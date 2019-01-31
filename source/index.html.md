@@ -9,7 +9,9 @@ toc_footers:
   - Source on <a href='https://github.com/thingsdb/ThingsDocs'>GitHub</a>
 
 includes:
+  - types
   - root
+  - functions
   - errors
 
 search: true
@@ -61,20 +63,36 @@ ThingsDB uses a user and password combination for access. A default user `admin`
 If you did not yet change the default password, you might want to jump to [set password](#set-password)
 
 ## Python
-At least Python version 3.6 is required. The ThingsDB Client can be installed using pip:
+
+> Use pip to install the python client:
+
 ```
 pip install python-thingsdb
 ```
 
+The Python client supports both queries, watching and a framework for using ThingsDB in a really simple way.
+
+
+
 ## Shell
- > Copy/paste to download and install *thingscmd*
+
+> Copy/paste to download and install *thingscmd*
+
 ```
-sudo pip install thingscmd
+pip install thingscmd
 ```
 
 For running thingsdb queries from the shell, a shell tool [thingscmd](https://github.com/thingsdb/ThingsCMD) is available.
-
+It is not possible to *watch* things by using this shell based tool.
 
 # Events
 When a query uses a statement which makes a change to ThingsDB, then internally ThingsDB will create an *event* to apply these changes.
 Events are applied in order on each node so database consistency is guaranteed.
+
+# Names
+The following rules apply to names in ThingsDB:
+
+- A name must start with a letter or underscore character
+- A name cannot start with a number
+- A name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ )
+- Names are case-sensitive (thing, Thing and THING are three different names)

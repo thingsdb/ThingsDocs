@@ -7,8 +7,8 @@ All manage queries should use target `0` which is the `root` of ThingDB.
 ## Set Password
 
 > This code changes the password for use *admin*:
-```python
 
+```python
 import asyncio
 from thingsdb.client import Client
 
@@ -30,12 +30,27 @@ set_password('admin', 'my_secret_password');
 EOQ
 ```
 
-> Example return value (just the new collection id)
+> Example return value (just `null`)
 
 ```json
-31415
+null
 ```
 
+Change a users password.
+This function requires an [event](#events).
+
+### Function
+`set_password(username, new_password);`
+
+### Arguments
+Argument | Type | Description
+--------- | ----------- | -----------
+username | raw (required) | Name of the user
+new_password | raw (required) | New password, can be anything from 1 to 128 graphical characters
+
+### Return value
+Returns `nil` if successful. An `INDEX_ERROR` is returned
+if the user does not exist and `BAD_REQUEST` if the new password is not compliant.
 
 ## New Collection
 
@@ -120,18 +135,12 @@ Delete a collection.
 This function requires an [event](#events).
 
 ### Function
-`new_collection(name);`
+`del_collection(name);`
 
 ### Arguments
 Argument | Type | Description
 --------- | ----------- | -----------
-name | raw (required) | Name of the new collection.
-
-<aside class="notice">
-The user who has created the collection will automatically receive full
-access rights to the new collection.
-Use <code>grant</code> to give other users access to the collection.
-</aside>
+name | raw (required) | Name of the collection to delete.
 
 ## Grant
 
