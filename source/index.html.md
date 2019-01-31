@@ -6,7 +6,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - shell
 
 toc_footers:
-  - Source on [GitHub](https://github.com/thingsdb/ThingsDocs)
+  - Source on <a href='https://github.com/thingsdb/ThingsDocs'>GitHub</a>
 
 includes:
   - root
@@ -39,8 +39,8 @@ async def example():
     # replace `localhost` with your ThingsDB server address
     await client.connect('localhost', 9200)
 
-    # replace `iris` with yout username and `siri` with your password
-    await client.authenticate('iris', 'siri')
+    # replace `amdin` with yout username and `pass` with your password
+    await client.authenticate('admin', 'pass')
 
 # run the example
 loop.run_until_complete(example())
@@ -51,184 +51,30 @@ loop.run_until_complete(client.wait_closed())
 ```
 
 ```shell
-thingscmd -u iris -p siri -s localhost -c << EOL
+thingscmd -u admin -p pass -s localhost -c << EOL
 /* Creates a new collection */
 new_collection('awesome_things');
 EOL
 ```
 
-ThingsDB uses a user and password combination for access. A default user `iris` with password `siri` is created on a fresh installation.
+ThingsDB uses a user and password combination for access. A default user `admin` with password `pass` is created on a fresh installation.
+If you did not yet change the default password, you might want to jump to [set password](#set-password)
 
-`Authorization: meowmeowmeow`
-
-<aside class="warning">
-The Python client is an async client which requires at least Python 3.6
-</aside>
-
-## new_collection
-
-```python
-import asyncio
-from thingsdb.client import Client
-
-client = Client()
-
-async def example():
-    await client.connect('localhost', 9200)
-    await client.authenticate('iris', 'siri')
-    await client.new_collection('awesome_things')
-
-asyncio.get_event_loop().run_until_complete(example())
+## Python
+At least Python version 3.6 is required. The ThingsDB Client can be installed using pip:
+```
+pip install python-thingsdb
 ```
 
-```shell
-thingscmd -u username -p password -s server.local -c << EOL
-
-/* Creates a new collection */
-new_collection('awesome_things');
-
-EOL
+## Shell
+ > Copy/paste to download and install *thingscmd*
+```
+sudo pip install thingscmd
 ```
 
-> The above command returns JSON structured like this:
+For running thingsdb queries from the shell, a shell tool [thingscmd](https://github.com/thingsdb/ThingsCMD) is available.
 
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
 
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
-
-## Delete a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -X DELETE
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "deleted" : ":("
-}
-```
-
-This endpoint deletes a specific kitten.
-
-### HTTP Request
-
-`DELETE http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
-
+# Events
+When a query uses a statement which makes a change to ThingsDB, then internally ThingsDB will create an *event* to apply these changes.
+Events are applied in order on each node so database consistency is guaranteed.
