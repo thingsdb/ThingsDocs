@@ -1,4 +1,4 @@
-# Query Collections
+# Collection API
 
 > This code returns the *id* of collection *stuff*
 
@@ -128,12 +128,6 @@ This function does *not* generate an [event](#events).
 
 This function does *not* generate an [event](#events).
 
-## match
-
-Determines if a string matches a given regular expression.
-
-This function does *not* generate an [event](#events).
-
 ## now
 
 This function does *not* generate an [event](#events).
@@ -175,7 +169,7 @@ some_array.push('something').ret();
 EOQ
 ```
 
-> Return value in json format
+> Return value in JSON format
 
 ```json
 null
@@ -209,6 +203,12 @@ Determines if a string starts with characters given by another string.
 This function does *not* generate an [event](#events).
 
 ## str
+
+This function does *not* generate an [event](#events).
+
+## test
+
+Test if a string matches a given regular expression and return `true` or `false`.
 
 This function does *not* generate an [event](#events).
 

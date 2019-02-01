@@ -1,6 +1,12 @@
 # Data Types
 ThingsDB has some basic
 
+## Nil
+
+Probably the most simple type, it's used as *no value*.
+What more can we say about `nil`?
+
+
 ## String / Raw
 
  > This code creates a *raw* property *greet* to collection *stuff*:
@@ -38,8 +44,8 @@ Method | Description
 ------ | -----------
 [endsswith](#endsswith) | Determines if a string ends with characters given by another string.
 [lower](#lower) | Return a new string in which all case-based characters are in lower case.
-[match](#match) | Determines if a string matches a given regular expression.
 [startswith](#startswith) | Determines if a string starts with characters given by another string.
+[test](#test) | Test if a string matches a given regular expression and return `true` or `false`.
 [upper](#upper) | Return a new string in which all case-based characters are in upper case.
 
 <aside class="notice">
@@ -48,6 +54,7 @@ If you want to store long string or blob values, you might want to use
 memory then properties but the downside is that it is not possible to search within
 a value. (unless you *download* the value first.)
 </aside>
+
 
 ## Boolean
 
@@ -157,4 +164,77 @@ EOQ
 ```
 
 ThingsDB can store 64bit float values.  [isinf](#isinf) and [isnan](#isnan)
+
+
+## Regex
+
+> This code uses a regular expression for an overly simple email check:
+
+```python
+import asyncio
+from thingsdb.client import Client
+
+client = Client()
+
+async def example():
+    await client.connect('server.local', 9200)
+    await client.authenticate('admin', 'pass')
+
+    # Note: the email check is oversimplified, do not use in production
+    await client.query(r'''
+        email = 'info@thingsdb.net';
+        email.match( /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/ );
+    ''', target='stuff')
+
+asyncio.get_event_loop().run_until_complete(example())
+```
+
+```shell
+# Note: the email check is oversimplified, do not use in production
+thingscmd -s server.local -u admin -p pass -c stuff -q << EOQ "
+email = 'info@thingsdb.net';
+email.match( /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/ );
+"
+EOQ
+```
+
+> Return value in JSON format (the first `nil` is for the email assignments)
+
+```json
+[
+    null,
+    true
+]
+```
+
+Regular expression can be constructed using a literal which consists of a pattern enclosed between slashes, as follows: `re = /ab+c/;`.
+
+### Methods that use regular expressions
+Method | Description
+------ | -----------
+[test](#test) | A [string](#string-raw) method that tests for a match in a string. It returns `true` or `false`.
+
+
+## Array
+
+Arrays in ThingsDB come in three flavors.
+
+An empty array can be constructed as follows: `arr = [];`
+Each *empty* array presents itself as an *array-of-things* but will convert to a "normal" array
+if some other data type is added to the array. Data types can be mixed in an array with the exception of type [thing](#thing).
+
+Nesting is also possible withing "normal" arrays but each nested array will become a `tuple` which means the array will be immutable.
+
+### Array Types
+
+Type | Description
+---- | -----------
+array | Mutable and can take any type except type [thing](#thing) or an array of *things*.
+tuple | Immutable, each *nested array* becomes a tuple so all nested arrays are tuples.
+things | Mutable array which can only hold type `thing`.
+
+## Thing
+
+
+## Arrow function
 

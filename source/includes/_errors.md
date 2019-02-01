@@ -1,22 +1,17 @@
 # Errors
 
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
-
-The Kittn API uses the following error codes:
+ThingsDB uses the following error codes:
 
 
-Error Code | Meaning
----------- | -------
-400 | Bad Request -- Your request is invalid.
-401 | Unauthorized -- Your API key is wrong.
-403 | Forbidden -- The kitten requested is hidden for administrators only.
-404 | Not Found -- The specified kitten could not be found.
-405 | Method Not Allowed -- You tried to access a kitten with an invalid method.
-406 | Not Acceptable -- You requested a format that isn't json.
-410 | Gone -- The kitten requested has been removed from our servers.
-418 | I'm a teapot.
-429 | Too Many Requests -- You're requesting too many kittens! Slow down!
-500 | Internal Server Error -- We had a problem with our server. Try again later.
-503 | Service Unavailable -- We're temporarily offline for maintenance. Please try again later.
+Error | Code | Meaning
+------| ---- | -------
+`OVERFLOW_ERROR` | 96 | Integer is too large to fit a 64 bit signed integer.
+`ZERO_DIV_ERROR` | 97 | Trying a division or module by zero.
+`MAX_QUOTA_ERROR` | 98 | Your collection has quotas set and the limit is reached.
+`AUTH_ERROR` | 99 | Wrong credentials or a request while the connection is not authenticated.
+`FORBIDDEN` | 100 | You lack the privileges to do the request.
+`INDEX_ERROR` | 101 | Index out of range or trying to access an invalid property.
+`BAD_REQUEST` | 102 | Invalid data, for example an invalid data type used in a query.
+`QUERY_ERROR` | 103 | Syntax error in the query.
+`NODE_ERROR` | 104 | At least one node has an issue while processing the request.
+`INTERNAL_ERROR` | 127 | Node is probably out-of-memory or out-of-disk-space.
