@@ -60,7 +60,7 @@ to use this function to *get* the blob value.
 This function does *not* generate an [event](#events).
 
 ### Function
-`blob(index);`
+`blob(index)`
 
 ### Arguments
 Argument | Type | Description
@@ -124,9 +124,27 @@ Return a new string in which all case-based characters are in lower case.
 
 This function does *not* generate an [event](#events).
 
+### Function
+*string*.`lower()`
+
 ## map
 
+Iterate over items in an [array](#array) or over all properties on a [thing](#thing).
+
 This function does *not* generate an [event](#events).
+
+### Function
+*iterable*.`map(callback)`
+
+### Arguments
+
+Explanation of the *callback* argument:
+
+Iterable | Callback | Description
+-------- | -------- | -----------
+array | item, index => ... | Iterate over all items in the array. Both item and index are optional.
+thing | name, value => ... | Iterate over the thing properties. Both name and value are optional.
+
 
 ## now
 
@@ -182,7 +200,7 @@ unnecessary network traffic.
 This function does *not* generate an [event](#events).
 
 ### Function
-`ret();`
+`ret()`
 
 ### Return value
 Returns `nil`.
@@ -202,9 +220,15 @@ Determines if a string starts with characters given by another string.
 
 This function does *not* generate an [event](#events).
 
+### Function
+*string*.`startswith(search_string)`
+
 ## str
 
 This function does *not* generate an [event](#events).
+
+### Function
+`str(object)`
 
 ## test
 
@@ -212,16 +236,43 @@ Test if a string matches a given regular expression and return `true` or `false`
 
 This function does *not* generate an [event](#events).
 
+### Function
+*string*.`test(regex)`
+
 ## thing
 
+This function can be used to get a thing or things by id.
+
 This function does *not* generate an [event](#events).
+
+### Function
+`thing(id1, id2, ..., idX)`
+
+### Arguments
+Argument | Type | Description
+-------- | ---- | -----------
+id1, id2, ..., idX | int (at least one required) | The thing(s) to return.
+
+### Return value
+Returns a [thing ](#thing) or an *array-of-things* based on given id's.
+You can force an *array-of-things* with only one id, just by placing a `,`
+after the id, for example: `thing(666,);`
+An `INDEX_ERROR` is returned in case at least one id is not found inside the collection.
+
 
 ## unset
 
 This function generates an [event](#events).
+
+### Function
+*thing*.`unset(attr)`
+
 
 ## upper
 
 Return a new string in which all case-based characters are in upper case.
 
 This function does *not* generate an [event](#events).
+
+### Function
+*string*.`upper()`
