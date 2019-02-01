@@ -38,8 +38,8 @@ loop = asyncio.get_event_loop()
 
 
 async def example():
-    # replace `localhost` with your ThingsDB server address
-    await client.connect('localhost', 9200)
+    # replace `server.local` with your ThingsDB server address
+    await client.connect('server.local', 9200)
 
     # replace `amdin` with yout username and `pass` with your password
     await client.authenticate('admin', 'pass')
@@ -53,7 +53,7 @@ loop.run_until_complete(client.wait_closed())
 ```
 
 ```shell
-thingscmd -u admin -p pass -s localhost -c << EOL
+thingscmd -s server.local -u admin -p pass -c << EOL
 /* Creates a new collection */
 new_collection('awesome_things');
 EOL

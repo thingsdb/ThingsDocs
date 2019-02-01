@@ -15,7 +15,7 @@ from thingsdb.client import Client
 client = Client()
 
 async def example():
-    await client.connect('localhost', 9200)
+    await client.connect('server.local', 9200)
     await client.authenticate('admin', 'pass')
     await client.set_password('admin', 'my_secret_password')
 
@@ -23,21 +23,21 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -u admin -p pass -s server.local -q << EOQ "
-/* Change the password for user `admin` */
+# Change the password for user `admin`
+thingscmd -s server.local -u admin -p pass -q << EOQ "
 set_password('admin', 'my_secret_password');
 "
 EOQ
 ```
 
-> Example return value (just `null`)
+> Return value in json format
 
 ```json
 null
 ```
 
 Change a users password.
-This function requires an [event](#events).
+This function generates an [event](#events).
 
 ### Function
 `set_password(username, new_password);`
@@ -63,7 +63,7 @@ from thingsdb.client import Client
 client = Client()
 
 async def example():
-    await client.connect('localhost', 9200)
+    await client.connect('server.local', 9200)
     await client.authenticate('admin', 'pass')
     await client.new_collection('awesome_things')
 
@@ -71,21 +71,21 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -u admin -p pass -s server.local -q << EOQ "
-/* Creates a new collection */
+# Creates a new collection
+thingscmd -s server.local -u admin -p pass -q << EOQ "
 new_collection('awesome_things');
 "
 EOQ
 ```
 
-> Example return value (just the new collection id)
+> Example return value in json format (the new collection id)
 
 ```json
 31415
 ```
 
 Create a new collection.
-This function requires an [event](#events).
+This function generates an [event](#events).
 
 ### Function
 `new_collection(name);`
@@ -116,7 +116,7 @@ from thingsdb.client import Client
 client = Client()
 
 async def example():
-    await client.connect('localhost', 9200)
+    await client.connect('server.local', 9200)
     await client.authenticate('admin', 'pass')
     await client.del_collection('old_things')
 
@@ -132,14 +132,15 @@ EOQ
 ```
 
 Delete a collection.
-This function requires an [event](#events).
+
+This function generates an [event](#events).
 
 ### Function
 `del_collection(name);`
 
 ### Arguments
 Argument | Type | Description
---------- | ----------- | -----------
+-------- | ---- | -----------
 name | raw (required) | Name of the collection to delete.
 
 ## Grant
