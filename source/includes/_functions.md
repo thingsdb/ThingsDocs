@@ -80,19 +80,82 @@ This function does *not* generate an [event](#events).
 
 This function generates an [event](#events).
 
+### Function
+*thing*.`del(property)`
+
+### Arguments
+Argument | Type | Description
+-------- | ---- | -----------
+property | raw (required) | Name of the property to delete.
+
+### Return value
+Returns `nil` if successful. An `INDEX_ERROR` is returned
+if the property does not exist or `BAD_REQUEST` in case the given property is
+not a valid [name](#names).
+
+
 ## endswith
 
 Determines if a string ends with characters given by another string.
 
 This function does *not* generate an [event](#events).
 
+### Function
+*string*.`endswith(search_string)`
+
+### Arguments
+Argument | Type | Description
+-------- | ---- | -----------
+search_string | raw (required) | The characters to be searched for at the end of this string.
+
+### Return value
+Returns `true` the given characters are found at the end of the string and otherwise `false`.
+
+
 ## filter
 
 This function does *not* generate an [event](#events).
 
+### Function
+*iterable*.`filter(callback)`
+
+### Arguments
+
+Explanation of the *callback* argument:
+
+Iterable | Callback | Description
+-------- | -------- | -----------
+array | item, index => ... | Iterate over all items in the array. Both item and index are optional.
+thing | name, value => ... | Iterate over the thing properties. Both name and value are optional.
+
+
+### Return value
+A new array or thing with the elements that pass the test.
+If no elements pass the test, an empty array or thing will be returned.
+
 ## find
 
+This function returns the value of the first element in the array or thing that satisfies the callback function.
+Otherwise `nil` is returned.
+
 This function does *not* generate an [event](#events).
+
+### Function
+*iterable*.`find(callback)`
+
+### Arguments
+
+Explanation of the *callback* argument:
+
+Iterable | Callback | Description
+-------- | -------- | -----------
+array | item, index => ... | Iterate over items in the array. Both item and index are optional.
+thing | name, value => ... | Iterate over thing properties. Both name and value are optional.
+
+### Return value
+The value of the first element in the array or thing that satisfies the provided testing function;
+otherwise, `nil` is returned.
+
 
 ## get
 
@@ -105,6 +168,30 @@ This function does *not* generate an [event](#events).
 ## id
 
 This function does *not* generate an [event](#events).
+
+## isarray
+
+This function determines whether the value passed to this function is an array or not.
+
+This function does *not* generate an [event](#events).
+
+### Function
+`isarray(value)`
+
+### Arguments
+Argument | Type | Description
+-------- | ---- | -----------
+value | any (required) | The value to be tested for being an array.
+
+### Return value
+Returns `true` the value passed is array else it returns `false`.
+
+<aside class="notice">
+This function returns <code>true</code> for any array type. If you You can force an <i>array-of-things</i>, even with only one id. Just add an extra comma,
+for example: <code>thing(666,);</code> and this will return an array with one thing: <code>[{"#": 666, ...}]</code>
+</aside>
+
+
 
 ## int
 
@@ -144,6 +231,9 @@ Iterable | Callback | Description
 -------- | -------- | -----------
 array | item, index => ... | Iterate over all items in the array. Both item and index are optional.
 thing | name, value => ... | Iterate over the thing properties. Both name and value are optional.
+
+### Return value
+A new array with each element being the result of the callback function.
 
 
 ## now
@@ -223,12 +313,21 @@ This function does *not* generate an [event](#events).
 ### Function
 *string*.`startswith(search_string)`
 
+### Arguments
+Argument | Type | Description
+-------- | ---- | -----------
+search_string | raw (required) | The characters to be searched for at the start of this string.
+
+### Return value
+Returns `true` the given characters are found at the start of the string and otherwise `false`.
+
+
 ## str
 
 This function does *not* generate an [event](#events).
 
 ### Function
-`str(object)`
+`str(value)`
 
 ## test
 
