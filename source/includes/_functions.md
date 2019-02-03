@@ -187,8 +187,7 @@ value | any (required) | The value to be tested for being an array.
 Returns `true` the value passed is array else it returns `false`.
 
 <aside class="notice">
-This function returns <code>true</code> for any array type. If you You can force an <i>array-of-things</i>, even with only one id. Just add an extra comma,
-for example: <code>thing(666,);</code> and this will return an array with one thing: <code>[{"#": 666, ...}]</code>
+This function returns <code>true</code> for all array types, *list*, *tuple* and *array-of-things*.
 </aside>
 
 
