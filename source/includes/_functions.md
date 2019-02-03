@@ -6,14 +6,13 @@
 import asyncio
 from thingsdb.client import Client
 
-client = Client()
-
 async def example():
     await client.connect('server.local', 9200)
     await client.authenticate('admin', 'pass')
     res = await client.query('id()', target='stuff')
     print(res)
 
+client = Client()
 asyncio.get_event_loop().run_until_complete(example())
 ```
 
@@ -30,8 +29,6 @@ import asyncio
 import urllib
 from thingsdb.client import Client
 
-client = Client()
-
 async def example():
     await client.connect('server.local', 9200)
     await client.authenticate('admin', 'pass')
@@ -44,6 +41,7 @@ async def example():
     # The python client will automatically use a blob for byte values
     await stuff.set('logo', resp.read())
 
+client = Client()
 asyncio.get_event_loop().run_until_complete(example())
 ```
 
@@ -171,7 +169,53 @@ This function does *not* generate an [event](#events).
 
 ## isarray
 
-This function determines whether the value passed to this function is an array or not.
+> This code shows some return values for ***isarray()***:
+
+```python
+import asyncio
+from thingsdb.client import Client
+
+async def example():
+    await client.connect('server.local', 9200)
+    await client.authenticate('admin', 'pass')
+    res = await client.query(r'''
+        isarray( [] );
+        isarray( {} );
+        isarray( [1, 'two', 3.0] );
+        isarray( [{some: 'array'}, {with: 'things'}] );
+        isarray( [['nested', 'therefore this is a tuple']][0] );
+    ''', target='stuff')
+    print(res)
+
+client = Client()
+asyncio.get_event_loop().run_until_complete(example())
+```
+
+```shell
+thingscmd -s server.local -u admin -p pass -c stuff -q << EOQ "
+isarray( [] );
+isarray( {} );
+isarray( [1, 'two', 3.0] );
+isarray( [{some: 'array'}, {with: 'things'}] );
+isarray( [['nested', 'therefore this is a tuple']][0] );
+"
+EOQ
+```
+
+> Return value in JSON format
+
+```json
+[
+    true,
+    false,
+    true,
+    true,
+    true
+]
+```
+
+This function determines whether the value passed to this function
+is an [array](#array) type or not.
 
 This function does *not* generate an [event](#events).
 
@@ -187,10 +231,76 @@ value | any (required) | The value to be tested for being an array.
 Returns `true` the value passed is array else it returns `false`.
 
 <aside class="notice">
-This function returns <code>true</code> for all array types, *list*, *tuple* and *array-of-things*.
+This function returns <code>true</code> for all array types, <i>list</i>, <i>tuple</i> and <i>array-of-things</i>.
 </aside>
 
+## islist
 
+> This code shows some return values for ***islist()***:
+
+```python
+import asyncio
+from thingsdb.client import Client
+
+async def example():
+    await client.connect('server.local', 9200)
+    await client.authenticate('admin', 'pass')
+    res = await client.query(r'''
+        islist( [] );
+        islist( {} );
+        islist( [1, 'two', 3.0] );
+        islist( [{some: 'array'}, {with: 'things'}] );
+        islist( [['nested', 'therefore this is a tuple']][0] );
+    ''', target='stuff')
+    print(res)
+
+client = Client()
+asyncio.get_event_loop().run_until_complete(example())
+```
+
+```shell
+thingscmd -s server.local -u admin -p pass -c stuff -q << EOQ "
+islist( [] );
+islist( {} );
+islist( [1, 'two', 3.0] );
+islist( [{some: 'array'}, {with: 'things'}] );
+islist( [['nested', 'therefore this is a tuple']][0] );
+"
+EOQ
+```
+
+> Return value in JSON format
+
+```json
+[
+    true,
+    false,
+    true,
+    false,
+    false
+]
+```
+
+This function determines whether the value passed to this function
+is a list type or not.
+
+This function does *not* generate an [event](#events).
+
+### Function
+`islist(value)`
+
+### Arguments
+Argument | Type | Description
+-------- | ---- | -----------
+value | any (required) | The value to be tested for being a list.
+
+### Return value
+Returns `true` the value passed is list else it returns `false`.
+
+<aside class="notice">
+The <code>islist()</code> function returns <code>true</code> for an empty, not-nested, <i>array-of-things</i> because it will
+take any value and therefore can convert to a list.
+</aside>
 
 ## int
 
@@ -205,6 +315,37 @@ This function does *not* generate an [event](#events).
 This function does *not* generate an [event](#events).
 
 ## lower
+
+> Example using ***lower()***:
+
+```python
+import asyncio
+from thingsdb.client import Client
+
+async def example():
+    await client.connect('server.local', 9200)
+    await client.authenticate('admin', 'pass')
+    res = await client.query(r'''
+        'Hello World!!'.lower();
+    ''', target='stuff')
+    print(res)
+
+client = Client()
+asyncio.get_event_loop().run_until_complete(example())
+```
+
+```shell
+thingscmd -s server.local -u admin -p pass -c stuff -q << EOQ "
+'Hello World!!'.lower();
+"
+EOQ
+```
+
+> Return value in JSON format
+
+```json
+"hello world!!"
+```
 
 Return a new string in which all case-based characters are in lower case.
 
@@ -249,27 +390,26 @@ This function generates an [event](#events).
 
 ## ret
 
-> This code pushes a value to an array but returns simple `nil`:
+> This code pushes a value to an array but returns just ***nil***:
 
 ```python
 import asyncio
 from thingsdb.client import Client
 
-client = Client()
-
 async def example():
     await client.connect('server.local', 9200)
     await client.authenticate('admin', 'pass')
-    stuff = await client.get_collection('stuff')
+    res = await client.query(r'''
+        some_array.push('something').ret();
+    ''', target='stuff')
+    print(res)
 
-    # The python client adds ret() automatically
-    await stuff.some_array.ti_push('something')
-
+client = Client()
 asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -s server.local -u admin -p pass -q << EOQ "
+thingscmd -s server.local -u admin -p pass -c stuff -q << EOQ "
 #
 some_array.push('something').ret();
 "
@@ -370,6 +510,37 @@ This function generates an [event](#events).
 
 
 ## upper
+
+> Example using ***upper()***:
+
+```python
+import asyncio
+from thingsdb.client import Client
+
+async def example():
+    await client.connect('server.local', 9200)
+    await client.authenticate('admin', 'pass')
+    res = await client.query(r'''
+        'Hello World!!'.upper();
+    ''', target='stuff')
+    print(res)
+
+client = Client()
+asyncio.get_event_loop().run_until_complete(example())
+```
+
+```shell
+thingscmd -s server.local -u admin -p pass -c stuff -q << EOQ "
+'Hello World!!'.upper();
+"
+EOQ
+```
+
+> Return value in JSON format
+
+```json
+"HELLO WORLD!!"
+```
 
 Return a new string in which all case-based characters are in upper case.
 
