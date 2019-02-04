@@ -27,7 +27,7 @@ from thingsdb.client import Client
 client = Client()
 
 async def example():
-    await client.connect('server.local', 9200)
+    await client.connect('node.local', 9200)
     await client.authenticate('admin', 'pass')
     # Delete collection `old_things`
     await client.del_collection('old_things')
@@ -37,7 +37,7 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 # Delete collection `old_things`
-thingscmd -s server.local -u admin -p pass -q << EOQ "
+thingscmd -n node.local -u admin -p pass -q << EOQ "
 del_collection('old_things');
 "
 EOQ
@@ -77,7 +77,7 @@ from thingsdb.client import Client
 client = Client()
 
 async def example():
-    await client.connect('server.local', 9200)
+    await client.connect('node.local', 9200)
     await client.authenticate('admin', 'pass')
     await client.new_collection('awesome_things')
 
@@ -86,7 +86,7 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 # Creates a new collection
-thingscmd -s server.local -u admin -p pass -q << EOQ "
+thingscmd -n node.local -u admin -p pass -q << EOQ "
 new_collection('awesome_things');
 "
 EOQ
@@ -174,7 +174,7 @@ from thingsdb.client import Client
 client = Client()
 
 async def example():
-    await client.connect('server.local', 9200)
+    await client.connect('node.local', 9200)
     await client.authenticate('admin', 'pass')
     await client.set_password('admin', 'my_secret_password')
 
@@ -183,7 +183,7 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 # Change the password for user `admin`
-thingscmd -s server.local -u admin -p pass -q << EOQ "
+thingscmd -n node.local -u admin -p pass -q << EOQ "
 set_password('admin', 'my_secret_password');
 "
 EOQ

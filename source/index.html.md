@@ -10,8 +10,33 @@ toc_footers:
 
 includes:
   - types
-  - root
-  - functions
+  - manage_api
+  - collection_api
+  - blob
+  - del
+  - find
+  - get
+  - hasattr
+  - hasprop
+  - id
+  - isarray
+  - islist
+  - int
+  - isinf
+  - isnan
+  - lower
+  - map
+  - push
+  - rename
+  - ret
+  - set
+  - splice
+  - startswith
+  - str
+  - test
+  - thing_function
+  - unset
+  - upper
   - errors
 
 search: true
@@ -38,8 +63,8 @@ loop = asyncio.get_event_loop()
 
 
 async def example():
-    # replace `server.local` with your ThingsDB server address
-    await client.connect('server.local', 9200)
+    # replace `node.local` with your ThingsDB server address
+    await client.connect('node.local', 9200)
 
     # replace `amdin` with yout username and `pass` with your password
     await client.authenticate('admin', 'pass')
@@ -53,7 +78,7 @@ loop.run_until_complete(client.wait_closed())
 ```
 
 ```shell
-thingscmd -s server.local -u admin -p pass -c << EOL
+thingscmd -n node.local -u admin -p pass -c << EOL
 /* Creates a new collection */
 new_collection('awesome_things');
 EOL

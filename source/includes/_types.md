@@ -18,7 +18,7 @@ from thingsdb.client import Client
 client = Client()
 
 async def example():
-    await client.connect('server.local', 9200)
+    await client.connect('node.local', 9200)
     await client.authenticate('admin', 'pass')
     # Get collection `stuff`
     stuff = await client.get_collection('stuff')
@@ -31,7 +31,7 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 # Assign property `greet`
-thingscmd -s server.local -u admin -p pass -c stuff -q << EOQ "
+thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
 greet = 'Hello world!!';
 "
 EOQ
@@ -67,7 +67,7 @@ from thingsdb.client import Client
 client = Client()
 
 async def example():
-    await client.connect('server.local', 9200)
+    await client.connect('node.local', 9200)
     await client.authenticate('admin', 'pass')
     # Get collection `stuff`
     stuff = await client.get_collection('stuff')
@@ -80,7 +80,7 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 # Assign property `is_the_earth_flat`
-thingscmd -s server.local -u admin -p pass -c stuff -q << EOQ "
+thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
 is_the_earth_flat = !true;
 "
 EOQ
@@ -101,7 +101,7 @@ from thingsdb.client import Client
 client = Client()
 
 async def example():
-    await client.connect('server.local', 9200)
+    await client.connect('node.local', 9200)
     await client.authenticate('admin', 'pass')
     # Get collection `stuff`
     stuff = await client.get_collection('stuff')
@@ -114,7 +114,7 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 # Assign property `count`
-thingscmd -s server.local -u admin -p pass -c stuff -q << EOQ "
+thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
 count = 123;
 "
 EOQ
@@ -144,7 +144,7 @@ from thingsdb.client import Client
 client = Client()
 
 async def example():
-    await client.connect('server.local', 9200)
+    await client.connect('node.local', 9200)
     await client.authenticate('admin', 'pass')
     # Get collection `stuff`
     stuff = await client.get_collection('stuff')
@@ -157,7 +157,7 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 # Assign property `plank_constant`
-thingscmd -s server.local -u admin -p pass -c stuff -q << EOQ "
+thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
 plank_constant = 6.62607004e-34;
 "
 EOQ
@@ -177,7 +177,7 @@ from thingsdb.client import Client
 client = Client()
 
 async def example():
-    await client.connect('server.local', 9200)
+    await client.connect('node.local', 9200)
     await client.authenticate('admin', 'pass')
 
     # Note: the email check is oversimplified, do not use in production
@@ -191,7 +191,7 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 # Note: the email check is oversimplified, do not use in production
-thingscmd -s server.local -u admin -p pass -c stuff -q << EOQ "
+thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
 email = 'info@thingsdb.net';
 email.match( /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/ );
 "
