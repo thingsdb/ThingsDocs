@@ -35,6 +35,7 @@ includes:
   - str
   - test
   - thing_function
+  - try
   - unset
   - upper
   - errors

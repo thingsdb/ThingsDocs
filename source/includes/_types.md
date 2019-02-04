@@ -133,7 +133,7 @@ Base | Example | Description
 10 | `123` | Decimal notation, numbers between zero and nine (`0-9`).
 16 | `0x7b` | Hexadecimal notation start with a `0x` (zero, lower case `x`), followed by hexadecimal digits (`0-9`, `a-f` or `A-F`).
 
-## Float
+## Floating point
 
  > This code creates a *float* property *plank_constant* to collection *stuff*:
 
