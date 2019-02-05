@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;python&quot;,&quot;shell&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -211,10 +211,8 @@
     <div class="toc-wrapper">
       <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
               <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="shell">shell</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -226,18 +224,213 @@
           </li>
           <li>
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
-          </li>
-          <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#python" class="toc-h2 toc-link" data-title="Python">Python</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                    <a href="#shell" class="toc-h2 toc-link" data-title="Shell">Shell</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#events" class="toc-h1 toc-link" data-title="Events">Events</a>
+          </li>
+          <li>
+            <a href="#names" class="toc-h1 toc-link" data-title="Names">Names</a>
+          </li>
+          <li>
+            <a href="#properties" class="toc-h1 toc-link" data-title="Properties">Properties</a>
+          </li>
+          <li>
+            <a href="#attributes" class="toc-h1 toc-link" data-title="Attributes">Attributes</a>
+          </li>
+          <li>
+            <a href="#data-types" class="toc-h1 toc-link" data-title="Data Types">Data Types</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#nil" class="toc-h2 toc-link" data-title="Nil">Nil</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#string-raw" class="toc-h2 toc-link" data-title="String / Raw">String / Raw</a>
+                  </li>
+                  <li>
+                    <a href="#boolean" class="toc-h2 toc-link" data-title="Boolean">Boolean</a>
+                  </li>
+                  <li>
+                    <a href="#integer" class="toc-h2 toc-link" data-title="Integer">Integer</a>
+                  </li>
+                  <li>
+                    <a href="#floating-point" class="toc-h2 toc-link" data-title="Floating point">Floating point</a>
+                  </li>
+                  <li>
+                    <a href="#regex" class="toc-h2 toc-link" data-title="Regex">Regex</a>
+                  </li>
+                  <li>
+                    <a href="#array" class="toc-h2 toc-link" data-title="Array">Array</a>
+                  </li>
+                  <li>
+                    <a href="#thing" class="toc-h2 toc-link" data-title="Thing">Thing</a>
+                  </li>
+                  <li>
+                    <a href="#arrow-function" class="toc-h2 toc-link" data-title="Arrow function">Arrow function</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#manage-api" class="toc-h1 toc-link" data-title="Manage API">Manage API</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#collection" class="toc-h2 toc-link" data-title="collection">collection</a>
+                  </li>
+                  <li>
+                    <a href="#collections" class="toc-h2 toc-link" data-title="collections">collections</a>
+                  </li>
+                  <li>
+                    <a href="#counters" class="toc-h2 toc-link" data-title="counters">counters</a>
+                  </li>
+                  <li>
+                    <a href="#del_collection" class="toc-h2 toc-link" data-title="del_collection">del_collection</a>
+                  </li>
+                  <li>
+                    <a href="#del_user" class="toc-h2 toc-link" data-title="del_user">del_user</a>
+                  </li>
+                  <li>
+                    <a href="#grant" class="toc-h2 toc-link" data-title="grant">grant</a>
+                  </li>
+                  <li>
+                    <a href="#new_collection" class="toc-h2 toc-link" data-title="new_collection">new_collection</a>
+                  </li>
+                  <li>
+                    <a href="#new_node" class="toc-h2 toc-link" data-title="new_node">new_node</a>
+                  </li>
+                  <li>
+                    <a href="#new_user" class="toc-h2 toc-link" data-title="new_user">new_user</a>
+                  </li>
+                  <li>
+                    <a href="#node" class="toc-h2 toc-link" data-title="node">node</a>
+                  </li>
+                  <li>
+                    <a href="#nodes" class="toc-h2 toc-link" data-title="nodes">nodes</a>
+                  </li>
+                  <li>
+                    <a href="#pop_node" class="toc-h2 toc-link" data-title="pop_node">pop_node</a>
+                  </li>
+                  <li>
+                    <a href="#rename_collection" class="toc-h2 toc-link" data-title="rename_collection">rename_collection</a>
+                  </li>
+                  <li>
+                    <a href="#rename_user" class="toc-h2 toc-link" data-title="rename_user">rename_user</a>
+                  </li>
+                  <li>
+                    <a href="#reset_counters" class="toc-h2 toc-link" data-title="reset_counters">reset_counters</a>
+                  </li>
+                  <li>
+                    <a href="#revoke" class="toc-h2 toc-link" data-title="revoke">revoke</a>
+                  </li>
+                  <li>
+                    <a href="#set_loglevel" class="toc-h2 toc-link" data-title="set_loglevel">set_loglevel</a>
+                  </li>
+                  <li>
+                    <a href="#set_password" class="toc-h2 toc-link" data-title="set_password">set_password</a>
+                  </li>
+                  <li>
+                    <a href="#set_quota" class="toc-h2 toc-link" data-title="set_quota">set_quota</a>
+                  </li>
+                  <li>
+                    <a href="#set_zone" class="toc-h2 toc-link" data-title="set_zone">set_zone</a>
+                  </li>
+                  <li>
+                    <a href="#shutdown" class="toc-h2 toc-link" data-title="shutdown">shutdown</a>
+                  </li>
+                  <li>
+                    <a href="#user" class="toc-h2 toc-link" data-title="user">user</a>
+                  </li>
+                  <li>
+                    <a href="#users" class="toc-h2 toc-link" data-title="users">users</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#collection-api" class="toc-h1 toc-link" data-title="Collection API">Collection API</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#blob" class="toc-h2 toc-link" data-title="blob">blob</a>
+                  </li>
+                  <li>
+                    <a href="#del" class="toc-h2 toc-link" data-title="del">del</a>
+                  </li>
+                  <li>
+                    <a href="#find" class="toc-h2 toc-link" data-title="find">find</a>
+                  </li>
+                  <li>
+                    <a href="#get" class="toc-h2 toc-link" data-title="get">get</a>
+                  </li>
+                  <li>
+                    <a href="#hasattr" class="toc-h2 toc-link" data-title="hasattr">hasattr</a>
+                  </li>
+                  <li>
+                    <a href="#hasprop" class="toc-h2 toc-link" data-title="hasprop">hasprop</a>
+                  </li>
+                  <li>
+                    <a href="#id" class="toc-h2 toc-link" data-title="id">id</a>
+                  </li>
+                  <li>
+                    <a href="#isarray" class="toc-h2 toc-link" data-title="isarray">isarray</a>
+                  </li>
+                  <li>
+                    <a href="#islist" class="toc-h2 toc-link" data-title="islist">islist</a>
+                  </li>
+                  <li>
+                    <a href="#int" class="toc-h2 toc-link" data-title="int">int</a>
+                  </li>
+                  <li>
+                    <a href="#isinf" class="toc-h2 toc-link" data-title="isinf">isinf</a>
+                  </li>
+                  <li>
+                    <a href="#isnan" class="toc-h2 toc-link" data-title="isnan">isnan</a>
+                  </li>
+                  <li>
+                    <a href="#lower" class="toc-h2 toc-link" data-title="lower">lower</a>
+                  </li>
+                  <li>
+                    <a href="#map" class="toc-h2 toc-link" data-title="map">map</a>
+                  </li>
+                  <li>
+                    <a href="#push" class="toc-h2 toc-link" data-title="push">push</a>
+                  </li>
+                  <li>
+                    <a href="#rename" class="toc-h2 toc-link" data-title="rename">rename</a>
+                  </li>
+                  <li>
+                    <a href="#ret" class="toc-h2 toc-link" data-title="ret">ret</a>
+                  </li>
+                  <li>
+                    <a href="#set" class="toc-h2 toc-link" data-title="set">set</a>
+                  </li>
+                  <li>
+                    <a href="#splice" class="toc-h2 toc-link" data-title="splice">splice</a>
+                  </li>
+                  <li>
+                    <a href="#startswith" class="toc-h2 toc-link" data-title="startswith">startswith</a>
+                  </li>
+                  <li>
+                    <a href="#str" class="toc-h2 toc-link" data-title="str">str</a>
+                  </li>
+                  <li>
+                    <a href="#test" class="toc-h2 toc-link" data-title="test">test</a>
+                  </li>
+                  <li>
+                    <a href="#thing-function" class="toc-h2 toc-link" data-title="thing (function)">thing (function)</a>
+                  </li>
+                  <li>
+                    <a href="#try" class="toc-h2 toc-link" data-title="try">try</a>
+                  </li>
+                  <li>
+                    <a href="#unset" class="toc-h2 toc-link" data-title="unset">unset</a>
+                  </li>
+                  <li>
+                    <a href="#upper" class="toc-h2 toc-link" data-title="upper">upper</a>
                   </li>
               </ul>
           </li>
@@ -246,258 +439,1263 @@
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+            <li>Source on <a href='https://github.com/thingsdb/ThingsDocs'>GitHub</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+<p>Welcome to the ThingsDB API!</p>
 
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-
-<p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
+<p>We have language bindings in Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
 <h1 id='authentication'>Authentication</h1>
 <blockquote>
 <p>To authorize, use this code:</p>
 </blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-</code></pre>
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="c"># replace `node.local` with your ThingsDB server address</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">,</span> <span class="mi">9200</span><span class="p">)</span>
+
+    <span class="c"># replace `amdin` with yout username and `pass` with your password</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+
+<span class="c"># run the example</span>
+<span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+
+<span class="c"># the will close the client in a nice way</span>
+<span class="n">client</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">wait_closed</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c <span class="sh">&lt;&lt; EOL
+/* Creates a new collection */
+new_collection('awesome_things');
+EOL
+</span></code></pre>
+<p>ThingsDB uses a user and password combination for access. A default user <code>admin</code> with password <code>pass</code> is created on a fresh installation.
+If you did not yet change the default password, you might want to jump to <a href="#set-password">set password</a></p>
+<h2 id='python'>Python</h2>
 <blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
+<p>Use pip to install the python client:</p>
 </blockquote>
+<pre class="highlight plaintext"><code>pip install python-thingsdb
+</code></pre>
+<p>The Python client supports both queries, watching and a framework for using ThingsDB in a really simple way.</p>
+<h2 id='shell'>Shell</h2>
+<blockquote>
+<p>Copy/paste to download and install <em>thingscmd</em></p>
+</blockquote>
+<pre class="highlight plaintext"><code>pip install thingscmd
+</code></pre>
+<p>For running thingsdb queries from the shell, a shell tool <a href="https://github.com/thingsdb/ThingsCMD">thingscmd</a> is available.
+It is not possible to <em>watch</em> things by using this shell based tool.</p>
+<h1 id='events'>Events</h1>
+<p>When a query uses a statement which makes a change to ThingsDB, then internally ThingsDB will create an <em>event</em> to apply these changes.
+Events are applied in order on each node so database consistency is guaranteed.</p>
+<h1 id='names'>Names</h1>
+<p>The following rules apply to names in ThingsDB:</p>
 
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+<ul>
+<li>A name must start with a letter or underscore character</li>
+<li>A name cannot start with a number</li>
+<li>A name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ )</li>
+<li>Names are case-sensitive (thing, Thing and THING are three different names)</li>
+</ul>
+<h1 id='properties'>Properties</h1><h1 id='attributes'>Attributes</h1><h1 id='data-types'>Data Types</h1>
+<p>ThingsDB has some basic</p>
+<h2 id='nil'>Nil</h2>
+<p>Probably the most simple type, it&#39;s used as <em>no value</em>.
+What more can we say about <code>nil</code>?</p>
+<h2 id='string-raw'>String / Raw</h2>
+<blockquote>
+<p>This code creates a <em>raw</em> property <em>greet</em> to collection <em>stuff</em>:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
 
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 
-<p><code>Authorization: meowmeowmeow</code></p>
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">,</span> <span class="mi">9200</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="c"># Get collection `stuff`</span>
+    <span class="n">stuff</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_collection</span><span class="p">(</span><span class="s">'stuff'</span><span class="p">)</span>
+
+    <span class="c"># Assign property `greet`</span>
+    <span class="n">await</span> <span class="n">stuff</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="s">'greet'</span><span class="p">,</span> <span class="s">'Hello world!!'</span><span class="p">)</span>
+
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># Assign property `greet`</span>
+thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+greet = 'Hello world!!';
+"
+EOQ
+</span></code></pre>
+<p>ThingsDB has only type <code>raw</code> which is used for storing both <em>strings</em> and <em>blob</em> values.</p>
+<h3 id='methods'>Methods</h3>
+<table><thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><a href="#endsswith">endsswith</a></td>
+<td>Determines if a string ends with characters given by another string.</td>
+</tr>
+<tr>
+<td><a href="#lower">lower</a></td>
+<td>Return a new string in which all case-based characters are in lower case.</td>
+</tr>
+<tr>
+<td><a href="#startswith">startswith</a></td>
+<td>Determines if a string starts with characters given by another string.</td>
+</tr>
+<tr>
+<td><a href="#test">test</a></td>
+<td>Test if a string matches a given regular expression and return <code>true</code> or <code>false</code>.</td>
+</tr>
+<tr>
+<td><a href="#upper">upper</a></td>
+<td>Return a new string in which all case-based characters are in upper case.</td>
+</tr>
+</tbody></table>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+If you want to store long string or blob values, you might want to use
+<code>attributes</code> rather than <code>properties</code>. Attributes take less
+memory then properties but the downside is that it is not possible to search within
+a value. (unless you *download* the value first.)
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
-</code></pre>
+<h2 id='boolean'>Boolean</h2>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>This code creates a <em>bool</em> property <em>is_the_earth_flat</em> to collection <em>stuff</em>:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">,</span> <span class="mi">9200</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="c"># Get collection `stuff`</span>
+    <span class="n">stuff</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_collection</span><span class="p">(</span><span class="s">'stuff'</span><span class="p">)</span>
+
+    <span class="c"># Assign property `is_the_earth_flat`</span>
+    <span class="n">await</span> <span class="n">stuff</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="s">'is_the_earth_flat'</span><span class="p">,</span> <span class="ow">not</span> <span class="bp">True</span><span class="p">)</span>
+
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># Assign property `is_the_earth_flat`</span>
+thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+is_the_earth_flat = !true;
+"
+EOQ
+</span></code></pre>
+<p>Boolean are either <code>true</code> or <code>false</code>.
+Other types can convert to <code>bool</code> by using the <code>!</code> (not) operator or the <a href="#bool">bool</a> function.</p>
+<h2 id='integer'>Integer</h2>
+<blockquote>
+<p>This code creates a <em>int</em> property <em>count</em> to collection <em>stuff</em>:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">,</span> <span class="mi">9200</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="c"># Get collection `stuff`</span>
+    <span class="n">stuff</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_collection</span><span class="p">(</span><span class="s">'stuff'</span><span class="p">)</span>
+
+    <span class="c"># Assign property `count`</span>
+    <span class="n">await</span> <span class="n">stuff</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="s">'count'</span><span class="p">,</span> <span class="mi">123</span><span class="p">)</span>
+
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># Assign property `count`</span>
+thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+count = 123;
+"
+EOQ
+</span></code></pre>
+<p>ThingsDB can store 64bit signed integers values. When assigning integer values
+larger than 64bit, an <code>OVERFLOW_ERROR</code> will be returned. Other types can be
+converted to <code>int</code> by using the <a href="#int">int</a> function.</p>
+<h3 id='notations'>Notations</h3>
+<table><thead>
+<tr>
+<th>Base</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>2</td>
+<td><code>0b1111011</code></td>
+<td>Binary notation starts with <code>0b</code> (zero, lower case <code>b</code>), followed by binary digits (<code>0-1</code>).</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>0o173</code></td>
+<td>Octal notation starts with <code>0o</code> (zero, lower case <code>o</code>), followed by octal digits (<code>0-8</code>).</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>123</code></td>
+<td>Decimal notation, numbers between zero and nine (<code>0-9</code>).</td>
+</tr>
+<tr>
+<td>16</td>
+<td><code>0x7b</code></td>
+<td>Hexadecimal notation start with a <code>0x</code> (zero, lower case <code>x</code>), followed by hexadecimal digits (<code>0-9</code>, <code>a-f</code> or <code>A-F</code>).</td>
+</tr>
+</tbody></table>
+<h2 id='floating-point'>Floating point</h2>
+<blockquote>
+<p>This code creates a <em>float</em> property <em>plank_constant</em> to collection <em>stuff</em>:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">,</span> <span class="mi">9200</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="c"># Get collection `stuff`</span>
+    <span class="n">stuff</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_collection</span><span class="p">(</span><span class="s">'stuff'</span><span class="p">)</span>
+
+    <span class="c"># Assign property `plank_constant`</span>
+    <span class="n">await</span> <span class="n">stuff</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="s">'plank_constant'</span><span class="p">,</span> <span class="mf">6.62607004e-34</span><span class="p">)</span>
+
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># Assign property `plank_constant`</span>
+thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+plank_constant = 6.62607004e-34;
+"
+EOQ
+</span></code></pre>
+<p>ThingsDB can store 64bit float values.  <a href="#isinf">isinf</a> and <a href="#isnan">isnan</a></p>
+<h2 id='regex'>Regex</h2>
+<blockquote>
+<p>This code uses a regular expression for an overly simple email check:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">,</span> <span class="mi">9200</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+
+    <span class="c"># Note: the email check is oversimplified, do not use in production</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
+        email = 'info@thingsdb.net';
+        email.match( /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/ );
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
+
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># Note: the email check is oversimplified, do not use in production</span>
+thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+email = 'info@thingsdb.net';
+email.match( /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/ );
+"
+EOQ
+</span></code></pre>
+<blockquote>
+<p>Return value in JSON format (the first <code>nil</code> is for the email assignments)</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+    </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="kc">true</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
+<p>Regular expression can be constructed using a literal which consists of a pattern enclosed between slashes, as follows: <code>re = /ab+c/;</code>.</p>
+<h3 id='methods-that-use-regular-expressions'>Methods that use regular expressions</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Default</th>
+<th>Method</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td><a href="#test">test</a></td>
+<td>A <a href="#string-raw">string</a> method that tests for a match in a string. It returns <code>true</code> or <code>false</code>.</td>
 </tr>
 </tbody></table>
+<h2 id='array'>Array</h2>
+<p>Arrays in ThingsDB come in three flavors.</p>
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<p>An empty array can be constructed as follows: <code>arr = [];</code>
+Each <em>empty</em> array presents itself as an <em>array-of-things</em> but will convert to a <em>list</em>
+if some other data type is added to the array. Data types can be mixed in an array with the exception of type <a href="#thing">thing</a>.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
+<p>Nesting is also possible withing &quot;normal&quot; arrays but each nested array will become a <code>tuple</code> which means the array will be immutable.</p>
+<h3 id='array-types'>Array Types</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>list</td>
+<td>Mutable and can take any type except type <a href="#thing">thing</a> and an <em>array-of-things</em>.</td>
+</tr>
+<tr>
+<td>tuple</td>
+<td>Immutable, each <em>nested-array</em> becomes a tuple so all nested arrays are tuples.</td>
+</tr>
+<tr>
+<td>things</td>
+<td>Mutable array which can only hold type <code>thing</code>.</td>
+</tr>
+</tbody></table>
+<h2 id='thing'>Thing</h2><h2 id='arrow-function'>Arrow function</h2><h1 id='manage-api'>Manage API</h1>
+<p>ThingsDB can be managed with simple query commands. This allows you to manage
+collections, users, nodes and view statistics about the active nodes.
+All manage queries should use target <code>0</code> which is the <code>root</code> of ThingDB.</p>
+<h2 id='collection'>collection</h2>
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h2 id='collections'>collections</h2>
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h2 id='counters'>counters</h2>
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h2 id='del_collection'>del_collection</h2>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>This code will delete collection <em>old_things</em>:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">,</span> <span class="mi">9200</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="c"># Delete collection `old_things`</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">del_collection</span><span class="p">(</span><span class="s">'old_things'</span><span class="p">)</span>
+
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># Delete collection `old_things`</span>
+thingscmd -n node.local -u admin -p pass -q <span class="sh">&lt;&lt; EOQ "
+del_collection('old_things');
+"
+EOQ
+</span></code></pre>
+<p>Delete a collection.</p>
+
+<p>This function generates an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><code>del_collection(name);</code></p>
+<h3 id='arguments'>Arguments</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>Argument</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td>name</td>
+<td>raw (required)</td>
+<td>Name of the collection to delete.</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h2 id='del_user'>del_user</h2>
+<p>This function generates an <a href="#events">event</a>.</p>
+<h2 id='grant'>grant</h2>
+<p>grant access.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
+<p>This function generates an <a href="#events">event</a>.</p>
+<h2 id='new_collection'>new_collection</h2>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>This code will create a collection <em>&quot;awesome_things&quot;</em>:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">,</span> <span class="mi">9200</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">new_collection</span><span class="p">(</span><span class="s">'awesome_things'</span><span class="p">)</span>
+
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># Creates a new collection</span>
+thingscmd -n node.local -u admin -p pass -q <span class="sh">&lt;&lt; EOQ "
+new_collection('awesome_things');
+"
+EOQ
 </span></code></pre>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+<blockquote>
+<p>Example return value in JSON format (the new collection id)</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="mi">31415</span><span class="w">
+</span></code></pre>
+<p>Create a new collection.</p>
+
+<p>This function generates an <a href="#events">event</a>.</p>
+<h3 id='function-2'>Function</h3>
+<p><code>new_collection(name);</code></p>
+<h3 id='arguments-2'>Arguments</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>Argument</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
+<td>name</td>
+<td>raw (required)</td>
+<td>Name of the new collection.</td>
 </tr>
 </tbody></table>
-<h1 id='errors'>Errors</h1>
+
 <aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
+The user who has created the collection will automatically receive full
+access rights to the new collection.
+Use <code>grant</code> to give other users access to the collection.
 </aside>
+<h3 id='return-value'>Return value</h3>
+<p>Returns the new collection <code>id</code> if successful. An <code>INDEX_ERROR</code> is returned
+if the collection already exists.</p>
+<h2 id='new_node'>new_node</h2>
+<p>This function generates an <a href="#events">event</a>.</p>
+<h2 id='new_user'>new_user</h2>
+<p>This function generates an <a href="#events">event</a>.</p>
+<h2 id='node'>node</h2>
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h2 id='nodes'>nodes</h2>
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h2 id='pop_node'>pop_node</h2>
+<p>This function generates an <a href="#events">event</a>.</p>
+<h2 id='rename_collection'>rename_collection</h2>
+<p>This function generates an <a href="#events">event</a>.</p>
+<h2 id='rename_user'>rename_user</h2>
+<p>This function generates an <a href="#events">event</a>.</p>
+<h2 id='reset_counters'>reset_counters</h2>
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h2 id='revoke'>revoke</h2>
+<p>revoke access.</p>
 
-<p>The Kittn API uses the following error codes:</p>
+<p>This function generates an <a href="#events">event</a>.</p>
+<h2 id='set_loglevel'>set_loglevel</h2>
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h2 id='set_password'>set_password</h2>
+<blockquote>
+<p>This code changes the password for use <em>admin</em>:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">,</span> <span class="mi">9200</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">set_password</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'my_secret_password'</span><span class="p">)</span>
+
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># Change the password for user `admin`</span>
+thingscmd -n node.local -u admin -p pass -q <span class="sh">&lt;&lt; EOQ "
+set_password('admin', 'my_secret_password');
+"
+EOQ
+</span></code></pre>
+<blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="kc">null</span><span class="w">
+</span></code></pre>
+<p>Change a users password.</p>
+
+<p>This function generates an <a href="#events">event</a>.</p>
+<h3 id='function-3'>Function</h3>
+<p><code>set_password(username, new_password);</code></p>
+<h3 id='arguments-3'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>raw (required)</td>
+<td>Name of the user</td>
+</tr>
+<tr>
+<td>new_password</td>
+<td>raw (required)</td>
+<td>New password, can be anything from 1 to 128 graphical characters</td>
+</tr>
+</tbody></table>
+<h3 id='return-value-2'>Return value</h3>
+<p>Returns <code>nil</code> if successful. An <code>INDEX_ERROR</code> is returned
+if the user does not exist and <code>BAD_REQUEST</code> if the new password is not compliant.</p>
+<h2 id='set_quota'>set_quota</h2>
+<p>This function generates an <a href="#events">event</a>.</p>
+<h2 id='set_zone'>set_zone</h2>
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h2 id='shutdown'>shutdown</h2>
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h2 id='user'>user</h2>
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h2 id='users'>users</h2>
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h1 id='collection-api'>Collection API</h1>
+<blockquote>
+<p>This code returns the <em>id</em> of collection <em>stuff</em></p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">,</span> <span class="mi">9200</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">'id()'</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="s1">'id()'</span>
+</code></pre><h2 id='blob'>blob</h2>
+<blockquote>
+<p>This code assigns the ThingsDB logo to an attribute <em>logo</em> using a blob:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">import</span> <span class="nn">urllib</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">,</span> <span class="mi">9200</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">stuff</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_collection</span><span class="p">(</span><span class="s">'stuff'</span><span class="p">)</span>
+
+    <span class="c"># TODO: replace with ThingsDB logo</span>
+    <span class="n">resp</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span>
+        <span class="s">'https://upload.wikimedia.org/wikipedia/commons/1/15/Siridb-logo.svg'</span><span class="p">)</span>
+
+    <span class="c"># The python client will automatically use a blob for byte values</span>
+    <span class="n">await</span> <span class="n">stuff</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="s">'logo'</span><span class="p">,</span> <span class="n">resp</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># Note: thingscmd supports only one blob per query, so this is always blob(0)</span>
+wget <span class="s1">'https://upload.wikimedia.org/wikipedia/commons/1/15/Siridb-logo.svg'</span> | <span class="se">\</span>
+thingscmd -n node.local -u admin -p pass -c stuff -q <span class="s2">"set('logo', blob(0));"</span>
+</code></pre>
+<p>Blobs can be used to send binary data to ThingsDB. Each query request allows you to send
+an array of <em>blob</em> values together with the query. Within the query it is then possible
+to use this function to <em>get</em> the blob value.</p>
+
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><code>blob(index)</code></p>
+<h3 id='arguments'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>index</td>
+<td>int (required)</td>
+<td>Index of a blob in the blobs array. This value may be negative, for example: <code>-1</code> can be used to get the last blob in the array.</td>
+</tr>
+</tbody></table>
+<h3 id='return-value'>Return value</h3>
+<p>Returns the blob. An <code>INDEX_ERROR</code> is returned
+if the blob at the given <code>index</code> does not exist.</p>
+<h2 id='del'>del</h2>
+<p>This function generates an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><em>thing</em>.<code>del(property)</code></p>
+<h3 id='arguments'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>property</td>
+<td>raw (required)</td>
+<td>Name of the property to delete.</td>
+</tr>
+</tbody></table>
+<h3 id='return-value'>Return value</h3>
+<p>Returns <code>nil</code> if successful. An <code>INDEX_ERROR</code> is returned
+if the property does not exist or <code>BAD_REQUEST</code> in case the given property is
+not a valid <a href="#names">name</a>.</p>
+<h2 id='find'>find</h2>
+<p>This function returns the value of the first element in the array or thing that satisfies the callback function.
+Otherwise <code>nil</code> is returned.</p>
+
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><em>iterable</em>.<code>find(callback)</code></p>
+<h3 id='arguments'>Arguments</h3>
+<p>Explanation of the <em>callback</em> argument:</p>
 
 <table><thead>
 <tr>
-<th>Error Code</th>
+<th>Iterable</th>
+<th>Callback</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>array</td>
+<td>item, index =&gt; ...</td>
+<td>Iterate over items in the array. Both item and index are optional.</td>
+</tr>
+<tr>
+<td>thing</td>
+<td>name, value =&gt; ...</td>
+<td>Iterate over thing properties. Both name and value are optional.</td>
+</tr>
+</tbody></table>
+<h3 id='return-value'>Return value</h3>
+<p>The value of the first element in the array or thing that satisfies the provided testing function;
+otherwise, <code>nil</code> is returned.</p>
+<h2 id='get'>get</h2>
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h2 id='hasattr'>hasattr</h2>
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h2 id='hasprop'>hasprop</h2>
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h2 id='id'>id</h2>
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h2 id='isarray'>isarray</h2>
+<blockquote>
+<p>This code shows some return values for <strong><em>isarray()</em></strong>:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">,</span> <span class="mi">9200</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
+        isarray( [] );
+        isarray( {} );
+        isarray( [1, 'two', 3.0] );
+        isarray( [{some: 'array'}, {with: 'things'}] );
+        isarray( [['nested', 'therefore this is a tuple']][0] );
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+isarray( [] );
+isarray( {} );
+isarray( [1, 'two', 3.0] );
+isarray( [{some: 'array'}, {with: 'things'}] );
+isarray( [['nested', 'therefore this is a tuple']][0] );
+"
+EOQ
+</span></code></pre>
+<blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="kc">true</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This function determines whether the value passed to this function
+is an <a href="#array">array</a> type or not.</p>
+
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><code>isarray(value)</code></p>
+<h3 id='arguments'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>value</td>
+<td>any (required)</td>
+<td>The value to be tested for being an array.</td>
+</tr>
+</tbody></table>
+<h3 id='return-value'>Return value</h3>
+<p>Returns <code>true</code> the value passed is array else it returns <code>false</code>.</p>
+
+<aside class="notice">
+This function returns <code>true</code> for all array types, <i>list</i>, <i>tuple</i> and <i>array-of-things</i>.
+</aside>
+<h2 id='islist'>islist</h2>
+<blockquote>
+<p>This code shows some return values for <strong><em>islist()</em></strong>:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">,</span> <span class="mi">9200</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
+        islist( [] );
+        islist( {} );
+        islist( [1, 'two', 3.0] );
+        islist( [{some: 'array'}, {with: 'things'}] );
+        islist( [['nested', 'therefore this is a tuple']][0] );
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+islist( [] );
+islist( {} );
+islist( [1, 'two', 3.0] );
+islist( [{some: 'array'}, {with: 'things'}] );
+islist( [['nested', 'therefore this is a tuple']][0] );
+"
+EOQ
+</span></code></pre>
+<blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="kc">false</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This function determines whether the value passed to this function
+is a list type or not.</p>
+
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><code>islist(value)</code></p>
+<h3 id='arguments'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>value</td>
+<td>any (required)</td>
+<td>The value to be tested for being a list.</td>
+</tr>
+</tbody></table>
+<h3 id='return-value'>Return value</h3>
+<p>Returns <code>true</code> the value passed is list else it returns <code>false</code>.</p>
+
+<aside class="notice">
+The <code>islist()</code> function returns <code>true</code> for an empty, not-nested, <i>array-of-things</i> because it will
+take any value and therefore can convert to a list.
+</aside>
+<h2 id='int'>int</h2>
+<blockquote>
+<p>This code shows some return values for <strong><em>int()</em></strong>:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">,</span> <span class="mi">9200</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
+        int(2.718);
+        int(-1.9);
+        int('365 days');
+        int('0xFF');
+        int(true);
+        int(false);
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+int(2.718);
+int(-1.9);
+int('365 days');
+int('0xFF');
+int(true);
+int(false);
+"
+EOQ
+</span></code></pre>
+<blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="mi">-1</span><span class="p">,</span><span class="w">
+    </span><span class="mi">365</span><span class="p">,</span><span class="w">
+    </span><span class="mi">255</span><span class="p">,</span><span class="w">
+    </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="mi">0</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Returns an <a href="#integer">int</a> from a specified value.</p>
+
+<p>If the specified value was a <a href="#floating-point">float</a> value, then the
+new integer value will be rounded towards zero.</p>
+
+<p>If the specified value is of type <a href="#raw">raw</a>, then the initial characters
+of the string are converted until a non-digit character is found.
+Initial white space is ignored and the number may start with an optional <code>+</code> or <code>-</code> sign.</p>
+
+<p>Type <a href="#boolean">bool</a> values are converted to <code>1</code> for <code>true</code> and <code>0</code> for <code>false</code>.</p>
+
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><code>int(value)</code></p>
+<h3 id='arguments'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>value</td>
+<td>any (required)</td>
+<td>The value where to create an integer value for.</td>
+</tr>
+</tbody></table>
+<h3 id='return-value'>Return value</h3>
+<p>An integer value. In case the integer value is too large for a 64bit integer,
+an <code>OVERFLOW_ERROR</code> is raised. Other type than <code>float</code>, <code>raw</code>, <code>bool</code> or <code>int</code>
+will raise a <code>BAD_REQUEST</code>.</p>
+<h2 id='isinf'>isinf</h2>
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h2 id='isnan'>isnan</h2>
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h2 id='lower'>lower</h2>
+<blockquote>
+<p>Example using <strong><em>lower()</em></strong>:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">,</span> <span class="mi">9200</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
+        'Hello World!!'.lower();
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+'Hello World!!'.lower();
+"
+EOQ
+</span></code></pre>
+<blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="s2">"hello world!!"</span><span class="w">
+</span></code></pre>
+<p>Return a new string in which all case-based characters are in lower case.</p>
+
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><em>string</em>.<code>lower()</code></p>
+<h2 id='map'>map</h2>
+<p>Iterate over items in an <a href="#array">array</a> or over all properties on a <a href="#thing">thing</a>.</p>
+
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><em>iterable</em>.<code>map(callback)</code></p>
+<h3 id='arguments'>Arguments</h3>
+<p>Explanation of the <em>callback</em> argument:</p>
+
+<table><thead>
+<tr>
+<th>Iterable</th>
+<th>Callback</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>array</td>
+<td>item, index =&gt; ...</td>
+<td>Iterate over all items in the array. Both item and index are optional.</td>
+</tr>
+<tr>
+<td>thing</td>
+<td>name, value =&gt; ...</td>
+<td>Iterate over the thing properties. Both name and value are optional.</td>
+</tr>
+</tbody></table>
+<h3 id='return-value'>Return value</h3>
+<p>A new array with each element being the result of the callback function.</p>
+<h2 id='push'>push</h2>
+<p>This function generates an <a href="#events">event</a>.</p>
+<h2 id='rename'>rename</h2>
+<p>This function generates an <a href="#events">event</a>.</p>
+<h2 id='ret'>ret</h2>
+<blockquote>
+<p>This code pushes a value to an array but returns just <strong><em>nil</em></strong>:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">,</span> <span class="mi">9200</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
+        some_array.push('something').ret();
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+some_array.push('something').ret();
+"
+EOQ
+</span></code></pre>
+<blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="kc">null</span><span class="w">
+</span></code></pre>
+<p>Use this function to simply return <code>nil</code>. This can be useful in some cases
+where you don&#39;t want to return the default value from some function to prevent
+unnecessary network traffic.</p>
+
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><code>ret()</code></p>
+<h3 id='return-value'>Return value</h3>
+<p>Returns <code>nil</code>.</p>
+<h2 id='set'>set</h2>
+<p>This function generates an <a href="#events">event</a>.</p>
+<h2 id='splice'>splice</h2>
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h2 id='startswith'>startswith</h2>
+<p>Determines if a string starts with characters given by another string.</p>
+
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><em>string</em>.<code>startswith(search_string)</code></p>
+<h3 id='arguments'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>search_string</td>
+<td>raw (required)</td>
+<td>The characters to be searched for at the start of this string.</td>
+</tr>
+</tbody></table>
+<h3 id='return-value'>Return value</h3>
+<p>Returns <code>true</code> the given characters are found at the start of the string and otherwise <code>false</code>.</p>
+<h2 id='str'>str</h2>
+<p>Convert a value to a</p>
+
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><code>str(value)</code></p>
+<h3 id='arguments'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>value</td>
+<td>any (optional)</td>
+<td>The value whose</td>
+</tr>
+</tbody></table>
+<h2 id='test'>test</h2>
+<blockquote>
+<p>Examples using <strong><em>test()</em></strong>:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">,</span> <span class="mi">9200</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
+        'Hello world!!'.test(/^hello/);
+        'Hello world!!'.test(/^hello/i);
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+'Hello world!!'.test(/^hello/);
+'Hello world!!'.test(/^hello/i);
+"
+EOQ
+</span></code></pre>
+<blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="kc">true</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Test if a string matches a given <a href="#regex">regular expression</a> and return <code>true</code> or <code>false</code>.</p>
+
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><em>string</em>.<code>test(regex)</code></p>
+<h3 id='arguments'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>regex</td>
+<td>regex (required)</td>
+<td>The regular expression to test against the string.</td>
+</tr>
+</tbody></table>
+<h3 id='return-value'>Return value</h3>
+<p><code>true</code> if there is a match between the string and the specified regular expression, otherwise <code>false</code>.</p>
+<h2 id='thing-function'>thing (function)</h2>
+<p>This function can be used to get a thing or things by id.</p>
+
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><code>thing(id1, id2, ..., idX)</code></p>
+<h3 id='arguments'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id1, id2, ..., idX</td>
+<td>int (at least one required)</td>
+<td>The thing(s) to return.</td>
+</tr>
+</tbody></table>
+<h3 id='return-value'>Return value</h3>
+<p>Returns a <a href="#thing">thing </a> or an <em>array-of-things</em> based on given id&#39;s.
+An <code>INDEX_ERROR</code> is returned in case at least one id is not found inside the collection.</p>
+
+<aside class="notice">
+You can force an <i>array-of-things</i>, even with only one id. Just add an extra comma,
+for example: <code>thing(666,);</code> and this will return an array with one thing: <code>[{"#": 666, ...}]</code>
+</aside>
+<h2 id='try'>try</h2>
+<blockquote>
+<p>This code shows some return values for <strong><em>try()</em></strong>:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">,</span> <span class="mi">9200</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
+        try( (1/0) );
+        try( (1/0), 0 );
+        try( (1/0), 0, ZERO_DIV_ERROR );
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+try( (1/0) );
+try( (1/0), 0 );
+try( (1/0), 0, ZERO_DIV_ERROR );
+"
+EOQ
+</span></code></pre>
+<blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="mi">0</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Try a statement and if the statement fails with an error, then <code>nil</code> is returned unless
+an alternative return value is specified. It is also possible to <em>catch</em> only specific
+<a href="#errors">errors</a>.</p>
+
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><code>try(statement, [alt, [e0, e1, ..., eX]])</code></p>
+<h3 id='arguments'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>statement</td>
+<td>any (required)</td>
+<td>The statement to try.</td>
+</tr>
+<tr>
+<td>alt</td>
+<td>any (optional)</td>
+<td>Alternative value which is returned if the statement has failed.</td>
+</tr>
+<tr>
+<td>e0, e1, ..., eX</td>
+<td>int (optional)</td>
+<td>Only catch specific errors, if omitted, catch all errors.</td>
+</tr>
+</tbody></table>
+<h3 id='return-value'>Return value</h3>
+<p>The value for the specified <em>statement</em> unless the statement has failed.</p>
+<h2 id='unset'>unset</h2>
+<p>This function generates an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><em>thing</em>.<code>unset(attr)</code></p>
+<h2 id='upper'>upper</h2>
+<blockquote>
+<p>Example using <strong><em>upper()</em></strong>:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">,</span> <span class="mi">9200</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
+        'Hello World!!'.upper();
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+'Hello World!!'.upper();
+"
+EOQ
+</span></code></pre>
+<blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="s2">"HELLO WORLD!!"</span><span class="w">
+</span></code></pre>
+<p>Return a new string in which all case-based characters are in upper case.</p>
+
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><em>string</em>.<code>upper()</code></p>
+<h1 id='errors'>Errors</h1>
+<p>ThingsDB uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error</th>
+<th>Code</th>
 <th>Meaning</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
+<td><code>OVERFLOW_ERROR</code></td>
+<td>96</td>
+<td>Integer is too large to fit a 64 bit signed integer.</td>
 </tr>
 <tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
+<td><code>ZERO_DIV_ERROR</code></td>
+<td>97</td>
+<td>Trying a division or module by zero.</td>
 </tr>
 <tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+<td><code>MAX_QUOTA_ERROR</code></td>
+<td>98</td>
+<td>Your collection has quotas set and the limit is reached.</td>
 </tr>
 <tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
+<td><code>AUTH_ERROR</code></td>
+<td>99</td>
+<td>Wrong credentials or a request while the connection is not authenticated.</td>
 </tr>
 <tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+<td><code>FORBIDDEN</code></td>
+<td>100</td>
+<td>You lack the privileges to do the request.</td>
 </tr>
 <tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+<td><code>INDEX_ERROR</code></td>
+<td>101</td>
+<td>Index out of range or trying to access an invalid property.</td>
 </tr>
 <tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
+<td><code>BAD_REQUEST</code></td>
+<td>102</td>
+<td>Invalid data, for example an invalid data type used in a query.</td>
 </tr>
 <tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
+<td><code>QUERY_ERROR</code></td>
+<td>103</td>
+<td>Syntax error in the query.</td>
 </tr>
 <tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+<td><code>NODE_ERROR</code></td>
+<td>104</td>
+<td>At least one node has an issue while processing the request.</td>
 </tr>
 <tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+<td><code>INTERNAL_ERROR</code></td>
+<td>127</td>
+<td>Node is probably out-of-memory or out-of-disk-space.</td>
 </tr>
 </tbody></table>
 
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
                 <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="shell">shell</a>
           </div>
       </div>
     </div>
