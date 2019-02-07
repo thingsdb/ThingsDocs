@@ -2,13 +2,15 @@
 title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - python
-  - shell
+  - python: Python
+  - shell: ThingsCMD
+  # - curl: cURL
 
 toc_footers:
   - Source on <a href='https://github.com/thingsdb/ThingsDocs'>GitHub</a>
 
 includes:
+  - operators
   - types
   - manage_api
   - collection_api
@@ -84,6 +86,8 @@ thingscmd -n node.local -u admin -p pass -c << EOL
 new_collection('awesome_things');
 EOL
 ```
+
+
 
 ThingsDB uses a user and password combination for access. A default user `admin` with password `pass` is created on a fresh installation.
 If you did not yet change the default password, you might want to jump to [set password](#set-password)

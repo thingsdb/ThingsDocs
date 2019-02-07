@@ -1,3 +1,5 @@
+require File.expand_path('../curl_lexter', __FILE__)
+
 # Unique header generation
 require './lib/unique_head.rb'
 

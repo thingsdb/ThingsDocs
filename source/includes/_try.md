@@ -12,7 +12,8 @@ async def example():
     res = await client.query(r'''
         try( (1/0) );
         try( (1/0), 0 );
-        try( (1/0), 0, ZERO_DIV_ERROR );
+        try( (1/0), 0, 'ZERO_DIV_ERROR' );
+        try( (1/0), 0, 97 );
     ''', target='stuff')
     print(res)
 
@@ -24,7 +25,8 @@ asyncio.get_event_loop().run_until_complete(example())
 thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
 try( (1/0) );
 try( (1/0), 0 );
-try( (1/0), 0, ZERO_DIV_ERROR );
+try( (1/0), 0, 'ZERO_DIV_ERROR' );
+try( (1/0), 0, 97 );
 "
 EOQ
 ```
@@ -35,6 +37,7 @@ EOQ
 [
     null,
     0,
+    0,
     0
 ]
 ```
@@ -42,6 +45,11 @@ EOQ
 Try a statement and if the statement fails with an error, then `nil` is returned unless
 an alternative return value is specified. It is also possible to *catch* only specific
 [errors](#errors).
+
+<aside class="warning">
+The <code>islist()</code> function returns <code>true</code> for an empty, not-nested, <i>array-of-things</i> because it will
+take any value and therefore can convert to a list.
+</aside>
 
 This function does *not* generate an [event](#events).
 
@@ -53,7 +61,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 statement | any (required) | The statement to try.
 alt | any (optional) | Alternative value which is returned if the statement has failed.
-e0, e1, ..., eX | int (optional) | Only catch specific errors, if omitted, catch all errors.
+e0, e1, ..., eX | int/raw (optional) | Only catch specific errors, if omitted, catch all errors. Error codes and names are accepted.
 
 ### Return value
 The value for the specified *statement* unless the statement has failed.
