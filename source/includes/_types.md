@@ -183,7 +183,7 @@ async def example():
     # Note: the email check is oversimplified, do not use in production
     await client.query(r'''
         email = 'info@thingsdb.net';
-        email.match( /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/ );
+        email.test( /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/ );
     ''', target='stuff')
 
 asyncio.get_event_loop().run_until_complete(example())
@@ -193,7 +193,7 @@ asyncio.get_event_loop().run_until_complete(example())
 # Note: the email check is oversimplified, do not use in production
 thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
 email = 'info@thingsdb.net';
-email.match( /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/ );
+email.test( /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/ );
 "
 EOQ
 ```

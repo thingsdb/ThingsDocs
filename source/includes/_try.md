@@ -47,8 +47,8 @@ an alternative return value is specified. It is also possible to *catch* only sp
 [errors](#errors).
 
 <aside class="warning">
-The <code>islist()</code> function returns <code>true</code> for an empty, not-nested, <i>array-of-things</i> because it will
-take any value and therefore can convert to a list.
+It is possible to catch all errors with the exception of <code>INTERNAL_ERROR</code>.
+Such error should never happen, unless something is really wrong with at least one node.
 </aside>
 
 This function does *not* generate an [event](#events).
