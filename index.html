@@ -999,14 +999,14 @@ EOQ
     <span class="c"># Note: the email check is oversimplified, do not use in production</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         email = 'info@thingsdb.net';
-        email.match( /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/ );
+        email.test( /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/ );
     '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
 
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># Note: the email check is oversimplified, do not use in production</span>
 thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
 email = 'info@thingsdb.net';
-email.match( /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/ );
+email.test( /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/ );
 "
 EOQ
 </span></code></pre>
@@ -1868,8 +1868,8 @@ an alternative return value is specified. It is also possible to <em>catch</em> 
 <a href="#errors">errors</a>.</p>
 
 <aside class="warning">
-The <code>islist()</code> function returns <code>true</code> for an empty, not-nested, <i>array-of-things</i> because it will
-take any value and therefore can convert to a list.
+It is possible to catch all errors with the exception of <code>INTERNAL_ERROR</code>.
+Such error should never happen, unless something is really wrong with at least one node.
 </aside>
 
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
