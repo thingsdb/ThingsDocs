@@ -13,33 +13,55 @@ includes:
   - operators
   - types
   - manage_api
+  - r_collection
+  - r_collections
+  - r_counters
+  - r_del_collection
+  - r_del_user
+  - r_grant
+  - r_new_collection
+  - r_new_node
+  - r_new_user
+  - r_node
+  - r_nodes
+  - r_pop_node
+  - r_rename_collection
+  - r_rename_user
+  - r_reset_counters
+  - r_revoke
+  - r_set_password
+  - r_set_quota
+  - r_set_zone
+  - r_shutdown
+  - r_user
+  - r_users
   - collection_api
-  - blob
-  - del
-  - find
-  - get
-  - hasattr
-  - hasprop
-  - id
-  - isarray
-  - islist
-  - int
-  - isinf
-  - isnan
-  - lower
-  - map
-  - push
-  - rename
-  - ret
-  - set
-  - splice
-  - startswith
-  - str
-  - test
-  - thing_function
-  - try
-  - unset
-  - upper
+  - c_blob
+  - c_del
+  - c_find
+  - c_get
+  - c_hasattr
+  - c_hasprop
+  - c_id
+  - c_isarray
+  - c_islist
+  - c_int
+  - c_isinf
+  - c_isnan
+  - c_lower
+  - c_map
+  - c_push
+  - c_rename
+  - c_ret
+  - c_set
+  - c_splice
+  - c_startswith
+  - c_str
+  - c_test
+  - c_thing_function
+  - c_try
+  - c_unset
+  - c_upper
   - errors
 
 search: true
