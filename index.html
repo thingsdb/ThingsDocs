@@ -349,9 +349,6 @@
                     <a href="#revoke" class="toc-h2 toc-link" data-title="revoke">revoke</a>
                   </li>
                   <li>
-                    <a href="#set_loglevel" class="toc-h2 toc-link" data-title="set_loglevel">set_loglevel</a>
-                  </li>
-                  <li>
                     <a href="#set_password" class="toc-h2 toc-link" data-title="set_password">set_password</a>
                   </li>
                   <li>
@@ -1064,6 +1061,42 @@ if some other data type is added to the array. Data types can be mixed in an arr
 collections, users, nodes and view statistics about the active nodes.
 All manage queries should use target <code>0</code> which is the <code>root</code> of ThingDB.</p>
 <h2 id='collection'>collection</h2>
+<blockquote>
+<p>Returns information about collection <em>stuff</em>:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">,</span> <span class="mi">9200</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
+        collection('stuff');
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -q <span class="sh">&lt;&lt; EOQ "
+collection('stuff');
+"
+EOQ
+</span></code></pre>
+<blockquote>
+<p>Example return value in JSON format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"collection_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">782</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stuff"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"quota_array_size"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"quota_properties"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"quota_raw_size"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"quota_things"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"things"</span><span class="p">:</span><span class="w"> </span><span class="mi">61352</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Returns information about a specific collection.</p>
+
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h2 id='collections'>collections</h2>
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
@@ -1145,9 +1178,9 @@ EOQ
 <p>Create a new collection.</p>
 
 <p>This function generates an <a href="#events">event</a>.</p>
-<h3 id='function-2'>Function</h3>
+<h3 id='function'>Function</h3>
 <p><code>new_collection(name);</code></p>
-<h3 id='arguments-2'>Arguments</h3>
+<h3 id='arguments'>Arguments</h3>
 <table><thead>
 <tr>
 <th>Argument</th>
@@ -1190,8 +1223,6 @@ if the collection already exists.</p>
 <p>revoke access.</p>
 
 <p>This function generates an <a href="#events">event</a>.</p>
-<h2 id='set_loglevel'>set_loglevel</h2>
-<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h2 id='set_password'>set_password</h2>
 <blockquote>
 <p>This code changes the password for use <em>admin</em>:</p>
@@ -1221,9 +1252,9 @@ EOQ
 <p>Change a users password.</p>
 
 <p>This function generates an <a href="#events">event</a>.</p>
-<h3 id='function-3'>Function</h3>
+<h3 id='function'>Function</h3>
 <p><code>set_password(username, new_password);</code></p>
-<h3 id='arguments-3'>Arguments</h3>
+<h3 id='arguments'>Arguments</h3>
 <table><thead>
 <tr>
 <th>Argument</th>
@@ -1242,11 +1273,100 @@ EOQ
 <td>New password, can be anything from 1 to 128 graphical characters</td>
 </tr>
 </tbody></table>
-<h3 id='return-value-2'>Return value</h3>
+<h3 id='return-value'>Return value</h3>
 <p>Returns <code>nil</code> if successful. An <code>INDEX_ERROR</code> is returned
 if the user does not exist and <code>BAD_REQUEST</code> if the new password is not compliant.</p>
 <h2 id='set_quota'>set_quota</h2>
+<blockquote>
+<p>This code sets a quota on the number of things and disables the properties quota on collection <em>stuff</em>:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">,</span> <span class="mi">9200</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
+        set_quota('stuff', 'things', 10000);
+        set_quota('stuff', 'properties', nil);
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -q <span class="sh">&lt;&lt; EOQ "
+set_quota('stuff', 'things', 10000);
+set_quota('stuff', 'properties', nil);
+"
+EOQ
+</span></code></pre>
+<blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="kc">null</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Quota limits can be set on collections. The following quota limits can be set:</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>things</code></td>
+<td>Maximum number of <a href="#thing">things</a> allowed in a collection.</td>
+</tr>
+<tr>
+<td><code>properties</code></td>
+<td>Maximum number of <a href="#properties">properties</a> which can be assigned to a thing.</td>
+</tr>
+<tr>
+<td><code>array_size</code></td>
+<td>Maximum array length. This quota type applies to all <a href="#array">array type</a>.</td>
+</tr>
+<tr>
+<td><code>raw_size</code></td>
+<td>Maximum <a href="#string-raw">raw</a> value size. When this quota is set, both queries and blob values are limited to this quota.</td>
+</tr>
+</tbody></table>
+
+<p>If a quota limit is reached, then the affected query will raise <code>MAX_QUOTA_ERROR</code>.</p>
+
+<p>The current quota values can be viewed with <a href="#collection">collection(...)</a> or <a href="#collections">collections()</a>.</p>
+
 <p>This function generates an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><code>set_quota(collection, quota_type, quota)</code></p>
+<h3 id='arguments'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>collection</td>
+<td>raw/int (required)</td>
+<td>Collection <em>name</em> or <em>id</em>.</td>
+</tr>
+<tr>
+<td>quota_type</td>
+<td>raw (required)</td>
+<td>Must be one of <code>&#39;things&#39;</code>, <code>&#39;properties&#39;</code>, <code>&#39;array_size&#39;</code> or <code>&#39;raw_size&#39;</code>.</td>
+</tr>
+<tr>
+<td>quota</td>
+<td>int/nil (required)</td>
+<td>Integer value to set the quota limit or <code>nil</code> to disable the quota.</td>
+</tr>
+</tbody></table>
+<h3 id='return-value'>Return value</h3>
+<p><code>nil</code> when successful.</p>
 <h2 id='set_zone'>set_zone</h2>
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h2 id='shutdown'>shutdown</h2>
