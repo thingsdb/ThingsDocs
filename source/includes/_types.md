@@ -233,6 +233,13 @@ list | Mutable and can take any type except type [thing](#thing) and an *array-o
 tuple | Immutable, each *nested-array* becomes a tuple so all nested arrays are tuples.
 things | Mutable array which can only hold type `thing`.
 
+<aside class="notice">
+It is not possible to change an array while the array is in use, for example:
+<p><code>$tmp = [1, 2, 3]; $tmp.map(i => $tmp.push(i));</code></p>
+<p>...will raise <code>BAD_REQUEST</code> <i>(cannot use function `push` while the array is in use)</i></p>
+</aside>
+
+
 ## Thing
 
 

@@ -9,8 +9,8 @@ async def example():
     await client.connect('node.local', 9200)
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
-        t = {};
-        t.refs();
+        $t = {};
+        $t.refs();
         {}.refs();
     ''', target='stuff')
     print(res)
@@ -21,8 +21,8 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
-t = {};
-t.refs();
+\$t = {};
+\$t.refs();
 {}.refs();
 "
 EOQ

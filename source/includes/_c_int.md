@@ -53,7 +53,7 @@ Returns an [int](#integer) from a specified value.
 If the specified value was a [float](#floating-point) value, then the
 new integer value will be rounded towards zero.
 
-If the specified value is of type [raw](#raw), then the initial characters
+If the specified value is of type [raw](#string-raw), then the initial characters
 of the string are converted until a non-digit character is found.
 Initial white space is ignored and the number may start with an optional `+` or `-` sign.
 
