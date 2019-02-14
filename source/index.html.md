@@ -57,8 +57,8 @@ includes:
   - c_splice
   - c_startswith
   - c_str
+  - c_t
   - c_test
-  - c_thing_function
   - c_try
   - c_unset
   - c_upper

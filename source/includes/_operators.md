@@ -50,6 +50,9 @@ Operator | Description
 <code>&#124;</code> | Bitwise OR, `true` if at least `a` or `b` is `1`.
 `^` | Bitwise XOR, `true` if `a` and `b` are different.
 
+<aside class="notice">
+Binary bitwise expressions must be wrapped between <code>()</code> parentheses.
+</aside>
 
 ## Arithmetic operators
 
@@ -109,6 +112,10 @@ Operator | Description
 `//` | Integer division operator.
 `*` | Multiplication operator.
 `%` | Modulo operator.
+
+<aside class="notice">
+Arithmetic expressions must be wrapped between <code>()</code> parentheses.
+</aside>
 
 
 ## Assignments
@@ -183,13 +190,16 @@ Operator | Description
 
 As logical expressions are evaluated left to right, they are tested for possible *"short-circuit"* evaluation using the following rules:
 
-- `(some falsy expression) && expr` is short-circuit evaluated to the falsy expression;
-- `(some truthy expression) || expr` is short-circuit evaluated to the truthy expression.
+- `((some falsy expression) && expr)` is short-circuit evaluated to the falsy expression;
+- `((some truthy expression) || expr)` is short-circuit evaluated to the truthy expression.
 
 Short circuit means that the `expr` parts above are not evaluated, hence any side effects of doing so do not take effect
 (e.g., if expr is a function call, the calling never takes place).
 This happens because the value of the operator is already determined after the evaluation of the first operand.
 
+<aside class="notice">
+Logical expressions must be wrapped between <code>()</code> parentheses.
+</aside>
 
 ## Conditional (ternary) operator
 
