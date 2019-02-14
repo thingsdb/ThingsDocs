@@ -43,14 +43,15 @@ includes:
   - c_hasattr
   - c_hasprop
   - c_id
-  - c_isarray
-  - c_islist
   - c_int
+  - c_isarray
   - c_isinf
+  - c_islist
   - c_isnan
   - c_lower
   - c_map
   - c_push
+  - c_refs
   - c_rename
   - c_ret
   - c_set
