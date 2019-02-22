@@ -1,5 +1,5 @@
 ## refs
-> Returns the reference of a thing:
+> Returns the reference count of a given value:
 
 ```python
 import asyncio
@@ -9,9 +9,9 @@ async def example():
     await client.connect('node.local', 9200)
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
-        $t = {};
-        $t.refs();
-        {}.refs();
+        refs( $a = {} );
+        ($tmp = $a).ret();
+        refs( $a );
     ''', target='stuff')
     print(res)
 
@@ -21,9 +21,9 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
-\$t = {};
-\$t.refs();
-{}.refs();
+refs( \$a = {} );
+(\$tmp = \$a).ret();
+refs( \$a );
 "
 EOQ
 ```
@@ -32,24 +32,31 @@ EOQ
 
 ```json
 [
-    null,
     2,
-    1
+    null,
+    3
 ]
 ```
 
-Returns the reference count of the [thing](#thing).
+Returns the reference count of a value.
 
 The count returned is generally one higher than you might expect,
 because it includes the (temporary) reference.
 
+<aside class="notice">
+Different nodes might return different reference values since the reference counter
+can be higher of lower depending on how the value is stored and used.
+</aside>
+
 This function does *not* generate an [event](#events).
 
 ### Function
-`*thing*.ref()`
+`refs(value)`
 
 ### Arguments
-None
+Argument | Type | Description
+-------- | ---- | -----------
+value | any (required) | The value to return the reference count for.
 
 ### Return value
-Reference count of the thing.
+Reference count of the given value.

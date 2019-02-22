@@ -45,11 +45,20 @@ includes:
   - c_id
   - c_int
   - c_isarray
+  - c_isascii
+  - c_isbool
+  - c_isfloat
   - c_isinf
+  - c_isint
   - c_islist
   - c_isnan
+  - c_isstr
+  - c_istuple
+  - c_isutf8
   - c_lower
   - c_map
+  - c_now
+  - c_pop
   - c_push
   - c_refs
   - c_rename

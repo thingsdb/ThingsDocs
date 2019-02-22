@@ -1,6 +1,6 @@
-## ret
+## isutf8
 
-> This code show how to use function ***ret()***:
+> This code shows some return values for ***isutf8()***:
 
 ```python
 import asyncio
@@ -10,7 +10,8 @@ async def example():
     await client.connect('node.local', 9200)
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
-        ($tmp = 'just an example which return nil').ret();
+        isutf8( 'ԉ' );
+        isutf8( 'pi' );
     ''', target='stuff')
     print(res)
 
@@ -20,7 +21,8 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
-(\$tmp = 'just an example which return nil').ret();
+isutf8( 'ԉ' );
+isutf8( 'pi' );
 "
 EOQ
 ```
@@ -28,18 +30,24 @@ EOQ
 > Return value in JSON format
 
 ```json
-null
+[
+    true,
+    true
+]
 ```
 
-Use this function to simply return `nil`. This can be useful in some cases
-where you don't want to return the default value from some function to prevent
-unnecessary network traffic.
+This function determines whether the value passed to this function is of
+type `raw` and contains valid utf8.
 
 This function does *not* generate an [event](#events).
 
 ### Function
-*value*.`ret()`
+`isutf8(value)`
+
+### Arguments
+Argument | Type | Description
+-------- | ---- | -----------
+value | any (required) | The value to be tested.
 
 ### Return value
-Returns `nil`.
-
+Returns `true` is the given value is of type `raw` and contains valid utf8, else `false`.

@@ -6,7 +6,6 @@ This function does *not* generate an [event](#events).
 *iterable*.`filter(callback)`
 
 ### Arguments
-
 Explanation of the *callback* argument:
 
 Iterable | Callback | Description

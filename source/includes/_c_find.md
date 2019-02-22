@@ -44,7 +44,6 @@ This function does *not* generate an [event](#events).
 *iterable*.`find(callback)`
 
 ### Arguments
-
 Explanation of the *callback* argument:
 
 Iterable | Callback | Description

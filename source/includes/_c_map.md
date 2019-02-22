@@ -8,7 +8,6 @@ This function does *not* generate an [event](#events).
 *iterable*.`map(callback)`
 
 ### Arguments
-
 Explanation of the *callback* argument:
 
 Iterable | Callback | Description

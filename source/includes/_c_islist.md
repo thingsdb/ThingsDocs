@@ -11,10 +11,8 @@ async def example():
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
         islist( [] );
-        islist( {} );
-        islist( [1, 'two', 3.0] );
-        islist( [{some: 'array'}, {with: 'things'}] );
-        islist( [['nested', 'therefore this is a tuple']][0] );
+        islist( $tmp = [['nested']] );
+        islist( $tmp[0] );
     ''', target='stuff')
     print(res)
 
@@ -25,10 +23,8 @@ asyncio.get_event_loop().run_until_complete(example())
 ```shell
 thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
 islist( [] );
-islist( {} );
-islist( [1, 'two', 3.0] );
-islist( [{some: 'array'}, {with: 'things'}] );
-islist( [['nested', 'therefore this is a tuple']][0] );
+islist( \$tmp = [['nested']] );
+islist( \$tmp[0] );
 "
 EOQ
 ```
@@ -38,15 +34,13 @@ EOQ
 ```json
 [
     true,
-    false,
     true,
-    false,
     false
 ]
 ```
 
 This function determines whether the value passed to this function
-is a list type or not.
+is a mutable [array](#array) or not.
 
 This function does *not* generate an [event](#events).
 
@@ -56,12 +50,7 @@ This function does *not* generate an [event](#events).
 ### Arguments
 Argument | Type | Description
 -------- | ---- | -----------
-value | any (required) | The value to be tested for being a list.
+value | any (required) | The value to be tested for being an list.
 
 ### Return value
-Returns `true` the value passed is list else it returns `false`.
-
-<aside class="notice">
-The <code>islist()</code> function returns <code>true</code> for an empty, not-nested, <i>array-of-things</i> because it will
-take any value and therefore can convert to a list.
-</aside>
+Returns `true` is the passed value is a list else it returns `false`.

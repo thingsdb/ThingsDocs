@@ -217,11 +217,9 @@ Method | Description
 
 ## Array
 
-Arrays in ThingsDB come in three flavors.
+Arrays in ThingsDB come in two flavors.
 
 An empty array can be constructed as follows: `arr = [];`
-Each *empty* array presents itself as an *array-of-things* but will convert to a *list*
-if some other data type is added to the array. Data types can be mixed in an array with the exception of type [thing](#thing).
 
 Nesting is also possible withing "normal" arrays but each nested array will become a `tuple` which means the array will be immutable.
 
@@ -229,9 +227,8 @@ Nesting is also possible withing "normal" arrays but each nested array will beco
 
 Type | Description
 ---- | -----------
-list | Mutable and can take any type except type [thing](#thing) and an *array-of-things*.
-tuple | Immutable, each *nested-array* becomes a tuple so all nested arrays are tuples.
-things | Mutable array which can only hold type `thing`.
+list | Mutable array.
+tuple | Immutable array, *nested* arrays are always tuples.
 
 <aside class="notice">
 It is not possible to change an array while the array is in use, for example:

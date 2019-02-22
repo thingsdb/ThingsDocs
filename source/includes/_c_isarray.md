@@ -11,10 +11,8 @@ async def example():
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
         isarray( [] );
-        isarray( {} );
-        isarray( [1, 'two', 3.0] );
-        isarray( [{some: 'array'}, {with: 'things'}] );
-        isarray( [['nested', 'therefore this is a tuple']][0] );
+        isarray( $tmp = [['nested']] );
+        isarray( $tmp[0] );
     ''', target='stuff')
     print(res)
 
@@ -25,10 +23,8 @@ asyncio.get_event_loop().run_until_complete(example())
 ```shell
 thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
 isarray( [] );
-isarray( {} );
-isarray( [1, 'two', 3.0] );
-isarray( [{some: 'array'}, {with: 'things'}] );
-isarray( [['nested', 'therefore this is a tuple']][0] );
+isarray( \$tmp = [['nested']] );
+isarray( \$tmp[0] );
 "
 EOQ
 ```
@@ -38,15 +34,14 @@ EOQ
 ```json
 [
     true,
-    false,
-    true,
     true,
     true
 ]
 ```
 
 This function determines whether the value passed to this function
-is an [array](#array) type or not.
+is an [array](#array) type or not. The functions [islist](#islist) and
+[istuple](#istuple) can be used to check if the array is mutable.
 
 This function does *not* generate an [event](#events).
 
@@ -60,8 +55,3 @@ value | any (required) | The value to be tested for being an array.
 
 ### Return value
 Returns `true` the value passed is array else it returns `false`.
-
-<aside class="notice">
-This function returns <code>true</code> for all array types, <i>list</i>, <i>tuple</i> and <i>array-of-things</i>.
-</aside>
-
