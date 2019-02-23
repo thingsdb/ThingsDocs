@@ -186,7 +186,7 @@ thingscmd \
     --query       "'Hello world!!'"
 ```
 
-> JSON representation of the request:
+> Request in JSON format
 
 ```json
 {
@@ -200,7 +200,7 @@ thingscmd \
 Queries to ThingsDB can be used to [manage](#manage-api) ThingsDB, or to query [collections](#collection-api).
 
 ThingsDB will respond with an array containing the results for each statement. In case one of the statements
-have failed, an [error](#erros) is returned.
+have failed, an [error](#errors) is returned.
 
 A query request has one required field *query*, and some other optionals:
 

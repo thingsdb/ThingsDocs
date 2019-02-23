@@ -174,7 +174,7 @@ EOQ
 
 ```json
 [
-    null,
+    0,
     false,
     true,
     0

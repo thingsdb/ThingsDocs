@@ -1,6 +1,6 @@
 ## pop
 
-> This code remomes an returns the last item of an array:
+> This code show an example usage of ***pop()***:
 
 ```python
 import asyncio
@@ -10,8 +10,7 @@ async def example():
     await client.connect('node.local', 9200)
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
-        arr = [1, 2, 3];
-        arr.pop();
+        (arr = [1.2.3]).pop();
         arr;
     ''', target='stuff')
     print(res)
@@ -22,8 +21,7 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
-arr = [1, 2, 3];
-arr.pop();
+(arr = [1, 2, 3]).pop();
 arr;
 "
 EOQ
@@ -33,7 +31,6 @@ EOQ
 
 ```json
 [
-    null,
     3,
     [
         1,

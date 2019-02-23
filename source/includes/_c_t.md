@@ -8,11 +8,12 @@ from thingsdb.client import Client
 async def example():
     await client.connect('node.local', 9200)
     await client.authenticate('admin', 'pass')
+    # we use `deep=2` to specify we want to fetch things 2 levels deep
     res = await client.query(r'''
-        t(20);
-        t(21,);
-        t(20, 21);
-    ''', target='stuff')
+        t(7);
+        t(8,);
+        t(7, 8);
+    ''', deep=2, target='stuff')
     print(res)
 
 client = Client()
@@ -20,10 +21,11 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
-t(20);
-t(21,);
-t(20, 21);
+# we use `deep=2` to specify we want to fetch things 2 levels deep
+thingscmd -n node.local -u admin -p pass -c stuff -d 2 -q << EOQ "
+t(7);
+t(8,);
+t(7, 8);
 "
 EOQ
 ```
@@ -33,23 +35,23 @@ EOQ
 ```json
 [
     {
-        "#": 20,
+        "#": 7,
         "greet": "Hello"
     },
     [
         {
-            "#": 21,
-            "to": "World"
+            "#": 8,
+            "to": "world!!"
         }
     ],
     [
         {
-            "#": 20,
+            "#": 7,
             "greet": "Hello"
         },
         {
-            "#": 21,
-            "to": "World"
+            "#": 8,
+            "to": "world!!"
         }
     ]
 ]
@@ -72,6 +74,6 @@ Returns a [thing ](#thing) or an *array-of-things* based on given id's.
 An `INDEX_ERROR` is returned in case at least one id is not found inside the collection.
 
 <aside class="notice">
-You can force an <i>array-of-things</i>, even with only one id. Just add an extra comma,
+You can force an <i>array</i>, even with only one id. Just add an extra comma,
 for example: <code>thing(666,);</code> and this will return an array with one thing: <code>[{"#": 666, ...}]</code>
 </aside>
