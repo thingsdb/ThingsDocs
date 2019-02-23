@@ -234,6 +234,20 @@
               </ul>
           </li>
           <li>
+            <a href="#query" class="toc-h1 toc-link" data-title="Query">Query</a>
+          </li>
+          <li>
+            <a href="#protocol" class="toc-h1 toc-link" data-title="Protocol">Protocol</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#package" class="toc-h2 toc-link" data-title="Package">Package</a>
+                  </li>
+                  <li>
+                    <a href="#example" class="toc-h2 toc-link" data-title="Example">Example</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#events" class="toc-h1 toc-link" data-title="Events">Events</a>
           </li>
           <li>
@@ -545,6 +559,166 @@ If you did not yet change the default password, you might want to jump to <a hre
 </code></pre>
 <p>For running thingsdb queries from the shell, a shell tool <a href="https://github.com/thingsdb/ThingsCMD">thingscmd</a> is available.
 It is not possible to <em>watch</em> things by using this shell based tool.</p>
+<h1 id='query'>Query</h1>
+<blockquote>
+<p>Example query</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+        <span class="s">'node.local'</span><span class="p">,</span>       <span class="c"># node address</span>
+        <span class="mi">9200</span>                <span class="c"># node port, default 9200</span>
+    <span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span>
+        <span class="s">'admin'</span><span class="p">,</span>            <span class="c"># username</span>
+        <span class="s">'pass'</span>              <span class="c"># password</span>
+    <span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+        <span class="s">"'Hello world!!'"</span><span class="p">,</span>  <span class="c"># query string</span>
+        <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span>     <span class="c"># target collection, default 0 (no collection)</span>
+        <span class="n">deep</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>             <span class="c"># depth to return `things`, default 1</span>
+        <span class="n">blobs</span><span class="o">=</span><span class="p">[],</span>           <span class="c"># blob values, default None</span>
+    <span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd <span class="se">\</span>
+    --node        node.local <span class="se">\</span>
+    --user        admin      <span class="se">\</span>
+    --password    pass       <span class="se">\</span>
+    --collection  stuff      <span class="se">\</span>
+    --deep        1          <span class="se">\</span>
+    --query       <span class="s2">"'Hello world!!'"</span>
+</code></pre>
+<blockquote>
+<p>JSON representation of the request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"'Hello world!!'"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stuff"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"deep"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"blobs"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Queries to ThingsDB can be used to <a href="#manage-api">manage</a> ThingsDB, or to query <a href="#collection-api">collections</a>.</p>
+
+<p>ThingsDB will respond with an array containing the results for each statement. In case one of the statements
+have failed, an <a href="#erros">error</a> is returned.</p>
+
+<p>A query request has one required field <em>query</em>, and some other optionals:</p>
+
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>query</code></td>
+<td>The query string containing one or more statements. (required)</td>
+</tr>
+<tr>
+<td><code>target</code></td>
+<td>Target collection, or <code>0</code> for manage queries. (default: <code>0</code>)</td>
+</tr>
+<tr>
+<td><code>deep</code></td>
+<td>Specify the depth to which <code>things</code> should be fully returned. (default: <code>1</code>)</td>
+</tr>
+<tr>
+<td><code>blobs</code></td>
+<td>Array of additional blobs for binary data. (default: <code>[]</code>)</td>
+</tr>
+</tbody></table>
+
+<p>To send a query you can either use a language binding, see code examples, or if you
+want to know how to serialize and send the data, read the <a href="#protocol">protocol</a> section.</p>
+<h1 id='protocol'>Protocol</h1>
+<p>This is a more in depth view of the protocol used for communication with ThingsDB.
+In case you just want to use ThingsDB using one of the language bindings, then this
+info can be skipped. If you plan to implement you own connector, then this info might
+be useful to you.</p>
+
+<p>Communication with ThingsDB is done over a socket, either using TCP or a UNIX PIPE connection.
+Once a connection is made, packages can be send to ThingsDB. Each package starts
+with a 8 bytes header using little endian, followed by optional data. Before you can
+send queries to ThingsDB, the connection must be authenticated. This can be done by
+sending an <code>AUTH</code> package.</p>
+<h2 id='package'>Package</h2><pre class="highlight plaintext"><code>┌───────────┬───────────┬───────────┬───────────┬───────────┐
+│ LEN (4)   │ ID (2)    │ TYPE (1)  │ CHK (1)   │ DATA (..) │
+└───────────┴───────────┴───────────┴───────────┴───────────┘
+</code></pre><h3 id='len-unsigned-32bit'>LEN (Unsigned, 32bit)</h3>
+<p>Length of the data, the header not included.</p>
+<h3 id='id-16bit'>ID (16bit)</h3>
+<p>The ID can be used as an identifier of your package. When ThingsDB send a response
+on a request, it will use the same ID so this allows you to map a response to a
+request. This is useful if you want to send multiple request in parallel.</p>
+<h3 id='type-unsigned-8bit'>TYPE (Unsigned, 8bit)</h3>
+<p>Package type is used to describe what kind of package is transmitted.</p>
+<h4 id='request-type'>Request type</h4>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>PING</code></td>
+<td>32</td>
+<td>Ping, useful as keep-alive.</td>
+</tr>
+<tr>
+<td><code>AUTH</code></td>
+<td>33</td>
+<td>Authentication, expects: <code>[username, password]</code></td>
+</tr>
+<tr>
+<td><code>QUERY</code></td>
+<td>34</td>
+<td>Query, see <a href="#query">query</a> for more info.</td>
+</tr>
+<tr>
+<td><code>WATCH</code></td>
+<td>48</td>
+<td>Watch, see <a href="#watch">watch</a> for more info.</td>
+</tr>
+<tr>
+<td><code>UNWATCH</code></td>
+<td>49</td>
+<td>Stop watching specified things, see <a href="#watch">watch</a> for more info.</td>
+</tr>
+</tbody></table>
+<h3 id='chk-unsigned-8bit'>CHK (Unsigned, 8bit)</h3>
+<p>Inverse of the type: <code>type ^ 0xff</code>, this is used as a check-bit.</p>
+<h3 id='data'>DATA</h3>
+<p>Data serialized using <a href="https://github.com/transceptor-technology/libqpack">qpack</a>.</p>
+<h2 id='example'>Example</h2>
+<p>As an example we create an authentication package for the default <em>admin</em> user with password <em>pass</em>.</p>
+
+<p>This is the package data for our authentication request:</p>
+
+<p><code>[&quot;admin&quot;, &quot;pass&quot;]</code></p>
+
+<p>Serializing the above using <em>qpack</em> results in the following <code>12</code> bytes:</p>
+
+<p><code>\xef\x85admin\x84pass</code></p>
+
+<p>Now we create the header, for this example we just use ID 0:</p>
+
+<ul>
+<li>Data length (12) <code>\x0c\x00\x00\x00</code></li>
+<li>Identifier (0) <code>\x00\x00</code></li>
+<li>Auth package type (33) <code>\x21</code></li>
+<li>Inverse type check bit (222) <code>\xde</code></li>
+</ul>
+
+<p>So our total package will be:</p>
+
+<p><code>\x0c\x00\x00\x00\x00\x00\x21\xde\xef\x85admin\x84pass</code></p>
 <h1 id='events'>Events</h1>
 <p>When a query uses a statement which makes a change to ThingsDB, then internally ThingsDB will create an <em>event</em> to apply these changes.
 Events are applied in order on each node so database consistency is guaranteed.</p>
@@ -568,9 +742,7 @@ Events are applied in order on each node so database consistency is guaranteed.<
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">,</span> <span class="mi">9200</span><span class="p">)</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
-        $tmp = 'This is a ';
-        $tmp += 'temporary variable!!!';
-        $tmp;
+        $tmp = 'This is a temporary variable!!!';
     '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
@@ -578,20 +750,14 @@ Events are applied in order on each node so database consistency is guaranteed.<
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># note that we need to escape the $ sign in bash</span>
 thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
-\$tmp = 'This is a ';
-\$tmp += 'temporary variable!!!';
-\$tmp;
+\$tmp = 'This is a temporary variable!!!';
 "
 EOQ
 </span></code></pre>
 <blockquote>
 <p>Return value in JSON format</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-    </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"This is a temporary variable!!!"</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="s2">"This is a temporary variable!!!"</span><span class="w">
 </span></code></pre>
 <p>Can be used to assign a value to a variable which can be used within a query.</p>
 
