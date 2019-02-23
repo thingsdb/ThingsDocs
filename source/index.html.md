@@ -147,6 +147,140 @@ pip install thingscmd
 For running thingsdb queries from the shell, a shell tool [thingscmd](https://github.com/thingsdb/ThingsCMD) is available.
 It is not possible to *watch* things by using this shell based tool.
 
+# Query
+
+> Example query
+
+```python
+import asyncio
+from thingsdb.client import Client
+
+async def example():
+    await client.connect(
+        'node.local',       # node address
+        9200                # node port, default 9200
+    )
+    await client.authenticate(
+        'admin',            # username
+        'pass'              # password
+    )
+    res = await client.query(
+        "'Hello world!!'",  # query string
+        target='stuff',     # target collection, default 0 (no collection)
+        deep=1,             # depth to return `things`, default 1
+        blobs=[],           # blob values, default None
+    )
+    print(res)
+
+client = Client()
+asyncio.get_event_loop().run_until_complete(example())
+```
+
+```shell
+thingscmd \
+    --node        node.local \
+    --user        admin      \
+    --password    pass       \
+    --collection  stuff      \
+    --deep        1          \
+    --query       "'Hello world!!'"
+```
+
+> JSON representation of the request:
+
+```json
+{
+    "query": "'Hello world!!'",
+    "target": "stuff",
+    "deep": 1,
+    "blobs": []
+}
+```
+
+Queries to ThingsDB can be used to [manage](#manage-api) ThingsDB, or to query [collections](#collection-api).
+
+ThingsDB will respond with an array containing the results for each statement. In case one of the statements
+have failed, an [error](#erros) is returned.
+
+A query request has one required field *query*, and some other optionals:
+
+Key | Description
+--- | -----------
+`query` | The query string containing one or more statements. (required)
+`target` | Target collection, or `0` for manage queries. (default: `0`)
+`deep` | Specify the depth to which `things` should be fully returned. (default: `1`)
+`blobs` | Array of additional blobs for binary data. (default: `[]`)
+
+To send a query you can either use a language binding, see code examples, or if you
+want to know how to serialize and send the data, read the [protocol](#protocol) section.
+
+# Protocol
+This is a more in depth view of the protocol used for communication with ThingsDB.
+In case you just want to use ThingsDB using one of the language bindings, then this
+info can be skipped. If you plan to implement you own connector, then this info might
+be useful to you.
+
+Communication with ThingsDB is done over a socket, either using TCP or a UNIX PIPE connection.
+Once a connection is made, packages can be send to ThingsDB. Each package starts
+with a 8 bytes header using little endian, followed by optional data. Before you can
+send queries to ThingsDB, the connection must be authenticated. This can be done by
+sending an `AUTH` package.
+
+## Package
+```
+┌───────────┬───────────┬───────────┬───────────┬───────────┐
+│ LEN (4)   │ ID (2)    │ TYPE (1)  │ CHK (1)   │ DATA (..) │
+└───────────┴───────────┴───────────┴───────────┴───────────┘
+```
+### LEN (Unsigned, 32bit)
+Length of the data, the header not included.
+
+### ID (16bit)
+The ID can be used as an identifier of your package. When ThingsDB send a response
+on a request, it will use the same ID so this allows you to map a response to a
+request. This is useful if you want to send multiple request in parallel.
+
+### TYPE (Unsigned, 8bit)
+Package type is used to describe what kind of package is transmitted.
+
+#### Request type
+Type | Number | Description
+--------| -----| -----------
+`PING`  | 32 | Ping, useful as keep-alive.
+`AUTH`  | 33 | Authentication, expects: `[username, password]`
+`QUERY` | 34 | Query, see [query](#query) for more info.
+`WATCH` | 48 | Watch, see [watch](#watch) for more info.
+`UNWATCH` | 49 | Stop watching specified things, see [watch](#watch) for more info.
+
+### CHK (Unsigned, 8bit)
+Inverse of the type: `type ^ 0xff`, this is used as a check-bit.
+
+### DATA
+Data serialized using [qpack](https://github.com/transceptor-technology/libqpack).
+
+## Example
+As an example we create an authentication package for the default *admin* user with password *pass*.
+
+This is the package data for our authentication request:
+
+`["admin", "pass"]`
+
+Serializing the above using *qpack* results in the following `12` bytes:
+
+`\xef\x85admin\x84pass`
+
+Now we create the header, for this example we just use ID 0:
+
+- Data length (12) `\x0c\x00\x00\x00`
+- Identifier (0) `\x00\x00`
+- Auth package type (33) `\x21`
+- Inverse type check bit (222) `\xde`
+
+
+So our total package will be:
+
+`\x0c\x00\x00\x00\x00\x00\x21\xde\xef\x85admin\x84pass`
+
 
 # Events
 
@@ -178,9 +312,7 @@ async def example():
     await client.connect('node.local', 9200)
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
-        $tmp = 'This is a ';
-        $tmp += 'temporary variable!!!';
-        $tmp;
+        $tmp = 'This is a temporary variable!!!';
     ''', target='stuff')
     print(res)
 
@@ -191,9 +323,7 @@ asyncio.get_event_loop().run_until_complete(example())
 ```shell
 # note that we need to escape the $ sign in bash
 thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
-\$tmp = 'This is a ';
-\$tmp += 'temporary variable!!!';
-\$tmp;
+\$tmp = 'This is a temporary variable!!!';
 "
 EOQ
 ```
@@ -201,11 +331,7 @@ EOQ
 > Return value in JSON format
 
 ```json
-[
-    null,
-    null,
-    "This is a temporary variable!!!"
-]
+"This is a temporary variable!!!"
 ```
 
 Can be used to assign a value to a variable which can be used within a query.
