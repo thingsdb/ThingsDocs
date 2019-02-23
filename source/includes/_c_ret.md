@@ -10,7 +10,7 @@ async def example():
     await client.connect('node.local', 9200)
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
-        ($tmp = 'just an example which return nil').ret();
+        ($tmp = 'just an example, returns nil').ret();
     ''', target='stuff')
     print(res)
 
@@ -20,7 +20,7 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
-(\$tmp = 'just an example which return nil').ret();
+(\$tmp = 'just an example, returns nil').ret();
 "
 EOQ
 ```

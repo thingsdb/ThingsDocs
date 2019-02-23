@@ -168,6 +168,7 @@ async def example():
         "'Hello world!!'",  # query string
         target='stuff',     # target collection, default 0 (no collection)
         deep=1,             # depth to return `things`, default 1
+        all=False,          # return only the last statement, default False
         blobs=[],           # blob values, default None
     )
     print(res)
@@ -199,17 +200,19 @@ thingscmd \
 
 Queries to ThingsDB can be used to [manage](#manage-api) ThingsDB, or to query [collections](#collection-api).
 
-ThingsDB will respond with an array containing the results for each statement. In case one of the statements
-have failed, an [error](#errors) is returned.
+ThingsDB will respond with the last statement result, or, when `all` is set to `true`,
+an array containing the results for each statement. In case a statement fails, the other statements are
+not processed and an [error](#errors) is returned. Changes made are synchronized, even when an error has ocurred.
 
 A query request has one required field *query*, and some other optionals:
 
-Key | Description
---- | -----------
-`query` | The query string containing one or more statements. (required)
-`target` | Target collection, or `0` for manage queries. (default: `0`)
-`deep` | Specify the depth to which `things` should be fully returned. (default: `1`)
-`blobs` | Array of additional blobs for binary data. (default: `[]`)
+Key | Type | Description
+--- | ---- | -----------
+`query` | string | The query string containing one or more statements. (required)
+`target` | string| Target collection, or `0` for manage queries. (default: `0`)
+`deep` | integer | Specify the depth in the range 0-127 to which `things` should be fully returned. (default: `1`)
+`all` | boolean | When true, all statement results are returned in an array, otherwise only the last statement result. (default: `false`)
+`blobs` | array | Additional blobs for binary data. (default: `[]`)
 
 To send a query you can either use a language binding, see code examples, or if you
 want to know how to serialize and send the data, read the [protocol](#protocol) section.
