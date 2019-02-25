@@ -6,7 +6,7 @@
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>API Reference</title>
-
+    <link href="images/favicon.ico" rel="icon" type="image/ico" />
     <style>
       .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
@@ -1915,12 +1915,12 @@ if the user does not exist and <code>BAD_REQUEST</code> if the new password is n
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         set_quota('stuff', 'things', 10000);
         set_quota('stuff', 'properties', nil);
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">all</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
-</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -q <span class="sh">&lt;&lt; EOQ "
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -a -q <span class="sh">&lt;&lt; EOQ "
 set_quota('stuff', 'things', 10000);
 set_quota('stuff', 'properties', nil);
 "
@@ -2094,10 +2094,7 @@ EOQ
 <blockquote>
 <p>Return value in JSON format</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-    </span><span class="s2">"create and delete this prop"</span><span class="p">,</span><span class="w">
-    </span><span class="kc">null</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="kc">null</span><span class="w">
 </span></code></pre>
 <p>Delete a property from a <a href="#thing">thing</a>.</p>
 
@@ -2918,39 +2915,28 @@ EOQ
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">,</span> <span class="mi">9200</span><span class="p">)</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
-    <span class="c"># current timestamp in float and milliseconds</span>
+    <span class="c"># current timestamp</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
-        $now = now();
-        $now;
-        int($now);
-        int(($now * 1000));
+        now();
     '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># current timestamp in float and milliseconds</span>
+</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># current timestamp</span>
 thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
-\$now = now();
-\$now;
-int(\$now);
-int((\$now * 1000));
+now();
 "
 EOQ
 </span></code></pre>
 <blockquote>
 <p>Example return value in JSON format</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-    </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="mf">1550221210.3550816</span><span class="p">,</span><span class="w">
-    </span><span class="mi">1550221210</span><span class="p">,</span><span class="w">
-    </span><span class="mi">1550221210355</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="mf">1551093313.6622682</span><span class="w">
 </span></code></pre>
-<p>Returns the current timestamp as <a href="#floating-point">float</a>.</p>
+<p>Return the time in seconds since the epoch as a <a href="#floating-point">floating point</a> number.</p>
 
-<p>If you require the <em>same</em> timestamp multiple times within a query,
+<p>If you require the <em>same</em> time multiple times within a query,
 then call <code>now()</code> only once and save it to a temporary variable, for example <code>$now = now();</code></p>
 
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
@@ -3117,6 +3103,32 @@ unnecessary network traffic.</p>
 <h2 id='splice'>splice</h2>
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h2 id='startswith'>startswith</h2>
+<blockquote>
+<p>This code shows an example using <strong><em>startswith()</em></strong>:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">,</span> <span class="mi">9200</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
+        'the answer to life the universe and everything'.startswith('the answer');
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+'the answer to life the universe and everything'.startswith('the answer');
+"
+EOQ
+</span></code></pre>
+<blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="kc">true</span><span class="w">
+</span></code></pre>
 <p>Determines if a string starts with characters given by another string.</p>
 
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
