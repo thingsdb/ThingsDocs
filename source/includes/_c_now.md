@@ -9,12 +9,9 @@ from thingsdb.client import Client
 async def example():
     await client.connect('node.local', 9200)
     await client.authenticate('admin', 'pass')
-    # current timestamp in float and milliseconds
+    # current timestamp
     res = await client.query(r'''
-        $now = now();
-        $now;
-        int($now);
-        int(($now * 1000));
+        now();
     ''', target='stuff')
     print(res)
 
@@ -23,12 +20,9 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-# current timestamp in float and milliseconds
+# current timestamp
 thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
-\$now = now();
-\$now;
-int(\$now);
-int((\$now * 1000));
+now();
 "
 EOQ
 ```
@@ -36,17 +30,12 @@ EOQ
 > Example return value in JSON format
 
 ```json
-[
-    null,
-    1550221210.3550816,
-    1550221210,
-    1550221210355
-]
+1551093313.6622682
 ```
 
-Returns the current timestamp as [float](#floating-point).
+Return the time in seconds since the epoch as a [floating point](#floating-point) number.
 
-If you require the *same* timestamp multiple times within a query,
+If you require the *same* time multiple times within a query,
 then call `now()` only once and save it to a temporary variable, for example `$now = now();`
 
 This function does *not* generate an [event](#events).

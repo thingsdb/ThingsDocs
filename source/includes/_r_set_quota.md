@@ -12,7 +12,7 @@ async def example():
     res = await client.query(r'''
         set_quota('stuff', 'things', 10000);
         set_quota('stuff', 'properties', nil);
-    ''', target=0)
+    ''', target=0, all=True)
     print(res)
 
 client = Client()
@@ -20,7 +20,7 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -n node.local -u admin -p pass -q << EOQ "
+thingscmd -n node.local -u admin -p pass -a -q << EOQ "
 set_quota('stuff', 'things', 10000);
 set_quota('stuff', 'properties', nil);
 "

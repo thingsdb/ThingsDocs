@@ -30,10 +30,7 @@ EOQ
 > Return value in JSON format
 
 ```json
-[
-    "create and delete this prop",
-    null
-]
+null
 ```
 
 Delete a property from a [thing](#thing).
