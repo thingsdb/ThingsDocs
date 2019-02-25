@@ -14,7 +14,7 @@ async def example():
         try( (1/0), 0 );
         try( (1/0), 0, 'ZERO_DIV_ERROR' );
         try( (1/0), 0, 97 );
-    ''', target='stuff')
+    ''', target='stuff', all=True)
     print(res)
 
 client = Client()
@@ -22,7 +22,7 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
+thingscmd -n node.local -u admin -p pass -c stuff -a -q << EOQ "
 try( (1/0) );
 try( (1/0), 0 );
 try( (1/0), 0, 'ZERO_DIV_ERROR' );

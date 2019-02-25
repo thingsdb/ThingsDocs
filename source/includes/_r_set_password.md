@@ -41,7 +41,7 @@ This function generates an [event](#events).
 Argument | Type | Description
 --------- | ----------- | -----------
 username | raw (required) | Name of the user
-new_password | raw (required) | New password, can be anything from 1 to 128 graphical characters
+new_password | raw (required) | New password, can be anything from 1 to 128 printable characters
 
 ### Return value
 Returns `nil` if successful. An `INDEX_ERROR` is returned

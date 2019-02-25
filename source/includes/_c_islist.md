@@ -13,7 +13,7 @@ async def example():
         islist( [] );
         islist( $tmp = [['nested']] );
         islist( $tmp[0] );
-    ''', target='stuff')
+    ''', target='stuff', all=True)
     print(res)
 
 client = Client()
@@ -21,7 +21,7 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
+thingscmd -n node.local -u admin -p pass -c stuff -a -q << EOQ "
 islist( [] );
 islist( \$tmp = [['nested']] );
 islist( \$tmp[0] );
@@ -50,7 +50,7 @@ This function does *not* generate an [event](#events).
 ### Arguments
 Argument | Type | Description
 -------- | ---- | -----------
-value | any (required) | The value to be tested for being an list.
+value | any (required) | The value to be tested.
 
 ### Return value
 Returns `true` is the passed value is a list else it returns `false`.

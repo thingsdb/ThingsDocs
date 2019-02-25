@@ -13,7 +13,7 @@ async def example():
         isarray( [] );
         isarray( $tmp = [['nested']] );
         isarray( $tmp[0] );
-    ''', target='stuff')
+    ''', target='stuff', all=True)
     print(res)
 
 client = Client()
@@ -21,7 +21,7 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
+thingscmd -n node.local -u admin -p pass -c stuff -a -q << EOQ "
 isarray( [] );
 isarray( \$tmp = [['nested']] );
 isarray( \$tmp[0] );

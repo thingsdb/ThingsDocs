@@ -10,9 +10,8 @@ async def example():
     await client.connect('node.local', 9200)
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
-        x = 'Mr x exists!';
-        (hasprop('x')) ? x : 'No x found';
-        (hasprop('y')) ? y : 'No y found';
+        $tmp = {name: 'Iris'};
+        $tmp.hasprop('name');
     ''', target='stuff')
     print(res)
 
@@ -22,9 +21,8 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
-x = 'Mr x exists!';
-(hasprop('x')) ? x : 'No x found';
-(hasprop('y')) ? y : 'No y found';
+\$tmp = {name: 'Iris'};
+\$tmp.hasprop('name');
 "
 EOQ
 ```
@@ -32,11 +30,7 @@ EOQ
 > Return value in JSON format
 
 ```json
-[
-    null,
-    "Mr x exists!",
-    "No y found"
-]
+true
 ```
 
 Determines if a [thing](#thing) has a given property.

@@ -11,7 +11,10 @@ client = Client()
 async def example():
     await client.connect('node.local', 9200)
     await client.authenticate('admin', 'pass')
-    await client.new_collection('awesome_things')
+    res = await client.query(r'''
+        new_collection('awesome_things');
+    ''')
+    print(res)
 
 asyncio.get_event_loop().run_until_complete(example())
 ```
@@ -49,5 +52,5 @@ Use <code>grant</code> to give other users access to the collection.
 </aside>
 
 ### Return value
-Returns the new collection `id` if successful. An `INDEX_ERROR` is returned
+Returns the new collection `id` if successful. An `INDEX_ERROR` is raised
 if the collection already exists.

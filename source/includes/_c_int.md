@@ -16,7 +16,7 @@ async def example():
         int('0xFF');
         int(true);
         int(false);
-    ''', target='stuff')
+    ''', target='stuff', all=True)
     print(res)
 
 client = Client()
@@ -24,7 +24,7 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
+thingscmd -n node.local -u admin -p pass -c stuff -a -q << EOQ "
 int(2.718);
 int(-1.9);
 int('365 days');
