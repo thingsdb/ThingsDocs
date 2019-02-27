@@ -9,7 +9,7 @@ from thingsdb.client import Client
 client = Client()
 
 async def example():
-    await client.connect('node.local', 9200)
+    await client.connect('node.local')
     await client.authenticate('admin', 'pass')
     # Delete collection `old_things`
     await client.del_collection('old_things')

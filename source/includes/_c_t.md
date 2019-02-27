@@ -6,7 +6,7 @@ import asyncio
 from thingsdb.client import Client
 
 async def example():
-    await client.connect('node.local', 9200)
+    await client.connect('node.local')
     await client.authenticate('admin', 'pass')
     # we use `deep=2` to specify we want to fetch things 2 levels deep
     res = await client.query(r'''

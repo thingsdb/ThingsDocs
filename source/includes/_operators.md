@@ -9,7 +9,7 @@ import asyncio
 from thingsdb.client import Client
 
 async def example():
-    await client.connect('node.local', 9200)
+    await client.connect('node.local')
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
         (0b110 & 0b011);
@@ -63,7 +63,7 @@ import asyncio
 from thingsdb.client import Client
 
 async def example():
-    await client.connect('node.local', 9200)
+    await client.connect('node.local')
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
         ( 5 + 2 );
@@ -144,7 +144,7 @@ import asyncio
 from thingsdb.client import Client
 
 async def example():
-    await client.connect('node.local', 9200)
+    await client.connect('node.local')
     await client.authenticate('admin', 'pass')
     # Note: x += 1 never is executed
     res = await client.query(r'''
@@ -210,7 +210,7 @@ import asyncio
 from thingsdb.client import Client
 
 async def example():
-    await client.connect('node.local', 9200)
+    await client.connect('node.local')
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
         ( 2 > 1 ) ? 'two is larger than one' : 'two is NOT larger than one';

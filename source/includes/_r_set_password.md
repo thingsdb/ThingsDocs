@@ -9,7 +9,7 @@ from thingsdb.client import Client
 client = Client()
 
 async def example():
-    await client.connect('node.local', 9200)
+    await client.connect('node.local')
     await client.authenticate('admin', 'pass')
     await client.set_password('admin', 'my_secret_password')
 

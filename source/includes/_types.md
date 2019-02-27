@@ -18,7 +18,7 @@ from thingsdb.client import Client
 client = Client()
 
 async def example():
-    await client.connect('node.local', 9200)
+    await client.connect('node.local')
     await client.authenticate('admin', 'pass')
     # Get collection `stuff`
     stuff = await client.get_collection('stuff')
@@ -48,7 +48,7 @@ Method | Description
 [test](#test) | Test if a string matches a given regular expression and return `true` or `false`.
 [upper](#upper) | Return a new string in which all case-based characters are in upper case.
 
-<aside class="notice">
+<aside class="warning">
 If you want to store long string or blob values, you might want to use
 <code>attributes</code> rather than <code>properties</code>. Attributes take less
 memory then properties but the downside is that it is not possible to search within
@@ -67,7 +67,7 @@ from thingsdb.client import Client
 client = Client()
 
 async def example():
-    await client.connect('node.local', 9200)
+    await client.connect('node.local')
     await client.authenticate('admin', 'pass')
     # Get collection `stuff`
     stuff = await client.get_collection('stuff')
@@ -101,7 +101,7 @@ from thingsdb.client import Client
 client = Client()
 
 async def example():
-    await client.connect('node.local', 9200)
+    await client.connect('node.local')
     await client.authenticate('admin', 'pass')
     # Get collection `stuff`
     stuff = await client.get_collection('stuff')
@@ -144,7 +144,7 @@ from thingsdb.client import Client
 client = Client()
 
 async def example():
-    await client.connect('node.local', 9200)
+    await client.connect('node.local')
     await client.authenticate('admin', 'pass')
     # Get collection `stuff`
     stuff = await client.get_collection('stuff')
@@ -177,7 +177,7 @@ from thingsdb.client import Client
 client = Client()
 
 async def example():
-    await client.connect('node.local', 9200)
+    await client.connect('node.local')
     await client.authenticate('admin', 'pass')
 
     # Note: the email check is oversimplified, do not use in production

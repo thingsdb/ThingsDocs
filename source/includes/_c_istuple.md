@@ -7,7 +7,7 @@ import asyncio
 from thingsdb.client import Client
 
 async def example():
-    await client.connect('node.local', 9200)
+    await client.connect('node.local')
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
         istuple( [] );

@@ -8,7 +8,7 @@ import urllib
 from thingsdb.client import Client
 
 async def example():
-    await client.connect('node.local', 9200)
+    await client.connect('node.local')
     await client.authenticate('admin', 'pass')
     stuff = await client.get_collection('stuff')
 

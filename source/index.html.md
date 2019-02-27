@@ -99,7 +99,7 @@ loop = asyncio.get_event_loop()
 
 async def example():
     # replace `node.local` with your ThingsDB server address
-    await client.connect('node.local', 9200)
+    await client.connect('node.local')
 
     # replace `amdin` with yout username and `pass` with your password
     await client.authenticate('admin', 'pass')
@@ -230,11 +230,15 @@ send queries to ThingsDB, the connection must be authenticated. This can be done
 sending an `AUTH` package.
 
 ## Package
+
+> Package format:
+
 ```
 ┌───────────┬───────────┬───────────┬───────────┬───────────┐
 │ LEN (4)   │ ID (2)    │ TYPE (1)  │ CHK (1)   │ DATA (..) │
 └───────────┴───────────┴───────────┴───────────┴───────────┘
 ```
+
 ### LEN (Unsigned, 32bit)
 Length of the data, the header not included.
 
@@ -312,7 +316,7 @@ import asyncio
 from thingsdb.client import Client
 
 async def example():
-    await client.connect('node.local', 9200)
+    await client.connect('node.local')
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
         $tmp = 'This is a temporary variable!!!';
