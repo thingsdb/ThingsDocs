@@ -217,11 +217,28 @@ Method | Description
 
 ## Array
 
-Arrays in ThingsDB come in two flavors.
-
 An empty array can be constructed as follows: `arr = [];`
 
-Nesting is also possible withing "normal" arrays but each nested array will become a `tuple` which means the array will be immutable.
+Nesting is also possible withing but each nested array will become a `tuple` which means the array will be immutable.
+ThingsDB does this because it wants to update all changes to subscribers and finds the subscribers by the parent object where
+the change is  made. Since the parent of a nested array is another array, the `thing` holding the array would not be found.
+
+Another *weird* property of ThingsDB is that `arrays` are always *copies*, and not by *reference* as in most languages. This is
+because ThingsDB needs to know which subscribers to update with changes made to the `array`.
+
+
+### Methods
+Method | Description
+------ | -----------
+[filter](#filter) | Return a new `array` with elements that pass a given test.
+[find](#find) | Returns the first element for which a given test passes.
+[findindex](#findindex) | Returns the index of the first element which passes given test.
+[indexof](#indexof) | Returns the index of a given value, or `nil` if .
+[remove](#remove) | Remove the  by value.
+[splice](#splice) | Determines if a string starts with characters given by another string.
+[pop](#pop) | Removes the last element from an array and returns that element.
+[push](#push) | Adds new items to the end of an array, and returns the new length.
+
 
 ### Array Types
 
@@ -240,5 +257,5 @@ It is not possible to change an array while the array is in use, for example:
 ## Thing
 
 
-## Arrow function
+## Closure
 

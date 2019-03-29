@@ -46,7 +46,7 @@ on a `list` and `things` type array, but not on a `tuple`.
 This function generates an [event](#events).
 
 ### Function
-*mutable_array*.`pop`
+*mutable_array*.`pop()`
 
 ### Arguments
 None

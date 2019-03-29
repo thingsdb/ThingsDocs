@@ -38,11 +38,13 @@ includes:
   - collection_api
   - c_blob
   - c_del
+  - c_filter
   - c_find
   - c_get
   - c_hasattr
   - c_hasprop
   - c_id
+  - c_indexof
   - c_int
   - c_isarray
   - c_isascii

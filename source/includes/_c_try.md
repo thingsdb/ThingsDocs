@@ -63,5 +63,11 @@ statement | any (required) | The statement to try.
 alt | any (optional) | Alternative value which is returned if the statement has failed.
 e0, e1, ..., eX | int/raw (optional) | Only catch specific errors, if omitted, catch all errors. Error codes and names are accepted.
 
+<aside class="notice">
+The <code>alt</code> argument will be <i>lazy</i> evaluated. Consider the following example:
+<p><code>try( (1/x), items.pop(), "ZERO_DIV_ERROR");</code></p>
+In this example, the item will only be popped in case <code>x</code> is equal to <code>0</code>.
+</aside>
+
 ### Return value
 The value for the specified *statement* unless the statement has failed.
