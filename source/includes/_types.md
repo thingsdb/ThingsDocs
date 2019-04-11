@@ -249,7 +249,7 @@ tuple | Immutable array, *nested* arrays are always tuples.
 
 <aside class="notice">
 It is not possible to change an array while the array is in use, for example:
-<p><code>$tmp = [1, 2, 3]; $tmp.map(i => $tmp.push(i));</code></p>
+<p><code>$tmp = [1, 2, 3]; $tmp.map(|i| $tmp.push(i));</code></p>
 <p>...will raise <code>BAD_REQUEST</code> <i>(cannot use function `push` while the array is in use)</i></p>
 </aside>
 

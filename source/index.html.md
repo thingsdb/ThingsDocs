@@ -40,6 +40,7 @@ includes:
   - c_del
   - c_filter
   - c_find
+  - c_findindex
   - c_get
   - c_hasattr
   - c_hasprop
@@ -63,6 +64,7 @@ includes:
   - c_pop
   - c_push
   - c_refs
+  - c_remove
   - c_rename
   - c_ret
   - c_set
@@ -359,6 +361,6 @@ Some valid examples:
 <aside class="notice">
 It is possible to re-assign or change a temporary variable within a query, as long as the variable
 is not in use within the statement, for example:
-<p><code>$tmp = [1, 2]; $tmp.map(_ => $tmp = nil);</code></p>
+<p><code>$tmp = [1, 2]; $tmp.map(|| $tmp = nil);</code></p>
 <p>...will raise a <code>BAD_REQUEST</code> <i>(cannot assign a new value to `$tmp` while the variable is in use)</i></p>
 </aside>

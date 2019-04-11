@@ -11,10 +11,10 @@ async def example():
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
         /* Return all users with age 18 or above */
-        users.filter(user => (user.age >= 18));
+        users.filter(|user| (user.age >= 18));
 
         /* Return a `thing` with only property `age` */
-        users[0].filter(prop => (prop == 'age'));
+        users[0].filter(|prop| (prop == 'age'));
     ''', target='stuff', deep=2, all=True)
     print(res)
 
@@ -25,10 +25,10 @@ asyncio.get_event_loop().run_until_complete(example())
 ```shell
 thingscmd -n node.local -u admin -p pass -c stuff -d 2 -a -q << EOQ "
 /* Return all users with age 18 or above */
-users.filter(user => (user.age >= 18));
+users.filter(|user| (user.age >= 18));
 
 /* Return a thing with only property age */
-users[0].filter(prop => (prop == 'age'));
+users[0].filter(|prop| (prop == 'age'));
 "
 EOQ
 ```
@@ -69,10 +69,10 @@ This function does *not* generate an [event](#events).
 ### Arguments
 The *callback* argument must be a `closure` which input values depend on the type the method is called on.
 
-Iterable | Callback | Description
+Iterable | Arguments | Description
 -------- | -------- | -----------
-array | item, index => ... | Iterate over all items in the array. Both item and index are optional.
-thing | name, value => ... | Iterate over the thing properties. Both name and value are optional.
+array | item, index | Iterate over all items in the array. Both item and index are optional.
+thing | name, value | Iterate over the thing properties. Both name and value are optional.
 
 
 ### Return value

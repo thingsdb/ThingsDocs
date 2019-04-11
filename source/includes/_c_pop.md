@@ -39,9 +39,9 @@ EOQ
 ]
 ```
 
-Removes the last element from an array and returns that element.
+Removes the last element from an [array](#array) and returns that element.
 This method changes the length of the array. The `pop()` method works
-on a `list` and `things` type array, but not on a `tuple`.
+on a `list` type array, but not on a `tuple` since tuples are immutable.
 
 This function generates an [event](#events).
 

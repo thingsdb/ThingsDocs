@@ -31,7 +31,7 @@ EOQ
 6
 ```
 
-Returns the first index at which a given value can be found in the array, or `nil` if it is not present.
+Returns the first index at which a given value can be found in the [array](#array), or `nil` if it is not present.
 The index of an array starts at `0`, so the first item has index `0` the second `1` and so on.
 
 This function does *not* generate an [event](#events).
