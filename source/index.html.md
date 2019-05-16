@@ -12,7 +12,6 @@ toc_footers:
 includes:
   - operators
   - types
-  - scopes
   - node_api
   - n_counters
   - n_node
@@ -172,10 +171,7 @@ async def example():
     )
     res = await client.query(
         "'Hello world!!'",  # query string
-        target=client.node, # collection, node or thingsdb, default thingsdb
-        deep=1,             # depth to return `things`, default 1
-        all_=False,         # return only the last statement, default False
-        blobs=[],           # blob values, default None
+        target=client.node, # collection or scope, defaults to client.thingsdb
     )
     print(res)
 
@@ -189,7 +185,6 @@ thingscmd \
     --user        admin      \
     --password    pass       \
     --scope       node       \
-    --deep        1          \
     --query       "'Hello world!!'"
 ```
 
@@ -198,7 +193,7 @@ thingscmd \
 ```json
 {
     "query": "'Hello world!!'",
-    "target": "stuff",
+    "collection": "stuff",
     "deep": 1,
     "blobs": []
 }
