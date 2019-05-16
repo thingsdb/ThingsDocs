@@ -315,16 +315,39 @@
               </ul>
           </li>
           <li>
-            <a href="#manage-api" class="toc-h1 toc-link" data-title="Manage API">Manage API</a>
+            <a href="#node-api" class="toc-h1 toc-link" data-title="Node API">Node API</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#counters" class="toc-h2 toc-link" data-title="counters">counters</a>
+                  </li>
+                  <li>
+                    <a href="#node" class="toc-h2 toc-link" data-title="node">node</a>
+                  </li>
+                  <li>
+                    <a href="#nodes" class="toc-h2 toc-link" data-title="nodes">nodes</a>
+                  </li>
+                  <li>
+                    <a href="#reset_counters" class="toc-h2 toc-link" data-title="reset_counters">reset_counters</a>
+                  </li>
+                  <li>
+                    <a href="#set_loglevel" class="toc-h2 toc-link" data-title="set_loglevel">set_loglevel</a>
+                  </li>
+                  <li>
+                    <a href="#set_zone" class="toc-h2 toc-link" data-title="set_zone">set_zone</a>
+                  </li>
+                  <li>
+                    <a href="#shutdown" class="toc-h2 toc-link" data-title="shutdown">shutdown</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#thingsdb-api" class="toc-h1 toc-link" data-title="ThingsDB API">ThingsDB API</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#collection" class="toc-h2 toc-link" data-title="collection">collection</a>
                   </li>
                   <li>
                     <a href="#collections" class="toc-h2 toc-link" data-title="collections">collections</a>
-                  </li>
-                  <li>
-                    <a href="#counters" class="toc-h2 toc-link" data-title="counters">counters</a>
                   </li>
                   <li>
                     <a href="#del_collection" class="toc-h2 toc-link" data-title="del_collection">del_collection</a>
@@ -345,12 +368,6 @@
                     <a href="#new_user" class="toc-h2 toc-link" data-title="new_user">new_user</a>
                   </li>
                   <li>
-                    <a href="#node" class="toc-h2 toc-link" data-title="node">node</a>
-                  </li>
-                  <li>
-                    <a href="#nodes" class="toc-h2 toc-link" data-title="nodes">nodes</a>
-                  </li>
-                  <li>
                     <a href="#pop_node" class="toc-h2 toc-link" data-title="pop_node">pop_node</a>
                   </li>
                   <li>
@@ -360,9 +377,6 @@
                     <a href="#rename_user" class="toc-h2 toc-link" data-title="rename_user">rename_user</a>
                   </li>
                   <li>
-                    <a href="#reset_counters" class="toc-h2 toc-link" data-title="reset_counters">reset_counters</a>
-                  </li>
-                  <li>
                     <a href="#revoke" class="toc-h2 toc-link" data-title="revoke">revoke</a>
                   </li>
                   <li>
@@ -370,12 +384,6 @@
                   </li>
                   <li>
                     <a href="#set_quota" class="toc-h2 toc-link" data-title="set_quota">set_quota</a>
-                  </li>
-                  <li>
-                    <a href="#set_zone" class="toc-h2 toc-link" data-title="set_zone">set_zone</a>
-                  </li>
-                  <li>
-                    <a href="#shutdown" class="toc-h2 toc-link" data-title="shutdown">shutdown</a>
                   </li>
                   <li>
                     <a href="#user" class="toc-h2 toc-link" data-title="user">user</a>
@@ -549,7 +557,7 @@
 <span class="c"># the will close the client in a nice way</span>
 <span class="n">client</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 <span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">wait_closed</span><span class="p">())</span>
-</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c <span class="sh">&lt;&lt; EOL
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -q <span class="sh">&lt;&lt; EOL
 /* Creates a new collection */
 new_collection('awesome_things');
 EOL
@@ -589,10 +597,7 @@ It is not possible to <em>watch</em> things by using this shell based tool.</p>
     <span class="p">)</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
         <span class="s">"'Hello world!!'"</span><span class="p">,</span>  <span class="c"># query string</span>
-        <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span>     <span class="c"># target collection, default 0 (no collection)</span>
-        <span class="n">deep</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>             <span class="c"># depth to return `things`, default 1</span>
-        <span class="nb">all</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>          <span class="c"># return only the last statement, default False</span>
-        <span class="n">blobs</span><span class="o">=</span><span class="p">[],</span>           <span class="c"># blob values, default None</span>
+        <span class="n">target</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">node</span><span class="p">,</span> <span class="c"># collection or scope, defaults to client.thingsdb</span>
     <span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
@@ -602,8 +607,7 @@ It is not possible to <em>watch</em> things by using this shell based tool.</p>
     --node        node.local <span class="se">\</span>
     --user        admin      <span class="se">\</span>
     --password    pass       <span class="se">\</span>
-    --collection  stuff      <span class="se">\</span>
-    --deep        1          <span class="se">\</span>
+    --scope       node       <span class="se">\</span>
     --query       <span class="s2">"'Hello world!!'"</span>
 </code></pre>
 <blockquote>
@@ -611,12 +615,12 @@ It is not possible to <em>watch</em> things by using this shell based tool.</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"'Hello world!!'"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stuff"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"collection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stuff"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"deep"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="s2">"blobs"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Queries to ThingsDB can be used to <a href="#manage-api">manage</a> ThingsDB, or to query <a href="#collection-api">collections</a>.</p>
+<p>Queries to ThingsDB can be used to manage <a href="#node-api">nodes</a>, <a href="#thingsdb-api">ThingsDB</a> or to query <a href="#collection-api">collections</a>.</p>
 
 <p>ThingsDB will respond with the last statement result, or, when <code>all</code> is set to <code>true</code>,
 an array containing the results for each statement. In case a statement fails, the other statements are
@@ -705,8 +709,8 @@ request. This is useful if you want to send multiple request in parallel.</p>
 <td>Authentication, expects: <code>[username, password]</code></td>
 </tr>
 <tr>
-<td><code>QUERY</code></td>
-<td>34</td>
+<td><code>QUERY_COLLECTION</code></td>
+<td>36</td>
 <td>Query, see <a href="#query">query</a> for more info.</td>
 </tr>
 <tr>
@@ -1346,19 +1350,19 @@ because ThingsDB needs to know which subscribers to update with changes made to 
 </tr>
 <tr>
 <td><a href="#find">find</a></td>
-<td>Returns the first element for which a given test passes.</td>
+<td>Returns the first element that pass a given test.</td>
 </tr>
 <tr>
 <td><a href="#findindex">findindex</a></td>
-<td>Returns the index of the first element which passes given test.</td>
+<td>Returns the index of the first element that pass a given test.</td>
 </tr>
 <tr>
 <td><a href="#indexof">indexof</a></td>
-<td>Returns the index of a given value, or <code>nil</code> if .</td>
+<td>Returns the index of a given value, or <code>nil</code> if not found.</td>
 </tr>
 <tr>
 <td><a href="#remove">remove</a></td>
-<td>Remove the  by value.</td>
+<td>Removes the first element that pass a given test and returns that element.</td>
 </tr>
 <tr>
 <td><a href="#splice">splice</a></td>
@@ -1395,50 +1399,9 @@ It is not possible to change an array while the array is in use, for example:
 <p><code>$tmp = [1, 2, 3]; $tmp.map(|i| $tmp.push(i));</code></p>
 <p>...will raise <code>BAD_REQUEST</code> <i>(cannot use function `push` while the array is in use)</i></p>
 </aside>
-<h2 id='thing'>Thing</h2><h2 id='closure'>Closure</h2><h1 id='manage-api'>Manage API</h1>
-<p>ThingsDB can be managed with simple query commands. This allows you to manage
-collections, users, nodes and view statistics about the active nodes.
-All manage queries should use target <code>0</code> which is the <code>root</code> of ThingDB.</p>
-<h2 id='collection'>collection</h2>
-<blockquote>
-<p>Returns information about collection <em>stuff</em>:</p>
-</blockquote>
-<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
-<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
-
-<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
-    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
-        collection('stuff');
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
-
-<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
-<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
-</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -q <span class="sh">&lt;&lt; EOQ "
-collection('stuff');
-"
-EOQ
-</span></code></pre>
-<blockquote>
-<p>Example return value in JSON format</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"collection_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">782</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stuff"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"quota_array_size"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"quota_properties"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"quota_raw_size"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"quota_things"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"things"</span><span class="p">:</span><span class="w"> </span><span class="mi">61352</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Returns information about a specific collection.</p>
-
-<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
-<h2 id='collections'>collections</h2>
-<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h2 id='thing'>Thing</h2><h2 id='closure'>Closure</h2><h1 id='node-api'>Node API</h1>
+<p>The <em>node</em> scope can be used to query node statistics, counters or make
+node specific changes.</p>
 <h2 id='counters'>counters</h2>
 <blockquote>
 <p>This code will return node counter values:</p>
@@ -1547,6 +1510,99 @@ counters might provide you with more information.</p>
 <h3 id='return-value'>Return value</h3>
 <p>Returns the new collection <code>id</code> if successful. An <code>INDEX_ERROR</code> is returned
 if the collection already exists.</p>
+<h2 id='node'>node</h2>
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h2 id='nodes'>nodes</h2>
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h2 id='reset_counters'>reset_counters</h2>
+<blockquote>
+<p>This code will reset the counters:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="c"># resets counters on `node.local:9200`</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
+        reset_counters();
+    '''</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># resets counters on `node.local:9200`</span>
+thingscmd -n node.local -u admin -p pass -q <span class="sh">&lt;&lt; EOQ "
+reset_counters();
+"
+EOQ
+</span></code></pre>
+<blockquote>
+<p>Example return value in JSON format (the new collection id)</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="kc">null</span><span class="w">
+</span></code></pre>
+<p>Resets the <a href="#counters">counters</a> for the ThingsDB node you are connected too.
+Other nodes are not affected.</p>
+
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><code>reset_counters();</code></p>
+<h3 id='arguments'>Arguments</h3>
+<p>None</p>
+<h3 id='return-value'>Return value</h3>
+<p>Returns <code>nil</code>.</p>
+<h2 id='set_loglevel'>set_loglevel</h2>
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h2 id='set_zone'>set_zone</h2>
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h2 id='shutdown'>shutdown</h2>
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h1 id='thingsdb-api'>ThingsDB API</h1>
+<p>ThingsDB can be managed with simple query commands. This allows you to manage
+collections, users, access and nodes.</p>
+<h2 id='collection'>collection</h2>
+<blockquote>
+<p>Returns information about collection <em>stuff</em>:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
+        collection('stuff');
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -q <span class="sh">&lt;&lt; EOQ "
+collection('stuff');
+"
+EOQ
+</span></code></pre>
+<blockquote>
+<p>Example return value in JSON format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"collection_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">782</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stuff"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"quota_array_size"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"quota_properties"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"quota_raw_size"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"quota_things"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"things"</span><span class="p">:</span><span class="w"> </span><span class="mi">61352</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Returns information about a specific collection.</p>
+
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h2 id='collections'>collections</h2>
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h2 id='del_collection'>del_collection</h2>
 <blockquote>
 <p>This code will delete collection <em>old_things</em>:</p>
@@ -1639,7 +1695,7 @@ Privileges to ThingsDB gives a user the ability to view counters, add, view remo
 </tr>
 <tr>
 <td><code>WATCH</code> (4)</td>
-<td>Gives watch (and un-watch) privileges. (only applicable to a collection)</td>
+<td>Gives watch (and un-watch) privileges.</td>
 </tr>
 <tr>
 <td><code>GRANT</code> (11)</td>
@@ -1856,56 +1912,12 @@ want to assign some privileges to the new user by using <a href="#grant">grant(.
 <h3 id='return-value'>Return value</h3>
 <p>Returns the new user <code>id</code> if successful. An <code>INDEX_ERROR</code> is raised
 if the user already exists.</p>
-<h2 id='node'>node</h2>
-<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
-<h2 id='nodes'>nodes</h2>
-<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h2 id='pop_node'>pop_node</h2>
 <p>This function generates an <a href="#events">event</a>.</p>
 <h2 id='rename_collection'>rename_collection</h2>
 <p>This function generates an <a href="#events">event</a>.</p>
 <h2 id='rename_user'>rename_user</h2>
 <p>This function generates an <a href="#events">event</a>.</p>
-<h2 id='reset_counters'>reset_counters</h2>
-<blockquote>
-<p>This code will reset the counters:</p>
-</blockquote>
-<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
-<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
-
-<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
-
-<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
-    <span class="c"># resets counters on `node.local:9200`</span>
-    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
-        reset_counters();
-    '''</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
-
-<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># resets counters on `node.local:9200`</span>
-thingscmd -n node.local -u admin -p pass -q <span class="sh">&lt;&lt; EOQ "
-reset_counters();
-"
-EOQ
-</span></code></pre>
-<blockquote>
-<p>Example return value in JSON format (the new collection id)</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="kc">null</span><span class="w">
-</span></code></pre>
-<p>Resets the <a href="#counters">counters</a> for the ThingsDB node you are connected too.
-Other nodes are not affected.</p>
-
-<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
-<h3 id='function'>Function</h3>
-<p><code>reset_counters();</code></p>
-<h3 id='arguments'>Arguments</h3>
-<p>None</p>
-<h3 id='return-value'>Return value</h3>
-<p>Returns <code>nil</code>.</p>
 <h2 id='revoke'>revoke</h2>
 <blockquote>
 <p>Revoke all privileges for user <code>iris</code> on collection <code>stuff</code>:</p>
@@ -2033,7 +2045,7 @@ if the user does not exist and <code>BAD_REQUEST</code> if the new password is n
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         set_quota('stuff', 'things', 10000);
         set_quota('stuff', 'properties', nil);
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">all</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
@@ -2111,10 +2123,6 @@ EOQ
 </tbody></table>
 <h3 id='return-value'>Return value</h3>
 <p><code>nil</code> when successful.</p>
-<h2 id='set_zone'>set_zone</h2>
-<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
-<h2 id='shutdown'>shutdown</h2>
-<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h2 id='user'>user</h2>
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h2 id='users'>users</h2>
@@ -2253,7 +2261,7 @@ not a valid <a href="#names">name</a>.</p>
 
         /* Return a `thing` with only property `age` */
         users[0].filter(|prop| (prop == 'age'));
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">deep</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="nb">all</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">deep</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
@@ -2594,7 +2602,7 @@ The index of an array starts at <code>0</code>, so the first item has index <cod
         int('0xFF');
         int(true);
         int(false);
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="nb">all</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
@@ -2667,7 +2675,7 @@ will raise a <code>BAD_REQUEST</code>.</p>
         isarray( [] );
         isarray( $tmp = [['nested']] );
         isarray( $tmp[0] );
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="nb">all</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
@@ -2724,7 +2732,7 @@ is an <a href="#array">array</a> type or not. The functions <a href="#islist">is
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         isascii( 'ԉ' );
         isascii( 'pi' );
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="nb">all</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
@@ -2779,7 +2787,7 @@ type <code>raw</code> and contains only valid ascii characters.</p>
         isbool( true );
         isbool( 'true' );
         isbool( nil );
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="nb">all</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
@@ -2836,7 +2844,7 @@ is a <a href="#boolean">boolean</a> or not.</p>
         isfloat( 42.0 );
         isfloat( 0.42e+2 );
         isfloat( 42 );
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="nb">all</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
@@ -2897,7 +2905,7 @@ is a <a href="#floating-point">floating point</a> value or not.</p>
         isint( 42.0 );
         isint( '42' );
         isint( true );
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="nb">all</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
@@ -2958,7 +2966,7 @@ is an <a href="#integer">integer</a> or not.</p>
         islist( [] );
         islist( $tmp = [['nested']] );
         islist( $tmp[0] );
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="nb">all</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
@@ -3020,7 +3028,7 @@ is a mutable <a href="#array">array</a> or not.</p>
         isnan( {} );
         isnan( nan );
         isnan( '123' );
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="nb">all</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
@@ -3088,7 +3096,7 @@ EOQ
         istuple( [] );
         istuple( $tmp = [['nested']] );
         istuple( $tmp[0] );
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="nb">all</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
@@ -3144,7 +3152,7 @@ is a immutable <a href="#array">array</a> or not. At least nested arrays are of 
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         isutf8( 'ԉ' );
         isutf8( 'pi' );
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="nb">all</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
@@ -3419,7 +3427,7 @@ can be higher of lower depending on how the value is stored and used.
         ( $tmp = [1, 2, 3, 4] ).ret();
         $tmp.remove(|x| (x </span><span class="si">% 2</span><span class="s"> == 0));
         $tmp;
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="nb">all</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
@@ -3698,7 +3706,7 @@ for example: <code>thing(666,);</code> and this will return an array with one th
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         'Hello world!!'.test(/^hello/);
         'Hello world!!'.test(/^hello/i);
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="nb">all</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
@@ -3753,7 +3761,7 @@ EOQ
         try( (1/0), 0 );
         try( (1/0), 0, 'ZERO_DIV_ERROR' );
         try( (1/0), 0, 97 );
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="nb">all</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
