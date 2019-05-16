@@ -41,7 +41,7 @@ Mask | Description
 ---- | -----------
 `READ` (1) | Gives read access.
 `MODIFY` (3) | Gives read and modify access.
-`WATCH` (4) | Gives watch (and un-watch) privileges. (only applicable to a collection)
+`WATCH` (4) | Gives watch (and un-watch) privileges.
 `GRANT` (11) | Gives read, modify and grant(/revoke) privileges.
 `FULL` (15) | Gives full privileges.
 

@@ -18,7 +18,7 @@ async def example():
         isnan( {} );
         isnan( nan );
         isnan( '123' );
-    ''', target='stuff', all=True)
+    ''', target='stuff', all_=True)
     print(res)
 
 client = Client()

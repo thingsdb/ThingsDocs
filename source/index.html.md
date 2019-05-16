@@ -12,27 +12,30 @@ toc_footers:
 includes:
   - operators
   - types
-  - manage_api
+  - scopes
+  - node_api
+  - n_counters
+  - n_node
+  - n_nodes
+  - n_reset_counters
+  - n_set_loglevel
+  - n_set_zone
+  - n_shutdown
+  - thingsdb_api
   - r_collection
   - r_collections
-  - r_counters
   - r_del_collection
   - r_del_user
   - r_grant
   - r_new_collection
   - r_new_node
   - r_new_user
-  - r_node
-  - r_nodes
   - r_pop_node
   - r_rename_collection
   - r_rename_user
-  - r_reset_counters
   - r_revoke
   - r_set_password
   - r_set_quota
-  - r_set_zone
-  - r_shutdown
   - r_user
   - r_users
   - collection_api
@@ -117,12 +120,11 @@ loop.run_until_complete(client.wait_closed())
 ```
 
 ```shell
-thingscmd -n node.local -u admin -p pass -c << EOL
+thingscmd -n node.local -u admin -p pass -q << EOL
 /* Creates a new collection */
 new_collection('awesome_things');
 EOL
 ```
-
 
 
 ThingsDB uses a user and password combination for access. A default user `admin` with password `pass` is created on a fresh installation.
@@ -170,9 +172,9 @@ async def example():
     )
     res = await client.query(
         "'Hello world!!'",  # query string
-        target='stuff',     # target collection, default 0 (no collection)
+        target=client.node, # collection, node or thingsdb, default thingsdb
         deep=1,             # depth to return `things`, default 1
-        all=False,          # return only the last statement, default False
+        all_=False,         # return only the last statement, default False
         blobs=[],           # blob values, default None
     )
     print(res)
@@ -186,7 +188,7 @@ thingscmd \
     --node        node.local \
     --user        admin      \
     --password    pass       \
-    --collection  stuff      \
+    --scope       node       \
     --deep        1          \
     --query       "'Hello world!!'"
 ```
@@ -202,7 +204,7 @@ thingscmd \
 }
 ```
 
-Queries to ThingsDB can be used to [manage](#manage-api) ThingsDB, or to query [collections](#collection-api).
+Queries to ThingsDB can be used to manage [nodes](#node-api), [ThingsDB](#thingsdb-api) or to query [collections](#collection-api).
 
 ThingsDB will respond with the last statement result, or, when `all` is set to `true`,
 an array containing the results for each statement. In case a statement fails, the other statements are
@@ -259,7 +261,7 @@ Type | Number | Description
 --------| -----| -----------
 `PING`  | 32 | Ping, useful as keep-alive.
 `AUTH`  | 33 | Authentication, expects: `[username, password]`
-`QUERY` | 34 | Query, see [query](#query) for more info.
+`QUERY_COLLECTION` | 36 | Query, see [query](#query) for more info.
 `WATCH` | 48 | Watch, see [watch](#watch) for more info.
 `UNWATCH` | 49 | Stop watching specified things, see [watch](#watch) for more info.
 

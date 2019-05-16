@@ -15,7 +15,7 @@ async def example():
         isint( 42.0 );
         isint( '42' );
         isint( true );
-    ''', target='stuff', all=True)
+    ''', target='stuff', all_=True)
     print(res)
 
 client = Client()

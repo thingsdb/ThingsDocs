@@ -14,7 +14,7 @@ async def example():
         try( (1/0), 0 );
         try( (1/0), 0, 'ZERO_DIV_ERROR' );
         try( (1/0), 0, 97 );
-    ''', target='stuff', all=True)
+    ''', target='stuff', all_=True)
     print(res)
 
 client = Client()

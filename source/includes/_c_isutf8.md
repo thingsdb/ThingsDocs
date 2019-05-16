@@ -12,7 +12,7 @@ async def example():
     res = await client.query(r'''
         isutf8( 'ԉ' );
         isutf8( 'pi' );
-    ''', target='stuff', all=True)
+    ''', target='stuff', all_=True)
     print(res)
 
 client = Client()

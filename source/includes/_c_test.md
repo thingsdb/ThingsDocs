@@ -12,7 +12,7 @@ async def example():
     res = await client.query(r'''
         'Hello world!!'.test(/^hello/);
         'Hello world!!'.test(/^hello/i);
-    ''', target='stuff', all=True)
+    ''', target='stuff', all_=True)
     print(res)
 
 client = Client()

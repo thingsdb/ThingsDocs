@@ -15,7 +15,7 @@ async def example():
 
         /* Return a `thing` with only property `age` */
         users[0].filter(|prop| (prop == 'age'));
-    ''', target='stuff', deep=2, all=True)
+    ''', target='stuff', deep=2, all_=True)
     print(res)
 
 client = Client()

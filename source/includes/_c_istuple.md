@@ -13,7 +13,7 @@ async def example():
         istuple( [] );
         istuple( $tmp = [['nested']] );
         istuple( $tmp[0] );
-    ''', target='stuff', all=True)
+    ''', target='stuff', all_=True)
     print(res)
 
 client = Client()

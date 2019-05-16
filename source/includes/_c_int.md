@@ -16,7 +16,7 @@ async def example():
         int('0xFF');
         int(true);
         int(false);
-    ''', target='stuff', all=True)
+    ''', target='stuff', all_=True)
     print(res)
 
 client = Client()

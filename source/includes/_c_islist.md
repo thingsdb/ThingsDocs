@@ -13,7 +13,7 @@ async def example():
         islist( [] );
         islist( $tmp = [['nested']] );
         islist( $tmp[0] );
-    ''', target='stuff', all=True)
+    ''', target='stuff', all_=True)
     print(res)
 
 client = Client()

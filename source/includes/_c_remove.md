@@ -13,7 +13,7 @@ async def example():
         ( $tmp = [1, 2, 3, 4] ).ret();
         $tmp.remove(|x| (x % 2 == 0));
         $tmp;
-    ''', target='stuff', all=True)
+    ''', target='stuff', all_=True)
     print(res)
 
 client = Client()

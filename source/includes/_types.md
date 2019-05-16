@@ -231,10 +231,10 @@ because ThingsDB needs to know which subscribers to update with changes made to 
 Method | Description
 ------ | -----------
 [filter](#filter) | Return a new `array` with elements that pass a given test.
-[find](#find) | Returns the first element for which a given test passes.
-[findindex](#findindex) | Returns the index of the first element which passes given test.
-[indexof](#indexof) | Returns the index of a given value, or `nil` if .
-[remove](#remove) | Remove the  by value.
+[find](#find) | Returns the first element that pass a given test.
+[findindex](#findindex) | Returns the index of the first element that pass a given test.
+[indexof](#indexof) | Returns the index of a given value, or `nil` if not found.
+[remove](#remove) | Removes the first element that pass a given test and returns that element.
 [splice](#splice) | Determines if a string starts with characters given by another string.
 [pop](#pop) | Removes the last element from an array and returns that element.
 [push](#push) | Adds new items to the end of an array, and returns the new length.

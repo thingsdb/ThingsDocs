@@ -12,7 +12,7 @@ async def example():
     res = await client.query(r'''
         set_quota('stuff', 'things', 10000);
         set_quota('stuff', 'properties', nil);
-    ''', target=0, all=True)
+    ''', target=0, all_=True)
     print(res)
 
 client = Client()

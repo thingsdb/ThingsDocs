@@ -13,7 +13,7 @@ async def example():
         isbool( true );
         isbool( 'true' );
         isbool( nil );
-    ''', target='stuff', all=True)
+    ''', target='stuff', all_=True)
     print(res)
 
 client = Client()

@@ -13,7 +13,7 @@ async def example():
         isfloat( 42.0 );
         isfloat( 0.42e+2 );
         isfloat( 42 );
-    ''', target='stuff', all=True)
+    ''', target='stuff', all_=True)
     print(res)
 
 client = Client()
