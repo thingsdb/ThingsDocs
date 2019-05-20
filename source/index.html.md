@@ -38,6 +38,7 @@ includes:
   - r_user
   - r_users
   - collection_api
+  - c_assert
   - c_blob
   - c_del
   - c_filter
