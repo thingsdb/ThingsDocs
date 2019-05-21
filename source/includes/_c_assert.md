@@ -42,7 +42,7 @@ This function does *not* generate an [event](#events).
 
 
 ### Function
-`assert(statement, [error_msg], [error_code])`
+`assert(statement [, error_msg] [, error_code])`
 
 ### Arguments
 Argument | Type | Description

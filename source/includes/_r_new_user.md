@@ -26,7 +26,7 @@ new_user('iris', 'siri');
 EOQ
 ```
 
-> Example return value in JSON format (the new collection id)
+> Example return value in JSON format (the new user id)
 
 ```json
 null

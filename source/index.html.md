@@ -32,6 +32,7 @@ includes:
   - r_pop_node
   - r_rename_collection
   - r_rename_user
+  - r_replace_node
   - r_revoke
   - r_set_password
   - r_set_quota
