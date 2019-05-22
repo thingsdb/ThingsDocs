@@ -289,7 +289,10 @@
                     <a href="#nil" class="toc-h2 toc-link" data-title="Nil">Nil</a>
                   </li>
                   <li>
-                    <a href="#string-raw" class="toc-h2 toc-link" data-title="String / Raw">String / Raw</a>
+                    <a href="#string" class="toc-h2 toc-link" data-title="String">String</a>
+                  </li>
+                  <li>
+                    <a href="#raw" class="toc-h2 toc-link" data-title="Raw">Raw</a>
                   </li>
                   <li>
                     <a href="#boolean" class="toc-h2 toc-link" data-title="Boolean">Boolean</a>
@@ -377,6 +380,9 @@
                     <a href="#rename_user" class="toc-h2 toc-link" data-title="rename_user">rename_user</a>
                   </li>
                   <li>
+                    <a href="#replace_node" class="toc-h2 toc-link" data-title="replace_node">replace_node</a>
+                  </li>
+                  <li>
                     <a href="#revoke" class="toc-h2 toc-link" data-title="revoke">revoke</a>
                   </li>
                   <li>
@@ -413,12 +419,6 @@
                   </li>
                   <li>
                     <a href="#findindex" class="toc-h2 toc-link" data-title="findindex">findindex</a>
-                  </li>
-                  <li>
-                    <a href="#get" class="toc-h2 toc-link" data-title="get">get</a>
-                  </li>
-                  <li>
-                    <a href="#hasattr" class="toc-h2 toc-link" data-title="hasattr">hasattr</a>
                   </li>
                   <li>
                     <a href="#hasprop" class="toc-h2 toc-link" data-title="hasprop">hasprop</a>
@@ -464,6 +464,9 @@
                   </li>
                   <li>
                     <a href="#isutf8" class="toc-h2 toc-link" data-title="isutf8">isutf8</a>
+                  </li>
+                  <li>
+                    <a href="#len" class="toc-h2 toc-link" data-title="len">len</a>
                   </li>
                   <li>
                     <a href="#lower" class="toc-h2 toc-link" data-title="lower">lower</a>
@@ -1112,7 +1115,9 @@ EOQ
 <h2 id='nil'>Nil</h2>
 <p>Probably the most simple type, it&#39;s used as <em>no value</em>.
 What more can we say about <code>nil</code>?</p>
-<h2 id='string-raw'>String / Raw</h2>
+<h2 id='string'>String</h2>
+<p>See <a href="#raw">raw</a> since both <em>strings</em> and <em>blobs</em> are implemented in ThingsDB as type <code>raw</code>.</p>
+<h2 id='raw'>Raw</h2>
 <blockquote>
 <p>This code creates a <em>raw</em> property <em>greet</em> to collection <em>stuff</em>:</p>
 </blockquote>
@@ -1148,6 +1153,10 @@ EOQ
 <tr>
 <td><a href="#endsswith">endsswith</a></td>
 <td>Determines if a string ends with characters given by another string.</td>
+</tr>
+<tr>
+<td><a href="#len">len</a></td>
+<td>Returns the length of a string.</td>
 </tr>
 <tr>
 <td><a href="#lower">lower</a></td>
@@ -1349,7 +1358,7 @@ because ThingsDB needs to know which subscribers to update with changes made to 
 </thead><tbody>
 <tr>
 <td><a href="#filter">filter</a></td>
-<td>Return a new <code>array</code> with elements that pass a given test.</td>
+<td>Returns a new <code>array</code> with elements that pass a given test.</td>
 </tr>
 <tr>
 <td><a href="#find">find</a></td>
@@ -1364,12 +1373,12 @@ because ThingsDB needs to know which subscribers to update with changes made to 
 <td>Returns the index of a given value, or <code>nil</code> if not found.</td>
 </tr>
 <tr>
-<td><a href="#remove">remove</a></td>
-<td>Removes the first element that pass a given test and returns that element.</td>
+<td><a href="#len">len</a></td>
+<td>Returns the length of the array.</td>
 </tr>
 <tr>
-<td><a href="#splice">splice</a></td>
-<td>Determines if a string starts with characters given by another string.</td>
+<td><a href="#map">map</a></td>
+<td>Returns a new <code>array</code> with the results of calling a provided closure on every element.</td>
 </tr>
 <tr>
 <td><a href="#pop">pop</a></td>
@@ -1378,6 +1387,14 @@ because ThingsDB needs to know which subscribers to update with changes made to 
 <tr>
 <td><a href="#push">push</a></td>
 <td>Adds new items to the end of an array, and returns the new length.</td>
+</tr>
+<tr>
+<td><a href="#remove">remove</a></td>
+<td>Removes the first element that pass a given test and returns that element.</td>
+</tr>
+<tr>
+<td><a href="#splice">splice</a></td>
+<td>Determines if a string starts with characters given by another string.</td>
 </tr>
 </tbody></table>
 <h3 id='array-types'>Array Types</h3>
@@ -1402,7 +1419,39 @@ It is not possible to change an array while the array is in use, for example:
 <p><code>$tmp = [1, 2, 3]; $tmp.map(|i| $tmp.push(i));</code></p>
 <p>...will raise <code>BAD_REQUEST</code> <i>(cannot use function `push` while the array is in use)</i></p>
 </aside>
-<h2 id='thing'>Thing</h2><h2 id='closure'>Closure</h2><h1 id='node-api'>Node API</h1>
+<h2 id='thing'>Thing</h2><h3 id='methods-3'>Methods</h3>
+<table><thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><a href="#del">del</a></td>
+<td>Remove a property.</td>
+</tr>
+<tr>
+<td><a href="#filter">filter</a></td>
+<td>Return a new <code>thing</code> with properties that pass a given test.</td>
+</tr>
+<tr>
+<td><a href="#id">id</a></td>
+<td>Return the <code>id</code>.</td>
+</tr>
+<tr>
+<td><a href="#len">len</a></td>
+<td>Returns the number of items.</td>
+</tr>
+<tr>
+<td><a href="#map">map</a></td>
+<td>Returns a <a href="#array">array</a> with the results of calling a provided closure on every item.</td>
+</tr>
+<tr>
+<td><a href="#rename">rename</a></td>
+<td>Rename a given property.</td>
+</tr>
+</tbody></table>
+<h2 id='closure'>Closure</h2><h1 id='node-api'>Node API</h1>
 <p>The <em>node</em> scope can be used to query node statistics, counters or make
 node specific changes.</p>
 <h2 id='counters'>counters</h2>
@@ -1823,9 +1872,9 @@ new_node('my-one-time-serect', 'node2.local');
 EOQ
 </span></code></pre>
 <blockquote>
-<p>Example return value in JSON format (the new collection id)</p>
+<p>Example return value in JSON format (the new node id)</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="kc">null</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="mi">1</span><span class="w">
 </span></code></pre>
 <p>Adds a new node to ThingsDB. Nodes are used for scaling and high availability.</p>
 
@@ -1882,7 +1931,7 @@ new_user('iris', 'siri');
 EOQ
 </span></code></pre>
 <blockquote>
-<p>Example return value in JSON format (the new collection id)</p>
+<p>Example return value in JSON format (the new user id)</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="kc">null</span><span class="w">
 </span></code></pre>
@@ -1921,6 +1970,77 @@ if the user already exists.</p>
 <p>This function generates an <a href="#events">event</a>.</p>
 <h2 id='rename_user'>rename_user</h2>
 <p>This function generates an <a href="#events">event</a>.</p>
+<h2 id='replace_node'>replace_node</h2>
+<blockquote>
+<p>Replace node with id 1:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="c"># node3.local must be started using the `--secret ...` argument</span>
+    <span class="c"># and the node with id 1 must be turned off</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node1.local'</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
+        replace_node(1, 'my-one-time-serect', 'node3.local');
+    '''</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># node3.local must be started using the `--secret ...` argument</span>
+<span class="c"># and the node with id 1 must be turned off</span>
+thingscmd -n node.local -u admin -p pass -q <span class="sh">&lt;&lt; EOQ "
+replace_node(1, 'my-one-time-serect', 'node3.local');
+"
+EOQ
+</span></code></pre>
+<blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="kc">null</span><span class="w">
+</span></code></pre>
+<p>Replace a node in ThingsDB. This can be used if an existing node has a
+unrecoverable state, for example a hardware failure. This function requires
+a node id as its first argument which can be queried using the <a href="#nodes">nodes()</a>
+function.</p>
+
+<p>This function generates an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><code>replace_node(node_id, secret, ip_address [, port]);</code></p>
+<h3 id='arguments'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>node_id</code></td>
+<td>int (required)</td>
+<td>Node id of the node to replace.</td>
+</tr>
+<tr>
+<td><code>secret</code></td>
+<td>raw (required)</td>
+<td>Secret used to initially connect to the new node.</td>
+</tr>
+<tr>
+<td><code>ip_address</code></td>
+<td>raw (required)</td>
+<td>IP Address (IPv4 or IPv6) of the new node.</td>
+</tr>
+<tr>
+<td><code>port</code></td>
+<td>int (optional)</td>
+<td>Node port (<code>listen_node_port</code>), an integer between 0 an 65535, default <strong>9220</strong>.</td>
+</tr>
+</tbody></table>
+<h3 id='return-value'>Return value</h3>
+<p>Returns <code>nil</code> if successful.</p>
 <h2 id='revoke'>revoke</h2>
 <blockquote>
 <p>Revoke all privileges for user <code>iris</code> on collection <code>stuff</code>:</p>
@@ -2182,7 +2302,7 @@ EOQ
 
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h3 id='function'>Function</h3>
-<p><code>assert(statement, [error_msg], [error_code])</code></p>
+<p><code>assert(statement [, error_msg] [, error_code])</code></p>
 <h3 id='arguments'>Arguments</h3>
 <table><thead>
 <tr>
@@ -2547,10 +2667,6 @@ Otherwise <code>nil</code> is returned.</p>
 <h3 id='return-value'>Return value</h3>
 <p>The index of the first element in the array or thing that satisfies the provided testing function;
 otherwise, <code>nil</code> is returned.</p>
-<h2 id='get'>get</h2>
-<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
-<h2 id='hasattr'>hasattr</h2>
-<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h2 id='hasprop'>hasprop</h2>
 <blockquote>
 <p>This code shows an example use case of <strong><em>hasprop()</em></strong>:</p>
@@ -2602,7 +2718,41 @@ EOQ
 <h3 id='return-value'>Return value</h3>
 <p>Returns <code>true</code> the given property is found and otherwise <code>false</code>.</p>
 <h2 id='id'>id</h2>
+<blockquote>
+<p>This code uses <code>id()</code> to return a collection id:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
+        id();
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+id();
+"
+EOQ
+</span></code></pre>
+<blockquote>
+<p>Example return value in JSON format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="mi">3</span><span class="w">
+</span></code></pre>
+<p>Returns the <code>id</code> of a <a href="#thing">thing</a>.</p>
+
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><em>thing</em>.<code>id()</code></p>
+<h3 id='arguments'>Arguments</h3>
+<p>None</p>
+<h3 id='return-value'>Return value</h3>
+<p>Returns <code>id</code> of a thing.</p>
 <h2 id='indexof'>indexof</h2>
 <blockquote>
 <p>This code shows an example using <strong><em>indexof()</em></strong>:</p>
@@ -3260,6 +3410,42 @@ type <code>raw</code> and contains valid utf8.</p>
 </tbody></table>
 <h3 id='return-value'>Return value</h3>
 <p>Returns <code>true</code> is the given value is of type <code>raw</code> and contains valid utf8, else <code>false</code>.</p>
+<h2 id='len'>len</h2>
+<blockquote>
+<p>This code uses <code>len()</code> to return the number of items in a collection:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
+        len();
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+len();
+"
+EOQ
+</span></code></pre>
+<blockquote>
+<p>Example return value in JSON format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="mi">4</span><span class="w">
+</span></code></pre>
+<p>Returns the length of an <a href="#array">array</a> or <a href="#raw">string</a>, or the number of items in a <a href="#thing">thing</a>.</p>
+
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><em>iterable</em>.<code>len()</code></p>
+<h3 id='arguments'>Arguments</h3>
+<p>None</p>
+<h3 id='return-value'>Return value</h3>
+<p>Returns length of the iterable.</p>
 <h2 id='lower'>lower</h2>
 <blockquote>
 <p>Example using <strong><em>lower()</em></strong>:</p>
