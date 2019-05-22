@@ -6,8 +6,11 @@ ThingsDB has some basic
 Probably the most simple type, it's used as *no value*.
 What more can we say about `nil`?
 
+## String
 
-## String / Raw
+See [raw](#raw) since both *strings* and *blobs* are implemented in ThingsDB as type `raw`.
+
+## Raw
 
  > This code creates a *raw* property *greet* to collection *stuff*:
 
@@ -43,6 +46,7 @@ ThingsDB has only type `raw` which is used for storing both *strings* and *blob*
 Method | Description
 ------ | -----------
 [endsswith](#endsswith) | Determines if a string ends with characters given by another string.
+[len](#len) | Returns the length of a string.
 [lower](#lower) | Return a new string in which all case-based characters are in lower case.
 [startswith](#startswith) | Determines if a string starts with characters given by another string.
 [test](#test) | Test if a string matches a given regular expression and return `true` or `false`.
@@ -230,14 +234,16 @@ because ThingsDB needs to know which subscribers to update with changes made to 
 ### Methods
 Method | Description
 ------ | -----------
-[filter](#filter) | Return a new `array` with elements that pass a given test.
+[filter](#filter) | Returns a new `array` with elements that pass a given test.
 [find](#find) | Returns the first element that pass a given test.
 [findindex](#findindex) | Returns the index of the first element that pass a given test.
 [indexof](#indexof) | Returns the index of a given value, or `nil` if not found.
-[remove](#remove) | Removes the first element that pass a given test and returns that element.
-[splice](#splice) | Determines if a string starts with characters given by another string.
+[len](#len) | Returns the length of the array.
+[map](#map) | Returns a new `array` with the results of calling a provided closure on every element.
 [pop](#pop) | Removes the last element from an array and returns that element.
 [push](#push) | Adds new items to the end of an array, and returns the new length.
+[remove](#remove) | Removes the first element that pass a given test and returns that element.
+[splice](#splice) | Determines if a string starts with characters given by another string.
 
 
 ### Array Types
@@ -255,6 +261,16 @@ It is not possible to change an array while the array is in use, for example:
 
 
 ## Thing
+
+### Methods
+Method | Description
+------ | -----------
+[del](#del) | Remove a property.
+[filter](#filter) | Return a new `thing` with properties that pass a given test.
+[id](#id) | Return the `id`.
+[len](#len) | Returns the number of items.
+[map](#map) | Returns a [array](#array) with the results of calling a provided closure on every item.
+[rename](#rename) | Rename a given property.
 
 
 ## Closure

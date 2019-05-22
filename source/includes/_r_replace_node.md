@@ -1,4 +1,4 @@
-## new_node
+## replace_node
 
 > Replace node with id 1:
 

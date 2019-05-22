@@ -45,8 +45,6 @@ includes:
   - c_filter
   - c_find
   - c_findindex
-  - c_get
-  - c_hasattr
   - c_hasprop
   - c_id
   - c_indexof
@@ -62,6 +60,7 @@ includes:
   - c_isstr
   - c_istuple
   - c_isutf8
+  - c_len
   - c_lower
   - c_map
   - c_now
