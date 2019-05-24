@@ -10,7 +10,7 @@ async def example():
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
         collection('stuff');
-    ''', target=0)
+    ''', target=client.thingsdb)
     print(res)
 
 client = Client()
