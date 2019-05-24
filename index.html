@@ -1627,7 +1627,7 @@ collections, users, access and nodes.</p>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         collection('stuff');
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">thingsdb</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
@@ -2168,7 +2168,7 @@ if the user does not exist and <code>BAD_REQUEST</code> if the new password is n
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         set_quota('stuff', 'things', 10000);
         set_quota('stuff', 'properties', nil);
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">thingsdb</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
