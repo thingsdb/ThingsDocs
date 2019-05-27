@@ -49,7 +49,7 @@ Otherwise `nil` is returned unless an alternative return value is specified.
 This function generates an [event](#events).
 
 ### Function
-*mutable_array*.`remove(callback, [alt])`
+*list*.`remove(callback, [alt])`
 
 ### Arguments
 Argument | Type | Description
