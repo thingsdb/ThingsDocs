@@ -496,9 +496,6 @@
                     <a href="#ret" class="toc-h2 toc-link" data-title="ret">ret</a>
                   </li>
                   <li>
-                    <a href="#set" class="toc-h2 toc-link" data-title="set">set</a>
-                  </li>
-                  <li>
                     <a href="#splice" class="toc-h2 toc-link" data-title="splice">splice</a>
                   </li>
                   <li>
@@ -3589,17 +3586,45 @@ on a <code>list</code> type array, but not on a <code>tuple</code> since tuples 
 
 <p>This function generates an <a href="#events">event</a>.</p>
 <h3 id='function'>Function</h3>
-<p><em>mutable_array</em>.<code>pop()</code></p>
+<p><em>list</em>.<code>pop()</code></p>
 <h3 id='arguments'>Arguments</h3>
 <p>None</p>
 <h3 id='return-value'>Return value</h3>
 <p>The removed element from the array. An <code>INDEX_ERROR</code> is raised if the array is empty.</p>
 <h2 id='push'>push</h2>
+<blockquote>
+<p>This code pushes values to a list:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
+        list = [1, 2, 3];
+        list.push(4, 5, 6);
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+list = [1, 2, 3];
+list.push(4, 5, 6);
+"
+EOQ
+</span></code></pre>
+<blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="mi">6</span><span class="w">
+</span></code></pre>
 <p>Adds new items to the end of an array, and returns the new length.</p>
 
 <p>This function generates an <a href="#events">event</a>.</p>
 <h3 id='function'>Function</h3>
-<p><em>mutable_array</em>.<code>push(item1, item2, ..., itemX)</code></p>
+<p><em>list</em>.<code>push(item1, item2, ..., itemX)</code></p>
 <h3 id='return-value'>Return value</h3>
 <p>Returns the new length of the list.</p>
 <h2 id='refs'>refs</h2>
@@ -3710,7 +3735,7 @@ Otherwise <code>nil</code> is returned unless an alternative return value is spe
 
 <p>This function generates an <a href="#events">event</a>.</p>
 <h3 id='function'>Function</h3>
-<p><em>mutable_array</em>.<code>remove(callback, [alt])</code></p>
+<p><em>list</em>.<code>remove(callback, [alt])</code></p>
 <h3 id='arguments'>Arguments</h3>
 <table><thead>
 <tr>
@@ -3756,7 +3781,65 @@ Here, the item will <i>only</i> be popped, in case <code>e</code> with <code>nam
 <p>The value of the first element in the array or thing that satisfies the provided testing function;
 otherwise, <code>nil</code> or a specified alternative value is returned.</p>
 <h2 id='rename'>rename</h2>
+<blockquote>
+<p>This code renames property <code>world</code> to <code>universe</code>:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
+        world = 'huge';
+        rename('world', 'universe');
+        map(|k|k);
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+world = 'huge';
+rename('world', 'universe');
+map(|k|k);
+"
+EOQ
+</span></code></pre>
+<blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="s2">"universe"</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Rename a property on a <a href="#thing">thing</a>. The <em>destination</em> property with value will be overwritten
+if it already existed.</p>
+
 <p>This function generates an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><em>thing</em>.<code>rename(current, dest)</code></p>
+<h3 id='arguments'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>current</td>
+<td>raw (required)</td>
+<td>Name of the property to rename.</td>
+</tr>
+<tr>
+<td>dest</td>
+<td>raw (required)</td>
+<td>New name of the property.</td>
+</tr>
+</tbody></table>
+<h3 id='return-value'>Return value</h3>
+<p>Returns <code>nil</code> is the rename was successful.</p>
 <h2 id='ret'>ret</h2>
 <blockquote>
 <p>This code show how to use function <strong><em>ret()</em></strong>:</p>
@@ -3793,10 +3876,74 @@ unnecessary network traffic.</p>
 <p><em>value</em>.<code>ret()</code></p>
 <h3 id='return-value'>Return value</h3>
 <p>Returns <code>nil</code>.</p>
-<h2 id='set'>set</h2>
-<p>This function generates an <a href="#events">event</a>.</p>
 <h2 id='splice'>splice</h2>
-<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<blockquote>
+<p>This code replaces an element in a list at position 2:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
+        months = ['Jan', 'Feb', 'April'];
+        months.splice(2, 1, 'March');       /* Returns: ['April'] */
+        months;
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+months = ['Jan', 'Feb', 'April'];
+months.splice(2, 1, 'March');       /* Returns: ['April'] */
+months;
+"
+EOQ
+</span></code></pre>
+<blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="s2">"Jan"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Feb"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"March"</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>The <code>splice()</code> method changes the contents of an array by removing or replacing
+existing elements and/or adding new elements in place.</p>
+
+<p>This function generates an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><em>list</em>.<code>splice(start, [delete_count, [item1, item2, ..., itemX]])</code>)`</p>
+<h3 id='arguments'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>start</td>
+<td>int (required)</td>
+<td>Start index in the array. If negative, it will begin that many elements from the end of the array.</td>
+</tr>
+<tr>
+<td>delete_count</td>
+<td>int (optional)</td>
+<td>Number of item to remove from <code>start</code>. If <code>&lt;= 0</code>, no items will be removed.</td>
+</tr>
+<tr>
+<td>item1, item2, ..., itemX</td>
+<td>any (optional)</td>
+<td>Items to add, beginning from <code>start</code>.</td>
+</tr>
+</tbody></table>
+<h3 id='return-value'>Return value</h3>
+<p>An array containing the deleted elements. If only one element is removed,
+an array of one element is returned. If no elements are removed, an empty array is returned.</p>
 <h2 id='startswith'>startswith</h2>
 <blockquote>
 <p>This code shows an example using <strong><em>startswith()</em></strong>:</p>
