@@ -2379,7 +2379,7 @@ to use this function to <em>get</em> the blob value.</p>
 if the blob at the given <code>index</code> does not exist.</p>
 <h2 id='del'>del</h2>
 <blockquote>
-<p>This code shows some return values for <strong><em>try()</em></strong>:</p>
+<p>This code shows some return values for <strong><em>del()</em></strong>:</p>
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
 <span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
@@ -4276,57 +4276,57 @@ EOQ
 </thead><tbody>
 <tr>
 <td><code>OVERFLOW_ERROR</code></td>
-<td>-96</td>
+<td>96</td>
 <td>Integer is too large to fit a 64 bit signed integer.</td>
 </tr>
 <tr>
 <td><code>ZERO_DIV_ERROR</code></td>
-<td>-97</td>
+<td>97</td>
 <td>Trying a division or module by zero.</td>
 </tr>
 <tr>
 <td><code>MAX_QUOTA_ERROR</code></td>
-<td>-98</td>
+<td>98</td>
 <td>Your collection has quotas set and the limit is reached.</td>
 </tr>
 <tr>
 <td><code>AUTH_ERROR</code></td>
-<td>-99</td>
+<td>99</td>
 <td>Wrong credentials or a request while the connection is not authenticated.</td>
 </tr>
 <tr>
 <td><code>FORBIDDEN</code></td>
-<td>-100</td>
+<td>100</td>
 <td>You lack the privileges to do the request.</td>
 </tr>
 <tr>
 <td><code>INDEX_ERROR</code></td>
-<td>-101</td>
+<td>101</td>
 <td>Index out of range or trying to access an invalid property.</td>
 </tr>
 <tr>
 <td><code>BAD_REQUEST</code></td>
-<td>-102</td>
+<td>102</td>
 <td>Invalid data, for example an invalid data type used in a query.</td>
 </tr>
 <tr>
 <td><code>QUERY_ERROR</code></td>
-<td>-103</td>
+<td>103</td>
 <td>Syntax error in the query.</td>
 </tr>
 <tr>
 <td><code>NODE_ERROR</code></td>
-<td>-104</td>
+<td>104</td>
 <td>At least one node has an issue while processing the request.</td>
 </tr>
 <tr>
 <td><code>ASSERTION_ERROR</code></td>
-<td>-105</td>
-<td><a href="#assert">Assertion</a> statement has failed.</td>
+<td>105</td>
+<td><a href="#assert">Assertion</a> statement has failed, the error code may have been set to an integer in the range <code>1-32</code>.</td>
 </tr>
 <tr>
 <td><code>INTERNAL_ERROR</code></td>
-<td>-127</td>
+<td>127</td>
 <td>Node is probably out-of-memory or out-of-disk-space.</td>
 </tr>
 </tbody></table>
