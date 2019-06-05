@@ -1,6 +1,6 @@
 ## del
 
-> This code shows some return values for ***try()***:
+> This code shows some return values for ***del()***:
 
 ```python
 import asyncio
