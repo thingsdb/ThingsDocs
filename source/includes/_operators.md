@@ -181,7 +181,7 @@ EOQ
 ]
 ```
 
-Logical operators are typically used with [boolean](#boolean) values.
+Logical operators are typically used with [bool](#bool) values.
 
 Operator | Description
 -------- | -----------

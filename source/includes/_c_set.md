@@ -1,6 +1,6 @@
-## isbool
+## set
 
-> This code shows some return values for ***isbool()***:
+> This code shows some return values for ***set()***:
 
 ```python
 import asyncio
@@ -10,9 +10,8 @@ async def example():
     await client.connect('node.local')
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
-        isbool( true );
-        isbool( 'true' );
-        isbool( nil );
+        set();
+        set([{}, {}]);
     ''', target='stuff', all_=True)
     print(res)
 
@@ -22,9 +21,8 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 thingscmd -n node.local -u admin -p pass -c stuff -a -q << EOQ "
-isbool( true );
-isbool( 'true' );
-isbool( nil );
+set();
+set([{}, {}]);
 "
 EOQ
 ```
@@ -33,24 +31,35 @@ EOQ
 
 ```json
 [
-    true,
-    false,
-    false
+    {
+        "!": []
+    },
+    {
+        "!": [
+            {
+                "#": 0
+            },
+            {
+                "#": 0
+            }
+        ]
+    }
 ]
 ```
 
-This function determines whether the value passed to this function
-is a [bool](#bool) or not.
+Returns a new empty [set](#set). If an array is given, then all elements in the
+given array must be or type `thing` and a new set is returned based on the
+given things.
 
 This function does *not* generate an [event](#events).
 
 ### Function
-`isbool(value)`
+`set([array])`
 
 ### Arguments
 Argument | Type | Description
 -------- | ---- | -----------
-value | any (required) | The value to be tested.
+array | array (optional) | Optional array to initialize the set.
 
 ### Return value
-Returns `true` is the passed value is a boolean else it returns `false`.
+A new set.

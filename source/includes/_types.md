@@ -60,7 +60,7 @@ a value. (unless you *download* the value first.)
 </aside>
 
 
-## Boolean
+## Bool
 
 > This code creates a *bool* property *is_the_earth_flat* to collection *stuff*:
 
@@ -94,7 +94,7 @@ Boolean are either `true` or `false`.
 Other types can convert to `bool` by using the `!` (not) operator or the [bool](#bool) function.
 
 
-## Integer
+## Int
 
  > This code creates a *int* property *count* to collection *stuff*:
 

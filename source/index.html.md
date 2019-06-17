@@ -41,10 +41,12 @@ includes:
   - collection_api
   - c_assert
   - c_blob
+  - c_bool
   - c_del
   - c_filter
   - c_find
   - c_findindex
+  - c_has
   - c_hasprop
   - c_id
   - c_indexof
@@ -70,13 +72,13 @@ includes:
   - c_remove
   - c_rename
   - c_ret
+  - c_set
   - c_splice
   - c_startswith
   - c_str
   - c_t
   - c_test
   - c_try
-  - c_unset
   - c_upper
   - errors
 
