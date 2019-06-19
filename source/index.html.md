@@ -34,8 +34,11 @@ includes:
   - r_rename_user
   - r_replace_node
   - r_revoke
+  - r_set_loglevel
   - r_set_password
   - r_set_quota
+  - r_set_zone
+  - r_shutdown
   - r_user
   - r_users
   - collection_api
