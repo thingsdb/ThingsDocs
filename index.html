@@ -386,10 +386,19 @@
                     <a href="#revoke" class="toc-h2 toc-link" data-title="revoke">revoke</a>
                   </li>
                   <li>
+                    <a href="#set_loglevel" class="toc-h2 toc-link" data-title="set_loglevel">set_loglevel</a>
+                  </li>
+                  <li>
                     <a href="#set_password" class="toc-h2 toc-link" data-title="set_password">set_password</a>
                   </li>
                   <li>
                     <a href="#set_quota" class="toc-h2 toc-link" data-title="set_quota">set_quota</a>
+                  </li>
+                  <li>
+                    <a href="#set_zone" class="toc-h2 toc-link" data-title="set_zone">set_zone</a>
+                  </li>
+                  <li>
+                    <a href="#shutdown" class="toc-h2 toc-link" data-title="shutdown">shutdown</a>
                   </li>
                   <li>
                     <a href="#user" class="toc-h2 toc-link" data-title="user">user</a>
@@ -2105,6 +2114,8 @@ how access privileges can be set for a user.</p>
 <h3 id='return-value'>Return value</h3>
 <p>Returns <code>nil</code> when successful. An <code>INDEX_ERROR</code> is raised if the user or target
 does not exist.</p>
+<h2 id='set_loglevel'>set_loglevel</h2>
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h2 id='set_password'>set_password</h2>
 <blockquote>
 <p>This code changes the password for use <em>admin</em>:</p>
@@ -2249,6 +2260,10 @@ EOQ
 </tbody></table>
 <h3 id='return-value'>Return value</h3>
 <p><code>nil</code> when successful.</p>
+<h2 id='set_zone'>set_zone</h2>
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h2 id='shutdown'>shutdown</h2>
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h2 id='user'>user</h2>
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h2 id='users'>users</h2>
