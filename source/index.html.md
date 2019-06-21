@@ -63,6 +63,7 @@ includes:
   - c_islist
   - c_isnan
   - c_isstr
+  - c_isthing
   - c_istuple
   - c_isutf8
   - c_len

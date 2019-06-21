@@ -167,8 +167,17 @@ plank_constant = 6.62607004e-34;
 EOQ
 ```
 
-ThingsDB can store 64bit float values.  [isinf](#isinf) and [isnan](#isnan)
+ThingsDB uses 64bit to store float values and has support for the `e` notation and
+special *float* values like `inf`, `-inf` and `nan`.
 
+### Useful methods
+
+Method | Description
+------ | -----------
+[float](#float) | return a float type for a given value.
+[isfloat](#isfloat) | check if the given value is of the float type.
+[isinf](#isinf) | check if the given value is infinite.
+[isnan](#isnan) | check if the given value is not-a-number.
 
 ## Regex
 
@@ -275,3 +284,20 @@ Method | Description
 
 ## Closure
 
+Closures can be used to consume items from a `thing`, `array` or `set`.
+
+<aside class="notice">
+It is not possible to use closures with recursion, for example:
+<p><code>$a = ||map($a); map($a);</code></p>
+<p>...will raise <code>BAD_REQUEST</code> <i>(closures cannot be used recursively)</i></p>
+</aside>
+
+
+## Set
+
+A set is a collection which is unordered and can only contain things.
+Each [thing](#thing) will only exists once in a collection.
+
+### Methods
+Method | Description
+------ | -----------
