@@ -315,6 +315,9 @@
                   <li>
                     <a href="#closure" class="toc-h2 toc-link" data-title="Closure">Closure</a>
                   </li>
+                  <li>
+                    <a href="#set" class="toc-h2 toc-link" data-title="Set">Set</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -473,6 +476,9 @@
                   </li>
                   <li>
                     <a href="#isstr" class="toc-h2 toc-link" data-title="isstr">isstr</a>
+                  </li>
+                  <li>
+                    <a href="#isthing" class="toc-h2 toc-link" data-title="isthing">isthing</a>
                   </li>
                   <li>
                     <a href="#istuple" class="toc-h2 toc-link" data-title="istuple">istuple</a>
@@ -1303,7 +1309,32 @@ plank_constant = 6.62607004e-34;
 "
 EOQ
 </span></code></pre>
-<p>ThingsDB can store 64bit float values.  <a href="#isinf">isinf</a> and <a href="#isnan">isnan</a></p>
+<p>ThingsDB uses 64bit to store float values and has support for the <code>e</code> notation and
+special <em>float</em> values like <code>inf</code>, <code>-inf</code> and <code>nan</code>.</p>
+<h3 id='useful-methods'>Useful methods</h3>
+<table><thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><a href="#float">float</a></td>
+<td>return a float type for a given value.</td>
+</tr>
+<tr>
+<td><a href="#isfloat">isfloat</a></td>
+<td>check if the given value is of the float type.</td>
+</tr>
+<tr>
+<td><a href="#isinf">isinf</a></td>
+<td>check if the given value is infinite.</td>
+</tr>
+<tr>
+<td><a href="#isnan">isnan</a></td>
+<td>check if the given value is not-a-number.</td>
+</tr>
+</tbody></table>
 <h2 id='regex'>Regex</h2>
 <blockquote>
 <p>This code uses a regular expression for an overly simple email check:</p>
@@ -1463,7 +1494,26 @@ It is not possible to change an array while the array is in use, for example:
 <td>Rename a given property.</td>
 </tr>
 </tbody></table>
-<h2 id='closure'>Closure</h2><h1 id='node-api'>Node API</h1>
+<h2 id='closure'>Closure</h2>
+<p>Closures can be used to consume items from a <code>thing</code>, <code>array</code> or <code>set</code>.</p>
+
+<aside class="notice">
+It is not possible to use closures with recursion, for example:
+<p><code>$a = ||map($a); map($a);</code></p>
+<p>...will raise <code>BAD_REQUEST</code> <i>(closures cannot be used recursively)</i></p>
+</aside>
+<h2 id='set'>Set</h2>
+<p>A set is a collection which is unordered and can only contain things.
+Each <a href="#thing">thing</a> will only exists once in a collection.</p>
+<h3 id='methods-4'>Methods</h3>
+<table><thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+<h1 id='node-api'>Node API</h1>
 <p>The <em>node</em> scope can be used to query node statistics, counters or make
 node specific changes.</p>
 <h2 id='counters'>counters</h2>
@@ -3451,6 +3501,60 @@ EOQ
 <p>Returns <code>true</code> is the given value is not a number, else <code>false</code>.</p>
 <h2 id='isstr'>isstr</h2>
 <p>Alias for <a href="#isutf8">isutf8</a>.</p>
+<h2 id='isthing'>isthing</h2>
+<blockquote>
+<p>This code shows some return values for <strong><em>isthing()</em></strong>:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
+        isthing( {} );
+        isthing( [] );
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -a -q <span class="sh">&lt;&lt; EOQ "
+isthing( {} );
+isthing( [] );
+"
+EOQ
+</span></code></pre>
+<blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="kc">false</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This function determines whether the value passed to this function
+is a <a href="#thing">thing</a> or not.</p>
+
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><code>isthing(value)</code></p>
+<h3 id='arguments'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>value</td>
+<td>any (required)</td>
+<td>The value to be tested.</td>
+</tr>
+</tbody></table>
+<h3 id='return-value'>Return value</h3>
+<p>Returns <code>true</code> is the passed value is a thing else it returns <code>false</code>.</p>
 <h2 id='istuple'>istuple</h2>
 <blockquote>
 <p>This code shows some return values for <strong><em>istuple()</em></strong>:</p>
