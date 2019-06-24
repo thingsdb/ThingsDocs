@@ -42,6 +42,7 @@ includes:
   - r_user
   - r_users
   - collection_api
+  - c_add
   - c_assert
   - c_blob
   - c_bool
