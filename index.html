@@ -415,6 +415,9 @@
             <a href="#collection-api" class="toc-h1 toc-link" data-title="Collection API">Collection API</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#add" class="toc-h2 toc-link" data-title="add">add</a>
+                  </li>
+                  <li>
                     <a href="#assert" class="toc-h2 toc-link" data-title="assert">assert</a>
                   </li>
                   <li>
@@ -473,6 +476,12 @@
                   </li>
                   <li>
                     <a href="#isnan" class="toc-h2 toc-link" data-title="isnan">isnan</a>
+                  </li>
+                  <li>
+                    <a href="#israw" class="toc-h2 toc-link" data-title="israw">israw</a>
+                  </li>
+                  <li>
+                    <a href="#isset" class="toc-h2 toc-link" data-title="isset">isset</a>
                   </li>
                   <li>
                     <a href="#isstr" class="toc-h2 toc-link" data-title="isstr">isstr</a>
@@ -673,11 +682,6 @@ not processed and an <a href="#errors">error</a> is returned. Changes made are s
 <td><code>deep</code></td>
 <td>integer</td>
 <td>Specify the depth in the range 0-127 to which <code>things</code> should be fully returned. (default: <code>1</code>)</td>
-</tr>
-<tr>
-<td><code>all</code></td>
-<td>boolean</td>
-<td>When true, all statement results are returned in an array, otherwise only the last statement result. (default: <code>false</code>)</td>
 </tr>
 <tr>
 <td><code>blobs</code></td>
@@ -1630,7 +1634,7 @@ if the collection already exists.</p>
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h2 id='reset_counters'>reset_counters</h2>
 <blockquote>
-<p>This code will reset the counters:</p>
+<p>This code will reset the counters on a node:</p>
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
 <span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
@@ -2224,7 +2228,7 @@ if the user does not exist and <code>BAD_REQUEST</code> if the new password is n
 <p>This code sets a quota on the number of things and disables the properties quota on collection <em>stuff</em>:</p>
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
-<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">scope</span>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
@@ -2232,12 +2236,12 @@ if the user does not exist and <code>BAD_REQUEST</code> if the new password is n
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         set_quota('stuff', 'things', 10000);
         set_quota('stuff', 'properties', nil);
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">thingsdb</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="n">scope</span><span class="o">.</span><span class="n">thingsdb</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
-</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -a -q <span class="sh">&lt;&lt; EOQ "
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -q <span class="sh">&lt;&lt; EOQ "
 set_quota('stuff', 'things', 10000);
 set_quota('stuff', 'properties', nil);
 "
@@ -2246,10 +2250,7 @@ EOQ
 <blockquote>
 <p>Return value in JSON format</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-    </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="kc">null</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="kc">null</span><span class="w">
 </span></code></pre>
 <p>Quota limits can be set on collections. The following quota limits can be set:</p>
 
@@ -2334,7 +2335,45 @@ EOQ
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
 </code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="s1">'id()'</span>
-</code></pre><h2 id='assert'>assert</h2>
+</code></pre><h2 id='add'>add</h2>
+<blockquote>
+<p>This code adds things to a set:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
+        s = set(); a = {item: 'a'}; b = {item: 'b'};
+        s.add(a, a, b);
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+s = set(); a = {item: 'a'}; b = {item: 'b'};
+s.add(a, a, b);
+"
+EOQ
+</span></code></pre>
+<blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="mi">2</span><span class="w">
+</span></code></pre>
+<p>Adds new thing to the <a href="#set">set</a> and returns the number of things which are
+actually added to the set. For example <code>my_set.add( t(42) );</code> will return <code>0</code>
+if <code>my_set</code> already contains thing <code>#42</code>.</p>
+
+<p>This function generates an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><em>set</em>.<code>add(thing1, thing1, ..., thingX)</code></p>
+<h3 id='return-value'>Return value</h3>
+<p>Returns the number of <code>things</code> which are added to the set.</p>
+<h2 id='assert'>assert</h2>
 <blockquote>
 <p>This code shows how assert can be used:</p>
 </blockquote>
@@ -2409,21 +2448,25 @@ an <code>ASSERTION_ERROR</code> is raised.</p>
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
-    <span class="n">stuff</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_collection</span><span class="p">(</span><span class="s">'stuff'</span><span class="p">)</span>
 
     <span class="c"># TODO: replace with ThingsDB logo</span>
     <span class="n">resp</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span>
         <span class="s">'https://upload.wikimedia.org/wikipedia/commons/1/15/Siridb-logo.svg'</span><span class="p">)</span>
 
-    <span class="c"># The python client will automatically use a blob for byte values</span>
-    <span class="n">await</span> <span class="n">stuff</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="s">'logo'</span><span class="p">,</span> <span class="n">resp</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
+        logo = blob(0);
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">blobs</span><span class="o">=</span><span class="p">[</span><span class="n">resp</span><span class="o">.</span><span class="n">read</span><span class="p">()])</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># Note: thingscmd supports only one blob per query, so this is always blob(0)</span>
 wget <span class="s1">'https://upload.wikimedia.org/wikipedia/commons/1/15/Siridb-logo.svg'</span> | <span class="se">\</span>
-thingscmd -n node.local -u admin -p pass -c stuff -q <span class="s2">"set('logo', blob(0));"</span>
-</code></pre>
+thingscmd -n node.local -u admin -p pass -c stuff -q  <span class="sh">&lt;&lt; EOQ "
+logo = blob(0);
+"
+EOQ
+</span></code></pre>
 <p>Blobs can be used to send binary data to ThingsDB. Each query request allows you to send
 an array of <em>blob</em> values together with the query. Within the query it is then possible
 to use this function to <em>get</em> the blob value.</p>
@@ -2459,28 +2502,32 @@ if the blob at the given <code>index</code> does not exist.</p>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
-        bool();
-        bool(nil);
-        bool({});
-        bool({answer: 42});
-        bool([]);
-        bool([1, 2, 3]);
-        bool('');
-        bool('forty two');
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        [
+            bool(),
+            bool(nil),
+            bool({}),
+            bool({answer: 42}),
+            bool([]),
+            bool([1, 2, 3]),
+            bool(''),
+            bool('forty two'),
+        ];
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
-</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -a -q <span class="sh">&lt;&lt; EOQ "
-bool();
-bool(nil);
-bool({});
-bool({answer: 42});
-bool([]);
-bool([1, 2, 3]);
-bool('');
-bool('forty two');
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+[
+    bool(),
+    bool(nil),
+    bool({}),
+    bool({answer: 42}),
+    bool([]),
+    bool([1, 2, 3]),
+    bool(''),
+    bool('forty two'),
+];
 "
 EOQ
 </span></code></pre>
@@ -2585,44 +2632,51 @@ not a valid <a href="#names">name</a>.</p>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
-        /* Return all users with age 18 or above */
-        users.filter(|user| (user.age &gt;= 18));
+        $users = [{name: 'Iris', age: 6}, {name: 'Sasha', age: 34}];
 
-        /* Return a `thing` with only property `age` */
-        users[0].filter(|prop| (prop == 'age'));
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">deep</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        /*
+         * Return all users with age 18 or above and
+         * a `thing` with only property `age`
+         */
+
+        [
+            $users.filter(|user| (user.age &gt;= 18)),
+            $users[0].filter(|prop| (prop == 'age')),
+        ];
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">deep</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
-</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -d 2 -a -q <span class="sh">&lt;&lt; EOQ "
-/* Return all users with age 18 or above */
-users.filter(|user| (user.age &gt;= 18));
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -d 3 -q <span class="sh">&lt;&lt; EOQ "
+\$users = [{name: 'Iris', age: 6}, {name: 'Sasha', age: 34}];
 
-/* Return a thing with only property age */
-users[0].filter(|prop| (prop == 'age'));
+/*
+ * Return all users with age 18 or above and
+ * a thing with only property age
+ */
+
+[
+    \$users.filter(|user| (user.age &gt;= 18)),
+    \$users[0].filter(|prop| (prop == 'age')),
+];
 "
 EOQ
 </span></code></pre>
 <blockquote>
-<p>Example return value in JSON format</p>
+<p>Return value in JSON format</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
     </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"#"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"#"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
             </span><span class="s2">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span><span class="p">,</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sasha"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"#"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jeroen"</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="p">{</span><span class="w">
         </span><span class="s2">"#"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span><span class="w">
+        </span><span class="s2">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
@@ -3011,26 +3065,30 @@ The index of an array starts at <code>0</code>, so the first item has index <cod
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
-        int();
-        int(2.718);
-        int(-1.9);
-        int('365 days');
-        int('0xFF');
-        int(true);
-        int(false);
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        [
+            int(),
+            int(2.718),
+            int(-1.9),
+            int('365 days'),
+            int('0xFF'),
+            int(true),
+            int(false),
+        ];
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
-</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -a -q <span class="sh">&lt;&lt; EOQ "
-int();
-int(2.718);
-int(-1.9);
-int('365 days');
-int('0xFF');
-int(true);
-int(false);
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+[
+    int(),
+    int(2.718),
+    int(-1.9),
+    int('365 days'),
+    int('0xFF'),
+    int(true),
+    int(false),
+];
 "
 EOQ
 </span></code></pre>
@@ -3091,18 +3149,22 @@ will raise a <code>BAD_REQUEST</code>.</p>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
-        isarray( [] );
-        isarray( $tmp = [['nested']] );
-        isarray( $tmp[0] );
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        [
+            isarray( [] ),
+            isarray( $tmp = [['nested']] ),
+            isarray( $tmp[0] ),
+        ];
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
-</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -a -q <span class="sh">&lt;&lt; EOQ "
-isarray( [] );
-isarray( \$tmp = [['nested']] );
-isarray( \$tmp[0] );
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+[
+    isarray( [] ),
+    isarray( \$tmp = [['nested']] ),
+    isarray( \$tmp[0] ),
+];
 "
 EOQ
 </span></code></pre>
@@ -3149,16 +3211,20 @@ is an <a href="#array">array</a> type or not. The functions <a href="#islist">is
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
-        isascii( 'ԉ' );
-        isascii( 'pi' );
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        [
+            isascii( 'ԉ' ),
+            isascii( 'pi' ),
+        ];
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
-</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -a -q <span class="sh">&lt;&lt; EOQ "
-isascii( 'ԉ' );
-isascii( 'pi' );
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+[
+    isascii( 'ԉ' ),
+    isascii( 'pi' ),
+];
 "
 EOQ
 </span></code></pre>
@@ -3203,18 +3269,22 @@ type <code>raw</code> and contains only valid ascii characters.</p>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
-        isbool( true );
-        isbool( 'true' );
-        isbool( nil );
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        [
+            isbool( true ),
+            isbool( 'true' ),
+            isbool( nil ),
+        ];
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
-</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -a -q <span class="sh">&lt;&lt; EOQ "
-isbool( true );
-isbool( 'true' );
-isbool( nil );
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+[
+    isbool( true ),
+    isbool( 'true' ),
+    isbool( nil ),
+];
 "
 EOQ
 </span></code></pre>
@@ -3260,18 +3330,22 @@ is a <a href="#bool">bool</a> or not.</p>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
-        isfloat( 42.0 );
-        isfloat( 0.42e+2 );
-        isfloat( 42 );
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        [
+            isfloat( 42.0 ),
+            isfloat( 0.42e+2 ),
+            isfloat( 42 ),
+        ];
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
-</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -a -q <span class="sh">&lt;&lt; EOQ "
-isfloat( 42.0 );
-isfloat( 0.42e+2 );
-isfloat( 42 );
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+[
+    isfloat( 42.0 ),
+    isfloat( 0.42e+2 ),
+    isfloat( 42 ),
+];
 "
 EOQ
 </span></code></pre>
@@ -3319,22 +3393,26 @@ is a <a href="#floating-point">floating point</a> value or not.</p>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
-        isint( 42 );
-        isint( 0x2a );
-        isint( 42.0 );
-        isint( '42' );
-        isint( true );
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        [
+            isint( 42 ),
+            isint( 0x2a ),
+            isint( 42.0 ),
+            isint( '42' ),
+            isint( true ),
+        ];
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
-</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -a -q <span class="sh">&lt;&lt; EOQ "
-isint( 42 );
-isint( 0x2a );
-isint( 42.0 );
-isint( '42' );
-isint( true );
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+[
+    isint( 42 ),
+    isint( 0x2a ),
+    isint( 42.0 ),
+    isint( '42' ),
+    isint( true ),
+];
 "
 EOQ
 </span></code></pre>
@@ -3382,18 +3460,22 @@ is an <a href="#integer">integer</a> or not.</p>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
-        islist( [] );
-        islist( $tmp = [['nested']] );
-        islist( $tmp[0] );
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        [
+            islist( [] ),
+            islist( $tmp = [['nested']] ),
+            islist( $tmp[0] ),
+        ];
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
-</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -a -q <span class="sh">&lt;&lt; EOQ "
-islist( [] );
-islist( \$tmp = [['nested']] );
-islist( \$tmp[0] );
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+[
+    islist( [] ),
+    islist( \$tmp = [['nested']] ),
+    islist( \$tmp[0] ),
+];
 "
 EOQ
 </span></code></pre>
@@ -3427,7 +3509,7 @@ is a mutable <a href="#array">array</a> or not.</p>
 </tr>
 </tbody></table>
 <h3 id='return-value'>Return value</h3>
-<p>Returns <code>true</code> is the passed value is a list else it returns <code>false</code>.</p>
+<p>Returns <code>true</code> is the passed value is a <code>list</code>, else it returns <code>false</code>.</p>
 <h2 id='isnan'>isnan</h2>
 <blockquote>
 <p>This code shows some return values for <strong><em>isnan()</em></strong>:</p>
@@ -3439,28 +3521,32 @@ is a mutable <a href="#array">array</a> or not.</p>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
-        isnan( true );
-        isnan( 123 );
-        isnan( 3.14 );
-        isnan( inf );
-        isnan( [] );
-        isnan( {} );
-        isnan( nan );
-        isnan( '123' );
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        [
+            isnan( true ),
+            isnan( 123 ),
+            isnan( 3.14 ),
+            isnan( inf ),
+            isnan( [] ),
+            isnan( {} ),
+            isnan( nan ),
+            isnan( '123' ),
+        ];
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
-</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -a -q <span class="sh">&lt;&lt; EOQ "
-isnan( true );
-isnan( 123 );
-isnan( 3.14 );
-isnan( inf );
-isnan( [] );
-isnan( {} );
-isnan( nan );
-isnan( '123' );
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+[
+    isnan( true ),
+    isnan( 123 ),
+    isnan( 3.14 ),
+    isnan( inf ),
+    isnan( [] ),
+    isnan( {} ),
+    isnan( nan ),
+    isnan( '123' ),
+];
 "
 EOQ
 </span></code></pre>
@@ -3499,6 +3585,129 @@ EOQ
 </tbody></table>
 <h3 id='return-value'>Return value</h3>
 <p>Returns <code>true</code> is the given value is not a number, else <code>false</code>.</p>
+<h2 id='israw'>israw</h2>
+<blockquote>
+<p>This code shows some return values for <strong><em>israw()</em></strong>:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">import</span> <span class="nn">urllib</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+
+    <span class="c"># TODO: replace with ThingsDB logo</span>
+    <span class="n">resp</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span>
+        <span class="s">'https://upload.wikimedia.org/wikipedia/commons/1/15/Siridb-logo.svg'</span><span class="p">)</span>
+
+    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
+        [
+            israw( 'some string' ),
+            israw( blob(0) ),
+        ];
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">blobs</span><span class="o">=</span><span class="p">[</span><span class="n">resp</span><span class="o">.</span><span class="n">read</span><span class="p">()])</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code>wget <span class="s1">'https://upload.wikimedia.org/wikipedia/commons/1/15/Siridb-logo.svg'</span> | <span class="se">\</span>
+thingscmd -n node.local -u admin -p pass -c stuff -q  <span class="sh">&lt;&lt; EOQ "
+[
+    israw( 'some string' ),
+    israw( blob(0) ),
+];
+"
+EOQ
+</span></code></pre>
+<blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="kc">true</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This function determines whether the value passed to this function is of
+type <code>raw</code>.</p>
+
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><code>israw(value)</code></p>
+<h3 id='arguments'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>value</td>
+<td>any (required)</td>
+<td>The value to be tested.</td>
+</tr>
+</tbody></table>
+<h3 id='return-value'>Return value</h3>
+<p>Returns <code>true</code> is the given value is of type <code>raw</code>, else <code>false</code>.</p>
+<h2 id='isset'>isset</h2>
+<blockquote>
+<p>This code shows some return values for <strong><em>isset()</em></strong>:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
+        [
+            isset( [] ),
+            isset( set() ),
+        ];
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+[
+    isset( [] ),
+    isset( set() ),
+];
+"
+EOQ
+</span></code></pre>
+<blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="kc">true</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This function determines whether the value passed to this function
+is a <a href="#set">set</a> or not.</p>
+
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><code>isset(value)</code></p>
+<h3 id='arguments'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>value</td>
+<td>any (required)</td>
+<td>The value to be tested.</td>
+</tr>
+</tbody></table>
+<h3 id='return-value'>Return value</h3>
+<p>Returns <code>true</code> is the passed value is a <code>set</code>, else it returns <code>false</code>.</p>
 <h2 id='isstr'>isstr</h2>
 <p>Alias for <a href="#isutf8">isutf8</a>.</p>
 <h2 id='isthing'>isthing</h2>
@@ -3512,16 +3721,20 @@ EOQ
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
-        isthing( {} );
-        isthing( [] );
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        [
+            isthing( {} ),
+            isthing( [] ),
+        ];
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
-</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -a -q <span class="sh">&lt;&lt; EOQ "
-isthing( {} );
-isthing( [] );
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+[
+    isthing( {} ),
+    isthing( [] ),
+];
 "
 EOQ
 </span></code></pre>
@@ -3566,18 +3779,24 @@ is a <a href="#thing">thing</a> or not.</p>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
-        istuple( [] );
-        istuple( $tmp = [['nested']] );
-        istuple( $tmp[0] );
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        [
+            istuple( [] ),
+            istuple( $tmp = [['nested'], set()] ),
+            istuple( $tmp[0] ),
+            istuple( $tmp[1] ),
+        ];
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
-</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -a -q <span class="sh">&lt;&lt; EOQ "
-istuple( [] );
-istuple( \$tmp = [['nested']] );
-istuple( \$tmp[0] );
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+[
+    istuple( [] ),
+    istuple( \$tmp = [['nested'], set()] ),
+    istuple( \$tmp[0] ),
+    istuple( \$tmp[1] ),
+];
 "
 EOQ
 </span></code></pre>
@@ -3587,6 +3806,7 @@ EOQ
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
     </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="kc">true</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
@@ -3623,16 +3843,20 @@ is a immutable <a href="#array">array</a> or not. At least nested arrays are of 
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
-        isutf8( 'ԉ' );
-        isutf8( 'pi' );
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        [
+            isutf8( 'ԉ' ),
+            isutf8( 'pi' ),
+        ];
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
-</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -a -q <span class="sh">&lt;&lt; EOQ "
-isutf8( 'ԉ' );
-isutf8( 'pi' );
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+[
+    isutf8( 'ԉ' ),
+    isutf8( 'pi' ),
+];
 "
 EOQ
 </span></code></pre>
@@ -3897,28 +4121,29 @@ EOQ
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
-        refs( $a = {} );
-        ($tmp = $a).ret();
-        refs( $a );
+        [
+            refs( 'some string' ),
+            refs( a = b = c = 42 ),
+        ];
     '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
 </code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
-refs( \$a = {} );
-(\$tmp = \$a).ret();
-refs( \$a );
+[
+    refs( 'some string' ),
+    refs( a = b = c = 42 ),
+];
 "
 EOQ
 </span></code></pre>
 <blockquote>
-<p>Return value in JSON format</p>
+<p>Example return value in JSON format</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
     </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="mi">3</span><span class="w">
+    </span><span class="mi">5</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>Returns the reference count of a value.</p>
@@ -3961,18 +4186,22 @@ can be higher of lower depending on how the value is stored and used.
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
-        ( $tmp = [1, 2, 3, 4] ).ret();
-        $tmp.remove(|x| (x </span><span class="si">% 2</span><span class="s"> == 0));
-        $tmp;
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        $tmp = [1, 2, 3, 4];
+        [
+            $tmp.remove(|x| (x </span><span class="si">% 2</span><span class="s"> == 0)),
+            $tmp
+        ];
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
-</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -a -q  <span class="sh">&lt;&lt; EOQ "
-( \$tmp = [1, 2, 3, 4] ).ret();
-\$tmp.remove(|x| (x % 2 == 0));
-\$tmp;
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q  <span class="sh">&lt;&lt; EOQ "
+\$tmp = [1, 2, 3, 4];
+[
+    \$tmp.remove(|x| (x % 2 == 0)),
+    \$tmp
+];
 "
 EOQ
 </span></code></pre>
@@ -3980,7 +4209,6 @@ EOQ
 <p>Return value in JSON format</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-    </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="mi">2</span><span class="p">,</span><span class="w">
     </span><span class="p">[</span><span class="w">
         </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -4146,16 +4374,17 @@ unnecessary network traffic.</p>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
-        set();
-        set([{}, {}]);
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        set([{}, {}]),
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
-</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -a -q <span class="sh">&lt;&lt; EOQ "
-set();
-set([{}, {}]);
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+[
+    set(),
+    set([{}, {}]),
+];
 "
 EOQ
 </span></code></pre>
@@ -4429,16 +4658,20 @@ for example: <code>thing(666,);</code> and this will return an array with one th
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
-        'Hello world!!'.test(/^hello/);
-        'Hello world!!'.test(/^hello/i);
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        [
+            'Hello world!!'.test(/^hello/),
+            'Hello world!!'.test(/^hello/i),
+        ];
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
-</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -a -q <span class="sh">&lt;&lt; EOQ "
-'Hello world!!'.test(/^hello/);
-'Hello world!!'.test(/^hello/i);
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+[
+    'Hello world!!'.test(/^hello/),
+    'Hello world!!'.test(/^hello/i),
+];
 "
 EOQ
 </span></code></pre>
@@ -4482,20 +4715,24 @@ EOQ
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
-        try( (1/0) );
-        try( (1/0), 0 );
-        try( (1/0), 0, 'ZERO_DIV_ERROR' );
-        try( (1/0), 0, 97 );
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">,</span> <span class="n">all_</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        [
+            try( (1/0) ),
+            try( (1/0), 0 ),
+            try( (1/0), 0, 'ZERO_DIV_ERROR' ),
+            try( (1/0), 0, 97 ),
+        ];
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
-</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -a -q <span class="sh">&lt;&lt; EOQ "
-try( (1/0) );
-try( (1/0), 0 );
-try( (1/0), 0, 'ZERO_DIV_ERROR' );
-try( (1/0), 0, 97 );
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+[
+    try( (1/0) ),
+    try( (1/0), 0 ),
+    try( (1/0), 0, 'ZERO_DIV_ERROR' ),
+    try( (1/0), 0, 97 ),
+];
 "
 EOQ
 </span></code></pre>
