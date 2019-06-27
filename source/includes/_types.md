@@ -251,7 +251,7 @@ Method | Description
 [map](#map) | Returns a new `array` with the results of calling a provided closure on every element.
 [pop](#pop) | Removes the last element from an array and returns that element.
 [push](#push) | Adds new items to the end of an array, and returns the new length.
-[remove](#remove) | Removes the first element that pass a given test and returns that element.
+[remove](#remove-list) | Removes the first element that pass a given test and returns that element.
 [splice](#splice) | Determines if a string starts with characters given by another string.
 
 

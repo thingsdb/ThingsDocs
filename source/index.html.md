@@ -47,6 +47,7 @@ includes:
   - c_blob
   - c_bool
   - c_del
+  - c_endswith
   - c_filter
   - c_find
   - c_findindex

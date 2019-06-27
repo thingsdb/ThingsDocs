@@ -1,4 +1,4 @@
-## remove
+## remove (list)
 
 > This code shows an example using ***remove()***:
 
@@ -75,3 +75,8 @@ Here, the item will <i>only</i> be popped, in case <code>e</code> with <code>nam
 ### Return value
 The value of the first element in the array or thing that satisfies the provided testing function;
 otherwise, `nil` or a specified alternative value is returned.
+
+
+## remove (set)
+
+This function generates an [event](#events).
