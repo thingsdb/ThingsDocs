@@ -1,6 +1,6 @@
 ## reset_counters
 
-> This code will reset the counters:
+> This code will reset the counters on a node:
 
 ```python
 import asyncio

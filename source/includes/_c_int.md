@@ -10,14 +10,16 @@ async def example():
     await client.connect('node.local')
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
-        int();
-        int(2.718);
-        int(-1.9);
-        int('365 days');
-        int('0xFF');
-        int(true);
-        int(false);
-    ''', target='stuff', all_=True)
+        [
+            int(),
+            int(2.718),
+            int(-1.9),
+            int('365 days'),
+            int('0xFF'),
+            int(true),
+            int(false),
+        ];
+    ''', target='stuff')
     print(res)
 
 client = Client()
@@ -25,14 +27,16 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -n node.local -u admin -p pass -c stuff -a -q << EOQ "
-int();
-int(2.718);
-int(-1.9);
-int('365 days');
-int('0xFF');
-int(true);
-int(false);
+thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
+[
+    int(),
+    int(2.718),
+    int(-1.9),
+    int('365 days'),
+    int('0xFF'),
+    int(true),
+    int(false),
+];
 "
 EOQ
 ```

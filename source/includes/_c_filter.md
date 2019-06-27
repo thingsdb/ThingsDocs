@@ -10,12 +10,18 @@ async def example():
     await client.connect('node.local')
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
-        /* Return all users with age 18 or above */
-        users.filter(|user| (user.age >= 18));
+        $users = [{name: 'Iris', age: 6}, {name: 'Sasha', age: 34}];
 
-        /* Return a `thing` with only property `age` */
-        users[0].filter(|prop| (prop == 'age'));
-    ''', target='stuff', deep=2, all_=True)
+        /*
+         * Return all users with age 18 or above and
+         * a `thing` with only property `age`
+         */
+
+        [
+            $users.filter(|user| (user.age >= 18)),
+            $users[0].filter(|prop| (prop == 'age')),
+        ];
+    ''', target='stuff', deep=3)
     print(res)
 
 client = Client()
@@ -23,35 +29,36 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -n node.local -u admin -p pass -c stuff -d 2 -a -q << EOQ "
-/* Return all users with age 18 or above */
-users.filter(|user| (user.age >= 18));
+thingscmd -n node.local -u admin -p pass -c stuff -d 3 -q << EOQ "
+\$users = [{name: 'Iris', age: 6}, {name: 'Sasha', age: 34}];
 
-/* Return a thing with only property age */
-users[0].filter(|prop| (prop == 'age'));
+/*
+ * Return all users with age 18 or above and
+ * a thing with only property age
+ */
+
+[
+    \$users.filter(|user| (user.age >= 18)),
+    \$users[0].filter(|prop| (prop == 'age')),
+];
 "
 EOQ
 ```
 
-> Example return value in JSON format
+> Return value in JSON format
 
 ```json
 [
     [
         {
-            "#": 3,
+            "#": 0,
             "age": 34,
             "name": "Sasha"
-        },
-        {
-            "#": 4,
-            "age": 40,
-            "name": "Jeroen"
         }
     ],
     {
         "#": 0,
-        "age": 34
+        "age": 6
     }
 ]
 ```

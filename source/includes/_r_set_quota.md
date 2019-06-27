@@ -4,7 +4,7 @@
 
 ```python
 import asyncio
-from thingsdb.client import Client
+from thingsdb.client import Client, scope
 
 async def example():
     await client.connect('node.local')
@@ -12,7 +12,7 @@ async def example():
     res = await client.query(r'''
         set_quota('stuff', 'things', 10000);
         set_quota('stuff', 'properties', nil);
-    ''', target=client.thingsdb, all_=True)
+    ''', target=scope.thingsdb)
     print(res)
 
 client = Client()
@@ -20,7 +20,7 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -n node.local -u admin -p pass -a -q << EOQ "
+thingscmd -n node.local -u admin -p pass -q << EOQ "
 set_quota('stuff', 'things', 10000);
 set_quota('stuff', 'properties', nil);
 "
@@ -30,10 +30,7 @@ EOQ
 > Return value in JSON format
 
 ```json
-[
-    null,
-    null
-]
+null
 ```
 Quota limits can be set on collections. The following quota limits can be set:
 

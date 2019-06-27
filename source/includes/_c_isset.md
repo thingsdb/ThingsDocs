@@ -1,6 +1,6 @@
-## isutf8
+## isset
 
-> This code shows some return values for ***isutf8()***:
+> This code shows some return values for ***isset()***:
 
 ```python
 import asyncio
@@ -11,8 +11,8 @@ async def example():
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
         [
-            isutf8( 'ԉ' ),
-            isutf8( 'pi' ),
+            isset( [] ),
+            isset( set() ),
         ];
     ''', target='stuff')
     print(res)
@@ -24,8 +24,8 @@ asyncio.get_event_loop().run_until_complete(example())
 ```shell
 thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
 [
-    isutf8( 'ԉ' ),
-    isutf8( 'pi' ),
+    isset( [] ),
+    isset( set() ),
 ];
 "
 EOQ
@@ -35,18 +35,18 @@ EOQ
 
 ```json
 [
-    true,
+    false,
     true
 ]
 ```
 
-This function determines whether the value passed to this function is of
-type `raw` and contains valid utf8.
+This function determines whether the value passed to this function
+is a [set](#set) or not.
 
 This function does *not* generate an [event](#events).
 
 ### Function
-`isutf8(value)`
+`isset(value)`
 
 ### Arguments
 Argument | Type | Description
@@ -54,4 +54,4 @@ Argument | Type | Description
 value | any (required) | The value to be tested.
 
 ### Return value
-Returns `true` is the given value is of type `raw` and contains valid utf8, else `false`.
+Returns `true` is the passed value is a `set`, else it returns `false`.

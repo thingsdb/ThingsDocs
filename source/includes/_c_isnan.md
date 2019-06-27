@@ -10,15 +10,17 @@ async def example():
     await client.connect('node.local')
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
-        isnan( true );
-        isnan( 123 );
-        isnan( 3.14 );
-        isnan( inf );
-        isnan( [] );
-        isnan( {} );
-        isnan( nan );
-        isnan( '123' );
-    ''', target='stuff', all_=True)
+        [
+            isnan( true ),
+            isnan( 123 ),
+            isnan( 3.14 ),
+            isnan( inf ),
+            isnan( [] ),
+            isnan( {} ),
+            isnan( nan ),
+            isnan( '123' ),
+        ];
+    ''', target='stuff')
     print(res)
 
 client = Client()
@@ -26,15 +28,17 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -n node.local -u admin -p pass -c stuff -a -q << EOQ "
-isnan( true );
-isnan( 123 );
-isnan( 3.14 );
-isnan( inf );
-isnan( [] );
-isnan( {} );
-isnan( nan );
-isnan( '123' );
+thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
+[
+    isnan( true ),
+    isnan( 123 ),
+    isnan( 3.14 ),
+    isnan( inf ),
+    isnan( [] ),
+    isnan( {} ),
+    isnan( nan ),
+    isnan( '123' ),
+];
 "
 EOQ
 ```

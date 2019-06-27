@@ -10,10 +10,12 @@ async def example():
     await client.connect('node.local')
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
-        ( $tmp = [1, 2, 3, 4] ).ret();
-        $tmp.remove(|x| (x % 2 == 0));
-        $tmp;
-    ''', target='stuff', all_=True)
+        $tmp = [1, 2, 3, 4];
+        [
+            $tmp.remove(|x| (x % 2 == 0)),
+            $tmp
+        ];
+    ''', target='stuff')
     print(res)
 
 client = Client()
@@ -21,10 +23,12 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -n node.local -u admin -p pass -c stuff -a -q  << EOQ "
-( \$tmp = [1, 2, 3, 4] ).ret();
-\$tmp.remove(|x| (x % 2 == 0));
-\$tmp;
+thingscmd -n node.local -u admin -p pass -c stuff -q  << EOQ "
+\$tmp = [1, 2, 3, 4];
+[
+    \$tmp.remove(|x| (x % 2 == 0)),
+    \$tmp
+];
 "
 EOQ
 ```
@@ -33,7 +37,6 @@ EOQ
 
 ```json
 [
-    null,
     2,
     [
         1,

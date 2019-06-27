@@ -63,6 +63,8 @@ includes:
   - c_isint
   - c_islist
   - c_isnan
+  - c_israw
+  - c_isset
   - c_isstr
   - c_isthing
   - c_istuple
@@ -219,7 +221,6 @@ Key | Type | Description
 `query` | string | The query string containing one or more statements. (required)
 `target` | string| Target collection, or `0` for manage queries. (default: `0`)
 `deep` | integer | Specify the depth in the range 0-127 to which `things` should be fully returned. (default: `1`)
-`all` | boolean | When true, all statement results are returned in an array, otherwise only the last statement result. (default: `false`)
 `blobs` | array | Additional blobs for binary data. (default: `[]`)
 
 To send a query you can either use a language binding, see code examples, or if you

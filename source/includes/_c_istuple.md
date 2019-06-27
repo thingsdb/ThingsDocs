@@ -10,10 +10,13 @@ async def example():
     await client.connect('node.local')
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
-        istuple( [] );
-        istuple( $tmp = [['nested']] );
-        istuple( $tmp[0] );
-    ''', target='stuff', all_=True)
+        [
+            istuple( [] ),
+            istuple( $tmp = [['nested'], set()] ),
+            istuple( $tmp[0] ),
+            istuple( $tmp[1] ),
+        ];
+    ''', target='stuff')
     print(res)
 
 client = Client()
@@ -21,10 +24,13 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -n node.local -u admin -p pass -c stuff -a -q << EOQ "
-istuple( [] );
-istuple( \$tmp = [['nested']] );
-istuple( \$tmp[0] );
+thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
+[
+    istuple( [] ),
+    istuple( \$tmp = [['nested'], set()] ),
+    istuple( \$tmp[0] ),
+    istuple( \$tmp[1] ),
+];
 "
 EOQ
 ```
@@ -35,6 +41,7 @@ EOQ
 [
     false,
     false,
+    true,
     true
 ]
 ```
