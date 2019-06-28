@@ -77,7 +77,6 @@ includes:
   - c_refs
   - c_remove
   - c_rename
-  - c_ret
   - c_set
   - c_splice
   - c_startswith
