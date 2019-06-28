@@ -52,13 +52,6 @@ Method | Description
 [test](#test) | Test if a string matches a given regular expression and return `true` or `false`.
 [upper](#upper) | Return a new string in which all case-based characters are in upper case.
 
-<aside class="warning">
-If you want to store long string or blob values, you might want to use
-<code>attributes</code> rather than <code>properties</code>. Attributes take less
-memory then properties but the downside is that it is not possible to search within
-a value. (unless you *download* the value first.)
-</aside>
-
 
 ## Bool
 
