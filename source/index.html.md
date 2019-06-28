@@ -34,11 +34,8 @@ includes:
   - r_rename_user
   - r_replace_node
   - r_revoke
-  - r_set_loglevel
   - r_set_password
   - r_set_quota
-  - r_set_zone
-  - r_shutdown
   - r_user
   - r_users
   - collection_api
@@ -46,6 +43,7 @@ includes:
   - c_assert
   - c_blob
   - c_bool
+  - c_contains
   - c_del
   - c_endswith
   - c_filter
@@ -211,9 +209,9 @@ thingscmd \
 
 Queries to ThingsDB can be used to manage [nodes](#node-api), [ThingsDB](#thingsdb-api) or to query [collections](#collection-api).
 
-ThingsDB will respond with the last statement result, or, when `all` is set to `true`,
-an array containing the results for each statement. In case a statement fails, the other statements are
-not processed and an [error](#errors) is returned. Changes made are synchronized, even when an error has ocurred.
+ThingsDB will respond with the last statement result. In case a statement fails, the other statements are
+not processed and an [error](#errors) is returned. Changes will be synchronized to all nodes and optionally to watchers,
+even when an error has ocurred.
 
 A query request has one required field *query*, and some other optionals:
 

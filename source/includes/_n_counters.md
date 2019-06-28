@@ -75,5 +75,4 @@ This function does *not* generate an [event](#events).
 None
 
 ### Return value
-Returns the new collection `id` if successful. An `INDEX_ERROR` is returned
-if the collection already exists.
+Returns the current counter values.
