@@ -10,8 +10,10 @@ async def example():
     await client.connect('node.local')
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
-        set_quota('stuff', 'things', 10000);
-        set_quota('stuff', 'properties', nil);
+        [
+            set_quota('stuff', 'things', 10000),
+            set_quota('stuff', 'properties', nil),
+        ];
     ''', target=scope.thingsdb)
     print(res)
 
@@ -21,8 +23,10 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 thingscmd -n node.local -u admin -p pass -q << EOQ "
-set_quota('stuff', 'things', 10000);
-set_quota('stuff', 'properties', nil);
+[
+    set_quota('stuff', 'things', 10000),
+    set_quota('stuff', 'properties', nil),
+];
 "
 EOQ
 ```
@@ -30,7 +34,10 @@ EOQ
 > Return value in JSON format
 
 ```json
-null
+[
+    null,
+    null
+]
 ```
 Quota limits can be set on collections. The following quota limits can be set:
 
