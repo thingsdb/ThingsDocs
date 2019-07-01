@@ -84,6 +84,7 @@ includes:
   - c_t
   - c_test
   - c_try
+  - c_type
   - c_upper
   - errors
 
