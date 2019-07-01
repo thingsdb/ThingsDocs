@@ -301,7 +301,7 @@
                     <a href="#regex" class="toc-h2 toc-link" data-title="Regex">Regex</a>
                   </li>
                   <li>
-                    <a href="#array" class="toc-h2 toc-link" data-title="Array">Array</a>
+                    <a href="#array-type" class="toc-h2 toc-link" data-title="Array type">Array type</a>
                   </li>
                   <li>
                     <a href="#thing" class="toc-h2 toc-link" data-title="Thing">Thing</a>
@@ -310,7 +310,7 @@
                     <a href="#closure" class="toc-h2 toc-link" data-title="Closure">Closure</a>
                   </li>
                   <li>
-                    <a href="#set" class="toc-h2 toc-link" data-title="Set">Set</a>
+                    <a href="#set-type" class="toc-h2 toc-link" data-title="Set type">Set type</a>
                   </li>
               </ul>
           </li>
@@ -1383,7 +1383,7 @@ requirement to compile the regular expression each time.</p>
 <td>A <a href="#string-raw">string</a> method that tests for a match in a string. It returns <code>true</code> or <code>false</code>.</td>
 </tr>
 </tbody></table>
-<h2 id='array'>Array</h2>
+<h2 id='array-type'>Array type</h2>
 <p>An empty array can be constructed as follows: <code>arr = [];</code></p>
 
 <p>Nesting is also possible withing but each nested array will become a <code>tuple</code> which means the array will be immutable.
@@ -1487,7 +1487,7 @@ It is not possible to change an array while the array is in use, for example:
 </tr>
 <tr>
 <td><a href="#map">map</a></td>
-<td>Returns a <a href="#array">array</a> with the results of calling a provided closure on every item.</td>
+<td>Returns an <a href="#array-type">array</a> with the results of calling a provided closure on every item.</td>
 </tr>
 <tr>
 <td><a href="#rename">rename</a></td>
@@ -1502,7 +1502,7 @@ It is not possible to use closures with recursion, for example:
 <p><code>$a = ||map($a); map($a);</code></p>
 <p>...will raise <code>BAD_REQUEST</code> <i>(closures cannot be used recursively)</i></p>
 </aside>
-<h2 id='set'>Set</h2>
+<h2 id='set-type'>Set type</h2>
 <p>A set is a collection which is unordered and can only contain things.
 Each <a href="#thing">thing</a> will only exists once in a collection.</p>
 <h3 id='methods-4'>Methods</h3>
@@ -1512,6 +1512,34 @@ Each <a href="#thing">thing</a> will only exists once in a collection.</p>
 <th>Description</th>
 </tr>
 </thead><tbody>
+<tr>
+<td><a href="#add">add</a></td>
+<td>Add things to a set.</td>
+</tr>
+<tr>
+<td><a href="#filter">filter</a></td>
+<td>Return a new <code>set</code> with things that pass a given test.</td>
+</tr>
+<tr>
+<td><a href="#find">find</a></td>
+<td>Returns the first <code>thing</code> which passes a given test.</td>
+</tr>
+<tr>
+<td><a href="#has">has</a></td>
+<td>Test if a set contains a given thing.</td>
+</tr>
+<tr>
+<td><a href="#map">map</a></td>
+<td>Return an <a href="#array-type">array</a> with the results of calling a provided closure on every thing.</td>
+</tr>
+<tr>
+<td><a href="#remove-set">remove</a></td>
+<td>Remove things from a set.</td>
+</tr>
+<tr>
+<td><a href="#set">set</a></td>
+<td>Create a new empty set or convert an <a href="#array-type">array</a> to a new set.</td>
+</tr>
 </tbody></table>
 <h1 id='node-api'>Node API</h1>
 <p>The <em>node</em> scope can be used to query node statistics, counters or make
@@ -2328,7 +2356,7 @@ EOQ
 </tr>
 <tr>
 <td><code>array_size</code></td>
-<td>Maximum array length. This quota type applies to all <a href="#array">array type</a>.</td>
+<td>Maximum array length. This quota type applies to all <a href="#array-type">array type</a>.</td>
 </tr>
 <tr>
 <td><code>raw_size</code></td>
@@ -2418,7 +2446,7 @@ EOQ
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="mi">2</span><span class="w">
 </span></code></pre>
-<p>Adds new thing to the <a href="#set">set</a> and returns the number of things which are
+<p>Adds new thing to the <a href="#set-type">set</a> and returns the number of things which are
 actually added to the set. For example <code>my_set.add( t(42) );</code> will return <code>0</code>
 if <code>my_set</code> already contains thing <code>#42</code>.</p>
 
@@ -2908,10 +2936,16 @@ EOQ
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jeroen van der Heijden"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This function returns the value of the first element in the <a href="#array">array</a> or <a href="#thing">thing</a> that satisfies the callback function.
+<p>This function returns the value of the first element in the <a href="#array-type">array</a> or <a href="#set-type">set</a> that satisfies the callback function.
 Otherwise <code>nil</code> is returned unless an alternative return value is specified.</p>
 
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+
+<aside class="notice">
+The return value when called on a [set](#set-type) might be unpredictable since a set is not ordered.
+<p><code>set([{name: 'Iris'}, {name: 'Cato'}]).find(||true);</code></p>
+<p>...will return <code>{Iris}</code> <i>or</i> <code>{Cato}</code>.</p>
+</aside>
 <h3 id='function'>Function</h3>
 <p><em>iterable</em>.<code>find(callback, [alt])</code></p>
 <h3 id='arguments'>Arguments</h3>
@@ -2946,12 +2980,12 @@ Otherwise <code>nil</code> is returned unless an alternative return value is spe
 <tr>
 <td>array</td>
 <td>item, index</td>
-<td>Iterate over items in the array. Both item and index are optional.</td>
+<td>Iterate over items in the array. Both <code>item</code> and <code>index</code> are optional.</td>
 </tr>
 <tr>
-<td>thing</td>
-<td>name, value</td>
-<td>Iterate over thing properties. Both name and value are optional.</td>
+<td>set</td>
+<td>thing, id</td>
+<td>Iterate over things in the set. Both <code>thing</code> and <code>id</code> are optional.</td>
 </tr>
 </tbody></table>
 
@@ -2990,7 +3024,7 @@ EOQ
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="mi">42</span><span class="w">
 </span></code></pre>
-<p>This function returns the index of the first element in an <a href="#array">array</a> that satisfies the callback function.
+<p>This function returns the index of the first element in an <a href="#array-type">array</a> that satisfies the callback function.
 Otherwise <code>nil</code> is returned.</p>
 
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
@@ -3141,7 +3175,7 @@ EOQ
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="kc">true</span><span class="w">
 </span></code></pre>
-<p>Determines if a <a href="#set">set</a> has a given thing.</p>
+<p>Determines if a <a href="#set-type">set</a> has a given thing.</p>
 
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h3 id='function'>Function</h3>
@@ -3275,7 +3309,7 @@ EOQ
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="mi">6</span><span class="w">
 </span></code></pre>
-<p>Returns the first index at which a given value can be found in the <a href="#array">array</a>, or <code>nil</code> if it is not present.
+<p>Returns the first index at which a given value can be found in the <a href="#array-type">array</a>, or <code>nil</code> if it is not present.
 The index of an array starts at <code>0</code>, so the first item has index <code>0</code> the second <code>1</code> and so on.</p>
 
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
@@ -3421,7 +3455,7 @@ EOQ
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This function determines whether the value passed to this function
-is an <a href="#array">array</a> type or not. The functions <a href="#islist">islist</a> and
+is an <a href="#array-type">array</a> type or not. The functions <a href="#islist">islist</a> and
 <a href="#istuple">istuple</a> can be used to check if the array is mutable.</p>
 
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
@@ -3732,7 +3766,7 @@ EOQ
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This function determines whether the value passed to this function
-is a mutable <a href="#array">array</a> or not.</p>
+is a mutable <a href="#array-type">array</a> or not.</p>
 
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h3 id='function'>Function</h3>
@@ -3930,7 +3964,7 @@ EOQ
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This function determines whether the value passed to this function
-is a <a href="#set">set</a> or not.</p>
+is a <a href="#set-type">set</a> or not.</p>
 
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h3 id='function'>Function</h3>
@@ -4054,7 +4088,7 @@ EOQ
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This function determines whether the value passed to this function
-is a immutable <a href="#array">array</a> or not. At least nested arrays are of kind tuple.</p>
+is a immutable <a href="#array-type">array</a> or not. At least nested arrays are of kind tuple.</p>
 
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h3 id='function'>Function</h3>
@@ -4160,7 +4194,7 @@ EOQ
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="mi">4</span><span class="w">
 </span></code></pre>
-<p>Returns the length of an <a href="#array">array</a> or <a href="#string-raw">string</a>, or the number of items in a <a href="#thing">thing</a>.</p>
+<p>Returns the length of an <a href="#array-type">array</a> or <a href="#string-raw">string</a>, or the number of items in a <a href="#thing">thing</a>.</p>
 
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h3 id='function'>Function</h3>
@@ -4237,7 +4271,7 @@ EOQ
     </span><span class="s2">"Sasha"</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>Iterate over items in an <a href="#array">array</a>, <a href="#set">set</a> or over all properties on a <a href="#thing">thing</a>.</p>
+<p>Iterate over items in an <a href="#array-type">array</a>, <a href="#set-type">set</a> or over all properties on a <a href="#thing">thing</a>.</p>
 
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h3 id='function'>Function</h3>
@@ -4346,7 +4380,7 @@ EOQ
     </span><span class="p">]</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>Removes the last element from an <a href="#array">array</a> and returns that element.
+<p>Removes the last element from an <a href="#array-type">array</a> and returns that element.
 This method changes the length of the array. The <code>pop()</code> method works
 on a <code>list</code> type array, but not on a <code>tuple</code> since tuples are immutable.</p>
 
@@ -4500,7 +4534,7 @@ EOQ
     </span><span class="p">]</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>This function removes and returns the value of the <em>first</em> element in the <a href="#array">array</a>
+<p>This function removes and returns the value of the <em>first</em> element in the <a href="#array-type">array</a>
 that satisfies the callback function.
 Otherwise <code>nil</code> is returned unless an alternative return value is specified.</p>
 
@@ -4740,7 +4774,7 @@ EOQ
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Returns a new empty <a href="#set">set</a>. If an array is given, then all elements in the
+<p>Returns a new empty <a href="#set-type">set</a>. If an array is given, then all elements in the
 given array must be or type <code>thing</code> and a new set is returned based on the
 given things.</p>
 
