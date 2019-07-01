@@ -65,7 +65,7 @@ If the specified value is of type [raw](#string-raw), then the initial character
 of the string are converted until a non-digit character is found.
 Initial white space is ignored and the number may start with an optional `+` or `-` sign.
 
-Type [bool](#bool) values are converted to `1` for `true` and `0` for `false`.
+Type [bool](#boolean) values are converted to `1` for `true` and `0` for `false`.
 
 This function does *not* generate an [event](#events).
 

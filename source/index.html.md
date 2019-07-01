@@ -49,6 +49,7 @@ includes:
   - c_filter
   - c_find
   - c_findindex
+  - c_float
   - c_has
   - c_hasprop
   - c_id

@@ -31,7 +31,7 @@ EOQ
 4
 ```
 
-Returns the length of an [array](#array) or [string](#raw), or the number of items in a [thing](#thing).
+Returns the length of an [array](#array) or [string](#string-raw), or the number of items in a [thing](#thing).
 
 This function does *not* generate an [event](#events).
 

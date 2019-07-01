@@ -6,11 +6,7 @@ ThingsDB has some basic
 Probably the most simple type, it's used as *no value*.
 What more can we say about `nil`?
 
-## String
-
-See [raw](#raw) since both *strings* and *blobs* are implemented in ThingsDB as type `raw`.
-
-## Raw
+## String (raw)
 
  > This code creates a *raw* property *greet* to collection *stuff*:
 
@@ -53,7 +49,7 @@ Method | Description
 [upper](#upper) | Return a new string in which all case-based characters are in upper case.
 
 
-## Bool
+## Boolean
 
 > This code creates a *bool* property *is_the_earth_flat* to collection *stuff*:
 
@@ -87,7 +83,7 @@ Boolean are either `true` or `false`.
 Other types can convert to `bool` by using the `!` (not) operator or the [bool](#bool) function.
 
 
-## Int
+## Integer
 
  > This code creates a *int* property *count* to collection *stuff*:
 
@@ -188,8 +184,11 @@ async def example():
 
     # Note: the email check is oversimplified, do not use in production
     await client.query(r'''
-        email = 'info@thingsdb.net';
-        email.test( /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/ );
+        email_test = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+
+        /* example usage of our 'email_test' */
+        $email = 'info@thingsdb.net';
+        $email.test( email_test );
     ''', target='stuff')
 
 asyncio.get_event_loop().run_until_complete(example())
@@ -198,22 +197,24 @@ asyncio.get_event_loop().run_until_complete(example())
 ```shell
 # Note: the email check is oversimplified, do not use in production
 thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
-email = 'info@thingsdb.net';
-email.test( /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/ );
+email_test = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+
+/* example usage of our 'email_test' */
+\$email = 'info@thingsdb.net';
+\$email.test( email_test );
 "
 EOQ
 ```
 
-> Return value in JSON format (the first `nil` is for the email assignments)
+> Return value in JSON format
 
 ```json
-[
-    null,
-    true
-]
+true
 ```
 
 Regular expression can be constructed using a literal which consists of a pattern enclosed between slashes, as follows: `re = /ab+c/;`.
+It is probably a good idea to store a `regex` in a variable if you plan to use the regular expression multiple times. This prevents the
+requirement to compile the regular expression each time.
 
 ### Methods that use regular expressions
 Method | Description
