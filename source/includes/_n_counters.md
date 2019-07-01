@@ -4,7 +4,7 @@
 
 ```python
 import asyncio
-from thingsdb.client import Client
+from thingsdb.client import Client, scope
 
 client = Client()
 
@@ -13,8 +13,8 @@ async def example():
     await client.authenticate('admin', 'pass')
     # returns counters for `node.local:9200`
     res = await client.query(r'''
-        counter();
-    ''')
+        counters();
+    ''', target=scope.node)
     print(res)
 
 asyncio.get_event_loop().run_until_complete(example())
@@ -22,13 +22,13 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 # returns counters for `node.local:9200`
-thingscmd -n node.local -u admin -p pass -q << EOQ "
+thingscmd -n node.local -u admin -p pass -s node -q << EOQ "
 counters();
 "
 EOQ
 ```
 
-> Example return value in JSON format (the new collection id)
+> Example return value in JSON format
 
 ```json
 {
