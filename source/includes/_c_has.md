@@ -39,7 +39,7 @@ EOQ
 true
 ```
 
-Determines if a [set](#set) has a given thing.
+Determines if a [set](#set-type) has a given thing.
 
 This function does *not* generate an [event](#events).
 

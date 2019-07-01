@@ -35,10 +35,17 @@ EOQ
 }
 ```
 
-This function returns the value of the first element in the [array](#array) or [thing](#thing) that satisfies the callback function.
+This function returns the value of the first element in the [array](#array-type) or [set](#set-type) that satisfies the callback function.
 Otherwise `nil` is returned unless an alternative return value is specified.
 
 This function does *not* generate an [event](#events).
+
+<aside class="notice">
+The return value when called on a [set](#set-type) might be unpredictable since a set is not ordered.
+<p><code>set([{name: 'Iris'}, {name: 'Cato'}]).find(||true);</code></p>
+<p>...will return <code>{Iris}</code> <i>or</i> <code>{Cato}</code>.</p>
+</aside>
+
 
 ### Function
 *iterable*.`find(callback, [alt])`
@@ -51,10 +58,10 @@ alt | any (optional) | Alternative value which is returned if no item has passed
 
 Explanation of the *callback* argument:
 
-Iterable | Arguments | Description
--------- | -------- | -----------
-array | item, index | Iterate over items in the array. Both item and index are optional.
-thing | name, value | Iterate over thing properties. Both name and value are optional.
+Iterable | Arguments   | Description
+-------- | ----------- | -----------
+array    | item, index | Iterate over items in the array. Both `item` and `index` are optional.
+set      | thing, id   | Iterate over things in the set. Both `thing` and `id` are optional.
 
 <aside class="notice">
 The <code>alt</code> argument will be <i>lazy</i> evaluated. Consider the following example:

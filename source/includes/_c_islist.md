@@ -44,7 +44,7 @@ EOQ
 ```
 
 This function determines whether the value passed to this function
-is a mutable [array](#array) or not.
+is a mutable [array](#array-type) or not.
 
 This function does *not* generate an [event](#events).
 

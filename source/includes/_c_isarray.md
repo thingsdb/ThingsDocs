@@ -44,7 +44,7 @@ EOQ
 ```
 
 This function determines whether the value passed to this function
-is an [array](#array) type or not. The functions [islist](#islist) and
+is an [array](#array-type) type or not. The functions [islist](#islist) and
 [istuple](#istuple) can be used to check if the array is mutable.
 
 This function does *not* generate an [event](#events).

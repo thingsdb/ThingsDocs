@@ -40,7 +40,7 @@ EOQ
 }
 ```
 
-Returns a new empty [set](#set). If an array is given, then all elements in the
+Returns a new empty [set](#set-type). If an array is given, then all elements in the
 given array must be or type `thing` and a new set is returned based on the
 given things.
 

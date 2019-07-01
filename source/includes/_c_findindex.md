@@ -31,7 +31,7 @@ EOQ
 42
 ```
 
-This function returns the index of the first element in an [array](#array) that satisfies the callback function.
+This function returns the index of the first element in an [array](#array-type) that satisfies the callback function.
 Otherwise `nil` is returned.
 
 This function does *not* generate an [event](#events).

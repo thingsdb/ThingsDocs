@@ -47,7 +47,7 @@ EOQ
 ```
 
 This function determines whether the value passed to this function
-is a immutable [array](#array) or not. At least nested arrays are of kind tuple.
+is a immutable [array](#array-type) or not. At least nested arrays are of kind tuple.
 
 This function does *not* generate an [event](#events).
 

@@ -46,7 +46,7 @@ EOQ
 ]
 ```
 
-This function removes and returns the value of the *first* element in the [array](#array)
+This function removes and returns the value of the *first* element in the [array](#array-type)
 that satisfies the callback function.
 Otherwise `nil` is returned unless an alternative return value is specified.
 

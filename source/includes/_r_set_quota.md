@@ -45,7 +45,7 @@ Type | Description
 ---- | -----------
 `things` | Maximum number of [things](#thing) allowed in a collection.
 `properties` | Maximum number of [properties](#properties) which can be assigned to a thing.
-`array_size` | Maximum array length. This quota type applies to all [array type](#array).
+`array_size` | Maximum array length. This quota type applies to all [array type](#array-type).
 `raw_size` | Maximum [raw](#string-raw) value size. When this quota is set, both queries and blob values are limited to this quota.
 
 If a quota limit is reached, then the affected query will raise `MAX_QUOTA_ERROR`.

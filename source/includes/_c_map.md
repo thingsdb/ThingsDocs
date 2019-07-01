@@ -40,7 +40,7 @@ EOQ
 ]
 ```
 
-Iterate over items in an [array](#array), [set](#set) or over all properties on a [thing](#thing).
+Iterate over items in an [array](#array-type), [set](#set-type) or over all properties on a [thing](#thing).
 
 This function does *not* generate an [event](#events).
 

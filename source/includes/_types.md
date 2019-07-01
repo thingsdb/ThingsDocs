@@ -222,7 +222,7 @@ Method | Description
 [test](#test) | A [string](#string-raw) method that tests for a match in a string. It returns `true` or `false`.
 
 
-## Array
+## Array type
 
 An empty array can be constructed as follows: `arr = [];`
 
@@ -272,7 +272,7 @@ Method | Description
 [filter](#filter) | Return a new `thing` with properties that pass a given test.
 [id](#id) | Return the `id`.
 [len](#len) | Returns the number of items.
-[map](#map) | Returns a [array](#array) with the results of calling a provided closure on every item.
+[map](#map) | Returns an [array](#array-type) with the results of calling a provided closure on every item.
 [rename](#rename) | Rename a given property.
 
 
@@ -287,7 +287,7 @@ It is not possible to use closures with recursion, for example:
 </aside>
 
 
-## Set
+## Set type
 
 A set is a collection which is unordered and can only contain things.
 Each [thing](#thing) will only exists once in a collection.
@@ -295,3 +295,10 @@ Each [thing](#thing) will only exists once in a collection.
 ### Methods
 Method | Description
 ------ | -----------
+[add](#add) | Add things to a set.
+[filter](#filter) | Return a new `set` with things that pass a given test.
+[find](#find) | Returns the first `thing` which passes a given test.
+[has](#has) | Test if a set contains a given thing.
+[map](#map) | Return an [array](#array-type) with the results of calling a provided closure on every thing.
+[remove](#remove-set) | Remove things from a set.
+[set](#set) | Create a new empty set or convert an [array](#array-type) to a new set.

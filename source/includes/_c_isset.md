@@ -41,7 +41,7 @@ EOQ
 ```
 
 This function determines whether the value passed to this function
-is a [set](#set) or not.
+is a [set](#set-type) or not.
 
 This function does *not* generate an [event](#events).
 
