@@ -29,7 +29,7 @@ EOQ
 > Example return value in JSON format (the new user id)
 
 ```json
-null
+19
 ```
 
 Creates a new user to ThingsDB. The new user is created without any access privileges.

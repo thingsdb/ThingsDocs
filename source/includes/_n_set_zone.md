@@ -36,7 +36,7 @@ null
 
 This function sets the zone on the connected ThingsDB node.
 
-Each node can be placed in a zone which is represented by a integer value between `0` and `255`.
+Each node can be placed in a zone which is represented by an integer value between `0` and `255`.
 By default each node is placed into zone `0`. Zones are used when a query is forwarded by a node
 to another node to outsource some work. The *other* node is selected randomly from all available
 nodes, but nodes in the same zone are preferred.
