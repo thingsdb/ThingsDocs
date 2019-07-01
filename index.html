@@ -286,16 +286,13 @@
                     <a href="#nil" class="toc-h2 toc-link" data-title="Nil">Nil</a>
                   </li>
                   <li>
-                    <a href="#string" class="toc-h2 toc-link" data-title="String">String</a>
+                    <a href="#string-raw" class="toc-h2 toc-link" data-title="String (raw)">String (raw)</a>
                   </li>
                   <li>
-                    <a href="#raw" class="toc-h2 toc-link" data-title="Raw">Raw</a>
+                    <a href="#boolean" class="toc-h2 toc-link" data-title="Boolean">Boolean</a>
                   </li>
                   <li>
-                    <a href="#bool" class="toc-h2 toc-link" data-title="Bool">Bool</a>
-                  </li>
-                  <li>
-                    <a href="#int" class="toc-h2 toc-link" data-title="Int">Int</a>
+                    <a href="#integer" class="toc-h2 toc-link" data-title="Integer">Integer</a>
                   </li>
                   <li>
                     <a href="#floating-point" class="toc-h2 toc-link" data-title="Floating point">Floating point</a>
@@ -431,6 +428,9 @@
                   </li>
                   <li>
                     <a href="#findindex" class="toc-h2 toc-link" data-title="findindex">findindex</a>
+                  </li>
+                  <li>
+                    <a href="#float" class="toc-h2 toc-link" data-title="float">float</a>
                   </li>
                   <li>
                     <a href="#has" class="toc-h2 toc-link" data-title="has">has</a>
@@ -1070,7 +1070,7 @@ EOQ
     </span><span class="mi">0</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>Logical operators are typically used with <a href="#bool">bool</a> values.</p>
+<p>Logical operators are typically used with <a href="#boolean">bool</a> values.</p>
 
 <table><thead>
 <tr>
@@ -1137,9 +1137,7 @@ EOQ
 <h2 id='nil'>Nil</h2>
 <p>Probably the most simple type, it&#39;s used as <em>no value</em>.
 What more can we say about <code>nil</code>?</p>
-<h2 id='string'>String</h2>
-<p>See <a href="#raw">raw</a> since both <em>strings</em> and <em>blobs</em> are implemented in ThingsDB as type <code>raw</code>.</p>
-<h2 id='raw'>Raw</h2>
+<h2 id='string-raw'>String (raw)</h2>
 <blockquote>
 <p>This code creates a <em>raw</em> property <em>greet</em> to collection <em>stuff</em>:</p>
 </blockquote>
@@ -1197,7 +1195,7 @@ EOQ
 <td>Return a new string in which all case-based characters are in upper case.</td>
 </tr>
 </tbody></table>
-<h2 id='bool'>Bool</h2>
+<h2 id='boolean'>Boolean</h2>
 <blockquote>
 <p>This code creates a <em>bool</em> property <em>is_the_earth_flat</em> to collection <em>stuff</em>:</p>
 </blockquote>
@@ -1224,7 +1222,7 @@ EOQ
 </span></code></pre>
 <p>Boolean are either <code>true</code> or <code>false</code>.
 Other types can convert to <code>bool</code> by using the <code>!</code> (not) operator or the <a href="#bool">bool</a> function.</p>
-<h2 id='int'>Int</h2>
+<h2 id='integer'>Integer</h2>
 <blockquote>
 <p>This code creates a <em>int</em> property <em>count</em> to collection <em>stuff</em>:</p>
 </blockquote>
@@ -1347,27 +1345,32 @@ special <em>float</em> values like <code>inf</code>, <code>-inf</code> and <code
 
     <span class="c"># Note: the email check is oversimplified, do not use in production</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
-        email = 'info@thingsdb.net';
-        email.test( /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/ );
+        email_test = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+
+        /* example usage of our 'email_test' */
+        $email = 'info@thingsdb.net';
+        $email.test( email_test );
     '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
 
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># Note: the email check is oversimplified, do not use in production</span>
 thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
-email = 'info@thingsdb.net';
-email.test( /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/ );
+email_test = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+
+/* example usage of our 'email_test' */
+\$email = 'info@thingsdb.net';
+\$email.test( email_test );
 "
 EOQ
 </span></code></pre>
 <blockquote>
-<p>Return value in JSON format (the first <code>nil</code> is for the email assignments)</p>
+<p>Return value in JSON format</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-    </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="kc">true</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="kc">true</span><span class="w">
 </span></code></pre>
-<p>Regular expression can be constructed using a literal which consists of a pattern enclosed between slashes, as follows: <code>re = /ab+c/;</code>.</p>
+<p>Regular expression can be constructed using a literal which consists of a pattern enclosed between slashes, as follows: <code>re = /ab+c/;</code>.
+It is probably a good idea to store a <code>regex</code> in a variable if you plan to use the regular expression multiple times. This prevents the
+requirement to compile the regular expression each time.</p>
 <h3 id='methods-that-use-regular-expressions'>Methods that use regular expressions</h3>
 <table><thead>
 <tr>
@@ -1518,7 +1521,7 @@ node specific changes.</p>
 <p>This code will return node counter values:</p>
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
-<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">scope</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 
@@ -1527,19 +1530,19 @@ node specific changes.</p>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
     <span class="c"># returns counters for `node.local:9200`</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
-        counter();
-    '''</span><span class="p">)</span>
+        counters();
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="n">scope</span><span class="o">.</span><span class="n">node</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># returns counters for `node.local:9200`</span>
-thingscmd -n node.local -u admin -p pass -q <span class="sh">&lt;&lt; EOQ "
+thingscmd -n node.local -u admin -p pass -s node -q <span class="sh">&lt;&lt; EOQ "
 counters();
 "
 EOQ
 </span></code></pre>
 <blockquote>
-<p>Example return value in JSON format (the new collection id)</p>
+<p>Example return value in JSON format</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"average_event_duration"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.368566710075053e-05</span><span class="p">,,</span><span class="w">
@@ -1667,7 +1670,65 @@ Other nodes are not affected.</p>
 <h2 id='set_loglevel'>set_loglevel</h2>
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h2 id='set_zone'>set_zone</h2>
+<blockquote>
+<p>This code will set the zone to <code>1</code> on <code>node.local:9200</code>:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">scope</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="c"># set the zone to 1 on 'node.local:9200'</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
+        set_zone(1);
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="n">scope</span><span class="o">.</span><span class="n">node</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># returns counters for 'node.local:9200'</span>
+thingscmd -n node.local -u admin -p pass -s node -q <span class="sh">&lt;&lt; EOQ "
+set_zone(1);
+"
+EOQ
+</span></code></pre>
+<blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="kc">null</span><span class="w">
+</span></code></pre>
+<p>This function sets the zone on the connected ThingsDB node.</p>
+
+<p>Each node can be placed in a zone which is represented by a integer value between <code>0</code> and <code>255</code>.
+By default each node is placed into zone <code>0</code>. Zones are used when a query is forwarded by a node
+to another node to outsource some work. The <em>other</em> node is selected randomly from all available
+nodes, but nodes in the same zone are preferred.</p>
+
+<p>So when do you configure a zone for a node? In case nodes are spread across multiple locations, you might
+want to configure the nodes in the same location or region with a specified zone number to reduce
+network traffic time when forwarding packages from one node to another.</p>
+
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><code>set_zone(zone);</code></p>
+<h3 id='arguments'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>zone</td>
+<td>integer (required)</td>
+<td>Integer value between <code>0</code> and <code>255</code> representing the zone number.</td>
+</tr>
+</tbody></table>
+<h3 id='return-value'>Return value</h3>
+<p>Returns <code>nil</code>.</p>
 <h2 id='shutdown'>shutdown</h2>
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h1 id='thingsdb-api'>ThingsDB API</h1>
@@ -2968,6 +3029,83 @@ Otherwise <code>nil</code> is returned.</p>
 <h3 id='return-value'>Return value</h3>
 <p>The index of the first element in the array or thing that satisfies the provided testing function;
 otherwise, <code>nil</code> is returned.</p>
+<h2 id='float'>float</h2>
+<blockquote>
+<p>This code shows some return values for <strong><em>float()</em></strong>:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
+        [
+            float(),
+            float(42),
+            float('0.365e+3 days'),
+            float('0xFF'),
+            float(true),
+            float(false),
+        ];
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+[
+    float(),
+    float(42),
+    float('0.365e+3 days'),
+    float('0xFF'),
+    float(true),
+    float(false),
+];
+"
+EOQ
+</span></code></pre>
+<blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">42.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">365.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">255.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">1.0</span><span class="p">,</span><span class="w">
+    </span><span class="mf">0.0</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Returns a <a href="#floating-point">float</a> from a specified value.
+If no value is given, the default float <code>0.0</code> is returned.</p>
+
+<p>If the specified value is of type <a href="#string-raw">raw</a>, then the initial characters
+of the string are converted until a non-digit character is found.
+Initial white space is ignored and the number may start with an optional <code>+</code> or <code>-</code> sign.</p>
+
+<p>Type <a href="#boolean">bool</a> values are converted to <code>1.0</code> for <code>true</code> and <code>0.0</code> for <code>false</code>.</p>
+
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><code>float(value)</code></p>
+<h3 id='arguments'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>value</td>
+<td>any (optional)</td>
+<td>The value where to create a floating point value for.</td>
+</tr>
+</tbody></table>
+<h3 id='return-value'>Return value</h3>
+<p>A floating point value. Other type than <code>float</code>, <code>raw</code>, <code>bool</code> or <code>int</code>
+will raise a <code>BAD_REQUEST</code>.</p>
 <h2 id='has'>has</h2>
 <blockquote>
 <p>This code shows an example use case of <strong><em>has()</em></strong>:</p>
@@ -3220,7 +3358,7 @@ new integer value will be rounded towards zero.</p>
 of the string are converted until a non-digit character is found.
 Initial white space is ignored and the number may start with an optional <code>+</code> or <code>-</code> sign.</p>
 
-<p>Type <a href="#bool">bool</a> values are converted to <code>1</code> for <code>true</code> and <code>0</code> for <code>false</code>.</p>
+<p>Type <a href="#boolean">bool</a> values are converted to <code>1</code> for <code>true</code> and <code>0</code> for <code>false</code>.</p>
 
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h3 id='function'>Function</h3>
@@ -3403,7 +3541,7 @@ EOQ
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This function determines whether the value passed to this function
-is a <a href="#bool">bool</a> or not.</p>
+is a <a href="#boolean">bool</a> or not.</p>
 
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h3 id='function'>Function</h3>
@@ -4022,7 +4160,7 @@ EOQ
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="mi">4</span><span class="w">
 </span></code></pre>
-<p>Returns the length of an <a href="#array">array</a> or <a href="#raw">string</a>, or the number of items in a <a href="#thing">thing</a>.</p>
+<p>Returns the length of an <a href="#array">array</a> or <a href="#string-raw">string</a>, or the number of items in a <a href="#thing">thing</a>.</p>
 
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h3 id='function'>Function</h3>
