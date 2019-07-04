@@ -412,7 +412,7 @@
                     <a href="#bool" class="toc-h2 toc-link" data-title="bool">bool</a>
                   </li>
                   <li>
-                    <a href="#endswith" class="toc-h2 toc-link" data-title="endswith">endswith</a>
+                    <a href="#contains" class="toc-h2 toc-link" data-title="contains">contains</a>
                   </li>
                   <li>
                     <a href="#del" class="toc-h2 toc-link" data-title="del">del</a>
@@ -2543,7 +2543,7 @@ an <code>ASSERTION_ERROR</code> is raised.</p>
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># Note: thingscmd supports only one blob per query, so this is always blob(0)</span>
-wget <span class="s1">'https://upload.wikimedia.org/wikipedia/commons/1/15/Siridb-logo.svg'</span> | <span class="se">\</span>
+wget -O - <span class="s1">'https://upload.wikimedia.org/wikipedia/commons/1/15/Siridb-logo.svg'</span> | <span class="se">\</span>
 thingscmd -n node.local -u admin -p pass -c stuff -q  <span class="sh">&lt;&lt; EOQ "
 logo = blob(0);
 "
@@ -2627,7 +2627,7 @@ EOQ
     </span><span class="kc">true</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>Returns an <a href="#integer">bool</a> from a specified value.
+<p>Returns an <a href="#boolean">bool</a> from a specified value.
 If no value is given, <code>false</code> is returned.</p>
 
 <p>Types with a <em>length</em> evaluate to <code>true</code> when the length is <em>not</em> <code>0</code> and <code>false</code> otherwise.</p>
@@ -2651,7 +2651,7 @@ If no value is given, <code>false</code> is returned.</p>
 </tbody></table>
 <h3 id='return-value'>Return value</h3>
 <p>A boolean value.</p>
-<h2 id='endswith'>endswith</h2>
+<h2 id='contains'>contains</h2>
 <blockquote>
 <p>This code shows an example using <strong><em>contains()</em></strong>:</p>
 </blockquote>
@@ -3888,7 +3888,7 @@ EOQ
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
-</code></pre><pre class="highlight shell tab-shell"><code>wget <span class="s1">'https://upload.wikimedia.org/wikipedia/commons/1/15/Siridb-logo.svg'</span> | <span class="se">\</span>
+</code></pre><pre class="highlight shell tab-shell"><code>wget -O - <span class="s1">'https://upload.wikimedia.org/wikipedia/commons/1/15/Siridb-logo.svg'</span> | <span class="se">\</span>
 thingscmd -n node.local -u admin -p pass -c stuff -q  <span class="sh">&lt;&lt; EOQ "
 [
     israw( 'some string' ),
