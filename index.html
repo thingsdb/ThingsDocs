@@ -1899,13 +1899,18 @@ Privileges to ThingsDB gives a user the ability to view counters, add, view remo
 </tr>
 <tr>
 <td><code>GRANT</code> (11)</td>
-<td>Gives read, modify and grant(/revoke) privileges.</td>
+<td>Gives read, modify and grant (and revoke) privileges.</td>
 </tr>
 <tr>
 <td><code>FULL</code> (15)</td>
 <td>Gives full privileges.</td>
 </tr>
 </tbody></table>
+
+<aside class="notice">
+It is not possible to have <code>GRANT</code> privileges without also having <code>MODIFY</code> privileges.
+Similarly, it is not possible to have <code>MODIFY</code> privileges without <code>READ</code>.
+</aside>
 
 <p>This function generates an <a href="#events">event</a>.</p>
 <h3 id='function'>Function</h3>
