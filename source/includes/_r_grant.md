@@ -38,13 +38,18 @@ Privileges to ThingsDB gives a user the ability to view counters, add, view remo
 
 The following pre-defined masks are available:
 
-Mask | Description
----- | -----------
-`READ` (1) | Gives read access.
+Mask         | Description
+------------ | -----------
+`READ` (1)   | Gives read access.
 `MODIFY` (3) | Gives read and modify access.
-`WATCH` (4) | Gives watch (and un-watch) privileges.
-`GRANT` (11) | Gives read, modify and grant(/revoke) privileges.
-`FULL` (15) | Gives full privileges.
+`WATCH` (4)  | Gives watch (and un-watch) privileges.
+`GRANT` (11) | Gives read, modify and grant (and revoke) privileges.
+`FULL` (15)  | Gives full privileges.
+
+<aside class="notice">
+It is not possible to have <code>GRANT</code> privileges without also having <code>MODIFY</code> privileges.
+Similarly, it is not possible to have <code>MODIFY</code> privileges without <code>READ</code>.
+</aside>
 
 
 This function generates an [event](#events).
