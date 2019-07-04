@@ -26,7 +26,7 @@ revoke('stuff', 'iris', FULL);
 EOQ
 ```
 
-> Example return value in JSON format (the new collection id)
+> Return value in JSON format
 
 ```json
 null
@@ -43,7 +43,7 @@ This function generates an [event](#events).
 ### Arguments
 Argument | Type | Description
 -------- | ---- | -----------
-`target` | int/raw | Target collection name or id. With target `0`, general ThingsDB privileges can be revoked.
+`target` | int/raw | Can be either the `:node` scope, `:thingsdb` scope, or a collection name or id.
 `user` | raw | User to revoke privileges from.
 `mask` | int | Bit-mask for revoking privileges.
 

@@ -26,13 +26,14 @@ grant('stuff', 'iris', (READ|WATCH));
 EOQ
 ```
 
-> Example return value in JSON format (the new collection id)
+> Return value in JSON format
 
 ```json
 null
 ```
 
-Grant collection or general privileges to a user. Access to a user is provided by setting a bit mask to either a collection, or to ThingsDB in general.
+Grant collection or general privileges to a user. Access to a user is provided by setting
+a bit mask to either the `:node` scope, `:thingsdb` scope or a collection.
 Privileges to ThingsDB gives a user the ability to view counters, add, view remove users etc.
 
 The following pre-defined masks are available:
@@ -54,7 +55,7 @@ This function generates an [event](#events).
 ### Arguments
 Argument | Type | Description
 -------- | ---- | -----------
-`target` | int/raw | Target collection name or id. With target `0`, general ThingsDB privileges can be granted.
+`target` | int/raw | Can be either the `:node` scope, `:thingsdb` scope, or a collection name or id.
 `user` | raw | User to grant privileges to.
 `mask` | int | Bit-mask for setting privileges.
 

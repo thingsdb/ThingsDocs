@@ -41,7 +41,7 @@ Otherwise `nil` is returned unless an alternative return value is specified.
 This function does *not* generate an [event](#events).
 
 <aside class="notice">
-The return value when called on a [set](#set-type) might be unpredictable since a set is not ordered.
+The return value when called on a <code>set</code> might be unpredictable since a set is not ordered.
 <p><code>set([{name: 'Iris'}, {name: 'Cato'}]).find(||true);</code></p>
 <p>...will return <code>{Iris}</code> <i>or</i> <code>{Cato}</code>.</p>
 </aside>
