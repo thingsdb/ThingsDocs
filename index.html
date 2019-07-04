@@ -1869,11 +1869,12 @@ grant('stuff', 'iris', (READ|WATCH));
 EOQ
 </span></code></pre>
 <blockquote>
-<p>Example return value in JSON format (the new collection id)</p>
+<p>Return value in JSON format</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="kc">null</span><span class="w">
 </span></code></pre>
-<p>Grant collection or general privileges to a user. Access to a user is provided by setting a bit mask to either a collection, or to ThingsDB in general.
+<p>Grant collection or general privileges to a user. Access to a user is provided by setting
+a bit mask to either the <code>:node</code> scope, <code>:thingsdb</code> scope or a collection.
 Privileges to ThingsDB gives a user the ability to view counters, add, view remove users etc.</p>
 
 <p>The following pre-defined masks are available:</p>
@@ -1920,7 +1921,7 @@ Privileges to ThingsDB gives a user the ability to view counters, add, view remo
 <tr>
 <td><code>target</code></td>
 <td>int/raw</td>
-<td>Target collection name or id. With target <code>0</code>, general ThingsDB privileges can be granted.</td>
+<td>Can be either the <code>:node</code> scope, <code>:thingsdb</code> scope, or a collection name or id.</td>
 </tr>
 <tr>
 <td><code>user</code></td>
@@ -2212,7 +2213,7 @@ revoke('stuff', 'iris', FULL);
 EOQ
 </span></code></pre>
 <blockquote>
-<p>Example return value in JSON format (the new collection id)</p>
+<p>Return value in JSON format</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="kc">null</span><span class="w">
 </span></code></pre>
@@ -2233,7 +2234,7 @@ how access privileges can be set for a user.</p>
 <tr>
 <td><code>target</code></td>
 <td>int/raw</td>
-<td>Target collection name or id. With target <code>0</code>, general ThingsDB privileges can be revoked.</td>
+<td>Can be either the <code>:node</code> scope, <code>:thingsdb</code> scope, or a collection name or id.</td>
 </tr>
 <tr>
 <td><code>user</code></td>
@@ -2942,7 +2943,7 @@ Otherwise <code>nil</code> is returned unless an alternative return value is spe
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 
 <aside class="notice">
-The return value when called on a [set](#set-type) might be unpredictable since a set is not ordered.
+The return value when called on a <code>set</code> might be unpredictable since a set is not ordered.
 <p><code>set([{name: 'Iris'}, {name: 'Cato'}]).find(||true);</code></p>
 <p>...will return <code>{Iris}</code> <i>or</i> <code>{Cato}</code>.</p>
 </aside>
