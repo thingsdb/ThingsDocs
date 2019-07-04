@@ -1,4 +1,4 @@
-## endswith
+## contains
 
 > This code shows an example using ***contains()***:
 

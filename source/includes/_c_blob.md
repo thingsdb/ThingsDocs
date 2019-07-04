@@ -26,7 +26,7 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 # Note: thingscmd supports only one blob per query, so this is always blob(0)
-wget 'https://upload.wikimedia.org/wikipedia/commons/1/15/Siridb-logo.svg' | \
+wget -O - 'https://upload.wikimedia.org/wikipedia/commons/1/15/Siridb-logo.svg' | \
 thingscmd -n node.local -u admin -p pass -c stuff -q  << EOQ "
 logo = blob(0);
 "
