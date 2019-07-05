@@ -3,8 +3,38 @@ ThingsDB has some basic
 
 ## Nil
 
-Probably the most simple type, it's used as *no value*.
-What more can we say about `nil`?
+ > This code uses `nil` to prevent returning unused data:
+
+```python
+import asyncio
+from thingsdb.client import Client
+
+client = Client()
+
+async def example():
+    await client.connect('node.local')
+    await client.authenticate('admin', 'pass')
+    res = await client.query(r'''
+        my_array = [1, 2, 3, 42];
+        nil;  /* without nil, the array above would be returned */
+    ''', target='stuff')
+    print(res)
+
+asyncio.get_event_loop().run_until_complete(example())
+```
+
+```shell
+thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
+my_array = [1, 2, 3, 42];
+nil;  /* without nil, the array above would be returned */
+"
+EOQ
+```
+
+Probably the most simple type, it can be used as *no value*.
+
+It might be useful to use `nil` as the last statement in a query to prevent
+returning data which is not required. See the code example.
 
 ## String (raw)
 
@@ -19,19 +49,21 @@ client = Client()
 async def example():
     await client.connect('node.local')
     await client.authenticate('admin', 'pass')
-    # Get collection `stuff`
-    stuff = await client.get_collection('stuff')
+    res = await client.query(r'''
 
-    # Assign property `greet`
-    await stuff.assign('greet', 'Hello world!!')
+        greet = 'Hello world!!';
+
+    ''', target='stuff')
+    print(res)
 
 asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-# Assign property `greet`
 thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
+
 greet = 'Hello world!!';
+
 "
 EOQ
 ```
@@ -62,19 +94,22 @@ client = Client()
 async def example():
     await client.connect('node.local')
     await client.authenticate('admin', 'pass')
-    # Get collection `stuff`
-    stuff = await client.get_collection('stuff')
 
-    # Assign property `is_the_earth_flat`
-    await stuff.assign('is_the_earth_flat', not True)
+    res = await client.query(r'''
+
+        is_the_earth_flat = !true;
+
+    ''', target='stuff')
+    print(res)
 
 asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-# Assign property `is_the_earth_flat`
 thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
+
 is_the_earth_flat = !true;
+
 "
 EOQ
 ```
@@ -96,19 +131,21 @@ client = Client()
 async def example():
     await client.connect('node.local')
     await client.authenticate('admin', 'pass')
-    # Get collection `stuff`
-    stuff = await client.get_collection('stuff')
+    res = await client.query(r'''
 
-    # Assign property `count`
-    await stuff.assign('count', 123)
+        count = 123;
+
+    ''', target='stuff')
+    print(res)
 
 asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-# Assign property `count`
 thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
+
 count = 123;
+
 "
 EOQ
 ```
@@ -151,7 +188,9 @@ asyncio.get_event_loop().run_until_complete(example())
 ```shell
 # Assign property `plank_constant`
 thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
+
 plank_constant = 6.62607004e-34;
+
 "
 EOQ
 ```

@@ -21,23 +21,26 @@ includes:
   - n_set_zone
   - n_shutdown
   - thingsdb_api
-  - r_collection
-  - r_collections
-  - r_del_collection
-  - r_del_user
-  - r_grant
-  - r_new_collection
-  - r_new_node
-  - r_new_user
-  - r_pop_node
-  - r_rename_collection
-  - r_rename_user
-  - r_replace_node
-  - r_revoke
-  - r_set_password
-  - r_set_quota
-  - r_user
-  - r_users
+  - t_collection
+  - t_collections
+  - t_del_collection
+  - t_del_expired
+  - t_del_token
+  - t_del_user
+  - t_grant
+  - t_new_collection
+  - t_new_node
+  - t_new_token
+  - t_new_user
+  - t_pop_node
+  - t_rename_collection
+  - t_rename_user
+  - t_replace_node
+  - t_revoke
+  - t_set_password
+  - t_set_quota
+  - t_user
+  - t_users
   - collection_api
   - c_add
   - c_assert
@@ -119,6 +122,9 @@ async def example():
     # replace `amdin` with yout username and `pass` with your password
     await client.authenticate('admin', 'pass')
 
+    # ..or by using a token
+    await client.authenticate('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
+
 # run the example
 loop.run_until_complete(example())
 
@@ -128,15 +134,24 @@ loop.run_until_complete(client.wait_closed())
 ```
 
 ```shell
-thingscmd -n node.local -u admin -p pass -q << EOL
-/* Creates a new collection */
-new_collection('awesome_things');
-EOL
+# Authenticate with a user and password
+thingscmd -n node.local -u admin -p pass -q "nil;"
+# ..or with a token
+thingscmd -n node.local -t "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" -q "nil;"
+
 ```
 
 
-ThingsDB uses a user and password combination for access. A default user `admin` with password `pass` is created on a fresh installation.
+ThingsDB supports authentication by using a *user* and *password* combination, or with a *token*. A default user `admin` with password `pass` is created on a fresh installation.
 If you did not yet change the default password, you might want to jump to [set password](#set_password)
+
+It might be a good idea to create a [new user](#new_user) with minimal privileges and add a [new token](#new_token) for this user.
+See the [grant](#grant) and [revoke](#revoke) functions for managing privileges for a user.
+
+<aside class="warning">
+For connecting to ThingsDB with a client, <code>WATCH</code> privileges on the <code>:node</code> scope are required.
+</aside>
+
 
 ## Python
 
@@ -355,6 +370,9 @@ Can be used to assign a value to a variable which can be used within a query.
 
 A temporary variable can be used withing the scope of a query and is automatically
 destroyed after the query is finished.
+
+Temporary variable can be created with `READ` privileges since they do not modify
+the collection data.
 
 To create a temporary variable, start with a dollar `$` sign, followed with a valid [name](#names).
 

@@ -12,7 +12,12 @@ async def example():
     await client.connect('node.local')
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
-        grant('stuff', 'iris', (READ|WATCH));
+        new_user('iris');
+        new_token('iris');
+        [
+            grant(':node', 'iris', WATCH),
+            grant('stuff', 'iris', (READ|WATCH)),
+        ];
     ''')
     print(res)
 
@@ -21,7 +26,12 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 thingscmd -n node.local -u admin -p pass -q << EOQ "
-grant('stuff', 'iris', (READ|WATCH));
+new_user('iris');
+new_token('iris');
+[
+    grant(':node', 'iris', WATCH),
+    grant('stuff', 'iris', (READ|WATCH)),
+];
 "
 EOQ
 ```
@@ -29,7 +39,10 @@ EOQ
 > Return value in JSON format
 
 ```json
-null
+[
+    null,
+    null
+]
 ```
 
 Grant collection or general privileges to a user. Access to a user is provided by setting
