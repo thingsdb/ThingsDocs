@@ -28,10 +28,10 @@ new_token('admin', now() + 7*24*3600, 'token for one week');
 EOQ
 ```
 
-> Example return value in JSON format (the new node id)
+> Example return value in JSON format (the token key)
 
 ```json
-
+"FXIxyVAJmtQ8o5GTU8yZxdsKrZC7TRijzZ71Kh5q"
 ```
 
 Adds a new token for a given user. An optional expiration date may be given after which the token cannot
