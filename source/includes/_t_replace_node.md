@@ -12,7 +12,7 @@ async def example():
     # node3.local must be started using the `--secret ...` argument
     # and the node with id 1 must be turned off
     await client.connect('node1.local')
-    await client.authenticate('admin', 'pass')
+    client.authenticate(auth=['admin', 'pass'])
     res = await client.query(r'''
         replace_node(1, 'my-one-time-serect', 'node3.local');
     ''')

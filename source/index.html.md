@@ -120,7 +120,7 @@ async def example():
     await client.connect('node.local')
 
     # replace `amdin` with yout username and `pass` with your password
-    await client.authenticate('admin', 'pass')
+    await client.authenticate(auth=['admin', 'pass'])
 
     # ..or by using a token
     await client.authenticate('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
@@ -148,8 +148,8 @@ If you did not yet change the default password, you might want to jump to [set p
 It might be a good idea to create a [new user](#new_user) with minimal privileges and add a [new token](#new_token) for this user.
 See the [grant](#grant) and [revoke](#revoke) functions for managing privileges for a user.
 
-<aside class="warning">
-For connecting to ThingsDB with a client, <code>WATCH</code> privileges on the <code>:node</code> scope are required.
+<aside class="notice">
+For connecting to ThingsDB with a auto-reconnect client, <code>WATCH</code> privileges on the <code>:node</code> scope are required.
 </aside>
 
 
@@ -189,10 +189,10 @@ async def example():
         'node.local',       # node address
         9200                # node port, default 9200
     )
-    await client.authenticate(
+    await client.authenticate([
         'admin',            # username
-        'pass'              # password
-    )
+        'pass',             # password
+    ])
     res = await client.query(
         "'Hello world!!'",  # query string
         target=client.node, # collection or scope, defaults to client.thingsdb
@@ -342,7 +342,7 @@ from thingsdb.client import Client
 
 async def example():
     await client.connect('node.local')
-    await client.authenticate('admin', 'pass')
+    client.authenticate(auth=['admin', 'pass'])
     res = await client.query(r'''
         $tmp = 'This is a temporary variable!!!';
     ''', target='stuff')

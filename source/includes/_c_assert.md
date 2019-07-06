@@ -8,7 +8,7 @@ from thingsdb.client import Client
 
 async def example():
     await client.connect('node.local')
-    await client.authenticate('admin', 'pass')
+    client.authenticate(auth=['admin', 'pass'])
     # evaluate 1 > 2 with a custom message and error code
     res = await client.query(r'''
         assert( (1 > 2), 'one is still smaller than two', 1);

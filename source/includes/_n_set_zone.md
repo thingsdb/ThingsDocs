@@ -10,7 +10,7 @@ client = Client()
 
 async def example():
     await client.connect('node.local')
-    await client.authenticate('admin', 'pass')
+    client.authenticate(auth=['admin', 'pass'])
     # set the zone to 1 on 'node.local:9200'
     res = await client.query(r'''
         set_zone(1);

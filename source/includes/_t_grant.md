@@ -10,7 +10,7 @@ client = Client()
 
 async def example():
     await client.connect('node.local')
-    await client.authenticate('admin', 'pass')
+    client.authenticate(auth=['admin', 'pass'])
     res = await client.query(r'''
         new_user('iris');
         new_token('iris');

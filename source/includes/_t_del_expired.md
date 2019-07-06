@@ -10,7 +10,7 @@ client = Client()
 
 async def example():
     await client.connect('node.local')
-    await client.authenticate('admin', 'pass')
+    client.authenticate(auth=['admin', 'pass'])
     # Delete all expired tokens
     await client.del_expired()
 

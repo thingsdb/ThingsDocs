@@ -10,7 +10,7 @@ client = Client()
 
 async def example():
     await client.connect('node.local')
-    await client.authenticate('admin', 'pass')
+    client.authenticate(auth=['admin', 'pass'])
     await client.set_password('admin', 'my_secret_password')
 
 asyncio.get_event_loop().run_until_complete(example())

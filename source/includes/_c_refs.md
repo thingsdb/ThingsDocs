@@ -7,7 +7,7 @@ from thingsdb.client import Client
 
 async def example():
     await client.connect('node.local')
-    await client.authenticate('admin', 'pass')
+    client.authenticate(auth=['admin', 'pass'])
     res = await client.query(r'''
         [
             refs( 'some string' ),
