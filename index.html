@@ -588,7 +588,7 @@
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
 
     <span class="c"># replace `amdin` with yout username and `pass` with your password</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
 
     <span class="c"># ..or by using a token</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'</span><span class="p">)</span>
@@ -611,8 +611,8 @@ If you did not yet change the default password, you might want to jump to <a hre
 <p>It might be a good idea to create a <a href="#new_user">new user</a> with minimal privileges and add a <a href="#new_token">new token</a> for this user.
 See the <a href="#grant">grant</a> and <a href="#revoke">revoke</a> functions for managing privileges for a user.</p>
 
-<aside class="warning">
-For connecting to ThingsDB with a client, <code>WATCH</code> privileges on the <code>:node</code> scope are required.
+<aside class="notice">
+For connecting to ThingsDB with a auto-reconnect client, <code>WATCH</code> privileges on the <code>:node</code> scope are required.
 </aside>
 <h2 id='python'>Python</h2>
 <blockquote>
@@ -641,10 +641,10 @@ It is not possible to <em>watch</em> things by using this shell based tool.</p>
         <span class="s">'node.local'</span><span class="p">,</span>       <span class="c"># node address</span>
         <span class="mi">9200</span>                <span class="c"># node port, default 9200</span>
     <span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">([</span>
         <span class="s">'admin'</span><span class="p">,</span>            <span class="c"># username</span>
-        <span class="s">'pass'</span>              <span class="c"># password</span>
-    <span class="p">)</span>
+        <span class="s">'pass'</span><span class="p">,</span>             <span class="c"># password</span>
+    <span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
         <span class="s">"'Hello world!!'"</span><span class="p">,</span>  <span class="c"># query string</span>
         <span class="n">target</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">node</span><span class="p">,</span> <span class="c"># collection or scope, defaults to client.thingsdb</span>
@@ -820,7 +820,7 @@ For example: <code>answer = 42;</code> creates a property <code>answer</code> wi
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         $tmp = 'This is a temporary variable!!!';
     '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
@@ -872,7 +872,7 @@ is not in use within the statement, for example:
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         (0b110 &amp; 0b011);
         (0b110 | 0b011);
@@ -933,7 +933,7 @@ Binary bitwise expressions must be wrapped between <code>()</code> parentheses.
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         ( 5 + 2 );
         ( 5 - 2 );
@@ -1062,7 +1062,7 @@ Arithmetic expressions must be wrapped between <code>()</code> parentheses.
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="c"># Note: x += 1 never is executed</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         x = 0;
@@ -1134,7 +1134,7 @@ Logical expressions must be wrapped between <code>()</code> parentheses.
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         ( 2 &gt; 1 ) ? 'two is larger than one' : 'two is NOT larger than one';
     '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
@@ -1168,7 +1168,7 @@ EOQ
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         my_array = [1, 2, 3, 42];
         nil;  /* without nil, the array above would be returned */
@@ -1197,7 +1197,7 @@ returning data which is not required. See the code example.</p>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
 
         greet = 'Hello world!!';
@@ -1257,7 +1257,7 @@ EOQ
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
 
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
 
@@ -1287,7 +1287,7 @@ Other types can convert to <code>bool</code> by using the <code>!</code> (not) o
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
 
         count = 123;
@@ -1346,7 +1346,7 @@ converted to <code>int</code> by using the <a href="#int">int</a> function.</p>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="c"># Get collection `stuff`</span>
     <span class="n">stuff</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_collection</span><span class="p">(</span><span class="s">'stuff'</span><span class="p">)</span>
 
@@ -1399,7 +1399,7 @@ special <em>float</em> values like <code>inf</code>, <code>-inf</code> and <code
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
 
     <span class="c"># Note: the email check is oversimplified, do not use in production</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
@@ -1613,7 +1613,7 @@ node specific changes.</p>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="c"># returns counters for `node.local:9200`</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         counters();
@@ -1724,7 +1724,7 @@ counters might provide you with more information.</p>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="c"># resets counters on `node.local:9200`</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         reset_counters();
@@ -1766,7 +1766,7 @@ Other nodes are not affected.</p>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="c"># set the zone to 1 on 'node.local:9200'</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         set_zone(1);
@@ -1829,7 +1829,7 @@ collections, users, access and nodes.</p>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         collection('stuff');
     '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">thingsdb</span><span class="p">)</span>
@@ -1871,7 +1871,7 @@ EOQ
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="c"># Delete collection `old_things`</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">del_collection</span><span class="p">(</span><span class="s">'old_things'</span><span class="p">)</span>
 
@@ -1912,7 +1912,7 @@ EOQ
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="c"># Delete all expired tokens</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">del_expired</span><span class="p">()</span>
 
@@ -1943,7 +1943,7 @@ EOQ
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="c"># Delete a token</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">del_token</span><span class="p">(</span><span class="s">'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'</span><span class="p">)</span>
 
@@ -1986,7 +1986,7 @@ EOQ
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         new_user('iris');
         new_token('iris');
@@ -2096,7 +2096,7 @@ does not exist.</p>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         new_collection('awesome_things');
     '''</span><span class="p">)</span>
@@ -2154,7 +2154,7 @@ if the collection already exists.</p>
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="c"># ThingsDB must be started on node2 using the `--secret ...` argument</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node1.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         new_node('my-one-time-serect', 'node2.local');
     '''</span><span class="p">)</span>
@@ -2215,7 +2215,7 @@ EOQ
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="c"># ThingsDB must be started on node2 using the `--secret ...` argument</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node1.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         new_token('admin', now() + 7*24*3600, 'token for one week');
     '''</span><span class="p">)</span>
@@ -2229,15 +2229,15 @@ new_token('admin', now() + 7*24*3600, 'token for one week');
 EOQ
 </span></code></pre>
 <blockquote>
-<p>Example return value in JSON format (the new node id)</p>
+<p>Example return value in JSON format (the token key)</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="w">
+<pre class="highlight json tab-json"><code><span class="s2">"FXIxyVAJmtQ8o5GTU8yZxdsKrZC7TRijzZ71Kh5q"</span><span class="w">
 </span></code></pre>
-<p>Adds a new token for a given user. An optional expiration date may be given after which the token cannot
-be used anymore. Use <a href="#del_expired">del_expired</a> to cleanup expired tokens. The expiration date may be
-given as a UNIX time-stamp in seconds or a date-time string.</p>
+<p>Adds a new token for a given user. An optional expiration time may be given after which the token cannot
+be used anymore. Use <a href="#del_expired">del_expired</a> to cleanup expired tokens. The expiration time may be
+given as a UNIX time-stamp in seconds or a date/time string.</p>
 
-<p>Some valid date strings:</p>
+<p>Some valid date/time strings:</p>
 
 <ul>
 <li><code>2021-01-01</code></li>
@@ -2248,7 +2248,7 @@ given as a UNIX time-stamp in seconds or a date-time string.</p>
 <p>Expiration dates in the past are not allowed an will raise a <code>BAD_REQUEST</code> error.</p>
 
 <p>It is also possible to set a description for the token which can be used to identify where token is used for.
-If you only want to set a description, but no expiration date, then you can use <code>nil</code> as second argument.
+If you only want to set a description, but no expiration time, then you can use <code>nil</code> as second argument.
 For example: <code>new_token(&#39;my_user&#39;, nil, &#39;some nice description&#39;);</code></p>
 
 <p>There can be no more than 128 tokens assigned to a single user. A <code>MAX_QUOTA_ERROR</code> is raised if this limit
@@ -2256,7 +2256,7 @@ is reached. Existing tokens can be removed with <a href="#del_token">del_token</
 
 <p>This function generates an <a href="#events">event</a>.</p>
 <h3 id='function'>Function</h3>
-<p><code>new_token(username, [, expiration_date] [, description]);</code></p>
+<p><code>new_token(username, [, expiration_time] [, description]);</code></p>
 <h3 id='arguments'>Arguments</h3>
 <table><thead>
 <tr>
@@ -2271,7 +2271,7 @@ is reached. Existing tokens can be removed with <a href="#del_token">del_token</
 <td>Name of the user.</td>
 </tr>
 <tr>
-<td>expiration_date</td>
+<td>expiration_time</td>
 <td>nil/int/float/raw (optional)</td>
 <td>Expiration date of the token.</td>
 </tr>
@@ -2294,7 +2294,7 @@ is reached. Existing tokens can be removed with <a href="#del_token">del_token</
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         new_user('iris', 'siri');
     '''</span><span class="p">)</span>
@@ -2359,7 +2359,7 @@ if the user already exists.</p>
     <span class="c"># node3.local must be started using the `--secret ...` argument</span>
     <span class="c"># and the node with id 1 must be turned off</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node1.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         replace_node(1, 'my-one-time-serect', 'node3.local');
     '''</span><span class="p">)</span>
@@ -2428,7 +2428,7 @@ function.</p>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         revoke('stuff', 'iris', FULL);
     '''</span><span class="p">)</span>
@@ -2489,7 +2489,7 @@ does not exist.</p>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">set_password</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'my_secret_password'</span><span class="p">)</span>
 
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
@@ -2540,7 +2540,7 @@ if the user does not exist and <code>BAD_REQUEST</code> if the new password is n
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         [
             set_quota('stuff', 'things', 10000),
@@ -2627,8 +2627,8 @@ EOQ
 <h3 id='return-value'>Return value</h3>
 <p><code>nil</code> when successful.</p>
 <h2 id='user'>user</h2>
-<p>This function requires <code>GRANT</code> privileges on the <code>:thingsdb</code> scope since it
-exposes user access and token information.</p>
+<p>Without arguments, this function returns info about the connected user and in this case <code>READ</code> privileges on the <code>:thingsdb</code> scope are sufficient.
+If used with a user argument, then this function requires <code>GRANT</code> privileges on the <code>:thingsdb</code> scope since it exposes user access and token information.</p>
 
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h2 id='users'>users</h2>
@@ -2645,7 +2645,7 @@ exposes user access and token information.</p>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">'id()'</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
@@ -2661,7 +2661,7 @@ exposes user access and token information.</p>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         s = set(); a = {item: 'a'}; b = {item: 'b'};
         s.add(a, a, b);
@@ -2699,7 +2699,7 @@ if <code>my_set</code> already contains thing <code>#42</code>.</p>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="c"># evaluate 1 &gt; 2 with a custom message and error code</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         assert( (1 &gt; 2), 'one is still smaller than two', 1);
@@ -2764,7 +2764,7 @@ an <code>ASSERTION_ERROR</code> is raised.</p>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
 
     <span class="c"># TODO: replace with ThingsDB logo</span>
     <span class="n">resp</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span>
@@ -2817,7 +2817,7 @@ if the blob at the given <code>index</code> does not exist.</p>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         [
             bool(),
@@ -2895,7 +2895,7 @@ If no value is given, <code>false</code> is returned.</p>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         'the answer to life the universe and everything'.contains('life');
     '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
@@ -2943,7 +2943,7 @@ EOQ
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         x = 'create and delete this prop';
         del('x');
@@ -2995,7 +2995,7 @@ not a valid <a href="#names">name</a>.</p>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         'the answer to life the universe and everything'.endswith('everything');
     '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
@@ -3043,7 +3043,7 @@ EOQ
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         $users = [{name: 'Iris', age: 6}, {name: 'Sasha', age: 34}];
 
@@ -3149,7 +3149,7 @@ If no elements or properties pass the test, an empty array, set or thing will be
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         users.find(|user| user.name.startswith('Jeroen'));
     '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
@@ -3241,7 +3241,7 @@ otherwise, <code>nil</code> or a specified alternative value is returned.</p>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         users.findindex(|user| user.name.startswith('Jeroen'));
     '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
@@ -3307,7 +3307,7 @@ otherwise, <code>nil</code> is returned.</p>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         [
             float(),
@@ -3384,7 +3384,7 @@ will raise a <code>BAD_REQUEST</code>.</p>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         $iris = {name: 'Iris'};
         $set = set([$iris]);
@@ -3440,7 +3440,7 @@ EOQ
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         $tmp = {name: 'Iris'};
         $tmp.hasprop('name');
@@ -3490,7 +3490,7 @@ EOQ
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         id();
     '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
@@ -3526,7 +3526,7 @@ EOQ
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         users.indexof(t(42));
     '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
@@ -3575,7 +3575,7 @@ The index of an array starts at <code>0</code>, so the first item has index <cod
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         [
             int(),
@@ -3659,7 +3659,7 @@ will raise a <code>BAD_REQUEST</code>.</p>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         [
             isarray( [] ),
@@ -3721,7 +3721,7 @@ is an <a href="#array-type">array</a> type or not. The functions <a href="#islis
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         [
             isascii( 'ԉ' ),
@@ -3779,7 +3779,7 @@ type <code>raw</code> and contains only valid ascii characters.</p>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         [
             isbool( true ),
@@ -3840,7 +3840,7 @@ is a <a href="#boolean">bool</a> or not.</p>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         [
             isfloat( 42.0 ),
@@ -3903,7 +3903,7 @@ is a <a href="#floating-point">floating point</a> value or not.</p>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         [
             isint( 42 ),
@@ -3970,7 +3970,7 @@ is an <a href="#integer">integer</a> or not.</p>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         [
             islist( [] ),
@@ -4031,7 +4031,7 @@ is a mutable <a href="#array-type">array</a> or not.</p>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         [
             isnan( true ),
@@ -4107,7 +4107,7 @@ EOQ
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
 
     <span class="c"># TODO: replace with ThingsDB logo</span>
     <span class="n">resp</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span>
@@ -4171,7 +4171,7 @@ type <code>raw</code>.</p>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         [
             isset( [] ),
@@ -4231,7 +4231,7 @@ is a <a href="#set-type">set</a> or not.</p>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         [
             isthing( {} ),
@@ -4289,7 +4289,7 @@ is a <a href="#thing">thing</a> or not.</p>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         [
             istuple( [] ),
@@ -4353,7 +4353,7 @@ is a immutable <a href="#array-type">array</a> or not. At least nested arrays ar
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         [
             isutf8( 'ԉ' ),
@@ -4411,7 +4411,7 @@ type <code>raw</code> and contains valid utf8.</p>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         len();
     '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
@@ -4447,7 +4447,7 @@ EOQ
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         'Hello World!!'.lower();
     '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
@@ -4479,7 +4479,7 @@ EOQ
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         $users = [{name: 'Iris', age: 6}, {name: 'Sasha', age: 34}];
 
@@ -4548,7 +4548,7 @@ EOQ
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="c"># current timestamp</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         now();
@@ -4589,7 +4589,7 @@ then call <code>now()</code> only once and save it to a temporary variable, for 
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         (arr = [1.2.3]).pop();
         arr;
@@ -4635,7 +4635,7 @@ on a <code>list</code> type array, but not on a <code>tuple</code> since tuples 
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         list = [1, 2, 3];
         list.push(4, 5, 6);
@@ -4671,7 +4671,7 @@ EOQ
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         [
             refs( 'some string' ),
@@ -4736,7 +4736,7 @@ can be higher of lower depending on how the value is stored and used.
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         $tmp = [1, 2, 3, 4];
         [
@@ -4829,7 +4829,7 @@ otherwise, <code>nil</code> or a specified alternative value is returned.</p>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         $t1 = {x:1}; $t2 = {x:2}; $t3 = {x:3}; $t4 = {x:4};
         $s = set([$t1, $t2, $t3, $t4]);
@@ -4922,7 +4922,7 @@ Things which are not found in the set are ignored.</p>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         world = 'huge';
         rename('world', 'universe');
@@ -4982,7 +4982,7 @@ if it already existed.</p>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         set( [{}, {}] );
     '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
@@ -5041,7 +5041,7 @@ given things.</p>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         months = ['Jan', 'Feb', 'April'];
         months.splice(2, 1, 'March');       /* Returns: ['April'] */
@@ -5109,7 +5109,7 @@ an array of one element is returned. If no elements are removed, an empty array 
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         'the answer to life the universe and everything'.startswith('the answer');
     '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
@@ -5177,7 +5177,7 @@ EOQ
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="c"># we use `deep=2` to specify we want to fetch things 2 levels deep</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         t(7);
@@ -5258,7 +5258,7 @@ for example: <code>thing(666,);</code> and this will return an array with one th
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         [
             'Hello world!!'.test(/^hello/),
@@ -5315,7 +5315,7 @@ EOQ
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         [
             try( (1/0) ),
@@ -5401,7 +5401,7 @@ In this example, the item will only be popped in case <code>x</code> is equal to
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         [
             type( nil ),
@@ -5461,7 +5461,7 @@ EOQ
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         'Hello World!!'.upper();
     '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
