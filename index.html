@@ -330,10 +330,7 @@
                     <a href="#reset_counters" class="toc-h2 toc-link" data-title="reset_counters">reset_counters</a>
                   </li>
                   <li>
-                    <a href="#set_loglevel" class="toc-h2 toc-link" data-title="set_loglevel">set_loglevel</a>
-                  </li>
-                  <li>
-                    <a href="#set_zone" class="toc-h2 toc-link" data-title="set_zone">set_zone</a>
+                    <a href="#set_log_level" class="toc-h2 toc-link" data-title="set_log_level">set_log_level</a>
                   </li>
                   <li>
                     <a href="#shutdown" class="toc-h2 toc-link" data-title="shutdown">shutdown</a>
@@ -1717,6 +1714,124 @@ counters might provide you with more information.</p>
 <h3 id='return-value'>Return value</h3>
 <p>Returns the current counter values.</p>
 <h2 id='node'>node</h2>
+<p>Returns information about the connected node.</p>
+
+<table><thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>archive_files</td>
+<td>Number of archive files. May decrease after a full store during <em>away</em> mode.</td>
+</tr>
+<tr>
+<td>archived_in_memory</td>
+<td>Number of events which are archived in memory.</td>
+</tr>
+<tr>
+<td>cached_names</td>
+<td>Number of <a href="#names">names</a> cached in memory.</td>
+</tr>
+<tr>
+<td>client_port</td>
+<td>Listening for client TCP socket connections on this port.</td>
+</tr>
+<tr>
+<td>db_stored_event_id</td>
+<td>Last stored event ID in full database store.</td>
+</tr>
+<tr>
+<td>events_in_queue</td>
+<td>Events which are pending in the queue.</td>
+</tr>
+<tr>
+<td>global_committed_event_id</td>
+<td>Lowest known committed event ID by all nodes.</td>
+</tr>
+<tr>
+<td>global_stored_event_id</td>
+<td>Lowest known stored event ID by all nodes.</td>
+</tr>
+<tr>
+<td>hostname</td>
+<td>Hostname of the node.</td>
+</tr>
+<tr>
+<td>ip_support</td>
+<td>Enabled IP support. May be IPv4/IPv6 or both.</td>
+</tr>
+<tr>
+<td>libcleri_version</td>
+<td>Cleri language parser library version.</td>
+</tr>
+<tr>
+<td>libpcre2_version</td>
+<td>PCRE regular expression library version.</td>
+</tr>
+<tr>
+<td>libqpack_version</td>
+<td>QPack data protocol library version.</td>
+</tr>
+<tr>
+<td>libuv_version</td>
+<td>UV asynchronous library version.</td>
+</tr>
+<tr>
+<td>local_committed_event_id</td>
+<td>Last committed event ID on the node.</td>
+</tr>
+<tr>
+<td>local_stored_event_id</td>
+<td>Last stored event ID on disk. Store takes place when in <em>away</em> mode.</td>
+</tr>
+<tr>
+<td>log_level</td>
+<td>Current log level for the node. May be changed at runtime using <a href="#set_log_level">set_log_level(..)</a></td>
+</tr>
+<tr>
+<td>next_event_id</td>
+<td>Next free event ID.</td>
+</tr>
+<tr>
+<td>next_thing_id</td>
+<td>Next free things ID.</td>
+</tr>
+<tr>
+<td>node_id</td>
+<td>The <code>id</code> which is assigned to the node.</td>
+</tr>
+<tr>
+<td>node_port</td>
+<td>Listening for node TCP socket connections on this port.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Current status of the ThingsDB node.</td>
+</tr>
+<tr>
+<td>storage_path</td>
+<td>Path used for storing ThingsDB data.</td>
+</tr>
+<tr>
+<td>syntax_version</td>
+<td>Language or syntax version. A new version of ThingsDB might also have a new language version.</td>
+</tr>
+<tr>
+<td>uptime</td>
+<td>Uptime of the node in seconds.</td>
+</tr>
+<tr>
+<td>version</td>
+<td>Version of ThingsDB,</td>
+</tr>
+<tr>
+<td>zone</td>
+<td>Zone which is assigned to this node. May be changed in the ThingsDB configuration file.</td>
+</tr>
+</tbody></table>
+
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h2 id='nodes'>nodes</h2>
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
@@ -1760,68 +1875,8 @@ Other nodes are not affected.</p>
 <p>None</p>
 <h3 id='return-value'>Return value</h3>
 <p>Returns <code>nil</code>.</p>
-<h2 id='set_loglevel'>set_loglevel</h2>
+<h2 id='set_log_level'>set_log_level</h2>
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
-<h2 id='set_zone'>set_zone</h2>
-<blockquote>
-<p>This code will set the zone to <code>1</code> on <code>node.local:9200</code>:</p>
-</blockquote>
-<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
-<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">scope</span>
-
-<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
-
-<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
-    <span class="c"># set the zone to 1 on 'node.local:9200'</span>
-    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
-        set_zone(1);
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="n">scope</span><span class="o">.</span><span class="n">node</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
-
-<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># returns counters for 'node.local:9200'</span>
-thingscmd -n node.local -u admin -p pass -s node -q <span class="sh">&lt;&lt; EOQ "
-set_zone(1);
-"
-EOQ
-</span></code></pre>
-<blockquote>
-<p>Return value in JSON format</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="kc">null</span><span class="w">
-</span></code></pre>
-<p>This function sets the zone on the connected ThingsDB node.</p>
-
-<p>Each node can be placed in a zone which is represented by an integer value between <code>0</code> and <code>255</code>.
-By default each node is placed into zone <code>0</code>. Zones are used when a query is forwarded by a node
-to another node to outsource some work. The <em>other</em> node is selected randomly from all available
-nodes, but nodes in the same zone are preferred.</p>
-
-<p>So when do you configure a zone for a node? In case nodes are spread across multiple locations, you might
-want to configure the nodes in the same location or region with a specified zone number to reduce
-network traffic time when forwarding packages from one node to another.</p>
-
-<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
-<h3 id='function'>Function</h3>
-<p><code>set_zone(zone);</code></p>
-<h3 id='arguments'>Arguments</h3>
-<table><thead>
-<tr>
-<th>Argument</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>zone</td>
-<td>integer (required)</td>
-<td>Integer value between <code>0</code> and <code>255</code> representing the zone number.</td>
-</tr>
-</tbody></table>
-<h3 id='return-value'>Return value</h3>
-<p>Returns <code>nil</code>.</p>
 <h2 id='shutdown'>shutdown</h2>
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h1 id='thingsdb-api'>ThingsDB API</h1>
@@ -2197,7 +2252,7 @@ Use <code>grant</code> to give other users access to the collection.
 if the collection already exists.</p>
 <h2 id='new_node'>new_node</h2>
 <blockquote>
-<p>Create a new node in zone <code>0</code>:</p>
+<p>Add a new node to ThingsDB:</p>
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
 <span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
