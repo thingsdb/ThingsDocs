@@ -17,8 +17,7 @@ includes:
   - n_node
   - n_nodes
   - n_reset_counters
-  - n_set_loglevel
-  - n_set_zone
+  - n_set_log_level
   - n_shutdown
   - thingsdb_api
   - t_collection

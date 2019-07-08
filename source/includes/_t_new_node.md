@@ -1,6 +1,6 @@
 ## new_node
 
-> Create a new node in zone `0`:
+> Add a new node to ThingsDB:
 
 ```python
 import asyncio
