@@ -64,7 +64,8 @@ events_unaligned | Number of times an event cannot be pushed to the end of the q
 events_with_gap | Events which are committed but at least one event `id` was skipped.
 garbage_collected | Number of things which are garbage collected.
 longest_event_duration | Longest event duration, in seconds.
-queries_received | Number of queries where this node acted as the master node.
+queries_success | Number of queries where this node acted as the master node and the query has successful finished.
+queries_with_error | Number of queries where this node acted as the master node but the query has returned with an error.
 
 This function does *not* generate an [event](#events).
 
