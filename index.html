@@ -412,6 +412,9 @@
                     <a href="#add" class="toc-h2 toc-link" data-title="add">add</a>
                   </li>
                   <li>
+                    <a href="#array" class="toc-h2 toc-link" data-title="array">array</a>
+                  </li>
+                  <li>
                     <a href="#assert" class="toc-h2 toc-link" data-title="assert">assert</a>
                   </li>
                   <li>
@@ -1945,12 +1948,12 @@ EOQ
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
     <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="c"># Delete a token</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">del_token</span><span class="p">(</span><span class="s">'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">del_token</span><span class="p">(</span><span class="s">'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'</span><span class="p">)</span>
 
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># Delete a token</span>
 thingscmd -n node.local -u admin -p pass -q <span class="sh">&lt;&lt; EOQ "
-del_token('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX');
+del_token('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX');
 "
 EOQ
 </span></code></pre>
@@ -2231,7 +2234,7 @@ EOQ
 <blockquote>
 <p>Example return value in JSON format (the token key)</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="s2">"FXIxyVAJmtQ8o5GTU8yZxdsKrZC7TRijzZ71Kh5q"</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="s2">"FX1xyVAJmtQ8o5GTU8yZxdsKrZC7TRijzZ71Kh5q0DmbY24zaA"</span><span class="w">
 </span></code></pre>
 <p>Adds a new token for a given user. An optional expiration time may be given after which the token cannot
 be used anymore. Use <a href="#del_expired">del_expired</a> to cleanup expired tokens. The expiration time may be
@@ -2627,10 +2630,74 @@ EOQ
 <h3 id='return-value'>Return value</h3>
 <p><code>nil</code> when successful.</p>
 <h2 id='user'>user</h2>
+<blockquote>
+<p>This code returns info for the connected user:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">scope</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
+        user();
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="n">scope</span><span class="o">.</span><span class="n">thingsdb</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -q <span class="sh">&lt;&lt; EOQ "
+user();
+"
+EOQ
+</span></code></pre>
+<blockquote>
+<p>Example return value in JSON format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"access"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"privileges"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FULL"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">":node"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"privileges"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FULL"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">":thingsdb"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"privileges"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FULL"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stuff"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tokens"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Returns access and token information about a user.</p>
+
 <p>Without arguments, this function returns info about the connected user and in this case <code>READ</code> privileges on the <code>:thingsdb</code> scope are sufficient.
 If used with a user argument, then this function requires <code>GRANT</code> privileges on the <code>:thingsdb</code> scope since it exposes user access and token information.</p>
 
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><code>user([username])</code></p>
+<h3 id='arguments'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>raw/int (optional)</td>
+<td>User to return info</td>
+</tr>
+</tbody></table>
+<h3 id='return-value'>Return value</h3>
+<p>Information about a ThingsDB user.</p>
 <h2 id='users'>users</h2>
 <p>This function requires <code>GRANT</code> privileges on the <code>:thingsdb</code> scope since it
 exposes user access and token information.</p>
@@ -2690,6 +2757,61 @@ if <code>my_set</code> already contains thing <code>#42</code>.</p>
 <p><em>set</em>.<code>add(thing1, thing1, ..., thingX)</code></p>
 <h3 id='return-value'>Return value</h3>
 <p>Returns the number of <code>things</code> which are added to the set.</p>
+<h2 id='array'>array</h2>
+<blockquote>
+<p>This code shows some return values for <strong><em>array()</em></strong>:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
+        array( set( [{}, {}] ) );
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+array( set( [{}, {}] ) );
+"
+EOQ
+</span></code></pre>
+<blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"#"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"#"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Returns a new empty <a href="#array-type">array</a> or returns an array for a given <code>set</code>.</p>
+
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><code>array([set])</code></p>
+<h3 id='arguments'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>set</td>
+<td>set (optional)</td>
+<td>Optional set to initialize the array.</td>
+</tr>
+</tbody></table>
+<h3 id='return-value'>Return value</h3>
+<p>A new array.</p>
 <h2 id='assert'>assert</h2>
 <blockquote>
 <p>This code shows how assert can be used:</p>
