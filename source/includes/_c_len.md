@@ -20,12 +20,12 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
-len();
+[1, 2, 3, 4].len();
 "
 EOQ
 ```
 
-> Example return value in JSON format
+> Return value in JSON format
 
 ```json
 4
