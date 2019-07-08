@@ -1,5 +1,62 @@
 ## node
 
+> This code returns info for the connected node:
+
+```python
+import asyncio
+from thingsdb.client import Client, scope
+
+async def example():
+    await client.connect('node.local')
+    client.authenticate(auth=['admin', 'pass'])
+    res = await client.node()
+    print(res)
+
+client = Client()
+asyncio.get_event_loop().run_until_complete(example())
+```
+
+```shell
+thingscmd -n node.local -u admin -p pass -s node -q << EOQ "
+node();
+"
+EOQ
+```
+
+> Example return value in JSON format
+
+```json
+{
+    "archive_files": 2,
+    "archived_in_memory": 0,
+    "cached_names": 3,
+    "client_port": 9200,
+    "db_stored_event_id": 1,
+    "events_in_queue": 0,
+    "global_committed_event_id": 11,
+    "global_stored_event_id": 11,
+    "hostname": "node.local",
+    "ip_support": "ALL",
+    "libcleri_version": "0.10.1",
+    "libpcre2_version": "10.31",
+    "libqpack_version": "0.11.0",
+    "libuv_version": "1.18.0",
+    "local_committed_event_id": 11,
+    "local_stored_event_id": 11,
+    "log_level": "WARNING",
+    "next_event_id": 12,
+    "next_thing_id": 8,
+    "node_id": 0,
+    "node_port": 9220,
+    "status": "READY",
+    "storage_path": "/var/lib/thingsdb/",
+    "syntax_version": "v0",
+    "uptime": 15.749372482299805,
+    "version": "0.1.5",
+    "zone": 0
+}
+```
+
 Returns information about the connected node.
 
 Value | Description
@@ -13,6 +70,7 @@ events_in_queue | Events which are pending in the queue.
 global_committed_event_id | Lowest known committed event ID by all nodes.
 global_stored_event_id | Lowest known stored event ID by all nodes.
 hostname | Hostname of the node.
+http_status_port | Listening to this HTTP port for status, readiness and liveness requests.
 ip_support | Enabled IP support. May be IPv4/IPv6 or both.
 libcleri_version | Cleri language parser library version.
 libpcre2_version | PCRE regular expression library version.
@@ -33,3 +91,12 @@ version | Version of ThingsDB,
 zone | Zone which is assigned to this node. May be changed in the ThingsDB configuration file.
 
 This function does *not* generate an [event](#events).
+
+### Function
+`node()`
+
+### Arguments
+None
+
+### Return value
+Information about the connected node.
