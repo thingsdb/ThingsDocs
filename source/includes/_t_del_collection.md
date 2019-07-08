@@ -36,3 +36,6 @@ This function generates an [event](#events).
 Argument | Type | Description
 -------- | ---- | -----------
 name | raw (required) | Name of the collection to delete.
+
+### Return value
+Returns `nil` when successful. An `INDEX_ERROR` is raised if the collection does not exist.
