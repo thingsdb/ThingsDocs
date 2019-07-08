@@ -1700,8 +1700,12 @@ counters might provide you with more information.</p>
 <td>Longest event duration, in seconds.</td>
 </tr>
 <tr>
-<td>queries_received</td>
-<td>Number of queries where this node acted as the master node.</td>
+<td>queries_success</td>
+<td>Number of queries where this node acted as the master node and the query has successful finished.</td>
+</tr>
+<tr>
+<td>queries_with_error</td>
+<td>Number of queries where this node acted as the master node but the query has returned with an error.</td>
 </tr>
 </tbody></table>
 
@@ -1904,6 +1908,8 @@ EOQ
 <td>Name of the collection to delete.</td>
 </tr>
 </tbody></table>
+<h3 id='return-value'>Return value</h3>
+<p>Returns <code>nil</code> when successful. An <code>INDEX_ERROR</code> is raised if the collection does not exist.</p>
 <h2 id='del_expired'>del_expired</h2>
 <blockquote>
 <p>This code will delete all expired tokens:</p>
@@ -1976,8 +1982,52 @@ EOQ
 <td>Token key to delete.</td>
 </tr>
 </tbody></table>
+<h3 id='return-value'>Return value</h3>
+<p>Returns <code>nil</code> when successful. An <code>INDEX_ERROR</code> is raised if the token is not found.</p>
 <h2 id='del_user'>del_user</h2>
+<blockquote>
+<p>This code will delete user <em>test</em>:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
+    <span class="c"># Delete user `test`</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">del_user</span><span class="p">(</span><span class="s">'test'</span><span class="p">)</span>
+
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># Delete user `test`</span>
+thingscmd -n node.local -u admin -p pass -q <span class="sh">&lt;&lt; EOQ "
+del_user('test');
+"
+EOQ
+</span></code></pre>
+<p>Delete a user. It is not possible to delete your own user account and a <code>BAD_REQUEST</code> will be raised in case you try to.
+Any <em>tokens</em> associated with the user will also be deleted.</p>
+
 <p>This function generates an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><code>del_user(username);</code></p>
+<h3 id='arguments'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>raw (required)</td>
+<td>Username of the user to delete.</td>
+</tr>
+</tbody></table>
+<h3 id='return-value'>Return value</h3>
+<p>Returns <code>nil</code> when successful. An <code>INDEX_ERROR</code> is raised if the user does not exist.</p>
 <h2 id='grant'>grant</h2>
 <blockquote>
 <p>Grant read and watch privileges to user <code>iris</code> to collection <code>stuff</code>:</p>
@@ -2699,10 +2749,20 @@ If used with a user argument, then this function requires <code>GRANT</code> pri
 <h3 id='return-value'>Return value</h3>
 <p>Information about a ThingsDB user.</p>
 <h2 id='users'>users</h2>
+<p>Returns user information for all users withing ThingsDB.</p>
+
+<p>See the <a href="#user">user()</a> function documentation for an example of the exposed user information.</p>
+
 <p>This function requires <code>GRANT</code> privileges on the <code>:thingsdb</code> scope since it
 exposes user access and token information.</p>
 
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><code>users()</code></p>
+<h3 id='arguments'>Arguments</h3>
+<p>None</p>
+<h3 id='return-value'>Return value</h3>
+<p>Returns an array containing user information for all users within ThingsDB.</p>
 <h1 id='collection-api'>Collection API</h1>
 <blockquote>
 <p>This code returns the <em>id</em> of collection <em>stuff</em></p>
