@@ -31,7 +31,7 @@ EOQ
 > Example return value in JSON format (the token key)
 
 ```json
-"FXIxyVAJmtQ8o5GTU8yZxdsKrZC7TRijzZ71Kh5q"
+"FX1xyVAJmtQ8o5GTU8yZxdsKrZC7TRijzZ71Kh5q0DmbY24zaA"
 ```
 
 Adds a new token for a given user. An optional expiration time may be given after which the token cannot

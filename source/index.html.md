@@ -43,6 +43,7 @@ includes:
   - t_users
   - collection_api
   - c_add
+  - c_array
   - c_assert
   - c_blob
   - c_bool

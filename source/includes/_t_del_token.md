@@ -12,7 +12,7 @@ async def example():
     await client.connect('node.local')
     client.authenticate(auth=['admin', 'pass'])
     # Delete a token
-    await client.del_token('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
+    await client.del_token('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
 
 asyncio.get_event_loop().run_until_complete(example())
 ```
@@ -20,7 +20,7 @@ asyncio.get_event_loop().run_until_complete(example())
 ```shell
 # Delete a token
 thingscmd -n node.local -u admin -p pass -q << EOQ "
-del_token('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX');
+del_token('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX');
 "
 EOQ
 ```

@@ -39,6 +39,7 @@ EOQ
     null
 ]
 ```
+
 Quota limits can be set on collections. The following quota limits can be set:
 
 Type | Description
