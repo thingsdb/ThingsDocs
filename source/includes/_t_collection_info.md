@@ -1,4 +1,4 @@
-## collection
+## collection_info
 > Returns information about collection *stuff*:
 
 ```python
@@ -8,9 +8,7 @@ from thingsdb.client import Client
 async def example():
     await client.connect('node.local')
     client.authenticate(auth=['admin', 'pass'])
-    res = await client.query(r'''
-        collection('stuff');
-    ''', target=client.thingsdb)
+    res = await client.collection_info("stuff")
     print(res)
 
 client = Client()
@@ -19,7 +17,7 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 thingscmd -n node.local -u admin -p pass -q << EOQ "
-collection('stuff');
+collection_info('stuff');
 "
 EOQ
 ```
@@ -39,6 +37,5 @@ EOQ
 ```
 
 Returns information about a specific collection.
-
 
 This function does *not* generate an [event](#events).

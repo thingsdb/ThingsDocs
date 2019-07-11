@@ -38,7 +38,7 @@ null
 
 Replace a node in ThingsDB. This can be used if an existing node has a
 unrecoverable state, for example a hardware failure. This function requires
-a node id as its first argument which can be queried using the [nodes()](#nodes)
+a node id as its first argument which can be queried using the [nodes_info()](#nodes_info)
 function.
 
 

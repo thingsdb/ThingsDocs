@@ -47,7 +47,7 @@ EOQ
 ```
 
 Returns `counters` for the ThingsDB node you are connected too. Counters start all at zero when ThingsDB
-is started, or when the counters are reset by using [reset_counters()'](#reset-counters).
+is started, or when the counters are reset by using [reset_counters()'](#reset_counters).
 
 Counters give information about things, queries and events. If you suspect failed queries, then
 counters might provide you with more information.

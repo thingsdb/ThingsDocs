@@ -51,7 +51,7 @@ If you only want to set a description, but no expiration time, then you can use 
 For example: `new_token('my_user', nil, 'some nice description');`
 
 There can be no more than 128 tokens assigned to a single user. A `MAX_QUOTA_ERROR` is raised if this limit
-is reached. Existing tokens can be removed with [del_token](#del_token) and to view the current tokens you can use the [user(..)](#user) (or [users()](#users)) function.
+is reached. Existing tokens can be removed with [del_token](#del_token) and to view the current tokens you can use the [user_info(..)](#user_info) (or [users_info()](#users_info)) function.
 
 This function generates an [event](#events).
 

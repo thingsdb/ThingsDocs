@@ -14,14 +14,14 @@ includes:
   - types
   - node_api
   - n_counters
-  - n_node
-  - n_nodes
+  - n_node_info
+  - n_nodes_info
   - n_reset_counters
   - n_set_log_level
   - n_shutdown
   - thingsdb_api
-  - t_collection
-  - t_collections
+  - t_collection_info
+  - t_collections_info
   - t_del_collection
   - t_del_expired
   - t_del_token
@@ -38,8 +38,8 @@ includes:
   - t_revoke
   - t_set_password
   - t_set_quota
-  - t_user
-  - t_users
+  - t_user_info
+  - t_users_info
   - collection_api
   - c_add
   - c_array

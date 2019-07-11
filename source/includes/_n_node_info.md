@@ -1,4 +1,4 @@
-## node
+## node_info
 
 > This code returns info for the connected node:
 
@@ -9,7 +9,7 @@ from thingsdb.client import Client, scope
 async def example():
     await client.connect('node.local')
     client.authenticate(auth=['admin', 'pass'])
-    res = await client.node()
+    res = await client.node_info()
     print(res)
 
 client = Client()
@@ -18,7 +18,7 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 thingscmd -n node.local -u admin -p pass -s node -q << EOQ "
-node();
+node_info();
 "
 EOQ
 ```
@@ -93,10 +93,10 @@ zone | Zone which is assigned to this node. May be changed in the ThingsDB confi
 This function does *not* generate an [event](#events).
 
 ### Function
-`node()`
+`node_info()`
 
 ### Arguments
 None
 
 ### Return value
-Information about the connected node.
+Information as a `qpack` type bout the connected node.

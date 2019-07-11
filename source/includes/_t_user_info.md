@@ -1,4 +1,4 @@
-## user
+## user_info
 
 > This code returns info for the connected user:
 
@@ -10,7 +10,7 @@ async def example():
     await client.connect('node.local')
     client.authenticate(auth=['admin', 'pass'])
     res = await client.query(r'''
-        user();
+        user_info();
     ''', target=scope.thingsdb)
     print(res)
 
@@ -20,7 +20,7 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 thingscmd -n node.local -u admin -p pass -q << EOQ "
-user();
+user_info();
 "
 EOQ
 ```
@@ -57,7 +57,7 @@ If used with a user argument, then this function requires `GRANT` privileges on 
 This function does *not* generate an [event](#events).
 
 ### Function
-`user([username])`
+`user_info([username])`
 
 ### Arguments
 Argument | Type | Description
@@ -65,4 +65,4 @@ Argument | Type | Description
 username | raw/int (optional) | User to return info
 
 ### Return value
-Information about a ThingsDB user.
+Information as a `qpack` type about a ThingsDB user.

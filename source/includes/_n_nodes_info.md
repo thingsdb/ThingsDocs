@@ -1,4 +1,4 @@
-## nodes
+## nodes_info
 
 > This code returns info for all ThingsDB nodes:
 
@@ -9,7 +9,7 @@ from thingsdb.client import Client, scope
 async def example():
     await client.connect('node.local')
     client.authenticate(auth=['admin', 'pass'])
-    res = await client.nodes()
+    res = await client.nodes_info()
     print(res)
 
 client = Client()
@@ -18,7 +18,7 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 thingscmd -n node.local -u admin -p pass -s node -q << EOQ "
-nodes();
+nodes_info();
 "
 EOQ
 ```
@@ -57,10 +57,10 @@ syntax_version | Language or syntax version which is running on the node.
 This function does *not* generate an [event](#events).
 
 ### Function
-`nodes()`
+`nodes_info()`
 
 ### Arguments
 None
 
 ### Return value
-Array containing information about each node.
+Array as `qpack` type containing node information for all nodes within ThingsDB.
