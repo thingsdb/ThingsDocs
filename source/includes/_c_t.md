@@ -61,6 +61,8 @@ EOQ
 
 This function can be used to get a thing or multiple things by id.
 
+This function is limited to the [collection](#collection-api) scope.
+
 This function does *not* generate an [event](#events).
 
 ### Function
