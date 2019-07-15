@@ -218,7 +218,6 @@ thingscmd \
 {
     "query": "'Hello world!!'",
     "collection": "stuff",
-    "deep": 1,
     "blobs": []
 }
 ```
@@ -229,14 +228,14 @@ ThingsDB will respond with the last statement result. In case a statement fails,
 not processed and an [error](#errors) is returned. Changes will be synchronized to all nodes and optionally to watchers,
 even when an error has ocurred.
 
-A query request has one required field *query*, and some other optionals:
+A query request has a required field *query*, and a required field *collection* when querying a collection scope.
+
 
 Key | Type | Description
 --- | ---- | -----------
 `query` | string | The query string containing one or more statements. (required)
-`target` | string| Target collection, or `0` for manage queries. (default: `0`)
-`deep` | integer | Specify the depth in the range 0-127 to which `things` should be fully returned. (default: `1`)
-`blobs` | array | Additional blobs for binary data. (default: `[]`)
+`collection` | string| Required only in the collection scope.
+`blobs` | array | (Only the collection scope) Additional blobs for binary data. (default: `[]`)
 
 To send a query you can either use a language binding, see code examples, or if you
 want to know how to serialize and send the data, read the [protocol](#protocol) section.

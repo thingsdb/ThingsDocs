@@ -8,12 +8,13 @@ from thingsdb.client import Client
 async def example():
     await client.connect('node.local')
     client.authenticate(auth=['admin', 'pass'])
-    # we use `deep=2` to specify we want to fetch things 2 levels deep
+    # we use `=> 2` to specify we want to fetch things 2 levels deep
     res = await client.query(r'''
         t(7);
         t(8,);
         t(7, 8);
-    ''', deep=2, target='stuff')
+        => 2
+    ''',target='stuff')
     print(res)
 
 client = Client()
@@ -21,11 +22,12 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-# we use `deep=2` to specify we want to fetch things 2 levels deep
-thingscmd -n node.local -u admin -p pass -c stuff -d 2 -q << EOQ "
+# we use `=> 2` to specify we want to fetch things 2 levels deep
+thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
 t(7);
 t(8,);
 t(7, 8);
+=> 2
 "
 EOQ
 ```

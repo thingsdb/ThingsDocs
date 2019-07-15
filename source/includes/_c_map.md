@@ -14,7 +14,7 @@ async def example():
 
         /* returns ['Iris', 'Sasha'] */
         $users.map(|user| user.name);
-    ''', target='stuff', deep=3)
+    ''', target='stuff')
     print(res)
 
 client = Client()
@@ -22,7 +22,7 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -n node.local -u admin -p pass -c stuff -d 3 -q << EOQ "
+thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
 \$users = [{name: 'Iris', age: 6}, {name: 'Sasha', age: 34}];
 
 /* returns ['Iris', 'Sasha'] */
