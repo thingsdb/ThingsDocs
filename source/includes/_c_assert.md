@@ -9,9 +9,9 @@ from thingsdb.client import Client
 async def example():
     await client.connect('node.local')
     client.authenticate(auth=['admin', 'pass'])
-    # evaluate 1 > 2 with a custom message and error code
+    # evaluate 1 > 2 with an assert message
     res = await client.query(r'''
-        assert( (1 > 2), 'one is still smaller than two', 1);
+        assert( (1 > 2), 'one is still smaller than two');
     ''', target='stuff')
     print(res)
     # Error code is set: `res.error_code == 1`
@@ -22,7 +22,7 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
-assert( (1 > 2), 'one is still smaller than two', 1);
+assert( (1 > 2), 'one is still smaller than two');
 "
 EOQ
 ```
@@ -42,7 +42,7 @@ This function does *not* generate an [event](#events).
 
 
 ### Function
-`assert(statement [, error_msg] [, error_code])`
+`assert(statement [, error_msg])`
 
 ### Arguments
 Argument | Type | Description
