@@ -341,3 +341,14 @@ Method | Description
 [map](#map) | Return an [array](#array-type) with the results of calling a provided closure on every thing.
 [remove](#remove-set) | Remove things from a set.
 [set](#set) | Create a new empty set or convert an [array](#array-type) to a new set.
+
+## Error type
+
+
+### Related functions
+Method | Description
+------ | -----------
+[err](#err) | Initialize a new error.
+[raise](#raise) | Raise an error.
+[try](#try) | Try a statement and catch if an error is raised.
+
