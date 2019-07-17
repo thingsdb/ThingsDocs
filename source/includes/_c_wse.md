@@ -44,7 +44,7 @@ EOQ
 Stored closures which can potentially make changes to ThingsDB are called
 *closures with side effects* and must be wrapped with the `wse(..)` function.
 
-This allows ThingsDB to know ahead for running the query to make an event.
+This allows ThingsDB before running the query to make an event.
 You should not wrap `wse` around all closures since this would unnecessary
 create events when they may not be required.
 
