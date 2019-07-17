@@ -100,6 +100,7 @@ includes:
   - c_try
   - c_type
   - c_upper
+  - c_wse
   - procedures_api
   - p_call
   - p_calle
