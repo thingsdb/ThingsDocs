@@ -564,6 +564,9 @@
                   <li>
                     <a href="#upper" class="toc-h2 toc-link" data-title="upper">upper</a>
                   </li>
+                  <li>
+                    <a href="#wse" class="toc-h2 toc-link" data-title="wse">wse</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -6100,6 +6103,69 @@ EOQ
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h3 id='function'>Function</h3>
 <p><em>string</em>.<code>upper()</code></p>
+<h2 id='wse'>wse</h2>
+<blockquote>
+<p>This code shows an example usage for <strong><em>wse()</em></strong>:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
+        wse({
+            x = 0;
+            a = |v| x += v;
+            [1 ,2 ,3, 4].map(a);  /* without wse() this would raise an error */
+            x;
+        });
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+wse({
+    x = 0;
+    a = |v| x += v;
+    [1 ,2 ,3, 4].map(a);  /* without wse() this would raise an error */
+    x;
+});
+"
+EOQ
+</span></code></pre>
+<blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="mi">10</span><span class="w">
+</span></code></pre>
+<p>Stored closures which can potentially make changes to ThingsDB are called
+<em>closures with side effects</em> and must be wrapped with the <code>wse(..)</code> function.</p>
+
+<p>This allows ThingsDB before running the query to make an event.
+You should not wrap <code>wse</code> around all closures since this would unnecessary
+create events when they may not be required.</p>
+
+<p>This function generates an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><code>wse(statement)</code></p>
+<h3 id='arguments'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>statement</td>
+<td>any</td>
+<td>Statement or block to wrap.</td>
+</tr>
+</tbody></table>
+<h3 id='return-value'>Return value</h3>
+<p>Return value of the given statement.</p>
 <h1 id='procedures-api'>Procedures API</h1><h2 id='call'>call</h2>
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h2 id='calle'>calle</h2>
