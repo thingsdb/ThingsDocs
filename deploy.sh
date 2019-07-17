@@ -21,7 +21,7 @@ Options:
 
 
 run_build() {
-  bundle exec middleman build --clean
+  docker run --rm -v $PWD/source:/usr/src/app/source -w /usr/src/app/source -v $PWD/build:/usr/src/app/build thingsdocs_app bundle exec middleman build --clean
 }
 
 parse_args() {

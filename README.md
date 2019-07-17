@@ -30,6 +30,10 @@ sudo gem install nokogiri -v '1.8.2' --source 'https://rubygems.org/'
 bundle install
 bundle exec middleman server
 
+# Use docker
+docker-compose up
+
 ```
+
 
 You can now see the docs at http://localhost:4567. Whoa! That was fast!

@@ -52,9 +52,6 @@ includes:
   - c_add
   - c_array
   - c_assert
-  - c_assert_err
-  - c_auth_err
-  - c_bad_data_err
   - c_blob
   - c_bool
   - c_contains
@@ -65,11 +62,9 @@ includes:
   - c_find
   - c_findindex
   - c_float
-  - c_forbidden_err
   - c_has
   - c_hasprop
   - c_id
-  - c_index_err
   - c_indexof
   - c_int
   - c_isarray
@@ -90,10 +85,7 @@ includes:
   - c_len
   - c_lower
   - c_map
-  - c_max_quota_err
-  - c_node_err
   - c_now
-  - c_overflow_err
   - c_pop
   - c_push
   - c_refs
@@ -103,13 +95,11 @@ includes:
   - c_splice
   - c_startswith
   - c_str
-  - c_syntax_err
   - c_t
   - c_test
   - c_try
   - c_type
   - c_upper
-  - c_zero_div_err
   - procedures_api
   - p_call
   - p_calle
@@ -120,6 +110,17 @@ includes:
   - p_procedure_info
   - p_procedures_info
   - errors
+  - e_assert_err
+  - e_auth_err
+  - e_bad_data_err
+  - e_forbidden_err
+  - e_index_err
+  - e_max_quota_err
+  - e_node_err
+  - e_overflow_err
+  - e_syntax_err
+  - e_zero_div_err
+
 
 search: true
 ---
