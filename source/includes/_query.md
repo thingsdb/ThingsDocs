@@ -11,7 +11,7 @@ async def example():
         'node.local',       # node address
         9200                # node port, default 9200
     )
-    await client.authenticate([
+    await client.authenticate(auth=[
         'admin',            # username
         'pass',             # password
     ])

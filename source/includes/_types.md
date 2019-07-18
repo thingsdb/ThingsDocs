@@ -73,7 +73,7 @@ ThingsDB has only type `raw` which is used for storing both *strings* and *blob*
 ### Methods
 Method | Description
 ------ | -----------
-[endsswith](#endsswith) | Determines if a string ends with characters given by another string.
+[endswith](#endswith) | Determines if a string ends with characters given by another string.
 [len](#len) | Returns the length of a string.
 [lower](#lower) | Return a new string in which all case-based characters are in lower case.
 [startswith](#startswith) | Determines if a string starts with characters given by another string.
