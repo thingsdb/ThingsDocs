@@ -685,7 +685,7 @@ If you did not yet change the default password, you might want to jump to <a hre
 See the <a href="#grant">grant</a> and <a href="#revoke">revoke</a> functions for managing privileges for a user.</p>
 
 <aside class="notice">
-For connecting to ThingsDB with a auto-reconnect client, <code>WATCH</code> privileges on the <code>:node</code> scope are required.
+For connecting to ThingsDB with a auto-reconnect client, <code>WATCH</code> privileges on the <code>.node</code> scope are required.
 </aside>
 <h2 id='python'>Python</h2>
 <blockquote>
@@ -2329,7 +2329,7 @@ Any <em>tokens</em> associated with the user will also be deleted.</p>
         new_user('iris');
         new_token('iris');
         [
-            grant(':node', 'iris', WATCH),
+            grant('.node', 'iris', WATCH),
             grant('stuff', 'iris', (READ|WATCH)),
         ];
     '''</span><span class="p">)</span>
@@ -2340,7 +2340,7 @@ Any <em>tokens</em> associated with the user will also be deleted.</p>
 new_user('iris');
 new_token('iris');
 [
-    grant(':node', 'iris', WATCH),
+    grant('.node', 'iris', WATCH),
     grant('stuff', 'iris', (READ|WATCH)),
 ];
 "
@@ -2355,7 +2355,7 @@ EOQ
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>Grant collection or general privileges to a user. Access to a user is provided by setting
-a bit mask to either the <code>:node</code> scope, <code>:thingsdb</code> scope or a collection.
+a bit mask to either the <code>.node</code> scope, <code>.thingsdb</code> scope or a collection.
 Privileges to ThingsDB gives a user the ability to view counters, add, view remove users etc.</p>
 
 <p>The following pre-defined masks are available:</p>
@@ -2407,7 +2407,7 @@ Similarly, it is not possible to have <code>MODIFY</code> privileges without <co
 <tr>
 <td><code>target</code></td>
 <td>int/raw</td>
-<td>Can be either the <code>:node</code> scope, <code>:thingsdb</code> scope, or a collection name or id.</td>
+<td>Can be either the <code>.node</code> scope, <code>.thingsdb</code> scope, or a collection name or id.</td>
 </tr>
 <tr>
 <td><code>user</code></td>
@@ -2794,7 +2794,7 @@ how access privileges can be set for a user.</p>
 <tr>
 <td><code>target</code></td>
 <td>int/raw</td>
-<td>Can be either the <code>:node</code> scope, <code>:thingsdb</code> scope, or a collection name or id.</td>
+<td>Can be either the <code>.node</code> scope, <code>.thingsdb</code> scope, or a collection name or id.</td>
 </tr>
 <tr>
 <td><code>user</code></td>
@@ -2987,11 +2987,11 @@ EOQ
     </span><span class="s2">"access"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"privileges"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FULL"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">":node"</span><span class="w">
+            </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">".node"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"privileges"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FULL"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">":thingsdb"</span><span class="w">
+            </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">".thingsdb"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"privileges"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FULL"</span><span class="p">,</span><span class="w">
@@ -3005,8 +3005,8 @@ EOQ
 </span></code></pre>
 <p>Returns access and token information about a user.</p>
 
-<p>Without arguments, this function returns info about the connected user and in this case <code>READ</code> privileges on the <code>:thingsdb</code> scope are sufficient.
-If used with a user argument, then this function requires <code>GRANT</code> privileges on the <code>:thingsdb</code> scope since it exposes user access and token information.</p>
+<p>Without arguments, this function returns info about the connected user and in this case <code>READ</code> privileges on the <code>.thingsdb</code> scope are sufficient.
+If used with a user argument, then this function requires <code>GRANT</code> privileges on the <code>.thingsdb</code> scope since it exposes user access and token information.</p>
 
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h3 id='function'>Function</h3>
@@ -3032,7 +3032,7 @@ If used with a user argument, then this function requires <code>GRANT</code> pri
 
 <p>See the <a href="#user_info">user_info()</a> function documentation for an example of the exposed user information.</p>
 
-<p>This function requires <code>GRANT</code> privileges on the <code>:thingsdb</code> scope since it
+<p>This function requires <code>GRANT</code> privileges on the <code>.thingsdb</code> scope since it
 exposes user access and token information.</p>
 
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
