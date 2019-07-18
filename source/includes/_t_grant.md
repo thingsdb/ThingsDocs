@@ -15,7 +15,7 @@ async def example():
         new_user('iris');
         new_token('iris');
         [
-            grant(':node', 'iris', WATCH),
+            grant('.node', 'iris', WATCH),
             grant('stuff', 'iris', (READ|WATCH)),
         ];
     ''')
@@ -29,7 +29,7 @@ thingscmd -n node.local -u admin -p pass -q << EOQ "
 new_user('iris');
 new_token('iris');
 [
-    grant(':node', 'iris', WATCH),
+    grant('.node', 'iris', WATCH),
     grant('stuff', 'iris', (READ|WATCH)),
 ];
 "
@@ -46,7 +46,7 @@ EOQ
 ```
 
 Grant collection or general privileges to a user. Access to a user is provided by setting
-a bit mask to either the `:node` scope, `:thingsdb` scope or a collection.
+a bit mask to either the `.node` scope, `.thingsdb` scope or a collection.
 Privileges to ThingsDB gives a user the ability to view counters, add, view remove users etc.
 
 The following pre-defined masks are available:
@@ -73,7 +73,7 @@ This function generates an [event](#events).
 ### Arguments
 Argument | Type | Description
 -------- | ---- | -----------
-`target` | int/raw | Can be either the `:node` scope, `:thingsdb` scope, or a collection name or id.
+`target` | int/raw | Can be either the `.node` scope, `.thingsdb` scope, or a collection name or id.
 `user` | raw | User to grant privileges to.
 `mask` | int | Bit-mask for setting privileges.
 

@@ -43,7 +43,7 @@ This function generates an [event](#events).
 ### Arguments
 Argument | Type | Description
 -------- | ---- | -----------
-`target` | int/raw | Can be either the `:node` scope, `:thingsdb` scope, or a collection name or id.
+`target` | int/raw | Can be either the `.node` scope, `.thingsdb` scope, or a collection name or id.
 `user` | raw | User to revoke privileges from.
 `mask` | int | Bit-mask for revoking privileges.
 

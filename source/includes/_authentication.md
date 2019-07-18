@@ -44,7 +44,7 @@ It might be a good idea to create a [new user](#new_user) with minimal privilege
 See the [grant](#grant) and [revoke](#revoke) functions for managing privileges for a user.
 
 <aside class="notice">
-For connecting to ThingsDB with a auto-reconnect client, <code>WATCH</code> privileges on the <code>:node</code> scope are required.
+For connecting to ThingsDB with a auto-reconnect client, <code>WATCH</code> privileges on the <code>.node</code> scope are required.
 </aside>
 
 
