@@ -127,7 +127,6 @@ Operator | Description
 `=` | Assignment operator.
 `*=` | Multiplication assignment.
 `/=` | Float division assignment.
-`//=` | Integer division assignment.
 `%=` | Modulo assignment.
 `+=` | Addition assignment.
 `-=` | Subtraction assignment
@@ -237,4 +236,4 @@ EOQ
 The conditional operator returns one of two values based on the logical value of the condition.
 
 ### Syntax:
-`(condition) ? if-true : if-false`
+`(condition) ? if-true [: if-false]`

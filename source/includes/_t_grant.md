@@ -54,10 +54,11 @@ The following pre-defined masks are available:
 Mask         | Description
 ------------ | -----------
 `READ` (1)   | Gives read access.
-`MODIFY` (3) | Gives read and modify access.
-`WATCH` (4)  | Gives watch (and un-watch) privileges.
-`GRANT` (11) | Gives read, modify and grant (and revoke) privileges.
-`FULL` (15)  | Gives full privileges.
+`MODIFY` (2) | Gives read and modify access.
+`GRANT` (4) | Gives read, modify and grant (and revoke) privileges.
+`WATCH` (8)  | Gives watch (and un-watch) privileges.
+`CALL` (16)   | Gives call access.
+`FULL` (31)  | Gives full privileges.
 
 <aside class="notice">
 It is not possible to have <code>GRANT</code> privileges without also having <code>MODIFY</code> privileges.
