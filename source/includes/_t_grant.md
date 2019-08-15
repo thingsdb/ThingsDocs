@@ -55,10 +55,10 @@ Mask         | Description
 ------------ | -----------
 `READ` (1)   | Gives read access.
 `MODIFY` (2) | Gives read and modify access.
-`GRANT` (4) | Gives read, modify and grant (and revoke) privileges.
+`GRANT` (4)  | Gives read, modify and grant (and revoke) privileges.
 `WATCH` (8)  | Gives watch (and un-watch) privileges.
-`CALL` (16)   | Gives call access.
-`FULL` (31)  | Gives full privileges.
+`RUN` (16)   | Gives run procedures access.
+`FULL` (31)  | A *mask* for full privileges.
 
 <aside class="notice">
 It is not possible to have <code>GRANT</code> privileges without also having <code>MODIFY</code> privileges.

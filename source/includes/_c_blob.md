@@ -37,8 +37,6 @@ Blobs can be used to send binary data to ThingsDB. Each query request allows you
 an array of *blob* values together with the query. Within the query it is then possible
 to use this function to *get* the blob value.
 
-This function is limited to the [collection](#collection-api) scope.
-
 This function does *not* generate an [event](#events).
 
 ### Function

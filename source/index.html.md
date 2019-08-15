@@ -54,6 +54,7 @@ includes:
   - c_assert
   - c_blob
   - c_bool
+  - c_call
   - c_contains
   - c_del
   - c_endswith
@@ -90,7 +91,6 @@ includes:
   - c_push
   - c_refs
   - c_remove
-  - c_rename
   - c_set
   - c_splice
   - c_startswith
@@ -102,14 +102,12 @@ includes:
   - c_upper
   - c_wse
   - procedures_api
-  - p_call
-  - p_calle
   - p_del_procedure
   - p_new_procedure
-  - p_procedure_def
   - p_procedure_doc
   - p_procedure_info
   - p_procedures_info
+  - p_run
   - errors
   - e_assert_err
   - e_auth_err

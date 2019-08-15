@@ -312,7 +312,6 @@ Method | Description
 [id](#id) | Return the `id`.
 [len](#len) | Returns the number of items.
 [map](#map) | Returns an [array](#array-type) with the results of calling a provided closure on every item.
-[rename](#rename) | Rename a given property.
 
 
 ## Closure
