@@ -424,6 +424,9 @@
                     <a href="#bool" class="toc-h2 toc-link" data-title="bool">bool</a>
                   </li>
                   <li>
+                    <a href="#call" class="toc-h2 toc-link" data-title="call">call</a>
+                  </li>
+                  <li>
                     <a href="#contains" class="toc-h2 toc-link" data-title="contains">contains</a>
                   </li>
                   <li>
@@ -535,9 +538,6 @@
                     <a href="#remove-set" class="toc-h2 toc-link" data-title="remove (set)">remove (set)</a>
                   </li>
                   <li>
-                    <a href="#rename" class="toc-h2 toc-link" data-title="rename">rename</a>
-                  </li>
-                  <li>
                     <a href="#set" class="toc-h2 toc-link" data-title="set">set</a>
                   </li>
                   <li>
@@ -573,19 +573,10 @@
             <a href="#procedures-api" class="toc-h1 toc-link" data-title="Procedures API">Procedures API</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#call" class="toc-h2 toc-link" data-title="call">call</a>
-                  </li>
-                  <li>
-                    <a href="#calle" class="toc-h2 toc-link" data-title="calle">calle</a>
-                  </li>
-                  <li>
                     <a href="#del_procedure" class="toc-h2 toc-link" data-title="del_procedure">del_procedure</a>
                   </li>
                   <li>
                     <a href="#new_procedure" class="toc-h2 toc-link" data-title="new_procedure">new_procedure</a>
-                  </li>
-                  <li>
-                    <a href="#procedure_def" class="toc-h2 toc-link" data-title="procedure_def">procedure_def</a>
                   </li>
                   <li>
                     <a href="#procedure_doc" class="toc-h2 toc-link" data-title="procedure_doc">procedure_doc</a>
@@ -595,6 +586,9 @@
                   </li>
                   <li>
                     <a href="#procedures_info" class="toc-h2 toc-link" data-title="procedures_info">procedures_info</a>
+                  </li>
+                  <li>
+                    <a href="#run" class="toc-h2 toc-link" data-title="run">run</a>
                   </li>
               </ul>
           </li>
@@ -714,7 +708,7 @@ It is not possible to <em>watch</em> things by using this shell based tool.</p>
         <span class="s">'node.local'</span><span class="p">,</span>       <span class="c"># node address</span>
         <span class="mi">9200</span>                <span class="c"># node port, default 9200</span>
     <span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">([</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span>
         <span class="s">'admin'</span><span class="p">,</span>            <span class="c"># username</span>
         <span class="s">'pass'</span><span class="p">,</span>             <span class="c"># password</span>
     <span class="p">])</span>
@@ -1285,7 +1279,7 @@ EOQ
 </tr>
 </thead><tbody>
 <tr>
-<td><a href="#endsswith">endsswith</a></td>
+<td><a href="#endswith">endswith</a></td>
 <td>Determines if a string ends with characters given by another string.</td>
 </tr>
 <tr>
@@ -1609,10 +1603,6 @@ It is not possible to change an array while the array is in use, for example:
 <tr>
 <td><a href="#map">map</a></td>
 <td>Returns an <a href="#array-type">array</a> with the results of calling a provided closure on every item.</td>
-</tr>
-<tr>
-<td><a href="#rename">rename</a></td>
-<td>Rename a given property.</td>
 </tr>
 </tbody></table>
 <h2 id='closure'>Closure</h2>
@@ -2379,12 +2369,12 @@ Privileges to ThingsDB gives a user the ability to view counters, add, view remo
 <td>Gives watch (and un-watch) privileges.</td>
 </tr>
 <tr>
-<td><code>CALL</code> (16)</td>
-<td>Gives call access.</td>
+<td><code>RUN</code> (16)</td>
+<td>Gives run procedures access.</td>
 </tr>
 <tr>
 <td><code>FULL</code> (31)</td>
-<td>Gives full privileges.</td>
+<td>A <em>mask</em> for full privileges.</td>
 </tr>
 </tbody></table>
 
@@ -3251,8 +3241,6 @@ EOQ
 an array of <em>blob</em> values together with the query. Within the query it is then possible
 to use this function to <em>get</em> the blob value.</p>
 
-<p>This function is limited to the <a href="#collection-api">collection</a> scope.</p>
-
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h3 id='function'>Function</h3>
 <p><code>blob(index)</code></p>
@@ -3351,6 +3339,8 @@ If no value is given, <code>false</code> is returned.</p>
 </tbody></table>
 <h3 id='return-value'>Return value</h3>
 <p>A boolean value.</p>
+<h2 id='call'>call</h2>
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h2 id='contains'>contains</h2>
 <blockquote>
 <p>This code shows an example using <strong><em>contains()</em></strong>:</p>
@@ -5528,66 +5518,6 @@ Things which are not found in the set are ignored.</p>
 </tbody></table>
 <h3 id='return-value-2'>Return value</h3>
 <p>A list with the removed <code>things</code> from the set or an empty list if nothing is removed.</p>
-<h2 id='rename'>rename</h2>
-<blockquote>
-<p>This code renames property <code>world</code> to <code>universe</code>:</p>
-</blockquote>
-<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
-<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
-
-<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
-    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
-        world = 'huge';
-        rename('world', 'universe');
-        map(|k|k);
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
-
-<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
-<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
-</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
-world = 'huge';
-rename('world', 'universe');
-map(|k|k);
-"
-EOQ
-</span></code></pre>
-<blockquote>
-<p>Return value in JSON format</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-    </span><span class="s2">"universe"</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>Rename a property on a <a href="#thing">thing</a>. The <em>destination</em> property with value will be overwritten
-if it already existed.</p>
-
-<p>This function generates an <a href="#events">event</a>.</p>
-<h3 id='function'>Function</h3>
-<p><em>thing</em>.<code>rename(current, dest)</code></p>
-<h3 id='arguments'>Arguments</h3>
-<table><thead>
-<tr>
-<th>Argument</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>current</td>
-<td>raw (required)</td>
-<td>Name of the property to rename.</td>
-</tr>
-<tr>
-<td>dest</td>
-<td>raw (required)</td>
-<td>New name of the property.</td>
-</tr>
-</tbody></table>
-<h3 id='return-value'>Return value</h3>
-<p>Returns <code>nil</code> is the rename was successful.</p>
 <h2 id='set'>set</h2>
 <blockquote>
 <p>This code shows some return values for <strong><em>set()</em></strong>:</p>
@@ -6166,21 +6096,17 @@ create events when they may not be required.</p>
 </tbody></table>
 <h3 id='return-value'>Return value</h3>
 <p>Return value of the given statement.</p>
-<h1 id='procedures-api'>Procedures API</h1><h2 id='call'>call</h2>
-<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
-<h2 id='calle'>calle</h2>
-<p>This function generates an <a href="#events">event</a>.</p>
-<h2 id='del_procedure'>del_procedure</h2>
+<h1 id='procedures-api'>Procedures API</h1><h2 id='del_procedure'>del_procedure</h2>
 <p>This function generates an <a href="#events">event</a>.</p>
 <h2 id='new_procedure'>new_procedure</h2>
 <p>This function generates an <a href="#events">event</a>.</p>
-<h2 id='procedure_def'>procedure_def</h2>
-<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h2 id='procedure_doc'>procedure_doc</h2>
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h2 id='procedure_info'>procedure_info</h2>
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h2 id='procedures_info'>procedures_info</h2>
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h2 id='run'>run</h2>
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h1 id='errors'>Errors</h1>
 <p>ThingsDB uses the following error codes:</p>
