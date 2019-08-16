@@ -7,7 +7,7 @@ from thingsdb.client import Client
 
 async def example():
     await client.connect('node.local')
-    client.authenticate(auth=['admin', 'pass'])
+    await client.authenticate(auth=['admin', 'pass'])
     # we use `=> 2` to specify we want to fetch things 2 levels deep
     res = await client.query(r'''
         t(7);

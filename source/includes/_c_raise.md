@@ -8,7 +8,7 @@ from thingsdb.client import Client
 
 async def example():
     await client.connect('node.local')
-    client.authenticate(auth=['admin', 'pass'])
+    await client.authenticate(auth=['admin', 'pass'])
     res = await client.query(r'''
         raise ();
         'This code is not reached';
@@ -32,7 +32,7 @@ Raises an [error](#error-type).
 This function does *not* generate an [event](#events).
 
 ### Function
-`raise([value])`
+`raise([error])`
 
 ### Arguments
 Argument | Type | Description

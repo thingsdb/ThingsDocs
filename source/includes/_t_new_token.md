@@ -11,7 +11,7 @@ client = Client()
 async def example():
     # ThingsDB must be started on node2 using the `--secret ...` argument
     await client.connect('node1.local')
-    client.authenticate(auth=['admin', 'pass'])
+    await client.authenticate(auth=['admin', 'pass'])
     res = await client.query(r'''
         new_token('admin', now() + 7*24*3600, 'token for one week');
     ''')

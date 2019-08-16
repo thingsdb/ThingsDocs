@@ -9,7 +9,7 @@ from thingsdb.client import Client
 
 async def example():
     await client.connect('node.local')
-    client.authenticate(auth=['admin', 'pass'])
+    await client.authenticate(auth=['admin', 'pass'])
 
     # TODO: replace with ThingsDB logo
     resp = urllib.request.urlopen(

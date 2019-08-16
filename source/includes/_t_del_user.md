@@ -10,7 +10,7 @@ client = Client()
 
 async def example():
     await client.connect('node.local')
-    client.authenticate(auth=['admin', 'pass'])
+    await client.authenticate(auth=['admin', 'pass'])
     # Delete user `test`
     await client.del_user('test')
 

@@ -8,7 +8,7 @@ from thingsdb.client import Client, scope
 
 async def example():
     await client.connect('node.local')
-    client.authenticate(auth=['admin', 'pass'])
+    await client.authenticate(auth=['admin', 'pass'])
     res = await client.node_info()
     print(res)
 
@@ -88,7 +88,7 @@ storage_path | Path used for storing ThingsDB data.
 syntax_version | Language or syntax version. A new version of ThingsDB might also have a new language version.
 uptime | Uptime of the node in seconds.
 version | Version of ThingsDB,
-zone | Zone which is assigned to this node. May be changed in the ThingsDB configuration file.
+zone | Zone number to which the node is assigned. May be changed in the ThingsDB configuration file.
 
 This function does *not* generate an [event](#events).
 

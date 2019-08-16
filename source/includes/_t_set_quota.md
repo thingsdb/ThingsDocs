@@ -8,7 +8,7 @@ from thingsdb.client import Client, scope
 
 async def example():
     await client.connect('node.local')
-    client.authenticate(auth=['admin', 'pass'])
+    await client.authenticate(auth=['admin', 'pass'])
     res = await client.query(r'''
         [
             set_quota('stuff', 'things', 10000),

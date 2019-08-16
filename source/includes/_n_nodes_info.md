@@ -8,7 +8,7 @@ from thingsdb.client import Client, scope
 
 async def example():
     await client.connect('node.local')
-    client.authenticate(auth=['admin', 'pass'])
+    await client.authenticate(auth=['admin', 'pass'])
     res = await client.nodes_info()
     print(res)
 
@@ -35,7 +35,8 @@ EOQ
         "port": 9220,
         "status": "READY",
         "stored_event_id": 5,
-        "syntax_version": "v0"
+        "syntax_version": "v0",
+        "zone": 0,
     }
 ]
 ```
@@ -52,6 +53,7 @@ port | TCP port on which the node is listening for node connections.
 status | Current status of the node.
 stored_event_id | Last known stored event ID on the node.
 syntax_version | Language or syntax version which is running on the node.
+zone | Zone number to which the node is assigned.
 
 
 This function does *not* generate an [event](#events).

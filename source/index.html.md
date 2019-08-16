@@ -89,6 +89,7 @@ includes:
   - c_now
   - c_pop
   - c_push
+  - c_raise
   - c_refs
   - c_remove
   - c_set

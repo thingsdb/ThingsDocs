@@ -8,7 +8,7 @@ from thingsdb.client import Client, scope
 
 async def example():
     await client.connect('node.local')
-    client.authenticate(auth=['admin', 'pass'])
+    await client.authenticate(auth=['admin', 'pass'])
     res = await client.query(r'''
         user_info();
     ''', target=scope.thingsdb)
@@ -43,6 +43,7 @@ EOQ
             "target": "stuff"
         }
     ],
+    "has_password": true,
     "name": "admin",
     "tokens": [],
     "user_id": 1

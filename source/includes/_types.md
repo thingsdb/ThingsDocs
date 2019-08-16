@@ -13,7 +13,7 @@ client = Client()
 
 async def example():
     await client.connect('node.local')
-    client.authenticate(auth=['admin', 'pass'])
+    await client.authenticate(auth=['admin', 'pass'])
     res = await client.query(r'''
         my_array = [1, 2, 3, 42];
         nil;  /* without nil, the array above would be returned */
@@ -48,7 +48,7 @@ client = Client()
 
 async def example():
     await client.connect('node.local')
-    client.authenticate(auth=['admin', 'pass'])
+    await client.authenticate(auth=['admin', 'pass'])
     res = await client.query(r'''
 
         greet = 'Hello world!!';
@@ -93,7 +93,7 @@ client = Client()
 
 async def example():
     await client.connect('node.local')
-    client.authenticate(auth=['admin', 'pass'])
+    await client.authenticate(auth=['admin', 'pass'])
 
     res = await client.query(r'''
 
@@ -130,7 +130,7 @@ client = Client()
 
 async def example():
     await client.connect('node.local')
-    client.authenticate(auth=['admin', 'pass'])
+    await client.authenticate(auth=['admin', 'pass'])
     res = await client.query(r'''
 
         count = 123;
@@ -175,7 +175,7 @@ client = Client()
 
 async def example():
     await client.connect('node.local')
-    client.authenticate(auth=['admin', 'pass'])
+    await client.authenticate(auth=['admin', 'pass'])
     # Get collection `stuff`
     stuff = await client.get_collection('stuff')
 
@@ -219,7 +219,7 @@ client = Client()
 
 async def example():
     await client.connect('node.local')
-    client.authenticate(auth=['admin', 'pass'])
+    await client.authenticate(auth=['admin', 'pass'])
 
     # Note: the email check is oversimplified, do not use in production
     await client.query(r'''

@@ -8,7 +8,7 @@ from thingsdb.client import Client
 
 async def example():
     await client.connect('node.local')
-    client.authenticate(auth=['admin', 'pass'])
+    await client.authenticate(auth=['admin', 'pass'])
     res = await client.query(r'''
         $tmp = [1, 2, 3, 4];
         [
@@ -88,7 +88,7 @@ from thingsdb.client import Client
 
 async def example():
     await client.connect('node.local')
-    client.authenticate(auth=['admin', 'pass'])
+    await client.authenticate(auth=['admin', 'pass'])
     res = await client.query(r'''
         $t1 = {x:1}; $t2 = {x:2}; $t3 = {x:3}; $t4 = {x:4};
         $s = set([$t1, $t2, $t3, $t4]);

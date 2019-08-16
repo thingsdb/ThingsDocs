@@ -10,7 +10,7 @@ client = Client()
 
 async def example():
     await client.connect('node.local')
-    client.authenticate(auth=['admin', 'pass'])
+    await client.authenticate(auth=['admin', 'pass'])
     await client.set_password('admin', 'my_secret_password')
 
 asyncio.get_event_loop().run_until_complete(example())
@@ -30,7 +30,10 @@ EOQ
 null
 ```
 
-Change a users password.
+Change a users password. This function can also be used to remove an existing
+password by using `nil` as the new password.
+
+Passwords must contain 1 to 128 printable characters.
 
 This function generates an [event](#events).
 
@@ -41,7 +44,7 @@ This function generates an [event](#events).
 Argument | Type | Description
 --------- | ----------- | -----------
 username | raw (required) | Name of the user
-new_password | raw (required) | New password, can be anything from 1 to 128 printable characters
+new_password | nil/raw (required) | New password or `nil`
 
 ### Return value
 Returns `nil` if successful. An `INDEX_ERROR` is returned
