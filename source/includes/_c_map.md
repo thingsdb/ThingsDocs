@@ -10,10 +10,10 @@ async def example():
     await client.connect('node.local')
     await client.authenticate(auth=['admin', 'pass'])
     res = await client.query(r'''
-        $users = [{name: 'Iris', age: 6}, {name: 'Sasha', age: 34}];
+        users = [{name: 'Iris', age: 6}, {name: 'Sasha', age: 34}];
 
         /* returns ['Iris', 'Sasha'] */
-        $users.map(|user| user.name);
+        users.map(|user| user.name);
     ''', target='stuff')
     print(res)
 
@@ -23,10 +23,10 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
-\$users = [{name: 'Iris', age: 6}, {name: 'Sasha', age: 34}];
+users = [{name: 'Iris', age: 6}, {name: 'Sasha', age: 34}];
 
 /* returns ['Iris', 'Sasha'] */
-\$users.map(|user| user.name);
+users.map(|user| user.name);
 "
 EOQ
 ```

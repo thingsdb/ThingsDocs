@@ -226,8 +226,8 @@ async def example():
         email_test = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
         /* example usage of our 'email_test' */
-        $email = 'info@thingsdb.net';
-        $email.test( email_test );
+        email = 'info@thingsdb.net';
+        email.test( email_test );
     ''', target='stuff')
 
 asyncio.get_event_loop().run_until_complete(example())
@@ -239,8 +239,8 @@ thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
 email_test = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
 /* example usage of our 'email_test' */
-\$email = 'info@thingsdb.net';
-\$email.test( email_test );
+email = 'info@thingsdb.net';
+email.test( email_test );
 "
 EOQ
 ```
@@ -297,8 +297,8 @@ tuple | Immutable array, *nested* arrays are always tuples.
 
 <aside class="notice">
 It is not possible to change an array while the array is in use, for example:
-<p><code>$tmp = [1, 2, 3]; $tmp.map(|i| $tmp.push(i));</code></p>
-<p>...will raise <code>BAD_REQUEST</code> <i>(cannot use function `push` while the array is in use)</i></p>
+<p><code>tmp = [1, 2, 3]; tmp.map(|i| tmp.push(i));</code></p>
+<p>...will raise <code>BAD_REQUEST</code> <i>(cannot change type `list` while the value is being used)</i></p>
 </aside>
 
 
@@ -320,7 +320,7 @@ Closures can be used to consume items from a `thing`, `array` or `set`.
 
 <aside class="notice">
 It is not possible to use closures with recursion, for example:
-<p><code>$a = ||map($a); map($a);</code></p>
+<p><code>a = ||map(a); map(a);</code></p>
 <p>...will raise <code>BAD_REQUEST</code> <i>(closures cannot be used recursively)</i></p>
 </aside>
 

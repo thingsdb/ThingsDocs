@@ -10,11 +10,11 @@ async def example():
     await client.connect('node.local')
     await client.authenticate(auth=['admin', 'pass'])
     res = await client.query(r'''
-        $iris = {name: 'Iris'};
-        $set = set([$iris]);
+        iris = {name: 'Iris'};
+        set = set([iris]);
 
-        /* Check if $iris is in the set */
-        $set.has($iris);
+        /* Check if iris is in the set */
+        set.has(iris);
     ''', target='stuff')
     print(res)
 
@@ -24,11 +24,11 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
-\$iris = {name: 'Iris'};
-\$set = set([\$iris]);
+iris = {name: 'Iris'};
+set = set([iris]);
 
-/* Check if $iris is in the set */
-\$set.has(\$iris);
+/* Check if iris is in the set */
+set.has(iris);
 "
 EOQ
 ```

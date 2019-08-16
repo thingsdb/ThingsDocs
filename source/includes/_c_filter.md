@@ -10,7 +10,7 @@ async def example():
     await client.connect('node.local')
     await client.authenticate(auth=['admin', 'pass'])
     res = await client.query(r'''
-        $users = [{name: 'Iris', age: 6}, {name: 'Sasha', age: 34}];
+        users = [{name: 'Iris', age: 6}, {name: 'Sasha', age: 34}];
 
         /*
          * Return all users with age 18 or above and
@@ -18,9 +18,9 @@ async def example():
          */
 
         [
-            $users.filter(|user| (user.age >= 18)),
-            $users[0].filter(|prop| (prop == 'age')),
-            set($users).filter(|user| (user.name == 'Iris')),
+            users.filter(|user| (user.age >= 18)),
+            users[0].filter(|prop| (prop == 'age')),
+            set(users).filter(|user| (user.name == 'Iris')),
         ];
         => 3
     ''', target='stuff')
@@ -32,7 +32,7 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
-\$users = [{name: 'Iris', age: 6}, {name: 'Sasha', age: 34}];
+users = [{name: 'Iris', age: 6}, {name: 'Sasha', age: 34}];
 
 /*
  * Return all users with age 18 or above,
@@ -41,9 +41,9 @@ thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
  */
 
 [
-    \$users.filter(|user| (user.age >= 18)),
-    \$users[0].filter(|prop| (prop == 'age')),
-    set(\$users).filter(|user| (user.name == 'Iris')),
+    users.filter(|user| (user.age >= 18)),
+    users[0].filter(|prop| (prop == 'age')),
+    set(users).filter(|user| (user.name == 'Iris')),
 ];
 => 3
 "

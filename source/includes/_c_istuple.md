@@ -12,9 +12,9 @@ async def example():
     res = await client.query(r'''
         [
             istuple( [] ),
-            istuple( $tmp = [['nested'], set()] ),
-            istuple( $tmp[0] ),
-            istuple( $tmp[1] ),
+            istuple( tmp = [['nested'], set()] ),
+            istuple( tmp[0] ),
+            istuple( tmp[1] ),
         ];
     ''', target='stuff')
     print(res)
@@ -27,9 +27,9 @@ asyncio.get_event_loop().run_until_complete(example())
 thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
 [
     istuple( [] ),
-    istuple( \$tmp = [['nested'], set()] ),
-    istuple( \$tmp[0] ),
-    istuple( \$tmp[1] ),
+    istuple( tmp = [['nested'], set()] ),
+    istuple( tmp[0] ),
+    istuple( tmp[1] ),
 ];
 "
 EOQ

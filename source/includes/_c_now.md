@@ -36,7 +36,7 @@ EOQ
 Return the time in seconds since the epoch as a [floating point](#floating-point) number.
 
 If you require the *same* time multiple times within a query,
-then call `now()` only once and save it to a [variable](#variable), for example `$now = now();`
+then call `now()` only once and save it to a [variable](#variable), for example `now = now();`
 
 This function does *not* generate an [event](#events).
 

@@ -12,8 +12,8 @@ async def example():
     res = await client.query(r'''
         [
             islist( [] ),
-            islist( $tmp = [['nested']] ),
-            islist( $tmp[0] ),
+            islist( tmp = [['nested']] ),
+            islist( tmp[0] ),
         ];
     ''', target='stuff')
     print(res)
@@ -26,8 +26,8 @@ asyncio.get_event_loop().run_until_complete(example())
 thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
 [
     islist( [] ),
-    islist( \$tmp = [['nested']] ),
-    islist( \$tmp[0] ),
+    islist( tmp = [['nested']] ),
+    islist( tmp[0] ),
 ];
 "
 EOQ
