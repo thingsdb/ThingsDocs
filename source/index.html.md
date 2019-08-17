@@ -102,6 +102,7 @@ includes:
   - c_try
   - c_type
   - c_upper
+  - c_values
   - c_wse
   - procedures_api
   - p_del_procedure

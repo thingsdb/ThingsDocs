@@ -1,6 +1,6 @@
-## keys
+## values
 
-> This code shows how to use `keys()`:
+> This code shows how to use `values()`:
 
 ```python
 import asyncio
@@ -10,7 +10,7 @@ async def example():
     await client.connect('node.local')
     await client.authenticate(auth=['admin', 'pass'])
     res = await client.query(r'''
-        {a: 1, b: 2, c: 3}.keys();
+        {a: 1, b: 2, c: 3}.values();
     ''', target='stuff')
     print(res)
 
@@ -20,7 +20,7 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
-{a: 1, b: 2, c: 3}.keys();
+{a: 1, b: 2, c: 3}.values();
 "
 EOQ
 ```
@@ -29,30 +29,30 @@ EOQ
 
 ```json
 [
-    "a",
-    "b",
-    "c"
+    1,
+    2,
+    3
 ]
 ```
 
-Returns an array with all the property names of a [thing](#thing).
+Returns an array with all the property values of a [thing](#thing).
 The same could be returned using map so the following statement is `true`:
 
-`(.keys() == .map(|k| k))`
+`(.values() == .map(|_, v| v))`
 
 <aside class="warning">
-Although the <code>keys()</code> and <code>map()</code> functions in the example above will return an array with the same order,
-the order of <i>keys</i> in the array is not guaranteed and may be different each time you run the query.
+Although the <code>values()</code> and <code>map()</code> in the example above will return an array with the same order,
+the order of <i>values</i> in the array is not guaranteed and may be different each time you run the query.
 </aside>
 
 
 This function does *not* generate an [event](#events).
 
 ### Function
-*thing*.`keys()`
+*thing*.`values()`
 
 ### Arguments
 None
 
 ### Return value
-Returns an array with property names.
+Returns an array with property values.
