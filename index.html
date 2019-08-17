@@ -571,6 +571,9 @@
                     <a href="#upper" class="toc-h2 toc-link" data-title="upper">upper</a>
                   </li>
                   <li>
+                    <a href="#values" class="toc-h2 toc-link" data-title="values">values</a>
+                  </li>
+                  <li>
                     <a href="#wse" class="toc-h2 toc-link" data-title="wse">wse</a>
                   </li>
               </ul>
@@ -877,7 +880,7 @@ Events are applied in order on each node so database consistency is guaranteed.<
 </ul>
 <h1 id='properties'>Properties</h1>
 <p>Properties are <a href="#names">names</a> assigned to a <code>thing</code> with a value. The collection itself is also a <code>thing</code> to which properties can be assigned.
-For example: <code>answer = 42;</code> creates a property <code>answer</code> with value <code>42</code> and the property will be assigned to the collection.</p>
+For example: <code>.answer = 42;</code> creates a property <code>answer</code> with value <code>42</code> and the property will be assigned to the collection.</p>
 <h1 id='variable'>Variable</h1>
 <blockquote>
 <p>This code uses a variable:</p>
@@ -5055,7 +5058,7 @@ type <code>raw</code> and contains valid utf8.</p>
 EOQ
 </span></code></pre>
 <blockquote>
-<p>Return value in JSON format</p>
+<p>Return value in JSON format (Warning: the order is <em>NOT</em> guaranteed)</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
     </span><span class="s2">"a"</span><span class="p">,</span><span class="w">
@@ -5067,6 +5070,11 @@ EOQ
 The same could be returned using map so the following statement is <code>true</code>:</p>
 
 <p><code>(.keys() == .map(|k| k))</code></p>
+
+<aside class="warning">
+Although the <code>keys()</code> and <code>map()</code> functions in the example above will return an array with the same order,
+the order of <i>keys</i> in the array is not guaranteed and may be different each time you run the query.
+</aside>
 
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h3 id='function'>Function</h3>
@@ -6128,6 +6136,54 @@ EOQ
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h3 id='function'>Function</h3>
 <p><em>string</em>.<code>upper()</code></p>
+<h2 id='values'>values</h2>
+<blockquote>
+<p>This code shows how to use <code>values()</code>:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
+        {a: 1, b: 2, c: 3}.values();
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+{a: 1, b: 2, c: 3}.values();
+"
+EOQ
+</span></code></pre>
+<blockquote>
+<p>Return value in JSON format (Warning: the order is <em>NOT</em> guaranteed)</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="mi">3</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Returns an array with all the property values of a <a href="#thing">thing</a>.
+The same could be returned using map so the following statement is <code>true</code>:</p>
+
+<p><code>(.values() == .map(|_, v| v))</code></p>
+
+<aside class="warning">
+Although the <code>values()</code> and <code>map()</code> in the example above will return an array with the same order,
+the order of <i>values</i> in the array is not guaranteed and may be different each time you run the query.
+</aside>
+
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><em>thing</em>.<code>values()</code></p>
+<h3 id='arguments'>Arguments</h3>
+<p>None</p>
+<h3 id='return-value'>Return value</h3>
+<p>Returns an array with property values.</p>
 <h2 id='wse'>wse</h2>
 <blockquote>
 <p>This code shows an example usage for <strong><em>wse()</em></strong>:</p>
