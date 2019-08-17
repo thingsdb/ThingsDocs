@@ -83,6 +83,7 @@ includes:
   - c_isthing
   - c_istuple
   - c_isutf8
+  - c_keys
   - c_len
   - c_lower
   - c_map
