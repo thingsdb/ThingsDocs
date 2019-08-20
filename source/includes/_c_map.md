@@ -22,12 +22,12 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
-users = [{name: 'Iris', age: 6}, {name: 'Sasha', age: 34}];
+thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ '
+users = [{name: "Iris", age: 6}, {name: "Sasha", age: 34}];
 
-/* returns ['Iris', 'Sasha'] */
+// returns ["Iris", "Sasha"]
 users.map(|user| user.name);
-"
+'
 EOQ
 ```
 
@@ -41,6 +41,11 @@ EOQ
 ```
 
 Iterate over items in an [array](#array-type), [set](#set-type) or over all properties on a [thing](#thing).
+
+<aside class="warning">
+Be aware that the order when iterating over a <i>set</i> or a <i>thing</i> is not guaranteed.
+</aside>
+
 
 This function does *not* generate an [event](#events).
 
