@@ -5171,12 +5171,12 @@ EOQ
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
-</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
-users = [{name: 'Iris', age: 6}, {name: 'Sasha', age: 34}];
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ '
+users = [{name: "Iris", age: 6}, {name: "Sasha", age: 34}];
 
-/* returns ['Iris', 'Sasha'] */
+// returns ["Iris", "Sasha"]
 users.map(|user| user.name);
-"
+'
 EOQ
 </span></code></pre>
 <blockquote>
@@ -5188,6 +5188,10 @@ EOQ
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>Iterate over items in an <a href="#array-type">array</a>, <a href="#set-type">set</a> or over all properties on a <a href="#thing">thing</a>.</p>
+
+<aside class="warning">
+Be aware that the order when iterating over a <i>set</i> or a <i>thing</i> is not guaranteed.
+</aside>
 
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h3 id='function'>Function</h3>
