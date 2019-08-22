@@ -22,7 +22,6 @@ async def example():
             users[0].filter(|prop| (prop == 'age')),
             set(users).filter(|user| (user.name == 'Iris')),
         ];
-        => 3
     ''', target='stuff')
     print(res)
 
@@ -45,7 +44,6 @@ users = [{name: 'Iris', age: 6}, {name: 'Sasha', age: 34}];
     users[0].filter(|prop| (prop == 'age')),
     set(users).filter(|user| (user.name == 'Iris')),
 ];
-=> 3
 "
 EOQ
 ```

@@ -1,6 +1,6 @@
-## iserror
+## iserr
 
-> This code shows some return values for ***iserror()***:
+> This code shows some return values for ***iserr()***:
 
 ```python
 import asyncio
@@ -11,10 +11,10 @@ async def example():
     await client.authenticate(auth=['admin', 'pass'])
     res = await client.query(r'''
         [
-            iserror( err() ),
-            iserror( zero_div_err() ),
-            iserror( try((1 / 0)) ),
-            iserror( try((1 / 1)) ),
+            iserr( err() ),
+            iserr( zero_div_err() ),
+            iserr( try((1 / 0)) ),
+            iserr( try((1 / 1)) ),
         ];
     ''', target='stuff')
     print(res)
@@ -26,10 +26,10 @@ asyncio.get_event_loop().run_until_complete(example())
 ```shell
 thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
 [
-    iserror( err() ),
-    iserror( zero_div_err() ),
-    iserror( try((1 / 0)) ),
-    iserror( try((1 / 1)) ),
+    iserr( err() ),
+    iserr( zero_div_err() ),
+    iserr( try((1 / 0)) ),
+    iserr( try((1 / 1)) ),
 ];
 "
 EOQ
@@ -52,7 +52,7 @@ is a [error](#error-type) or not.
 This function does *not* generate an [event](#events).
 
 ### Function
-`iserror(value)`
+`iserr(value)`
 
 ### Arguments
 Argument | Type | Description

@@ -11,8 +11,8 @@ async def example():
     await client.authenticate(auth=['admin', 'pass'])
     res = await client.query(r'''
         [
-            iserror( try( x = (1/0) )),
-            iserror( try( (1/0), zero_div_err() )),
+            iserr( try( x = (1/0) )),
+            iserr( try( (1/0), zero_div_err() )),
         ];
     ''', target='stuff')
     print(res)
@@ -24,8 +24,8 @@ asyncio.get_event_loop().run_until_complete(example())
 ```shell
 thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ '
 [
-    iserror( try( x = (1/0) )),
-    iserror( try( (1/0), zero_div_err() )),
+    iserr( try( x = (1/0) )),
+    iserr( try( (1/0), zero_div_err() )),
 ];
 '
 EOQ

@@ -56,6 +56,7 @@ includes:
   - c_bool
   - c_call
   - c_contains
+  - c_deep
   - c_del
   - c_endswith
   - c_err
@@ -71,7 +72,7 @@ includes:
   - c_isarray
   - c_isascii
   - c_isbool
-  - c_iserror
+  - c_iserr
   - c_isfloat
   - c_isinf
   - c_isint
@@ -93,6 +94,7 @@ includes:
   - c_raise
   - c_refs
   - c_remove
+  - c_return
   - c_set
   - c_splice
   - c_startswith
