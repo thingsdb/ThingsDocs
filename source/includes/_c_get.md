@@ -1,6 +1,6 @@
-## hasprop
+## get
 
-> This code shows an example use case of ***hasprop()***:
+> This code shows an example use case of ***get()***:
 
 ```python
 import asyncio
@@ -11,7 +11,7 @@ async def example():
     await client.authenticate(auth=['admin', 'pass'])
     res = await client.query(r'''
         tmp = {name: 'Iris'};
-        tmp.hasprop('name');
+        tmp.get('name');
     ''', target='stuff')
     print(res)
 
@@ -22,7 +22,7 @@ asyncio.get_event_loop().run_until_complete(example())
 ```shell
 thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
 tmp = {name: 'Iris'};
-tmp.hasprop('name');
+tmp.get('name');
 "
 EOQ
 ```
@@ -30,20 +30,20 @@ EOQ
 > Return value in JSON format
 
 ```json
-true
+"Iris"
 ```
 
-Determines if a [thing](#thing) has a given property.
+Return the value of a property on a [thing](#thing) by a given property name.
 
 This function does *not* generate an [event](#events).
 
 ### Function
-*thing*.`hasprop(name)`
+*thing*.`get(name)`
 
 ### Arguments
 Argument | Type | Description
 -------- | ---- | -----------
-name | raw (required) | Name of the property to check.
+name | raw (required) | Name of the property where to return the value for.
 
 ### Return value
-Returns `true` when the given propery name is found and otherwise `false`.
+Returns the value for the given property name.

@@ -64,6 +64,7 @@ includes:
   - c_find
   - c_findindex
   - c_float
+  - c_get
   - c_has
   - c_hasprop
   - c_id
