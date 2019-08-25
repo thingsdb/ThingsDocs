@@ -14,7 +14,7 @@
   index.ref('id');
   index.field('title', { boost: 10 });
   index.field('body');
-  index.pipeline.add(lunr.trimmer, lunr.stopWordFilter);
+  // index.pipeline.add(lunr.trimmer, lunr.stopWordFilter);
 
   $(populate);
   $(bind);
