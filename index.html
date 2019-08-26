@@ -457,10 +457,10 @@
                     <a href="#get" class="toc-h2 toc-link" data-title="get">get</a>
                   </li>
                   <li>
-                    <a href="#has" class="toc-h2 toc-link" data-title="has">has</a>
+                    <a href="#has-set" class="toc-h2 toc-link" data-title="has (set)">has (set)</a>
                   </li>
                   <li>
-                    <a href="#hasprop" class="toc-h2 toc-link" data-title="hasprop">hasprop</a>
+                    <a href="#has-thing" class="toc-h2 toc-link" data-title="has (thing)">has (thing)</a>
                   </li>
                   <li>
                     <a href="#id" class="toc-h2 toc-link" data-title="id">id</a>
@@ -553,7 +553,10 @@
                     <a href="#return" class="toc-h2 toc-link" data-title="return">return</a>
                   </li>
                   <li>
-                    <a href="#set" class="toc-h2 toc-link" data-title="set">set</a>
+                    <a href="#set-new-type" class="toc-h2 toc-link" data-title="set (new-type)">set (new-type)</a>
+                  </li>
+                  <li>
+                    <a href="#set-property" class="toc-h2 toc-link" data-title="set (property)">set (property)</a>
                   </li>
                   <li>
                     <a href="#splice" class="toc-h2 toc-link" data-title="splice">splice</a>
@@ -1664,7 +1667,7 @@ Each <a href="#thing">thing</a> will only exists once in a collection.</p>
 <td>Returns the first <code>thing</code> which passes a given test.</td>
 </tr>
 <tr>
-<td><a href="#has">has</a></td>
+<td><a href="#has-set">has</a></td>
 <td>Test if a set contains a given thing.</td>
 </tr>
 <tr>
@@ -4037,7 +4040,7 @@ EOQ
 </tbody></table>
 <h3 id='return-value'>Return value</h3>
 <p>Returns the value for the given property name.</p>
-<h2 id='has'>has</h2>
+<h2 id='has-set'>has (set)</h2>
 <blockquote>
 <p>This code shows an example use case of <strong><em>has()</em></strong>:</p>
 </blockquote>
@@ -4093,9 +4096,9 @@ EOQ
 </tbody></table>
 <h3 id='return-value'>Return value</h3>
 <p>Returns <code>true</code> the given thing is found in the set and otherwise <code>false</code>.</p>
-<h2 id='hasprop'>hasprop</h2>
+<h2 id='has-thing'>has (thing)</h2>
 <blockquote>
-<p>This code shows an example use case of <strong><em>hasprop()</em></strong>:</p>
+<p>This code shows an example use case of <strong><em>has()</em></strong>:</p>
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
 <span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
@@ -4105,7 +4108,7 @@ EOQ
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         tmp = {name: 'Iris'};
-        tmp.hasprop('name');
+        tmp.has('name');
     '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
@@ -4113,7 +4116,7 @@ EOQ
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
 </code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
 tmp = {name: 'Iris'};
-tmp.hasprop('name');
+tmp.has('name');
 "
 EOQ
 </span></code></pre>
@@ -4125,9 +4128,9 @@ EOQ
 <p>Determines if a <a href="#thing">thing</a> has a given property.</p>
 
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
-<h3 id='function'>Function</h3>
-<p><em>thing</em>.<code>hasprop(name)</code></p>
-<h3 id='arguments'>Arguments</h3>
+<h3 id='function-2'>Function</h3>
+<p><em>thing</em>.<code>has(name)</code></p>
+<h3 id='arguments-2'>Arguments</h3>
 <table><thead>
 <tr>
 <th>Argument</th>
@@ -4141,7 +4144,7 @@ EOQ
 <td>Name of the property to check.</td>
 </tr>
 </tbody></table>
-<h3 id='return-value'>Return value</h3>
+<h3 id='return-value-2'>Return value</h3>
 <p>Returns <code>true</code> when the given propery name is found and otherwise <code>false</code>.</p>
 <h2 id='id'>id</h2>
 <blockquote>
@@ -5836,7 +5839,7 @@ in returning very much data.
 <h3 id='return-value'>Return value</h3>
 <p>The <code>return</code> function has no real return value but will move directly
 to the output of the current query or closure.</p>
-<h2 id='set'>set</h2>
+<h2 id='set-new-type'>set (new-type)</h2>
 <blockquote>
 <p>This code shows some return values for <strong><em>set()</em></strong>:</p>
 </blockquote>
@@ -5876,7 +5879,7 @@ EOQ
 given array must be or type <code>thing</code> and a new set is returned based on the
 given things.</p>
 
-<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<p>This function generates an <a href="#events">event</a>.</p>
 <h3 id='function'>Function</h3>
 <p><code>set([array])</code></p>
 <h3 id='arguments'>Arguments</h3>
@@ -5895,6 +5898,61 @@ given things.</p>
 </tbody></table>
 <h3 id='return-value'>Return value</h3>
 <p>A new set.</p>
+<h2 id='set-property'>set (property)</h2>
+<blockquote>
+<p>This code shows how to use <strong><em>set()</em></strong>:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
+        .set('the_answer', 42);
+    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
+.set('the_answer', 42);
+"
+EOQ
+</span></code></pre>
+<blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="mi">42</span><span class="w">
+</span></code></pre>
+<p>Creates a new property on a thing. If the property already existed then the old
+property will be overwritten. This function is equal to an assignment except that
+it can be used when the <code>name</code> of the property is dynamic.</p>
+
+<p>This function generates an <a href="#events">event</a>.</p>
+<h3 id='function-2'>Function</h3>
+<p><em>thing</em>.<code>set(name, value)</code></p>
+<h3 id='arguments-2'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>raw (required)</td>
+<td>The name of the property to set.</td>
+</tr>
+<tr>
+<td>value</td>
+<td>any (required)</td>
+<td>The value which will be assigned to the property.</td>
+</tr>
+</tbody></table>
+<h3 id='return-value-2'>Return value</h3>
+<p>The value which will be assigned.</p>
 <h2 id='splice'>splice</h2>
 <blockquote>
 <p>This code replaces an element in a list at position 2:</p>
