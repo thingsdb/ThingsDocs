@@ -336,7 +336,7 @@ Method | Description
 [add](#add) | Add things to a set.
 [filter](#filter) | Return a new `set` with things that pass a given test.
 [find](#find) | Returns the first `thing` which passes a given test.
-[has](#has) | Test if a set contains a given thing.
+[has](#has-set) | Test if a set contains a given thing.
 [map](#map) | Return an [array](#array-type) with the results of calling a provided closure on every thing.
 [remove](#remove-set) | Remove things from a set.
 [set](#set) | Create a new empty set or convert an [array](#array-type) to a new set.
