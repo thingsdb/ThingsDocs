@@ -60,6 +60,7 @@ includes:
   - c_del
   - c_endswith
   - c_err
+  - c_extend
   - c_filter
   - c_find
   - c_findindex
