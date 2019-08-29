@@ -10,7 +10,7 @@ async def example():
     await client.connect('node.local')
     await client.authenticate(auth=['admin', 'pass'])
     res = await client.query(r'''
-        set( [{}, {}] );
+        set({}, {});
     ''', target='stuff')
     print(res)
 
@@ -20,7 +20,7 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
-set( [{}, {}] );
+set({}, {});
 "
 EOQ
 ```
@@ -29,7 +29,7 @@ EOQ
 
 ```json
 {
-    "!": [
+    "$": [
         {
             "#": 0
         },
@@ -42,9 +42,13 @@ EOQ
 
 Returns a new empty [set](#set-type). If an array is given, then all elements in the
 given array must be or type `thing` and a new set is returned based on the
-given things.
+given things. Instead of an array, it is also possible to provide things comma separated.
 
-This function generates an [event](#events).
+<aside class="warning">
+When creating a new set with a single thing, make sure to add a comma <code>set({},)</code>  to enforce an array, or actually wrap the thing in an array <code>set( [{}] )</code>.
+</aside>
+
+This function does *not* generate an [event](#events).
 
 ### Function
 `set([array])`
