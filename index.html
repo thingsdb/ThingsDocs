@@ -304,7 +304,7 @@
                     <a href="#array-type" class="toc-h2 toc-link" data-title="Array type">Array type</a>
                   </li>
                   <li>
-                    <a href="#thing" class="toc-h2 toc-link" data-title="Thing">Thing</a>
+                    <a href="#thing-type" class="toc-h2 toc-link" data-title="Thing type">Thing type</a>
                   </li>
                   <li>
                     <a href="#closure" class="toc-h2 toc-link" data-title="Closure">Closure</a>
@@ -571,10 +571,10 @@
                     <a href="#str" class="toc-h2 toc-link" data-title="str">str</a>
                   </li>
                   <li>
-                    <a href="#t" class="toc-h2 toc-link" data-title="t">t</a>
+                    <a href="#test" class="toc-h2 toc-link" data-title="test">test</a>
                   </li>
                   <li>
-                    <a href="#test" class="toc-h2 toc-link" data-title="test">test</a>
+                    <a href="#thing" class="toc-h2 toc-link" data-title="thing">thing</a>
                   </li>
                   <li>
                     <a href="#try" class="toc-h2 toc-link" data-title="try">try</a>
@@ -1611,7 +1611,7 @@ It is not possible to change an array while the array is in use, for example:
 <p><code>tmp = [1, 2, 3]; tmp.map(|i| tmp.push(i));</code></p>
 <p>...will raise <code>BAD_REQUEST</code> <i>(cannot change type `list` while the value is being used)</i></p>
 </aside>
-<h2 id='thing'>Thing</h2><h3 id='methods-3'>Methods</h3>
+<h2 id='thing-type'>Thing type</h2><h3 id='methods-3'>Methods</h3>
 <table><thead>
 <tr>
 <th>Method</th>
@@ -3092,7 +3092,7 @@ exposes user access and token information.</p>
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
 </code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="s1">'id()'</span>
 </code></pre>
-<p>Unless explicitly specified, the functions in the Collection API can also be used in the <a href="#thingsdb-api">thingsdb</a> and <a href="#node-api">node</a> scopes.</p>
+<p>The functions in the Collection API can also be used in the <a href="#thingsdb-api">thingsdb</a> and <a href="#node-api">node</a> scopes.</p>
 <h2 id='add'>add</h2>
 <blockquote>
 <p>This code adds things to a set:</p>
@@ -3497,7 +3497,7 @@ EOQ
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="kc">null</span><span class="w">
 </span></code></pre>
-<p>Delete a property from a <a href="#thing">thing</a>.</p>
+<p>Delete a property from a <a href="#thing-type">thing</a>.</p>
 
 <p>This function generates an <a href="#events">event</a>.</p>
 <h3 id='function'>Function</h3>
@@ -4069,7 +4069,7 @@ EOQ
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="s2">"Iris"</span><span class="w">
 </span></code></pre>
-<p>Return the value of a property on a <a href="#thing">thing</a> by a given property name.</p>
+<p>Return the value of a property on a <a href="#thing-type">thing</a> by a given property name.</p>
 
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h3 id='function'>Function</h3>
@@ -4175,7 +4175,7 @@ EOQ
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="kc">true</span><span class="w">
 </span></code></pre>
-<p>Determines if a <a href="#thing">thing</a> has a given property.</p>
+<p>Determines if a <a href="#thing-type">thing</a> has a given property.</p>
 
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h3 id='function-2'>Function</h3>
@@ -4223,7 +4223,7 @@ EOQ
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="mi">3</span><span class="w">
 </span></code></pre>
-<p>Returns the <code>id</code> of a <a href="#thing">thing</a>.</p>
+<p>Returns the <code>id</code> of a <a href="#thing-type">thing</a>.</p>
 
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h3 id='function'>Function</h3>
@@ -5038,7 +5038,7 @@ EOQ
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This function determines whether the value passed to this function
-is a <a href="#thing">thing</a> or not.</p>
+is a <a href="#thing-type">thing</a> or not.</p>
 
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h3 id='function'>Function</h3>
@@ -5212,7 +5212,7 @@ EOQ
     </span><span class="s2">"c"</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>Returns an array with all the property names of a <a href="#thing">thing</a>.
+<p>Returns an array with all the property names of a <a href="#thing-type">thing</a>.
 The same could be returned using map so the following statement is <code>true</code>:</p>
 
 <p><code>(.keys() == .map(|k| k))</code></p>
@@ -5256,7 +5256,7 @@ EOQ
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="mi">4</span><span class="w">
 </span></code></pre>
-<p>Returns the length of an <a href="#array-type">array</a> or <a href="#string-raw">string</a>, or the number of items in a <a href="#thing">thing</a>.</p>
+<p>Returns the length of an <a href="#array-type">array</a> or <a href="#string-raw">string</a>, or the number of items in a <a href="#thing-type">thing</a>.</p>
 
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h3 id='function'>Function</h3>
@@ -5333,7 +5333,7 @@ EOQ
     </span><span class="s2">"Sasha"</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>Iterate over items in an <a href="#array-type">array</a>, <a href="#set-type">set</a> or over all properties on a <a href="#thing">thing</a>.</p>
+<p>Iterate over items in an <a href="#array-type">array</a>, <a href="#set-type">set</a> or over all properties on a <a href="#thing-type">thing</a>.</p>
 
 <aside class="warning">
 Be aware that the order when iterating over a <i>set</i> or a <i>thing</i> is not guaranteed.
@@ -6143,87 +6143,6 @@ EOQ
 <td>The value whose</td>
 </tr>
 </tbody></table>
-<h2 id='t'>t</h2>
-<blockquote>
-<p>This code shows an example usage of <strong><em>t()</em></strong>:</p>
-</blockquote>
-<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
-<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
-
-<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
-    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
-        t(7);
-        t(8,);
-        t(7, 8);
-    '''</span><span class="p">,</span><span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
-
-<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
-<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
-</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
-t(7);
-t(8,);
-t(7, 8);
-"
-EOQ
-</span></code></pre>
-<blockquote>
-<p>Return value in JSON format</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"#"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"greet"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hello"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"#"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"world!!"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"#"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"greet"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hello"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"#"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"world!!"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>This function can be used to get a thing or multiple things by id.</p>
-
-<p>This function is limited to the <a href="#collection-api">collection</a> scope.</p>
-
-<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
-<h3 id='function'>Function</h3>
-<p><code>t(id1, id2, ..., idX)</code></p>
-<h3 id='arguments'>Arguments</h3>
-<table><thead>
-<tr>
-<th>Argument</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>id1, id2, ..., idX</td>
-<td>int (at least one required)</td>
-<td>The thing(s) to return.</td>
-</tr>
-</tbody></table>
-<h3 id='return-value'>Return value</h3>
-<p>Returns a <a href="#thing">thing </a> or an <em>array-of-things</em> based on given id&#39;s.
-An <code>INDEX_ERROR</code> is returned in case at least one id is not found inside the collection.</p>
-
-<aside class="notice">
-You can force an <i>array</i>, even with only one id. Just add an extra comma,
-for example: <code>thing(666,);</code> and this will return an array with one thing: <code>[{"#": 666, ...}]</code>
-</aside>
 <h2 id='test'>test</h2>
 <blockquote>
 <p>Examples using <strong><em>test()</em></strong>:</p>
@@ -6281,6 +6200,72 @@ EOQ
 </tbody></table>
 <h3 id='return-value'>Return value</h3>
 <p><code>true</code> if there is a match between the string and the specified regular expression, otherwise <code>false</code>.</p>
+<h2 id='thing'>thing</h2>
+<blockquote>
+<p>This code shows an example usage of <strong><em>thing()</em></strong>:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
+        .greet = "Hello world!";
+        [
+            thing(.id()),
+            thing(),
+        ];
+    '''</span><span class="p">,</span><span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ '
+.greet = "Hello world!";
+[
+    thing(.id()),
+    thing(),
+];
+'
+EOQ
+</span></code></pre>
+<blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"#"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"greet"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hello world!"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"#"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Returns a <a href="#thing-type">thing</a> from a specified value.
+If no value is given, a new thing is returned.</p>
+
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
+<h3 id='function'>Function</h3>
+<p><code>thing([id])</code></p>
+<h3 id='arguments'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>int (optional)</td>
+<td>The id for the thing to return.</td>
+</tr>
+</tbody></table>
+<h3 id='return-value'>Return value</h3>
+<p>Returns a <a href="#thing-type">thing </a>.
+An <code>INDEX_ERROR</code> is returned in case an id is given which is not found inside the collection.</p>
 <h2 id='try'>try</h2>
 <blockquote>
 <p>This code shows some return values for <strong><em>try()</em></strong>:</p>
