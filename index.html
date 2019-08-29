@@ -5900,14 +5900,14 @@ to the output of the current query or closure.</p>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
-        set( [{}, {}] );
+        set({}, {});
     '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
 </code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
-set( [{}, {}] );
+set({}, {});
 "
 EOQ
 </span></code></pre>
@@ -5915,7 +5915,7 @@ EOQ
 <p>Return value in JSON format</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"!"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"$"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"#"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
         </span><span class="p">},</span><span class="w">
@@ -5927,9 +5927,13 @@ EOQ
 </span></code></pre>
 <p>Returns a new empty <a href="#set-type">set</a>. If an array is given, then all elements in the
 given array must be or type <code>thing</code> and a new set is returned based on the
-given things.</p>
+given things. Instead of an array, it is also possible to provide things comma separated.</p>
 
-<p>This function generates an <a href="#events">event</a>.</p>
+<aside class="warning">
+When creating a new set with a single thing, make sure to add a comma <code>set({},)</code>  to enforce an array, or actually wrap the thing in an array <code>set( [{}] )</code>.
+</aside>
+
+<p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h3 id='function'>Function</h3>
 <p><code>set([array])</code></p>
 <h3 id='arguments'>Arguments</h3>
