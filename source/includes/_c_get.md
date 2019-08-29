@@ -33,7 +33,7 @@ EOQ
 "Iris"
 ```
 
-Return the value of a property on a [thing](#thing) by a given property name.
+Return the value of a property on a [thing](#thing-type) by a given property name.
 
 This function does *not* generate an [event](#events).
 

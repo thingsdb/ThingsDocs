@@ -31,7 +31,7 @@ EOQ
 3
 ```
 
-Returns the `id` of a [thing](#thing).
+Returns the `id` of a [thing](#thing-type).
 
 This function does *not* generate an [event](#events).
 

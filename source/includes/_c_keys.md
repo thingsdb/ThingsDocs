@@ -35,7 +35,7 @@ EOQ
 ]
 ```
 
-Returns an array with all the property names of a [thing](#thing).
+Returns an array with all the property names of a [thing](#thing-type).
 The same could be returned using map so the following statement is `true`:
 
 `(.keys() == .map(|k| k))`

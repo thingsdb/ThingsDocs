@@ -302,7 +302,7 @@ It is not possible to change an array while the array is in use, for example:
 </aside>
 
 
-## Thing
+## Thing type
 
 ### Methods
 Method | Description

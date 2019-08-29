@@ -41,7 +41,7 @@ EOQ
 ```
 
 This function determines whether the value passed to this function
-is a [thing](#thing) or not.
+is a [thing](#thing-type) or not.
 
 This function does *not* generate an [event](#events).
 

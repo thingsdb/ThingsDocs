@@ -40,7 +40,7 @@ EOQ
 ]
 ```
 
-Iterate over items in an [array](#array-type), [set](#set-type) or over all properties on a [thing](#thing).
+Iterate over items in an [array](#array-type), [set](#set-type) or over all properties on a [thing](#thing-type).
 
 <aside class="warning">
 Be aware that the order when iterating over a <i>set</i> or a <i>thing</i> is not guaranteed.

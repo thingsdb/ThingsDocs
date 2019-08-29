@@ -33,7 +33,7 @@ EOQ
 null
 ```
 
-Delete a property from a [thing](#thing).
+Delete a property from a [thing](#thing-type).
 
 This function generates an [event](#events).
 

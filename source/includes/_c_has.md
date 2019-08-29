@@ -90,7 +90,7 @@ EOQ
 true
 ```
 
-Determines if a [thing](#thing) has a given property.
+Determines if a [thing](#thing-type) has a given property.
 
 This function does *not* generate an [event](#events).
 

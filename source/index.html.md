@@ -100,8 +100,8 @@ includes:
   - c_splice
   - c_startswith
   - c_str
-  - c_t
   - c_test
+  - c_thing
   - c_try
   - c_type
   - c_upper

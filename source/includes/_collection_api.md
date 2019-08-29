@@ -20,4 +20,4 @@ asyncio.get_event_loop().run_until_complete(example())
 thingscmd -n node.local -u admin -p pass -c stuff -q 'id()'
 ```
 
-Unless explicitly specified, the functions in the Collection API can also be used in the [thingsdb](#thingsdb-api) and [node](#node-api) scopes.
+The functions in the Collection API can also be used in the [thingsdb](#thingsdb-api) and [node](#node-api) scopes.
