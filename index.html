@@ -4200,15 +4200,15 @@ EOQ
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'node.local'</span><span class="p">)</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">])</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
-        id();
+        .id();  // Returns the collection id
     '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s">'stuff'</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
-</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ "
-id();
-"
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n node.local -u admin -p pass -c stuff -q <span class="sh">&lt;&lt; EOQ '
+.id();  // Returns the collection id
+'
 EOQ
 </span></code></pre>
 <blockquote>
@@ -4216,7 +4216,7 @@ EOQ
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="mi">3</span><span class="w">
 </span></code></pre>
-<p>Returns the <code>id</code> of a <a href="#thing-type">thing</a>.</p>
+<p>Returns the <code>id</code> of a <a href="#thing-type">thing</a> or <code>nil</code> if the thing is not stored.</p>
 
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h3 id='function'>Function</h3>
@@ -4224,7 +4224,7 @@ EOQ
 <h3 id='arguments'>Arguments</h3>
 <p>None</p>
 <h3 id='return-value'>Return value</h3>
-<p>Returns <code>id</code> of a thing.</p>
+<p>Returns <code>id</code> of a thing or <code>nil</code> when the thing is not stored.</p>
 <h2 id='indexof'>indexof</h2>
 <blockquote>
 <p>This code shows an example using <strong><em>indexof()</em></strong>:</p>
