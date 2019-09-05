@@ -40,10 +40,6 @@ Returns a new empty [set](#set-type). If an array is given, then all elements in
 given array must be or type `thing` and a new set is returned based on the
 given things. Instead of an array, it is also possible to provide things comma separated.
 
-<aside class="warning">
-When creating a new set with a single thing, make sure to add a comma <code>set({},)</code>  to enforce an array, or actually wrap the thing in an array <code>set( [{}] )</code>.
-</aside>
-
 This function does *not* generate an [event](#events).
 
 ### Function
