@@ -10,7 +10,7 @@ async def example():
     await client.connect('node.local')
     await client.authenticate(auth=['admin', 'pass'])
     res = await client.query(r'''
-        id();
+        .id();  // Returns the collection id
     ''', target='stuff')
     print(res)
 
@@ -19,9 +19,9 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
-id();
-"
+thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ '
+.id();  // Returns the collection id
+'
 EOQ
 ```
 
@@ -31,7 +31,7 @@ EOQ
 3
 ```
 
-Returns the `id` of a [thing](#thing-type).
+Returns the `id` of a [thing](#thing-type) or `nil` if the thing is not stored.
 
 This function does *not* generate an [event](#events).
 
@@ -42,4 +42,4 @@ This function does *not* generate an [event](#events).
 None
 
 ### Return value
-Returns `id` of a thing.
+Returns `id` of a thing or `nil` when the thing is not stored.
