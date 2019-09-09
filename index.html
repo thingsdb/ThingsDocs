@@ -4062,11 +4062,13 @@ EOQ
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="s2">"Iris"</span><span class="w">
 </span></code></pre>
-<p>Return the value of a property on a <a href="#thing-type">thing</a> by a given property name.</p>
+<p>Return the value of a property on a <a href="#thing-type">thing</a> by a given property name.
+If the property is not found then the return value will be <code>nil</code>, unless an alternative
+return value is given.</p>
 
 <p>This function does <em>not</em> generate an <a href="#events">event</a>.</p>
 <h3 id='function'>Function</h3>
-<p><em>thing</em>.<code>get(name)</code></p>
+<p><em>thing</em>.<code>get(name [, alt])</code></p>
 <h3 id='arguments'>Arguments</h3>
 <table><thead>
 <tr>
@@ -4080,9 +4082,15 @@ EOQ
 <td>raw (required)</td>
 <td>Name of the property where to return the value for.</td>
 </tr>
+<tr>
+<td>alt</td>
+<td>any (optional)</td>
+<td>Optional return value.</td>
+</tr>
 </tbody></table>
 <h3 id='return-value'>Return value</h3>
-<p>Returns the value for the given property name.</p>
+<p>Returns the value for the given property name. If the property is not found the the
+return value will be <code>nil</code>  unless an alternative return value is given as second argument.</p>
 <h2 id='has-set'>has (set)</h2>
 <blockquote>
 <p>This code shows an example use case of <strong><em>has()</em></strong>:</p>
