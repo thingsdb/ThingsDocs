@@ -13,7 +13,7 @@ async def example():
 
     # TODO: replace with ThingsDB logo
     resp = urllib.request.urlopen(
-        'https://upload.wikimedia.org/wikipedia/commons/1/15/Siridb-logo.svg')
+        'https://thingsdb.github.io/ThingsDocs/images/logo.png')
 
     res = await client.query(r'''
         [
@@ -28,14 +28,13 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-wget -O - 'https://upload.wikimedia.org/wikipedia/commons/1/15/Siridb-logo.svg' | \
-thingscmd -n node.local -u admin -p pass -c stuff -q  << EOQ "
-[
-    israw( 'some string' ),
-    israw( blob(0) ),
-];
-"
-EOQ
+wget -O - "https://thingsdb.github.io/ThingsDocs/images/logo.png" |
+thingscmd \
+    -n node.local \
+    -u admin \
+    -p pass \
+    -c stuff \
+    -q " [ israw( 'some string' ), israw( blob(0) ) ]; "
 ```
 
 > Return value in JSON format
