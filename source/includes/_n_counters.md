@@ -4,7 +4,7 @@
 
 ```python
 import asyncio
-from thingsdb.client import Client, scope
+from thingsdb.client import Client
 
 client = Client()
 
@@ -14,7 +14,7 @@ async def example():
     # returns counters for `localhost:9200`
     res = await client.query(r'''
         counters();
-    ''', target=scope.node)
+    ''', scope='@node')
     print(res)
 
 asyncio.get_event_loop().run_until_complete(example())
@@ -22,7 +22,7 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 # returns counters for `localhost:9200`
-thingscmd -n localhost -u admin -p pass -s node -q << EOQ "
+thingscmd -n localhost -u admin -p pass -s @node -q << EOQ "
 counters();
 "
 EOQ

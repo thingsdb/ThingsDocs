@@ -4,14 +4,14 @@
 
 ```python
 import asyncio
-from thingsdb.client import Client, scope
+from thingsdb.client import Client
 
 async def example():
     await client.connect('localhost')
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
         user_info();
-    ''', target=scope.thingsdb)
+    ''', scope='@thingsdb')
     print(res)
 
 client = Client()

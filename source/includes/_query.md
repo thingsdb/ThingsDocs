@@ -11,13 +11,13 @@ async def example():
         'localhost',       # node address
         9200                # node port, default 9200
     )
-    await client.authenticate(auth=[
+    await client.authenticate(
         'admin',            # username
         'pass',             # password
-    ])
+    )
     res = await client.query(
         "'Hello world!!'",  # query string
-        target=client.node, # collection or scope, defaults to client.thingsdb
+        scope='@thingsdb',  # scope
     )
     print(res)
 

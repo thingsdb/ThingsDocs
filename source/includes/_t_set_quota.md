@@ -4,7 +4,7 @@
 
 ```python
 import asyncio
-from thingsdb.client import Client, scope
+from thingsdb.client import Client
 
 async def example():
     await client.connect('localhost')
@@ -14,7 +14,7 @@ async def example():
             set_quota('stuff', 'things', 10000),
             set_quota('stuff', 'properties', nil),
         ];
-    ''', target=scope.thingsdb)
+    ''', scope='@thingsdb')
     print(res)
 
 client = Client()

@@ -17,7 +17,7 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -n localhost -u admin -p pass -s node -q << EOQ "
+thingscmd -n localhost -u admin -p pass -s @node -q << EOQ "
 node_info();
 "
 EOQ
