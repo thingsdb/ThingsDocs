@@ -735,13 +735,13 @@ It is not possible to <em>watch</em> things by using this shell based tool.</p>
         <span class="s">'localhost'</span><span class="p">,</span>       <span class="c"># node address</span>
         <span class="mi">9200</span>                <span class="c"># node port, default 9200</span>
     <span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="p">[</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span>
         <span class="s">'admin'</span><span class="p">,</span>            <span class="c"># username</span>
         <span class="s">'pass'</span><span class="p">,</span>             <span class="c"># password</span>
-    <span class="p">])</span>
+    <span class="p">)</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
         <span class="s">"'Hello world!!'"</span><span class="p">,</span>  <span class="c"># query string</span>
-        <span class="n">target</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">node</span><span class="p">,</span> <span class="c"># collection or scope, defaults to client.thingsdb</span>
+        <span class="n">scope</span><span class="o">=</span><span class="s">'@thingsdb'</span><span class="p">,</span>  <span class="c"># scope</span>
     <span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
@@ -1788,7 +1788,7 @@ node specific changes.</p>
 <p>This code will return node counter values:</p>
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
-<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">scope</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 
@@ -1798,12 +1798,12 @@ node specific changes.</p>
     <span class="c"># returns counters for `localhost:9200`</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         counters();
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="n">scope</span><span class="o">.</span><span class="n">node</span><span class="p">)</span>
+    '''</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="s">'@node'</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># returns counters for `localhost:9200`</span>
-thingscmd -n localhost -u admin -p pass -s node -q <span class="sh">&lt;&lt; EOQ "
+thingscmd -n localhost -u admin -p pass -s @node -q <span class="sh">&lt;&lt; EOQ "
 counters();
 "
 EOQ
@@ -1909,7 +1909,7 @@ counters might provide you with more information.</p>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
-</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n localhost -u admin -p pass -s node -q <span class="sh">&lt;&lt; EOQ "
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n localhost -u admin -p pass -s @node -q <span class="sh">&lt;&lt; EOQ "
 node_info();
 "
 EOQ
@@ -2091,7 +2091,7 @@ EOQ
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">example</span><span class="p">())</span>
-</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n localhost -u admin -p pass -s node -q <span class="sh">&lt;&lt; EOQ "
+</code></pre><pre class="highlight shell tab-shell"><code>thingscmd -n localhost -u admin -p pass -s @node -q <span class="sh">&lt;&lt; EOQ "
 nodes_info();
 "
 EOQ
@@ -2974,7 +2974,7 @@ if the user does not exist and <code>BAD_REQUEST</code> if the new password is n
 <p>This code sets a quota on the number of things and disables the properties quota on collection <em>stuff</em>:</p>
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
-<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">scope</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'localhost'</span><span class="p">)</span>
@@ -2984,7 +2984,7 @@ if the user does not exist and <code>BAD_REQUEST</code> if the new password is n
             set_quota('stuff', 'things', 10000),
             set_quota('stuff', 'properties', nil),
         ];
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="n">scope</span><span class="o">.</span><span class="n">thingsdb</span><span class="p">)</span>
+    '''</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="s">'@thingsdb'</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
@@ -3069,14 +3069,14 @@ EOQ
 <p>This code returns info for the connected user:</p>
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
-<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">scope</span>
+<span class="kn">from</span> <span class="nn">thingsdb.client</span> <span class="kn">import</span> <span class="n">Client</span>
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'localhost'</span><span class="p">)</span>
     <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'admin'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">)</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">r'''
         user_info();
-    '''</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="n">scope</span><span class="o">.</span><span class="n">thingsdb</span><span class="p">)</span>
+    '''</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="s">'@thingsdb'</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
