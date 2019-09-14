@@ -7,15 +7,15 @@ import asyncio
 from thingsdb.client import Client
 
 async def example():
-    await client.connect('node.local')
-    await client.authenticate(auth=['admin', 'pass'])
+    await client.connect('localhost')
+    await client.authenticate('admin', 'pass')
     res = await client.query(r'''
         tmp = [1, 2, 3, 4];
         [
             tmp.remove(|x| (x % 2 == 0)),
             tmp,
         ];
-    ''', target='stuff')
+    ''', scope='@:stuff')
     print(res)
 
 client = Client()
@@ -23,7 +23,7 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -n node.local -u admin -p pass -c stuff -q  << EOQ "
+thingscmd -n localhost -u admin -p pass -s @:stuff -q  << EOQ "
 tmp = [1, 2, 3, 4];
 [
     tmp.remove(|x| (x % 2 == 0)),
@@ -87,8 +87,8 @@ import asyncio
 from thingsdb.client import Client
 
 async def example():
-    await client.connect('node.local')
-    await client.authenticate(auth=['admin', 'pass'])
+    await client.connect('localhost')
+    await client.authenticate('admin', 'pass')
     res = await client.query(r'''
         t1 = {x:1}; t2 = {x:2}; t3 = {x:3}; t4 = {x:4};
         s = set([t1, t2, t3, t4]);
@@ -96,7 +96,7 @@ async def example():
             s.remove(|t| (t.x < 3)),
             s.remove(t1, t2, t3, t4),
         ]
-    ''', target='stuff')
+    ''', scope='@:stuff')
     print(res)
 
 client = Client()
@@ -104,7 +104,7 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -n node.local -u admin -p pass -c stuff -d 3 -q  << EOQ "
+thingscmd -n localhost -u admin -p pass -c stuff -d 3 -q  << EOQ "
 t1 = {x:1}; t2 = {x:2}; t3 = {x:3}; t4 = {x:4};
 s = set([t1, t2, t3, t4]);
 [

@@ -7,8 +7,8 @@ import asyncio
 from thingsdb.client import Client, scope
 
 async def example():
-    await client.connect('node.local')
-    await client.authenticate(auth=['admin', 'pass'])
+    await client.connect('localhost')
+    await client.authenticate('admin', 'pass')
     res = await client.nodes_info()
     print(res)
 
@@ -17,7 +17,7 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -n node.local -u admin -p pass -s node -q << EOQ "
+thingscmd -n localhost -u admin -p pass -s node -q << EOQ "
 nodes_info();
 "
 EOQ
@@ -28,7 +28,7 @@ EOQ
 ```json
 [
     {
-        "address": "node.local",
+        "address": "localhost",
         "committed_event_id": 5,
         "next_thing_id": 8,
         "node_id": 0,

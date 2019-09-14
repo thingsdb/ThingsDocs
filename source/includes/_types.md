@@ -12,19 +12,19 @@ from thingsdb.client import Client
 client = Client()
 
 async def example():
-    await client.connect('node.local')
-    await client.authenticate(auth=['admin', 'pass'])
+    await client.connect('localhost')
+    await client.authenticate('admin', 'pass')
     res = await client.query(r'''
         my_array = [1, 2, 3, 42];
         nil;  /* without nil, the array above would be returned */
-    ''', target='stuff')
+    ''', scope='@:stuff')
     print(res)
 
 asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
+thingscmd -n localhost -u admin -p pass -s @:stuff -q << EOQ "
 my_array = [1, 2, 3, 42];
 nil;  /* without nil, the array above would be returned */
 "
@@ -47,20 +47,20 @@ from thingsdb.client import Client
 client = Client()
 
 async def example():
-    await client.connect('node.local')
-    await client.authenticate(auth=['admin', 'pass'])
+    await client.connect('localhost')
+    await client.authenticate('admin', 'pass')
     res = await client.query(r'''
 
         greet = 'Hello world!!';
 
-    ''', target='stuff')
+    ''', scope='@:stuff')
     print(res)
 
 asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
+thingscmd -n localhost -u admin -p pass -s @:stuff -q << EOQ "
 
 greet = 'Hello world!!';
 
@@ -92,21 +92,21 @@ from thingsdb.client import Client
 client = Client()
 
 async def example():
-    await client.connect('node.local')
-    await client.authenticate(auth=['admin', 'pass'])
+    await client.connect('localhost')
+    await client.authenticate('admin', 'pass')
 
     res = await client.query(r'''
 
         is_the_earth_flat = !true;
 
-    ''', target='stuff')
+    ''', scope='@:stuff')
     print(res)
 
 asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
+thingscmd -n localhost -u admin -p pass -s @:stuff -q << EOQ "
 
 is_the_earth_flat = !true;
 
@@ -129,20 +129,20 @@ from thingsdb.client import Client
 client = Client()
 
 async def example():
-    await client.connect('node.local')
-    await client.authenticate(auth=['admin', 'pass'])
+    await client.connect('localhost')
+    await client.authenticate('admin', 'pass')
     res = await client.query(r'''
 
         count = 123;
 
-    ''', target='stuff')
+    ''', scope='@:stuff')
     print(res)
 
 asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
+thingscmd -n localhost -u admin -p pass -s @:stuff -q << EOQ "
 
 count = 123;
 
@@ -174,8 +174,8 @@ from thingsdb.client import Client
 client = Client()
 
 async def example():
-    await client.connect('node.local')
-    await client.authenticate(auth=['admin', 'pass'])
+    await client.connect('localhost')
+    await client.authenticate('admin', 'pass')
     # Get collection `stuff`
     stuff = await client.get_collection('stuff')
 
@@ -187,7 +187,7 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 # Assign property `plank_constant`
-thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
+thingscmd -n localhost -u admin -p pass -s @:stuff -q << EOQ "
 
 plank_constant = 6.62607004e-34;
 
@@ -218,8 +218,8 @@ from thingsdb.client import Client
 client = Client()
 
 async def example():
-    await client.connect('node.local')
-    await client.authenticate(auth=['admin', 'pass'])
+    await client.connect('localhost')
+    await client.authenticate('admin', 'pass')
 
     # Note: the email check is oversimplified, do not use in production
     await client.query(r'''
@@ -228,14 +228,14 @@ async def example():
         /* example usage of our 'email_test' */
         email = 'info@thingsdb.net';
         email.test( email_test );
-    ''', target='stuff')
+    ''', scope='@:stuff')
 
 asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
 # Note: the email check is oversimplified, do not use in production
-thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
+thingscmd -n localhost -u admin -p pass -s @:stuff -q << EOQ "
 email_test = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
 /* example usage of our 'email_test' */

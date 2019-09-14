@@ -7,8 +7,8 @@ import asyncio
 from thingsdb.client import Client, scope
 
 async def example():
-    await client.connect('node.local')
-    await client.authenticate(auth=['admin', 'pass'])
+    await client.connect('localhost')
+    await client.authenticate('admin', 'pass')
     res = await client.node_info()
     print(res)
 
@@ -17,7 +17,7 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -n node.local -u admin -p pass -s node -q << EOQ "
+thingscmd -n localhost -u admin -p pass -s node -q << EOQ "
 node_info();
 "
 EOQ
@@ -35,7 +35,7 @@ EOQ
     "events_in_queue": 0,
     "global_committed_event_id": 11,
     "global_stored_event_id": 11,
-    "hostname": "node.local",
+    "hostname": "localhost",
     "ip_support": "ALL",
     "libcleri_version": "0.10.1",
     "libpcre2_version": "10.31",

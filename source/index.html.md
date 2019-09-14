@@ -15,6 +15,7 @@ includes:
   - query
   - protocol
   - events
+  - scopes
   - names
   - properties
   - variable
@@ -52,7 +53,6 @@ includes:
   - c_add
   - c_array
   - c_assert
-  - c_blob
   - c_bool
   - c_call
   - c_contains

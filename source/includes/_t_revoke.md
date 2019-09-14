@@ -9,8 +9,8 @@ from thingsdb.client import Client
 client = Client()
 
 async def example():
-    await client.connect('node.local')
-    await client.authenticate(auth=['admin', 'pass'])
+    await client.connect('localhost')
+    await client.authenticate('admin', 'pass')
     res = await client.query(r'''
         revoke('stuff', 'iris', FULL);
     ''')
@@ -20,7 +20,7 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -n node.local -u admin -p pass -q << EOQ "
+thingscmd -n localhost -u admin -p pass -q << EOQ "
 revoke('stuff', 'iris', FULL);
 "
 EOQ

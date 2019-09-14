@@ -7,8 +7,8 @@ import asyncio
 from thingsdb.client import Client
 
 async def example():
-    await client.connect('node.local')
-    await client.authenticate(auth=['admin', 'pass'])
+    await client.connect('localhost')
+    await client.authenticate('admin', 'pass')
     res = await client.query(r'''
         wse({
             x = 0;
@@ -16,7 +16,7 @@ async def example():
             [1 ,2 ,3, 4].map(a);  /* without wse() this would raise an error */
             x;
         });
-    ''', target='stuff')
+    ''', scope='@:stuff')
     print(res)
 
 client = Client()
@@ -24,7 +24,7 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
+thingscmd -n localhost -u admin -p pass -s @:stuff -q << EOQ "
 wse({
     x = 0;
     a = |v| x += v;

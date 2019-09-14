@@ -37,7 +37,7 @@ Type | Number | Description
 --------| -----| -----------
 `PING`  | 32 | Ping, useful as keep-alive.
 `AUTH`  | 33 | Authentication, expects: `[username, password]`
-`QUERY_COLLECTION` | 36 | Query, see [query](#query) for more info.
+`QUERY` | 34 | Query, see [query](#query) for more info.
 `WATCH` | 48 | Watch, see [watch](#watch) for more info.
 `UNWATCH` | 49 | Stop watching specified things, see [watch](#watch) for more info.
 

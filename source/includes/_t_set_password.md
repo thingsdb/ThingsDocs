@@ -9,8 +9,8 @@ from thingsdb.client import Client
 client = Client()
 
 async def example():
-    await client.connect('node.local')
-    await client.authenticate(auth=['admin', 'pass'])
+    await client.connect('localhost')
+    await client.authenticate('admin', 'pass')
     await client.set_password('admin', 'my_secret_password')
 
 asyncio.get_event_loop().run_until_complete(example())
@@ -18,7 +18,7 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 # Change the password for user `admin`
-thingscmd -n node.local -u admin -p pass -q << EOQ "
+thingscmd -n localhost -u admin -p pass -q << EOQ "
 set_password('admin', 'my_secret_password');
 "
 EOQ

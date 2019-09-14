@@ -6,8 +6,8 @@ import asyncio
 from thingsdb.client import Client
 
 async def example():
-    await client.connect('node.local')
-    await client.authenticate(auth=['admin', 'pass'])
+    await client.connect('localhost')
+    await client.authenticate('admin', 'pass')
     res = await client.collection_info("stuff")
     print(res)
 
@@ -16,7 +16,7 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -n node.local -u admin -p pass -q << EOQ "
+thingscmd -n localhost -u admin -p pass -q << EOQ "
 collection_info('stuff');
 "
 EOQ

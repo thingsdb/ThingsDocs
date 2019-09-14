@@ -9,8 +9,8 @@ from thingsdb.client import Client
 client = Client()
 
 async def example():
-    await client.connect('node.local')
-    await client.authenticate(auth=['admin', 'pass'])
+    await client.connect('localhost')
+    await client.authenticate('admin', 'pass')
     # Delete all expired tokens
     await client.del_expired()
 
@@ -19,7 +19,7 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 # Delete all expired tokens
-thingscmd -n node.local -u admin -p pass -q << EOQ "
+thingscmd -n localhost -u admin -p pass -q << EOQ "
 del_expired();
 "
 EOQ

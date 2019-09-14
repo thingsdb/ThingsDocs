@@ -9,9 +9,9 @@ from thingsdb.client import Client, scope
 client = Client()
 
 async def example():
-    await client.connect('node.local')
-    await client.authenticate(auth=['admin', 'pass'])
-    # returns counters for `node.local:9200`
+    await client.connect('localhost')
+    await client.authenticate('admin', 'pass')
+    # returns counters for `localhost:9200`
     res = await client.query(r'''
         counters();
     ''', target=scope.node)
@@ -21,8 +21,8 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-# returns counters for `node.local:9200`
-thingscmd -n node.local -u admin -p pass -s node -q << EOQ "
+# returns counters for `localhost:9200`
+thingscmd -n localhost -u admin -p pass -s node -q << EOQ "
 counters();
 "
 EOQ

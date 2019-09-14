@@ -11,11 +11,11 @@ loop = asyncio.get_event_loop()
 
 
 async def example():
-    # replace `node.local` with your ThingsDB server address
-    await client.connect('node.local')
+    # replace `localhost` with your ThingsDB server address
+    await client.connect('localhost')
 
     # replace `amdin` with yout username and `pass` with your password
-    await client.authenticate(auth=['admin', 'pass'])
+    await client.authenticate('admin', 'pass')
 
     # ..or by using a token
     await client.authenticate('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
@@ -30,9 +30,9 @@ loop.run_until_complete(client.wait_closed())
 
 ```shell
 # Authenticate with a user and password
-thingscmd -n node.local -u admin -p pass -q "nil;"
+thingscmd -n localhost -u admin -p pass -q "nil;"
 # ..or with a token
-thingscmd -n node.local -t "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" -q "nil;"
+thingscmd -n localhost -t "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" -q "nil;"
 
 ```
 

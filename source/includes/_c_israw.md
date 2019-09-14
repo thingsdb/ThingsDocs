@@ -8,8 +8,8 @@ import urllib
 from thingsdb.client import Client
 
 async def example():
-    await client.connect('node.local')
-    await client.authenticate(auth=['admin', 'pass'])
+    await client.connect('localhost')
+    await client.authenticate('admin', 'pass')
 
     # TODO: replace with ThingsDB logo
     resp = urllib.request.urlopen(
@@ -20,7 +20,7 @@ async def example():
             israw( 'some string' ),
             israw( blob(0) ),
         ];
-    ''', target='stuff', blobs=[resp.read()])
+    ''', scope='@:stuff', blobs=[resp.read()])
     print(res)
 
 client = Client()
@@ -28,9 +28,9 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-wget -O - "https://thingsdb.github.io/ThingsDocs/images/logo.png" |
+curl "https://thingsdb.github.io/ThingsDocs/images/logo.png" |
 thingscmd \
-    -n node.local \
+    -n localhost \
     -u admin \
     -p pass \
     -c stuff \

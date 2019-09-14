@@ -12,7 +12,7 @@ async def example():
     # node3.local must be started using the `--secret ...` argument
     # and the node with id 1 must be turned off
     await client.connect('node1.local')
-    await client.authenticate(auth=['admin', 'pass'])
+    await client.authenticate('admin', 'pass')
     res = await client.query(r'''
         replace_node(1, 'my-one-time-serect', 'node3.local');
     ''')
@@ -24,7 +24,7 @@ asyncio.get_event_loop().run_until_complete(example())
 ```shell
 # node3.local must be started using the `--secret ...` argument
 # and the node with id 1 must be turned off
-thingscmd -n node.local -u admin -p pass -q << EOQ "
+thingscmd -n localhost -u admin -p pass -q << EOQ "
 replace_node(1, 'my-one-time-serect', 'node3.local');
 "
 EOQ

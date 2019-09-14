@@ -11,7 +11,7 @@ client = Client()
 async def example():
     # ThingsDB must be started on node2 using the `--secret ...` argument
     await client.connect('node1.local')
-    await client.authenticate(auth=['admin', 'pass'])
+    await client.authenticate('admin', 'pass')
     res = await client.query(r'''
         new_node('my-one-time-serect', 'node2.local');
     ''')
@@ -22,7 +22,7 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 # ThingsDB must be started on node2 using the `--secret ...` argument
-thingscmd -n node.local -u admin -p pass -q << EOQ "
+thingscmd -n localhost -u admin -p pass -q << EOQ "
 new_node('my-one-time-serect', 'node2.local');
 "
 EOQ

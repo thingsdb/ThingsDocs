@@ -7,8 +7,8 @@ import asyncio
 from thingsdb.client import Client
 
 async def example():
-    await client.connect('node.local')
-    await client.authenticate(auth=['admin', 'pass'])
+    await client.connect('localhost')
+    await client.authenticate('admin', 'pass')
     res = await client.query(r'''
         // return .colors, two levels deep if .colors exists
         try(return(.colors, 2));
@@ -23,7 +23,7 @@ async def example():
         };
 
         return(.colors, 2);
-    ''', target='stuff')
+    ''', scope='@:stuff')
     print(res)
 
 client = Client()
@@ -31,7 +31,7 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ '
+thingscmd -n localhost -u admin -p pass -s @:stuff -q << EOQ '
 // return .colors, two levels deep if .colors exists
 try(return(.colors, 2));
 

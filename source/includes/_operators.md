@@ -9,15 +9,15 @@ import asyncio
 from thingsdb.client import Client
 
 async def example():
-    await client.connect('node.local')
-    await client.authenticate(auth=['admin', 'pass'])
+    await client.connect('localhost')
+    await client.authenticate('admin', 'pass')
     res = await client.query(r'''
         [
             0b110 & 0b011,
             0b110 | 0b011,
             0b110 ^ 0b011,
         ];
-    ''', target='stuff')
+    ''', scope='@:stuff')
     print(res)
 
 client = Client()
@@ -25,7 +25,7 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
+thingscmd -n localhost -u admin -p pass -s @:stuff -q << EOQ "
 [
     0b110 & 0b011,
     0b110 | 0b011,
@@ -63,8 +63,8 @@ import asyncio
 from thingsdb.client import Client
 
 async def example():
-    await client.connect('node.local')
-    await client.authenticate(auth=['admin', 'pass'])
+    await client.connect('localhost')
+    await client.authenticate('admin', 'pass')
     res = await client.query(r'''
         [
             5 + 2,
@@ -74,7 +74,7 @@ async def example():
             5 * 2,
             5 % 2,
         ];
-    ''', target='stuff')
+    ''', scope='@:stuff')
     print(res)
 
 client = Client()
@@ -82,7 +82,7 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
+thingscmd -n localhost -u admin -p pass -s @:stuff -q << EOQ "
 [
     5 + 2,
     5 - 2,
@@ -143,8 +143,8 @@ import asyncio
 from thingsdb.client import Client
 
 async def example():
-    await client.connect('node.local')
-    await client.authenticate(auth=['admin', 'pass'])
+    await client.connect('localhost')
+    await client.authenticate('admin', 'pass')
     res = await client.query(r'''
         x = 0;
         [
@@ -152,7 +152,7 @@ async def example():
             true || x += 1,
             x
         ];  // expression x += 1 will never be executed
-    ''', target='stuff')
+    ''', scope='@:stuff')
     print(res)
 
 client = Client()
@@ -160,7 +160,7 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
+thingscmd -n localhost -u admin -p pass -s @:stuff -q << EOQ "
 x = 0;
 [
     false && x += 1,
@@ -207,11 +207,11 @@ import asyncio
 from thingsdb.client import Client
 
 async def example():
-    await client.connect('node.local')
-    await client.authenticate(auth=['admin', 'pass'])
+    await client.connect('localhost')
+    await client.authenticate('admin', 'pass')
     res = await client.query(r'''
         2 > 1 ? 'two is greater than one' : 'two is less than one';
-    ''', target='stuff')
+    ''', scope='@:stuff')
     print(res)
 
 client = Client()
@@ -219,7 +219,7 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -n node.local -u admin -p pass -c stuff -q << EOQ "
+thingscmd -n localhost -u admin -p pass -s @:stuff -q << EOQ "
 2 > 1  ? 'two is greater than one' : 'two is less than one';
 "
 EOQ
