@@ -11,7 +11,7 @@ async def example():
     await client.authenticate('admin', 'pass')
     # evaluate 1 > 2 with an assert message
     res = await client.query(r'''
-        assert( (1 > 2), 'one is still smaller than two');
+        assert(1 > 2, 'one is still smaller than two');
     ''', scope='@:stuff')
     print(res)
     # Error code is set: `res.error_code == 1`
@@ -22,7 +22,7 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 thingscmd -n localhost -u admin -p pass -s @:stuff -q << EOQ "
-assert( (1 > 2), 'one is still smaller than two');
+assert(1 > 2, 'one is still smaller than two');
 "
 EOQ
 ```

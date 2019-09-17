@@ -10,7 +10,7 @@ async def example():
     await client.connect('localhost')
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
-        node_err()
+        node_err();
     ''', scope='@:stuff')
     print(res)
 

@@ -119,11 +119,15 @@ includes:
   - e_auth_err
   - e_bad_data_err
   - e_forbidden_err
-  - e_index_err
+  - e_lookup_err
   - e_max_quota_err
   - e_node_err
+  - e_num_arguments_err
+  - e_operation_err
   - e_overflow_err
   - e_syntax_err
+  - e_type_err
+  - e_value_err
   - e_zero_div_err
 
 

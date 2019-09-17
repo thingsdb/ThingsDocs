@@ -1,6 +1,6 @@
-## zero_div_err
+## type_err
 
-> This code shows ***zero_div_err()***:
+> This code shows ***type_err()***:
 
 ```python
 import asyncio
@@ -10,7 +10,7 @@ async def example():
     await client.connect('localhost')
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
-        zero_div_err();
+        type_err();
     ''', scope='@:stuff')
     print(res)
 
@@ -20,7 +20,7 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 thingscmd -n localhost -u admin -p pass -s @:stuff -q << EOQ "
-zero_div_err();
+type_err();
 "
 EOQ
 ```
@@ -29,9 +29,9 @@ EOQ
 
 ```json
 {
-    "!": "zero_div_err()",
-    "error_code": -58,
-    "error_msg": "division or module by zero"
+    "!": "type_err()",
+    "error_code": -61,
+    "error_msg": "object of inappropriate type"
 }
 ```
 
@@ -40,7 +40,7 @@ Returns an [error](#error-type).
 This function does *not* generate an [event](#events).
 
 ### Function
-`zero_div_err([message])`
+`type_err([message])`
 
 ### Arguments
 Argument | Type | Description

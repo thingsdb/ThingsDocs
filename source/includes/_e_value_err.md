@@ -1,6 +1,6 @@
-## index_err
+## value_err
 
-> This code shows ***index_err()***:
+> This code shows ***value_err()***:
 
 ```python
 import asyncio
@@ -10,7 +10,7 @@ async def example():
     await client.connect('localhost')
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
-        index_err()
+        value_err();
     ''', scope='@:stuff')
     print(res)
 
@@ -20,7 +20,7 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 thingscmd -n localhost -u admin -p pass -s @:stuff -q << EOQ "
-index_err();
+value_err();
 "
 EOQ
 ```
@@ -29,9 +29,9 @@ EOQ
 
 ```json
 {
-    "!": "index_err()",
-    "error_code": -54,
-    "error_msg": "requested resource not found"
+    "!": "value_err()",
+    "error_code": -60,
+    "error_msg": "object has the right type but an inappropriate value"
 }
 ```
 
@@ -40,7 +40,7 @@ Returns an [error](#error-type).
 This function does *not* generate an [event](#events).
 
 ### Function
-`index_err([message])`
+`value_err([message])`
 
 ### Arguments
 Argument | Type | Description

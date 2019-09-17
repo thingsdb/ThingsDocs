@@ -10,7 +10,7 @@ async def example():
     await client.connect('localhost')
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
-        users.indexof(t(42));
+        ["January", "February", "March", "April"].indexof("March");
     ''', scope='@:stuff')
     print(res)
 
@@ -19,16 +19,16 @@ asyncio.get_event_loop().run_until_complete(example())
 ```
 
 ```shell
-thingscmd -n localhost -u admin -p pass -s @:stuff -q << EOQ "
-users.indexof(t(42));
-"
+thingscmd -n localhost -u admin -p pass -s @:stuff -q << EOQ '
+["January", "February", "March", "April"].indexof("March");
+'
 EOQ
 ```
 
-> Example return value in JSON format when `t(42)` was found at the 7th place, so at index 6.
+> Return value in JSON format
 
 ```json
-6
+2
 ```
 
 Returns the first index at which a given value can be found in the [array](#array-type), or `nil` if it is not present.

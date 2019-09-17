@@ -10,8 +10,8 @@ async def example():
     await client.connect('localhost')
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
-        x = 'create and delete this prop';
-        del('x');
+        .x = 'create and delete this prop';
+        .del('x');
     ''', scope='@:stuff')
     print(res)
 
@@ -21,8 +21,8 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 thingscmd -n localhost -u admin -p pass -s @:stuff -q << EOQ "
-x = 'create and delete this prop';
-del('x');
+.x = 'create and delete this prop';
+.del('x');
 "
 EOQ
 ```

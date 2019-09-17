@@ -10,7 +10,7 @@ async def example():
     await client.connect('localhost')
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
-        array( set( [{}, {}] ) );
+        array( set({}, {}) );
     ''', scope='@:stuff')
     print(res)
 
@@ -20,7 +20,7 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 thingscmd -n localhost -u admin -p pass -s @:stuff -q << EOQ "
-array( set( [{}, {}] ) );
+array( set({}, {}) );
 "
 EOQ
 ```

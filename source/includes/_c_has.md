@@ -11,7 +11,7 @@ async def example():
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
         iris = {name: 'Iris'};
-        set = set([iris]);
+        set = set(iris);
 
         /* Check if iris is in the set */
         set.has(iris);
@@ -25,7 +25,7 @@ asyncio.get_event_loop().run_until_complete(example())
 ```shell
 thingscmd -n localhost -u admin -p pass -s @:stuff -q << EOQ "
 iris = {name: 'Iris'};
-set = set([iris]);
+set = set(iris);
 
 /* Check if iris is in the set */
 set.has(iris);

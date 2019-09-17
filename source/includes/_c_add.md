@@ -34,7 +34,7 @@ EOQ
 ```
 
 Adds new thing to the [set](#set-type) and returns the number of things which are
-actually added to the set. For example `my_set.add( t(42) );` will return `0`
+actually added to the set. For example `my_set.add(#42);` will return `0`
 if `my_set` already contains thing `#42`.
 
 This function generates an [event](#events).

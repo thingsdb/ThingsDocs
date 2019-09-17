@@ -91,9 +91,9 @@ async def example():
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
         t1 = {x:1}; t2 = {x:2}; t3 = {x:3}; t4 = {x:4};
-        s = set([t1, t2, t3, t4]);
+        s = set(t1, t2, t3, t4);
         [
-            s.remove(|t| (t.x < 3)),
+            s.remove(|t| t.x < 3),
             s.remove(t1, t2, t3, t4),
         ]
     ''', scope='@:stuff')
@@ -106,9 +106,9 @@ asyncio.get_event_loop().run_until_complete(example())
 ```shell
 thingscmd -n localhost -u admin -p pass -c stuff -d 3 -q  << EOQ "
 t1 = {x:1}; t2 = {x:2}; t3 = {x:3}; t4 = {x:4};
-s = set([t1, t2, t3, t4]);
+s = set(t1, t2, t3, t4);
 [
-    s.remove(|t| (t.x < 3)),
+    s.remove(|t| t.x < 3),
     s.remove(t1, t2, t3, t4),
 ]
 "

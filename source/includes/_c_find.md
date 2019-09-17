@@ -42,7 +42,7 @@ This function does *not* generate an [event](#events).
 
 <aside class="notice">
 The return value when called on a <code>set</code> might be unpredictable since a set is not ordered.
-<p><code>set([{name: 'Iris'}, {name: 'Cato'}]).find(||true);</code></p>
+<p><code>set({name: 'Iris'}, {name: 'Cato'}).find(||true);</code></p>
 <p>...will return <code>{Iris}</code> <i>or</i> <code>{Cato}</code>.</p>
 </aside>
 

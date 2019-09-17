@@ -1,6 +1,6 @@
-## zero_div_err
+## num_arguments_err
 
-> This code shows ***zero_div_err()***:
+> This code shows ***num_arguments_err()***:
 
 ```python
 import asyncio
@@ -10,7 +10,7 @@ async def example():
     await client.connect('localhost')
     await client.authenticate('admin', 'pass')
     res = await client.query(r'''
-        zero_div_err();
+        num_arguments_err();
     ''', scope='@:stuff')
     print(res)
 
@@ -20,7 +20,7 @@ asyncio.get_event_loop().run_until_complete(example())
 
 ```shell
 thingscmd -n localhost -u admin -p pass -s @:stuff -q << EOQ "
-zero_div_err();
+num_arguments_err();
 "
 EOQ
 ```
@@ -29,9 +29,9 @@ EOQ
 
 ```json
 {
-    "!": "zero_div_err()",
-    "error_code": -58,
-    "error_msg": "division or module by zero"
+    "!": "num_arguments_err()",
+    "error_code": -62,
+    "error_msg": "wrong number of arguments"
 }
 ```
 
@@ -40,7 +40,7 @@ Returns an [error](#error-type).
 This function does *not* generate an [event](#events).
 
 ### Function
-`zero_div_err([message])`
+`num_arguments_err([message])`
 
 ### Arguments
 Argument | Type | Description

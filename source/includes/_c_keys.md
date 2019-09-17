@@ -38,7 +38,7 @@ EOQ
 Returns an array with all the property names of a [thing](#thing-type).
 The same could be returned using map so the following statement is `true`:
 
-`(.keys() == .map(|k| k))`
+`.keys() == .map(|k| k)`
 
 <aside class="warning">
 Although the <code>keys()</code> and <code>map()</code> functions in the example above will return an array with the same order,
