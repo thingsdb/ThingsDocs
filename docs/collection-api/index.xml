@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Collection API on ThingsDB documentation</title>
-    <link>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/</link>
+    <link>https://thingsdb.github.io/ThingsDocs/collection-api/</link>
     <description>Recent content in Collection API on ThingsDB documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 07 Oct 2019 11:04:33 +0200</lastBuildDate>
     
-	<atom:link href="https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://thingsdb.github.io/ThingsDocs/collection-api/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

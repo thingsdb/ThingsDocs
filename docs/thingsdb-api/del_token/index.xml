@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>del_token on ThingsDB documentation</title>
-    <link>https://transceptor-technology.github.io/ThingsDocsPrototype/thingsdb-api/del_token/</link>
+    <link>https://thingsdb.github.io/ThingsDocs/thingsdb-api/del_token/</link>
     <description>Recent content in del_token on ThingsDB documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 14 Oct 2019 09:49:34 +0200</lastBuildDate>
     
-	<atom:link href="https://transceptor-technology.github.io/ThingsDocsPrototype/thingsdb-api/del_token/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://thingsdb.github.io/ThingsDocs/thingsdb-api/del_token/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

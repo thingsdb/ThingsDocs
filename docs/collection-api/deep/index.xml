@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>deep on ThingsDB documentation</title>
-    <link>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/deep/</link>
+    <link>https://thingsdb.github.io/ThingsDocs/collection-api/deep/</link>
     <description>Recent content in deep on ThingsDB documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 14 Oct 2019 09:57:18 +0200</lastBuildDate>
     
-	<atom:link href="https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/deep/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://thingsdb.github.io/ThingsDocs/collection-api/deep/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

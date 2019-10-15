@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Node API on ThingsDB documentation</title>
-    <link>https://transceptor-technology.github.io/ThingsDocsPrototype/node-api/</link>
+    <link>https://thingsdb.github.io/ThingsDocs/node-api/</link>
     <description>Recent content in Node API on ThingsDB documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 07 Oct 2019 11:03:34 +0200</lastBuildDate>
     
-	<atom:link href="https://transceptor-technology.github.io/ThingsDocsPrototype/node-api/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://thingsdb.github.io/ThingsDocs/node-api/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

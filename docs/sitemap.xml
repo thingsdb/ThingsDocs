@@ -3,736 +3,736 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/errors/assert_err/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/errors/assert_err/</loc>
     <lastmod>2019-10-14T10:11:16+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/procedures-api/del_procedure/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/procedures-api/del_procedure/</loc>
     <lastmod>2019-10-14T10:07:08+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/add/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/add/</loc>
     <lastmod>2019-10-14T09:56:25+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/thingsdb-api/collection_info/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/thingsdb-api/collection_info/</loc>
     <lastmod>2019-10-14T09:48:47+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/node-api/counters/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/node-api/counters/</loc>
     <lastmod>2019-10-14T09:42:18+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/data-types/array-type/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/data-types/array-type/</loc>
     <lastmod>2019-10-14T09:41:11+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/operators/arithmetic-operators/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/operators/arithmetic-operators/</loc>
     <lastmod>2019-10-14T09:35:42+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/protocol/example/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/protocol/example/</loc>
     <lastmod>2019-10-14T09:31:57+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/authentication/python/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/authentication/python/</loc>
     <lastmod>2019-10-14T09:30:56+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/authentication/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/authentication/</loc>
     <lastmod>2019-10-07T11:01:14+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/errors/auth_err/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/errors/auth_err/</loc>
     <lastmod>2019-10-14T10:11:22+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/procedures-api/new_procedure/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/procedures-api/new_procedure/</loc>
     <lastmod>2019-10-14T10:07:12+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/array/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/array/</loc>
     <lastmod>2019-10-14T09:56:29+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/thingsdb-api/collections_info/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/thingsdb-api/collections_info/</loc>
     <lastmod>2019-10-14T09:48:51+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/node-api/node_info/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/node-api/node_info/</loc>
     <lastmod>2019-10-14T09:42:49+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/data-types/boolean/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/data-types/boolean/</loc>
     <lastmod>2019-10-14T09:40:19+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/operators/assignments/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/operators/assignments/</loc>
     <lastmod>2019-10-14T09:36:11+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/protocol/package/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/protocol/package/</loc>
     <lastmod>2019-10-14T09:31:46+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/authentication/shell/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/authentication/shell/</loc>
     <lastmod>2019-10-14T09:31:07+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/query/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/query/</loc>
     <lastmod>2019-10-07T11:01:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/errors/bad_data_err/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/errors/bad_data_err/</loc>
     <lastmod>2019-10-14T10:11:34+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/procedures-api/procedure_doc/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/procedures-api/procedure_doc/</loc>
     <lastmod>2019-10-14T10:10:02+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/assert/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/assert/</loc>
     <lastmod>2019-10-14T09:56:39+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/thingsdb-api/del_collection/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/thingsdb-api/del_collection/</loc>
     <lastmod>2019-10-14T09:49:09+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/node-api/nodes_info/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/node-api/nodes_info/</loc>
     <lastmod>2019-10-14T09:43:03+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/data-types/closure/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/data-types/closure/</loc>
     <lastmod>2019-10-14T09:41:26+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/operators/binary-bitwise-operators/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/operators/binary-bitwise-operators/</loc>
     <lastmod>2019-10-14T09:34:41+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/protocol/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/protocol/</loc>
     <lastmod>2019-10-07T11:01:36+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/errors/forbidden_err/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/errors/forbidden_err/</loc>
     <lastmod>2019-10-14T10:11:45+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/procedures-api/procedure_info/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/procedures-api/procedure_info/</loc>
     <lastmod>2019-10-14T10:10:07+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/bool/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/bool/</loc>
     <lastmod>2019-10-14T09:56:51+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/thingsdb-api/del_expired/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/thingsdb-api/del_expired/</loc>
     <lastmod>2019-10-14T09:49:19+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/node-api/reset_counters/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/node-api/reset_counters/</loc>
     <lastmod>2019-10-14T09:43:17+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/data-types/error-type/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/data-types/error-type/</loc>
     <lastmod>2019-10-14T09:41:45+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/operators/conditional-ternary-operator/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/operators/conditional-ternary-operator/</loc>
     <lastmod>2019-10-14T09:37:07+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/events/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/events/</loc>
     <lastmod>2019-10-07T11:01:44+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/errors/lookup_err/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/errors/lookup_err/</loc>
     <lastmod>2019-10-14T10:11:56+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/procedures-api/procedures_info/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/procedures-api/procedures_info/</loc>
     <lastmod>2019-10-14T10:10:26+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/call/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/call/</loc>
     <lastmod>2019-10-14T09:56:57+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/thingsdb-api/del_token/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/thingsdb-api/del_token/</loc>
     <lastmod>2019-10-14T09:49:34+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/node-api/set_log_level/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/node-api/set_log_level/</loc>
     <lastmod>2019-10-14T09:43:31+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/data-types/floating-point/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/data-types/floating-point/</loc>
     <lastmod>2019-10-14T09:40:47+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/operators/logical_operators/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/operators/logical_operators/</loc>
     <lastmod>2019-10-14T09:36:27+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/scopes/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/scopes/</loc>
     <lastmod>2019-10-07T11:01:51+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/errors/max_quota_err/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/errors/max_quota_err/</loc>
     <lastmod>2019-10-14T10:12:08+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/procedures-api/run/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/procedures-api/run/</loc>
     <lastmod>2019-10-14T10:10:34+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/contains/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/contains/</loc>
     <lastmod>2019-10-14T09:57:04+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/thingsdb-api/del_user/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/thingsdb-api/del_user/</loc>
     <lastmod>2019-10-14T09:49:40+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/node-api/shutdown/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/node-api/shutdown/</loc>
     <lastmod>2019-10-14T09:43:42+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/data-types/integer/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/data-types/integer/</loc>
     <lastmod>2019-10-14T09:40:28+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/operators/precedence-and-associativity/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/operators/precedence-and-associativity/</loc>
     <lastmod>2019-10-14T09:37:41+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/names/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/names/</loc>
     <lastmod>2019-10-07T11:01:58+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/errors/node_err/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/errors/node_err/</loc>
     <lastmod>2019-10-14T10:12:19+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/deep/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/deep/</loc>
     <lastmod>2019-10-14T09:57:18+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/thingsdb-api/grant/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/thingsdb-api/grant/</loc>
     <lastmod>2019-10-14T09:49:48+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/data-types/nil/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/data-types/nil/</loc>
     <lastmod>2019-10-14T09:39:58+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/properties/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/properties/</loc>
     <lastmod>2019-10-07T11:02:12+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/errors/num_arguments_err/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/errors/num_arguments_err/</loc>
     <lastmod>2019-10-14T10:12:52+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/del/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/del/</loc>
     <lastmod>2019-10-14T09:57:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/thingsdb-api/new_collection/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/thingsdb-api/new_collection/</loc>
     <lastmod>2019-10-14T09:49:59+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/data-types/regex/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/data-types/regex/</loc>
     <lastmod>2019-10-14T09:40:56+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/variable/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/variable/</loc>
     <lastmod>2019-10-07T11:02:22+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/errors/operation_err/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/errors/operation_err/</loc>
     <lastmod>2019-10-14T10:13:11+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/endswith/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/endswith/</loc>
     <lastmod>2019-10-14T09:58:15+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/thingsdb-api/new_node/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/thingsdb-api/new_node/</loc>
     <lastmod>2019-10-14T09:50:09+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/data-types/set-type/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/data-types/set-type/</loc>
     <lastmod>2019-10-14T09:41:39+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/operators/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/operators/</loc>
     <lastmod>2019-10-07T11:02:33+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/errors/overflow_err/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/errors/overflow_err/</loc>
     <lastmod>2019-10-14T10:13:24+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/err/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/err/</loc>
     <lastmod>2019-10-14T09:58:22+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/thingsdb-api/new_token/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/thingsdb-api/new_token/</loc>
     <lastmod>2019-10-14T09:50:15+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/data-types/string-raw/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/data-types/string-raw/</loc>
     <lastmod>2019-10-14T09:40:11+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/data-types/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/data-types/</loc>
     <lastmod>2019-10-07T11:03:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/errors/syntax_err/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/errors/syntax_err/</loc>
     <lastmod>2019-10-14T10:13:32+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/extend/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/extend/</loc>
     <lastmod>2019-10-14T09:58:32+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/thingsdb-api/new_user/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/thingsdb-api/new_user/</loc>
     <lastmod>2019-10-14T09:50:22+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/data-types/thing-type/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/data-types/thing-type/</loc>
     <lastmod>2019-10-14T09:41:17+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/node-api/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/node-api/</loc>
     <lastmod>2019-10-07T11:03:34+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/errors/type_err/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/errors/type_err/</loc>
     <lastmod>2019-10-14T10:13:39+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/filter/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/filter/</loc>
     <lastmod>2019-10-14T09:58:39+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/thingsdb-api/pop_node/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/thingsdb-api/pop_node/</loc>
     <lastmod>2019-10-14T09:50:35+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/thingsdb-api/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/thingsdb-api/</loc>
     <lastmod>2019-10-07T11:04:22+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/errors/value_err/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/errors/value_err/</loc>
     <lastmod>2019-10-14T10:13:47+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/find/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/find/</loc>
     <lastmod>2019-10-14T09:58:44+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/thingsdb-api/rename_collection/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/thingsdb-api/rename_collection/</loc>
     <lastmod>2019-10-14T09:50:49+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/</loc>
     <lastmod>2019-10-07T11:04:33+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/errors/zero_div_err/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/errors/zero_div_err/</loc>
     <lastmod>2019-10-14T10:13:56+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/findindex/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/findindex/</loc>
     <lastmod>2019-10-14T09:59:22+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/thingsdb-api/rename_user/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/thingsdb-api/rename_user/</loc>
     <lastmod>2019-10-14T09:50:58+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/procedures-api/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/procedures-api/</loc>
     <lastmod>2019-10-07T11:04:44+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/float/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/float/</loc>
     <lastmod>2019-10-14T09:59:28+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/thingsdb-api/replace_node/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/thingsdb-api/replace_node/</loc>
     <lastmod>2019-10-14T09:51:12+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/errors/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/errors/</loc>
     <lastmod>2019-10-07T11:04:54+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/get/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/get/</loc>
     <lastmod>2019-10-14T09:59:34+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/thingsdb-api/revoke/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/thingsdb-api/revoke/</loc>
     <lastmod>2019-10-14T09:51:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/has-set/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/has-set/</loc>
     <lastmod>2019-10-14T09:59:47+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/thingsdb-api/set_password/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/thingsdb-api/set_password/</loc>
     <lastmod>2019-10-14T09:51:37+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/has-thing/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/has-thing/</loc>
     <lastmod>2019-10-14T09:59:52+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/thingsdb-api/set_quota/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/thingsdb-api/set_quota/</loc>
     <lastmod>2019-10-14T09:51:52+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/id/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/id/</loc>
     <lastmod>2019-10-14T09:59:59+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/thingsdb-api/user_info/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/thingsdb-api/user_info/</loc>
     <lastmod>2019-10-14T09:51:59+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/indexof/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/indexof/</loc>
     <lastmod>2019-10-14T10:00:10+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/thingsdb-api/users_info/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/thingsdb-api/users_info/</loc>
     <lastmod>2019-10-14T09:52:04+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/int/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/int/</loc>
     <lastmod>2019-10-14T10:00:14+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/isarray/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/isarray/</loc>
     <lastmod>2019-10-14T10:00:22+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/isascii/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/isascii/</loc>
     <lastmod>2019-10-14T10:00:36+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/isbool/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/isbool/</loc>
     <lastmod>2019-10-14T10:00:44+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/iserr/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/iserr/</loc>
     <lastmod>2019-10-14T10:01:10+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/isfloat/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/isfloat/</loc>
     <lastmod>2019-10-14T10:01:19+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/isinf/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/isinf/</loc>
     <lastmod>2019-10-14T10:01:34+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/isint/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/isint/</loc>
     <lastmod>2019-10-14T10:01:44+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/islist/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/islist/</loc>
     <lastmod>2019-10-14T10:01:56+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/isnan/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/isnan/</loc>
     <lastmod>2019-10-14T10:02:01+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/isnil/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/isnil/</loc>
     <lastmod>2019-10-14T13:53:26+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/israw/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/israw/</loc>
     <lastmod>2019-10-14T10:02:14+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/isset/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/isset/</loc>
     <lastmod>2019-10-14T10:02:21+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/isstr/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/isstr/</loc>
     <lastmod>2019-10-14T10:02:30+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/isthing/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/isthing/</loc>
     <lastmod>2019-10-14T10:02:42+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/istuple/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/istuple/</loc>
     <lastmod>2019-10-14T10:02:50+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/isutf8/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/isutf8/</loc>
     <lastmod>2019-10-14T10:03:04+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/keys/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/keys/</loc>
     <lastmod>2019-10-14T10:03:10+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/len/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/len/</loc>
     <lastmod>2019-10-14T10:03:17+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/lower/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/lower/</loc>
     <lastmod>2019-10-14T10:03:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/map/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/map/</loc>
     <lastmod>2019-10-14T10:03:29+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/now/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/now/</loc>
     <lastmod>2019-10-14T10:03:34+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/pop/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/pop/</loc>
     <lastmod>2019-10-14T10:03:42+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/push/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/push/</loc>
     <lastmod>2019-10-14T10:03:46+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/raise/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/raise/</loc>
     <lastmod>2019-10-14T10:03:58+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/refs/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/refs/</loc>
     <lastmod>2019-10-14T10:04:02+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/remove-list/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/remove-list/</loc>
     <lastmod>2019-10-14T10:04:22+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/remove-set/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/remove-set/</loc>
     <lastmod>2019-10-14T10:04:27+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/return/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/return/</loc>
     <lastmod>2019-10-14T10:04:35+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/set-new-type/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/set-new-type/</loc>
     <lastmod>2019-10-14T10:04:55+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/set-property/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/set-property/</loc>
     <lastmod>2019-10-14T10:05:11+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/splice/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/splice/</loc>
     <lastmod>2019-10-14T10:05:21+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/startswith/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/startswith/</loc>
     <lastmod>2019-10-14T10:05:31+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/str/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/str/</loc>
     <lastmod>2019-10-14T10:05:38+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/test/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/test/</loc>
     <lastmod>2019-10-14T10:05:45+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/thing/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/thing/</loc>
     <lastmod>2019-10-14T10:05:54+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/try/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/try/</loc>
     <lastmod>2019-10-14T10:06:02+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/type/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/type/</loc>
     <lastmod>2019-10-14T10:06:09+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/upper/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/upper/</loc>
     <lastmod>2019-10-14T10:06:15+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/values/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/values/</loc>
     <lastmod>2019-10-14T10:06:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/wse/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/wse/</loc>
     <lastmod>2019-10-14T10:06:27+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/query/arguments/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/query/arguments/</loc>
     <lastmod>2019-10-14T09:31:27+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/categories/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/categories/</loc>
   </url>
   
   <url>
-    <loc>https://transceptor-technology.github.io/ThingsDocsPrototype/tags/</loc>
+    <loc>https://thingsdb.github.io/ThingsDocs/tags/</loc>
   </url>
   
 </urlset>
