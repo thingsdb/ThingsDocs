@@ -1,0 +1,18 @@
+baseURL = "https://transceptor-technology.github.io/ThingsDocsPrototype/"
+languageCode = "en-us"
+title = "ThingsDB documentation"
+publishDir = "docs"
+
+# Change the default theme to be use when building the site with Hugo
+theme = "hugo-theme-learn"
+
+# For search functionality
+[outputs]
+  home = [ "HTML", "RSS", "JSON"]
+
+[params]
+  # Change default color scheme with a variant one. Can be "red", "blue", "green".
+  themeVariant = "mine"
+  # Description of the site, will be used in meta information
+  description = "ThingsDB documentation"
+  disableInlineCopyToClipBoard = true

@@ -1,12 +1,33 @@
 # The ThingsDB Documentation source
 
 
-```shell
-
-# Use docker
-docker-compose up
-
+Update golang to version 1.12
+```
+sudo snap install go --classic
 ```
 
 
-You can now see the docs at http://localhost:4567. Whoa! That was fast!
+Install Hugo (Ubuntu/Debian)
+
+```
+sudo snap install hugo
+```
+
+Install template
+```
+git submodule update --init --recursive
+```
+
+Start development server
+```
+hugo server --disableFastRender
+```
+
+Build for GitHub pages
+```
+hugo
+```
+
+And upload to master
+
+

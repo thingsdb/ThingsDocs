@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>isinf on ThingsDB documentation</title>
+    <link>https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/isinf/</link>
+    <description>Recent content in isinf on ThingsDB documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 14 Oct 2019 10:01:34 +0200</lastBuildDate>
+    
+	<atom:link href="https://transceptor-technology.github.io/ThingsDocsPrototype/collection-api/isinf/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>
