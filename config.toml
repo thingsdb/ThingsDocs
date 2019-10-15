@@ -1,4 +1,4 @@
-baseURL = "https://transceptor-technology.github.io/ThingsDocsPrototype/"
+baseURL = "https://thingsdb.github.io/ThingsDocs/"
 languageCode = "en-us"
 title = "ThingsDB documentation"
 publishDir = "docs"
