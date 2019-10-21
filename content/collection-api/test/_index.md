@@ -21,7 +21,7 @@ regex | regex (required) | The regular expression to test against the string.
 
 > Examples using ***test()***:
 
-```
+```thingsdb,json_response
 [
     'Hello world!!'.test(/^hello/),
     'Hello world!!'.test(/^hello/i),

@@ -21,7 +21,7 @@ The removed element from the array. An `INDEX_ERROR` is raised if the array is e
 
 > This code show an example usage of ***pop()***:
 
-```
+```thingsdb,json_response
 (arr = [1, 2, 3]).pop();
 arr;
 ```
@@ -30,10 +30,7 @@ arr;
 
 ```json
 [
-    3,
-    [
-        1,
-        2
-    ]
+    1,
+    2
 ]
 ```

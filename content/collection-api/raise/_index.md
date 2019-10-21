@@ -21,7 +21,7 @@ None
 
 > This code shows how ***raise()*** can be used:
 
-```
+```thingsdb,should_err
 raise ();
 'This code is not reached';
 ```

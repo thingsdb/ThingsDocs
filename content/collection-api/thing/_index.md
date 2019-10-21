@@ -23,7 +23,7 @@ An `INDEX_ERROR` is returned in case an id is given which is not found inside th
 
 > This code shows an example usage of ***thing()***:
 
-```
+```thingsdb,should_pass
 .greet = "Hello world!";
 [
     thing(.id()),
@@ -31,7 +31,7 @@ An `INDEX_ERROR` is returned in case an id is given which is not found inside th
 ];
 ```
 
-> Return value in JSON format
+> Example return value in JSON format
 
 ```json
 [

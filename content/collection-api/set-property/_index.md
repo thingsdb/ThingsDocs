@@ -24,12 +24,18 @@ The value which will be assigned.
 
 > This code shows how to use ***set()***:
 
-```
-.set('the_answer', 42);
+```thingsdb,json_response
+[
+    .set('the_answer', 42),
+    .the_answer,
+];
 ```
 
 > Return value in JSON format
 
 ```json
-42
+[
+    42,
+    42
+]
 ```

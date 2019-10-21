@@ -9,6 +9,6 @@ Other types can convert to `bool` by using the `!` (not) operator or the [bool](
 
 > This code creates a *bool* property *is_the_earth_flat* to collection *stuff*:
 
-```
-is_the_earth_flat = !true;
+```thingsdb,should_pass
+.is_the_earth_flat = !true;
 ```

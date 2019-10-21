@@ -35,7 +35,7 @@ A list with the removed `things` from the set or an empty list if nothing is rem
 
 > This code shows an example using ***remove()*** on a set:
 
-```
+```thingsdb,should_pass
 t1 = {x:1}; t2 = {x:2}; t3 = {x:3}; t4 = {x:4};
 s = set(t1, t2, t3, t4);
 [

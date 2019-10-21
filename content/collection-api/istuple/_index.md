@@ -22,7 +22,7 @@ Returns `true` is the passed value is a tuple else it returns `false`.
 
 > This code shows some return values for ***istuple()***:
 
-```
+```thingsdb,json_response
 [
     istuple( [] ),
     istuple( tmp = [['nested'], set()] ),

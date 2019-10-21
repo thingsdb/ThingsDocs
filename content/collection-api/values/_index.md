@@ -27,7 +27,7 @@ Returns an array with property values.
 
 > This code shows how to use `values()`:
 
-```
+```thingsdb,should_pass
 {a: 1, b: 2, c: 3}.values();
 ```
 

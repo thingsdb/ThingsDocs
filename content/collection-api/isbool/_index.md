@@ -22,7 +22,7 @@ Returns `true` is the passed value is a boolean else it returns `false`.
 
 > This code shows some return values for ***isbool()***:
 
-```
+```thingsdb,json_response
 [
     isbool( true ),
     isbool( 'true' ),

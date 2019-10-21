@@ -21,7 +21,7 @@ Returns `true` is the given value is not a number, else `false`.
 
 > This code shows some return values for ***isnan()***:
 
-```
+```thingsdb,json_response
 [
     isnan( true ),
     isnan( 123 ),

@@ -23,7 +23,7 @@ Returns `true` the value passed is array else it returns `false`.
 
 > This code shows some return values for ***isarray()***:
 
-```
+```thingsdb,json_response
 [
     isarray( [] ),
     isarray( tmp = [['nested']] ),

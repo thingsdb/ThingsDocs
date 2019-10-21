@@ -16,7 +16,7 @@ Returns the new length of the list.
 
 > This code pushes values to a list:
 
-```
+```thingsdb,json_response
 list = [1, 2, 3];
 list.push(4, 5, 6);
 ```

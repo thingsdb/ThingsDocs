@@ -19,6 +19,6 @@ Base | Example | Description
 
 > This code creates a *int* property *count* to collection *stuff*:
 
-```
-count = 123;
+```thingsdb,should_pass
+.count = 123;
 ```

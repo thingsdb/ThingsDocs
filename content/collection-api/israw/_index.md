@@ -22,14 +22,11 @@ Returns `true` is the given value is of type `raw`, else `false`.
 
 > This code shows some return values for ***israw()***:
 
-```shell
-curl "https://thingsdb.github.io/ThingsDocs/images/logo.png" |
-thingscmd \
-    -n localhost \
-    -u admin \
-    -p pass \
-    -c stuff \
-    -q " [ israw( 'some string' ), israw( blob(0) ) ]; "
+```thingsdb,json_response
+[
+    israw( 'some string' ),
+    israw( bytes('xxxx') ),
+];
 ```
 
 > Return value in JSON format

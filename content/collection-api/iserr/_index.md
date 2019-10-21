@@ -22,7 +22,7 @@ Returns `true` is the passed value is an error else it returns `false`.
 
 > This code shows some return values for ***iserr()***:
 
-```
+```thingsdb,json_response
 [
     iserr( err() ),
     iserr( zero_div_err() ),

@@ -28,7 +28,7 @@ The value for the specified *statement* or an error if the statement has failed.
 
 > This code shows some return values for ***try()***:
 
-```
+```thingsdb,json_response
 [
     iserr( try( x = (1/0) )),
     iserr( try( (1/0), zero_div_err() )),

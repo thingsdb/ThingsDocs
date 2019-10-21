@@ -21,7 +21,7 @@ Returns `true` when the given propery name is found and otherwise `false`.
 
 > This code shows an example use case of ***has()***:
 
-```
+```thingsdb,json_response
 tmp = {name: 'Iris'};
 tmp.has('name');
 ```

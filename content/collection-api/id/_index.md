@@ -19,7 +19,7 @@ Returns `id` of a thing or `nil` when the thing is not stored.
 
 > This code uses `id()` to return a collection id:
 
-```
+```thingsdb,should_pass
 .id();  // Returns the collection id
 ```
 

@@ -29,7 +29,7 @@ will raise a `BAD_REQUEST`.
 
 > This code shows some return values for ***float()***:
 
-```
+```thingsdb,json_response
 [
     float(),
     float(42),

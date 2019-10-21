@@ -30,7 +30,7 @@ If no elements or properties pass the test, an empty array, set or thing will be
 
 > This code shows an example using ***filter()***:
 
-```
+```thingsdb,json_response
 users = [{name: 'Iris', age: 6}, {name: 'Sasha', age: 34}];
 
 /*
@@ -57,7 +57,7 @@ users = [{name: 'Iris', age: 6}, {name: 'Sasha', age: 34}];
         }
     ],
     {
-]        "age": 6
+        "age": 6
     },
     [
         {

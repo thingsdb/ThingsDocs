@@ -29,7 +29,7 @@ Returns an array with property names.
 
 > This code shows how to use `keys()`:
 
-```
+```thingsdb,json_response
 {a: 1, b: 2, c: 3}.keys();
 ```
 

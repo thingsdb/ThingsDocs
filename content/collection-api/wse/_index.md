@@ -26,7 +26,7 @@ Return value of the given statement.
 
 > This code shows an example usage for ***wse()***:
 
-```
+```thingsdb,json_response
 wse({
     x = 0;
     a = |v| x += v;

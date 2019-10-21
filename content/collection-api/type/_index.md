@@ -21,7 +21,7 @@ Type name of the given value.
 
 > Returns the type name of a given value:
 
-```
+```thingsdb,json_response
 [
     type( nil ),
     type( 42 ),

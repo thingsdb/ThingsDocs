@@ -29,7 +29,7 @@ Reference count of the given value.
 
 > Returns the reference count of a given value:
 
-```
+```thingsdb,should_pass
 [
     refs( 'some string' ),
     refs( a = b = c = 42 ),

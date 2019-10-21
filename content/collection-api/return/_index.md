@@ -37,7 +37,7 @@ to the output of the current query or closure.
 
 > This code shows how ***return()*** can be used:
 
-```
+```thingsdb,should_pass
 // return .colors, two levels deep if .colors exists
 try(return(.colors, 2));
 

@@ -22,7 +22,7 @@ Returns `true` is the passed value is a float else it returns `false`.
 
 > This code shows some return values for ***isfloat()***:
 
-```
+```thingsdb,json_response
 [
     isfloat( 42.0 ),
     isfloat( 0.42e+2 ),

@@ -25,7 +25,7 @@ return value will be `nil`  unless an alternative return value is given as secon
 
 > This code shows an example use case of ***get()***:
 
-```
+```thingsdb,json_response
 tmp = {name: 'Iris'};
 tmp.get('name');
 ```

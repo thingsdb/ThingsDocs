@@ -22,7 +22,7 @@ Returns `true` is the passed value is a `set`, else it returns `false`.
 
 > This code shows some return values for ***isset()***:
 
-```
+```thingsdb,json_response
 [
     isset( [] ),
     isset( set() ),

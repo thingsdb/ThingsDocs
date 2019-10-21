@@ -22,7 +22,7 @@ Returns `true` is the passed value is a `list`, else it returns `false`.
 
 > This code shows some return values for ***islist()***:
 
-```
+```thingsdb,json_response
 [
     islist( [] ),
     islist( tmp = [['nested']] ),

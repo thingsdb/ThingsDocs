@@ -21,7 +21,7 @@ Returns `true` the given thing is found in the set and otherwise `false`.
 
 > This code shows an example use case of ***has()***:
 
-```
+```thingsdb,json_response
 iris = {name: 'Iris'};
 set = set(iris);
 

@@ -23,7 +23,7 @@ Current timestamp.
 
 > This code shows the current timestamp:
 
-```
+```thingsdb,should_pass
 // current timestamp
 now();
 ```

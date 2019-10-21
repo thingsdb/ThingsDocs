@@ -21,7 +21,7 @@ Returns `true` the given characters are found at the start of the string and oth
 
 > This code shows an example using ***startswith()***:
 
-```
+```thingsdb,json_response
 'the answer to life the universe and everything'.startswith('the answer');
 ```
 

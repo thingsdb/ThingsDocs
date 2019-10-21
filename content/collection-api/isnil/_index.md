@@ -21,7 +21,7 @@ Returns `true` is the given value is `nil`, else `false`.
 
 > This code shows some return values for ***isnil()***:
 
-```
+```thingsdb,json_response
 [
     isnil( nil ),
     isnil( 0 ),

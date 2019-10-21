@@ -43,7 +43,7 @@ otherwise, `nil` or a specified alternative value is returned.
 
 > This code shows an example using ***find()***:
 
-```
+```thingsdb,syntax_only
 users.find(|user| user.name.startswith('Jeroen'));
 ```
 

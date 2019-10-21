@@ -19,7 +19,7 @@ Returns length of the iterable.
 
 > This code uses `len()` to return the number of items in a collection:
 
-```
+```thingsdb,json_response
 [1, 2, 3, 4].len();
 ```
 

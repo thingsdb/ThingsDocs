@@ -23,7 +23,7 @@ A new set.
 
 > This code shows some return values for ***set()***:
 
-```
+```thingsdb,json_response
 set({}, {});
 ```
 

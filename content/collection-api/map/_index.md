@@ -29,7 +29,7 @@ A new array with each element being the result of the callback function.
 
 > This code shows an example using ***map()***:
 
-```
+```thingsdb,json_response
 users = [{name: "Iris", age: 6}, {name: "Sasha", age: 34}];
 
 // returns ["Iris", "Sasha"]

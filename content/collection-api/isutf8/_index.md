@@ -22,7 +22,7 @@ Returns `true` is the given value is of type `raw` and contains valid utf8, else
 
 > This code shows some return values for ***isutf8()***:
 
-```
+```thingsdb,json_response
 [
     isutf8( 'ԉ' ),
     isutf8( 'pi' ),

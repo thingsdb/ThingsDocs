@@ -22,7 +22,7 @@ Returns `true` is the passed value is an integer else it returns `false`.
 
 > This code shows some return values for ***isint()***:
 
-```
+```thingsdb,json_response
 [
     isint( 42 ),
     isint( 0x2a ),

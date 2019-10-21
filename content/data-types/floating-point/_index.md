@@ -18,7 +18,7 @@ Method | Description
 
 > This code creates a *float* property *plank_constant* to collection *stuff*:
 
-```
+```thingsdb,should_pass
 // Assign property `plank_constant`
-plank_constant = 6.62607004e-34;
+.plank_constant = 6.62607004e-34;
 ```

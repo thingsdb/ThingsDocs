@@ -13,7 +13,7 @@ This function does *not* generate an [event](../../events).
 
 > Example using ***lower()***:
 
-```
+```thingsdb,json_response
 'Hello World!!'.lower();
 ```
 

@@ -33,7 +33,7 @@ will raise a `BAD_REQUEST`.
 
 > This code shows some return values for ***int()***:
 
-```
+```thingsdb,json_response
 [
     int(),
     int(2.718),

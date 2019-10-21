@@ -13,7 +13,7 @@ This function does *not* generate an [event](../../events).
 
 > Example using ***upper()***:
 
-```
+```thingsdb,json_response
 'Hello World!!'.upper();
 ```
 

@@ -37,7 +37,7 @@ from thingsdb.exceptions import OperationError
 DOC_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONTENT_PATH = os.path.join(DOC_PATH, 'content')
 RE_TEST = re.compile(
-    '```thingsdb,(should_pass|should_err|syntax_only|json_response|no_test)')
+    '```thingsdb,([a-zA-Z_]*)')
 
 
 class TestDoc(TestBase):
@@ -62,8 +62,15 @@ class TestDoc(TestBase):
                     try:
                         await self.process_markdown(client, lines)
                     except Exception as e:
-                        raise type(e)(f'{e} happens in `{fn}`').with_traceback(
-                            sys.exc_info()[2])
+                        try:
+                            ex = type(e)(
+                                f'{e} happens in `{fn}`').with_traceback(
+                                    sys.exc_info()[2])
+                            raise ex
+                        except:
+                            raise Exception(
+                                f'{e} happens in `{fn}`').with_traceback(
+                                    sys.exc_info()[2])
 
         client.close()
         await client.wait_closed()

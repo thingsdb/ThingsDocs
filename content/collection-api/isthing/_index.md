@@ -22,7 +22,7 @@ Returns `true` is the passed value is a thing else it returns `false`.
 
 > This code shows some return values for ***isthing()***:
 
-```
+```thingsdb,json_response
 [
     isthing( {} ),
     isthing( [] ),

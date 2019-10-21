@@ -16,7 +16,7 @@ Returns the new length of the list.
 
 > This code extends a list with a given array:
 
-```
+```thingsdb,json_response
 a = [1, 2, 3];
 b = [4, 5, 6];
 a.extend(b);  // returns the new length, 6

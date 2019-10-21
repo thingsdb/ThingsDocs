@@ -25,7 +25,7 @@ an array of one element is returned. If no elements are removed, an empty array 
 
 > This code replaces an element in a list at position 2:
 
-```
+```thingsdb,json_response
 months = ['Jan', 'Feb', 'April'];
 months.splice(2, 1, 'March');       /* Returns: ['April'] */
 months;

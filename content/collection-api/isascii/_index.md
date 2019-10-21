@@ -22,7 +22,7 @@ Returns `true` is the given value is of type `raw` and contains only ascii chara
 
 > This code shows some return values for ***isascii()***:
 
-```
+```thingsdb,json_response
 [
     isascii( 'ԉ' ),
     isascii( 'pi' ),

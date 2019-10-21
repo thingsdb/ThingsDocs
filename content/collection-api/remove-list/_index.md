@@ -37,7 +37,7 @@ otherwise, `nil` or a specified alternative value is returned.
 
 > This code shows an example using ***remove()*** on a list:
 
-```
+```thingsdb,json_response
 tmp = [1, 2, 3, 4];
 [
     tmp.remove(|x| (x % 2 == 0)),

@@ -22,7 +22,7 @@ Index at which the first item matches a given value, or `nil` if it is not prese
 
 > This code shows an example using ***indexof()***:
 
-```
+```thingsdb,json_response
 ["January", "February", "March", "April"].indexof("March");
 ```
 

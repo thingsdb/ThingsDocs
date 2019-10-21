@@ -30,7 +30,7 @@ otherwise, `nil` is returned.
 
 > This code shows an example using ***findindex()***:
 
-```
+```thingsdb,syntax_only
 users.findindex(|user| user.name.startswith('Jeroen'));
 ```
 

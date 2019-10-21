@@ -23,7 +23,7 @@ An error value.
 
 > This code shows some return values for ***err()***:
 
-```
+```thingsdb,json_response
 [
     err(),
     err(-100, 'some error occurred'),
