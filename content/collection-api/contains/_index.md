@@ -21,7 +21,7 @@ Returns `true` the given characters are found as a substring and otherwise `fals
 
 > This code shows an example using ***contains()***:
 
-```
+```thingsdb,json_response
 'the answer to life the universe and everything'.contains('life');
 ```
 

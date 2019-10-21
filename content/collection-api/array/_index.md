@@ -21,7 +21,7 @@ A new array.
 
 > This code shows some return values for ***array()***:
 
-```
+```thingsdb,json_response
 array( set({}, {}) );
 ```
 

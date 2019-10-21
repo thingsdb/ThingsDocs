@@ -25,11 +25,11 @@ an `ASSERTION_ERROR` is raised.
 
 > This code shows how assert can be used:
 
-```
+```thingsdb,should_err
 assert(1 > 2, 'one is still smaller than two');
 ```
 
-> Returns with an  `ASSERTION_ERROR` exception
+> Raises an `ASSERTION_ERROR` exception
 
 ```json
 {

@@ -22,7 +22,7 @@ This happens because the value of the operator is already determined after the e
 
 > Logical *short-circuit* examples:
 
-```thingsdb
+```thingsdb,json_response
 x = 0;
 [
     false && x += 1,

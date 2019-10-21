@@ -18,7 +18,7 @@ Returns the number of `things` which are added to the set.
 
 > This code adds things to a set:
 
-```thingsdb,test:response
+```thingsdb,json_response
 s = set();
 a = {item: 'a'};
 b = {item: 'b'};

@@ -21,7 +21,7 @@ Returns `true` the given characters are found at the end of the string and other
 
 > This code shows an example using ***endswith()***:
 
-```
+```thingsdb,json_response
 'the answer to life the universe and everything'.endswith('everything');
 ```
 

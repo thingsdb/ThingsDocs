@@ -24,7 +24,7 @@ A boolean value.
 
 > This code shows some return values for ***bool()***:
 
-```
+```thingsdb,json_response
 [
     bool(),
     bool(nil),

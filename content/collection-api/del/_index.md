@@ -23,7 +23,7 @@ not a valid [name](../../names).
 
 > This code shows some return values for ***del()***:
 
-```
+```thingsdb,json_response
 .x = 'create and delete this prop';
 .del('x');
 ```

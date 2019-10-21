@@ -19,7 +19,7 @@ The current `deep` value for the running query.
 
 > This code uses `deep()` to return the default `deep` value:
 
-```
+```thingsdb,json_response
 deep();  // returns the default since `deep` is not changed
 ```
 

@@ -22,3 +22,10 @@ build/
 _yardoc
 doc/
 .idea/
+
+# Python
+.pyc
+__pycache__/
+
+# test
+test/testdir/
