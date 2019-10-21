@@ -50,7 +50,7 @@ Information as a `qpack` type bout the connected node.
 
 > This code returns info for the connected node:
 
-```
+```thingsdb
 node_info();
 ```
 

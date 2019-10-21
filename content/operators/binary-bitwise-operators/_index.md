@@ -14,13 +14,13 @@ Operator | Description
 
 > Binary bitwise operator examples:
 
-```
+{{< highlight thingsdb >}}
 [
     0b110 & 0b011,
     0b110 | 0b011,
     0b110 ^ 0b011,
 ];
-```
+{{< / highlight >}}
 
 > Return value in JSON format
 

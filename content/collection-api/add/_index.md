@@ -18,8 +18,12 @@ Returns the number of `things` which are added to the set.
 
 > This code adds things to a set:
 
-```
-s = set(); a = {item: 'a'}; b = {item: 'b'};
+```thingsdb,test:response
+s = set();
+a = {item: 'a'};
+b = {item: 'b'};
+
+// add both `a` and `b` to set `s`; note that `a` is only added once;
 s.add(a, a, b);
 ```
 
