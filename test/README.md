@@ -5,5 +5,5 @@ using an environment variable.
 
 for example:
 ```
-THINGSDB_BIN=../../thingsdb/Debug/thingsdb ./test_doc.py
+THINGSDB_BIN=../thingsdb/Debug/thingsdb ./test/test_doc.py
 ```
