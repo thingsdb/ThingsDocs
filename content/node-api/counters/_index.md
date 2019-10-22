@@ -38,7 +38,7 @@ Returns the current counter values.
 
 > This code will return node counter values:
 
-```thingsdb
+```thingsdb,should_pass,@n
 // returns counters for `localhost:9200`
 counters();
 ```

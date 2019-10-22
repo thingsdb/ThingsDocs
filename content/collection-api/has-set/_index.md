@@ -23,10 +23,10 @@ Returns `true` the given thing is found in the set and otherwise `false`.
 
 ```thingsdb,json_response
 iris = {name: 'Iris'};
-set = set(iris);
+s = set(iris);
 
-/* Check if iris is in the set */
-set.has(iris);
+/* Check if iris is in set `s` */
+s.has(iris);
 ```
 
 > Return value in JSON format

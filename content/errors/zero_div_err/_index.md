@@ -21,7 +21,7 @@ An error value.
 
 > This code shows ***zero_div_err()***:
 
-```
+```thingsdb,json_response
 zero_div_err();
 ```
 

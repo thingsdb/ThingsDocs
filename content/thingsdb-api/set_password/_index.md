@@ -26,7 +26,7 @@ if the user does not exist and `BAD_REQUEST` if the new password is not complian
 
 > This code changes the password for use *admin*:
 
-```
+```thingsdb,syntax_only,@t
 // Change the password for user `admin`
 set_password('admin', 'my_secret_password');
 ```

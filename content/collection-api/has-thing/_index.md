@@ -23,6 +23,8 @@ Returns `true` when the given propery name is found and otherwise `false`.
 
 ```thingsdb,json_response
 tmp = {name: 'Iris'};
+
+/* Check if `tmp` has a property `name` */
 tmp.has('name');
 ```
 

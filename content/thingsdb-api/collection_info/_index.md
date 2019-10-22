@@ -10,7 +10,7 @@ This function does *not* generate an [event](../../events).
 
 > Returns information about collection *stuff*:
 
-```
+```thingsdb,should_pass,@t
 collection_info('stuff');
 ```
 

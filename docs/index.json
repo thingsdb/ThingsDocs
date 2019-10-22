@@ -102,14 +102,14 @@
 	"title": "node_info",
 	"tags": [],
 	"description": "",
-	"content": " Returns information about the connected node.\n   Value Description     archive_files Number of archive files. May decrease after a full store during away mode.   archived_in_memory Number of events which are archived in memory.   cached_names Number of names cached in memory.   client_port Listening for client TCP socket connections on this port.   db_stored_event_id Last stored event ID in full database store.   events_in_queue Events which are pending in the queue.   global_committed_event_id Lowest known committed event ID by all nodes.   global_stored_event_id Lowest known stored event ID by all nodes.   hostname Hostname of the node.   http_status_port Listening to this HTTP port for status, readiness and liveness requests.   ip_support Enabled IP support. May be IPv4/IPv6 or both.   libcleri_version Cleri language parser library version.   libpcre2_version PCRE regular expression library version.   libqpack_version QPack data protocol library version.   libuv_version UV asynchronous library version.   local_committed_event_id Last committed event ID on the node.   local_stored_event_id Last stored event ID on disk. Store takes place when in away mode.   log_level Current log level for the node. May be changed at runtime using set_log_level(..)   next_event_id Next free event ID.   next_thing_id Next free things ID.   node_id The id which is assigned to the node.   node_port Listening for node TCP socket connections on this port.   status Current status of the ThingsDB node.   storage_path Path used for storing ThingsDB data.   syntax_version Language or syntax version. A new version of ThingsDB might also have a new language version.   uptime Uptime of the node in seconds.   version Version of ThingsDB,   zone Zone number to which the node is assigned. May be changed in the ThingsDB configuration file.    This function does not generate an event.\nFunction node_info()\nArguments None\nReturn value Information as a qpack type bout the connected node.\n This code returns info for the connected node:\n node_info();   Example return value in JSON format\n { \u0026quot;archive_files\u0026quot;: 2, \u0026quot;archived_in_memory\u0026quot;: 0, \u0026quot;cached_names\u0026quot;: 3, \u0026quot;client_port\u0026quot;: 9200, \u0026quot;db_stored_event_id\u0026quot;: 1, \u0026quot;events_in_queue\u0026quot;: 0, \u0026quot;global_committed_event_id\u0026quot;: 11, \u0026quot;global_stored_event_id\u0026quot;: 11, \u0026quot;hostname\u0026quot;: \u0026quot;localhost\u0026quot;, \u0026quot;ip_support\u0026quot;: \u0026quot;ALL\u0026quot;, \u0026quot;libcleri_version\u0026quot;: \u0026quot;0.10.1\u0026quot;, \u0026quot;libpcre2_version\u0026quot;: \u0026quot;10.31\u0026quot;, \u0026quot;libqpack_version\u0026quot;: \u0026quot;0.11.0\u0026quot;, \u0026quot;libuv_version\u0026quot;: \u0026quot;1.18.0\u0026quot;, \u0026quot;local_committed_event_id\u0026quot;: 11, \u0026quot;local_stored_event_id\u0026quot;: 11, \u0026quot;log_level\u0026quot;: \u0026quot;WARNING\u0026quot;, \u0026quot;next_event_id\u0026quot;: 12, \u0026quot;next_thing_id\u0026quot;: 8, \u0026quot;node_id\u0026quot;: 0, \u0026quot;node_port\u0026quot;: 9220, \u0026quot;status\u0026quot;: \u0026quot;READY\u0026quot;, \u0026quot;storage_path\u0026quot;: \u0026quot;/var/lib/thingsdb/\u0026quot;, \u0026quot;syntax_version\u0026quot;: \u0026quot;v0\u0026quot;, \u0026quot;uptime\u0026quot;: 15.749372482299805, \u0026quot;version\u0026quot;: \u0026quot;0.1.5\u0026quot;, \u0026quot;zone\u0026quot;: 0 }  "
+	"content": " Returns information about the connected node.\n   Value Description     archive_files Number of archive files. May decrease after a full store during away mode.   archived_in_memory Number of events which are archived in memory.   cached_names Number of names cached in memory.   client_port Listening for client TCP socket connections on this port.   db_stored_event_id Last stored event ID in full database store.   events_in_queue Events which are pending in the queue.   global_committed_event_id Lowest known committed event ID by all nodes.   global_stored_event_id Lowest known stored event ID by all nodes.   hostname Hostname of the node.   http_status_port Listening to this HTTP port for status, readiness and liveness requests.   ip_support Enabled IP support. May be IPv4/IPv6 or both.   libcleri_version Cleri language parser library version.   libpcre2_version PCRE regular expression library version.   msgpack_version MessagePack data protocol library version.   libuv_version UV asynchronous library version.   local_committed_event_id Last committed event ID on the node.   local_stored_event_id Last stored event ID on disk. Store takes place when in away mode.   log_level Current log level for the node. May be changed at runtime using set_log_level(..)   next_event_id Next free event ID.   next_thing_id Next free things ID.   node_id The id which is assigned to the node.   node_port Listening for node TCP socket connections on this port.   status Current status of the ThingsDB node.   storage_path Path used for storing ThingsDB data.   syntax_version Language or syntax version. A new version of ThingsDB might also have a new language version.   uptime Uptime of the node in seconds.   version Version of ThingsDB,   zone Zone number to which the node is assigned. May be changed in the ThingsDB configuration file.    This function does not generate an event.\nFunction node_info()\nArguments None\nReturn value Information as a msgpack type bout the connected node.\n This code returns info for the connected node:\n node_info();   Example return value in JSON format\n { \u0026quot;archive_files\u0026quot;: 1, \u0026quot;archived_in_memory\u0026quot;: 0, \u0026quot;cached_names\u0026quot;: 2, \u0026quot;client_port\u0026quot;: 9200, \u0026quot;db_stored_event_id\u0026quot;: 1, \u0026quot;events_in_queue\u0026quot;: 0, \u0026quot;global_committed_event_id\u0026quot;: 2, \u0026quot;global_stored_event_id\u0026quot;: 2, \u0026quot;hostname\u0026quot;: \u0026quot;node.things\u0026quot;, \u0026quot;http_status_port\u0026quot;: \u0026quot;disabled\u0026quot;, \u0026quot;ip_support\u0026quot;: \u0026quot;ALL\u0026quot;, \u0026quot;libcleri_version\u0026quot;: \u0026quot;0.11.0\u0026quot;, \u0026quot;libpcre2_version\u0026quot;: \u0026quot;10.32\u0026quot;, \u0026quot;libuv_version\u0026quot;: \u0026quot;1.24.1\u0026quot;, \u0026quot;local_committed_event_id\u0026quot;: 2, \u0026quot;local_stored_event_id\u0026quot;: 2, \u0026quot;log_level\u0026quot;: \u0026quot;DEBUG\u0026quot;, \u0026quot;msgpack_version\u0026quot;: \u0026quot;3.2.0\u0026quot;, \u0026quot;next_event_id\u0026quot;: 3, \u0026quot;next_thing_id\u0026quot;: 5, \u0026quot;node_id\u0026quot;: 0, \u0026quot;node_port\u0026quot;: 9220, \u0026quot;scheduled_backups\u0026quot;: 0, \u0026quot;status\u0026quot;: \u0026quot;READY\u0026quot;, \u0026quot;storage_path\u0026quot;: \u0026quot;/var/lib/thingsdb/\u0026quot;, \u0026quot;syntax_version\u0026quot;: \u0026quot;v0\u0026quot;, \u0026quot;uptime\u0026quot;: 7.854678630828857, \u0026quot;version\u0026quot;: \u0026quot;0.2.1\u0026quot;, \u0026quot;zone\u0026quot;: 0 }  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/boolean/",
 	"title": "Boolean",
 	"tags": [],
 	"description": "",
-	"content": "Boolean are either true or false. Other types can convert to bool by using the ! (not) operator or the bool function.\n This code creates a bool property is_the_earth_flat to collection stuff:\n is_the_earth_flat = !true;  "
+	"content": "Boolean are either true or false. Other types can convert to bool by using the ! (not) operator or the bool function.\n This code creates a bool property is_the_earth_flat to collection stuff:\n .is_the_earth_flat = !true;  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/operators/assignments/",
@@ -158,21 +158,21 @@
 	"title": "assert",
 	"tags": [],
 	"description": "",
-	"content": " Raises ASSERTION_ERROR if the specified statement evaluates to false.\nThis function does not generate an event.\nFunction assert(statement [, error_msg])\nArguments    Argument Type Description     statement any (required) The statement to evaluate.   msg raw (optional) Custom error message.   code int (optional) Return a custom error code between 1 and 32. If not given, the error code is ASSERTION_ERROR (-105)    Return value Assert returns with the return value of the given statement when the statement evaluates to true. Otherwise an ASSERTION_ERROR is raised.\n This code shows how assert can be used:\n assert(1 \u0026gt; 2, 'one is still smaller than two');   Returns with an ASSERTION_ERROR exception\n { \u0026quot;error_msg\u0026quot;: \u0026quot;one is still smaller than two\u0026quot;, \u0026quot;error_code\u0026quot;: 1 }  "
+	"content": " Raises ASSERTION_ERROR if the specified statement evaluates to false.\nThis function does not generate an event.\nFunction assert(statement [, error_msg])\nArguments    Argument Type Description     statement any (required) The statement to evaluate.   msg raw (optional) Custom error message.   code int (optional) Return a custom error code between 1 and 32. If not given, the error code is ASSERTION_ERROR (-105)    Return value Assert returns with the return value of the given statement when the statement evaluates to true. Otherwise an ASSERTION_ERROR is raised.\n This code shows how assert can be used:\n assert(1 \u0026gt; 2, 'one is still smaller than two');   Raises an ASSERTION_ERROR exception\n { \u0026quot;error_msg\u0026quot;: \u0026quot;one is still smaller than two\u0026quot;, \u0026quot;error_code\u0026quot;: 1 }  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/thingsdb-api/del_collection/",
 	"title": "del_collection",
 	"tags": [],
 	"description": "",
-	"content": " Delete a collection.\nThis function generates an event.\nFunction del_collection(name);\nArguments    Argument Type Description     name raw (required) Name of the collection to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the collection does not exist.\n This code will delete collection old_things:\n // Delete collection `old_things` del_collection('old_things');  "
+	"content": " Delete a collection.\nThis function generates an event.\nFunction del_collection(name);\nArguments    Argument Type Description     name raw (required) Name of the collection to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the collection does not exist.\n This code will delete collection stuff:\n // Delete collection `stuff` del_collection('stuff');  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/node-api/nodes_info/",
 	"title": "nodes_info",
 	"tags": [],
 	"description": "",
-	"content": " Returns information about all ThingsDB nodes.\n   Value Description     address IP address or hostname of the node.   committed_event_id Last known committed event ID on the node.   next_thing_id Next free thing ID on the node.   node_id ID which is assigned to the node.   port TCP port on which the node is listening for node connections.   status Current status of the node.   stored_event_id Last known stored event ID on the node.   syntax_version Language or syntax version which is running on the node.   zone Zone number to which the node is assigned.    This function does not generate an event.\nFunction nodes_info()\nArguments None\nReturn value Array as qpack type containing node information for all nodes within ThingsDB.\n This code returns info for all ThingsDB nodes:\n nodes_info();   Example return value in JSON format\n [ { \u0026quot;address\u0026quot;: \u0026quot;localhost\u0026quot;, \u0026quot;committed_event_id\u0026quot;: 5, \u0026quot;next_thing_id\u0026quot;: 8, \u0026quot;node_id\u0026quot;: 0, \u0026quot;port\u0026quot;: 9220, \u0026quot;status\u0026quot;: \u0026quot;READY\u0026quot;, \u0026quot;stored_event_id\u0026quot;: 5, \u0026quot;syntax_version\u0026quot;: \u0026quot;v0\u0026quot;, \u0026quot;zone\u0026quot;: 0, } ]  "
+	"content": " Returns information about all ThingsDB nodes.\n   Value Description     address IP address or hostname of the node.   committed_event_id Last known committed event ID on the node.   next_thing_id Next free thing ID on the node.   node_id ID which is assigned to the node.   port TCP port on which the node is listening for node connections.   status Current status of the node.   stored_event_id Last known stored event ID on the node.   syntax_version Language or syntax version which is running on the node.   zone Zone number to which the node is assigned.    This function does not generate an event.\nFunction nodes_info()\nArguments None\nReturn value Array as msgpack type containing node information for all nodes within ThingsDB.\n This code returns info for all ThingsDB nodes:\n nodes_info();   Example return value in JSON format\n [ { \u0026quot;address\u0026quot;: \u0026quot;node.things\u0026quot;, \u0026quot;committed_event_id\u0026quot;: 2, \u0026quot;next_thing_id\u0026quot;: 5, \u0026quot;node_id\u0026quot;: 0, \u0026quot;port\u0026quot;: 9220, \u0026quot;status\u0026quot;: \u0026quot;READY\u0026quot;, \u0026quot;stored_event_id\u0026quot;: 2, \u0026quot;stream\u0026quot;: null, \u0026quot;syntax_version\u0026quot;: \u0026quot;v0\u0026quot;, \u0026quot;zone\u0026quot;: 0 } ]  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/closure/",
@@ -186,7 +186,7 @@
 	"title": "Binary bitwise operators",
 	"tags": [],
 	"description": "",
-	"content": "Can be used on integer values.\nOperator | Description \u0026mdash;\u0026mdash;\u0026ndash; + \u0026mdash;\u0026mdash;\u0026mdash;\u0026ndash; \u0026amp; | Bitwise AND, true if both a and b are 1. \u0026#124; | Bitwise OR, true if at least a or b is 1. ^ | Bitwise XOR, true if a and b are different.\n Binary bitwise operator examples:\n [ 0b110 \u0026amp; 0b011, 0b110 | 0b011, 0b110 ^ 0b011, ];  Return value in JSON format\n [ 2, 7, 5 ]  "
+	"content": "Can be used on integer values.\nOperator | Description \u0026mdash;\u0026mdash;\u0026ndash; + \u0026mdash;\u0026mdash;\u0026mdash;\u0026ndash; \u0026amp; | Bitwise AND, true if both a and b are 1. \u0026#124; | Bitwise OR, true if at least a or b is 1. ^ | Bitwise XOR, true if a and b are different.\n Binary bitwise operator examples:\n [ 0b110 \u0026amp; 0b011, 0b110 | 0b011, 0b110 ^ 0b011, ];   Return value in JSON format\n [ 2, 7, 5 ]  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/protocol/",
@@ -221,7 +221,7 @@
 	"title": "del_expired",
 	"tags": [],
 	"description": "",
-	"content": " Delete all expired tokens.\nThis function generates an event.\nFunction del_expired();\nArguments None\nReturn value Returns nil.\n This code will delete all expired tokens:\n // Delete all expired tokens del_expired();  "
+	"content": " Delete all expired tokens.\nThis function generates an event.\nFunction del_expired();\nArguments None\nReturn value Returns nil.\n This code will delete all expired tokens:\n ```thingsdb,should_pass,@t // Delete all expired tokens del_expired(); \n"
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/node-api/reset_counters/",
@@ -277,7 +277,7 @@
 	"title": "del_token",
 	"tags": [],
 	"description": "",
-	"content": " Delete a token.\nThis function generates an event.\nFunction del_token(key);\nArguments    Argument Type Description     key raw (required) Token key to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the token is not found.\n This code will delete a token:\n // Delete a token del_token('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX');  "
+	"content": " Delete a token.\nThis function generates an event.\nFunction del_token(key);\nArguments    Argument Type Description     key raw (required) Token key to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the token is not found.\n This code will delete a token:\n ```thingsdb,syntax_only,@t // Delete a token del_token('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'); \n"
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/node-api/set_log_level/",
@@ -291,7 +291,7 @@
 	"title": "Floating point",
 	"tags": [],
 	"description": "",
-	"content": " ThingsDB uses 64bit to store float values and has support for the e notation and special float values like inf, -inf and nan.\nUseful methods    Method Description     float return a float type for a given value.   isfloat check if the given value is of the float type.   isinf check if the given value is infinite.   isnan check if the given value is not-a-number.     This code creates a float property plank_constant to collection stuff:\n // Assign property `plank_constant` plank_constant = 6.62607004e-34;  "
+	"content": " ThingsDB uses 64bit to store float values and has support for the e notation and special float values like inf, -inf and nan.\nUseful methods    Method Description     float return a float type for a given value.   isfloat check if the given value is of the float type.   isinf check if the given value is infinite.   isnan check if the given value is not-a-number.     This code creates a float property plank_constant to collection stuff:\n // Assign property `plank_constant` .plank_constant = 6.62607004e-34;  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/operators/logical_operators/",
@@ -333,7 +333,7 @@
 	"title": "del_user",
 	"tags": [],
 	"description": "",
-	"content": " Delete a user. It is not possible to delete your own user account and a BAD_REQUEST will be raised in case you try to. Any tokens associated with the user will also be deleted.\nThis function generates an event.\nFunction del_user(username);\nArguments    Argument Type Description     username raw (required) Username of the user to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the user does not exist.\n This code will delete user test:\n // Delete user `test` del_user('test');  "
+	"content": " Delete a user. It is not possible to delete your own user account and a BAD_REQUEST will be raised in case you try to. Any tokens associated with the user will also be deleted.\nThis function generates an event.\nFunction del_user(username);\nArguments    Argument Type Description     username raw (required) Username of the user to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the user does not exist.\n This code will delete user test:\n ```thingsdb,syntax_only,@t // Delete user `test` del_user('test'); \n"
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/node-api/shutdown/",
@@ -347,7 +347,7 @@
 	"title": "Integer",
 	"tags": [],
 	"description": "",
-	"content": " ThingsDB can store 64bit signed integers values. When assigning integer values larger than 64bit, an OVERFLOW_ERROR will be returned. Other types can be converted to int by using the int function.\nNotations    Base Example Description     2 0b1111011 Binary notation starts with 0b (zero, lower case b), followed by binary digits (0-1).   8 0o173 Octal notation starts with 0o (zero, lower case o), followed by octal digits (0-8).   10 123 Decimal notation, numbers between zero and nine (0-9).   16 0x7b Hexadecimal notation start with a 0x (zero, lower case x), followed by hexadecimal digits (0-9, a-f or A-F).     This code creates a int property count to collection stuff:\n count = 123;  "
+	"content": " ThingsDB can store 64bit signed integers values. When assigning integer values larger than 64bit, an OVERFLOW_ERROR will be returned. Other types can be converted to int by using the int function.\nNotations    Base Example Description     2 0b1111011 Binary notation starts with 0b (zero, lower case b), followed by binary digits (0-1).   8 0o173 Octal notation starts with 0o (zero, lower case o), followed by octal digits (0-8).   10 123 Decimal notation, numbers between zero and nine (0-9).   16 0x7b Hexadecimal notation start with a 0x (zero, lower case x), followed by hexadecimal digits (0-9, a-f or A-F).     This code creates a int property count to collection stuff:\n .count = 123;  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/operators/precedence-and-associativity/",
@@ -382,14 +382,14 @@
 	"title": "grant",
 	"tags": [],
 	"description": "",
-	"content": " Grant collection or general privileges to a user. Access to a user is provided by setting a bit mask to either the .node scope, .thingsdb scope or a collection. Privileges to ThingsDB gives a user the ability to view counters, add, view remove users etc.\nThe following pre-defined masks are available:\n   Mask Description     READ (1) Gives read access.   MODIFY (2) Gives read and modify access.   GRANT (4) Gives read, modify and grant (and revoke) privileges.   WATCH (8) Gives watch (and un-watch) privileges.   RUN (16) Gives run procedures access.   FULL (31) A mask for full privileges.    It is not possible to have GRANT privileges without also having MODIFY privileges. Similarly, it is not possible to have MODIFY privileges without READ.\n This function generates an event.\nFunction grant(target, user, mask);\nArguments    Argument Type Description     target int/raw Can be either the .node scope, .thingsdb scope, or a collection name or id.   user raw User to grant privileges to.   mask int Bit-mask for setting privileges.    Return value Returns nil when successful. An INDEX_ERROR is raised if the user or target does not exist.\n Grant read and watch privileges to user iris to collection stuff:\n new_user('iris'); new_token('iris'); [ grant('.node', 'iris', WATCH), grant('stuff', 'iris', (READ|WATCH)), ];   Return value in JSON format\n [ null, null ]  "
+	"content": " Grant collection or general privileges to a user. Access to a user is provided by setting a bit mask to either the .node scope, .thingsdb scope or a collection. Privileges to ThingsDB gives a user the ability to view counters, add, view remove users etc.\nThe following pre-defined masks are available:\n   Mask Description     READ (1) Gives read access.   MODIFY (2) Gives read and modify access.   GRANT (4) Gives read, modify and grant (and revoke) privileges.   WATCH (8) Gives watch (and un-watch) privileges.   RUN (16) Gives run procedures access.   FULL (31) A mask for full privileges.    It is not possible to have GRANT privileges without also having MODIFY privileges. Similarly, it is not possible to have MODIFY privileges without READ.\n This function generates an event.\nFunction grant(target, user, mask);\nArguments    Argument Type Description     target int/raw Can be either the .node scope, .thingsdb scope, or a collection name or id.   user raw User to grant privileges to.   mask int Bit-mask for setting privileges.    Return value Returns nil when successful. An INDEX_ERROR is raised if the user or target does not exist.\n Grant read and watch privileges to user iris to collection stuff:\n new_user('iris'); new_token('iris'); [ grant('@node', 'iris', WATCH), grant('@:stuff', 'iris', (READ|WATCH)), ];   Return value in JSON format\n [ null, null ]  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/nil/",
 	"title": "Nil",
 	"tags": [],
 	"description": "",
-	"content": "Probably the most simple type, it can be used as no value.\nIt might be useful to use nil as the last statement in a query to prevent returning data which is not required. See the code example.\n This code uses nil to prevent returning unused data:\n my_array = [1, 2, 3, 42]; nil; /* without nil, the array above would be returned */  "
+	"content": "Probably the most simple type, it can be used as no value.\nIt might be useful to use nil as the last statement in a query to prevent returning data which is not required. See the code example.\n This code uses nil to prevent returning unused data:\n my_array = [1, 2, 3, 42]; nil; /* without nil, the array above would be returned */   Return value in JSON format\n null  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/properties/",
@@ -494,7 +494,7 @@
 	"title": "String (raw)",
 	"tags": [],
 	"description": "",
-	"content": " ThingsDB has only type raw which is used for storing both strings and blob values.\nMethods    Method Description     endswith Determines if a string ends with characters given by another string.   len Returns the length of a string.   lower Return a new string in which all case-based characters are in lower case.   startswith Determines if a string starts with characters given by another string.   test Test if a string matches a given regular expression and return true or false.   upper Return a new string in which all case-based characters are in upper case.     This code creates a raw property greet to collection stuff:\n greet = 'Hello world!!';  "
+	"content": " ThingsDB has only type raw which is used for storing both strings and blob values.\nMethods    Method Description     endswith Determines if a string ends with characters given by another string.   len Returns the length of a string.   lower Return a new string in which all case-based characters are in lower case.   startswith Determines if a string starts with characters given by another string.   test Test if a string matches a given regular expression and return true or false.   upper Return a new string in which all case-based characters are in upper case.     This code creates a raw property greet to collection stuff:\n .greet = 'Hello world!!';  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/",
@@ -522,7 +522,7 @@
 	"title": "new_user",
 	"tags": [],
 	"description": "",
-	"content": " Creates a new user to ThingsDB. The new user is created without a password, token and access privileges. You probably want to set a password or add a new token and assign some privileges using grant(\u0026hellip;).\nThis function generates an event.\nFunction new_user(user);\nArguments    Argument Type Description     user raw (required) Username, between 1 and 128 graphical characters.    Return value Returns the new user id if successful. An INDEX_ERROR is raised if the user already exists.\n Create a new user iris with password siri:\n new_user('iris');   Example return value in JSON format (the new user id)\n 19  "
+	"content": " Creates a new user to ThingsDB. The new user is created without a password, token and access privileges. You probably want to set a password or add a new token and assign some privileges using grant(\u0026hellip;).\nThis function generates an event.\nFunction new_user(user);\nArguments    Argument Type Description     user raw (required) Username, between 1 and 128 graphical characters.    Return value Returns the new user id if successful. An INDEX_ERROR is raised if the user already exists.\n Create a new user iris:\n new_user('iris');   Example return value in JSON format (the new user id)\n 19  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/thing-type/",
@@ -550,7 +550,7 @@
 	"title": "filter",
 	"tags": [],
 	"description": "",
-	"content": " If this method is used on a thing, then a new thing will be returned with only the properties that pass the test. If the method is used on an array, then a new array is returned with elements that pass the test and if used on a set, then the return value will be a new set.\nThis function does not generate an event.\nFunction iterable.filter(callback)\nArguments The callback argument must be a closure which input values depend on the type the method is called on.\n   Iterable Arguments Description     array item, index Iterate over all items in the array. Both item and index are optional.   set thing, id Iterate over things in the set. Both thing and id are optional.   thing name, value Iterate over the thing properties. Both name and value are optional.    Return value A new array, set or thing with the elements or properties that pass the test. If no elements or properties pass the test, an empty array, set or thing will be returned.\n This code shows an example using filter():\n users = [{name: 'Iris', age: 6}, {name: 'Sasha', age: 34}]; /* * Return all users with age 18 or above, * a thing with only property age, * and all users with name 'Iris'. */ [ users.filter(|user| (user.age \u0026gt;= 18)), users[0].filter(|prop| (prop == 'age')), set(users).filter(|user| (user.name == 'Iris')), ];   Return value in JSON format\n [ [ { \u0026quot;age\u0026quot;: 34, \u0026quot;name\u0026quot;: \u0026quot;Sasha\u0026quot; } ], { ] \u0026quot;age\u0026quot;: 6 }, [ { \u0026quot;age\u0026quot;: 6, \u0026quot;name\u0026quot;: \u0026quot;Iris\u0026quot; } ] ]  "
+	"content": " If this method is used on a thing, then a new thing will be returned with only the properties that pass the test. If the method is used on an array, then a new array is returned with elements that pass the test and if used on a set, then the return value will be a new set.\nThis function does not generate an event.\nFunction iterable.filter(callback)\nArguments The callback argument must be a closure which input values depend on the type the method is called on.\n   Iterable Arguments Description     array item, index Iterate over all items in the array. Both item and index are optional.   set thing, id Iterate over things in the set. Both thing and id are optional.   thing name, value Iterate over the thing properties. Both name and value are optional.    Return value A new array, set or thing with the elements or properties that pass the test. If no elements or properties pass the test, an empty array, set or thing will be returned.\n This code shows an example using filter():\n users = [{name: 'Iris', age: 6}, {name: 'Sasha', age: 34}]; /* * Return all users with age 18 or above, * a thing with only property age, * and all users with name 'Iris'. */ [ users.filter(|user| (user.age \u0026gt;= 18)), users[0].filter(|prop| (prop == 'age')), set(users).filter(|user| (user.name == 'Iris')), ];   Return value in JSON format\n [ [ { \u0026quot;age\u0026quot;: 34, \u0026quot;name\u0026quot;: \u0026quot;Sasha\u0026quot; } ], { \u0026quot;age\u0026quot;: 6 }, [ { \u0026quot;age\u0026quot;: 6, \u0026quot;name\u0026quot;: \u0026quot;Iris\u0026quot; } ] ]  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/thingsdb-api/pop_node/",
@@ -630,13 +630,6 @@
 	"content": " Returns a float from a specified value. If no value is given, the default float 0.0 is returned.\nIf the specified value is of type raw, then the initial characters of the string are converted until a non-digit character is found. Initial white space is ignored and the number may start with an optional + or - sign.\nType bool values are converted to 1.0 for true and 0.0 for false.\nThis function does not generate an event.\nFunction float(value)\nArguments    Argument Type Description     value any (optional) The value where to create a floating point value for.    Return value A floating point value. Other type than float, raw, bool or int will raise a BAD_REQUEST.\n This code shows some return values for float():\n [ float(), float(42), float('0.365e+3 days'), float('0xFF'), float(true), float(false), ];   Return value in JSON format\n [ 0, 42.0, 365.0, 255.0, 1.0, 0.0 ]  "
 },
 {
-	"uri": "https://thingsdb.github.io/ThingsDocs/thingsdb-api/replace_node/",
-	"title": "replace_node",
-	"tags": [],
-	"description": "",
-	"content": " Replace a node in ThingsDB. This can be used if an existing node has a unrecoverable state, for example a hardware failure. This function requires a node id as its first argument which can be queried using the nodes_info() function.\nThis function generates an event.\nFunction replace_node(node_id, secret, ip_address [, port]);\nArguments    Argument Type Description     node_id int (required) Node id of the node to replace.   secret raw (required) Secret used to initially connect to the new node.   ip_address raw (required) IP Address (IPv4 or IPv6) of the new node.   port int (optional) Node port (listen_node_port), an integer between 0 an 65535, default 9220.    Return value Returns nil if successful.\n Replace node with id 1:\n /* node3.local must be started using the `--secret ...` argument and the node with id 1 must be turned off */ replace_node(1, 'my-one-time-serect', 'node3.local');   Return value in JSON format\n null  "
-},
-{
 	"uri": "https://thingsdb.github.io/ThingsDocs/errors/",
 	"title": "Errors",
 	"tags": [],
@@ -655,14 +648,14 @@
 	"title": "revoke",
 	"tags": [],
 	"description": "",
-	"content": " Revoke collection or general privileges from a user. See grant for more information on how access privileges can be set for a user.\nThis function generates an event.\nFunction revoke(target, user, mask);\nArguments    Argument Type Description     target int/raw Can be either the .node scope, .thingsdb scope, or a collection name or id.   user raw User to revoke privileges from.   mask int Bit-mask for revoking privileges.    Return value Returns nil when successful. An INDEX_ERROR is raised if the user or target does not exist.\n Revoke all privileges for user iris on collection stuff:\n revoke('stuff', 'iris', FULL);   Return value in JSON format\n null  "
+	"content": " Revoke collection or general privileges from a user. See grant for more information on how access privileges can be set for a user.\nThis function generates an event.\nFunction revoke(target, user, mask);\nArguments    Argument Type Description     target int/raw Can be either the .node scope, .thingsdb scope, or a collection name or id.   user raw User to revoke privileges from.   mask int Bit-mask for revoking privileges.    Return value Returns nil when successful. An INDEX_ERROR is raised if the user or target does not exist.\n Revoke all privileges for user iris on collection stuff:\n revoke('@:stuff', 'iris', FULL);   Return value in JSON format\n null  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/collection-api/has-set/",
 	"title": "has (set)",
 	"tags": [],
 	"description": "",
-	"content": " Determines if a set has a given thing.\nThis function does not generate an event.\nFunction set.has(thing)\nArguments    Argument Type Description     thing thing (required) Thing to check.    Return value Returns true the given thing is found in the set and otherwise false.\n This code shows an example use case of has():\n iris = {name: 'Iris'}; set = set(iris); /* Check if iris is in the set */ set.has(iris);   Return value in JSON format\n true  "
+	"content": " Determines if a set has a given thing.\nThis function does not generate an event.\nFunction set.has(thing)\nArguments    Argument Type Description     thing thing (required) Thing to check.    Return value Returns true the given thing is found in the set and otherwise false.\n This code shows an example use case of has():\n iris = {name: 'Iris'}; s = set(iris); /* Check if iris is in set `s` */ s.has(iris);   Return value in JSON format\n true  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/thingsdb-api/set_password/",
@@ -676,7 +669,7 @@
 	"title": "has (thing)",
 	"tags": [],
 	"description": "",
-	"content": " Determines if a thing has a given property.\nThis function does not generate an event.\nFunction thing.has(name)\nArguments    Argument Type Description     name raw (required) Name of the property to check.    Return value Returns true when the given propery name is found and otherwise false.\n This code shows an example use case of has():\n tmp = {name: 'Iris'}; tmp.has('name');   Return value in JSON format\n true  "
+	"content": " Determines if a thing has a given property.\nThis function does not generate an event.\nFunction thing.has(name)\nArguments    Argument Type Description     name raw (required) Name of the property to check.    Return value Returns true when the given propery name is found and otherwise false.\n This code shows an example use case of has():\n tmp = {name: 'Iris'}; /* Check if `tmp` has a property `name` */ tmp.has('name');   Return value in JSON format\n true  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/thingsdb-api/set_quota/",
@@ -697,7 +690,7 @@
 	"title": "user_info",
 	"tags": [],
 	"description": "",
-	"content": " Quota limits can be set on collections. The following quota limits can be set:\n   Type Description     things Maximum number of things allowed in a collection.   properties Maximum number of properties which can be assigned to a thing.   array_size Maximum array length. This quota type applies to all array type.   raw_size Maximum raw value size. When this quota is set, both queries and blob values are limited to this quota.    If a quota limit is reached, then the affected query will raise MAX_QUOTA_ERROR.\nThe current quota values can be viewed with collection(\u0026hellip;) or collections().\nThis function generates an event.\nFunction set_quota(collection, quota_type, quota)\nArguments    Argument Type Description     collection raw/int (required) Collection name or id.   quota_type raw (required) Must be one of 'things', 'properties', 'array_size' or 'raw_size'.   quota int/nil (required) Integer value to set the quota limit or nil to disable the quota.    Return value nil when successful.\n This code sets a quota on the number of things and disables the properties quota on collection stuff:\n [ set_quota('stuff', 'things', 10000), set_quota('stuff', 'properties', nil), ];   Return value in JSON format\n [ null, null ]  "
+	"content": ""
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/collection-api/indexof/",
@@ -795,7 +788,7 @@
 	"title": "israw",
 	"tags": [],
 	"description": "",
-	"content": " This function determines whether the value passed to this function is of type raw.\nThis function does not generate an event.\nFunction israw(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the given value is of type raw, else false.\n This code shows some return values for israw():\n curl \u0026quot;https://thingsdb.github.io/ThingsDocs/images/logo.png\u0026quot; | thingscmd \\ -n localhost \\ -u admin \\ -p pass \\ -c stuff \\ -q \u0026quot; [ israw( 'some string' ), israw( blob(0) ) ]; \u0026quot;   Return value in JSON format\n [ true, true ]  "
+	"content": " This function determines whether the value passed to this function is of type raw.\nThis function does not generate an event.\nFunction israw(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the given value is of type raw, else false.\n This code shows some return values for israw():\n [ israw( 'some string' ), israw( bytes('xxxx') ), ];   Return value in JSON format\n [ true, true ]  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/collection-api/isset/",
@@ -872,7 +865,7 @@
 	"title": "pop",
 	"tags": [],
 	"description": "",
-	"content": " Removes the last element from an array and returns that element. This method changes the length of the array. The pop() method works on a list type array, but not on a tuple since tuples are immutable.\nThis function generates an event.\nFunction list.pop()\nArguments None\nReturn value The removed element from the array. An INDEX_ERROR is raised if the array is empty.\n This code show an example usage of pop():\n (arr = [1, 2, 3]).pop(); arr;   Return value in JSON format\n [ 3, [ 1, 2 ] ]  "
+	"content": " Removes the last element from an array and returns that element. This method changes the length of the array. The pop() method works on a list type array, but not on a tuple since tuples are immutable.\nThis function generates an event.\nFunction list.pop()\nArguments None\nReturn value The removed element from the array. An INDEX_ERROR is raised if the array is empty.\n This code show an example usage of pop():\n (arr = [1, 2, 3]).pop(); arr;   Return value in JSON format\n [ 1, 2 ]  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/collection-api/push/",
@@ -928,7 +921,7 @@
 	"title": "set (property)",
 	"tags": [],
 	"description": "",
-	"content": " Creates a new property on a thing. If the property already existed then the old property will be overwritten. This function is equal to an assignment except that it can be used when the name of the property is dynamic.\nThis function generates an event.\nFunction thing.set(name, value)\nArguments    Argument Type Description     name raw (required) The name of the property to set.   value any (required) The value which will be assigned to the property.    Return value The value which will be assigned.\n This code shows how to use set():\n .set('the_answer', 42);   Return value in JSON format\n 42  "
+	"content": " Creates a new property on a thing. If the property already existed then the old property will be overwritten. This function is equal to an assignment except that it can be used when the name of the property is dynamic.\nThis function generates an event.\nFunction thing.set(name, value)\nArguments    Argument Type Description     name raw (required) The name of the property to set.   value any (required) The value which will be assigned to the property.    Return value The value which will be assigned.\n This code shows how to use set():\n [ .set('the_answer', 42), .the_answer, ];   Return value in JSON format\n [ 42, 42 ]  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/collection-api/splice/",
@@ -963,7 +956,7 @@
 	"title": "thing",
 	"tags": [],
 	"description": "",
-	"content": " Returns a thing from a specified value. If no value is given, a new thing is returned.\nThis function does not generate an event.\nFunction thing([id])\nArguments    Argument Type Description     id int (optional) The id for the thing to return.    Return value Returns a thing . An INDEX_ERROR is returned in case an id is given which is not found inside the collection.\n This code shows an example usage of thing():\n .greet = \u0026quot;Hello world!\u0026quot;; [ thing(.id()), thing(), ];   Return value in JSON format\n [ { \u0026quot;#\u0026quot;: 42, \u0026quot;greet\u0026quot;: \u0026quot;Hello world!\u0026quot; }, {} ]  "
+	"content": " Returns a thing from a specified value. If no value is given, a new thing is returned.\nThis function does not generate an event.\nFunction thing([id])\nArguments    Argument Type Description     id int (optional) The id for the thing to return.    Return value Returns a thing . An INDEX_ERROR is returned in case an id is given which is not found inside the collection.\n This code shows an example usage of thing():\n .greet = \u0026quot;Hello world!\u0026quot;; [ thing(.id()), thing(), ];   Example return value in JSON format\n [ { \u0026quot;#\u0026quot;: 42, \u0026quot;greet\u0026quot;: \u0026quot;Hello world!\u0026quot; }, {} ]  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/collection-api/try/",

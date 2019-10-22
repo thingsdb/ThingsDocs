@@ -28,11 +28,11 @@ This function does *not* generate an [event](../../events).
 None
 
 ### Return value
-Array as `qpack` type containing node information for all nodes within ThingsDB.
+Array as `msgpack` type containing node information for all nodes within ThingsDB.
 
 > This code returns info for all ThingsDB nodes:
 
-```
+```thingsdb,should_pass,@n
 nodes_info();
 ```
 
@@ -41,15 +41,16 @@ nodes_info();
 ```json
 [
     {
-        "address": "localhost",
-        "committed_event_id": 5,
-        "next_thing_id": 8,
+        "address": "node.things",
+        "committed_event_id": 2,
+        "next_thing_id": 5,
         "node_id": 0,
         "port": 9220,
         "status": "READY",
-        "stored_event_id": 5,
+        "stored_event_id": 2,
+        "stream": null,
         "syntax_version": "v0",
-        "zone": 0,
+        "zone": 0
     }
 ]
 ```

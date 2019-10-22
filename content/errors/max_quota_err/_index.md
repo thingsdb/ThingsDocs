@@ -21,7 +21,7 @@ An error value.
 
 > This code shows ***max_quota_err()***:
 
-```
+```thingsdb,json_response
 max_quota_err();
 ```
 

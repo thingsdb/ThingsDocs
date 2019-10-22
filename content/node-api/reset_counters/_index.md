@@ -20,7 +20,7 @@ Returns `nil`.
 
 > This code will reset the counters on a node:
 
-```
+```thingsdb,json_response,@n
 // resets counters on `localhost:9200`
 reset_counters();
 ```

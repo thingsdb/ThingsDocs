@@ -11,7 +11,7 @@ The conditional operator returns one of two values based on the logical value of
 
 > Conditional (ternary) operator examples:
 
-```
+```thingsdb,json_response
 2 > 1  ? 'two is greater than one' : 'two is less than one';
 ```
 

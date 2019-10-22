@@ -21,7 +21,7 @@ An error value.
 
 > This code shows ***operation_err()***:
 
-```
+```thingsdb,json_response
 operation_err();
 ```
 

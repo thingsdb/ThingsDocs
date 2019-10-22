@@ -15,7 +15,7 @@ Operator | Description
 
 > Arithmetic examples:
 
-```
+```thingsdb,json_response
 [
     5 + 2,
     5 - 2,

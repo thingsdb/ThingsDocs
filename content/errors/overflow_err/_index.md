@@ -21,7 +21,7 @@ An error value.
 
 > This code shows ***overflow_err()***:
 
-```
+```thingsdb,json_response
 overflow_err();
 ```
 

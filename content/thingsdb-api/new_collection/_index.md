@@ -28,7 +28,7 @@ if the collection already exists.
 
 > This code will create a collection *"awesome_things"*:
 
-```
+```thingsdb,should_pass,@t
 // Creates a new collection
 new_collection('awesome_things');
 ```

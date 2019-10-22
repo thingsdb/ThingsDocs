@@ -21,7 +21,7 @@ An error value.
 
 > This code shows ***auth_err()***:
 
-```
+```thingsdb,json_response
 auth_err();
 ```
 

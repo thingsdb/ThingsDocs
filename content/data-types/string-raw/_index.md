@@ -18,6 +18,6 @@ Method | Description
 
 > This code creates a *raw* property *greet* to collection *stuff*:
 
-```
-greet = 'Hello world!!';
+```thingsdb,should_pass
+.greet = 'Hello world!!';
 ```

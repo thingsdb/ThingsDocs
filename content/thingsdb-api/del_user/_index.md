@@ -22,7 +22,7 @@ Returns `nil` when successful. An `INDEX_ERROR` is raised if the user does not e
 
 > This code will delete user *test*:
 
-```
+``````thingsdb,syntax_only,@t
 // Delete user `test`
 del_user('test');
 ```

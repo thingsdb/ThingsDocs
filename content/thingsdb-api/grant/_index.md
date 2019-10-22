@@ -42,12 +42,12 @@ does not exist.
 
 > Grant read and watch privileges to user `iris` to collection `stuff`:
 
-```
+```thingsdb,json_response,@t
 new_user('iris');
 new_token('iris');
 [
-    grant('.node', 'iris', WATCH),
-    grant('stuff', 'iris', (READ|WATCH)),
+    grant('@node', 'iris', WATCH),
+    grant('@:stuff', 'iris', (READ|WATCH)),
 ];
 ```
 

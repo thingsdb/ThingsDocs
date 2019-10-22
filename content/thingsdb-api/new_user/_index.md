@@ -21,9 +21,9 @@ Argument | Type | Description
 Returns the new user `id` if successful. An `INDEX_ERROR` is raised
 if the user already exists.
 
-> Create a new user `iris` with password `siri`:
+> Create a new user `iris`:
 
-```
+```thingsdb,should_pass,@t
 new_user('iris');
 ```
 

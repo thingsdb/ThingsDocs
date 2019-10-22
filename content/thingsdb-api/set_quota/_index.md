@@ -34,7 +34,7 @@ quota | int/nil (required) | Integer value to set the quota limit or `nil` to di
 
 > This code sets a quota on the number of things and disables the properties quota on collection *stuff*:
 
-```
+```thingsdb,json_response,@t
 [
     set_quota('stuff', 'things', 10000),
     set_quota('stuff', 'properties', nil),

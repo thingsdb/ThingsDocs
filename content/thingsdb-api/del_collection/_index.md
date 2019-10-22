@@ -19,9 +19,9 @@ name | raw (required) | Name of the collection to delete.
 ### Return value
 Returns `nil` when successful. An `INDEX_ERROR` is raised if the collection does not exist.
 
-> This code will delete collection *old_things*:
+> This code will delete collection *stuff*:
 
-```
-// Delete collection `old_things`
-del_collection('old_things');
+```thingsdb,should_pass,@t
+// Delete collection `stuff`
+del_collection('stuff');
 ```

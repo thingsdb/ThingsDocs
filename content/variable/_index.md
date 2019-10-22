@@ -22,7 +22,7 @@ Some valid examples:
 
 > This code uses a variable:
 
-```
+```thingsdb,json_response
 a = 'This is a variable!!!';
 b = 'Hello';
 {

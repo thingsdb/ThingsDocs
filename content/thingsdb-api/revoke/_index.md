@@ -25,8 +25,8 @@ does not exist.
 
 > Revoke all privileges for user `iris` on collection `stuff`:
 
-```
-revoke('stuff', 'iris', FULL);
+```thingsdb,syntax_only,@t
+revoke('@:stuff', 'iris', FULL);
 ```
 
 > Return value in JSON format

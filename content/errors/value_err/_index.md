@@ -21,7 +21,7 @@ An error value.
 
 > This code shows ***value_err()***:
 
-```
+```thingsdb,json_response
 value_err();
 ```
 

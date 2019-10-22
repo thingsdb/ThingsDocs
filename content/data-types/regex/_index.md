@@ -15,7 +15,7 @@ Method | Description
 
 > This code uses a regular expression for an overly simple email check:
 
-```
+```thingsdb,json_response
 // Note: the email check is oversimplified, do not use in production
 email_test = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 

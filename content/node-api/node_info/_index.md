@@ -21,7 +21,7 @@ http_status_port | Listening to this HTTP port for status, readiness and livenes
 ip_support | Enabled IP support. May be IPv4/IPv6 or both.
 libcleri_version | Cleri language parser library version.
 libpcre2_version | PCRE regular expression library version.
-libqpack_version | QPack data protocol library version.
+msgpack_version | MessagePack data protocol library version.
 libuv_version | UV asynchronous library version.
 local_committed_event_id | Last committed event ID on the node.
 local_stored_event_id | Last stored event ID on disk. Store takes place when in *away* mode.
@@ -46,11 +46,11 @@ This function does *not* generate an [event](../../events).
 None
 
 ### Return value
-Information as a `qpack` type bout the connected node.
+Information as a `msgpack` type bout the connected node.
 
 > This code returns info for the connected node:
 
-```thingsdb
+```thingsdb,should_pass,@n
 node_info();
 ```
 
@@ -58,32 +58,34 @@ node_info();
 
 ```json
 {
-    "archive_files": 2,
+    "archive_files": 1,
     "archived_in_memory": 0,
-    "cached_names": 3,
+    "cached_names": 2,
     "client_port": 9200,
     "db_stored_event_id": 1,
     "events_in_queue": 0,
-    "global_committed_event_id": 11,
-    "global_stored_event_id": 11,
-    "hostname": "localhost",
+    "global_committed_event_id": 2,
+    "global_stored_event_id": 2,
+    "hostname": "node.things",
+    "http_status_port": "disabled",
     "ip_support": "ALL",
-    "libcleri_version": "0.10.1",
-    "libpcre2_version": "10.31",
-    "libqpack_version": "0.11.0",
-    "libuv_version": "1.18.0",
-    "local_committed_event_id": 11,
-    "local_stored_event_id": 11,
-    "log_level": "WARNING",
-    "next_event_id": 12,
-    "next_thing_id": 8,
+    "libcleri_version": "0.11.0",
+    "libpcre2_version": "10.32",
+    "libuv_version": "1.24.1",
+    "local_committed_event_id": 2,
+    "local_stored_event_id": 2,
+    "log_level": "DEBUG",
+    "msgpack_version": "3.2.0",
+    "next_event_id": 3,
+    "next_thing_id": 5,
     "node_id": 0,
     "node_port": 9220,
+    "scheduled_backups": 0,
     "status": "READY",
     "storage_path": "/var/lib/thingsdb/",
     "syntax_version": "v0",
-    "uptime": 15.749372482299805,
-    "version": "0.1.5",
+    "uptime": 7.854678630828857,
+    "version": "0.2.1",
     "zone": 0
 }
 ```

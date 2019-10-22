@@ -37,7 +37,7 @@ from thingsdb.exceptions import OperationError
 DOC_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONTENT_PATH = os.path.join(DOC_PATH, 'content')
 RE_TEST = re.compile(
-    '```thingsdb,([a-zA-Z_]*)')
+    '```thingsdb,([a-zA-Z_]*)(,(@[\:a-zA-Z0-9]))?')
 
 
 class TestDoc(TestBase):
@@ -58,7 +58,6 @@ class TestDoc(TestBase):
                     fn = os.path.join(root, file)
                     with open(fn, 'r') as f:
                         lines = f.readlines()
-
                     try:
                         await self.process_markdown(client, lines)
                     except Exception as e:
@@ -83,11 +82,13 @@ class TestDoc(TestBase):
                 line = next(lines)
                 m = RE_TEST.match(line)
                 if m:
+                    scope = m.group(3)
                     await client.query(r'''
-                        del_collection('stuff');
+                        try(del_collection('stuff'));
+                        try(del_user('iris'));
                         new_collection('stuff');
                     ''', scope='@t')
-                    await self.MAP[m.group(1)](self, client, lines)
+                    await self.MAP[m.group(1)](self, client, scope, lines)
             except StopIteration:
                 break
 
@@ -101,24 +102,24 @@ class TestDoc(TestBase):
             code.append(line)
         return ''.join(code)
 
-    async def should_pass(self, client, lines):
+    async def should_pass(self, client, scope, lines):
         code = self.get_code(lines)
-        await client.query(code)
+        await client.query(code, scope=scope)
 
-    async def should_err(self, client, lines):
+    async def should_err(self, client, scope, lines):
         code = self.get_code(lines)
         with self.assertRaises(ThingsDBError):
-            await client.query(code)
+            await client.query(code, scope=scope)
 
-    async def syntax_only(self, client, lines):
+    async def syntax_only(self, client, scope, lines):
         code = self.get_code(lines)
         code = f'assert(0); {code}'
         with self.assertRaises(AssertionError):
-            await client.query(code)
+            await client.query(code, scope=scope)
 
-    async def json_response(self, client, lines):
+    async def json_response(self, client, scope, lines):
         code = self.get_code(lines)
-        res = await client.query(code)
+        res = await client.query(code, scope=scope)
 
         while True:
             try:
@@ -131,7 +132,7 @@ class TestDoc(TestBase):
 
         self.assertEqual(res, expected)
 
-    async def no_test(self, client, lines):
+    async def no_test(self, client, scope, lines):
         code = self.get_code(lines)
         pass
 

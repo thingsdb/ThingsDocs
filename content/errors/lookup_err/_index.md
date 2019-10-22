@@ -21,7 +21,7 @@ An error value.
 
 > This code shows ***lookup_err()***:
 
-```
+```thingsdb,json_response
 lookup_err();
 ```
 

@@ -40,7 +40,7 @@ Returns the new token key.
 
 > Create a new token for user `admin`:
 
-```
+```thingsdb,should_pass,@t
 // ThingsDB must be started on node2 using the `--secret ...` argument
 new_token('admin', now() + 7*24*3600, 'token for one week');
 ```

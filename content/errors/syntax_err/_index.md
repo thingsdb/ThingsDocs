@@ -21,7 +21,7 @@ An error value.
 
 > This code shows ***syntax_err()***:
 
-```
+```thingsdb,json_response
 syntax_err();
 ```
 

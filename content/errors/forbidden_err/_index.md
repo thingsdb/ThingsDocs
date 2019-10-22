@@ -21,7 +21,7 @@ An error value.
 
 > This code shows ***forbidden_err()***:
 
-```
+```thingsdb,json_response
 forbidden_err();
 ```
 

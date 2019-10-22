@@ -21,7 +21,7 @@ An error value.
 
 > This code shows ***bad_data_err()***:
 
-```
+```thingsdb,json_response
 bad_data_err();
 ```
 

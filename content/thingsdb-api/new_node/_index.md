@@ -26,7 +26,7 @@ Returns the new node `id` if successful.
 
 > Add a new node to ThingsDB:
 
-```
+```thingsdb,syntax_only,@t
 // ThingsDB must be started on node2 using the `--secret ...` argument
 new_node('my-one-time-serect', 'node2.local');
 ```
