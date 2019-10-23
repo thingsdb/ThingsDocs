@@ -1,7 +1,6 @@
 ---
 title: "len"
-date: 2019-10-23T12:51:58+02:00
-weight: 5
+date: 2019-10-23T16:41:37+02:00
 ---
 
 Returns the length of an [list](../../list), [tuple](../../tuple) or [string](../../str), or the number of items in a [thing](../../thing).

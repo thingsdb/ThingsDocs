@@ -23,10 +23,10 @@ because ThingsDB needs to know which subscribers to update with changes made to 
 
 Method | Description
 ------ | -----------
-[filter](./filter) | Returns a new `list` with elements that pass a given test.
-[find](./find) | Returns the first element that pass a given test.
-[findindex](./findindex) | Returns the index of the first element that pass a given test.
-[indexof](./indexof) | Returns the index of a given value, or `nil` if not found.
-[len](./len) | Returns the length of the tuple.
-[map](./map) | Returns a new `list` with the results of calling a provided closure on every element.
-[sort](./sort) | Returns a new sorted `list`.
+[filter](../list/filter) | Returns a new `list` with elements that pass a given test.
+[find](../list/find) | Returns the first element that pass a given test.
+[findindex](../list/findindex) | Returns the index of the first element that pass a given test.
+[indexof](../list/indexof) | Returns the index of a given value, or `nil` if not found.
+[len](../list/len) | Returns the length of the tuple.
+[map](../list/map) | Returns a new `list` with the results of calling a provided closure on every element.
+[sort](../list/sort) | Returns a new sorted `list`.

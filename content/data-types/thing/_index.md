@@ -18,3 +18,4 @@ Method | Description
 [map](./map) | Returns a [list](../list) with the results of calling a provided closure on every item.
 [set](./set) | Creates a new property on a thing.
 [values](./values) | Returns an array with all the property values of a thing.
+[wrap](./wrap) | Wraps..

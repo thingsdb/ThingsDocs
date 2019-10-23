@@ -1,5 +1,5 @@
 ---
-title: "boolean"
+title: "bool"
 date: 2019-10-14T09:40:19+02:00
 weight: 1
 ---
