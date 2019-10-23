@@ -16,4 +16,3 @@ theme = "hugo-theme-learn"
   # Description of the site, will be used in meta information
   description = "ThingsDB documentation"
   disableInlineCopyToClipBoard = true
-

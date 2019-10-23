@@ -1,7 +1,7 @@
 ---
-title: "Regex"
+title: "regex"
 date: 2019-10-14T09:40:56+02:00
-weight: 8
+weight: 10
 ---
 
 Regular expression can be constructed using a literal which consists of a pattern enclosed between slashes, as follows: `re = /ab+c/;`.
@@ -9,6 +9,7 @@ It is probably a good idea to store a `regex` in a variable if you plan to use t
 requirement to compile the regular expression each time.
 
 ### Methods that use regular expressions
+
 Method | Description
 ------ | -----------
 [test](../../collection-api/test) | A [string](../../data-types/string-raw) method that tests for a match in a string. It returns `true` or `false`.

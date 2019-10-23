@@ -1,10 +1,10 @@
 ---
-title: "Closure"
+title: "closure"
 date: 2019-10-14T09:41:26+02:00
 weight: 3
 ---
 
-Closures can be used to consume items from a `thing`, `array` or `set`.
+Closures can be used to consume items from a `thing`, `list`, `tuple` or `set`.
 
 {{% notice note %}}
 It is not possible to use closures with recursion, for example: \

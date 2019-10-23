@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Nil on ThingsDB documentation</title>
+    <title>nil on ThingsDB documentation</title>
     <link>https://thingsdb.github.io/ThingsDocs/data-types/nil/</link>
-    <description>Recent content in Nil on ThingsDB documentation</description>
+    <description>Recent content in nil on ThingsDB documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 14 Oct 2019 09:39:58 +0200</lastBuildDate>

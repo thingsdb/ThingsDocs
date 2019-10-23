@@ -1264,23 +1264,9 @@ hljs.registerLanguage('thingsdb', function(hljs) {
 
     var REGEXP = {
         className: 'regexp',
-        begin: /\//, end: /\/i?/,
-        illegal: /\n/,
-        contains: [
-            hljs.BACKSLASH_ESCAPE,
-            {
-                begin: /\[/, end: /\]/,
-                relevance: 0,
-                contains: [hljs.BACKSLASH_ESCAPE]
-            }
-        ]
+        begin: new RegExp('(/[^/\\\\\\n]*(?:\\\\.[^/\\\\]*)*/i?)'),
+        relevance: 0,
     }
-
-    var PARAMS = {
-        className: 'params',
-        begin: /\(/, end: /\)/,
-        contains: ['self']
-    };
 
     return {
         aliases: ['ti'],

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Boolean on ThingsDB documentation</title>
+    <title>boolean on ThingsDB documentation</title>
     <link>https://thingsdb.github.io/ThingsDocs/data-types/boolean/</link>
-    <description>Recent content in Boolean on ThingsDB documentation</description>
+    <description>Recent content in boolean on ThingsDB documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 14 Oct 2019 09:40:19 +0200</lastBuildDate>

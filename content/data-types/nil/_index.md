@@ -1,7 +1,7 @@
 ---
-title: "Nil"
+title: "nil"
 date: 2019-10-14T09:39:58+02:00
-weight: 7
+weight: 9
 ---
 
 Probably the most simple type, it can be used as *no value*.
