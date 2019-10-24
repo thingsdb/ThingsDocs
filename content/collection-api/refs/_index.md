@@ -1,7 +1,7 @@
 ---
 title: "refs"
 date: 2019-10-14T10:04:02+02:00
-weight: 46
+weight: 31
 ---
 
 Returns the reference count of a value.
@@ -17,14 +17,17 @@ can be higher of lower depending on how the value is stored and used.
 This function does *not* generate an [event](../../events).
 
 ### Function
+
 `refs(value)`
 
 ### Arguments
+
 Argument | Type | Description
 -------- | ---- | -----------
 value | any (required) | The value to return the reference count for.
 
 ### Return value
+
 Reference count of the given value.
 
 > Returns the reference count of a given value:

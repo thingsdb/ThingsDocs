@@ -1,7 +1,7 @@
 ---
 title: "return"
 date: 2019-10-14T10:04:35+02:00
-weight: 49
+weight: 32
 ---
 
 The `return` function moves the argument to the output of the current query/closure call.
@@ -23,15 +23,18 @@ When no arguments are used the return value will be `nil`.
 This function does *not* generate an [event](../../events).
 
 ### Function
+
 `return([value[, deep]])`
 
 ### Arguments
+
 Argument | Type | Description
 -------- | ---- | -----------
 value | any (optional) | The value which will be moved to the output of the query or closure.
 deep | int (optional) | Specify the `deep` value for the query (the current `deep` value will be overwritten).
 
 ### Return value
+
 The `return` function has no real return value but will move directly
 to the output of the current query or closure.
 

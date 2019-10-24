@@ -1,7 +1,7 @@
 ---
 title: "try"
 date: 2019-10-14T10:06:02+02:00
-weight: 57
+weight: 37
 ---
 
 Try a statement and if the statement fails with an error, then the error is returned.
@@ -15,15 +15,18 @@ Such errors should never happen, unless something is really wrong with at least 
 This function does *not* generate an [event](../../events).
 
 ### Function
+
 `try(statement, [e0, e1, ..., eX])`
 
 ### Arguments
+
 Argument | Type | Description
 -------- | ---- | -----------
 statement | any (required) | The statement to try.
 e0, e1, ..., eX | int/raw (optional) | Only catch specific errors, if omitted, catch all errors. Error codes and names are accepted.
 
 ### Return value
+
 The value for the specified *statement* or an error if the statement has failed.
 
 > This code shows some return values for ***try()***:

@@ -1,7 +1,7 @@
 ---
 title: "float"
 date: 2019-10-14T09:59:28+02:00
-weight: 15
+weight: 7
 ---
 
 Returns a [float](../../data-types/floating-point) from a specified value.
@@ -16,14 +16,17 @@ Type [bool](../../data-types/boolean) values are converted to `1.0` for `true` a
 This function does *not* generate an [event](../../events).
 
 ### Function
+
 `float(value)`
 
 ### Arguments
+
 Argument | Type | Description
 -------- | ---- | -----------
 value | any (optional) | The value where to create a floating point value for.
 
 ### Return value
+
 A floating point value. Other type than `float`, `raw`, `bool` or `int`
 will raise a `BAD_REQUEST`.
 

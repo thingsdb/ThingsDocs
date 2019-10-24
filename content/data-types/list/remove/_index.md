@@ -32,6 +32,7 @@ Here, the item will *only* be popped, in case `e` with `name` *foo* is *not* fou
 {{% /notice %}}
 
 ### Return value
+
 The value of the first element in the array or thing that satisfies the provided testing function;
 otherwise, `nil` or a specified alternative value is returned.
 

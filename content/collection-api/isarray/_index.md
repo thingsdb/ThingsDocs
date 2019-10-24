@@ -1,7 +1,7 @@
 ---
 title: "isarray"
 date: 2019-10-14T10:00:22+02:00
-weight: 22
+weight: 9
 ---
 
 This function determines whether the value passed to this function
@@ -11,14 +11,17 @@ is an [array](../../data-types/array-type) type or not. The functions [islist](.
 This function does *not* generate an [event](../../events).
 
 ### Function
+
 `isarray(value)`
 
 ### Arguments
+
 Argument | Type | Description
 -------- | ---- | -----------
 value | any (required) | The value to be tested for being an array.
 
 ### Return value
+
 Returns `true` the value passed is array else it returns `false`.
 
 > This code shows some return values for ***isarray()***:

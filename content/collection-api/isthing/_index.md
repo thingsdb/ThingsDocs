@@ -1,7 +1,7 @@
 ---
 title: "isthing"
 date: 2019-10-14T10:02:42+02:00
-weight: 35
+weight: 23
 ---
 
 This function determines whether the value passed to this function
@@ -10,14 +10,17 @@ is a [thing](../../data-types/thing-type) or not.
 This function does *not* generate an [event](../../events).
 
 ### Function
+
 `isthing(value)`
 
 ### Arguments
+
 Argument | Type | Description
 -------- | ---- | -----------
 value | any (required) | The value to be tested.
 
 ### Return value
+
 Returns `true` is the passed value is a thing else it returns `false`.
 
 > This code shows some return values for ***isthing()***:

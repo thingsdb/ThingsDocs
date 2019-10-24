@@ -1,7 +1,7 @@
 ---
 title: "err"
 date: 2019-10-14T09:58:22+02:00
-weight: 10
+weight: 6
 ---
 
 Returns an [error](../../data-types/error-type).
@@ -9,16 +9,18 @@ Returns an [error](../../data-types/error-type).
 This function does *not* generate an [event](../../events).
 
 ### Function
+
 `err([code, [message]])`
 
 ### Arguments
+
 Argument | Type | Description
 -------- | ---- | -----------
 code | int (optional) | Integer error code between -127 and -50, defaults to -100.
 message | raw (optional) | Optional error message.
 
-
 ### Return value
+
 An error value.
 
 > This code shows some return values for ***err()***:

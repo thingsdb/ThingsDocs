@@ -1,7 +1,7 @@
 ---
 title: "int"
 date: 2019-10-14T10:00:14+02:00
-weight: 21
+weight: 8
 ---
 
 Returns an [int](../../data-types/integer) from a specified value.
@@ -19,14 +19,17 @@ Type [bool](../../data-types/boolean) values are converted to `1` for `true` and
 This function does *not* generate an [event](../../events).
 
 ### Function
+
 `int(value)`
 
 ### Arguments
+
 Argument | Type | Description
 -------- | ---- | -----------
 value | any (optional) | The value where to create an integer value for.
 
 ### Return value
+
 An integer value. In case the integer value is too large for a 64bit integer,
 an `OVERFLOW_ERROR` is raised. Other type than `float`, `raw`, `bool` or `int`
 will raise a `BAD_REQUEST`.
