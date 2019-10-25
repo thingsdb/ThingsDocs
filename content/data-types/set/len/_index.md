@@ -23,11 +23,11 @@ Returns length of the set.
 > This code uses `len()` to return the number of items in a set:
 
 ```thingsdb,json_response
-set([1, 2, 3, 4]).len();
+set({iten: 'a'}, {item: 'b'}).len();
 ```
 
 > Return value in JSON format
 
 ```json
-4
+2
 ```

@@ -29,5 +29,5 @@ new_type('NewType');
 > Return value in JSON format
 
 ```json
-'NewType'
+"NewType"
 ```

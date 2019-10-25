@@ -34,7 +34,7 @@ users = set({name: 'Iris', age: 6}, {name: 'Sasha', age: 34});
  * Return all users with name 'Iris'.
  */
 
-users.filter(|user| (user.name == 'Iris'));
+array(users.filter(|user| (user.name == 'Iris')));
 ```
 
 > Return value in JSON format
