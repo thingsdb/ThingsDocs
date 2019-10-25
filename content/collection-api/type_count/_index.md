@@ -6,6 +6,8 @@ weight: 39
 
 Returns the number of instances of a given [Type](../../data-types/Type) within a collection.
 
+This function does *not* generate an [event](../../events).
+
 ### Function
 
 `type_count(type_name)`

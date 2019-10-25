@@ -6,6 +6,8 @@ weight: 40
 
 Returns information about the properties of a given [Type](../../data-types/Type).
 
+This function does *not* generate an [event](../../events).
+
 ### Function
 
 `type_info(type_name)`

@@ -1,7 +1,7 @@
 ---
 title: "counters"
 date: 2019-10-14T09:42:18+02:00
-weight: 1
+weight: 3
 ---
 
 Returns `counters` for the ThingsDB node you are connected too. Counters start all at zero when ThingsDB

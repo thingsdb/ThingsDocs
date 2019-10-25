@@ -6,6 +6,8 @@ weight: 11
 
 When this method is used on an [list](..) or [tuple](../../tuple), a new sorted list is returned.
 
+This function does *not* generate an [event](../../../events).
+
 ### Function
 
 *array*.`sort([closure, [reverse]])`

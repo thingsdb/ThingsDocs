@@ -30,3 +30,7 @@ Method | Description
 [len](../list/len) | Returns the length of the tuple.
 [map](../list/map) | Returns a new `list` with the results of calling a provided closure on every element.
 [sort](../list/sort) | Returns a new sorted `list`.
+
+{{% notice info %}}
+The above methods correspond to those of a `list`. For that reason, they are only listed under the data type `list`.
+{{% /notice %}}

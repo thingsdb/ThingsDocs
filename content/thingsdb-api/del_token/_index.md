@@ -1,7 +1,7 @@
 ---
 title: "del_token"
 date: 2019-10-14T09:49:34+02:00
-weight: 5
+weight: 6
 ---
 
 Delete a token.

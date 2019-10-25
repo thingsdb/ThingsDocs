@@ -6,6 +6,8 @@ weight: 26
 
 This function is used to modify an existing [Type](../../data-types/Type). A number of actions can be performed with this function.
 
+This function generates an [event](../../events).
+
 ### Actions
 
 Action | Description

@@ -6,6 +6,8 @@ weight: 28
 
 Creates a new [Type](../../data-types/Type).
 
+This function generates an [event](../../events).
+
 ### Function
 
 `new_type(type_name)`

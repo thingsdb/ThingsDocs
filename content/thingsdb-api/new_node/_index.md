@@ -1,11 +1,10 @@
 ---
 title: "new_node"
 date: 2019-10-14T09:50:09+02:00
-weight: 9
+weight: 10
 ---
 
 Adds a new node to ThingsDB. Nodes are used for scaling and high availability.
-
 
 This function generates an [event](../../events).
 

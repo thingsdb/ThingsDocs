@@ -7,9 +7,7 @@ chapter = true
 
 # Data Types
 
-The data types that exist within ThingsDB are discussed here.
-
-### Types
+ThingsDB uses the following data types:
 
 type | Description
 ------ | -----------

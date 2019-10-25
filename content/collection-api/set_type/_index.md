@@ -6,6 +6,8 @@ weight: 34
 
 Defines the properties of a Type. Function `set_type` works only on a new type. Use `mod_type()` if you want to change an existing type, see [mod_type](../mod_type).
 
+This function generates an [event](../../events).
+
 ### Function
 
 `set_type(type_name, value)`

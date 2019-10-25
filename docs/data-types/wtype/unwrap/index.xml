@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Unwrap on ThingsDB documentation</title>
+    <title>unwrap on ThingsDB documentation</title>
     <link>https://thingsdb.github.io/ThingsDocs/data-types/wtype/unwrap/</link>
-    <description>Recent content in Unwrap on ThingsDB documentation</description>
+    <description>Recent content in unwrap on ThingsDB documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 23 Oct 2019 16:44:29 +0200</lastBuildDate>

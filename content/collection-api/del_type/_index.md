@@ -6,6 +6,8 @@ weight: 5
 
 Deletes an existing type [Type](../../data-types/Type).
 
+This function generates an [event](../../events).
+
 ### Function
 
 `del_type(type_name)`

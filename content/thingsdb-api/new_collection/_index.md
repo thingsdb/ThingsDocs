@@ -1,7 +1,7 @@
 ---
 title: "new_collection"
 date: 2019-10-14T09:49:59+02:00
-weight: 8
+weight: 9
 ---
 
 Create a new collection.

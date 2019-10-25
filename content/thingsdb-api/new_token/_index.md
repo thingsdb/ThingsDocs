@@ -1,7 +1,7 @@
 ---
 title: "new_token"
 date: 2019-10-14T09:50:15+02:00
-weight: 10
+weight: 11
 ---
 
 Adds a new token for a given user. An optional expiration time may be given after which the token cannot

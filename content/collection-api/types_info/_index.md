@@ -6,6 +6,8 @@ weight: 41
 
 Returns information about the properties of all [Types](../../data-types/Type) within a collection.
 
+This function does *not* generate an [event](../../events).
+
 ### Function
 
 `type_info()`

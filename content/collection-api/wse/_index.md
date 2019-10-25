@@ -14,14 +14,17 @@ create events when they may not be required.
 This function generates an [event](../../events).
 
 ### Function
+
 `wse(statement)`
 
 ### Arguments
+
 Argument | Type | Description
 -------- | ---- | -----------
 statement | any | Statement or block to wrap.
 
 ### Return value
+
 Return value of the given statement.
 
 > This code shows an example usage for ***wse()***:

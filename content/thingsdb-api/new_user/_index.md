@@ -1,7 +1,7 @@
 ---
 title: "new_user"
 date: 2019-10-14T09:50:22+02:00
-weight: 11
+weight: 12
 ---
 
 Creates a new user to ThingsDB. The new user is created without a password, token and access privileges.

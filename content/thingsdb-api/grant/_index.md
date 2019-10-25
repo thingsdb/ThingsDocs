@@ -1,7 +1,7 @@
 ---
 title: "grant"
 date: 2019-10-14T09:49:48+02:00
-weight: 7
+weight: 8
 ---
 
 Grant collection or general privileges to a user. Access to a user is provided by setting

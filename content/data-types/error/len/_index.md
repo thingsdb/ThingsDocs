@@ -8,13 +8,16 @@ Returns the length of an [error](..) message.
 This function does *not* generate an [event](../../../events).
 
 ### Function
+
 *error*.`len()`
 
 ### Arguments
+
 None
 
 ### Return value
-Returns length of the iterable.
+
+Returns length of an error message.
 
 > This code uses `len()` to return the length of the error message:
 
