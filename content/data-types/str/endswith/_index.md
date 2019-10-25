@@ -4,19 +4,19 @@ date: 2019-10-23T13:50:27+02:00
 weight: 2
 ---
 
-Determines if a string ends with characters given by another string.
+Determines if a [string](..) ends with characters given by another string.
 
 This function does *not* generate an [event](../../../events).
 
 ### Function
 
-*string*.`endswith(search_string)`
+*str*.`endswith(search_string)`
 
 ### Arguments
 
 Argument | Type | Description
 -------- | ---- | -----------
-search_string | raw (required) | The characters to be searched for at the end of this string.
+search_string | str (required) | The characters to be searched for at the end of this string.
 
 ### Return value
 

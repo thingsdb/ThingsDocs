@@ -4,26 +4,29 @@ date: 2019-10-23T15:13:20+02:00
 weight: 10
 ---
 
-Returns an array with all the property values of a [thing](../../thing).
+Returns an list with all the property values of a [thing](..).
 The same could be returned using map so the following statement is `true`:
 
 `(.values() == .map(|_, v| v))`
 
 {{% notice warning %}}
-Although the `values()` and `map()` in the example above will return an array with the same order,
-the order of *values* in the array is not guaranteed and may be different each time you run the query.
+Although the `values()` and `map()` in the example above will return an list with the same order,
+the order of *values* in the list is not guaranteed and may be different each time you run the query.
 {{% /notice %}}
 
 This function does *not* generate an [event](../../../events).
 
 ### Function
+
 *thing*.`values()`
 
 ### Arguments
+
 None
 
 ### Return value
-Returns an array with property values.
+
+Returns an list with property values.
 
 > This code shows how to use `values()`:
 

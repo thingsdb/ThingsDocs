@@ -11,9 +11,11 @@ if `my_set` already contains thing `#42`.
 This function generates an [event](../../../events).
 
 ### Function
+
 *set*.`add(thing1, thing1, ..., thingX)`
 
 ### Return value
+
 Returns the number of `things` which are added to the set.
 
 > This code adds things to a set:

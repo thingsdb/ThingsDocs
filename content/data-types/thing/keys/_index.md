@@ -6,7 +6,7 @@ weight: 6
 
 ## keys
 
-Returns an array with all the property names of a [thing](../../thing).
+Returns an array with all the property names of a [thing](..).
 The same could be returned using map so the following statement is `true`:
 
 `.keys() == .map(|k| k)`
@@ -19,12 +19,15 @@ the order of *keys* in the array is not guaranteed and may be different each tim
 This function does *not* generate an [event](../../../events).
 
 ### Function
+
 *thing*.`keys()`
 
 ### Arguments
+
 None
 
 ### Return value
+
 Returns an array with property names.
 
 > This code shows how to use `keys()`:

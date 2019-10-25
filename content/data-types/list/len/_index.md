@@ -4,18 +4,21 @@ date: 2019-10-23T12:51:58+02:00
 weight: 6
 ---
 
-Returns the length of an [list](../../list), [tuple](../../tuple) or [string](../../str), or the number of items in a [thing](../../thing).
+Returns the length of a [list](..) or [tuple](../../tuple).
 
 This function does *not* generate an [event](../../../events).
 
 ### Function
-*iterable*.`len()`
+
+*array*.`len()`
 
 ### Arguments
+
 None
 
 ### Return value
-Returns length of the iterable.
+
+Returns length of the array.
 
 > This code uses `len()` to return the number of items in a collection:
 

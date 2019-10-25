@@ -4,7 +4,7 @@ date: 2019-10-23T13:53:55+02:00
 weight: 1
 ---
 
-Delete a property from a [thing](../../thing).
+Delete a property from a [thing](..).
 
 This function generates an [event](../../../events).
 
@@ -16,7 +16,7 @@ This function generates an [event](../../../events).
 
 Argument | Type | Description
 -------- | ---- | -----------
-property | raw (required) | Name of the property to delete.
+property | str (required) | Name of the property to delete.
 
 ### Return value
 

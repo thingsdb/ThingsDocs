@@ -11,14 +11,14 @@
 	"title": "contains",
 	"tags": [],
 	"description": "",
-	"content": " Determines if a given string is a substring of a string.\nThis function does not generate an event.\nFunction string.contains(search_string)\nArguments    Argument Type Description     search_string raw (required) The characters to be searched for in the string.    Return value Returns true the given characters are found as a substring and otherwise false.\n This code shows an example using contains():\n 'the answer to life the universe and everything'.contains('life');   Return value in JSON format\n true  "
+	"content": " Determines if a given string is a substring of a string.\nThis function does not generate an event.\nFunction str.contains(search_string)\nArguments    Argument Type Description     search_string str (required) The characters to be searched for in the string.    Return value Returns true the given characters are found as a substring and otherwise false.\n This code shows an example using contains():\n 'the answer to life the universe and everything'.contains('life');   Return value in JSON format\n true  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/thing/del/",
 	"title": "del",
 	"tags": [],
 	"description": "",
-	"content": " Delete a property from a thing.\nThis function generates an event.\nFunction thing.del(property)\nArguments    Argument Type Description     property raw (required) Name of the property to delete.    Return value Returns nil if successful. An INDEX_ERROR is returned if the property does not exist or BAD_REQUEST in case the given property is not a valid name.\n This code shows some return values for del():\n .x = 'create and delete this prop'; .del('x');   Return value in JSON format\n null  "
+	"content": " Delete a property from a thing.\nThis function generates an event.\nFunction thing.del(property)\nArguments    Argument Type Description     property str (required) Name of the property to delete.    Return value Returns nil if successful. An INDEX_ERROR is returned if the property does not exist or BAD_REQUEST in case the given property is not a valid name.\n This code shows some return values for del():\n .x = 'create and delete this prop'; .del('x');   Return value in JSON format\n null  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/set/add/",
@@ -32,7 +32,7 @@
 	"title": "extend",
 	"tags": [],
 	"description": "",
-	"content": " Adds an array with items to the end of a list, and returns the new length.\nThis function generates an event.\nFunction list.extend(array)\nReturn value Returns the new length of the list.\n This code extends a list with a given array:\n a = [1, 2, 3]; b = [4, 5, 6]; a.extend(b); // returns the new length, 6 a;   Return value in JSON format\n [ 1, 2, 3, 4, 5, 6 ]  "
+	"content": " Adds a list or tuple with items to the end of a list, and returns the new length.\nThis function generates an event.\nFunction list.extend(list)\nReturn value Returns the new length of the list.\n This code extends a list with a given array:\n a = [1, 2, 3]; b = [4, 5, 6]; a.extend(b); // returns the new length, 6 a;   Return value in JSON format\n [ 1, 2, 3, 4, 5, 6 ]  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/errors/assert_err/",
@@ -74,7 +74,7 @@
 	"title": "bool",
 	"tags": [],
 	"description": "",
-	"content": "Boolean are either true or false. Other types can convert to bool by using the ! (not) operator or the bool function.\n This code creates a bool property is_the_earth_flat to collection stuff:\n .is_the_earth_flat = !true;  "
+	"content": "Booleans are either true or false. Other types can convert to bool by using the ! (not) operator or the bool function.\n This code creates a bool property is_the_earth_flat to collection stuff:\n .is_the_earth_flat = !true;  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/operators/arithmetic-operators/",
@@ -116,28 +116,28 @@
 	"title": "filter",
 	"tags": [],
 	"description": "",
-	"content": " If this method is used on a thing, then a new thing will be returned with only the properties that pass the test. If the method is used on an array, then a new array is returned with elements that pass the test and if used on a set, then the return value will be a new set.\nThis function does not generate an event.\nFunction iterable.filter(callback)\nArguments The callback argument must be a closure which input values depend on the type the method is called on.\n   Iterable Arguments Description     array item, index Iterate over all items in the array. Both item and index are optional.   set thing, id Iterate over things in the set. Both thing and id are optional.   thing name, value Iterate over the thing properties. Both name and value are optional.    Return value A new array, set or thing with the elements or properties that pass the test. If no elements or properties pass the test, an empty array, set or thing will be returned.\n This code shows an example using filter():\n users = [{name: 'Iris', age: 6}, {name: 'Sasha', age: 34}]; /* * Return all users with age 18 or above, * a thing with only property age, * and all users with name 'Iris'. */ [ users.filter(|user| (user.age \u0026gt;= 18)), users[0].filter(|prop| (prop == 'age')), set(users).filter(|user| (user.name == 'Iris')), ];   Return value in JSON format\n [ [ { \u0026quot;age\u0026quot;: 34, \u0026quot;name\u0026quot;: \u0026quot;Sasha\u0026quot; } ], { \u0026quot;age\u0026quot;: 6 }, [ { \u0026quot;age\u0026quot;: 6, \u0026quot;name\u0026quot;: \u0026quot;Iris\u0026quot; } ] ]  "
+	"content": " When this method is used on a thing, then a new thing will be returned with only the properties that pass the test.\nThis function does not generate an event.\nFunction thing.filter(callback)\nArguments The callback argument must be a closure which input values depend on the type the method is called on.\n   Iterable Arguments Description     thing name, value Iterate over the thing properties. Both name and value are optional.    Return value A new thing with the properties that pass the test. If no properties pass the test, a empty thing will be returned.\n This code shows an example using filter():\n user = {name: 'Iris', age: 6}; /* * Return a thing with only property age */ user.filter(|prop| (prop == 'age'));   Return value in JSON format\n { \u0026quot;age\u0026quot;: 6 }  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/set/filter/",
 	"title": "filter",
 	"tags": [],
 	"description": "",
-	"content": " If this method is used on a thing, then a new thing will be returned with only the properties that pass the test. If the method is used on an array, then a new array is returned with elements that pass the test and if used on a set, then the return value will be a new set.\nThis function does not generate an event.\nFunction iterable.filter(callback)\nArguments The callback argument must be a closure which input values depend on the type the method is called on.\n   Iterable Arguments Description     array item, index Iterate over all items in the array. Both item and index are optional.   set thing, id Iterate over things in the set. Both thing and id are optional.   thing name, value Iterate over the thing properties. Both name and value are optional.    Return value A new array, set or thing with the elements or properties that pass the test. If no elements or properties pass the test, an empty array, set or thing will be returned.\n This code shows an example using filter():\n users = [{name: 'Iris', age: 6}, {name: 'Sasha', age: 34}]; /* * Return all users with age 18 or above, * a thing with only property age, * and all users with name 'Iris'. */ [ users.filter(|user| (user.age \u0026gt;= 18)), users[0].filter(|prop| (prop == 'age')), set(users).filter(|user| (user.name == 'Iris')), ];   Return value in JSON format\n [ [ { \u0026quot;age\u0026quot;: 34, \u0026quot;name\u0026quot;: \u0026quot;Sasha\u0026quot; } ], { \u0026quot;age\u0026quot;: 6 }, [ { \u0026quot;age\u0026quot;: 6, \u0026quot;name\u0026quot;: \u0026quot;Iris\u0026quot; } ] ]  "
+	"content": " When this method is used on a set, then the return value will be a new set.\nThis function does not generate an event.\nFunction set.filter(callback)\nArguments The callback argument must be a closure which input values depend on the type the method is called on.\n   Iterable Arguments Description     set thing, id Iterate over things in the set. Both thing and id are optional.    Return value A new set with the elements that pass the test. If no elements pass the test, an empty set will be returned.\n This code shows an example using filter():\n users = set({name: 'Iris', age: 6}, {name: 'Sasha', age: 34}); /* * Return all users with name 'Iris'. */ users.filter(|user| (user.name == 'Iris'));   Return value in JSON format\n [ { \u0026quot;age\u0026quot;: 6, \u0026quot;name\u0026quot;: \u0026quot;Iris\u0026quot; } ]  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/str/endswith/",
 	"title": "endswith",
 	"tags": [],
 	"description": "",
-	"content": " Determines if a string ends with characters given by another string.\nThis function does not generate an event.\nFunction string.endswith(search_string)\nArguments    Argument Type Description     search_string raw (required) The characters to be searched for at the end of this string.    Return value Returns true the given characters are found at the end of the string and otherwise false.\n This code shows an example using endswith():\n 'the answer to life the universe and everything'.endswith('everything');   Return value in JSON format\n true  "
+	"content": " Determines if a string ends with characters given by another string.\nThis function does not generate an event.\nFunction str.endswith(search_string)\nArguments    Argument Type Description     search_string str (required) The characters to be searched for at the end of this string.    Return value Returns true the given characters are found at the end of the string and otherwise false.\n This code shows an example using endswith():\n 'the answer to life the universe and everything'.endswith('everything');   Return value in JSON format\n true  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/list/filter/",
 	"title": "filter",
 	"tags": [],
 	"description": "",
-	"content": " If this method is used on a thing, then a new thing will be returned with only the properties that pass the test. If the method is used on an array, then a new array is returned with elements that pass the test and if used on a set, then the return value will be a new set.\nThis function does not generate an event.\nFunction iterable.filter(callback)\nArguments The callback argument must be a closure which input values depend on the type the method is called on.\n   Iterable Arguments Description     array item, index Iterate over all items in the array. Both item and index are optional.   set thing, id Iterate over things in the set. Both thing and id are optional.   thing name, value Iterate over the thing properties. Both name and value are optional.    Return value A new array, set or thing with the elements or properties that pass the test. If no elements or properties pass the test, an empty array, set or thing will be returned.\n This code shows an example using filter():\n users = [{name: 'Iris', age: 6}, {name: 'Sasha', age: 34}]; /* * Return all users with age 18 or above, * a thing with only property age, * and all users with name 'Iris'. */ [ users.filter(|user| (user.age \u0026gt;= 18)), users[0].filter(|prop| (prop == 'age')), set(users).filter(|user| (user.name == 'Iris')), ];   Return value in JSON format\n [ [ { \u0026quot;age\u0026quot;: 34, \u0026quot;name\u0026quot;: \u0026quot;Sasha\u0026quot; } ], { \u0026quot;age\u0026quot;: 6 }, [ { \u0026quot;age\u0026quot;: 6, \u0026quot;name\u0026quot;: \u0026quot;Iris\u0026quot; } ] ]  "
+	"content": " When this method is used on an list or tuple, a new list is returned with elements that pass the test.\nThis function does not generate an event.\nFunction array.filter(callback)\nArguments The callback argument must be a closure which input values depend on the type the method is called on.\n   Iterable Arguments Description     array item, index Iterate over all items in the array. Both item and index are optional.    Return value A new list with the elements that pass the test. If no elements pass the test, an empty list will be returned.\n This code shows an example using filter():\n users = [{name: 'Iris', age: 6}, {name: 'Sasha', age: 34}]; /* * Return all users with age 18 or above, * a thing with only property age, * and all users with name 'Iris'. */ users.filter(|user| (user.age \u0026gt;= 18));   Return value in JSON format\n [ { \u0026quot;age\u0026quot;: 34, \u0026quot;name\u0026quot;: \u0026quot;Sasha\u0026quot; } ]  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/bytes/",
@@ -221,28 +221,28 @@
 	"title": "get",
 	"tags": [],
 	"description": "",
-	"content": " Return the value of a property on a thing by a given property name. If the property is not found then the return value will be nil, unless an alternative return value is given.\nThis function does not generate an event.\nFunction thing.get(name [, alt])\nArguments    Argument Type Description     name raw (required) Name of the property where to return the value for.   alt any (optional) Optional return value.    Return value Returns the value for the given property name. If the property is not found the the return value will be nil unless an alternative return value is given as second argument.\n This code shows an example use case of get():\n tmp = {name: 'Iris'}; tmp.get('name');   Return value in JSON format\n \u0026quot;Iris\u0026quot;  "
+	"content": " Return the value of a property on a thing by a given property name. If the property is not found then the return value will be nil, unless an alternative return value is given.\nThis function does not generate an event.\nFunction thing.get(name [, alt])\nArguments    Argument Type Description     name str (required) Name of the property where to return the value for.   alt any (optional) Optional return value.    Return value Returns the value for the given property name. If the property is not found the the return value will be nil unless an alternative return value is given as second argument.\n This code shows an example use case of get():\n tmp = {name: 'Iris'}; tmp.get('name');   Return value in JSON format\n \u0026quot;Iris\u0026quot;  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/set/find/",
 	"title": "find",
 	"tags": [],
 	"description": "",
-	"content": " This function returns the value of the first element in the list, tuple or set that satisfies the callback function. Otherwise nil is returned unless an alternative return value is specified.\nThis function does not generate an event.\nThe return value when called on a set might be unpredictable since a set is not ordered. set({name: 'Iris'}, {name: 'Cato'}).find(||true); \u0026hellip;will return {Iris} or {Cato}.\n Function iterable.find(callback, [alt])\nArguments    Argument Type Description     callback closure Closure to execute on each value until the closure evaluates to true.   alt any (optional) Alternative value which is returned if no item has passed the callback test.    Explanation of the callback argument:\n   Iterable Arguments Description     array item, index Iterate over items in the array. Both item and index are optional.   set thing, id Iterate over things in the set. Both thing and id are optional.    The alt argument will be lazy evaluated. Consider the following example: elems.find(|e| (e.name == \u0026quot;foo\u0026quot;), items.pop()); Here, the item will only be popped, in case e with name foo is not found in elems.\n Return value The value of the first element in the array or thing that satisfies the provided testing function; otherwise, nil or a specified alternative value is returned.\n This code shows an example using find():\n users.find(|user| user.name.startswith('Jeroen'));   Example return value in JSON format\n { \u0026quot;#\u0026quot;: 16, \u0026quot;email\u0026quot;: \u0026quot;jeroen@transceptor.technology\u0026quot;, \u0026quot;name\u0026quot;: \u0026quot;Jeroen van der Heijden\u0026quot; }  "
+	"content": " This function returns the value of the first element in the set that satisfies the callback function. Otherwise nil is returned unless an alternative return value is specified.\nThis function does not generate an event.\nThe return value when called on a set might be unpredictable since a set is not ordered. set({name: 'Iris'}, {name: 'Cato'}).find(||true); \u0026hellip;will return {Iris} or {Cato}.\n Function set.find(callback, [alt])\nArguments    Argument Type Description     callback closure Closure to execute on each value until the closure evaluates to true.   alt any (optional) Alternative value which is returned if no item has passed the callback test.    Explanation of the callback argument:\n   Iterable Arguments Description     set thing, id Iterate over things in the set. Both thing and id are optional.    The alt argument will be lazy evaluated. Consider the following example: elems.find(|e| (e.name == \u0026quot;foo\u0026quot;), items.pop()); Here, the item will only be popped, in case e with name foo is not found in elems.\n Return value The value of the first element in the set that satisfies the provided testing function; otherwise, nil or a specified alternative value is returned.\n This code shows an example using find():\n users.find(|user| user.name.startswith('Jeroen'));   Example return value in JSON format\n { \u0026quot;#\u0026quot;: 16, \u0026quot;email\u0026quot;: \u0026quot;jeroen@transceptor.technology\u0026quot;, \u0026quot;name\u0026quot;: \u0026quot;Jeroen van der Heijden\u0026quot; }  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/str/len/",
 	"title": "len",
 	"tags": [],
 	"description": "",
-	"content": " Returns the length of an list, tuple or string, or the number of items in a thing.\nThis function does not generate an event.\nFunction iterable.len()\nArguments None\nReturn value Returns length of the iterable.\n This code uses len() to return the number of items in a collection:\n [1, 2, 3, 4].len();   Return value in JSON format\n 4  "
+	"content": " Returns the length of a string.\nThis function does not generate an event.\nFunction str.len()\nArguments None\nReturn value Returns length of the string.\n This code uses len() to return the length of a string:\n 'Hello'.len();   Return value in JSON format\n 5  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/list/find/",
 	"title": "find",
 	"tags": [],
 	"description": "",
-	"content": " This function returns the value of the first element in the list, tuple or set that satisfies the callback function. Otherwise nil is returned unless an alternative return value is specified.\nThis function does not generate an event.\nThe return value when called on a set might be unpredictable since a set is not ordered. set({name: 'Iris'}, {name: 'Cato'}).find(||true); \u0026hellip;will return {Iris} or {Cato}.\n Function iterable.find(callback, [alt])\nArguments    Argument Type Description     callback closure Closure to execute on each value until the closure evaluates to true.   alt any (optional) Alternative value which is returned if no item has passed the callback test.    Explanation of the callback argument:\n   Iterable Arguments Description     array item, index Iterate over items in the array. Both item and index are optional.   set thing, id Iterate over things in the set. Both thing and id are optional.    The alt argument will be lazy evaluated. Consider the following example: elems.find(|e| (e.name == \u0026quot;foo\u0026quot;), items.pop()); Here, the item will only be popped, in case e with name foo is not found in elems.\n Return value The value of the first element in the array or thing that satisfies the provided testing function; otherwise, nil or a specified alternative value is returned.\n This code shows an example using find():\n users.find(|user| user.name.startswith('Jeroen'));   Example return value in JSON format\n { \u0026quot;#\u0026quot;: 16, \u0026quot;email\u0026quot;: \u0026quot;jeroen@transceptor.technology\u0026quot;, \u0026quot;name\u0026quot;: \u0026quot;Jeroen van der Heijden\u0026quot; }  "
+	"content": " This function returns the value of the first element in the list or tuple that satisfies the callback function. Otherwise nil is returned unless an alternative return value is specified.\nThis function does not generate an event.\nFunction array.find(callback, [alt])\nArguments    Argument Type Description     callback closure Closure to execute on each value until the closure evaluates to true.   alt any (optional) Alternative value which is returned if no item has passed the callback test.    Explanation of the callback argument:\n   Iterable Arguments Description     array item, index Iterate over items in the array. Both item and index are optional.    The alt argument will be lazy evaluated. Consider the following example: elems.find(|e| (e.name == \u0026quot;foo\u0026quot;), items.pop()); Here, the item will only be popped, in case e with name foo is not found in elems.\n Return value The value of the first element in the array that satisfies the provided testing function; otherwise, nil or a specified alternative value is returned.\n This code shows an example using find():\n users.find(|user| user.name.startswith('Jeroen'));   Example return value in JSON format\n { \u0026quot;#\u0026quot;: 16, \u0026quot;email\u0026quot;: \u0026quot;jeroen@transceptor.technology\u0026quot;, \u0026quot;name\u0026quot;: \u0026quot;Jeroen van der Heijden\u0026quot; }  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/errors/bad_data_err/",
@@ -305,7 +305,7 @@
 	"title": "has",
 	"tags": [],
 	"description": "",
-	"content": " Determines if a thing has a given property.\nThis function does not generate an event.\nFunction thing.has(name)\nArguments    Argument Type Description     name raw (required) Name of the property to check.    Return value Returns true when the given propery name is found and otherwise false.\n This code shows an example use case of has():\n tmp = {name: 'Iris'}; /* Check if `tmp` has a property `name` */ tmp.has('name');   Return value in JSON format\n true  "
+	"content": " Determines if a thing has a given property.\nThis function does not generate an event.\nFunction thing.has(name)\nArguments    Argument Type Description     name str (required) Name of the property to check.    Return value Returns true when the given propery name is found and otherwise false.\n This code shows an example use case of has():\n tmp = {name: 'Iris'}; /* Check if `tmp` has a property `name` */ tmp.has('name');   Return value in JSON format\n true  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/set/has/",
@@ -319,14 +319,14 @@
 	"title": "lower",
 	"tags": [],
 	"description": "",
-	"content": " Return a new string in which all case-based characters are in lower case.\nThis function does not generate an event.\nFunction string.lower()\n Example using lower():\n 'Hello World!!'.lower();   Return value in JSON format\n \u0026quot;hello world!!\u0026quot;  "
+	"content": " Return a new string in which all case-based characters are in lower case.\nThis function does not generate an event.\nFunction str.lower()\n Example using lower():\n 'Hello World!!'.lower();   Return value in JSON format\n \u0026quot;hello world!!\u0026quot;  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/list/findindex/",
 	"title": "findindex",
 	"tags": [],
 	"description": "",
-	"content": " This function returns the index of the first element in a list or tuple that satisfies the callback function. Otherwise nil is returned.\nThis function does not generate an event.\nFunction array.findindex(callback)\nArguments    Argument Type Description     callback closure The statement to try.    Explanation of the callback argument:\n   Iterable Callback arguments Description     array item, index Iterate over items in the array. Both item and index are optional.    Return value The index of the first element in the array or thing that satisfies the provided testing function; otherwise, nil is returned.\n This code shows an example using findindex():\n users.findindex(|user| user.name.startswith('Jeroen'));   Example return value in JSON format\n 42  "
+	"content": " This function returns the index of the first element in a list or tuple that satisfies the callback function. Otherwise nil is returned.\nThis function does not generate an event.\nFunction array.findindex(callback)\nArguments    Argument Type Description     callback closure The statement to try.    Explanation of the callback argument:\n   Iterable Callback arguments Description     array item, index Iterate over items in the array. Both item and index are optional.    Return value The index of the first element in the array that satisfies the provided testing function; otherwise, nil is returned.\n This code shows an example using findindex():\n users.findindex(|user| user.name.startswith('Jeroen'));   Example return value in JSON format\n 42  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/errors/forbidden_err/",
@@ -368,7 +368,7 @@
 	"title": "error",
 	"tags": [],
 	"description": "",
-	"content": " Related functions    Method Description     err Initialize a new error.   raise Raise an error.   try Try a statement and catch if an error is raised.    "
+	"content": " When an error occurs within a method, an object can be returned. The object, called an error, contains information about the error, including its type and a message.\nRelated functions    Method Description     err Initialize a new error.   raise Raise an error.   try Try a statement and catch if an error is raised.    "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/operators/conditional-ternary-operator/",
@@ -403,14 +403,14 @@
 	"title": "map",
 	"tags": [],
 	"description": "",
-	"content": " Iterate over items in an list, tuple, set or over all properties on a thing.\nBe aware that the order when iterating over a set or a thing is not guaranteed.\n This function does not generate an event.\nFunction iterable.map(callback)\nArguments Explanation of the callback argument:\n   Iterable Arguments Description     array item, index Iterate over all items in the array. Both item and index are optional.   set thing, id Iterate over things in the set. Both thing and id are optional.   thing name, value Iterate over the thing properties. Both name and value are optional.    Return value A new array with each element being the result of the callback function.\n This code shows an example using map():\n users = [{name: \u0026quot;Iris\u0026quot;, age: 6}, {name: \u0026quot;Sasha\u0026quot;, age: 34}]; // returns [\u0026quot;Iris\u0026quot;, \u0026quot;Sasha\u0026quot;] users.map(|user| user.name);   Return value in JSON format\n [ \u0026quot;Iris\u0026quot;, \u0026quot;Sasha\u0026quot; ]  "
+	"content": " Iterate over items in an set.\nBe aware that the order when iterating over a set or a thing is not guaranteed.\n This function does not generate an event.\nFunction set.map(callback)\nArguments Explanation of the callback argument:\n   Iterable Arguments Description     set thing, id Iterate over things in the set. Both thing and id are optional.    Return value A new list with each element being the result of the callback function.\n This code shows an example using map():\n users = [{name: \u0026quot;Iris\u0026quot;, age: 6}, {name: \u0026quot;Sasha\u0026quot;, age: 34}]; // returns [\u0026quot;Iris\u0026quot;, \u0026quot;Sasha\u0026quot;] set(users).map(|user| user.name);   Return value in JSON format\n [ \u0026quot;Iris\u0026quot;, \u0026quot;Sasha\u0026quot; ]  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/str/startswith/",
 	"title": "startswith",
 	"tags": [],
 	"description": "",
-	"content": " Determines if a string starts with characters given by another string.\nThis function does not generate an event.\nFunction string.startswith(search_string)\nArguments    Argument Type Description     search_string raw (required) The characters to be searched for at the start of this string.    Return value Returns true the given characters are found at the start of the string and otherwise false.\n This code shows an example using startswith():\n 'the answer to life the universe and everything'.startswith('the answer');   Return value in JSON format\n true  "
+	"content": " Determines if a string starts with characters given by another string.\nThis function does not generate an event.\nFunction str.startswith(search_string)\nArguments    Argument Type Description     search_string str (required) The characters to be searched for at the start of this string.    Return value Returns true the given characters are found at the start of the string and otherwise false.\n This code shows an example using startswith():\n 'the answer to life the universe and everything'.startswith('the answer');   Return value in JSON format\n true  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/list/indexof/",
@@ -487,14 +487,14 @@
 	"title": "test",
 	"tags": [],
 	"description": "",
-	"content": " Test if a string matches a given regular expression and return true or false.\nThis function does not generate an event.\nFunction string.test(regex)\nArguments    Argument Type Description     regex regex (required) The regular expression to test against the string.    Return value true if there is a match between the string and the specified regular expression, otherwise false.\n Examples using test():\n [ 'Hello world!!'.test(/^hello/), 'Hello world!!'.test(/^hello/i), ];   Return value in JSON format\n [ false, true ]  "
+	"content": " Test if a string matches a given regular expression and return true or false.\nThis function does not generate an event.\nFunction str.test(regex)\nArguments    Argument Type Description     regex regex (required) The regular expression to test against the string.    Return value true if there is a match between the string and the specified regular expression, otherwise false.\n Examples using test():\n [ 'Hello world!!'.test(/^hello/), 'Hello world!!'.test(/^hello/i), ];   Return value in JSON format\n [ false, true ]  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/list/len/",
 	"title": "len",
 	"tags": [],
 	"description": "",
-	"content": " Returns the length of an list, tuple or string, or the number of items in a thing.\nThis function does not generate an event.\nFunction iterable.len()\nArguments None\nReturn value Returns length of the iterable.\n This code uses len() to return the number of items in a collection:\n [1, 2, 3, 4].len();   Return value in JSON format\n 4  "
+	"content": " Returns the length of a list or tuple.\nThis function does not generate an event.\nFunction array.len()\nArguments None\nReturn value Returns length of the array.\n This code uses len() to return the number of items in a collection:\n [1, 2, 3, 4].len();   Return value in JSON format\n 4  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/info/",
@@ -553,25 +553,32 @@
 	"content": " Names The following rules apply to names in ThingsDB:\n A name must start with a letter or underscore character A name cannot start with a number A name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ ) Names are case-sensitive (thing, Thing and THING are three different names)  "
 },
 {
+	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/set/len/",
+	"title": "len",
+	"tags": [],
+	"description": "",
+	"content": " Returns the length of a set.\nThis function does not generate an event.\nFunction set.len()\nArguments None\nReturn value Returns length of the set.\n This code uses len() to return the number of items in a set:\n set([1, 2, 3, 4]).len();   Return value in JSON format\n 4  "
+},
+{
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/thing/len/",
 	"title": "len",
 	"tags": [],
 	"description": "",
-	"content": " Returns the length of an list, tuple or string, or the number of items in a thing.\nThis function does not generate an event.\nFunction iterable.len()\nArguments None\nReturn value Returns length of the iterable.\n This code uses len() to return the number of items in a collection:\n [1, 2, 3, 4].len();   Return value in JSON format\n 4  "
+	"content": " Returns the number of items in a thing.\nThis function does not generate an event.\nFunction thing.len()\nArguments None\nReturn value Returns the number of items in a thing.\n This code uses len() to return the number of items in a thing:\n {name: 'Iris', age: 6}.len();   Return value in JSON format\n 2  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/str/upper/",
 	"title": "upper",
 	"tags": [],
 	"description": "",
-	"content": " Return a new string in which all case-based characters are in upper case.\nThis function does not generate an event.\nFunction string.upper()\n Example using upper():\n 'Hello World!!'.upper();   Return value in JSON format\n \u0026quot;HELLO WORLD!!\u0026quot;  "
+	"content": " Return a new string in which all case-based characters are in upper case.\nThis function does not generate an event.\nFunction str.upper()\n Example using upper():\n 'Hello World!!'.upper();   Return value in JSON format\n \u0026quot;HELLO WORLD!!\u0026quot;  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/list/map/",
 	"title": "map",
 	"tags": [],
 	"description": "",
-	"content": " Iterate over items in an list, tuple, set or over all properties on a thing.\nBe aware that the order when iterating over a set or a thing is not guaranteed.\n This function does not generate an event.\nFunction iterable.map(callback)\nArguments Explanation of the callback argument:\n   Iterable Arguments Description     array item, index Iterate over all items in the array. Both item and index are optional.   set thing, id Iterate over things in the set. Both thing and id are optional.   thing name, value Iterate over the thing properties. Both name and value are optional.    Return value A new array with each element being the result of the callback function.\n This code shows an example using map():\n users = [{name: \u0026quot;Iris\u0026quot;, age: 6}, {name: \u0026quot;Sasha\u0026quot;, age: 34}]; // returns [\u0026quot;Iris\u0026quot;, \u0026quot;Sasha\u0026quot;] users.map(|user| user.name);   Return value in JSON format\n [ \u0026quot;Iris\u0026quot;, \u0026quot;Sasha\u0026quot; ]  "
+	"content": " Iterate over items in an list or tuple.\nThis function does not generate an event.\nFunction array.map(callback)\nArguments Explanation of the callback argument:\n   Iterable Arguments Description     array item, index Iterate over all items in the array. Both item and index are optional.    Return value A new list with each element being the result of the callback function.\n This code shows an example using map():\n users = [{name: \u0026quot;Iris\u0026quot;, age: 6}, {name: \u0026quot;Sasha\u0026quot;, age: 34}]; // returns [\u0026quot;Iris\u0026quot;, \u0026quot;Sasha\u0026quot;] users.map(|user| user.name);   Return value in JSON format\n [ \u0026quot;Iris\u0026quot;, \u0026quot;Sasha\u0026quot; ]  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/errors/node_err/",
@@ -613,14 +620,14 @@
 	"title": "map",
 	"tags": [],
 	"description": "",
-	"content": " Iterate over items in an list, tuple, set or over all properties on a thing.\nBe aware that the order when iterating over a set or a thing is not guaranteed.\n This function does not generate an event.\nFunction iterable.map(callback)\nArguments Explanation of the callback argument:\n   Iterable Arguments Description     array item, index Iterate over all items in the array. Both item and index are optional.   set thing, id Iterate over things in the set. Both thing and id are optional.   thing name, value Iterate over the thing properties. Both name and value are optional.    Return value A new array with each element being the result of the callback function.\n This code shows an example using map():\n users = [{name: \u0026quot;Iris\u0026quot;, age: 6}, {name: \u0026quot;Sasha\u0026quot;, age: 34}]; // returns [\u0026quot;Iris\u0026quot;, \u0026quot;Sasha\u0026quot;] users.map(|user| user.name);   Return value in JSON format\n [ \u0026quot;Iris\u0026quot;, \u0026quot;Sasha\u0026quot; ]  "
+	"content": " Iterate over all properties on a thing.\nBe aware that the order when iterating over a thing is not guaranteed.\n This function does not generate an event.\nFunction thing.map(callback)\nArguments Explanation of the callback argument:\n   Iterable Arguments Description     thing name, value Iterate over the thing properties. Both name and value are optional.    Return value A new list with each element being the result of the callback function.\n This code shows an example using map():\n user = {name: \u0026quot;Iris\u0026quot;, age: 6}; user.map(|property| property.len());   Return value in JSON format\n [ 4, 3 ]  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/list/pop/",
 	"title": "pop",
 	"tags": [],
 	"description": "",
-	"content": " Removes the last element from a list or tuple and returns that element. This method changes the length of the array. The pop() method works on a list type array, but not on a tuple since tuples are immutable.\nThis function generates an event.\nFunction list.pop()\nArguments None\nReturn value The removed element from the array. An INDEX_ERROR is raised if the array is empty.\n This code show an example usage of pop():\n (arr = [1, 2, 3]).pop(); arr;   Return value in JSON format\n [ 1, 2 ]  "
+	"content": " Removes the last element from a list and returns that element. This method changes the length of the list. The pop() method works on a list type array, but not on a tuple since tuples are immutable.\nThis function generates an event.\nFunction list.pop()\nArguments None\nReturn value The removed element from the list. An INDEX_ERROR is raised if the list is empty.\n This code show an example usage of pop():\n (list = [1, 2, 3]).pop(); list;   Return value in JSON format\n [ 1, 2 ]  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/list/",
@@ -662,14 +669,14 @@
 	"title": "set",
 	"tags": [],
 	"description": "",
-	"content": " Creates a new property on a thing. If the property already existed then the old property will be overwritten. This function is equal to an assignment except that it can be used when the name of the property is dynamic.\nThis function generates an event.\nFunction thing.set(name, value)\nArguments    Argument Type Description     name raw (required) The name of the property to set.   value any (required) The value which will be assigned to the property.    Return value The value which will be assigned.\n This code shows how to use set():\n [ .set('the_answer', 42), .the_answer, ];   Return value in JSON format\n [ 42, 42 ]  "
+	"content": " Creates a new property on a thing. If the property already existed then the old property will be overwritten. This function is equal to an assignment except that it can be used when the name of the property is dynamic.\nThis function generates an event.\nFunction thing.set(name, value)\nArguments    Argument Type Description     name str (required) The name of the property to set.   value any (required) The value which will be assigned to the property.    Return value The value which will be assigned.\n This code shows how to use set():\n [ .set('the_answer', 42), .the_answer, ];   Return value in JSON format\n [ 42, 42 ]  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/list/push/",
 	"title": "push",
 	"tags": [],
 	"description": "",
-	"content": " Adds new items to the end of an array, and returns the new length.\nThis function generates an event.\nFunction list.push(item1, item2, ..., itemX)\nReturn value Returns the new length of the list.\n This code pushes values to a list:\n list = [1, 2, 3]; list.push(4, 5, 6);   Return value in JSON format\n 6  "
+	"content": " Adds new items to the end of an list, and returns the new length.\nThis function generates an event.\nFunction list.push(item1, item2, ..., itemX)\nReturn value Returns the new length of the list.\n This code pushes values to a list:\n list = [1, 2, 3]; list.push(4, 5, 6);   Return value in JSON format\n 6  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/errors/operation_err/",
@@ -711,14 +718,14 @@
 	"title": "values",
 	"tags": [],
 	"description": "",
-	"content": " Returns an array with all the property values of a thing. The same could be returned using map so the following statement is true:\n(.values() == .map(|_, v| v))\nAlthough the values() and map() in the example above will return an array with the same order, the order of values in the array is not guaranteed and may be different each time you run the query.\n This function does not generate an event.\nFunction thing.values()\nArguments None\nReturn value Returns an array with property values.\n This code shows how to use values():\n {a: 1, b: 2, c: 3}.values();   Return value in JSON format (Warning: the order is NOT guaranteed)\n [ 1, 2, 3 ]  "
+	"content": " Returns an list with all the property values of a thing. The same could be returned using map so the following statement is true:\n(.values() == .map(|_, v| v))\nAlthough the values() and map() in the example above will return an list with the same order, the order of values in the list is not guaranteed and may be different each time you run the query.\n This function does not generate an event.\nFunction thing.values()\nArguments None\nReturn value Returns an list with property values.\n This code shows how to use values():\n {a: 1, b: 2, c: 3}.values();   Return value in JSON format (Warning: the order is NOT guaranteed)\n [ 1, 2, 3 ]  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/list/remove/",
 	"title": "remove",
 	"tags": [],
 	"description": "",
-	"content": " This function removes and returns the value of the first element in the list or tuple that satisfies the callback function. Otherwise nil is returned unless an alternative return value is specified.\nThis function generates an event.\nFunction list.remove(callback, [alt])\nArguments    Argument Type Description     callback closure Closure to execute on each value until the closure evaluates to true.   alt any (optional) Alternative value which is returned if no item has passed the callback test.    Explanation of the callback argument:\n   Iterable Arguments Description     array item, index Iterate over items in the array. Both item and index are optional.    The alt argument will be lazy evaluated. Consider the following example: elems.remove(|e| (e.name == \u0026quot;foo\u0026quot;), items.pop()); Here, the item will only be popped, in case e with name foo is not found in elems.\n Return value The value of the first element in the array or thing that satisfies the provided testing function; otherwise, nil or a specified alternative value is returned.\n This code shows an example using remove() on a list:\n tmp = [1, 2, 3, 4]; [ tmp.remove(|x| (x % 2 == 0)), tmp, ];   Return value in JSON format\n [ 2, [ 1, 3, 4 ] ]  "
+	"content": " This function removes and returns the value of the first element in the list that satisfies the callback function. Otherwise nil is returned unless an alternative return value is specified.\nThis function generates an event.\nFunction list.remove(callback, [alt])\nArguments    Argument Type Description     callback closure Closure to execute on each value until the closure evaluates to true.   alt any (optional) Alternative value which is returned if no item has passed the callback test.    Explanation of the callback argument:\n   Iterable Arguments Description     list item, index Iterate over items in the list. Both item and index are optional.    The alt argument will be lazy evaluated. Consider the following example: elems.remove(|e| (e.name == \u0026quot;foo\u0026quot;), items.pop()); Here, the item will only be popped, in case e with name foo is not found in elems.\n Return value The value of the first element in the list that satisfies the provided testing function; otherwise, nil or a specified alternative value is returned.\n This code shows an example using remove() on a list:\n tmp = [1, 2, 3, 4]; [ tmp.remove(|x| (x % 2 == 0)), tmp, ];   Return value in JSON format\n [ 2, [ 1, 3, 4 ] ]  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/errors/overflow_err/",
@@ -753,14 +760,21 @@
 	"title": "Data Types",
 	"tags": [],
 	"description": "",
-	"content": " Data Types The data types that exist within ThingsDB are discussed here.\n"
+	"content": " Data Types The data types that exist within ThingsDB are discussed here.\nTypes    type Description     bool Booleans are either true or false.   bytes ..   closure Closures can be used to consume items from a thing, list, tuple or set.   error An object containing information about an error.   float ..   info ..   int ..   list ..   nil Probably the most simple type, it can be used as no value.   regex ..   set A set is a collection which is unordered and can only contain things.   str ..   thing ..   tuple ..   Type ..   WType ..    "
+},
+{
+	"uri": "https://thingsdb.github.io/ThingsDocs/custom-types/",
+	"title": "Custom Types",
+	"tags": [],
+	"description": "",
+	"content": " Custom Types Lorem Ipsum.\n"
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/list/sort/",
 	"title": "sort",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": " When this method is used on an list or tuple, a new sorted list is returned.\nFunction array.sort([closure, [reverse]])\nArguments    Argument Type Description     callback closure (optional) Closure to execute on each value, which is used to determine how the list should be sorted.   reverse bool (optional) Determines the order of the returned list.    An order cannot be specified with a closure which takes two arguments. In this case the order should be specified within the closure.\n Explanation of the callback argument:\n   Iterable Arguments Description     array item1, item2 Iterate over all items in the array. Argument item2 is is optional and can be used to define the order of the returned list.    Return value A new sorted list.\n This code shows an example using map():\n values = [5, 3, 8, 1]; values.sort();   Return value in JSON format\n [ 1, 3, 5, 8 ]  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/errors/syntax_err/",
@@ -788,14 +802,14 @@
 	"title": "set",
 	"tags": [],
 	"description": "",
-	"content": " A set is a collection which is unordered and can only contain things. Each thing will only exists once in a collection.\nMethods    Method Description     add Add things to a set.   filter Return a new set with things that pass a given test.   find Returns the first thing which passes a given test.   has Test if a set contains a given thing.   map Return an list with the results of calling a provided closure on every thing.   remove Remove things from a set.    Related functions    Method Description     set Create a new empty set or convert an list to a new set.    "
+	"content": " A set is a collection which is unordered and can only contain things. Each thing will only exists once in a collection.\nMethods    Method Description     add Add things to a set.   filter Return a new set with things that pass a given test.   find Returns the first thing which passes a given test.   has Test if a set contains a given thing.   len Returns the length of a set.   map Return an list with the results of calling a provided closure on every thing.   remove Remove things from a set.    Related functions    Method Description     set Create a new empty set or convert an list to a new set.    "
 },
 {
-	"uri": "https://thingsdb.github.io/ThingsDocs/node-api/",
-	"title": "Node API",
+	"uri": "https://thingsdb.github.io/ThingsDocs/slices/",
+	"title": "Slices",
 	"tags": [],
 	"description": "",
-	"content": " Node API The node scope can be used to query node statistics, counters or make node specific changes.\n"
+	"content": " Slices Lorem Ipsum.\n"
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/collection-api/isbytes/",
@@ -809,14 +823,14 @@
 	"title": "splice",
 	"tags": [],
 	"description": "",
-	"content": " The splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.\nThis function generates an event.\nFunction list.splice(start, [delete_count, [item1, item2, ..., itemX]]))`\nArguments    Argument Type Description     start int (required) Start index in the array. If negative, it will begin that many elements from the end of the array.   delete_count int (optional) Number of item to remove from start. If \u0026lt;= 0, no items will be removed.   item1, item2, \u0026hellip;, itemX any (optional) Items to add, beginning from start.    Return value An array containing the deleted elements. If only one element is removed, an array of one element is returned. If no elements are removed, an empty array is returned.\n This code replaces an element in a list at position 2:\n months = ['Jan', 'Feb', 'April']; months.splice(2, 1, 'March'); /* Returns: ['April'] */ months;   Return value in JSON format\n [ \u0026quot;Jan\u0026quot;, \u0026quot;Feb\u0026quot;, \u0026quot;March\u0026quot; ]  "
+	"content": " The splice() method changes the contents of an list by removing or replacing existing elements and/or adding new elements in place.\nThis function generates an event.\nFunction list.splice(start, [delete_count, [item1, item2, ..., itemX]]))`\nArguments    Argument Type Description     start int (required) Start index in the list. If negative, it will begin that many elements from the end of the list.   delete_count int (optional) Number of item to remove from start. If \u0026lt;= 0, no items will be removed.   item1, item2, \u0026hellip;, itemX any (optional) Items to add, beginning from start.    Return value An list containing the deleted elements. If only one element is removed, an list of one element is returned. If no elements are removed, an empty list is returned.\n This code replaces an element in a list at position 2:\n months = ['Jan', 'Feb', 'April']; months.splice(2, 1, 'March'); /* Returns: ['April'] */ months;   Return value in JSON format\n [ \u0026quot;Jan\u0026quot;, \u0026quot;Feb\u0026quot;, \u0026quot;March\u0026quot; ]  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/str/",
 	"title": "str",
 	"tags": [],
 	"description": "",
-	"content": " ThingsDB has only type raw which is used for storing both strings and blob values.\nMethods    Method Description     contains Determines if a given string is a substring of a string.   endswith Determines if a string ends with characters given by another string.   len Returns the length of a string.   lower Return a new string in which all case-based characters are in lower case.   startswith Determines if a string starts with characters given by another string.   test Test if a string matches a given regular expression and return true or false.   upper Return a new string in which all case-based characters are in upper case.     This code creates a raw property greet to collection stuff:\n .greet = 'Hello world!!';  "
+	"content": " Methods    Method Description     contains Determines if a given string is a substring of a string.   endswith Determines if a string ends with characters given by another string.   len Returns the length of a string.   lower Return a new string in which all case-based characters are in lower case.   startswith Determines if a string starts with characters given by another string.   test Test if a string matches a given regular expression and return true or false.   upper Return a new string in which all case-based characters are in upper case.     This code creates a raw property greet to collection stuff:\n .greet = 'Hello world!!';  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/errors/type_err/",
@@ -831,13 +845,6 @@
 	"tags": [],
 	"description": "",
 	"content": "This function generates an event.\n"
-},
-{
-	"uri": "https://thingsdb.github.io/ThingsDocs/thingsdb-api/",
-	"title": "Thingsdb API",
-	"tags": [],
-	"description": "",
-	"content": " Thingsdb API ThingsDB can be managed with simple query commands. This allows you to manage collections, users, access and nodes.\n"
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/errors/value_err/",
@@ -868,11 +875,11 @@
 	"content": " Methods    Method Description     del Remove a property.   filter Return a new thing with properties that pass a given test.   get Return the value of a property on a thing by a given property name.   has Determines if a thing has a given property.   id Return the id.   keys    len Returns the number of items.   map Returns a list with the results of calling a provided closure on every item.   set Creates a new property on a thing.   values Returns an array with all the property values of a thing.   wrap Wraps..    "
 },
 {
-	"uri": "https://thingsdb.github.io/ThingsDocs/collection-api/",
-	"title": "Collection API",
+	"uri": "https://thingsdb.github.io/ThingsDocs/node-api/",
+	"title": "Node API",
 	"tags": [],
 	"description": "",
-	"content": " Collection API The collection scope can be used to manage data within a collection.\n This code returns the id of collection stuff\n thingscmd -n localhost -u admin -p pass -s @:stuff -q 'id()'  The functions in the Collection API can also be used in the thingsdb and node scopes.\n "
+	"content": " Node API The node scope can be used to query node statistics, counters or make node specific changes.\n"
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/tuple/",
@@ -903,11 +910,18 @@
 	"content": "This function generates an event.\n"
 },
 {
-	"uri": "https://thingsdb.github.io/ThingsDocs/procedures-api/",
-	"title": "Procedures API",
+	"uri": "https://thingsdb.github.io/ThingsDocs/thingsdb-api/",
+	"title": "Thingsdb API",
 	"tags": [],
 	"description": "",
-	"content": " Procedures API A procedure int ThingsDB is a prepared piece of code that you can save, so the code can be reused over and over again.\n"
+	"content": " Thingsdb API ThingsDB can be managed with simple query commands. This allows you to manage collections, users, access and nodes.\n"
+},
+{
+	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/type/",
+	"title": "Type",
+	"tags": [],
+	"description": "",
+	"content": ""
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/collection-api/isinf/",
@@ -917,18 +931,18 @@
 	"content": "This function does not generate an event.\n"
 },
 {
-	"uri": "https://thingsdb.github.io/ThingsDocs/errors/",
-	"title": "Errors",
+	"uri": "https://thingsdb.github.io/ThingsDocs/collection-api/",
+	"title": "Collection API",
 	"tags": [],
 	"description": "",
-	"content": " Errors ThingsDB uses the following error codes:\n   Error Code Meaning     operation_err -63 Operation is not valid in the current context.   num_arguments_err -62 Wrong number of arguments.   type_err -61 Object of inappropriate type.   value_err -60 Object has the right type but an inappropriate value.   overflow_err -59 Integer is too large to fit a 64 bit signed integer.   zero_div_err -58 Trying a division or module by zero.   max_quota_err -57 Your collection has quotas set and the limit is reached.   auth_err -56 Wrong credentials or a request while the connection is not authenticated.   forbidden_err -55 You lack the privileges to do the request.   lookup_err -54 Requested resource not found or index out of range.   bad_data_err -53 Invalid data, for example an invalid data type used in a query.   syntax_err -52 Syntax error in the query.   node_err -51 At least one node has an issue while processing the request.   assert_err -50 Assertion statement has failed.    "
+	"content": " Collection API The collection scope can be used to manage data within a collection.\n This code returns the id of collection stuff\n thingscmd -n localhost -u admin -p pass -s @:stuff -q 'id()'  The functions in the Collection API can also be used in the thingsdb and node scopes.\n "
 },
 {
-	"uri": "https://thingsdb.github.io/ThingsDocs/custom-types/",
-	"title": "Custom Types",
+	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/wtype/",
+	"title": "WType",
 	"tags": [],
 	"description": "",
-	"content": " Custom Types Lorem Ipsum.\n"
+	"content": ""
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/collection-api/isint/",
@@ -943,6 +957,13 @@
 	"tags": [],
 	"description": "",
 	"content": " Revoke collection or general privileges from a user. See grant for more information on how access privileges can be set for a user.\nThis function generates an event.\nFunction revoke(target, user, mask);\nArguments    Argument Type Description     target int/raw Can be either the .node scope, .thingsdb scope, or a collection name or id.   user raw User to revoke privileges from.   mask int Bit-mask for revoking privileges.    Return value Returns nil when successful. An INDEX_ERROR is raised if the user or target does not exist.\n Revoke all privileges for user iris on collection stuff:\n revoke('@:stuff', 'iris', FULL);   Return value in JSON format\n null  "
+},
+{
+	"uri": "https://thingsdb.github.io/ThingsDocs/procedures-api/",
+	"title": "Procedures API",
+	"tags": [],
+	"description": "",
+	"content": " Procedures API A procedure int ThingsDB is a prepared piece of code that you can save, so the code can be reused over and over again.\n"
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/watching/",
@@ -978,6 +999,13 @@
 	"tags": [],
 	"description": "",
 	"content": " Quota limits can be set on collections. The following quota limits can be set:\n   Type Description     things Maximum number of things allowed in a collection.   properties Maximum number of properties which can be assigned to a thing.   array_size Maximum array length. This quota type applies to all array type.   raw_size Maximum raw value size. When this quota is set, both queries and blob values are limited to this quota.    If a quota limit is reached, then the affected query will raise MAX_QUOTA_ERROR.\nThe current quota values can be viewed with collection(\u0026hellip;) or collections().\nThis function generates an event.\nFunction set_quota(collection, quota_type, quota)\nArguments    Argument Type Description     collection raw/int (required) Collection name or id.   quota_type raw (required) Must be one of 'things', 'properties', 'array_size' or 'raw_size'.   quota int/nil (required) Integer value to set the quota limit or nil to disable the quota.    Return value nil when successful.\n This code sets a quota on the number of things and disables the properties quota on collection stuff:\n [ set_quota('stuff', 'things', 10000), set_quota('stuff', 'properties', nil), ];   Return value in JSON format\n [ null, null ]  "
+},
+{
+	"uri": "https://thingsdb.github.io/ThingsDocs/errors/",
+	"title": "Errors",
+	"tags": [],
+	"description": "",
+	"content": " Errors ThingsDB uses the following error codes:\n   Error Code Meaning     operation_err -63 Operation is not valid in the current context.   num_arguments_err -62 Wrong number of arguments.   type_err -61 Object of inappropriate type.   value_err -60 Object has the right type but an inappropriate value.   overflow_err -59 Integer is too large to fit a 64 bit signed integer.   zero_div_err -58 Trying a division or module by zero.   max_quota_err -57 Your collection has quotas set and the limit is reached.   auth_err -56 Wrong credentials or a request while the connection is not authenticated.   forbidden_err -55 You lack the privileges to do the request.   lookup_err -54 Requested resource not found or index out of range.   bad_data_err -53 Invalid data, for example an invalid data type used in a query.   syntax_err -52 Syntax error in the query.   node_err -51 At least one node has an issue while processing the request.   assert_err -50 Assertion statement has failed.    "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/collection-api/isnil/",
@@ -1162,6 +1190,13 @@
 	"content": " Stored closures which can potentially make changes to ThingsDB are called closures with side effects and must be wrapped with the wse(..) function.\nThis allows ThingsDB before running the query to make an event. You should not wrap wse around all closures since this would unnecessary create events when they may not be required.\nThis function generates an event.\nFunction wse(statement)\nArguments    Argument Type Description     statement any Statement or block to wrap.    Return value Return value of the given statement.\n This code shows an example usage for wse():\n wse({ x = 0; a = |v| x += v; [1 ,2 ,3, 4].map(a); /* without wse() this would raise an error */ x; });   Return value in JSON format\n 10  "
 },
 {
+	"uri": "https://thingsdb.github.io/ThingsDocs/thingsdb-api/del_node/",
+	"title": "del_node",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "https://thingsdb.github.io/ThingsDocs/node-api/new_backup/",
 	"title": "New_backup",
 	"tags": [],
@@ -1197,20 +1232,6 @@
 	"content": ""
 },
 {
-	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/wtype/",
-	"title": "WType",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/type/",
-	"title": "Type",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/thing/wrap/",
 	"title": "wrap",
 	"tags": [],
@@ -1222,7 +1243,7 @@
 	"title": "len",
 	"tags": [],
 	"description": "",
-	"content": " Returns the length of an list, tuple or string, or the number of items in a thing.\nThis function does not generate an event.\nFunction iterable.len()\nArguments None\nReturn value Returns length of the iterable.\n This code uses len() to return the number of items in a collection:\n [1, 2, 3, 4].len();   Return value in JSON format\n 4  "
+	"content": " Returns the length of an error message.\nThis function does not generate an event.\nFunction error.len()\nArguments None\nReturn value Returns length of the iterable.\n This code uses len() to return the length of the error message:\n err().len();   Return value in JSON format\n 10  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/closure/call/",
@@ -1230,6 +1251,13 @@
 	"tags": [],
 	"description": "",
 	"content": "This function does not generate an event.\n"
+},
+{
+	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/bytes/len/",
+	"title": "len",
+	"tags": [],
+	"description": "",
+	"content": ""
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/query/arguments/",

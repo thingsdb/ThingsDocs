@@ -4,12 +4,13 @@ date: 2019-10-23T13:50:39+02:00
 weight: 4
 ---
 
-Return a new string in which all case-based characters are in lower case.
+Return a new [string](..) in which all case-based characters are in lower case.
 
 This function does *not* generate an [event](../../../events).
 
 ### Function
-*string*.`lower()`
+
+*str*.`lower()`
 
 > Example using ***lower()***:
 

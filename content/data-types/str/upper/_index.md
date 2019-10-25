@@ -4,12 +4,13 @@ date: 2019-10-23T13:51:02+02:00
 weight: 7
 ---
 
-Return a new string in which all case-based characters are in upper case.
+Return a new [string](..) in which all case-based characters are in upper case.
 
 This function does *not* generate an [event](../../../events).
 
 ### Function
-*string*.`upper()`
+
+*str*.`upper()`
 
 > Example using ***upper()***:
 

@@ -4,7 +4,7 @@ date: 2019-10-23T13:52:23+02:00
 weight: 3
 ---
 
-This function returns the value of the first element in the [list](../../list), [tuple](../../tuple) or [set](..) that satisfies the callback function.
+This function returns the value of the first element in the [set](..) that satisfies the callback function.
 Otherwise `nil` is returned unless an alternative return value is specified.
 
 This function does *not* generate an [event](../../../events).
@@ -16,9 +16,11 @@ The return value when called on a `set` might be unpredictable since a set is no
 {{% /notice %}}
 
 ### Function
-*iterable*.`find(callback, [alt])`
+
+*set*.`find(callback, [alt])`
 
 ### Arguments
+
 Argument | Type | Description
 -------- | ---- | -----------
 callback | closure | Closure to execute on each value until the closure evaluates to true.
@@ -28,7 +30,6 @@ Explanation of the *callback* argument:
 
 Iterable | Arguments   | Description
 -------- | ----------- | -----------
-array    | item, index | Iterate over items in the array. Both `item` and `index` are optional.
 set      | thing, id   | Iterate over things in the set. Both `thing` and `id` are optional.
 
 {{% notice note %}}
@@ -38,7 +39,8 @@ Here, the item will *only* be popped, in case `e` with `name` *foo* is *not* fou
 {{% /notice %}}
 
 ### Return value
-The value of the first element in the array or thing that satisfies the provided testing function;
+
+The value of the first element in the set that satisfies the provided testing function;
 otherwise, `nil` or a specified alternative value is returned.
 
 > This code shows an example using ***find()***:

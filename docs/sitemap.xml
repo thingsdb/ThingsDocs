@@ -398,6 +398,11 @@
   </url>
   
   <url>
+    <loc>https://thingsdb.github.io/ThingsDocs/data-types/set/len/</loc>
+    <lastmod>2019-10-23T13:54:12+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://thingsdb.github.io/ThingsDocs/data-types/thing/len/</loc>
     <lastmod>2019-10-23T13:54:12+02:00</lastmod>
   </url>
@@ -543,6 +548,11 @@
   </url>
   
   <url>
+    <loc>https://thingsdb.github.io/ThingsDocs/custom-types/</loc>
+    <lastmod>2019-10-23T17:20:05+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://thingsdb.github.io/ThingsDocs/data-types/list/sort/</loc>
     <lastmod>2019-10-23T12:52:33+02:00</lastmod>
   </url>
@@ -568,8 +578,8 @@
   </url>
   
   <url>
-    <loc>https://thingsdb.github.io/ThingsDocs/node-api/</loc>
-    <lastmod>2019-10-07T11:03:34+02:00</lastmod>
+    <loc>https://thingsdb.github.io/ThingsDocs/slices/</loc>
+    <lastmod>2019-10-25T10:50:00+02:00</lastmod>
   </url>
   
   <url>
@@ -598,11 +608,6 @@
   </url>
   
   <url>
-    <loc>https://thingsdb.github.io/ThingsDocs/thingsdb-api/</loc>
-    <lastmod>2019-10-07T11:04:22+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://thingsdb.github.io/ThingsDocs/errors/value_err/</loc>
     <lastmod>2019-10-14T10:13:47+02:00</lastmod>
   </url>
@@ -623,8 +628,8 @@
   </url>
   
   <url>
-    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/</loc>
-    <lastmod>2019-10-07T11:04:33+02:00</lastmod>
+    <loc>https://thingsdb.github.io/ThingsDocs/node-api/</loc>
+    <lastmod>2019-10-07T11:03:34+02:00</lastmod>
   </url>
   
   <url>
@@ -648,8 +653,13 @@
   </url>
   
   <url>
-    <loc>https://thingsdb.github.io/ThingsDocs/procedures-api/</loc>
-    <lastmod>2019-10-07T11:04:44+02:00</lastmod>
+    <loc>https://thingsdb.github.io/ThingsDocs/thingsdb-api/</loc>
+    <lastmod>2019-10-07T11:04:22+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thingsdb.github.io/ThingsDocs/data-types/type/</loc>
+    <lastmod>2019-10-23T16:43:16+02:00</lastmod>
   </url>
   
   <url>
@@ -658,13 +668,13 @@
   </url>
   
   <url>
-    <loc>https://thingsdb.github.io/ThingsDocs/errors/</loc>
-    <lastmod>2019-10-07T11:04:54+02:00</lastmod>
+    <loc>https://thingsdb.github.io/ThingsDocs/collection-api/</loc>
+    <lastmod>2019-10-07T11:04:33+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://thingsdb.github.io/ThingsDocs/custom-types/</loc>
-    <lastmod>2019-10-23T17:20:05+02:00</lastmod>
+    <loc>https://thingsdb.github.io/ThingsDocs/data-types/wtype/</loc>
+    <lastmod>2019-10-23T16:44:19+02:00</lastmod>
   </url>
   
   <url>
@@ -675,6 +685,11 @@
   <url>
     <loc>https://thingsdb.github.io/ThingsDocs/thingsdb-api/revoke/</loc>
     <lastmod>2019-10-14T09:51:20+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thingsdb.github.io/ThingsDocs/procedures-api/</loc>
+    <lastmod>2019-10-07T11:04:44+02:00</lastmod>
   </url>
   
   <url>
@@ -700,6 +715,11 @@
   <url>
     <loc>https://thingsdb.github.io/ThingsDocs/thingsdb-api/set_quota/</loc>
     <lastmod>2019-10-14T09:51:52+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thingsdb.github.io/ThingsDocs/errors/</loc>
+    <lastmod>2019-10-07T11:04:54+02:00</lastmod>
   </url>
   
   <url>
@@ -833,6 +853,11 @@
   </url>
   
   <url>
+    <loc>https://thingsdb.github.io/ThingsDocs/thingsdb-api/del_node/</loc>
+    <lastmod>2019-10-25T09:34:10+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://thingsdb.github.io/ThingsDocs/node-api/new_backup/</loc>
     <lastmod>2019-10-23T17:01:20+02:00</lastmod>
   </url>
@@ -858,16 +883,6 @@
   </url>
   
   <url>
-    <loc>https://thingsdb.github.io/ThingsDocs/data-types/wtype/</loc>
-    <lastmod>2019-10-23T16:44:19+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://thingsdb.github.io/ThingsDocs/data-types/type/</loc>
-    <lastmod>2019-10-23T16:43:16+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://thingsdb.github.io/ThingsDocs/data-types/thing/wrap/</loc>
     <lastmod>2019-10-23T16:42:43+02:00</lastmod>
   </url>
@@ -880,6 +895,11 @@
   <url>
     <loc>https://thingsdb.github.io/ThingsDocs/data-types/closure/call/</loc>
     <lastmod>2019-10-23T16:40:38+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thingsdb.github.io/ThingsDocs/data-types/bytes/len/</loc>
+    <lastmod>2019-10-23T13:54:12+02:00</lastmod>
   </url>
   
   <url>

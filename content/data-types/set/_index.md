@@ -15,6 +15,7 @@ Method | Description
 [filter](./filter) | Return a new `set` with things that pass a given test.
 [find](./find) | Returns the first `thing` which passes a given test.
 [has](./has) | Test if a set contains a given thing.
+[len](./len) | Returns the length of a set.
 [map](./map) | Return an [list](../list) with the results of calling a provided closure on every thing.
 [remove](./remove) | Remove things from a set.
 

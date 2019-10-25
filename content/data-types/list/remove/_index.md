@@ -4,16 +4,17 @@ date: 2019-10-23T12:52:23+02:00
 weight: 10
 ---
 
-This function removes and returns the value of the *first* element in the [list](../../list) or [tuple](../../tuple)
-that satisfies the callback function.
+This function removes and returns the value of the *first* element in the [list](../../list) that satisfies the callback function.
 Otherwise `nil` is returned unless an alternative return value is specified.
 
 This function generates an [event](../../../events).
 
 ### Function
+
 *list*.`remove(callback, [alt])`
 
 ### Arguments
+
 Argument | Type | Description
 -------- | ---- | -----------
 callback | closure | Closure to execute on each value until the closure evaluates to true.
@@ -23,7 +24,7 @@ Explanation of the *callback* argument:
 
 Iterable | Arguments | Description
 -------- | -------- | -----------
-array | item, index | Iterate over items in the array. Both item and index are optional.
+list | item, index | Iterate over items in the list. Both item and index are optional.
 
 {{% notice note %}}
 The `alt` argument will be *lazy* evaluated. Consider the following example: \
@@ -33,7 +34,7 @@ Here, the item will *only* be popped, in case `e` with `name` *foo* is *not* fou
 
 ### Return value
 
-The value of the first element in the array or thing that satisfies the provided testing function;
+The value of the first element in the list that satisfies the provided testing function;
 otherwise, `nil` or a specified alternative value is returned.
 
 > This code shows an example using ***remove()*** on a list:

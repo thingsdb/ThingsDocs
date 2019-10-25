@@ -4,21 +4,17 @@ date: 2019-10-23T12:51:28+02:00
 weight: 3
 ---
 
-This function returns the value of the first element in the [list](../../list), [tuple](../../tuple) or [set](../../set) that satisfies the callback function.
+This function returns the value of the first element in the [list](..) or [tuple](../../tuple) that satisfies the callback function.
 Otherwise `nil` is returned unless an alternative return value is specified.
 
 This function does *not* generate an [event](../../../events).
 
-{{% notice note %}}
-The return value when called on a `set` might be unpredictable since a set is not ordered. \
-`set({name: 'Iris'}, {name: 'Cato'}).find(||true);` \
-...will return `{Iris}` *or* ``{Cato}``.
-{{% /notice %}}
-
 ### Function
-*iterable*.`find(callback, [alt])`
+
+*array*.`find(callback, [alt])`
 
 ### Arguments
+
 Argument | Type | Description
 -------- | ---- | -----------
 callback | closure | Closure to execute on each value until the closure evaluates to true.
@@ -29,7 +25,6 @@ Explanation of the *callback* argument:
 Iterable | Arguments   | Description
 -------- | ----------- | -----------
 array    | item, index | Iterate over items in the array. Both `item` and `index` are optional.
-set      | thing, id   | Iterate over things in the set. Both `thing` and `id` are optional.
 
 {{% notice note %}}
 The `alt` argument will be *lazy* evaluated. Consider the following example: \
@@ -38,7 +33,8 @@ Here, the item will *only* be popped, in case `e` with `name` *foo* is *not* fou
 {{% /notice %}}
 
 ### Return value
-The value of the first element in the array or thing that satisfies the provided testing function;
+
+The value of the first element in the array that satisfies the provided testing function;
 otherwise, `nil` or a specified alternative value is returned.
 
 > This code shows an example using ***find()***:

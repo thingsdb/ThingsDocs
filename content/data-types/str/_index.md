@@ -4,8 +4,6 @@ date: 2019-10-23T11:04:00+02:00
 weight: 12
 ---
 
-ThingsDB has only type `raw` which is used for storing both *strings* and *blob* values.
-
 ### Methods
 
 Method | Description

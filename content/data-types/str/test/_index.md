@@ -4,19 +4,22 @@ date: 2019-10-23T13:50:57+02:00
 weight: 6
 ---
 
-Test if a string matches a given [regular expression](../../regex) and return `true` or `false`.
+Test if a [string](..) matches a given [regular expression](../../regex) and return `true` or `false`.
 
 This function does *not* generate an [event](../../../events).
 
 ### Function
-*string*.`test(regex)`
+
+*str*.`test(regex)`
 
 ### Arguments
+
 Argument | Type | Description
 -------- | ---- | -----------
 regex | regex (required) | The regular expression to test against the string.
 
 ### Return value
+
 `true` if there is a match between the string and the specified regular expression, otherwise `false`.
 
 > Examples using ***test()***:

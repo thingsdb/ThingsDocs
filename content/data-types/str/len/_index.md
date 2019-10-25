@@ -4,27 +4,30 @@ date: 2019-10-23T13:50:34+02:00
 weight: 3
 ---
 
-Returns the length of an [list](../../list), [tuple](../../tuple) or [string](../../str), or the number of items in a [thing](../../thing).
+Returns the length of a [string](..).
 
 This function does *not* generate an [event](../../../events).
 
 ### Function
-*iterable*.`len()`
+
+*str*.`len()`
 
 ### Arguments
+
 None
 
 ### Return value
-Returns length of the iterable.
 
-> This code uses `len()` to return the number of items in a collection:
+Returns length of the string.
+
+> This code uses `len()` to return the length of a string:
 
 ```thingsdb,json_response
-[1, 2, 3, 4].len();
+'Hello'.len();
 ```
 
 > Return value in JSON format
 
 ```json
-4
+5
 ```
