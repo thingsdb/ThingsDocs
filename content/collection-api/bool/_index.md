@@ -4,7 +4,7 @@ date: 2019-10-14T09:56:51+02:00
 weight: 3
 ---
 
-Returns an [bool](../../data-types/boolean) from a specified value.
+Returns an [bool](../../data-types/bool) from a specified value.
 If no value is given, `false` is returned.
 
 Types with a *length* evaluate to `true` when the length is *not* `0` and `false` otherwise.

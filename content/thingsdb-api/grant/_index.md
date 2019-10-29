@@ -33,7 +33,7 @@ This function generates an [event](../../events).
 Argument | Type | Description
 -------- | ---- | -----------
 `target` | int/raw | Can be either the `.node` scope, `.thingsdb` scope, or a collection name or id.
-`user` | raw | User to grant privileges to.
+`user` | str | User to grant privileges to.
 `mask` | int | Bit-mask for setting privileges.
 
 ### Return value

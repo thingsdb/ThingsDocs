@@ -8,10 +8,10 @@ Quota limits can be set on collections. The following quota limits can be set:
 
 Type | Description
 ---- | -----------
-`things` | Maximum number of [things](../../thingsdb-api) allowed in a collection.
+`things` | Maximum number of [things](../../data-types/thing) allowed in a collection. [Type](../../data-types/type) instances are also counted towards this quota.
 `properties` | Maximum number of [properties](../../properties) which can be assigned to a thing.
-`array_size` | Maximum array length. This quota type applies to all [array type](../../data-types/array-type).
-`raw_size` | Maximum [raw](../../data-types/string-raw) value size. When this quota is set, both queries and blob values are limited to this quota.
+`array_size` | Maximum [list](../../data-types/list) and [tuple](../../data-types/tuple) length.
+`raw_size` | Maximum [str](../../data-types/str) and [bytes](../../data-types/bytes) length.
 
 If a quota limit is reached, then the affected query will raise `MAX_QUOTA_ERROR`.
 
@@ -25,8 +25,8 @@ This function generates an [event](../../events).
 ### Arguments
 Argument | Type | Description
 -------- | ---- | -----------
-collection | raw/int (required) | Collection *name* or *id*.
-quota_type | raw (required) | Must be one of `'things'`, `'properties'`, `'array_size'` or `'raw_size'`.
+collection | str/int (required) | Collection *name* or *id*.
+quota_type | str (required) | Must be one of `'things'`, `'properties'`, `'array_size'` or `'raw_size'`.
 quota | int/nil (required) | Integer value to set the quota limit or `nil` to disable the quota.
 
 ### Return value

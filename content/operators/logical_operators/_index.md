@@ -4,7 +4,7 @@ date: 2019-10-14T09:36:27+02:00
 weight: 5
 ---
 
-Logical operators are typically used with [bool](../../data-types/boolean) values.
+Logical operators are typically used with [bool](../../data-types/bool) values.
 
 Operator | Description
 -------- | -----------

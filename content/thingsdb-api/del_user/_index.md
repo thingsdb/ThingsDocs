@@ -15,7 +15,7 @@ This function generates an [event](../../events).
 ### Arguments
 Argument | Type | Description
 -------- | ---- | -----------
-username | raw (required) | Username of the user to delete.
+username | str (required) | Username of the user to delete.
 
 ### Return value
 Returns `nil` when successful. An `INDEX_ERROR` is raised if the user does not exist.

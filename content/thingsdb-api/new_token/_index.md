@@ -31,9 +31,9 @@ This function generates an [event](../../events).
 ### Arguments
 Argument | Type | Description
 -------- | ---- | -----------
-username | raw (required) | Name of the user.
+username | str (required) | Name of the user.
 expiration_time | nil/int/float/raw (optional) | Expiration date of the token.
-description | raw (optional) | Token description.
+description | str (optional) | Token description.
 
 ### Return value
 Returns the new token key.

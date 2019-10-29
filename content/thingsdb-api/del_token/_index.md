@@ -14,7 +14,7 @@ This function generates an [event](../../events).
 ### Arguments
 Argument | Type | Description
 -------- | ---- | -----------
-key | raw (required) | Token key to delete.
+key | str (required) | Token key to delete.
 
 ### Return value
 Returns `nil` when successful. An `INDEX_ERROR` is raised if the token is not found.

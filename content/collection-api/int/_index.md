@@ -10,11 +10,11 @@ If no value is given, the default integer `0` is returned.
 If the specified value was a [float](../../data-types/floating-point) value, then the
 new integer value will be rounded towards zero.
 
-If the specified value is of type [raw](../../data-types/string-raw), then the initial characters
+If the specified value is of type [str](../../data-types/str), then the initial characters
 of the string are converted until a non-digit character is found.
 Initial white space is ignored and the number may start with an optional `+` or `-` sign.
 
-Type [bool](../../data-types/boolean) values are converted to `1` for `true` and `0` for `false`.
+Type [bool](../../data-types/bool) values are converted to `1` for `true` and `0` for `false`.
 
 This function does *not* generate an [event](../../events).
 

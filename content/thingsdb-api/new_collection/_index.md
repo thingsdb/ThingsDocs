@@ -14,7 +14,7 @@ This function generates an [event](../../events).
 ### Arguments
 Argument | Type | Description
 --------- | ----------- | -----------
-name | raw (required) | Name of the new collection.
+name | str (required) | Name of the new collection.
 
 {{% notice note %}}
 The user who has created the collection will automatically receive full

@@ -46,7 +46,7 @@
 	"title": "assert_err",
 	"tags": [],
 	"description": "",
-	"content": " Returns an error.\nThis function does not generate an event.\nFunction assert_err([message])\nArguments    Argument Type Description     message raw (optional) Alternative error message.    Return value An error value.\n This code shows assert_err():\n assert_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;assert_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -50, \u0026quot;error_msg\u0026quot;: \u0026quot;assertion statement has failed\u0026quot; }  "
+	"content": " Returns an error.\nThis function does not generate an event.\nFunction assert_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows assert_err():\n assert_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;assert_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -50, \u0026quot;error_msg\u0026quot;: \u0026quot;assertion statement has failed\u0026quot; }  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/procedures-api/del_procedure/",
@@ -158,7 +158,7 @@
 	"title": "auth_err",
 	"tags": [],
 	"description": "",
-	"content": " Returns an error.\nThis function does not generate an event.\nFunction auth_err([message])\nArguments    Argument Type Description     message raw (optional) Alternative error message.    Return value An error value.\n This code shows auth_err():\n auth_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;auth_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -56, \u0026quot;error_msg\u0026quot;: \u0026quot;authentication error\u0026quot; }  "
+	"content": " Returns an error.\nThis function does not generate an event.\nFunction auth_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows auth_err():\n auth_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;auth_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -56, \u0026quot;error_msg\u0026quot;: \u0026quot;authentication error\u0026quot; }  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/procedures-api/new_procedure/",
@@ -172,7 +172,7 @@
 	"title": "assert",
 	"tags": [],
 	"description": "",
-	"content": " Raises ASSERTION_ERROR if the specified statement evaluates to false.\nThis function does not generate an event.\nFunction assert(statement [, error_msg])\nArguments    Argument Type Description     statement any (required) The statement to evaluate.   msg raw (optional) Custom error message.   code int (optional) Return a custom error code between 1 and 32. If not given, the error code is ASSERTION_ERROR (-105)    Return value Assert returns with the return value of the given statement when the statement evaluates to true. Otherwise an ASSERTION_ERROR is raised.\n This code shows how assert can be used:\n assert(1 \u0026gt; 2, 'one is still smaller than two');   Raises an ASSERTION_ERROR exception\n { \u0026quot;error_msg\u0026quot;: \u0026quot;one is still smaller than two\u0026quot;, \u0026quot;error_code\u0026quot;: 1 }  "
+	"content": " Raises ASSERTION_ERROR if the specified statement evaluates to false.\nThis function does not generate an event.\nFunction assert(statement [, error_msg])\nArguments    Argument Type Description     statement any (required) The statement to evaluate.   msg str (optional) Custom error message.   code int (optional) Return a custom error code between 1 and 32. If not given, the error code is ASSERTION_ERROR (-105)    Return value Assert returns with the return value of the given statement when the statement evaluates to true. Otherwise an ASSERTION_ERROR is raised.\n This code shows how assert can be used:\n assert(1 \u0026gt; 2, 'one is still smaller than two');   Raises an ASSERTION_ERROR exception\n { \u0026quot;error_msg\u0026quot;: \u0026quot;one is still smaller than two\u0026quot;, \u0026quot;error_code\u0026quot;: 1 }  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/thingsdb-api/collections_info/",
@@ -249,7 +249,7 @@
 	"title": "bad_data_err",
 	"tags": [],
 	"description": "",
-	"content": " Returns an error.\nThis function does not generate an event.\nFunction bad_data_err([message])\nArguments    Argument Type Description     message raw (optional) Alternative error message.    Return value An error value.\n This code shows bad_data_err():\n bad_data_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;bad_data_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -53, \u0026quot;error_msg\u0026quot;: \u0026quot;unable to handle request due to invalid data\u0026quot; }  "
+	"content": " Returns an error.\nThis function does not generate an event.\nFunction bad_data_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows bad_data_err():\n bad_data_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;bad_data_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -53, \u0026quot;error_msg\u0026quot;: \u0026quot;unable to handle request due to invalid data\u0026quot; }  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/procedures-api/procedure_doc/",
@@ -270,7 +270,7 @@
 	"title": "del_collection",
 	"tags": [],
 	"description": "",
-	"content": " Delete a collection.\nThis function generates an event.\nFunction del_collection(name);\nArguments    Argument Type Description     name raw (required) Name of the collection to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the collection does not exist.\n This code will delete collection stuff:\n // Delete collection `stuff` del_collection('stuff');  "
+	"content": " Delete a collection.\nThis function generates an event.\nFunction del_collection(name);\nArguments    Argument Type Description     name str (required) Name of the collection to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the collection does not exist.\n This code will delete collection stuff:\n // Delete collection `stuff` del_collection('stuff');  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/node-api/counters/",
@@ -340,7 +340,7 @@
 	"title": "forbidden_err",
 	"tags": [],
 	"description": "",
-	"content": " Returns an error.\nThis function does not generate an event.\nFunction forbidden_err([message])\nArguments    Argument Type Description     message raw (optional) Alternative error message.    Return value An error value.\n This code shows forbidden_err():\n forbidden_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;forbidden_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -55, \u0026quot;error_msg\u0026quot;: \u0026quot;forbidden (access denied)\u0026quot; }  "
+	"content": " Returns an error.\nThis function does not generate an event.\nFunction forbidden_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows forbidden_err():\n forbidden_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;forbidden_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -55, \u0026quot;error_msg\u0026quot;: \u0026quot;forbidden (access denied)\u0026quot; }  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/procedures-api/procedure_info/",
@@ -438,7 +438,7 @@
 	"title": "lookup_err",
 	"tags": [],
 	"description": "",
-	"content": " Returns an error.\nThis function does not generate an event.\nFunction lookup_err([message])\nArguments    Argument Type Description     message raw (optional) Alternative error message.    Return value An error value.\n This code shows lookup_err():\n lookup_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;lookup_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -54, \u0026quot;error_msg\u0026quot;: \u0026quot;requested resource not found\u0026quot; }  "
+	"content": " Returns an error.\nThis function does not generate an event.\nFunction lookup_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows lookup_err():\n lookup_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;lookup_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -54, \u0026quot;error_msg\u0026quot;: \u0026quot;requested resource not found\u0026quot; }  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/procedures-api/procedures_info/",
@@ -508,7 +508,7 @@
 	"title": "max_quota_err",
 	"tags": [],
 	"description": "",
-	"content": " Returns an error.\nThis function does not generate an event.\nFunction max_quota_err([message])\nArguments    Argument Type Description     message raw (optional) Alternative error message.    Return value An error value.\n This code shows max_quota_err():\n max_quota_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;max_quota_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -57, \u0026quot;error_msg\u0026quot;: \u0026quot;max quota is reached\u0026quot; }  "
+	"content": " Returns an error.\nThis function does not generate an event.\nFunction max_quota_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows max_quota_err():\n max_quota_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;max_quota_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -57, \u0026quot;error_msg\u0026quot;: \u0026quot;max quota is reached\u0026quot; }  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/procedures-api/run/",
@@ -522,21 +522,21 @@
 	"title": "err",
 	"tags": [],
 	"description": "",
-	"content": " Returns an error.\nThis function does not generate an event.\nFunction err([code, [message]])\nArguments    Argument Type Description     code int (optional) Integer error code between -127 and -50, defaults to -100.   message raw (optional) Optional error message.    Return value An error value.\n This code shows some return values for err():\n [ err(), err(-100, 'some error occurred'), err(-101), err(-59), ];   Return value in JSON format\n [ { \u0026quot;!\u0026quot;: \u0026quot;err(-100)\u0026quot;, \u0026quot;error_code\u0026quot;: -100, \u0026quot;error_msg\u0026quot;: \u0026quot;error:-100\u0026quot; }, { \u0026quot;!\u0026quot;: \u0026quot;err(-100)\u0026quot;, \u0026quot;error_code\u0026quot;: -100, \u0026quot;error_msg\u0026quot;: \u0026quot;some error occurred\u0026quot; }, { \u0026quot;!\u0026quot;: \u0026quot;err(-101)\u0026quot;, \u0026quot;error_code\u0026quot;: -101, \u0026quot;error_msg\u0026quot;: \u0026quot;error:-101\u0026quot; }, { \u0026quot;!\u0026quot;: \u0026quot;overflow_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -59, \u0026quot;error_msg\u0026quot;: \u0026quot;integer overflow\u0026quot; } ]  "
+	"content": " Returns an error.\nThis function does not generate an event.\nFunction err([code, [message]])\nArguments    Argument Type Description     code int (optional) Integer error code between -127 and -50, defaults to -100.   message str (optional) Optional error message.    Return value An error value.\n This code shows some return values for err():\n [ err(), err(-100, 'some error occurred'), err(-101), err(-59), ];   Return value in JSON format\n [ { \u0026quot;!\u0026quot;: \u0026quot;err(-100)\u0026quot;, \u0026quot;error_code\u0026quot;: -100, \u0026quot;error_msg\u0026quot;: \u0026quot;error:-100\u0026quot; }, { \u0026quot;!\u0026quot;: \u0026quot;err(-100)\u0026quot;, \u0026quot;error_code\u0026quot;: -100, \u0026quot;error_msg\u0026quot;: \u0026quot;some error occurred\u0026quot; }, { \u0026quot;!\u0026quot;: \u0026quot;err(-101)\u0026quot;, \u0026quot;error_code\u0026quot;: -101, \u0026quot;error_msg\u0026quot;: \u0026quot;error:-101\u0026quot; }, { \u0026quot;!\u0026quot;: \u0026quot;overflow_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -59, \u0026quot;error_msg\u0026quot;: \u0026quot;integer overflow\u0026quot; } ]  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/thingsdb-api/del_token/",
 	"title": "del_token",
 	"tags": [],
 	"description": "",
-	"content": " Delete a token.\nThis function generates an event.\nFunction del_token(key);\nArguments    Argument Type Description     key raw (required) Token key to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the token is not found.\n This code will delete a token:\n ```thingsdb,syntax_only,@t // Delete a token del_token('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'); \n"
+	"content": " Delete a token.\nThis function generates an event.\nFunction del_token(key);\nArguments    Argument Type Description     key str (required) Token key to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the token is not found.\n This code will delete a token:\n ```thingsdb,syntax_only,@t // Delete a token del_token('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'); \n"
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/node-api/node_info/",
 	"title": "node_info",
 	"tags": [],
 	"description": "",
-	"content": " Returns information about the connected node.\n   Value Description     archive_files Number of archive files. May decrease after a full store during away mode.   archived_in_memory Number of events which are archived in memory.   cached_names Number of names cached in memory.   client_port Listening for client TCP socket connections on this port.   db_stored_event_id Last stored event ID in full database store.   events_in_queue Events which are pending in the queue.   global_committed_event_id Lowest known committed event ID by all nodes.   global_stored_event_id Lowest known stored event ID by all nodes.   hostname Hostname of the node.   http_status_port Listening to this HTTP port for status, readiness and liveness requests.   ip_support Enabled IP support. May be IPv4/IPv6 or both.   libcleri_version Cleri language parser library version.   libpcre2_version PCRE regular expression library version.   msgpack_version MessagePack data protocol library version.   libuv_version UV asynchronous library version.   local_committed_event_id Last committed event ID on the node.   local_stored_event_id Last stored event ID on disk. Store takes place when in away mode.   log_level Current log level for the node. May be changed at runtime using set_log_level(..)   next_event_id Next free event ID.   next_thing_id Next free things ID.   node_id The id which is assigned to the node.   node_port Listening for node TCP socket connections on this port.   status Current status of the ThingsDB node.   storage_path Path used for storing ThingsDB data.   syntax_version Language or syntax version. A new version of ThingsDB might also have a new language version.   uptime Uptime of the node in seconds.   version Version of ThingsDB,   zone Zone number to which the node is assigned. May be changed in the ThingsDB configuration file.    This function does not generate an event.\nFunction node_info()\nArguments None\nReturn value Information as a msgpack type bout the connected node.\n This code returns info for the connected node:\n node_info();   Example return value in JSON format\n { \u0026quot;archive_files\u0026quot;: 1, \u0026quot;archived_in_memory\u0026quot;: 0, \u0026quot;cached_names\u0026quot;: 2, \u0026quot;client_port\u0026quot;: 9200, \u0026quot;db_stored_event_id\u0026quot;: 1, \u0026quot;events_in_queue\u0026quot;: 0, \u0026quot;global_committed_event_id\u0026quot;: 2, \u0026quot;global_stored_event_id\u0026quot;: 2, \u0026quot;hostname\u0026quot;: \u0026quot;node.things\u0026quot;, \u0026quot;http_status_port\u0026quot;: \u0026quot;disabled\u0026quot;, \u0026quot;ip_support\u0026quot;: \u0026quot;ALL\u0026quot;, \u0026quot;libcleri_version\u0026quot;: \u0026quot;0.11.0\u0026quot;, \u0026quot;libpcre2_version\u0026quot;: \u0026quot;10.32\u0026quot;, \u0026quot;libuv_version\u0026quot;: \u0026quot;1.24.1\u0026quot;, \u0026quot;local_committed_event_id\u0026quot;: 2, \u0026quot;local_stored_event_id\u0026quot;: 2, \u0026quot;log_level\u0026quot;: \u0026quot;DEBUG\u0026quot;, \u0026quot;msgpack_version\u0026quot;: \u0026quot;3.2.0\u0026quot;, \u0026quot;next_event_id\u0026quot;: 3, \u0026quot;next_thing_id\u0026quot;: 5, \u0026quot;node_id\u0026quot;: 0, \u0026quot;node_port\u0026quot;: 9220, \u0026quot;scheduled_backups\u0026quot;: 0, \u0026quot;status\u0026quot;: \u0026quot;READY\u0026quot;, \u0026quot;storage_path\u0026quot;: \u0026quot;/var/lib/thingsdb/\u0026quot;, \u0026quot;syntax_version\u0026quot;: \u0026quot;v0\u0026quot;, \u0026quot;uptime\u0026quot;: 7.854678630828857, \u0026quot;version\u0026quot;: \u0026quot;0.2.1\u0026quot;, \u0026quot;zone\u0026quot;: 0 }  "
+	"content": " Returns information about the node in the current scope. See scopes for more information on how to target a specific node scope.\n   Value Description     archive_files Number of archive files. May decrease after a full store during away mode.   archived_in_memory Number of events which are archived in memory.   cached_names Number of names cached in memory.   client_port Listening for client TCP socket connections on this port.   db_stored_event_id Last stored event ID in full database store.   events_in_queue Events which are pending in the queue.   global_committed_event_id Lowest known committed event ID by all nodes.   global_stored_event_id Lowest known stored event ID by all nodes.   hostname Hostname of the node.   http_status_port Listening to this HTTP port for status, readiness and liveness requests.   ip_support Enabled IP support. May be IPv4/IPv6 or both.   libcleri_version Cleri language parser library version.   libpcre2_version PCRE regular expression library version.   msgpack_version MessagePack data protocol library version.   libuv_version UV asynchronous library version.   local_committed_event_id Last committed event ID on the node.   local_stored_event_id Last stored event ID on disk. Store takes place when in away mode.   log_level Current log level for the node. May be changed at runtime using set_log_level(..)   next_event_id Next free event ID.   next_thing_id Next free things ID.   node_id The id which is assigned to the node.   node_port Listening for node TCP socket connections on this port.   status Current status of the ThingsDB node.   storage_path Path used for storing ThingsDB data.   syntax_version Language or syntax version. A new version of ThingsDB might also have a new language version.   uptime Uptime of the node in seconds.   version Version of ThingsDB,   zone Zone number to which the node is assigned. May be changed in the ThingsDB configuration file.    This function does not generate an event.\nFunction node_info()\nArguments None\nReturn value Information as a msgpack type bout the connected node.\n This code returns info for the connected node:\n node_info();   Example return value in JSON format\n { \u0026quot;archive_files\u0026quot;: 1, \u0026quot;archived_in_memory\u0026quot;: 0, \u0026quot;cached_names\u0026quot;: 2, \u0026quot;client_port\u0026quot;: 9200, \u0026quot;db_stored_event_id\u0026quot;: 1, \u0026quot;events_in_queue\u0026quot;: 0, \u0026quot;global_committed_event_id\u0026quot;: 2, \u0026quot;global_stored_event_id\u0026quot;: 2, \u0026quot;hostname\u0026quot;: \u0026quot;node.things\u0026quot;, \u0026quot;http_status_port\u0026quot;: \u0026quot;disabled\u0026quot;, \u0026quot;ip_support\u0026quot;: \u0026quot;ALL\u0026quot;, \u0026quot;libcleri_version\u0026quot;: \u0026quot;0.11.0\u0026quot;, \u0026quot;libpcre2_version\u0026quot;: \u0026quot;10.32\u0026quot;, \u0026quot;libuv_version\u0026quot;: \u0026quot;1.24.1\u0026quot;, \u0026quot;local_committed_event_id\u0026quot;: 2, \u0026quot;local_stored_event_id\u0026quot;: 2, \u0026quot;log_level\u0026quot;: \u0026quot;WARNING\u0026quot;, \u0026quot;msgpack_version\u0026quot;: \u0026quot;3.2.0\u0026quot;, \u0026quot;next_event_id\u0026quot;: 3, \u0026quot;next_thing_id\u0026quot;: 5, \u0026quot;node_id\u0026quot;: 0, \u0026quot;node_port\u0026quot;: 9220, \u0026quot;scheduled_backups\u0026quot;: 0, \u0026quot;status\u0026quot;: \u0026quot;READY\u0026quot;, \u0026quot;storage_path\u0026quot;: \u0026quot;/var/lib/thingsdb/\u0026quot;, \u0026quot;syntax_version\u0026quot;: \u0026quot;v0\u0026quot;, \u0026quot;uptime\u0026quot;: 7.854678630828857, \u0026quot;version\u0026quot;: \u0026quot;0.2.7\u0026quot;, \u0026quot;zone\u0026quot;: 0 }  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/operators/precedence-and-associativity/",
@@ -550,7 +550,7 @@
 	"title": "Names",
 	"tags": [],
 	"description": "",
-	"content": " Names The following rules apply to names in ThingsDB:\n A name must start with a letter or underscore character A name cannot start with a number A name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ ) Names are case-sensitive (thing, Thing and THING are three different names)  "
+	"content": " Names The following rules apply to names in ThingsDB:\n A name must start with a letter or underscore character A name cannot start with a number A name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ ) Names are case-sensitive (thing, Thing and THING are three different names) Names are restricted to 255 characters  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/set/len/",
@@ -585,21 +585,21 @@
 	"title": "node_err",
 	"tags": [],
 	"description": "",
-	"content": " Returns an error.\nThis function does not generate an event.\nFunction node_err([message])\nArguments    Argument Type Description     message raw (optional) Alternative error message.    Return value An error value.\n This code shows node_err():\n node_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;node_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -51, \u0026quot;error_msg\u0026quot;: \u0026quot;node is temporary unable to handle the request\u0026quot; }  "
+	"content": " Returns an error.\nThis function does not generate an event.\nFunction node_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows node_err():\n node_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;node_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -51, \u0026quot;error_msg\u0026quot;: \u0026quot;node is temporary unable to handle the request\u0026quot; }  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/collection-api/float/",
 	"title": "float",
 	"tags": [],
 	"description": "",
-	"content": " Returns a float from a specified value. If no value is given, the default float 0.0 is returned.\nIf the specified value is of type raw, then the initial characters of the string are converted until a non-digit character is found. Initial white space is ignored and the number may start with an optional + or - sign.\nType bool values are converted to 1.0 for true and 0.0 for false.\nThis function does not generate an event.\nFunction float(value)\nArguments    Argument Type Description     value any (optional) The value where to create a floating point value for.    Return value A floating point value. Other type than float, raw, bool or int will raise a BAD_REQUEST.\n This code shows some return values for float():\n [ float(), float(42), float('0.365e+3 days'), float('0xFF'), float(true), float(false), ];   Return value in JSON format\n [ 0, 42.0, 365.0, 255.0, 1.0, 0.0 ]  "
+	"content": " Returns a float from a specified value. If no value is given, the default float 0.0 is returned.\nIf the specified value is of type str, then the initial characters of the string are converted until a non-digit character is found. Initial white space is ignored and the number may start with an optional + or - sign.\nType bool values are converted to 1.0 for true and 0.0 for false.\nThis function does not generate an event.\nFunction float(value)\nArguments    Argument Type Description     value any (optional) The value where to create a floating point value for.    Return value A floating point value. Other type than float, raw, bool or int will raise a BAD_REQUEST.\n This code shows some return values for float():\n [ float(), float(42), float('0.365e+3 days'), float('0xFF'), float(true), float(false), ];   Return value in JSON format\n [ 0, 42.0, 365.0, 255.0, 1.0, 0.0 ]  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/thingsdb-api/del_user/",
 	"title": "del_user",
 	"tags": [],
 	"description": "",
-	"content": " Delete a user. It is not possible to delete your own user account and a BAD_REQUEST will be raised in case you try to. Any tokens associated with the user will also be deleted.\nThis function generates an event.\nFunction del_user(username);\nArguments    Argument Type Description     username raw (required) Username of the user to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the user does not exist.\n This code will delete user test:\n ```thingsdb,syntax_only,@t // Delete user `test` del_user('test'); \n"
+	"content": " Delete a user. It is not possible to delete your own user account and a BAD_REQUEST will be raised in case you try to. Any tokens associated with the user will also be deleted.\nThis function generates an event.\nFunction del_user(username);\nArguments    Argument Type Description     username str (required) Username of the user to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the user does not exist.\n This code will delete user test:\n ```thingsdb,syntax_only,@t // Delete user `test` del_user('test'); \n"
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/node-api/nodes_info/",
@@ -648,21 +648,21 @@
 	"title": "num_arguments_err",
 	"tags": [],
 	"description": "",
-	"content": " Returns an error.\nThis function does not generate an event.\nFunction num_arguments_err([message])\nArguments    Argument Type Description     message raw (optional) Alternative error message.    Return value An error value.\n This code shows num_arguments_err():\n num_arguments_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;num_arguments_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -62, \u0026quot;error_msg\u0026quot;: \u0026quot;wrong number of arguments\u0026quot; }  "
+	"content": " Returns an error.\nThis function does not generate an event.\nFunction num_arguments_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows num_arguments_err():\n num_arguments_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;num_arguments_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -62, \u0026quot;error_msg\u0026quot;: \u0026quot;wrong number of arguments\u0026quot; }  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/collection-api/int/",
 	"title": "int",
 	"tags": [],
 	"description": "",
-	"content": " Returns an int from a specified value. If no value is given, the default integer 0 is returned.\nIf the specified value was a float value, then the new integer value will be rounded towards zero.\nIf the specified value is of type raw, then the initial characters of the string are converted until a non-digit character is found. Initial white space is ignored and the number may start with an optional + or - sign.\nType bool values are converted to 1 for true and 0 for false.\nThis function does not generate an event.\nFunction int(value)\nArguments    Argument Type Description     value any (optional) The value where to create an integer value for.    Return value An integer value. In case the integer value is too large for a 64bit integer, an OVERFLOW_ERROR is raised. Other type than float, raw, bool or int will raise a BAD_REQUEST.\n This code shows some return values for int():\n [ int(), int(2.718), int(-1.9), int('365 days'), int('0xFF'), int(true), int(false), ];   Return value in JSON format\n [ 0, 2, -1, 365, 255, 1, 0 ]  "
+	"content": " Returns an int from a specified value. If no value is given, the default integer 0 is returned.\nIf the specified value was a float value, then the new integer value will be rounded towards zero.\nIf the specified value is of type str, then the initial characters of the string are converted until a non-digit character is found. Initial white space is ignored and the number may start with an optional + or - sign.\nType bool values are converted to 1 for true and 0 for false.\nThis function does not generate an event.\nFunction int(value)\nArguments    Argument Type Description     value any (optional) The value where to create an integer value for.    Return value An integer value. In case the integer value is too large for a 64bit integer, an OVERFLOW_ERROR is raised. Other type than float, raw, bool or int will raise a BAD_REQUEST.\n This code shows some return values for int():\n [ int(), int(2.718), int(-1.9), int('365 days'), int('0xFF'), int(true), int(false), ];   Return value in JSON format\n [ 0, 2, -1, 365, 255, 1, 0 ]  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/thingsdb-api/grant/",
 	"title": "grant",
 	"tags": [],
 	"description": "",
-	"content": " Grant collection or general privileges to a user. Access to a user is provided by setting a bit mask to either the .node scope, .thingsdb scope or a collection. Privileges to ThingsDB gives a user the ability to view counters, add, view remove users etc.\nThe following pre-defined masks are available:\n   Mask Description     READ (1) Gives read access.   MODIFY (2) Gives read and modify access.   GRANT (4) Gives read, modify and grant (and revoke) privileges.   WATCH (8) Gives watch (and un-watch) privileges.   RUN (16) Gives run procedures access.   FULL (31) A mask for full privileges.    It is not possible to have GRANT privileges without also having MODIFY privileges. Similarly, it is not possible to have MODIFY privileges without READ.\n This function generates an event.\nFunction grant(target, user, mask);\nArguments    Argument Type Description     target int/raw Can be either the .node scope, .thingsdb scope, or a collection name or id.   user raw User to grant privileges to.   mask int Bit-mask for setting privileges.    Return value Returns nil when successful. An INDEX_ERROR is raised if the user or target does not exist.\n Grant read and watch privileges to user iris to collection stuff:\n new_user('iris'); new_token('iris'); [ grant('@node', 'iris', WATCH), grant('@:stuff', 'iris', (READ|WATCH)), ];   Return value in JSON format\n [ null, null ]  "
+	"content": " Grant collection or general privileges to a user. Access to a user is provided by setting a bit mask to either the .node scope, .thingsdb scope or a collection. Privileges to ThingsDB gives a user the ability to view counters, add, view remove users etc.\nThe following pre-defined masks are available:\n   Mask Description     READ (1) Gives read access.   MODIFY (2) Gives read and modify access.   GRANT (4) Gives read, modify and grant (and revoke) privileges.   WATCH (8) Gives watch (and un-watch) privileges.   RUN (16) Gives run procedures access.   FULL (31) A mask for full privileges.    It is not possible to have GRANT privileges without also having MODIFY privileges. Similarly, it is not possible to have MODIFY privileges without READ.\n This function generates an event.\nFunction grant(target, user, mask);\nArguments    Argument Type Description     target int/raw Can be either the .node scope, .thingsdb scope, or a collection name or id.   user str User to grant privileges to.   mask int Bit-mask for setting privileges.    Return value Returns nil when successful. An INDEX_ERROR is raised if the user or target does not exist.\n Grant read and watch privileges to user iris to collection stuff:\n new_user('iris'); new_token('iris'); [ grant('@node', 'iris', WATCH), grant('@:stuff', 'iris', (READ|WATCH)), ];   Return value in JSON format\n [ null, null ]  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/node-api/reset_counters/",
@@ -697,7 +697,7 @@
 	"title": "operation_err",
 	"tags": [],
 	"description": "",
-	"content": " Returns an error.\nThis function does not generate an event.\nFunction operation_err([message])\nArguments    Argument Type Description     message raw (optional) Alternative error message.    Return value An error value.\n This code shows operation_err():\n operation_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;operation_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -63, \u0026quot;error_msg\u0026quot;: \u0026quot;operation is not valid in the current context\u0026quot; }  "
+	"content": " Returns an error.\nThis function does not generate an event.\nFunction operation_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows operation_err():\n operation_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;operation_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -63, \u0026quot;error_msg\u0026quot;: \u0026quot;operation is not valid in the current context\u0026quot; }  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/collection-api/isarray/",
@@ -711,7 +711,7 @@
 	"title": "new_collection",
 	"tags": [],
 	"description": "",
-	"content": " Create a new collection.\nThis function generates an event.\nFunction new_collection(name);\nArguments    Argument Type Description     name raw (required) Name of the new collection.    The user who has created the collection will automatically receive full access rights to the new collection. Use grant to give other users access to the collection.\n Return value Returns the new collection id if successful. An INDEX_ERROR is raised if the collection already exists.\n This code will create a collection \u0026ldquo;awesome_things\u0026rdquo;:\n // Creates a new collection new_collection('awesome_things');   Example return value in JSON format (the new collection id)\n 31415  "
+	"content": " Create a new collection.\nThis function generates an event.\nFunction new_collection(name);\nArguments    Argument Type Description     name str (required) Name of the new collection.    The user who has created the collection will automatically receive full access rights to the new collection. Use grant to give other users access to the collection.\n Return value Returns the new collection id if successful. An INDEX_ERROR is raised if the collection already exists.\n This code will create a collection \u0026ldquo;awesome_things\u0026rdquo;:\n // Creates a new collection new_collection('awesome_things');   Example return value in JSON format (the new collection id)\n 31415  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/node-api/set_log_level/",
@@ -753,7 +753,7 @@
 	"title": "overflow_err",
 	"tags": [],
 	"description": "",
-	"content": " Returns an error.\nThis function does not generate an event.\nFunction overflow_err([message])\nArguments    Argument Type Description     message raw (optional) Alternative error message.    Return value An error value.\n This code shows overflow_err():\n overflow_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;overflow_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -59, \u0026quot;error_msg\u0026quot;: \u0026quot;integer overflow\u0026quot; }  "
+	"content": " Returns an error.\nThis function does not generate an event.\nFunction overflow_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows overflow_err():\n overflow_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;overflow_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -59, \u0026quot;error_msg\u0026quot;: \u0026quot;integer overflow\u0026quot; }  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/collection-api/isascii/",
@@ -767,7 +767,7 @@
 	"title": "new_node",
 	"tags": [],
 	"description": "",
-	"content": " Adds a new node to ThingsDB. Nodes are used for scaling and high availability.\nThis function generates an event.\nFunction new_node(secret, ip_address [, port]);\nArguments    Argument Type Description     secret raw (required) Secret used to initially connect to the new node.   ip_address raw (required) IP Address (IPv4 or IPv6) of the new node.   port int (optional) Node port (listen_node_port), an integer between 0 an 65535, default 9220.    Return value Returns the new node id if successful.\n Add a new node to ThingsDB:\n // ThingsDB must be started on node2 using the `--secret ...` argument new_node('my-one-time-serect', 'node2.local');   Example return value in JSON format (the new node id)\n 1  "
+	"content": " Adds a new node to ThingsDB. Nodes are used for scaling and high availability.\nThis function generates an event.\nFunction new_node(secret, ip_address [, port]);\nArguments    Argument Type Description     secret str (required) Secret used to initially connect to the new node.   ip_address str (required) IP Address (IPv4 or IPv6) of the new node.   port int (optional) Node port (listen_node_port), an integer between 0 an 65535, default 9220.    Return value Returns the new node id if successful.\n Add a new node to ThingsDB:\n // ThingsDB must be started on node2 using the `--secret ...` argument new_node('my-one-time-serect', 'node2.local');   Example return value in JSON format (the new node id)\n 1  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/node-api/shutdown/",
@@ -781,7 +781,7 @@
 	"title": "regex",
 	"tags": [],
 	"description": "",
-	"content": " Regular expression can be constructed using a literal which consists of a pattern enclosed between slashes, as follows: re = /ab+c/;. It is probably a good idea to store a regex in a variable if you plan to use the regular expression multiple times. This prevents the requirement to compile the regular expression each time.\nMethods that use regular expressions    Method Description     test A string method that tests for a match in a string. It returns true or false.     This code uses a regular expression for an overly simple email check:\n // Note: the email check is oversimplified, do not use in production email_test = /^\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}$/; /* example usage of our 'email_test' */ email = 'info@thingsdb.net'; email.test( email_test );   Return value in JSON format\n true  "
+	"content": " Regular expression can be constructed using a literal which consists of a pattern enclosed between slashes, as follows: re = /ab+c/;. It is probably a good idea to store a regex in a variable if you plan to use the regular expression multiple times. This prevents the requirement to compile the regular expression each time.\nMethods that use regular expressions    Method Description     test A str method that tests for a match in a string. It returns true or false.     This code uses a regular expression for an overly simple email check:\n // Note: the email check is oversimplified, do not use in production email_test = /^\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}$/; /* example usage of our 'email_test' */ email = 'info@thingsdb.net'; email.test( email_test );   Return value in JSON format\n true  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/",
@@ -809,7 +809,7 @@
 	"title": "syntax_err",
 	"tags": [],
 	"description": "",
-	"content": " Returns an error.\nThis function does not generate an event.\nFunction syntax_err([message])\nArguments    Argument Type Description     message raw (optional) Alternative error message.    Return value An error value.\n This code shows syntax_err():\n syntax_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;syntax_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -52, \u0026quot;error_msg\u0026quot;: \u0026quot;syntax error in query\u0026quot; }  "
+	"content": " Returns an error.\nThis function does not generate an event.\nFunction syntax_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows syntax_err():\n syntax_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;syntax_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -52, \u0026quot;error_msg\u0026quot;: \u0026quot;syntax error in query\u0026quot; }  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/collection-api/isbool/",
@@ -823,7 +823,7 @@
 	"title": "new_token",
 	"tags": [],
 	"description": "",
-	"content": " Adds a new token for a given user. An optional expiration time may be given after which the token cannot be used anymore. Use del_expired to cleanup expired tokens. The expiration time may be given as a UNIX time-stamp in seconds or a date/time string.\nSome valid date/time strings:\n 2021-01-01 2023-02-06 14:30 2023-07-5T13:23:20+01:00  Expiration dates in the past are not allowed an will raise a BAD_REQUEST error.\nIt is also possible to set a description for the token which can be used to identify where token is used for. If you only want to set a description, but no expiration time, then you can use nil as second argument. For example: new_token('my_user', nil, 'some nice description');\nThere can be no more than 128 tokens assigned to a single user. A MAX_QUOTA_ERROR is raised if this limit is reached. Existing tokens can be removed with del_token and to view the current tokens you can use the user_info(..) (or users_info()) function.\nThis function generates an event.\nFunction new_token(username, [, expiration_time] [, description]);\nArguments    Argument Type Description     username raw (required) Name of the user.   expiration_time nil/int/float/raw (optional) Expiration date of the token.   description raw (optional) Token description.    Return value Returns the new token key.\n Create a new token for user admin:\n // ThingsDB must be started on node2 using the `--secret ...` argument new_token('admin', now() + 7*24*3600, 'token for one week');   Example return value in JSON format (the token key)\n \u0026quot;FX1xyVAJmtQ8o5GTU8yZxdsKrZC7TRijzZ71Kh5q0DmbY24zaA\u0026quot;  "
+	"content": " Adds a new token for a given user. An optional expiration time may be given after which the token cannot be used anymore. Use del_expired to cleanup expired tokens. The expiration time may be given as a UNIX time-stamp in seconds or a date/time string.\nSome valid date/time strings:\n 2021-01-01 2023-02-06 14:30 2023-07-5T13:23:20+01:00  Expiration dates in the past are not allowed an will raise a BAD_REQUEST error.\nIt is also possible to set a description for the token which can be used to identify where token is used for. If you only want to set a description, but no expiration time, then you can use nil as second argument. For example: new_token('my_user', nil, 'some nice description');\nThere can be no more than 128 tokens assigned to a single user. A MAX_QUOTA_ERROR is raised if this limit is reached. Existing tokens can be removed with del_token and to view the current tokens you can use the user_info(..) (or users_info()) function.\nThis function generates an event.\nFunction new_token(username, [, expiration_time] [, description]);\nArguments    Argument Type Description     username str (required) Name of the user.   expiration_time nil/int/float/raw (optional) Expiration date of the token.   description str (optional) Token description.    Return value Returns the new token key.\n Create a new token for user admin:\n // ThingsDB must be started on node2 using the `--secret ...` argument new_token('admin', now() + 7*24*3600, 'token for one week');   Example return value in JSON format (the token key)\n \u0026quot;FX1xyVAJmtQ8o5GTU8yZxdsKrZC7TRijzZ71Kh5q0DmbY24zaA\u0026quot;  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/data-types/set/",
@@ -865,21 +865,21 @@
 	"title": "type_err",
 	"tags": [],
 	"description": "",
-	"content": " Returns an error.\nThis function does not generate an event.\nFunction type_err([message])\nArguments    Argument Type Description     message raw (optional) Alternative error message.    Return value An error value.\n This code shows type_err():\n type_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;type_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -61, \u0026quot;error_msg\u0026quot;: \u0026quot;object of inappropriate type\u0026quot; }  "
+	"content": " Returns an error.\nThis function does not generate an event.\nFunction type_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows type_err():\n type_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;type_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -61, \u0026quot;error_msg\u0026quot;: \u0026quot;object of inappropriate type\u0026quot; }  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/thingsdb-api/new_user/",
 	"title": "new_user",
 	"tags": [],
 	"description": "",
-	"content": " Creates a new user to ThingsDB. The new user is created without a password, token and access privileges. You probably want to set a password or add a new token and assign some privileges using grant(\u0026hellip;).\nThis function generates an event.\nFunction new_user(user);\nArguments    Argument Type Description     user raw (required) Username, between 1 and 128 graphical characters.    Return value Returns the new user id if successful. An INDEX_ERROR is raised if the user already exists.\n Create a new user iris:\n new_user('iris');   Example return value in JSON format (the new user id)\n 19  "
+	"content": " Creates a new user to ThingsDB. The new user is created without a password, token and access privileges. You probably want to set a password or add a new token and assign some privileges using grant(\u0026hellip;).\nThis function generates an event.\nFunction new_user(user);\nArguments    Argument Type Description     user str (required) Username, between 1 and 128 graphical characters.    Return value Returns the new user id if successful. An INDEX_ERROR is raised if the user already exists.\n Create a new user iris:\n new_user('iris');   Example return value in JSON format (the new user id)\n 19  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/errors/value_err/",
 	"title": "value_err",
 	"tags": [],
 	"description": "",
-	"content": " Returns an error.\nThis function does not generate an event.\nFunction value_err([message])\nArguments    Argument Type Description     message raw (optional) Alternative error message.    Return value An error value.\n This code shows value_err():\n value_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;value_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -60, \u0026quot;error_msg\u0026quot;: \u0026quot;object has the right type but an inappropriate value\u0026quot; }  "
+	"content": " Returns an error.\nThis function does not generate an event.\nFunction value_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows value_err():\n value_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;value_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -60, \u0026quot;error_msg\u0026quot;: \u0026quot;object has the right type but an inappropriate value\u0026quot; }  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/collection-api/iserr/",
@@ -921,7 +921,7 @@
 	"title": "zero_div_err",
 	"tags": [],
 	"description": "",
-	"content": " Returns an error.\nThis function does not generate an event.\nFunction zero_div_err([message])\nArguments    Argument Type Description     message raw (optional) Alternative error message.    Return value An error value.\n This code shows zero_div_err():\n zero_div_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;zero_div_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -58, \u0026quot;error_msg\u0026quot;: \u0026quot;division or module by zero\u0026quot; }  "
+	"content": " Returns an error.\nThis function does not generate an event.\nFunction zero_div_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows zero_div_err():\n zero_div_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;zero_div_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -58, \u0026quot;error_msg\u0026quot;: \u0026quot;division or module by zero\u0026quot; }  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/collection-api/isfloat/",
@@ -991,7 +991,7 @@
 	"title": "revoke",
 	"tags": [],
 	"description": "",
-	"content": " Revoke collection or general privileges from a user. See grant for more information on how access privileges can be set for a user.\nThis function generates an event.\nFunction revoke(target, user, mask);\nArguments    Argument Type Description     target int/raw Can be either the .node scope, .thingsdb scope, or a collection name or id.   user raw User to revoke privileges from.   mask int Bit-mask for revoking privileges.    Return value Returns nil when successful. An INDEX_ERROR is raised if the user or target does not exist.\n Revoke all privileges for user iris on collection stuff:\n revoke('@:stuff', 'iris', FULL);   Return value in JSON format\n null  "
+	"content": " Revoke collection or general privileges from a user. See grant for more information on how access privileges can be set for a user.\nThis function generates an event.\nFunction revoke(target, user, mask);\nArguments    Argument Type Description     target int/raw Can be either the .node scope, .thingsdb scope, or a collection name or id.   user str User to revoke privileges from.   mask int Bit-mask for revoking privileges.    Return value Returns nil when successful. An INDEX_ERROR is raised if the user or target does not exist.\n Revoke all privileges for user iris on collection stuff:\n revoke('@:stuff', 'iris', FULL);   Return value in JSON format\n null  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/procedures-api/",
@@ -1019,7 +1019,7 @@
 	"title": "set_password",
 	"tags": [],
 	"description": "",
-	"content": " Change a users password. This function can also be used to remove an existing password by using nil as the new password.\nPasswords must contain 1 to 128 printable characters.\nThis function generates an event.\nFunction set_password(username, new_password);\nArguments    Argument Type Description     username raw (required) Name of the user   new_password nil/raw (required) New password or nil    Return value Returns nil if successful. An INDEX_ERROR is returned if the user does not exist and BAD_REQUEST if the new password is not compliant.\n This code changes the password for use admin:\n // Change the password for user `admin` set_password('admin', 'my_secret_password');   Return value in JSON format\n null  "
+	"content": " Change a users password. This function can also be used to remove an existing password by using nil as the new password.\nPasswords must contain 1 to 128 printable characters.\nThis function generates an event.\nFunction set_password(username, new_password);\nArguments    Argument Type Description     username str (required) Name of the user   new_password nil/str (required) New password or nil    Return value Returns nil if successful. An INDEX_ERROR is returned if the user does not exist and BAD_REQUEST if the new password is not compliant.\n This code changes the password for user admin:\n // Change the password for user `admin` set_password('admin', 'my_secret_password');   Return value in JSON format\n null  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/collection-api/isnan/",
@@ -1033,7 +1033,7 @@
 	"title": "set_quota",
 	"tags": [],
 	"description": "",
-	"content": " Quota limits can be set on collections. The following quota limits can be set:\n   Type Description     things Maximum number of things allowed in a collection.   properties Maximum number of properties which can be assigned to a thing.   array_size Maximum array length. This quota type applies to all array type.   raw_size Maximum raw value size. When this quota is set, both queries and blob values are limited to this quota.    If a quota limit is reached, then the affected query will raise MAX_QUOTA_ERROR.\nThe current quota values can be viewed with collection(\u0026hellip;) or collections().\nThis function generates an event.\nFunction set_quota(collection, quota_type, quota)\nArguments    Argument Type Description     collection raw/int (required) Collection name or id.   quota_type raw (required) Must be one of 'things', 'properties', 'array_size' or 'raw_size'.   quota int/nil (required) Integer value to set the quota limit or nil to disable the quota.    Return value nil when successful.\n This code sets a quota on the number of things and disables the properties quota on collection stuff:\n [ set_quota('stuff', 'things', 10000), set_quota('stuff', 'properties', nil), ];   Return value in JSON format\n [ null, null ]  "
+	"content": " Quota limits can be set on collections. The following quota limits can be set:\n   Type Description     things Maximum number of things allowed in a collection. Type instances are also counted towards this quota.   properties Maximum number of properties which can be assigned to a thing.   array_size Maximum list and tuple length.   raw_size Maximum str and bytes length.    If a quota limit is reached, then the affected query will raise MAX_QUOTA_ERROR.\nThe current quota values can be viewed with collection(\u0026hellip;) or collections().\nThis function generates an event.\nFunction set_quota(collection, quota_type, quota)\nArguments    Argument Type Description     collection str/int (required) Collection name or id.   quota_type str (required) Must be one of 'things', 'properties', 'array_size' or 'raw_size'.   quota int/nil (required) Integer value to set the quota limit or nil to disable the quota.    Return value nil when successful.\n This code sets a quota on the number of things and disables the properties quota on collection stuff:\n [ set_quota('stuff', 'things', 10000), set_quota('stuff', 'properties', nil), ];   Return value in JSON format\n [ null, null ]  "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/errors/",
@@ -1054,7 +1054,7 @@
 	"title": "user_info",
 	"tags": [],
 	"description": "",
-	"content": "This function does not generate an event.\n"
+	"content": " Returns information about a user. If no argument is given, this method will return information about the current logged in user.\nThis function does not generate an event.\nFunction user_info([username]);\nArguments    Argument Type Description     username str (optional) Name of the user    "
 },
 {
 	"uri": "https://thingsdb.github.io/ThingsDocs/collection-api/israw/",

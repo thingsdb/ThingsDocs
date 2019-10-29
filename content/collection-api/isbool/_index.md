@@ -5,7 +5,7 @@ weight: 11
 ---
 
 This function determines whether the value passed to this function
-is a [bool](../../data-types/boolean) or not.
+is a [bool](../../data-types/bool) or not.
 
 This function does *not* generate an [event](../../events).
 

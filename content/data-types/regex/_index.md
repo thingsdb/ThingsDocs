@@ -12,7 +12,7 @@ requirement to compile the regular expression each time.
 
 Method | Description
 ------ | -----------
-[test](../../collection-api/test) | A [string](../../data-types/string-raw) method that tests for a match in a string. It returns `true` or `false`.
+[test](../../collection-api/test) | A [str](../../data-types/str) method that tests for a match in a string. It returns `true` or `false`.
 
 > This code uses a regular expression for an overly simple email check:
 

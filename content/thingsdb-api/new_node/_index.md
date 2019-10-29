@@ -15,8 +15,8 @@ This function generates an [event](../../events).
 ### Arguments
 Argument | Type | Description
 -------- | ---- | -----------
-`secret` | raw (required) | Secret used to initially connect to the new node.
-`ip_address` | raw (required) | IP Address (IPv4 or IPv6) of the new node.
+`secret` | str (required) | Secret used to initially connect to the new node.
+`ip_address` | str (required) | IP Address (IPv4 or IPv6) of the new node.
 `port` | int (optional) | Node port (`listen_node_port`), an integer between 0 an 65535, default **9220**.
 
 

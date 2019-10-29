@@ -14,7 +14,7 @@ This function does *not* generate an [event](../../events).
 ### Arguments
 Argument | Type | Description
 -------- | ---- | -----------
-message | raw (optional) | Alternative error message.
+message | str (optional) | Alternative error message.
 
 ### Return value
 An error value.

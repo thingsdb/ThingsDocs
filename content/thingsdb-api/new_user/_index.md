@@ -15,7 +15,7 @@ This function generates an [event](../../events).
 ### Arguments
 Argument | Type | Description
 -------- | ---- | -----------
-`user` | raw (required) | Username, between 1 and 128 *graphical* characters.
+`user` | str (required) | Username, between 1 and 128 *graphical* characters.
 
 ### Return value
 Returns the new user `id` if successful. An `INDEX_ERROR` is raised

@@ -17,7 +17,7 @@ This function does *not* generate an [event](../../events).
 Argument | Type | Description
 -------- | ---- | -----------
 statement | any (required) | The statement to evaluate.
-msg | raw (optional) | Custom error message.
+msg | str (optional) | Custom error message.
 code | int (optional) | Return a custom error code between 1 and 32. If not given, the error code is `ASSERTION_ERROR` (-105)
 
 ### Return value

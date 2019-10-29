@@ -17,7 +17,7 @@ This function does *not* generate an [event](../../events).
 Argument | Type | Description
 -------- | ---- | -----------
 code | int (optional) | Integer error code between -127 and -50, defaults to -100.
-message | raw (optional) | Optional error message.
+message | str (optional) | Optional error message.
 
 ### Return value
 

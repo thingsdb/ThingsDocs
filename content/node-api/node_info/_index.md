@@ -4,7 +4,8 @@ date: 2019-10-14T09:42:49+02:00
 weight: 6
 ---
 
-Returns information about the connected node.
+Returns information about the node in the current scope.
+See [scopes](../../scopes) for more information on how to target a specific node scope.
 
 Value | Description
 ------- | -----------
@@ -74,7 +75,7 @@ node_info();
     "libuv_version": "1.24.1",
     "local_committed_event_id": 2,
     "local_stored_event_id": 2,
-    "log_level": "DEBUG",
+    "log_level": "WARNING",
     "msgpack_version": "3.2.0",
     "next_event_id": 3,
     "next_thing_id": 5,
@@ -85,7 +86,7 @@ node_info();
     "storage_path": "/var/lib/thingsdb/",
     "syntax_version": "v0",
     "uptime": 7.854678630828857,
-    "version": "0.2.1",
+    "version": "0.2.7",
     "zone": 0
 }
 ```
