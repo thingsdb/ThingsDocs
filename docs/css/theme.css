@@ -261,8 +261,7 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 #sidebar ul.topics ul ul {
     padding-bottom: 0;
 }
-/* Changed to make nested pages not expand automatically */
-#sidebar ul.topics li.parent > ul {
+#sidebar ul.topics li.parent ul, #sidebar ul.topics > li.active ul {
     display: block;
 }
 #sidebar ul.topics > li > a {

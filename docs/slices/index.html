@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.59.0-DEV" />
     <meta name="description" content="ThingsDB documentation">
 
 
@@ -11,20 +11,20 @@
     <title>Slices :: ThingsDB documentation</title>
 
     
-    <link href="/ThingsDocs/css/nucleus.css?1573047485" rel="stylesheet">
-    <link href="/ThingsDocs/css/fontawesome-all.min.css?1573047485" rel="stylesheet">
-    <link href="/ThingsDocs/css/hybrid.css?1573047485" rel="stylesheet">
-    <link href="/ThingsDocs/css/featherlight.min.css?1573047485" rel="stylesheet">
-    <link href="/ThingsDocs/css/perfect-scrollbar.min.css?1573047485" rel="stylesheet">
-    <link href="/ThingsDocs/css/auto-complete.css?1573047485" rel="stylesheet">
-    <link href="/ThingsDocs/css/atom-one-dark-reasonable.css?1573047485" rel="stylesheet">
-    <link href="/ThingsDocs/css/theme.css?1573047485" rel="stylesheet">
-    <link href="/ThingsDocs/css/hugo-theme.css?1573047485" rel="stylesheet">
+    <link href="/ThingsDocs/css/nucleus.css?1573480666" rel="stylesheet">
+    <link href="/ThingsDocs/css/fontawesome-all.min.css?1573480666" rel="stylesheet">
+    <link href="/ThingsDocs/css/hybrid.css?1573480666" rel="stylesheet">
+    <link href="/ThingsDocs/css/featherlight.min.css?1573480666" rel="stylesheet">
+    <link href="/ThingsDocs/css/perfect-scrollbar.min.css?1573480666" rel="stylesheet">
+    <link href="/ThingsDocs/css/auto-complete.css?1573480666" rel="stylesheet">
+    <link href="/ThingsDocs/css/atom-one-dark-reasonable.css?1573480666" rel="stylesheet">
+    <link href="/ThingsDocs/css/theme.css?1573480666" rel="stylesheet">
+    <link href="/ThingsDocs/css/hugo-theme.css?1573480666" rel="stylesheet">
     
-      <link href="/ThingsDocs/css/theme-mine.css?1573047485" rel="stylesheet">
+      <link href="/ThingsDocs/css/theme-mine.css?1573480666" rel="stylesheet">
     
 
-    <script src="/ThingsDocs/js/jquery-3.3.1.min.js?1573047485"></script>
+    <script src="/ThingsDocs/js/jquery-3.3.1.min.js?1573480666"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/ThingsDocs/js/lunr.min.js?1573047485"></script>
-<script type="text/javascript" src="/ThingsDocs/js/auto-complete.js?1573047485"></script>
+<script type="text/javascript" src="/ThingsDocs/js/lunr.min.js?1573480666"></script>
+<script type="text/javascript" src="/ThingsDocs/js/auto-complete.js?1573480666"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/thingsdb.github.io\/ThingsDocs\/";
     
 </script>
-<script type="text/javascript" src="/ThingsDocs/js/search.js?1573047485"></script>
+<script type="text/javascript" src="/ThingsDocs/js/search.js?1573480666"></script>
 
     
   </div>
@@ -4682,7 +4682,130 @@
 
 <h1 id="slices">Slices</h1>
 
-<p>Lorem Ipsum.</p>
+<p>The following slice notation can be used:</p>
+
+<pre><code class="language-thingsdb,syntax_only">list[start:stop:step]
+</code></pre>
+
+<p>The <code>start</code> and <code>stop</code> value will default to <code>nil</code> and <code>step</code> has a default value of <code>1</code>.
+For understanding slices it is important to remember that the <code>:stop</code> value represents the
+first value that is <em>not</em> in the selected slice. This means that the
+difference between <code>stop</code> and <code>start</code> is the number of selected elements.
+(assuming that <code>step</code> is the default value <code>1</code>)</p>
+
+<p>Another feature is that <em>negative</em> numbers may be used. For <code>start</code> and <code>stop</code> this means that it
+will count from the end of the array instead of the beginning.</p>
+
+<p>Here are some examples using <code>start</code> and <code>stop</code> to select some elements:</p>
+
+<pre><code class="language-thingsdb,json_response">months = ['January', 'February', 'March', 'April',
+          'May', 'June', 'July', 'August',
+          'September', 'October', 'November', 'December'];
+
+[
+    { months[:2];   /* first two months */ },
+    { months[-2:];  /* last two months */ },
+    { months[:-2];  /* all, except the last two months */ },
+];
+</code></pre>
+
+<p>&hellip;And the corresponding result in JSON format:</p>
+
+<pre><code class="language-json">[
+    [
+        &quot;January&quot;,
+        &quot;February&quot;
+    ],
+    [
+        &quot;November&quot;,
+        &quot;December&quot;
+    ],
+    [
+        &quot;January&quot;,
+        &quot;February&quot;,
+        &quot;March&quot;,
+        &quot;April&quot;,
+        &quot;May&quot;,
+        &quot;June&quot;,
+        &quot;July&quot;,
+        &quot;August&quot;,
+        &quot;September&quot;,
+        &quot;October&quot;
+    ]
+]
+</code></pre>
+
+<p>Another feature is the <code>step</code> argument, which also may be <em>negative</em> to reverse the
+slice direction.</p>
+
+<p>Some examples using the <code>step</code> value:</p>
+
+<pre><code class="language-thingsdb,json_response">months = ['January', 'February', 'March', 'April',
+          'May', 'June', 'July', 'August',
+          'September', 'October', 'November', 'December'];
+
+[
+    { months[::2];   /* only the odd months */ },
+    { months[::-1];  /* months in reverse order */ },
+];
+</code></pre>
+
+<p>&hellip;The corresponding result in JSON format:</p>
+
+<pre><code class="language-json">[
+    [
+        &quot;January&quot;,
+        &quot;March&quot;,
+        &quot;May&quot;,
+        &quot;July&quot;,
+        &quot;September&quot;,
+        &quot;November&quot;
+    ],
+    [
+        &quot;December&quot;,
+        &quot;November&quot;,
+        &quot;October&quot;,
+        &quot;September&quot;,
+        &quot;August&quot;,
+        &quot;July&quot;,
+        &quot;June&quot;,
+        &quot;May&quot;,
+        &quot;April&quot;,
+        &quot;March&quot;,
+        &quot;February&quot;,
+        &quot;January&quot;
+    ]
+]
+</code></pre>
+
+<p>Slices can also be used to replace the <a href="#data-types/list/splice">splice</a> function.</p>
+
+
+<div class="notices note" ><p>It is not possible to use the <code>step</code> value when assigning items using the slice syntax.</p>
+</div>
+
+
+<p>Use slice syntax to replace items in a list:</p>
+
+<pre><code class="language-thingsdb,json_response">months = ['January', 'February', 'XXX', 'May'];
+
+/* Replace 'XXX' with 'March' and 'April' */
+months[2:3] = ['March', 'April'];
+
+/* Return result */
+months;
+</code></pre>
+
+<p>Once again the result in JSON format:</p>
+
+<pre><code class="language-json">[
+    &quot;January&quot;,
+    &quot;February&quot;,
+    &quot;March&quot;,
+    &quot;April&quot;,
+    &quot;May&quot;
+]
+</code></pre>
 
 
 
@@ -7683,19 +7806,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/ThingsDocs/js/clipboard.min.js?1573047485"></script>
-    <script src="/ThingsDocs/js/perfect-scrollbar.min.js?1573047485"></script>
-    <script src="/ThingsDocs/js/perfect-scrollbar.jquery.min.js?1573047485"></script>
-    <script src="/ThingsDocs/js/jquery.sticky.js?1573047485"></script>
-    <script src="/ThingsDocs/js/featherlight.min.js?1573047485"></script>
-    <script src="/ThingsDocs/js/highlight.pack.js?1573047485"></script>
+    <script src="/ThingsDocs/js/clipboard.min.js?1573480666"></script>
+    <script src="/ThingsDocs/js/perfect-scrollbar.min.js?1573480666"></script>
+    <script src="/ThingsDocs/js/perfect-scrollbar.jquery.min.js?1573480666"></script>
+    <script src="/ThingsDocs/js/jquery.sticky.js?1573480666"></script>
+    <script src="/ThingsDocs/js/featherlight.min.js?1573480666"></script>
+    <script src="/ThingsDocs/js/highlight.pack.js?1573480666"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/ThingsDocs/js/modernizr.custom-3.6.0.js?1573047485"></script>
-    <script src="/ThingsDocs/js/learn.js?1573047485"></script>
-    <script src="/ThingsDocs/js/hugo-learn.js?1573047485"></script>
+    <script src="/ThingsDocs/js/modernizr.custom-3.6.0.js?1573480666"></script>
+    <script src="/ThingsDocs/js/learn.js?1573480666"></script>
+    <script src="/ThingsDocs/js/hugo-learn.js?1573480666"></script>
 
-    <link href="/ThingsDocs/mermaid/mermaid.css?1573047485" rel="stylesheet" />
-    <script src="/ThingsDocs/mermaid/mermaid.js?1573047485"></script>
+    <link href="/ThingsDocs/mermaid/mermaid.css?1573480666" rel="stylesheet" />
+    <script src="/ThingsDocs/mermaid/mermaid.js?1573480666"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
