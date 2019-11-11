@@ -33,11 +33,9 @@ set({name: 'Iris'});
 > Return value in JSON format
 
 ```json
-{
-    "$": [
-        {
-            "name": "Iris"
-        }
-    ]
-}
+[
+    {
+        "name": "Iris"
+    }
+]
 ```

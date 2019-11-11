@@ -34,7 +34,7 @@ A new list with each element being the result of the callback function.
 users = [{name: "Iris", age: 6}, {name: "Sasha", age: 34}];
 
 // returns ["Iris", "Sasha"]
-set(users).map(|user| user.name);
+set(users).map(|user| user.name).sort();
 ```
 
 > Return value in JSON format
