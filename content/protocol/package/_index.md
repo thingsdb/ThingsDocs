@@ -21,14 +21,14 @@ Type | Number | Description
 `PING`  | 32 | Ping, useful as keep-alive.
 `AUTH`  | 33 | Authentication, expects: `[username, password]`
 `QUERY` | 34 | Query, see [query](../../query) for more info.
-`WATCH` | 48 | Watch, see [watch](../../watch) for more info.
-`UNWATCH` | 49 | Stop watching specified things, see [watch](../../watch) for more info.
+`WATCH` | 48 | Watch, see [watching](../../watching) for more info.
+`UNWATCH` | 49 | Stop watching specified things, see [watching](../../watching) for more info.
 
 ### CHK (Unsigned, 8bit)
 Inverse of the type: `type ^ 0xff`, this is used as a check-bit.
 
 ### DATA
-Data serialized using [qpack](https://github.com/transceptor-technology/libqpack).
+Data serialized using [msgpack](https://github.com/transceptor-technology/libqpack).
 
 > Package format:
 

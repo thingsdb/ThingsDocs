@@ -110,7 +110,7 @@ months = ['January', 'February', 'March', 'April',
 ]
 ```
 
-Slices can also be used to replace the [splice](#data-types/list/splice) function.
+Slices can also be used to replace the [splice](../data-types/list/splice) function.
 
 {{% notice note %}}
 It is not possible to use the `step` value when assigning items using the slice syntax.
@@ -137,4 +137,17 @@ Once again the result in JSON format:
     "April",
     "May"
 ]
+```
+
+Instead of [lists](../data-types/list) and [tuples](../data-types/tuple) it also possible to use the slice notion on [strings](../data-types/str)
+
+For example:
+
+```thingsdb,json_response
+/* Return 'abcdef' in reverse order */
+"abcdef"[::-1];
+```
+
+```json
+"fedcba"
 ```

@@ -5,7 +5,7 @@ weight: 24
 ---
 
 This function determines whether the value passed to this function
-is a immutable [array](../../data-types/array-type) or not. At least nested arrays are of kind tuple.
+is a [tuple](../../data-types/tuple) or not. At least nested arrays are of kind tuple.
 
 This function does *not* generate an [event](../../events).
 

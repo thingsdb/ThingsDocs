@@ -4,7 +4,7 @@ date: 2019-10-14T10:11:34+02:00
 weight: 3
 ---
 
-Returns an [error](../../data-types/error-type).
+Returns an [error](../../data-types/error).
 
 This function does *not* generate an [event](../../events).
 

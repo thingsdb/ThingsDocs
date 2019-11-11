@@ -5,7 +5,7 @@ weight: 23
 ---
 
 This function determines whether the value passed to this function
-is a [thing](../../data-types/thing-type) or not.
+is a [thing](../../data-types/thing) or not.
 
 This function does *not* generate an [event](../../events).
 

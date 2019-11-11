@@ -4,7 +4,7 @@ date: 2019-10-14T09:59:28+02:00
 weight: 7
 ---
 
-Returns a [float](../../data-types/floating-point) from a specified value.
+Returns a [float](../../data-types/float) from a specified value.
 If no value is given, the default float `0.0` is returned.
 
 If the specified value is of type [str](../../data-types/str), then the initial characters

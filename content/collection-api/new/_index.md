@@ -4,7 +4,7 @@ date: 2019-10-23T16:58:40+02:00
 weight: 27
 ---
 
-Creates a new instance of a defined [Type](../../data-types/Type).
+Creates a new instance of a defined [Type](../../data-types/type).
 
 This function generates an [event](../../events).
 

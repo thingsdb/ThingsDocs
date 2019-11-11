@@ -11,9 +11,9 @@ This is the package data for our authentication request:
 
 `["admin", "pass"]`
 
-Serializing the above using *qpack* results in the following `12` bytes:
+Serializing the above using *msgpack* results in the following `12` bytes:
 
-`\xef\x85admin\x84pass`
+`\x92\xa5admin\xa4pass`
 
 Now we create the header, for this example we just use ID 0:
 
@@ -25,4 +25,4 @@ Now we create the header, for this example we just use ID 0:
 
 So our total package will be:
 
-`\x0c\x00\x00\x00\x00\x00\x21\xde\xef\x85admin\x84pass`
+`\x0c\x00\x00\x00\x00\x00\x21\xde\x92\xa5admin\xa4pass`

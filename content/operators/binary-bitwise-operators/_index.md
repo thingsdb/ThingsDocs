@@ -4,7 +4,7 @@ date: 2019-10-14T09:34:41+02:00
 weight: 3
 ---
 
-Can be used on [integer](../../data-types/integer) values.
+Can be used on [integer](../../data-types/int) values.
 
 Operator | Description
 -------- + -----------

@@ -4,7 +4,7 @@ date: 2019-10-14T10:03:58+02:00
 weight: 30
 ---
 
-Raises an [error](../../data-types/error-type).
+Raises an [error](../../data-types/error).
 
 This function does *not* generate an [event](../../events).
 

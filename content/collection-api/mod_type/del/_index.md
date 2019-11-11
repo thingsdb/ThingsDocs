@@ -4,7 +4,7 @@ date: 2019-10-23T16:58:06+02:00
 weight: 2
 ---
 
-Deletes a property from an existing [Type](../../data-types/Type).
+Deletes a property from an existing [Type](../../../data-types/type).
 
 ### Action
 

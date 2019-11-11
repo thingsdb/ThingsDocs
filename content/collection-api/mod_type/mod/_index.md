@@ -4,7 +4,7 @@ date: 2019-10-23T16:58:14+02:00
 weight: 3
 ---
 
-Modifies a property from an exinsting [Type](../../data-types/Type).
+Modifies a property from an exinsting [Type](../../../data-types/type).
 
 ### Action
 

@@ -5,7 +5,7 @@ weight: 9
 ---
 
 This function determines whether the value passed to this function
-is an [array](../../data-types/array-type) type or not. The functions [islist](../../collection-api/islist) and
+is a [list](../../data-types/list) or [tuple](../../data-types/tuple) type or not. The functions [islist](../../collection-api/islist) and
 [istuple](../../collection-api/istuple) can be used to check if the array is mutable.
 
 This function does *not* generate an [event](../../events).

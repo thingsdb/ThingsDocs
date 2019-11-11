@@ -5,7 +5,7 @@ weight: 13
 ---
 
 This function determines whether the value passed to this function
-is a [error](../../data-types/error-type) or not.
+is a [error](../../data-types/error) or not.
 
 This function does *not* generate an [event](../../events).
 

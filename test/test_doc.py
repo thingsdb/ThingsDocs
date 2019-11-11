@@ -39,6 +39,7 @@ CONTENT_PATH = os.path.join(DOC_PATH, 'content')
 RE_TEST = re.compile(
     '```thingsdb,([a-zA-Z_]*)(,(@[\:a-zA-Z0-9]))?')
 
+RE_LINK = re.compile(r'(\[[\w\s\-]+\]\(([\.\/\w\-]+)\))')
 
 class TestDoc(TestBase):
 
@@ -59,7 +60,7 @@ class TestDoc(TestBase):
                     with open(fn, 'r') as f:
                         lines = f.readlines()
                     try:
-                        await self.process_markdown(client, lines)
+                        await self.process_markdown(client, root, lines)
                     except Exception as e:
                         try:
                             ex = type(e)(
@@ -74,12 +75,19 @@ class TestDoc(TestBase):
         client.close()
         await client.wait_closed()
 
-    async def process_markdown(self, client, lines):
+    async def process_markdown(self, client, root, lines):
         lines = iter(lines)
 
         while True:
             try:
                 line = next(lines)
+                matches = RE_LINK.findall(line)
+                for m in matches:
+                    markdown_fn = os.path.join(root, m[1], '_index.md')
+                    if not os.path.isfile(markdown_fn):
+                        raise FileNotFoundError(
+                            f'file {markdown_fn} does not exist')
+
                 m = RE_TEST.match(line)
                 if m:
                     scope = m.group(3)

@@ -4,7 +4,7 @@ date: 2019-10-14T09:56:29+02:00
 weight: 1
 ---
 
-Returns a new empty [array](../../data-types/array-type) or returns an array for a given `set`.
+Returns a new empty [list](../../data-types/list) or returns a list for a given `set`.
 
 This function does *not* generate an [event](../../events).
 

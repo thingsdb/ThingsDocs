@@ -4,10 +4,10 @@ date: 2019-10-14T10:00:14+02:00
 weight: 8
 ---
 
-Returns an [int](../../data-types/integer) from a specified value.
+Returns an [int](../../data-types/int) from a specified value.
 If no value is given, the default integer `0` is returned.
 
-If the specified value was a [float](../../data-types/floating-point) value, then the
+If the specified value was a [float](../../data-types/float) value, then the
 new integer value will be rounded towards zero.
 
 If the specified value is of type [str](../../data-types/str), then the initial characters

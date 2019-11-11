@@ -5,7 +5,7 @@ weight: 14
 ---
 
 This function determines whether the value passed to this function
-is a [floating point](../../data-types/floating-point) value or not.
+is a [floating point](../../data-types/float) value or not.
 
 This function does *not* generate an [event](../../events).
 

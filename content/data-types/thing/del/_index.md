@@ -22,7 +22,7 @@ property | str (required) | Name of the property to delete.
 
 Returns `nil` if successful. An `INDEX_ERROR` is returned
 if the property does not exist or `BAD_REQUEST` in case the given property is
-not a valid [name](../../names).
+not a valid [name](../../../names).
 
 > This code shows some return values for ***del()***:
 

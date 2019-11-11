@@ -4,7 +4,7 @@ date: 2019-10-23T16:59:28+02:00
 weight: 40
 ---
 
-Returns information about the properties of a given [Type](../../data-types/Type).
+Returns information about the properties of a given [Type](../../data-types/type).
 
 This function does *not* generate an [event](../../events).
 

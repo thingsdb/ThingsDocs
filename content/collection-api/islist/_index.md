@@ -5,7 +5,7 @@ weight: 17
 ---
 
 This function determines whether the value passed to this function
-is a mutable [array](../../data-types/array-type) or not.
+is a [list](../../data-types/list) or not.
 
 This function does *not* generate an [event](../../events).
 

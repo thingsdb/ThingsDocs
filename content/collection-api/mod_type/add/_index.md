@@ -4,7 +4,7 @@ date: 2019-10-23T16:58:01+02:00
 weight: 1
 ---
 
-Adds a property to an existing [Type](../../data-types/Type).
+Adds a property to an existing [Type](../../../data-types/type).
 
 ### Action
 

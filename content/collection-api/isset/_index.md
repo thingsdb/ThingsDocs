@@ -5,7 +5,7 @@ weight: 21
 ---
 
 This function determines whether the value passed to this function
-is a [set](../../data-types/set-type) or not.
+is a [set](../../data-types/set) or not.
 
 This function does *not* generate an [event](../../events).
 

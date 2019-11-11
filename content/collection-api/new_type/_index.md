@@ -4,7 +4,7 @@ date: 2019-10-23T16:58:46+02:00
 weight: 28
 ---
 
-Creates a new [Type](../../data-types/Type).
+Creates a new [Type](../../data-types/type).
 
 This function generates an [event](../../events).
 

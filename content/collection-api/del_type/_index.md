@@ -4,7 +4,7 @@ date: 2019-10-23T16:54:20+02:00
 weight: 5
 ---
 
-Deletes an existing type [Type](../../data-types/Type).
+Deletes an existing type [Type](../../data-types/type).
 
 This function generates an [event](../../events).
 
