@@ -599,7 +599,7 @@
 	"title": "Data Types",
 	"tags": [],
 	"description": "",
-	"content": " Data Types ThingsDB uses the following data types:\n   type Description     bool Booleans are either true or false.   bytes ..   closure Closures can be used to consume items from a thing, list, tuple or set.   error An object containing information about an error.   float ..   info ..   int ..   list ..   nil Probably the most simple type, it can be used as no value.   regex ..   set A set is a collection which is unordered and can only contain things.   str ..   thing ..   tuple ..   Type ..   WType ..    "
+	"content": " Data Types ThingsDB uses the following data types:\n   type Description     bool Booleans are either true or false.   bytes Byte sequence.   closure Closures can be used to consume items from a thing, list, tuple or set.   error An object containing information about an error.   float Floating point type.   info Return value for all *_info() functions.   int Integer type.   list Mutable array.   nil Probably the most simple type, it can be used as no value.   regex Regular expression.   set A set is a collection which is unordered and can only contain things.   str String type.   thing Object with key value pairs.   tuple Nested and immutable list.   Type Type are things with pre-defined properties.    Wrapped instance or thing by a Type.    "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/custom-types/",
