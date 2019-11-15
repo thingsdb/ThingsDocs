@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Example on ThingsDB documentation</title>
-    <link>https://docs.thingsdb.net/ThingsDocs/v0/protocol/example/</link>
+    <link>https://docs.thingsdb.net/v0/protocol/example/</link>
     <description>Recent content in Example on ThingsDB documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 14 Oct 2019 09:31:57 +0200</lastBuildDate>
     
-	<atom:link href="https://docs.thingsdb.net/ThingsDocs/v0/protocol/example/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://docs.thingsdb.net/v0/protocol/example/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

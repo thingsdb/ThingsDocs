@@ -1,4 +1,4 @@
-baseURL = "https://docs.thingsdb.net/ThingsDocs/v0/"
+baseURL = "https://docs.thingsdb.net/v0/"
 languageCode = "en-us"
 title = "ThingsDB documentation"
 publishDir = "../docs/v0"

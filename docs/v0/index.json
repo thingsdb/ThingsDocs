@@ -1,1287 +1,1287 @@
 [
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/node-api/backup_info/",
+	"uri": "https://docs.thingsdb.net/v0/node-api/backup_info/",
 	"title": "backup_info",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/mod_type/add/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/mod_type/add/",
 	"title": "add",
 	"tags": [],
 	"description": "",
 	"content": " Adds a property to an existing Type.\nAction mod_type(type_name, 'add', property_name, property_type, initial_value)\nArguments    Argument Type Description     type_name str Name of the Type where the property has to be added to.   \u0026lsquo;add\u0026rsquo; str Passing this argument will result in a Add action.   property_name str Name of the property that has to be added.   property_type str Type of the property that has to be added.   initial_value any De default value to set on existing instances of this Type.    Return value The value nil.\n This code shows the return value for the action add:\n new_type('Person'); set_type('Person', { name: 'str', age: 'int' }); mod_type('Person', 'add', 'hobbies', '[str]', ['football']);   Return value in JSON format\n null  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/str/contains/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/str/contains/",
 	"title": "contains",
 	"tags": [],
 	"description": "",
 	"content": " Determines if a given string is a substring of a string.\nThis function does not generate an event.\nFunction str.contains(search_string)\nArguments    Argument Type Description     search_string str (required) The characters to be searched for in the string.    Return value Returns true the given characters are found as a substring and otherwise false.\n This code shows an example using contains():\n 'the answer to life the universe and everything'.contains('life');   Return value in JSON format\n true  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/thing/del/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/thing/del/",
 	"title": "del",
 	"tags": [],
 	"description": "",
 	"content": " Delete a property from a thing.\nThis function generates an event.\nFunction thing.del(property)\nArguments    Argument Type Description     property str (required) Name of the property to delete.    Return value Returns nil if successful. An INDEX_ERROR is returned if the property does not exist or BAD_REQUEST in case the given property is not a valid name.\n This code shows some return values for del():\n .x = 'create and delete this prop'; .del('x');   Return value in JSON format\n null  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/set/add/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/set/add/",
 	"title": "add",
 	"tags": [],
 	"description": "",
 	"content": " Adds new thing to the set and returns the number of things which are actually added to the set. For example my_set.add(#42); will return 0 if my_set already contains thing #42.\nThis function generates an event.\nFunction set.add(thing1, thing1, ..., thingX)\nReturn value Returns the number of things which are added to the set.\n This code adds things to a set:\n s = set(); a = {item: 'a'}; b = {item: 'b'}; // add both `a` and `b` to set `s`; note that `a` is only added once; s.add(a, a, b);   Return value in JSON format\n 2  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/list/extend/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/list/extend/",
 	"title": "extend",
 	"tags": [],
 	"description": "",
 	"content": " Adds a list or tuple with items to the end of a list, and returns the new length.\nThis function generates an event.\nFunction list.extend(list)\nReturn value Returns the new length of the list.\n This code extends a list with a given array:\n a = [1, 2, 3]; b = [4, 5, 6]; a.extend(b); // returns the new length, 6 a;   Return value in JSON format\n [ 1, 2, 3, 4, 5, 6 ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/errors/assert_err/",
+	"uri": "https://docs.thingsdb.net/v0/errors/assert_err/",
 	"title": "assert_err",
 	"tags": [],
 	"description": "",
 	"content": " Returns an error.\nThis function does not generate an event.\nFunction assert_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows assert_err():\n assert_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;assert_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -50, \u0026quot;error_msg\u0026quot;: \u0026quot;assertion statement has failed\u0026quot; }  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/procedures-api/del_procedure/",
+	"uri": "https://docs.thingsdb.net/v0/procedures-api/del_procedure/",
 	"title": "del_procedure",
 	"tags": [],
 	"description": "",
 	"content": "This function generates an event.\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/array/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/array/",
 	"title": "array",
 	"tags": [],
 	"description": "",
 	"content": " Returns a new empty list or returns a list for a given set.\nThis function does not generate an event.\nFunction array([set])\nArguments    Argument Type Description     set set (optional) Optional set to initialize the array.    Return value A new array.\n This code shows some return values for array():\n array( set({}, {}) );   Return value in JSON format\n [ {}, {} ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/thingsdb-api/collection_info/",
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/collection_info/",
 	"title": "collection_info",
 	"tags": [],
 	"description": "",
 	"content": "Returns information about a specific collection.\nThis function does not generate an event.\n Returns information about collection stuff:\n collection_info('stuff');   Example return value in JSON format\n { \u0026quot;collection_id\u0026quot;: 782, \u0026quot;name\u0026quot;: \u0026quot;stuff\u0026quot;, \u0026quot;quota_array_size\u0026quot;: null, \u0026quot;quota_properties\u0026quot;: null, \u0026quot;quota_raw_size\u0026quot;: null, \u0026quot;quota_things\u0026quot;: null, \u0026quot;things\u0026quot;: 61352 }  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/bool/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/bool/",
 	"title": "bool",
 	"tags": [],
 	"description": "",
 	"content": "Booleans are either true or false. Other types can convert to bool by using the ! (not) operator or the bool function.\n This code creates a bool property is_the_earth_flat to collection stuff:\n .is_the_earth_flat = !true;  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/operators/arithmetic-operators/",
+	"uri": "https://docs.thingsdb.net/v0/operators/arithmetic-operators/",
 	"title": "Arithmetic operators",
 	"tags": [],
 	"description": "",
 	"content": "   Operator Description     + Addition operator.   - Subtraction operator.   / Float division operator.   // Integer division operator.   * Multiplication operator.   % Modulo operator.     Arithmetic examples:\n [ 5 + 2, 5 - 2, 5 / 2, 5 // 2, 5 * 2, 5 % 2, ];   Return value in JSON format\n [ 7, 3, 2.5, 2, 10, 1 ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/protocol/example/",
+	"uri": "https://docs.thingsdb.net/v0/protocol/example/",
 	"title": "Example",
 	"tags": [],
 	"description": "",
 	"content": " Example As an example we create an authentication package for the default admin user with password pass.\nThis is the package data for our authentication request:\n[\u0026quot;admin\u0026quot;, \u0026quot;pass\u0026quot;]\nSerializing the above using msgpack results in the following 12 bytes:\n\\x92\\xa5admin\\xa4pass\nNow we create the header, for this example we just use ID 0:\n Data length (12) \\x0c\\x00\\x00\\x00 Identifier (0) \\x00\\x00 Auth package type (33) \\x21 Inverse type check bit (222) \\xde  So our total package will be:\n\\x0c\\x00\\x00\\x00\\x00\\x00\\x21\\xde\\x92\\xa5admin\\xa4pass\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/authentication/python/",
+	"uri": "https://docs.thingsdb.net/v0/authentication/python/",
 	"title": "Python",
 	"tags": [],
 	"description": "",
 	"content": " Use pip to install the python client:\n pip install python-thingsdb  The Python client supports both queries, watching and a framework for using ThingsDB in a really simple way.\n To authorize in Python, use this code:\n import asyncio from thingsdb.client import Client client = Client() loop = asyncio.get_event_loop() async def example(): # replace `localhost` with your ThingsDB server address await client.connect('localhost') # replace `amdin` with yout username and `pass` with your password await client.authenticate('admin', 'pass') # ..or by using a token await client.authenticate('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX') # run the example loop.run_until_complete(example()) # the will close the client in a nice way client.close() loop.run_until_complete(client.wait_closed())  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/authentication/",
+	"uri": "https://docs.thingsdb.net/v0/authentication/",
 	"title": "Authentication",
 	"tags": [],
 	"description": "",
 	"content": " Authentication ThingsDB supports authentication by using a user and password combination, or with a token. A default user admin with password pass is created on a fresh installation. If you did not yet change the default password, you might want to jump to set password.\nIt might be a good idea to create a new user with minimal privileges and add a new token for this user. See the grant and revoke functions for managing privileges for a user.\nFor connecting to ThingsDB with a auto-reconnect client, WATCH privileges on the .node scope are required.\n "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/node-api/backups_info/",
+	"uri": "https://docs.thingsdb.net/v0/node-api/backups_info/",
 	"title": "backups_info",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/mod_type/del/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/mod_type/del/",
 	"title": "del",
 	"tags": [],
 	"description": "",
 	"content": " Deletes a property from an existing Type.\nAction mod_type(type_name, 'del', property_name)\nArguments    Argument Type Description     type_name str Name of the Type where the property has to be removed from.   del str Passing this argument will result in a Delete action.   property_name str Name of the property that has to be removed.    Return value The value nil.\n This code shows the return value for the action del:\n new_type('Person'); set_type('Person', { name: 'str', age: 'int', hobbies: '[str]' }); mod_type('Person', 'del', 'hobbies');   Return value in JSON format\n null  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/thing/filter/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/thing/filter/",
 	"title": "filter",
 	"tags": [],
 	"description": "",
 	"content": " When this method is used on a thing, then a new thing will be returned with only the properties that pass the test.\nThis function does not generate an event.\nFunction thing.filter(callback)\nArguments The callback argument must be a closure which input values depend on the type the method is called on.\n   Iterable Arguments Description     thing name, value Iterate over the thing properties. Both name and value are optional.    Return value A new thing with the properties that pass the test. If no properties pass the test, a empty thing will be returned.\n This code shows an example using filter():\n user = {name: 'Iris', age: 6}; /* * Return a thing with only property age */ user.filter(|prop| (prop == 'age'));   Return value in JSON format\n { \u0026quot;age\u0026quot;: 6 }  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/set/filter/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/set/filter/",
 	"title": "filter",
 	"tags": [],
 	"description": "",
 	"content": " When this method is used on a set, then the return value will be a new set.\nThis function does not generate an event.\nFunction set.filter(callback)\nArguments The callback argument must be a closure which input values depend on the type the method is called on.\n   Iterable Arguments Description     set thing, id Iterate over things in the set. Both thing and id are optional.    Return value A new set with the elements that pass the test. If no elements pass the test, an empty set will be returned.\n This code shows an example using filter():\n users = set({name: 'Iris', age: 6}, {name: 'Sasha', age: 34}); /* * Return all users with name 'Iris'. */ array(users.filter(|user| (user.name == 'Iris')));   Return value in JSON format\n [ { \u0026quot;age\u0026quot;: 6, \u0026quot;name\u0026quot;: \u0026quot;Iris\u0026quot; } ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/str/endswith/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/str/endswith/",
 	"title": "endswith",
 	"tags": [],
 	"description": "",
 	"content": " Determines if a string ends with characters given by another string.\nThis function does not generate an event.\nFunction str.endswith(search_string)\nArguments    Argument Type Description     search_string str (required) The characters to be searched for at the end of this string.    Return value Returns true the given characters are found at the end of the string and otherwise false.\n This code shows an example using endswith():\n 'the answer to life the universe and everything'.endswith('everything');   Return value in JSON format\n true  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/list/filter/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/list/filter/",
 	"title": "filter",
 	"tags": [],
 	"description": "",
 	"content": " When this method is used on an list or tuple, a new list is returned with elements that pass the test.\nThis function does not generate an event.\nFunction array.filter(callback)\nArguments The callback argument must be a closure which input values depend on the type the method is called on.\n   Iterable Arguments Description     array item, index Iterate over all items in the array. Both item and index are optional.    Return value A new list with the elements that pass the test. If no elements pass the test, an empty list will be returned.\n This code shows an example using filter():\n users = [{name: 'Iris', age: 6}, {name: 'Sasha', age: 34}]; /* * Return all users with age 18 or above, * a thing with only property age, * and all users with name 'Iris'. */ users.filter(|user| (user.age \u0026gt;= 18));   Return value in JSON format\n [ { \u0026quot;age\u0026quot;: 34, \u0026quot;name\u0026quot;: \u0026quot;Sasha\u0026quot; } ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/bytes/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/bytes/",
 	"title": "bytes",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/errors/auth_err/",
+	"uri": "https://docs.thingsdb.net/v0/errors/auth_err/",
 	"title": "auth_err",
 	"tags": [],
 	"description": "",
 	"content": " Returns an error.\nThis function does not generate an event.\nFunction auth_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows auth_err():\n auth_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;auth_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -56, \u0026quot;error_msg\u0026quot;: \u0026quot;authentication error\u0026quot; }  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/procedures-api/new_procedure/",
+	"uri": "https://docs.thingsdb.net/v0/procedures-api/new_procedure/",
 	"title": "new_procedure",
 	"tags": [],
 	"description": "",
 	"content": "This function generates an event.\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/assert/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/assert/",
 	"title": "assert",
 	"tags": [],
 	"description": "",
 	"content": " Raises ASSERTION_ERROR if the specified statement evaluates to false.\nThis function does not generate an event.\nFunction assert(statement [, error_msg])\nArguments    Argument Type Description     statement any (required) The statement to evaluate.   msg str (optional) Custom error message.   code int (optional) Return a custom error code between 1 and 32. If not given, the error code is ASSERTION_ERROR (-105)    Return value Assert returns with the return value of the given statement when the statement evaluates to true. Otherwise an ASSERTION_ERROR is raised.\n This code shows how assert can be used:\n assert(1 \u0026gt; 2, 'one is still smaller than two');   Raises an ASSERTION_ERROR exception\n { \u0026quot;error_msg\u0026quot;: \u0026quot;one is still smaller than two\u0026quot;, \u0026quot;error_code\u0026quot;: 1 }  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/thingsdb-api/collections_info/",
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/collections_info/",
 	"title": "collections_info",
 	"tags": [],
 	"description": "",
 	"content": "This function does not generate an event.\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/operators/assignments/",
+	"uri": "https://docs.thingsdb.net/v0/operators/assignments/",
 	"title": "Assignments",
 	"tags": [],
 	"description": "",
 	"content": "Assignments will generate an event.\n   Operator Description     = Assignment operator.   *= Multiplication assignment.   /= Float division assignment.   %= Modulo assignment.   += Addition assignment.   -= Subtraction assignment   \u0026amp;= Bitwise AND assignment.   ^= Bitwise XOR assignment.   \u0026#124;= Bitwise OR assignment.    "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/protocol/package/",
+	"uri": "https://docs.thingsdb.net/v0/protocol/package/",
 	"title": "Package",
 	"tags": [],
 	"description": "",
 	"content": " LEN (Unsigned, 32bit) Length of the data, the header not included.\nID (16bit) The ID can be used as an identifier of your package. When ThingsDB send a response on a request, it will use the same ID so this allows you to map a response to a request. This is useful if you want to send multiple request in parallel.\nTYPE (Unsigned, 8bit) Package type is used to describe what kind of package is transmitted.\nRequest type    Type Number Description     PING 32 Ping, useful as keep-alive.   AUTH 33 Authentication, expects: [username, password] or a token_string.   QUERY 34 Query, see query for more info.   WATCH 35 Watch, see watching for more info.   UNWATCH 36 Stop watching specified things, see watching for more info.   RUN 37 Run a procedure, see procedures for more info.    CHK (Unsigned, 8bit) Inverse of the type: type ^ 0xff, this is used as a check-bit.\nDATA Data serialized using msgpack.\n Package format:\n ┌───────────┬───────────┬───────────┬───────────┬───────────┐ │ LEN (4) │ ID (2) │ TYPE (1) │ CHK (1) │ DATA (..) │ └───────────┴───────────┴───────────┴───────────┴───────────┘  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/authentication/shell/",
+	"uri": "https://docs.thingsdb.net/v0/authentication/shell/",
 	"title": "Shell",
 	"tags": [],
 	"description": "",
 	"content": " Copy/paste to download and install thingscmd\n pip install thingscmd  For running ThingsDB queries from the shell, a shell tool ThingsCMD is available. It is not possible to watch things by using this shell based tool.\n To authorize from the shell, use this code:\n # Authenticate with a user and password thingscmd -n localhost -u admin -p pass -q \u0026quot;nil;\u0026quot; # ..or with a token thingscmd -n localhost -t \u0026quot;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\u0026quot; -q \u0026quot;nil;\u0026quot;  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/query/",
+	"uri": "https://docs.thingsdb.net/v0/query/",
 	"title": "Query",
 	"tags": [],
 	"description": "",
 	"content": " Query Queries to ThingsDB can be used to manage nodes, ThingsDB or to query collections.\nA query request has a required field scope and query, and an option required field collection when querying a collection scope.\nTo send a query you can either use a language binding, see code examples, or if you want to know how to serialize and send the data, read the protocol section.\n Example query\n thingscmd \\ --node localhost \\ --user admin \\ --password pass \\ --scope @thingsdb \\ --query \u0026quot;'Hello world!!'\u0026quot;   Request in JSON format\n [\u0026quot;@thingsdb\u0026quot;, \u0026quot;'Hello world!!'\u0026quot;]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/mod_type/mod/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/mod_type/mod/",
 	"title": "mod",
 	"tags": [],
 	"description": "",
 	"content": " Modifies a property from an exinsting Type.\nAction mod_type(type_name, 'mod', property_name, property_type)\nArguments    Argument Type Description     type_name str Name of the Type where the property has to be removed from.   mod str Passing this argument will result in a Modify action.   property_name str Name of the property that has to be removed.   property_type str Type of the property that has to be modified.    Return value The value nil.\n This code shows the return value for the action mod:\n new_type('Person'); set_type('Person', { name: 'str', age: 'int', hobbies: '[str]' }); mod_type('Person', 'mod', 'age', 'int?');   Return value in JSON format\n null  When modifying a property of a Type, the changed property type can only be less \u0026lsquo;strict\u0026rsquo;. So for example, age: 'int' can become age: 'int?', but not the other way around.\n "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/thing/get/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/thing/get/",
 	"title": "get",
 	"tags": [],
 	"description": "",
 	"content": " Return the value of a property on a thing by a given property name. If the property is not found then the return value will be nil, unless an alternative return value is given.\nThis function does not generate an event.\nFunction thing.get(name [, alt])\nArguments    Argument Type Description     name str (required) Name of the property where to return the value for.   alt any (optional) Optional return value.    Return value Returns the value for the given property name. If the property is not found the the return value will be nil unless an alternative return value is given as second argument.\n This code shows an example use case of get():\n tmp = {name: 'Iris'}; tmp.get('name');   Return value in JSON format\n \u0026quot;Iris\u0026quot;  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/set/find/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/set/find/",
 	"title": "find",
 	"tags": [],
 	"description": "",
 	"content": " This function returns the value of the first element in the set that satisfies the callback function. Otherwise nil is returned unless an alternative return value is specified.\nThis function does not generate an event.\nThe return value when called on a set might be unpredictable since a set is not ordered. set({name: 'Iris'}, {name: 'Cato'}).find(||true); \u0026hellip;will return {Iris} or {Cato}.\n Function set.find(callback, [alt])\nArguments    Argument Type Description     callback closure Closure to execute on each value until the closure evaluates to true.   alt any (optional) Alternative value which is returned if no item has passed the callback test.    Explanation of the callback argument:\n   Iterable Arguments Description     set thing, id Iterate over things in the set. Both thing and id are optional.    The alt argument will be lazy evaluated. Consider the following example: elems.find(|e| (e.name == \u0026quot;foo\u0026quot;), items.pop()); Here, the item will only be popped, in case e with name foo is not found in elems.\n Return value The value of the first element in the set that satisfies the provided testing function; otherwise, nil or a specified alternative value is returned.\n This code shows an example using find():\n users.find(|user| user.name.startswith('Jeroen'));   Example return value in JSON format\n { \u0026quot;#\u0026quot;: 16, \u0026quot;email\u0026quot;: \u0026quot;jeroen@transceptor.technology\u0026quot;, \u0026quot;name\u0026quot;: \u0026quot;Jeroen van der Heijden\u0026quot; }  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/str/len/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/str/len/",
 	"title": "len",
 	"tags": [],
 	"description": "",
 	"content": " Returns the length of a string.\nThis function does not generate an event.\nFunction str.len()\nArguments None\nReturn value Returns length of the string.\n This code uses len() to return the length of a string:\n 'Hello'.len();   Return value in JSON format\n 5  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/list/find/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/list/find/",
 	"title": "find",
 	"tags": [],
 	"description": "",
 	"content": " This function returns the value of the first element in the list or tuple that satisfies the callback function. Otherwise nil is returned unless an alternative return value is specified.\nThis function does not generate an event.\nFunction array.find(callback, [alt])\nArguments    Argument Type Description     callback closure Closure to execute on each value until the closure evaluates to true.   alt any (optional) Alternative value which is returned if no item has passed the callback test.    Explanation of the callback argument:\n   Iterable Arguments Description     array item, index Iterate over items in the array. Both item and index are optional.    The alt argument will be lazy evaluated. Consider the following example: elems.find(|e| (e.name == \u0026quot;foo\u0026quot;), items.pop()); Here, the item will only be popped, in case e with name foo is not found in elems.\n Return value The value of the first element in the array that satisfies the provided testing function; otherwise, nil or a specified alternative value is returned.\n This code shows an example using find():\n users.find(|user| user.name.startswith('Jeroen'));   Example return value in JSON format\n { \u0026quot;#\u0026quot;: 16, \u0026quot;email\u0026quot;: \u0026quot;jeroen@transceptor.technology\u0026quot;, \u0026quot;name\u0026quot;: \u0026quot;Jeroen van der Heijden\u0026quot; }  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/errors/bad_data_err/",
+	"uri": "https://docs.thingsdb.net/v0/errors/bad_data_err/",
 	"title": "bad_data_err",
 	"tags": [],
 	"description": "",
 	"content": " Returns an error.\nThis function does not generate an event.\nFunction bad_data_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows bad_data_err():\n bad_data_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;bad_data_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -53, \u0026quot;error_msg\u0026quot;: \u0026quot;unable to handle request due to invalid data\u0026quot; }  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/procedures-api/procedure_doc/",
+	"uri": "https://docs.thingsdb.net/v0/procedures-api/procedure_doc/",
 	"title": "procedure_doc",
 	"tags": [],
 	"description": "",
 	"content": "This function does not generate an event.\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/bool/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/bool/",
 	"title": "bool",
 	"tags": [],
 	"description": "",
 	"content": " Returns an bool from a specified value. If no value is given, false is returned.\nTypes with a length evaluate to true when the length is not 0 and false otherwise.\nThis function does not generate an event.\nFunction bool(value)\nArguments    Argument Type Description     value any (optional) The value where to return a boolean value for.    Return value A boolean value.\n This code shows some return values for bool():\n [ bool(), bool(nil), bool({}), bool({answer: 42}), bool([]), bool([1, 2, 3]), bool(''), bool('forty two'), ];   Return value in JSON format\n [ false, false, false, true, false, true, false, true ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/thingsdb-api/del_collection/",
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/del_collection/",
 	"title": "del_collection",
 	"tags": [],
 	"description": "",
 	"content": " Delete a collection.\nThis function generates an event.\nFunction del_collection(name);\nArguments    Argument Type Description     name str (required) Name of the collection to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the collection does not exist.\n This code will delete collection stuff:\n // Delete collection `stuff` del_collection('stuff');  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/node-api/counters/",
+	"uri": "https://docs.thingsdb.net/v0/node-api/counters/",
 	"title": "counters",
 	"tags": [],
 	"description": "",
 	"content": " Returns counters for the ThingsDB node you are connected too. Counters start all at zero when ThingsDB is started, or when the counters are reset by using reset_counters()\u0026rsquo;.\nCounters give information about things, queries and events. If you suspect failed queries, then counters might provide you with more information.\n   Counter Description     average_event_duration The average event duration in seconds.   events_committed Events committed since last counters reset.   events_failed Failed events. This is a critical counter which should be 0.   events_killed Killed events took too long for receiving the READY status. These event may be processed later.   events_quorum_lost Number of times a quorum was not received.   events_skipped Events which cannot be committed since an event with a higher id is already processed. These events are moved to a skipped queue.   events_unaligned Number of times an event cannot be pushed to the end of the queue and needs re-ordering.   events_with_gap Events which are committed but at least one event id was skipped.   garbage_collected Number of things which are garbage collected.   longest_event_duration Longest event duration, in seconds.   queries_success Number of queries where this node acted as the master node and the query has successful finished.   queries_with_error Number of queries where this node acted as the master node but the query has returned with an error.    This function does not generate an event.\nFunction counters();\nArguments None\nReturn value Returns the current counter values.\n This code will return node counter values:\n // returns counters for `localhost:9200` counters();   Example return value in JSON format\n { \u0026quot;average_event_duration\u0026quot;: 3.368566710075053e-05,, \u0026quot;events_committed\u0026quot;: 80352, \u0026quot;events_failed\u0026quot;: 0, \u0026quot;events_killed\u0026quot;: 0, \u0026quot;events_quorum_lost\u0026quot;: 0, \u0026quot;events_skipped\u0026quot;: 0, \u0026quot;events_unaligned\u0026quot;: 0, \u0026quot;events_with_gap\u0026quot;: 0, \u0026quot;garbage_collected\u0026quot;: 0, \u0026quot;longest_event_duration\u0026quot;: 3.508100053295493e-05, \u0026quot;queries_received\u0026quot;: 130944 }  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/closure/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/closure/",
 	"title": "closure",
 	"tags": [],
 	"description": "",
 	"content": "Closures can be used to consume items from a thing, list, tuple or set.\nIt is not possible to use closures with recursion, for example: a = ||map(a); map(a); \u0026hellip;will raise BAD_REQUEST (closures cannot be used recursively)\n "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/operators/binary-bitwise-operators/",
+	"uri": "https://docs.thingsdb.net/v0/operators/binary-bitwise-operators/",
 	"title": "Binary bitwise operators",
 	"tags": [],
 	"description": "",
 	"content": "Can be used on integer values.\nOperator | Description \u0026mdash;\u0026mdash;\u0026ndash; + \u0026mdash;\u0026mdash;\u0026mdash;\u0026ndash; \u0026amp; | Bitwise AND, true if both a and b are 1. \u0026#124; | Bitwise OR, true if at least a or b is 1. ^ | Bitwise XOR, true if a and b are different.\n Binary bitwise operator examples:\n [ 0b110 \u0026amp; 0b011, 0b110 | 0b011, 0b110 ^ 0b011, ];   Return value in JSON format\n [ 2, 7, 5 ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/protocol/",
+	"uri": "https://docs.thingsdb.net/v0/protocol/",
 	"title": "Protocol",
 	"tags": [],
 	"description": "",
 	"content": " Protocol This is a more in depth view of the protocol used for communication with ThingsDB. In case you just want to use ThingsDB using one of the language bindings, then this info can be skipped. If you plan to implement you own connector, then this info might be useful to you.\nCommunication with ThingsDB is done over a socket, either using TCP or a UNIX PIPE connection. Once a connection is made, packages can be send to ThingsDB. Each package starts with a 8 bytes header using little endian, followed by optional data. Before you can send queries to ThingsDB, the connection must be authenticated. This can be done by sending an AUTH package.\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/node-api/del_backup/",
+	"uri": "https://docs.thingsdb.net/v0/node-api/del_backup/",
 	"title": "del_backup",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/thing/has/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/thing/has/",
 	"title": "has",
 	"tags": [],
 	"description": "",
 	"content": " Determines if a thing has a given property.\nThis function does not generate an event.\nFunction thing.has(name)\nArguments    Argument Type Description     name str (required) Name of the property to check.    Return value Returns true when the given propery name is found and otherwise false.\n This code shows an example use case of has():\n tmp = {name: 'Iris'}; /* Check if `tmp` has a property `name` */ tmp.has('name');   Return value in JSON format\n true  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/set/has/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/set/has/",
 	"title": "has",
 	"tags": [],
 	"description": "",
 	"content": " Determines if a set has a given thing.\nThis function does not generate an event.\nFunction set.has(thing)\nArguments    Argument Type Description     thing thing (required) Thing to check.    Return value Returns true the given thing is found in the set and otherwise false.\n This code shows an example use case of has():\n iris = {name: 'Iris'}; s = set(iris); /* Check if iris is in set `s` */ s.has(iris);   Return value in JSON format\n true  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/str/lower/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/str/lower/",
 	"title": "lower",
 	"tags": [],
 	"description": "",
 	"content": " Return a new string in which all case-based characters are in lower case.\nThis function does not generate an event.\nFunction str.lower()\n Example using lower():\n 'Hello World!!'.lower();   Return value in JSON format\n \u0026quot;hello world!!\u0026quot;  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/list/findindex/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/list/findindex/",
 	"title": "findindex",
 	"tags": [],
 	"description": "",
 	"content": " This function returns the index of the first element in a list or tuple that satisfies the callback function. Otherwise nil is returned.\nThis function does not generate an event.\nFunction array.findindex(callback)\nArguments    Argument Type Description     callback closure The statement to try.    Explanation of the callback argument:\n   Iterable Callback arguments Description     array item, index Iterate over items in the array. Both item and index are optional.    Return value The index of the first element in the array that satisfies the provided testing function; otherwise, nil is returned.\n This code shows an example using findindex():\n users.findindex(|user| user.name.startswith('Jeroen'));   Example return value in JSON format\n 42  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/errors/forbidden_err/",
+	"uri": "https://docs.thingsdb.net/v0/errors/forbidden_err/",
 	"title": "forbidden_err",
 	"tags": [],
 	"description": "",
 	"content": " Returns an error.\nThis function does not generate an event.\nFunction forbidden_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows forbidden_err():\n forbidden_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;forbidden_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -55, \u0026quot;error_msg\u0026quot;: \u0026quot;forbidden (access denied)\u0026quot; }  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/procedures-api/procedure_info/",
+	"uri": "https://docs.thingsdb.net/v0/procedures-api/procedure_info/",
 	"title": "procedure_info",
 	"tags": [],
 	"description": "",
 	"content": "This function does not generate an event.\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/deep/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/deep/",
 	"title": "deep",
 	"tags": [],
 	"description": "",
 	"content": " Returns the current deep value. The deep value might change when a function with a return(..) is called which has changed the deep value for this query.\nThis function does not generate an event.\nFunction deep()\nArguments None\nReturn value The current deep value for the running query.\n This code uses deep() to return the default deep value:\n deep(); // returns the default since `deep` is not changed   Return value in JSON format\n 1  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/thingsdb-api/del_expired/",
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/del_expired/",
 	"title": "del_expired",
 	"tags": [],
 	"description": "",
 	"content": " Delete all expired tokens.\nThis function generates an event.\nFunction del_expired();\nArguments None\nReturn value Returns nil.\n This code will delete all expired tokens:\n ```thingsdb,should_pass,@t // Delete all expired tokens del_expired(); \n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/error/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/error/",
 	"title": "error",
 	"tags": [],
 	"description": "",
 	"content": " When an error occurs within a method, an object can be returned. The object, called an error, contains information about the error, including its type and a message.\nRelated functions    Method Description     err Initialize a new error.   raise Raise an error.   try Try a statement and catch if an error is raised.    "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/operators/conditional-ternary-operator/",
+	"uri": "https://docs.thingsdb.net/v0/operators/conditional-ternary-operator/",
 	"title": "Conditional ternary operator",
 	"tags": [],
 	"description": "",
 	"content": " The conditional operator returns one of two values based on the logical value of the condition.\nSyntax: expression ? if-true : if-false\n Conditional (ternary) operator examples:\n 2 \u0026gt; 1 ? 'two is greater than one' : 'two is less than one';   Return value in JSON format\n \u0026quot;two is greater than one\u0026quot;  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/events/",
+	"uri": "https://docs.thingsdb.net/v0/events/",
 	"title": "Events",
 	"tags": [],
 	"description": "",
 	"content": " Events When a query uses a statement which makes a change to ThingsDB, then internally ThingsDB will create an event to apply these changes. Events are applied in order on each node so database consistency is guaranteed.\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/thingsdb-api/del_node/",
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/del_node/",
 	"title": "del_node",
 	"tags": [],
 	"description": "",
 	"content": "This function generates an event.\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/node-api/new_backup/",
+	"uri": "https://docs.thingsdb.net/v0/node-api/new_backup/",
 	"title": "new_backup",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/del_type/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/del_type/",
 	"title": "del_type",
 	"tags": [],
 	"description": "",
 	"content": " Deletes an existing type Type.\nThis function generates an event.\nFunction del_type(type_name)\nArguments    Argument Type Description     type_name string Name of the Type to be deleted.    Return value The value nil.\n This code shows the return value for del_type():\n new_type('NewType'); del_type('NewType');   Return value in JSON format\n null  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/thing/id/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/thing/id/",
 	"title": "id",
 	"tags": [],
 	"description": "",
 	"content": " Returns the id of a thing or nil if the thing is not stored.\nThis function does not generate an event.\nFunction thing.id()\nArguments None\nReturn value Returns id of a thing or nil when the thing is not stored.\n This code uses id() to return a collection id:\n .id(); // Returns the collection id   Example return value in JSON format\n 3  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/set/map/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/set/map/",
 	"title": "map",
 	"tags": [],
 	"description": "",
 	"content": " Iterate over items in an set.\nBe aware that the order when iterating over a set or a thing is not guaranteed.\n This function does not generate an event.\nFunction set.map(callback)\nArguments Explanation of the callback argument:\n   Iterable Arguments Description     set thing, id Iterate over things in the set. Both thing and id are optional.    Return value A new list with each element being the result of the callback function.\n This code shows an example using map():\n users = [{name: \u0026quot;Iris\u0026quot;, age: 6}, {name: \u0026quot;Sasha\u0026quot;, age: 34}]; // returns [\u0026quot;Iris\u0026quot;, \u0026quot;Sasha\u0026quot;] set(users).map(|user| user.name).sort();   Return value in JSON format\n [ \u0026quot;Iris\u0026quot;, \u0026quot;Sasha\u0026quot; ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/str/startswith/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/str/startswith/",
 	"title": "startswith",
 	"tags": [],
 	"description": "",
 	"content": " Determines if a string starts with characters given by another string.\nThis function does not generate an event.\nFunction str.startswith(search_string)\nArguments    Argument Type Description     search_string str (required) The characters to be searched for at the start of this string.    Return value Returns true the given characters are found at the start of the string and otherwise false.\n This code shows an example using startswith():\n 'the answer to life the universe and everything'.startswith('the answer');   Return value in JSON format\n true  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/list/indexof/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/list/indexof/",
 	"title": "indexof",
 	"tags": [],
 	"description": "",
 	"content": " Returns the first index at which a given value can be found in the list or tuple, or nil if it is not present. The index of an array starts at 0, so the first item has index 0 the second 1 and so on.\nThis function does not generate an event.\nFunction array.indexof(value)\nArguments    Argument Type Description     value any The value to find the index for.    Return value Index at which the first item matches a given value, or nil if it is not present.\n This code shows an example using indexof():\n [\u0026quot;January\u0026quot;, \u0026quot;February\u0026quot;, \u0026quot;March\u0026quot;, \u0026quot;April\u0026quot;].indexof(\u0026quot;March\u0026quot;);   Return value in JSON format\n 2  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/errors/lookup_err/",
+	"uri": "https://docs.thingsdb.net/v0/errors/lookup_err/",
 	"title": "lookup_err",
 	"tags": [],
 	"description": "",
 	"content": " Returns an error.\nThis function does not generate an event.\nFunction lookup_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows lookup_err():\n lookup_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;lookup_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -54, \u0026quot;error_msg\u0026quot;: \u0026quot;requested resource not found\u0026quot; }  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/procedures-api/procedures_info/",
+	"uri": "https://docs.thingsdb.net/v0/procedures-api/procedures_info/",
 	"title": "procedures_info",
 	"tags": [],
 	"description": "",
 	"content": "This function does not generate an event.\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/float/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/float/",
 	"title": "float",
 	"tags": [],
 	"description": "",
 	"content": " ThingsDB uses 64bit to store float values and has support for the e notation and special float values like inf, -inf and nan.\nUseful methods    Method Description     float return a float type for a given value.   isfloat check if the given value is of the float type.   isinf check if the given value is infinite.   isnan check if the given value is not-a-number.     This code creates a float property plank_constant to collection stuff:\n // Assign property `plank_constant` .plank_constant = 6.62607004e-34;  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/operators/logical_operators/",
+	"uri": "https://docs.thingsdb.net/v0/operators/logical_operators/",
 	"title": "Logical operators",
 	"tags": [],
 	"description": "",
 	"content": "Logical operators are typically used with bool values.\n   Operator Description     \u0026amp;\u0026amp; Logical AND.   \u0026#124;\u0026#124; Logical OR.    As logical expressions are evaluated left to right, they are tested for possible \u0026ldquo;short-circuit\u0026rdquo; evaluation using the following rules:\n (some falsy expression) \u0026amp;\u0026amp; expr is short-circuit evaluated to the falsy expression; (some truthy expression) || expr is short-circuit evaluated to the truthy expression.  Short circuit means that the expr parts above are not evaluated, hence any side effects of doing so do not take effect (e.g., if expr is a function call, the calling never takes place). This happens because the value of the operator is already determined after the evaluation of the first operand.\n Logical short-circuit examples:\n x = 0; [ false \u0026amp;\u0026amp; x += 1, true || x += 1, x ]; // expression x += 1 will never be executed   Return value in JSON format\n [ false, true, 0 ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/scopes/",
+	"uri": "https://docs.thingsdb.net/v0/scopes/",
 	"title": "Scopes",
 	"tags": [],
 	"description": "",
 	"content": " Scopes When sending a query, calling a procedure or subscribing to a thing, the request will require you to provide a scope. ThingsDB has three main scopes: @thingsdb, @node and @collection.\n   scope short description     @thingsdb @t ThingsDB scope; Used for managing user accounts, collections and nodes.   @node @n Current node scope; For node info and statistics from the connected node.   @node:ID @n:ID Specific node scope; Get node info and statistics from a specific node id (ID should be replaced with a node ID, for example 0).   @collection:NAME @:NAME Collection scope; A collection where things are stored.   @collection:ID @:ID Collection scope; By collection ID instead of the using the collection name.    "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/thing/keys/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/thing/keys/",
 	"title": "keys",
 	"tags": [],
 	"description": "",
 	"content": " keys Returns an array with all the property names of a thing. The same could be returned using map so the following statement is true:\n.keys() == .map(|k| k)\nAlthough the keys() and map() functions in the example above will return an array with the same order, the order of keys in the array is not guaranteed and may be different each time you run the query.\n This function does not generate an event.\nFunction thing.keys()\nArguments None\nReturn value Returns an array with property names.\n This code shows how to use keys():\n {a: 1, b: 2, c: 3}.keys();   Return value in JSON format (Warning: the order is NOT guaranteed)\n [ \u0026quot;a\u0026quot;, \u0026quot;b\u0026quot;, \u0026quot;c\u0026quot; ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/set/remove/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/set/remove/",
 	"title": "remove",
 	"tags": [],
 	"description": "",
 	"content": " This function can be used to remove things from a set.\nIf a closure is used, then all things that satisfy the test are removed from the set and returned as list. The order of the removed things is not guaranteed since the set itself is unordered.\nIt is also possible to specify things as arguments. In this case a list is returned with all the things which are removed from the set, in the order that the arguments are used. Things which are not found in the set are ignored.\nThis function generates an event.\nFunction set.remove(callback)\nOr\nset.remove(thing1, thing2, ..., thingX)\nArguments Explanation of the callback argument:\n   Iterable Arguments Description     set thing, thing ID Iterate over things in the set. Both thing and thing ID are optional.    Return value A list with the removed things from the set or an empty list if nothing is removed.\n This code shows an example using remove() on a set:\n t1 = {x:1}; t2 = {x:2}; t3 = {x:3}; t4 = {x:4}; s = set(t1, t2, t3, t4); [ s.remove(|t| t.x \u0026lt; 3), s.remove(t1, t2, t3, t4), ]   Example return value in JSON format\n [ [ { \u0026quot;x\u0026quot;: 1 }, { \u0026quot;x\u0026quot;: 2 } ], [ { \u0026quot;x\u0026quot;: 3 }, { \u0026quot;x\u0026quot;: 4 } ] ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/str/test/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/str/test/",
 	"title": "test",
 	"tags": [],
 	"description": "",
 	"content": " Test if a string matches a given regular expression and return true or false.\nThis function does not generate an event.\nFunction str.test(regex)\nArguments    Argument Type Description     regex regex (required) The regular expression to test against the string.    Return value true if there is a match between the string and the specified regular expression, otherwise false.\n Examples using test():\n [ 'Hello world!!'.test(/^hello/), 'Hello world!!'.test(/^hello/i), ];   Return value in JSON format\n [ false, true ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/list/len/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/list/len/",
 	"title": "len",
 	"tags": [],
 	"description": "",
 	"content": " Returns the length of a list or tuple.\nThis function does not generate an event.\nFunction array.len()\nArguments None\nReturn value Returns length of the array.\n This code uses len() to return the number of items in a collection:\n [1, 2, 3, 4].len();   Return value in JSON format\n 4  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/info/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/info/",
 	"title": "info",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/errors/max_quota_err/",
+	"uri": "https://docs.thingsdb.net/v0/errors/max_quota_err/",
 	"title": "max_quota_err",
 	"tags": [],
 	"description": "",
 	"content": " Returns an error.\nThis function does not generate an event.\nFunction max_quota_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows max_quota_err():\n max_quota_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;max_quota_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -57, \u0026quot;error_msg\u0026quot;: \u0026quot;max quota is reached\u0026quot; }  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/procedures-api/run/",
+	"uri": "https://docs.thingsdb.net/v0/procedures-api/run/",
 	"title": "run",
 	"tags": [],
 	"description": "",
 	"content": "This function does not generate an event.\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/err/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/err/",
 	"title": "err",
 	"tags": [],
 	"description": "",
 	"content": " Returns an error.\nThis function does not generate an event.\nFunction err([code, [message]])\nArguments    Argument Type Description     code int (optional) Integer error code between -127 and -50, defaults to -100.   message str (optional) Optional error message.    Return value An error value.\n This code shows some return values for err():\n [ err(), err(-100, 'some error occurred'), err(-101), err(-59), ];   Return value in JSON format\n [ { \u0026quot;!\u0026quot;: \u0026quot;err(-100)\u0026quot;, \u0026quot;error_code\u0026quot;: -100, \u0026quot;error_msg\u0026quot;: \u0026quot;error:-100\u0026quot; }, { \u0026quot;!\u0026quot;: \u0026quot;err(-100)\u0026quot;, \u0026quot;error_code\u0026quot;: -100, \u0026quot;error_msg\u0026quot;: \u0026quot;some error occurred\u0026quot; }, { \u0026quot;!\u0026quot;: \u0026quot;err(-101)\u0026quot;, \u0026quot;error_code\u0026quot;: -101, \u0026quot;error_msg\u0026quot;: \u0026quot;error:-101\u0026quot; }, { \u0026quot;!\u0026quot;: \u0026quot;overflow_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -59, \u0026quot;error_msg\u0026quot;: \u0026quot;integer overflow\u0026quot; } ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/thingsdb-api/del_token/",
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/del_token/",
 	"title": "del_token",
 	"tags": [],
 	"description": "",
 	"content": " Delete a token.\nThis function generates an event.\nFunction del_token(key);\nArguments    Argument Type Description     key str (required) Token key to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the token is not found.\n This code will delete a token:\n ```thingsdb,syntax_only,@t // Delete a token del_token('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'); \n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/node-api/node_info/",
+	"uri": "https://docs.thingsdb.net/v0/node-api/node_info/",
 	"title": "node_info",
 	"tags": [],
 	"description": "",
 	"content": " Returns information about the node in the current scope. See scopes for more information on how to target a specific node scope.\n   Value Description     archive_files Number of archive files. May decrease after a full store during away mode.   archived_in_memory Number of events which are archived in memory.   cached_names Number of names cached in memory.   client_port Listening for client TCP socket connections on this port.   db_stored_event_id Last stored event ID in full database store.   events_in_queue Events which are pending in the queue.   global_committed_event_id Lowest known committed event ID by all nodes.   global_stored_event_id Lowest known stored event ID by all nodes.   hostname Hostname of the node.   http_status_port Listening to this HTTP port for status, readiness and liveness requests.   ip_support Enabled IP support. May be IPv4/IPv6 or both.   libcleri_version Cleri language parser library version.   libpcre2_version PCRE regular expression library version.   msgpack_version MessagePack data protocol library version.   libuv_version UV asynchronous library version.   local_committed_event_id Last committed event ID on the node.   local_stored_event_id Last stored event ID on disk. Store takes place when in away mode.   log_level Current log level for the node. May be changed at runtime using set_log_level(..)   next_event_id Next free event ID.   next_thing_id Next free things ID.   node_id The id which is assigned to the node.   node_port Listening for node TCP socket connections on this port.   status Current status of the ThingsDB node.   storage_path Path used for storing ThingsDB data.   syntax_version Language or syntax version. A new version of ThingsDB might also have a new language version.   uptime Uptime of the node in seconds.   version Version of ThingsDB,   zone Zone number to which the node is assigned. May be changed in the ThingsDB configuration file.    This function does not generate an event.\nFunction node_info()\nArguments None\nReturn value Information as a msgpack type bout the connected node.\n This code returns info for the connected node:\n node_info();   Example return value in JSON format\n { \u0026quot;archive_files\u0026quot;: 1, \u0026quot;archived_in_memory\u0026quot;: 0, \u0026quot;cached_names\u0026quot;: 2, \u0026quot;client_port\u0026quot;: 9200, \u0026quot;db_stored_event_id\u0026quot;: 1, \u0026quot;events_in_queue\u0026quot;: 0, \u0026quot;global_committed_event_id\u0026quot;: 2, \u0026quot;global_stored_event_id\u0026quot;: 2, \u0026quot;hostname\u0026quot;: \u0026quot;node.things\u0026quot;, \u0026quot;http_status_port\u0026quot;: \u0026quot;disabled\u0026quot;, \u0026quot;ip_support\u0026quot;: \u0026quot;ALL\u0026quot;, \u0026quot;libcleri_version\u0026quot;: \u0026quot;0.11.0\u0026quot;, \u0026quot;libpcre2_version\u0026quot;: \u0026quot;10.32\u0026quot;, \u0026quot;libuv_version\u0026quot;: \u0026quot;1.24.1\u0026quot;, \u0026quot;local_committed_event_id\u0026quot;: 2, \u0026quot;local_stored_event_id\u0026quot;: 2, \u0026quot;log_level\u0026quot;: \u0026quot;WARNING\u0026quot;, \u0026quot;msgpack_version\u0026quot;: \u0026quot;3.2.0\u0026quot;, \u0026quot;next_event_id\u0026quot;: 3, \u0026quot;next_thing_id\u0026quot;: 5, \u0026quot;node_id\u0026quot;: 0, \u0026quot;node_port\u0026quot;: 9220, \u0026quot;scheduled_backups\u0026quot;: 0, \u0026quot;status\u0026quot;: \u0026quot;READY\u0026quot;, \u0026quot;storage_path\u0026quot;: \u0026quot;/var/lib/thingsdb/\u0026quot;, \u0026quot;syntax_version\u0026quot;: \u0026quot;v0\u0026quot;, \u0026quot;uptime\u0026quot;: 7.854678630828857, \u0026quot;version\u0026quot;: \u0026quot;0.2.7\u0026quot;, \u0026quot;zone\u0026quot;: 0 }  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/operators/precedence-and-associativity/",
+	"uri": "https://docs.thingsdb.net/v0/operators/precedence-and-associativity/",
 	"title": "Precedence and associativity",
 	"tags": [],
 	"description": "",
 	"content": "   Symbol Type of operation Associativity     () Expression parenthesis Left-to-right   ! Not operator Right-to-left   * / // % Multiplication, Modulo, (Integer) Division Left-to-right   + - Add, Subtract Left-to-right   \u0026amp; Bitwise AND Left-to-right   ^ Bitwise XOR Left-to-right   \u0026#124; Bitwise OR Left-to-right   == != \u0026lt;= \u0026gt;= \u0026lt; \u0026gt; Compare Left-to-right   \u0026amp;\u0026amp; Logical AND Left-to-right   \u0026#124;\u0026#124; Logical OR Left-to-right   ? : Conditional Right-to-left   = *= /= %= += -= \u0026amp;= ^= \u0026#124;= Assignments Right-to-left    "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/names/",
+	"uri": "https://docs.thingsdb.net/v0/names/",
 	"title": "Names",
 	"tags": [],
 	"description": "",
 	"content": " Names The following rules apply to names in ThingsDB:\n A name must start with a letter or underscore character A name cannot start with a number A name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ ) Names are case-sensitive (thing, Thing and THING are three different names) Names are restricted to 255 characters  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/set/len/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/set/len/",
 	"title": "len",
 	"tags": [],
 	"description": "",
 	"content": " Returns the length of a set.\nThis function does not generate an event.\nFunction set.len()\nArguments None\nReturn value Returns length of the set.\n This code uses len() to return the number of items in a set:\n set({iten: 'a'}, {item: 'b'}).len();   Return value in JSON format\n 2  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/thing/len/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/thing/len/",
 	"title": "len",
 	"tags": [],
 	"description": "",
 	"content": " Returns the number of items in a thing.\nThis function does not generate an event.\nFunction thing.len()\nArguments None\nReturn value Returns the number of items in a thing.\n This code uses len() to return the number of items in a thing:\n {name: 'Iris', age: 6}.len();   Return value in JSON format\n 2  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/str/upper/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/str/upper/",
 	"title": "upper",
 	"tags": [],
 	"description": "",
 	"content": " Return a new string in which all case-based characters are in upper case.\nThis function does not generate an event.\nFunction str.upper()\n Example using upper():\n 'Hello World!!'.upper();   Return value in JSON format\n \u0026quot;HELLO WORLD!!\u0026quot;  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/list/map/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/list/map/",
 	"title": "map",
 	"tags": [],
 	"description": "",
 	"content": " Iterate over items in an list or tuple.\nThis function does not generate an event.\nFunction array.map(callback)\nArguments Explanation of the callback argument:\n   Iterable Arguments Description     array item, index Iterate over all items in the array. Both item and index are optional.    Return value A new list with each element being the result of the callback function.\n This code shows an example using map():\n users = [{name: \u0026quot;Iris\u0026quot;, age: 6}, {name: \u0026quot;Sasha\u0026quot;, age: 34}]; // returns [\u0026quot;Iris\u0026quot;, \u0026quot;Sasha\u0026quot;] users.map(|user| user.name);   Return value in JSON format\n [ \u0026quot;Iris\u0026quot;, \u0026quot;Sasha\u0026quot; ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/errors/node_err/",
+	"uri": "https://docs.thingsdb.net/v0/errors/node_err/",
 	"title": "node_err",
 	"tags": [],
 	"description": "",
 	"content": " Returns an error.\nThis function does not generate an event.\nFunction node_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows node_err():\n node_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;node_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -51, \u0026quot;error_msg\u0026quot;: \u0026quot;node is temporary unable to handle the request\u0026quot; }  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/float/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/float/",
 	"title": "float",
 	"tags": [],
 	"description": "",
 	"content": " Returns a float from a specified value. If no value is given, the default float 0.0 is returned.\nIf the specified value is of type str, then the initial characters of the string are converted until a non-digit character is found. Initial white space is ignored and the number may start with an optional + or - sign.\nType bool values are converted to 1.0 for true and 0.0 for false.\nThis function does not generate an event.\nFunction float(value)\nArguments    Argument Type Description     value any (optional) The value where to create a floating point value for.    Return value A floating point value. Other type than float, raw, bool or int will raise a BAD_REQUEST.\n This code shows some return values for float():\n [ float(), float(42), float('0.365e+3 days'), float('0xFF'), float(true), float(false), ];   Return value in JSON format\n [ 0, 42.0, 365.0, 255.0, 1.0, 0.0 ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/thingsdb-api/del_user/",
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/del_user/",
 	"title": "del_user",
 	"tags": [],
 	"description": "",
 	"content": " Delete a user. It is not possible to delete your own user account and a BAD_REQUEST will be raised in case you try to. Any tokens associated with the user will also be deleted.\nThis function generates an event.\nFunction del_user(username);\nArguments    Argument Type Description     username str (required) Username of the user to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the user does not exist.\n This code will delete user test:\n ```thingsdb,syntax_only,@t // Delete user `test` del_user('test'); \n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/node-api/nodes_info/",
+	"uri": "https://docs.thingsdb.net/v0/node-api/nodes_info/",
 	"title": "nodes_info",
 	"tags": [],
 	"description": "",
 	"content": " Returns information about all ThingsDB nodes.\n   Value Description     address IP address or hostname of the node.   committed_event_id Last known committed event ID on the node.   next_thing_id Next free thing ID on the node.   node_id ID which is assigned to the node.   port TCP port on which the node is listening for node connections.   status Current status of the node.   stored_event_id Last known stored event ID on the node.   syntax_version Language or syntax version which is running on the node.   zone Zone number to which the node is assigned.    This function does not generate an event.\nFunction nodes_info()\nArguments None\nReturn value Array as msgpack type containing node information for all nodes within ThingsDB.\n This code returns info for all ThingsDB nodes:\n nodes_info();   Example return value in JSON format\n [ { \u0026quot;address\u0026quot;: \u0026quot;node.things\u0026quot;, \u0026quot;committed_event_id\u0026quot;: 2, \u0026quot;next_thing_id\u0026quot;: 5, \u0026quot;node_id\u0026quot;: 0, \u0026quot;port\u0026quot;: 9220, \u0026quot;status\u0026quot;: \u0026quot;READY\u0026quot;, \u0026quot;stored_event_id\u0026quot;: 2, \u0026quot;stream\u0026quot;: null, \u0026quot;syntax_version\u0026quot;: \u0026quot;v0\u0026quot;, \u0026quot;zone\u0026quot;: 0 } ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/int/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/int/",
 	"title": "int",
 	"tags": [],
 	"description": "",
 	"content": " ThingsDB can store 64bit signed integers values. When assigning integer values larger than 64bit, an OVERFLOW_ERROR will be returned. Other types can be converted to int by using the int function.\nNotations    Base Example Description     2 0b1111011 Binary notation starts with 0b (zero, lower case b), followed by binary digits (0-1).   8 0o173 Octal notation starts with 0o (zero, lower case o), followed by octal digits (0-8).   10 123 Decimal notation, numbers between zero and nine (0-9).   16 0x7b Hexadecimal notation start with a 0x (zero, lower case x), followed by hexadecimal digits (0-9, a-f or A-F).     This code creates a int property count to collection stuff:\n .count = 123;  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/properties/",
+	"uri": "https://docs.thingsdb.net/v0/properties/",
 	"title": "Properties",
 	"tags": [],
 	"description": "",
 	"content": " Properties Properties are names assigned to a thing with a value. The collection itself is also a thing to which properties can be assigned. For example: .answer = 42; creates a property answer with value 42 and the property will be assigned to the collection.\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/thing/map/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/thing/map/",
 	"title": "map",
 	"tags": [],
 	"description": "",
 	"content": " Iterate over all properties on a thing.\nBe aware that the order when iterating over a thing is not guaranteed.\n This function does not generate an event.\nFunction thing.map(callback)\nArguments Explanation of the callback argument:\n   Iterable Arguments Description     thing name, value Iterate over the thing properties. Both name and value are optional.    Return value A new list with each element being the result of the callback function.\n This code shows an example using map():\n user = {name: \u0026quot;Iris\u0026quot;, age: 6}; user.map(|property| property.len());   Return value in JSON format\n [ 4, 3 ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/list/pop/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/list/pop/",
 	"title": "pop",
 	"tags": [],
 	"description": "",
 	"content": " Removes the last element from a list and returns that element. This method changes the length of the list. The pop() method works on a list type array, but not on a tuple since tuples are immutable.\nThis function generates an event.\nFunction list.pop()\nArguments None\nReturn value The removed element from the list. An INDEX_ERROR is raised if the list is empty.\n This code show an example usage of pop():\n (list = [1, 2, 3]).pop(); list;   Return value in JSON format\n [ 1, 2 ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/list/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/list/",
 	"title": "list",
 	"tags": [],
 	"description": "",
 	"content": " An empty list can be constructed as follows: list = [];\nNesting is also possible withing but each nested list will become a tuple which means the \u0026lsquo;list\u0026rsquo; will be immutable. ThingsDB does this because it wants to update all changes to subscribers and finds the subscribers by the parent object where the change is made. Since the parent of a nested \u0026lsquo;list\u0026rsquo; is another list, the thing holding the list would not be found.\nAnother weird property of ThingsDB is that lists are always copies, and not by reference as in most languages. This is because ThingsDB needs to know which subscribers to update with changes made to the list.\nMethods    Method Description     extend Adds an array with items to the end of a list, and returns the new length.   filter Returns a new list with elements that pass a given test.   find Returns the first element that pass a given test.   findindex Returns the index of the first element that pass a given test.   indexof Returns the index of a given value, or nil if not found.   len Returns the length of the list.   map Returns a new list with the results of calling a provided closure on every element.   pop Removes the last element from an list and returns that element.   push Adds new items to the end of an list, and returns the new length.   remove Removes the first element that pass a given test and returns that element.   splice Determines if a string starts with characters given by another string.   sort Returns a new sorted list.    It is not possible to change an list while the list is in use, for example: tmp = [1, 2, 3]; tmp.map(|i| tmp.push(i)); \u0026hellip;will raise BAD_REQUEST (cannot change type list while the value is being used)\n "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/errors/num_arguments_err/",
+	"uri": "https://docs.thingsdb.net/v0/errors/num_arguments_err/",
 	"title": "num_arguments_err",
 	"tags": [],
 	"description": "",
 	"content": " Returns an error.\nThis function does not generate an event.\nFunction num_arguments_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows num_arguments_err():\n num_arguments_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;num_arguments_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -62, \u0026quot;error_msg\u0026quot;: \u0026quot;wrong number of arguments\u0026quot; }  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/int/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/int/",
 	"title": "int",
 	"tags": [],
 	"description": "",
 	"content": " Returns an int from a specified value. If no value is given, the default integer 0 is returned.\nIf the specified value was a float value, then the new integer value will be rounded towards zero.\nIf the specified value is of type str, then the initial characters of the string are converted until a non-digit character is found. Initial white space is ignored and the number may start with an optional + or - sign.\nType bool values are converted to 1 for true and 0 for false.\nThis function does not generate an event.\nFunction int(value)\nArguments    Argument Type Description     value any (optional) The value where to create an integer value for.    Return value An integer value. In case the integer value is too large for a 64bit integer, an OVERFLOW_ERROR is raised. Other type than float, raw, bool or int will raise a BAD_REQUEST.\n This code shows some return values for int():\n [ int(), int(2.718), int(-1.9), int('365 days'), int('0xFF'), int(true), int(false), ];   Return value in JSON format\n [ 0, 2, -1, 365, 255, 1, 0 ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/thingsdb-api/grant/",
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/grant/",
 	"title": "grant",
 	"tags": [],
 	"description": "",
 	"content": " Grant collection or general privileges to a user. Access to a user is provided by setting a bit mask to either the .node scope, .thingsdb scope or a collection. Privileges to ThingsDB gives a user the ability to view counters, add, view remove users etc.\nThe following pre-defined masks are available:\n   Mask Description     READ (1) Gives read access.   MODIFY (2) Gives read and modify access.   GRANT (4) Gives read, modify and grant (and revoke) privileges.   WATCH (8) Gives watch (and un-watch) privileges.   RUN (16) Gives run procedures access.   FULL (31) A mask for full privileges.    It is not possible to have GRANT privileges without also having MODIFY privileges. Similarly, it is not possible to have MODIFY privileges without READ.\n This function generates an event.\nFunction grant(target, user, mask);\nArguments    Argument Type Description     target int/raw Can be either the .node scope, .thingsdb scope, or a collection name or id.   user str User to grant privileges to.   mask int Bit-mask for setting privileges.    Return value Returns nil when successful. An INDEX_ERROR is raised if the user or target does not exist.\n Grant read and watch privileges to user iris to collection stuff:\n new_user('iris'); new_token('iris'); [ grant('@node', 'iris', WATCH), grant('@:stuff', 'iris', (READ|WATCH)), ];   Return value in JSON format\n [ null, null ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/node-api/reset_counters/",
+	"uri": "https://docs.thingsdb.net/v0/node-api/reset_counters/",
 	"title": "reset_counters",
 	"tags": [],
 	"description": "",
 	"content": " Resets the counters for the ThingsDB node you are connected too. Other nodes are not affected.\nThis function does not generate an event.\nFunction reset_counters();\nArguments None\nReturn value Returns nil.\n This code will reset the counters on a node:\n // resets counters on `localhost:9200` reset_counters();   Example return value in JSON format (the new collection id)\n null  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/variable/",
+	"uri": "https://docs.thingsdb.net/v0/variable/",
 	"title": "Variable",
 	"tags": [],
 	"description": "",
 	"content": " Variable Can be used to assign a value to a variable which can be used within a query.\nVariable can be created with READ privileges since they do not modify the collection data.\nTo create a variable, just use a valid name.\nSome valid examples:\n _ = ... tmp = ... var1 = ...   This code uses a variable:\n a = 'This is a variable!!!'; b = 'Hello'; { /* This will create a new variable `a` within this scope */ a = 'New variable within this block'; /* This will update the global variable `b` */ b += ' World'; }; [a, b];   Return value in JSON format\n [ \u0026quot;This is a variable!!!\u0026quot;, \u0026quot;Hello World\u0026quot; ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/thing/set/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/thing/set/",
 	"title": "set",
 	"tags": [],
 	"description": "",
 	"content": " Creates a new property on a thing. If the property already existed then the old property will be overwritten. This function is equal to an assignment except that it can be used when the name of the property is dynamic.\nThis function generates an event.\nFunction thing.set(name, value)\nArguments    Argument Type Description     name str (required) The name of the property to set.   value any (required) The value which will be assigned to the property.    Return value The value which will be assigned.\n This code shows how to use set():\n [ .set('the_answer', 42), .the_answer, ];   Return value in JSON format\n [ 42, 42 ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/list/push/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/list/push/",
 	"title": "push",
 	"tags": [],
 	"description": "",
 	"content": " Adds new items to the end of an list, and returns the new length.\nThis function generates an event.\nFunction list.push(item1, item2, ..., itemX)\nReturn value Returns the new length of the list.\n This code pushes values to a list:\n list = [1, 2, 3]; list.push(4, 5, 6);   Return value in JSON format\n 6  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/errors/operation_err/",
+	"uri": "https://docs.thingsdb.net/v0/errors/operation_err/",
 	"title": "operation_err",
 	"tags": [],
 	"description": "",
 	"content": " Returns an error.\nThis function does not generate an event.\nFunction operation_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows operation_err():\n operation_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;operation_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -63, \u0026quot;error_msg\u0026quot;: \u0026quot;operation is not valid in the current context\u0026quot; }  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/isarray/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/isarray/",
 	"title": "isarray",
 	"tags": [],
 	"description": "",
 	"content": " This function determines whether the value passed to this function is a list or tuple type or not. The functions islist and istuple can be used to check if the array is mutable.\nThis function does not generate an event.\nFunction isarray(value)\nArguments    Argument Type Description     value any (required) The value to be tested for being an array.    Return value Returns true the value passed is array else it returns false.\n This code shows some return values for isarray():\n [ isarray( [] ), isarray( tmp = [['nested']] ), isarray( tmp[0] ), ];   Return value in JSON format\n [ true, true, true ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/thingsdb-api/new_collection/",
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/new_collection/",
 	"title": "new_collection",
 	"tags": [],
 	"description": "",
 	"content": " Create a new collection.\nThis function generates an event.\nFunction new_collection(name);\nArguments    Argument Type Description     name str (required) Name of the new collection.    The user who has created the collection will automatically receive full access rights to the new collection. Use grant to give other users access to the collection.\n Return value Returns the new collection id if successful. An INDEX_ERROR is raised if the collection already exists.\n This code will create a collection \u0026ldquo;awesome_things\u0026rdquo;:\n // Creates a new collection new_collection('awesome_things');   Example return value in JSON format (the new collection id)\n 31415  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/node-api/set_log_level/",
+	"uri": "https://docs.thingsdb.net/v0/node-api/set_log_level/",
 	"title": "set_log_level",
 	"tags": [],
 	"description": "",
 	"content": "This function does not generate an event.\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/nil/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/nil/",
 	"title": "nil",
 	"tags": [],
 	"description": "",
 	"content": "Probably the most simple type, it can be used as no value.\nIt might be useful to use nil as the last statement in a query to prevent returning data which is not required. See the code example.\n This code uses nil to prevent returning unused data:\n my_array = [1, 2, 3, 42]; nil; /* without nil, the array above would be returned */   Return value in JSON format\n null  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/operators/",
+	"uri": "https://docs.thingsdb.net/v0/operators/",
 	"title": "Operators",
 	"tags": [],
 	"description": "",
 	"content": " Operators Operators are special symbols in ThingsDB that carry out arithmetic or logical computation.\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/thing/values/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/thing/values/",
 	"title": "values",
 	"tags": [],
 	"description": "",
 	"content": " Returns an list with all the property values of a thing. The same could be returned using map so the following statement is true:\n(.values() == .map(|_, v| v))\nAlthough the values() and map() in the example above will return an list with the same order, the order of values in the list is not guaranteed and may be different each time you run the query.\n This function does not generate an event.\nFunction thing.values()\nArguments None\nReturn value Returns an list with property values.\n This code shows how to use values():\n {a: 1, b: 2, c: 3}.values();   Return value in JSON format (Warning: the order is NOT guaranteed)\n [ 1, 2, 3 ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/list/remove/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/list/remove/",
 	"title": "remove",
 	"tags": [],
 	"description": "",
 	"content": " This function removes and returns the value of the first element in the list that satisfies the callback function. Otherwise nil is returned unless an alternative return value is specified.\nThis function generates an event.\nFunction list.remove(callback, [alt])\nArguments    Argument Type Description     callback closure Closure to execute on each value until the closure evaluates to true.   alt any (optional) Alternative value which is returned if no item has passed the callback test.    Explanation of the callback argument:\n   Iterable Arguments Description     list item, index Iterate over items in the list. Both item and index are optional.    The alt argument will be lazy evaluated. Consider the following example: elems.remove(|e| (e.name == \u0026quot;foo\u0026quot;), items.pop()); Here, the item will only be popped, in case e with name foo is not found in elems.\n Return value The value of the first element in the list that satisfies the provided testing function; otherwise, nil or a specified alternative value is returned.\n This code shows an example using remove() on a list:\n tmp = [1, 2, 3, 4]; [ tmp.remove(|x| (x % 2 == 0)), tmp, ];   Return value in JSON format\n [ 2, [ 1, 3, 4 ] ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/errors/overflow_err/",
+	"uri": "https://docs.thingsdb.net/v0/errors/overflow_err/",
 	"title": "overflow_err",
 	"tags": [],
 	"description": "",
 	"content": " Returns an error.\nThis function does not generate an event.\nFunction overflow_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows overflow_err():\n overflow_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;overflow_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -59, \u0026quot;error_msg\u0026quot;: \u0026quot;integer overflow\u0026quot; }  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/isascii/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/isascii/",
 	"title": "isascii",
 	"tags": [],
 	"description": "",
 	"content": " This function determines whether the value passed to this function is of type raw and contains only valid ascii characters.\nThis function does not generate an event.\nFunction isascii(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the given value is of type raw and contains only ascii characters, else false.\n This code shows some return values for isascii():\n [ isascii( 'ԉ' ), isascii( 'pi' ), ];   Return value in JSON format\n [ false, true ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/thingsdb-api/new_node/",
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/new_node/",
 	"title": "new_node",
 	"tags": [],
 	"description": "",
 	"content": " Adds a new node to ThingsDB. Nodes are used for scaling and high availability.\nThis function generates an event.\nFunction new_node(secret, ip_address [, port]);\nArguments    Argument Type Description     secret str (required) Secret used to initially connect to the new node.   ip_address str (required) IP Address (IPv4 or IPv6) of the new node.   port int (optional) Node port (listen_node_port), an integer between 0 an 65535, default 9220.    Return value Returns the new node id if successful.\n Add a new node to ThingsDB:\n // ThingsDB must be started on node2 using the `--secret ...` argument new_node('my-one-time-serect', 'node2.local');   Example return value in JSON format (the new node id)\n 1  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/node-api/shutdown/",
+	"uri": "https://docs.thingsdb.net/v0/node-api/shutdown/",
 	"title": "shutdown",
 	"tags": [],
 	"description": "",
 	"content": "This function does not generate an event.\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/regex/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/regex/",
 	"title": "regex",
 	"tags": [],
 	"description": "",
 	"content": " Regular expression can be constructed using a literal which consists of a pattern enclosed between slashes, as follows: re = /ab+c/;. It is probably a good idea to store a regex in a variable if you plan to use the regular expression multiple times. This prevents the requirement to compile the regular expression each time.\nMethods that use regular expressions    Method Description     test A str method that tests for a match in a string. It returns true or false.     This code uses a regular expression for an overly simple email check:\n // Note: the email check is oversimplified, do not use in production email_test = /^\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}$/; /* example usage of our 'email_test' */ email = 'info@thingsdb.net'; email.test( email_test );   Return value in JSON format\n true  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/",
 	"title": "Data Types",
 	"tags": [],
 	"description": "",
 	"content": " Data Types ThingsDB uses the following data types:\n   type Description     bool Booleans are either true or false.   bytes ..   closure Closures can be used to consume items from a thing, list, tuple or set.   error An object containing information about an error.   float ..   info ..   int ..   list ..   nil Probably the most simple type, it can be used as no value.   regex ..   set A set is a collection which is unordered and can only contain things.   str ..   thing ..   tuple ..   Type ..   WType ..    "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/custom-types/",
+	"uri": "https://docs.thingsdb.net/v0/custom-types/",
 	"title": "Custom Types",
 	"tags": [],
 	"description": "",
 	"content": " Custom Types Lorem Ipsum.\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/list/sort/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/list/sort/",
 	"title": "sort",
 	"tags": [],
 	"description": "",
 	"content": " When this method is used on an list or tuple, a new sorted list is returned.\nThis function does not generate an event.\nFunction array.sort([closure, [reverse]])\nArguments    Argument Type Description     callback closure (optional) Closure to execute on each value, which is used to determine how the list should be sorted.   reverse bool (optional) Determines the order of the returned list.    An order cannot be specified with a closure which takes two arguments. In this case the order should be specified within the closure.\n Explanation of the callback argument:\n   Iterable Arguments Description     array item1, item2 Iterate over all items in the array. Argument item2 is is optional and can be used to define the order of the returned list.    Return value A new sorted list.\n This code shows an example using map():\n values = [5, 3, 8, 1]; values.sort();   Return value in JSON format\n [ 1, 3, 5, 8 ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/errors/syntax_err/",
+	"uri": "https://docs.thingsdb.net/v0/errors/syntax_err/",
 	"title": "syntax_err",
 	"tags": [],
 	"description": "",
 	"content": " Returns an error.\nThis function does not generate an event.\nFunction syntax_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows syntax_err():\n syntax_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;syntax_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -52, \u0026quot;error_msg\u0026quot;: \u0026quot;syntax error in query\u0026quot; }  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/isbool/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/isbool/",
 	"title": "isbool",
 	"tags": [],
 	"description": "",
 	"content": " This function determines whether the value passed to this function is a bool or not.\nThis function does not generate an event.\nFunction isbool(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the passed value is a boolean else it returns false.\n This code shows some return values for isbool():\n [ isbool( true ), isbool( 'true' ), isbool( nil ), ];   Return value in JSON format\n [ true, false, false ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/thingsdb-api/new_token/",
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/new_token/",
 	"title": "new_token",
 	"tags": [],
 	"description": "",
 	"content": " Adds a new token for a given user. An optional expiration time may be given after which the token cannot be used anymore. Use del_expired to cleanup expired tokens. The expiration time may be given as a UNIX time-stamp in seconds or a date/time string.\nSome valid date/time strings:\n 2021-01-01 2023-02-06 14:30 2023-07-5T13:23:20+01:00  Expiration dates in the past are not allowed an will raise a BAD_REQUEST error.\nIt is also possible to set a description for the token which can be used to identify where token is used for. If you only want to set a description, but no expiration time, then you can use nil as second argument. For example: new_token('my_user', nil, 'some nice description');\nThere can be no more than 128 tokens assigned to a single user. A MAX_QUOTA_ERROR is raised if this limit is reached. Existing tokens can be removed with del_token and to view the current tokens you can use the user_info(..) (or users_info()) function.\nThis function generates an event.\nFunction new_token(username, [, expiration_time] [, description]);\nArguments    Argument Type Description     username str (required) Name of the user.   expiration_time nil/int/float/raw (optional) Expiration date of the token.   description str (optional) Token description.    Return value Returns the new token key.\n Create a new token for user admin:\n // ThingsDB must be started on node2 using the `--secret ...` argument new_token('admin', now() + 7*24*3600, 'token for one week');   Example return value in JSON format (the token key)\n \u0026quot;FX1xyVAJmtQ8o5GTU8yZxdsKrZC7TRijzZ71Kh5q0DmbY24zaA\u0026quot;  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/set/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/set/",
 	"title": "set",
 	"tags": [],
 	"description": "",
 	"content": " A set is a collection which is unordered and can only contain things. Each thing will only exists once in a collection.\nMethods    Method Description     add Add things to a set.   filter Return a new set with things that pass a given test.   find Returns the first thing which passes a given test.   has Test if a set contains a given thing.   len Returns the length of a set.   map Return an list with the results of calling a provided closure on every thing.   remove Remove things from a set.    Related functions    Method Description     set Create a new empty set or convert an list to a new set.    "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/slices/",
+	"uri": "https://docs.thingsdb.net/v0/slices/",
 	"title": "Slices",
 	"tags": [],
 	"description": "",
 	"content": " Slices The following slice notation can be used:\nlist[start:stop:step]  The start and stop value will default to nil and step has a default value of 1. For understanding slices it is important to remember that the :stop value represents the first value that is not in the selected slice. This means that the difference between stop and start is the number of selected elements. (assuming that step is the default value 1)\nAnother feature is that negative numbers may be used. For start and stop this means that it will count from the end of the array instead of the beginning.\n Some examples using start and stop to select some elements:\n months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; [ { months[:2]; /* first two months */ }, { months[-2:]; /* last two months */ }, { months[:-2]; /* all, except the last two months */ }, ];   \u0026hellip;and the corresponding result in JSON format:\n [ [ \u0026quot;January\u0026quot;, \u0026quot;February\u0026quot; ], [ \u0026quot;November\u0026quot;, \u0026quot;December\u0026quot; ], [ \u0026quot;January\u0026quot;, \u0026quot;February\u0026quot;, \u0026quot;March\u0026quot;, \u0026quot;April\u0026quot;, \u0026quot;May\u0026quot;, \u0026quot;June\u0026quot;, \u0026quot;July\u0026quot;, \u0026quot;August\u0026quot;, \u0026quot;September\u0026quot;, \u0026quot;October\u0026quot; ] ]  Another feature is the step argument, which also may be negative to reverse the slice direction.\n Some examples using the step value:\n months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; [ { months[::2]; /* only the odd months */ }, { months[::-1]; /* months in reverse order */ }, ];   \u0026hellip;the corresponding result in JSON format:\n [ [ \u0026quot;January\u0026quot;, \u0026quot;March\u0026quot;, \u0026quot;May\u0026quot;, \u0026quot;July\u0026quot;, \u0026quot;September\u0026quot;, \u0026quot;November\u0026quot; ], [ \u0026quot;December\u0026quot;, \u0026quot;November\u0026quot;, \u0026quot;October\u0026quot;, \u0026quot;September\u0026quot;, \u0026quot;August\u0026quot;, \u0026quot;July\u0026quot;, \u0026quot;June\u0026quot;, \u0026quot;May\u0026quot;, \u0026quot;April\u0026quot;, \u0026quot;March\u0026quot;, \u0026quot;February\u0026quot;, \u0026quot;January\u0026quot; ] ]  Slices can also be used to replace the splice function.\nIt is not possible to use the step value when assigning items using the slice syntax.\n  Example using the slice syntax to replace items in a list:\n months = ['January', 'February', 'XXX', 'May']; /* Replace 'XXX' with 'March' and 'April' */ months[2:3] = ['March', 'April']; /* Return result */ months;   Once again the result in JSON format:\n [ \u0026quot;January\u0026quot;, \u0026quot;February\u0026quot;, \u0026quot;March\u0026quot;, \u0026quot;April\u0026quot;, \u0026quot;May\u0026quot; ]  Instead of lists and tuples it also possible to use the slice notion on strings\n Slice on string example:\n /* Return 'abcdef' in reverse order */ \u0026quot;abcdef\u0026quot;[::-1];  \u0026quot;fedcba\u0026quot;  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/isbytes/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/isbytes/",
 	"title": "isbytes",
 	"tags": [],
 	"description": "",
 	"content": "This function does not generate an event.\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/list/splice/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/list/splice/",
 	"title": "splice",
 	"tags": [],
 	"description": "",
 	"content": " The splice() method changes the contents of an list by removing or replacing existing elements and/or adding new elements in place.\nThis function generates an event.\nFunction list.splice(start, [delete_count, [item1, item2, ..., itemX]]))`\nArguments    Argument Type Description     start int (required) Start index in the list. If negative, it will begin that many elements from the end of the list.   delete_count int (optional) Number of item to remove from start. If \u0026lt;= 0, no items will be removed.   item1, item2, \u0026hellip;, itemX any (optional) Items to add, beginning from start.    Return value An list containing the deleted elements. If only one element is removed, an list of one element is returned. If no elements are removed, an empty list is returned.\n This code replaces an element in a list at position 2:\n months = ['Jan', 'Feb', 'April']; months.splice(2, 1, 'March'); /* Returns: ['April'] */ months;   Return value in JSON format\n [ \u0026quot;Jan\u0026quot;, \u0026quot;Feb\u0026quot;, \u0026quot;March\u0026quot; ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/str/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/str/",
 	"title": "str",
 	"tags": [],
 	"description": "",
 	"content": " Methods    Method Description     contains Determines if a given string is a substring of a string.   endswith Determines if a string ends with characters given by another string.   len Returns the length of a string.   lower Return a new string in which all case-based characters are in lower case.   startswith Determines if a string starts with characters given by another string.   test Test if a string matches a given regular expression and return true or false.   upper Return a new string in which all case-based characters are in upper case.     This code creates a raw property greet to collection stuff:\n .greet = 'Hello world!!';  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/errors/type_err/",
+	"uri": "https://docs.thingsdb.net/v0/errors/type_err/",
 	"title": "type_err",
 	"tags": [],
 	"description": "",
 	"content": " Returns an error.\nThis function does not generate an event.\nFunction type_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows type_err():\n type_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;type_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -61, \u0026quot;error_msg\u0026quot;: \u0026quot;object of inappropriate type\u0026quot; }  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/thingsdb-api/new_user/",
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/new_user/",
 	"title": "new_user",
 	"tags": [],
 	"description": "",
 	"content": " Creates a new user to ThingsDB. The new user is created without a password, token and access privileges. You probably want to set a password or add a new token and assign some privileges using grant(\u0026hellip;).\nThis function generates an event.\nFunction new_user(user);\nArguments    Argument Type Description     user str (required) Username, between 1 and 128 graphical characters.    Return value Returns the new user id if successful. An INDEX_ERROR is raised if the user already exists.\n Create a new user iris:\n new_user('iris');   Example return value in JSON format (the new user id)\n 19  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/errors/value_err/",
+	"uri": "https://docs.thingsdb.net/v0/errors/value_err/",
 	"title": "value_err",
 	"tags": [],
 	"description": "",
 	"content": " Returns an error.\nThis function does not generate an event.\nFunction value_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows value_err():\n value_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;value_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -60, \u0026quot;error_msg\u0026quot;: \u0026quot;object has the right type but an inappropriate value\u0026quot; }  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/iserr/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/iserr/",
 	"title": "iserr",
 	"tags": [],
 	"description": "",
 	"content": " This function determines whether the value passed to this function is a error or not.\nThis function does not generate an event.\nFunction iserr(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the passed value is an error else it returns false.\n This code shows some return values for iserr():\n [ iserr( err() ), iserr( zero_div_err() ), iserr( try((1 / 0)) ), iserr( try((1 / 1)) ), ];   Return value in JSON format\n [ true, true, true, false ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/thingsdb-api/pop_node/",
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/pop_node/",
 	"title": "pop_node",
 	"tags": [],
 	"description": "",
 	"content": "This function generates an event.\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/thing/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/thing/",
 	"title": "thing",
 	"tags": [],
 	"description": "",
 	"content": " Methods    Method Description     del Remove a property.   filter Return a new thing with properties that pass a given test.   get Return the value of a property on a thing by a given property name.   has Determines if a thing has a given property.   id Return the id.   keys    len Returns the number of items.   map Returns a list with the results of calling a provided closure on every item.   set Creates a new property on a thing.   values Returns an array with all the property values of a thing.   wrap Wraps..    "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/node-api/",
+	"uri": "https://docs.thingsdb.net/v0/node-api/",
 	"title": "Node API",
 	"tags": [],
 	"description": "",
 	"content": " Node API The node scope can be used to query node statistics, counters or make node specific changes.\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/tuple/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/tuple/",
 	"title": "tuple",
 	"tags": [],
 	"description": "",
 	"content": " An empty tuple can be constructed as follows:\nlist = []; tuple = []; list.push(tuple);  A tuple only becomes a tuple when it is nested inside a list, which means the \u0026lsquo;list\u0026rsquo; will be immutable. ThingsDB does this because it wants to update all changes to subscribers and finds the subscribers by the parent object where the change is made. Since the parent of a nested \u0026lsquo;list\u0026rsquo; is another list, the thing holding the list would not be found.\nAnother weird property of ThingsDB is that tuples are always copies, and not by reference as in most languages. This is because ThingsDB needs to know which subscribers to update with changes made to the tuple.\nMethods    Method Description     filter Returns a new list with elements that pass a given test.   find Returns the first element that pass a given test.   findindex Returns the index of the first element that pass a given test.   indexof Returns the index of a given value, or nil if not found.   len Returns the length of the tuple.   map Returns a new list with the results of calling a provided closure on every element.   sort Returns a new sorted list.    The above methods correspond to those of a list. For that reason, they are only listed under the data type list.\n "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/errors/zero_div_err/",
+	"uri": "https://docs.thingsdb.net/v0/errors/zero_div_err/",
 	"title": "zero_div_err",
 	"tags": [],
 	"description": "",
 	"content": " Returns an error.\nThis function does not generate an event.\nFunction zero_div_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows zero_div_err():\n zero_div_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;zero_div_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -58, \u0026quot;error_msg\u0026quot;: \u0026quot;division or module by zero\u0026quot; }  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/isfloat/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/isfloat/",
 	"title": "isfloat",
 	"tags": [],
 	"description": "",
 	"content": " This function determines whether the value passed to this function is a floating point value or not.\nThis function does not generate an event.\nFunction isfloat(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the passed value is a float else it returns false.\n This code shows some return values for isfloat():\n [ isfloat( 42.0 ), isfloat( 0.42e+2 ), isfloat( 42 ), ];   Return value in JSON format\n [ true, true, false ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/thingsdb-api/rename_collection/",
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/rename_collection/",
 	"title": "rename_collection",
 	"tags": [],
 	"description": "",
 	"content": "This function generates an event.\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/thingsdb-api/",
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/",
 	"title": "Thingsdb API",
 	"tags": [],
 	"description": "",
 	"content": " Thingsdb API ThingsDB can be managed with simple query commands. This allows you to manage collections, users, access and nodes.\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/type/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/type/",
 	"title": "Type",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/isinf/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/isinf/",
 	"title": "isinf",
 	"tags": [],
 	"description": "",
 	"content": "This function does not generate an event.\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/thingsdb-api/rename_user/",
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/rename_user/",
 	"title": "rename_user",
 	"tags": [],
 	"description": "",
 	"content": "This function generates an event.\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/",
 	"title": "Collection API",
 	"tags": [],
 	"description": "",
 	"content": " Collection API The collection scope can be used to manage data within a collection.\n This code returns the id of collection stuff\n thingscmd -n localhost -u admin -p pass -s @:stuff -q 'id()'  The functions in the Collection API can also be used in the thingsdb and node scopes.\n "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/wtype/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/wtype/",
 	"title": "&lt;Type&gt;",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/isint/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/isint/",
 	"title": "isint",
 	"tags": [],
 	"description": "",
 	"content": " This function determines whether the value passed to this function is an integer or not.\nThis function does not generate an event.\nFunction isint(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the passed value is an integer else it returns false.\n This code shows some return values for isint():\n [ isint( 42 ), isint( 0x2a ), isint( 42.0 ), isint( '42' ), isint( true ), ];   Return value in JSON format\n [ true, true, false, false, false ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/thingsdb-api/revoke/",
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/revoke/",
 	"title": "revoke",
 	"tags": [],
 	"description": "",
 	"content": " Revoke collection or general privileges from a user. See grant for more information on how access privileges can be set for a user.\nThis function generates an event.\nFunction revoke(target, user, mask);\nArguments    Argument Type Description     target int/raw Can be either the .node scope, .thingsdb scope, or a collection name or id.   user str User to revoke privileges from.   mask int Bit-mask for revoking privileges.    Return value Returns nil when successful. An INDEX_ERROR is raised if the user or target does not exist.\n Revoke all privileges for user iris on collection stuff:\n revoke('@:stuff', 'iris', FULL);   Return value in JSON format\n null  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/procedures-api/",
+	"uri": "https://docs.thingsdb.net/v0/procedures-api/",
 	"title": "Procedures API",
 	"tags": [],
 	"description": "",
 	"content": " Procedures API A procedure int ThingsDB is a prepared piece of code that you can save, so the code can be reused over and over again.\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/watching/",
+	"uri": "https://docs.thingsdb.net/v0/watching/",
 	"title": "Watching",
 	"tags": [],
 	"description": "",
 	"content": " Watching Lorem Ipsum.\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/islist/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/islist/",
 	"title": "islist",
 	"tags": [],
 	"description": "",
 	"content": " This function determines whether the value passed to this function is a list or not.\nThis function does not generate an event.\nFunction islist(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the passed value is a list, else it returns false.\n This code shows some return values for islist():\n [ islist( [] ), islist( tmp = [['nested']] ), islist( tmp[0] ), ];   Return value in JSON format\n [ true, true, false ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/thingsdb-api/set_password/",
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/set_password/",
 	"title": "set_password",
 	"tags": [],
 	"description": "",
 	"content": " Change a users password. This function can also be used to remove an existing password by using nil as the new password.\nPasswords must contain 1 to 128 printable characters.\nThis function generates an event.\nFunction set_password(username, new_password);\nArguments    Argument Type Description     username str (required) Name of the user   new_password nil/str (required) New password or nil    Return value Returns nil if successful. An INDEX_ERROR is returned if the user does not exist and BAD_REQUEST if the new password is not compliant.\n This code changes the password for user admin:\n // Change the password for user `admin` set_password('admin', 'my_secret_password');   Return value in JSON format\n null  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/isnan/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/isnan/",
 	"title": "isnan",
 	"tags": [],
 	"description": "",
 	"content": " This function determines whether the value passed to this function is a number.\nThis function does not generate an event.\nFunction isnan(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the given value is not a number, else false.\n This code shows some return values for isnan():\n [ isnan( true ), isnan( 123 ), isnan( 3.14 ), isnan( inf ), isnan( [] ), isnan( {} ), isnan( nan ), isnan( '123' ), ];   Return value in JSON format\n [ false, false, false, false, true, true, true, true ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/thingsdb-api/set_quota/",
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/set_quota/",
 	"title": "set_quota",
 	"tags": [],
 	"description": "",
 	"content": " Quota limits can be set on collections. The following quota limits can be set:\n   Type Description     things Maximum number of things allowed in a collection. Type instances are also counted towards this quota.   properties Maximum number of properties which can be assigned to a thing.   array_size Maximum list and tuple length.   raw_size Maximum str and bytes length.    If a quota limit is reached, then the affected query will raise MAX_QUOTA_ERROR.\nThe current quota values can be viewed with collection(\u0026hellip;) or collections().\nThis function generates an event.\nFunction set_quota(collection, quota_type, quota)\nArguments    Argument Type Description     collection str/int (required) Collection name or id.   quota_type str (required) Must be one of 'things', 'properties', 'array_size' or 'raw_size'.   quota int/nil (required) Integer value to set the quota limit or nil to disable the quota.    Return value nil when successful.\n This code sets a quota on the number of things and disables the properties quota on collection stuff:\n [ set_quota('stuff', 'things', 10000), set_quota('stuff', 'properties', nil), ];   Return value in JSON format\n [ null, null ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/errors/",
+	"uri": "https://docs.thingsdb.net/v0/errors/",
 	"title": "Errors",
 	"tags": [],
 	"description": "",
 	"content": " Errors ThingsDB uses the following error codes:\n   Error Code Meaning     operation_err -63 Operation is not valid in the current context.   num_arguments_err -62 Wrong number of arguments.   type_err -61 Object of inappropriate type.   value_err -60 Object has the right type but an inappropriate value.   overflow_err -59 Integer is too large to fit a 64 bit signed integer.   zero_div_err -58 Trying a division or module by zero.   max_quota_err -57 Your collection has quotas set and the limit is reached.   auth_err -56 Wrong credentials or a request while the connection is not authenticated.   forbidden_err -55 You lack the privileges to do the request.   lookup_err -54 Requested resource not found or index out of range.   bad_data_err -53 Invalid data, for example an invalid data type used in a query.   syntax_err -52 Syntax error in the query.   node_err -51 At least one node has an issue while processing the request.   assert_err -50 Assertion statement has failed.    "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/isnil/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/isnil/",
 	"title": "isnil",
 	"tags": [],
 	"description": "",
 	"content": " This function determines whether the value passed to this function is nil.\nThis function does not generate an event.\nFunction isnil(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the given value is nil, else false.\n This code shows some return values for isnil():\n [ isnil( nil ), isnil( 0 ), ];   Return value in JSON format\n [ true, false ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/thingsdb-api/user_info/",
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/user_info/",
 	"title": "user_info",
 	"tags": [],
 	"description": "",
 	"content": " Returns information about a user. If no argument is given, this method will return information about the current logged in user.\nThis function does not generate an event.\nFunction user_info([username]);\nArguments    Argument Type Description     username str (optional) Name of the user    "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/israw/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/israw/",
 	"title": "israw",
 	"tags": [],
 	"description": "",
 	"content": " This function determines whether the value passed to this function is of type raw.\nThis function does not generate an event.\nFunction israw(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the given value is of type raw, else false.\n This code shows some return values for israw():\n [ israw( 'some string' ), israw( bytes('xxxx') ), ];   Return value in JSON format\n [ true, true ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/thingsdb-api/users_info/",
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/users_info/",
 	"title": "users_info",
 	"tags": [],
 	"description": "",
 	"content": " Returns user information for all users withing ThingsDB.\nSee the user_info() function documentation for an example of the exposed user information.\nThis function requires GRANT privileges on the .thingsdb scope since it exposes user access and token information.\nThis function does not generate an event.\nFunction users_info()\nArguments None\nReturn value Array as qpack type containing user information for all users within ThingsDB.\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/isset/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/isset/",
 	"title": "isset",
 	"tags": [],
 	"description": "",
 	"content": " This function determines whether the value passed to this function is a set or not.\nThis function does not generate an event.\nFunction isset(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the passed value is a set, else it returns false.\n This code shows some return values for isset():\n [ isset( [] ), isset( set() ), ];   Return value in JSON format\n [ false, true ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/isstr/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/isstr/",
 	"title": "isstr",
 	"tags": [],
 	"description": "",
 	"content": "Alias for isutf8.\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/isthing/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/isthing/",
 	"title": "isthing",
 	"tags": [],
 	"description": "",
 	"content": " This function determines whether the value passed to this function is a thing or not.\nThis function does not generate an event.\nFunction isthing(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the passed value is a thing else it returns false.\n This code shows some return values for isthing():\n [ isthing( {} ), isthing( [] ), ];   Return value in JSON format\n [ true, false ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/istuple/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/istuple/",
 	"title": "istuple",
 	"tags": [],
 	"description": "",
 	"content": " This function determines whether the value passed to this function is a tuple or not. At least nested arrays are of kind tuple.\nThis function does not generate an event.\nFunction istuple(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the passed value is a tuple else it returns false.\n This code shows some return values for istuple():\n [ istuple( [] ), istuple( tmp = [['nested'], set()] ), istuple( tmp[0] ), istuple( tmp[1] ), ];   Return value in JSON format\n [ false, false, true, true ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/isutf8/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/isutf8/",
 	"title": "isutf8",
 	"tags": [],
 	"description": "",
 	"content": " This function determines whether the value passed to this function is of type raw and contains valid utf8.\nThis function does not generate an event.\nFunction isutf8(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the given value is of type raw and contains valid utf8, else false.\n This code shows some return values for isutf8():\n [ isutf8( 'ԉ' ), isutf8( 'pi' ), ];   Return value in JSON format\n [ true, true ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/mod_type/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/mod_type/",
 	"title": "mod_type",
 	"tags": [],
 	"description": "",
 	"content": " This function is used to modify an existing Type. A number of actions can be performed with this function.\nThis function generates an event.\nActions    Action Description     add Adds a property to an exinsting Type.   del Deletes a property of an existing Type.   mod Modifies a property of an existing Type.    "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/new/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/new/",
 	"title": "new",
 	"tags": [],
 	"description": "",
 	"content": " Creates a new instance of a defined Type.\nThis function generates an event.\nFunction new(type_name, value)\nArguments    Argument Type Description     type_name str The name of the Type that an instance must be made of.   value thing Thing containing all the properities to be added to the new instance of the given Type.    Return value A Thing containing all the properities which have been added to the new instance of the given Type.\n This code shows how to use new():\n new_type('Person'); set_type('Person', { name: 'str', age: 'int', hobbies: '[str]' }); new('Person', { name: 'John', age: 34, hobbies: ['Football'] });   Return value in JSON format\n { \u0026quot;name\u0026quot;: \u0026quot;John\u0026quot;, \u0026quot;age\u0026quot;: 34, \u0026quot;hobbies\u0026quot;: [\u0026quot;Football\u0026quot;] }  The property names and (data) types of the values that are added to an instance of an existing type must exactly match that Type.\n "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/new_type/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/new_type/",
 	"title": "new_type",
 	"tags": [],
 	"description": "",
 	"content": " Creates a new Type.\nThis function generates an event.\nFunction new_type(type_name)\nArguments    Argument Type Description     type_name string Name of the Type to be created.    Return value The name of the newly created Type.\n This code shows the return value for new_type():\n new_type('NewType');   Return value in JSON format\n \u0026quot;NewType\u0026quot;  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/now/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/now/",
 	"title": "now",
 	"tags": [],
 	"description": "",
 	"content": " Return the time in seconds since the epoch as a floating point number.\nIf you require the same time multiple times within a query, then call now() only once and save it to a variable, for example now = now();\nThis function does not generate an event.\nFunction now()\nArguments None\nReturn value Current timestamp.\n This code shows the current timestamp:\n // current timestamp now();   Example return value in JSON format\n 1551093313.6622682  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/raise/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/raise/",
 	"title": "raise",
 	"tags": [],
 	"description": "",
 	"content": " Raises an error.\nThis function does not generate an event.\nFunction raise([error])\nArguments    Argument Type Description     value error (optional) The error to raise.    Return value None\n This code shows how raise() can be used:\n raise (); 'This code is not reached';  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/refs/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/refs/",
 	"title": "refs",
 	"tags": [],
 	"description": "",
 	"content": " Returns the reference count of a value.\nThe count returned is generally one higher than you might expect, because it includes the (temporary) reference.\nDifferent nodes might return different reference values since the reference counter can be higher of lower depending on how the value is stored and used.\n This function does not generate an event.\nFunction refs(value)\nArguments    Argument Type Description     value any (required) The value to return the reference count for.    Return value Reference count of the given value.\n Returns the reference count of a given value:\n [ refs( 'some string' ), refs( a = b = c = 42 ), ];   Example return value in JSON format\n [ 2, 5 ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/return/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/return/",
 	"title": "return",
 	"tags": [],
 	"description": "",
 	"content": " The return function moves the argument to the output of the current query/closure call.\nIf no return is specified, then the last value will be the value which is returned. A second argument can be given to the return function which can be used to specify how deep the result should be returned. The default deep value is set to 1, but any value between 0 and 127 is possible.\nA query can run different procedures and/or closures which might have change the deep value. In case you need to know the current deep value, the function deep() can be used.\nBe careful with using a high deep value, especially when circular references are made since this can result in returning very much data.\n When no arguments are used the return value will be nil.\nThis function does not generate an event.\nFunction return([value[, deep]])\nArguments    Argument Type Description     value any (optional) The value which will be moved to the output of the query or closure.   deep int (optional) Specify the deep value for the query (the current deep value will be overwritten).    Return value The return function has no real return value but will move directly to the output of the current query or closure.\n This code shows how return() can be used:\n // return .colors, two levels deep if .colors exists try(return(.colors, 2)); // if .colors could not be returned, create the property .colors = { aegean: { R: 0x5e, G: 0x8e, B: 0xc9, }, }; return(.colors, 2);   Example return value in JSON format (the #id\u0026rsquo;s might be different)\n { \u0026quot;#\u0026quot;: 23, \u0026quot;aegean\u0026quot;: { \u0026quot;#\u0026quot;: 24, \u0026quot;B\u0026quot;: 201, \u0026quot;G\u0026quot;: 142, \u0026quot;R\u0026quot;: 94 } }  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/set/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/set/",
 	"title": "set",
 	"tags": [],
 	"description": "",
 	"content": " Returns a new empty set. If an array is given, then all elements in the given array must be or type thing and a new set is returned based on the given things. Instead of an array, it is also possible to provide things comma separated.\nThis function does not generate an event.\nFunction set(array_or_things)\nArguments    Argument Type Description     array_or_things array/things (optional) Optional array or things to initialize the set.    Return value A new set.\n This code shows some return values for set():\n set({name: 'Iris'});   Return value in JSON format\n [ { \u0026quot;name\u0026quot;: \u0026quot;Iris\u0026quot; } ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/set_type/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/set_type/",
 	"title": "set_type",
 	"tags": [],
 	"description": "",
 	"content": " Defines the properties of a Type. Function set_type works only on a new type. Use mod_type() if you want to change an existing type, see mod_type.\nThis function generates an event.\nFunction set_type(type_name, value)\nArguments    Argument Type Description     type_name str The name of the Type where the properties have to be set.   value thing Thing containing all the properities to be set.    Return value The value nil.\n This code shows how to use set_type():\n new_type('Person'); set_type('Person', { name: 'str', age: 'int', hobbies: '[str]' });   Return value in JSON format\n null  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/str/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/str/",
 	"title": "str",
 	"tags": [],
 	"description": "",
 	"content": " Convert a value to a string. If no value is given, an empty string \u0026quot;\u0026quot; is returned.\nThis function does not generate an event.\nFunction str(value)\nArguments    Argument Type Description     value any (optional) The value whose    "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/thing/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/thing/",
 	"title": "thing",
 	"tags": [],
 	"description": "",
 	"content": " Returns a thing from a specified value. If no value is given, a new thing is returned.\nThis function does not generate an event.\nFunction thing([id])\nArguments    Argument Type Description     id int (optional) The id for the thing to return.    Return value Returns a thing. An INDEX_ERROR is returned in case an id is given which is not found inside the collection.\n This code shows an example usage of thing():\n .greet = \u0026quot;Hello world!\u0026quot;; [ thing(.id()), thing(), ];   Example return value in JSON format\n [ { \u0026quot;#\u0026quot;: 42, \u0026quot;greet\u0026quot;: \u0026quot;Hello world!\u0026quot; }, {} ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/try/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/try/",
 	"title": "try",
 	"tags": [],
 	"description": "",
 	"content": " Try a statement and if the statement fails with an error, then the error is returned. It is also possible to catch only specific errors.\nIt is possible to catch all errors with the exception of internal errors. Such errors should never happen, unless something is really wrong with at least one node.\n This function does not generate an event.\nFunction try(statement, [e0, e1, ..., eX])\nArguments    Argument Type Description     statement any (required) The statement to try.   e0, e1, \u0026hellip;, eX int/raw (optional) Only catch specific errors, if omitted, catch all errors. Error codes and names are accepted.    Return value The value for the specified statement or an error if the statement has failed.\n This code shows some return values for try():\n [ iserr( try( x = (1/0) )), iserr( try( (1/0), zero_div_err() )), ];   Return value in JSON format\n [ true, true ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/type/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/type/",
 	"title": "type",
 	"tags": [],
 	"description": "",
 	"content": " Returns the type name of a value.\nThis function does not generate an event.\nFunction type(value)\nArguments    Argument Type Description     value any (required) The value to return the type name for.    Return value Type name of the given value.\n Returns the type name of a given value:\n [ type( nil ), type( 42 ), type( 3.14 ), ];   Example return value in JSON format\n [ \u0026quot;nil\u0026quot;, \u0026quot;int\u0026quot;, \u0026quot;float\u0026quot; ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/type_count/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/type_count/",
 	"title": "type_count",
 	"tags": [],
 	"description": "",
 	"content": " Returns the number of instances of a given Type within a collection.\nThis function does not generate an event.\nFunction type_count(type_name)\nArguments    Argument Type Description     type_name str The name of the Type for which the number of instances must be returned.    Return value An int representing the number of occurrences.\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/type_info/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/type_info/",
 	"title": "type_info",
 	"tags": [],
 	"description": "",
 	"content": " Returns information about the properties of a given Type.\nThis function does not generate an event.\nFunction type_info(type_name)\nArguments    Argument Type Description     type_name str The name of the Type for which the information about the properties has to be returned.    Return value A Thing containing information about the properties of a given Type.\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/types_info/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/types_info/",
 	"title": "types_info",
 	"tags": [],
 	"description": "",
 	"content": " Returns information about the properties of all Types within a collection.\nThis function does not generate an event.\nFunction type_info()\nArguments None\nReturn value A Thing containing information about the properties of all Types within a collection.\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/collection-api/wse/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/wse/",
 	"title": "wse",
 	"tags": [],
 	"description": "",
 	"content": " Stored closures which can potentially make changes to ThingsDB are called closures with side effects and must be wrapped with the wse(..) function.\nThis allows ThingsDB before running the query to make an event. You should not wrap wse around all closures since this would unnecessary create events when they may not be required.\nThis function generates an event.\nFunction wse(statement)\nArguments    Argument Type Description     statement any Statement or block to wrap.    Return value Return value of the given statement.\n This code shows an example usage for wse():\n wse({ x = 0; a = |v| x += v; [1 ,2 ,3, 4].map(a); /* without wse() this would raise an error */ x; });   Return value in JSON format\n 10  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/wtype/unwrap/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/wtype/unwrap/",
 	"title": "unwrap",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/thing/wrap/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/thing/wrap/",
 	"title": "wrap",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/error/len/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/error/len/",
 	"title": "len",
 	"tags": [],
 	"description": "",
 	"content": " Returns the length of an error message.\nThis function does not generate an event.\nFunction error.len()\nArguments None\nReturn value Returns length of an error message.\n This code uses len() to return the length of the error message:\n err().len();   Return value in JSON format\n 10  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/closure/call/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/closure/call/",
 	"title": "call",
 	"tags": [],
 	"description": "",
 	"content": "This function does not generate an event.\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/data-types/bytes/len/",
+	"uri": "https://docs.thingsdb.net/v0/data-types/bytes/len/",
 	"title": "len",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/query/arguments/",
+	"uri": "https://docs.thingsdb.net/v0/query/arguments/",
 	"title": "Arguments",
 	"tags": [],
 	"description": "",
-	"content": "Arguments can be used when querying ThingsDB.\nCan also be used for binary data, see example.\n This code uses arguments to set binary data using arguments:\n # note: ThingsCMD only supports one argument which is named `blob` curl \u0026quot;https://docs.thingsdb.net/ThingsDocs/images/logo.png\u0026quot; | thingscmd -n node.local -u admin -p pass -c @:stuff -q \u0026quot;.logo = blob;\u0026quot;  "
+	"content": "Arguments can be used when querying ThingsDB.\nCan also be used for binary data, see example.\n This code uses arguments to set binary data using arguments:\n # note: ThingsCMD only supports one argument which is named `blob` curl \u0026quot;https://docs.thingsdb.net/images/logo.png\u0026quot; | thingscmd -n node.local -u admin -p pass -c @:stuff -q \u0026quot;.logo = blob;\u0026quot;  "
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/",
+	"uri": "https://docs.thingsdb.net/v0/",
 	"title": "",
 	"tags": [],
 	"description": "",
 	"content": " ThingsDB Transceptor Technology, a Dutch software startup, is proud to announce ThingsDB to the world.\nGet it now Source code is available here at GitHub.\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/categories/",
+	"uri": "https://docs.thingsdb.net/v0/categories/",
 	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://docs.thingsdb.net/ThingsDocs/v0/tags/",
+	"uri": "https://docs.thingsdb.net/v0/tags/",
 	"title": "Tags",
 	"tags": [],
 	"description": "",

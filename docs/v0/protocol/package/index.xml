@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Package on ThingsDB documentation</title>
-    <link>https://docs.thingsdb.net/ThingsDocs/v0/protocol/package/</link>
+    <link>https://docs.thingsdb.net/v0/protocol/package/</link>
     <description>Recent content in Package on ThingsDB documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 14 Oct 2019 09:31:46 +0200</lastBuildDate>
     
-	<atom:link href="https://docs.thingsdb.net/ThingsDocs/v0/protocol/package/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://docs.thingsdb.net/v0/protocol/package/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

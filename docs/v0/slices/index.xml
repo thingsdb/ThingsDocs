@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Slices on ThingsDB documentation</title>
-    <link>https://docs.thingsdb.net/ThingsDocs/v0/slices/</link>
+    <link>https://docs.thingsdb.net/v0/slices/</link>
     <description>Recent content in Slices on ThingsDB documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 25 Oct 2019 10:50:00 +0200</lastBuildDate>
     
-	<atom:link href="https://docs.thingsdb.net/ThingsDocs/v0/slices/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://docs.thingsdb.net/v0/slices/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>set_log_level on ThingsDB documentation</title>
-    <link>https://docs.thingsdb.net/ThingsDocs/v0/node-api/set_log_level/</link>
+    <link>https://docs.thingsdb.net/v0/node-api/set_log_level/</link>
     <description>Recent content in set_log_level on ThingsDB documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 14 Oct 2019 09:43:31 +0200</lastBuildDate>
     
-	<atom:link href="https://docs.thingsdb.net/ThingsDocs/v0/node-api/set_log_level/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://docs.thingsdb.net/v0/node-api/set_log_level/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

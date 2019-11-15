@@ -11,6 +11,6 @@ Can also be used for binary data, see example.
 
 ```shell
 # note: ThingsCMD only supports one argument which is named `blob`
-curl "https://docs.thingsdb.net/ThingsDocs/images/logo.png" |
+curl "https://docs.thingsdb.net/images/logo.png" |
 thingscmd -n node.local -u admin -p pass -c @:stuff -q  ".logo = blob;"
 ```

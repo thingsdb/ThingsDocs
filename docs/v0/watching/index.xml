@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Watching on ThingsDB documentation</title>
-    <link>https://docs.thingsdb.net/ThingsDocs/v0/watching/</link>
+    <link>https://docs.thingsdb.net/v0/watching/</link>
     <description>Recent content in Watching on ThingsDB documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 23 Oct 2019 17:19:53 +0200</lastBuildDate>
     
-	<atom:link href="https://docs.thingsdb.net/ThingsDocs/v0/watching/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://docs.thingsdb.net/v0/watching/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

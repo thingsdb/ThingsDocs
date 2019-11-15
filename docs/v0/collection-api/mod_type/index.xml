@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mod_type on ThingsDB documentation</title>
-    <link>https://docs.thingsdb.net/ThingsDocs/v0/collection-api/mod_type/</link>
+    <link>https://docs.thingsdb.net/v0/collection-api/mod_type/</link>
     <description>Recent content in mod_type on ThingsDB documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 23 Oct 2019 16:57:52 +0200</lastBuildDate>
     
-	<atom:link href="https://docs.thingsdb.net/ThingsDocs/v0/collection-api/mod_type/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://docs.thingsdb.net/v0/collection-api/mod_type/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
