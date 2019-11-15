@@ -11,20 +11,20 @@
     <title>Type :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1573854491" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1573854491" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1573854491" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1573854491" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1573854491" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1573854491" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1573854491" rel="stylesheet">
-    <link href="/v0/css/theme.css?1573854491" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1573854491" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1573856208" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1573856208" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1573856208" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1573856208" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1573856208" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1573856208" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1573856208" rel="stylesheet">
+    <link href="/v0/css/theme.css?1573856208" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1573856208" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1573854491" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1573856208" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1573854491"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1573856208"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1573854491"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1573854491"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1573856208"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1573856208"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1573854491"></script>
+<script type="text/javascript" src="/v0/js/search.js?1573856208"></script>
 
     
   </div>
@@ -3781,7 +3781,17 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#definable-properties">Definable properties</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -3805,7 +3815,11 @@
 
 
 
-<p>It is possible to create a type in ThingsDB which can</p>
+
+
+<p>A Type is like a thing with pre-defined properties.</p>
+
+<h3 id="definable-properties">Definable properties</h3>
 
 <table>
 <thead>
@@ -3847,6 +3861,16 @@
 </tr>
 
 <tr>
+<td><code>'thing'</code></td>
+<td>requires a <a href="../thing">thing</a>.</td>
+</tr>
+
+<tr>
+<td><code>'X'</code></td>
+<td>requires a instance of <a href="../type">Type</a> <code>X</code>. The value <code>X</code> should be replace with the <code>Type</code> name.</td>
+</tr>
+
+<tr>
 <td><code>'[]'</code></td>
 <td>requires a <a href="../list">list</a>.</td>
 </tr>
@@ -3862,6 +3886,56 @@
 </tr>
 </tbody>
 </table>
+
+<p>Each definition can be made optional by adding a question-mark <code>?</code> to the definition.
+If a property is made optional, then the value <code>nil</code> is allowed instead of the give type.
+The property will also be set to <code>nil</code> if no value for the property is given.</p>
+
+<blockquote>
+<p>For example</p>
+</blockquote>
+
+<pre><code>// Create a new type `User` with an optional property `name`.
+set_type('User', {name: 'str?'});
+
+// Create a instance of type `User` without a name
+unknown = User{};
+
+// ..or explicit set name to `nil`
+user_nil = User{name: nil};
+
+// And a name is also valid
+iris = User{name: 'Iris'};
+
+// Another type than `str` or `nil` is not allowed
+assert(iserr(try(User{name: 0})));
+
+// Return the results
+[unkown, user_nil, iris];
+</code></pre>
+
+<blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+
+<pre><code>[
+    {
+        &quot;name&quot;: null
+    },
+    {
+        &quot;name&quot;: null
+    },
+    {
+        &quot;name&quot;: &quot;Iris&quot;
+    }
+]
+</code></pre>
+
+<p>When using a list <code>'[]'</code> definition, it is also possible to allow only a certain type as members of the list.</p>
+
+<blockquote>
+<p>For example:</p>
+</blockquote>
 
 
 <footer class=" footline" >
@@ -15556,19 +15630,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1573854491"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1573854491"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1573854491"></script>
-    <script src="/v0/js/jquery.sticky.js?1573854491"></script>
-    <script src="/v0/js/featherlight.min.js?1573854491"></script>
-    <script src="/v0/js/highlight.pack.js?1573854491"></script>
+    <script src="/v0/js/clipboard.min.js?1573856208"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1573856208"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1573856208"></script>
+    <script src="/v0/js/jquery.sticky.js?1573856208"></script>
+    <script src="/v0/js/featherlight.min.js?1573856208"></script>
+    <script src="/v0/js/highlight.pack.js?1573856208"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1573854491"></script>
-    <script src="/v0/js/learn.js?1573854491"></script>
-    <script src="/v0/js/hugo-learn.js?1573854491"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1573856208"></script>
+    <script src="/v0/js/learn.js?1573856208"></script>
+    <script src="/v0/js/hugo-learn.js?1573856208"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1573854491" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1573854491"></script>
+    <link href="/v0/mermaid/mermaid.css?1573856208" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1573856208"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -32,12 +32,16 @@ otherwise, `nil` is returned.
 
 > This code shows an example using ***findindex()***:
 
-```thingsdb,syntax_only
-users.findindex(|user| user.name.startswith('Jeroen'));
+```thingsdb,json_response
+// some sports as an example
+sports = ['cycling', 'baseball', 'running', 'tennis', 'skateboarding'];
+
+// return the index of `running` in list
+sports.findindex(|sport| sport == 'running');
 ```
 
-> Example return value in JSON format
+> Return value in JSON format
 
 ```json
-42
+2
 ```

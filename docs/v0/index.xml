@@ -1449,8 +1449,8 @@ Arguments    Argument Type Description     value any (required) The value to be 
       <pubDate>Wed, 23 Oct 2019 16:43:16 +0200</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/type/</guid>
-      <description>It is possible to create a type in ThingsDB which can
-   definition description     &#39;str&#39; requires type str and the value should contain valid UTF-8 characters.   &#39;utf8&#39; requires type str and the value is must be valid UTF-8.   &#39;raw&#39; requires type str or bytes.   &#39;bytes&#39; requires type bytes.   &#39;int&#39; requires type int.   &#39;uint&#39; requires a non-negative type int.</description>
+      <description>A Type is like a thing with pre-defined properties.
+Definable properties    definition description     &#39;str&#39; requires type str and the value should contain valid UTF-8 characters.   &#39;utf8&#39; requires type str and the value is must be valid UTF-8.   &#39;raw&#39; requires type str or bytes.   &#39;bytes&#39; requires type bytes.   &#39;int&#39; requires type int.   &#39;uint&#39; requires a non-negative type int.</description>
     </item>
     
     <item>
