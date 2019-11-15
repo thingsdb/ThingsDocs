@@ -1,0 +1,7793 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="description" content="ThingsDB documentation">
+
+
+    <link rel="shortcut icon" href="/ThingsDocs/images/favicon.ico" type="image/x-icon" />
+    <title>revoke :: ThingsDB documentation</title>
+
+    
+    <link href="/ThingsDocs/v0/css/nucleus.css?1573807660" rel="stylesheet">
+    <link href="/ThingsDocs/v0/css/fontawesome-all.min.css?1573807660" rel="stylesheet">
+    <link href="/ThingsDocs/v0/css/hybrid.css?1573807660" rel="stylesheet">
+    <link href="/ThingsDocs/v0/css/featherlight.min.css?1573807660" rel="stylesheet">
+    <link href="/ThingsDocs/v0/css/perfect-scrollbar.min.css?1573807660" rel="stylesheet">
+    <link href="/ThingsDocs/v0/css/auto-complete.css?1573807660" rel="stylesheet">
+    <link href="/ThingsDocs/v0/css/atom-one-dark-reasonable.css?1573807660" rel="stylesheet">
+    <link href="/ThingsDocs/v0/css/theme.css?1573807660" rel="stylesheet">
+    <link href="/ThingsDocs/v0/css/hugo-theme.css?1573807660" rel="stylesheet">
+    
+      <link href="/ThingsDocs/v0/css/theme-mine.css?1573807660" rel="stylesheet">
+    
+
+    <script src="/ThingsDocs/v0/js/jquery-3.3.1.min.js?1573807660"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/ThingsDocs/v0/thingsdb-api/revoke/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a href="/ThingsDocs/">
+    <img src="/ThingsDocs/images/logo.png" alt="Logo">
+</a>
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/ThingsDocs/v0/js/lunr.min.js?1573807660"></script>
+<script type="text/javascript" src="/ThingsDocs/v0/js/auto-complete.js?1573807660"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/docs.thingsdb.net\/ThingsDocs\/v0\/";
+    
+</script>
+<script type="text/javascript" src="/ThingsDocs/v0/js/search.js?1573807660"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/authentication/" title="Authentication" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/authentication/">
+          Authentication
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/authentication/python/" title="Python" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/authentication/python/">
+          Python
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/authentication/shell/" title="Shell" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/authentication/shell/">
+          Shell
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/query/" title="Query" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/query/">
+          Query
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/query/arguments/" title="Arguments" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/query/arguments/">
+          Arguments
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/protocol/" title="Protocol" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/protocol/">
+          Protocol
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/protocol/example/" title="Example" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/protocol/example/">
+          Example
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/protocol/package/" title="Package" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/protocol/package/">
+          Package
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/events/" title="Events" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/events/">
+          Events
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/scopes/" title="Scopes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/scopes/">
+          Scopes
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/names/" title="Names" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/names/">
+          Names
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/properties/" title="Properties" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/properties/">
+          Properties
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/variable/" title="Variable" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/variable/">
+          Variable
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/operators/" title="Operators" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/operators/">
+          Operators
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/operators/arithmetic-operators/" title="Arithmetic operators" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/operators/arithmetic-operators/">
+          Arithmetic operators
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/operators/assignments/" title="Assignments" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/operators/assignments/">
+          Assignments
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/operators/binary-bitwise-operators/" title="Binary bitwise operators" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/operators/binary-bitwise-operators/">
+          Binary bitwise operators
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/operators/conditional-ternary-operator/" title="Conditional ternary operator" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/operators/conditional-ternary-operator/">
+          Conditional ternary operator
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/operators/logical_operators/" title="Logical operators" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/operators/logical_operators/">
+          Logical operators
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/operators/precedence-and-associativity/" title="Precedence and associativity" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/operators/precedence-and-associativity/">
+          Precedence and associativity
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/" title="Data Types" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/">
+          Data Types
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/bool/" title="bool" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/bool/">
+          bool
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/bytes/" title="bytes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/bytes/">
+          bytes
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/bytes/len/" title="len" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/bytes/len/">
+          len
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/closure/" title="closure" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/closure/">
+          closure
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/closure/call/" title="call" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/closure/call/">
+          call
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/error/" title="error" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/error/">
+          error
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/error/len/" title="len" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/error/len/">
+          len
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/float/" title="float" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/float/">
+          float
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/info/" title="info" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/info/">
+          info
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/int/" title="int" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/int/">
+          int
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/list/" title="list" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/list/">
+          list
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/list/extend/" title="extend" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/list/extend/">
+          extend
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/list/filter/" title="filter" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/list/filter/">
+          filter
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/list/find/" title="find" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/list/find/">
+          find
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/list/findindex/" title="findindex" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/list/findindex/">
+          findindex
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/list/indexof/" title="indexof" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/list/indexof/">
+          indexof
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/list/len/" title="len" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/list/len/">
+          len
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/list/map/" title="map" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/list/map/">
+          map
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/list/pop/" title="pop" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/list/pop/">
+          pop
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/list/push/" title="push" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/list/push/">
+          push
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/list/remove/" title="remove" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/list/remove/">
+          remove
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/list/sort/" title="sort" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/list/sort/">
+          sort
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/list/splice/" title="splice" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/list/splice/">
+          splice
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/nil/" title="nil" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/nil/">
+          nil
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/regex/" title="regex" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/regex/">
+          regex
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/set/" title="set" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/set/">
+          set
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/set/add/" title="add" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/set/add/">
+          add
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/set/filter/" title="filter" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/set/filter/">
+          filter
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/set/find/" title="find" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/set/find/">
+          find
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/set/has/" title="has" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/set/has/">
+          has
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/set/map/" title="map" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/set/map/">
+          map
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/set/remove/" title="remove" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/set/remove/">
+          remove
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/set/len/" title="len" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/set/len/">
+          len
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/str/" title="str" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/str/">
+          str
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/str/contains/" title="contains" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/str/contains/">
+          contains
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/str/endswith/" title="endswith" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/str/endswith/">
+          endswith
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/str/len/" title="len" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/str/len/">
+          len
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/str/lower/" title="lower" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/str/lower/">
+          lower
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/str/startswith/" title="startswith" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/str/startswith/">
+          startswith
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/str/test/" title="test" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/str/test/">
+          test
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/str/upper/" title="upper" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/str/upper/">
+          upper
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/thing/" title="thing" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/thing/">
+          thing
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/thing/del/" title="del" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/thing/del/">
+          del
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/thing/filter/" title="filter" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/thing/filter/">
+          filter
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/thing/get/" title="get" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/thing/get/">
+          get
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/thing/has/" title="has" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/thing/has/">
+          has
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/thing/id/" title="id" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/thing/id/">
+          id
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/thing/keys/" title="keys" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/thing/keys/">
+          keys
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/thing/len/" title="len" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/thing/len/">
+          len
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/thing/map/" title="map" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/thing/map/">
+          map
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/thing/set/" title="set" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/thing/set/">
+          set
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/thing/values/" title="values" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/thing/values/">
+          values
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/thing/wrap/" title="wrap" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/thing/wrap/">
+          wrap
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/tuple/" title="tuple" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/tuple/">
+          tuple
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/type/" title="Type" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/type/">
+          Type
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/wtype/" title="&lt;Type&gt;" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/wtype/">
+          &lt;Type&gt;
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/data-types/wtype/unwrap/" title="unwrap" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/data-types/wtype/unwrap/">
+          unwrap
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/custom-types/" title="Custom Types" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/custom-types/">
+          Custom Types
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/slices/" title="Slices" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/slices/">
+          Slices
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/node-api/" title="Node API" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/node-api/">
+          Node API
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/node-api/backup_info/" title="backup_info" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/node-api/backup_info/">
+          backup_info
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/node-api/backups_info/" title="backups_info" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/node-api/backups_info/">
+          backups_info
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/node-api/counters/" title="counters" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/node-api/counters/">
+          counters
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/node-api/del_backup/" title="del_backup" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/node-api/del_backup/">
+          del_backup
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/node-api/new_backup/" title="new_backup" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/node-api/new_backup/">
+          new_backup
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/node-api/node_info/" title="node_info" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/node-api/node_info/">
+          node_info
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/node-api/nodes_info/" title="nodes_info" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/node-api/nodes_info/">
+          nodes_info
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/node-api/reset_counters/" title="reset_counters" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/node-api/reset_counters/">
+          reset_counters
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/node-api/set_log_level/" title="set_log_level" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/node-api/set_log_level/">
+          set_log_level
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/node-api/shutdown/" title="shutdown" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/node-api/shutdown/">
+          shutdown
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/thingsdb-api/" title="Thingsdb API" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/thingsdb-api/">
+          Thingsdb API
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/thingsdb-api/collection_info/" title="collection_info" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/thingsdb-api/collection_info/">
+          collection_info
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/thingsdb-api/collections_info/" title="collections_info" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/thingsdb-api/collections_info/">
+          collections_info
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/thingsdb-api/del_collection/" title="del_collection" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/thingsdb-api/del_collection/">
+          del_collection
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/thingsdb-api/del_expired/" title="del_expired" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/thingsdb-api/del_expired/">
+          del_expired
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/thingsdb-api/del_node/" title="del_node" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/thingsdb-api/del_node/">
+          del_node
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/thingsdb-api/del_token/" title="del_token" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/thingsdb-api/del_token/">
+          del_token
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/thingsdb-api/del_user/" title="del_user" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/thingsdb-api/del_user/">
+          del_user
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/thingsdb-api/grant/" title="grant" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/thingsdb-api/grant/">
+          grant
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/thingsdb-api/new_collection/" title="new_collection" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/thingsdb-api/new_collection/">
+          new_collection
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/thingsdb-api/new_node/" title="new_node" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/thingsdb-api/new_node/">
+          new_node
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/thingsdb-api/new_token/" title="new_token" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/thingsdb-api/new_token/">
+          new_token
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/thingsdb-api/new_user/" title="new_user" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/thingsdb-api/new_user/">
+          new_user
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/thingsdb-api/pop_node/" title="pop_node" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/thingsdb-api/pop_node/">
+          pop_node
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/thingsdb-api/rename_collection/" title="rename_collection" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/thingsdb-api/rename_collection/">
+          rename_collection
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/thingsdb-api/rename_user/" title="rename_user" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/thingsdb-api/rename_user/">
+          rename_user
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/thingsdb-api/revoke/" title="revoke" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="/ThingsDocs/v0/thingsdb-api/revoke/">
+          revoke
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/thingsdb-api/set_password/" title="set_password" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/thingsdb-api/set_password/">
+          set_password
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/thingsdb-api/set_quota/" title="set_quota" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/thingsdb-api/set_quota/">
+          set_quota
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/thingsdb-api/user_info/" title="user_info" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/thingsdb-api/user_info/">
+          user_info
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/thingsdb-api/users_info/" title="users_info" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/thingsdb-api/users_info/">
+          users_info
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/" title="Collection API" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/">
+          Collection API
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/array/" title="array" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/array/">
+          array
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/assert/" title="assert" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/assert/">
+          assert
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/bool/" title="bool" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/bool/">
+          bool
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/deep/" title="deep" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/deep/">
+          deep
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/del_type/" title="del_type" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/del_type/">
+          del_type
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/err/" title="err" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/err/">
+          err
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/float/" title="float" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/float/">
+          float
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/int/" title="int" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/int/">
+          int
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/isarray/" title="isarray" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/isarray/">
+          isarray
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/isascii/" title="isascii" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/isascii/">
+          isascii
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/isbool/" title="isbool" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/isbool/">
+          isbool
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/isbytes/" title="isbytes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/isbytes/">
+          isbytes
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/iserr/" title="iserr" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/iserr/">
+          iserr
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/isfloat/" title="isfloat" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/isfloat/">
+          isfloat
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/isinf/" title="isinf" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/isinf/">
+          isinf
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/isint/" title="isint" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/isint/">
+          isint
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/islist/" title="islist" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/islist/">
+          islist
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/isnan/" title="isnan" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/isnan/">
+          isnan
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/isnil/" title="isnil" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/isnil/">
+          isnil
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/israw/" title="israw" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/israw/">
+          israw
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/isset/" title="isset" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/isset/">
+          isset
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/isstr/" title="isstr" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/isstr/">
+          isstr
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/isthing/" title="isthing" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/isthing/">
+          isthing
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/istuple/" title="istuple" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/istuple/">
+          istuple
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/isutf8/" title="isutf8" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/isutf8/">
+          isutf8
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/mod_type/" title="mod_type" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/mod_type/">
+          mod_type
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/mod_type/add/" title="add" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/mod_type/add/">
+          add
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/mod_type/del/" title="del" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/mod_type/del/">
+          del
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/mod_type/mod/" title="mod" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/mod_type/mod/">
+          mod
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/new/" title="new" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/new/">
+          new
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/new_type/" title="new_type" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/new_type/">
+          new_type
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/now/" title="now" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/now/">
+          now
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/raise/" title="raise" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/raise/">
+          raise
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/refs/" title="refs" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/refs/">
+          refs
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/return/" title="return" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/return/">
+          return
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/set/" title="set" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/set/">
+          set
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/set_type/" title="set_type" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/set_type/">
+          set_type
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/str/" title="str" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/str/">
+          str
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/thing/" title="thing" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/thing/">
+          thing
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/try/" title="try" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/try/">
+          try
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/type/" title="type" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/type/">
+          type
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/type_count/" title="type_count" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/type_count/">
+          type_count
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/type_info/" title="type_info" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/type_info/">
+          type_info
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/types_info/" title="types_info" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/types_info/">
+          types_info
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/collection-api/wse/" title="wse" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/collection-api/wse/">
+          wse
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/procedures-api/" title="Procedures API" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/procedures-api/">
+          Procedures API
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/procedures-api/del_procedure/" title="del_procedure" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/procedures-api/del_procedure/">
+          del_procedure
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/procedures-api/new_procedure/" title="new_procedure" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/procedures-api/new_procedure/">
+          new_procedure
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/procedures-api/procedure_doc/" title="procedure_doc" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/procedures-api/procedure_doc/">
+          procedure_doc
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/procedures-api/procedure_info/" title="procedure_info" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/procedures-api/procedure_info/">
+          procedure_info
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/procedures-api/procedures_info/" title="procedures_info" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/procedures-api/procedures_info/">
+          procedures_info
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/procedures-api/run/" title="run" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/procedures-api/run/">
+          run
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/watching/" title="Watching" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/watching/">
+          Watching
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/errors/" title="Errors" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/errors/">
+          Errors
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/errors/assert_err/" title="assert_err" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/errors/assert_err/">
+          assert_err
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/errors/auth_err/" title="auth_err" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/errors/auth_err/">
+          auth_err
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/errors/bad_data_err/" title="bad_data_err" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/errors/bad_data_err/">
+          bad_data_err
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/errors/forbidden_err/" title="forbidden_err" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/errors/forbidden_err/">
+          forbidden_err
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/errors/lookup_err/" title="lookup_err" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/errors/lookup_err/">
+          lookup_err
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/errors/max_quota_err/" title="max_quota_err" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/errors/max_quota_err/">
+          max_quota_err
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/errors/node_err/" title="node_err" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/errors/node_err/">
+          node_err
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/errors/num_arguments_err/" title="num_arguments_err" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/errors/num_arguments_err/">
+          num_arguments_err
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/errors/operation_err/" title="operation_err" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/errors/operation_err/">
+          operation_err
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/errors/overflow_err/" title="overflow_err" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/errors/overflow_err/">
+          overflow_err
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/errors/syntax_err/" title="syntax_err" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/errors/syntax_err/">
+          syntax_err
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/errors/type_err/" title="type_err" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/errors/type_err/">
+          type_err
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/errors/value_err/" title="value_err" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/errors/value_err/">
+          value_err
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ThingsDocs/v0/errors/zero_div_err/" title="zero_div_err" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ThingsDocs/v0/errors/zero_div_err/">
+          zero_div_err
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/ThingsDocs/v0/'></a> > <a href='/ThingsDocs/v0/thingsdb-api/'>Thingsdb API</a> > revoke
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#function">Function</a></li>
+<li><a href="#arguments">Arguments</a></li>
+<li><a href="#return-value">Return value</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              revoke
+            </h1>
+          
+
+        
+
+
+
+
+	
+
+<p>Revoke collection or general privileges from a user. See <a href="../../thingsdb-api/grant">grant</a> for more information on
+how access privileges can be set for a user.</p>
+
+<p>This function generates an <a href="../../events">event</a>.</p>
+
+<h3 id="function">Function</h3>
+
+<p><code>revoke(target, user, mask);</code></p>
+
+<h3 id="arguments">Arguments</h3>
+
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>target</code></td>
+<td>int/raw</td>
+<td>Can be either the <code>.node</code> scope, <code>.thingsdb</code> scope, or a collection name or id.</td>
+</tr>
+
+<tr>
+<td><code>user</code></td>
+<td>str</td>
+<td>User to revoke privileges from.</td>
+</tr>
+
+<tr>
+<td><code>mask</code></td>
+<td>int</td>
+<td>Bit-mask for revoking privileges.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="return-value">Return value</h3>
+
+<p>Returns <code>nil</code> when successful. An <code>INDEX_ERROR</code> is raised if the user or target
+does not exist.</p>
+
+<blockquote>
+<p>Revoke all privileges for user <code>iris</code> on collection <code>stuff</code>:</p>
+</blockquote>
+
+<pre><code class="language-thingsdb,syntax_only,@t">revoke('@:stuff', 'iris', FULL);
+</code></pre>
+
+<blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+
+<pre><code class="language-json">null
+</code></pre>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/ThingsDocs/v0/thingsdb-api/rename_user/" title="rename_user"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/ThingsDocs/v0/thingsdb-api/set_password/" title="set_password" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/ThingsDocs/v0/js/clipboard.min.js?1573807660"></script>
+    <script src="/ThingsDocs/v0/js/perfect-scrollbar.min.js?1573807660"></script>
+    <script src="/ThingsDocs/v0/js/perfect-scrollbar.jquery.min.js?1573807660"></script>
+    <script src="/ThingsDocs/v0/js/jquery.sticky.js?1573807660"></script>
+    <script src="/ThingsDocs/v0/js/featherlight.min.js?1573807660"></script>
+    <script src="/ThingsDocs/v0/js/highlight.pack.js?1573807660"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/ThingsDocs/v0/js/modernizr.custom-3.6.0.js?1573807660"></script>
+    <script src="/ThingsDocs/v0/js/learn.js?1573807660"></script>
+    <script src="/ThingsDocs/v0/js/hugo-learn.js?1573807660"></script>
+
+    <link href="/ThingsDocs/v0/mermaid/mermaid.css?1573807660" rel="stylesheet" />
+    <script src="/ThingsDocs/v0/mermaid/mermaid.js?1573807660"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
