@@ -22,5 +22,78 @@
  .is_the_earth_flat = !true;  Related functions    Method Description     bool Create a new boolean value.   isbool Test if a given value is of type bool.    </description>
     </item>
     
+    <item>
+      <title>float</title>
+      <link>https://docs.thingsdb.net/v0/data-types/float/</link>
+      <pubDate>Mon, 14 Oct 2019 09:40:47 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/float/</guid>
+      <description>ThingsDB uses 64bit to store float values and has support for the e notation and special float values like inf, -inf and nan.
+Useful methods    Method Description     float return a float type for a given value.   isfloat check if the given value is of the float type.   isinf check if the given value is infinite.   isnan check if the given value is not-a-number.</description>
+    </item>
+    
+    <item>
+      <title>info</title>
+      <link>https://docs.thingsdb.net/v0/data-types/info/</link>
+      <pubDate>Wed, 23 Oct 2019 11:03:35 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/info/</guid>
+      <description>This is a special type within ThingsDB and is returned by all the *_info() functions.
+As an example we can take the node_info and view the type. This will tell us that the value is indeed of the info type.
+// get the current node info node_info = node_info(); // return the type as string to verify this is indeed the `info` type type(node_info);   Return value in JSON format</description>
+    </item>
+    
+    <item>
+      <title>int</title>
+      <link>https://docs.thingsdb.net/v0/data-types/int/</link>
+      <pubDate>Mon, 14 Oct 2019 09:40:28 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/int/</guid>
+      <description>ThingsDB can store 64bit signed integers values. When assigning integer values larger than 64bit, an OVERFLOW_ERROR will be returned. Other types can be converted to int by using the int function.
+Notations    Base Example Description     2 0b1111011 Binary notation starts with 0b (zero, lower case b), followed by binary digits (0-1).   8 0o173 Octal notation starts with 0o (zero, lower case o), followed by octal digits (0-8).</description>
+    </item>
+    
+    <item>
+      <title>nil</title>
+      <link>https://docs.thingsdb.net/v0/data-types/nil/</link>
+      <pubDate>Mon, 14 Oct 2019 09:39:58 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/nil/</guid>
+      <description>Probably the most simple type, it can be used as no value.
+It might be useful to use nil as the last statement in a query to prevent returning data which is not required. See the code example.
+ This code uses nil to prevent returning unused data:
+ my_array = [1, 2, 3, 42]; nil; /* without nil, the array above would be returned */   Return value in JSON format</description>
+    </item>
+    
+    <item>
+      <title>regex</title>
+      <link>https://docs.thingsdb.net/v0/data-types/regex/</link>
+      <pubDate>Mon, 14 Oct 2019 09:40:56 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/regex/</guid>
+      <description>Regular expression can be constructed using a literal which consists of a pattern enclosed between slashes, as follows: re = /ab+c/;. It is probably a good idea to store a regex in a variable if you plan to use the regular expression multiple times. This prevents the requirement to compile the regular expression each time.
+Methods that use regular expressions    Method Description     test A str method that tests for a match in a string.</description>
+    </item>
+    
+    <item>
+      <title>tuple</title>
+      <link>https://docs.thingsdb.net/v0/data-types/tuple/</link>
+      <pubDate>Wed, 23 Oct 2019 11:04:51 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/tuple/</guid>
+      <description>An empty tuple can be constructed as follows:
+list = []; tuple = []; list.push(tuple);  A tuple only becomes a tuple when it is nested inside a list, which means the &amp;lsquo;list&amp;rsquo; will be immutable. ThingsDB does this because it wants to update all changes to subscribers and finds the subscribers by the parent object where the change is made. Since the parent of a nested &amp;lsquo;list&amp;rsquo; is another list, the thing holding the list would not be found.</description>
+    </item>
+    
+    <item>
+      <title>Type</title>
+      <link>https://docs.thingsdb.net/v0/data-types/type/</link>
+      <pubDate>Wed, 23 Oct 2019 16:43:16 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/type/</guid>
+      <description>It is possible to create a type in ThingsDB which can
+   definition description     &#39;str&#39; requires type str and the value should contain valid UTF-8 characters.   &#39;utf8&#39; requires type str and the value is must be valid UTF-8.   &#39;raw&#39; requires type str or bytes.   &#39;bytes&#39; requires type bytes.   &#39;int&#39; requires type int.   &#39;uint&#39; requires a non-negative type int.</description>
+    </item>
+    
   </channel>
 </rss>

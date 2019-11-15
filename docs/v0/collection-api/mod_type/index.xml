@@ -11,5 +11,39 @@
 	<atom:link href="https://docs.thingsdb.net/v0/collection-api/mod_type/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>add</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/mod_type/add/</link>
+      <pubDate>Wed, 23 Oct 2019 16:58:01 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/mod_type/add/</guid>
+      <description>Adds a property to an existing Type.
+Action mod_type(type_name, &#39;add&#39;, property_name, property_type, initial_value)
+Arguments    Argument Type Description     type_name str Name of the Type where the property has to be added to.   &#39;add&#39; str Passing this argument will result in a Add action.   property_name str Name of the property that has to be added.   property_type str Type of the property that has to be added.</description>
+    </item>
+    
+    <item>
+      <title>del</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/mod_type/del/</link>
+      <pubDate>Wed, 23 Oct 2019 16:58:06 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/mod_type/del/</guid>
+      <description>Deletes a property from an existing Type.
+Action mod_type(type_name, &#39;del&#39;, property_name)
+Arguments    Argument Type Description     type_name str Name of the Type where the property has to be removed from.   &#39;del&#39; str Passing this argument will result in a delete action.   property_name str Name of the property that has to be removed.    Return value The value nil.</description>
+    </item>
+    
+    <item>
+      <title>mod</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/mod_type/mod/</link>
+      <pubDate>Wed, 23 Oct 2019 16:58:14 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/mod_type/mod/</guid>
+      <description>Modifies a property from an exinsting Type.
+When modifying a property of a Type, the changed property type can only be less &amp;lsquo;strict&amp;rsquo;. So for example, age: &#39;int&#39; can become age: &#39;int?&#39;, but not the other way around.
+ Action mod_type(type_name, &#39;mod&#39;, property_name, property_type)
+Arguments    Argument Type Description     type_name str Name of the Type where the property has to be removed from.   &#39;mod&#39; str Passing this argument will result in a Modify action.</description>
+    </item>
+    
   </channel>
 </rss>

@@ -1,7 +1,7 @@
 ---
 title: "type"
 date: 2019-10-14T10:06:09+02:00
-weight: 38
+weight: 3800
 ---
 
 Returns the type name of a value.

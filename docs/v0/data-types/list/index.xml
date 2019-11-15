@@ -11,5 +11,164 @@
 	<atom:link href="https://docs.thingsdb.net/v0/data-types/list/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>extend</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/extend/</link>
+      <pubDate>Wed, 23 Oct 2019 12:50:12 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/list/extend/</guid>
+      <description>Adds a list or tuple with items to the end of a list, and returns the new length.
+This function generates an event.
+Function list.extend(list)
+Return value Returns the new length of the list.
+ This code extends a list with a given array:
+ a = [1, 2, 3]; b = [4, 5, 6]; a.extend(b); // returns the new length, 6 a;   Return value in JSON format</description>
+    </item>
+    
+    <item>
+      <title>filter</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/filter/</link>
+      <pubDate>Wed, 23 Oct 2019 12:51:22 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/list/filter/</guid>
+      <description>When this method is used on an list or tuple, a new list is returned with elements that pass the test.
+This function does not generate an event.
+Function array.filter(callback)
+Arguments The callback argument must be a closure which input values depend on the type the method is called on.
+   Iterable Arguments Description     array item, index Iterate over all items in the array.</description>
+    </item>
+    
+    <item>
+      <title>find</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/find/</link>
+      <pubDate>Wed, 23 Oct 2019 12:51:28 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/list/find/</guid>
+      <description>This function returns the value of the first element in the list or tuple that satisfies the callback function. Otherwise nil is returned unless an alternative return value is specified.
+This function does not generate an event.
+Function array.find(callback, [alt])
+Arguments    Argument Type Description     callback closure Closure to execute on each value until the closure evaluates to true.   alt any (optional) Alternative value which is returned if no item has passed the callback test.</description>
+    </item>
+    
+    <item>
+      <title>findindex</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/findindex/</link>
+      <pubDate>Wed, 23 Oct 2019 12:51:33 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/list/findindex/</guid>
+      <description>This function returns the index of the first element in a list or tuple that satisfies the callback function. Otherwise nil is returned.
+This function does not generate an event.
+Function array.findindex(callback)
+Arguments    Argument Type Description     callback closure The statement to try.    Explanation of the callback argument:
+   Iterable Callback arguments Description     array item, index Iterate over items in the array.</description>
+    </item>
+    
+    <item>
+      <title>indexof</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/indexof/</link>
+      <pubDate>Wed, 23 Oct 2019 12:51:51 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/list/indexof/</guid>
+      <description>Returns the first index at which a given value can be found in the list or tuple, or nil if it is not present. The index of an array starts at 0, so the first item has index 0 the second 1 and so on.
+This function does not generate an event.
+Function array.indexof(value)
+Arguments    Argument Type Description     value any The value to find the index for.</description>
+    </item>
+    
+    <item>
+      <title>len</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/len/</link>
+      <pubDate>Wed, 23 Oct 2019 12:51:58 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/list/len/</guid>
+      <description> Returns the length of a list or tuple.
+This function does not generate an event.
+Function array.len()
+Arguments None
+Return value Returns length of the array.
+ This code uses len() to return the number of items in a collection:
+ [1, 2, 3, 4].len();   Return value in JSON format
+ 4  </description>
+    </item>
+    
+    <item>
+      <title>map</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/map/</link>
+      <pubDate>Wed, 23 Oct 2019 12:52:02 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/list/map/</guid>
+      <description>Iterate over items in an list or tuple.
+This function does not generate an event.
+Function array.map(callback)
+Arguments Explanation of the callback argument:
+   Iterable Arguments Description     array item, index Iterate over all items in the array. Both item and index are optional.    Return value A new list with each element being the result of the callback function.
+ This code shows an example using map():</description>
+    </item>
+    
+    <item>
+      <title>pop</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/pop/</link>
+      <pubDate>Wed, 23 Oct 2019 12:52:11 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/list/pop/</guid>
+      <description>Removes the last element from a list and returns that element. This method changes the length of the list. The pop() method works on a list type array, but not on a tuple since tuples are immutable.
+This function generates an event.
+Function list.pop()
+Arguments None
+Return value The removed element from the list. An INDEX_ERROR is raised if the list is empty.
+ This code show an example usage of pop():</description>
+    </item>
+    
+    <item>
+      <title>push</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/push/</link>
+      <pubDate>Wed, 23 Oct 2019 12:52:17 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/list/push/</guid>
+      <description> Adds new items to the end of an list, and returns the new length.
+This function generates an event.
+Function list.push(item1, item2, ..., itemX)
+Return value Returns the new length of the list.
+ This code pushes values to a list:
+ list = [1, 2, 3]; list.push(4, 5, 6);   Return value in JSON format
+ 6  </description>
+    </item>
+    
+    <item>
+      <title>remove</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/remove/</link>
+      <pubDate>Wed, 23 Oct 2019 12:52:23 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/list/remove/</guid>
+      <description>This function removes and returns the value of the first element in the list that satisfies the callback function. Otherwise nil is returned unless an alternative return value is specified.
+This function generates an event.
+Function list.remove(callback, [alt])
+Arguments    Argument Type Description     callback closure Closure to execute on each value until the closure evaluates to true.   alt any (optional) Alternative value which is returned if no item has passed the callback test.</description>
+    </item>
+    
+    <item>
+      <title>sort</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/sort/</link>
+      <pubDate>Wed, 23 Oct 2019 12:52:33 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/list/sort/</guid>
+      <description>When this method is used on an list or tuple, a new sorted list is returned.
+This function does not generate an event.
+Function array.sort([closure, [reverse]])
+Arguments    Argument Type Description     callback closure (optional) Closure to execute on each value, which is used to determine how the list should be sorted.   reverse bool (optional) Determines the order of the returned list.    An order cannot be specified with a closure which takes two arguments.</description>
+    </item>
+    
+    <item>
+      <title>splice</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/splice/</link>
+      <pubDate>Wed, 23 Oct 2019 12:52:42 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/list/splice/</guid>
+      <description>The splice() method changes the contents of an list by removing or replacing existing elements and/or adding new elements in place.
+This function generates an event.
+Function list.splice(start, [delete_count, [item1, item2, ..., itemX]]))`
+Arguments    Argument Type Description     start int (required) Start index in the list. If negative, it will begin that many elements from the end of the list.   delete_count int (optional) Number of item to remove from start.</description>
+    </item>
+    
   </channel>
 </rss>

@@ -1,7 +1,7 @@
 ---
 title: "bool"
 date: 2019-10-14T09:40:19+02:00
-weight: 1
+weight: 100
 ---
 
 Booleans are either `true` or `false`.

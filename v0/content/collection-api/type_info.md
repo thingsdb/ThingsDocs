@@ -1,7 +1,7 @@
 ---
 title: "type_info"
 date: 2019-10-23T16:59:28+02:00
-weight: 40
+weight: 4000
 ---
 
 Returns information about the properties of a given [Type](../../data-types/type).

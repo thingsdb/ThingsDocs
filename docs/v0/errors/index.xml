@@ -11,5 +11,215 @@
 	<atom:link href="https://docs.thingsdb.net/v0/errors/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>assert_err</title>
+      <link>https://docs.thingsdb.net/v0/errors/assert_err/</link>
+      <pubDate>Mon, 14 Oct 2019 10:11:16 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/errors/assert_err/</guid>
+      <description> Returns an error.
+This function does not generate an event.
+Function assert_err([message])
+Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
+ This code shows assert_err():
+ assert_err();   Return value in JSON format
+ { &amp;quot;!&amp;quot;: &amp;quot;assert_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -50, &amp;quot;error_msg&amp;quot;: &amp;quot;assertion statement has failed&amp;quot; }  </description>
+    </item>
+    
+    <item>
+      <title>auth_err</title>
+      <link>https://docs.thingsdb.net/v0/errors/auth_err/</link>
+      <pubDate>Mon, 14 Oct 2019 10:11:22 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/errors/auth_err/</guid>
+      <description> Returns an error.
+This function does not generate an event.
+Function auth_err([message])
+Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
+ This code shows auth_err():
+ auth_err();   Return value in JSON format
+ { &amp;quot;!&amp;quot;: &amp;quot;auth_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -56, &amp;quot;error_msg&amp;quot;: &amp;quot;authentication error&amp;quot; }  </description>
+    </item>
+    
+    <item>
+      <title>bad_data_err</title>
+      <link>https://docs.thingsdb.net/v0/errors/bad_data_err/</link>
+      <pubDate>Mon, 14 Oct 2019 10:11:34 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/errors/bad_data_err/</guid>
+      <description> Returns an error.
+This function does not generate an event.
+Function bad_data_err([message])
+Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
+ This code shows bad_data_err():
+ bad_data_err();   Return value in JSON format
+ { &amp;quot;!&amp;quot;: &amp;quot;bad_data_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -53, &amp;quot;error_msg&amp;quot;: &amp;quot;unable to handle request due to invalid data&amp;quot; }  </description>
+    </item>
+    
+    <item>
+      <title>forbidden_err</title>
+      <link>https://docs.thingsdb.net/v0/errors/forbidden_err/</link>
+      <pubDate>Mon, 14 Oct 2019 10:11:45 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/errors/forbidden_err/</guid>
+      <description> Returns an error.
+This function does not generate an event.
+Function forbidden_err([message])
+Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
+ This code shows forbidden_err():
+ forbidden_err();   Return value in JSON format
+ { &amp;quot;!&amp;quot;: &amp;quot;forbidden_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -55, &amp;quot;error_msg&amp;quot;: &amp;quot;forbidden (access denied)&amp;quot; }  </description>
+    </item>
+    
+    <item>
+      <title>lookup_err</title>
+      <link>https://docs.thingsdb.net/v0/errors/lookup_err/</link>
+      <pubDate>Mon, 14 Oct 2019 10:11:56 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/errors/lookup_err/</guid>
+      <description> Returns an error.
+This function does not generate an event.
+Function lookup_err([message])
+Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
+ This code shows lookup_err():
+ lookup_err();   Return value in JSON format
+ { &amp;quot;!&amp;quot;: &amp;quot;lookup_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -54, &amp;quot;error_msg&amp;quot;: &amp;quot;requested resource not found&amp;quot; }  </description>
+    </item>
+    
+    <item>
+      <title>max_quota_err</title>
+      <link>https://docs.thingsdb.net/v0/errors/max_quota_err/</link>
+      <pubDate>Mon, 14 Oct 2019 10:12:08 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/errors/max_quota_err/</guid>
+      <description> Returns an error.
+This function does not generate an event.
+Function max_quota_err([message])
+Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
+ This code shows max_quota_err():
+ max_quota_err();   Return value in JSON format
+ { &amp;quot;!&amp;quot;: &amp;quot;max_quota_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -57, &amp;quot;error_msg&amp;quot;: &amp;quot;max quota is reached&amp;quot; }  </description>
+    </item>
+    
+    <item>
+      <title>node_err</title>
+      <link>https://docs.thingsdb.net/v0/errors/node_err/</link>
+      <pubDate>Mon, 14 Oct 2019 10:12:19 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/errors/node_err/</guid>
+      <description> Returns an error.
+This function does not generate an event.
+Function node_err([message])
+Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
+ This code shows node_err():
+ node_err();   Return value in JSON format
+ { &amp;quot;!&amp;quot;: &amp;quot;node_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -51, &amp;quot;error_msg&amp;quot;: &amp;quot;node is temporary unable to handle the request&amp;quot; }  </description>
+    </item>
+    
+    <item>
+      <title>num_arguments_err</title>
+      <link>https://docs.thingsdb.net/v0/errors/num_arguments_err/</link>
+      <pubDate>Mon, 14 Oct 2019 10:12:52 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/errors/num_arguments_err/</guid>
+      <description> Returns an error.
+This function does not generate an event.
+Function num_arguments_err([message])
+Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
+ This code shows num_arguments_err():
+ num_arguments_err();   Return value in JSON format
+ { &amp;quot;!&amp;quot;: &amp;quot;num_arguments_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -62, &amp;quot;error_msg&amp;quot;: &amp;quot;wrong number of arguments&amp;quot; }  </description>
+    </item>
+    
+    <item>
+      <title>operation_err</title>
+      <link>https://docs.thingsdb.net/v0/errors/operation_err/</link>
+      <pubDate>Mon, 14 Oct 2019 10:13:11 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/errors/operation_err/</guid>
+      <description> Returns an error.
+This function does not generate an event.
+Function operation_err([message])
+Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
+ This code shows operation_err():
+ operation_err();   Return value in JSON format
+ { &amp;quot;!&amp;quot;: &amp;quot;operation_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -63, &amp;quot;error_msg&amp;quot;: &amp;quot;operation is not valid in the current context&amp;quot; }  </description>
+    </item>
+    
+    <item>
+      <title>overflow_err</title>
+      <link>https://docs.thingsdb.net/v0/errors/overflow_err/</link>
+      <pubDate>Mon, 14 Oct 2019 10:13:24 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/errors/overflow_err/</guid>
+      <description> Returns an error.
+This function does not generate an event.
+Function overflow_err([message])
+Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
+ This code shows overflow_err():
+ overflow_err();   Return value in JSON format
+ { &amp;quot;!&amp;quot;: &amp;quot;overflow_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -59, &amp;quot;error_msg&amp;quot;: &amp;quot;integer overflow&amp;quot; }  </description>
+    </item>
+    
+    <item>
+      <title>syntax_err</title>
+      <link>https://docs.thingsdb.net/v0/errors/syntax_err/</link>
+      <pubDate>Mon, 14 Oct 2019 10:13:32 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/errors/syntax_err/</guid>
+      <description> Returns an error.
+This function does not generate an event.
+Function syntax_err([message])
+Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
+ This code shows syntax_err():
+ syntax_err();   Return value in JSON format
+ { &amp;quot;!&amp;quot;: &amp;quot;syntax_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -52, &amp;quot;error_msg&amp;quot;: &amp;quot;syntax error in query&amp;quot; }  </description>
+    </item>
+    
+    <item>
+      <title>type_err</title>
+      <link>https://docs.thingsdb.net/v0/errors/type_err/</link>
+      <pubDate>Mon, 14 Oct 2019 10:13:39 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/errors/type_err/</guid>
+      <description> Returns an error.
+This function does not generate an event.
+Function type_err([message])
+Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
+ This code shows type_err():
+ type_err();   Return value in JSON format
+ { &amp;quot;!&amp;quot;: &amp;quot;type_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -61, &amp;quot;error_msg&amp;quot;: &amp;quot;object of inappropriate type&amp;quot; }  </description>
+    </item>
+    
+    <item>
+      <title>value_err</title>
+      <link>https://docs.thingsdb.net/v0/errors/value_err/</link>
+      <pubDate>Mon, 14 Oct 2019 10:13:47 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/errors/value_err/</guid>
+      <description> Returns an error.
+This function does not generate an event.
+Function value_err([message])
+Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
+ This code shows value_err():
+ value_err();   Return value in JSON format
+ { &amp;quot;!&amp;quot;: &amp;quot;value_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -60, &amp;quot;error_msg&amp;quot;: &amp;quot;object has the right type but an inappropriate value&amp;quot; }  </description>
+    </item>
+    
+    <item>
+      <title>zero_div_err</title>
+      <link>https://docs.thingsdb.net/v0/errors/zero_div_err/</link>
+      <pubDate>Mon, 14 Oct 2019 10:13:56 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/errors/zero_div_err/</guid>
+      <description> Returns an error.
+This function does not generate an event.
+Function zero_div_err([message])
+Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
+ This code shows zero_div_err():
+ zero_div_err();   Return value in JSON format
+ { &amp;quot;!&amp;quot;: &amp;quot;zero_div_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -58, &amp;quot;error_msg&amp;quot;: &amp;quot;division or module by zero&amp;quot; }  </description>
+    </item>
+    
   </channel>
 </rss>

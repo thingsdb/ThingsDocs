@@ -1,7 +1,7 @@
 ---
 title: "str"
 date: 2019-10-23T11:04:00+02:00
-weight: 12
+weight: 1200
 ---
 
 ### Methods

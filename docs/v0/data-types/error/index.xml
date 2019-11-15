@@ -11,5 +11,21 @@
 	<atom:link href="https://docs.thingsdb.net/v0/data-types/error/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>len</title>
+      <link>https://docs.thingsdb.net/v0/data-types/error/len/</link>
+      <pubDate>Wed, 23 Oct 2019 16:41:37 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/error/len/</guid>
+      <description> Returns the length of an error message.
+This function does not generate an event.
+Function error.len()
+Arguments None
+Return value Returns length of an error message.
+ This code uses len() to return the length of the error message:
+ type_err(&amp;quot;incorrect type given&amp;quot;).len();   Return value in JSON format
+ 20  </description>
+    </item>
+    
   </channel>
 </rss>

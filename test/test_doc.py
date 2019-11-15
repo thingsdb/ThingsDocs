@@ -66,8 +66,12 @@ class TestDoc(TestBase):
                     fn = os.path.join(root, file)
                     with open(fn, 'r') as f:
                         lines = f.readlines()
+
+                    location = root if file == '_index.md' else \
+                        os.path.join(root, os.path.splitext(file)[0])
+
                     try:
-                        await self.process_markdown(client, root, lines)
+                        await self.process_markdown(client, location, lines)
                     except Exception as e:
                         try:
                             ex = type(e)(
@@ -82,7 +86,7 @@ class TestDoc(TestBase):
         client.close()
         await client.wait_closed()
 
-    async def process_markdown(self, client, root, lines):
+    async def process_markdown(self, client, location, lines):
         lines = iter(lines)
 
         while True:
@@ -90,10 +94,15 @@ class TestDoc(TestBase):
                 line = next(lines)
                 matches = RE_LINK.findall(line)
                 for m in matches:
-                    markdown_fn = os.path.join(root, m[1], '_index.md')
-                    if not os.path.isfile(markdown_fn):
+                    chap_fn = os.path.join(location, m[1], '_index.md')
+                    mark_fn = os.path.join(location, f'{m[1]}.md')
+                    chap_fn = os.path.abspath(chap_fn)
+                    mark_fn = os.path.abspath(mark_fn)
+
+                    if (not os.path.isfile(chap_fn)) and \
+                            (not os.path.isfile(mark_fn)):
                         raise FileNotFoundError(
-                            f'file {markdown_fn} does not exist')
+                            f'neither `{mark_fn}` or `{chap_fn}` exists')
 
                 m = RE_TEST.match(line)
                 if m:

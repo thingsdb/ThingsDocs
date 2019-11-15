@@ -1,7 +1,7 @@
 ---
 title: "assert"
 date: 2019-10-14T09:56:39+02:00
-weight: 2
+weight: 200
 ---
 
 Raises `ASSERTION_ERROR` if the specified statement evaluates to `false`.

@@ -1,7 +1,7 @@
 ---
 title: "list"
 date: 2019-10-23T11:04:46+02:00
-weight: 8
+weight: 800
 ---
 
 An empty list can be constructed as follows: `list = [];`

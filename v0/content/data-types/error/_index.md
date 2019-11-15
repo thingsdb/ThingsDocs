@@ -1,7 +1,7 @@
 ---
 title: "error"
 date: 2019-10-14T09:41:45+02:00
-weight: 4
+weight: 400
 ---
 
 When an error occurs within a method, an object can be returned. The object, called an error, contains information about the error, including its type and a message.

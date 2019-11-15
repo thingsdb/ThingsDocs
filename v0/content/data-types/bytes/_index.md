@@ -1,7 +1,7 @@
 ---
 title: "bytes"
 date: 2019-10-23T11:04:12+02:00
-weight: 2
+weight: 200
 ---
 
 The bytes type can be used to store a sequence of byte values.

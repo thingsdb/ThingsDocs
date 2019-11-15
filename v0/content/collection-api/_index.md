@@ -9,6 +9,7 @@ chapter = true
 
 The *collection* scope can be used to manage data within a *collection*.
 
+
 > This code returns the *id* of collection *stuff*
 
 ```shell

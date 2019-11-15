@@ -11,5 +11,59 @@
 	<atom:link href="https://docs.thingsdb.net/v0/procedures-api/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>del_procedure</title>
+      <link>https://docs.thingsdb.net/v0/procedures-api/del_procedure/</link>
+      <pubDate>Mon, 14 Oct 2019 10:07:08 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/procedures-api/del_procedure/</guid>
+      <description>This function generates an event.</description>
+    </item>
+    
+    <item>
+      <title>new_procedure</title>
+      <link>https://docs.thingsdb.net/v0/procedures-api/new_procedure/</link>
+      <pubDate>Mon, 14 Oct 2019 10:07:12 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/procedures-api/new_procedure/</guid>
+      <description>This function generates an event.</description>
+    </item>
+    
+    <item>
+      <title>procedure_doc</title>
+      <link>https://docs.thingsdb.net/v0/procedures-api/procedure_doc/</link>
+      <pubDate>Mon, 14 Oct 2019 10:10:02 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/procedures-api/procedure_doc/</guid>
+      <description>This function does not generate an event.</description>
+    </item>
+    
+    <item>
+      <title>procedure_info</title>
+      <link>https://docs.thingsdb.net/v0/procedures-api/procedure_info/</link>
+      <pubDate>Mon, 14 Oct 2019 10:10:07 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/procedures-api/procedure_info/</guid>
+      <description>This function does not generate an event.</description>
+    </item>
+    
+    <item>
+      <title>procedures_info</title>
+      <link>https://docs.thingsdb.net/v0/procedures-api/procedures_info/</link>
+      <pubDate>Mon, 14 Oct 2019 10:10:26 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/procedures-api/procedures_info/</guid>
+      <description>This function does not generate an event.</description>
+    </item>
+    
+    <item>
+      <title>run</title>
+      <link>https://docs.thingsdb.net/v0/procedures-api/run/</link>
+      <pubDate>Mon, 14 Oct 2019 10:10:34 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/procedures-api/run/</guid>
+      <description>This function does not generate an event.</description>
+    </item>
+    
   </channel>
 </rss>

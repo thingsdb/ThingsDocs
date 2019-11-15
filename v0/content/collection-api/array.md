@@ -1,7 +1,7 @@
 ---
 title: "array"
 date: 2019-10-14T09:56:29+02:00
-weight: 1
+weight: 100
 ---
 
 Returns a new empty [list](../../data-types/list) or returns a list for a given `set`.

@@ -1,7 +1,7 @@
 ---
 title: "set"
 date: 2019-10-14T09:41:39+02:00
-weight: 11
+weight: 1100
 ---
 
 A set is a collection which is unordered and can only contain things.

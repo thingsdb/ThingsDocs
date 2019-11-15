@@ -3,16 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/node-api/backup_info/</loc>
-    <lastmod>2019-10-23T17:00:50+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/mod_type/add/</loc>
-    <lastmod>2019-10-23T16:58:01+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://docs.thingsdb.net/v0/data-types/str/contains/</loc>
     <lastmod>2019-10-23T14:34:12+02:00</lastmod>
   </url>
@@ -43,18 +33,8 @@
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/array/</loc>
-    <lastmod>2019-10-14T09:56:29+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://docs.thingsdb.net/v0/thingsdb-api/collection_info/</loc>
     <lastmod>2019-10-14T09:48:47+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/bool/</loc>
-    <lastmod>2019-10-14T09:40:19+02:00</lastmod>
   </url>
   
   <url>
@@ -78,16 +58,6 @@
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/node-api/backups_info/</loc>
-    <lastmod>2019-10-23T17:00:57+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/mod_type/del/</loc>
-    <lastmod>2019-10-23T16:58:06+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://docs.thingsdb.net/v0/data-types/thing/filter/</loc>
     <lastmod>2019-10-23T13:54:00+02:00</lastmod>
   </url>
@@ -108,11 +78,6 @@
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/bytes/</loc>
-    <lastmod>2019-10-23T11:04:12+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://docs.thingsdb.net/v0/errors/auth_err/</loc>
     <lastmod>2019-10-14T10:11:22+02:00</lastmod>
   </url>
@@ -120,11 +85,6 @@
   <url>
     <loc>https://docs.thingsdb.net/v0/procedures-api/new_procedure/</loc>
     <lastmod>2019-10-14T10:07:12+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/assert/</loc>
-    <lastmod>2019-10-14T09:56:39+02:00</lastmod>
   </url>
   
   <url>
@@ -150,11 +110,6 @@
   <url>
     <loc>https://docs.thingsdb.net/v0/query/</loc>
     <lastmod>2019-10-07T11:01:23+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/mod_type/mod/</loc>
-    <lastmod>2019-10-23T16:58:14+02:00</lastmod>
   </url>
   
   <url>
@@ -188,11 +143,6 @@
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/bool/</loc>
-    <lastmod>2019-10-14T09:56:51+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://docs.thingsdb.net/v0/thingsdb-api/del_collection/</loc>
     <lastmod>2019-10-14T09:49:09+02:00</lastmod>
   </url>
@@ -203,11 +153,6 @@
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/closure/</loc>
-    <lastmod>2019-10-14T09:41:26+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://docs.thingsdb.net/v0/operators/binary-bitwise-operators/</loc>
     <lastmod>2019-10-14T09:34:41+02:00</lastmod>
   </url>
@@ -215,11 +160,6 @@
   <url>
     <loc>https://docs.thingsdb.net/v0/protocol/</loc>
     <lastmod>2019-10-07T11:01:36+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/node-api/del_backup/</loc>
-    <lastmod>2019-10-23T17:01:14+02:00</lastmod>
   </url>
   
   <url>
@@ -253,18 +193,8 @@
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/deep/</loc>
-    <lastmod>2019-10-14T09:57:18+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://docs.thingsdb.net/v0/thingsdb-api/del_expired/</loc>
     <lastmod>2019-10-14T09:49:19+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/error/</loc>
-    <lastmod>2019-10-14T09:41:45+02:00</lastmod>
   </url>
   
   <url>
@@ -280,16 +210,6 @@
   <url>
     <loc>https://docs.thingsdb.net/v0/thingsdb-api/del_node/</loc>
     <lastmod>2019-10-25T09:34:10+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/node-api/new_backup/</loc>
-    <lastmod>2019-10-23T17:01:20+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/del_type/</loc>
-    <lastmod>2019-10-23T16:54:20+02:00</lastmod>
   </url>
   
   <url>
@@ -323,12 +243,7 @@
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/float/</loc>
-    <lastmod>2019-10-14T09:40:47+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/operators/logical_operators/</loc>
+    <loc>https://docs.thingsdb.net/v0/operators/logical-operators/</loc>
     <lastmod>2019-10-14T09:36:27+02:00</lastmod>
   </url>
   
@@ -358,11 +273,6 @@
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/info/</loc>
-    <lastmod>2019-10-23T11:03:35+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://docs.thingsdb.net/v0/errors/max_quota_err/</loc>
     <lastmod>2019-10-14T10:12:08+02:00</lastmod>
   </url>
@@ -370,11 +280,6 @@
   <url>
     <loc>https://docs.thingsdb.net/v0/procedures-api/run/</loc>
     <lastmod>2019-10-14T10:10:34+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/err/</loc>
-    <lastmod>2019-10-14T09:58:22+02:00</lastmod>
   </url>
   
   <url>
@@ -423,11 +328,6 @@
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/float/</loc>
-    <lastmod>2019-10-14T09:59:28+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://docs.thingsdb.net/v0/thingsdb-api/del_user/</loc>
     <lastmod>2019-10-14T09:49:40+02:00</lastmod>
   </url>
@@ -435,11 +335,6 @@
   <url>
     <loc>https://docs.thingsdb.net/v0/node-api/nodes_info/</loc>
     <lastmod>2019-10-14T09:43:03+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/int/</loc>
-    <lastmod>2019-10-14T09:40:28+02:00</lastmod>
   </url>
   
   <url>
@@ -458,18 +353,8 @@
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/list/</loc>
-    <lastmod>2019-10-23T11:04:46+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://docs.thingsdb.net/v0/errors/num_arguments_err/</loc>
     <lastmod>2019-10-14T10:12:52+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/int/</loc>
-    <lastmod>2019-10-14T10:00:14+02:00</lastmod>
   </url>
   
   <url>
@@ -503,11 +388,6 @@
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/isarray/</loc>
-    <lastmod>2019-10-14T10:00:22+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://docs.thingsdb.net/v0/thingsdb-api/new_collection/</loc>
     <lastmod>2019-10-14T09:49:59+02:00</lastmod>
   </url>
@@ -515,11 +395,6 @@
   <url>
     <loc>https://docs.thingsdb.net/v0/node-api/set_log_level/</loc>
     <lastmod>2019-10-14T09:43:31+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/nil/</loc>
-    <lastmod>2019-10-14T09:39:58+02:00</lastmod>
   </url>
   
   <url>
@@ -543,11 +418,6 @@
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/isascii/</loc>
-    <lastmod>2019-10-14T10:00:36+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://docs.thingsdb.net/v0/thingsdb-api/new_node/</loc>
     <lastmod>2019-10-14T09:50:09+02:00</lastmod>
   </url>
@@ -555,11 +425,6 @@
   <url>
     <loc>https://docs.thingsdb.net/v0/node-api/shutdown/</loc>
     <lastmod>2019-10-14T09:43:42+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/regex/</loc>
-    <lastmod>2019-10-14T09:40:56+02:00</lastmod>
   </url>
   
   <url>
@@ -583,18 +448,8 @@
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/isbool/</loc>
-    <lastmod>2019-10-14T10:00:44+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://docs.thingsdb.net/v0/thingsdb-api/new_token/</loc>
     <lastmod>2019-10-14T09:50:15+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/set/</loc>
-    <lastmod>2019-10-14T09:41:39+02:00</lastmod>
   </url>
   
   <url>
@@ -603,18 +458,8 @@
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/isbytes/</loc>
-    <lastmod>2019-10-23T16:54:41+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://docs.thingsdb.net/v0/data-types/list/splice/</loc>
     <lastmod>2019-10-23T12:52:42+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/str/</loc>
-    <lastmod>2019-10-23T11:04:00+02:00</lastmod>
   </url>
   
   <url>
@@ -633,18 +478,8 @@
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/iserr/</loc>
-    <lastmod>2019-10-14T10:01:10+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://docs.thingsdb.net/v0/thingsdb-api/pop_node/</loc>
     <lastmod>2019-10-14T09:50:35+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/thing/</loc>
-    <lastmod>2019-10-14T09:41:17+02:00</lastmod>
   </url>
   
   <url>
@@ -653,18 +488,8 @@
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/tuple/</loc>
-    <lastmod>2019-10-23T11:04:51+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://docs.thingsdb.net/v0/errors/zero_div_err/</loc>
     <lastmod>2019-10-14T10:13:56+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/isfloat/</loc>
-    <lastmod>2019-10-14T10:01:19+02:00</lastmod>
   </url>
   
   <url>
@@ -678,16 +503,6 @@
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/type/</loc>
-    <lastmod>2019-10-23T16:43:16+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/isinf/</loc>
-    <lastmod>2019-10-14T10:01:34+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://docs.thingsdb.net/v0/thingsdb-api/rename_user/</loc>
     <lastmod>2019-10-14T09:50:58+02:00</lastmod>
   </url>
@@ -695,16 +510,6 @@
   <url>
     <loc>https://docs.thingsdb.net/v0/collection-api/</loc>
     <lastmod>2019-10-07T11:04:33+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/wtype/</loc>
-    <lastmod>2019-10-23T16:44:19+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/isint/</loc>
-    <lastmod>2019-10-14T10:01:44+02:00</lastmod>
   </url>
   
   <url>
@@ -723,18 +528,8 @@
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/islist/</loc>
-    <lastmod>2019-10-14T10:01:56+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://docs.thingsdb.net/v0/thingsdb-api/set_password/</loc>
     <lastmod>2019-10-14T09:51:37+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/isnan/</loc>
-    <lastmod>2019-10-14T10:02:01+02:00</lastmod>
   </url>
   
   <url>
@@ -748,23 +543,213 @@
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/isnil/</loc>
-    <lastmod>2019-10-14T13:53:26+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://docs.thingsdb.net/v0/thingsdb-api/user_info/</loc>
     <lastmod>2019-10-14T09:51:59+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/israw/</loc>
-    <lastmod>2019-10-14T10:02:14+02:00</lastmod>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/users_info/</loc>
+    <lastmod>2019-10-14T09:52:04+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/users_info/</loc>
-    <lastmod>2019-10-14T09:52:04+02:00</lastmod>
+    <loc>https://docs.thingsdb.net/v0/collection-api/mod_type/add/</loc>
+    <lastmod>2019-10-23T16:58:01+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/array/</loc>
+    <lastmod>2019-10-14T09:56:29+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/bool/</loc>
+    <lastmod>2019-10-14T09:40:19+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/mod_type/del/</loc>
+    <lastmod>2019-10-23T16:58:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/bytes/</loc>
+    <lastmod>2019-10-23T11:04:12+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/assert/</loc>
+    <lastmod>2019-10-14T09:56:39+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/mod_type/mod/</loc>
+    <lastmod>2019-10-23T16:58:14+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/bool/</loc>
+    <lastmod>2019-10-14T09:56:51+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/closure/</loc>
+    <lastmod>2019-10-14T09:41:26+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/bytes/</loc>
+    <lastmod>2019-11-15T20:40:38+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/deep/</loc>
+    <lastmod>2019-10-14T09:57:18+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/error/</loc>
+    <lastmod>2019-10-14T09:41:45+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/del_type/</loc>
+    <lastmod>2019-10-23T16:54:20+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/float/</loc>
+    <lastmod>2019-10-14T09:40:47+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/info/</loc>
+    <lastmod>2019-10-23T11:03:35+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/err/</loc>
+    <lastmod>2019-10-14T09:58:22+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/float/</loc>
+    <lastmod>2019-10-14T09:59:28+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/int/</loc>
+    <lastmod>2019-10-14T09:40:28+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/list/</loc>
+    <lastmod>2019-10-23T11:04:46+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/int/</loc>
+    <lastmod>2019-10-14T10:00:14+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/isarray/</loc>
+    <lastmod>2019-10-14T10:00:22+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/nil/</loc>
+    <lastmod>2019-10-14T09:39:58+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/isascii/</loc>
+    <lastmod>2019-10-14T10:00:36+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/regex/</loc>
+    <lastmod>2019-10-14T09:40:56+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/isbool/</loc>
+    <lastmod>2019-10-14T10:00:44+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/set/</loc>
+    <lastmod>2019-10-14T09:41:39+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/isbytes/</loc>
+    <lastmod>2019-10-23T16:54:41+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/str/</loc>
+    <lastmod>2019-10-23T11:04:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/iserr/</loc>
+    <lastmod>2019-10-14T10:01:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/thing/</loc>
+    <lastmod>2019-10-14T09:41:17+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/tuple/</loc>
+    <lastmod>2019-10-23T11:04:51+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/isfloat/</loc>
+    <lastmod>2019-10-14T10:01:19+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/type/</loc>
+    <lastmod>2019-10-23T16:43:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/isinf/</loc>
+    <lastmod>2019-10-14T10:01:34+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/wtype/</loc>
+    <lastmod>2019-10-23T16:44:19+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/isint/</loc>
+    <lastmod>2019-10-14T10:01:44+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/islist/</loc>
+    <lastmod>2019-10-14T10:01:56+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/isnan/</loc>
+    <lastmod>2019-10-14T10:02:01+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/isnil/</loc>
+    <lastmod>2019-10-14T13:53:26+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/israw/</loc>
+    <lastmod>2019-10-14T10:02:14+02:00</lastmod>
   </url>
   
   <url>
@@ -879,18 +864,8 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v0/</loc>
-    <lastmod>2019-10-23T16:59:56+02:00</lastmod>
+    <lastmod>2019-11-15T20:40:38+02:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/wtype/unwrap/</loc>
-    <lastmod>2019-10-23T16:44:29+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/thing/wrap/</loc>
-    <lastmod>2019-10-23T16:42:43+02:00</lastmod>
   </url>
   
   <url>
