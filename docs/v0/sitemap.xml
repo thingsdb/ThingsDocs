@@ -878,6 +878,12 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/</loc>
+    <lastmod>2019-10-23T16:59:56+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/data-types/wtype/unwrap/</loc>
     <lastmod>2019-10-23T16:44:29+02:00</lastmod>
   </url>
@@ -905,11 +911,6 @@
   <url>
     <loc>https://docs.thingsdb.net/v0/query/arguments/</loc>
     <lastmod>2019-10-14T09:31:27+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/</loc>
-    <priority>0</priority>
   </url>
   
   <url>

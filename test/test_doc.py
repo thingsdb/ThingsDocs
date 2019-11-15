@@ -42,7 +42,7 @@ if not DOC_VERSION:
         'expecting an environment variable DOC_VERSION\n'
         'for eaxmple: DOC_VERSION=v0')
 
-CONTENT_PATH = os.path.join(ROOT_PATH, 'content')
+CONTENT_PATH = os.path.join(ROOT_PATH, DOC_VERSION, 'content')
 RE_TEST = re.compile(
     '```thingsdb,([a-zA-Z_]*)(,(@[\:a-zA-Z0-9]))?')
 

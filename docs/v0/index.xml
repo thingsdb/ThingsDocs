@@ -6,9 +6,135 @@
     <description>Recent content on ThingsDB documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Wed, 23 Oct 2019 16:59:56 +0200</lastBuildDate>
     
 	<atom:link href="https://docs.thingsdb.net/v0/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>array</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/array/</link>
+      <pubDate>Mon, 14 Oct 2019 09:56:29 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/array/</guid>
+      <description>Returns a new empty list or returns a list for a given set.
+This function does not generate an event.
+Function array([set])
+Arguments    Argument Type Description     set set (optional) Optional set to initialize the array.    Return value A new array.
+ This code shows some return values for array():
+ array( set({}, {}) );   Return value in JSON format</description>
+    </item>
+    
+    <item>
+      <title>bool</title>
+      <link>https://docs.thingsdb.net/v0/data-types/bool/</link>
+      <pubDate>Mon, 14 Oct 2019 09:40:19 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/bool/</guid>
+      <description> Booleans are either true or false. Other types can convert to bool by using the ! (not) operator or the bool function.
+ This code creates a bool property is_the_earth_flat to collection stuff:
+ .is_the_earth_flat = !true;  Related functions    Method Description     bool Create a new boolean value.   isbool Test if a given value is of type bool.    </description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://docs.thingsdb.net/v0/authentication/python/</link>
+      <pubDate>Mon, 14 Oct 2019 09:30:56 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/authentication/python/</guid>
+      <description>Use pip to install the python client:
+ pip install python-thingsdb  The Python client supports both queries, watching and a framework for using ThingsDB in a really simple way.
+ To authorize in Python, use this code:
+ import asyncio from thingsdb.client import Client client = Client() loop = asyncio.get_event_loop() async def example(): # replace `localhost` with your ThingsDB server address await client.connect(&#39;localhost&#39;) # replace `amdin` with yout username and `pass` with your password await client.</description>
+    </item>
+    
+    <item>
+      <title>assert</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/assert/</link>
+      <pubDate>Mon, 14 Oct 2019 09:56:39 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/assert/</guid>
+      <description>Raises ASSERTION_ERROR if the specified statement evaluates to false.
+This function does not generate an event.
+Function assert(statement [, error_msg])
+Arguments    Argument Type Description     statement any (required) The statement to evaluate.   msg str (optional) Custom error message.   code int (optional) Return a custom error code between 1 and 32. If not given, the error code is ASSERTION_ERROR (-105)    Return value Assert returns with the return value of the given statement when the statement evaluates to true.</description>
+    </item>
+    
+    <item>
+      <title>Shell</title>
+      <link>https://docs.thingsdb.net/v0/authentication/shell/</link>
+      <pubDate>Mon, 14 Oct 2019 09:31:07 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/authentication/shell/</guid>
+      <description> Copy/paste to download and install thingscmd
+ pip install thingscmd  For running ThingsDB queries from the shell, a shell tool ThingsCMD is available. It is not possible to watch things by using this shell based tool.
+ To authorize from the shell, use this code:
+ # Authenticate with a user and password thingscmd -n localhost -u admin -p pass -q &amp;quot;nil;&amp;quot; # ..or with a token thingscmd -n localhost -t &amp;quot;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&amp;quot; -q &amp;quot;nil;&amp;quot;  </description>
+    </item>
+    
+    <item>
+      <title>type</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/type/</link>
+      <pubDate>Mon, 14 Oct 2019 10:06:09 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/type/</guid>
+      <description>Returns the type name of a value.
+This function does not generate an event.
+Function type(value)
+Arguments    Argument Type Description     value any (required) The value to return the type name for.    Return value Type name of the given value.
+ Returns the type name of a given value:
+ [ type( nil ), type( 42 ), type( 3.14 ), ];   Example return value in JSON format</description>
+    </item>
+    
+    <item>
+      <title>type_count</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/type_count/</link>
+      <pubDate>Wed, 23 Oct 2019 16:59:23 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/type_count/</guid>
+      <description>Returns the number of instances of a given Type within a collection.
+This function does not generate an event.
+Function type_count(type_name)
+Arguments    Argument Type Description     type_name str The name of the Type for which the number of instances must be returned.    Return value An int representing the number of occurrences.</description>
+    </item>
+    
+    <item>
+      <title>type_info</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/type_info/</link>
+      <pubDate>Wed, 23 Oct 2019 16:59:28 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/type_info/</guid>
+      <description>Returns information about the properties of a given Type.
+This function does not generate an event.
+Function type_info(type_name)
+Arguments    Argument Type Description     type_name str The name of the Type for which the information about the properties has to be returned.    Return value A Thing containing information about the properties of a given Type.</description>
+    </item>
+    
+    <item>
+      <title>types_info</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/types_info/</link>
+      <pubDate>Wed, 23 Oct 2019 16:59:56 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/types_info/</guid>
+      <description>Returns information about the properties of all Types within a collection.
+This function does not generate an event.
+Function type_info()
+Arguments None
+Return value A Thing containing information about the properties of all Types within a collection.</description>
+    </item>
+    
+    <item>
+      <title>wse</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/wse/</link>
+      <pubDate>Mon, 14 Oct 2019 10:06:27 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/wse/</guid>
+      <description>Stored closures which can potentially make changes to ThingsDB are called closures with side effects and must be wrapped with the wse(..) function.
+This allows ThingsDB before running the query to make an event. You should not wrap wse around all closures since this would unnecessary create events when they may not be required.
+This function generates an event.
+Function wse(statement)
+Arguments    Argument Type Description     statement any Statement or block to wrap.</description>
+    </item>
     
   </channel>
 </rss>

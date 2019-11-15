@@ -12,3 +12,11 @@ Other types can convert to `bool` by using the `!` (not) operator or the [bool](
 ```thingsdb,should_pass
 .is_the_earth_flat = !true;
 ```
+
+
+### Related functions
+
+Method | Description
+------ | -----------
+[bool](../../collection-api/bool) | Create a new boolean value.
+[isbool](../../collection-api/isbool) | Test if a given value is of type bool.

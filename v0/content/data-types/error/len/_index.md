@@ -22,11 +22,11 @@ Returns length of an error message.
 > This code uses `len()` to return the length of the error message:
 
 ```thingsdb,json_response
-err().len();
+type_err("incorrect type given").len();
 ```
 
 > Return value in JSON format
 
 ```json
-10
+20
 ```

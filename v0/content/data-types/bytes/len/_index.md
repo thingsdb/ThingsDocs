@@ -1,30 +1,29 @@
 ---
 title: "len"
 date: 2019-10-23T13:54:12+02:00
-draft: true
 ---
 
-Returns the length of an [list](../../list), [tuple](../../tuple) or [string](../../str), or the number of items in a [thing](../../thing).
+Returns the length of the bytes value.
 
 This function does *not* generate an [event](../../../events).
 
 ### Function
-*iterable*.`len()`
+*bytes*.`len()`
 
 ### Arguments
 None
 
 ### Return value
-Returns length of the iterable.
+Returns length of the byte sequence.
 
-> This code uses `len()` to return the number of items in a collection:
+> This code uses `len()` to return the length of a byte sequence:
 
 ```thingsdb,json_response
-[1, 2, 3, 4].len();
+bytes("abc").len();
 ```
 
 > Return value in JSON format
 
 ```json
-4
+3
 ```

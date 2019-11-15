@@ -16,15 +16,25 @@ This function does *not* generate an [event](../../events).
 
 Argument | Type | Description
 -------- | ---- | -----------
-value | error (optional) | The error to raise.
+value | error/str (optional) | The error to raise.
 
 ### Return value
 
 None
 
-> This code shows how ***raise()*** can be used:
+> Some examples on how ***raise()*** can be used:
 
 ```thingsdb,should_err
-raise ();
+raise ();  // raise a default error
+'This code is not reached';
+```
+
+```thingsdb,should_err
+raise ('no licenses left');  // raise with a custom message
+'This code is not reached';
+```
+
+```thingsdb,should_err
+raise (value_err());  // raise a value error
 'This code is not reached';
 ```

@@ -11,5 +11,95 @@
 	<atom:link href="https://docs.thingsdb.net/v0/collection-api/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>array</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/array/</link>
+      <pubDate>Mon, 14 Oct 2019 09:56:29 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/array/</guid>
+      <description>Returns a new empty list or returns a list for a given set.
+This function does not generate an event.
+Function array([set])
+Arguments    Argument Type Description     set set (optional) Optional set to initialize the array.    Return value A new array.
+ This code shows some return values for array():
+ array( set({}, {}) );   Return value in JSON format</description>
+    </item>
+    
+    <item>
+      <title>assert</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/assert/</link>
+      <pubDate>Mon, 14 Oct 2019 09:56:39 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/assert/</guid>
+      <description>Raises ASSERTION_ERROR if the specified statement evaluates to false.
+This function does not generate an event.
+Function assert(statement [, error_msg])
+Arguments    Argument Type Description     statement any (required) The statement to evaluate.   msg str (optional) Custom error message.   code int (optional) Return a custom error code between 1 and 32. If not given, the error code is ASSERTION_ERROR (-105)    Return value Assert returns with the return value of the given statement when the statement evaluates to true.</description>
+    </item>
+    
+    <item>
+      <title>type</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/type/</link>
+      <pubDate>Mon, 14 Oct 2019 10:06:09 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/type/</guid>
+      <description>Returns the type name of a value.
+This function does not generate an event.
+Function type(value)
+Arguments    Argument Type Description     value any (required) The value to return the type name for.    Return value Type name of the given value.
+ Returns the type name of a given value:
+ [ type( nil ), type( 42 ), type( 3.14 ), ];   Example return value in JSON format</description>
+    </item>
+    
+    <item>
+      <title>type_count</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/type_count/</link>
+      <pubDate>Wed, 23 Oct 2019 16:59:23 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/type_count/</guid>
+      <description>Returns the number of instances of a given Type within a collection.
+This function does not generate an event.
+Function type_count(type_name)
+Arguments    Argument Type Description     type_name str The name of the Type for which the number of instances must be returned.    Return value An int representing the number of occurrences.</description>
+    </item>
+    
+    <item>
+      <title>type_info</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/type_info/</link>
+      <pubDate>Wed, 23 Oct 2019 16:59:28 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/type_info/</guid>
+      <description>Returns information about the properties of a given Type.
+This function does not generate an event.
+Function type_info(type_name)
+Arguments    Argument Type Description     type_name str The name of the Type for which the information about the properties has to be returned.    Return value A Thing containing information about the properties of a given Type.</description>
+    </item>
+    
+    <item>
+      <title>types_info</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/types_info/</link>
+      <pubDate>Wed, 23 Oct 2019 16:59:56 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/types_info/</guid>
+      <description>Returns information about the properties of all Types within a collection.
+This function does not generate an event.
+Function type_info()
+Arguments None
+Return value A Thing containing information about the properties of all Types within a collection.</description>
+    </item>
+    
+    <item>
+      <title>wse</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/wse/</link>
+      <pubDate>Mon, 14 Oct 2019 10:06:27 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/wse/</guid>
+      <description>Stored closures which can potentially make changes to ThingsDB are called closures with side effects and must be wrapped with the wse(..) function.
+This allows ThingsDB before running the query to make an event. You should not wrap wse around all closures since this would unnecessary create events when they may not be required.
+This function generates an event.
+Function wse(statement)
+Arguments    Argument Type Description     statement any Statement or block to wrap.</description>
+    </item>
+    
   </channel>
 </rss>

@@ -11,5 +11,16 @@
 	<atom:link href="https://docs.thingsdb.net/v0/data-types/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>bool</title>
+      <link>https://docs.thingsdb.net/v0/data-types/bool/</link>
+      <pubDate>Mon, 14 Oct 2019 09:40:19 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/bool/</guid>
+      <description> Booleans are either true or false. Other types can convert to bool by using the ! (not) operator or the bool function.
+ This code creates a bool property is_the_earth_flat to collection stuff:
+ .is_the_earth_flat = !true;  Related functions    Method Description     bool Create a new boolean value.   isbool Test if a given value is of type bool.    </description>
+    </item>
+    
   </channel>
 </rss>

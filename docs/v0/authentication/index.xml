@@ -11,5 +11,29 @@
 	<atom:link href="https://docs.thingsdb.net/v0/authentication/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Python</title>
+      <link>https://docs.thingsdb.net/v0/authentication/python/</link>
+      <pubDate>Mon, 14 Oct 2019 09:30:56 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/authentication/python/</guid>
+      <description>Use pip to install the python client:
+ pip install python-thingsdb  The Python client supports both queries, watching and a framework for using ThingsDB in a really simple way.
+ To authorize in Python, use this code:
+ import asyncio from thingsdb.client import Client client = Client() loop = asyncio.get_event_loop() async def example(): # replace `localhost` with your ThingsDB server address await client.connect(&#39;localhost&#39;) # replace `amdin` with yout username and `pass` with your password await client.</description>
+    </item>
+    
+    <item>
+      <title>Shell</title>
+      <link>https://docs.thingsdb.net/v0/authentication/shell/</link>
+      <pubDate>Mon, 14 Oct 2019 09:31:07 +0200</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/authentication/shell/</guid>
+      <description> Copy/paste to download and install thingscmd
+ pip install thingscmd  For running ThingsDB queries from the shell, a shell tool ThingsCMD is available. It is not possible to watch things by using this shell based tool.
+ To authorize from the shell, use this code:
+ # Authenticate with a user and password thingscmd -n localhost -u admin -p pass -q &amp;quot;nil;&amp;quot; # ..or with a token thingscmd -n localhost -t &amp;quot;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&amp;quot; -q &amp;quot;nil;&amp;quot;  </description>
+    </item>
+    
   </channel>
 </rss>
