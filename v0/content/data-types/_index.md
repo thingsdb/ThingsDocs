@@ -26,4 +26,4 @@ type | Description
 [thing](./thing) | Object with key value pairs.
 [tuple](./tuple) | Nested and immutable [list](./list).
 [Type](./type) | Type are [things](./thing) with pre-defined properties.
-[<Type>](./wtype) | Wrapped instance or thing by a [Type](./type).
+[&lt;Type&gt;](./wtype) | Wrapped instance or thing by a [Type](./type).
