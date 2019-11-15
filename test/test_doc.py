@@ -34,8 +34,15 @@ from thingsdb.exceptions import ZeroDivisionError
 from thingsdb.exceptions import OperationError
 
 
-DOC_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CONTENT_PATH = os.path.join(DOC_PATH, 'content')
+ROOT_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+DOC_VERSION = os.getenv('DOC_VERSION')
+if not DOC_VERSION:
+    sys,exit(
+        'expecting an environment variable DOC_VERSION\n'
+        'for eaxmple: DOC_VERSION=v0')
+
+CONTENT_PATH = os.path.join(ROOT_PATH, 'content')
 RE_TEST = re.compile(
     '```thingsdb,([a-zA-Z_]*)(,(@[\:a-zA-Z0-9]))?')
 
