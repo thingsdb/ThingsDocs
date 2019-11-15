@@ -41,10 +41,10 @@ unknown = User{};
 // ..or explicit set name to `nil`
 user_nil = User{name: nil};
 
-// And a name is also valid
+// ..a `str` is also ok
 iris = User{name: 'Iris'};
 
-// Another type than `str` or `nil` is not allowed
+// ..but another type than `str` or `nil` is not allowed
 assert(iserr(try(User{name: 0})));
 
 // Return the results
