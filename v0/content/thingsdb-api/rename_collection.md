@@ -1,6 +1,6 @@
 ---
 title: "rename_collection"
-weight: 33
+weight: 105
 ---
 
 This function generates an [event](../../events).

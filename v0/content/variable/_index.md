@@ -1,6 +1,6 @@
 ---
 title: "Variable"
-weight: 121
+weight: 7
 chapter: true
 ---
 

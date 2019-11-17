@@ -30,3 +30,6 @@ __pycache__/
 # test
 test/testdir/
 testdir/
+
+# vscode
+.vscode/

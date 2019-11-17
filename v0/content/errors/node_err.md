@@ -1,6 +1,6 @@
 ---
 title: "node_err"
-weight: 113
+weight: 174
 ---
 
 Returns an [error](../../data-types/error).

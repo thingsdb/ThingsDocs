@@ -1,6 +1,6 @@
 ---
 title: "del_type"
-weight: 128
+weight: 118
 ---
 
 Deletes an existing type [Type](../../data-types/type).

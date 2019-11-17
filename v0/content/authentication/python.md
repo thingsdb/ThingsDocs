@@ -1,6 +1,6 @@
 ---
 title: "Python"
-weight: 14
+weight: 2
 ---
 
 > Use pip to install the python client:

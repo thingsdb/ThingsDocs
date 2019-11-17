@@ -82,7 +82,6 @@ def get_weight_map():
     site.echo(0)
 
 
-
 def set_weights(fn):
     with open(fn, 'r') as f:
         lines = f.readlines()
@@ -116,18 +115,15 @@ def set_weights(fn):
         with open(fn, 'r') as f:
             doc_lines = f.readlines()
 
-        for i, line in enumerate(doc_lines):
+        for i, doc_line in enumerate(doc_lines):
             m = WEIGHT.match(doc_line)
             if m:
                 doc_lines[i] = f'weight: {weight}\n'
+                weight += 1
                 break
 
         with open(fn, 'w') as f:
             f.writelines(doc_lines)
-
-
-
-
 
 
 if __name__ == '__main__':

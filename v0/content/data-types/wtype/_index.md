@@ -1,6 +1,6 @@
 ---
 title: "˂Type˃"
-weight: 100
+weight: 70
 ---
 
 

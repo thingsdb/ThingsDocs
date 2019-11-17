@@ -1,6 +1,6 @@
 ---
 title: "thing"
-weight: 88
+weight: 56
 ---
 
 ### Methods

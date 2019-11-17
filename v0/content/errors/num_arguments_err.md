@@ -1,6 +1,6 @@
 ---
 title: "num_arguments_err"
-weight: 114
+weight: 175
 ---
 
 Returns an [error](../../data-types/error).

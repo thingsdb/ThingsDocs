@@ -1,6 +1,6 @@
 ---
 title: "Shell"
-weight: 15
+weight: 3
 ---
 
 > Copy/paste to download and install *thingscmd*
