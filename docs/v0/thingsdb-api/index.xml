@@ -6,7 +6,6 @@
     <description>Recent content in Thingsdb API on ThingsDB documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 Oct 2019 11:04:22 +0200</lastBuildDate>
     
 	<atom:link href="https://docs.thingsdb.net/v0/thingsdb-api/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +13,7 @@
     <item>
       <title>collection_info</title>
       <link>https://docs.thingsdb.net/v0/thingsdb-api/collection_info/</link>
-      <pubDate>Mon, 14 Oct 2019 09:48:47 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/collection_info/</guid>
       <description>Returns information about a specific collection.
@@ -27,7 +26,7 @@ This function does not generate an event.
     <item>
       <title>collections_info</title>
       <link>https://docs.thingsdb.net/v0/thingsdb-api/collections_info/</link>
-      <pubDate>Mon, 14 Oct 2019 09:48:51 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/collections_info/</guid>
       <description>This function does not generate an event.</description>
@@ -36,7 +35,7 @@ This function does not generate an event.
     <item>
       <title>del_collection</title>
       <link>https://docs.thingsdb.net/v0/thingsdb-api/del_collection/</link>
-      <pubDate>Mon, 14 Oct 2019 09:49:09 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/del_collection/</guid>
       <description> Delete a collection.
@@ -50,7 +49,7 @@ Arguments    Argument Type Description     name str (required) Name of the colle
     <item>
       <title>del_expired</title>
       <link>https://docs.thingsdb.net/v0/thingsdb-api/del_expired/</link>
-      <pubDate>Mon, 14 Oct 2019 09:49:19 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/del_expired/</guid>
       <description>Delete all expired tokens.
@@ -65,7 +64,7 @@ Return value Returns nil.
     <item>
       <title>del_node</title>
       <link>https://docs.thingsdb.net/v0/thingsdb-api/del_node/</link>
-      <pubDate>Fri, 25 Oct 2019 09:34:10 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/del_node/</guid>
       <description>This function generates an event.</description>
@@ -74,7 +73,7 @@ Return value Returns nil.
     <item>
       <title>del_token</title>
       <link>https://docs.thingsdb.net/v0/thingsdb-api/del_token/</link>
-      <pubDate>Mon, 14 Oct 2019 09:49:34 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/del_token/</guid>
       <description>Delete a token.
@@ -88,7 +87,7 @@ Arguments    Argument Type Description     key str (required) Token key to delet
     <item>
       <title>del_user</title>
       <link>https://docs.thingsdb.net/v0/thingsdb-api/del_user/</link>
-      <pubDate>Mon, 14 Oct 2019 09:49:40 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/del_user/</guid>
       <description>Delete a user. It is not possible to delete your own user account and a BAD_REQUEST will be raised in case you try to. Any tokens associated with the user will also be deleted.
@@ -100,7 +99,7 @@ Arguments    Argument Type Description     username str (required) Username of t
     <item>
       <title>grant</title>
       <link>https://docs.thingsdb.net/v0/thingsdb-api/grant/</link>
-      <pubDate>Mon, 14 Oct 2019 09:49:48 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/grant/</guid>
       <description>Grant collection or general privileges to a user. Access to a user is provided by setting a bit mask to either the .node scope, .thingsdb scope or a collection. Privileges to ThingsDB gives a user the ability to view counters, add, view remove users etc.
@@ -111,7 +110,7 @@ The following pre-defined masks are available:
     <item>
       <title>new_collection</title>
       <link>https://docs.thingsdb.net/v0/thingsdb-api/new_collection/</link>
-      <pubDate>Mon, 14 Oct 2019 09:49:59 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/new_collection/</guid>
       <description>Create a new collection.
@@ -124,7 +123,7 @@ Arguments    Argument Type Description     name str (required) Name of the new c
     <item>
       <title>new_node</title>
       <link>https://docs.thingsdb.net/v0/thingsdb-api/new_node/</link>
-      <pubDate>Mon, 14 Oct 2019 09:50:09 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/new_node/</guid>
       <description>Adds a new node to ThingsDB. Nodes are used for scaling and high availability.
@@ -136,7 +135,7 @@ Arguments    Argument Type Description     secret str (required) Secret used to 
     <item>
       <title>new_token</title>
       <link>https://docs.thingsdb.net/v0/thingsdb-api/new_token/</link>
-      <pubDate>Mon, 14 Oct 2019 09:50:15 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/new_token/</guid>
       <description>Adds a new token for a given user. An optional expiration time may be given after which the token cannot be used anymore. Use del_expired to cleanup expired tokens. The expiration time may be given as a UNIX time-stamp in seconds or a date/time string.
@@ -147,7 +146,7 @@ Some valid date/time strings:
     <item>
       <title>new_user</title>
       <link>https://docs.thingsdb.net/v0/thingsdb-api/new_user/</link>
-      <pubDate>Mon, 14 Oct 2019 09:50:22 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/new_user/</guid>
       <description>Creates a new user to ThingsDB. The new user is created without a password, token and access privileges. You probably want to set a password or add a new token and assign some privileges using grant(&amp;hellip;).
@@ -159,7 +158,7 @@ Arguments    Argument Type Description     user str (required) Username, between
     <item>
       <title>pop_node</title>
       <link>https://docs.thingsdb.net/v0/thingsdb-api/pop_node/</link>
-      <pubDate>Mon, 14 Oct 2019 09:50:35 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/pop_node/</guid>
       <description>This function generates an event.</description>
@@ -168,7 +167,7 @@ Arguments    Argument Type Description     user str (required) Username, between
     <item>
       <title>rename_collection</title>
       <link>https://docs.thingsdb.net/v0/thingsdb-api/rename_collection/</link>
-      <pubDate>Mon, 14 Oct 2019 09:50:49 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/rename_collection/</guid>
       <description>This function generates an event.</description>
@@ -177,7 +176,7 @@ Arguments    Argument Type Description     user str (required) Username, between
     <item>
       <title>rename_user</title>
       <link>https://docs.thingsdb.net/v0/thingsdb-api/rename_user/</link>
-      <pubDate>Mon, 14 Oct 2019 09:50:58 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/rename_user/</guid>
       <description>This function generates an event.</description>
@@ -186,7 +185,7 @@ Arguments    Argument Type Description     user str (required) Username, between
     <item>
       <title>revoke</title>
       <link>https://docs.thingsdb.net/v0/thingsdb-api/revoke/</link>
-      <pubDate>Mon, 14 Oct 2019 09:51:20 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/revoke/</guid>
       <description>Revoke collection or general privileges from a user. See grant for more information on how access privileges can be set for a user.
@@ -198,7 +197,7 @@ Arguments    Argument Type Description     target int/raw Can be either the .nod
     <item>
       <title>set_password</title>
       <link>https://docs.thingsdb.net/v0/thingsdb-api/set_password/</link>
-      <pubDate>Mon, 14 Oct 2019 09:51:37 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/set_password/</guid>
       <description>Change a users password. This function can also be used to remove an existing password by using nil as the new password.
@@ -211,7 +210,7 @@ Arguments    Argument Type Description     username str (required) Name of the u
     <item>
       <title>set_quota</title>
       <link>https://docs.thingsdb.net/v0/thingsdb-api/set_quota/</link>
-      <pubDate>Mon, 14 Oct 2019 09:51:52 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/set_quota/</guid>
       <description>Quota limits can be set on collections. The following quota limits can be set:
@@ -221,7 +220,7 @@ Arguments    Argument Type Description     username str (required) Name of the u
     <item>
       <title>user_info</title>
       <link>https://docs.thingsdb.net/v0/thingsdb-api/user_info/</link>
-      <pubDate>Mon, 14 Oct 2019 09:51:59 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/user_info/</guid>
       <description> Returns information about a user. If no argument is given, this method will return information about the current logged in user.
@@ -233,7 +232,7 @@ Arguments    Argument Type Description     username str (optional) Name of the u
     <item>
       <title>users_info</title>
       <link>https://docs.thingsdb.net/v0/thingsdb-api/users_info/</link>
-      <pubDate>Mon, 14 Oct 2019 09:52:04 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/users_info/</guid>
       <description>Returns user information for all users withing ThingsDB.

@@ -6,10 +6,35 @@
     <description>Recent content in Protocol on ThingsDB documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 Oct 2019 11:01:36 +0200</lastBuildDate>
     
 	<atom:link href="https://docs.thingsdb.net/v0/protocol/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Example</title>
+      <link>https://docs.thingsdb.net/v0/protocol/example/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/protocol/example/</guid>
+      <description>Example As an example we create an authentication package for the default admin user with password pass.
+This is the package data for our authentication request:
+[&amp;quot;admin&amp;quot;, &amp;quot;pass&amp;quot;]
+Serializing the above using msgpack results in the following 12 bytes:
+\x92\xa5admin\xa4pass
+Now we create the header, for this example we just use ID 0:
+ Data length (12) \x0c\x00\x00\x00 Identifier (0) \x00\x00 Auth package type (33) \x21 Inverse type check bit (222) \xde  So our total package will be:</description>
+    </item>
+    
+    <item>
+      <title>Package</title>
+      <link>https://docs.thingsdb.net/v0/protocol/package/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/protocol/package/</guid>
+      <description>LEN (Unsigned, 32bit) Length of the data, the header not included.
+ID (16bit) The ID can be used as an identifier of your package. When ThingsDB send a response on a request, it will use the same ID so this allows you to map a response to a request. This is useful if you want to send multiple request in parallel.
+TYPE (Unsigned, 8bit) Package type is used to describe what kind of package is transmitted.</description>
+    </item>
     
   </channel>
 </rss>

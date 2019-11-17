@@ -6,7 +6,6 @@
     <description>Recent content in mod_type on ThingsDB documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 Oct 2019 16:57:52 +0200</lastBuildDate>
     
 	<atom:link href="https://docs.thingsdb.net/v0/collection-api/mod_type/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +13,7 @@
     <item>
       <title>add</title>
       <link>https://docs.thingsdb.net/v0/collection-api/mod_type/add/</link>
-      <pubDate>Wed, 23 Oct 2019 16:58:01 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/mod_type/add/</guid>
       <description>Adds a property to an existing Type.
@@ -25,7 +24,7 @@ Arguments    Argument Type Description     type_name str Name of the Type where 
     <item>
       <title>del</title>
       <link>https://docs.thingsdb.net/v0/collection-api/mod_type/del/</link>
-      <pubDate>Wed, 23 Oct 2019 16:58:06 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/mod_type/del/</guid>
       <description>Deletes a property from an existing Type.
@@ -36,7 +35,7 @@ Arguments    Argument Type Description     type_name str Name of the Type where 
     <item>
       <title>mod</title>
       <link>https://docs.thingsdb.net/v0/collection-api/mod_type/mod/</link>
-      <pubDate>Wed, 23 Oct 2019 16:58:14 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/mod_type/mod/</guid>
       <description>Modifies a property from an exinsting Type.

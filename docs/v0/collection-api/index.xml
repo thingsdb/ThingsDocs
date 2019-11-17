@@ -6,7 +6,6 @@
     <description>Recent content in Collection API on ThingsDB documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 Oct 2019 11:04:33 +0200</lastBuildDate>
     
 	<atom:link href="https://docs.thingsdb.net/v0/collection-api/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +13,7 @@
     <item>
       <title>array</title>
       <link>https://docs.thingsdb.net/v0/collection-api/array/</link>
-      <pubDate>Mon, 14 Oct 2019 09:56:29 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/array/</guid>
       <description>Returns a new empty list or returns a list for a given set.
@@ -28,7 +27,7 @@ Arguments    Argument Type Description     set set (optional) Optional set to in
     <item>
       <title>assert</title>
       <link>https://docs.thingsdb.net/v0/collection-api/assert/</link>
-      <pubDate>Mon, 14 Oct 2019 09:56:39 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/assert/</guid>
       <description>Raises ASSERTION_ERROR if the specified statement evaluates to false.
@@ -40,7 +39,7 @@ Arguments    Argument Type Description     statement any (required) The statemen
     <item>
       <title>bool</title>
       <link>https://docs.thingsdb.net/v0/collection-api/bool/</link>
-      <pubDate>Mon, 14 Oct 2019 09:56:51 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/bool/</guid>
       <description>Returns an bool from a specified value. If no value is given, false is returned.
@@ -53,7 +52,7 @@ Arguments    Argument Type Description     value any (optional) The value where 
     <item>
       <title>bytes</title>
       <link>https://docs.thingsdb.net/v0/collection-api/bytes/</link>
-      <pubDate>Fri, 15 Nov 2019 20:40:38 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/bytes/</guid>
       <description> Convert a value to a byte sequence. If no value is given, an empty byte sequence is returned.
@@ -65,7 +64,7 @@ Arguments    Argument Type Description     value any (optional) The value where 
     <item>
       <title>deep</title>
       <link>https://docs.thingsdb.net/v0/collection-api/deep/</link>
-      <pubDate>Mon, 14 Oct 2019 09:57:18 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/deep/</guid>
       <description>Returns the current deep value. The deep value might change when a function with a return(..) is called which has changed the deep value for this query.
@@ -80,7 +79,7 @@ Return value The current deep value for the running query.
     <item>
       <title>del_type</title>
       <link>https://docs.thingsdb.net/v0/collection-api/del_type/</link>
-      <pubDate>Wed, 23 Oct 2019 16:54:20 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/del_type/</guid>
       <description> Deletes an existing type Type.
@@ -95,7 +94,7 @@ Arguments    Argument Type Description     type_name string Name of the Type to 
     <item>
       <title>err</title>
       <link>https://docs.thingsdb.net/v0/collection-api/err/</link>
-      <pubDate>Mon, 14 Oct 2019 09:58:22 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/err/</guid>
       <description>Returns an error.
@@ -109,7 +108,7 @@ Arguments    Argument Type Description     code int (optional) Integer error cod
     <item>
       <title>float</title>
       <link>https://docs.thingsdb.net/v0/collection-api/float/</link>
-      <pubDate>Mon, 14 Oct 2019 09:59:28 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/float/</guid>
       <description>Returns a float from a specified value. If no value is given, the default float 0.0 is returned.
@@ -120,7 +119,7 @@ Type bool values are converted to 1.0 for true and 0.0 for false.</description>
     <item>
       <title>int</title>
       <link>https://docs.thingsdb.net/v0/collection-api/int/</link>
-      <pubDate>Mon, 14 Oct 2019 10:00:14 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/int/</guid>
       <description>Returns an int from a specified value. If no value is given, the default integer 0 is returned.
@@ -131,7 +130,7 @@ If the specified value is of type str, then the initial characters of the string
     <item>
       <title>isarray</title>
       <link>https://docs.thingsdb.net/v0/collection-api/isarray/</link>
-      <pubDate>Mon, 14 Oct 2019 10:00:22 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/isarray/</guid>
       <description>This function determines whether the value passed to this function is a list or tuple type or not. The functions islist and istuple can be used to check if the array is mutable.
@@ -143,7 +142,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
     <item>
       <title>isascii</title>
       <link>https://docs.thingsdb.net/v0/collection-api/isascii/</link>
-      <pubDate>Mon, 14 Oct 2019 10:00:36 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/isascii/</guid>
       <description>This function determines whether the value passed to this function is of type raw and contains only valid ascii characters.
@@ -155,7 +154,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
     <item>
       <title>isbool</title>
       <link>https://docs.thingsdb.net/v0/collection-api/isbool/</link>
-      <pubDate>Mon, 14 Oct 2019 10:00:44 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/isbool/</guid>
       <description>This function determines whether the value passed to this function is a bool or not.
@@ -168,7 +167,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
     <item>
       <title>isbytes</title>
       <link>https://docs.thingsdb.net/v0/collection-api/isbytes/</link>
-      <pubDate>Wed, 23 Oct 2019 16:54:41 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/isbytes/</guid>
       <description>This function does not generate an event.</description>
@@ -177,7 +176,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
     <item>
       <title>iserr</title>
       <link>https://docs.thingsdb.net/v0/collection-api/iserr/</link>
-      <pubDate>Mon, 14 Oct 2019 10:01:10 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/iserr/</guid>
       <description>This function determines whether the value passed to this function is a error or not.
@@ -190,7 +189,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
     <item>
       <title>isfloat</title>
       <link>https://docs.thingsdb.net/v0/collection-api/isfloat/</link>
-      <pubDate>Mon, 14 Oct 2019 10:01:19 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/isfloat/</guid>
       <description>This function determines whether the value passed to this function is a floating point value or not.
@@ -203,7 +202,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
     <item>
       <title>isinf</title>
       <link>https://docs.thingsdb.net/v0/collection-api/isinf/</link>
-      <pubDate>Mon, 14 Oct 2019 10:01:34 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/isinf/</guid>
       <description>This function does not generate an event.</description>
@@ -212,7 +211,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
     <item>
       <title>isint</title>
       <link>https://docs.thingsdb.net/v0/collection-api/isint/</link>
-      <pubDate>Mon, 14 Oct 2019 10:01:44 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/isint/</guid>
       <description>This function determines whether the value passed to this function is an integer or not.
@@ -225,7 +224,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
     <item>
       <title>islist</title>
       <link>https://docs.thingsdb.net/v0/collection-api/islist/</link>
-      <pubDate>Mon, 14 Oct 2019 10:01:56 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/islist/</guid>
       <description>This function determines whether the value passed to this function is a list or not.
@@ -238,7 +237,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
     <item>
       <title>isnan</title>
       <link>https://docs.thingsdb.net/v0/collection-api/isnan/</link>
-      <pubDate>Mon, 14 Oct 2019 10:02:01 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/isnan/</guid>
       <description>This function determines whether the value passed to this function is a number.
@@ -252,7 +251,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
     <item>
       <title>isnil</title>
       <link>https://docs.thingsdb.net/v0/collection-api/isnil/</link>
-      <pubDate>Mon, 14 Oct 2019 13:53:26 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/isnil/</guid>
       <description>This function determines whether the value passed to this function is nil.
@@ -266,7 +265,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
     <item>
       <title>israw</title>
       <link>https://docs.thingsdb.net/v0/collection-api/israw/</link>
-      <pubDate>Mon, 14 Oct 2019 10:02:14 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/israw/</guid>
       <description>This function determines whether the value passed to this function is of type raw.
@@ -280,7 +279,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
     <item>
       <title>isset</title>
       <link>https://docs.thingsdb.net/v0/collection-api/isset/</link>
-      <pubDate>Mon, 14 Oct 2019 10:02:21 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/isset/</guid>
       <description>This function determines whether the value passed to this function is a set or not.
@@ -293,7 +292,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
     <item>
       <title>isstr</title>
       <link>https://docs.thingsdb.net/v0/collection-api/isstr/</link>
-      <pubDate>Mon, 14 Oct 2019 10:02:30 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/isstr/</guid>
       <description>Alias for isutf8.</description>
@@ -302,7 +301,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
     <item>
       <title>isthing</title>
       <link>https://docs.thingsdb.net/v0/collection-api/isthing/</link>
-      <pubDate>Mon, 14 Oct 2019 10:02:42 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/isthing/</guid>
       <description>This function determines whether the value passed to this function is a thing or not.
@@ -315,7 +314,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
     <item>
       <title>istuple</title>
       <link>https://docs.thingsdb.net/v0/collection-api/istuple/</link>
-      <pubDate>Mon, 14 Oct 2019 10:02:50 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/istuple/</guid>
       <description>This function determines whether the value passed to this function is a tuple or not. At least nested arrays are of kind tuple.
@@ -327,7 +326,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
     <item>
       <title>isutf8</title>
       <link>https://docs.thingsdb.net/v0/collection-api/isutf8/</link>
-      <pubDate>Mon, 14 Oct 2019 10:03:04 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/isutf8/</guid>
       <description>This function determines whether the value passed to this function is of type raw and contains valid utf8.
@@ -340,7 +339,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
     <item>
       <title>new</title>
       <link>https://docs.thingsdb.net/v0/collection-api/new/</link>
-      <pubDate>Wed, 23 Oct 2019 16:58:40 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/new/</guid>
       <description>Creates a new instance of a defined Type.
@@ -352,7 +351,7 @@ Arguments    Argument Type Description     type_name str The name of the Type th
     <item>
       <title>new_type</title>
       <link>https://docs.thingsdb.net/v0/collection-api/new_type/</link>
-      <pubDate>Wed, 23 Oct 2019 16:58:46 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/new_type/</guid>
       <description> Creates a new Type.
@@ -367,7 +366,7 @@ Arguments    Argument Type Description     type_name string Name of the Type to 
     <item>
       <title>now</title>
       <link>https://docs.thingsdb.net/v0/collection-api/now/</link>
-      <pubDate>Mon, 14 Oct 2019 10:03:34 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/now/</guid>
       <description>Return the time in seconds since the epoch as a floating point number.
@@ -383,7 +382,7 @@ Return value Current timestamp.
     <item>
       <title>raise</title>
       <link>https://docs.thingsdb.net/v0/collection-api/raise/</link>
-      <pubDate>Mon, 14 Oct 2019 10:03:58 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/raise/</guid>
       <description> Raises an error.
@@ -397,7 +396,7 @@ Arguments    Argument Type Description     value error/str (optional) The error 
     <item>
       <title>refs</title>
       <link>https://docs.thingsdb.net/v0/collection-api/refs/</link>
-      <pubDate>Mon, 14 Oct 2019 10:04:02 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/refs/</guid>
       <description>Returns the reference count of a value.
@@ -411,7 +410,7 @@ Arguments    Argument Type Description     value any (required) The value to ret
     <item>
       <title>return</title>
       <link>https://docs.thingsdb.net/v0/collection-api/return/</link>
-      <pubDate>Mon, 14 Oct 2019 10:04:35 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/return/</guid>
       <description>The return function moves the argument to the output of the current query/closure call.
@@ -421,7 +420,7 @@ If no return is specified, then the last value will be the value which is return
     <item>
       <title>set</title>
       <link>https://docs.thingsdb.net/v0/collection-api/set/</link>
-      <pubDate>Mon, 14 Oct 2019 10:04:55 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/set/</guid>
       <description>Returns a new empty set. If an array is given, then all elements in the given array must be or type thing and a new set is returned based on the given things. Instead of an array, it is also possible to provide things comma separated.
@@ -433,7 +432,7 @@ Arguments    Argument Type Description     array_or_things array/things (optiona
     <item>
       <title>set_type</title>
       <link>https://docs.thingsdb.net/v0/collection-api/set_type/</link>
-      <pubDate>Wed, 23 Oct 2019 16:59:02 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/set_type/</guid>
       <description>Defines the properties of a Type. Function set_type works only on a new type. Use mod_type() if you want to change an existing type, see mod_type.
@@ -445,7 +444,7 @@ Arguments    Argument Type Description     type_name str The name of the Type wh
     <item>
       <title>str</title>
       <link>https://docs.thingsdb.net/v0/collection-api/str/</link>
-      <pubDate>Mon, 14 Oct 2019 10:05:38 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/str/</guid>
       <description> Convert a value to a string. If no value is given, an empty string &amp;quot;&amp;quot; is returned.
@@ -457,7 +456,7 @@ Arguments    Argument Type Description     value any (optional) The value to cre
     <item>
       <title>thing</title>
       <link>https://docs.thingsdb.net/v0/collection-api/thing/</link>
-      <pubDate>Mon, 14 Oct 2019 10:05:54 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/thing/</guid>
       <description>Returns a thing from a specified value. If no value is given, a new thing is returned.
@@ -469,7 +468,7 @@ Arguments    Argument Type Description     id int (optional) The id for the thin
     <item>
       <title>try</title>
       <link>https://docs.thingsdb.net/v0/collection-api/try/</link>
-      <pubDate>Mon, 14 Oct 2019 10:06:02 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/try/</guid>
       <description>Try a statement and if the statement fails with an error, then the error is returned. It is also possible to catch only specific errors.
@@ -482,7 +481,7 @@ Arguments    Argument Type Description     statement any (required) The statemen
     <item>
       <title>type</title>
       <link>https://docs.thingsdb.net/v0/collection-api/type/</link>
-      <pubDate>Mon, 14 Oct 2019 10:06:09 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/type/</guid>
       <description>Returns the type name of a value.
@@ -496,7 +495,7 @@ Arguments    Argument Type Description     value any (required) The value to ret
     <item>
       <title>type_count</title>
       <link>https://docs.thingsdb.net/v0/collection-api/type_count/</link>
-      <pubDate>Wed, 23 Oct 2019 16:59:23 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/type_count/</guid>
       <description>Returns the number of instances of a given Type within a collection.
@@ -508,7 +507,7 @@ Arguments    Argument Type Description     type_name str The name of the Type fo
     <item>
       <title>type_info</title>
       <link>https://docs.thingsdb.net/v0/collection-api/type_info/</link>
-      <pubDate>Wed, 23 Oct 2019 16:59:28 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/type_info/</guid>
       <description>Returns information about the properties of a given Type.
@@ -520,7 +519,7 @@ Arguments    Argument Type Description     type_name str The name of the Type fo
     <item>
       <title>types_info</title>
       <link>https://docs.thingsdb.net/v0/collection-api/types_info/</link>
-      <pubDate>Wed, 23 Oct 2019 16:59:56 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/types_info/</guid>
       <description>Returns information about the properties of all Types within a collection.
@@ -533,7 +532,7 @@ Return value A Thing containing information about the properties of all Types wi
     <item>
       <title>wse</title>
       <link>https://docs.thingsdb.net/v0/collection-api/wse/</link>
-      <pubDate>Mon, 14 Oct 2019 10:06:27 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/wse/</guid>
       <description>Stored closures which can potentially make changes to ThingsDB are called closures with side effects and must be wrapped with the wse(..) function.

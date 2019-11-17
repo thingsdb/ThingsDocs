@@ -6,7 +6,6 @@
     <description>Recent content in thing on ThingsDB documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Oct 2019 09:41:17 +0200</lastBuildDate>
     
 	<atom:link href="https://docs.thingsdb.net/v0/data-types/thing/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +13,7 @@
     <item>
       <title>del</title>
       <link>https://docs.thingsdb.net/v0/data-types/thing/del/</link>
-      <pubDate>Wed, 23 Oct 2019 13:53:55 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/thing/del/</guid>
       <description>Delete a property from a thing.
@@ -27,7 +26,7 @@ Arguments    Argument Type Description     property str (required) Name of the p
     <item>
       <title>filter</title>
       <link>https://docs.thingsdb.net/v0/data-types/thing/filter/</link>
-      <pubDate>Wed, 23 Oct 2019 13:54:00 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/thing/filter/</guid>
       <description>When this method is used on a thing, then a new thing will be returned with only the properties that pass the test.
@@ -40,7 +39,7 @@ Arguments The callback argument must be a closure which input values depend on t
     <item>
       <title>get</title>
       <link>https://docs.thingsdb.net/v0/data-types/thing/get/</link>
-      <pubDate>Wed, 23 Oct 2019 14:49:42 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/thing/get/</guid>
       <description>Return the value of a property on a thing by a given property name. If the property is not found then the return value will be nil, unless an alternative return value is given.
@@ -52,7 +51,7 @@ Arguments    Argument Type Description     name str (required) Name of the prope
     <item>
       <title>has</title>
       <link>https://docs.thingsdb.net/v0/data-types/thing/has/</link>
-      <pubDate>Wed, 23 Oct 2019 14:52:10 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/thing/has/</guid>
       <description>Determines if a thing has a given property.
@@ -66,7 +65,7 @@ Arguments    Argument Type Description     name str (required) Name of the prope
     <item>
       <title>id</title>
       <link>https://docs.thingsdb.net/v0/data-types/thing/id/</link>
-      <pubDate>Wed, 23 Oct 2019 13:54:06 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/thing/id/</guid>
       <description> Returns the id of a thing or nil if the thing is not stored.
@@ -82,7 +81,7 @@ Return value Returns id of a thing or nil when the thing is not stored.
     <item>
       <title>keys</title>
       <link>https://docs.thingsdb.net/v0/data-types/thing/keys/</link>
-      <pubDate>Wed, 23 Oct 2019 14:57:32 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/thing/keys/</guid>
       <description>keys Returns an array with all the property names of a thing. The same could be returned using map so the following statement is true:
@@ -94,7 +93,7 @@ Although the keys() and map() functions in the example above will return an arra
     <item>
       <title>len</title>
       <link>https://docs.thingsdb.net/v0/data-types/thing/len/</link>
-      <pubDate>Wed, 23 Oct 2019 13:54:12 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/thing/len/</guid>
       <description> Returns the number of items in a thing.
@@ -110,7 +109,7 @@ Return value Returns the number of items in a thing.
     <item>
       <title>map</title>
       <link>https://docs.thingsdb.net/v0/data-types/thing/map/</link>
-      <pubDate>Wed, 23 Oct 2019 13:54:18 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/thing/map/</guid>
       <description>Iterate over all properties on a thing.
@@ -124,7 +123,7 @@ Arguments Explanation of the callback argument:
     <item>
       <title>set</title>
       <link>https://docs.thingsdb.net/v0/data-types/thing/set/</link>
-      <pubDate>Wed, 23 Oct 2019 15:08:47 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/thing/set/</guid>
       <description>Creates a new property on a thing. If the property already existed then the old property will be overwritten. This function is equal to an assignment except that it can be used when the name of the property is dynamic.
@@ -136,13 +135,22 @@ Arguments    Argument Type Description     name str (required) The name of the p
     <item>
       <title>values</title>
       <link>https://docs.thingsdb.net/v0/data-types/thing/values/</link>
-      <pubDate>Wed, 23 Oct 2019 15:13:20 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/thing/values/</guid>
       <description>Returns an list with all the property values of a thing. The same could be returned using map so the following statement is true:
 (.values() == .map(|_, v| v))
 Although the values() and map() in the example above will return an list with the same order, the order of values in the list is not guaranteed and may be different each time you run the query.
  This function does not generate an event.</description>
+    </item>
+    
+    <item>
+      <title>wrap</title>
+      <link>https://docs.thingsdb.net/v0/data-types/thing/wrap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/thing/wrap/</guid>
+      <description>Wrap a thing with another Type.</description>
     </item>
     
   </channel>

@@ -6,7 +6,6 @@
     <description>Recent content in bytes on ThingsDB documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 Oct 2019 11:04:12 +0200</lastBuildDate>
     
 	<atom:link href="https://docs.thingsdb.net/v0/data-types/bytes/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +13,7 @@
     <item>
       <title>len</title>
       <link>https://docs.thingsdb.net/v0/data-types/bytes/len/</link>
-      <pubDate>Wed, 23 Oct 2019 13:54:12 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/bytes/len/</guid>
       <description> Returns the length of the bytes value.

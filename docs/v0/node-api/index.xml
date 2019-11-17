@@ -6,15 +6,34 @@
     <description>Recent content in Node API on ThingsDB documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 Oct 2019 11:03:34 +0200</lastBuildDate>
     
 	<atom:link href="https://docs.thingsdb.net/v0/node-api/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>backup_info</title>
+      <link>https://docs.thingsdb.net/v0/node-api/backup_info/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/node-api/backup_info/</guid>
+      <description>Returns information about a specific scheduled backup.
+This function does not generate an event.</description>
+    </item>
+    
+    <item>
+      <title>backups_info</title>
+      <link>https://docs.thingsdb.net/v0/node-api/backups_info/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/node-api/backups_info/</guid>
+      <description>Returns info about all scheduled backups.
+This function does not generate an event.</description>
+    </item>
+    
+    <item>
       <title>counters</title>
       <link>https://docs.thingsdb.net/v0/node-api/counters/</link>
-      <pubDate>Mon, 14 Oct 2019 09:42:18 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/node-api/counters/</guid>
       <description>Returns counters for the ThingsDB node you are connected too. Counters start all at zero when ThingsDB is started, or when the counters are reset by using reset_counters()&amp;rsquo;.
@@ -23,9 +42,29 @@ Counters give information about things, queries and events. If you suspect faile
     </item>
     
     <item>
+      <title>del_backup</title>
+      <link>https://docs.thingsdb.net/v0/node-api/del_backup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/node-api/del_backup/</guid>
+      <description>Delete a scheduled backup.
+This function does not generate an event.</description>
+    </item>
+    
+    <item>
+      <title>new_backup</title>
+      <link>https://docs.thingsdb.net/v0/node-api/new_backup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/node-api/new_backup/</guid>
+      <description>Schedule a new backup.
+This function does not generate an event.</description>
+    </item>
+    
+    <item>
       <title>node_info</title>
       <link>https://docs.thingsdb.net/v0/node-api/node_info/</link>
-      <pubDate>Mon, 14 Oct 2019 09:42:49 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/node-api/node_info/</guid>
       <description>Returns information about the node in the current scope. See scopes for more information on how to target a specific node scope.
@@ -35,7 +74,7 @@ Counters give information about things, queries and events. If you suspect faile
     <item>
       <title>nodes_info</title>
       <link>https://docs.thingsdb.net/v0/node-api/nodes_info/</link>
-      <pubDate>Mon, 14 Oct 2019 09:43:03 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/node-api/nodes_info/</guid>
       <description>Returns information about all ThingsDB nodes.
@@ -45,7 +84,7 @@ Counters give information about things, queries and events. If you suspect faile
     <item>
       <title>reset_counters</title>
       <link>https://docs.thingsdb.net/v0/node-api/reset_counters/</link>
-      <pubDate>Mon, 14 Oct 2019 09:43:17 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/node-api/reset_counters/</guid>
       <description> Resets the counters for the ThingsDB node you are connected too. Other nodes are not affected.
@@ -61,7 +100,7 @@ Return value Returns nil.
     <item>
       <title>set_log_level</title>
       <link>https://docs.thingsdb.net/v0/node-api/set_log_level/</link>
-      <pubDate>Mon, 14 Oct 2019 09:43:31 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/node-api/set_log_level/</guid>
       <description>This function does not generate an event.</description>
@@ -70,7 +109,7 @@ Return value Returns nil.
     <item>
       <title>shutdown</title>
       <link>https://docs.thingsdb.net/v0/node-api/shutdown/</link>
-      <pubDate>Mon, 14 Oct 2019 09:43:42 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/node-api/shutdown/</guid>
       <description>This function does not generate an event.</description>

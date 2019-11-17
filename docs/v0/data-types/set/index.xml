@@ -6,7 +6,6 @@
     <description>Recent content in set on ThingsDB documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Oct 2019 09:41:39 +0200</lastBuildDate>
     
 	<atom:link href="https://docs.thingsdb.net/v0/data-types/set/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +13,7 @@
     <item>
       <title>add</title>
       <link>https://docs.thingsdb.net/v0/data-types/set/add/</link>
-      <pubDate>Wed, 23 Oct 2019 13:52:11 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/set/add/</guid>
       <description>Adds new thing to the set and returns the number of things which are actually added to the set. For example my_set.add(#42); will return 0 if my_set already contains thing #42.
@@ -28,7 +27,7 @@ Return value Returns the number of things which are added to the set.
     <item>
       <title>filter</title>
       <link>https://docs.thingsdb.net/v0/data-types/set/filter/</link>
-      <pubDate>Wed, 23 Oct 2019 13:52:18 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/set/filter/</guid>
       <description>When this method is used on a set, then the return value will be a new set.
@@ -41,7 +40,7 @@ Arguments The callback argument must be a closure which input values depend on t
     <item>
       <title>find</title>
       <link>https://docs.thingsdb.net/v0/data-types/set/find/</link>
-      <pubDate>Wed, 23 Oct 2019 13:52:23 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/set/find/</guid>
       <description>This function returns the value of the first element in the set that satisfies the callback function. Otherwise nil is returned unless an alternative return value is specified.
@@ -54,7 +53,7 @@ Arguments    Argument Type Description     callback closure Closure to execute o
     <item>
       <title>has</title>
       <link>https://docs.thingsdb.net/v0/data-types/set/has/</link>
-      <pubDate>Wed, 23 Oct 2019 13:52:30 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/set/has/</guid>
       <description>Determines if a set has a given thing.
@@ -66,9 +65,25 @@ Arguments    Argument Type Description     thing thing (required) Thing to check
     </item>
     
     <item>
+      <title>len</title>
+      <link>https://docs.thingsdb.net/v0/data-types/set/len/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/set/len/</guid>
+      <description> Returns the length of a set.
+This function does not generate an event.
+Function set.len()
+Arguments None
+Return value Returns length of the set.
+ This code uses len() to return the number of items in a set:
+ set({iten: &#39;a&#39;}, {item: &#39;b&#39;}).len();   Return value in JSON format
+ 2  </description>
+    </item>
+    
+    <item>
       <title>map</title>
       <link>https://docs.thingsdb.net/v0/data-types/set/map/</link>
-      <pubDate>Wed, 23 Oct 2019 13:52:38 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/set/map/</guid>
       <description>Iterate over items in an set.
@@ -82,28 +97,12 @@ Arguments Explanation of the callback argument:
     <item>
       <title>remove</title>
       <link>https://docs.thingsdb.net/v0/data-types/set/remove/</link>
-      <pubDate>Wed, 23 Oct 2019 13:52:43 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/set/remove/</guid>
       <description>This function can be used to remove things from a set.
 If a closure is used, then all things that satisfy the test are removed from the set and returned as list. The order of the removed things is not guaranteed since the set itself is unordered.
 It is also possible to specify things as arguments. In this case a list is returned with all the things which are removed from the set, in the order that the arguments are used.</description>
-    </item>
-    
-    <item>
-      <title>len</title>
-      <link>https://docs.thingsdb.net/v0/data-types/set/len/</link>
-      <pubDate>Wed, 23 Oct 2019 13:54:12 +0200</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/data-types/set/len/</guid>
-      <description> Returns the length of a set.
-This function does not generate an event.
-Function set.len()
-Arguments None
-Return value Returns length of the set.
- This code uses len() to return the number of items in a set:
- set({iten: &#39;a&#39;}, {item: &#39;b&#39;}).len();   Return value in JSON format
- 2  </description>
     </item>
     
   </channel>

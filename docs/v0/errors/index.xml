@@ -6,7 +6,6 @@
     <description>Recent content in Errors on ThingsDB documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 Oct 2019 11:04:54 +0200</lastBuildDate>
     
 	<atom:link href="https://docs.thingsdb.net/v0/errors/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +13,7 @@
     <item>
       <title>assert_err</title>
       <link>https://docs.thingsdb.net/v0/errors/assert_err/</link>
-      <pubDate>Mon, 14 Oct 2019 10:11:16 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/assert_err/</guid>
       <description> Returns an error.
@@ -29,7 +28,7 @@ Arguments    Argument Type Description     message str (optional) Alternative er
     <item>
       <title>auth_err</title>
       <link>https://docs.thingsdb.net/v0/errors/auth_err/</link>
-      <pubDate>Mon, 14 Oct 2019 10:11:22 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/auth_err/</guid>
       <description> Returns an error.
@@ -44,7 +43,7 @@ Arguments    Argument Type Description     message str (optional) Alternative er
     <item>
       <title>bad_data_err</title>
       <link>https://docs.thingsdb.net/v0/errors/bad_data_err/</link>
-      <pubDate>Mon, 14 Oct 2019 10:11:34 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/bad_data_err/</guid>
       <description> Returns an error.
@@ -59,7 +58,7 @@ Arguments    Argument Type Description     message str (optional) Alternative er
     <item>
       <title>forbidden_err</title>
       <link>https://docs.thingsdb.net/v0/errors/forbidden_err/</link>
-      <pubDate>Mon, 14 Oct 2019 10:11:45 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/forbidden_err/</guid>
       <description> Returns an error.
@@ -74,7 +73,7 @@ Arguments    Argument Type Description     message str (optional) Alternative er
     <item>
       <title>lookup_err</title>
       <link>https://docs.thingsdb.net/v0/errors/lookup_err/</link>
-      <pubDate>Mon, 14 Oct 2019 10:11:56 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/lookup_err/</guid>
       <description> Returns an error.
@@ -89,7 +88,7 @@ Arguments    Argument Type Description     message str (optional) Alternative er
     <item>
       <title>max_quota_err</title>
       <link>https://docs.thingsdb.net/v0/errors/max_quota_err/</link>
-      <pubDate>Mon, 14 Oct 2019 10:12:08 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/max_quota_err/</guid>
       <description> Returns an error.
@@ -104,7 +103,7 @@ Arguments    Argument Type Description     message str (optional) Alternative er
     <item>
       <title>node_err</title>
       <link>https://docs.thingsdb.net/v0/errors/node_err/</link>
-      <pubDate>Mon, 14 Oct 2019 10:12:19 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/node_err/</guid>
       <description> Returns an error.
@@ -119,7 +118,7 @@ Arguments    Argument Type Description     message str (optional) Alternative er
     <item>
       <title>num_arguments_err</title>
       <link>https://docs.thingsdb.net/v0/errors/num_arguments_err/</link>
-      <pubDate>Mon, 14 Oct 2019 10:12:52 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/num_arguments_err/</guid>
       <description> Returns an error.
@@ -134,7 +133,7 @@ Arguments    Argument Type Description     message str (optional) Alternative er
     <item>
       <title>operation_err</title>
       <link>https://docs.thingsdb.net/v0/errors/operation_err/</link>
-      <pubDate>Mon, 14 Oct 2019 10:13:11 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/operation_err/</guid>
       <description> Returns an error.
@@ -149,7 +148,7 @@ Arguments    Argument Type Description     message str (optional) Alternative er
     <item>
       <title>overflow_err</title>
       <link>https://docs.thingsdb.net/v0/errors/overflow_err/</link>
-      <pubDate>Mon, 14 Oct 2019 10:13:24 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/overflow_err/</guid>
       <description> Returns an error.
@@ -164,7 +163,7 @@ Arguments    Argument Type Description     message str (optional) Alternative er
     <item>
       <title>syntax_err</title>
       <link>https://docs.thingsdb.net/v0/errors/syntax_err/</link>
-      <pubDate>Mon, 14 Oct 2019 10:13:32 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/syntax_err/</guid>
       <description> Returns an error.
@@ -179,7 +178,7 @@ Arguments    Argument Type Description     message str (optional) Alternative er
     <item>
       <title>type_err</title>
       <link>https://docs.thingsdb.net/v0/errors/type_err/</link>
-      <pubDate>Mon, 14 Oct 2019 10:13:39 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/type_err/</guid>
       <description> Returns an error.
@@ -194,7 +193,7 @@ Arguments    Argument Type Description     message str (optional) Alternative er
     <item>
       <title>value_err</title>
       <link>https://docs.thingsdb.net/v0/errors/value_err/</link>
-      <pubDate>Mon, 14 Oct 2019 10:13:47 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/value_err/</guid>
       <description> Returns an error.
@@ -209,7 +208,7 @@ Arguments    Argument Type Description     message str (optional) Alternative er
     <item>
       <title>zero_div_err</title>
       <link>https://docs.thingsdb.net/v0/errors/zero_div_err/</link>
-      <pubDate>Mon, 14 Oct 2019 10:13:56 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/zero_div_err/</guid>
       <description> Returns an error.

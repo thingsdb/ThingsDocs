@@ -6,7 +6,6 @@
     <description>Recent content in list on ThingsDB documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 Oct 2019 11:04:46 +0200</lastBuildDate>
     
 	<atom:link href="https://docs.thingsdb.net/v0/data-types/list/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +13,7 @@
     <item>
       <title>extend</title>
       <link>https://docs.thingsdb.net/v0/data-types/list/extend/</link>
-      <pubDate>Wed, 23 Oct 2019 12:50:12 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/list/extend/</guid>
       <description>Adds a list or tuple with items to the end of a list, and returns the new length.
@@ -28,7 +27,7 @@ Return value Returns the new length of the list.
     <item>
       <title>filter</title>
       <link>https://docs.thingsdb.net/v0/data-types/list/filter/</link>
-      <pubDate>Wed, 23 Oct 2019 12:51:22 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/list/filter/</guid>
       <description>When this method is used on an list or tuple, a new list is returned with elements that pass the test.
@@ -41,7 +40,7 @@ Arguments The callback argument must be a closure which input values depend on t
     <item>
       <title>find</title>
       <link>https://docs.thingsdb.net/v0/data-types/list/find/</link>
-      <pubDate>Wed, 23 Oct 2019 12:51:28 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/list/find/</guid>
       <description>This function returns the value of the first element in the list or tuple that satisfies the callback function. Otherwise nil is returned unless an alternative return value is specified.
@@ -53,7 +52,7 @@ Arguments    Argument Type Description     callback closure Closure to execute o
     <item>
       <title>findindex</title>
       <link>https://docs.thingsdb.net/v0/data-types/list/findindex/</link>
-      <pubDate>Wed, 23 Oct 2019 12:51:33 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/list/findindex/</guid>
       <description>This function returns the index of the first element in a list or tuple that satisfies the callback function. Otherwise nil is returned.
@@ -66,7 +65,7 @@ Arguments    Argument Type Description     callback closure The statement to try
     <item>
       <title>indexof</title>
       <link>https://docs.thingsdb.net/v0/data-types/list/indexof/</link>
-      <pubDate>Wed, 23 Oct 2019 12:51:51 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/list/indexof/</guid>
       <description>Returns the first index at which a given value can be found in the list or tuple, or nil if it is not present. The index of an array starts at 0, so the first item has index 0 the second 1 and so on.
@@ -78,7 +77,7 @@ Arguments    Argument Type Description     value any The value to find the index
     <item>
       <title>len</title>
       <link>https://docs.thingsdb.net/v0/data-types/list/len/</link>
-      <pubDate>Wed, 23 Oct 2019 12:51:58 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/list/len/</guid>
       <description> Returns the length of a list or tuple.
@@ -94,7 +93,7 @@ Return value Returns length of the array.
     <item>
       <title>map</title>
       <link>https://docs.thingsdb.net/v0/data-types/list/map/</link>
-      <pubDate>Wed, 23 Oct 2019 12:52:02 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/list/map/</guid>
       <description>Iterate over items in an list or tuple.
@@ -108,7 +107,7 @@ Arguments Explanation of the callback argument:
     <item>
       <title>pop</title>
       <link>https://docs.thingsdb.net/v0/data-types/list/pop/</link>
-      <pubDate>Wed, 23 Oct 2019 12:52:11 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/list/pop/</guid>
       <description>Removes the last element from a list and returns that element. This method changes the length of the list. The pop() method works on a list type array, but not on a tuple since tuples are immutable.
@@ -122,7 +121,7 @@ Return value The removed element from the list. An INDEX_ERROR is raised if the 
     <item>
       <title>push</title>
       <link>https://docs.thingsdb.net/v0/data-types/list/push/</link>
-      <pubDate>Wed, 23 Oct 2019 12:52:17 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/list/push/</guid>
       <description> Adds new items to the end of an list, and returns the new length.
@@ -137,7 +136,7 @@ Return value Returns the new length of the list.
     <item>
       <title>remove</title>
       <link>https://docs.thingsdb.net/v0/data-types/list/remove/</link>
-      <pubDate>Wed, 23 Oct 2019 12:52:23 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/list/remove/</guid>
       <description>This function removes and returns the value of the first element in the list that satisfies the callback function. Otherwise nil is returned unless an alternative return value is specified.
@@ -149,7 +148,7 @@ Arguments    Argument Type Description     callback closure Closure to execute o
     <item>
       <title>sort</title>
       <link>https://docs.thingsdb.net/v0/data-types/list/sort/</link>
-      <pubDate>Wed, 23 Oct 2019 12:52:33 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/list/sort/</guid>
       <description>When this method is used on an list or tuple, a new sorted list is returned.
@@ -161,7 +160,7 @@ Arguments    Argument Type Description     callback closure (optional) Closure t
     <item>
       <title>splice</title>
       <link>https://docs.thingsdb.net/v0/data-types/list/splice/</link>
-      <pubDate>Wed, 23 Oct 2019 12:52:42 +0200</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/list/splice/</guid>
       <description>The splice() method changes the contents of an list by removing or replacing existing elements and/or adding new elements in place.
