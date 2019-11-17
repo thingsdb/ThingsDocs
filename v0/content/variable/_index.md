@@ -25,7 +25,7 @@ Some valid examples:
 a = 'This is a variable!!!';
 b = 'Hello';
 {
-    /* This will create a new variable `a` within this scope */
+    /* This will create a new variable `a` within this block */
     a = 'New variable within this block';
 
     /* This will update the global variable `b` */

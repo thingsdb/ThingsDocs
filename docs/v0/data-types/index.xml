@@ -80,8 +80,8 @@ Methods that use regular expressions    Method Description     test A str method
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/tuple/</guid>
-      <description>An empty tuple can be constructed as follows:
-list = []; tuple = []; list.push(tuple);  A tuple only becomes a tuple when it is nested inside a list, which means the &amp;lsquo;list&amp;rsquo; will be immutable. ThingsDB does this because it wants to update all changes to subscribers and finds the subscribers by the parent object where the change is made. Since the parent of a nested &amp;lsquo;list&amp;rsquo; is another list, the thing holding the list would not be found.</description>
+      <description>All nested arrays are immutable and thus tuples.
+list = []; list.push([&#39;this list will be nested and therefore convert to a tuple&#39;]); // Check that the first item in `list` is indeed a `tuple` assert(istuple(list[0])); // Check that the `tuple` is indeed immutable assert(iserr(list[0].push(&#39;cannot be added to a tuple&#39;)));  A tuple only becomes a tuple when it is nested inside a list, which means the &amp;lsquo;list&amp;rsquo; will be immutable.</description>
     </item>
     
     <item>
