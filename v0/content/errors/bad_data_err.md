@@ -1,6 +1,6 @@
 ---
 title: "bad_data_err"
-weight: 3
+weight: 109
 ---
 
 Returns an [error](../../data-types/error).

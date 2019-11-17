@@ -1,6 +1,6 @@
 ---
 title: "info"
-weight: 600
+weight: 47
 ---
 
 

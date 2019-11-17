@@ -1,6 +1,6 @@
 ---
 title: "auth_err"
-weight: 2
+weight: 108
 ---
 
 Returns an [error](../../data-types/error).

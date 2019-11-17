@@ -1,6 +1,6 @@
 ---
 title: "isbytes"
-weight: 1200
+weight: 135
 ---
 
 This function does *not* generate an [event](../../events).

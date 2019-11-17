@@ -1,6 +1,6 @@
 ---
 title: "Slices"
-weight: 12
+weight: 40
 chapter: true
 ---
 

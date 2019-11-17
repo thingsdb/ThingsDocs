@@ -1,6 +1,6 @@
 ---
 title: "rename_user"
-weight: 15
+weight: 34
 ---
 
 This function generates an [event](../../events).

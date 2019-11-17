@@ -1,6 +1,6 @@
 ---
 title: "Events"
-weight: 4
+weight: 105
 chapter: true
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Properties"
-weight: 7
+weight: 18
 chapter: true
 ---
 

@@ -1,0 +1,182 @@
+authentication
+    python
+    shell
+scopes
+names
+properties
+variable
+protocol
+    example
+    package
+data-types
+    bool
+    bytes
+        len
+    closure
+        call
+    error
+        len
+    float
+    info
+    int
+    list
+        extend
+        filter
+        find
+        findindex
+        indexof
+        len
+        map
+        pop
+        push
+        remove
+        sort
+        splice
+    nil
+    regex
+    set
+        add
+        filter
+        find
+        has
+        len
+        map
+        remove
+    str
+        contains
+        endswith
+        len
+        lower
+        startswith
+        test
+        upper
+    thing
+        del
+        filter
+        get
+        has
+        id
+        keys
+        len
+        map
+        set
+        values
+        wrap
+    tuple
+    type
+    wtype
+        unwrap
+watching
+query
+    arguments
+operators
+    arithmetic-operators
+    assignments
+    binary-bitwise-operators
+    conditional-ternary-operator
+    logical-operators
+    precedence-and-associativity
+slices
+events
+custom-types
+node-api
+    backup_info
+    backups_info
+    counters
+    del_backup
+    new_backup
+    node_info
+    nodes_info
+    reset_counters
+    set_log_level
+    shutdown
+thingsdb-api
+    collection_info
+    collections_info
+    del_collection
+    del_expired
+    del_node
+    del_token
+    del_user
+    grant
+    new_collection
+    new_node
+    new_token
+    new_user
+    pop_node
+    rename_collection
+    rename_user
+    revoke
+    set_password
+    set_quota
+    user_info
+    users_info
+errors
+    assert_err
+    auth_err
+    bad_data_err
+    forbidden_err
+    lookup_err
+    max_quota_err
+    node_err
+    num_arguments_err
+    operation_err
+    overflow_err
+    syntax_err
+    type_err
+    value_err
+    zero_div_err
+collection-api
+    array
+    assert
+    bool
+    bytes
+    deep
+    del_type
+    err
+    float
+    int
+    isarray
+    isascii
+    isbool
+    isbytes
+    iserr
+    isfloat
+    isinf
+    isint
+    islist
+    isnan
+    isnil
+    israw
+    isset
+    isstr
+    isthing
+    istuple
+    isutf8
+    mod_type
+        add
+        del
+        mod
+    new
+    new_type
+    now
+    raise
+    refs
+    return
+    set
+    set_type
+    str
+    thing
+    try
+    type
+    type_count
+    type_info
+    types_info
+    wse
+procedures-api
+    del_procedure
+    new_procedure
+    procedure_doc
+    procedure_info
+    procedures_info
+    run

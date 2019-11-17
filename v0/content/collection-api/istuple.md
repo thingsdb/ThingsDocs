@@ -1,6 +1,6 @@
 ---
 title: "istuple"
-weight: 2400
+weight: 147
 ---
 
 This function determines whether the value passed to this function

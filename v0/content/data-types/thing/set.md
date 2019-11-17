@@ -1,6 +1,6 @@
 ---
 title: "set"
-weight: 9
+weight: 97
 ---
 
 Creates a new property on a [thing](..). If the property already existed then the old

@@ -1,6 +1,6 @@
 ---
 title: "del_node"
-weight: 5
+weight: 24
 ---
 
 This function generates an [event](../../events).

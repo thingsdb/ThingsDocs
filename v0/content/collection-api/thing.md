@@ -1,6 +1,6 @@
 ---
 title: "thing"
-weight: 3600
+weight: 158
 ---
 
 Returns a [thing](../../data-types/thing) from a specified value.

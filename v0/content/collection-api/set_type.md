@@ -1,6 +1,6 @@
 ---
 title: "set_type"
-weight: 3400
+weight: 156
 ---
 
 Defines the properties of a Type. Function `set_type` works only on a new type. Use `mod_type()` if you want to change an existing type, see [mod_type](../mod_type).

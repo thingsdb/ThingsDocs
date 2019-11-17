@@ -1,6 +1,6 @@
 ---
 title: "isinf"
-weight: 1500
+weight: 138
 ---
 
 This function does *not* generate an [event](../../events).

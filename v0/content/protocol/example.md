@@ -1,6 +1,6 @@
 ---
 title: "Example"
-weight: 1
+weight: 42
 ---
 
 ## Example

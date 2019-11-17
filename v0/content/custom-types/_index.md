@@ -1,6 +1,6 @@
 ---
 title: "Custom Types"
-weight: 11
+weight: 17
 chapter: true
 ---
 

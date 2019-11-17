@@ -1,6 +1,6 @@
 ---
 title: "Scopes"
-weight: 5
+weight: 12
 chapter: true
 ---
 

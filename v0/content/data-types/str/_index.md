@@ -1,6 +1,6 @@
 ---
 title: "str"
-weight: 1200
+weight: 78
 ---
 
 ### Methods

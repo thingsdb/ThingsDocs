@@ -1,6 +1,6 @@
 ---
 title: "collections_info"
-weight: 2
+weight: 21
 ---
 
 This function does *not* generate an [event](../../events).

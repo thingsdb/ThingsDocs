@@ -1,6 +1,6 @@
 ---
 title: "isstr"
-weight: 2200
+weight: 145
 ---
 
 Alias for [isutf8](../../collection-api/isutf8).

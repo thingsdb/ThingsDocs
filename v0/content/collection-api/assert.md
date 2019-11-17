@@ -1,6 +1,6 @@
 ---
 title: "assert"
-weight: 200
+weight: 124
 ---
 
 Raises `ASSERTION_ERROR` if the specified statement evaluates to `false`.

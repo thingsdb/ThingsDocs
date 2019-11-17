@@ -1,6 +1,6 @@
 ---
 title: "Thingsdb API"
-weight: 14
+weight: 19
 chapter: true
 ---
 

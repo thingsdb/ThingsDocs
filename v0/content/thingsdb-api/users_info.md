@@ -1,6 +1,6 @@
 ---
 title: "users_info"
-weight: 20
+weight: 39
 ---
 
 Returns user information for all users withing ThingsDB.

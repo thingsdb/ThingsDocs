@@ -1,6 +1,6 @@
 ---
 title: "Authentication"
-weight: 100
+weight: 13
 chapter: true
 ---
 
