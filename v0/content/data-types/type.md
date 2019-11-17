@@ -77,7 +77,7 @@ make members of a `set` optional.
 
 > This is an example using a restricted list:
 
-```thingsdb,json_response
+```thingsdb,should_pass
 // Very simple `Note` type
 set_type('Note', {
     text: 'str',

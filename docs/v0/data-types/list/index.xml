@@ -154,7 +154,7 @@ Arguments    Argument Type Description     callback closure Closure to execute o
       <description>When this method is used on an list or tuple, a new sorted list is returned.
 This function does not generate an event.
 Function array.sort([closure, [reverse]])
-Arguments    Argument Type Description     callback closure (optional) Closure to execute on each value, which is used to determine how the list should be sorted.   reverse bool (optional) Determines the order of the returned list.    An order cannot be specified with a closure which takes two arguments.</description>
+Arguments    Argument Type Description     callback closure (optional) Closure to execute on each value, which is used to determine how the list should be sorted.   reverse bool (optional) Determines the order of the returned list.    The reverse argument cannot be used together with a closure which takes two arguments.</description>
     </item>
     
     <item>

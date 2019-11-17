@@ -11,20 +11,20 @@
     <title>sort :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1574004136" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1574004136" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1574004136" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1574004136" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1574004136" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1574004136" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1574004136" rel="stylesheet">
-    <link href="/v0/css/theme.css?1574004136" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1574004136" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1574019307" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1574019307" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1574019307" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1574019307" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1574019307" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1574019307" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1574019307" rel="stylesheet">
+    <link href="/v0/css/theme.css?1574019307" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1574019307" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1574004136" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1574019307" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1574004136"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1574019307"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1574004136"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1574004136"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1574019307"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1574019307"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1574004136"></script>
+<script type="text/javascript" src="/v0/js/search.js?1574019307"></script>
 
     
   </div>
@@ -3950,41 +3950,20 @@
 </table>
 
 
-<div class="notices note" ><p>An order cannot be specified with a closure which takes two arguments. In this case the order should be specified within the closure.</p>
+<div class="notices note" ><p>The <em>reverse</em> argument cannot be used together with a closure which takes two arguments. In this case the order should be specified within the closure.</p>
 </div>
 
-
-<p>Explanation of the <em>callback</em> argument:</p>
-
-<table>
-<thead>
-<tr>
-<th>Iterable</th>
-<th>Arguments</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>array</td>
-<td>item1, item2</td>
-<td>Iterate over all items in the array. Argument item2 is is optional and can be used to define the order of the returned list.</td>
-</tr>
-</tbody>
-</table>
 
 <h3 id="return-value">Return value</h3>
 
 <p>A new sorted list.</p>
 
 <blockquote>
-<p>This code shows an example using <strong><em>map()</em></strong>:</p>
+<p>Simple sort</p>
 </blockquote>
 
-<pre><code class="language-thingsdb,json_response">values = [5, 3, 8, 1];
-
-values.sort();
+<pre><code class="language-thingsdb,json_response">// return a new list in ascending order
+[3, 1, 2].sort();
 </code></pre>
 
 <blockquote>
@@ -3993,9 +3972,70 @@ values.sort();
 
 <pre><code class="language-json">[
     1,
+    2,
+    3
+]
+</code></pre>
+
+<blockquote>
+<p>Reverse sort</p>
+</blockquote>
+
+<pre><code class="language-thingsdb,json_response">// return a new list in descending order
+[3, 1, 2].sort(true);
+</code></pre>
+
+<blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+
+<pre><code class="language-json">[
     3,
-    5,
-    8
+    2,
+    1
+]
+</code></pre>
+
+<blockquote>
+<p>Sort using a one-argument callback</p>
+</blockquote>
+
+<pre><code class="language-thingsdb,json_response">// return a new list in ascending order, case-insensitive
+[&quot;charlie&quot;, &quot;alpha&quot;, &quot;Beta&quot;].sort(|s| s.lower());
+</code></pre>
+
+<blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+
+<pre><code class="language-json">[
+    &quot;alpha&quot;,
+    &quot;Beta&quot;,
+    &quot;charlie&quot;
+]
+</code></pre>
+
+<blockquote>
+<p>Sort using a two-argument callback</p>
+</blockquote>
+
+<pre><code class="language-thingsdb,json_response">// list with `nil` values
+arr = [nil, &quot;charlie&quot;, nil, &quot;alpha&quot;, &quot;beta&quot;];
+
+// return a new list in ascending order with `nil` values last
+arr.sort(|a, b| isnil(a) ? 1 : isnil(b) ? -1 : a &lt; b ? -1 : a &gt; b ? 1 : 0);
+</code></pre>
+
+<blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+
+<pre><code class="language-json">[
+    &quot;alpha&quot;,
+    &quot;beta&quot;,
+    &quot;charlie&quot;,
+    null,
+    null
 ]
 </code></pre>
 
@@ -4028,19 +4068,19 @@ values.sort();
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1574004136"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1574004136"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1574004136"></script>
-    <script src="/v0/js/jquery.sticky.js?1574004136"></script>
-    <script src="/v0/js/featherlight.min.js?1574004136"></script>
-    <script src="/v0/js/highlight.pack.js?1574004136"></script>
+    <script src="/v0/js/clipboard.min.js?1574019307"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1574019307"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1574019307"></script>
+    <script src="/v0/js/jquery.sticky.js?1574019307"></script>
+    <script src="/v0/js/featherlight.min.js?1574019307"></script>
+    <script src="/v0/js/highlight.pack.js?1574019307"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1574004136"></script>
-    <script src="/v0/js/learn.js?1574004136"></script>
-    <script src="/v0/js/hugo-learn.js?1574004136"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1574019307"></script>
+    <script src="/v0/js/learn.js?1574019307"></script>
+    <script src="/v0/js/hugo-learn.js?1574019307"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1574004136" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1574004136"></script>
+    <link href="/v0/mermaid/mermaid.css?1574019307" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1574019307"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
