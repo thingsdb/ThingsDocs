@@ -1,6 +1,6 @@
 ---
 title: "len"
-date: 2019-10-23T13:54:12+02:00
+weight: 210
 ---
 
 Returns the length of the bytes value.

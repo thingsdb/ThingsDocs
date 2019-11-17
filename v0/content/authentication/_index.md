@@ -1,9 +1,8 @@
-+++
-title = "Authentication"
-date = 2019-10-07T11:01:14+02:00
-weight = 1
-chapter = true
-+++
+---
+title: "Authentication"
+weight: 100
+chapter: true
+---
 
 # Authentication
 

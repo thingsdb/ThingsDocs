@@ -1,7 +1,6 @@
 ---
 title: "has"
-date: 2019-10-23T13:52:30+02:00
-weight: 4
+weight: 1140
 ---
 
 Determines if a [set](..) has a given thing.

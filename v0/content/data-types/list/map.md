@@ -1,7 +1,6 @@
 ---
 title: "map"
-date: 2019-10-23T12:52:02+02:00
-weight: 7
+weight: 870
 ---
 
 Iterate over items in an [list](../../list) or [tuple](../../tuple).

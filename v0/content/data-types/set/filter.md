@@ -1,7 +1,6 @@
 ---
 title: "filter"
-date: 2019-10-23T13:52:18+02:00
-weight: 2
+weight: 1120
 ---
 
 When this method is used on a `set`, then the return value will be a new set.

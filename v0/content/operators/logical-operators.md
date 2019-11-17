@@ -1,6 +1,5 @@
 ---
 title: "Logical operators"
-date: 2019-10-14T09:36:27+02:00
 weight: 5
 ---
 

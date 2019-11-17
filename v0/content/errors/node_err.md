@@ -1,6 +1,5 @@
 ---
 title: "node_err"
-date: 2019-10-14T10:12:19+02:00
 weight: 7
 ---
 

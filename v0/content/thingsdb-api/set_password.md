@@ -1,6 +1,5 @@
 ---
 title: "set_password"
-date: 2019-10-14T09:51:37+02:00
 weight: 17
 ---
 

@@ -1,9 +1,8 @@
-+++
-title = "Thingsdb API"
-date = 2019-10-07T11:04:22+02:00
-weight = 14
-chapter = true
-+++
+---
+title: "Thingsdb API"
+weight: 14
+chapter: true
+---
 
 # Thingsdb API
 

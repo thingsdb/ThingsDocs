@@ -1,9 +1,8 @@
-+++
-title = "Variable"
-date = 2019-10-07T11:02:22+02:00
-weight = 8
-chapter = true
-+++
+---
+title: "Variable"
+weight: 8
+chapter: true
+---
 
 # Variable
 

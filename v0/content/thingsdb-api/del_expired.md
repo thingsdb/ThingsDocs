@@ -1,6 +1,5 @@
 ---
 title: "del_expired"
-date: 2019-10-14T09:49:19+02:00
 weight: 4
 ---
 

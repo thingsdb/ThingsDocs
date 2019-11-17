@@ -1,6 +1,5 @@
 ---
 title: "isthing"
-date: 2019-10-14T10:02:42+02:00
 weight: 2300
 ---
 

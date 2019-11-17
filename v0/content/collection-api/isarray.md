@@ -1,6 +1,5 @@
 ---
 title: "isarray"
-date: 2019-10-14T10:00:22+02:00
 weight: 900
 ---
 

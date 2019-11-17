@@ -1,6 +1,5 @@
 ---
 title: "Type"
-date: 2019-10-23T16:43:16+02:00
 weight: 1500
 ---
 
@@ -67,7 +66,58 @@ assert(iserr(try(User{name: 0})));
 ]
 ```
 
-When using a list `'[]'` definition, it is also possible to allow only a certain type as members of the list.
+When using a list `'[]'` or set `'{}'` definition, it is also possible to make the list or set restricted to a certain type.
+In this case only items of the given definition are allowed as members. For example `'[int]'` requires the members of a list
+to be integers and `'{User}'` is a restricted set which only allows things of type *User*.
 
-> For example:
 
+Both the list *and/or* the members can be made optional.
+For example, this `'[str?]?'` is a valid declaration. Since a set does not allow for `nil` values, it is not possible to
+make members of a `set` optional.
+
+> This is an example using a restricted list:
+
+```thingsdb,json_response
+// Very simple `Note` type
+set_type('Note', {
+    text: 'str',
+    timestamp: 'uint'
+});
+
+// Book type with `notes` of type `Note`
+set_type('Book', {
+    title: 'str',
+    notes: '[Note]'
+});
+
+// Create a new book
+book = Book{
+    title: "hitchhiker's guide to the galaxy",
+    notes: []
+};
+
+// Add a note to the book
+book.notes.push(Note{
+    text: 'the answer is 42',
+    timestamp: int(now())
+});
+
+// It *must* be a `Note`, something else is not allowed
+assert(iserr(try(book.notes.push({test: 'not a Note'}))));
+
+// Return the book, 2 levels deep to see the note
+return(book, 2);
+```
+
+> Return value in JSON format
+```json
+{
+    "notes": [
+        {
+            "text": "the answer is 42",
+            "timestamp": 1573894579
+        }
+    ],
+    "title": "hitchhiker's guide to the galaxy"
+}
+```

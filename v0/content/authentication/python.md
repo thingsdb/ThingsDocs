@@ -1,7 +1,6 @@
 ---
 title: "Python"
-date: 2019-10-14T09:30:56+02:00
-weight: 1
+weight: 200
 ---
 
 > Use pip to install the python client:

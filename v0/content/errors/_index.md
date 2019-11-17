@@ -1,9 +1,8 @@
-+++
-title = "Errors"
-date = 2019-10-07T11:04:54+02:00
-weight = 18
-chapter = true
-+++
+---
+title: "Errors"
+weight: 18
+chapter: true
+---
 
 # Errors
 

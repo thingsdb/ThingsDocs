@@ -1,7 +1,6 @@
 ---
 title: "map"
-date: 2019-10-23T13:52:38+02:00
-weight: 5
+weight: 1160
 ---
 
 Iterate over items in an [set](..).

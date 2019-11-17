@@ -1,6 +1,5 @@
 ---
 title: "collection_info"
-date: 2019-10-14T09:48:47+02:00
 weight: 1
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: "values"
-date: 2019-10-23T15:13:20+02:00
 weight: 10
 ---
 

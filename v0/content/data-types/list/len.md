@@ -1,7 +1,6 @@
 ---
 title: "len"
-date: 2019-10-23T12:51:58+02:00
-weight: 6
+weight: 860
 ---
 
 Returns the length of a [list](..) or [tuple](../../tuple).

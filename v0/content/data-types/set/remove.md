@@ -1,7 +1,6 @@
 ---
 title: "remove"
-date: 2019-10-23T13:52:43+02:00
-weight: 6
+weight: 1170
 ---
 
 This function can be used to remove `things` from a `set`.

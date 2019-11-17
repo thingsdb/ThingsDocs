@@ -1,7 +1,6 @@
 ---
 title: "add"
-date: 2019-10-23T13:52:11+02:00
-weight: 1
+weight: 1110
 ---
 
 Adds new thing to the [set](..) and returns the number of things which are

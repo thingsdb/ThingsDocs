@@ -1,7 +1,6 @@
 ---
 title: "find"
-date: 2019-10-23T13:52:23+02:00
-weight: 3
+weight: 1130
 ---
 
 This function returns the value of the first element in the [set](..) that satisfies the callback function.

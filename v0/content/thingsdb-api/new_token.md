@@ -1,6 +1,5 @@
 ---
 title: "new_token"
-date: 2019-10-14T09:50:15+02:00
 weight: 11
 ---
 

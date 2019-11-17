@@ -1,6 +1,5 @@
 ---
 title: "Package"
-date: 2019-10-14T09:31:46+02:00
 weight: 2
 ---
 

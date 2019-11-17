@@ -1,9 +1,8 @@
-+++
-title = "Collection API"
-date = 2019-10-07T11:04:33+02:00
-weight = 15
-chapter = true
-+++
+---
+title: "Collection API"
+weight: 15
+chapter: true
+---
 
 # Collection API
 

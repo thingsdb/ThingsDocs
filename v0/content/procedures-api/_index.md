@@ -1,9 +1,8 @@
-+++
-title = "Procedures API"
-date = 2019-10-07T11:04:44+02:00
-weight = 16
-chapter = true
-+++
+---
+title: "Procedures API"
+weight: 16
+chapter: true
+---
 
 # Procedures API
 

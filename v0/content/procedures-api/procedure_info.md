@@ -1,6 +1,5 @@
 ---
 title: "procedure_info"
-date: 2019-10-14T10:10:07+02:00
 weight: 4
 ---
 

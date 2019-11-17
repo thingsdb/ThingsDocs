@@ -1,7 +1,6 @@
 ---
 title: "len"
-date: 2019-10-23T13:50:34+02:00
-weight: 3
+weight: 1230
 ---
 
 Returns the length of a [string](..).

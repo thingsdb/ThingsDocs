@@ -1,6 +1,5 @@
 ---
 title: "filter"
-date: 2019-10-23T13:54:00+02:00
 weight: 2
 ---
 

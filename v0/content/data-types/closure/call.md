@@ -1,6 +1,6 @@
 ---
 title: "call"
-date: 2019-10-23T16:40:38+02:00
+weight: 310
 ---
 
 Call a closure with optional arguments.

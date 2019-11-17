@@ -1,6 +1,5 @@
 ---
 title: "del_user"
-date: 2019-10-14T09:49:40+02:00
 weight: 7
 ---
 

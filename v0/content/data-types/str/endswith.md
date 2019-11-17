@@ -1,7 +1,6 @@
 ---
 title: "endswith"
-date: 2019-10-23T13:50:27+02:00
-weight: 2
+weight: 1220
 ---
 
 Determines if a [string](..) ends with characters given by another string.

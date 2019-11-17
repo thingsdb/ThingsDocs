@@ -1,6 +1,6 @@
 ---
 title: "len"
-date: 2019-10-23T16:41:37+02:00
+weight: 410
 ---
 
 Returns the length of an [error](..) message.

@@ -1,6 +1,5 @@
 ---
 title: "reset_counters"
-date: 2019-10-14T09:43:17+02:00
 weight: 8
 ---
 

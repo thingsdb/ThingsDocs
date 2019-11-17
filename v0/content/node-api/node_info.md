@@ -1,6 +1,5 @@
 ---
 title: "node_info"
-date: 2019-10-14T09:42:49+02:00
 weight: 6
 ---
 

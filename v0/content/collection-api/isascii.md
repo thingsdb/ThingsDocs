@@ -1,6 +1,5 @@
 ---
 title: "isascii"
-date: 2019-10-14T10:00:36+02:00
 weight: 1000
 ---
 

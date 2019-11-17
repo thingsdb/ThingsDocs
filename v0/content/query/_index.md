@@ -1,9 +1,8 @@
-+++
-title = "Query"
-date = 2019-10-07T11:01:23+02:00
-weight = 2
-chapter = true
-+++
+---
+title: "Query"
+weight: 2
+chapter: true
+---
 
 # Query
 

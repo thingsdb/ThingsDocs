@@ -1,9 +1,8 @@
-+++
-title = "Properties"
-date = 2019-10-07T11:02:12+02:00
-weight = 7
-chapter = true
-+++
+---
+title: "Properties"
+weight: 7
+chapter: true
+---
 
 # Properties
 

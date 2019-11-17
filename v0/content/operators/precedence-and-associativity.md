@@ -1,6 +1,5 @@
 ---
 title: "Precedence and associativity"
-date: 2019-10-14T09:37:41+02:00
 weight: 6
 ---
 

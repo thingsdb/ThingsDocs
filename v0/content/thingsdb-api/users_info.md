@@ -1,6 +1,5 @@
 ---
 title: "users_info"
-date: 2019-10-14T09:52:04+02:00
 weight: 20
 ---
 

@@ -1,7 +1,6 @@
 ---
 title: "push"
-date: 2019-10-23T12:52:17+02:00
-weight: 9
+weight: 880
 ---
 
 Adds new items to the end of an list, and returns the new length.

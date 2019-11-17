@@ -1,7 +1,6 @@
 ---
 title: "len"
-date: 2019-10-23T13:54:12+02:00
-weight: 7
+weight: 1150
 ---
 
 Returns the length of a [set](..).

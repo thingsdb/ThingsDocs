@@ -1,6 +1,5 @@
 ---
 title: "operation_err"
-date: 2019-10-14T10:13:11+02:00
 weight: 9
 ---
 

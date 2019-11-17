@@ -1,6 +1,5 @@
 ---
 title: "Example"
-date: 2019-10-14T09:31:57+02:00
 weight: 1
 ---
 

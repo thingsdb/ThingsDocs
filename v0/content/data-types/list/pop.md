@@ -1,7 +1,6 @@
 ---
 title: "pop"
-date: 2019-10-23T12:52:11+02:00
-weight: 8
+weight: 875
 ---
 
 Removes the last element from a [list](../../list) and returns that element.

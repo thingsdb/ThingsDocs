@@ -1,6 +1,5 @@
 ---
 title: "auth_err"
-date: 2019-10-14T10:11:22+02:00
 weight: 2
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: "Binary bitwise operators"
-date: 2019-10-14T09:34:41+02:00
 weight: 3
 ---
 

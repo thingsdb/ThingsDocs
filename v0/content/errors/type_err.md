@@ -1,6 +1,5 @@
 ---
 title: "type_err"
-date: 2019-10-14T10:13:39+02:00
 weight: 12
 ---
 

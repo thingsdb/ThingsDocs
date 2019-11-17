@@ -1,6 +1,5 @@
 ---
 title: "value_err"
-date: 2019-10-14T10:13:47+02:00
 weight: 13
 ---
 

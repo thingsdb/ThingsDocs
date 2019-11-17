@@ -1,6 +1,5 @@
 ---
 title: "type_info"
-date: 2019-10-23T16:59:28+02:00
 weight: 4000
 ---
 

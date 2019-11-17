@@ -1,6 +1,5 @@
 ---
 title: "Conditional ternary operator"
-date: 2019-10-14T09:37:07+02:00
 weight: 4
 ---
 

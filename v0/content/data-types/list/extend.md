@@ -1,7 +1,6 @@
 ---
 title: "extend"
-date: 2019-10-23T12:50:12+02:00
-weight: 1
+weight: 810
 ---
 
 Adds a `list` or `tuple` with items to the end of a [list](..), and returns the new length.

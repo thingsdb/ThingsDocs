@@ -1,6 +1,5 @@
 ---
 title: "istuple"
-date: 2019-10-14T10:02:50+02:00
 weight: 2400
 ---
 

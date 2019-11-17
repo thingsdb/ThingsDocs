@@ -1,7 +1,6 @@
 ---
 title: "contains"
-date: 2019-10-23T14:34:12+02:00
-weight: 1
+weight: 1210
 ---
 
 Determines if a given string is a substring of a [string](..).

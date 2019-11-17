@@ -1,6 +1,5 @@
 ---
 title: "new_node"
-date: 2019-10-14T09:50:09+02:00
 weight: 10
 ---
 

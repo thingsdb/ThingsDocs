@@ -1,6 +1,9 @@
 ---
 title: "backup_info"
-date: 2019-10-23T17:00:50+02:00
-draft: true
 weight: 1
 ---
+
+
+Returns information about a specific scheduled backup.
+
+This function does *not* generate an [event](../../events).

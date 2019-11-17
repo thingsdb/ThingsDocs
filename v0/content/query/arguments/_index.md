@@ -1,6 +1,6 @@
 ---
 title: "Arguments"
-date: 2019-10-14T09:31:27+02:00
+weight: 3
 ---
 
 Arguments can be used when querying ThingsDB.

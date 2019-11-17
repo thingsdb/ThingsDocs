@@ -1,6 +1,5 @@
 ---
 title: "bad_data_err"
-date: 2019-10-14T10:11:34+02:00
 weight: 3
 ---
 

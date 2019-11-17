@@ -1,7 +1,6 @@
 ---
 title: "filter"
-date: 2019-10-23T12:51:22+02:00
-weight: 2
+weight: 820
 ---
 
 When this method is used on an [list](..) or [tuple](../../tuple), a new list is returned with elements that pass the test.

@@ -1,7 +1,6 @@
 ---
 title: "Shell"
-date: 2019-10-14T09:31:07+02:00
-weight: 2
+weight: 300
 ---
 
 > Copy/paste to download and install *thingscmd*

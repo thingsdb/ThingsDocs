@@ -1,6 +1,5 @@
 ---
 title: "types_info"
-date: 2019-10-23T16:59:56+02:00
 weight: 4100
 ---
 

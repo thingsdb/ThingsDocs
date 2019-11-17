@@ -1,7 +1,6 @@
 ---
 title: "indexof"
-date: 2019-10-23T12:51:51+02:00
-weight: 5
+weight: 850
 ---
 
 Returns the first index at which a given value can be found in the [list](..) or [tuple](../../tuple), or `nil` if it is not present.

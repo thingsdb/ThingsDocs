@@ -1,7 +1,6 @@
 ---
 title: "sort"
-date: 2019-10-23T12:52:33+02:00
-weight: 11
+weight: 890
 ---
 
 When this method is used on an [list](..) or [tuple](../../tuple), a new sorted list is returned.

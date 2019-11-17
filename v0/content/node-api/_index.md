@@ -1,9 +1,8 @@
-+++
-title = "Node API"
-date = 2019-10-07T11:03:34+02:00
-weight = 13
-chapter = true
-+++
+---
+title: "Node API"
+weight: 13
+chapter: true
+---
 
 # Node API
 

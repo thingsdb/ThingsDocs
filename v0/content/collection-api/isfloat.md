@@ -1,6 +1,5 @@
 ---
 title: "isfloat"
-date: 2019-10-14T10:01:19+02:00
 weight: 1400
 ---
 

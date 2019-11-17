@@ -1,6 +1,5 @@
 ---
 title: "type_count"
-date: 2019-10-23T16:59:23+02:00
 weight: 3900
 ---
 

@@ -1,6 +1,7 @@
 ---
-title: "<Type>"
-date: 2019-10-23T16:44:19+02:00
-draft: true
+title: "˂Type˃"
 weight: 1600
 ---
+
+
+Wrapped thing.

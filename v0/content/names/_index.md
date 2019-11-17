@@ -1,9 +1,8 @@
-+++
-title = "Names"
-date = 2019-10-07T11:01:58+02:00
-weight = 6
-chapter = true
-+++
+---
+title: "Names"
+weight: 6
+chapter: true
+---
 
 # Names
 

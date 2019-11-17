@@ -1,6 +1,5 @@
 ---
 title: "new_user"
-date: 2019-10-14T09:50:22+02:00
 weight: 12
 ---
 

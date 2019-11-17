@@ -1,6 +1,5 @@
 ---
 title: "Arithmetic operators"
-date: 2019-10-14T09:35:42+02:00
 weight: 1
 ---
 

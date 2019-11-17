@@ -1,6 +1,5 @@
 ---
 title: "startswith"
-date: 2019-10-23T13:50:49+02:00
 weight: 5
 ---
 
