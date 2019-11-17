@@ -70,18 +70,18 @@
 	"content": " Protocol This is a more in depth view of the protocol used for communication with ThingsDB. In case you just want to use ThingsDB using one of the language bindings, then this info can be skipped. If you plan to implement you own connector, then this info might be useful to you.\nCommunication with ThingsDB is done over a socket, either using TCP or a UNIX PIPE connection. Once a connection is made, packages can be send to ThingsDB. Each package starts with a 8 bytes header using little endian, followed by optional data. Before you can send queries to ThingsDB, the connection must be authenticated. This can be done by sending an AUTH package.\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/v0/protocol/example/",
-	"title": "Example",
-	"tags": [],
-	"description": "",
-	"content": " Example As an example we create an authentication package for the default admin user with password pass.\nThis is the package data for our authentication request:\n[\u0026quot;admin\u0026quot;, \u0026quot;pass\u0026quot;]\nSerializing the above using msgpack results in the following 12 bytes:\n\\x92\\xa5admin\\xa4pass\nNow we create the header, for this example we just use ID 0:\n Data length (12) \\x0c\\x00\\x00\\x00 Identifier (0) \\x00\\x00 Auth package type (33) \\x21 Inverse type check bit (222) \\xde  So our total package will be:\n\\x0c\\x00\\x00\\x00\\x00\\x00\\x21\\xde\\x92\\xa5admin\\xa4pass\n"
-},
-{
 	"uri": "https://docs.thingsdb.net/v0/protocol/package/",
 	"title": "Package",
 	"tags": [],
 	"description": "",
 	"content": " LEN (Unsigned, 32bit) Length of the data, the header not included.\nID (16bit) The ID can be used as an identifier of your package. When ThingsDB send a response on a request, it will use the same ID so this allows you to map a response to a request. This is useful if you want to send multiple request in parallel.\nTYPE (Unsigned, 8bit) Package type is used to describe what kind of package is transmitted.\nRequest type    Type Number Description     PING 32 Ping, useful as keep-alive.   AUTH 33 Authentication, expects: [username, password] or a token_string.   QUERY 34 Query, see query for more info.   WATCH 35 Watch, see watching for more info.   UNWATCH 36 Stop watching specified things, see watching for more info.   RUN 37 Run a procedure, see procedures for more info.    CHK (Unsigned, 8bit) Inverse of the type: type ^ 0xff, this is used as a check-bit.\nDATA Data serialized using msgpack.\n Package format:\n ┌───────────┬───────────┬───────────┬───────────┬───────────┐ │ LEN (4) │ ID (2) │ TYPE (1) │ CHK (1) │ DATA (..) │ └───────────┴───────────┴───────────┴───────────┴───────────┘  "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/protocol/example/",
+	"title": "Example",
+	"tags": [],
+	"description": "",
+	"content": " Example As an example we create an authentication package for the default admin user with password pass.\nThis is the package data for our authentication request:\n[\u0026quot;admin\u0026quot;, \u0026quot;pass\u0026quot;]\nSerializing the above using msgpack results in the following 12 bytes:\n\\x92\\xa5admin\\xa4pass\nNow we create the header, for this example we just use ID 0:\n Data length (12) \\x0c\\x00\\x00\\x00 Identifier (0) \\x00\\x00 Auth package type (33) \\x21 Inverse type check bit (222) \\xde  So our total package will be:\n\\x0c\\x00\\x00\\x00\\x00\\x00\\x21\\xde\\x92\\xa5admin\\xa4pass\n"
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/events/",
@@ -109,7 +109,7 @@
 	"title": "bytes",
 	"tags": [],
 	"description": "",
-	"content": " The bytes type can be used to store a sequence of byte values.\n This code converts a string to bytes\n .as_bytes = bytes(\u0026quot;Hello ThingsDB!\u0026quot;);  Methods    Method Description     len Returns the length of the bytes.    Related functions    Method Description     bytes Create a new bytes value.   isbytesl Test if a given value is of type bytes.    "
+	"content": " The bytes type can be used to store a sequence of byte values.\n This code converts a string to bytes\n .as_bytes = bytes(\u0026quot;Hello ThingsDB!\u0026quot;);  Methods    Method Description     len Returns the length of the bytes.    Related functions    Method Description     bytes Create a new bytes value.   isbytes Test if a given value is of type bytes.    "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/data-types/bytes/len/",
@@ -249,7 +249,7 @@
 	"title": "sort",
 	"tags": [],
 	"description": "",
-	"content": " When this method is used on an list or tuple, a new sorted list is returned.\nThis function does not generate an event.\nFunction array.sort([closure, [reverse]])\nArguments    Argument Type Description     callback closure (optional) Closure to execute on each value, which is used to determine how the list should be sorted.   reverse bool (optional) Determines the order of the returned list.    The reverse argument cannot be used together with a closure which takes two arguments. In this case the order should be specified within the closure.\n Return value A new sorted list.\n Simple sort\n // return a new list in ascending order [3, 1, 2].sort();   Return value in JSON format\n [ 1, 2, 3 ]   Reverse sort\n // return a new list in descending order [3, 1, 2].sort(true);   Return value in JSON format\n [ 3, 2, 1 ]   Sort using a one-argument callback\n // return a new list in ascending order, case-insensitive [\u0026quot;charlie\u0026quot;, \u0026quot;alpha\u0026quot;, \u0026quot;Beta\u0026quot;].sort(|s| s.lower());   Return value in JSON format\n [ \u0026quot;alpha\u0026quot;, \u0026quot;Beta\u0026quot;, \u0026quot;charlie\u0026quot; ]   Sort using a two-argument callback\n // list with `nil` values arr = [nil, \u0026quot;charlie\u0026quot;, nil, \u0026quot;alpha\u0026quot;, \u0026quot;beta\u0026quot;]; // return a new list in ascending order with `nil` values last arr.sort(|a, b| isnil(a) ? 1 : isnil(b) ? -1 : a \u0026lt; b ? -1 : a \u0026gt; b ? 1 : 0);   Return value in JSON format\n [ \u0026quot;alpha\u0026quot;, \u0026quot;beta\u0026quot;, \u0026quot;charlie\u0026quot;, null, null ]  "
+	"content": " When this method is used on an list or tuple, a new sorted list is returned.\nThis function does not generate an event.\nFunction array.sort([closure, [reverse]])\nArguments    Argument Type Description     callback closure (optional) Closure to execute on each value, which is used to determine how the list should be sorted.   reverse bool (optional) Determines the order of the returned list.    The reverse argument cannot be used together with a closure which takes two arguments. In this case the order should be specified within the closure.\n Return value A new sorted list.\n Simple sort\n // return a new list in ascending order [3, 1, 2].sort();   Return value in JSON format\n [ 1, 2, 3 ]  With the reverse argument set to true, a new list will be returned in descending order.\n Reverse sort\n // return a new list in descending order [3, 1, 2].sort(true);   Return value in JSON format\n [ 3, 2, 1 ]  When using a closure the sort behavior depends on the number of arguments the give closure accepts. With one argument, each item in the list will be parser to the closure and the return value of the closure will be used as compare value. Below is an example which uses such closure to do a case-insensitive sort. Another common use case is when you want to sort things based on a property. For example a closure like |u| u.age could be used to sort users based on a age property.\n Sort using a one-argument callback\n // return a new list in ascending order, case-insensitive [\u0026quot;charlie\u0026quot;, \u0026quot;alpha\u0026quot;, \u0026quot;Beta\u0026quot;].sort(|s| s.lower());   Return value in JSON format\n [ \u0026quot;alpha\u0026quot;, \u0026quot;Beta\u0026quot;, \u0026quot;charlie\u0026quot; ]  As a second option the sort function can accept a closure with two arguments. The return value of the given closure must return an integer value. When the integer is \u0026lt; 0, then a goes before b, when 0 both a and b are considered equal and if \u0026gt;0 then a goes after b.\n Sort using a two-argument callback\n // list with `nil` values arr = [nil, \u0026quot;charlie\u0026quot;, nil, \u0026quot;alpha\u0026quot;, \u0026quot;beta\u0026quot;]; // return a new list in ascending order with `nil` values at the end arr.sort(|a, b| isnil(a) ? 1 : isnil(b) ? -1 : a \u0026lt; b ? -1 : a \u0026gt; b ? 1 : 0);   Return value in JSON format\n [ \u0026quot;alpha\u0026quot;, \u0026quot;beta\u0026quot;, \u0026quot;charlie\u0026quot;, null, null ]  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/data-types/list/splice/",
@@ -333,7 +333,7 @@
 	"title": "str",
 	"tags": [],
 	"description": "",
-	"content": " Methods    Method Description     contains Determines if a given string is a substring of a string.   endswith Determines if a string ends with characters given by another string.   len Returns the length of a string.   lower Return a new string in which all case-based characters are in lower case.   startswith Determines if a string starts with characters given by another string.   test Test if a string matches a given regular expression and return true or false.   upper Return a new string in which all case-based characters are in upper case.     This code creates a raw property greet to collection stuff:\n .greet = 'Hello world!!';  "
+	"content": " This is the string type of ThingsDB. A value of type str should contain valid UTF-8 characters. This is not guaranteed but rather depends on MessagePack to pack data correctly. There is an isutf8 which can be used to test a str value for valid UTF-8 data and it is also possible to create an utf8 property on a custom Type which only allows strings with valid UTF-8 data.\nMethods    Method Description     contains Determines if a given string is a substring of a string.   endswith Determines if a string ends with characters given by another string.   len Returns the length of a string.   lower Return a new string in which all case-based characters are in lower case.   startswith Determines if a string starts with characters given by another string.   test Test if a string matches a given regular expression and return true or false.   upper Return a new string in which all case-based characters are in upper case.     This code creates a raw property greet to collection stuff:\n .greet = 'Hello world!!';  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/data-types/str/contains/",
@@ -354,7 +354,7 @@
 	"title": "len",
 	"tags": [],
 	"description": "",
-	"content": " Returns the length of a string.\nThis function does not generate an event.\nFunction str.len()\nArguments None\nReturn value Returns length of the string.\n This code uses len() to return the length of a string:\n 'Hello'.len();   Return value in JSON format\n 5  "
+	"content": " Returns the length of a string.\nBe aware that the length represents the number of bytes and not the number of characters. see example below.\n This function does not generate an event.\nFunction str.len()\nArguments None\nReturn value Returns length of the string.\n This code uses len() to return the length of a string:\n [ {'Hello'.len(); /* 5 bytes */ }, {'π'.len(); /* 2 bytes, not 1 */ }, ]   Return value in JSON format\n [ 5, 2 ]  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/data-types/str/lower/",
@@ -662,7 +662,7 @@
 	"title": "del_expired",
 	"tags": [],
 	"description": "",
-	"content": " Delete all expired tokens.\nThis function generates an event.\nFunction del_expired();\nArguments None\nReturn value Returns nil.\n This code will delete all expired tokens:\n ```thingsdb,should_pass,@t // Delete all expired tokens del_expired(); \n"
+	"content": " Delete all expired tokens.\nThis function generates an event.\nFunction del_expired();\nArguments None\nReturn value Returns nil.\n This code will delete all expired tokens:\n // Delete all expired tokens del_expired();  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/del_node/",
@@ -676,14 +676,14 @@
 	"title": "del_token",
 	"tags": [],
 	"description": "",
-	"content": " Delete a token.\nThis function generates an event.\nFunction del_token(key);\nArguments    Argument Type Description     key str (required) Token key to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the token is not found.\n This code will delete a token:\n ```thingsdb,syntax_only,@t // Delete a token del_token('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'); \n"
+	"content": " Delete a token.\nThis function generates an event.\nFunction del_token(key);\nArguments    Argument Type Description     key str (required) Token key to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the token is not found.\n This code will delete a token:\n // Delete a token del_token('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX');  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/del_user/",
 	"title": "del_user",
 	"tags": [],
 	"description": "",
-	"content": " Delete a user. It is not possible to delete your own user account and a BAD_REQUEST will be raised in case you try to. Any tokens associated with the user will also be deleted.\nThis function generates an event.\nFunction del_user(username);\nArguments    Argument Type Description     username str (required) Username of the user to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the user does not exist.\n This code will delete user test:\n ```thingsdb,syntax_only,@t // Delete user `test` del_user('test'); \n"
+	"content": " Delete a user. It is not possible to delete your own user account and a BAD_REQUEST will be raised in case you try to. Any tokens associated with the user will also be deleted.\nThis function generates an event.\nFunction del_user(username);\nArguments    Argument Type Description     username str (required) Username of the user to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the user does not exist.\n This code will delete user test:\n // Delete user `test` del_user('test');  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/grant/",
@@ -1054,7 +1054,7 @@
 	"title": "str",
 	"tags": [],
 	"description": "",
-	"content": " Convert a value to a string. If no value is given, an empty string \u0026quot;\u0026quot; is returned.\nThis function does not generate an event.\nFunction str(value)\nArguments    Argument Type Description     value any (optional) The value to create a string from.    "
+	"content": " Convert a value to a string. If no value is given, an empty string \u0026quot;\u0026quot; is returned.\nWhen bytes are converted to str then the data will be checked if it contains valid UTF-8 characters. If this is not the case, a VALUE_ERROR will be raised.\nThis function does not generate an event.\nFunction str(value)\nArguments    Argument Type Description     value any (optional) The value to create a string from.    Return value A new string\n This code shows some return values for str():\n [ str(), str(42), str(true) ];   Return value in JSON format\n [ \u0026quot;\u0026quot;, \u0026quot;42\u0026quot;, \u0026quot;true\u0026quot; ]  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/thing/",
@@ -1110,7 +1110,7 @@
 	"title": "Procedures API",
 	"tags": [],
 	"description": "",
-	"content": " Procedures API A procedure int ThingsDB is a prepared piece of code that you can save, so the code can be reused over and over again.\n"
+	"content": " Procedures API A procedure in ThingsDB is a prepared piece of code that you can save, so the code can be reused over and over again.\nProcedures can be used in the @thngsdb scope and in @collection scopes.\nThe same procedure name can be used in different scopes but must be unique within a scope.\nBelow is an example where we make a procedure in the @thingsdb scope to help us create a user in ThingsDB with some pre-defined access rights and a token for one day usage.\nnew_procedure('create_user', |name| { /* * Creates a new user with some basic access rights. * Returns a `token` for the user which expires after 24 hours */ // Create the user new_user(name); // Create a `token` for one day token = new_token(name, now() + 3600 * 24); // Give watch access to the @node scope and read on collection `stuff` grant('@node', name, WATCH); grant('@:stuff', name, READ); // Return the token token; });  Once a procedure is created, it can be used by using the run function or by using the RUN protocol.\nHere is a complete working example where we use the Python client to call our procedure.\nimport asyncio from thingsdb.client import Client client = Client() loop = asyncio.get_event_loop() async def create_user(name): # first we need to connect, in this example we assume ThingsDB is running # on localhost and the default admin user can be used await client.connect('localhost') await client.authenticate('admin', 'pass') # this is the code where we call our procedure token = await client.run('create_user', name, scope='@thingsdb') # run the example loop.run_until_complete(create_user('iris')) # the will close the client in a nice way client.close() loop.run_until_complete(client.wait_closed())  It is also possible to use the procedure within a query or from another procedure. This can be done with the run function.\n Here is an example query where we use run to create a new user.\n // Our procedure has side-effects so we need to wrap `run` with `wse` token = wse(run('create_user', 'cato')); // return the token token;   Example output in JSON format\n\u0026quot;Sj3WQ3dkm8Hl8B/iFoH9Cz\u0026quot;   "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/procedures-api/del_procedure/",

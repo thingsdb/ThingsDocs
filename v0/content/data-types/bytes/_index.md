@@ -22,4 +22,4 @@ Method | Description
 Method | Description
 ------ | -----------
 [bytes](../../collection-api/bytes) | Create a new bytes value.
-[isbytesl](../../collection-api/isbytes) | Test if a given value is of type bytes.
+[isbytes](../../collection-api/isbytes) | Test if a given value is of type bytes.

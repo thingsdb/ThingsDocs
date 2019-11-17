@@ -20,7 +20,7 @@ Returns `nil` when successful. An `INDEX_ERROR` is raised if the token is not fo
 
 > This code will delete a token:
 
-``````thingsdb,syntax_only,@t
+```thingsdb,syntax_only,@t
 // Delete a token
 del_token('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX');
 ```

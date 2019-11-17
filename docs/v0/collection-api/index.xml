@@ -447,10 +447,11 @@ Arguments    Argument Type Description     type_name str The name of the Type wh
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/str/</guid>
-      <description> Convert a value to a string. If no value is given, an empty string &amp;quot;&amp;quot; is returned.
+      <description>Convert a value to a string. If no value is given, an empty string &amp;quot;&amp;quot; is returned.
+When bytes are converted to str then the data will be checked if it contains valid UTF-8 characters. If this is not the case, a VALUE_ERROR will be raised.
 This function does not generate an event.
 Function str(value)
-Arguments    Argument Type Description     value any (optional) The value to create a string from.    </description>
+Arguments    Argument Type Description     value any (optional) The value to create a string from.</description>
     </item>
     
     <item>

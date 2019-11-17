@@ -3,6 +3,13 @@ title: "str"
 weight: 48
 ---
 
+This is the `string` type of ThingsDB. A value of type `str` *should* contain valid UTF-8 characters. This
+is not guaranteed but rather depends on [MessagePack](https://msgpack.org) to pack data correctly.
+There is an [isutf8](../../collection-api/isutf8) which can be used to test a `str` value for valid UTF-8
+data and it is also possible to create an `utf8` property on a custom [Type](../type) which only allows strings
+with valid UTF-8 data.
+
+
 ### Methods
 
 Method | Description

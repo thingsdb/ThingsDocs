@@ -52,13 +52,13 @@ Arguments    Argument Type Description     name str (required) Name of the colle
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/del_expired/</guid>
-      <description>Delete all expired tokens.
+      <description> Delete all expired tokens.
 This function generates an event.
 Function del_expired();
 Arguments None
 Return value Returns nil.
  This code will delete all expired tokens:
- ```thingsdb,should_pass,@t // Delete all expired tokens del_expired();</description>
+ // Delete all expired tokens del_expired();  </description>
     </item>
     
     <item>
@@ -76,12 +76,12 @@ Return value Returns nil.
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/del_token/</guid>
-      <description>Delete a token.
+      <description> Delete a token.
 This function generates an event.
 Function del_token(key);
 Arguments    Argument Type Description     key str (required) Token key to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the token is not found.
  This code will delete a token:
- ```thingsdb,syntax_only,@t // Delete a token del_token(&#39;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#39;);</description>
+ // Delete a token del_token(&#39;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#39;);  </description>
     </item>
     
     <item>

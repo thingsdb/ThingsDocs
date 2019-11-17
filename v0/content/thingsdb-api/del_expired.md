@@ -18,7 +18,7 @@ Returns `nil`.
 
 > This code will delete all expired tokens:
 
-``````thingsdb,should_pass,@t
+```thingsdb,should_pass,@t
 // Delete all expired tokens
 del_expired();
 ```

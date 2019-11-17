@@ -8,8 +8,8 @@ variable
 query
     arguments
 protocol
-    example
     package
+    example
 events
 data-types
     bool
