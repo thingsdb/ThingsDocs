@@ -113,8 +113,21 @@ def set_weights(fn):
             raise FileNotFoundError(
                 f'neither `{chap_fn}` or `{page_fn}` is found')
 
+        with open(fn, 'r') as f:
+            doc_lines = f.readlines()
+
+        for i, line in enumerate(doc_lines):
+            m = WEIGHT.match(doc_line)
+            if m:
+                doc_lines[i] = f'weight: {weight}\n'
+                break
+
         with open(fn, 'w') as f:
-            pass
+            f.writelines(doc_lines)
+
+
+
+
 
 
 if __name__ == '__main__':
