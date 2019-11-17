@@ -39,7 +39,7 @@ new_procedure('create_user', |name| {
 
 Once a procedure is created, it can be used by using the [run](./run) function or by using the `RUN` [protocol](../protocol).
 
-Here is a complete working example where we use the Python client to call our procedure.
+> Here is a complete working example where we use the Python client to call our procedure.
 
 ```python
 import asyncio
@@ -78,6 +78,7 @@ token;
 ```
 
 > Example output in JSON format
+
 ```json
 "Sj3WQ3dkm8Hl8B/iFoH9Cz"
 ```

@@ -11,20 +11,20 @@
     <title>del :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1574026789" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1574026789" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1574026789" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1574026789" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1574026789" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1574026789" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1574026789" rel="stylesheet">
-    <link href="/v0/css/theme.css?1574026789" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1574026789" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1574029723" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1574029723" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1574029723" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1574029723" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1574029723" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1574029723" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1574029723" rel="stylesheet">
+    <link href="/v0/css/theme.css?1574029723" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1574029723" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1574026789" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1574029723" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1574026789"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1574029723"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1574026789"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1574026789"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1574029723"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1574029723"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1574026789"></script>
+<script type="text/javascript" src="/v0/js/search.js?1574029723"></script>
 
     
   </div>
@@ -3917,6 +3917,11 @@
 
 <p>Deletes a property from an existing <a href="../../../data-types/type">Type</a>.</p>
 
+
+<div class="notices warning" ><p>The property will be removed from all the active instances of that type.</p>
+</div>
+
+
 <h3 id="action">Action</h3>
 
 <p><code>mod_type(type_name, 'del', property_name)</code></p>
@@ -3961,12 +3966,14 @@
 <p>This code shows the return value for the action <strong><em>del</em></strong>:</p>
 </blockquote>
 
-<pre><code class="language-thingsdb,json_response">new_type('Person');
+<pre><code class="language-thingsdb,json_response">// Create type `Person`
 set_type('Person', {
     name: 'str',
     age: 'int',
     hobbies: '[str]'
 });
+
+// Delete `hobbies` from type `Person`
 mod_type('Person', 'del', 'hobbies');
 </code></pre>
 
@@ -4006,19 +4013,19 @@ mod_type('Person', 'del', 'hobbies');
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1574026789"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1574026789"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1574026789"></script>
-    <script src="/v0/js/jquery.sticky.js?1574026789"></script>
-    <script src="/v0/js/featherlight.min.js?1574026789"></script>
-    <script src="/v0/js/highlight.pack.js?1574026789"></script>
+    <script src="/v0/js/clipboard.min.js?1574029723"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1574029723"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1574029723"></script>
+    <script src="/v0/js/jquery.sticky.js?1574029723"></script>
+    <script src="/v0/js/featherlight.min.js?1574029723"></script>
+    <script src="/v0/js/highlight.pack.js?1574029723"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1574026789"></script>
-    <script src="/v0/js/learn.js?1574026789"></script>
-    <script src="/v0/js/hugo-learn.js?1574026789"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1574029723"></script>
+    <script src="/v0/js/learn.js?1574029723"></script>
+    <script src="/v0/js/hugo-learn.js?1574029723"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1574026789" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1574026789"></script>
+    <link href="/v0/mermaid/mermaid.css?1574029723" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1574029723"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -354,13 +354,9 @@ Arguments    Argument Type Description     type_name str The name of the Type th
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/new_type/</guid>
-      <description> Creates a new Type.
-This function generates an event.
-Function new_type(type_name)
-Arguments    Argument Type Description     type_name string Name of the Type to be created.    Return value The name of the newly created Type.
- This code shows the return value for new_type():
- new_type(&#39;NewType&#39;);   Return value in JSON format
- &amp;quot;NewType&amp;quot;  </description>
+      <description>Creates a new Type. This function only creates a new type and does not allow you to specify any fields. With the set_type() function you can define the fields for the new type.
+It is possible to use set_type directly without calling new_type first. However, sometimes you want to cross reference two types so you want both type to exists before calling set_type.
+ This function generates an event.</description>
     </item>
     
     <item>

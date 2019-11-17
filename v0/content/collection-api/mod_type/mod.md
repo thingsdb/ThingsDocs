@@ -5,11 +5,10 @@ weight: 142
 
 Modifies a property from an exinsting [Type](../../../data-types/type).
 
-{{% notice warning %}}
+{{% notice note %}}
 When modifying a property of a Type, the changed property type can only be less 'strict'. \
 So for example, `age: 'int'` can become `age: 'int?'`, but not the other way around.
 {{% /notice %}}
-
 
 
 ### Action
@@ -22,8 +21,8 @@ Argument | Type | Description
 -------- | ---- | -----------
 type_name | str | Name of the Type where the property has to be removed from.
 `'mod'` | str | Passing this argument will result in a *Modify* action.
-property_name | str | Name of the property that has to be removed.
-property_type | str | Type of the property that has to be modified.
+property_name | str | Name of the property that has to be modified.
+property_type | str | New definition of the property that has to be modified.
 
 ### Return value
 
@@ -32,12 +31,14 @@ The value `nil`.
 > This code shows the return value for the action ***mod***:
 
 ```thingsdb,json_response
-new_type('Person');
+// Create type `Person`
 set_type('Person', {
     name: 'str',
     age: 'int',
     hobbies: '[str]'
 });
+
+// Make `age` nillable
 mod_type('Person', 'mod', 'age', 'int?');
 ```
 

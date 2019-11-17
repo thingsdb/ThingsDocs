@@ -17,8 +17,9 @@
       
       <guid>https://docs.thingsdb.net/v0/collection-api/mod_type/add/</guid>
       <description>Adds a property to an existing Type.
-Action mod_type(type_name, &#39;add&#39;, property_name, property_type, initial_value)
-Arguments    Argument Type Description     type_name str Name of the Type where the property has to be added to.   &#39;add&#39; str Passing this argument will result in a Add action.   property_name str Name of the property that has to be added.   property_type str Type of the property that has to be added.</description>
+If there are active instances of the type you want to modify, then an initial_value is required. This value is used only once for applying the value to the existing instances.
+ Action mod_type(type_name, &#39;add&#39;, property_name, property_type, [initial_value])
+Arguments    Argument Type Description     type_name str Name of the Type where the property has to be added to.</description>
     </item>
     
     <item>
@@ -28,8 +29,9 @@ Arguments    Argument Type Description     type_name str Name of the Type where 
       
       <guid>https://docs.thingsdb.net/v0/collection-api/mod_type/del/</guid>
       <description>Deletes a property from an existing Type.
-Action mod_type(type_name, &#39;del&#39;, property_name)
-Arguments    Argument Type Description     type_name str Name of the Type where the property has to be removed from.   &#39;del&#39; str Passing this argument will result in a delete action.   property_name str Name of the property that has to be removed.    Return value The value nil.</description>
+The property will be removed from all the active instances of that type.
+ Action mod_type(type_name, &#39;del&#39;, property_name)
+Arguments    Argument Type Description     type_name str Name of the Type where the property has to be removed from.   &#39;del&#39; str Passing this argument will result in a delete action.   property_name str Name of the property that has to be removed.</description>
     </item>
     
     <item>

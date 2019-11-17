@@ -5,6 +5,10 @@ weight: 141
 
 Deletes a property from an existing [Type](../../../data-types/type).
 
+{{% notice warning %}}
+The property will be removed from all the active instances of that type.
+{{% /notice %}}
+
 ### Action
 
 `mod_type(type_name, 'del', property_name)`
@@ -24,12 +28,14 @@ The value `nil`.
 > This code shows the return value for the action ***del***:
 
 ```thingsdb,json_response
-new_type('Person');
+// Create type `Person`
 set_type('Person', {
     name: 'str',
     age: 'int',
     hobbies: '[str]'
 });
+
+// Delete `hobbies` from type `Person`
 mod_type('Person', 'del', 'hobbies');
 ```
 

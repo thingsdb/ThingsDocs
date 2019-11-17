@@ -9,12 +9,6 @@ chapter: true
 The *collection* scope can be used to manage data within a *collection*.
 
 
-> This code returns the *id* of collection *stuff*
-
-```shell
-thingscmd -n localhost -u admin -p pass -s @:stuff -q 'id()'
-```
-
 {{% notice tip %}}
-The functions in the Collection API can also be used in the [thingsdb](../thingsdb-api) and [node](../node-api) scopes.
+Most of the functions in the Collection API can also be used in the [thingsdb](../thingsdb-api) and [node](../node-api) scopes.
 {{% /notice %}}
