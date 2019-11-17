@@ -1,3 +1,6 @@
+---
+weight: 0
+---
 # ThingsDB
 
 [Transceptor Technology](https://transceptor.technology), a Dutch software startup, is proud to announce ThingsDB to the world.
