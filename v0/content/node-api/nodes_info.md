@@ -27,7 +27,7 @@ This function does *not* generate an [event](../../events).
 None
 
 ### Return value
-Array as `msgpack` type containing node information for all nodes within ThingsDB.
+List with node [info](../../data-types/info) for all nodes in ThingsDB.
 
 > This code returns info for all ThingsDB nodes:
 
@@ -40,14 +40,26 @@ nodes_info();
 ```json
 [
     {
-        "address": "node.things",
-        "committed_event_id": 2,
+        "address": "node0.local",
+        "committed_event_id": 4,
         "next_thing_id": 5,
         "node_id": 0,
         "port": 9220,
         "status": "READY",
-        "stored_event_id": 2,
+        "stored_event_id": 4,
         "stream": null,
+        "syntax_version": "v0",
+        "zone": 0
+    },
+    {
+        "address": "node1.local",
+        "committed_event_id": 4,
+        "next_thing_id": 5,
+        "node_id": 1,
+        "port": 9220,
+        "status": "READY",
+        "stored_event_id": 4,
+        "stream": "<node-out:1> 192.168.0.10:9220",
         "syntax_version": "v0",
         "zone": 0
     }

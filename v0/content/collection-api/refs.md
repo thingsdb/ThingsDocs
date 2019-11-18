@@ -1,6 +1,6 @@
 ---
 title: "refs"
-weight: 147
+weight: 146
 ---
 
 Returns the reference count of a value.
@@ -8,7 +8,7 @@ Returns the reference count of a value.
 The count returned is generally one higher than you might expect,
 because it includes the (temporary) reference.
 
-{{% notice note %}}
+{{% notice info %}}
 Different nodes might return different reference values since the reference counter
 can be higher of lower depending on how the value is stored and used.
 {{% /notice %}}

@@ -101,7 +101,6 @@ thingsdb-api
     new_node
     new_token
     new_user
-    pop_node
     rename_collection
     rename_user
     revoke

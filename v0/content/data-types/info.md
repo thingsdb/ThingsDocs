@@ -17,6 +17,7 @@ type(node_info);
 ```
 
 > Return value in JSON format
+
 ```json
 "info"
 ```

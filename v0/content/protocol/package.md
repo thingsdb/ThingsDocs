@@ -28,7 +28,7 @@ Type | Number | Description
 Inverse of the type: `type ^ 0xff`, this is used as a check-bit.
 
 ### DATA
-Data serialized using [msgpack](https://github.com/transceptor-technology/libqpack).
+Data serialized using [MessagePack](https://msgpack.org).
 
 > Package format:
 

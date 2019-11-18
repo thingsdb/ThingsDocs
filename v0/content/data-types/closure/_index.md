@@ -31,6 +31,7 @@ call_result = add_one.call(41);
 ```
 
 > Return value in JSON format
+
 ```json
 [
     [

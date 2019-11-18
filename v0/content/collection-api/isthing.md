@@ -1,10 +1,14 @@
 ---
 title: "isthing"
-weight: 136
+weight: 135
 ---
 
 This function determines whether the value passed to this function
 is a [thing](../../data-types/thing) or not.
+
+{{% notice note %}}
+[Type](../../data-types/type) instances are also things, so this function returns `true` for a type instance as well.
+{{% /notice %}}
 
 This function does *not* generate an [event](../../events).
 
@@ -25,8 +29,10 @@ Returns `true` is the passed value is a thing else it returns `false`.
 > This code shows some return values for ***isthing()***:
 
 ```thingsdb,json_response
+new_type('A');
 [
     isthing( {} ),
+    isthing( A{} ),
     isthing( [] ),
 ];
 ```
@@ -35,6 +41,7 @@ Returns `true` is the passed value is a thing else it returns `false`.
 
 ```json
 [
+    true,
     true,
     false
 ]

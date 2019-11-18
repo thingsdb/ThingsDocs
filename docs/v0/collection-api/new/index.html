@@ -11,20 +11,20 @@
     <title>new :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1574031146" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1574031146" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1574031146" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1574031146" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1574031146" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1574031146" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1574031146" rel="stylesheet">
-    <link href="/v0/css/theme.css?1574031146" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1574031146" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1574086295" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1574086295" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1574086295" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1574086295" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1574086295" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1574086295" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1574086295" rel="stylesheet">
+    <link href="/v0/css/theme.css?1574086295" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1574086295" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1574031146" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1574086295" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1574031146"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1574086295"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1574031146"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1574031146"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1574086295"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1574086295"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1574031146"></script>
+<script type="text/javascript" src="/v0/js/search.js?1574086295"></script>
 
     
   </div>
@@ -2267,25 +2267,6 @@
  
   
     
-      <li data-nav-id="/v0/thingsdb-api/pop_node/" title="pop_node" class="dd-item ">
-        <a href="/v0/thingsdb-api/pop_node/">
-        pop_node
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
       <li data-nav-id="/v0/thingsdb-api/rename_collection/" title="rename_collection" class="dd-item ">
         <a href="/v0/thingsdb-api/rename_collection/">
         rename_collection
@@ -3911,6 +3892,11 @@
 
 <p>Creates a new instance of a defined <a href="../../data-types/type">Type</a>.</p>
 
+
+<div class="notices info" ><p>When possible it is preferred to use the syntax <code>MyType{...}</code> to create a instance of a certain type. However, sometimes you need to create an instance dynamically with the type name as variable and then <code>new()</code> can be used.</p>
+</div>
+
+
 <p>This function generates an <a href="../../events">event</a>.</p>
 
 <h3 id="function">Function</h3>
@@ -3938,26 +3924,30 @@
 <tr>
 <td>value</td>
 <td>thing</td>
-<td>Thing containing all the properities to be added to the new instance of the given Type.</td>
+<td>Thing containing all the properties to be added to the new instance of the given Type.</td>
 </tr>
 </tbody>
 </table>
 
 <h3 id="return-value">Return value</h3>
 
-<p>A Thing containing all the properities which have been added to the new instance of the given Type.</p>
+<p>A Thing containing all the properties which have been added to the new instance of the given Type.</p>
 
 <blockquote>
 <p>This code shows how to use <strong><em>new()</em></strong>:</p>
 </blockquote>
 
-<pre><code class="language-thingsdb,json_response">new_type('Person');
-set_type('Person', {
+<pre><code class="language-thingsdb,json_response">type_name = 'Person';
+
+// Create type `Person`
+set_type(type_name, {
     name: 'str',
     age: 'int',
     hobbies: '[str]'
 });
-new('Person', {
+
+// Create an instance of type `Person`
+new(type_name, {
     name: 'John',
     age: 34,
     hobbies: ['Football']
@@ -4009,19 +3999,19 @@ new('Person', {
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1574031146"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1574031146"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1574031146"></script>
-    <script src="/v0/js/jquery.sticky.js?1574031146"></script>
-    <script src="/v0/js/featherlight.min.js?1574031146"></script>
-    <script src="/v0/js/highlight.pack.js?1574031146"></script>
+    <script src="/v0/js/clipboard.min.js?1574086295"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1574086295"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1574086295"></script>
+    <script src="/v0/js/jquery.sticky.js?1574086295"></script>
+    <script src="/v0/js/featherlight.min.js?1574086295"></script>
+    <script src="/v0/js/highlight.pack.js?1574086295"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1574031146"></script>
-    <script src="/v0/js/learn.js?1574031146"></script>
-    <script src="/v0/js/hugo-learn.js?1574031146"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1574086295"></script>
+    <script src="/v0/js/learn.js?1574086295"></script>
+    <script src="/v0/js/hugo-learn.js?1574086295"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1574031146" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1574031146"></script>
+    <link href="/v0/mermaid/mermaid.css?1574086295" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1574086295"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -1,10 +1,10 @@
 ---
 title: "isutf8"
-weight: 138
+weight: 137
 ---
 
 This function determines whether the value passed to this function is of
-type `raw` and contains valid utf8.
+type [str](../../data-types/str) and contains valid UTF-8 characters.
 
 This function does *not* generate an [event](../../events).
 

@@ -1,6 +1,6 @@
 ---
 title: "float"
-weight: 120
+weight: 119
 ---
 
 Returns a [float](../../data-types/float) from a specified value.
@@ -26,7 +26,7 @@ value | any (optional) | The value where to create a floating point value for.
 
 ### Return value
 
-A floating point value. Other type than `float`, `raw`, `bool` or `int`
+A floating point value. Other type than `float`, `str`, `bool` or `int`
 will raise a `BAD_REQUEST`.
 
 > This code shows some return values for ***float()***:

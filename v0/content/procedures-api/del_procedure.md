@@ -1,6 +1,6 @@
 ---
 title: "del_procedure"
-weight: 160
+weight: 159
 ---
 
 This function generates an [event](../../events).

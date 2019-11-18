@@ -4,8 +4,11 @@ weight: 99
 ---
 
 Grant collection or general privileges to a user. Access to a user is provided by setting
-a bit mask to either the `.node` scope, `.thingsdb` scope or a collection.
-Privileges to ThingsDB gives a user the ability to view counters, add, view remove users etc.
+a bit mask to either the `@node`, `@thingsdb` or a collection [scope](../../scopes).
+
+{{% notice warning %}}
+It is not possible to set privileges on a specific node scope. Therefore scope `@node` will apply to *all* nodes in ThingsDB.
+{{% /notice %}}
 
 The following pre-defined masks are available:
 
@@ -20,7 +23,9 @@ Mask         | Description
 
 {{% notice note %}}
 It is not possible to have `GRANT` privileges without also having `MODIFY` privileges.
-Similarly, it is not possible to have `MODIFY` privileges without `READ`.
+Similarly, it is not possible to have `MODIFY` privileges without `READ`. However, ThingsDB
+automatically applies the required privileges so when setting for example `GRANT` privileges, ThingsDB
+makes sure that the user also gets `MODIFY` and `READ`.
 {{% /notice %}}
 
 This function generates an [event](../../events).
@@ -31,7 +36,7 @@ This function generates an [event](../../events).
 ### Arguments
 Argument | Type | Description
 -------- | ---- | -----------
-`target` | int/raw | Can be either the `.node` scope, `.thingsdb` scope, or a collection name or id.
+`target` | int/raw | Can be either the `@node`, `@thingsdb`, or a collection [scope](../../scopes).
 `user` | str | User to grant privileges to.
 `mask` | int | Bit-mask for setting privileges.
 

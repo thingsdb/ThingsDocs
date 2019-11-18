@@ -1,9 +1,9 @@
 ---
 title: "users_info"
-weight: 111
+weight: 110
 ---
 
-Returns user information for all users withing ThingsDB.
+Returns user information for all users in ThingsDB.
 
 See the [user_info()](../../thingsdb-api/user_info) function documentation for an example of the exposed user information.
 
@@ -19,4 +19,4 @@ This function does *not* generate an [event](../../events).
 None
 
 ### Return value
-Array as `qpack` type containing user information for all users within ThingsDB.
+List with user [info](../../data-types/info) for all users in ThingsDB.

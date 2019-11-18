@@ -46,7 +46,7 @@ This function does *not* generate an [event](../../events).
 None
 
 ### Return value
-Information as a `msgpack` type bout the connected node.
+Information about the node. Which *node* is defined by the [scope](../../scopes).
 
 > This code returns info for the connected node:
 
@@ -66,10 +66,10 @@ node_info();
     "events_in_queue": 0,
     "global_committed_event_id": 2,
     "global_stored_event_id": 2,
-    "hostname": "node.things",
+    "hostname": "node0.local",
     "http_status_port": "disabled",
     "ip_support": "ALL",
-    "libcleri_version": "0.11.0",
+    "libcleri_version": "0.11.1",
     "libpcre2_version": "10.32",
     "libuv_version": "1.24.1",
     "local_committed_event_id": 2,
@@ -85,7 +85,7 @@ node_info();
     "storage_path": "/var/lib/thingsdb/",
     "syntax_version": "v0",
     "uptime": 7.854678630828857,
-    "version": "0.2.7",
+    "version": "0.2.13",
     "zone": 0
 }
 ```

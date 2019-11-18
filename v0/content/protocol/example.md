@@ -10,7 +10,7 @@ This is the package data for our authentication request:
 
 `["admin", "pass"]`
 
-Serializing the above using *msgpack* results in the following `12` bytes:
+Serializing the above using [MessagePack](https://msgpack.org) results in the following `12` bytes:
 
 `\x92\xa5admin\xa4pass`
 

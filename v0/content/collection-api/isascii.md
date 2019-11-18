@@ -1,10 +1,10 @@
 ---
 title: "isascii"
-weight: 123
+weight: 122
 ---
 
 This function determines whether the value passed to this function is of
-type `raw` and contains only valid ascii characters.
+type [str](../../data-types/str) and contains only valid ascii characters.
 
 This function does *not* generate an [event](../../events).
 
@@ -20,7 +20,7 @@ value | any (required) | The value to be tested.
 
 ### Return value
 
-Returns `true` is the given value is of type `raw` and contains only ascii characters, else `false`.
+Returns `true` is the given value is of type `str` and contains only ascii characters, else `false`.
 
 > This code shows some return values for ***isascii()***:
 

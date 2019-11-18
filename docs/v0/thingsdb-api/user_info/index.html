@@ -11,20 +11,20 @@
     <title>user_info :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1574031146" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1574031146" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1574031146" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1574031146" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1574031146" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1574031146" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1574031146" rel="stylesheet">
-    <link href="/v0/css/theme.css?1574031146" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1574031146" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1574086295" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1574086295" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1574086295" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1574086295" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1574086295" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1574086295" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1574086295" rel="stylesheet">
+    <link href="/v0/css/theme.css?1574086295" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1574086295" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1574031146" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1574086295" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1574031146"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1574086295"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1574031146"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1574031146"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1574086295"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1574086295"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1574031146"></script>
+<script type="text/javascript" src="/v0/js/search.js?1574086295"></script>
 
     
   </div>
@@ -2267,25 +2267,6 @@
  
   
     
-      <li data-nav-id="/v0/thingsdb-api/pop_node/" title="pop_node" class="dd-item ">
-        <a href="/v0/thingsdb-api/pop_node/">
-        pop_node
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
       <li data-nav-id="/v0/thingsdb-api/rename_collection/" title="rename_collection" class="dd-item ">
         <a href="/v0/thingsdb-api/rename_collection/">
         rename_collection
@@ -3911,6 +3892,13 @@
 <p>Returns information about a user. If no argument is given, this method will return
 information about the current logged in user.</p>
 
+
+<div class="notices note" ><p>This function requires <code>GRANT</code> privileges on the <code>@thingsdb</code> scope when a <code>username</code>
+other then the logged in user is given as argument. For the currently logged in user, <code>READ</code>
+privileges on the <code>@thingsdb</code> scope are sufficient.</p>
+</div>
+
+
 <p>This function does <em>not</em> generate an <a href="../../events">event</a>.</p>
 
 <h3 id="function">Function</h3>
@@ -3936,6 +3924,46 @@ information about the current logged in user.</p>
 </tr>
 </tbody>
 </table>
+
+<blockquote>
+<p>This code returns info for the authenticated user:</p>
+</blockquote>
+
+<pre><code class="language-thingsdb,should_pass,@t">// Without a `username`, info about the currently logged in user is returned
+user_info();
+</code></pre>
+
+<blockquote>
+<p>Example output in JSON format:</p>
+</blockquote>
+
+<pre><code>{
+    &quot;access&quot;: [
+        {
+            &quot;privileges&quot;: &quot;FULL&quot;,
+            &quot;scope&quot;: &quot;@node&quot;
+        },
+        {
+            &quot;privileges&quot;: &quot;FULL&quot;,
+            &quot;scope&quot;: &quot;@thingsdb&quot;
+        },
+        {
+            &quot;privileges&quot;: &quot;FULL&quot;,
+            &quot;scope&quot;: &quot;@collection:stuff&quot;
+        }
+    ],
+    &quot;has_password&quot;: true,
+    &quot;name&quot;: &quot;admin&quot;,
+    &quot;tokens&quot;: [
+        {
+            &quot;expiration_time&quot;: &quot;2020-11-17 09:25:36Z&quot;,
+            &quot;key&quot;: &quot;QpVmHOsfQaKKpjpOkW0SUt&quot;,
+            &quot;status&quot;: &quot;OK&quot;
+        }
+    ],
+    &quot;user_id&quot;: 1
+}
+</code></pre>
 
 
 <footer class=" footline" >
@@ -3966,19 +3994,19 @@ information about the current logged in user.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1574031146"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1574031146"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1574031146"></script>
-    <script src="/v0/js/jquery.sticky.js?1574031146"></script>
-    <script src="/v0/js/featherlight.min.js?1574031146"></script>
-    <script src="/v0/js/highlight.pack.js?1574031146"></script>
+    <script src="/v0/js/clipboard.min.js?1574086295"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1574086295"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1574086295"></script>
+    <script src="/v0/js/jquery.sticky.js?1574086295"></script>
+    <script src="/v0/js/featherlight.min.js?1574086295"></script>
+    <script src="/v0/js/highlight.pack.js?1574086295"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1574031146"></script>
-    <script src="/v0/js/learn.js?1574031146"></script>
-    <script src="/v0/js/hugo-learn.js?1574031146"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1574086295"></script>
+    <script src="/v0/js/learn.js?1574086295"></script>
+    <script src="/v0/js/hugo-learn.js?1574086295"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1574031146" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1574031146"></script>
+    <link href="/v0/mermaid/mermaid.css?1574086295" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1574086295"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

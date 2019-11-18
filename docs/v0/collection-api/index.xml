@@ -82,13 +82,9 @@ Return value The current deep value for the running query.
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/del_type/</guid>
-      <description> Deletes an existing type Type.
-This function generates an event.
-Function del_type(type_name)
-Arguments    Argument Type Description     type_name string Name of the Type to be deleted.    Return value The value nil.
- This code shows the return value for del_type():
- new_type(&#39;NewType&#39;); del_type(&#39;NewType&#39;);   Return value in JSON format
- null  </description>
+      <description>Deletes an existing Type.
+It is not possible to delete a Type which is used by another type. You should first change or delete the other type before you are able to delete this type. See the example below.
+If there are still instances of the type you delete, then all instances will be converted to normal things. No properties will be removed in this process. With type_count(..) you can view the number of instances of a certain type.</description>
     </item>
     
     <item>
@@ -145,10 +141,10 @@ Arguments    Argument Type Description     value any (required) The value to be 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/isascii/</guid>
-      <description>This function determines whether the value passed to this function is of type raw and contains only valid ascii characters.
+      <description>This function determines whether the value passed to this function is of type str and contains only valid ascii characters.
 This function does not generate an event.
 Function isascii(value)
-Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the given value is of type raw and contains only ascii characters, else false.</description>
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the given value is of type str and contains only ascii characters, else false.</description>
     </item>
     
     <item>
@@ -170,7 +166,11 @@ Arguments    Argument Type Description     value any (required) The value to be 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/isbytes/</guid>
-      <description>This function does not generate an event.</description>
+      <description>This function determines whether the value passed to this function is of type bytes or not.
+This function does not generate an event.
+Function isbytes(value)
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the passed value is of type bytes else it returns false.
+ This code shows some return values for isbytes():</description>
     </item>
     
     <item>
@@ -205,7 +205,11 @@ Arguments    Argument Type Description     value any (required) The value to be 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/isinf/</guid>
-      <description>This function does not generate an event.</description>
+      <description>This function determines whether the value passed to this function is a positive or negative infinity.
+This function does not generate an event.
+Function isinf(value)
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the passed value is a positive or negative infinity else it returns false.
+ This code shows some return values for isinf():</description>
     </item>
     
     <item>
@@ -268,12 +272,11 @@ Arguments    Argument Type Description     value any (required) The value to be 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/israw/</guid>
-      <description>This function determines whether the value passed to this function is of type raw.
+      <description>This function determines whether the value passed to this function is of type str or bytes.
 This function does not generate an event.
 Function israw(value)
-Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the given value is of type raw, else false.
- This code shows some return values for israw():
- [ israw( &#39;some string&#39; ), israw( bytes(&#39;xxxx&#39;) ), ];   Return value in JSON format</description>
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the given value is of type str or bytes, else false.
+ This code shows some return values for israw():</description>
     </item>
     
     <item>
@@ -295,7 +298,11 @@ Arguments    Argument Type Description     value any (required) The value to be 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/isstr/</guid>
-      <description>Alias for isutf8.</description>
+      <description>This function determines whether the value passed to this function is of type str.
+The value is not explicitly checked for valid UTF-8 characters, use isutf8() if you want to check for valid UTF-8 data.
+This function does not generate an event.
+Function isstr(value)
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the given value is of type str, else false.</description>
     </item>
     
     <item>
@@ -305,10 +312,10 @@ Arguments    Argument Type Description     value any (required) The value to be 
       
       <guid>https://docs.thingsdb.net/v0/collection-api/isthing/</guid>
       <description>This function determines whether the value passed to this function is a thing or not.
-This function does not generate an event.
+Type instances are also things, so this function returns true for a type instance as well.
+ This function does not generate an event.
 Function isthing(value)
-Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the passed value is a thing else it returns false.
- This code shows some return values for isthing():</description>
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the passed value is a thing else it returns false.</description>
     </item>
     
     <item>
@@ -329,7 +336,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/isutf8/</guid>
-      <description>This function determines whether the value passed to this function is of type raw and contains valid utf8.
+      <description>This function determines whether the value passed to this function is of type str and contains valid UTF-8 characters.
 This function does not generate an event.
 Function isutf8(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the given value is of type raw and contains valid utf8, else false.
@@ -343,9 +350,10 @@ Arguments    Argument Type Description     value any (required) The value to be 
       
       <guid>https://docs.thingsdb.net/v0/collection-api/new/</guid>
       <description>Creates a new instance of a defined Type.
-This function generates an event.
+When possible it is preferred to use the syntax MyType{...} to create a instance of a certain type. However, sometimes you need to create an instance dynamically with the type name as variable and then new() can be used.
+ This function generates an event.
 Function new(type_name, value)
-Arguments    Argument Type Description     type_name str The name of the Type that an instance must be made of.   value thing Thing containing all the properities to be added to the new instance of the given Type.    Return value A Thing containing all the properities which have been added to the new instance of the given Type.</description>
+Arguments    Argument Type Description     type_name str The name of the Type that an instance must be made of.</description>
     </item>
     
     <item>
@@ -434,7 +442,7 @@ Arguments    Argument Type Description     array_or_things array/things (optiona
       <description>Defines the properties of a Type. Function set_type works only on a new type. Use mod_type() if you want to change an existing type, see mod_type.
 This function generates an event.
 Function set_type(type_name, value)
-Arguments    Argument Type Description     type_name str The name of the Type where the properties have to be set.   value thing Thing containing all the properities to be set.</description>
+Arguments    Argument Type Description     type_name str The name of the Type where the properties have to be set.   value thing Thing containing all the properties to be set.</description>
     </item>
     
     <item>

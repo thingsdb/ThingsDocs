@@ -1,10 +1,10 @@
 ---
 title: "israw"
-weight: 133
+weight: 132
 ---
 
 This function determines whether the value passed to this function is of
-type `raw`.
+type `str` *or* `bytes`.
 
 This function does *not* generate an [event](../../events).
 
@@ -20,7 +20,7 @@ value | any (required) | The value to be tested.
 
 ### Return value
 
-Returns `true` is the given value is of type `raw`, else `false`.
+Returns `true` is the given value is of type `str` *or* `bytes`, else `false`.
 
 > This code shows some return values for ***israw()***:
 

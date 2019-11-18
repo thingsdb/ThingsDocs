@@ -1,13 +1,13 @@
 ---
 title: "add"
-weight: 140
+weight: 139
 ---
 
 Adds a property to an existing [Type](../../../data-types/type).
 
-{{% notice note %}}
+{{% notice info %}}
 If there are active instances of the type you want to modify, then an *initial_value* is required.
-This value is used *only once* for applying the value to the existing instances.
+This value is used *only once* for applying the value to the existing instances and is not used when new instances are created.
 {{% /notice %}}
 
 
@@ -20,9 +20,9 @@ This value is used *only once* for applying the value to the existing instances.
 Argument | Type | Description
 -------- | ---- | -----------
 type_name | str | Name of the [Type](../../../data-types/type) where the property has to be added to.
-`'add'` | str | Passing this argument will result in a *Add* action.
+`'add'` | str | Passing this argument will result in an *add* action.
 property_name | str | Name of the property that has to be added.
-property_type | str | Type of the property that has to be added.
+property_type | str | Type definition of the property that has to be added.
 initial_value | any | The default value to set on existing instances of this [Type](../../../data-types/type).
 
 ### Return value

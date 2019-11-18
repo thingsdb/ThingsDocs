@@ -13,7 +13,7 @@ list.push(['this list will be nested and therefore convert to a tuple']);
 assert(istuple(list[0]));
 
 // Check that the `tuple` is indeed immutable
-assert(iserr(list[0].push('cannot be added to a tuple')));
+assert(iserr(try(list[0].push('cannot be added to a tuple'))));
 ```
 
 A tuple only becomes a `tuple` when it is nested inside a list, which means the 'list' will be immutable.

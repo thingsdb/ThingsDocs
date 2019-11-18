@@ -1,6 +1,6 @@
 ---
 title: "new_type"
-weight: 144
+weight: 143
 ---
 
 Creates a new [Type](../../data-types/type). This function *only* creates a new type
@@ -29,14 +29,36 @@ type_name | string | Name of the Type to be created.
 
 The name of the newly created Type.
 
-> This code shows the return value for ***new_type()***:
+> This code shows a use case where ***new_type()*** is helpful:
 
 ```thingsdb,json_response
-new_type('MyType');
+type_a = 'A';
+type_b = 'B';
+
+new_type(type_a);
+new_type(type_b);
+
+set_type(type_a, {
+    b: type_b
+});
+
+set_type(type_b, {
+    a: type_a
+});
+
+// Return type information
+types_info();
 ```
 
 > Return value in JSON format
 
 ```json
-"MyType"
+{
+    "A": {
+        "b": "B"
+    },
+    "B": {
+        "a": "A"
+    }
+}
 ```
