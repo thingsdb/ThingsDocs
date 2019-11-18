@@ -18,6 +18,8 @@ message | str (optional) | Alternative error message.
 ### Return value
 An error value.
 
+### Example
+
 > This code shows ***operation_err()***:
 
 ```thingsdb,json_response

@@ -1166,98 +1166,98 @@
 	"title": "assert_err",
 	"tags": [],
 	"description": "",
-	"content": " Returns an error.\nThis function does not generate an event.\nFunction assert_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows assert_err():\n assert_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;assert_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -50, \u0026quot;error_msg\u0026quot;: \u0026quot;assertion statement has failed\u0026quot; }  "
+	"content": " Returns an error.\nThis function does not generate an event.\nFunction assert_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\nExample  This code shows assert_err():\n assert_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;assert_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -50, \u0026quot;error_msg\u0026quot;: \u0026quot;assertion statement has failed\u0026quot; }  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/errors/auth_err/",
 	"title": "auth_err",
 	"tags": [],
 	"description": "",
-	"content": " Returns an error.\nThis function does not generate an event.\nFunction auth_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows auth_err():\n auth_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;auth_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -56, \u0026quot;error_msg\u0026quot;: \u0026quot;authentication error\u0026quot; }  "
+	"content": " Returns an error.\nThis function does not generate an event.\nFunction auth_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\nExample  This code shows auth_err():\n auth_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;auth_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -56, \u0026quot;error_msg\u0026quot;: \u0026quot;authentication error\u0026quot; }  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/errors/bad_data_err/",
 	"title": "bad_data_err",
 	"tags": [],
 	"description": "",
-	"content": " Returns an error.\nThis function does not generate an event.\nFunction bad_data_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows bad_data_err():\n bad_data_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;bad_data_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -53, \u0026quot;error_msg\u0026quot;: \u0026quot;unable to handle request due to invalid data\u0026quot; }  "
+	"content": " Returns an error.\nThis function does not generate an event.\nFunction bad_data_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\nExample  This code shows bad_data_err():\n bad_data_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;bad_data_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -53, \u0026quot;error_msg\u0026quot;: \u0026quot;unable to handle request due to invalid data\u0026quot; }  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/errors/forbidden_err/",
 	"title": "forbidden_err",
 	"tags": [],
 	"description": "",
-	"content": " Returns an error.\nThis function does not generate an event.\nFunction forbidden_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows forbidden_err():\n forbidden_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;forbidden_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -55, \u0026quot;error_msg\u0026quot;: \u0026quot;forbidden (access denied)\u0026quot; }  "
+	"content": " Returns an error.\nThis function does not generate an event.\nFunction forbidden_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\nExample  This code shows forbidden_err():\n forbidden_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;forbidden_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -55, \u0026quot;error_msg\u0026quot;: \u0026quot;forbidden (access denied)\u0026quot; }  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/errors/lookup_err/",
 	"title": "lookup_err",
 	"tags": [],
 	"description": "",
-	"content": " Returns an error.\nThis function does not generate an event.\nFunction lookup_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows lookup_err():\n lookup_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;lookup_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -54, \u0026quot;error_msg\u0026quot;: \u0026quot;requested resource not found\u0026quot; }  "
+	"content": " Returns an error.\nThis function does not generate an event.\nFunction lookup_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\nExample  This code shows lookup_err():\n lookup_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;lookup_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -54, \u0026quot;error_msg\u0026quot;: \u0026quot;requested resource not found\u0026quot; }  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/errors/max_quota_err/",
 	"title": "max_quota_err",
 	"tags": [],
 	"description": "",
-	"content": " Returns an error.\nThis function does not generate an event.\nFunction max_quota_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows max_quota_err():\n max_quota_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;max_quota_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -57, \u0026quot;error_msg\u0026quot;: \u0026quot;max quota is reached\u0026quot; }  "
+	"content": " Returns an error.\nThis function does not generate an event.\nFunction max_quota_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\nExample  This code shows max_quota_err():\n max_quota_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;max_quota_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -57, \u0026quot;error_msg\u0026quot;: \u0026quot;max quota is reached\u0026quot; }  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/errors/node_err/",
 	"title": "node_err",
 	"tags": [],
 	"description": "",
-	"content": " Returns an error.\nThis function does not generate an event.\nFunction node_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows node_err():\n node_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;node_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -51, \u0026quot;error_msg\u0026quot;: \u0026quot;node is temporary unable to handle the request\u0026quot; }  "
+	"content": " Returns an error.\nThis function does not generate an event.\nFunction node_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\nExample  This code shows node_err():\n node_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;node_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -51, \u0026quot;error_msg\u0026quot;: \u0026quot;node is temporary unable to handle the request\u0026quot; }  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/errors/num_arguments_err/",
 	"title": "num_arguments_err",
 	"tags": [],
 	"description": "",
-	"content": " Returns an error.\nThis function does not generate an event.\nFunction num_arguments_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows num_arguments_err():\n num_arguments_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;num_arguments_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -62, \u0026quot;error_msg\u0026quot;: \u0026quot;wrong number of arguments\u0026quot; }  "
+	"content": " Returns an error.\nThis function does not generate an event.\nFunction num_arguments_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\nExample  This code shows num_arguments_err():\n num_arguments_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;num_arguments_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -62, \u0026quot;error_msg\u0026quot;: \u0026quot;wrong number of arguments\u0026quot; }  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/errors/operation_err/",
 	"title": "operation_err",
 	"tags": [],
 	"description": "",
-	"content": " Returns an error.\nThis function does not generate an event.\nFunction operation_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows operation_err():\n operation_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;operation_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -63, \u0026quot;error_msg\u0026quot;: \u0026quot;operation is not valid in the current context\u0026quot; }  "
+	"content": " Returns an error.\nThis function does not generate an event.\nFunction operation_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\nExample  This code shows operation_err():\n operation_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;operation_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -63, \u0026quot;error_msg\u0026quot;: \u0026quot;operation is not valid in the current context\u0026quot; }  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/errors/overflow_err/",
 	"title": "overflow_err",
 	"tags": [],
 	"description": "",
-	"content": " Returns an error.\nThis function does not generate an event.\nFunction overflow_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows overflow_err():\n overflow_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;overflow_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -59, \u0026quot;error_msg\u0026quot;: \u0026quot;integer overflow\u0026quot; }  "
+	"content": " Returns an error.\nThis function does not generate an event.\nFunction overflow_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\nExample  This code shows overflow_err():\n overflow_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;overflow_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -59, \u0026quot;error_msg\u0026quot;: \u0026quot;integer overflow\u0026quot; }  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/errors/syntax_err/",
 	"title": "syntax_err",
 	"tags": [],
 	"description": "",
-	"content": " Returns an error.\nThis function does not generate an event.\nFunction syntax_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows syntax_err():\n syntax_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;syntax_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -52, \u0026quot;error_msg\u0026quot;: \u0026quot;syntax error in query\u0026quot; }  "
+	"content": " Returns an error.\nThis function does not generate an event.\nFunction syntax_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\nExample  This code shows syntax_err():\n syntax_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;syntax_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -52, \u0026quot;error_msg\u0026quot;: \u0026quot;syntax error in query\u0026quot; }  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/errors/type_err/",
 	"title": "type_err",
 	"tags": [],
 	"description": "",
-	"content": " Returns an error.\nThis function does not generate an event.\nFunction type_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows type_err():\n type_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;type_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -61, \u0026quot;error_msg\u0026quot;: \u0026quot;object of inappropriate type\u0026quot; }  "
+	"content": " Returns an error.\nThis function does not generate an event.\nFunction type_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\nExample  This code shows type_err():\n type_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;type_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -61, \u0026quot;error_msg\u0026quot;: \u0026quot;object of inappropriate type\u0026quot; }  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/errors/value_err/",
 	"title": "value_err",
 	"tags": [],
 	"description": "",
-	"content": " Returns an error.\nThis function does not generate an event.\nFunction value_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows value_err():\n value_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;value_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -60, \u0026quot;error_msg\u0026quot;: \u0026quot;object has the right type but an inappropriate value\u0026quot; }  "
+	"content": " Returns an error.\nThis function does not generate an event.\nFunction value_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\nExample  This code shows value_err():\n value_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;value_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -60, \u0026quot;error_msg\u0026quot;: \u0026quot;object has the right type but an inappropriate value\u0026quot; }  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/errors/zero_div_err/",
 	"title": "zero_div_err",
 	"tags": [],
 	"description": "",
-	"content": " Returns an error.\nThis function does not generate an event.\nFunction zero_div_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\n This code shows zero_div_err():\n zero_div_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;zero_div_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -58, \u0026quot;error_msg\u0026quot;: \u0026quot;division or module by zero\u0026quot; }  "
+	"content": " Returns an error.\nThis function does not generate an event.\nFunction zero_div_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.\nExample  This code shows zero_div_err():\n zero_div_err();   Return value in JSON format\n { \u0026quot;!\u0026quot;: \u0026quot;zero_div_err()\u0026quot;, \u0026quot;error_code\u0026quot;: -58, \u0026quot;error_msg\u0026quot;: \u0026quot;division or module by zero\u0026quot; }  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/",

@@ -18,6 +18,8 @@ message | str (optional) | Alternative error message.
 ### Return value
 An error value.
 
+### Example
+
 > This code shows ***zero_div_err()***:
 
 ```thingsdb,json_response

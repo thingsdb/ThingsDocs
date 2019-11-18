@@ -1747,7 +1747,7 @@ Arguments    Argument Type Description     statement any Statement or block to w
 This function does not generate an event.
 Function assert_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
- This code shows assert_err():
+Example  This code shows assert_err():
  assert_err();   Return value in JSON format
  { &amp;quot;!&amp;quot;: &amp;quot;assert_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -50, &amp;quot;error_msg&amp;quot;: &amp;quot;assertion statement has failed&amp;quot; }  </description>
     </item>
@@ -1762,7 +1762,7 @@ Arguments    Argument Type Description     message str (optional) Alternative er
 This function does not generate an event.
 Function auth_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
- This code shows auth_err():
+Example  This code shows auth_err():
  auth_err();   Return value in JSON format
  { &amp;quot;!&amp;quot;: &amp;quot;auth_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -56, &amp;quot;error_msg&amp;quot;: &amp;quot;authentication error&amp;quot; }  </description>
     </item>
@@ -1777,7 +1777,7 @@ Arguments    Argument Type Description     message str (optional) Alternative er
 This function does not generate an event.
 Function bad_data_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
- This code shows bad_data_err():
+Example  This code shows bad_data_err():
  bad_data_err();   Return value in JSON format
  { &amp;quot;!&amp;quot;: &amp;quot;bad_data_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -53, &amp;quot;error_msg&amp;quot;: &amp;quot;unable to handle request due to invalid data&amp;quot; }  </description>
     </item>
@@ -1792,7 +1792,7 @@ Arguments    Argument Type Description     message str (optional) Alternative er
 This function does not generate an event.
 Function forbidden_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
- This code shows forbidden_err():
+Example  This code shows forbidden_err():
  forbidden_err();   Return value in JSON format
  { &amp;quot;!&amp;quot;: &amp;quot;forbidden_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -55, &amp;quot;error_msg&amp;quot;: &amp;quot;forbidden (access denied)&amp;quot; }  </description>
     </item>
@@ -1807,7 +1807,7 @@ Arguments    Argument Type Description     message str (optional) Alternative er
 This function does not generate an event.
 Function lookup_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
- This code shows lookup_err():
+Example  This code shows lookup_err():
  lookup_err();   Return value in JSON format
  { &amp;quot;!&amp;quot;: &amp;quot;lookup_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -54, &amp;quot;error_msg&amp;quot;: &amp;quot;requested resource not found&amp;quot; }  </description>
     </item>
@@ -1822,7 +1822,7 @@ Arguments    Argument Type Description     message str (optional) Alternative er
 This function does not generate an event.
 Function max_quota_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
- This code shows max_quota_err():
+Example  This code shows max_quota_err():
  max_quota_err();   Return value in JSON format
  { &amp;quot;!&amp;quot;: &amp;quot;max_quota_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -57, &amp;quot;error_msg&amp;quot;: &amp;quot;max quota is reached&amp;quot; }  </description>
     </item>
@@ -1837,7 +1837,7 @@ Arguments    Argument Type Description     message str (optional) Alternative er
 This function does not generate an event.
 Function node_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
- This code shows node_err():
+Example  This code shows node_err():
  node_err();   Return value in JSON format
  { &amp;quot;!&amp;quot;: &amp;quot;node_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -51, &amp;quot;error_msg&amp;quot;: &amp;quot;node is temporary unable to handle the request&amp;quot; }  </description>
     </item>
@@ -1852,7 +1852,7 @@ Arguments    Argument Type Description     message str (optional) Alternative er
 This function does not generate an event.
 Function num_arguments_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
- This code shows num_arguments_err():
+Example  This code shows num_arguments_err():
  num_arguments_err();   Return value in JSON format
  { &amp;quot;!&amp;quot;: &amp;quot;num_arguments_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -62, &amp;quot;error_msg&amp;quot;: &amp;quot;wrong number of arguments&amp;quot; }  </description>
     </item>
@@ -1867,7 +1867,7 @@ Arguments    Argument Type Description     message str (optional) Alternative er
 This function does not generate an event.
 Function operation_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
- This code shows operation_err():
+Example  This code shows operation_err():
  operation_err();   Return value in JSON format
  { &amp;quot;!&amp;quot;: &amp;quot;operation_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -63, &amp;quot;error_msg&amp;quot;: &amp;quot;operation is not valid in the current context&amp;quot; }  </description>
     </item>
@@ -1882,7 +1882,7 @@ Arguments    Argument Type Description     message str (optional) Alternative er
 This function does not generate an event.
 Function overflow_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
- This code shows overflow_err():
+Example  This code shows overflow_err():
  overflow_err();   Return value in JSON format
  { &amp;quot;!&amp;quot;: &amp;quot;overflow_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -59, &amp;quot;error_msg&amp;quot;: &amp;quot;integer overflow&amp;quot; }  </description>
     </item>
@@ -1897,7 +1897,7 @@ Arguments    Argument Type Description     message str (optional) Alternative er
 This function does not generate an event.
 Function syntax_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
- This code shows syntax_err():
+Example  This code shows syntax_err():
  syntax_err();   Return value in JSON format
  { &amp;quot;!&amp;quot;: &amp;quot;syntax_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -52, &amp;quot;error_msg&amp;quot;: &amp;quot;syntax error in query&amp;quot; }  </description>
     </item>
@@ -1912,7 +1912,7 @@ Arguments    Argument Type Description     message str (optional) Alternative er
 This function does not generate an event.
 Function type_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
- This code shows type_err():
+Example  This code shows type_err():
  type_err();   Return value in JSON format
  { &amp;quot;!&amp;quot;: &amp;quot;type_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -61, &amp;quot;error_msg&amp;quot;: &amp;quot;object of inappropriate type&amp;quot; }  </description>
     </item>
@@ -1927,7 +1927,7 @@ Arguments    Argument Type Description     message str (optional) Alternative er
 This function does not generate an event.
 Function value_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
- This code shows value_err():
+Example  This code shows value_err():
  value_err();   Return value in JSON format
  { &amp;quot;!&amp;quot;: &amp;quot;value_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -60, &amp;quot;error_msg&amp;quot;: &amp;quot;object has the right type but an inappropriate value&amp;quot; }  </description>
     </item>
@@ -1942,7 +1942,7 @@ Arguments    Argument Type Description     message str (optional) Alternative er
 This function does not generate an event.
 Function zero_div_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
- This code shows zero_div_err():
+Example  This code shows zero_div_err():
  zero_div_err();   Return value in JSON format
  { &amp;quot;!&amp;quot;: &amp;quot;zero_div_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -58, &amp;quot;error_msg&amp;quot;: &amp;quot;division or module by zero&amp;quot; }  </description>
     </item>
