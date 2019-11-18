@@ -1,6 +1,6 @@
 ---
 title: "zero_div_err"
-weight: 180
+weight: 181
 ---
 
 Returns an [error](../../data-types/error).

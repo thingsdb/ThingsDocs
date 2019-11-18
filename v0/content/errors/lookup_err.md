@@ -1,6 +1,6 @@
 ---
 title: "lookup_err"
-weight: 171
+weight: 172
 ---
 
 Returns an [error](../../data-types/error).

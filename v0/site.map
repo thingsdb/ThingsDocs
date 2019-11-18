@@ -17,6 +17,7 @@ data-types
         len
     closure
         call
+        doc
     error
         len
     float

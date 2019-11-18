@@ -1285,13 +1285,13 @@ hljs.registerLanguage('thingsdb', function(hljs) {
             },
             {
                 className: 'build_in',
-                beginKeywords: 'array assert assert_err auth_err backup_info backups_info ' +
+                beginKeywords: 'assert assert_err auth_err backup_info backups_info ' +
                 'bad_data_err bool closure collection_info collections_info ' +
                 'counters deep del_backup del_collection del_expired del_node ' +
                 'del_procedure del_token del_type del_user err float ' +
                 'forbidden_err grant int isarray isascii isbool isbytes iserr ' +
                 'isfloat isinf isint islist isnan isnil israw isset isstr ' +
-                'isthing istuple isutf8 lookup_err max_quota_err mod_type new ' +
+                'isthing istuple isutf8 list lookup_err max_quota_err mod_type new ' +
                 'new_backup new_collection new_node new_procedure new_token ' +
                 'new_type new_user node_err node_info nodes_info now ' +
                 'num_arguments_err operation_err overflow_err procedure_doc ' +
@@ -1304,7 +1304,7 @@ hljs.registerLanguage('thingsdb', function(hljs) {
             {
                 className: 'function',
                 begin: new RegExp(
-                    '\\.(add|call|contains|del|endswith|extend|filter|find|' +
+                    '\\.(add|call|contains|del|doc|endswith|extend|filter|find|' +
                     'findindex|get|has|id|indexof|keys|len|lower|map|pop|' +
                     'push|remove|set|sort|splice|startswith|test|unwrap|' +
                     'upper|values|wrap)'),

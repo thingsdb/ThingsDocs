@@ -1,6 +1,6 @@
 ---
 title: "del_user"
-weight: 98
+weight: 99
 ---
 
 Delete a user. It is not possible to delete your own user account and a `BAD_REQUEST` will be raised in case you try to.

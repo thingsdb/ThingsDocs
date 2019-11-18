@@ -1,6 +1,6 @@
 ---
 title: "syntax_err"
-weight: 177
+weight: 178
 ---
 
 Returns an [error](../../data-types/error).

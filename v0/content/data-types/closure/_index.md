@@ -6,15 +6,62 @@ weight: 18
 Closures can be used to consume items from a `thing`, `list`, `tuple` or `set`.
 They are also used by [procedures](../../procedures-api) where they get the role of a function.
 
-The following syntax is used to define a closure
+Closure can be stored in a collection or assigned to a variable.
 
-```thingsdb,no_test
-|argument1,... argumentX| ...
+A closure starts with a `|`, then takes optional arguments and a `|` to close, followed by a statement.
+The most simple closure is `||nil` which is a closure without arguments and returns the value `nil` when called.
+
+More complex closures are also possible, check the last example below.
+
+### Methods
+
+Method | Description
+------ | -----------
+[call](./call) | Call the closure with optional arguments.
+[doc](./doc) | Returns the doc string of the closure.
+
+{{% notice note %}}
+It is not possible to use closures with recursion, for example:
+`a = ||.map(a); .map(a);` \
+...will raise `OPERATION_ERROR` *(closures cannot be used recursively)*
+{{% /notice %}}
+
+### Doc string
+
+Doc strings can be set for closures. This is especially useful for when closures
+are used inside a procedure but are not common when closures are used for other purposes.
+
+Usually, a doc string is just a normal string on top of a block in the closure.
+
+For example:
+
+```thingsdb,should_pass
+|| {
+    "this is a doc string.";
+};
 ```
 
-Closure may like any value, be stored in a collection or assigned to a variable.
+Although less common, it is also possible to use a simple comment as doc string, for example:
 
-> For example:
+```thingsdb,should_pass
+|| {
+    // this is a doc string.
+};
+```
+
+It is common to wrap a block scope with [wse](../../collection-api/wse) if a closure has side-effects.
+When this is the case, the doc string will be read from the the first argument, *only* if the first argument contains a block scope with a doc string.
+
+For example:
+```thingsdb,should_pass
+|| wse({
+    "this is still a doc string, even while wrapped using `wse`.";
+});
+```
+
+### Examples
+
+> This code uses a simple closure together with *map* and *call*:
 
 ```thingsdb,json_response
 // create a simple closure which just adds one to a given value
@@ -43,15 +90,20 @@ call_result = add_one.call(41);
 ]
 ```
 
-### Methods
-
-Method | Description
------- | -----------
-[call](./call) | Call the closure with optional arguments.
+Like explained, closures can accept multiple arguments and may contain a block scope instead of just a single line statement. Here is an example:
 
 
-{{% notice note %}}
-It is not possible to use closures with recursion, for example:
-`a = ||.map(a); .map(a);` \
-...will raise `OPERATION_ERROR` *(closures cannot be used recursively)*
-{{% /notice %}}
+```thingsdb,should_pass
+|name, age| {
+    "Returns a thing with properties `name`, `age` and `time`."
+
+    assert(isstr(name) && name.len());
+    assert(isint(age) && age >= 0));
+
+    return {
+        name: name,
+        age: age,
+        time: now()
+    };
+};
+```
