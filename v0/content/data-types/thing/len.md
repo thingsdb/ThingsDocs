@@ -19,6 +19,8 @@ None
 
 Returns the number of items in a thing.
 
+### Example
+
 > This code uses `len()` to return the number of items in a thing:
 
 ```thingsdb,json_response

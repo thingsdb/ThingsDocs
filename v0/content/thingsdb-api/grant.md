@@ -31,9 +31,11 @@ makes sure that the user also gets `MODIFY` and `READ`.
 This function generates an [event](../../events).
 
 ### Function
+
 `grant(target, user, mask);`
 
 ### Arguments
+
 Argument | Type | Description
 -------- | ---- | -----------
 `target` | int/raw | Can be either the `@node`, `@thingsdb`, or a collection [scope](../../scopes).
@@ -41,8 +43,11 @@ Argument | Type | Description
 `mask` | int | Bit-mask for setting privileges.
 
 ### Return value
+
 Returns `nil` when successful. An `INDEX_ERROR` is raised if the user or target
 does not exist.
+
+### Example
 
 > Grant read and watch privileges to user `iris` to collection `stuff`:
 

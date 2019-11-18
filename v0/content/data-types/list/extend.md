@@ -3,7 +3,7 @@ title: "extend"
 weight: 26
 ---
 
-Adds a `list` or `tuple` with items to the end of a [list](..), and returns the new length.
+Adds a [list](..) or [tuple](../../tuple) with items to the end of a [list](..), and returns the new length.
 
 This function generates an [event](../../../events).
 
@@ -11,9 +11,17 @@ This function generates an [event](../../../events).
 
 *list*.`extend(list)`
 
+### Arguments
+
+Argument | Type | Description
+-------- | ---- | -----------
+list | list/tuple | The `list` or `tuple` to extend the `list` with.
+
 ### Return value
 
 Returns the new length of the list.
+
+### Example
 
 > This code extends a list with a given array:
 

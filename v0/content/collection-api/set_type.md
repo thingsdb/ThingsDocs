@@ -22,6 +22,8 @@ value | thing | Thing containing all the properties to be set.
 
 The value `nil`.
 
+### Example
+
 > This code shows how to use ***set_type()***:
 
 ```thingsdb,json_response

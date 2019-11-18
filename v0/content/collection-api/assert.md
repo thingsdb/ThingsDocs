@@ -1,6 +1,6 @@
 ---
 title: "assert"
-weight: 113
+weight: 112
 ---
 
 Raises `ASSERTION_ERROR` if the specified statement evaluates to `false`.
@@ -23,6 +23,8 @@ code | int (optional) | Return a custom error code between 1 and 32. If not give
 
 Assert returns with the return value of the given statement when the statement evaluates to `true`. Otherwise
 an `ASSERTION_ERROR` is raised.
+
+### Example
 
 > This code shows how assert can be used:
 

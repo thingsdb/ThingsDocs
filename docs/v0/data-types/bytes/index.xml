@@ -21,7 +21,7 @@ This function does not generate an event.
 Function bytes.len()
 Arguments None
 Return value Returns length of the byte sequence.
- This code uses len() to return the length of a byte sequence:
+Example  This code uses len() to return the length of a byte sequence:
  bytes(&amp;quot;abc&amp;quot;).len();   Return value in JSON format
  3  </description>
     </item>

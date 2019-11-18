@@ -21,6 +21,8 @@ search_string | str (required) | The characters to be searched for at the end of
 
 Returns `true` the given characters are found at the end of the string and otherwise `false`.
 
+### Example
+
 > This code shows an example using ***endswith()***:
 
 ```thingsdb,json_response

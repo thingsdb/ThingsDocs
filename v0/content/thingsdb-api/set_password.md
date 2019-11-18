@@ -11,17 +11,22 @@ Passwords must contain 1 to 128 printable characters.
 This function generates an [event](../../events).
 
 ### Function
+
 `set_password(username, new_password);`
 
 ### Arguments
+
 Argument | Type | Description
 --------- | ----------- | -----------
 username | str (required) | Name of the user
 new_password | nil/str (required) | New password or `nil`
 
 ### Return value
+
 Returns `nil` if successful. An `INDEX_ERROR` is returned
 if the user does not exist and `BAD_REQUEST` if the new password is not compliant.
+
+### Example
 
 > This code changes the password for user *admin*:
 

@@ -9,13 +9,18 @@ Other nodes are not affected.
 This function does *not* generate an [event](../../events).
 
 ### Function
+
 `reset_counters();`
 
 ### Arguments
+
 None
 
 ### Return value
+
 Returns `nil`.
+
+### Example
 
 > This code will reset the counters on a node:
 

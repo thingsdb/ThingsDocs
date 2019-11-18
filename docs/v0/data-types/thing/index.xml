@@ -20,7 +20,7 @@
 This function generates an event.
 Function thing.del(property)
 Arguments    Argument Type Description     property str (required) Name of the property to delete.    Return value Returns nil if successful. An INDEX_ERROR is returned if the property does not exist or BAD_REQUEST in case the given property is not a valid name.
- This code shows some return values for del():</description>
+Example  This code shows some return values for del():</description>
     </item>
     
     <item>
@@ -58,7 +58,7 @@ Arguments    Argument Type Description     name str (required) Name of the prope
 This function does not generate an event.
 Function thing.has(name)
 Arguments    Argument Type Description     name str (required) Name of the property to check.    Return value Returns true when the given propery name is found and otherwise false.
- This code shows an example use case of has():
+Example  This code shows an example use case of has():
  tmp = {name: &#39;Iris&#39;}; /* Check if `tmp` has a property `name` */ tmp.</description>
     </item>
     
@@ -73,7 +73,7 @@ This function does not generate an event.
 Function thing.id()
 Arguments None
 Return value Returns id of a thing or nil when the thing is not stored.
- This code uses id() to return a collection id:
+Example  This code uses id() to return a collection id:
  .id(); // Returns the collection id   Example return value in JSON format
  3  </description>
     </item>
@@ -101,7 +101,7 @@ This function does not generate an event.
 Function thing.len()
 Arguments None
 Return value Returns the number of items in a thing.
- This code uses len() to return the number of items in a thing:
+Example  This code uses len() to return the number of items in a thing:
  {name: &#39;Iris&#39;, age: 6}.len();   Return value in JSON format
  2  </description>
     </item>

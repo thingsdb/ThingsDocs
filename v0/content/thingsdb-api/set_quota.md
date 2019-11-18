@@ -19,9 +19,11 @@ The current quota values can be viewed with [collection(...)](../../thingsdb-api
 This function generates an [event](../../events).
 
 ### Function
+
 `set_quota(collection, quota_type, quota)`
 
 ### Arguments
+
 Argument | Type | Description
 -------- | ---- | -----------
 collection | str/int (required) | Collection *name* or *id*.
@@ -29,7 +31,10 @@ quota_type | str (required) | Must be one of `'things'`, `'properties'`, `'array
 quota | int/nil (required) | Integer value to set the quota limit or `nil` to disable the quota.
 
 ### Return value
-`nil` when successful.
+
+Returns `nil` when successful.
+
+### Example
 
 > This code sets a quota on the number of things and disables the properties quota on collection *stuff*:
 

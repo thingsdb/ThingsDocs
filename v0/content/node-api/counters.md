@@ -35,6 +35,8 @@ None
 ### Return value
 Returns the current counter values.
 
+### Example
+
 > This code will return node counter values:
 
 ```thingsdb,should_pass,@n

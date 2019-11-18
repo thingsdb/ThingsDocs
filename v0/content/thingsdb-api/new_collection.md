@@ -8,6 +8,7 @@ Create a new collection.
 This function generates an [event](../../events).
 
 ### Function
+
 `new_collection(name);`
 
 ### Arguments
@@ -22,8 +23,11 @@ Use `grant` to give other users access to the collection.
 {{% /notice %}}
 
 ### Return value
+
 Returns the new collection `id` if successful. An `INDEX_ERROR` is raised
 if the collection already exists.
+
+### Example
 
 > This code will create a collection *"awesome_things"*:
 

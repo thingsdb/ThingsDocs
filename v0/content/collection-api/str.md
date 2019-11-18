@@ -24,6 +24,7 @@ value | any (optional) | The value to create a string from.
 
 A new string
 
+### Example
 
 > This code shows some return values for ***str()***:
 

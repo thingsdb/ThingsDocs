@@ -21,6 +21,8 @@ value | error/str (optional) | The error to raise.
 
 None
 
+### Example
+
 > Some examples on how ***raise()*** can be used:
 
 ```thingsdb,should_err

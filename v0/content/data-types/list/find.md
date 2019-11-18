@@ -27,7 +27,9 @@ array    | item, index | Iterate over items in the array. Both `item` and `index
 
 {{% notice note %}}
 The `alt` argument will be *lazy* evaluated. Consider the following example: \
-`elems.find(|e| (e.name == "foo"), items.pop());` \
+\
+  `elems.find(|e| e.name == "foo", items.pop());` \
+\
 Here, the item will *only* be popped, in case `e` with `name` *foo* is *not* found in `elems`.
 {{% /notice %}}
 
@@ -35,6 +37,8 @@ Here, the item will *only* be popped, in case `e` with `name` *foo* is *not* fou
 
 The value of the first element in the array that satisfies the provided testing function;
 otherwise, `nil` or a specified alternative value is returned.
+
+### Example
 
 > This code shows an example using ***find()***:
 

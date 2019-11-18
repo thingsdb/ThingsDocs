@@ -9,9 +9,11 @@ how access privileges can be set for a user.
 This function generates an [event](../../events).
 
 ### Function
+
 `revoke(target, user, mask);`
 
 ### Arguments
+
 Argument | Type | Description
 -------- | ---- | -----------
 `target` | int/raw | Can be either the `@node`, `@thingsdb`, or a collection [scope](../../scopes).
@@ -19,8 +21,11 @@ Argument | Type | Description
 `mask` | int | Bit-mask for revoking privileges.
 
 ### Return value
+
 Returns `nil` when successful. An `INDEX_ERROR` is raised if the user or target
 does not exist.
+
+### Example
 
 > Revoke all privileges for user `iris` on collection `stuff`:
 

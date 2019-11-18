@@ -16,9 +16,11 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/collection_info/</guid>
-      <description>Returns information about a specific collection.
+      <description> Returns information about a specific collection.
 This function does not generate an event.
- Returns information about collection stuff:
+Function collection_info(name_or_id);
+Arguments    Argument Type Description     name_or_id str/int Name or Id of the collection    Return value Returns info about the collection.
+Example  Returns information about collection stuff:
  collection_info(&#39;stuff&#39;);   Example return value in JSON format
  { &amp;quot;collection_id&amp;quot;: 782, &amp;quot;name&amp;quot;: &amp;quot;stuff&amp;quot;, &amp;quot;quota_array_size&amp;quot;: null, &amp;quot;quota_properties&amp;quot;: null, &amp;quot;quota_raw_size&amp;quot;: null, &amp;quot;quota_things&amp;quot;: null, &amp;quot;things&amp;quot;: 61352 }  </description>
     </item>
@@ -47,7 +49,7 @@ Return value List with collection info for all collections in ThingsDB.</descrip
 This function generates an event.
 Function del_collection(name);
 Arguments    Argument Type Description     name str (required) Name of the collection to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the collection does not exist.
- This code will delete collection stuff:
+Example  This code will delete collection stuff:
  // Delete collection `stuff` del_collection(&#39;stuff&#39;);  </description>
     </item>
     
@@ -62,7 +64,7 @@ This function generates an event.
 Function del_expired();
 Arguments None
 Return value Returns nil.
- This code will delete all expired tokens:
+Example  This code will delete all expired tokens:
  // Delete all expired tokens del_expired();  </description>
     </item>
     
@@ -89,7 +91,7 @@ Arguments    Argument Type Description     node_id int (required) Id of the node
 This function generates an event.
 Function del_token(key);
 Arguments    Argument Type Description     key str (required) Token key to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the token is not found.
- This code will delete a token:
+Example  This code will delete a token:
  // Delete a token del_token(&#39;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#39;);  </description>
     </item>
     
@@ -234,7 +236,7 @@ Arguments    Argument Type Description     username str (required) Name of the u
 This function requires GRANT privileges on the @thingsdb scope when a username other then the logged in user is given as argument. For the currently logged in user, READ privileges on the @thingsdb scope are sufficient.
  This function does not generate an event.
 Function user_info([username]);
-Arguments    Argument Type Description     username str (optional) Name of the user     This code returns info for the authenticated user:</description>
+Arguments    Argument Type Description     username str (optional) Name of the user    Return value Returns info about the user.</description>
     </item>
     
     <item>

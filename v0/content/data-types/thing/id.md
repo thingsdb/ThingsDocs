@@ -19,6 +19,8 @@ None
 
 Returns `id` of a thing or `nil` when the thing is not stored.
 
+### Example
+
 > This code uses `id()` to return a collection id:
 
 ```thingsdb,should_pass

@@ -29,6 +29,8 @@ value | any (required) | The value to return the reference count for.
 
 Reference count of the given value.
 
+### Example
+
 > Returns the reference count of a given value:
 
 ```thingsdb,should_pass

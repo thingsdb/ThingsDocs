@@ -21,6 +21,8 @@ thing | thing (required) | Thing to check.
 
 Returns `true` the given thing is found in the set and otherwise `false`.
 
+### Example
+
 > This code shows an example use case of ***has()***:
 
 ```thingsdb,json_response

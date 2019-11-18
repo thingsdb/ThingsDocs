@@ -8,7 +8,7 @@
 
 
     <link rel="shortcut icon" href='/v0/images/favicon.ico' type="image/x-icon" />
-    <title>values :: ThingsDB documentation</title>
+    <title>list :: ThingsDB documentation</title>
 
     
     <link href="/v0/css/nucleus.css?1574091814" rel="stylesheet">
@@ -38,7 +38,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/v0/data-types/thing/values/">
+  <body class="" data-url="/v0/collection-api/list/">
     <nav id="sidebar" class="">
 
 
@@ -388,7 +388,7 @@
   
     
     <li data-nav-id="/v0/data-types/" title="Data Types" class="dd-item 
-        parent
+        
         
         
         ">
@@ -1284,7 +1284,7 @@
   
     
     <li data-nav-id="/v0/data-types/thing/" title="thing" class="dd-item 
-        parent
+        
         
         
         ">
@@ -1479,7 +1479,7 @@
  
   
     
-      <li data-nav-id="/v0/data-types/thing/values/" title="values" class="dd-item active">
+      <li data-nav-id="/v0/data-types/thing/values/" title="values" class="dd-item ">
         <a href="/v0/data-types/thing/values/">
         values
         
@@ -2408,7 +2408,7 @@
   
     
     <li data-nav-id="/v0/collection-api/" title="Collection API" class="dd-item 
-        
+        parent
         
         
         ">
@@ -2909,7 +2909,7 @@
  
   
     
-      <li data-nav-id="/v0/collection-api/list/" title="list" class="dd-item ">
+      <li data-nav-id="/v0/collection-api/list/" title="list" class="dd-item active">
         <a href="/v0/collection-api/list/">
         list
         
@@ -3839,13 +3839,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/v0/'></a> > <a href='/v0/data-types/'>Data Types</a> > <a href='/v0/data-types/thing/'>thing</a> > values
-          
-         
+            <a href='/v0/'></a> > <a href='/v0/collection-api/'>Collection API</a> > list
           
          
           
@@ -3887,7 +3881,7 @@
           
             <h1>
               
-              values
+              list
             </h1>
           
 
@@ -3897,48 +3891,54 @@
 
 
 
-<p>Returns an list with all the property values of a <a href="..">thing</a>.
-The same could be returned using map so the following statement is <code>true</code>:</p>
+<p>Returns a new empty <a href="../../data-types/list">list</a> or returns a list for a given <code>set</code>.</p>
 
-<p><code>(.values() == .map(|_, v| v))</code></p>
-
-
-<div class="notices warning" ><p>Although the <code>values()</code> and <code>map()</code> in the example above will return an list with the same order,
-the order of <em>values</em> in the list is not guaranteed and may be different each time you run the query.</p>
-</div>
-
-
-<p>This function does <em>not</em> generate an <a href="../../../events">event</a>.</p>
+<p>This function does <em>not</em> generate an <a href="../../events">event</a>.</p>
 
 <h3 id="function">Function</h3>
 
-<p><em>thing</em>.<code>values()</code></p>
+<p><code>list([value])</code></p>
 
 <h3 id="arguments">Arguments</h3>
 
-<p>None</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>value</td>
+<td>set/list/tuple (optional)</td>
+<td>Optional value to initialize the list.</td>
+</tr>
+</tbody>
+</table>
 
 <h3 id="return-value">Return value</h3>
 
-<p>Returns an list with property values.</p>
+<p>A new list.</p>
 
 <h3 id="example">Example</h3>
 
 <blockquote>
-<p>This code shows how to use <code>values()</code>:</p>
+<p>This code shows some return values for <strong><em>list()</em></strong>:</p>
 </blockquote>
 
-<pre><code class="language-thingsdb,should_pass">{a: 1, b: 2, c: 3}.values();
+<pre><code class="language-thingsdb,json_response">list( set({}, {}) );
 </code></pre>
 
 <blockquote>
-<p>Return value in JSON format (Warning: the order is <em>NOT</em> guaranteed)</p>
+<p>Return value in JSON format</p>
 </blockquote>
 
 <pre><code class="language-json">[
-    1,
-    2,
-    3
+    {},
+    {}
 ]
 </code></pre>
 
@@ -3958,10 +3958,10 @@ the order of <em>values</em> in the list is not guaranteed and may be different 
         
     
         
-            <a class="nav nav-prev" href="/v0/data-types/thing/set/" title="set"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/v0/collection-api/isutf8/" title="isutf8"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/v0/data-types/thing/wrap/" title="wrap" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/v0/collection-api/mod_type/" title="mod_type" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     
     </div>

@@ -1,6 +1,6 @@
 ---
 title: "err"
-weight: 118
+weight: 117
 ---
 
 Returns an [error](../../data-types/error).
@@ -21,6 +21,8 @@ message | str (optional) | Optional error message.
 ### Return value
 
 An error value.
+
+### Example
 
 > This code shows some return values for ***err()***:
 

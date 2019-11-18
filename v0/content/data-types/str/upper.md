@@ -11,6 +11,16 @@ This function does *not* generate an [event](../../../events).
 
 *str*.`upper()`
 
+### Arguments
+
+None
+
+### Return value
+
+Returns a new string with all characters in upper case.
+
+### Example
+
 > Example using ***upper()***:
 
 ```thingsdb,json_response

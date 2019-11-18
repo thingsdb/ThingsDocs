@@ -21,6 +21,8 @@ value | any (required) | The value to return the type name for.
 
 Type name of the given value.
 
+### Example
+
 > Returns the type name of a given value:
 
 ```thingsdb,json_response

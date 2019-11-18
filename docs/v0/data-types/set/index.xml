@@ -20,7 +20,7 @@
 This function generates an event.
 Function set.add(thing1, thing1, ..., thingX)
 Return value Returns the number of things which are added to the set.
- This code adds things to a set:
+Example  This code adds things to a set:
  s = set(); a = {item: &#39;a&#39;}; b = {item: &#39;b&#39;}; // add both `a` and `b` to set `s`; note that `a` is only added once; s.</description>
     </item>
     
@@ -60,7 +60,7 @@ Arguments    Argument Type Description     callback closure Closure to execute o
 This function does not generate an event.
 Function set.has(thing)
 Arguments    Argument Type Description     thing thing (required) Thing to check.    Return value Returns true the given thing is found in the set and otherwise false.
- This code shows an example use case of has():
+Example  This code shows an example use case of has():
  iris = {name: &#39;Iris&#39;}; s = set(iris); /* Check if iris is in set `s` */ s.</description>
     </item>
     
@@ -75,7 +75,7 @@ This function does not generate an event.
 Function set.len()
 Arguments None
 Return value Returns length of the set.
- This code uses len() to return the number of items in a set:
+Example  This code uses len() to return the number of items in a set:
  set({iten: &#39;a&#39;}, {item: &#39;b&#39;}).len();   Return value in JSON format
  2  </description>
     </item>

@@ -21,6 +21,8 @@ search_string | str (required) | The characters to be searched for in the string
 
 Returns `true` the given characters are found as a substring and otherwise `false`.
 
+### Example
+
 > This code shows an example using ***contains()***:
 
 ```thingsdb,json_response

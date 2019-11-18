@@ -1,6 +1,6 @@
 ---
 title: "isstr"
-weight: 134
+weight: 133
 ---
 
 This function determines whether the value passed to this function is of
@@ -23,6 +23,8 @@ value | any (required) | The value to be tested.
 ### Return value
 
 Returns `true` is the given value is of type `str`, else `false`.
+
+### Example
 
 > This code shows some return values for ***isutf8()***:
 

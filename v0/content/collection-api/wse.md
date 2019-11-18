@@ -5,10 +5,12 @@ weight: 157
 
 Stored closures which can potentially make changes to ThingsDB are called
 *closures with side effects* and must be wrapped with the `wse(..)` function.
-
 This allows ThingsDB before running the query to make an event.
-You should not wrap `wse` around all closures since this would unnecessary
-create events when they may not be required.
+
+{{% notice info %}}
+You should use `wse` only when required since otherwise this would unnecessary
+create events.
+{{% /notice %}}
 
 This function generates an [event](../../events).
 
@@ -25,6 +27,8 @@ statement | any | Statement or block to wrap.
 ### Return value
 
 Return value of the given statement.
+
+### Example
 
 > This code shows an example usage for ***wse()***:
 

@@ -19,6 +19,8 @@ None
 
 Returns length of an error message.
 
+### Example
+
 > This code uses `len()` to return the length of the error message:
 
 ```thingsdb,json_response

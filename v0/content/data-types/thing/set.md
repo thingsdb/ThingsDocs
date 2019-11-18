@@ -24,6 +24,8 @@ value | any (required)  | The value which will be assigned to the property.
 
 The value which will be assigned.
 
+### Example
+
 > This code shows how to use ***set()***:
 
 ```thingsdb,json_response

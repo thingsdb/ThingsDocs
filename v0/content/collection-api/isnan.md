@@ -1,6 +1,6 @@
 ---
 title: "isnan"
-weight: 130
+weight: 129
 ---
 
 This function determines whether the value passed to this function is a number.
@@ -20,6 +20,8 @@ value | any (required) | The value to be tested.
 ### Return value
 
 Returns `true` is the given value is not a number, else `false`.
+
+### Example
 
 > This code shows some return values for ***isnan()***:
 

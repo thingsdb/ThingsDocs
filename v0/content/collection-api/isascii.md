@@ -1,6 +1,6 @@
 ---
 title: "isascii"
-weight: 122
+weight: 121
 ---
 
 This function determines whether the value passed to this function is of
@@ -21,6 +21,8 @@ value | any (required) | The value to be tested.
 ### Return value
 
 Returns `true` is the given value is of type `str` and contains only ascii characters, else `false`.
+
+### Example
 
 > This code shows some return values for ***isascii()***:
 

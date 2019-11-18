@@ -25,6 +25,8 @@ item1, item2, ..., itemX | any (optional) | Items to add, beginning from `start`
 An list containing the deleted elements. If only one element is removed,
 an list of one element is returned. If no elements are removed, an empty list is returned.
 
+### Example
+
 > This code replaces an element in a list at position 2:
 
 ```thingsdb,json_response

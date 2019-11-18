@@ -1,6 +1,6 @@
 ---
 title: "int"
-weight: 120
+weight: 119
 ---
 
 Returns an [int](../../data-types/int) from a specified value.
@@ -32,6 +32,8 @@ value | any (optional) | The value where to create an integer value for.
 An integer value. In case the integer value is too large for a 64bit integer,
 an `OVERFLOW_ERROR` is raised. Other type than `float`, `str`, `bool` or `int`
 will raise a `BAD_REQUEST`.
+
+### Example
 
 > This code shows some return values for ***int()***:
 

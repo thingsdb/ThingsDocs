@@ -9,15 +9,20 @@ Any *tokens* associated with the user will also be deleted.
 This function generates an [event](../../events).
 
 ### Function
+
 `del_user(username);`
 
 ### Arguments
+
 Argument | Type | Description
 -------- | ---- | -----------
 username | str (required) | Username of the user to delete.
 
 ### Return value
+
 Returns `nil` when successful. An `INDEX_ERROR` is raised if the user does not exist.
+
+### Example
 
 > This code will delete user *test*:
 

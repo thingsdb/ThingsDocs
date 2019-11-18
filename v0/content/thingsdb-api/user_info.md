@@ -15,12 +15,20 @@ privileges on the `@thingsdb` scope are sufficient.
 This function does *not* generate an [event](../../events).
 
 ### Function
+
 `user_info([username]);`
 
 ### Arguments
+
 Argument | Type | Description
 --------- | ----------- | -----------
 username | str (optional) | Name of the user
+
+### Return value
+
+Returns [info](../../data-types/info) about the user.
+
+### Example
 
 > This code returns info for the authenticated user:
 

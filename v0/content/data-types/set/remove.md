@@ -34,6 +34,8 @@ set | thing, thing ID | Iterate over things in the set. Both `thing` and `thing 
 
 A list with the removed `things` from the set or an empty list if nothing is removed.
 
+### Example
+
 > This code shows an example using ***remove()*** on a set:
 
 ```thingsdb,should_pass

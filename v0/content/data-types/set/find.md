@@ -42,6 +42,8 @@ Here, the item will *only* be popped, in case `e` with `name` *foo* is *not* fou
 The value of the first element in the set that satisfies the provided testing function;
 otherwise, `nil` or a specified alternative value is returned.
 
+### Example
+
 > This code shows an example using ***find()***:
 
 ```thingsdb,syntax_only

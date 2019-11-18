@@ -11,20 +11,6 @@
     
     
     <item>
-      <title>array</title>
-      <link>https://docs.thingsdb.net/v0/collection-api/array/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/collection-api/array/</guid>
-      <description>Returns a new empty list or returns a list for a given set.
-This function does not generate an event.
-Function array([set])
-Arguments    Argument Type Description     set set (optional) Optional set to initialize the array.    Return value A new array.
- This code shows some return values for array():
- array( set({}, {}) );   Return value in JSON format</description>
-    </item>
-    
-    <item>
       <title>assert</title>
       <link>https://docs.thingsdb.net/v0/collection-api/assert/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -72,7 +58,7 @@ This function does not generate an event.
 Function deep()
 Arguments None
 Return value The current deep value for the running query.
- This code uses deep() to return the default deep value:
+Example  This code uses deep() to return the default deep value:
  deep(); // returns the default since `deep` is not changed   Return value in JSON format</description>
     </item>
     
@@ -97,7 +83,7 @@ If there are still instances of the type you delete, then all instances will be 
 This function does not generate an event.
 Function err([code, [message]])
 Arguments    Argument Type Description     code int (optional) Integer error code between -127 and -50, defaults to -100.   message str (optional) Optional error message.    Return value An error value.
- This code shows some return values for err():
+Example  This code shows some return values for err():
  [ err(), err(-100, &#39;some error occurred&#39;), err(-101), err(-59), ];   Return value in JSON format</description>
     </item>
     
@@ -157,7 +143,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
 This function does not generate an event.
 Function isbool(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the passed value is a boolean else it returns false.
- This code shows some return values for isbool():</description>
+Example  This code shows some return values for isbool():</description>
     </item>
     
     <item>
@@ -170,7 +156,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
 This function does not generate an event.
 Function isbytes(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the passed value is of type bytes else it returns false.
- This code shows some return values for isbytes():</description>
+Example  This code shows some return values for isbytes():</description>
     </item>
     
     <item>
@@ -183,7 +169,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
 This function does not generate an event.
 Function iserr(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the passed value is an error else it returns false.
- This code shows some return values for iserr():</description>
+Example  This code shows some return values for iserr():</description>
     </item>
     
     <item>
@@ -196,7 +182,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
 This function does not generate an event.
 Function isfloat(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the passed value is a float else it returns false.
- This code shows some return values for isfloat():</description>
+Example  This code shows some return values for isfloat():</description>
     </item>
     
     <item>
@@ -209,7 +195,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
 This function does not generate an event.
 Function isinf(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the passed value is a positive or negative infinity else it returns false.
- This code shows some return values for isinf():</description>
+Example  This code shows some return values for isinf():</description>
     </item>
     
     <item>
@@ -222,7 +208,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
 This function does not generate an event.
 Function isint(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the passed value is an integer else it returns false.
- This code shows some return values for isint():</description>
+Example  This code shows some return values for isint():</description>
     </item>
     
     <item>
@@ -235,7 +221,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
 This function does not generate an event.
 Function islist(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the passed value is a list, else it returns false.
- This code shows some return values for islist():</description>
+Example  This code shows some return values for islist():</description>
     </item>
     
     <item>
@@ -248,7 +234,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
 This function does not generate an event.
 Function isnan(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the given value is not a number, else false.
- This code shows some return values for isnan():
+Example  This code shows some return values for isnan():
  [ isnan( true ), isnan( 123 ), isnan( 3.</description>
     </item>
     
@@ -262,7 +248,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
 This function does not generate an event.
 Function isnil(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the given value is nil, else false.
- This code shows some return values for isnil():
+Example  This code shows some return values for isnil():
  [ isnil( nil ), isnil( 0 ), ];   Return value in JSON format</description>
     </item>
     
@@ -276,7 +262,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
 This function does not generate an event.
 Function israw(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the given value is of type str or bytes, else false.
- This code shows some return values for israw():</description>
+Example  This code shows some return values for israw():</description>
     </item>
     
     <item>
@@ -289,7 +275,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
 This function does not generate an event.
 Function isset(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the passed value is a set, else it returns false.
- This code shows some return values for isset():</description>
+Example  This code shows some return values for isset():</description>
     </item>
     
     <item>
@@ -340,7 +326,21 @@ Arguments    Argument Type Description     value any (required) The value to be 
 This function does not generate an event.
 Function isutf8(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the given value is of type raw and contains valid utf8, else false.
- This code shows some return values for isutf8():</description>
+Example  This code shows some return values for isutf8():</description>
+    </item>
+    
+    <item>
+      <title>list</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/list/</guid>
+      <description>Returns a new empty list or returns a list for a given set.
+This function does not generate an event.
+Function list([value])
+Arguments    Argument Type Description     value set/list/tuple (optional) Optional value to initialize the list.    Return value A new list.
+Example  This code shows some return values for list():
+ list( set({}, {}) );   Return value in JSON format</description>
     </item>
     
     <item>
@@ -379,7 +379,7 @@ This function does not generate an event.
 Function now()
 Arguments None
 Return value Current timestamp.
- This code shows the current timestamp:
+Example  This code shows the current timestamp:
  // current timestamp now();   Example return value in JSON format</description>
     </item>
     
@@ -393,7 +393,7 @@ Return value Current timestamp.
 This function does not generate an event.
 Function raise([error])
 Arguments    Argument Type Description     value error/str (optional) The error to raise.    Return value None
- Some examples on how raise() can be used:
+Example  Some examples on how raise() can be used:
  raise (); // raise a default error &#39;This code is not reached&#39;;  raise (&#39;no licenses left&#39;); // raise with a custom message &#39;This code is not reached&#39;;  raise (value_err()); // raise a value error &#39;This code is not reached&#39;;  </description>
     </item>
     
@@ -493,7 +493,7 @@ Arguments    Argument Type Description     statement any (required) The statemen
 This function does not generate an event.
 Function type(value)
 Arguments    Argument Type Description     value any (required) The value to return the type name for.    Return value Type name of the given value.
- Returns the type name of a given value:
+Example  Returns the type name of a given value:
  [ type( nil ), type( 42 ), type( 3.14 ), ];   Example return value in JSON format</description>
     </item>
     
@@ -518,7 +518,7 @@ Arguments    Argument Type Description     type_name str The name of the Type fo
       <description>Returns information about the properties of a given Type.
 This function does not generate an event.
 Function type_info(type_name)
-Arguments    Argument Type Description     type_name str The name of the Type for which the information about the properties has to be returned.    Return value A Thing containing information about the properties of a given Type.</description>
+Arguments    Argument Type Description     type_name str The name of the Type for which the information about the properties has to be returned.    Return value Returns info about the type.</description>
     </item>
     
     <item>
@@ -529,9 +529,9 @@ Arguments    Argument Type Description     type_name str The name of the Type fo
       <guid>https://docs.thingsdb.net/v0/collection-api/types_info/</guid>
       <description>Returns information about the properties of all Types within a collection.
 This function does not generate an event.
-Function type_info()
+Function types_info()
 Arguments None
-Return value A Thing containing information about the properties of all Types within a collection.</description>
+Return value Types info for all types in the collection.</description>
     </item>
     
     <item>
@@ -540,9 +540,9 @@ Return value A Thing containing information about the properties of all Types wi
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/wse/</guid>
-      <description>Stored closures which can potentially make changes to ThingsDB are called closures with side effects and must be wrapped with the wse(..) function.
-This allows ThingsDB before running the query to make an event. You should not wrap wse around all closures since this would unnecessary create events when they may not be required.
-This function generates an event.
+      <description>Stored closures which can potentially make changes to ThingsDB are called closures with side effects and must be wrapped with the wse(..) function. This allows ThingsDB before running the query to make an event.
+You should use wse only when required since otherwise this would unnecessary create events.
+ This function generates an event.
 Function wse(statement)
 Arguments    Argument Type Description     statement any Statement or block to wrap.</description>
     </item>

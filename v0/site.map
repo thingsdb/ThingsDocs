@@ -109,7 +109,6 @@ thingsdb-api
     user_info
     users_info
 collection-api
-    array
     assert
     bool
     bytes
@@ -135,6 +134,7 @@ collection-api
     isthing
     istuple
     isutf8
+    list
     mod_type
         add
         del

@@ -15,6 +15,8 @@ This function generates an [event](../../../events).
 
 Returns the new length of the list.
 
+### Example
+
 > This code pushes values to a list:
 
 ```thingsdb,json_response

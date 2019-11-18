@@ -92,7 +92,7 @@ This function does not generate an event.
 Function reset_counters();
 Arguments None
 Return value Returns nil.
- This code will reset the counters on a node:
+Example  This code will reset the counters on a node:
  // resets counters on `localhost:9200` reset_counters();   Example return value in JSON format (the new collection id)
  null  </description>
     </item>

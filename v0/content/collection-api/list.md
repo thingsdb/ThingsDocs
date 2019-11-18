@@ -1,6 +1,6 @@
 ---
-title: "array"
-weight: 112
+title: "list"
+weight: 137
 ---
 
 Returns a new empty [list](../../data-types/list) or returns a list for a given `set`.
@@ -9,22 +9,24 @@ This function does *not* generate an [event](../../events).
 
 ### Function
 
-`array([set])`
+`list([value])`
 
 ### Arguments
 
 Argument | Type | Description
 -------- | ---- | -----------
-set | set (optional) | Optional set to initialize the array.
+value | set/list/tuple (optional) | Optional value to initialize the list.
 
 ### Return value
 
-A new array.
+A new list.
 
-> This code shows some return values for ***array()***:
+### Example
+
+> This code shows some return values for ***list()***:
 
 ```thingsdb,json_response
-array( set({}, {}) );
+list( set({}, {}) );
 ```
 
 > Return value in JSON format

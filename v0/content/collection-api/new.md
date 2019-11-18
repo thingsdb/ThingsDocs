@@ -26,6 +26,8 @@ value | thing | Thing containing all the properties to be added to the new insta
 
 A Thing containing all the properties which have been added to the new instance of the given Type.
 
+### Example
+
 > This code shows how to use ***new()***:
 
 ```thingsdb,json_response

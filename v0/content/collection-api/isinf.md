@@ -1,6 +1,6 @@
 ---
 title: "isinf"
-weight: 127
+weight: 126
 ---
 
 This function determines whether the value passed to this function
@@ -21,6 +21,8 @@ value | any (required) | The value to be tested.
 ### Return value
 
 Returns `true` is the passed value is a positive or negative *infinity* else it returns `false`.
+
+### Example
 
 > This code shows some return values for ***isinf()***:
 

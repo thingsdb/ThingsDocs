@@ -9,7 +9,7 @@ This function does *not* generate an [event](../../events).
 
 ### Function
 
-`type_info()`
+`types_info()`
 
 ### Arguments
 
@@ -17,4 +17,4 @@ None
 
 ### Return value
 
-A Thing containing information about the properties of all Types within a collection.
+Types [info](../../data-types/info) for all types in the collection.

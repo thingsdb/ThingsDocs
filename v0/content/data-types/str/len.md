@@ -24,6 +24,8 @@ None
 
 Returns length of the string.
 
+### Example
+
 > This code uses `len()` to return the length of a string:
 
 ```thingsdb,json_response

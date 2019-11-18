@@ -1,6 +1,6 @@
 ---
 title: "del_type"
-weight: 117
+weight: 116
 ---
 
 Deletes an existing [Type](../../data-types/type).
@@ -31,6 +31,8 @@ type_name | string | Name of the Type to be deleted.
 ### Return value
 
 The value `nil`.
+
+### Example
 
 > This code shows how to use ***del_type()***:
 

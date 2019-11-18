@@ -21,7 +21,7 @@ This function does not generate an event.
 Function error.len()
 Arguments None
 Return value Returns length of an error message.
- This code uses len() to return the length of the error message:
+Example  This code uses len() to return the length of the error message:
  type_err(&amp;quot;incorrect type given&amp;quot;).len();   Return value in JSON format
  20  </description>
     </item>

@@ -22,6 +22,8 @@ None
 
 Current timestamp.
 
+### Example
+
 > This code shows the current timestamp:
 
 ```thingsdb,should_pass

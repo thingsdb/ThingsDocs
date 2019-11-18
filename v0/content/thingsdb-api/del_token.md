@@ -8,15 +8,20 @@ Delete a token.
 This function generates an [event](../../events).
 
 ### Function
+
 `del_token(key);`
 
 ### Arguments
+
 Argument | Type | Description
 -------- | ---- | -----------
 key | str (required) | Token key to delete.
 
 ### Return value
+
 Returns `nil` when successful. An `INDEX_ERROR` is raised if the token is not found.
+
+### Example
 
 > This code will delete a token:
 

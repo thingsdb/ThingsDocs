@@ -1,6 +1,6 @@
 ---
 title: "islist"
-weight: 129
+weight: 128
 ---
 
 This function determines whether the value passed to this function
@@ -21,6 +21,8 @@ value | any (required) | The value to be tested.
 ### Return value
 
 Returns `true` is the passed value is a `list`, else it returns `false`.
+
+### Example
 
 > This code shows some return values for ***islist()***:
 

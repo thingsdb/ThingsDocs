@@ -21,13 +21,18 @@ zone | Zone number to which the node is assigned.
 This function does *not* generate an [event](../../events).
 
 ### Function
+
 `nodes_info()`
 
 ### Arguments
+
 None
 
 ### Return value
+
 List with node [info](../../data-types/info) for all nodes in ThingsDB.
+
+### Example
 
 > This code returns info for all ThingsDB nodes:
 

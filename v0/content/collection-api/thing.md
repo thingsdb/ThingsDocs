@@ -23,6 +23,8 @@ id | int (optional) | The id for the thing to return.
 Returns a [thing](../../data-types/thing).
 An `INDEX_ERROR` is returned in case an id is given which is not found inside the collection.
 
+### Example
+
 > This code shows an example usage of ***thing()***:
 
 ```thingsdb,should_pass

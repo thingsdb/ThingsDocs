@@ -82,7 +82,7 @@ This function does not generate an event.
 Function bytes.len()
 Arguments None
 Return value Returns length of the byte sequence.
- This code uses len() to return the length of a byte sequence:
+Example  This code uses len() to return the length of a byte sequence:
  bytes(&amp;quot;abc&amp;quot;).len();   Return value in JSON format
  3  </description>
     </item>
@@ -96,9 +96,10 @@ Return value Returns length of the byte sequence.
       <description>Call a closure with optional arguments.
 This function does not generate an event.
 Function closure.call()
-Arguments The exact number of arguments which the closure accepts must be given. It is not possible to assign default values to arguments but something similar can be accomplished by checking the argument within the closure. See the example.
-Return value Returns the closure response.
- Example code using call:
+Arguments The exact number of arguments for the closure must be given.
+It is not possible to assign default values to arguments but something similar can be accomplished by checking the argument within the closure. See the example below.
+ Return value Returns the closure response.
+Example  Example code using call:
  // create a greet closure greet = |name| isstr(name) ?</description>
     </item>
     
@@ -113,7 +114,7 @@ This function does not generate an event.
 Function error.len()
 Arguments None
 Return value Returns length of an error message.
- This code uses len() to return the length of the error message:
+Example  This code uses len() to return the length of the error message:
  type_err(&amp;quot;incorrect type given&amp;quot;).len();   Return value in JSON format
  20  </description>
     </item>
@@ -158,9 +159,8 @@ Notations    Base Example Description     2 0b1111011 Binary notation starts wit
       <description>Adds a list or tuple with items to the end of a list, and returns the new length.
 This function generates an event.
 Function list.extend(list)
-Return value Returns the new length of the list.
- This code extends a list with a given array:
- a = [1, 2, 3]; b = [4, 5, 6]; a.extend(b); // returns the new length, 6 a;   Return value in JSON format</description>
+Arguments    Argument Type Description     list list/tuple The list or tuple to extend the list with.    Return value Returns the new length of the list.
+Example  This code extends a list with a given array:</description>
     </item>
     
     <item>
@@ -224,7 +224,7 @@ This function does not generate an event.
 Function array.len()
 Arguments None
 Return value Returns length of the array.
- This code uses len() to return the number of items in a collection:
+Example  This code uses len() to return the number of items in a collection:
  [1, 2, 3, 4].len();   Return value in JSON format
  4  </description>
     </item>
@@ -240,7 +240,7 @@ This function does not generate an event.
 Function array.map(callback)
 Arguments Explanation of the callback argument:
    Iterable Arguments Description     array item, index Iterate over all items in the array. Both item and index are optional.    Return value A new list with each element being the result of the callback function.
- This code shows an example using map():</description>
+Example  This code shows an example using map():</description>
     </item>
     
     <item>
@@ -254,7 +254,7 @@ This function generates an event.
 Function list.pop()
 Arguments None
 Return value The removed element from the list. An INDEX_ERROR is raised if the list is empty.
- This code show an example usage of pop():</description>
+Example  This code show an example usage of pop():</description>
     </item>
     
     <item>
@@ -267,7 +267,7 @@ Return value The removed element from the list. An INDEX_ERROR is raised if the 
 This function generates an event.
 Function list.push(item1, item2, ..., itemX)
 Return value Returns the new length of the list.
- This code pushes values to a list:
+Example  This code pushes values to a list:
  list = [1, 2, 3]; list.push(4, 5, 6);   Return value in JSON format
  6  </description>
     </item>
@@ -340,7 +340,7 @@ Methods that use regular expressions    Method Description     test A str method
 This function generates an event.
 Function set.add(thing1, thing1, ..., thingX)
 Return value Returns the number of things which are added to the set.
- This code adds things to a set:
+Example  This code adds things to a set:
  s = set(); a = {item: &#39;a&#39;}; b = {item: &#39;b&#39;}; // add both `a` and `b` to set `s`; note that `a` is only added once; s.</description>
     </item>
     
@@ -380,7 +380,7 @@ Arguments    Argument Type Description     callback closure Closure to execute o
 This function does not generate an event.
 Function set.has(thing)
 Arguments    Argument Type Description     thing thing (required) Thing to check.    Return value Returns true the given thing is found in the set and otherwise false.
- This code shows an example use case of has():
+Example  This code shows an example use case of has():
  iris = {name: &#39;Iris&#39;}; s = set(iris); /* Check if iris is in set `s` */ s.</description>
     </item>
     
@@ -395,7 +395,7 @@ This function does not generate an event.
 Function set.len()
 Arguments None
 Return value Returns length of the set.
- This code uses len() to return the number of items in a set:
+Example  This code uses len() to return the number of items in a set:
  set({iten: &#39;a&#39;}, {item: &#39;b&#39;}).len();   Return value in JSON format
  2  </description>
     </item>
@@ -435,7 +435,7 @@ It is also possible to specify things as arguments. In this case a list is retur
 This function does not generate an event.
 Function str.contains(search_string)
 Arguments    Argument Type Description     search_string str (required) The characters to be searched for in the string.    Return value Returns true the given characters are found as a substring and otherwise false.
- This code shows an example using contains():</description>
+Example  This code shows an example using contains():</description>
     </item>
     
     <item>
@@ -448,7 +448,7 @@ Arguments    Argument Type Description     search_string str (required) The char
 This function does not generate an event.
 Function str.endswith(search_string)
 Arguments    Argument Type Description     search_string str (required) The characters to be searched for at the end of this string.    Return value Returns true the given characters are found at the end of the string and otherwise false.
- This code shows an example using endswith():</description>
+Example  This code shows an example using endswith():</description>
     </item>
     
     <item>
@@ -463,7 +463,7 @@ Be aware that the length represents the number of bytes and not the number of ch
 Function str.len()
 Arguments None
 Return value Returns length of the string.
- This code uses len() to return the length of a string:
+Example  This code uses len() to return the length of a string:
  [ {&#39;Hello&#39;.len(); /* 5 bytes */ }, {&#39;π&#39;.len(); /* 2 bytes, not 1 */ }, ]   Return value in JSON format</description>
     </item>
     
@@ -476,7 +476,9 @@ Return value Returns length of the string.
       <description> Return a new string in which all case-based characters are in lower case.
 This function does not generate an event.
 Function str.lower()
- Example using lower():
+Arguments None
+Return value Returns a new string with all characters in lower case.
+Example  Example using lower():
  &#39;Hello World!!&#39;.lower();   Return value in JSON format
  &amp;quot;hello world!!&amp;quot;  </description>
     </item>
@@ -491,7 +493,7 @@ Function str.lower()
 This function does not generate an event.
 Function str.startswith(search_string)
 Arguments    Argument Type Description     search_string str (required) The characters to be searched for at the start of this string.    Return value Returns true the given characters are found at the start of the string and otherwise false.
- This code shows an example using startswith():</description>
+Example  This code shows an example using startswith():</description>
     </item>
     
     <item>
@@ -504,7 +506,7 @@ Arguments    Argument Type Description     search_string str (required) The char
 This function does not generate an event.
 Function str.test(regex)
 Arguments    Argument Type Description     regex regex (required) The regular expression to test against the string.    Return value true if there is a match between the string and the specified regular expression, otherwise false.
- Examples using test():</description>
+Example  Examples using test():</description>
     </item>
     
     <item>
@@ -516,7 +518,9 @@ Arguments    Argument Type Description     regex regex (required) The regular ex
       <description> Return a new string in which all case-based characters are in upper case.
 This function does not generate an event.
 Function str.upper()
- Example using upper():
+Arguments None
+Return value Returns a new string with all characters in upper case.
+Example  Example using upper():
  &#39;Hello World!!&#39;.upper();   Return value in JSON format
  &amp;quot;HELLO WORLD!!&amp;quot;  </description>
     </item>
@@ -531,7 +535,7 @@ Function str.upper()
 This function generates an event.
 Function thing.del(property)
 Arguments    Argument Type Description     property str (required) Name of the property to delete.    Return value Returns nil if successful. An INDEX_ERROR is returned if the property does not exist or BAD_REQUEST in case the given property is not a valid name.
- This code shows some return values for del():</description>
+Example  This code shows some return values for del():</description>
     </item>
     
     <item>
@@ -569,7 +573,7 @@ Arguments    Argument Type Description     name str (required) Name of the prope
 This function does not generate an event.
 Function thing.has(name)
 Arguments    Argument Type Description     name str (required) Name of the property to check.    Return value Returns true when the given propery name is found and otherwise false.
- This code shows an example use case of has():
+Example  This code shows an example use case of has():
  tmp = {name: &#39;Iris&#39;}; /* Check if `tmp` has a property `name` */ tmp.</description>
     </item>
     
@@ -584,7 +588,7 @@ This function does not generate an event.
 Function thing.id()
 Arguments None
 Return value Returns id of a thing or nil when the thing is not stored.
- This code uses id() to return a collection id:
+Example  This code uses id() to return a collection id:
  .id(); // Returns the collection id   Example return value in JSON format
  3  </description>
     </item>
@@ -612,7 +616,7 @@ This function does not generate an event.
 Function thing.len()
 Arguments None
 Return value Returns the number of items in a thing.
- This code uses len() to return the number of items in a thing:
+Example  This code uses len() to return the number of items in a thing:
  {name: &#39;Iris&#39;, age: 6}.len();   Return value in JSON format
  2  </description>
     </item>
@@ -839,7 +843,7 @@ This function does not generate an event.
 Function reset_counters();
 Arguments None
 Return value Returns nil.
- This code will reset the counters on a node:
+Example  This code will reset the counters on a node:
  // resets counters on `localhost:9200` reset_counters();   Example return value in JSON format (the new collection id)
  null  </description>
     </item>
@@ -868,9 +872,11 @@ Return value Returns nil.
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/collection_info/</guid>
-      <description>Returns information about a specific collection.
+      <description> Returns information about a specific collection.
 This function does not generate an event.
- Returns information about collection stuff:
+Function collection_info(name_or_id);
+Arguments    Argument Type Description     name_or_id str/int Name or Id of the collection    Return value Returns info about the collection.
+Example  Returns information about collection stuff:
  collection_info(&#39;stuff&#39;);   Example return value in JSON format
  { &amp;quot;collection_id&amp;quot;: 782, &amp;quot;name&amp;quot;: &amp;quot;stuff&amp;quot;, &amp;quot;quota_array_size&amp;quot;: null, &amp;quot;quota_properties&amp;quot;: null, &amp;quot;quota_raw_size&amp;quot;: null, &amp;quot;quota_things&amp;quot;: null, &amp;quot;things&amp;quot;: 61352 }  </description>
     </item>
@@ -899,7 +905,7 @@ Return value List with collection info for all collections in ThingsDB.</descrip
 This function generates an event.
 Function del_collection(name);
 Arguments    Argument Type Description     name str (required) Name of the collection to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the collection does not exist.
- This code will delete collection stuff:
+Example  This code will delete collection stuff:
  // Delete collection `stuff` del_collection(&#39;stuff&#39;);  </description>
     </item>
     
@@ -914,7 +920,7 @@ This function generates an event.
 Function del_expired();
 Arguments None
 Return value Returns nil.
- This code will delete all expired tokens:
+Example  This code will delete all expired tokens:
  // Delete all expired tokens del_expired();  </description>
     </item>
     
@@ -941,7 +947,7 @@ Arguments    Argument Type Description     node_id int (required) Id of the node
 This function generates an event.
 Function del_token(key);
 Arguments    Argument Type Description     key str (required) Token key to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the token is not found.
- This code will delete a token:
+Example  This code will delete a token:
  // Delete a token del_token(&#39;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#39;);  </description>
     </item>
     
@@ -1086,7 +1092,7 @@ Arguments    Argument Type Description     username str (required) Name of the u
 This function requires GRANT privileges on the @thingsdb scope when a username other then the logged in user is given as argument. For the currently logged in user, READ privileges on the @thingsdb scope are sufficient.
  This function does not generate an event.
 Function user_info([username]);
-Arguments    Argument Type Description     username str (optional) Name of the user     This code returns info for the authenticated user:</description>
+Arguments    Argument Type Description     username str (optional) Name of the user    Return value Returns info about the user.</description>
     </item>
     
     <item>
@@ -1102,20 +1108,6 @@ This function does not generate an event.
 Function users_info()
 Arguments None
 Return value List with user info for all users in ThingsDB.</description>
-    </item>
-    
-    <item>
-      <title>array</title>
-      <link>https://docs.thingsdb.net/v0/collection-api/array/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/collection-api/array/</guid>
-      <description>Returns a new empty list or returns a list for a given set.
-This function does not generate an event.
-Function array([set])
-Arguments    Argument Type Description     set set (optional) Optional set to initialize the array.    Return value A new array.
- This code shows some return values for array():
- array( set({}, {}) );   Return value in JSON format</description>
     </item>
     
     <item>
@@ -1166,7 +1158,7 @@ This function does not generate an event.
 Function deep()
 Arguments None
 Return value The current deep value for the running query.
- This code uses deep() to return the default deep value:
+Example  This code uses deep() to return the default deep value:
  deep(); // returns the default since `deep` is not changed   Return value in JSON format</description>
     </item>
     
@@ -1191,7 +1183,7 @@ If there are still instances of the type you delete, then all instances will be 
 This function does not generate an event.
 Function err([code, [message]])
 Arguments    Argument Type Description     code int (optional) Integer error code between -127 and -50, defaults to -100.   message str (optional) Optional error message.    Return value An error value.
- This code shows some return values for err():
+Example  This code shows some return values for err():
  [ err(), err(-100, &#39;some error occurred&#39;), err(-101), err(-59), ];   Return value in JSON format</description>
     </item>
     
@@ -1251,7 +1243,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
 This function does not generate an event.
 Function isbool(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the passed value is a boolean else it returns false.
- This code shows some return values for isbool():</description>
+Example  This code shows some return values for isbool():</description>
     </item>
     
     <item>
@@ -1264,7 +1256,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
 This function does not generate an event.
 Function isbytes(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the passed value is of type bytes else it returns false.
- This code shows some return values for isbytes():</description>
+Example  This code shows some return values for isbytes():</description>
     </item>
     
     <item>
@@ -1277,7 +1269,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
 This function does not generate an event.
 Function iserr(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the passed value is an error else it returns false.
- This code shows some return values for iserr():</description>
+Example  This code shows some return values for iserr():</description>
     </item>
     
     <item>
@@ -1290,7 +1282,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
 This function does not generate an event.
 Function isfloat(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the passed value is a float else it returns false.
- This code shows some return values for isfloat():</description>
+Example  This code shows some return values for isfloat():</description>
     </item>
     
     <item>
@@ -1303,7 +1295,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
 This function does not generate an event.
 Function isinf(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the passed value is a positive or negative infinity else it returns false.
- This code shows some return values for isinf():</description>
+Example  This code shows some return values for isinf():</description>
     </item>
     
     <item>
@@ -1316,7 +1308,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
 This function does not generate an event.
 Function isint(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the passed value is an integer else it returns false.
- This code shows some return values for isint():</description>
+Example  This code shows some return values for isint():</description>
     </item>
     
     <item>
@@ -1329,7 +1321,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
 This function does not generate an event.
 Function islist(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the passed value is a list, else it returns false.
- This code shows some return values for islist():</description>
+Example  This code shows some return values for islist():</description>
     </item>
     
     <item>
@@ -1342,7 +1334,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
 This function does not generate an event.
 Function isnan(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the given value is not a number, else false.
- This code shows some return values for isnan():
+Example  This code shows some return values for isnan():
  [ isnan( true ), isnan( 123 ), isnan( 3.</description>
     </item>
     
@@ -1356,7 +1348,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
 This function does not generate an event.
 Function isnil(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the given value is nil, else false.
- This code shows some return values for isnil():
+Example  This code shows some return values for isnil():
  [ isnil( nil ), isnil( 0 ), ];   Return value in JSON format</description>
     </item>
     
@@ -1370,7 +1362,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
 This function does not generate an event.
 Function israw(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the given value is of type str or bytes, else false.
- This code shows some return values for israw():</description>
+Example  This code shows some return values for israw():</description>
     </item>
     
     <item>
@@ -1383,7 +1375,7 @@ Arguments    Argument Type Description     value any (required) The value to be 
 This function does not generate an event.
 Function isset(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the passed value is a set, else it returns false.
- This code shows some return values for isset():</description>
+Example  This code shows some return values for isset():</description>
     </item>
     
     <item>
@@ -1434,7 +1426,21 @@ Arguments    Argument Type Description     value any (required) The value to be 
 This function does not generate an event.
 Function isutf8(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the given value is of type raw and contains valid utf8, else false.
- This code shows some return values for isutf8():</description>
+Example  This code shows some return values for isutf8():</description>
+    </item>
+    
+    <item>
+      <title>list</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/list/</guid>
+      <description>Returns a new empty list or returns a list for a given set.
+This function does not generate an event.
+Function list([value])
+Arguments    Argument Type Description     value set/list/tuple (optional) Optional value to initialize the list.    Return value A new list.
+Example  This code shows some return values for list():
+ list( set({}, {}) );   Return value in JSON format</description>
     </item>
     
     <item>
@@ -1509,7 +1515,7 @@ This function does not generate an event.
 Function now()
 Arguments None
 Return value Current timestamp.
- This code shows the current timestamp:
+Example  This code shows the current timestamp:
  // current timestamp now();   Example return value in JSON format</description>
     </item>
     
@@ -1523,7 +1529,7 @@ Return value Current timestamp.
 This function does not generate an event.
 Function raise([error])
 Arguments    Argument Type Description     value error/str (optional) The error to raise.    Return value None
- Some examples on how raise() can be used:
+Example  Some examples on how raise() can be used:
  raise (); // raise a default error &#39;This code is not reached&#39;;  raise (&#39;no licenses left&#39;); // raise with a custom message &#39;This code is not reached&#39;;  raise (value_err()); // raise a value error &#39;This code is not reached&#39;;  </description>
     </item>
     
@@ -1623,7 +1629,7 @@ Arguments    Argument Type Description     statement any (required) The statemen
 This function does not generate an event.
 Function type(value)
 Arguments    Argument Type Description     value any (required) The value to return the type name for.    Return value Type name of the given value.
- Returns the type name of a given value:
+Example  Returns the type name of a given value:
  [ type( nil ), type( 42 ), type( 3.14 ), ];   Example return value in JSON format</description>
     </item>
     
@@ -1648,7 +1654,7 @@ Arguments    Argument Type Description     type_name str The name of the Type fo
       <description>Returns information about the properties of a given Type.
 This function does not generate an event.
 Function type_info(type_name)
-Arguments    Argument Type Description     type_name str The name of the Type for which the information about the properties has to be returned.    Return value A Thing containing information about the properties of a given Type.</description>
+Arguments    Argument Type Description     type_name str The name of the Type for which the information about the properties has to be returned.    Return value Returns info about the type.</description>
     </item>
     
     <item>
@@ -1659,9 +1665,9 @@ Arguments    Argument Type Description     type_name str The name of the Type fo
       <guid>https://docs.thingsdb.net/v0/collection-api/types_info/</guid>
       <description>Returns information about the properties of all Types within a collection.
 This function does not generate an event.
-Function type_info()
+Function types_info()
 Arguments None
-Return value A Thing containing information about the properties of all Types within a collection.</description>
+Return value Types info for all types in the collection.</description>
     </item>
     
     <item>
@@ -1670,9 +1676,9 @@ Return value A Thing containing information about the properties of all Types wi
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/wse/</guid>
-      <description>Stored closures which can potentially make changes to ThingsDB are called closures with side effects and must be wrapped with the wse(..) function.
-This allows ThingsDB before running the query to make an event. You should not wrap wse around all closures since this would unnecessary create events when they may not be required.
-This function generates an event.
+      <description>Stored closures which can potentially make changes to ThingsDB are called closures with side effects and must be wrapped with the wse(..) function. This allows ThingsDB before running the query to make an event.
+You should use wse only when required since otherwise this would unnecessary create events.
+ This function generates an event.
 Function wse(statement)
 Arguments    Argument Type Description     statement any Statement or block to wrap.</description>
     </item>

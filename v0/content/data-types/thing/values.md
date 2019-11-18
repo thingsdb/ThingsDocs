@@ -27,6 +27,8 @@ None
 
 Returns an list with property values.
 
+### Example
+
 > This code shows how to use `values()`:
 
 ```thingsdb,should_pass

@@ -23,6 +23,8 @@ Returns `nil` if successful. An `INDEX_ERROR` is returned
 if the property does not exist or `BAD_REQUEST` in case the given property is
 not a valid [name](../../../names).
 
+### Example
+
 > This code shows some return values for ***del()***:
 
 ```thingsdb,json_response

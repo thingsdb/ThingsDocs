@@ -1,6 +1,6 @@
 ---
 title: "isnil"
-weight: 131
+weight: 130
 ---
 
 This function determines whether the value passed to this function is [nil](../../data-types/nil).
@@ -20,6 +20,8 @@ value | any (required) | The value to be tested.
 ### Return value
 
 Returns `true` is the given value is `nil`, else `false`.
+
+### Example
 
 > This code shows some return values for ***isnil()***:
 

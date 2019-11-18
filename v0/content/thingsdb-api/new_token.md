@@ -25,9 +25,11 @@ is reached. Existing tokens can be removed with [del_token](../../thingsdb-api/d
 This function generates an [event](../../events).
 
 ### Function
+
 `new_token(username, [, expiration_time] [, description]);`
 
 ### Arguments
+
 Argument | Type | Description
 -------- | ---- | -----------
 username | str (required) | Name of the user.
@@ -35,7 +37,10 @@ expiration_time | nil/int/float/raw (optional) | Expiration date of the token.
 description | str (optional) | Token description.
 
 ### Return value
+
 Returns the new token key.
+
+### Example
 
 > Create a new token for user `admin`:
 

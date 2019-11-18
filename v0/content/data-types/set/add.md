@@ -17,6 +17,8 @@ This function generates an [event](../../../events).
 
 Returns the number of `things` which are added to the set.
 
+### Example
+
 > This code adds things to a set:
 
 ```thingsdb,json_response

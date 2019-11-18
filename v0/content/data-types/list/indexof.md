@@ -22,6 +22,8 @@ value | any | The value to find the index for.
 
 Index at which the first item matches a given value, or `nil` if it is not present.
 
+### Example
+
 > This code shows an example using ***indexof()***:
 
 ```thingsdb,json_response

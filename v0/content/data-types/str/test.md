@@ -21,6 +21,8 @@ regex | regex (required) | The regular expression to test against the string.
 
 `true` if there is a match between the string and the specified regular expression, otherwise `false`.
 
+### Example
+
 > Examples using ***test()***:
 
 ```thingsdb,json_response

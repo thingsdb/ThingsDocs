@@ -21,6 +21,8 @@ name | str (required) | Name of the property to check.
 
 Returns `true` when the given propery name is found and otherwise `false`.
 
+### Example
+
 > This code shows an example use case of ***has()***:
 
 ```thingsdb,json_response

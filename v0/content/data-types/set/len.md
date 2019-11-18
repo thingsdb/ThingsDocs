@@ -19,6 +19,8 @@ None
 
 Returns length of the set.
 
+### Example
+
 > This code uses `len()` to return the number of items in a set:
 
 ```thingsdb,json_response

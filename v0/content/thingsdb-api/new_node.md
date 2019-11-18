@@ -10,7 +10,6 @@ This function generates an [event](../../events).
 ### Function
 `new_node(secret, ip_address [, port]);`
 
-
 ### Arguments
 Argument | Type | Description
 -------- | ---- | -----------
@@ -20,7 +19,10 @@ Argument | Type | Description
 
 
 ### Return value
+
 Returns the new node `id` if successful.
+
+### Example
 
 > Add a new node to ThingsDB:
 

@@ -1,6 +1,6 @@
 ---
 title: "isarray"
-weight: 121
+weight: 120
 ---
 
 This function determines whether the value passed to this function
@@ -22,6 +22,8 @@ value | any (required) | The value to be tested for being an array.
 ### Return value
 
 Returns `true` the value passed is array else it returns `false`.
+
+### Example
 
 > This code shows some return values for ***isarray()***:
 

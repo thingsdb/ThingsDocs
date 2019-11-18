@@ -25,6 +25,8 @@ thing    | name, value | Iterate over the thing properties. Both `name` and `val
 A new `thing` with the properties that pass the test.
 If no properties pass the test, a empty thing will be returned.
 
+### Example
+
 > This code shows an example using ***filter()***:
 
 ```thingsdb,json_response

@@ -21,6 +21,8 @@ search_string | str (required) | The characters to be searched for at the start 
 
 Returns `true` the given characters are found at the start of the string and otherwise `false`.
 
+### Example
+
 > This code shows an example using ***startswith()***:
 
 ```thingsdb,json_response

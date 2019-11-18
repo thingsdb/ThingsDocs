@@ -24,6 +24,8 @@ set      | thing, id   | Iterate over things in the set. Both `thing` and `id` a
 A new `set` with the elements that pass the test.
 If no elements pass the test, an empty set will be returned.
 
+### Example
+
 > This code shows an example using ***filter()***:
 
 ```thingsdb,json_response
@@ -33,7 +35,7 @@ users = set({name: 'Iris', age: 6}, {name: 'Sasha', age: 34});
  * Return all users with name 'Iris'.
  */
 
-array(users.filter(|user| (user.name == 'Iris')));
+users.filter(|user| (user.name == 'Iris'));
 ```
 
 > Return value in JSON format

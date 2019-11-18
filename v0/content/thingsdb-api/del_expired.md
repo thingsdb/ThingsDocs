@@ -8,13 +8,18 @@ Delete all expired tokens.
 This function generates an [event](../../events).
 
 ### Function
+
 `del_expired();`
 
 ### Arguments
+
 None
 
 ### Return value
+
 Returns `nil`.
+
+### Example
 
 > This code will delete all expired tokens:
 

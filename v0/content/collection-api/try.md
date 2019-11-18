@@ -28,6 +28,8 @@ e0, e1, ..., eX | int/raw (optional) | Only catch specific errors, if omitted, c
 
 The value for the specified *statement* or an error if the statement has failed.
 
+### Example
+
 > This code shows some return values for ***try()***:
 
 ```thingsdb,json_response

@@ -7,6 +7,22 @@ Returns information about a specific collection.
 
 This function does *not* generate an [event](../../events).
 
+### Function
+
+`collection_info(name_or_id);`
+
+### Arguments
+
+Argument | Type | Description
+--------- | ----------- | -----------
+name_or_id | str/int | Name or Id of the collection
+
+### Return value
+
+Returns [info](../../data-types/info) about the collection.
+
+### Example
+
 > Returns information about collection *stuff*:
 
 ```thingsdb,should_pass,@t

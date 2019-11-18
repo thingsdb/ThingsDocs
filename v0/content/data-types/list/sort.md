@@ -26,6 +26,7 @@ The *reverse* argument cannot be used together with a closure which takes two ar
 
 A new sorted list.
 
+### Examples
 
 > Simple sort
 

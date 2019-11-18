@@ -1,6 +1,6 @@
 ---
 title: "bool"
-weight: 114
+weight: 113
 ---
 
 Returns an [bool](../../data-types/bool) from a specified value.
@@ -23,6 +23,8 @@ value | any (optional) | The value where to return a boolean value for.
 ### Return value
 
 A boolean value.
+
+### Example
 
 > This code shows some return values for ***bool()***:
 

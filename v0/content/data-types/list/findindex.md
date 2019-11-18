@@ -29,6 +29,8 @@ array | item, index | Iterate over items in the array. Both item and index are o
 The index of the first element in the array that satisfies the provided testing function;
 otherwise, `nil` is returned.
 
+### Example
+
 > This code shows an example using ***findindex()***:
 
 ```thingsdb,json_response

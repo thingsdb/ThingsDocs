@@ -29,6 +29,8 @@ type_name | string | Name of the Type to be created.
 
 The name of the newly created Type.
 
+### Example
+
 > This code shows a use case where ***new_type()*** is helpful:
 
 ```thingsdb,json_response

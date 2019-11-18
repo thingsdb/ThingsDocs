@@ -23,6 +23,8 @@ array_or_things | array/things (optional) | Optional array or things to initiali
 
 A new set.
 
+### Example
+
 > This code shows some return values for ***set()***:
 
 ```thingsdb,json_response

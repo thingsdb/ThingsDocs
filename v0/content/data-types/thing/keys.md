@@ -29,6 +29,8 @@ None
 
 Returns an array with property names.
 
+### Example
+
 > This code shows how to use `keys()`:
 
 ```thingsdb,json_response

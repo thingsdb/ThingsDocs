@@ -19,9 +19,8 @@
       <description>Adds a list or tuple with items to the end of a list, and returns the new length.
 This function generates an event.
 Function list.extend(list)
-Return value Returns the new length of the list.
- This code extends a list with a given array:
- a = [1, 2, 3]; b = [4, 5, 6]; a.extend(b); // returns the new length, 6 a;   Return value in JSON format</description>
+Arguments    Argument Type Description     list list/tuple The list or tuple to extend the list with.    Return value Returns the new length of the list.
+Example  This code extends a list with a given array:</description>
     </item>
     
     <item>
@@ -85,7 +84,7 @@ This function does not generate an event.
 Function array.len()
 Arguments None
 Return value Returns length of the array.
- This code uses len() to return the number of items in a collection:
+Example  This code uses len() to return the number of items in a collection:
  [1, 2, 3, 4].len();   Return value in JSON format
  4  </description>
     </item>
@@ -101,7 +100,7 @@ This function does not generate an event.
 Function array.map(callback)
 Arguments Explanation of the callback argument:
    Iterable Arguments Description     array item, index Iterate over all items in the array. Both item and index are optional.    Return value A new list with each element being the result of the callback function.
- This code shows an example using map():</description>
+Example  This code shows an example using map():</description>
     </item>
     
     <item>
@@ -115,7 +114,7 @@ This function generates an event.
 Function list.pop()
 Arguments None
 Return value The removed element from the list. An INDEX_ERROR is raised if the list is empty.
- This code show an example usage of pop():</description>
+Example  This code show an example usage of pop():</description>
     </item>
     
     <item>
@@ -128,7 +127,7 @@ Return value The removed element from the list. An INDEX_ERROR is raised if the 
 This function generates an event.
 Function list.push(item1, item2, ..., itemX)
 Return value Returns the new length of the list.
- This code pushes values to a list:
+Example  This code pushes values to a list:
  list = [1, 2, 3]; list.push(4, 5, 6);   Return value in JSON format
  6  </description>
     </item>

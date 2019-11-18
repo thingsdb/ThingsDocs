@@ -25,6 +25,8 @@ alt | any (optional) | Optional return value.
 Returns the value for the given property name. If the property is not found the the
 return value will be `nil`  unless an alternative return value is given as second argument.
 
+### Example
+
 > This code shows an example use case of ***get()***:
 
 ```thingsdb,json_response

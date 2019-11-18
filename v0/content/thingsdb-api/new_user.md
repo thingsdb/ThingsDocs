@@ -9,16 +9,21 @@ You probably want to [set a password](../../thingsdb-api/set_password) or add a 
 This function generates an [event](../../events).
 
 ### Function
+
 `new_user(user);`
 
 ### Arguments
+
 Argument | Type | Description
 -------- | ---- | -----------
 `user` | str (required) | Username, between 1 and 128 *graphical* characters.
 
 ### Return value
+
 Returns the new user `id` if successful. An `INDEX_ERROR` is raised
 if the user already exists.
+
+### Example
 
 > Create a new user `iris`:
 

@@ -21,6 +21,8 @@ None
 
 The removed element from the list. An `INDEX_ERROR` is raised if the list is empty.
 
+### Example
+
 > This code show an example usage of ***pop()***:
 
 ```thingsdb,json_response

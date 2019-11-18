@@ -37,6 +37,8 @@ deep | int (optional) | Specify the `deep` value for the query (the current `dee
 The `return` function has no real return value but will move directly
 to the output of the current query or closure.
 
+### Example
+
 > This code shows how ***return()*** can be used:
 
 ```thingsdb,should_pass

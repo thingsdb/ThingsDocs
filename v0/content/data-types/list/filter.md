@@ -24,18 +24,18 @@ array    | item, index | Iterate over all items in the array. Both `item` and `i
 A new `list` with the elements that pass the test.
 If no elements pass the test, an empty list will be returned.
 
+### Example
+
 > This code shows an example using ***filter()***:
 
 ```thingsdb,json_response
 users = [{name: 'Iris', age: 6}, {name: 'Sasha', age: 34}];
 
 /*
- * Return all users with age 18 or above,
- * a thing with only property age,
- * and all users with name 'Iris'.
+ * Return all users with age 18 or above
  */
 
-users.filter(|user| (user.age >= 18));
+users.filter(|user| user.age >= 18);
 ```
 
 > Return value in JSON format

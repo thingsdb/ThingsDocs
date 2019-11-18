@@ -19,6 +19,8 @@ None
 
 Returns length of the array.
 
+### Example
+
 > This code uses `len()` to return the number of items in a collection:
 
 ```thingsdb,json_response

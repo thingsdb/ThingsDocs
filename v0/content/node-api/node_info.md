@@ -46,7 +46,9 @@ This function does *not* generate an [event](../../events).
 None
 
 ### Return value
-Information about the node. Which *node* is defined by the [scope](../../scopes).
+Returns [info](../../data-types/info) about the node. Which *node* is defined by the [scope](../../scopes).
+
+### Example
 
 > This code returns info for the connected node:
 
