@@ -8,7 +8,7 @@
 
 
     <link rel="shortcut icon" href='/v0/images/favicon.ico' type="image/x-icon" />
-    <title>bool :: ThingsDB documentation</title>
+    <title>doc :: ThingsDB documentation</title>
 
     
     <link href="/v0/css/nucleus.css?1574108796" rel="stylesheet">
@@ -38,7 +38,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/v0/data-types/bool/">
+  <body class="" data-url="/v0/data-types/closure/doc/">
     <nav id="sidebar" class="">
 
 
@@ -414,7 +414,7 @@
  
   
     
-      <li data-nav-id="/v0/data-types/bool/" title="bool" class="dd-item active">
+      <li data-nav-id="/v0/data-types/bool/" title="bool" class="dd-item ">
         <a href="/v0/data-types/bool/">
         bool
         
@@ -487,7 +487,7 @@
   
     
     <li data-nav-id="/v0/data-types/closure/" title="closure" class="dd-item 
-        
+        parent
         
         
         ">
@@ -530,7 +530,7 @@
  
   
     
-      <li data-nav-id="/v0/data-types/closure/doc/" title="doc" class="dd-item ">
+      <li data-nav-id="/v0/data-types/closure/doc/" title="doc" class="dd-item active">
         <a href="/v0/data-types/closure/doc/">
         doc
         
@@ -3858,7 +3858,13 @@
             
           
           
-            <a href='/v0/'></a> > <a href='/v0/data-types/'>Data Types</a> > bool
+            
+            
+          
+          
+            <a href='/v0/'></a> > <a href='/v0/data-types/'>Data Types</a> > <a href='/v0/data-types/closure/'>closure</a> > doc
+          
+         
           
          
           
@@ -3877,7 +3883,10 @@
 <ul>
 <li>
 <ul>
-<li><a href="#related-functions">Related functions</a></li>
+<li><a href="#function">Function</a></li>
+<li><a href="#arguments">Arguments</a></li>
+<li><a href="#return-value">Return value</a></li>
+<li><a href="#example">Example</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -3897,7 +3906,7 @@
           
             <h1>
               
-              bool
+              doc
             </h1>
           
 
@@ -3907,38 +3916,45 @@
 
 
 
-<p>Booleans are either <code>true</code> or <code>false</code>.
-Other types can convert to <code>bool</code> by using the <code>!</code> (not) operator or the <a href="../../collection-api/bool">bool</a> function.</p>
+<p>Returns a doc string from a <a href="..">closure</a>.</p>
+
+<p>An empty string (<code>&quot;&quot;</code>) is returned if the closure has no doc string.</p>
+
+<p>This function does <em>not</em> generate an <a href="../../../events">event</a>.</p>
+
+<h3 id="function">Function</h3>
+
+<p><em>closure</em>.<code>doc()</code></p>
+
+<h3 id="arguments">Arguments</h3>
+
+<p>None</p>
+
+<h3 id="return-value">Return value</h3>
+
+<p>Returns the doc string.</p>
+
+<h3 id="example">Example</h3>
 
 <blockquote>
-<p>This code creates a <em>bool</em> property <em>is_the_earth_flat</em> to collection <em>stuff</em>:</p>
+<p>This code creates a closure with a doc string:</p>
 </blockquote>
 
-<pre><code class="language-thingsdb,should_pass">.is_the_earth_flat = !true;
+<pre><code class="language-thingsdb,json_response">add_one = |x| {
+    &quot;Adds one to a given value.&quot;;
+    x+1;
+};
+
+// Return the doc string
+add_one.doc();
 </code></pre>
 
-<h3 id="related-functions">Related functions</h3>
+<blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
 
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><a href="../../collection-api/bool">bool</a></td>
-<td>Create a new boolean value.</td>
-</tr>
-
-<tr>
-<td><a href="../../collection-api/isbool">isbool</a></td>
-<td>Test if a given value is of type bool.</td>
-</tr>
-</tbody>
-</table>
+<pre><code class="language-json">&quot;Adds one to a given value.&quot;
+</code></pre>
 
 
 <footer class=" footline" >
@@ -3956,10 +3972,10 @@ Other types can convert to <code>bool</code> by using the <code>!</code> (not) o
         
     
         
-            <a class="nav nav-prev" href="/v0/data-types/" title="Data Types"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/v0/data-types/closure/call/" title="call"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/v0/data-types/bytes/" title="bytes" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/v0/data-types/error/" title="error" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     
     </div>
