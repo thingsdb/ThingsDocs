@@ -46,6 +46,7 @@ Although less common, it is also possible to use a simple comment as doc string,
 ```thingsdb,should_pass
 || {
     // this is a doc string.
+    nil;
 };
 ```
 
@@ -95,10 +96,10 @@ Like explained, closures can accept multiple arguments and may contain a block s
 
 ```thingsdb,should_pass
 |name, age| {
-    "Returns a thing with properties `name`, `age` and `time`."
+    "Returns a thing with properties `name`, `age` and `time`.";
 
     assert(isstr(name) && name.len());
-    assert(isint(age) && age >= 0));
+    assert(isint(age) && age >= 0);
 
     return {
         name: name,
