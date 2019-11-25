@@ -16,8 +16,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/operators/arithmetic-operators/</guid>
-      <description>Operator Description     + Addition operator.   - Subtraction operator.   / Float division operator.   // Integer division operator.   * Multiplication operator.   % Modulo operator.     Arithmetic examples:
- [ 5 + 2, 5 - 2, 5 / 2, 5 // 2, 5 * 2, 5 % 2, ];   Return value in JSON format</description>
+      <description>Operator Description     + Addition operator.   - Subtraction operator.   / Division operator   * Multiplication operator.   % Modulo operator.    Division uses float division if either the numerator or denominator is of type float.
+  Arithmetic examples:
+ [ 5 + 2, 5 - 2, 5 / 2.0, 5 / 2, 5 * 2, 5 % 2, ];   Return value in JSON format</description>
     </item>
     
     <item>

@@ -19,7 +19,7 @@ So for example, `age: 'int'` can become `age: 'int?'`, but not the other way aro
 
 Argument | Type | Description
 -------- | ---- | -----------
-type_name | str | Name of the Type where the property has to be removed from.
+type_name | str | Name of the Type where the property has to be modified from.
 `'mod'` | str | Passing this argument will result in a *modify* action.
 property_name | str | Name of the property that has to be modified.
 property_type | str | New type definition of the property that has to be modified.

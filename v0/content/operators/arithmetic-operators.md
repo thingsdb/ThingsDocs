@@ -7,10 +7,13 @@ Operator | Description
 -------- | -----------
 `+` | Addition operator.
 `-` | Subtraction operator.
-`/` | Float division operator.
-`//` | Integer division operator.
+`/` | Division operator
 `*` | Multiplication operator.
 `%` | Modulo operator.
+
+{{% notice tip %}}
+Division uses float division if either the numerator or denominator is of type [float](../../data-types/float).
+{{% /notice %}}
 
 > Arithmetic examples:
 
@@ -18,8 +21,8 @@ Operator | Description
 [
     5 + 2,
     5 - 2,
+    5 / 2.0,
     5 / 2,
-    5 // 2,
     5 * 2,
     5 % 2,
 ];

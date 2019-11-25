@@ -17,6 +17,7 @@ events_in_queue | Events which are pending in the queue.
 global_committed_event_id | Lowest known committed event ID by all nodes.
 global_stored_event_id | Lowest known stored event ID by all nodes.
 hostname | Hostname of the node.
+http_api_port | Listening to this HTTP port for API calls.
 http_status_port | Listening to this HTTP port for status, readiness and liveness requests.
 ip_support | Enabled IP support. May be IPv4/IPv6 or both.
 libcleri_version | Cleri language parser library version.
@@ -69,6 +70,7 @@ node_info();
     "global_committed_event_id": 2,
     "global_stored_event_id": 2,
     "hostname": "node0.local",
+    "http_api_port": 9210,
     "http_status_port": "disabled",
     "ip_support": "ALL",
     "libcleri_version": "0.11.1",

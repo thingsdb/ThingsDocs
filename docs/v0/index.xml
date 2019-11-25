@@ -701,7 +701,7 @@ list = []; list.push([&#39;this list will be nested and therefore convert to a t
       
       <guid>https://docs.thingsdb.net/v0/data-types/type/</guid>
       <description>A Type is like a thing with pre-defined properties.
-Definable properties    definition description     &#39;str&#39; requires type str and the value should contain valid UTF-8 characters.   &#39;utf8&#39; requires type str and the value is must be valid UTF-8.   &#39;raw&#39; requires type str or bytes.   &#39;bytes&#39; requires type bytes.   &#39;int&#39; requires type int.   &#39;uint&#39; requires a non-negative type int.</description>
+Definable properties    definition description     &#39;str&#39; requires type str and the value should contain valid UTF-8 characters.   &#39;utf8&#39; requires type str and the value is must be valid UTF-8.   &#39;raw&#39; requires type str or bytes.   &#39;bytes&#39; requires type bytes.   &#39;bool&#39; requires type bool.   &#39;int&#39; requires type int.</description>
     </item>
     
     <item>
@@ -719,8 +719,9 @@ Definable properties    definition description     &#39;str&#39; requires type s
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/operators/arithmetic-operators/</guid>
-      <description>Operator Description     + Addition operator.   - Subtraction operator.   / Float division operator.   // Integer division operator.   * Multiplication operator.   % Modulo operator.     Arithmetic examples:
- [ 5 + 2, 5 - 2, 5 / 2, 5 // 2, 5 * 2, 5 % 2, ];   Return value in JSON format</description>
+      <description>Operator Description     + Addition operator.   - Subtraction operator.   / Division operator   * Multiplication operator.   % Modulo operator.    Division uses float division if either the numerator or denominator is of type float.
+  Arithmetic examples:
+ [ 5 + 2, 5 - 2, 5 / 2.0, 5 / 2, 5 * 2, 5 % 2, ];   Return value in JSON format</description>
     </item>
     
     <item>
@@ -1492,7 +1493,7 @@ Arguments    Argument Type Description     type_name str Name of the Type where 
       <description>Modifies a property from an exinsting Type.
 When modifying a property of a Type, the changed property type can only be less &amp;lsquo;strict&amp;rsquo;. So for example, age: &#39;int&#39; can become age: &#39;int?&#39;, but not the other way around.
  Action mod_type(type_name, &#39;mod&#39;, property_name, property_type)
-Arguments    Argument Type Description     type_name str Name of the Type where the property has to be removed from.   &#39;mod&#39; str Passing this argument will result in a modify action.</description>
+Arguments    Argument Type Description     type_name str Name of the Type where the property has to be modified from.   &#39;mod&#39; str Passing this argument will result in a modify action.</description>
     </item>
     
     <item>

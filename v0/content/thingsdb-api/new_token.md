@@ -52,5 +52,5 @@ new_token('admin', now() + 7*24*3600, 'token for one week');
 > Example return value in JSON format (the token key)
 
 ```json
-"FX1xyVAJmtQ8o5GTU8yZxdsKrZC7TRijzZ71Kh5q0DmbY24zaA"
+"8Ay0ngISFa9je3o/MMu24U"
 ```

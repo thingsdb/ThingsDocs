@@ -43,7 +43,7 @@ Arguments    Argument Type Description     type_name str Name of the Type where 
       <description>Modifies a property from an exinsting Type.
 When modifying a property of a Type, the changed property type can only be less &amp;lsquo;strict&amp;rsquo;. So for example, age: &#39;int&#39; can become age: &#39;int?&#39;, but not the other way around.
  Action mod_type(type_name, &#39;mod&#39;, property_name, property_type)
-Arguments    Argument Type Description     type_name str Name of the Type where the property has to be removed from.   &#39;mod&#39; str Passing this argument will result in a modify action.</description>
+Arguments    Argument Type Description     type_name str Name of the Type where the property has to be modified from.   &#39;mod&#39; str Passing this argument will result in a modify action.</description>
     </item>
     
   </channel>

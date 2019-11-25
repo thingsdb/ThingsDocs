@@ -15,8 +15,11 @@ definition | description
 `'utf8'` | requires type [str](../str) and the value is *must* be valid UTF-8.
 `'raw'` | requires type [str](../str) *or* [bytes](../bytes).
 `'bytes'` | requires type [bytes](../bytes).
+`'bool'` | requires type [bool](../bool).
 `'int'` | requires type [int](../int).
 `'uint'` | requires a *non-negative* type [int](../int).
+`'float'` | requires type [float](../float).
+`'number'` | requires type [float](../float) *or* type [int](../int).
 `'thing'` | requires a [thing](../thing).
 `'X'` | requires a instance of [Type](../type) `X`. The value `X` should be replace with the `Type` name.
 `'[]'` | requires a [list](../list).
