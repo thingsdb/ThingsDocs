@@ -38,7 +38,7 @@ ROOT_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 DOC_VERSION = os.getenv('DOC_VERSION')
 if not DOC_VERSION:
-    sys,exit(
+    sys.exit(
         'expecting an environment variable DOC_VERSION\n'
         'for eaxmple: DOC_VERSION=v0')
 
@@ -47,6 +47,7 @@ RE_TEST = re.compile(
     '```thingsdb,([a-zA-Z_]*)(,(@[\:a-zA-Z0-9]))?')
 
 RE_LINK = re.compile(r'(\[[\w\s\-]+\]\(([\.\/\w\-]+)\))')
+
 
 class TestDoc(TestBase):
 
@@ -78,7 +79,7 @@ class TestDoc(TestBase):
                                 f'{e} happens in `{fn}`').with_traceback(
                                     sys.exc_info()[2])
                             raise ex
-                        except:
+                        except Exception:
                             raise Exception(
                                 f'{e} happens in `{fn}`').with_traceback(
                                     sys.exc_info()[2])
@@ -168,6 +169,7 @@ class TestDoc(TestBase):
         'no_test': no_test,
 
     }
+
 
 if __name__ == '__main__':
     run_test(TestDoc())
