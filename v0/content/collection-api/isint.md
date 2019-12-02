@@ -1,6 +1,6 @@
 ---
 title: "isint"
-weight: 128
+weight: 130
 ---
 
 This function determines whether the value passed to this function

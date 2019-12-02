@@ -111,6 +111,8 @@ thingsdb-api
     users_info
 collection-api
     assert
+    base64_decode
+    base64_encode
     bool
     bytes
     deep

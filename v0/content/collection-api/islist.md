@@ -1,6 +1,6 @@
 ---
 title: "islist"
-weight: 129
+weight: 131
 ---
 
 This function determines whether the value passed to this function

@@ -1,6 +1,6 @@
 ---
 title: "operation_err"
-weight: 176
+weight: 178
 ---
 
 Returns an [error](../../data-types/error).

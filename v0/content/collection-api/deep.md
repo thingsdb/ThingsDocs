@@ -1,6 +1,6 @@
 ---
 title: "deep"
-weight: 116
+weight: 118
 ---
 
 Returns the current `deep` value. The `deep` value might change when a function with a [return(..)](../../collection-api/return) is called which has changed the `deep` value for this query.
