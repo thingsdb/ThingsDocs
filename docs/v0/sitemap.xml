@@ -455,6 +455,14 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/base64_decode/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/base64_encode/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/collection-api/bool/</loc>
   </url>
   

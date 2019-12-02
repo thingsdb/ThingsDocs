@@ -25,7 +25,7 @@
 	"title": "Scopes",
 	"tags": [],
 	"description": "",
-	"content": " Scopes When sending a query, calling a procedure or subscribing to a thing, the request will require you to provide a scope. ThingsDB has three main scopes: @thingsdb, @node and @collection.\n   scope short description     @thingsdb @t ThingsDB scope; Used for managing user accounts, collections and nodes.   @node @n Current node scope; For node info and statistics from the connected node.   @node:ID @n:ID Specific node scope; Get node info and statistics from a specific node id (ID should be replaced with a node ID, for example 0).   @collection:NAME @:NAME Collection scope; A collection where things are stored.   @collection:ID @:ID Collection scope; By collection ID instead of the using the collection name.    "
+	"content": " Scopes When sending a query, calling a procedure or subscribing to a thing, the request will require you to provide a scope. ThingsDB has three main scopes: @thingsdb, @node and @collection.\n   scope short description     @thingsdb @t ThingsDB scope; Used for managing user accounts, collections and nodes.   @node @n Current node scope; For node info and statistics from the connected node.   @node:ID @n:ID Specific node scope; Get node info and statistics from a specific node id (ID should be replaced with a node ID, for example 0).   @collection:NAME @:NAME Collection scope; A collection where things are stored.   @collection:ID @:ID Collection scope; By collection ID instead of the using the collection name.    Scopes names do allow an alternative syntax where the @ and : are replaced with the / character. For example @collection:stuff can be written as /collection/stuff and the short version @:stuff may be written as //stuff.\n "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/names/",
@@ -789,6 +789,20 @@
 	"tags": [],
 	"description": "",
 	"content": " Raises ASSERTION_ERROR if the specified statement evaluates to false.\nThis function does not generate an event.\nFunction assert(statement [, error_msg])\nArguments    Argument Type Description     statement any (required) The statement to evaluate.   msg str (optional) Custom error message.   code int (optional) Return a custom error code between 1 and 32. If not given, the error code is ASSERTION_ERROR (-105)    Return value Assert returns with the return value of the given statement when the statement evaluates to true. Otherwise an ASSERTION_ERROR is raised.\nExample  This code shows how assert can be used:\n assert(1 \u0026gt; 2, 'one is still smaller than two');   Raises an ASSERTION_ERROR exception\n { \u0026quot;error_msg\u0026quot;: \u0026quot;one is still smaller than two\u0026quot;, \u0026quot;error_code\u0026quot;: 1 }  "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/collection-api/base64_decode/",
+	"title": "base64_decode",
+	"tags": [],
+	"description": "",
+	"content": " Decode a Base64 encoded string.\nSee base64_encode for Base64 encoding.\nThis function does not generate an event.\nFunction base64_decode(encoded)\nArguments    Argument Type Description     encoded str/bytes The string value to decode.    Return value Decoded bytes value is returned.\nExample  This code shows an example for base64_decode:\n encoded = 'YmFzZTY0IGVuY29kZWQgc3RyaW5n'; // decode data = base64_decode(encoded); // result is of type bytes assert( type(data) == 'bytes'); // return as string str(data);   Return value in JSON format\n \u0026quot;base64 encoded string\u0026quot;  "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/collection-api/base64_encode/",
+	"title": "base64_encode",
+	"tags": [],
+	"description": "",
+	"content": " Encode a str or bytes value using Base64.\nSee base64_decode for Base64 decoding.\nThis function does not generate an event.\nFunction base64_encode(string)\nArguments    Argument Type Description     string str/bytes The value to encode.    Return value Encoded str value is returned.\nExample  This code shows an example for base64_encode:\n encoded = base64_encode('base64 encoded string');   Return value in JSON format\n \u0026quot;YmFzZTY0IGVuY29kZWQgc3RyaW5n\u0026quot;  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/bool/",

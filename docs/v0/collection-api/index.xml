@@ -23,6 +23,36 @@ Arguments    Argument Type Description     statement any (required) The statemen
     </item>
     
     <item>
+      <title>base64_decode</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/base64_decode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/base64_decode/</guid>
+      <description>Decode a Base64 encoded string.
+See base64_encode for Base64 encoding.
+This function does not generate an event.
+Function base64_decode(encoded)
+Arguments    Argument Type Description     encoded str/bytes The string value to decode.    Return value Decoded bytes value is returned.
+Example  This code shows an example for base64_decode:
+ encoded = &#39;YmFzZTY0IGVuY29kZWQgc3RyaW5n&#39;; // decode data = base64_decode(encoded); // result is of type bytes assert( type(data) == &#39;bytes&#39;); // return as string str(data);   Return value in JSON format</description>
+    </item>
+    
+    <item>
+      <title>base64_encode</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/base64_encode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/base64_encode/</guid>
+      <description>Encode a str or bytes value using Base64.
+See base64_decode for Base64 decoding.
+This function does not generate an event.
+Function base64_encode(string)
+Arguments    Argument Type Description     string str/bytes The value to encode.    Return value Encoded str value is returned.
+Example  This code shows an example for base64_encode:
+ encoded = base64_encode(&#39;base64 encoded string&#39;);   Return value in JSON format</description>
+    </item>
+    
+    <item>
       <title>bool</title>
       <link>https://docs.thingsdb.net/v0/collection-api/bool/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
