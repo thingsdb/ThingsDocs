@@ -41,3 +41,9 @@ b = 'Hello';
     "Hello World"
 ]
 ```
+
+## Injecting variable
+
+When running a query to ThingsDB, it is possible to *inject* variable into the code.
+This can be both easy for some data and in some case necessary when inserting binary data.
+

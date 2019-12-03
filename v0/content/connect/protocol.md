@@ -17,7 +17,7 @@ sending an `AUTH` package.
 ## Package
 
 #### LEN (Unsigned, 32bit)
-Length of the data, the header not included.
+Length of the data, the header *not* included.
 
 #### ID (16bit)
 The ID can be used as an identifier of your package. When ThingsDB send a response
@@ -31,10 +31,10 @@ Package type is used to describe what kind of package is transmitted.
 Type | Number | Description
 --------| -----| -----------
 `PING`  | 32 | Ping, useful as keep-alive.
-`AUTH`  | 33 | Authentication, expects: `[username, password]` or a `token_string`.
+`AUTH`  | 33 | Authorization., expects: `[username, password]` or a `token_string`.
 `QUERY` | 34 | Query ThingsDB.
-`WATCH` | 35 | Watch for changes to a *thing*.
-`UNWATCH` | 36 | Stop watching specified things, see [watching](../../watching) for more info.
+`WATCH` | 35 | Watch for changes on specific *things*.
+`UNWATCH` | 36 | Stop watching for changes on specific *things*.
 `RUN` | 37 | Run a procedure, see [procedures](../../procedures-api) for more info.
 
 ##### CHK (Unsigned, 8bit)
