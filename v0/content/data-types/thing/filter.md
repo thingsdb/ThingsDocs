@@ -1,12 +1,12 @@
 ---
 title: "filter"
-weight: 59
+weight: 60
 ---
 
 When this method is used on a `thing`, then a new thing will be returned with only
 the properties that pass the test.
 
-This function does *not* generate an [event](../../../events).
+This function does *not* generate an [event](../../../overview/events).
 
 ### Function
 

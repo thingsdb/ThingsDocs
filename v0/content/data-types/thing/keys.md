@@ -1,6 +1,6 @@
 ---
 title: "keys"
-weight: 63
+weight: 64
 ---
 
 ## keys
@@ -15,7 +15,7 @@ Although the `keys()` and `map()` functions in the example above will return an 
 the order of *keys* in the array is not guaranteed and may be different each time you run the query.
 {{% /notice %}}
 
-This function does *not* generate an [event](../../../events).
+This function does *not* generate an [event](../../../overview/events).
 
 ### Function
 

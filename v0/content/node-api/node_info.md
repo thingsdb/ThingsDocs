@@ -1,16 +1,16 @@
 ---
 title: "node_info"
-weight: 87
+weight: 136
 ---
 
 Returns information about the node in the current scope.
-See [scopes](../../scopes) for more information on how to target a specific node scope.
+See [scopes](../../overview/scopes) for more information on how to target a specific node scope.
 
 Value | Description
 ------- | -----------
 archive_files | Number of archive files. May decrease after a full store during *away* mode.
 archived_in_memory | Number of events which are archived in memory.
-cached_names | Number of [names](../../names) cached in memory.
+cached_names | Number of [names](../../overview/names) cached in memory.
 client_port | Listening for client TCP socket connections on this port.
 db_stored_event_id | Last stored event ID in full database store.
 events_in_queue | Events which are pending in the queue.
@@ -38,7 +38,7 @@ uptime | Uptime of the node in seconds.
 version | Version of ThingsDB,
 zone | Zone number to which the node is assigned. May be changed in the ThingsDB configuration file.
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 `node_info()`
@@ -47,7 +47,7 @@ This function does *not* generate an [event](../../events).
 None
 
 ### Return value
-Returns [info](../../data-types/info) about the node. Which *node* is defined by the [scope](../../scopes).
+Returns [info](../../data-types/info) about the node. Which *node* is defined by the [scope](../../overview/scopes).
 
 ### Example
 

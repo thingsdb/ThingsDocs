@@ -1,11 +1,11 @@
 ---
 title: "id"
-weight: 62
+weight: 63
 ---
 
 Returns the `id` of a [thing](..) or `nil` if the thing is not stored.
 
-This function does *not* generate an [event](../../../events).
+This function does *not* generate an [event](../../../overview/events).
 
 ### Function
 

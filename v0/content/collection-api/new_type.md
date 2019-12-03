@@ -1,6 +1,6 @@
 ---
 title: "new_type"
-weight: 146
+weight: 115
 ---
 
 Creates a new [Type](../../data-types/type). This function *only* creates a new type
@@ -13,7 +13,7 @@ you want to cross reference two types so you want both type to exists before cal
 {{% /notice %}}
 
 
-This function generates an [event](../../events).
+This function generates an [event](../../overview/events).
 
 ### Function
 

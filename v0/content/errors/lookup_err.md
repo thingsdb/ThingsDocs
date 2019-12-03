@@ -5,7 +5,7 @@ weight: 174
 
 Returns an [error](../../data-types/error).
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 `lookup_err([message])`

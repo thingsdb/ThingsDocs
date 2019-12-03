@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Connect on ThingsDB documentation</title>
+    <link>https://docs.thingsdb.net/v0/connect/</link>
+    <description>Recent content in Connect on ThingsDB documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://docs.thingsdb.net/v0/connect/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Authentication</title>
+      <link>https://docs.thingsdb.net/v0/connect/authentication/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/connect/authentication/</guid>
+      <description>ThingsDB supports authentication by using a user and password combination, or with a token. A default user admin with password pass is created on a fresh installation. If you did not yet change the default password, you might want to jump to set password.
+It might be a good idea to create a new user with minimal privileges and add a new token for this user. See the grant and revoke functions for managing privileges for a user.</description>
+    </item>
+    
+    <item>
+      <title>HTTP API</title>
+      <link>https://docs.thingsdb.net/v0/connect/http-api/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/connect/http-api/</guid>
+      <description>Explain the HTTP API.</description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://docs.thingsdb.net/v0/connect/python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/connect/python/</guid>
+      <description>Use pip to install the python client:
+ pip install python-thingsdb  The Python client supports both queries, watching and a framework for using ThingsDB in a really simple way.
+ To authorize in Python, use this code:
+ import asyncio from thingsdb.client import Client client = Client() loop = asyncio.get_event_loop() async def example(): # replace `localhost` with your ThingsDB server address await client.connect(&#39;localhost&#39;) # replace `amdin` with yout username and `pass` with your password await client.</description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>https://docs.thingsdb.net/v0/connect/go/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/connect/go/</guid>
+      <description>Explain the Go client&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Protocol</title>
+      <link>https://docs.thingsdb.net/v0/connect/protocol/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/connect/protocol/</guid>
+      <description>This is a more in depth view of the protocol used for communication with ThingsDB. In case you just want to use ThingsDB using one of the language bindings, then this info can be skipped. If you plan to implement you own connector, then this info might be useful to you.
+Communication with ThingsDB is done over a socket, either using TCP or a UNIX PIPE connection. Once a connection is made, packages can be send to ThingsDB.</description>
+    </item>
+    
+  </channel>
+</rss>

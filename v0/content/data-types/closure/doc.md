@@ -1,13 +1,13 @@
 ---
 title: "doc"
-weight: 20
+weight: 21
 ---
 
 Returns a doc string from a [closure](..).
 
 An empty string (`""`) is returned if the closure has no doc string.
 
-This function does *not* generate an [event](../../../events).
+This function does *not* generate an [event](../../../overview/events).
 
 ### Function
 

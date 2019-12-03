@@ -1,6 +1,6 @@
 ---
 title: "refs"
-weight: 149
+weight: 118
 ---
 
 Returns the reference count of a value.
@@ -13,7 +13,7 @@ Different nodes might return different reference values since the reference coun
 can be higher of lower depending on how the value is stored and used.
 {{% /notice %}}
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 

@@ -1,11 +1,11 @@
 ---
 title: "len"
-weight: 46
+weight: 47
 ---
 
 Returns the length of a [set](..).
 
-This function does *not* generate an [event](../../../events).
+This function does *not* generate an [event](../../../overview/events).
 
 ### Function
 

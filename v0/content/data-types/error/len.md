@@ -1,11 +1,11 @@
 ---
 title: "len"
-weight: 22
+weight: 23
 ---
 
 Returns the length of an [error](..) message.
 
-This function does *not* generate an [event](../../../events).
+This function does *not* generate an [event](../../../overview/events).
 
 ### Function
 

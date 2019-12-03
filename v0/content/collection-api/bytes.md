@@ -1,11 +1,11 @@
 ---
 title: "bytes"
-weight: 117
+weight: 86
 ---
 
 Convert a value to a byte sequence. If no value is given, an empty byte sequence is returned.
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 

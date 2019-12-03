@@ -1,12 +1,12 @@
 ---
 title: "isbytes"
-weight: 126
+weight: 95
 ---
 
 This function determines whether the value passed to this function
 is of type [bytes](../../data-types/bytes) or not.
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 

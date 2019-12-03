@@ -3,55 +3,59 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/authentication/</loc>
+    <loc>https://docs.thingsdb.net/v0/installation/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/authentication/python/</loc>
+    <loc>https://docs.thingsdb.net/v0/connect/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/authentication/shell/</loc>
+    <loc>https://docs.thingsdb.net/v0/connect/authentication/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/scopes/</loc>
+    <loc>https://docs.thingsdb.net/v0/connect/http-api/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/names/</loc>
+    <loc>https://docs.thingsdb.net/v0/connect/python/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/properties/</loc>
+    <loc>https://docs.thingsdb.net/v0/connect/go/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/variable/</loc>
+    <loc>https://docs.thingsdb.net/v0/connect/protocol/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/query/</loc>
+    <loc>https://docs.thingsdb.net/v0/overview/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/query/arguments/</loc>
+    <loc>https://docs.thingsdb.net/v0/overview/scopes/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/protocol/</loc>
+    <loc>https://docs.thingsdb.net/v0/overview/names/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/protocol/package/</loc>
+    <loc>https://docs.thingsdb.net/v0/overview/properties/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/protocol/example/</loc>
+    <loc>https://docs.thingsdb.net/v0/overview/variable/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/events/</loc>
+    <loc>https://docs.thingsdb.net/v0/overview/events/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/overview/slices/</loc>
   </url>
   
   <url>
@@ -291,10 +295,6 @@
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/slices/</loc>
-  </url>
-  
-  <url>
     <loc>https://docs.thingsdb.net/v0/operators/</loc>
   </url>
   
@@ -320,130 +320,6 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v0/operators/precedence-and-associativity/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/node-api/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/node-api/backup_info/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/node-api/backups_info/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/node-api/counters/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/node-api/del_backup/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/node-api/new_backup/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/node-api/node_info/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/node-api/nodes_info/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/node-api/reset_counters/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/node-api/set_log_level/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/node-api/shutdown/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/collection_info/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/collections_info/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/del_collection/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/del_expired/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/del_node/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/del_token/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/del_user/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/grant/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/new_collection/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/new_node/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/new_token/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/new_user/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/rename_collection/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/rename_user/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/revoke/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/set_password/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/set_quota/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/user_info/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/users_info/</loc>
   </url>
   
   <url>
@@ -640,6 +516,130 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v0/collection-api/wse/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/node-api/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/node-api/backup_info/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/node-api/backups_info/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/node-api/counters/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/node-api/del_backup/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/node-api/new_backup/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/node-api/node_info/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/node-api/nodes_info/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/node-api/reset_counters/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/node-api/set_log_level/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/node-api/shutdown/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/collection_info/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/collections_info/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/del_collection/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/del_expired/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/del_node/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/del_token/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/del_user/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/grant/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/new_collection/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/new_node/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/new_token/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/new_user/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/rename_collection/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/rename_user/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/revoke/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/set_password/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/set_quota/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/user_info/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/users_info/</loc>
   </url>
   
   <url>

@@ -1,6 +1,6 @@
 ---
 title: "return"
-weight: 150
+weight: 119
 ---
 
 The `return` function moves the argument to the output of the current query/closure call.
@@ -19,7 +19,7 @@ in returning very much data.
 
 When no arguments are used the return value will be `nil`.
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 

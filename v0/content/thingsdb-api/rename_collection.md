@@ -1,11 +1,11 @@
 ---
 title: "rename_collection"
-weight: 105
+weight: 154
 ---
 
 Rename a collection.
 
-This function generates an [event](../../events).
+This function generates an [event](../../overview/events).
 
 ### Function
 `rename_collection(current_name, new_name);`

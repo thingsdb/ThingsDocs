@@ -1,12 +1,12 @@
 ---
 title: "splice"
-weight: 38
+weight: 39
 ---
 
 The `splice()` method changes the contents of an list by removing or replacing
 existing elements and/or adding new elements in place.
 
-This function generates an [event](../../../events).
+This function generates an [event](../../../overview/events).
 
 ### Function
 

@@ -1,12 +1,12 @@
 ---
 title: "iserr"
-weight: 127
+weight: 96
 ---
 
 This function determines whether the value passed to this function
 is a [error](../../data-types/error) or not.
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 

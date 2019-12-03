@@ -1,9 +1,9 @@
 ---
 title: "del_backup"
-weight: 85
+weight: 134
 ---
 
 
 Delete a scheduled backup.
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).

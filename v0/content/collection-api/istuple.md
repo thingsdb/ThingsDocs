@@ -1,12 +1,12 @@
 ---
 title: "istuple"
-weight: 138
+weight: 107
 ---
 
 This function determines whether the value passed to this function
 is a [tuple](../../data-types/tuple) or not. At least nested arrays are of kind tuple.
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 

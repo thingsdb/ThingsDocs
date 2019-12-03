@@ -1,6 +1,6 @@
 ---
 title: "isthing"
-weight: 137
+weight: 106
 ---
 
 This function determines whether the value passed to this function
@@ -10,7 +10,7 @@ is a [thing](../../data-types/thing) or not.
 [Type](../../data-types/type) instances are also things, so this function returns `true` for a type instance as well.
 {{% /notice %}}
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 

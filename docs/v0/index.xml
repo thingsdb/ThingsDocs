@@ -11,11 +11,30 @@
     
     
     <item>
-      <title>Python</title>
-      <link>https://docs.thingsdb.net/v0/authentication/python/</link>
+      <title>Authentication</title>
+      <link>https://docs.thingsdb.net/v0/connect/authentication/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/authentication/python/</guid>
+      <guid>https://docs.thingsdb.net/v0/connect/authentication/</guid>
+      <description>ThingsDB supports authentication by using a user and password combination, or with a token. A default user admin with password pass is created on a fresh installation. If you did not yet change the default password, you might want to jump to set password.
+It might be a good idea to create a new user with minimal privileges and add a new token for this user. See the grant and revoke functions for managing privileges for a user.</description>
+    </item>
+    
+    <item>
+      <title>HTTP API</title>
+      <link>https://docs.thingsdb.net/v0/connect/http-api/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/connect/http-api/</guid>
+      <description>Explain the HTTP API.</description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://docs.thingsdb.net/v0/connect/python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/connect/python/</guid>
       <description>Use pip to install the python client:
  pip install python-thingsdb  The Python client supports both queries, watching and a framework for using ThingsDB in a really simple way.
  To authorize in Python, use this code:
@@ -23,41 +42,86 @@
     </item>
     
     <item>
-      <title>Shell</title>
-      <link>https://docs.thingsdb.net/v0/authentication/shell/</link>
+      <title>Go</title>
+      <link>https://docs.thingsdb.net/v0/connect/go/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/authentication/shell/</guid>
-      <description> Copy/paste to download and install thingscmd
- pip install thingscmd  For running ThingsDB queries from the shell, a shell tool ThingsCMD is available. It is not possible to watch things by using this shell based tool.
- To authorize from the shell, use this code:
- # Authenticate with a user and password thingscmd -n localhost -u admin -p pass -q &amp;quot;nil;&amp;quot; # ..or with a token thingscmd -n localhost -t &amp;quot;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&amp;quot; -q &amp;quot;nil;&amp;quot;  </description>
+      <guid>https://docs.thingsdb.net/v0/connect/go/</guid>
+      <description>Explain the Go client&amp;hellip;</description>
     </item>
     
     <item>
-      <title>Package</title>
-      <link>https://docs.thingsdb.net/v0/protocol/package/</link>
+      <title>Protocol</title>
+      <link>https://docs.thingsdb.net/v0/connect/protocol/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/protocol/package/</guid>
-      <description>LEN (Unsigned, 32bit) Length of the data, the header not included.
-ID (16bit) The ID can be used as an identifier of your package. When ThingsDB send a response on a request, it will use the same ID so this allows you to map a response to a request. This is useful if you want to send multiple request in parallel.
-TYPE (Unsigned, 8bit) Package type is used to describe what kind of package is transmitted.</description>
+      <guid>https://docs.thingsdb.net/v0/connect/protocol/</guid>
+      <description>This is a more in depth view of the protocol used for communication with ThingsDB. In case you just want to use ThingsDB using one of the language bindings, then this info can be skipped. If you plan to implement you own connector, then this info might be useful to you.
+Communication with ThingsDB is done over a socket, either using TCP or a UNIX PIPE connection. Once a connection is made, packages can be send to ThingsDB.</description>
     </item>
     
     <item>
-      <title>Example</title>
-      <link>https://docs.thingsdb.net/v0/protocol/example/</link>
+      <title>Scopes</title>
+      <link>https://docs.thingsdb.net/v0/overview/scopes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/protocol/example/</guid>
-      <description>Example As an example we create an authentication package for the default admin user with password pass.
-This is the package data for our authentication request:
-[&amp;quot;admin&amp;quot;, &amp;quot;pass&amp;quot;]
-Serializing the above using MessagePack results in the following 12 bytes:
-\x92\xa5admin\xa4pass
-Now we create the header, for this example we just use ID 0:
- Data length (12) \x0c\x00\x00\x00 Identifier (0) \x00\x00 Auth package type (33) \x21 Inverse type check bit (222) \xde  So our total package will be:</description>
+      <guid>https://docs.thingsdb.net/v0/overview/scopes/</guid>
+      <description>When sending a query, calling a procedure or subscribing to a thing, the request will require you to provide a scope. ThingsDB has three main scopes: @thingsdb, @node and @collection.
+   scope short description     @thingsdb @t ThingsDB scope; Used for managing user accounts, collections and nodes.   @node @n Current node scope; For node info and statistics from the connected node.   @node:ID @n:ID Specific node scope; Get node info and statistics from a specific node id (ID should be replaced with a node ID, for example 0).</description>
+    </item>
+    
+    <item>
+      <title>Names</title>
+      <link>https://docs.thingsdb.net/v0/overview/names/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/overview/names/</guid>
+      <description>The following rules apply to names in ThingsDB:
+ A name must start with a letter or underscore character A name cannot start with a number A name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ ) Names are case-sensitive (thing, Thing and THING are three different names) Names are restricted to 255 characters  </description>
+    </item>
+    
+    <item>
+      <title>Properties</title>
+      <link>https://docs.thingsdb.net/v0/overview/properties/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/overview/properties/</guid>
+      <description>Properties Properties are names assigned to a thing with a value. The collection itself is also a thing to which properties can be assigned. For example: .answer = 42; creates a property answer with value 42 and the property will be assigned to the collection.</description>
+    </item>
+    
+    <item>
+      <title>Variable</title>
+      <link>https://docs.thingsdb.net/v0/overview/variable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/overview/variable/</guid>
+      <description>Variable Can be used to assign a value to a variable which can be used within a query.
+Variable can be created with READ privileges since they do not modify the collection data.
+To create a variable, just use a valid name.
+Some valid examples:
+ _ = ... tmp = ... var1 = ...   This code uses a variable:
+ a = &#39;This is a variable!!!&#39;; b = &#39;Hello&#39;; { /* This will create a new variable `a` within this block */ a = &#39;New variable within this block&#39;; /* This will update the global variable `b` */ b += &#39; World&#39;; }; [a, b];   Return value in JSON format</description>
+    </item>
+    
+    <item>
+      <title>Events</title>
+      <link>https://docs.thingsdb.net/v0/overview/events/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/overview/events/</guid>
+      <description>When a query uses a statement which makes a change to ThingsDB, then internally ThingsDB will create an event to apply these changes. Events are applied in order on each node so database consistency is guaranteed.
+A single query might contain several statements and make many changes. All changes within a query will be grouped in a single event.
+In the documentation we try to make clear if a function will generate an event or not.</description>
+    </item>
+    
+    <item>
+      <title>Slices</title>
+      <link>https://docs.thingsdb.net/v0/overview/slices/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/overview/slices/</guid>
+      <description>The following slice notation can be used:
+list[start:stop:step]  The start and stop value will default to nil and step has a default value of 1. For understanding slices it is important to remember that the :stop value represents the first value that is not in the selected slice. This means that the difference between stop and start is the number of selected elements. (assuming that step is the default value 1)</description>
     </item>
     
     <item>
@@ -779,355 +843,6 @@ Syntax: expression ? if-true : if-false
     </item>
     
     <item>
-      <title>backup_info</title>
-      <link>https://docs.thingsdb.net/v0/node-api/backup_info/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/node-api/backup_info/</guid>
-      <description>Returns information about a specific scheduled backup.
-This function does not generate an event.</description>
-    </item>
-    
-    <item>
-      <title>backups_info</title>
-      <link>https://docs.thingsdb.net/v0/node-api/backups_info/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/node-api/backups_info/</guid>
-      <description>Returns info about all scheduled backups.
-This function does not generate an event.</description>
-    </item>
-    
-    <item>
-      <title>counters</title>
-      <link>https://docs.thingsdb.net/v0/node-api/counters/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/node-api/counters/</guid>
-      <description>Returns counters for the ThingsDB node you are connected too. Counters start all at zero when ThingsDB is started, or when the counters are reset by using reset_counters()&amp;rsquo;.
-Counters give information about things, queries and events. If you suspect failed queries, then counters might provide you with more information.
-   Counter Description     average_event_duration The average event duration in seconds.   events_committed Events committed since last counters reset.</description>
-    </item>
-    
-    <item>
-      <title>del_backup</title>
-      <link>https://docs.thingsdb.net/v0/node-api/del_backup/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/node-api/del_backup/</guid>
-      <description>Delete a scheduled backup.
-This function does not generate an event.</description>
-    </item>
-    
-    <item>
-      <title>new_backup</title>
-      <link>https://docs.thingsdb.net/v0/node-api/new_backup/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/node-api/new_backup/</guid>
-      <description>Schedule a new backup.
-This function does not generate an event.</description>
-    </item>
-    
-    <item>
-      <title>node_info</title>
-      <link>https://docs.thingsdb.net/v0/node-api/node_info/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/node-api/node_info/</guid>
-      <description>Returns information about the node in the current scope. See scopes for more information on how to target a specific node scope.
-   Value Description     archive_files Number of archive files. May decrease after a full store during away mode.   archived_in_memory Number of events which are archived in memory.   cached_names Number of names cached in memory.   client_port Listening for client TCP socket connections on this port.</description>
-    </item>
-    
-    <item>
-      <title>nodes_info</title>
-      <link>https://docs.thingsdb.net/v0/node-api/nodes_info/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/node-api/nodes_info/</guid>
-      <description>Returns information about all ThingsDB nodes.
-   Value Description     address IP address or hostname of the node.   committed_event_id Last known committed event ID on the node.   next_thing_id Next free thing ID on the node.   node_id ID which is assigned to the node.   port TCP port on which the node is listening for node connections.   status Current status of the node.</description>
-    </item>
-    
-    <item>
-      <title>reset_counters</title>
-      <link>https://docs.thingsdb.net/v0/node-api/reset_counters/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/node-api/reset_counters/</guid>
-      <description> Resets the counters for the ThingsDB node you are connected too. Other nodes are not affected.
-This function does not generate an event.
-Function reset_counters();
-Arguments None
-Return value Returns nil.
-Example  This code will reset the counters on a node:
- // resets counters on `localhost:9200` reset_counters();   Example return value in JSON format (the new collection id)
- null  </description>
-    </item>
-    
-    <item>
-      <title>set_log_level</title>
-      <link>https://docs.thingsdb.net/v0/node-api/set_log_level/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/node-api/set_log_level/</guid>
-      <description>This function does not generate an event.</description>
-    </item>
-    
-    <item>
-      <title>shutdown</title>
-      <link>https://docs.thingsdb.net/v0/node-api/shutdown/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/node-api/shutdown/</guid>
-      <description>This function does not generate an event.</description>
-    </item>
-    
-    <item>
-      <title>collection_info</title>
-      <link>https://docs.thingsdb.net/v0/thingsdb-api/collection_info/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/thingsdb-api/collection_info/</guid>
-      <description> Returns information about a specific collection.
-This function does not generate an event.
-Function collection_info(name_or_id);
-Arguments    Argument Type Description     name_or_id str/int Name or Id of the collection    Return value Returns info about the collection.
-Example  Returns information about collection stuff:
- collection_info(&#39;stuff&#39;);   Example return value in JSON format
- { &amp;quot;collection_id&amp;quot;: 782, &amp;quot;name&amp;quot;: &amp;quot;stuff&amp;quot;, &amp;quot;quota_array_size&amp;quot;: null, &amp;quot;quota_properties&amp;quot;: null, &amp;quot;quota_raw_size&amp;quot;: null, &amp;quot;quota_things&amp;quot;: null, &amp;quot;things&amp;quot;: 61352 }  </description>
-    </item>
-    
-    <item>
-      <title>collections_info</title>
-      <link>https://docs.thingsdb.net/v0/thingsdb-api/collections_info/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/thingsdb-api/collections_info/</guid>
-      <description>Returns collection information for all collections in ThingsDB.
-See the collection_info() function documentation for an example of the exposed collection information.
-This function does not generate an event.
-Function collections_info()
-Arguments None
-Return value List with collection info for all collections in ThingsDB.</description>
-    </item>
-    
-    <item>
-      <title>del_collection</title>
-      <link>https://docs.thingsdb.net/v0/thingsdb-api/del_collection/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/thingsdb-api/del_collection/</guid>
-      <description> Delete a collection.
-This function generates an event.
-Function del_collection(name);
-Arguments    Argument Type Description     name str (required) Name of the collection to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the collection does not exist.
-Example  This code will delete collection stuff:
- // Delete collection `stuff` del_collection(&#39;stuff&#39;);  </description>
-    </item>
-    
-    <item>
-      <title>del_expired</title>
-      <link>https://docs.thingsdb.net/v0/thingsdb-api/del_expired/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/thingsdb-api/del_expired/</guid>
-      <description> Delete all expired tokens.
-This function generates an event.
-Function del_expired();
-Arguments None
-Return value Returns nil.
-Example  This code will delete all expired tokens:
- // Delete all expired tokens del_expired();  </description>
-    </item>
-    
-    <item>
-      <title>del_node</title>
-      <link>https://docs.thingsdb.net/v0/thingsdb-api/del_node/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/thingsdb-api/del_node/</guid>
-      <description>Delete a node from ThingsDB.
-Before deleting a node, the node must be offline. As long is the node is active, you are not allowed to delete the node. See shutdown for shutting down a node by using a query.
- This function generates an event.
-Function del_node(node_id);
-Arguments    Argument Type Description     node_id int (required) Id of the node to delete.    Return value Returns nil when successful.</description>
-    </item>
-    
-    <item>
-      <title>del_token</title>
-      <link>https://docs.thingsdb.net/v0/thingsdb-api/del_token/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/thingsdb-api/del_token/</guid>
-      <description> Delete a token.
-This function generates an event.
-Function del_token(key);
-Arguments    Argument Type Description     key str (required) Token key to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the token is not found.
-Example  This code will delete a token:
- // Delete a token del_token(&#39;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#39;);  </description>
-    </item>
-    
-    <item>
-      <title>del_user</title>
-      <link>https://docs.thingsdb.net/v0/thingsdb-api/del_user/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/thingsdb-api/del_user/</guid>
-      <description>Delete a user. It is not possible to delete your own user account and a BAD_REQUEST will be raised in case you try to. Any tokens associated with the user will also be deleted.
-This function generates an event.
-Function del_user(username);
-Arguments    Argument Type Description     username str (required) Username of the user to delete.    Return value Returns nil when successful.</description>
-    </item>
-    
-    <item>
-      <title>grant</title>
-      <link>https://docs.thingsdb.net/v0/thingsdb-api/grant/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/thingsdb-api/grant/</guid>
-      <description>Grant collection or general privileges to a user. Access to a user is provided by setting a bit mask to either the @node, @thingsdb or a collection scope.
-It is not possible to set privileges on a specific node scope. Therefore scope @node will apply to all nodes in ThingsDB.
- The following pre-defined masks are available:
-   Mask Description     READ (1) Gives read access.</description>
-    </item>
-    
-    <item>
-      <title>new_collection</title>
-      <link>https://docs.thingsdb.net/v0/thingsdb-api/new_collection/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/thingsdb-api/new_collection/</guid>
-      <description>Create a new collection.
-This function generates an event.
-Function new_collection(name);
-Arguments    Argument Type Description     name str (required) Name of the new collection.    The user who has created the collection will automatically receive full access rights to the new collection. Use grant to give other users access to the collection.
- Return value Returns the new collection id if successful.</description>
-    </item>
-    
-    <item>
-      <title>new_node</title>
-      <link>https://docs.thingsdb.net/v0/thingsdb-api/new_node/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/thingsdb-api/new_node/</guid>
-      <description>Adds a new node to ThingsDB. Nodes are used for scaling and high availability.
-This function generates an event.
-Function new_node(secret, ip_address [, port]);
-Arguments    Argument Type Description     secret str (required) Secret used to initially connect to the new node.   ip_address str (required) IP Address (IPv4 or IPv6) of the new node.   port int (optional) Node port (listen_node_port), an integer between 0 an 65535, default 9220.</description>
-    </item>
-    
-    <item>
-      <title>new_token</title>
-      <link>https://docs.thingsdb.net/v0/thingsdb-api/new_token/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/thingsdb-api/new_token/</guid>
-      <description>Adds a new token for a given user. An optional expiration time may be given after which the token cannot be used anymore. Use del_expired to cleanup expired tokens. The expiration time may be given as a UNIX time-stamp in seconds or a date/time string.
-Some valid date/time strings:
- 2021-01-01 2023-02-06 14:30 2023-07-5T13:23:20+01:00  Expiration dates in the past are not allowed an will raise a BAD_REQUEST error.</description>
-    </item>
-    
-    <item>
-      <title>new_user</title>
-      <link>https://docs.thingsdb.net/v0/thingsdb-api/new_user/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/thingsdb-api/new_user/</guid>
-      <description>Creates a new user to ThingsDB. The new user is created without a password, token and access privileges. You probably want to set a password or add a new token and assign some privileges using grant(&amp;hellip;).
-This function generates an event.
-Function new_user(user);
-Arguments    Argument Type Description     user str (required) Username, between 1 and 128 graphical characters.    Return value Returns the new user id if successful.</description>
-    </item>
-    
-    <item>
-      <title>rename_collection</title>
-      <link>https://docs.thingsdb.net/v0/thingsdb-api/rename_collection/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/thingsdb-api/rename_collection/</guid>
-      <description>Rename a collection.
-This function generates an event.
-Function rename_collection(current_name, new_name);
-Arguments    Argument Type Description     current_name str (required) Current collection name.   new_name str (required) New name for the collection.    Return value Returns nil when successful.</description>
-    </item>
-    
-    <item>
-      <title>rename_user</title>
-      <link>https://docs.thingsdb.net/v0/thingsdb-api/rename_user/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/thingsdb-api/rename_user/</guid>
-      <description>Rename a user.
-This function generates an event.
-Function rename_user(current_name, new_name);
-Arguments    Argument Type Description     current_name str (required) Current user name.   new_name str (required) New name for the user.    Return value Returns nil when successful.</description>
-    </item>
-    
-    <item>
-      <title>revoke</title>
-      <link>https://docs.thingsdb.net/v0/thingsdb-api/revoke/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/thingsdb-api/revoke/</guid>
-      <description>Revoke collection or general privileges from a user. See grant for more information on how access privileges can be set for a user.
-This function generates an event.
-Function revoke(target, user, mask);
-Arguments    Argument Type Description     target int/raw Can be either the @node, @thingsdb, or a collection scope.   user str User to revoke privileges from.   mask int Bit-mask for revoking privileges.</description>
-    </item>
-    
-    <item>
-      <title>set_password</title>
-      <link>https://docs.thingsdb.net/v0/thingsdb-api/set_password/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/thingsdb-api/set_password/</guid>
-      <description>Change a users password. This function can also be used to remove an existing password by using nil as the new password.
-Passwords must contain 1 to 128 printable characters.
-This function generates an event.
-Function set_password(username, new_password);
-Arguments    Argument Type Description     username str (required) Name of the user   new_password nil/str (required) New password or nil    Return value Returns nil if successful.</description>
-    </item>
-    
-    <item>
-      <title>set_quota</title>
-      <link>https://docs.thingsdb.net/v0/thingsdb-api/set_quota/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/thingsdb-api/set_quota/</guid>
-      <description>Quota limits can be set on collections. The following quota limits can be set:
-   Type Description     things Maximum number of things allowed in a collection. Type instances are also counted towards this quota.   properties Maximum number of properties which can be assigned to a thing.   array_size Maximum list and tuple length.   raw_size Maximum str and bytes length.</description>
-    </item>
-    
-    <item>
-      <title>user_info</title>
-      <link>https://docs.thingsdb.net/v0/thingsdb-api/user_info/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/thingsdb-api/user_info/</guid>
-      <description>Returns information about a user. If no argument is given, this method will return information about the current logged in user.
-This function requires GRANT privileges on the @thingsdb scope when a username other then the logged in user is given as argument. For the currently logged in user, READ privileges on the @thingsdb scope are sufficient.
- This function does not generate an event.
-Function user_info([username]);
-Arguments    Argument Type Description     username str (optional) Name of the user    Return value Returns info about the user.</description>
-    </item>
-    
-    <item>
-      <title>users_info</title>
-      <link>https://docs.thingsdb.net/v0/thingsdb-api/users_info/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/thingsdb-api/users_info/</guid>
-      <description>Returns user information for all users in ThingsDB.
-See the user_info() function documentation for an example of the exposed user information.
-This function requires GRANT privileges on the .thingsdb scope since it exposes user access and token information.
-This function does not generate an event.
-Function users_info()
-Arguments None
-Return value List with user info for all users in ThingsDB.</description>
-    </item>
-    
-    <item>
       <title>assert</title>
       <link>https://docs.thingsdb.net/v0/collection-api/assert/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1166,7 +881,7 @@ This function does not generate an event.
 Function base64_encode(string)
 Arguments    Argument Type Description     string str/bytes The value to encode.    Return value Encoded str value is returned.
 Example  This code shows an example for base64_encode:
- encoded = base64_encode(&#39;base64 encoded string&#39;);   Return value in JSON format</description>
+ encoded = base64_encode(&#39;base64 encoded string&#39;); // result is of type str assert( type(encoded) == &#39;str&#39;); // return encoded;   Return value in JSON format</description>
     </item>
     
     <item>
@@ -1728,6 +1443,355 @@ You should use wse only when required since otherwise this would unnecessary cre
  This function generates an event.
 Function wse(statement)
 Arguments    Argument Type Description     statement any Statement or block to wrap.</description>
+    </item>
+    
+    <item>
+      <title>backup_info</title>
+      <link>https://docs.thingsdb.net/v0/node-api/backup_info/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/node-api/backup_info/</guid>
+      <description>Returns information about a specific scheduled backup.
+This function does not generate an event.</description>
+    </item>
+    
+    <item>
+      <title>backups_info</title>
+      <link>https://docs.thingsdb.net/v0/node-api/backups_info/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/node-api/backups_info/</guid>
+      <description>Returns info about all scheduled backups.
+This function does not generate an event.</description>
+    </item>
+    
+    <item>
+      <title>counters</title>
+      <link>https://docs.thingsdb.net/v0/node-api/counters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/node-api/counters/</guid>
+      <description>Returns counters for the ThingsDB node you are connected too. Counters start all at zero when ThingsDB is started, or when the counters are reset by using reset_counters()&amp;rsquo;.
+Counters give information about things, queries and events. If you suspect failed queries, then counters might provide you with more information.
+   Counter Description     average_event_duration The average event duration in seconds.   events_committed Events committed since last counters reset.</description>
+    </item>
+    
+    <item>
+      <title>del_backup</title>
+      <link>https://docs.thingsdb.net/v0/node-api/del_backup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/node-api/del_backup/</guid>
+      <description>Delete a scheduled backup.
+This function does not generate an event.</description>
+    </item>
+    
+    <item>
+      <title>new_backup</title>
+      <link>https://docs.thingsdb.net/v0/node-api/new_backup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/node-api/new_backup/</guid>
+      <description>Schedule a new backup.
+This function does not generate an event.</description>
+    </item>
+    
+    <item>
+      <title>node_info</title>
+      <link>https://docs.thingsdb.net/v0/node-api/node_info/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/node-api/node_info/</guid>
+      <description>Returns information about the node in the current scope. See scopes for more information on how to target a specific node scope.
+   Value Description     archive_files Number of archive files. May decrease after a full store during away mode.   archived_in_memory Number of events which are archived in memory.   cached_names Number of names cached in memory.   client_port Listening for client TCP socket connections on this port.</description>
+    </item>
+    
+    <item>
+      <title>nodes_info</title>
+      <link>https://docs.thingsdb.net/v0/node-api/nodes_info/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/node-api/nodes_info/</guid>
+      <description>Returns information about all ThingsDB nodes.
+   Value Description     address IP address or hostname of the node.   committed_event_id Last known committed event ID on the node.   next_thing_id Next free thing ID on the node.   node_id ID which is assigned to the node.   port TCP port on which the node is listening for node connections.   status Current status of the node.</description>
+    </item>
+    
+    <item>
+      <title>reset_counters</title>
+      <link>https://docs.thingsdb.net/v0/node-api/reset_counters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/node-api/reset_counters/</guid>
+      <description> Resets the counters for the ThingsDB node you are connected too. Other nodes are not affected.
+This function does not generate an event.
+Function reset_counters();
+Arguments None
+Return value Returns nil.
+Example  This code will reset the counters on a node:
+ // resets counters on `localhost:9200` reset_counters();   Example return value in JSON format (the new collection id)
+ null  </description>
+    </item>
+    
+    <item>
+      <title>set_log_level</title>
+      <link>https://docs.thingsdb.net/v0/node-api/set_log_level/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/node-api/set_log_level/</guid>
+      <description>This function does not generate an event.</description>
+    </item>
+    
+    <item>
+      <title>shutdown</title>
+      <link>https://docs.thingsdb.net/v0/node-api/shutdown/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/node-api/shutdown/</guid>
+      <description>This function does not generate an event.</description>
+    </item>
+    
+    <item>
+      <title>collection_info</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/collection_info/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/collection_info/</guid>
+      <description> Returns information about a specific collection.
+This function does not generate an event.
+Function collection_info(name_or_id);
+Arguments    Argument Type Description     name_or_id str/int Name or Id of the collection    Return value Returns info about the collection.
+Example  Returns information about collection stuff:
+ collection_info(&#39;stuff&#39;);   Example return value in JSON format
+ { &amp;quot;collection_id&amp;quot;: 782, &amp;quot;name&amp;quot;: &amp;quot;stuff&amp;quot;, &amp;quot;quota_array_size&amp;quot;: null, &amp;quot;quota_properties&amp;quot;: null, &amp;quot;quota_raw_size&amp;quot;: null, &amp;quot;quota_things&amp;quot;: null, &amp;quot;things&amp;quot;: 61352 }  </description>
+    </item>
+    
+    <item>
+      <title>collections_info</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/collections_info/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/collections_info/</guid>
+      <description>Returns collection information for all collections in ThingsDB.
+See the collection_info() function documentation for an example of the exposed collection information.
+This function does not generate an event.
+Function collections_info()
+Arguments None
+Return value List with collection info for all collections in ThingsDB.</description>
+    </item>
+    
+    <item>
+      <title>del_collection</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/del_collection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/del_collection/</guid>
+      <description> Delete a collection.
+This function generates an event.
+Function del_collection(name);
+Arguments    Argument Type Description     name str (required) Name of the collection to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the collection does not exist.
+Example  This code will delete collection stuff:
+ // Delete collection `stuff` del_collection(&#39;stuff&#39;);  </description>
+    </item>
+    
+    <item>
+      <title>del_expired</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/del_expired/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/del_expired/</guid>
+      <description> Delete all expired tokens.
+This function generates an event.
+Function del_expired();
+Arguments None
+Return value Returns nil.
+Example  This code will delete all expired tokens:
+ // Delete all expired tokens del_expired();  </description>
+    </item>
+    
+    <item>
+      <title>del_node</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/del_node/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/del_node/</guid>
+      <description>Delete a node from ThingsDB.
+Before deleting a node, the node must be offline. As long is the node is active, you are not allowed to delete the node. See shutdown for shutting down a node by using a query.
+ This function generates an event.
+Function del_node(node_id);
+Arguments    Argument Type Description     node_id int (required) Id of the node to delete.    Return value Returns nil when successful.</description>
+    </item>
+    
+    <item>
+      <title>del_token</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/del_token/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/del_token/</guid>
+      <description> Delete a token.
+This function generates an event.
+Function del_token(key);
+Arguments    Argument Type Description     key str (required) Token key to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the token is not found.
+Example  This code will delete a token:
+ // Delete a token del_token(&#39;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#39;);  </description>
+    </item>
+    
+    <item>
+      <title>del_user</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/del_user/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/del_user/</guid>
+      <description>Delete a user. It is not possible to delete your own user account and a BAD_REQUEST will be raised in case you try to. Any tokens associated with the user will also be deleted.
+This function generates an event.
+Function del_user(username);
+Arguments    Argument Type Description     username str (required) Username of the user to delete.    Return value Returns nil when successful.</description>
+    </item>
+    
+    <item>
+      <title>grant</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/grant/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/grant/</guid>
+      <description>Grant collection or general privileges to a user. Access to a user is provided by setting a bit mask to either the @node, @thingsdb or a collection scope.
+It is not possible to set privileges on a specific node scope. Therefore scope @node will apply to all nodes in ThingsDB.
+ The following pre-defined masks are available:
+   Mask Description     READ (1) Gives read access.</description>
+    </item>
+    
+    <item>
+      <title>new_collection</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/new_collection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/new_collection/</guid>
+      <description>Create a new collection.
+This function generates an event.
+Function new_collection(name);
+Arguments    Argument Type Description     name str (required) Name of the new collection.    The user who has created the collection will automatically receive full access rights to the new collection. Use grant to give other users access to the collection.
+ Return value Returns the new collection id if successful.</description>
+    </item>
+    
+    <item>
+      <title>new_node</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/new_node/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/new_node/</guid>
+      <description>Adds a new node to ThingsDB. Nodes are used for scaling and high availability.
+This function generates an event.
+Function new_node(secret, ip_address [, port]);
+Arguments    Argument Type Description     secret str (required) Secret used to initially connect to the new node.   ip_address str (required) IP Address (IPv4 or IPv6) of the new node.   port int (optional) Node port (listen_node_port), an integer between 0 an 65535, default 9220.</description>
+    </item>
+    
+    <item>
+      <title>new_token</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/new_token/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/new_token/</guid>
+      <description>Adds a new token for a given user. An optional expiration time may be given after which the token cannot be used anymore. Use del_expired to cleanup expired tokens. The expiration time may be given as a UNIX time-stamp in seconds or a date/time string.
+Some valid date/time strings:
+ 2021-01-01 2023-02-06 14:30 2023-07-5T13:23:20+01:00  Expiration dates in the past are not allowed an will raise a BAD_REQUEST error.</description>
+    </item>
+    
+    <item>
+      <title>new_user</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/new_user/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/new_user/</guid>
+      <description>Creates a new user to ThingsDB. The new user is created without a password, token and access privileges. You probably want to set a password or add a new token and assign some privileges using grant(&amp;hellip;).
+This function generates an event.
+Function new_user(user);
+Arguments    Argument Type Description     user str (required) Username, between 1 and 128 graphical characters.    Return value Returns the new user id if successful.</description>
+    </item>
+    
+    <item>
+      <title>rename_collection</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/rename_collection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/rename_collection/</guid>
+      <description>Rename a collection.
+This function generates an event.
+Function rename_collection(current_name, new_name);
+Arguments    Argument Type Description     current_name str (required) Current collection name.   new_name str (required) New name for the collection.    Return value Returns nil when successful.</description>
+    </item>
+    
+    <item>
+      <title>rename_user</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/rename_user/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/rename_user/</guid>
+      <description>Rename a user.
+This function generates an event.
+Function rename_user(current_name, new_name);
+Arguments    Argument Type Description     current_name str (required) Current user name.   new_name str (required) New name for the user.    Return value Returns nil when successful.</description>
+    </item>
+    
+    <item>
+      <title>revoke</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/revoke/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/revoke/</guid>
+      <description>Revoke collection or general privileges from a user. See grant for more information on how access privileges can be set for a user.
+This function generates an event.
+Function revoke(target, user, mask);
+Arguments    Argument Type Description     target int/raw Can be either the @node, @thingsdb, or a collection scope.   user str User to revoke privileges from.   mask int Bit-mask for revoking privileges.</description>
+    </item>
+    
+    <item>
+      <title>set_password</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/set_password/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/set_password/</guid>
+      <description>Change a users password. This function can also be used to remove an existing password by using nil as the new password.
+Passwords must contain 1 to 128 printable characters.
+This function generates an event.
+Function set_password(username, new_password);
+Arguments    Argument Type Description     username str (required) Name of the user   new_password nil/str (required) New password or nil    Return value Returns nil if successful.</description>
+    </item>
+    
+    <item>
+      <title>set_quota</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/set_quota/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/set_quota/</guid>
+      <description>Quota limits can be set on collections. The following quota limits can be set:
+   Type Description     things Maximum number of things allowed in a collection. Type instances are also counted towards this quota.   properties Maximum number of properties which can be assigned to a thing.   array_size Maximum list and tuple length.   raw_size Maximum str and bytes length.</description>
+    </item>
+    
+    <item>
+      <title>user_info</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/user_info/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/user_info/</guid>
+      <description>Returns information about a user. If no argument is given, this method will return information about the current logged in user.
+This function requires GRANT privileges on the @thingsdb scope when a username other then the logged in user is given as argument. For the currently logged in user, READ privileges on the @thingsdb scope are sufficient.
+ This function does not generate an event.
+Function user_info([username]);
+Arguments    Argument Type Description     username str (optional) Name of the user    Return value Returns info about the user.</description>
+    </item>
+    
+    <item>
+      <title>users_info</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/users_info/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/users_info/</guid>
+      <description>Returns user information for all users in ThingsDB.
+See the user_info() function documentation for an example of the exposed user information.
+This function requires GRANT privileges on the .thingsdb scope since it exposes user access and token information.
+This function does not generate an event.
+Function users_info()
+Arguments None
+Return value List with user info for all users in ThingsDB.</description>
     </item>
     
     <item>

@@ -1,6 +1,6 @@
 ---
 title: "map"
-weight: 65
+weight: 66
 ---
 
 Iterate over all properties on a [thing](..).
@@ -9,7 +9,7 @@ Iterate over all properties on a [thing](..).
 Be aware that the order when iterating over a *thing* is not guaranteed.
 {{% /notice %}}
 
-This function does *not* generate an [event](../../../events).
+This function does *not* generate an [event](../../../overview/events).
 
 ### Function
 

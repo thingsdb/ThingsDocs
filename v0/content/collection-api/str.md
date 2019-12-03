@@ -1,6 +1,6 @@
 ---
 title: "str"
-weight: 153
+weight: 122
 ---
 
 Convert a value to a string. If no value is given, an empty string `""` is returned.
@@ -8,7 +8,7 @@ Convert a value to a string. If no value is given, an empty string `""` is retur
 When [bytes](../../data-types/bytes) are converted to [str](../../data-types/str) then the data will be checked
 if it contains valid UTF-8 characters. If this is not the case, a `VALUE_ERROR` will be raised.
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 

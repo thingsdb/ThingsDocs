@@ -1,11 +1,11 @@
 ---
 title: "del_token"
-weight: 98
+weight: 147
 ---
 
 Delete a token.
 
-This function generates an [event](../../events).
+This function generates an [event](../../overview/events).
 
 ### Function
 

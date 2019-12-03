@@ -1,6 +1,6 @@
 ---
 title: "isstr"
-weight: 136
+weight: 105
 ---
 
 This function determines whether the value passed to this function is of
@@ -8,7 +8,7 @@ type [str](../../data-types/str).
 
 The value is *not* explicitly checked for valid UTF-8 characters, use [isutf8()](../isutf8) if you want to check for valid UTF-8 data.
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 

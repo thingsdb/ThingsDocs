@@ -1,6 +1,6 @@
 ---
 title: "set_password"
-weight: 108
+weight: 157
 ---
 
 Change a users password. This function can also be used to remove an existing
@@ -8,7 +8,7 @@ password by using `nil` as the new password.
 
 Passwords must contain 1 to 128 printable characters.
 
-This function generates an [event](../../events).
+This function generates an [event](../../overview/events).
 
 ### Function
 

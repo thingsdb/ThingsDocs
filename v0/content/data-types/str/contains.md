@@ -1,11 +1,11 @@
 ---
 title: "contains"
-weight: 50
+weight: 51
 ---
 
 Determines if a given string is a substring of a [string](..).
 
-This function does *not* generate an [event](../../../events).
+This function does *not* generate an [event](../../../overview/events).
 
 ### Function
 

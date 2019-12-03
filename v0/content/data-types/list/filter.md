@@ -1,11 +1,11 @@
 ---
 title: "filter"
-weight: 28
+weight: 29
 ---
 
 When this method is used on an [list](..) or [tuple](../../tuple), a new list is returned with elements that pass the test.
 
-This function does *not* generate an [event](../../../events).
+This function does *not* generate an [event](../../../overview/events).
 
 ### Function
 

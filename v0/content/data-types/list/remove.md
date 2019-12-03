@@ -1,12 +1,12 @@
 ---
 title: "remove"
-weight: 36
+weight: 37
 ---
 
 This function removes and returns the value of the *first* element in the [list](../../list) that satisfies the callback function.
 Otherwise `nil` is returned unless an alternative return value is specified.
 
-This function generates an [event](../../../events).
+This function generates an [event](../../../overview/events).
 
 ### Function
 

@@ -1,12 +1,12 @@
 ---
 title: "thing"
-weight: 154
+weight: 123
 ---
 
 Returns a [thing](../../data-types/thing) from a specified value.
 If no value is given, a new thing is returned.
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 

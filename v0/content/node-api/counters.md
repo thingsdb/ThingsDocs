@@ -1,6 +1,6 @@
 ---
 title: "counters"
-weight: 84
+weight: 133
 ---
 
 Returns `counters` for the ThingsDB node you are connected too. Counters start all at zero when ThingsDB
@@ -24,7 +24,7 @@ longest_event_duration | Longest event duration, in seconds.
 queries_success | Number of queries where this node acted as the master node and the query has successful finished.
 queries_with_error | Number of queries where this node acted as the master node but the query has returned with an error.
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 `counters();`

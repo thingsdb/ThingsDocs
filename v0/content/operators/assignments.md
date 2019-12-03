@@ -3,7 +3,7 @@ title: "Assignments"
 weight: 76
 ---
 
-Assignments will generate an [event](../../events).
+Assignments will generate an [event](../../overview/events).
 
 Operator | Description
 -------- | -----------

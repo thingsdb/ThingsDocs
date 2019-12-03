@@ -1,11 +1,11 @@
 ---
 title: "del_expired"
-weight: 96
+weight: 145
 ---
 
 Delete all expired tokens.
 
-This function generates an [event](../../events).
+This function generates an [event](../../overview/events).
 
 ### Function
 

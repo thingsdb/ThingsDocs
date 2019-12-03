@@ -1,11 +1,11 @@
 ---
 title: "len"
-weight: 32
+weight: 33
 ---
 
 Returns the length of a [list](..) or [tuple](../../tuple).
 
-This function does *not* generate an [event](../../../events).
+This function does *not* generate an [event](../../../overview/events).
 
 ### Function
 

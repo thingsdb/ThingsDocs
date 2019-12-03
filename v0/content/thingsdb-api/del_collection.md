@@ -1,11 +1,11 @@
 ---
 title: "del_collection"
-weight: 95
+weight: 144
 ---
 
 Delete a collection.
 
-This function generates an [event](../../events).
+This function generates an [event](../../overview/events).
 
 ### Function
 

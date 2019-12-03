@@ -1,13 +1,13 @@
 ---
 title: "base64_encode"
-weight: 115
+weight: 84
 ---
 
 Encode a [str](../../data-types/str) or [bytes](../../data-types/bytes) value using Base64.
 
 See [base64_decode](../base64_decode) for Base64 decoding.
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 
@@ -28,6 +28,12 @@ Encoded [str](../../data-types/str) value is returned.
 
 ```thingsdb,json_response
 encoded = base64_encode('base64 encoded string');
+
+// result is of type str
+assert( type(encoded) == 'str');
+
+// return
+encoded;
 ```
 
 > Return value in JSON format

@@ -1,11 +1,11 @@
 ---
 title: "push"
-weight: 35
+weight: 36
 ---
 
 Adds new items to the end of an list, and returns the new length.
 
-This function generates an [event](../../../events).
+This function generates an [event](../../../overview/events).
 
 ### Function
 

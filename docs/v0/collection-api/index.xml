@@ -49,7 +49,7 @@ This function does not generate an event.
 Function base64_encode(string)
 Arguments    Argument Type Description     string str/bytes The value to encode.    Return value Encoded str value is returned.
 Example  This code shows an example for base64_encode:
- encoded = base64_encode(&#39;base64 encoded string&#39;);   Return value in JSON format</description>
+ encoded = base64_encode(&#39;base64 encoded string&#39;); // result is of type str assert( type(encoded) == &#39;str&#39;); // return encoded;   Return value in JSON format</description>
     </item>
     
     <item>

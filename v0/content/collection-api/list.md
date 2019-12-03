@@ -1,11 +1,11 @@
 ---
 title: "list"
-weight: 140
+weight: 109
 ---
 
 Returns a new empty [list](../../data-types/list) or returns a list for a given `set`.
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 

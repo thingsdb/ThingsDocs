@@ -1,11 +1,11 @@
 ---
 title: "endswith"
-weight: 51
+weight: 52
 ---
 
 Determines if a [string](..) ends with characters given by another string.
 
-This function does *not* generate an [event](../../../events).
+This function does *not* generate an [event](../../../overview/events).
 
 ### Function
 

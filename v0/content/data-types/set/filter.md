@@ -1,11 +1,11 @@
 ---
 title: "filter"
-weight: 43
+weight: 44
 ---
 
 When this method is used on a `set`, then the return value will be a new set.
 
-This function does *not* generate an [event](../../../events).
+This function does *not* generate an [event](../../../overview/events).
 
 ### Function
 

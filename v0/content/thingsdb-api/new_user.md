@@ -1,12 +1,12 @@
 ---
 title: "new_user"
-weight: 104
+weight: 153
 ---
 
 Creates a new user to ThingsDB. The new user is created without a password, token and access privileges.
 You probably want to [set a password](../../thingsdb-api/set_password) or add a [new token](../../thingsdb-api/new_token) and assign some privileges using [grant(...)](../../thingsdb-api/grant).
 
-This function generates an [event](../../events).
+This function generates an [event](../../overview/events).
 
 ### Function
 

@@ -1,6 +1,6 @@
 ---
 title: "del_node"
-weight: 97
+weight: 146
 ---
 
 Delete a node from ThingsDB.
@@ -10,7 +10,7 @@ Before deleting a node, the node *must* be offline. As long is the node is *acti
 to delete the node. See [shutdown](../../node-api/shutdown) for shutting down a node by using a query.
 {{% /notice %}}
 
-This function generates an [event](../../events).
+This function generates an [event](../../overview/events).
 
 ### Function
 `del_node(node_id);`

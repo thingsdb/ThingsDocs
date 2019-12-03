@@ -1,6 +1,6 @@
 ---
 title: "shutdown"
-weight: 91
+weight: 140
 ---
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).

@@ -1,12 +1,12 @@
 ---
 title: "isbool"
-weight: 125
+weight: 94
 ---
 
 This function determines whether the value passed to this function
 is a [bool](../../data-types/bool) or not.
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 

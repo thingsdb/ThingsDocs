@@ -1,12 +1,12 @@
 ---
 title: "find"
-weight: 29
+weight: 30
 ---
 
 This function returns the value of the first element in the [list](..) or [tuple](../../tuple) that satisfies the callback function.
 Otherwise `nil` is returned unless an alternative return value is specified.
 
-This function does *not* generate an [event](../../../events).
+This function does *not* generate an [event](../../../overview/events).
 
 ### Function
 

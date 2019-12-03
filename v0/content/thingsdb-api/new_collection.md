@@ -1,11 +1,11 @@
 ---
 title: "new_collection"
-weight: 101
+weight: 150
 ---
 
 Create a new collection.
 
-This function generates an [event](../../events).
+This function generates an [event](../../overview/events).
 
 ### Function
 

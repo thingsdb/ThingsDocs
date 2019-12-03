@@ -1,6 +1,6 @@
 ---
 title: "nodes_info"
-weight: 88
+weight: 137
 ---
 
 Returns information about all ThingsDB nodes.
@@ -18,7 +18,7 @@ syntax_version | Language or syntax version which is running on the node.
 zone | Zone number to which the node is assigned.
 
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 

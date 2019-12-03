@@ -1,11 +1,11 @@
 ---
 title: "extend"
-weight: 27
+weight: 28
 ---
 
 Adds a [list](..) or [tuple](../../tuple) with items to the end of a [list](..), and returns the new length.
 
-This function generates an [event](../../../events).
+This function generates an [event](../../../overview/events).
 
 ### Function
 

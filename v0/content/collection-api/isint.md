@@ -1,12 +1,12 @@
 ---
 title: "isint"
-weight: 130
+weight: 99
 ---
 
 This function determines whether the value passed to this function
 is an [integer](../../data-types/int) or not.
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 

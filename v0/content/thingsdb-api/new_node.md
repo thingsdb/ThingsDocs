@@ -1,11 +1,11 @@
 ---
 title: "new_node"
-weight: 102
+weight: 151
 ---
 
 Adds a new node to ThingsDB. Nodes are used for scaling and high availability.
 
-This function generates an [event](../../events).
+This function generates an [event](../../overview/events).
 
 ### Function
 `new_node(secret, ip_address [, port]);`

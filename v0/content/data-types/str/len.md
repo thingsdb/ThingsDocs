@@ -1,6 +1,6 @@
 ---
 title: "len"
-weight: 52
+weight: 53
 ---
 
 Returns the length of a [string](..).
@@ -10,7 +10,7 @@ Be aware that the length represents the number of *bytes* and not the number of 
 {{% /notice %}}
 
 
-This function does *not* generate an [event](../../../events).
+This function does *not* generate an [event](../../../overview/events).
 
 ### Function
 

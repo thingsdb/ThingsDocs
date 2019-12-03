@@ -1,16 +1,17 @@
-authentication
+installation
+connect
+    authentication
+    http-api
     python
-    shell
-scopes
-names
-properties
-variable
-query
-    arguments
-protocol
-    package
-    example
-events
+    go
+    protocol
+overview
+    scopes
+    names
+    properties
+    variable
+    events
+    slices
 data-types
     bool
     bytes
@@ -70,7 +71,6 @@ data-types
     type
     wtype
         unwrap
-slices
 operators
     arithmetic-operators
     assignments
@@ -78,37 +78,6 @@ operators
     conditional-ternary-operator
     logical-operators
     precedence-and-associativity
-node-api
-    backup_info
-    backups_info
-    counters
-    del_backup
-    new_backup
-    node_info
-    nodes_info
-    reset_counters
-    set_log_level
-    shutdown
-thingsdb-api
-    collection_info
-    collections_info
-    del_collection
-    del_expired
-    del_node
-    del_token
-    del_user
-    grant
-    new_collection
-    new_node
-    new_token
-    new_user
-    rename_collection
-    rename_user
-    revoke
-    set_password
-    set_quota
-    user_info
-    users_info
 collection-api
     assert
     base64_decode
@@ -158,6 +127,37 @@ collection-api
     type_info
     types_info
     wse
+node-api
+    backup_info
+    backups_info
+    counters
+    del_backup
+    new_backup
+    node_info
+    nodes_info
+    reset_counters
+    set_log_level
+    shutdown
+thingsdb-api
+    collection_info
+    collections_info
+    del_collection
+    del_expired
+    del_node
+    del_token
+    del_user
+    grant
+    new_collection
+    new_node
+    new_token
+    new_user
+    rename_collection
+    rename_user
+    revoke
+    set_password
+    set_quota
+    user_info
+    users_info
 procedures-api
     del_procedure
     new_procedure

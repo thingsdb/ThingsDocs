@@ -1,11 +1,11 @@
 ---
 title: "lower"
-weight: 53
+weight: 54
 ---
 
 Return a new [string](..) in which all case-based characters are in lower case.
 
-This function does *not* generate an [event](../../../events).
+This function does *not* generate an [event](../../../overview/events).
 
 ### Function
 

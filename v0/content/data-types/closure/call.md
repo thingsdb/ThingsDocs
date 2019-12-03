@@ -1,11 +1,11 @@
 ---
 title: "call"
-weight: 19
+weight: 20
 ---
 
 Call a closure with optional arguments.
 
-This function does *not* generate an [event](../../../events).
+This function does *not* generate an [event](../../../overview/events).
 
 ### Function
 

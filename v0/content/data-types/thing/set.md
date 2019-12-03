@@ -1,13 +1,13 @@
 ---
 title: "set"
-weight: 66
+weight: 67
 ---
 
 Creates a new property on a [thing](..). If the property already existed then the old
 property will be overwritten. This function is equal to an assignment except that
 it can be used when the `name` of the property is dynamic.
 
-This function generates an [event](../../../events).
+This function generates an [event](../../../overview/events).
 
 ### Function
 

@@ -1,6 +1,6 @@
 ---
 title: "new"
-weight: 145
+weight: 114
 ---
 
 Creates a new instance of a defined [Type](../../data-types/type).
@@ -9,7 +9,7 @@ Creates a new instance of a defined [Type](../../data-types/type).
 When possible it is preferred to use the syntax `MyType{...}` to create a instance of a certain type. However, sometimes you need to create an instance dynamically with the type name as variable and then `new()` can be used.
 {{% /notice %}}
 
-This function generates an [event](../../events).
+This function generates an [event](../../overview/events).
 
 ### Function
 

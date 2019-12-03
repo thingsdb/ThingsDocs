@@ -1,12 +1,12 @@
 ---
 title: "islist"
-weight: 131
+weight: 100
 ---
 
 This function determines whether the value passed to this function
 is a [list](../../data-types/list) or not.
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 

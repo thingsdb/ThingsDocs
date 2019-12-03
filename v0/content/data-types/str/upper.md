@@ -1,11 +1,11 @@
 ---
 title: "upper"
-weight: 56
+weight: 57
 ---
 
 Return a new [string](..) in which all case-based characters are in upper case.
 
-This function does *not* generate an [event](../../../events).
+This function does *not* generate an [event](../../../overview/events).
 
 ### Function
 

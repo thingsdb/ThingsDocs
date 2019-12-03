@@ -1,94 +1,101 @@
 [
 {
-	"uri": "https://docs.thingsdb.net/v0/authentication/",
+	"uri": "https://docs.thingsdb.net/v0/installation/",
+	"title": "Installation",
+	"tags": [],
+	"description": "",
+	"content": " Installation From source (linux) Install dependencies\nsudo apt-get install -y \\ libuv1-dev \\ libpcre2-dev \\ libmsgpack-dev \\ libyajl-dev  At least version 0.11.0 for Library libcleri is required.\ngit clone https://github.com/transceptor-technology/libcleri.git cd libcleri/Release make sudo make install  First clone the project\ngit clone https://github.com/thingsdb/ThingsDB.git  cd ThingsDB/Release make  Configuration ThingsDB can start with a configuration file and/or with environment variable.\nAdd more nodes ThingsDB can work with a single node but is designed to work with at least two nodes but three nodes are preferred. Running on three nodes brings redundancy and ensures the database stays operational, even while you for example upgrade ThingsDB to a newer version.\nSee new_node for more information about adding nodes to ThingsDB.\n"
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/connect/",
+	"title": "Connect",
+	"tags": [],
+	"description": "",
+	"content": " Connect There are several options to communicate with ThingsDB. By default each node listens to port 9200 for TCP socket connections. With a socket connection it is possible to do queries, run procedures and watch for changes made to individual things in a collection.\nThe most easy way to use the socket connection is to use an existing connector. ThingsDB currently has connectors available for Python and Go. For other languages you can read the protocol section on how to implement a ThingsDB connector.\nAs an alternative to the socket connection, a ThingsDB node has support for HTTP request through a HTTP API. This HTTP API listens be default to port 9210 but can be desabled or changed with the http_api_port in the configuration file or with the THINGSDB_HTTP_API_PORT environment variable.\n"
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/connect/authentication/",
 	"title": "Authentication",
 	"tags": [],
 	"description": "",
-	"content": " Authentication ThingsDB supports authentication by using a user and password combination, or with a token. A default user admin with password pass is created on a fresh installation. If you did not yet change the default password, you might want to jump to set password.\nIt might be a good idea to create a new user with minimal privileges and add a new token for this user. See the grant and revoke functions for managing privileges for a user.\nFor connecting to ThingsDB with a auto-reconnect client, WATCH privileges on the .node scope are required.\n "
+	"content": "ThingsDB supports authentication by using a user and password combination, or with a token. A default user admin with password pass is created on a fresh installation. If you did not yet change the default password, you might want to jump to set password.\nIt might be a good idea to create a new user with minimal privileges and add a new token for this user. See the grant and revoke functions for managing privileges for a user.\nFor connecting to ThingsDB with a auto-reconnect client, WATCH privileges on the .node scope are required.\n "
 },
 {
-	"uri": "https://docs.thingsdb.net/v0/authentication/python/",
+	"uri": "https://docs.thingsdb.net/v0/connect/http-api/",
+	"title": "HTTP API",
+	"tags": [],
+	"description": "",
+	"content": "Explain the HTTP API.\n"
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/connect/python/",
 	"title": "Python",
 	"tags": [],
 	"description": "",
 	"content": " Use pip to install the python client:\n pip install python-thingsdb  The Python client supports both queries, watching and a framework for using ThingsDB in a really simple way.\n To authorize in Python, use this code:\n import asyncio from thingsdb.client import Client client = Client() loop = asyncio.get_event_loop() async def example(): # replace `localhost` with your ThingsDB server address await client.connect('localhost') # replace `amdin` with yout username and `pass` with your password await client.authenticate('admin', 'pass') # ..or by using a token await client.authenticate('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX') # run the example loop.run_until_complete(example()) # the will close the client in a nice way client.close() loop.run_until_complete(client.wait_closed())  "
 },
 {
-	"uri": "https://docs.thingsdb.net/v0/authentication/shell/",
-	"title": "Shell",
+	"uri": "https://docs.thingsdb.net/v0/connect/go/",
+	"title": "Go",
 	"tags": [],
 	"description": "",
-	"content": " Copy/paste to download and install thingscmd\n pip install thingscmd  For running ThingsDB queries from the shell, a shell tool ThingsCMD is available. It is not possible to watch things by using this shell based tool.\n To authorize from the shell, use this code:\n # Authenticate with a user and password thingscmd -n localhost -u admin -p pass -q \u0026quot;nil;\u0026quot; # ..or with a token thingscmd -n localhost -t \u0026quot;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\u0026quot; -q \u0026quot;nil;\u0026quot;  "
+	"content": "Explain the Go client\u0026hellip;\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/v0/scopes/",
+	"uri": "https://docs.thingsdb.net/v0/connect/protocol/",
+	"title": "Protocol",
+	"tags": [],
+	"description": "",
+	"content": " This is a more in depth view of the protocol used for communication with ThingsDB. In case you just want to use ThingsDB using one of the language bindings, then this info can be skipped. If you plan to implement you own connector, then this info might be useful to you.\nCommunication with ThingsDB is done over a socket, either using TCP or a UNIX PIPE connection. Once a connection is made, packages can be send to ThingsDB. Each package starts with a 8 bytes header using little endian, followed by optional data. Before you can send queries to ThingsDB, the connection must be authenticated. This can be done by sending an AUTH package.\nPackage LEN (Unsigned, 32bit) Length of the data, the header not included.\nID (16bit) The ID can be used as an identifier of your package. When ThingsDB send a response on a request, it will use the same ID so this allows you to map a response to a request. This is useful if you want to send multiple request in parallel.\nTYPE (Unsigned, 8bit) Package type is used to describe what kind of package is transmitted.\nRequest type    Type Number Description     PING 32 Ping, useful as keep-alive.   AUTH 33 Authentication, expects: [username, password] or a token_string.   QUERY 34 Query ThingsDB.   WATCH 35 Watch for changes to a thing.   UNWATCH 36 Stop watching specified things, see watching for more info.   RUN 37 Run a procedure, see procedures for more info.    CHK (Unsigned, 8bit) Inverse of the type: type ^ 0xff, this is used as a check-bit.\nDATA Data serialized using MessagePack.\n Package format:\n ┌───────────┬───────────┬───────────┬───────────┬───────────┐ │ LEN (4) │ ID (2) │ TYPE (1) │ CHK (1) │ DATA (..) │ └───────────┴───────────┴───────────┴───────────┴───────────┘  Example As an example we create an authentication package for the default admin user with password pass.\nThis is the package data for our authentication request:\n[\u0026quot;admin\u0026quot;, \u0026quot;pass\u0026quot;]\nSerializing the above using MessagePack results in the following 12 bytes:\n\\x92\\xa5admin\\xa4pass\nNow we create the header, for this example we just use ID 0:\n Data length (12) \\x0c\\x00\\x00\\x00 Identifier (0) \\x00\\x00 Auth package type (33) \\x21 Inverse type check bit (222) \\xde  So our total package will be:\n\\x0c\\x00\\x00\\x00\\x00\\x00\\x21\\xde\\x92\\xa5admin\\xa4pass\n"
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/overview/",
+	"title": "Overview",
+	"tags": [],
+	"description": "",
+	"content": " Overview In this section we briefly try to explain some concepts of ThingsDB.\n"
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/overview/scopes/",
 	"title": "Scopes",
 	"tags": [],
 	"description": "",
-	"content": " Scopes When sending a query, calling a procedure or subscribing to a thing, the request will require you to provide a scope. ThingsDB has three main scopes: @thingsdb, @node and @collection.\n   scope short description     @thingsdb @t ThingsDB scope; Used for managing user accounts, collections and nodes.   @node @n Current node scope; For node info and statistics from the connected node.   @node:ID @n:ID Specific node scope; Get node info and statistics from a specific node id (ID should be replaced with a node ID, for example 0).   @collection:NAME @:NAME Collection scope; A collection where things are stored.   @collection:ID @:ID Collection scope; By collection ID instead of the using the collection name.    Scopes names do allow an alternative syntax where the @ and : are replaced with the / character. For example @collection:stuff can be written as /collection/stuff and the short version @:stuff may be written as //stuff.\n "
+	"content": "When sending a query, calling a procedure or subscribing to a thing, the request will require you to provide a scope. ThingsDB has three main scopes: @thingsdb, @node and @collection.\n   scope short description     @thingsdb @t ThingsDB scope; Used for managing user accounts, collections and nodes.   @node @n Current node scope; For node info and statistics from the connected node.   @node:ID @n:ID Specific node scope; Get node info and statistics from a specific node id (ID should be replaced with a node ID, for example 0).   @collection:NAME @:NAME Collection scope; A collection where things are stored.   @collection:ID @:ID Collection scope; By collection ID instead of the using the collection name.    Scopes names do allow an alternative syntax where the @ and : are replaced with the / character. For example @collection:stuff can be written as /collection/stuff and the short version @:stuff may be written as //stuff.\n "
 },
 {
-	"uri": "https://docs.thingsdb.net/v0/names/",
+	"uri": "https://docs.thingsdb.net/v0/overview/names/",
 	"title": "Names",
 	"tags": [],
 	"description": "",
-	"content": " Names The following rules apply to names in ThingsDB:\n A name must start with a letter or underscore character A name cannot start with a number A name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ ) Names are case-sensitive (thing, Thing and THING are three different names) Names are restricted to 255 characters  "
+	"content": "The following rules apply to names in ThingsDB:\n A name must start with a letter or underscore character A name cannot start with a number A name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ ) Names are case-sensitive (thing, Thing and THING are three different names) Names are restricted to 255 characters  "
 },
 {
-	"uri": "https://docs.thingsdb.net/v0/properties/",
+	"uri": "https://docs.thingsdb.net/v0/overview/properties/",
 	"title": "Properties",
 	"tags": [],
 	"description": "",
 	"content": " Properties Properties are names assigned to a thing with a value. The collection itself is also a thing to which properties can be assigned. For example: .answer = 42; creates a property answer with value 42 and the property will be assigned to the collection.\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/v0/variable/",
+	"uri": "https://docs.thingsdb.net/v0/overview/variable/",
 	"title": "Variable",
 	"tags": [],
 	"description": "",
 	"content": " Variable Can be used to assign a value to a variable which can be used within a query.\nVariable can be created with READ privileges since they do not modify the collection data.\nTo create a variable, just use a valid name.\nSome valid examples:\n _ = ... tmp = ... var1 = ...   This code uses a variable:\n a = 'This is a variable!!!'; b = 'Hello'; { /* This will create a new variable `a` within this block */ a = 'New variable within this block'; /* This will update the global variable `b` */ b += ' World'; }; [a, b];   Return value in JSON format\n [ \u0026quot;This is a variable!!!\u0026quot;, \u0026quot;Hello World\u0026quot; ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/v0/query/",
-	"title": "Query",
-	"tags": [],
-	"description": "",
-	"content": " Query Queries to ThingsDB can be used to manage nodes, ThingsDB or to query collections.\nA query request has a required field scope and query, and an option required field collection when querying a collection scope.\nTo send a query you can either use a language binding, see code examples, or if you want to know how to serialize and send the data, read the protocol section.\n Example query\n thingscmd \\ --node localhost \\ --user admin \\ --password pass \\ --scope @thingsdb \\ --query \u0026quot;'Hello world!!'\u0026quot;   Request in JSON format\n [\u0026quot;@thingsdb\u0026quot;, \u0026quot;'Hello world!!'\u0026quot;]  "
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/query/arguments/",
-	"title": "Arguments",
-	"tags": [],
-	"description": "",
-	"content": "Arguments can be used when querying ThingsDB.\nCan also be used for binary data, see example.\n This code uses arguments to set binary data using arguments:\n # note: ThingsCMD only supports one argument which is named `blob` curl \u0026quot;https://docs.thingsdb.net/images/logo.png\u0026quot; | thingscmd -n node.local -u admin -p pass -c @:stuff -q \u0026quot;.logo = blob;\u0026quot;  "
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/protocol/",
-	"title": "Protocol",
-	"tags": [],
-	"description": "",
-	"content": " Protocol This is a more in depth view of the protocol used for communication with ThingsDB. In case you just want to use ThingsDB using one of the language bindings, then this info can be skipped. If you plan to implement you own connector, then this info might be useful to you.\nCommunication with ThingsDB is done over a socket, either using TCP or a UNIX PIPE connection. Once a connection is made, packages can be send to ThingsDB. Each package starts with a 8 bytes header using little endian, followed by optional data. Before you can send queries to ThingsDB, the connection must be authenticated. This can be done by sending an AUTH package.\n"
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/protocol/package/",
-	"title": "Package",
-	"tags": [],
-	"description": "",
-	"content": " LEN (Unsigned, 32bit) Length of the data, the header not included.\nID (16bit) The ID can be used as an identifier of your package. When ThingsDB send a response on a request, it will use the same ID so this allows you to map a response to a request. This is useful if you want to send multiple request in parallel.\nTYPE (Unsigned, 8bit) Package type is used to describe what kind of package is transmitted.\nRequest type    Type Number Description     PING 32 Ping, useful as keep-alive.   AUTH 33 Authentication, expects: [username, password] or a token_string.   QUERY 34 Query, see query for more info.   WATCH 35 Watch, see watching for more info.   UNWATCH 36 Stop watching specified things, see watching for more info.   RUN 37 Run a procedure, see procedures for more info.    CHK (Unsigned, 8bit) Inverse of the type: type ^ 0xff, this is used as a check-bit.\nDATA Data serialized using MessagePack.\n Package format:\n ┌───────────┬───────────┬───────────┬───────────┬───────────┐ │ LEN (4) │ ID (2) │ TYPE (1) │ CHK (1) │ DATA (..) │ └───────────┴───────────┴───────────┴───────────┴───────────┘  "
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/protocol/example/",
-	"title": "Example",
-	"tags": [],
-	"description": "",
-	"content": " Example As an example we create an authentication package for the default admin user with password pass.\nThis is the package data for our authentication request:\n[\u0026quot;admin\u0026quot;, \u0026quot;pass\u0026quot;]\nSerializing the above using MessagePack results in the following 12 bytes:\n\\x92\\xa5admin\\xa4pass\nNow we create the header, for this example we just use ID 0:\n Data length (12) \\x0c\\x00\\x00\\x00 Identifier (0) \\x00\\x00 Auth package type (33) \\x21 Inverse type check bit (222) \\xde  So our total package will be:\n\\x0c\\x00\\x00\\x00\\x00\\x00\\x21\\xde\\x92\\xa5admin\\xa4pass\n"
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/events/",
+	"uri": "https://docs.thingsdb.net/v0/overview/events/",
 	"title": "Events",
 	"tags": [],
 	"description": "",
-	"content": " Events When a query uses a statement which makes a change to ThingsDB, then internally ThingsDB will create an event to apply these changes. Events are applied in order on each node so database consistency is guaranteed.\nA single query might contain several statements and make many changes. All changes within a query will be grouped in a single event.\nIn the documentation we try to make clear if a function will generate an event or not. If possible, you should try to avoid a query to make an event if you do not intent to make changes which need to be stored.\n "
+	"content": "When a query uses a statement which makes a change to ThingsDB, then internally ThingsDB will create an event to apply these changes. Events are applied in order on each node so database consistency is guaranteed.\nA single query might contain several statements and make many changes. All changes within a query will be grouped in a single event.\nIn the documentation we try to make clear if a function will generate an event or not. If possible, you should try to avoid a query to make an event if you do not intent to make changes which need to be stored.\n "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/overview/slices/",
+	"title": "Slices",
+	"tags": [],
+	"description": "",
+	"content": "The following slice notation can be used:\nlist[start:stop:step]  The start and stop value will default to nil and step has a default value of 1. For understanding slices it is important to remember that the :stop value represents the first value that is not in the selected slice. This means that the difference between stop and start is the number of selected elements. (assuming that step is the default value 1)\nAnother feature is that negative numbers may be used. For start and stop this means that it will count from the end of the array instead of the beginning.\n Some examples using start and stop to select some elements:\n months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; [ { months[:2]; /* first two months */ }, { months[-2:]; /* last two months */ }, { months[:-2]; /* all, except the last two months */ }, ];   \u0026hellip;and the corresponding result in JSON format:\n [ [ \u0026quot;January\u0026quot;, \u0026quot;February\u0026quot; ], [ \u0026quot;November\u0026quot;, \u0026quot;December\u0026quot; ], [ \u0026quot;January\u0026quot;, \u0026quot;February\u0026quot;, \u0026quot;March\u0026quot;, \u0026quot;April\u0026quot;, \u0026quot;May\u0026quot;, \u0026quot;June\u0026quot;, \u0026quot;July\u0026quot;, \u0026quot;August\u0026quot;, \u0026quot;September\u0026quot;, \u0026quot;October\u0026quot; ] ]  Another feature is the step argument, which also may be negative to reverse the slice direction.\n Some examples using the step value:\n months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; [ { months[::2]; /* only the odd months */ }, { months[::-1]; /* months in reverse order */ }, ];   \u0026hellip;the corresponding result in JSON format:\n [ [ \u0026quot;January\u0026quot;, \u0026quot;March\u0026quot;, \u0026quot;May\u0026quot;, \u0026quot;July\u0026quot;, \u0026quot;September\u0026quot;, \u0026quot;November\u0026quot; ], [ \u0026quot;December\u0026quot;, \u0026quot;November\u0026quot;, \u0026quot;October\u0026quot;, \u0026quot;September\u0026quot;, \u0026quot;August\u0026quot;, \u0026quot;July\u0026quot;, \u0026quot;June\u0026quot;, \u0026quot;May\u0026quot;, \u0026quot;April\u0026quot;, \u0026quot;March\u0026quot;, \u0026quot;February\u0026quot;, \u0026quot;January\u0026quot; ] ]  Slices can also be used to replace the splice function.\nIt is not possible to use the step value when assigning items using the slice syntax.\n  Example using the slice syntax to replace items in a list:\n months = ['January', 'February', 'XXX', 'May']; /* Replace 'XXX' with 'March' and 'April' */ months[2:3] = ['March', 'April']; /* Return result */ months;   Once again the result in JSON format:\n [ \u0026quot;January\u0026quot;, \u0026quot;February\u0026quot;, \u0026quot;March\u0026quot;, \u0026quot;April\u0026quot;, \u0026quot;May\u0026quot; ]  Instead of lists and tuples it also possible to use the slice notion on strings\n Slice on string example:\n /* Return 'abcdef' in reverse order */ \u0026quot;abcdef\u0026quot;[::-1];  \u0026quot;fedcba\u0026quot;  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/data-types/",
@@ -504,13 +511,6 @@
 	"content": "Unwrap a wrapped thing.\n"
 },
 {
-	"uri": "https://docs.thingsdb.net/v0/slices/",
-	"title": "Slices",
-	"tags": [],
-	"description": "",
-	"content": " Slices The following slice notation can be used:\nlist[start:stop:step]  The start and stop value will default to nil and step has a default value of 1. For understanding slices it is important to remember that the :stop value represents the first value that is not in the selected slice. This means that the difference between stop and start is the number of selected elements. (assuming that step is the default value 1)\nAnother feature is that negative numbers may be used. For start and stop this means that it will count from the end of the array instead of the beginning.\n Some examples using start and stop to select some elements:\n months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; [ { months[:2]; /* first two months */ }, { months[-2:]; /* last two months */ }, { months[:-2]; /* all, except the last two months */ }, ];   \u0026hellip;and the corresponding result in JSON format:\n [ [ \u0026quot;January\u0026quot;, \u0026quot;February\u0026quot; ], [ \u0026quot;November\u0026quot;, \u0026quot;December\u0026quot; ], [ \u0026quot;January\u0026quot;, \u0026quot;February\u0026quot;, \u0026quot;March\u0026quot;, \u0026quot;April\u0026quot;, \u0026quot;May\u0026quot;, \u0026quot;June\u0026quot;, \u0026quot;July\u0026quot;, \u0026quot;August\u0026quot;, \u0026quot;September\u0026quot;, \u0026quot;October\u0026quot; ] ]  Another feature is the step argument, which also may be negative to reverse the slice direction.\n Some examples using the step value:\n months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; [ { months[::2]; /* only the odd months */ }, { months[::-1]; /* months in reverse order */ }, ];   \u0026hellip;the corresponding result in JSON format:\n [ [ \u0026quot;January\u0026quot;, \u0026quot;March\u0026quot;, \u0026quot;May\u0026quot;, \u0026quot;July\u0026quot;, \u0026quot;September\u0026quot;, \u0026quot;November\u0026quot; ], [ \u0026quot;December\u0026quot;, \u0026quot;November\u0026quot;, \u0026quot;October\u0026quot;, \u0026quot;September\u0026quot;, \u0026quot;August\u0026quot;, \u0026quot;July\u0026quot;, \u0026quot;June\u0026quot;, \u0026quot;May\u0026quot;, \u0026quot;April\u0026quot;, \u0026quot;March\u0026quot;, \u0026quot;February\u0026quot;, \u0026quot;January\u0026quot; ] ]  Slices can also be used to replace the splice function.\nIt is not possible to use the step value when assigning items using the slice syntax.\n  Example using the slice syntax to replace items in a list:\n months = ['January', 'February', 'XXX', 'May']; /* Replace 'XXX' with 'March' and 'April' */ months[2:3] = ['March', 'April']; /* Return result */ months;   Once again the result in JSON format:\n [ \u0026quot;January\u0026quot;, \u0026quot;February\u0026quot;, \u0026quot;March\u0026quot;, \u0026quot;April\u0026quot;, \u0026quot;May\u0026quot; ]  Instead of lists and tuples it also possible to use the slice notion on strings\n Slice on string example:\n /* Return 'abcdef' in reverse order */ \u0026quot;abcdef\u0026quot;[::-1];  \u0026quot;fedcba\u0026quot;  "
-},
-{
 	"uri": "https://docs.thingsdb.net/v0/operators/",
 	"title": "Operators",
 	"tags": [],
@@ -560,223 +560,6 @@
 	"content": "   Symbol Type of operation Associativity     () Expression parenthesis Left-to-right   ! Not operator Right-to-left   * / // % Multiplication, Modulo, (Integer) Division Left-to-right   + - Add, Subtract Left-to-right   \u0026amp; Bitwise AND Left-to-right   ^ Bitwise XOR Left-to-right   \u0026#124; Bitwise OR Left-to-right   == != \u0026lt;= \u0026gt;= \u0026lt; \u0026gt; Compare Left-to-right   \u0026amp;\u0026amp; Logical AND Left-to-right   \u0026#124;\u0026#124; Logical OR Left-to-right   ? : Conditional Right-to-left   = *= /= %= += -= \u0026amp;= ^= \u0026#124;= Assignments Right-to-left    "
 },
 {
-	"uri": "https://docs.thingsdb.net/v0/node-api/",
-	"title": "Node API",
-	"tags": [],
-	"description": "",
-	"content": " Node API The node scope can be used to query node statistics, counters or make node specific changes.\n"
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/node-api/backup_info/",
-	"title": "backup_info",
-	"tags": [],
-	"description": "",
-	"content": "Returns information about a specific scheduled backup.\nThis function does not generate an event.\n"
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/node-api/backups_info/",
-	"title": "backups_info",
-	"tags": [],
-	"description": "",
-	"content": "Returns info about all scheduled backups.\nThis function does not generate an event.\n"
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/node-api/counters/",
-	"title": "counters",
-	"tags": [],
-	"description": "",
-	"content": " Returns counters for the ThingsDB node you are connected too. Counters start all at zero when ThingsDB is started, or when the counters are reset by using reset_counters()\u0026rsquo;.\nCounters give information about things, queries and events. If you suspect failed queries, then counters might provide you with more information.\n   Counter Description     average_event_duration The average event duration in seconds.   events_committed Events committed since last counters reset.   events_failed Failed events. This is a critical counter which should be 0.   events_killed Killed events took too long for receiving the READY status. These event may be processed later.   events_quorum_lost Number of times a quorum was not received.   events_skipped Events which cannot be committed since an event with a higher id is already processed. These events are moved to a skipped queue.   events_unaligned Number of times an event cannot be pushed to the end of the queue and needs re-ordering.   events_with_gap Events which are committed but at least one event id was skipped.   garbage_collected Number of things which are garbage collected.   longest_event_duration Longest event duration, in seconds.   queries_success Number of queries where this node acted as the master node and the query has successful finished.   queries_with_error Number of queries where this node acted as the master node but the query has returned with an error.    This function does not generate an event.\nFunction counters();\nArguments None\nReturn value Returns the current counter values.\nExample  This code will return node counter values:\n // returns counters for `localhost:9200` counters();   Example return value in JSON format\n { \u0026quot;average_event_duration\u0026quot;: 3.368566710075053e-05,, \u0026quot;events_committed\u0026quot;: 80352, \u0026quot;events_failed\u0026quot;: 0, \u0026quot;events_killed\u0026quot;: 0, \u0026quot;events_quorum_lost\u0026quot;: 0, \u0026quot;events_skipped\u0026quot;: 0, \u0026quot;events_unaligned\u0026quot;: 0, \u0026quot;events_with_gap\u0026quot;: 0, \u0026quot;garbage_collected\u0026quot;: 0, \u0026quot;longest_event_duration\u0026quot;: 3.508100053295493e-05, \u0026quot;queries_received\u0026quot;: 130944 }  "
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/node-api/del_backup/",
-	"title": "del_backup",
-	"tags": [],
-	"description": "",
-	"content": "Delete a scheduled backup.\nThis function does not generate an event.\n"
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/node-api/new_backup/",
-	"title": "new_backup",
-	"tags": [],
-	"description": "",
-	"content": "Schedule a new backup.\nThis function does not generate an event.\n"
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/node-api/node_info/",
-	"title": "node_info",
-	"tags": [],
-	"description": "",
-	"content": " Returns information about the node in the current scope. See scopes for more information on how to target a specific node scope.\n   Value Description     archive_files Number of archive files. May decrease after a full store during away mode.   archived_in_memory Number of events which are archived in memory.   cached_names Number of names cached in memory.   client_port Listening for client TCP socket connections on this port.   db_stored_event_id Last stored event ID in full database store.   events_in_queue Events which are pending in the queue.   global_committed_event_id Lowest known committed event ID by all nodes.   global_stored_event_id Lowest known stored event ID by all nodes.   hostname Hostname of the node.   http_api_port Listening to this HTTP port for API calls.   http_status_port Listening to this HTTP port for status, readiness and liveness requests.   ip_support Enabled IP support. May be IPv4/IPv6 or both.   libcleri_version Cleri language parser library version.   libpcre2_version PCRE regular expression library version.   msgpack_version MessagePack data protocol library version.   libuv_version UV asynchronous library version.   local_committed_event_id Last committed event ID on the node.   local_stored_event_id Last stored event ID on disk. Store takes place when in away mode.   log_level Current log level for the node. May be changed at runtime using set_log_level(..)   next_event_id Next free event ID.   next_thing_id Next free things ID.   node_id The id which is assigned to the node.   node_port Listening for node TCP socket connections on this port.   status Current status of the ThingsDB node.   storage_path Path used for storing ThingsDB data.   syntax_version Language or syntax version. A new version of ThingsDB might also have a new language version.   uptime Uptime of the node in seconds.   version Version of ThingsDB,   zone Zone number to which the node is assigned. May be changed in the ThingsDB configuration file.    This function does not generate an event.\nFunction node_info()\nArguments None\nReturn value Returns info about the node. Which node is defined by the scope.\nExample  This code returns info for the connected node:\n node_info();   Example return value in JSON format\n { \u0026quot;archive_files\u0026quot;: 1, \u0026quot;archived_in_memory\u0026quot;: 0, \u0026quot;cached_names\u0026quot;: 2, \u0026quot;client_port\u0026quot;: 9200, \u0026quot;db_stored_event_id\u0026quot;: 1, \u0026quot;events_in_queue\u0026quot;: 0, \u0026quot;global_committed_event_id\u0026quot;: 2, \u0026quot;global_stored_event_id\u0026quot;: 2, \u0026quot;hostname\u0026quot;: \u0026quot;node0.local\u0026quot;, \u0026quot;http_api_port\u0026quot;: 9210, \u0026quot;http_status_port\u0026quot;: \u0026quot;disabled\u0026quot;, \u0026quot;ip_support\u0026quot;: \u0026quot;ALL\u0026quot;, \u0026quot;libcleri_version\u0026quot;: \u0026quot;0.11.1\u0026quot;, \u0026quot;libpcre2_version\u0026quot;: \u0026quot;10.32\u0026quot;, \u0026quot;libuv_version\u0026quot;: \u0026quot;1.24.1\u0026quot;, \u0026quot;local_committed_event_id\u0026quot;: 2, \u0026quot;local_stored_event_id\u0026quot;: 2, \u0026quot;log_level\u0026quot;: \u0026quot;WARNING\u0026quot;, \u0026quot;msgpack_version\u0026quot;: \u0026quot;3.2.0\u0026quot;, \u0026quot;next_event_id\u0026quot;: 3, \u0026quot;next_thing_id\u0026quot;: 5, \u0026quot;node_id\u0026quot;: 0, \u0026quot;node_port\u0026quot;: 9220, \u0026quot;scheduled_backups\u0026quot;: 0, \u0026quot;status\u0026quot;: \u0026quot;READY\u0026quot;, \u0026quot;storage_path\u0026quot;: \u0026quot;/var/lib/thingsdb/\u0026quot;, \u0026quot;syntax_version\u0026quot;: \u0026quot;v0\u0026quot;, \u0026quot;uptime\u0026quot;: 7.854678630828857, \u0026quot;version\u0026quot;: \u0026quot;0.2.13\u0026quot;, \u0026quot;zone\u0026quot;: 0 }  "
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/node-api/nodes_info/",
-	"title": "nodes_info",
-	"tags": [],
-	"description": "",
-	"content": " Returns information about all ThingsDB nodes.\n   Value Description     address IP address or hostname of the node.   committed_event_id Last known committed event ID on the node.   next_thing_id Next free thing ID on the node.   node_id ID which is assigned to the node.   port TCP port on which the node is listening for node connections.   status Current status of the node.   stored_event_id Last known stored event ID on the node.   syntax_version Language or syntax version which is running on the node.   zone Zone number to which the node is assigned.    This function does not generate an event.\nFunction nodes_info()\nArguments None\nReturn value List with node info for all nodes in ThingsDB.\nExample  This code returns info for all ThingsDB nodes:\n nodes_info();   Example return value in JSON format\n [ { \u0026quot;address\u0026quot;: \u0026quot;node0.local\u0026quot;, \u0026quot;committed_event_id\u0026quot;: 4, \u0026quot;next_thing_id\u0026quot;: 5, \u0026quot;node_id\u0026quot;: 0, \u0026quot;port\u0026quot;: 9220, \u0026quot;status\u0026quot;: \u0026quot;READY\u0026quot;, \u0026quot;stored_event_id\u0026quot;: 4, \u0026quot;stream\u0026quot;: null, \u0026quot;syntax_version\u0026quot;: \u0026quot;v0\u0026quot;, \u0026quot;zone\u0026quot;: 0 }, { \u0026quot;address\u0026quot;: \u0026quot;node1.local\u0026quot;, \u0026quot;committed_event_id\u0026quot;: 4, \u0026quot;next_thing_id\u0026quot;: 5, \u0026quot;node_id\u0026quot;: 1, \u0026quot;port\u0026quot;: 9220, \u0026quot;status\u0026quot;: \u0026quot;READY\u0026quot;, \u0026quot;stored_event_id\u0026quot;: 4, \u0026quot;stream\u0026quot;: \u0026quot;\u0026lt;node-out:1\u0026gt; 192.168.0.10:9220\u0026quot;, \u0026quot;syntax_version\u0026quot;: \u0026quot;v0\u0026quot;, \u0026quot;zone\u0026quot;: 0 } ]  "
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/node-api/reset_counters/",
-	"title": "reset_counters",
-	"tags": [],
-	"description": "",
-	"content": " Resets the counters for the ThingsDB node you are connected too. Other nodes are not affected.\nThis function does not generate an event.\nFunction reset_counters();\nArguments None\nReturn value Returns nil.\nExample  This code will reset the counters on a node:\n // resets counters on `localhost:9200` reset_counters();   Example return value in JSON format (the new collection id)\n null  "
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/node-api/set_log_level/",
-	"title": "set_log_level",
-	"tags": [],
-	"description": "",
-	"content": "This function does not generate an event.\n"
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/node-api/shutdown/",
-	"title": "shutdown",
-	"tags": [],
-	"description": "",
-	"content": "This function does not generate an event.\n"
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/",
-	"title": "Thingsdb API",
-	"tags": [],
-	"description": "",
-	"content": " Thingsdb API ThingsDB can be managed with simple query commands. This allows you to manage collections, users, access and nodes.\n"
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/collection_info/",
-	"title": "collection_info",
-	"tags": [],
-	"description": "",
-	"content": " Returns information about a specific collection.\nThis function does not generate an event.\nFunction collection_info(name_or_id);\nArguments    Argument Type Description     name_or_id str/int Name or Id of the collection    Return value Returns info about the collection.\nExample  Returns information about collection stuff:\n collection_info('stuff');   Example return value in JSON format\n { \u0026quot;collection_id\u0026quot;: 782, \u0026quot;name\u0026quot;: \u0026quot;stuff\u0026quot;, \u0026quot;quota_array_size\u0026quot;: null, \u0026quot;quota_properties\u0026quot;: null, \u0026quot;quota_raw_size\u0026quot;: null, \u0026quot;quota_things\u0026quot;: null, \u0026quot;things\u0026quot;: 61352 }  "
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/collections_info/",
-	"title": "collections_info",
-	"tags": [],
-	"description": "",
-	"content": " Returns collection information for all collections in ThingsDB.\nSee the collection_info() function documentation for an example of the exposed collection information.\nThis function does not generate an event.\nFunction collections_info()\nArguments None\nReturn value List with collection info for all collections in ThingsDB.\n"
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/del_collection/",
-	"title": "del_collection",
-	"tags": [],
-	"description": "",
-	"content": " Delete a collection.\nThis function generates an event.\nFunction del_collection(name);\nArguments    Argument Type Description     name str (required) Name of the collection to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the collection does not exist.\nExample  This code will delete collection stuff:\n // Delete collection `stuff` del_collection('stuff');  "
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/del_expired/",
-	"title": "del_expired",
-	"tags": [],
-	"description": "",
-	"content": " Delete all expired tokens.\nThis function generates an event.\nFunction del_expired();\nArguments None\nReturn value Returns nil.\nExample  This code will delete all expired tokens:\n // Delete all expired tokens del_expired();  "
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/del_node/",
-	"title": "del_node",
-	"tags": [],
-	"description": "",
-	"content": " Delete a node from ThingsDB.\nBefore deleting a node, the node must be offline. As long is the node is active, you are not allowed to delete the node. See shutdown for shutting down a node by using a query.\n This function generates an event.\nFunction del_node(node_id);\nArguments    Argument Type Description     node_id int (required) Id of the node to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the node id does not exist.\n"
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/del_token/",
-	"title": "del_token",
-	"tags": [],
-	"description": "",
-	"content": " Delete a token.\nThis function generates an event.\nFunction del_token(key);\nArguments    Argument Type Description     key str (required) Token key to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the token is not found.\nExample  This code will delete a token:\n // Delete a token del_token('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX');  "
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/del_user/",
-	"title": "del_user",
-	"tags": [],
-	"description": "",
-	"content": " Delete a user. It is not possible to delete your own user account and a BAD_REQUEST will be raised in case you try to. Any tokens associated with the user will also be deleted.\nThis function generates an event.\nFunction del_user(username);\nArguments    Argument Type Description     username str (required) Username of the user to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the user does not exist.\nExample  This code will delete user test:\n // Delete user `test` del_user('test');  "
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/grant/",
-	"title": "grant",
-	"tags": [],
-	"description": "",
-	"content": " Grant collection or general privileges to a user. Access to a user is provided by setting a bit mask to either the @node, @thingsdb or a collection scope.\nIt is not possible to set privileges on a specific node scope. Therefore scope @node will apply to all nodes in ThingsDB.\n The following pre-defined masks are available:\n   Mask Description     READ (1) Gives read access.   MODIFY (2) Gives read and modify access.   GRANT (4) Gives read, modify and grant (and revoke) privileges.   WATCH (8) Gives watch (and un-watch) privileges.   RUN (16) Gives run procedures access.   FULL (31) A mask for full privileges.    It is not possible to have GRANT privileges without also having MODIFY privileges. Similarly, it is not possible to have MODIFY privileges without READ. However, ThingsDB automatically applies the required privileges so when setting for example GRANT privileges, ThingsDB makes sure that the user also gets MODIFY and READ.\n This function generates an event.\nFunction grant(target, user, mask);\nArguments    Argument Type Description     target int/raw Can be either the @node, @thingsdb, or a collection scope.   user str User to grant privileges to.   mask int Bit-mask for setting privileges.    Return value Returns nil when successful. An INDEX_ERROR is raised if the user or target does not exist.\nExample  Grant read and watch privileges to user iris to collection stuff:\n new_user('iris'); new_token('iris'); [ grant('@node', 'iris', WATCH), grant('@:stuff', 'iris', (READ|WATCH)), ];   Return value in JSON format\n [ null, null ]  "
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/new_collection/",
-	"title": "new_collection",
-	"tags": [],
-	"description": "",
-	"content": " Create a new collection.\nThis function generates an event.\nFunction new_collection(name);\nArguments    Argument Type Description     name str (required) Name of the new collection.    The user who has created the collection will automatically receive full access rights to the new collection. Use grant to give other users access to the collection.\n Return value Returns the new collection id if successful. An INDEX_ERROR is raised if the collection already exists.\nExample  This code will create a collection \u0026ldquo;awesome_things\u0026rdquo;:\n // Creates a new collection new_collection('awesome_things');   Example return value in JSON format (the new collection id)\n 31415  "
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/new_node/",
-	"title": "new_node",
-	"tags": [],
-	"description": "",
-	"content": " Adds a new node to ThingsDB. Nodes are used for scaling and high availability.\nThis function generates an event.\nFunction new_node(secret, ip_address [, port]);\nArguments    Argument Type Description     secret str (required) Secret used to initially connect to the new node.   ip_address str (required) IP Address (IPv4 or IPv6) of the new node.   port int (optional) Node port (listen_node_port), an integer between 0 an 65535, default 9220.    Return value Returns the new node id if successful.\nExample  Add a new node to ThingsDB:\n // ThingsDB must be started on node2 using the `--secret ...` argument new_node('my-one-time-serect', 'node2.local');   Example return value in JSON format (the new node id)\n 1  "
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/new_token/",
-	"title": "new_token",
-	"tags": [],
-	"description": "",
-	"content": " Adds a new token for a given user. An optional expiration time may be given after which the token cannot be used anymore. Use del_expired to cleanup expired tokens. The expiration time may be given as a UNIX time-stamp in seconds or a date/time string.\nSome valid date/time strings:\n 2021-01-01 2023-02-06 14:30 2023-07-5T13:23:20+01:00  Expiration dates in the past are not allowed an will raise a BAD_REQUEST error.\nIt is also possible to set a description for the token which can be used to identify where token is used for. If you only want to set a description, but no expiration time, then you can use nil as second argument. For example: new_token('my_user', nil, 'some nice description');\nThere can be no more than 128 tokens assigned to a single user. A MAX_QUOTA_ERROR is raised if this limit is reached. Existing tokens can be removed with del_token and to view the current tokens you can use the user_info(..) (or users_info()) function.\nThis function generates an event.\nFunction new_token(username, [, expiration_time] [, description]);\nArguments    Argument Type Description     username str (required) Name of the user.   expiration_time nil/int/float/raw (optional) Expiration date of the token.   description str (optional) Token description.    Return value Returns the new token key.\nExample  Create a new token for user admin:\n // ThingsDB must be started on node2 using the `--secret ...` argument new_token('admin', now() + 7*24*3600, 'token for one week');   Example return value in JSON format (the token key)\n \u0026quot;8Ay0ngISFa9je3o/MMu24U\u0026quot;  "
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/new_user/",
-	"title": "new_user",
-	"tags": [],
-	"description": "",
-	"content": " Creates a new user to ThingsDB. The new user is created without a password, token and access privileges. You probably want to set a password or add a new token and assign some privileges using grant(\u0026hellip;).\nThis function generates an event.\nFunction new_user(user);\nArguments    Argument Type Description     user str (required) Username, between 1 and 128 graphical characters.    Return value Returns the new user id if successful. An INDEX_ERROR is raised if the user already exists.\nExample  Create a new user iris:\n new_user('iris');   Example return value in JSON format (the new user id)\n 19  "
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/rename_collection/",
-	"title": "rename_collection",
-	"tags": [],
-	"description": "",
-	"content": " Rename a collection.\nThis function generates an event.\nFunction rename_collection(current_name, new_name);\nArguments    Argument Type Description     current_name str (required) Current collection name.   new_name str (required) New name for the collection.    Return value Returns nil when successful.\n"
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/rename_user/",
-	"title": "rename_user",
-	"tags": [],
-	"description": "",
-	"content": " Rename a user.\nThis function generates an event.\nFunction rename_user(current_name, new_name);\nArguments    Argument Type Description     current_name str (required) Current user name.   new_name str (required) New name for the user.    Return value Returns nil when successful.\n"
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/revoke/",
-	"title": "revoke",
-	"tags": [],
-	"description": "",
-	"content": " Revoke collection or general privileges from a user. See grant for more information on how access privileges can be set for a user.\nThis function generates an event.\nFunction revoke(target, user, mask);\nArguments    Argument Type Description     target int/raw Can be either the @node, @thingsdb, or a collection scope.   user str User to revoke privileges from.   mask int Bit-mask for revoking privileges.    Return value Returns nil when successful. An INDEX_ERROR is raised if the user or target does not exist.\nExample  Revoke all privileges for user iris on collection stuff:\n revoke('@:stuff', 'iris', FULL);   Return value in JSON format\n null  "
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/set_password/",
-	"title": "set_password",
-	"tags": [],
-	"description": "",
-	"content": " Change a users password. This function can also be used to remove an existing password by using nil as the new password.\nPasswords must contain 1 to 128 printable characters.\nThis function generates an event.\nFunction set_password(username, new_password);\nArguments    Argument Type Description     username str (required) Name of the user   new_password nil/str (required) New password or nil    Return value Returns nil if successful. An INDEX_ERROR is returned if the user does not exist and BAD_REQUEST if the new password is not compliant.\nExample  This code changes the password for user admin:\n // Change the password for user `admin` set_password('admin', 'my_secret_password');   Return value in JSON format\n null  "
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/set_quota/",
-	"title": "set_quota",
-	"tags": [],
-	"description": "",
-	"content": " Quota limits can be set on collections. The following quota limits can be set:\n   Type Description     things Maximum number of things allowed in a collection. Type instances are also counted towards this quota.   properties Maximum number of properties which can be assigned to a thing.   array_size Maximum list and tuple length.   raw_size Maximum str and bytes length.    If a quota limit is reached, then the affected query will raise MAX_QUOTA_ERROR.\nThe current quota values can be viewed with collection(\u0026hellip;) or collections().\nThis function generates an event.\nFunction set_quota(collection, quota_type, quota)\nArguments    Argument Type Description     collection str/int (required) Collection name or id.   quota_type str (required) Must be one of 'things', 'properties', 'array_size' or 'raw_size'.   quota int/nil (required) Integer value to set the quota limit or nil to disable the quota.    Return value Returns nil when successful.\nExample  This code sets a quota on the number of things and disables the properties quota on collection stuff:\n [ set_quota('stuff', 'things', 10000), set_quota('stuff', 'properties', nil), ];   Return value in JSON format\n [ null, null ]  "
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/user_info/",
-	"title": "user_info",
-	"tags": [],
-	"description": "",
-	"content": " Returns information about a user. If no argument is given, this method will return information about the current logged in user.\nThis function requires GRANT privileges on the @thingsdb scope when a username other then the logged in user is given as argument. For the currently logged in user, READ privileges on the @thingsdb scope are sufficient.\n This function does not generate an event.\nFunction user_info([username]);\nArguments    Argument Type Description     username str (optional) Name of the user    Return value Returns info about the user.\nExample  This code returns info for the authenticated user:\n // Without a `username`, info about the currently logged in user is returned user_info();   Example output in JSON format:\n { \u0026quot;access\u0026quot;: [ { \u0026quot;privileges\u0026quot;: \u0026quot;FULL\u0026quot;, \u0026quot;scope\u0026quot;: \u0026quot;@node\u0026quot; }, { \u0026quot;privileges\u0026quot;: \u0026quot;FULL\u0026quot;, \u0026quot;scope\u0026quot;: \u0026quot;@thingsdb\u0026quot; }, { \u0026quot;privileges\u0026quot;: \u0026quot;FULL\u0026quot;, \u0026quot;scope\u0026quot;: \u0026quot;@collection:stuff\u0026quot; } ], \u0026quot;has_password\u0026quot;: true, \u0026quot;name\u0026quot;: \u0026quot;admin\u0026quot;, \u0026quot;tokens\u0026quot;: [ { \u0026quot;expiration_time\u0026quot;: \u0026quot;2020-11-17 09:25:36Z\u0026quot;, \u0026quot;key\u0026quot;: \u0026quot;QpVmHOsfQaKKpjpOkW0SUt\u0026quot;, \u0026quot;status\u0026quot;: \u0026quot;OK\u0026quot; } ], \u0026quot;user_id\u0026quot;: 1 }  "
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/users_info/",
-	"title": "users_info",
-	"tags": [],
-	"description": "",
-	"content": " Returns user information for all users in ThingsDB.\nSee the user_info() function documentation for an example of the exposed user information.\nThis function requires GRANT privileges on the .thingsdb scope since it exposes user access and token information.\nThis function does not generate an event.\nFunction users_info()\nArguments None\nReturn value List with user info for all users in ThingsDB.\n"
-},
-{
 	"uri": "https://docs.thingsdb.net/v0/collection-api/",
 	"title": "Collection API",
 	"tags": [],
@@ -802,7 +585,7 @@
 	"title": "base64_encode",
 	"tags": [],
 	"description": "",
-	"content": " Encode a str or bytes value using Base64.\nSee base64_decode for Base64 decoding.\nThis function does not generate an event.\nFunction base64_encode(string)\nArguments    Argument Type Description     string str/bytes The value to encode.    Return value Encoded str value is returned.\nExample  This code shows an example for base64_encode:\n encoded = base64_encode('base64 encoded string');   Return value in JSON format\n \u0026quot;YmFzZTY0IGVuY29kZWQgc3RyaW5n\u0026quot;  "
+	"content": " Encode a str or bytes value using Base64.\nSee base64_decode for Base64 decoding.\nThis function does not generate an event.\nFunction base64_encode(string)\nArguments    Argument Type Description     string str/bytes The value to encode.    Return value Encoded str value is returned.\nExample  This code shows an example for base64_encode:\n encoded = base64_encode('base64 encoded string'); // result is of type str assert( type(encoded) == 'str'); // return encoded;   Return value in JSON format\n \u0026quot;YmFzZTY0IGVuY29kZWQgc3RyaW5n\u0026quot;  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/bool/",
@@ -1118,6 +901,223 @@
 	"tags": [],
 	"description": "",
 	"content": " Stored closures which can potentially make changes to ThingsDB are called closures with side effects and must be wrapped with the wse(..) function. This allows ThingsDB before running the query to make an event.\nYou should use wse only when required since otherwise this would unnecessary create events.\n This function generates an event.\nFunction wse(statement)\nArguments    Argument Type Description     statement any Statement or block to wrap.    Return value Return value of the given statement.\nExample  This code shows an example usage for wse():\n // Suppose we have a closure with side-effects .take_license = || .licenses -= 1; // And we have some initial licenses .licenses = 99; wse({ // without wse() this would raise an error .take_license.call(); }); // Return the number of licenses left .licenses;   Return value in JSON format\n 98  "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/node-api/",
+	"title": "Node API",
+	"tags": [],
+	"description": "",
+	"content": " Node API The node scope can be used to query node statistics, counters or make node specific changes.\n"
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/node-api/backup_info/",
+	"title": "backup_info",
+	"tags": [],
+	"description": "",
+	"content": "Returns information about a specific scheduled backup.\nThis function does not generate an event.\n"
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/node-api/backups_info/",
+	"title": "backups_info",
+	"tags": [],
+	"description": "",
+	"content": "Returns info about all scheduled backups.\nThis function does not generate an event.\n"
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/node-api/counters/",
+	"title": "counters",
+	"tags": [],
+	"description": "",
+	"content": " Returns counters for the ThingsDB node you are connected too. Counters start all at zero when ThingsDB is started, or when the counters are reset by using reset_counters()\u0026rsquo;.\nCounters give information about things, queries and events. If you suspect failed queries, then counters might provide you with more information.\n   Counter Description     average_event_duration The average event duration in seconds.   events_committed Events committed since last counters reset.   events_failed Failed events. This is a critical counter which should be 0.   events_killed Killed events took too long for receiving the READY status. These event may be processed later.   events_quorum_lost Number of times a quorum was not received.   events_skipped Events which cannot be committed since an event with a higher id is already processed. These events are moved to a skipped queue.   events_unaligned Number of times an event cannot be pushed to the end of the queue and needs re-ordering.   events_with_gap Events which are committed but at least one event id was skipped.   garbage_collected Number of things which are garbage collected.   longest_event_duration Longest event duration, in seconds.   queries_success Number of queries where this node acted as the master node and the query has successful finished.   queries_with_error Number of queries where this node acted as the master node but the query has returned with an error.    This function does not generate an event.\nFunction counters();\nArguments None\nReturn value Returns the current counter values.\nExample  This code will return node counter values:\n // returns counters for `localhost:9200` counters();   Example return value in JSON format\n { \u0026quot;average_event_duration\u0026quot;: 3.368566710075053e-05,, \u0026quot;events_committed\u0026quot;: 80352, \u0026quot;events_failed\u0026quot;: 0, \u0026quot;events_killed\u0026quot;: 0, \u0026quot;events_quorum_lost\u0026quot;: 0, \u0026quot;events_skipped\u0026quot;: 0, \u0026quot;events_unaligned\u0026quot;: 0, \u0026quot;events_with_gap\u0026quot;: 0, \u0026quot;garbage_collected\u0026quot;: 0, \u0026quot;longest_event_duration\u0026quot;: 3.508100053295493e-05, \u0026quot;queries_received\u0026quot;: 130944 }  "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/node-api/del_backup/",
+	"title": "del_backup",
+	"tags": [],
+	"description": "",
+	"content": "Delete a scheduled backup.\nThis function does not generate an event.\n"
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/node-api/new_backup/",
+	"title": "new_backup",
+	"tags": [],
+	"description": "",
+	"content": "Schedule a new backup.\nThis function does not generate an event.\n"
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/node-api/node_info/",
+	"title": "node_info",
+	"tags": [],
+	"description": "",
+	"content": " Returns information about the node in the current scope. See scopes for more information on how to target a specific node scope.\n   Value Description     archive_files Number of archive files. May decrease after a full store during away mode.   archived_in_memory Number of events which are archived in memory.   cached_names Number of names cached in memory.   client_port Listening for client TCP socket connections on this port.   db_stored_event_id Last stored event ID in full database store.   events_in_queue Events which are pending in the queue.   global_committed_event_id Lowest known committed event ID by all nodes.   global_stored_event_id Lowest known stored event ID by all nodes.   hostname Hostname of the node.   http_api_port Listening to this HTTP port for API calls.   http_status_port Listening to this HTTP port for status, readiness and liveness requests.   ip_support Enabled IP support. May be IPv4/IPv6 or both.   libcleri_version Cleri language parser library version.   libpcre2_version PCRE regular expression library version.   msgpack_version MessagePack data protocol library version.   libuv_version UV asynchronous library version.   local_committed_event_id Last committed event ID on the node.   local_stored_event_id Last stored event ID on disk. Store takes place when in away mode.   log_level Current log level for the node. May be changed at runtime using set_log_level(..)   next_event_id Next free event ID.   next_thing_id Next free things ID.   node_id The id which is assigned to the node.   node_port Listening for node TCP socket connections on this port.   status Current status of the ThingsDB node.   storage_path Path used for storing ThingsDB data.   syntax_version Language or syntax version. A new version of ThingsDB might also have a new language version.   uptime Uptime of the node in seconds.   version Version of ThingsDB,   zone Zone number to which the node is assigned. May be changed in the ThingsDB configuration file.    This function does not generate an event.\nFunction node_info()\nArguments None\nReturn value Returns info about the node. Which node is defined by the scope.\nExample  This code returns info for the connected node:\n node_info();   Example return value in JSON format\n { \u0026quot;archive_files\u0026quot;: 1, \u0026quot;archived_in_memory\u0026quot;: 0, \u0026quot;cached_names\u0026quot;: 2, \u0026quot;client_port\u0026quot;: 9200, \u0026quot;db_stored_event_id\u0026quot;: 1, \u0026quot;events_in_queue\u0026quot;: 0, \u0026quot;global_committed_event_id\u0026quot;: 2, \u0026quot;global_stored_event_id\u0026quot;: 2, \u0026quot;hostname\u0026quot;: \u0026quot;node0.local\u0026quot;, \u0026quot;http_api_port\u0026quot;: 9210, \u0026quot;http_status_port\u0026quot;: \u0026quot;disabled\u0026quot;, \u0026quot;ip_support\u0026quot;: \u0026quot;ALL\u0026quot;, \u0026quot;libcleri_version\u0026quot;: \u0026quot;0.11.1\u0026quot;, \u0026quot;libpcre2_version\u0026quot;: \u0026quot;10.32\u0026quot;, \u0026quot;libuv_version\u0026quot;: \u0026quot;1.24.1\u0026quot;, \u0026quot;local_committed_event_id\u0026quot;: 2, \u0026quot;local_stored_event_id\u0026quot;: 2, \u0026quot;log_level\u0026quot;: \u0026quot;WARNING\u0026quot;, \u0026quot;msgpack_version\u0026quot;: \u0026quot;3.2.0\u0026quot;, \u0026quot;next_event_id\u0026quot;: 3, \u0026quot;next_thing_id\u0026quot;: 5, \u0026quot;node_id\u0026quot;: 0, \u0026quot;node_port\u0026quot;: 9220, \u0026quot;scheduled_backups\u0026quot;: 0, \u0026quot;status\u0026quot;: \u0026quot;READY\u0026quot;, \u0026quot;storage_path\u0026quot;: \u0026quot;/var/lib/thingsdb/\u0026quot;, \u0026quot;syntax_version\u0026quot;: \u0026quot;v0\u0026quot;, \u0026quot;uptime\u0026quot;: 7.854678630828857, \u0026quot;version\u0026quot;: \u0026quot;0.2.13\u0026quot;, \u0026quot;zone\u0026quot;: 0 }  "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/node-api/nodes_info/",
+	"title": "nodes_info",
+	"tags": [],
+	"description": "",
+	"content": " Returns information about all ThingsDB nodes.\n   Value Description     address IP address or hostname of the node.   committed_event_id Last known committed event ID on the node.   next_thing_id Next free thing ID on the node.   node_id ID which is assigned to the node.   port TCP port on which the node is listening for node connections.   status Current status of the node.   stored_event_id Last known stored event ID on the node.   syntax_version Language or syntax version which is running on the node.   zone Zone number to which the node is assigned.    This function does not generate an event.\nFunction nodes_info()\nArguments None\nReturn value List with node info for all nodes in ThingsDB.\nExample  This code returns info for all ThingsDB nodes:\n nodes_info();   Example return value in JSON format\n [ { \u0026quot;address\u0026quot;: \u0026quot;node0.local\u0026quot;, \u0026quot;committed_event_id\u0026quot;: 4, \u0026quot;next_thing_id\u0026quot;: 5, \u0026quot;node_id\u0026quot;: 0, \u0026quot;port\u0026quot;: 9220, \u0026quot;status\u0026quot;: \u0026quot;READY\u0026quot;, \u0026quot;stored_event_id\u0026quot;: 4, \u0026quot;stream\u0026quot;: null, \u0026quot;syntax_version\u0026quot;: \u0026quot;v0\u0026quot;, \u0026quot;zone\u0026quot;: 0 }, { \u0026quot;address\u0026quot;: \u0026quot;node1.local\u0026quot;, \u0026quot;committed_event_id\u0026quot;: 4, \u0026quot;next_thing_id\u0026quot;: 5, \u0026quot;node_id\u0026quot;: 1, \u0026quot;port\u0026quot;: 9220, \u0026quot;status\u0026quot;: \u0026quot;READY\u0026quot;, \u0026quot;stored_event_id\u0026quot;: 4, \u0026quot;stream\u0026quot;: \u0026quot;\u0026lt;node-out:1\u0026gt; 192.168.0.10:9220\u0026quot;, \u0026quot;syntax_version\u0026quot;: \u0026quot;v0\u0026quot;, \u0026quot;zone\u0026quot;: 0 } ]  "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/node-api/reset_counters/",
+	"title": "reset_counters",
+	"tags": [],
+	"description": "",
+	"content": " Resets the counters for the ThingsDB node you are connected too. Other nodes are not affected.\nThis function does not generate an event.\nFunction reset_counters();\nArguments None\nReturn value Returns nil.\nExample  This code will reset the counters on a node:\n // resets counters on `localhost:9200` reset_counters();   Example return value in JSON format (the new collection id)\n null  "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/node-api/set_log_level/",
+	"title": "set_log_level",
+	"tags": [],
+	"description": "",
+	"content": "This function does not generate an event.\n"
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/node-api/shutdown/",
+	"title": "shutdown",
+	"tags": [],
+	"description": "",
+	"content": "This function does not generate an event.\n"
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/",
+	"title": "ThingsDB API",
+	"tags": [],
+	"description": "",
+	"content": " ThingsDB API ThingsDB can be managed with simple query commands. This allows you to manage collections, users, access and nodes.\n"
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/collection_info/",
+	"title": "collection_info",
+	"tags": [],
+	"description": "",
+	"content": " Returns information about a specific collection.\nThis function does not generate an event.\nFunction collection_info(name_or_id);\nArguments    Argument Type Description     name_or_id str/int Name or Id of the collection    Return value Returns info about the collection.\nExample  Returns information about collection stuff:\n collection_info('stuff');   Example return value in JSON format\n { \u0026quot;collection_id\u0026quot;: 782, \u0026quot;name\u0026quot;: \u0026quot;stuff\u0026quot;, \u0026quot;quota_array_size\u0026quot;: null, \u0026quot;quota_properties\u0026quot;: null, \u0026quot;quota_raw_size\u0026quot;: null, \u0026quot;quota_things\u0026quot;: null, \u0026quot;things\u0026quot;: 61352 }  "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/collections_info/",
+	"title": "collections_info",
+	"tags": [],
+	"description": "",
+	"content": " Returns collection information for all collections in ThingsDB.\nSee the collection_info() function documentation for an example of the exposed collection information.\nThis function does not generate an event.\nFunction collections_info()\nArguments None\nReturn value List with collection info for all collections in ThingsDB.\n"
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/del_collection/",
+	"title": "del_collection",
+	"tags": [],
+	"description": "",
+	"content": " Delete a collection.\nThis function generates an event.\nFunction del_collection(name);\nArguments    Argument Type Description     name str (required) Name of the collection to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the collection does not exist.\nExample  This code will delete collection stuff:\n // Delete collection `stuff` del_collection('stuff');  "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/del_expired/",
+	"title": "del_expired",
+	"tags": [],
+	"description": "",
+	"content": " Delete all expired tokens.\nThis function generates an event.\nFunction del_expired();\nArguments None\nReturn value Returns nil.\nExample  This code will delete all expired tokens:\n // Delete all expired tokens del_expired();  "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/del_node/",
+	"title": "del_node",
+	"tags": [],
+	"description": "",
+	"content": " Delete a node from ThingsDB.\nBefore deleting a node, the node must be offline. As long is the node is active, you are not allowed to delete the node. See shutdown for shutting down a node by using a query.\n This function generates an event.\nFunction del_node(node_id);\nArguments    Argument Type Description     node_id int (required) Id of the node to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the node id does not exist.\n"
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/del_token/",
+	"title": "del_token",
+	"tags": [],
+	"description": "",
+	"content": " Delete a token.\nThis function generates an event.\nFunction del_token(key);\nArguments    Argument Type Description     key str (required) Token key to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the token is not found.\nExample  This code will delete a token:\n // Delete a token del_token('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX');  "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/del_user/",
+	"title": "del_user",
+	"tags": [],
+	"description": "",
+	"content": " Delete a user. It is not possible to delete your own user account and a BAD_REQUEST will be raised in case you try to. Any tokens associated with the user will also be deleted.\nThis function generates an event.\nFunction del_user(username);\nArguments    Argument Type Description     username str (required) Username of the user to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the user does not exist.\nExample  This code will delete user test:\n // Delete user `test` del_user('test');  "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/grant/",
+	"title": "grant",
+	"tags": [],
+	"description": "",
+	"content": " Grant collection or general privileges to a user. Access to a user is provided by setting a bit mask to either the @node, @thingsdb or a collection scope.\nIt is not possible to set privileges on a specific node scope. Therefore scope @node will apply to all nodes in ThingsDB.\n The following pre-defined masks are available:\n   Mask Description     READ (1) Gives read access.   MODIFY (2) Gives read and modify access.   GRANT (4) Gives read, modify and grant (and revoke) privileges.   WATCH (8) Gives watch (and un-watch) privileges.   RUN (16) Gives run procedures access.   FULL (31) A mask for full privileges.    It is not possible to have GRANT privileges without also having MODIFY privileges. Similarly, it is not possible to have MODIFY privileges without READ. However, ThingsDB automatically applies the required privileges so when setting for example GRANT privileges, ThingsDB makes sure that the user also gets MODIFY and READ.\n This function generates an event.\nFunction grant(target, user, mask);\nArguments    Argument Type Description     target int/raw Can be either the @node, @thingsdb, or a collection scope.   user str User to grant privileges to.   mask int Bit-mask for setting privileges.    Return value Returns nil when successful. An INDEX_ERROR is raised if the user or target does not exist.\nExample  Grant read and watch privileges to user iris to collection stuff:\n new_user('iris'); new_token('iris'); [ grant('@node', 'iris', WATCH), grant('@:stuff', 'iris', (READ|WATCH)), ];   Return value in JSON format\n [ null, null ]  "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/new_collection/",
+	"title": "new_collection",
+	"tags": [],
+	"description": "",
+	"content": " Create a new collection.\nThis function generates an event.\nFunction new_collection(name);\nArguments    Argument Type Description     name str (required) Name of the new collection.    The user who has created the collection will automatically receive full access rights to the new collection. Use grant to give other users access to the collection.\n Return value Returns the new collection id if successful. An INDEX_ERROR is raised if the collection already exists.\nExample  This code will create a collection \u0026ldquo;awesome_things\u0026rdquo;:\n // Creates a new collection new_collection('awesome_things');   Example return value in JSON format (the new collection id)\n 31415  "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/new_node/",
+	"title": "new_node",
+	"tags": [],
+	"description": "",
+	"content": " Adds a new node to ThingsDB. Nodes are used for scaling and high availability.\nThis function generates an event.\nFunction new_node(secret, ip_address [, port]);\nArguments    Argument Type Description     secret str (required) Secret used to initially connect to the new node.   ip_address str (required) IP Address (IPv4 or IPv6) of the new node.   port int (optional) Node port (listen_node_port), an integer between 0 an 65535, default 9220.    Return value Returns the new node id if successful.\nExample  Add a new node to ThingsDB:\n // ThingsDB must be started on node2 using the `--secret ...` argument new_node('my-one-time-serect', 'node2.local');   Example return value in JSON format (the new node id)\n 1  "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/new_token/",
+	"title": "new_token",
+	"tags": [],
+	"description": "",
+	"content": " Adds a new token for a given user. An optional expiration time may be given after which the token cannot be used anymore. Use del_expired to cleanup expired tokens. The expiration time may be given as a UNIX time-stamp in seconds or a date/time string.\nSome valid date/time strings:\n 2021-01-01 2023-02-06 14:30 2023-07-5T13:23:20+01:00  Expiration dates in the past are not allowed an will raise a BAD_REQUEST error.\nIt is also possible to set a description for the token which can be used to identify where token is used for. If you only want to set a description, but no expiration time, then you can use nil as second argument. For example: new_token('my_user', nil, 'some nice description');\nThere can be no more than 128 tokens assigned to a single user. A MAX_QUOTA_ERROR is raised if this limit is reached. Existing tokens can be removed with del_token and to view the current tokens you can use the user_info(..) (or users_info()) function.\nThis function generates an event.\nFunction new_token(username, [, expiration_time] [, description]);\nArguments    Argument Type Description     username str (required) Name of the user.   expiration_time nil/int/float/raw (optional) Expiration date of the token.   description str (optional) Token description.    Return value Returns the new token key.\nExample  Create a new token for user admin:\n // ThingsDB must be started on node2 using the `--secret ...` argument new_token('admin', now() + 7*24*3600, 'token for one week');   Example return value in JSON format (the token key)\n \u0026quot;8Ay0ngISFa9je3o/MMu24U\u0026quot;  "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/new_user/",
+	"title": "new_user",
+	"tags": [],
+	"description": "",
+	"content": " Creates a new user to ThingsDB. The new user is created without a password, token and access privileges. You probably want to set a password or add a new token and assign some privileges using grant(\u0026hellip;).\nThis function generates an event.\nFunction new_user(user);\nArguments    Argument Type Description     user str (required) Username, between 1 and 128 graphical characters.    Return value Returns the new user id if successful. An INDEX_ERROR is raised if the user already exists.\nExample  Create a new user iris:\n new_user('iris');   Example return value in JSON format (the new user id)\n 19  "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/rename_collection/",
+	"title": "rename_collection",
+	"tags": [],
+	"description": "",
+	"content": " Rename a collection.\nThis function generates an event.\nFunction rename_collection(current_name, new_name);\nArguments    Argument Type Description     current_name str (required) Current collection name.   new_name str (required) New name for the collection.    Return value Returns nil when successful.\n"
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/rename_user/",
+	"title": "rename_user",
+	"tags": [],
+	"description": "",
+	"content": " Rename a user.\nThis function generates an event.\nFunction rename_user(current_name, new_name);\nArguments    Argument Type Description     current_name str (required) Current user name.   new_name str (required) New name for the user.    Return value Returns nil when successful.\n"
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/revoke/",
+	"title": "revoke",
+	"tags": [],
+	"description": "",
+	"content": " Revoke collection or general privileges from a user. See grant for more information on how access privileges can be set for a user.\nThis function generates an event.\nFunction revoke(target, user, mask);\nArguments    Argument Type Description     target int/raw Can be either the @node, @thingsdb, or a collection scope.   user str User to revoke privileges from.   mask int Bit-mask for revoking privileges.    Return value Returns nil when successful. An INDEX_ERROR is raised if the user or target does not exist.\nExample  Revoke all privileges for user iris on collection stuff:\n revoke('@:stuff', 'iris', FULL);   Return value in JSON format\n null  "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/set_password/",
+	"title": "set_password",
+	"tags": [],
+	"description": "",
+	"content": " Change a users password. This function can also be used to remove an existing password by using nil as the new password.\nPasswords must contain 1 to 128 printable characters.\nThis function generates an event.\nFunction set_password(username, new_password);\nArguments    Argument Type Description     username str (required) Name of the user   new_password nil/str (required) New password or nil    Return value Returns nil if successful. An INDEX_ERROR is returned if the user does not exist and BAD_REQUEST if the new password is not compliant.\nExample  This code changes the password for user admin:\n // Change the password for user `admin` set_password('admin', 'my_secret_password');   Return value in JSON format\n null  "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/set_quota/",
+	"title": "set_quota",
+	"tags": [],
+	"description": "",
+	"content": " Quota limits can be set on collections. The following quota limits can be set:\n   Type Description     things Maximum number of things allowed in a collection. Type instances are also counted towards this quota.   properties Maximum number of properties which can be assigned to a thing.   array_size Maximum list and tuple length.   raw_size Maximum str and bytes length.    If a quota limit is reached, then the affected query will raise MAX_QUOTA_ERROR.\nThe current quota values can be viewed with collection(\u0026hellip;) or collections().\nThis function generates an event.\nFunction set_quota(collection, quota_type, quota)\nArguments    Argument Type Description     collection str/int (required) Collection name or id.   quota_type str (required) Must be one of 'things', 'properties', 'array_size' or 'raw_size'.   quota int/nil (required) Integer value to set the quota limit or nil to disable the quota.    Return value Returns nil when successful.\nExample  This code sets a quota on the number of things and disables the properties quota on collection stuff:\n [ set_quota('stuff', 'things', 10000), set_quota('stuff', 'properties', nil), ];   Return value in JSON format\n [ null, null ]  "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/user_info/",
+	"title": "user_info",
+	"tags": [],
+	"description": "",
+	"content": " Returns information about a user. If no argument is given, this method will return information about the current logged in user.\nThis function requires GRANT privileges on the @thingsdb scope when a username other then the logged in user is given as argument. For the currently logged in user, READ privileges on the @thingsdb scope are sufficient.\n This function does not generate an event.\nFunction user_info([username]);\nArguments    Argument Type Description     username str (optional) Name of the user    Return value Returns info about the user.\nExample  This code returns info for the authenticated user:\n // Without a `username`, info about the currently logged in user is returned user_info();   Example output in JSON format:\n { \u0026quot;access\u0026quot;: [ { \u0026quot;privileges\u0026quot;: \u0026quot;FULL\u0026quot;, \u0026quot;scope\u0026quot;: \u0026quot;@node\u0026quot; }, { \u0026quot;privileges\u0026quot;: \u0026quot;FULL\u0026quot;, \u0026quot;scope\u0026quot;: \u0026quot;@thingsdb\u0026quot; }, { \u0026quot;privileges\u0026quot;: \u0026quot;FULL\u0026quot;, \u0026quot;scope\u0026quot;: \u0026quot;@collection:stuff\u0026quot; } ], \u0026quot;has_password\u0026quot;: true, \u0026quot;name\u0026quot;: \u0026quot;admin\u0026quot;, \u0026quot;tokens\u0026quot;: [ { \u0026quot;expiration_time\u0026quot;: \u0026quot;2020-11-17 09:25:36Z\u0026quot;, \u0026quot;key\u0026quot;: \u0026quot;QpVmHOsfQaKKpjpOkW0SUt\u0026quot;, \u0026quot;status\u0026quot;: \u0026quot;OK\u0026quot; } ], \u0026quot;user_id\u0026quot;: 1 }  "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/users_info/",
+	"title": "users_info",
+	"tags": [],
+	"description": "",
+	"content": " Returns user information for all users in ThingsDB.\nSee the user_info() function documentation for an example of the exposed user information.\nThis function requires GRANT privileges on the .thingsdb scope since it exposes user access and token information.\nThis function does not generate an event.\nFunction users_info()\nArguments None\nReturn value List with user info for all users in ThingsDB.\n"
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/procedures-api/",

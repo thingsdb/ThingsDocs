@@ -1,6 +1,6 @@
 ---
 title: "values"
-weight: 67
+weight: 68
 ---
 
 Returns an list with all the property values of a [thing](..).
@@ -13,7 +13,7 @@ Although the `values()` and `map()` in the example above will return an list wit
 the order of *values* in the list is not guaranteed and may be different each time you run the query.
 {{% /notice %}}
 
-This function does *not* generate an [event](../../../events).
+This function does *not* generate an [event](../../../overview/events).
 
 ### Function
 

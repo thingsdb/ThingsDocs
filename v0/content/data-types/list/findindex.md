@@ -1,12 +1,12 @@
 ---
 title: "findindex"
-weight: 30
+weight: 31
 ---
 
 This function returns the index of the first element in a [list](..) or [tuple](../../tuple) that satisfies the callback function.
 Otherwise `nil` is returned.
 
-This function does *not* generate an [event](../../../events).
+This function does *not* generate an [event](../../../overview/events).
 
 ### Function
 

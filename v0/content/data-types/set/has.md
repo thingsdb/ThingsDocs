@@ -1,11 +1,11 @@
 ---
 title: "has"
-weight: 45
+weight: 46
 ---
 
 Determines if a [set](..) has a given thing.
 
-This function does *not* generate an [event](../../../events).
+This function does *not* generate an [event](../../../overview/events).
 
 ### Function
 

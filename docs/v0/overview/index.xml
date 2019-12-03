@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Overview on ThingsDB documentation</title>
+    <link>https://docs.thingsdb.net/v0/overview/</link>
+    <description>Recent content in Overview on ThingsDB documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://docs.thingsdb.net/v0/overview/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Scopes</title>
+      <link>https://docs.thingsdb.net/v0/overview/scopes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/overview/scopes/</guid>
+      <description>When sending a query, calling a procedure or subscribing to a thing, the request will require you to provide a scope. ThingsDB has three main scopes: @thingsdb, @node and @collection.
+   scope short description     @thingsdb @t ThingsDB scope; Used for managing user accounts, collections and nodes.   @node @n Current node scope; For node info and statistics from the connected node.   @node:ID @n:ID Specific node scope; Get node info and statistics from a specific node id (ID should be replaced with a node ID, for example 0).</description>
+    </item>
+    
+    <item>
+      <title>Names</title>
+      <link>https://docs.thingsdb.net/v0/overview/names/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/overview/names/</guid>
+      <description>The following rules apply to names in ThingsDB:
+ A name must start with a letter or underscore character A name cannot start with a number A name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ ) Names are case-sensitive (thing, Thing and THING are three different names) Names are restricted to 255 characters  </description>
+    </item>
+    
+    <item>
+      <title>Properties</title>
+      <link>https://docs.thingsdb.net/v0/overview/properties/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/overview/properties/</guid>
+      <description>Properties Properties are names assigned to a thing with a value. The collection itself is also a thing to which properties can be assigned. For example: .answer = 42; creates a property answer with value 42 and the property will be assigned to the collection.</description>
+    </item>
+    
+    <item>
+      <title>Variable</title>
+      <link>https://docs.thingsdb.net/v0/overview/variable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/overview/variable/</guid>
+      <description>Variable Can be used to assign a value to a variable which can be used within a query.
+Variable can be created with READ privileges since they do not modify the collection data.
+To create a variable, just use a valid name.
+Some valid examples:
+ _ = ... tmp = ... var1 = ...   This code uses a variable:
+ a = &#39;This is a variable!!!&#39;; b = &#39;Hello&#39;; { /* This will create a new variable `a` within this block */ a = &#39;New variable within this block&#39;; /* This will update the global variable `b` */ b += &#39; World&#39;; }; [a, b];   Return value in JSON format</description>
+    </item>
+    
+    <item>
+      <title>Events</title>
+      <link>https://docs.thingsdb.net/v0/overview/events/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/overview/events/</guid>
+      <description>When a query uses a statement which makes a change to ThingsDB, then internally ThingsDB will create an event to apply these changes. Events are applied in order on each node so database consistency is guaranteed.
+A single query might contain several statements and make many changes. All changes within a query will be grouped in a single event.
+In the documentation we try to make clear if a function will generate an event or not.</description>
+    </item>
+    
+    <item>
+      <title>Slices</title>
+      <link>https://docs.thingsdb.net/v0/overview/slices/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/overview/slices/</guid>
+      <description>The following slice notation can be used:
+list[start:stop:step]  The start and stop value will default to nil and step has a default value of 1. For understanding slices it is important to remember that the :stop value represents the first value that is not in the selected slice. This means that the difference between stop and start is the number of selected elements. (assuming that step is the default value 1)</description>
+    </item>
+    
+  </channel>
+</rss>

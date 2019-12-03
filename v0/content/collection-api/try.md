@@ -1,6 +1,6 @@
 ---
 title: "try"
-weight: 155
+weight: 124
 ---
 
 Try a statement and if the statement fails with an error, then the error is returned.
@@ -11,7 +11,7 @@ It is possible to catch all errors with the exception of *internal errors*.
 Such errors should never happen, unless something is really wrong with at least one node.
 {{% /notice %}}
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 

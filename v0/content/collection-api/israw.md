@@ -1,12 +1,12 @@
 ---
 title: "israw"
-weight: 134
+weight: 103
 ---
 
 This function determines whether the value passed to this function is of
 type `str` *or* `bytes`.
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 

@@ -1,13 +1,13 @@
 ---
 title: "get"
-weight: 60
+weight: 61
 ---
 
 Return the value of a property on a [thing](..) by a given property name.
 If the property is not found then the return value will be `nil`, unless an alternative
 return value is given.
 
-This function does *not* generate an [event](../../../events).
+This function does *not* generate an [event](../../../overview/events).
 
 ### Function
 

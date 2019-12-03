@@ -1,6 +1,6 @@
 ---
 title: "map"
-weight: 47
+weight: 48
 ---
 
 Iterate over items in an [set](..).
@@ -9,7 +9,7 @@ Iterate over items in an [set](..).
 Be aware that the order when iterating over a *set* or a *thing* is not guaranteed.
 {{% /notice %}}
 
-This function does *not* generate an [event](../../../events).
+This function does *not* generate an [event](../../../overview/events).
 
 ### Function
 

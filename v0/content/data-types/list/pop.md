@@ -1,13 +1,13 @@
 ---
 title: "pop"
-weight: 34
+weight: 35
 ---
 
 Removes the last element from a [list](../../list) and returns that element.
 This method changes the length of the list. The `pop()` method works
 on a `list` type array, but not on a `tuple` since tuples are immutable.
 
-This function generates an [event](../../../events).
+This function generates an [event](../../../overview/events).
 
 ### Function
 

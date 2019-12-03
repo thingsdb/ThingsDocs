@@ -1,11 +1,11 @@
 ---
 title: "deep"
-weight: 118
+weight: 87
 ---
 
 Returns the current `deep` value. The `deep` value might change when a function with a [return(..)](../../collection-api/return) is called which has changed the `deep` value for this query.
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 

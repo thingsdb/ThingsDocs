@@ -1,11 +1,11 @@
 ---
 title: "isnil"
-weight: 133
+weight: 102
 ---
 
 This function determines whether the value passed to this function is [nil](../../data-types/nil).
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 

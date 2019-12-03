@@ -1,11 +1,11 @@
 ---
 title: "test"
-weight: 55
+weight: 56
 ---
 
 Test if a [string](..) matches a given [regular expression](../../regex) and return `true` or `false`.
 
-This function does *not* generate an [event](../../../events).
+This function does *not* generate an [event](../../../overview/events).
 
 ### Function
 

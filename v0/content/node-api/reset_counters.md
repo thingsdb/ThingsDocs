@@ -1,12 +1,12 @@
 ---
 title: "reset_counters"
-weight: 89
+weight: 138
 ---
 
 Resets the [counters](../../node-api/counters) for the ThingsDB node you are connected too.
 Other nodes are not affected.
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 

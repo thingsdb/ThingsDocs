@@ -1,11 +1,11 @@
 ---
 title: "mod_type"
-weight: 141
+weight: 110
 ---
 
 This function is used to modify an existing [Type](../../data-types/type). A number of actions can be performed with this function.
 
-This function generates an [event](../../events).
+This function generates an [event](../../overview/events).
 
 ### Actions
 

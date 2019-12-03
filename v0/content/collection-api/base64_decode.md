@@ -1,13 +1,13 @@
 ---
 title: "base64_decode"
-weight: 114
+weight: 83
 ---
 
 Decode a Base64 encoded string.
 
 See [base64_encode](../base64_encode) for Base64 encoding.
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 

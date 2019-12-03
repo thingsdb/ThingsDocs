@@ -1,11 +1,11 @@
 ---
 title: "type"
-weight: 156
+weight: 125
 ---
 
 Returns the type name of a value.
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 

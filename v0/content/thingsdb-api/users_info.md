@@ -1,6 +1,6 @@
 ---
 title: "users_info"
-weight: 111
+weight: 160
 ---
 
 Returns user information for all users in ThingsDB.
@@ -10,7 +10,7 @@ See the [user_info()](../../thingsdb-api/user_info) function documentation for a
 This function requires `GRANT` privileges on the `.thingsdb` scope since it
 exposes user access and token information.
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 `users_info()`

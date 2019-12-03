@@ -1,11 +1,11 @@
 ---
 title: "len"
-weight: 17
+weight: 18
 ---
 
 Returns the length of the bytes value.
 
-This function does *not* generate an [event](../../../events).
+This function does *not* generate an [event](../../../overview/events).
 
 ### Function
 *bytes*.`len()`

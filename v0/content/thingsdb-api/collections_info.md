@@ -1,13 +1,13 @@
 ---
 title: "collections_info"
-weight: 94
+weight: 143
 ---
 
 Returns collection information for all collections in ThingsDB.
 
 See the [collection_info()](../../thingsdb-api/collection_info) function documentation for an example of the exposed collection information.
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 

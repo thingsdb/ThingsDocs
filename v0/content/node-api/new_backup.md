@@ -1,8 +1,8 @@
 ---
 title: "new_backup"
-weight: 86
+weight: 135
 ---
 
 Schedule a new backup.
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).

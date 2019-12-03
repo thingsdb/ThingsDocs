@@ -1,11 +1,11 @@
 ---
 title: "type_count"
-weight: 157
+weight: 126
 ---
 
 Returns the number of instances of a given [Type](../../data-types/type) within a collection.
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 

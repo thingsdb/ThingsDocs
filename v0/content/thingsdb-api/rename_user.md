@@ -1,11 +1,11 @@
 ---
 title: "rename_user"
-weight: 106
+weight: 155
 ---
 
 Rename a user.
 
-This function generates an [event](../../events).
+This function generates an [event](../../overview/events).
 
 ### Function
 `rename_user(current_name, new_name);`

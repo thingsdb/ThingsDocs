@@ -1,6 +1,6 @@
 ---
 title: "bool"
-weight: 116
+weight: 85
 ---
 
 Returns an [bool](../../data-types/bool) from a specified value.
@@ -8,7 +8,7 @@ If no value is given, `false` is returned.
 
 Types with a *length* evaluate to `true` when the length is *not* `0` and `false` otherwise.
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 

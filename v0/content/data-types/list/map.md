@@ -1,11 +1,11 @@
 ---
 title: "map"
-weight: 33
+weight: 34
 ---
 
 Iterate over items in an [list](../../list) or [tuple](../../tuple).
 
-This function does *not* generate an [event](../../../events).
+This function does *not* generate an [event](../../../overview/events).
 
 ### Function
 

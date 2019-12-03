@@ -1,6 +1,6 @@
 ---
 title: "int"
-weight: 122
+weight: 91
 ---
 
 Returns an [int](../../data-types/int) from a specified value.
@@ -15,7 +15,7 @@ Initial white space is ignored and the number may start with an optional `+` or 
 
 Type [bool](../../data-types/bool) values are converted to `1` for `true` and `0` for `false`.
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 

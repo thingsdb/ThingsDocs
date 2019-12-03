@@ -1,6 +1,6 @@
 ---
 title: "set_quota"
-weight: 109
+weight: 158
 ---
 
 Quota limits can be set on collections. The following quota limits can be set:
@@ -8,7 +8,7 @@ Quota limits can be set on collections. The following quota limits can be set:
 Type | Description
 ---- | -----------
 `things` | Maximum number of [things](../../data-types/thing) allowed in a collection. [Type](../../data-types/type) instances are also counted towards this quota.
-`properties` | Maximum number of [properties](../../properties) which can be assigned to a thing.
+`properties` | Maximum number of [properties](../../overview/properties) which can be assigned to a thing.
 `array_size` | Maximum [list](../../data-types/list) and [tuple](../../data-types/tuple) length.
 `raw_size` | Maximum [str](../../data-types/str) and [bytes](../../data-types/bytes) length.
 
@@ -16,7 +16,7 @@ If a quota limit is reached, then the affected query will raise `MAX_QUOTA_ERROR
 
 The current quota values can be viewed with [collection(...)](../../thingsdb-api/collection_info) or [collections()](../../thingsdb-api/collections_info).
 
-This function generates an [event](../../events).
+This function generates an [event](../../overview/events).
 
 ### Function
 

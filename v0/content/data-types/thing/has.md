@@ -1,11 +1,11 @@
 ---
 title: "has"
-weight: 61
+weight: 62
 ---
 
 Determines if a [thing](..) has a given property.
 
-This function does *not* generate an [event](../../../events).
+This function does *not* generate an [event](../../../overview/events).
 
 ### Function
 

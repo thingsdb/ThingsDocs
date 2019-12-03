@@ -1,11 +1,11 @@
 ---
 title: "assert"
-weight: 113
+weight: 82
 ---
 
 Raises `ASSERTION_ERROR` if the specified statement evaluates to `false`.
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 

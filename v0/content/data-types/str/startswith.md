@@ -1,11 +1,11 @@
 ---
 title: "startswith"
-weight: 54
+weight: 55
 ---
 
 Determines if a [string](..) starts with characters given by another string.
 
-This function does *not* generate an [event](../../../events).
+This function does *not* generate an [event](../../../overview/events).
 
 ### Function
 

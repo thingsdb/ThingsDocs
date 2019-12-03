@@ -1,6 +1,6 @@
 ---
 title: "wse"
-weight: 160
+weight: 129
 ---
 
 Stored closures which can potentially make changes to ThingsDB are called
@@ -12,7 +12,7 @@ You should use `wse` only when required since otherwise this would unnecessary
 create events.
 {{% /notice %}}
 
-This function generates an [event](../../events).
+This function generates an [event](../../overview/events).
 
 ### Function
 

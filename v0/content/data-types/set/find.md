@@ -1,12 +1,12 @@
 ---
 title: "find"
-weight: 44
+weight: 45
 ---
 
 This function returns the value of the first element in the [set](..) that satisfies the callback function.
 Otherwise `nil` is returned unless an alternative return value is specified.
 
-This function does *not* generate an [event](../../../events).
+This function does *not* generate an [event](../../../overview/events).
 
 {{% notice note %}}
 The return value when called on a `set` might be unpredictable since a set is not ordered. \

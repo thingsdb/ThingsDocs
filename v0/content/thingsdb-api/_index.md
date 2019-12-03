@@ -1,10 +1,10 @@
 ---
-title: "Thingsdb API"
-weight: 92
+title: "ThingsDB API"
+weight: 141
 chapter: true
 ---
 
-# Thingsdb API
+# ThingsDB API
 
 ThingsDB can be managed with simple query commands. This allows you to manage
 collections, users, access and nodes.

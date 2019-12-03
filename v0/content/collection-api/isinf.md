@@ -1,12 +1,12 @@
 ---
 title: "isinf"
-weight: 129
+weight: 98
 ---
 
 This function determines whether the value passed to this function
 is a positive or negative *infinity*.
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 

@@ -1,11 +1,11 @@
 ---
 title: "types_info"
-weight: 159
+weight: 128
 ---
 
 Returns information about the properties of all [Types](../../data-types/type) within a collection.
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 

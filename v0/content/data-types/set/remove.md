@@ -1,6 +1,6 @@
 ---
 title: "remove"
-weight: 48
+weight: 49
 ---
 
 This function can be used to remove `things` from a `set`.
@@ -12,7 +12,7 @@ It is also possible to specify `things` as arguments. In this case a list is ret
 all the things which are removed from the set, in the order that the arguments are used.
 Things which are not found in the set are ignored.
 
-This function generates an [event](../../../events).
+This function generates an [event](../../../overview/events).
 
 ### Function
 

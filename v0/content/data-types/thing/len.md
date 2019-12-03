@@ -1,11 +1,11 @@
 ---
 title: "len"
-weight: 64
+weight: 65
 ---
 
 Returns the number of items in a [thing](..).
 
-This function does *not* generate an [event](../../../events).
+This function does *not* generate an [event](../../../overview/events).
 
 ### Function
 

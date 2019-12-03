@@ -1,11 +1,11 @@
 ---
 title: "raise"
-weight: 148
+weight: 117
 ---
 
 Raises an [error](../../data-types/error).
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 

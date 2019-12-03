@@ -1,11 +1,11 @@
 ---
 title: "collection_info"
-weight: 93
+weight: 142
 ---
 
 Returns information about a specific collection.
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 

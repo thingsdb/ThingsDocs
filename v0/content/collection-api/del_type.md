@@ -1,6 +1,6 @@
 ---
 title: "del_type"
-weight: 119
+weight: 88
 ---
 
 Deletes an existing [Type](../../data-types/type).
@@ -16,7 +16,7 @@ in this process. With [type_count(..)](../type_count)
 you can view the number of instances of a certain type.
 {{% /notice %}}
 
-This function generates an [event](../../events).
+This function generates an [event](../../overview/events).
 
 ### Function
 

@@ -1,6 +1,6 @@
 ---
 title: "user_info"
-weight: 110
+weight: 159
 ---
 
 Returns information about a user. If no argument is given, this method will return
@@ -12,7 +12,7 @@ other then the logged in user is given as argument. For the currently logged in 
 privileges on the `@thingsdb` scope are sufficient.
 {{% /notice %}}
 
-This function does *not* generate an [event](../../events).
+This function does *not* generate an [event](../../overview/events).
 
 ### Function
 
