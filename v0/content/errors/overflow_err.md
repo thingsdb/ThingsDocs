@@ -1,9 +1,9 @@
 ---
 title: "overflow_err"
-weight: 179
+weight: 182
 ---
 
-Returns an [error](../../data-types/error).
+Returns an [error](../../data-types/error) when an attempt is made to create an integer value out of the supported 64Bit (signed) range.
 
 This function does *not* generate an [event](../../overview/events).
 

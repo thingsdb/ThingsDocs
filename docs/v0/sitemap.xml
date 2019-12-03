@@ -31,6 +31,18 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/connect/protocol/ping/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/connect/protocol/auth/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/connect/protocol/query/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/overview/</loc>
   </url>
   

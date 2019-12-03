@@ -1,9 +1,9 @@
 ---
 title: "value_err"
-weight: 182
+weight: 185
 ---
 
-Returns an [error](../../data-types/error).
+Returns an [error](../../data-types/error) when a given value has the correct type but contains invalid data.
 
 This function does *not* generate an [event](../../overview/events).
 

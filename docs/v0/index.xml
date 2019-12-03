@@ -26,7 +26,9 @@ It might be a good idea to create a new user with minimal privileges and add a n
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/connect/http-api/</guid>
-      <description>Explain the HTTP API.</description>
+      <description>Before using the HTTP API, make sure at least one node has the API port enabled. By default the API port is enabled and listening to TCP port 9210 but can be disabled or changed with the http_api_port in the configuration file or with the THINGSDB_HTTP_API_PORT environment variable.
+The API has support for both MessagePack and JSON and can be used to perform queries and run procedures.
+Use MessagePack if possible since this is the data serialization protocol which is used by ThingsDB internally and will therefore be a faster than JSON.</description>
     </item>
     
     <item>
@@ -51,13 +53,42 @@ It might be a good idea to create a new user with minimal privileges and add a n
     </item>
     
     <item>
-      <title>Protocol</title>
-      <link>https://docs.thingsdb.net/v0/connect/protocol/</link>
+      <title>Example ping</title>
+      <link>https://docs.thingsdb.net/v0/connect/protocol/ping/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/connect/protocol/</guid>
-      <description>This is a more in depth view of the protocol used for communication with ThingsDB. In case you just want to use ThingsDB using one of the language bindings, then this info can be skipped. If you plan to implement you own connector, then this info might be useful to you.
-Communication with ThingsDB is done over a socket, either using TCP or a UNIX PIPE connection. Once a connection is made, packages can be send to ThingsDB.</description>
+      <guid>https://docs.thingsdb.net/v0/connect/protocol/ping/</guid>
+      <description>Can be used as keep-alive. A successful ping will respond with a PONG (16)
+No authorization is required for sending a ping request.
+ Example A Ping package has no data so we only need to construct the header:
+ Data length (0) \x00\x00\x00\x00 Identifier (0) \x00\x00 Ping package type (32) \x20 Inverse type check bit (223) \xdf   Sending the Ping package
+ \x00\x00\x00\x00\x00\x00\x20\xdf   Responding Pong package</description>
+    </item>
+    
+    <item>
+      <title>Example auth</title>
+      <link>https://docs.thingsdb.net/v0/connect/protocol/auth/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/connect/protocol/auth/</guid>
+      <description>Used for authorizing the socket connection. A successful authentication will respond with OK (17)
+Authorization can be done by using either a username and password combination or by a token.
+ Syntax username/password
+ [username, password]   Syntax token
+ &amp;quot;token_string&amp;quot;  Example username/password As an example we create an authentication package for the default admin user with password pass.
+This is the package data for our authentication request:</description>
+    </item>
+    
+    <item>
+      <title>Example query</title>
+      <link>https://docs.thingsdb.net/v0/connect/protocol/query/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/connect/protocol/query/</guid>
+      <description>Query ThingsDB. A successful query request will respond with a DATA (18) package
+ Syntax
+ [scope, code, {vars}]  The vars in the query are optional and may be omitted. When used, vars must be a map where the keys represent the variable names and the values the values for the variable.
+The socket needs to be authorized before for sending a query request. See the auth example for how to authorize a socket connection.</description>
     </item>
     
     <item>
@@ -226,7 +257,7 @@ As an example we can take the node_info and view the type. This will tell us tha
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/int/</guid>
-      <description>ThingsDB can store 64bit signed integers values. When assigning integer values larger than 64bit, an OVERFLOW_ERROR will be returned. Other types can be converted to int by using the int function.
+      <description>ThingsDB can store 64bit signed integers values. When assigning integer values larger than 64bit, an overflow_err() will be returned. Other types can be converted to int by using the int function.
 Notations    Base Example Description     2 0b1111011 Binary notation starts with 0b (zero, lower case b), followed by binary digits (0-1).   8 0o173 Octal notation starts with 0o (zero, lower case o), followed by octal digits (0-8).</description>
     </item>
     
@@ -333,7 +364,7 @@ Example  This code shows an example using map():</description>
 This function generates an event.
 Function list.pop()
 Arguments None
-Return value The removed element from the list. An INDEX_ERROR is raised if the list is empty.
+Return value The removed element from the list. A lookup_err() is raised if the list is empty.
 Example  This code show an example usage of pop():</description>
     </item>
     
@@ -614,7 +645,7 @@ Example  Example using upper():
       <description>Delete a property from a thing.
 This function generates an event.
 Function thing.del(property)
-Arguments    Argument Type Description     property str (required) Name of the property to delete.    Return value Returns nil if successful. An INDEX_ERROR is returned if the property does not exist or BAD_REQUEST in case the given property is not a valid name.
+Arguments    Argument Type Description     property str (required) Name of the property to delete.    Return value Returns nil if successful. A lookup_err() is returned if the property does not exist or bad_data_err() in case the given property is not a valid name.
 Example  This code shows some return values for del():</description>
     </item>
     
@@ -848,10 +879,10 @@ Syntax: expression ? if-true : if-false
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/assert/</guid>
-      <description>Raises ASSERTION_ERROR if the specified statement evaluates to false.
+      <description>Raises assert_err() if the specified statement evaluates to false.
 This function does not generate an event.
 Function assert(statement [, error_msg])
-Arguments    Argument Type Description     statement any (required) The statement to evaluate.   msg str (optional) Custom error message.   code int (optional) Return a custom error code between 1 and 32. If not given, the error code is ASSERTION_ERROR (-105)    Return value Assert returns with the return value of the given statement when the statement evaluates to true.</description>
+Arguments    Argument Type Description     statement any (required) The statement to evaluate.   msg str (optional) Custom error message.    Return value Assert returns with the return value of the given statement when the statement evaluates to true. Otherwise an assert_err() is raised.</description>
     </item>
     
     <item>
@@ -1365,7 +1396,7 @@ Arguments    Argument Type Description     value any (optional) The value to cre
       <description>Returns a thing from a specified value. If no value is given, a new thing is returned.
 This function does not generate an event.
 Function thing([id])
-Arguments    Argument Type Description     id int (optional) The id for the thing to return.    Return value Returns a thing. An INDEX_ERROR is returned in case an id is given which is not found inside the collection.</description>
+Arguments    Argument Type Description     id int (optional) The id for the thing to return.    Return value Returns a thing. A lookup_err() is returned in case an id is given which is not found inside the collection.</description>
     </item>
     
     <item>
@@ -1473,7 +1504,7 @@ This function does not generate an event.</description>
       <guid>https://docs.thingsdb.net/v0/node-api/counters/</guid>
       <description>Returns counters for the ThingsDB node you are connected too. Counters start all at zero when ThingsDB is started, or when the counters are reset by using reset_counters()&amp;rsquo;.
 Counters give information about things, queries and events. If you suspect failed queries, then counters might provide you with more information.
-   Counter Description     average_event_duration The average event duration in seconds.   events_committed Events committed since last counters reset.</description>
+   Counter Description     average_event_duration The average event duration in seconds.   average_query_duration The average query duration in seconds.</description>
     </item>
     
     <item>
@@ -1588,7 +1619,7 @@ Return value List with collection info for all collections in ThingsDB.</descrip
       <description> Delete a collection.
 This function generates an event.
 Function del_collection(name);
-Arguments    Argument Type Description     name str (required) Name of the collection to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the collection does not exist.
+Arguments    Argument Type Description     name str (required) Name of the collection to delete.    Return value Returns nil when successful. A lookup_err() is raised if the collection does not exist.
 Example  This code will delete collection stuff:
  // Delete collection `stuff` del_collection(&#39;stuff&#39;);  </description>
     </item>
@@ -1630,7 +1661,7 @@ Arguments    Argument Type Description     node_id int (required) Id of the node
       <description> Delete a token.
 This function generates an event.
 Function del_token(key);
-Arguments    Argument Type Description     key str (required) Token key to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the token is not found.
+Arguments    Argument Type Description     key str (required) Token key to delete.    Return value Returns nil when successful. A lookup_err() is raised if the token is not found.
 Example  This code will delete a token:
  // Delete a token del_token(&#39;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#39;);  </description>
     </item>
@@ -1641,7 +1672,7 @@ Example  This code will delete a token:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/del_user/</guid>
-      <description>Delete a user. It is not possible to delete your own user account and a BAD_REQUEST will be raised in case you try to. Any tokens associated with the user will also be deleted.
+      <description>Delete a user. It is not possible to delete your own user account and a bad_data_err() will be raised in case you try to. Any tokens associated with the user will also be deleted.
 This function generates an event.
 Function del_user(username);
 Arguments    Argument Type Description     username str (required) Username of the user to delete.    Return value Returns nil when successful.</description>
@@ -1692,7 +1723,7 @@ Arguments    Argument Type Description     secret str (required) Secret used to 
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/new_token/</guid>
       <description>Adds a new token for a given user. An optional expiration time may be given after which the token cannot be used anymore. Use del_expired to cleanup expired tokens. The expiration time may be given as a UNIX time-stamp in seconds or a date/time string.
 Some valid date/time strings:
- 2021-01-01 2023-02-06 14:30 2023-07-5T13:23:20+01:00  Expiration dates in the past are not allowed an will raise a BAD_REQUEST error.</description>
+ 2021-01-01 2023-02-06 14:30 2023-07-5T13:23:20+01:00  Expiration dates in the past are not allowed an will raise a bad_data_err() error.</description>
     </item>
     
     <item>
@@ -1800,7 +1831,12 @@ Return value List with user info for all users in ThingsDB.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/procedures-api/del_procedure/</guid>
-      <description>This function generates an event.</description>
+      <description>Delete a procedure.
+This function generates an event.
+Function del_procedure(procedure);
+Arguments    Argument Type Description     procedure str (required) Procedure name to delete.    Return value Returns nil when successful. A lookup_err() is raised if the procedure does not exist.
+Example  This code will delete procedure add_one:
+ new_procedure(&#39;add_one&#39;, |x| { &amp;quot;Adds one to a given value&amp;quot;; x + 1; }); // Delete procedure `add_one` del_procedure(&#39;add_one&#39;);   Return value in JSON format</description>
     </item>
     
     <item>
@@ -1809,7 +1845,10 @@ Return value List with user info for all users in ThingsDB.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/procedures-api/new_procedure/</guid>
-      <description>This function generates an event.</description>
+      <description>Creates a new procedure to the @thingsdb or a @collection scope. The name of the procedure must be unique within the scope. The given closure will be copied to the procedure, so this is not a reference to a given closure.
+This function generates an event.
+Function new_procedure(name, closure);
+Arguments    Argument Type Description     name str (required) Name of the new procedure.   closure closure (required) Closure which will be attached to the procedure.</description>
     </item>
     
     <item>
@@ -1818,7 +1857,11 @@ Return value List with user info for all users in ThingsDB.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/procedures-api/procedure_doc/</guid>
-      <description>This function does not generate an event.</description>
+      <description>Returns the doc string for a given procedure. An empty string is returned if the procedure has no doc string.
+This function does not generate an event.
+Function procedure_doc(procedure);
+Arguments    Argument Type Description     procedure str (required) Name of the procedure where to return the doc string for.    Return value Returns the doc string for a given procedure.
+Example  Create a new procedure add_one:</description>
     </item>
     
     <item>
@@ -1827,7 +1870,10 @@ Return value List with user info for all users in ThingsDB.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/procedures-api/procedure_info/</guid>
-      <description>This function does not generate an event.</description>
+      <description>Returns information about a procedure.
+   Value Description     arguments Array with positional argument names.   definition Closure definition.   doc Doc string of the closure in the procedure.   name Name of the procedure.   with_side_effects Boolean value which indicates if this procedure has side effects.    This function does not generate an event.
+Function procedure_info(procedure);
+Arguments    Argument Type Description     procedure str (required) Name of the procedure where to return the info for.</description>
     </item>
     
     <item>
@@ -1836,7 +1882,12 @@ Return value List with user info for all users in ThingsDB.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/procedures-api/procedures_info/</guid>
-      <description>This function does not generate an event.</description>
+      <description>Returns procedure information for all procedures in the scope.
+See the procedure_info() function documentation for an example of the exposed procedure information.
+This function does not generate an event.
+Function procedures_info()
+Arguments None
+Return value List with procedure info for all procedure in the scope.</description>
     </item>
     
     <item>
@@ -1854,7 +1905,7 @@ Return value List with user info for all users in ThingsDB.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/assert_err/</guid>
-      <description> Returns an error.
+      <description> Returns an error when an assertion has failed.
 This function does not generate an event.
 Function assert_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
@@ -1869,7 +1920,7 @@ Example  This code shows assert_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/auth_err/</guid>
-      <description> Returns an error.
+      <description> Returns an error when authentication has failed.
 This function does not generate an event.
 Function auth_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
@@ -1884,7 +1935,7 @@ Example  This code shows auth_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/bad_data_err/</guid>
-      <description> Returns an error.
+      <description> Returns an error when a request is malformed.
 This function does not generate an event.
 Function bad_data_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
@@ -1899,7 +1950,7 @@ Example  This code shows bad_data_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/forbidden_err/</guid>
-      <description> Returns an error.
+      <description> Returns an error when the client or user is missing the required privileges.
 This function does not generate an event.
 Function forbidden_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
@@ -1914,7 +1965,7 @@ Example  This code shows forbidden_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/lookup_err/</guid>
-      <description> Returns an error.
+      <description> Returns an error when a requested resource is not found or when an index is out-of-range.
 This function does not generate an event.
 Function lookup_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
@@ -1929,7 +1980,7 @@ Example  This code shows lookup_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/max_quota_err/</guid>
-      <description> Returns an error.
+      <description> Returns an error when a quota limit is reached.
 This function does not generate an event.
 Function max_quota_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
@@ -1944,7 +1995,7 @@ Example  This code shows max_quota_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/node_err/</guid>
-      <description> Returns an error.
+      <description> Returns an error when a node was not able to handle the request.
 This function does not generate an event.
 Function node_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
@@ -1959,7 +2010,7 @@ Example  This code shows node_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/num_arguments_err/</guid>
-      <description> Returns an error.
+      <description> Returns an error when a wrong number of arguments are given.
 This function does not generate an event.
 Function num_arguments_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
@@ -1974,7 +2025,7 @@ Example  This code shows num_arguments_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/operation_err/</guid>
-      <description> Returns an error.
+      <description> Returns an error when an operation is not valid within the current context.
 This function does not generate an event.
 Function operation_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
@@ -1989,13 +2040,12 @@ Example  This code shows operation_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/overflow_err/</guid>
-      <description> Returns an error.
+      <description>Returns an error when an attempt is made to create an integer value out of the supported 64Bit (signed) range.
 This function does not generate an event.
 Function overflow_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
 Example  This code shows overflow_err():
- overflow_err();   Return value in JSON format
- { &amp;quot;!&amp;quot;: &amp;quot;overflow_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -59, &amp;quot;error_msg&amp;quot;: &amp;quot;integer overflow&amp;quot; }  </description>
+ overflow_err();   Return value in JSON format</description>
     </item>
     
     <item>
@@ -2004,7 +2054,7 @@ Example  This code shows overflow_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/syntax_err/</guid>
-      <description> Returns an error.
+      <description> Returns an error when the given ThingsDB code contains a syntax error.
 This function does not generate an event.
 Function syntax_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
@@ -2019,7 +2069,7 @@ Example  This code shows syntax_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/type_err/</guid>
-      <description> Returns an error.
+      <description> Returns an error when a given value is of the incorrect type.
 This function does not generate an event.
 Function type_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
@@ -2034,7 +2084,7 @@ Example  This code shows type_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/value_err/</guid>
-      <description> Returns an error.
+      <description> Returns an error when a given value has the correct type but contains invalid data.
 This function does not generate an event.
 Function value_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
@@ -2049,7 +2099,7 @@ Example  This code shows value_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/zero_div_err/</guid>
-      <description> Returns an error.
+      <description> Returns an error when an attempt is made to divide or take a modulo by zero.
 This function does not generate an event.
 Function zero_div_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.

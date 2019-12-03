@@ -1,6 +1,6 @@
 ---
 title: "splice"
-weight: 39
+weight: 42
 ---
 
 The `splice()` method changes the contents of an list by removing or replacing

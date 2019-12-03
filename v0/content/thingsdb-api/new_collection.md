@@ -1,6 +1,6 @@
 ---
 title: "new_collection"
-weight: 150
+weight: 153
 ---
 
 Create a new collection.
@@ -24,7 +24,7 @@ Use `grant` to give other users access to the collection.
 
 ### Return value
 
-Returns the new collection `id` if successful. An `INDEX_ERROR` is raised
+Returns the new collection `id` if successful. A [lookup_err()](../../errors/lookup_err) is raised
 if the collection already exists.
 
 ### Example

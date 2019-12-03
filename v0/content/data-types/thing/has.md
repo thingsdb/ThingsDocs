@@ -1,6 +1,6 @@
 ---
 title: "has"
-weight: 62
+weight: 65
 ---
 
 Determines if a [thing](..) has a given property.

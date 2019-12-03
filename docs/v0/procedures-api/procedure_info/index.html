@@ -11,20 +11,20 @@
     <title>procedure_info :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/theme.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1575373789" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/theme.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1575389752" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1575373789" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1575389752" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1575373789"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1575389752"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1575373789"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1575373789"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1575389752"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1575389752"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1575373789"></script>
+<script type="text/javascript" src="/v0/js/search.js?1575389752"></script>
 
     
   </div>
@@ -114,6 +114,8 @@
       
         <ul>
           
+          
+            
           
           
           
@@ -202,13 +204,85 @@
  
   
     
-      <li data-nav-id="/v0/connect/protocol/" title="Protocol" class="dd-item ">
-        <a href="/v0/connect/protocol/">
-        Protocol
+    <li data-nav-id="/v0/connect/protocol/" title="Protocol" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/v0/connect/protocol/">
+          Protocol
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/connect/protocol/ping/" title="Example ping" class="dd-item ">
+        <a href="/v0/connect/protocol/ping/">
+        Example ping
         
         </a>
     </li>
      
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/connect/protocol/auth/" title="Example auth" class="dd-item ">
+        <a href="/v0/connect/protocol/auth/">
+        Example auth
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/connect/protocol/query/" title="Example query" class="dd-item ">
+        <a href="/v0/connect/protocol/query/">
+        Example query
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
   
  
 
@@ -3874,7 +3948,20 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#function">Function</a></li>
+<li><a href="#arguments">Arguments</a></li>
+<li><a href="#return-value">Return value</a></li>
+<li><a href="#example">Example</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -3898,7 +3985,105 @@
 
 
 
+
+
+<p>Returns information about a procedure.</p>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>arguments</td>
+<td>Array with positional argument names.</td>
+</tr>
+
+<tr>
+<td>definition</td>
+<td>Closure definition.</td>
+</tr>
+
+<tr>
+<td>doc</td>
+<td>Doc string of the closure in the procedure.</td>
+</tr>
+
+<tr>
+<td>name</td>
+<td>Name of the procedure.</td>
+</tr>
+
+<tr>
+<td>with_side_effects</td>
+<td>Boolean value which indicates if this procedure has side effects.</td>
+</tr>
+</tbody>
+</table>
+
 <p>This function does <em>not</em> generate an <a href="../../overview/events">event</a>.</p>
+
+<h3 id="function">Function</h3>
+
+<p><code>procedure_info(procedure);</code></p>
+
+<h3 id="arguments">Arguments</h3>
+
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>procedure</code></td>
+<td>str (required)</td>
+<td>Name of the procedure where to return the info for.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="return-value">Return value</h3>
+
+<p>Returns <a href="../../data-types/info">info</a> about a given procedure.</p>
+
+<h3 id="example">Example</h3>
+
+<blockquote>
+<p>Create a new procedure <code>add_one</code>:</p>
+</blockquote>
+
+<pre><code class="language-thingsdb,json_response">new_procedure('add_one', |x| {
+    &quot;Adds one to a given value&quot;;
+    x + 1;
+});
+
+// Return the doc string for procedure `add_one`
+procedure_info('add_one');
+</code></pre>
+
+<blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+
+<pre><code class="language-json">{
+    &quot;arguments&quot;: [
+        &quot;x&quot;
+    ],
+    &quot;definition&quot;: &quot;|x|{\&quot;Adds one to a given value\&quot;;x+1;}&quot;,
+    &quot;doc&quot;: &quot;Adds one to a given value&quot;,
+    &quot;name&quot;: &quot;add_one&quot;,
+    &quot;with_side_effects&quot;: false
+}
+</code></pre>
 
 
 <footer class=" footline" >
@@ -3929,19 +4114,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1575373789"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1575373789"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1575373789"></script>
-    <script src="/v0/js/jquery.sticky.js?1575373789"></script>
-    <script src="/v0/js/featherlight.min.js?1575373789"></script>
-    <script src="/v0/js/highlight.pack.js?1575373789"></script>
+    <script src="/v0/js/clipboard.min.js?1575389752"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1575389752"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1575389752"></script>
+    <script src="/v0/js/jquery.sticky.js?1575389752"></script>
+    <script src="/v0/js/featherlight.min.js?1575389752"></script>
+    <script src="/v0/js/highlight.pack.js?1575389752"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1575373789"></script>
-    <script src="/v0/js/learn.js?1575373789"></script>
-    <script src="/v0/js/hugo-learn.js?1575373789"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1575389752"></script>
+    <script src="/v0/js/learn.js?1575389752"></script>
+    <script src="/v0/js/hugo-learn.js?1575389752"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1575373789" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1575373789"></script>
+    <link href="/v0/mermaid/mermaid.css?1575389752" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1575389752"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

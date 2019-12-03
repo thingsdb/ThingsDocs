@@ -1,6 +1,6 @@
 ---
 title: "new_user"
-weight: 153
+weight: 156
 ---
 
 Creates a new user to ThingsDB. The new user is created without a password, token and access privileges.
@@ -20,7 +20,7 @@ Argument | Type | Description
 
 ### Return value
 
-Returns the new user `id` if successful. An `INDEX_ERROR` is raised
+Returns the new user `id` if successful. A [lookup_err()](../../errors/lookup_err) is raised
 if the user already exists.
 
 ### Example

@@ -13,4 +13,3 @@ The most easy way to use the socket connection is to use an existing *connector*
 For other languages you can read the [protocol](./protocol) section on how to implement a ThingsDB connector.
 
 As an alternative to the socket connection, a ThingsDB node has support for HTTP request through a [HTTP API](./http-api).
-This HTTP API listens be default to port `9210` but can be desabled or changed with the `http_api_port` in the configuration file or with the `THINGSDB_HTTP_API_PORT` environment variable.

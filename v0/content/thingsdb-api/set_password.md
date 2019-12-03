@@ -1,6 +1,6 @@
 ---
 title: "set_password"
-weight: 157
+weight: 160
 ---
 
 Change a users password. This function can also be used to remove an existing
@@ -23,8 +23,8 @@ new_password | nil/str (required) | New password or `nil`
 
 ### Return value
 
-Returns `nil` if successful. An `INDEX_ERROR` is returned
-if the user does not exist and `BAD_REQUEST` if the new password is not compliant.
+Returns `nil` if successful. A [lookup_err()](../../errors/lookup_err) is returned
+if the user does not exist and [bad_data_err()](../../errors/bad_data_err) if the new password is not compliant.
 
 ### Example
 

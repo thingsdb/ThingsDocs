@@ -1,6 +1,6 @@
 ---
 title: "call"
-weight: 20
+weight: 23
 ---
 
 Call a closure with optional arguments.

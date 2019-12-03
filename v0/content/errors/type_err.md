@@ -1,9 +1,9 @@
 ---
 title: "type_err"
-weight: 181
+weight: 184
 ---
 
-Returns an [error](../../data-types/error).
+Returns an [error](../../data-types/error) when a given value is of the incorrect type.
 
 This function does *not* generate an [event](../../overview/events).
 

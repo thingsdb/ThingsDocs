@@ -1,9 +1,9 @@
 ---
 title: "assert_err"
-weight: 170
+weight: 173
 ---
 
-Returns an [error](../../data-types/error).
+Returns an [error](../../data-types/error) when an assertion has failed.
 
 This function does *not* generate an [event](../../overview/events).
 

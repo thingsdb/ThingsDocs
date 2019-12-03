@@ -19,7 +19,7 @@
       <description>Delete a property from a thing.
 This function generates an event.
 Function thing.del(property)
-Arguments    Argument Type Description     property str (required) Name of the property to delete.    Return value Returns nil if successful. An INDEX_ERROR is returned if the property does not exist or BAD_REQUEST in case the given property is not a valid name.
+Arguments    Argument Type Description     property str (required) Name of the property to delete.    Return value Returns nil if successful. A lookup_err() is returned if the property does not exist or bad_data_err() in case the given property is not a valid name.
 Example  This code shows some return values for del():</description>
     </item>
     

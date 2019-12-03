@@ -16,10 +16,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/assert/</guid>
-      <description>Raises ASSERTION_ERROR if the specified statement evaluates to false.
+      <description>Raises assert_err() if the specified statement evaluates to false.
 This function does not generate an event.
 Function assert(statement [, error_msg])
-Arguments    Argument Type Description     statement any (required) The statement to evaluate.   msg str (optional) Custom error message.   code int (optional) Return a custom error code between 1 and 32. If not given, the error code is ASSERTION_ERROR (-105)    Return value Assert returns with the return value of the given statement when the statement evaluates to true.</description>
+Arguments    Argument Type Description     statement any (required) The statement to evaluate.   msg str (optional) Custom error message.    Return value Assert returns with the return value of the given statement when the statement evaluates to true. Otherwise an assert_err() is raised.</description>
     </item>
     
     <item>
@@ -497,7 +497,7 @@ Arguments    Argument Type Description     value any (optional) The value to cre
       <description>Returns a thing from a specified value. If no value is given, a new thing is returned.
 This function does not generate an event.
 Function thing([id])
-Arguments    Argument Type Description     id int (optional) The id for the thing to return.    Return value Returns a thing. An INDEX_ERROR is returned in case an id is given which is not found inside the collection.</description>
+Arguments    Argument Type Description     id int (optional) The id for the thing to return.    Return value Returns a thing. A lookup_err() is returned in case an id is given which is not found inside the collection.</description>
     </item>
     
     <item>

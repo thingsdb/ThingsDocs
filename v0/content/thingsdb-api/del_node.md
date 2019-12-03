@@ -1,6 +1,6 @@
 ---
 title: "del_node"
-weight: 146
+weight: 149
 ---
 
 Delete a node from ThingsDB.
@@ -21,6 +21,6 @@ Argument | Type | Description
 node_id | int (required) | Id of the node to delete.
 
 ### Return value
-Returns `nil` when successful. An `INDEX_ERROR` is raised if the node id does not exist.
+Returns `nil` when successful. A [lookup_err()](../../errors/lookup_err) is raised if the node id does not exist.
 
 

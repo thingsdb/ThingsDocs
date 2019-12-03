@@ -11,20 +11,20 @@
     <title>del_procedure :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/theme.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1575373789" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/theme.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1575389752" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1575373789" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1575389752" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1575373789"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1575389752"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1575373789"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1575373789"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1575389752"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1575389752"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1575373789"></script>
+<script type="text/javascript" src="/v0/js/search.js?1575389752"></script>
 
     
   </div>
@@ -114,6 +114,8 @@
       
         <ul>
           
+          
+            
           
           
           
@@ -202,13 +204,85 @@
  
   
     
-      <li data-nav-id="/v0/connect/protocol/" title="Protocol" class="dd-item ">
-        <a href="/v0/connect/protocol/">
-        Protocol
+    <li data-nav-id="/v0/connect/protocol/" title="Protocol" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/v0/connect/protocol/">
+          Protocol
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/connect/protocol/ping/" title="Example ping" class="dd-item ">
+        <a href="/v0/connect/protocol/ping/">
+        Example ping
         
         </a>
     </li>
      
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/connect/protocol/auth/" title="Example auth" class="dd-item ">
+        <a href="/v0/connect/protocol/auth/">
+        Example auth
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/connect/protocol/query/" title="Example query" class="dd-item ">
+        <a href="/v0/connect/protocol/query/">
+        Example query
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
   
  
 
@@ -3874,7 +3948,20 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#function">Function</a></li>
+<li><a href="#arguments">Arguments</a></li>
+<li><a href="#return-value">Return value</a></li>
+<li><a href="#example">Example</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -3898,7 +3985,61 @@
 
 
 
+
+
+<p>Delete a procedure.</p>
+
 <p>This function generates an <a href="../../overview/events">event</a>.</p>
+
+<h3 id="function">Function</h3>
+
+<p><code>del_procedure(procedure);</code></p>
+
+<h3 id="arguments">Arguments</h3>
+
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>procedure</td>
+<td>str (required)</td>
+<td>Procedure name to delete.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="return-value">Return value</h3>
+
+<p>Returns <code>nil</code> when successful. A <a href="../../errors/lookup_err">lookup_err()</a> is raised if the procedure does not exist.</p>
+
+<h3 id="example">Example</h3>
+
+<blockquote>
+<p>This code will delete procedure <em>add_one</em>:</p>
+</blockquote>
+
+<pre><code class="language-thingsdb,json_response">new_procedure('add_one', |x| {
+    &quot;Adds one to a given value&quot;;
+    x + 1;
+});
+
+// Delete procedure `add_one`
+del_procedure('add_one');
+</code></pre>
+
+<blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+
+<pre><code class="language-json">null
+</code></pre>
 
 
 <footer class=" footline" >
@@ -3929,19 +4070,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1575373789"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1575373789"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1575373789"></script>
-    <script src="/v0/js/jquery.sticky.js?1575373789"></script>
-    <script src="/v0/js/featherlight.min.js?1575373789"></script>
-    <script src="/v0/js/highlight.pack.js?1575373789"></script>
+    <script src="/v0/js/clipboard.min.js?1575389752"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1575389752"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1575389752"></script>
+    <script src="/v0/js/jquery.sticky.js?1575389752"></script>
+    <script src="/v0/js/featherlight.min.js?1575389752"></script>
+    <script src="/v0/js/highlight.pack.js?1575389752"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1575373789"></script>
-    <script src="/v0/js/learn.js?1575373789"></script>
-    <script src="/v0/js/hugo-learn.js?1575373789"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1575389752"></script>
+    <script src="/v0/js/learn.js?1575389752"></script>
+    <script src="/v0/js/hugo-learn.js?1575389752"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1575373789" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1575373789"></script>
+    <link href="/v0/mermaid/mermaid.css?1575389752" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1575389752"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

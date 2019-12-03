@@ -1,9 +1,9 @@
 ---
 title: "assert"
-weight: 82
+weight: 85
 ---
 
-Raises `ASSERTION_ERROR` if the specified statement evaluates to `false`.
+Raises [assert_err()](../../errors/assert_err) if the specified statement evaluates to `false`.
 
 This function does *not* generate an [event](../../overview/events).
 
@@ -17,12 +17,11 @@ Argument | Type | Description
 -------- | ---- | -----------
 statement | any (required) | The statement to evaluate.
 msg | str (optional) | Custom error message.
-code | int (optional) | Return a custom error code between 1 and 32. If not given, the error code is `ASSERTION_ERROR` (-105)
 
 ### Return value
 
 Assert returns with the return value of the given statement when the statement evaluates to `true`. Otherwise
-an `ASSERTION_ERROR` is raised.
+an [assert_err()](../../errors/assert_err) is raised.
 
 ### Example
 
@@ -32,11 +31,11 @@ an `ASSERTION_ERROR` is raised.
 assert(1 > 2, 'one is still smaller than two');
 ```
 
-> Raises an `ASSERTION_ERROR` exception
+> Raises an [assert_err()](../../errors/assert_err) exception
 
 ```json
 {
     "error_msg": "one is still smaller than two",
-    "error_code": 1
+    "error_code": -50
 }
 ```

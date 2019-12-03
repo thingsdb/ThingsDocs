@@ -1,6 +1,6 @@
 ---
 title: "thing"
-weight: 123
+weight: 126
 ---
 
 Returns a [thing](../../data-types/thing) from a specified value.
@@ -21,7 +21,7 @@ id | int (optional) | The id for the thing to return.
 ### Return value
 
 Returns a [thing](../../data-types/thing).
-An `INDEX_ERROR` is returned in case an id is given which is not found inside the collection.
+A [lookup_err()](../../errors/lookup_err) is returned in case an id is given which is not found inside the collection.
 
 ### Example
 

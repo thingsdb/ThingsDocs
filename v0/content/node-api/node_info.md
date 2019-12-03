@@ -1,6 +1,6 @@
 ---
 title: "node_info"
-weight: 136
+weight: 139
 ---
 
 Returns information about the node in the current scope.
@@ -31,11 +31,13 @@ next_event_id | Next free event ID.
 next_thing_id | Next free things ID.
 node_id | The `id` which is assigned to the node.
 node_port | Listening for node TCP socket connections on this port.
+scheduled_backups | Number of backups scheduled on this node. Only repeated backups or backups which are planned in the future are included.
 status | Current status of the ThingsDB node.
 storage_path | Path used for storing ThingsDB data.
 syntax_version | Language or syntax version. A new version of ThingsDB might also have a new language version.
 uptime | Uptime of the node in seconds.
-version | Version of ThingsDB,
+version | Version of ThingsDB.
+yajl_version | JSON parser library version.
 zone | Zone number to which the node is assigned. May be changed in the ThingsDB configuration file.
 
 This function does *not* generate an [event](../../overview/events).
@@ -90,6 +92,7 @@ node_info();
     "syntax_version": "v0",
     "uptime": 7.854678630828857,
     "version": "0.2.13",
+    "yajl_version": "2.1.0",
     "zone": 0
 }
 ```

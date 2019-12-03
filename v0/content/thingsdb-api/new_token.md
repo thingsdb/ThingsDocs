@@ -1,6 +1,6 @@
 ---
 title: "new_token"
-weight: 152
+weight: 155
 ---
 
 Adds a new token for a given user. An optional expiration time may be given after which the token cannot
@@ -13,7 +13,7 @@ Some valid date/time strings:
 - `2023-02-06 14:30`
 - `2023-07-5T13:23:20+01:00`
 
-Expiration dates in the past are not allowed an will raise a `BAD_REQUEST` error.
+Expiration dates in the past are not allowed an will raise a [bad_data_err()](../../errors/bad_data_err) error.
 
 It is also possible to set a description for the token which can be used to identify where token is used for.
 If you only want to set a description, but no expiration time, then you can use `nil` as second argument.

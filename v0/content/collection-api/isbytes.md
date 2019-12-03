@@ -1,6 +1,6 @@
 ---
 title: "isbytes"
-weight: 95
+weight: 98
 ---
 
 This function determines whether the value passed to this function

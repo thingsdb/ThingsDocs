@@ -1,6 +1,6 @@
 ---
 title: "del_token"
-weight: 147
+weight: 150
 ---
 
 Delete a token.
@@ -19,7 +19,7 @@ key | str (required) | Token key to delete.
 
 ### Return value
 
-Returns `nil` when successful. An `INDEX_ERROR` is raised if the token is not found.
+Returns `nil` when successful. A [lookup_err()](../../errors/lookup_err) is raised if the token is not found.
 
 ### Example
 

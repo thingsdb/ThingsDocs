@@ -11,20 +11,20 @@
     <title>Protocol :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/theme.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1575373789" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/theme.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1575389752" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1575373789" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1575389752" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1575373789"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1575389752"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1575373789"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1575373789"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1575389752"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1575389752"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1575373789"></script>
+<script type="text/javascript" src="/v0/js/search.js?1575389752"></script>
 
     
   </div>
@@ -114,6 +114,8 @@
       
         <ul>
           
+          
+            
           
           
           
@@ -202,13 +204,85 @@
  
   
     
-      <li data-nav-id="/v0/connect/protocol/" title="Protocol" class="dd-item active">
-        <a href="/v0/connect/protocol/">
-        Protocol
+    <li data-nav-id="/v0/connect/protocol/" title="Protocol" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="/v0/connect/protocol/">
+          Protocol
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/connect/protocol/ping/" title="Example ping" class="dd-item ">
+        <a href="/v0/connect/protocol/ping/">
+        Example ping
         
         </a>
     </li>
      
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/connect/protocol/auth/" title="Example auth" class="dd-item ">
+        <a href="/v0/connect/protocol/auth/">
+        Example auth
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/connect/protocol/query/" title="Example query" class="dd-item ">
+        <a href="/v0/connect/protocol/query/">
+        Example query
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
   
  
 
@@ -3892,7 +3966,9 @@
 <li><a href="#data">DATA</a></li>
 </ul></li>
 </ul></li>
+<li><a href="#response-type">Response type</a></li>
 <li><a href="#example">Example</a></li>
+<li><a href="#more-examples">More examples</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -3920,13 +3996,14 @@
 
 
 
+	
 
 <p>This is a more in depth view of the protocol used for communication with ThingsDB.
 In case you just want to use ThingsDB using one of the language bindings, then this
 info can be skipped. If you plan to implement you own connector, then this info might
 be useful to you.</p>
 
-<p>Communication with ThingsDB is done over a socket, either using TCP or a UNIX PIPE connection.
+<p>This section applies to communication with ThingsDB over a socket, either by using TCP or a UNIX PIPE connection.
 Once a connection is made, packages can be send to ThingsDB. Each package starts
 with a 8 bytes header using little endian, followed by optional data. Before you can
 send queries to ThingsDB, the connection must be authenticated. This can be done by
@@ -4015,6 +4092,46 @@ request. This is useful if you want to send multiple request in parallel.</p>
 └───────────┴───────────┴───────────┴───────────┴───────────┘
 </code></pre>
 
+<h2 id="response-type">Response type</h2>
+
+<p>ThingsDB can respond with one of the following response type:</p>
+
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>PONG</code></td>
+<td>16</td>
+<td>Success response to <code>PING</code> (header only).</td>
+</tr>
+
+<tr>
+<td><code>OK</code></td>
+<td>17</td>
+<td>Success response to <code>AUTH</code>, <code>WATCH</code> and <code>UNWATCH</code> (header only).</td>
+</tr>
+
+<tr>
+<td><code>DATA</code></td>
+<td>18</td>
+<td>Success response to <code>QUERY</code> and <code>RUN</code> (with data).</td>
+</tr>
+
+<tr>
+<td><code>ERROR</code></td>
+<td>19</td>
+<td>Error response (with data).</td>
+</tr>
+</tbody>
+</table>
+
 <h2 id="example">Example</h2>
 
 <p>As an example we create an authentication package for the default <em>admin</em> user with password <em>pass</em>.</p>
@@ -4040,11 +4157,23 @@ request. This is useful if you want to send multiple request in parallel.</p>
 
 <p><code>\x0c\x00\x00\x00\x00\x00\x21\xde\x92\xa5admin\xa4pass</code></p>
 
+<h2 id="more-examples">More examples</h2>
+
+<p>Some more examples:</p>
+
+<ul>
+<li><a href="./ping">sending a ping request</a></li>
+<li><a href="./auth">sending an authentication request</a></li>
+<li><a href="./query">sending a query request</a></li>
+</ul>
+
+
+
+
 
 <footer class=" footline" >
 	
 </footer>
-
 
         
         </div>
@@ -4059,7 +4188,7 @@ request. This is useful if you want to send multiple request in parallel.</p>
             <a class="nav nav-prev" href="/v0/connect/go/" title="Go"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/v0/overview/" title="Overview" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/v0/connect/protocol/ping/" title="Example ping" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     
     </div>
@@ -4069,19 +4198,19 @@ request. This is useful if you want to send multiple request in parallel.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1575373789"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1575373789"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1575373789"></script>
-    <script src="/v0/js/jquery.sticky.js?1575373789"></script>
-    <script src="/v0/js/featherlight.min.js?1575373789"></script>
-    <script src="/v0/js/highlight.pack.js?1575373789"></script>
+    <script src="/v0/js/clipboard.min.js?1575389752"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1575389752"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1575389752"></script>
+    <script src="/v0/js/jquery.sticky.js?1575389752"></script>
+    <script src="/v0/js/featherlight.min.js?1575389752"></script>
+    <script src="/v0/js/highlight.pack.js?1575389752"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1575373789"></script>
-    <script src="/v0/js/learn.js?1575373789"></script>
-    <script src="/v0/js/hugo-learn.js?1575373789"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1575389752"></script>
+    <script src="/v0/js/learn.js?1575389752"></script>
+    <script src="/v0/js/hugo-learn.js?1575389752"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1575373789" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1575373789"></script>
+    <link href="/v0/mermaid/mermaid.css?1575389752" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1575389752"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
@@ -4089,4 +4218,3 @@ request. This is useful if you want to send multiple request in parallel.</p>
 
   </body>
 </html>
-

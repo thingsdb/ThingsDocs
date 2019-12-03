@@ -1,10 +1,10 @@
 ---
 title: "int"
-weight: 26
+weight: 29
 ---
 
 ThingsDB can store 64bit signed integers values. When assigning integer values
-larger than 64bit, an `OVERFLOW_ERROR` will be returned. Other types can be
+larger than 64bit, an [overflow_err()](../../errors/overflow_err) will be returned. Other types can be
 converted to `int` by using the [int](../../collection-api/int) function.
 
 ### Notations

@@ -11,20 +11,20 @@
     <title>counters :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/theme.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1575373789" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/theme.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1575389752" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1575373789" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1575389752" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1575373789"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1575389752"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1575373789"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1575373789"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1575389752"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1575389752"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1575373789"></script>
+<script type="text/javascript" src="/v0/js/search.js?1575389752"></script>
 
     
   </div>
@@ -114,6 +114,8 @@
       
         <ul>
           
+          
+            
           
           
           
@@ -202,13 +204,85 @@
  
   
     
-      <li data-nav-id="/v0/connect/protocol/" title="Protocol" class="dd-item ">
-        <a href="/v0/connect/protocol/">
-        Protocol
+    <li data-nav-id="/v0/connect/protocol/" title="Protocol" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/v0/connect/protocol/">
+          Protocol
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/connect/protocol/ping/" title="Example ping" class="dd-item ">
+        <a href="/v0/connect/protocol/ping/">
+        Example ping
         
         </a>
     </li>
      
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/connect/protocol/auth/" title="Example auth" class="dd-item ">
+        <a href="/v0/connect/protocol/auth/">
+        Example auth
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/connect/protocol/query/" title="Example query" class="dd-item ">
+        <a href="/v0/connect/protocol/query/">
+        Example query
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
   
  
 
@@ -3934,6 +4008,11 @@ counters might provide you with more information.</p>
 </tr>
 
 <tr>
+<td>average_query_duration</td>
+<td>The average query duration in seconds.</td>
+</tr>
+
+<tr>
 <td>events_committed</td>
 <td>Events committed since last counters reset.</td>
 </tr>
@@ -3979,6 +4058,11 @@ counters might provide you with more information.</p>
 </tr>
 
 <tr>
+<td>longest_query_duration</td>
+<td>Longest query duration, in seconds.</td>
+</tr>
+
+<tr>
 <td>queries_success</td>
 <td>Number of queries where this node acted as the master node and the query has successful finished.</td>
 </tr>
@@ -3986,6 +4070,11 @@ counters might provide you with more information.</p>
 <tr>
 <td>queries_with_error</td>
 <td>Number of queries where this node acted as the master node but the query has returned with an error.</td>
+</tr>
+
+<tr>
+<td>watcher_failed</td>
+<td>The value is increased if an update could not be forwarded to a registered watcher.</td>
 </tr>
 </tbody>
 </table>
@@ -4010,7 +4099,7 @@ counters might provide you with more information.</p>
 <p>This code will return node counter values:</p>
 </blockquote>
 
-<pre><code class="language-thingsdb,should_pass,@n">// returns counters for `localhost:9200`
+<pre><code class="language-thingsdb,should_pass,@n">// Returns the current counters the the node in this scope
 counters();
 </code></pre>
 
@@ -4019,8 +4108,9 @@ counters();
 </blockquote>
 
 <pre><code class="language-json">{
-    &quot;average_event_duration&quot;: 3.368566710075053e-05,,
-    &quot;events_committed&quot;: 80352,
+    &quot;average_event_duration&quot;: 0.0002218758461538461,
+    &quot;average_query_duration&quot;: 0.00007062491772151898,
+    &quot;events_committed&quot;: 26,
     &quot;events_failed&quot;: 0,
     &quot;events_killed&quot;: 0,
     &quot;events_quorum_lost&quot;: 0,
@@ -4028,8 +4118,11 @@ counters();
     &quot;events_unaligned&quot;: 0,
     &quot;events_with_gap&quot;: 0,
     &quot;garbage_collected&quot;: 0,
-    &quot;longest_event_duration&quot;: 3.508100053295493e-05,
-    &quot;queries_received&quot;: 130944
+    &quot;longest_event_duration&quot;: 0.000295981,
+    &quot;longest_query_duration&quot;: 0.000152664,
+    &quot;queries_success&quot;: 159,
+    &quot;queries_with_error&quot;: 0,
+    &quot;watcher_failed&quot;: 0
 }
 </code></pre>
 
@@ -4062,19 +4155,19 @@ counters();
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1575373789"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1575373789"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1575373789"></script>
-    <script src="/v0/js/jquery.sticky.js?1575373789"></script>
-    <script src="/v0/js/featherlight.min.js?1575373789"></script>
-    <script src="/v0/js/highlight.pack.js?1575373789"></script>
+    <script src="/v0/js/clipboard.min.js?1575389752"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1575389752"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1575389752"></script>
+    <script src="/v0/js/jquery.sticky.js?1575389752"></script>
+    <script src="/v0/js/featherlight.min.js?1575389752"></script>
+    <script src="/v0/js/highlight.pack.js?1575389752"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1575373789"></script>
-    <script src="/v0/js/learn.js?1575373789"></script>
-    <script src="/v0/js/hugo-learn.js?1575373789"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1575389752"></script>
+    <script src="/v0/js/learn.js?1575389752"></script>
+    <script src="/v0/js/hugo-learn.js?1575389752"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1575373789" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1575373789"></script>
+    <link href="/v0/mermaid/mermaid.css?1575389752" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1575389752"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

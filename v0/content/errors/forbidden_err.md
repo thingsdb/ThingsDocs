@@ -1,9 +1,9 @@
 ---
 title: "forbidden_err"
-weight: 173
+weight: 176
 ---
 
-Returns an [error](../../data-types/error).
+Returns an [error](../../data-types/error) when the client or user is missing the required privileges.
 
 This function does *not* generate an [event](../../overview/events).
 

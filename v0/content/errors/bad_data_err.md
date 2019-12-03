@@ -1,9 +1,9 @@
 ---
 title: "bad_data_err"
-weight: 172
+weight: 175
 ---
 
-Returns an [error](../../data-types/error).
+Returns an [error](../../data-types/error) when a request is malformed.
 
 This function does *not* generate an [event](../../overview/events).
 

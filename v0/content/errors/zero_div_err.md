@@ -1,9 +1,9 @@
 ---
 title: "zero_div_err"
-weight: 183
+weight: 186
 ---
 
-Returns an [error](../../data-types/error).
+Returns an [error](../../data-types/error) when an attempt is made to divide or take a modulo by zero.
 
 This function does *not* generate an [event](../../overview/events).
 

@@ -1,9 +1,9 @@
 ---
 title: "max_quota_err"
-weight: 175
+weight: 178
 ---
 
-Returns an [error](../../data-types/error).
+Returns an [error](../../data-types/error) when a quota limit is reached.
 
 This function does *not* generate an [event](../../overview/events).
 

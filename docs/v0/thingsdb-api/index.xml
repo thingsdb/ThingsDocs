@@ -48,7 +48,7 @@ Return value List with collection info for all collections in ThingsDB.</descrip
       <description> Delete a collection.
 This function generates an event.
 Function del_collection(name);
-Arguments    Argument Type Description     name str (required) Name of the collection to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the collection does not exist.
+Arguments    Argument Type Description     name str (required) Name of the collection to delete.    Return value Returns nil when successful. A lookup_err() is raised if the collection does not exist.
 Example  This code will delete collection stuff:
  // Delete collection `stuff` del_collection(&#39;stuff&#39;);  </description>
     </item>
@@ -90,7 +90,7 @@ Arguments    Argument Type Description     node_id int (required) Id of the node
       <description> Delete a token.
 This function generates an event.
 Function del_token(key);
-Arguments    Argument Type Description     key str (required) Token key to delete.    Return value Returns nil when successful. An INDEX_ERROR is raised if the token is not found.
+Arguments    Argument Type Description     key str (required) Token key to delete.    Return value Returns nil when successful. A lookup_err() is raised if the token is not found.
 Example  This code will delete a token:
  // Delete a token del_token(&#39;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#39;);  </description>
     </item>
@@ -101,7 +101,7 @@ Example  This code will delete a token:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/del_user/</guid>
-      <description>Delete a user. It is not possible to delete your own user account and a BAD_REQUEST will be raised in case you try to. Any tokens associated with the user will also be deleted.
+      <description>Delete a user. It is not possible to delete your own user account and a bad_data_err() will be raised in case you try to. Any tokens associated with the user will also be deleted.
 This function generates an event.
 Function del_user(username);
 Arguments    Argument Type Description     username str (required) Username of the user to delete.    Return value Returns nil when successful.</description>
@@ -152,7 +152,7 @@ Arguments    Argument Type Description     secret str (required) Secret used to 
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/new_token/</guid>
       <description>Adds a new token for a given user. An optional expiration time may be given after which the token cannot be used anymore. Use del_expired to cleanup expired tokens. The expiration time may be given as a UNIX time-stamp in seconds or a date/time string.
 Some valid date/time strings:
- 2021-01-01 2023-02-06 14:30 2023-07-5T13:23:20+01:00  Expiration dates in the past are not allowed an will raise a BAD_REQUEST error.</description>
+ 2021-01-01 2023-02-06 14:30 2023-07-5T13:23:20+01:00  Expiration dates in the past are not allowed an will raise a bad_data_err() error.</description>
     </item>
     
     <item>

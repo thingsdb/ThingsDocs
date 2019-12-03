@@ -1,6 +1,6 @@
 ---
 title: "revoke"
-weight: 156
+weight: 159
 ---
 
 Revoke collection or general privileges from a user. See [grant](../../thingsdb-api/grant) for more information on
@@ -22,7 +22,7 @@ Argument | Type | Description
 
 ### Return value
 
-Returns `nil` when successful. An `INDEX_ERROR` is raised if the user or target
+Returns `nil` when successful. A [lookup_err()](../../errors/lookup_err) is raised if the user or target
 does not exist.
 
 ### Example

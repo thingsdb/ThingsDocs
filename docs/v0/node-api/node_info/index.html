@@ -11,20 +11,20 @@
     <title>node_info :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/theme.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1575373789" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/theme.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1575389752" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1575373789" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1575389752" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1575373789"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1575389752"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1575373789"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1575373789"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1575389752"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1575389752"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1575373789"></script>
+<script type="text/javascript" src="/v0/js/search.js?1575389752"></script>
 
     
   </div>
@@ -114,6 +114,8 @@
       
         <ul>
           
+          
+            
           
           
           
@@ -202,13 +204,85 @@
  
   
     
-      <li data-nav-id="/v0/connect/protocol/" title="Protocol" class="dd-item ">
-        <a href="/v0/connect/protocol/">
-        Protocol
+    <li data-nav-id="/v0/connect/protocol/" title="Protocol" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/v0/connect/protocol/">
+          Protocol
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/connect/protocol/ping/" title="Example ping" class="dd-item ">
+        <a href="/v0/connect/protocol/ping/">
+        Example ping
         
         </a>
     </li>
      
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/connect/protocol/auth/" title="Example auth" class="dd-item ">
+        <a href="/v0/connect/protocol/auth/">
+        Example auth
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/connect/protocol/query/" title="Example query" class="dd-item ">
+        <a href="/v0/connect/protocol/query/">
+        Example query
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
   
  
 
@@ -4041,6 +4115,11 @@ See <a href="../../overview/scopes">scopes</a> for more information on how to ta
 </tr>
 
 <tr>
+<td>scheduled_backups</td>
+<td>Number of backups scheduled on this node. Only repeated backups or backups which are planned in the future are included.</td>
+</tr>
+
+<tr>
 <td>status</td>
 <td>Current status of the ThingsDB node.</td>
 </tr>
@@ -4062,7 +4141,12 @@ See <a href="../../overview/scopes">scopes</a> for more information on how to ta
 
 <tr>
 <td>version</td>
-<td>Version of ThingsDB,</td>
+<td>Version of ThingsDB.</td>
+</tr>
+
+<tr>
+<td>yajl_version</td>
+<td>JSON parser library version.</td>
 </tr>
 
 <tr>
@@ -4129,6 +4213,7 @@ See <a href="../../overview/scopes">scopes</a> for more information on how to ta
     &quot;syntax_version&quot;: &quot;v0&quot;,
     &quot;uptime&quot;: 7.854678630828857,
     &quot;version&quot;: &quot;0.2.13&quot;,
+    &quot;yajl_version&quot;: &quot;2.1.0&quot;,
     &quot;zone&quot;: 0
 }
 </code></pre>
@@ -4162,19 +4247,19 @@ See <a href="../../overview/scopes">scopes</a> for more information on how to ta
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1575373789"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1575373789"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1575373789"></script>
-    <script src="/v0/js/jquery.sticky.js?1575373789"></script>
-    <script src="/v0/js/featherlight.min.js?1575373789"></script>
-    <script src="/v0/js/highlight.pack.js?1575373789"></script>
+    <script src="/v0/js/clipboard.min.js?1575389752"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1575389752"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1575389752"></script>
+    <script src="/v0/js/jquery.sticky.js?1575389752"></script>
+    <script src="/v0/js/featherlight.min.js?1575389752"></script>
+    <script src="/v0/js/highlight.pack.js?1575389752"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1575373789"></script>
-    <script src="/v0/js/learn.js?1575373789"></script>
-    <script src="/v0/js/hugo-learn.js?1575373789"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1575389752"></script>
+    <script src="/v0/js/learn.js?1575389752"></script>
+    <script src="/v0/js/hugo-learn.js?1575389752"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1575373789" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1575373789"></script>
+    <link href="/v0/mermaid/mermaid.css?1575389752" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1575389752"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

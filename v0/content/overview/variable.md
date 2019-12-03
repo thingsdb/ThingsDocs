@@ -1,6 +1,6 @@
 ---
 title: "Variable"
-weight: 12
+weight: 15
 ---
 
 # Variable

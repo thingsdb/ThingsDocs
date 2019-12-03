@@ -8,7 +8,7 @@ In case you just want to use ThingsDB using one of the language bindings, then t
 info can be skipped. If you plan to implement you own connector, then this info might
 be useful to you.
 
-Communication with ThingsDB is done over a socket, either using TCP or a UNIX PIPE connection.
+This section applies to communication with ThingsDB over a socket, either by using TCP or a UNIX PIPE connection.
 Once a connection is made, packages can be send to ThingsDB. Each package starts
 with a 8 bytes header using little endian, followed by optional data. Before you can
 send queries to ThingsDB, the connection must be authenticated. This can be done by
@@ -28,14 +28,14 @@ request. This is useful if you want to send multiple request in parallel.
 Package type is used to describe what kind of package is transmitted.
 
 #### Request type
-Type | Number | Description
---------| -----| -----------
-`PING`  | 32 | Ping, useful as keep-alive.
-`AUTH`  | 33 | Authorization., expects: `[username, password]` or a `token_string`.
-`QUERY` | 34 | Query ThingsDB.
-`WATCH` | 35 | Watch for changes on specific *things*.
+Type      | Number | Description
+----------| -----| -----------
+`PING`    | 32 | Ping, useful as keep-alive.
+`AUTH`    | 33 | Authorization., expects: `[username, password]` or a `token_string`.
+`QUERY`   | 34 | Query ThingsDB.
+`WATCH`   | 35 | Watch for changes on specific *things*.
 `UNWATCH` | 36 | Stop watching for changes on specific *things*.
-`RUN` | 37 | Run a procedure, see [procedures](../../procedures-api) for more info.
+`RUN`     | 37 | Run a procedure, see [procedures](../../procedures-api) for more info.
 
 ##### CHK (Unsigned, 8bit)
 Inverse of the type: `type ^ 0xff`, this is used as a check-bit.
@@ -51,6 +51,16 @@ Data serialized using [MessagePack](https://msgpack.org).
 └───────────┴───────────┴───────────┴───────────┴───────────┘
 ```
 
+## Response type
+
+ThingsDB can respond with one of the following response type:
+
+Type | Number | Description
+--------| -----| -----------
+`PONG`  | 16 | Success response to `PING` (header only).
+`OK`    | 17 | Success response to `AUTH`, `WATCH` and `UNWATCH` (header only).
+`DATA`  | 18 | Success response to `QUERY` and `RUN` (with data).
+`ERROR` | 19 | Error response (with data).
 
 ## Example
 
@@ -75,3 +85,12 @@ Now we create the header, for this example we just use ID 0:
 So our total package will be:
 
 `\x0c\x00\x00\x00\x00\x00\x21\xde\x92\xa5admin\xa4pass`
+
+
+## More examples
+
+Some more examples:
+
+ - [sending a ping request](./ping)
+ - [sending an authentication request](./auth)
+ - [sending a query request](./query)

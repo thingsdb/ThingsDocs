@@ -1,6 +1,6 @@
 ---
 title: "filter"
-weight: 44
+weight: 47
 ---
 
 When this method is used on a `set`, then the return value will be a new set.

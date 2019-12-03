@@ -1,9 +1,9 @@
 ---
 title: "auth_err"
-weight: 171
+weight: 174
 ---
 
-Returns an [error](../../data-types/error).
+Returns an [error](../../data-types/error) when authentication has failed.
 
 This function does *not* generate an [event](../../overview/events).
 

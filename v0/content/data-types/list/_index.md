@@ -1,6 +1,6 @@
 ---
 title: "list"
-weight: 27
+weight: 30
 ---
 
 An empty list can be constructed as follows: `list = [];`
@@ -32,5 +32,5 @@ Method | Description
 {{% notice note %}}
 It is not possible to change an list while the list is in use, for example: \
 `tmp = [1, 2, 3]; tmp.map(|i| tmp.push(i));` \
-...will raise `BAD_REQUEST` *(cannot change type `list` while the value is being used)*
+...will raise [bad_data_err()](../../errors/bad_data_err) *(cannot change type `list` while the value is being used)*
 {{% /notice %}}

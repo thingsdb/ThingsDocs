@@ -113,7 +113,7 @@ Example  This code shows an example using map():</description>
 This function generates an event.
 Function list.pop()
 Arguments None
-Return value The removed element from the list. An INDEX_ERROR is raised if the list is empty.
+Return value The removed element from the list. A lookup_err() is raised if the list is empty.
 Example  This code show an example usage of pop():</description>
     </item>
     

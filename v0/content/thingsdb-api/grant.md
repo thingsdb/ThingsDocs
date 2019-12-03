@@ -1,6 +1,6 @@
 ---
 title: "grant"
-weight: 149
+weight: 152
 ---
 
 Grant collection or general privileges to a user. Access to a user is provided by setting
@@ -44,7 +44,7 @@ Argument | Type | Description
 
 ### Return value
 
-Returns `nil` when successful. An `INDEX_ERROR` is raised if the user or target
+Returns `nil` when successful. A [lookup_err()](../../errors/lookup_err) is raised if the user or target
 does not exist.
 
 ### Example

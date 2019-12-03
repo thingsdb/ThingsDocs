@@ -1,6 +1,6 @@
 ---
 title: "pop"
-weight: 35
+weight: 38
 ---
 
 Removes the last element from a [list](../../list) and returns that element.
@@ -19,7 +19,7 @@ None
 
 ### Return value
 
-The removed element from the list. An `INDEX_ERROR` is raised if the list is empty.
+The removed element from the list. A [lookup_err()](../../errors/lookup_err) is raised if the list is empty.
 
 ### Example
 

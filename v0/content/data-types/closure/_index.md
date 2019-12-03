@@ -1,6 +1,6 @@
 ---
 title: "closure"
-weight: 19
+weight: 22
 ---
 
 Closures can be used to consume items from a `thing`, `list`, `tuple` or `set`.

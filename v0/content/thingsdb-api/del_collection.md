@@ -1,6 +1,6 @@
 ---
 title: "del_collection"
-weight: 144
+weight: 147
 ---
 
 Delete a collection.
@@ -19,7 +19,7 @@ name | str (required) | Name of the collection to delete.
 
 ### Return value
 
-Returns `nil` when successful. An `INDEX_ERROR` is raised if the collection does not exist.
+Returns `nil` when successful. A [lookup_err()](../../errors/lookup_err) is raised if the collection does not exist.
 
 ### Example
 

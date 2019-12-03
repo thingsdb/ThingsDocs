@@ -1,6 +1,6 @@
 ---
 title: "del"
-weight: 59
+weight: 62
 ---
 
 Delete a property from a [thing](..).
@@ -19,8 +19,8 @@ property | str (required) | Name of the property to delete.
 
 ### Return value
 
-Returns `nil` if successful. An `INDEX_ERROR` is returned
-if the property does not exist or `BAD_REQUEST` in case the given property is
+Returns `nil` if successful. A [lookup_err()](../../errors/lookup_err) is returned
+if the property does not exist or [bad_data_err()](../../errors/bad_data_err) in case the given property is
 not a valid [name](../../../overview/names).
 
 ### Example

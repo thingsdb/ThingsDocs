@@ -1,6 +1,6 @@
 ---
 title: "find"
-weight: 45
+weight: 48
 ---
 
 This function returns the value of the first element in the [set](..) that satisfies the callback function.

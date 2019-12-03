@@ -26,7 +26,9 @@ It might be a good idea to create a new user with minimal privileges and add a n
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/connect/http-api/</guid>
-      <description>Explain the HTTP API.</description>
+      <description>Before using the HTTP API, make sure at least one node has the API port enabled. By default the API port is enabled and listening to TCP port 9210 but can be disabled or changed with the http_api_port in the configuration file or with the THINGSDB_HTTP_API_PORT environment variable.
+The API has support for both MessagePack and JSON and can be used to perform queries and run procedures.
+Use MessagePack if possible since this is the data serialization protocol which is used by ThingsDB internally and will therefore be a faster than JSON.</description>
     </item>
     
     <item>
@@ -48,16 +50,6 @@ It might be a good idea to create a new user with minimal privileges and add a n
       
       <guid>https://docs.thingsdb.net/v0/connect/go/</guid>
       <description>Explain the Go client&amp;hellip;</description>
-    </item>
-    
-    <item>
-      <title>Protocol</title>
-      <link>https://docs.thingsdb.net/v0/connect/protocol/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/connect/protocol/</guid>
-      <description>This is a more in depth view of the protocol used for communication with ThingsDB. In case you just want to use ThingsDB using one of the language bindings, then this info can be skipped. If you plan to implement you own connector, then this info might be useful to you.
-Communication with ThingsDB is done over a socket, either using TCP or a UNIX PIPE connection. Once a connection is made, packages can be send to ThingsDB.</description>
     </item>
     
   </channel>

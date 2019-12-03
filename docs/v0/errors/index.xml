@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/assert_err/</guid>
-      <description> Returns an error.
+      <description> Returns an error when an assertion has failed.
 This function does not generate an event.
 Function assert_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
@@ -31,7 +31,7 @@ Example  This code shows assert_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/auth_err/</guid>
-      <description> Returns an error.
+      <description> Returns an error when authentication has failed.
 This function does not generate an event.
 Function auth_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
@@ -46,7 +46,7 @@ Example  This code shows auth_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/bad_data_err/</guid>
-      <description> Returns an error.
+      <description> Returns an error when a request is malformed.
 This function does not generate an event.
 Function bad_data_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
@@ -61,7 +61,7 @@ Example  This code shows bad_data_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/forbidden_err/</guid>
-      <description> Returns an error.
+      <description> Returns an error when the client or user is missing the required privileges.
 This function does not generate an event.
 Function forbidden_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
@@ -76,7 +76,7 @@ Example  This code shows forbidden_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/lookup_err/</guid>
-      <description> Returns an error.
+      <description> Returns an error when a requested resource is not found or when an index is out-of-range.
 This function does not generate an event.
 Function lookup_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
@@ -91,7 +91,7 @@ Example  This code shows lookup_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/max_quota_err/</guid>
-      <description> Returns an error.
+      <description> Returns an error when a quota limit is reached.
 This function does not generate an event.
 Function max_quota_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
@@ -106,7 +106,7 @@ Example  This code shows max_quota_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/node_err/</guid>
-      <description> Returns an error.
+      <description> Returns an error when a node was not able to handle the request.
 This function does not generate an event.
 Function node_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
@@ -121,7 +121,7 @@ Example  This code shows node_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/num_arguments_err/</guid>
-      <description> Returns an error.
+      <description> Returns an error when a wrong number of arguments are given.
 This function does not generate an event.
 Function num_arguments_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
@@ -136,7 +136,7 @@ Example  This code shows num_arguments_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/operation_err/</guid>
-      <description> Returns an error.
+      <description> Returns an error when an operation is not valid within the current context.
 This function does not generate an event.
 Function operation_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
@@ -151,13 +151,12 @@ Example  This code shows operation_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/overflow_err/</guid>
-      <description> Returns an error.
+      <description>Returns an error when an attempt is made to create an integer value out of the supported 64Bit (signed) range.
 This function does not generate an event.
 Function overflow_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
 Example  This code shows overflow_err():
- overflow_err();   Return value in JSON format
- { &amp;quot;!&amp;quot;: &amp;quot;overflow_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -59, &amp;quot;error_msg&amp;quot;: &amp;quot;integer overflow&amp;quot; }  </description>
+ overflow_err();   Return value in JSON format</description>
     </item>
     
     <item>
@@ -166,7 +165,7 @@ Example  This code shows overflow_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/syntax_err/</guid>
-      <description> Returns an error.
+      <description> Returns an error when the given ThingsDB code contains a syntax error.
 This function does not generate an event.
 Function syntax_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
@@ -181,7 +180,7 @@ Example  This code shows syntax_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/type_err/</guid>
-      <description> Returns an error.
+      <description> Returns an error when a given value is of the incorrect type.
 This function does not generate an event.
 Function type_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
@@ -196,7 +195,7 @@ Example  This code shows type_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/value_err/</guid>
-      <description> Returns an error.
+      <description> Returns an error when a given value has the correct type but contains invalid data.
 This function does not generate an event.
 Function value_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
@@ -211,7 +210,7 @@ Example  This code shows value_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/zero_div_err/</guid>
-      <description> Returns an error.
+      <description> Returns an error when an attempt is made to divide or take a modulo by zero.
 This function does not generate an event.
 Function zero_div_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.

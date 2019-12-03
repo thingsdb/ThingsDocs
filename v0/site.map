@@ -5,6 +5,9 @@ connect
     python
     go
     protocol
+        ping
+        auth
+        query
 overview
     scopes
     names

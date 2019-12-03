@@ -1,9 +1,9 @@
 ---
 title: "node_err"
-weight: 176
+weight: 179
 ---
 
-Returns an [error](../../data-types/error).
+Returns an [error](../../data-types/error) when a node was not able to handle the request.
 
 This function does *not* generate an [event](../../overview/events).
 

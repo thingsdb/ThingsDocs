@@ -11,20 +11,20 @@
     <title>HTTP API :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/theme.css?1575373789" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1575373789" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/theme.css?1575389752" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1575389752" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1575373789" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1575389752" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1575373789"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1575389752"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1575373789"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1575373789"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1575389752"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1575389752"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1575373789"></script>
+<script type="text/javascript" src="/v0/js/search.js?1575389752"></script>
 
     
   </div>
@@ -114,6 +114,8 @@
       
         <ul>
           
+          
+            
           
           
           
@@ -202,13 +204,85 @@
  
   
     
-      <li data-nav-id="/v0/connect/protocol/" title="Protocol" class="dd-item ">
-        <a href="/v0/connect/protocol/">
-        Protocol
+    <li data-nav-id="/v0/connect/protocol/" title="Protocol" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/v0/connect/protocol/">
+          Protocol
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/connect/protocol/ping/" title="Example ping" class="dd-item ">
+        <a href="/v0/connect/protocol/ping/">
+        Example ping
         
         </a>
     </li>
      
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/connect/protocol/auth/" title="Example auth" class="dd-item ">
+        <a href="/v0/connect/protocol/auth/">
+        Example auth
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/connect/protocol/query/" title="Example query" class="dd-item ">
+        <a href="/v0/connect/protocol/query/">
+        Example query
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
   
  
 
@@ -3874,7 +3948,16 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#headers">Headers</a></li>
+<li><a href="#query-request">Query request</a></li>
+<li><a href="#query-example">Query example</a></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -3898,7 +3981,131 @@
 
 
 
-<p>Explain the HTTP API.</p>
+
+
+<p>Before using the HTTP API, make sure at least one node has the API port enabled.
+By default the API port is enabled and listening to TCP port <code>9210</code> but can be disabled or changed
+with the <code>http_api_port</code> in the <a href="https://github.com/thingsdb/ThingsDB/blob/master/thingsdb.example.conf">configuration file</a>
+or with the <code>THINGSDB_HTTP_API_PORT</code> environment variable.</p>
+
+<p>The API has support for both <a href="https://msgpack.org">MessagePack</a> and <a href="https://www.json.org">JSON</a> and can be used to perform queries and run procedures.</p>
+
+
+<div class="notices tip" ><p>Use <strong>MessagePack</strong> if possible since this is the data serialization protocol which is used by ThingsDB
+internally and will therefore be a faster than JSON. It also allows for sending and receiving binary data and is usually more compact than JSON.
+In most examples here we use JSON just because it is more readable.</p>
+</div>
+
+
+<h2 id="headers">Headers</h2>
+
+<p>The header field <code>Content-Type</code> is required and needs to be either <code>application/msgpack</code> or <code>application/json</code>.</p>
+
+<h2 id="query-request">Query request</h2>
+
+<table>
+<thead>
+<tr>
+<th>field</th>
+<th>description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td>Required and must be <code>query</code> for a query request.</td>
+</tr>
+
+<tr>
+<td><code>code</code></td>
+<td>Required string with the query code to preform.</td>
+</tr>
+
+<tr>
+<td><code>vars</code></td>
+<td>Optional and may contain a <code>map</code> where the <code>keys</code> are variable names and the <code>values</code> will be the variable values.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="query-example">Query example</h2>
+
+<blockquote>
+<p>Example using <em>curl</em> with <em>token</em> authentication:</p>
+</blockquote>
+
+<pre><code class="language-bash">curl http://127.0.0.1:9210/thingsdb \
+-H &quot;Authorization: TOKEN RzDFlsoucQfDqrwrfGGEtc&quot; \
+-H 'Content-Type: application/json' \
+-d \
+&quot;
+{
+    \&quot;type\&quot;: \&quot;query\&quot;,
+    \&quot;code\&quot;: \&quot;1 + 1;\&quot;
+}&quot;
+</code></pre>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+
+<pre><code class="language-json">2
+</code></pre>
+
+<blockquote>
+<p>Another <em>curl</em> example using <em>basic</em> authentication:</p>
+</blockquote>
+
+<pre><code class="language-bash">curl http://127.0.0.1:9210/node \
+--user admin:pass \
+-H 'Content-Type: application/json' \
+-d \
+&quot;
+{
+    \&quot;type\&quot;: \&quot;query\&quot;,
+    \&quot;code\&quot;: \&quot;node_info();\&quot;
+}&quot;
+</code></pre>
+
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+
+<pre><code class="language-json">{
+  &quot;node_id&quot;: 0,
+  &quot;version&quot;: &quot;0.2.18+debug&quot;,
+  &quot;syntax_version&quot;: &quot;v0&quot;,
+  &quot;msgpack_version&quot;: &quot;3.2.0&quot;,
+  &quot;libcleri_version&quot;: &quot;0.12.0&quot;,
+  &quot;libuv_version&quot;: &quot;1.30.1&quot;,
+  &quot;libpcre2_version&quot;: &quot;10.32&quot;,
+  &quot;status&quot;: &quot;READY&quot;,
+  &quot;zone&quot;: 0,
+  &quot;log_level&quot;: &quot;DEBUG&quot;,
+  &quot;hostname&quot;: &quot;xjoente&quot;,
+  &quot;client_port&quot;: 9200,
+  &quot;node_port&quot;: 9220,
+  &quot;ip_support&quot;: &quot;ALL&quot;,
+  &quot;storage_path&quot;: &quot;/home/joente/workspace/thingsdb/itest/testdir/tdb0/&quot;,
+  &quot;uptime&quot;: 9468.000403818,
+  &quot;events_in_queue&quot;: 0,
+  &quot;archived_in_memory&quot;: 26,
+  &quot;archive_files&quot;: 0,
+  &quot;local_stored_event_id&quot;: 12,
+  &quot;local_committed_event_id&quot;: 38,
+  &quot;global_stored_event_id&quot;: 12,
+  &quot;global_committed_event_id&quot;: 38,
+  &quot;db_stored_event_id&quot;: 12,
+  &quot;next_event_id&quot;: 39,
+  &quot;next_thing_id&quot;: 5,
+  &quot;cached_names&quot;: 3,
+  &quot;http_status_port&quot;: &quot;disabled&quot;,
+  &quot;http_api_port&quot;: 9210,
+  &quot;scheduled_backups&quot;: 0,
+  &quot;yajl_version&quot;: &quot;2.1.0&quot;
+}
+</code></pre>
 
 
 <footer class=" footline" >
@@ -3929,19 +4136,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1575373789"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1575373789"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1575373789"></script>
-    <script src="/v0/js/jquery.sticky.js?1575373789"></script>
-    <script src="/v0/js/featherlight.min.js?1575373789"></script>
-    <script src="/v0/js/highlight.pack.js?1575373789"></script>
+    <script src="/v0/js/clipboard.min.js?1575389752"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1575389752"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1575389752"></script>
+    <script src="/v0/js/jquery.sticky.js?1575389752"></script>
+    <script src="/v0/js/featherlight.min.js?1575389752"></script>
+    <script src="/v0/js/highlight.pack.js?1575389752"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1575373789"></script>
-    <script src="/v0/js/learn.js?1575373789"></script>
-    <script src="/v0/js/hugo-learn.js?1575373789"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1575389752"></script>
+    <script src="/v0/js/learn.js?1575389752"></script>
+    <script src="/v0/js/hugo-learn.js?1575389752"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1575373789" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1575373789"></script>
+    <link href="/v0/mermaid/mermaid.css?1575389752" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1575389752"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
