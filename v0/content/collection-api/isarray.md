@@ -1,6 +1,6 @@
 ---
 title: "isarray"
-weight: 95
+weight: 97
 ---
 
 This function determines whether the value passed to this function

@@ -1,6 +1,6 @@
 ---
 title: "set_quota"
-weight: 161
+weight: 163
 ---
 
 Quota limits can be set on collections. The following quota limits can be set:

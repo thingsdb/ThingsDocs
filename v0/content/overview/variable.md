@@ -3,8 +3,6 @@ title: "Variable"
 weight: 15
 ---
 
-# Variable
-
 Can be used to assign a value to a variable which can be used within a query.
 
 Variable can be created with `READ` privileges since they do not modify

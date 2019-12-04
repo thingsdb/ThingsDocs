@@ -1,6 +1,6 @@
 ---
 title: "len"
-weight: 26
+weight: 27
 ---
 
 Returns the length of an [error](..) message.

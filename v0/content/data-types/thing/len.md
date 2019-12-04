@@ -1,6 +1,6 @@
 ---
 title: "len"
-weight: 68
+weight: 70
 ---
 
 Returns the number of items in a [thing](..).

@@ -53,4 +53,4 @@ Now we create the header, for this example we just use ID 0:
 
 We see that the `DATA` response package has a header with attached data of length `1`.
 
-Unpacking the data `\x02` using [MessagePack](https://msgpack.org) will return the expected return value `2` which is the answer to our equation.
+Unpacking the data `\x02` using [MessagePack](https://msgpack.org) will return the expected value `2` which is the answer to our equation.

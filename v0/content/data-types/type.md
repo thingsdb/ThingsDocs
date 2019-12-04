@@ -1,6 +1,6 @@
 ---
 title: "Type"
-weight: 74
+weight: 76
 ---
 
 

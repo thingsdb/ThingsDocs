@@ -3,7 +3,6 @@ title: "Names"
 weight: 13
 ---
 
-
 The following rules apply to names in ThingsDB:
 
 - A name must start with a letter or underscore character

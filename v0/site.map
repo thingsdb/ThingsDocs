@@ -23,7 +23,9 @@ data-types
         call
         doc
     error
+        code
         len
+        msg
     float
     info
     int

@@ -1,6 +1,6 @@
 ---
 title: "float"
-weight: 27
+weight: 29
 ---
 
 ThingsDB uses 64bit to store float values and has support for the `e` notation and

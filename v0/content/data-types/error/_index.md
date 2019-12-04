@@ -10,6 +10,9 @@ When an error occurs within a method, an object can be returned. The object, cal
 Method | Description
 ------ | -----------
 [len](./len) | Returns the length of the error message.
+[code](./code) | Returns the error code.
+[msg](./msg) | Returns the error message.
+
 
 ### Related functions
 
@@ -21,4 +24,5 @@ Method | Description
 
 
 ### Build-in errors
+
 See [errors](../../errors) for a list of all the build-in error type.

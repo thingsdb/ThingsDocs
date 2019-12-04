@@ -1,6 +1,6 @@
 ---
 title: "counters"
-weight: 136
+weight: 138
 ---
 
 Returns `counters` for the ThingsDB node you are connected too. Counters start all at zero when ThingsDB

@@ -36,7 +36,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/overview/properties/</guid>
-      <description>Properties Properties are names assigned to a thing with a value. The collection itself is also a thing to which properties can be assigned. For example: .answer = 42; creates a property answer with value 42 and the property will be assigned to the collection.</description>
+      <description>Properties are names assigned to a thing with a value. The collection itself is also a thing to which properties can be assigned. For example: .answer = 42; creates a property answer with value 42 and the property will be assigned to the collection.</description>
     </item>
     
     <item>
@@ -45,7 +45,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/overview/variable/</guid>
-      <description>Variable Can be used to assign a value to a variable which can be used within a query.
+      <description>Can be used to assign a value to a variable which can be used within a query.
 Variable can be created with READ privileges since they do not modify the collection data.
 To create a variable, just use a valid name.
 Some valid examples:

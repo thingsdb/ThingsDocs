@@ -103,7 +103,15 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/error/code/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/data-types/error/len/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/error/msg/</loc>
   </url>
   
   <url>
