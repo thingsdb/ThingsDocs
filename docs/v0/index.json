@@ -172,7 +172,7 @@
 	"title": "error",
 	"tags": [],
 	"description": "",
-	"content": " When an error occurs within a method, an object can be returned. The object, called an error, contains information about the error, including its type and a message.\nMethods    Method Description     len Returns the length of the error message.   code Returns the error code.   msg Returns the error message.    Related functions    Method Description     err Initialize a new error.   raise Raise an error.   try Try a statement and catch if an error is raised.    Build-in errors See errors for a list of all the build-in error type.\n"
+	"content": " When an error occurs within a method, an object can be returned. The object, called an error, contains information about the error, including its type and a message.\nMethods    Method Description     code Returns the error code.   msg Returns the error message.    Related functions    Method Description     err Initialize a new error.   raise Raise an error.   try Try a statement and catch if an error is raised.    Build-in errors See errors for a list of all the build-in error type.\n"
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/data-types/error/code/",
@@ -180,13 +180,6 @@
 	"tags": [],
 	"description": "",
 	"content": " Returns the error code of an error type.\nThis function does not generate an event.\nFunction error.code()\nArguments None\nReturn value Returns error code of an error.\nExample  This code uses code() to return the error code for an error:\n type_err(\u0026quot;incorrect type\u0026quot;).code();   Return value in JSON format\n -61  "
-},
-{
-	"uri": "https://docs.thingsdb.net/v0/data-types/error/len/",
-	"title": "len",
-	"tags": [],
-	"description": "",
-	"content": " Returns the length of an error message.\nThis function does not generate an event.\nFunction error.len()\nArguments None\nReturn value Returns length of an error message.\nExample  This code uses len() to return the length of the error message:\n type_err(\u0026quot;incorrect type given\u0026quot;).len();   Return value in JSON format\n 20  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/data-types/error/msg/",

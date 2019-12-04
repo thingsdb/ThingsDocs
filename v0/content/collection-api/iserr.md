@@ -1,6 +1,6 @@
 ---
 title: "iserr"
-weight: 101
+weight: 100
 ---
 
 This function determines whether the value passed to this function

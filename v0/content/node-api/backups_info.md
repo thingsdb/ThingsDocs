@@ -1,6 +1,6 @@
 ---
 title: "backups_info"
-weight: 137
+weight: 136
 ---
 
 Returns info about all scheduled backups.

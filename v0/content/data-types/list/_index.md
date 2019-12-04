@@ -1,6 +1,6 @@
 ---
 title: "list"
-weight: 32
+weight: 31
 ---
 
 An empty list can be constructed as follows: `list = [];`

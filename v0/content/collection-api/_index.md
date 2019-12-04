@@ -1,6 +1,6 @@
 ---
 title: "Collection API"
-weight: 86
+weight: 85
 chapter: true
 ---
 

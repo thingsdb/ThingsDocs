@@ -231,22 +231,6 @@ Example  This code uses code() to return the error code for an error:
     </item>
     
     <item>
-      <title>len</title>
-      <link>https://docs.thingsdb.net/v0/data-types/error/len/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/data-types/error/len/</guid>
-      <description> Returns the length of an error message.
-This function does not generate an event.
-Function error.len()
-Arguments None
-Return value Returns length of an error message.
-Example  This code uses len() to return the length of the error message:
- type_err(&amp;quot;incorrect type given&amp;quot;).len();   Return value in JSON format
- 20  </description>
-    </item>
-    
-    <item>
       <title>msg</title>
       <link>https://docs.thingsdb.net/v0/data-types/error/msg/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

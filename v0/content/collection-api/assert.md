@@ -1,6 +1,6 @@
 ---
 title: "assert"
-weight: 87
+weight: 86
 ---
 
 Raises [assert_err()](../../errors/assert_err) if the specified statement evaluates to `false`.

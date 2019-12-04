@@ -1,6 +1,6 @@
 ---
 title: "mod"
-weight: 118
+weight: 117
 ---
 
 Modifies a property from an exinsting [Type](../../../data-types/type).

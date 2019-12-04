@@ -24,7 +24,6 @@ data-types
         doc
     error
         code
-        len
         msg
     float
     info
