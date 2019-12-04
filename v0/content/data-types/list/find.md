@@ -1,6 +1,6 @@
 ---
 title: "find"
-weight: 34
+weight: 36
 ---
 
 This function returns the value of the first element in the [list](..) or [tuple](../../tuple) that satisfies the callback function.

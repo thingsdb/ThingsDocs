@@ -1,6 +1,6 @@
 ---
 title: "now"
-weight: 120
+weight: 122
 ---
 
 Return the time in seconds since the epoch as a [floating point](../../data-types/float) number.

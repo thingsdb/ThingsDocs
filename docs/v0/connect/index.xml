@@ -16,8 +16,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/connect/authentication/</guid>
-      <description>ThingsDB supports authentication by using a user and password combination, or with a token. A default user admin with password pass is created on a fresh installation. If you did not yet change the default password, you might want to jump to set password.
-It might be a good idea to create a new user with minimal privileges and add a new token for this user. See the grant and revoke functions for managing privileges for a user.</description>
+      <description>ThingsDB supports authentication by using a user and password combination, or with a token. A default user admin with password pass is created on a fresh installation. If you did not yet change the default password, you might want to jump to set password or jump to token authentication.
+It might be a good idea to create a new user with minimal privileges and add a new token for this user.</description>
     </item>
     
     <item>

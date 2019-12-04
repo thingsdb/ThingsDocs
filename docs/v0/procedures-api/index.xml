@@ -81,7 +81,12 @@ Return value List with procedure info for all procedure in the scope.</descripti
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/procedures-api/run/</guid>
-      <description>This function does not generate an event.</description>
+      <description>Run a procedure.
+This function does not generate an event.
+Function run(procedure, ...args)
+Arguments    Argument Type Description     procedure str (required) Name of the procedure to run.   &amp;hellip;args any The exact number of arguments for the procedure must be given.    Return value Returns the procedure response.
+Example  Example code using run:
+ // create a greet procedure new_procedure(&#39;greet&#39;, |name| isstr(name) ?</description>
     </item>
     
   </channel>

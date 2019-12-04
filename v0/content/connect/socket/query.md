@@ -3,7 +3,7 @@ title: "Example query"
 weight: 10
 ---
 
-Query ThingsDB. A successful query request will respond with a `DATA (18)` package
+Query ThingsDB. A successful query request will respond with a `DATA (18)` package.
 
 > Syntax
 
@@ -54,3 +54,7 @@ Now we create the header, for this example we just use ID 0:
 We see that the `DATA` response package has a header with attached data of length `1`.
 
 Unpacking the data `\x02` using [MessagePack](https://msgpack.org) will return the expected value `2` which is the answer to our equation.
+
+{{% notice warning %}}
+If your socket connection is not authenticated then you will receive an [error response](../error-response).
+{{% /notice %}}

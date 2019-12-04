@@ -11,20 +11,20 @@
     <title>Authentication :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1575459608" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1575459608" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1575459608" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1575459608" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1575459608" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1575459608" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1575459608" rel="stylesheet">
-    <link href="/v0/css/theme.css?1575459608" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1575459608" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1575494973" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1575494973" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1575494973" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1575494973" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1575494973" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1575494973" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1575494973" rel="stylesheet">
+    <link href="/v0/css/theme.css?1575494973" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1575494973" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1575459608" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1575494973" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1575459608"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1575494973"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1575459608"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1575459608"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1575494973"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1575494973"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1575459608"></script>
+<script type="text/javascript" src="/v0/js/search.js?1575494973"></script>
 
     
   </div>
@@ -204,13 +204,13 @@
  
   
     
-    <li data-nav-id="/v0/connect/protocol/" title="Protocol" class="dd-item 
+    <li data-nav-id="/v0/connect/socket/" title="Socket" class="dd-item 
         
         
         
         ">
-      <a href="/v0/connect/protocol/">
-          Protocol
+      <a href="/v0/connect/socket/">
+          Socket
           
       </a>
       
@@ -229,8 +229,8 @@
  
   
     
-      <li data-nav-id="/v0/connect/protocol/ping/" title="Example ping" class="dd-item ">
-        <a href="/v0/connect/protocol/ping/">
+      <li data-nav-id="/v0/connect/socket/ping/" title="Example ping" class="dd-item ">
+        <a href="/v0/connect/socket/ping/">
         Example ping
         
         </a>
@@ -248,8 +248,8 @@
  
   
     
-      <li data-nav-id="/v0/connect/protocol/auth/" title="Example auth" class="dd-item ">
-        <a href="/v0/connect/protocol/auth/">
+      <li data-nav-id="/v0/connect/socket/auth/" title="Example auth" class="dd-item ">
+        <a href="/v0/connect/socket/auth/">
         Example auth
         
         </a>
@@ -267,9 +267,47 @@
  
   
     
-      <li data-nav-id="/v0/connect/protocol/query/" title="Example query" class="dd-item ">
-        <a href="/v0/connect/protocol/query/">
+      <li data-nav-id="/v0/connect/socket/query/" title="Example query" class="dd-item ">
+        <a href="/v0/connect/socket/query/">
         Example query
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/connect/socket/run/" title="Example run" class="dd-item ">
+        <a href="/v0/connect/socket/run/">
+        Example run
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/connect/socket/error-response/" title="Example error response" class="dd-item ">
+        <a href="/v0/connect/socket/error-response/">
+        Example error response
         
         </a>
     </li>
@@ -3967,7 +4005,14 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#token-authentication">Token authentication</a></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -3991,8 +4036,10 @@
 
 
 
+
+
 <p>ThingsDB supports authentication by using a <em>user</em> and <em>password</em> combination, or with a <em>token</em>. A default user <code>admin</code> with password <code>pass</code> is created on a fresh installation.
-If you did not yet change the default password, you might want to jump to <a href="../../thingsdb-api/set_password">set password</a>.</p>
+If you did not yet change the default password, you might want to jump to <a href="../../thingsdb-api/set_password">set password</a> or jump to <a href="#token-authentication">token authentication</a>.</p>
 
 <p>It might be a good idea to create a <a href="../../thingsdb-api/new_user">new user</a> with minimal privileges and add a <a href="../../thingsdb-api/new_token">new token</a> for this user.
 See the <a href="../../thingsdb-api/grant">grant</a> and <a href="../../thingsdb-api/revoke">revoke</a> functions for managing privileges for a user.</p>
@@ -4001,6 +4048,46 @@ See the <a href="../../thingsdb-api/grant">grant</a> and <a href="../../thingsdb
 <div class="notices note" ><p>For connecting to ThingsDB with a auto-reconnect client, <code>WATCH</code> privileges on the <code>.node</code> scope are required.</p>
 </div>
 
+
+<h2 id="token-authentication">Token authentication</h2>
+
+<p>This is a small tutorial to create a <em>token</em> and remove the <em>password</em> for the default <code>admin</code> user.
+This can be done with any client but in this tutorial the <a href="../http-api">HTTP API</a> is used with simple <code>curl</code>
+commands.</p>
+
+<p>First we create a new token, and then we remove the password from the <code>admin</code> user.
+Although this could be done in one step, we do this in <em>two</em> steps to be sure the new token
+works before removing the password.</p>
+
+<blockquote>
+<p>Replace <code>127.0.0.1:9210</code> with the address and port where your node is listening on for API requests</p>
+</blockquote>
+
+<pre><code class="language-bash">curl http://127.0.0.1:9210/t \
+--user admin:pass \
+-H 'Content-Type: application/json' \
+-d \
+&quot;
+{
+    \&quot;type\&quot;: \&quot;query\&quot;,
+    \&quot;code\&quot;: \&quot;new_token('admin');\&quot;
+}&quot;
+</code></pre>
+
+<p>The will return JSON string containing a new token, for example: <code>&quot;YyZcvq7BY3w+VgOTvXzTZp&quot;</code></p>
+
+<p>We can now use this token key to remove the password from user <code>admin</code>:</p>
+
+<pre><code class="language-bash">curl http://127.0.0.1:9210/t \
+-H &quot;Authorization: TOKEN YyZcvq7BY3w+VgOTvXzTZp&quot; \
+-H 'Content-Type: application/json' \
+-d \
+&quot;
+{
+    \&quot;type\&quot;: \&quot;query\&quot;,
+    \&quot;code\&quot;: \&quot;set_password('admin', nil);\&quot;
+}&quot;
+</code></pre>
 
 
 <footer class=" footline" >
@@ -4031,19 +4118,19 @@ See the <a href="../../thingsdb-api/grant">grant</a> and <a href="../../thingsdb
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1575459608"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1575459608"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1575459608"></script>
-    <script src="/v0/js/jquery.sticky.js?1575459608"></script>
-    <script src="/v0/js/featherlight.min.js?1575459608"></script>
-    <script src="/v0/js/highlight.pack.js?1575459608"></script>
+    <script src="/v0/js/clipboard.min.js?1575494973"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1575494973"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1575494973"></script>
+    <script src="/v0/js/jquery.sticky.js?1575494973"></script>
+    <script src="/v0/js/featherlight.min.js?1575494973"></script>
+    <script src="/v0/js/highlight.pack.js?1575494973"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1575459608"></script>
-    <script src="/v0/js/learn.js?1575459608"></script>
-    <script src="/v0/js/hugo-learn.js?1575459608"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1575494973"></script>
+    <script src="/v0/js/learn.js?1575494973"></script>
+    <script src="/v0/js/hugo-learn.js?1575494973"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1575459608" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1575459608"></script>
+    <link href="/v0/mermaid/mermaid.css?1575494973" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1575494973"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

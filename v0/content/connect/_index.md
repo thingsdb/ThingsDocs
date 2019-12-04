@@ -10,6 +10,6 @@ There are several options to communicate with ThingsDB. By default each node lis
 With a socket connection it is possible to do queries, run procedures and *watch* for changes made to individual things in a collection.
 
 The most easy way to use the socket connection is to use an existing *connector*. ThingsDB currently has connectors available for [Python](./python) and [Go](./go).
-For other languages you can read the [protocol](./protocol) section on how to implement a ThingsDB connector.
+For other languages you can read the [socket protocol](./socket) section on how to implement a ThingsDB connector.
 
 As an alternative to the socket connection, a ThingsDB node has support for HTTP request through a [HTTP API](./http-api).

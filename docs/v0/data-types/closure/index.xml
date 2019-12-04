@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/closure/call/</guid>
-      <description>Call a closure with optional arguments.
+      <description>Call a closure.
 This function does not generate an event.
 Function closure.call()
 Arguments The exact number of arguments for the closure must be given.

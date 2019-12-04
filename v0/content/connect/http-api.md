@@ -54,6 +54,8 @@ curl http://127.0.0.1:9210/thingsdb \
 2
 ```
 
+Besides the preferred **token** authentication, the HTTP API has also support for
+
 > Another *curl* example using *basic* authentication:
 
 ```bash

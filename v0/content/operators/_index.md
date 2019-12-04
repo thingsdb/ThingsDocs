@@ -1,6 +1,6 @@
 ---
 title: "Operators"
-weight: 78
+weight: 80
 chapter: true
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Procedures API"
-weight: 165
+weight: 167
 chapter: true
 ---
 
@@ -17,10 +17,7 @@ pre-defined access rights and a token for one day usage.
 
 ```thingsdb,should_pass,@t
 new_procedure('create_user', |name| {
-    /*
-     * Creates a new user with some basic access rights.
-     * Returns a `token` for the user which expires after 24 hours
-     */
+    "Creates a new user with a token and some basic access rights.";
 
     // Create the user
     new_user(name);
@@ -37,7 +34,7 @@ new_procedure('create_user', |name| {
 });
 ```
 
-Once a procedure is created, it can be used by using the [run](./run) function or by using the `RUN` [protocol](../connect/protocol).
+Once a procedure is created, it can be used by using the [run](./run) function or by performing a `RUN` request. See the [connect](../connect) section and then one of the connection methods on how to make a *run* resuest, or look at the [socket run example](../connect/socket/run) for a low-level example.
 
 > Here is a complete working example where we use the Python client to call our procedure.
 

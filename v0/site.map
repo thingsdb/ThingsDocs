@@ -4,10 +4,12 @@ connect
     http-api
     python
     go
-    protocol
+    socket
         ping
         auth
         query
+        run
+        error-response
 overview
     scopes
     names

@@ -27,19 +27,27 @@
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/connect/protocol/</loc>
+    <loc>https://docs.thingsdb.net/v0/connect/socket/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/connect/protocol/ping/</loc>
+    <loc>https://docs.thingsdb.net/v0/connect/socket/ping/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/connect/protocol/auth/</loc>
+    <loc>https://docs.thingsdb.net/v0/connect/socket/auth/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/connect/protocol/query/</loc>
+    <loc>https://docs.thingsdb.net/v0/connect/socket/query/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/connect/socket/run/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/connect/socket/error-response/</loc>
   </url>
   
   <url>

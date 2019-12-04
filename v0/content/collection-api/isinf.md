@@ -1,6 +1,6 @@
 ---
 title: "isinf"
-weight: 102
+weight: 104
 ---
 
 This function determines whether the value passed to this function

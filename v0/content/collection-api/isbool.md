@@ -1,6 +1,6 @@
 ---
 title: "isbool"
-weight: 98
+weight: 100
 ---
 
 This function determines whether the value passed to this function

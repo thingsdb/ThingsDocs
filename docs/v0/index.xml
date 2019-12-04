@@ -16,8 +16,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/connect/authentication/</guid>
-      <description>ThingsDB supports authentication by using a user and password combination, or with a token. A default user admin with password pass is created on a fresh installation. If you did not yet change the default password, you might want to jump to set password.
-It might be a good idea to create a new user with minimal privileges and add a new token for this user. See the grant and revoke functions for managing privileges for a user.</description>
+      <description>ThingsDB supports authentication by using a user and password combination, or with a token. A default user admin with password pass is created on a fresh installation. If you did not yet change the default password, you might want to jump to set password or jump to token authentication.
+It might be a good idea to create a new user with minimal privileges and add a new token for this user.</description>
     </item>
     
     <item>
@@ -54,10 +54,10 @@ Use MessagePack if possible since this is the data serialization protocol which 
     
     <item>
       <title>Example ping</title>
-      <link>https://docs.thingsdb.net/v0/connect/protocol/ping/</link>
+      <link>https://docs.thingsdb.net/v0/connect/socket/ping/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/connect/protocol/ping/</guid>
+      <guid>https://docs.thingsdb.net/v0/connect/socket/ping/</guid>
       <description>Can be used as keep-alive. A successful ping will respond with a PONG (16)
 No authorization is required for sending a ping request.
  Example A Ping package has no data so we only need to construct the header:
@@ -67,10 +67,10 @@ No authorization is required for sending a ping request.
     
     <item>
       <title>Example auth</title>
-      <link>https://docs.thingsdb.net/v0/connect/protocol/auth/</link>
+      <link>https://docs.thingsdb.net/v0/connect/socket/auth/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/connect/protocol/auth/</guid>
+      <guid>https://docs.thingsdb.net/v0/connect/socket/auth/</guid>
       <description>Used for authorizing the socket connection. A successful authentication will respond with OK (17)
 Authorization can be done by using either a username and password combination or by a token.
  Syntax username/password
@@ -81,14 +81,40 @@ This is the package data for our authentication request:</description>
     
     <item>
       <title>Example query</title>
-      <link>https://docs.thingsdb.net/v0/connect/protocol/query/</link>
+      <link>https://docs.thingsdb.net/v0/connect/socket/query/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/connect/protocol/query/</guid>
-      <description>Query ThingsDB. A successful query request will respond with a DATA (18) package
+      <guid>https://docs.thingsdb.net/v0/connect/socket/query/</guid>
+      <description>Query ThingsDB. A successful query request will respond with a DATA (18) package.
  Syntax
  [scope, code, {vars}]  The vars in the query are optional and may be omitted. When used, vars must be a map where the keys represent the variable names and the values the values for the variable.
 The socket needs to be authorized before for sending a query request. See the auth example for how to authorize a socket connection.</description>
+    </item>
+    
+    <item>
+      <title>Example run</title>
+      <link>https://docs.thingsdb.net/v0/connect/socket/run/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/connect/socket/run/</guid>
+      <description>Run a procedure in ThingsDB. A successful run request will respond with a DATA (18) package.
+ Syntax
+ [scope, procedure, ...args]  The args are parsed (and must match) to the procedure.
+The socket needs to be authorized before for sending a run request. See the auth example for how to authorize a socket connection.
+ Example As an example we assume there is a procedure created in the @thingsdb scope, called &amp;ldquo;add_one&amp;rdquo; which just adds one to a given value.</description>
+    </item>
+    
+    <item>
+      <title>Example error response</title>
+      <link>https://docs.thingsdb.net/v0/connect/socket/error-response/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/connect/socket/error-response/</guid>
+      <description>In this example we perform a query request and assume the socket connection is not authenticated yet. We then look at the error response.
+Example As an example we will perform a useless query with as code just the simple equation 1 + 1; and we will use the @thingsdb scope to perform the query on.
+This is the data we want to pack:
+[&amp;quot;@t&amp;quot;, &amp;quot;1 + 1;&amp;quot;]
+Serializing the above using MessagePack results in the following 11 bytes:</description>
     </item>
     
     <item>
@@ -188,7 +214,7 @@ Example  This code uses len() to return the length of a byte sequence:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/closure/call/</guid>
-      <description>Call a closure with optional arguments.
+      <description>Call a closure.
 This function does not generate an event.
 Function closure.call()
 Arguments The exact number of arguments for the closure must be given.
@@ -1912,7 +1938,12 @@ Return value List with procedure info for all procedure in the scope.</descripti
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/procedures-api/run/</guid>
-      <description>This function does not generate an event.</description>
+      <description>Run a procedure.
+This function does not generate an event.
+Function run(procedure, ...args)
+Arguments    Argument Type Description     procedure str (required) Name of the procedure to run.   &amp;hellip;args any The exact number of arguments for the procedure must be given.    Return value Returns the procedure response.
+Example  Example code using run:
+ // create a greet procedure new_procedure(&#39;greet&#39;, |name| isstr(name) ?</description>
     </item>
     
     <item>
