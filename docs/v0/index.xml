@@ -818,7 +818,12 @@ Although the values() and map() in the example above will return an list with th
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/thing/wrap/</guid>
-      <description>Wrap a thing with another Type.</description>
+      <description>Wrap a thing with a Type.
+For more details and a
+Function thing.wrap(type)
+Arguments    Argument Arguments Description     type str Type name to wrap the thing with.    Return value A wrapped thing.
+Example  This code shows an example using wrap():
+ // Create a Type to return just an email field. set_type(&#39;_Email&#39;, {email: &#39;str&#39;}); // Store a thing .joente = { name: &#39;Jeroen van der Heijden&#39;, email: &#39;jeroen@transceptor.</description>
     </item>
     
     <item>
@@ -1629,13 +1634,13 @@ Example  This code will reset the counters on a node:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/collection_info/</guid>
-      <description> Returns information about a specific collection.
+      <description>Returns information about a specific collection.
+This function requires READ privileges on the requested collection, or MODIFY privileges on the @thingsdb scope.
 This function does not generate an event.
 Function collection_info(name_or_id);
 Arguments    Argument Type Description     name_or_id str/int Name or Id of the collection    Return value Returns info about the collection.
 Example  Returns information about collection stuff:
- collection_info(&#39;stuff&#39;);   Example return value in JSON format
- { &amp;quot;collection_id&amp;quot;: 782, &amp;quot;name&amp;quot;: &amp;quot;stuff&amp;quot;, &amp;quot;quota_array_size&amp;quot;: null, &amp;quot;quota_properties&amp;quot;: null, &amp;quot;quota_raw_size&amp;quot;: null, &amp;quot;quota_things&amp;quot;: null, &amp;quot;things&amp;quot;: 61352 }  </description>
+ collection_info(&#39;stuff&#39;);   Example return value in JSON format</description>
     </item>
     
     <item>
@@ -1646,7 +1651,8 @@ Example  Returns information about collection stuff:
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/collections_info/</guid>
       <description>Returns collection information for all collections in ThingsDB.
 See the collection_info() function documentation for an example of the exposed collection information.
-This function does not generate an event.
+If the user has no MODIFY permissions on the @thingsdb scope, then only collection where the user has at least READ privileges are included in the result.
+ This function does not generate an event.
 Function collections_info()
 Arguments None
 Return value List with collection info for all collections in ThingsDB.</description>
@@ -1860,7 +1866,7 @@ Arguments    Argument Type Description     username str (optional) Name of the u
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/users_info/</guid>
       <description>Returns user information for all users in ThingsDB.
 See the user_info() function documentation for an example of the exposed user information.
-This function requires GRANT privileges on the .thingsdb scope since it exposes user access and token information.
+This function requires GRANT privileges on the @thingdb scope since it exposes user access and token information.
 This function does not generate an event.
 Function users_info()
 Arguments None

@@ -5,6 +5,9 @@ weight: 148
 
 Returns information about a specific collection.
 
+This function requires `READ` privileges on the requested `collection`, or `MODIFY`
+privileges on the `@thingsdb` scope.
+
 This function does *not* generate an [event](../../overview/events).
 
 ### Function

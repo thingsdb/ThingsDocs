@@ -522,7 +522,7 @@
 	"title": "wrap",
 	"tags": [],
 	"description": "",
-	"content": "Wrap a thing with another Type.\n"
+	"content": " Wrap a thing with a Type.\nFor more details and a\nFunction thing.wrap(type)\nArguments    Argument Arguments Description     type str Type name to wrap the thing with.    Return value A wrapped thing.\nExample  This code shows an example using wrap():\n // Create a Type to return just an email field. set_type('_Email', {email: 'str'}); // Store a thing .joente = { name: 'Jeroen van der Heijden', email: 'jeroen@transceptor.technology', gender: 'Male', }; // Return te email field and ID (#) .joente.wrap('_Email');   Example return value in JSON format\n { \u0026quot;#\u0026quot;: 42, \u0026quot;email\u0026quot;: \u0026quot;jeroen@transceptor.technology\u0026quot; }  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/data-types/tuple/",
@@ -1033,14 +1033,14 @@
 	"title": "collection_info",
 	"tags": [],
 	"description": "",
-	"content": " Returns information about a specific collection.\nThis function does not generate an event.\nFunction collection_info(name_or_id);\nArguments    Argument Type Description     name_or_id str/int Name or Id of the collection    Return value Returns info about the collection.\nExample  Returns information about collection stuff:\n collection_info('stuff');   Example return value in JSON format\n { \u0026quot;collection_id\u0026quot;: 782, \u0026quot;name\u0026quot;: \u0026quot;stuff\u0026quot;, \u0026quot;quota_array_size\u0026quot;: null, \u0026quot;quota_properties\u0026quot;: null, \u0026quot;quota_raw_size\u0026quot;: null, \u0026quot;quota_things\u0026quot;: null, \u0026quot;things\u0026quot;: 61352 }  "
+	"content": " Returns information about a specific collection.\nThis function requires READ privileges on the requested collection, or MODIFY privileges on the @thingsdb scope.\nThis function does not generate an event.\nFunction collection_info(name_or_id);\nArguments    Argument Type Description     name_or_id str/int Name or Id of the collection    Return value Returns info about the collection.\nExample  Returns information about collection stuff:\n collection_info('stuff');   Example return value in JSON format\n { \u0026quot;collection_id\u0026quot;: 782, \u0026quot;name\u0026quot;: \u0026quot;stuff\u0026quot;, \u0026quot;quota_array_size\u0026quot;: null, \u0026quot;quota_properties\u0026quot;: null, \u0026quot;quota_raw_size\u0026quot;: null, \u0026quot;quota_things\u0026quot;: null, \u0026quot;things\u0026quot;: 61352 }  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/collections_info/",
 	"title": "collections_info",
 	"tags": [],
 	"description": "",
-	"content": " Returns collection information for all collections in ThingsDB.\nSee the collection_info() function documentation for an example of the exposed collection information.\nThis function does not generate an event.\nFunction collections_info()\nArguments None\nReturn value List with collection info for all collections in ThingsDB.\n"
+	"content": " Returns collection information for all collections in ThingsDB.\nSee the collection_info() function documentation for an example of the exposed collection information.\nIf the user has no MODIFY permissions on the @thingsdb scope, then only collection where the user has at least READ privileges are included in the result.\n This function does not generate an event.\nFunction collections_info()\nArguments None\nReturn value List with collection info for all collections in ThingsDB.\n"
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/del_collection/",
@@ -1159,7 +1159,7 @@
 	"title": "users_info",
 	"tags": [],
 	"description": "",
-	"content": " Returns user information for all users in ThingsDB.\nSee the user_info() function documentation for an example of the exposed user information.\nThis function requires GRANT privileges on the .thingsdb scope since it exposes user access and token information.\nThis function does not generate an event.\nFunction users_info()\nArguments None\nReturn value List with user info for all users in ThingsDB.\n"
+	"content": " Returns user information for all users in ThingsDB.\nSee the user_info() function documentation for an example of the exposed user information.\nThis function requires GRANT privileges on the @thingdb scope since it exposes user access and token information.\nThis function does not generate an event.\nFunction users_info()\nArguments None\nReturn value List with user info for all users in ThingsDB.\n"
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/procedures-api/",

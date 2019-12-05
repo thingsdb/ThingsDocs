@@ -150,7 +150,12 @@ Although the values() and map() in the example above will return an list with th
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/thing/wrap/</guid>
-      <description>Wrap a thing with another Type.</description>
+      <description>Wrap a thing with a Type.
+For more details and a
+Function thing.wrap(type)
+Arguments    Argument Arguments Description     type str Type name to wrap the thing with.    Return value A wrapped thing.
+Example  This code shows an example using wrap():
+ // Create a Type to return just an email field. set_type(&#39;_Email&#39;, {email: &#39;str&#39;}); // Store a thing .joente = { name: &#39;Jeroen van der Heijden&#39;, email: &#39;jeroen@transceptor.</description>
     </item>
     
   </channel>
