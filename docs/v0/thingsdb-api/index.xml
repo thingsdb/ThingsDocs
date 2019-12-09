@@ -153,7 +153,7 @@ Arguments    Argument Type Description     secret str (required) Secret used to 
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/new_token/</guid>
       <description>Adds a new token for a given user. An optional expiration time may be given after which the token cannot be used anymore. Use del_expired to cleanup expired tokens. The expiration time may be given as a UNIX time-stamp in seconds or a date/time string.
 Some valid date/time strings:
- 2021-01-01 2023-02-06 14:30 2023-07-5T13:23:20+01:00  Expiration dates in the past are not allowed an will raise a bad_data_err() error.</description>
+ 2021-01-01 2023-02-06 14:30 2023-07-05T13:23:20+01:00  Expiration dates in the past are not allowed an will raise a bad_data_err() error.</description>
     </item>
     
     <item>

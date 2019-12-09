@@ -11,20 +11,20 @@
     <title>˂Type˃ :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1575558227" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1575558227" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1575558227" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1575558227" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1575558227" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1575558227" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1575558227" rel="stylesheet">
-    <link href="/v0/css/theme.css?1575558227" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1575558227" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1575887540" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1575887540" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1575887540" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1575887540" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1575887540" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1575887540" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1575887540" rel="stylesheet">
+    <link href="/v0/css/theme.css?1575887540" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1575887540" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1575558227" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1575887540" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1575558227"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1575887540"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1575558227"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1575558227"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1575887540"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1575887540"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1575558227"></script>
+<script type="text/javascript" src="/v0/js/search.js?1575887540"></script>
 
     
   </div>
@@ -4005,7 +4005,18 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#methods">Methods</a></li>
+<li><a href="#example">Example</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -4030,7 +4041,139 @@
 
 
 
-	<p>Wrapped thing.</p>
+	
+
+<p>It is sometimes useful to get things with their ID (<code>#</code>) but still
+be able to filter-out properties which are not required.</p>
+
+<p>One feature to return only specific properties from a thing, is to work with <em>wrapped</em> types.
+This feature is especially useful <em>(and fast)</em> if your source things are <a href="../type">Type</a> instances.</p>
+
+<p>In the <a href="#example">example</a> below we show a use case for wrapping a book type. The set-up requires some code
+but once the Types are defined, it is rather easy to use.</p>
+
+<h3 id="methods">Methods</h3>
+
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><a href="./unwrap">unwrap</a></td>
+<td>Unwrap to access the <em>wrapped</em> thing..</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="example">Example</h3>
+
+<pre><code class="language-thingsdb,should_pass">new_type('Writer');
+
+// Create type `Book`
+set_type('Book', {
+    title: 'str',
+    author: 'Writer'
+});
+
+// Create type `Writer`
+set_type('Writer', {
+    name: 'str',
+    books: '{Book}',
+});
+
+// Create a Type to just return a writers `name`
+set_type('_WriterName', {
+    name: 'any'
+});
+
+// Create a Type for returning a `title` and author as `_WriterName`
+set_type('_Book', {
+    title: 'any',
+    author: '_WriterName'
+});
+
+// Create a Type for returning only a set of `books` as `_Book`
+set_type('_AllBooks', {
+    books: '{_Book}'
+});
+
+// Create two sets `writers` and `books` to store all books and writers in
+.writers = set();
+.books = set();
+
+// A closure function to return a writer by name and create if not exists
+.upsert_writer = |name| {
+    &quot;Return the writer if exists, or create a new one&quot;;
+    .writers.find(|w| w.name == author_name) || {
+        new_writer = Writer{
+            name: author_name,
+            books: set()
+        };
+        .writers.add(new_writer);
+        new_writer;
+    };
+};
+
+// Create a procedure for adding a new book
+new_procedure('add_book', |author_name, book_title| wse({
+    writer = .upsert_writer.call(author_name);
+    new_book = Book{
+        title: book_title,
+        author: writer,
+    };
+    .books.add(new_book);
+    writer.books.add(new_book);
+}));
+
+// Add some sample books
+wse({
+    run('add_book', 'Alice', 'Foo');
+    run('add_book', 'Alice', 'Bar');
+    run('add_book', 'Bob', 'Baz');
+});
+
+/*
+ * Now we can simply wrap the collection to return the books with titles and
+ * the author names including the thing ids.
+ */
+return(.wrap('_AllBooks'), 3);
+</code></pre>
+
+<pre><code class="language-json">{
+    &quot;#&quot;: 4,
+    &quot;books&quot;: [
+        {
+            &quot;#&quot;: 6,
+            &quot;author&quot;: {
+                &quot;#&quot;: 5,
+                &quot;name&quot;: &quot;Alice&quot;
+            },
+            &quot;title&quot;: &quot;Foo&quot;
+        },
+        {
+            &quot;#&quot;: 7,
+            &quot;author&quot;: {
+                &quot;#&quot;: 5,
+                &quot;name&quot;: &quot;Alice&quot;
+            },
+            &quot;title&quot;: &quot;Bar&quot;
+        },
+        {
+            &quot;#&quot;: 9,
+            &quot;author&quot;: {
+                &quot;#&quot;: 8,
+                &quot;name&quot;: &quot;Bob&quot;
+            },
+            &quot;title&quot;: &quot;Baz&quot;
+        }
+    ]
+}
+</code></pre>
 
 
 
@@ -4063,19 +4206,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1575558227"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1575558227"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1575558227"></script>
-    <script src="/v0/js/jquery.sticky.js?1575558227"></script>
-    <script src="/v0/js/featherlight.min.js?1575558227"></script>
-    <script src="/v0/js/highlight.pack.js?1575558227"></script>
+    <script src="/v0/js/clipboard.min.js?1575887540"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1575887540"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1575887540"></script>
+    <script src="/v0/js/jquery.sticky.js?1575887540"></script>
+    <script src="/v0/js/featherlight.min.js?1575887540"></script>
+    <script src="/v0/js/highlight.pack.js?1575887540"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1575558227"></script>
-    <script src="/v0/js/learn.js?1575558227"></script>
-    <script src="/v0/js/hugo-learn.js?1575558227"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1575887540"></script>
+    <script src="/v0/js/learn.js?1575887540"></script>
+    <script src="/v0/js/hugo-learn.js?1575887540"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1575558227" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1575558227"></script>
+    <link href="/v0/mermaid/mermaid.css?1575887540" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1575887540"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

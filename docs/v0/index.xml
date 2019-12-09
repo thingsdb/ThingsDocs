@@ -819,11 +819,11 @@ Although the values() and map() in the example above will return an list with th
       
       <guid>https://docs.thingsdb.net/v0/data-types/thing/wrap/</guid>
       <description>Wrap a thing with a Type.
-For more details and a
+For a more advanced example using wrap() and unwrap() see .
 Function thing.wrap(type)
 Arguments    Argument Arguments Description     type str Type name to wrap the thing with.    Return value A wrapped thing.
 Example  This code shows an example using wrap():
- // Create a Type to return just an email field. set_type(&#39;_Email&#39;, {email: &#39;str&#39;}); // Store a thing .joente = { name: &#39;Jeroen van der Heijden&#39;, email: &#39;jeroen@transceptor.</description>
+ // Create a Type to return just an email field. set_type(&#39;_Email&#39;, {email: &#39;str&#39;}); // Store a thing .</description>
     </item>
     
     <item>
@@ -852,7 +852,12 @@ Definable properties    definition description     &#39;str&#39; requires type s
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/wtype/unwrap/</guid>
-      <description>Unwrap a wrapped thing.</description>
+      <description>Unwrap a wrapped thing.
+Function .unwrap()
+Arguments None
+Return value Returns the wrapped thing.
+Example  This code shows an example using unwrap():
+ // Create a Type to return just an email field. set_type(&#39;_Email&#39;, {email: &#39;str&#39;}); // Store a thing .joente = { name: &#39;Jeroen van der Heijden&#39;, email: &#39;jeroen@transceptor.technology&#39;, gender: &#39;male&#39;, }; // Wrap `joente` with the `_Email` type. .w = .joente.wrap(&#39;_Email&#39;); // Return the original `thing` .</description>
     </item>
     
     <item>
@@ -1771,7 +1776,7 @@ Arguments    Argument Type Description     secret str (required) Secret used to 
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/new_token/</guid>
       <description>Adds a new token for a given user. An optional expiration time may be given after which the token cannot be used anymore. Use del_expired to cleanup expired tokens. The expiration time may be given as a UNIX time-stamp in seconds or a date/time string.
 Some valid date/time strings:
- 2021-01-01 2023-02-06 14:30 2023-07-5T13:23:20+01:00  Expiration dates in the past are not allowed an will raise a bad_data_err() error.</description>
+ 2021-01-01 2023-02-06 14:30 2023-07-05T13:23:20+01:00  Expiration dates in the past are not allowed an will raise a bad_data_err() error.</description>
     </item>
     
     <item>

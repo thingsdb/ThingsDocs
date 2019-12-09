@@ -16,7 +16,12 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/wtype/unwrap/</guid>
-      <description>Unwrap a wrapped thing.</description>
+      <description>Unwrap a wrapped thing.
+Function .unwrap()
+Arguments None
+Return value Returns the wrapped thing.
+Example  This code shows an example using unwrap():
+ // Create a Type to return just an email field. set_type(&#39;_Email&#39;, {email: &#39;str&#39;}); // Store a thing .joente = { name: &#39;Jeroen van der Heijden&#39;, email: &#39;jeroen@transceptor.technology&#39;, gender: &#39;male&#39;, }; // Wrap `joente` with the `_Email` type. .w = .joente.wrap(&#39;_Email&#39;); // Return the original `thing` .</description>
     </item>
     
   </channel>

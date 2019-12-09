@@ -5,9 +5,7 @@ weight: 75
 
 Wrap a thing with a [Type](../../type).
 
-For more details and a
-
-
+For a more advanced example using [wrap()](.) and [unwrap()](../../wtype/unwrap) see [<Type>](../../wtype).
 
 ### Function
 
@@ -21,7 +19,7 @@ type     | str         | Type name to wrap the thing with.
 
 ### Return value
 
-A [wrapped](../../data-types/wtype) thing.
+A [wrapped](../../wtype) thing.
 
 ### Example
 
@@ -35,10 +33,10 @@ set_type('_Email', {email: 'str'});
 .joente = {
     name: 'Jeroen van der Heijden',
     email: 'jeroen@transceptor.technology',
-    gender: 'Male',
+    gender: 'male',
 };
 
-// Return te email field and ID (#)
+// Return the email field and ID (#)
 .joente.wrap('_Email');
 ```
 > Example return value in JSON format

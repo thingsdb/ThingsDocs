@@ -11,7 +11,7 @@ Some valid date/time strings:
 
 - `2021-01-01`
 - `2023-02-06 14:30`
-- `2023-07-5T13:23:20+01:00`
+- `2023-07-05T13:23:20+01:00`
 
 Expiration dates in the past are not allowed an will raise a [bad_data_err()](../../errors/bad_data_err) error.
 
