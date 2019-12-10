@@ -672,7 +672,7 @@
 	"content": " Returns a float from a specified value. If no value is given, the default float 0.0 is returned.\nIf the specified value is of type str, then the initial characters of the string are converted until a non-digit character is found. Initial white space is ignored and the number may start with an optional + or - sign.\nType bool values are converted to 1.0 for true and 0.0 for false.\nThis function does not generate an event.\nFunction float(value)\nArguments    Argument Type Description     value any (optional) The value where to create a floating point value for.    Return value A floating point value. Other type than float, str, bool or int will raise a bad_data_err().\nExample  This code shows some return values for float():\n [ float(), float(42), float('0.365e+3 days'), float('0xFF'), float(true), float(false), ];   Return value in JSON format\n [ 0, 42.0, 365.0, 255.0, 1.0, 0.0 ]  "
 },
 {
-	"uri": "https://docs.thingsdb.net/v0/collection-api/if/",
+	"uri": "https://docs.thingsdb.net/v0/collection-api/if-function/",
 	"title": "if",
 	"tags": [],
 	"description": "",
