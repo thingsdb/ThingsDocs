@@ -94,7 +94,7 @@ collection-api
     del_type
     err
     float
-    if-function
+    if
     int
     isarray
     isascii
