@@ -3,7 +3,7 @@ title: "node_info"
 weight: 142
 ---
 
-Returns information about the node in the current scope.
+Returns information about the node in the selected scope.
 See [scopes](../../overview/scopes) for more information on how to target a specific node scope.
 
 Value | Description

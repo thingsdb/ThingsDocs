@@ -11,20 +11,20 @@
     <title>set_log_level :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1575887540" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1575887540" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1575887540" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1575887540" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1575887540" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1575887540" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1575887540" rel="stylesheet">
-    <link href="/v0/css/theme.css?1575887540" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1575887540" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1575984757" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1575984757" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1575984757" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1575984757" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1575984757" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1575984757" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1575984757" rel="stylesheet">
+    <link href="/v0/css/theme.css?1575984757" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1575984757" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1575887540" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1575984757" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1575887540"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1575984757"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1575887540"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1575887540"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1575984757"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1575984757"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1575887540"></script>
+<script type="text/javascript" src="/v0/js/search.js?1575984757"></script>
 
     
   </div>
@@ -4005,7 +4005,21 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#log-levels">Log Levels</a></li>
+<li><a href="#function">Function</a></li>
+<li><a href="#arguments">Arguments</a></li>
+<li><a href="#return-value">Return value</a></li>
+<li><a href="#example">Example</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -4029,7 +4043,103 @@
 
 
 
+
+
+<p>Change the log level for the node in the selected scope.</p>
+
+<p>ThingsDB will then log all levels greater than or equal to the specified level.
+For example, a default log_level of <strong>warning</strong> will log <strong>warning</strong>, <strong>error</strong> and <strong>critical</strong> messages.</p>
+
 <p>This function does <em>not</em> generate an <a href="../../overview/events">event</a>.</p>
+
+<h3 id="log-levels">Log Levels</h3>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Int</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>DEBUG</td>
+<td>0</td>
+<td>Display debug messages (can result in large amount of logging).</td>
+</tr>
+
+<tr>
+<td>INFO</td>
+<td>1</td>
+<td>Informational messages.</td>
+</tr>
+
+<tr>
+<td>WARNING</td>
+<td>2</td>
+<td>Warning messages (default log level).</td>
+</tr>
+
+<tr>
+<td>ERROR</td>
+<td>3</td>
+<td>Error messages, can occur if for example a node is not available.</td>
+</tr>
+
+<tr>
+<td>CRITICAL</td>
+<td>4</td>
+<td>Critical messages, should never occur unless something is really bad.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="function">Function</h3>
+
+<p><code>set_log_level(log_level);</code></p>
+
+<h3 id="arguments">Arguments</h3>
+
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>log_level</td>
+<td>int</td>
+<td>Log level to set on the node.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="return-value">Return value</h3>
+
+<p>Returns <code>nil</code>.</p>
+
+<h3 id="example">Example</h3>
+
+<blockquote>
+<p>Change the log level on the node in the selected scope to <code>debug</code>:</p>
+</blockquote>
+
+<pre><code class="language-thingsdb,json_response,@n">// Enable `debug` logging on the node in the selected scope
+set_log_level(DEBUG);
+</code></pre>
+
+<blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+
+<pre><code class="language-json">null
+</code></pre>
 
 
 <footer class=" footline" >
@@ -4060,19 +4170,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1575887540"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1575887540"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1575887540"></script>
-    <script src="/v0/js/jquery.sticky.js?1575887540"></script>
-    <script src="/v0/js/featherlight.min.js?1575887540"></script>
-    <script src="/v0/js/highlight.pack.js?1575887540"></script>
+    <script src="/v0/js/clipboard.min.js?1575984757"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1575984757"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1575984757"></script>
+    <script src="/v0/js/jquery.sticky.js?1575984757"></script>
+    <script src="/v0/js/featherlight.min.js?1575984757"></script>
+    <script src="/v0/js/highlight.pack.js?1575984757"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1575887540"></script>
-    <script src="/v0/js/learn.js?1575887540"></script>
-    <script src="/v0/js/hugo-learn.js?1575887540"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1575984757"></script>
+    <script src="/v0/js/learn.js?1575984757"></script>
+    <script src="/v0/js/hugo-learn.js?1575984757"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1575887540" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1575887540"></script>
+    <link href="/v0/mermaid/mermaid.css?1575984757" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1575984757"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

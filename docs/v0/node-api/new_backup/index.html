@@ -11,20 +11,20 @@
     <title>new_backup :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1575887540" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1575887540" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1575887540" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1575887540" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1575887540" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1575887540" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1575887540" rel="stylesheet">
-    <link href="/v0/css/theme.css?1575887540" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1575887540" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1575984757" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1575984757" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1575984757" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1575984757" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1575984757" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1575984757" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1575984757" rel="stylesheet">
+    <link href="/v0/css/theme.css?1575984757" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1575984757" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1575887540" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1575984757" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1575887540"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1575984757"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1575887540"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1575887540"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1575984757"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1575984757"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1575887540"></script>
+<script type="text/javascript" src="/v0/js/search.js?1575984757"></script>
 
     
   </div>
@@ -4005,7 +4005,22 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#function">Function</a></li>
+<li><a href="#arguments">Arguments</a></li>
+<li><a href="#file-template">File template</a></li>
+<li><a href="#return-value">Return value</a></li>
+<li><a href="#example">Example</a></li>
+<li><a href="#example-recovery">Example recovery</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -4029,9 +4044,136 @@
 
 
 
+
+
 <p>Schedule a new backup.</p>
 
+<p>Backups are created using <code>tar</code> and <code>gzip</code>. Once a backup is made, the <code>.tar.gz</code> backup
+file can be used to recover ThingsDB, or can be used to load the ThingsDB into another node.
+The result value is a backup ID. This ID can be used by <a href="../backup_info">backup_info(..)</a> for details
+about the backup schedule job, or can be used to <a href="../del_backup">delete</a> the backup schedule.</p>
+
+<p>See the <a href="#example-recovery">example recovery</a> section below on how to recover from a backup file.</p>
+
+
+<div class="notices note" ><p>At least <strong>two nodes</strong> are required to create a new backup schedule. This is required because ThingsDB needs to enter <em>away</em> mode to actually create the backup and this happens only with two or more nodes.</p>
+</div>
+
+
 <p>This function does <em>not</em> generate an <a href="../../overview/events">event</a>.</p>
+
+<h3 id="function">Function</h3>
+
+<p><code>new_backup(file_template, [start_ts, [repeat]]);</code></p>
+
+<h3 id="arguments">Arguments</h3>
+
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>file_template</code></td>
+<td>str</td>
+<td>Backup schedule file template. See <a href="#file-template">file-template</a> for more information.</td>
+</tr>
+
+<tr>
+<td><code>start_ts</code></td>
+<td>nil/int/float/raw (optional)</td>
+<td>Start date/time of the backup. If no <code>start_ts</code> is given, the backup starts as soon as possible.</td>
+</tr>
+
+<tr>
+<td><code>repeat</code></td>
+<td>int (optional)</td>
+<td>Repeat the backup schedule every <code>repeat</code> seconds. If not <code>repeat</code> value is set, the backup job will run only once.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="file-template">File template</h3>
+
+<p>Backup file templates should end with <code>.tar.gz</code>. They may contain some template variable
+for creating unique file names.</p>
+
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>{DATE}</code></td>
+<td>Current date using format <code>%Y%m%d</code>, for example <code>20191209</code>.</td>
+</tr>
+
+<tr>
+<td><code>{TIME}</code></td>
+<td>Current time using format <code>%H%M%S</code>, for example <code>165730</code>.</td>
+</tr>
+
+<tr>
+<td><code>{EVENT}</code></td>
+<td>Last committed event ID, for example <code>123456</code>.</td>
+</tr>
+</tbody>
+</table>
+
+<p>An example file-name could be <code>/tmp/backup_{EVENT}.tar.gz</code>.</p>
+
+<h3 id="return-value">Return value</h3>
+
+<p>Returns the backup <code>ID</code> for the scheduled backup.</p>
+
+<h3 id="example">Example</h3>
+
+<blockquote>
+<p>Use <em>new_backup</em> to schedule a ThingsDB backup:</p>
+</blockquote>
+
+<pre><code class="language-thingsdb,syntax_only,@n">// Create a new backup immediately, and then at 23:00 and then repeat each day
+new_backup('/var/backup/thingsdb_{DATE}{TIME}.tar.gz', '2000-01-01 23:00', 24*3600);
+</code></pre>
+
+<blockquote>
+<p>Example result in JSON format:</p>
+</blockquote>
+
+<pre><code class="language-json">0
+</code></pre>
+
+<h3 id="example-recovery">Example recovery</h3>
+
+<p>To start a ThingsDB node data from a backup file, the following steps can be done</p>
+
+<pre><code class="language-bash"># Unpack a backup file in some storage directory.
+tar -xzf backup.tar.gz
+</code></pre>
+
+<pre><code class="language-bash"># Start ThingsDB with the current path as storage path
+THINGSDB_STORAGE_PATH=./ thingsdb --forget-nodes
+</code></pre>
+
+<blockquote>
+<p>Confirm with <code>yes</code> so we can start with a single node</p>
+</blockquote>
+
+<pre><code>Warning: all nodes information will be lost!!
+
+Type `yes` + ENTER if you really want to continue: yes
+</code></pre>
+
+<p>Done!</p>
 
 
 <footer class=" footline" >
@@ -4062,19 +4204,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1575887540"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1575887540"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1575887540"></script>
-    <script src="/v0/js/jquery.sticky.js?1575887540"></script>
-    <script src="/v0/js/featherlight.min.js?1575887540"></script>
-    <script src="/v0/js/highlight.pack.js?1575887540"></script>
+    <script src="/v0/js/clipboard.min.js?1575984757"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1575984757"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1575984757"></script>
+    <script src="/v0/js/jquery.sticky.js?1575984757"></script>
+    <script src="/v0/js/featherlight.min.js?1575984757"></script>
+    <script src="/v0/js/highlight.pack.js?1575984757"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1575887540"></script>
-    <script src="/v0/js/learn.js?1575887540"></script>
-    <script src="/v0/js/hugo-learn.js?1575887540"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1575984757"></script>
+    <script src="/v0/js/learn.js?1575984757"></script>
+    <script src="/v0/js/hugo-learn.js?1575984757"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1575887540" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1575887540"></script>
+    <link href="/v0/mermaid/mermaid.css?1575984757" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1575984757"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
