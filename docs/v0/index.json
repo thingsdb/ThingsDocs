@@ -672,6 +672,13 @@
 	"content": " Returns a float from a specified value. If no value is given, the default float 0.0 is returned.\nIf the specified value is of type str, then the initial characters of the string are converted until a non-digit character is found. Initial white space is ignored and the number may start with an optional + or - sign.\nType bool values are converted to 1.0 for true and 0.0 for false.\nThis function does not generate an event.\nFunction float(value)\nArguments    Argument Type Description     value any (optional) The value where to create a floating point value for.    Return value A floating point value. Other type than float, str, bool or int will raise a bad_data_err().\nExample  This code shows some return values for float():\n [ float(), float(42), float('0.365e+3 days'), float('0xFF'), float(true), float(false), ];   Return value in JSON format\n [ 0, 42.0, 365.0, 255.0, 1.0, 0.0 ]  "
 },
 {
+	"uri": "https://docs.thingsdb.net/v0/collection-api/if/",
+	"title": "if",
+	"tags": [],
+	"description": "",
+	"content": " Runs a block code based on the result of a given condition.\nThingsDB uses lazy-evaluation of function arguments. For this reason if() is a function call, and not a statement like in most other languages.\n This function does not generate an event.\nFunction if(condition, if_true, [if_false])\nArguments    Argument Type Description     condition any (required) The condition to evaluate.   if_true any (required) Will be executed when the condition evaluated to true.   if_false any (optional) Will be executed when the condition evaluated to false.    Return value Returns nil.\nExample  This code shows how if(..) can be used:\n if(2 \u0026gt; 1, { return(\u0026quot;two is more than one\u0026quot;); }); \u0026quot;math is broken\u0026quot;;   Return value in JSON format\n \u0026quot;two is more than one\u0026quot;  "
+},
+{
 	"uri": "https://docs.thingsdb.net/v0/collection-api/int/",
 	"title": "int",
 	"tags": [],

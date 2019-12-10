@@ -1044,6 +1044,19 @@ Type bool values are converted to 1.0 for true and 0.0 for false.</description>
     </item>
     
     <item>
+      <title>if</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/if/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/if/</guid>
+      <description>Runs a block code based on the result of a given condition.
+ThingsDB uses lazy-evaluation of function arguments. For this reason if() is a function call, and not a statement like in most other languages.
+ This function does not generate an event.
+Function if(condition, if_true, [if_false])
+Arguments    Argument Type Description     condition any (required) The condition to evaluate.   if_true any (required) Will be executed when the condition evaluated to true.</description>
+    </item>
+    
+    <item>
       <title>int</title>
       <link>https://docs.thingsdb.net/v0/collection-api/int/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
