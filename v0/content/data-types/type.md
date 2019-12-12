@@ -11,8 +11,8 @@ A Type is like a thing with pre-defined properties.
 
 definition | description
 ---------- | -----------
-`'str'` | requires type [str](../str); values of type [str](../str) *should* contain valid UTF-8 characters.
-`'utf8'` | requires type [str](../str); the value *must* contain valid UTF-8 characters.
+`'str'` | requires type [str](../str) (values of type [str](../str) *should* contain valid UTF-8 characters).
+`'utf8'` | requires type [str](../str) and the value *must* contain valid UTF-8 characters.
 `'raw'` | requires type [str](../str) *or* [bytes](../bytes).
 `'bytes'` | requires type [bytes](../bytes).
 `'bool'` | requires type [bool](../bool).
