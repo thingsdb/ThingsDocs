@@ -843,7 +843,7 @@ list = []; list.push([&#39;this list will be nested and therefore convert to a t
       
       <guid>https://docs.thingsdb.net/v0/data-types/type/</guid>
       <description>A Type is like a thing with pre-defined properties.
-Definable properties    definition description     &#39;str&#39; requires type str and the value should contain valid UTF-8 characters.   &#39;utf8&#39; requires type str and the value must contain valid UTF-8 characters.   &#39;raw&#39; requires type str or bytes.   &#39;bytes&#39; requires type bytes.   &#39;bool&#39; requires type bool.   &#39;int&#39; requires type int.</description>
+Definable properties    definition description     &#39;str&#39; requires type str; values of type str should contain valid UTF-8 characters.   &#39;utf8&#39; requires type str; the value must contain valid UTF-8 characters.   &#39;raw&#39; requires type str or bytes.   &#39;bytes&#39; requires type bytes.   &#39;bool&#39; requires type bool.   &#39;int&#39; requires type int.</description>
     </item>
     
     <item>
@@ -1045,10 +1045,10 @@ Type bool values are converted to 1.0 for true and 0.0 for false.</description>
     
     <item>
       <title>if</title>
-      <link>https://docs.thingsdb.net/v0/collection-api/if-function/</link>
+      <link>https://docs.thingsdb.net/v0/collection-api/if/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/collection-api/if-function/</guid>
+      <guid>https://docs.thingsdb.net/v0/collection-api/if/</guid>
       <description>Runs a block code based on the result of a given condition.
 ThingsDB uses lazy-evaluation of function arguments. For this reason if() is a function call, and not a statement like in most other languages.
  This function does not generate an event.
