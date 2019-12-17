@@ -8,7 +8,7 @@ Returns information about a procedure.
 Value | Description
 ------- | -----------
 arguments | Array with positional argument names.
-definition | Closure definition.
+definition | Closure definition. *(Only available with `MODIFY` privileges)*
 doc | Doc string of the closure in the procedure.
 name | Name of the procedure.
 with_side_effects | Boolean value which indicates if this procedure has side effects.

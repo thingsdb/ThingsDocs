@@ -40,7 +40,7 @@ Use MessagePack if possible since this is the data serialization protocol which 
       <description>Use pip to install the python client:
  pip install python-thingsdb  The Python client supports both queries, watching and a framework for using ThingsDB in a really simple way.
  To authorize in Python, use this code:
- import asyncio from thingsdb.client import Client client = Client() loop = asyncio.get_event_loop() async def example(): # replace `localhost` with your ThingsDB server address await client.connect(&#39;localhost&#39;) # replace `amdin` with yout username and `pass` with your password await client.</description>
+ import asyncio from thingsdb.client import Client client = Client() loop = asyncio.get_event_loop() async def example(): # replace `localhost` with your ThingsDB server address await client.connect(&#39;localhost&#39;) # replace `admin` with your username and `pass` with your password await client.</description>
     </item>
     
     <item>
@@ -1953,9 +1953,7 @@ Example  Create a new procedure add_one:</description>
       
       <guid>https://docs.thingsdb.net/v0/procedures-api/procedure_info/</guid>
       <description>Returns information about a procedure.
-   Value Description     arguments Array with positional argument names.   definition Closure definition.   doc Doc string of the closure in the procedure.   name Name of the procedure.   with_side_effects Boolean value which indicates if this procedure has side effects.    This function does not generate an event.
-Function procedure_info(procedure);
-Arguments    Argument Type Description     procedure str (required) Name of the procedure where to return the info for.</description>
+   Value Description     arguments Array with positional argument names.   definition Closure definition. (Only available with MODIFY privileges)   doc Doc string of the closure in the procedure.   name Name of the procedure.   with_side_effects Boolean value which indicates if this procedure has side effects.    This function does not generate an event.</description>
     </item>
     
     <item>

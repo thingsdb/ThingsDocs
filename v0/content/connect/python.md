@@ -25,7 +25,7 @@ async def example():
     # replace `localhost` with your ThingsDB server address
     await client.connect('localhost')
 
-    # replace `amdin` with yout username and `pass` with your password
+    # replace `admin` with your username and `pass` with your password
     await client.authenticate('admin', 'pass')
 
     # ..or by using a token
