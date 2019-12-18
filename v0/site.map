@@ -162,7 +162,6 @@ thingsdb-api
     rename_user
     revoke
     set_password
-    set_quota
     user_info
     users_info
 procedures-api

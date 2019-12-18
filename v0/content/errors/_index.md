@@ -1,6 +1,6 @@
 ---
 title: "Errors"
-weight: 176
+weight: 175
 chapter: true
 ---
 
@@ -16,7 +16,7 @@ Error | Code | Meaning
 [value_err](./value_err) | -60 | Object has the right type but an inappropriate value.
 [overflow_err](./overflow_err) | -59 | Integer is too large to fit a 64 bit signed integer.
 [zero_div_err](./zero_div_err) | -58 | Trying a division or module by zero.
-[max_quota_err](./max_quota_err) | -57 | Your collection has quotas set and the limit is reached.
+[max_quota_err](./max_quota_err) | -57 | Some quota limit is reached.
 [auth_err](./auth_err)| -56 | Wrong credentials or a request while the connection is not authenticated.
 [forbidden_err](./forbidden_err) | -55 | You lack the privileges to do the request.
 [lookup_err](./lookup_err) | -54 | Requested resource not found or index out of range.

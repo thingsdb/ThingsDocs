@@ -218,16 +218,6 @@ Arguments    Argument Type Description     username str (required) Name of the u
     </item>
     
     <item>
-      <title>set_quota</title>
-      <link>https://docs.thingsdb.net/v0/thingsdb-api/set_quota/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/thingsdb-api/set_quota/</guid>
-      <description>Quota limits can be set on collections. The following quota limits can be set:
-   Type Description     things Maximum number of things allowed in a collection. Type instances are also counted towards this quota.   properties Maximum number of properties which can be assigned to a thing.   array_size Maximum list and tuple length.   raw_size Maximum str and bytes length.</description>
-    </item>
-    
-    <item>
       <title>user_info</title>
       <link>https://docs.thingsdb.net/v0/thingsdb-api/user_info/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

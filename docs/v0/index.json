@@ -1040,7 +1040,7 @@
 	"title": "collection_info",
 	"tags": [],
 	"description": "",
-	"content": " Returns information about a specific collection.\nThis function requires READ privileges on the requested collection, or MODIFY privileges on the @thingsdb scope.\nThis function does not generate an event.\nFunction collection_info(name_or_id);\nArguments    Argument Type Description     name_or_id str/int Name or Id of the collection    Return value Returns info about the collection.\nExample  Returns information about collection stuff:\n collection_info('stuff');   Example return value in JSON format\n { \u0026quot;collection_id\u0026quot;: 782, \u0026quot;name\u0026quot;: \u0026quot;stuff\u0026quot;, \u0026quot;quota_array_size\u0026quot;: null, \u0026quot;quota_properties\u0026quot;: null, \u0026quot;quota_raw_size\u0026quot;: null, \u0026quot;quota_things\u0026quot;: null, \u0026quot;things\u0026quot;: 61352 }  "
+	"content": " Returns information about a specific collection.\nThis function requires READ privileges on the requested collection, or MODIFY privileges on the @thingsdb scope.\nThis function does not generate an event.\nFunction collection_info(name_or_id);\nArguments    Argument Type Description     name_or_id str/int Name or Id of the collection    Return value Returns info about the collection.\nExample  Returns information about collection stuff:\n collection_info('stuff');   Example return value in JSON format\n { \u0026quot;collection_id\u0026quot;: 782, \u0026quot;name\u0026quot;: \u0026quot;stuff\u0026quot;, \u0026quot;things\u0026quot;: 61352 }  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/collections_info/",
@@ -1148,13 +1148,6 @@
 	"content": " Change a users password. This function can also be used to remove an existing password by using nil as the new password.\nPasswords must contain 1 to 128 printable characters.\nThis function generates an event.\nFunction set_password(username, new_password);\nArguments    Argument Type Description     username str (required) Name of the user   new_password nil/str (required) New password or nil    Return value Returns nil if successful. A lookup_err() is returned if the user does not exist and bad_data_err() if the new password is not compliant.\nExample  This code changes the password for user admin:\n // Change the password for user `admin` set_password('admin', 'my_secret_password');   Return value in JSON format\n null  "
 },
 {
-	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/set_quota/",
-	"title": "set_quota",
-	"tags": [],
-	"description": "",
-	"content": " Quota limits can be set on collections. The following quota limits can be set:\n   Type Description     things Maximum number of things allowed in a collection. Type instances are also counted towards this quota.   properties Maximum number of properties which can be assigned to a thing.   array_size Maximum list and tuple length.   raw_size Maximum str and bytes length.    If a quota limit is reached, then the affected query will raise MAX_QUOTA_ERROR.\nThe current quota values can be viewed with collection(\u0026hellip;) or collections().\nThis function generates an event.\nFunction set_quota(collection, quota_type, quota)\nArguments    Argument Type Description     collection str/int (required) Collection name or id.   quota_type str (required) Must be one of 'things', 'properties', 'array_size' or 'raw_size'.   quota int/nil (required) Integer value to set the quota limit or nil to disable the quota.    Return value Returns nil when successful.\nExample  This code sets a quota on the number of things and disables the properties quota on collection stuff:\n [ set_quota('stuff', 'things', 10000), set_quota('stuff', 'properties', nil), ];   Return value in JSON format\n [ null, null ]  "
-},
-{
 	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/user_info/",
 	"title": "user_info",
 	"tags": [],
@@ -1229,7 +1222,7 @@
 	"title": "Errors",
 	"tags": [],
 	"description": "",
-	"content": " Errors ThingsDB uses the following error codes:\n   Error Code Meaning     operation_err -63 Operation is not valid in the current context.   num_arguments_err -62 Wrong number of arguments.   type_err -61 Object of inappropriate type.   value_err -60 Object has the right type but an inappropriate value.   overflow_err -59 Integer is too large to fit a 64 bit signed integer.   zero_div_err -58 Trying a division or module by zero.   max_quota_err -57 Your collection has quotas set and the limit is reached.   auth_err -56 Wrong credentials or a request while the connection is not authenticated.   forbidden_err -55 You lack the privileges to do the request.   lookup_err -54 Requested resource not found or index out of range.   bad_data_err -53 Invalid data, for example an invalid data type used in a query.   syntax_err -52 Syntax error in the query.   node_err -51 At least one node has an issue while processing the request.   assert_err -50 Assertion statement has failed.    "
+	"content": " Errors ThingsDB uses the following error codes:\n   Error Code Meaning     operation_err -63 Operation is not valid in the current context.   num_arguments_err -62 Wrong number of arguments.   type_err -61 Object of inappropriate type.   value_err -60 Object has the right type but an inappropriate value.   overflow_err -59 Integer is too large to fit a 64 bit signed integer.   zero_div_err -58 Trying a division or module by zero.   max_quota_err -57 Some quota limit is reached.   auth_err -56 Wrong credentials or a request while the connection is not authenticated.   forbidden_err -55 You lack the privileges to do the request.   lookup_err -54 Requested resource not found or index out of range.   bad_data_err -53 Invalid data, for example an invalid data type used in a query.   syntax_err -52 Syntax error in the query.   node_err -51 At least one node has an issue while processing the request.   assert_err -50 Assertion statement has failed.    "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/errors/assert_err/",

@@ -38,10 +38,6 @@ collection_info('stuff');
 {
     "collection_id": 782,
     "name": "stuff",
-    "quota_array_size": null,
-    "quota_properties": null,
-    "quota_raw_size": null,
-    "quota_things": null,
     "things": 61352
 }
 ```
