@@ -33,7 +33,7 @@ Serializing the above using [MessagePack](https://msgpack.org) results in the fo
 
 Now we create the header, for this example we just use ID 0:
 
-- Data length (11) `\x0d\x00\x00\x00`
+- Data length (13) `\x0d\x00\x00\x00`
 - Identifier (0) `\x00\x00`
 - Run package type (37) `\x25`
 - Inverse type check bit (218) `\xda`

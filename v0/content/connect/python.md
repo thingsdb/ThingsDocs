@@ -3,38 +3,54 @@ title: "Python"
 weight: 5
 ---
 
-> Use pip to install the python client:
+### Installation
+
+Just use pip:
 
 ```
 pip install python-thingsdb
 ```
 
-The Python client supports both queries, watching and a framework for using ThingsDB in a really simple way.
+Or, clone the project and use setup.py:
 
-> To authorize in Python, use this code:
+```
+python setup.py install
+```
+
+### Quick usage
 
 ```python
 import asyncio
 from thingsdb.client import Client
 
-client = Client()
-loop = asyncio.get_event_loop()
+async def hello_world():
+    client = Client()
 
-
-async def example():
     # replace `localhost` with your ThingsDB server address
     await client.connect('localhost')
 
-    # replace `admin` with your username and `pass` with your password
-    await client.authenticate('admin', 'pass')
+    try:
+        # replace `admin` and `pass` with your username and password
+        # or use a valid token string
+        await client.authenticate('admin', 'pass')
 
-    # ..or by using a token
-    await client.authenticate('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
+        # perform the hello world code...
+        print(await client.query('''
+            "Hello World!";
+        ''')
 
-# run the example
-loop.run_until_complete(example())
+    finally:
+        # the will close the client in a nice way
+        client.close()
+        await client.wait_closed()
 
-# the will close the client in a nice way
-client.close()
-loop.run_until_complete(client.wait_closed())
+# run the hello world example
+asyncio.get_event_loop().run_until_complete(hello_world())
 ```
+
+### More info
+
+A more complete description of the Python client can be found in one of the links below.
+
+- https://github.com/thingsdb/ThingsDB/tree/master/connectors/python3#readme
+- https://pypi.org/project/python-thingsdb/
