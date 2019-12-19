@@ -11,20 +11,20 @@
     <title>closure :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1576793305" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1576793305" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1576793305" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1576793305" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1576793305" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1576793305" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1576793305" rel="stylesheet">
-    <link href="/v0/css/theme.css?1576793305" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1576793305" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1576795677" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1576795677" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1576795677" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1576795677" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1576795677" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1576795677" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1576795677" rel="stylesheet">
+    <link href="/v0/css/theme.css?1576795677" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1576795677" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1576793305" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1576795677" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1576793305"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1576795677"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1576793305"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1576793305"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1576795677"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1576795677"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1576793305"></script>
+<script type="text/javascript" src="/v0/js/search.js?1576795677"></script>
 
     
   </div>
@@ -4231,22 +4231,15 @@ are used inside a procedure but are not common when closures are used for other 
 };
 </code></pre>
 
-<p>Although less common, it is also possible to use a simple comment as doc string, for example:</p>
+<p>It is common to wrap a block scope within one or more functions.
+When this is the case, the doc string will be read from the the first argument,
+<em>only</em> if the first <em>non-function</em> argument contains a block scope with a doc string.</p>
 
-<pre><code class="language-thingsdb,should_pass">|| {
-    // this is a doc string.
-    nil;
-};
-</code></pre>
+<p>For example, this closure contains a block scope wrapped with <a href="../../collection-api/return">return</a> and <a href="../../collection-api/wse">wse</a>:</p>
 
-<p>It is common to wrap a block scope with <a href="../../collection-api/wse">wse</a> if a closure has side-effects.
-When this is the case, the doc string will be read from the the first argument, <em>only</em> if the first argument contains a block scope with a doc string.</p>
-
-<p>For example:</p>
-
-<pre><code class="language-thingsdb,should_pass">|| wse({
-    &quot;this is still a doc string, even while wrapped using `wse`.&quot;;
-});
+<pre><code class="language-thingsdb,should_pass">|| return(wse({
+    &quot;this is still a doc string, even while wrapped using `return` and `wse`.&quot;;
+}), 2);
 </code></pre>
 
 <h3 id="examples">Examples</h3>
@@ -4290,7 +4283,8 @@ call_result = add_one.call(41);
     assert(isstr(name) &amp;&amp; name.len());
     assert(isint(age) &amp;&amp; age &gt;= 0);
 
-    return {
+    // this is the last statement so it will be the return value
+    {
         name: name,
         age: age,
         time: now()
@@ -4329,19 +4323,19 @@ call_result = add_one.call(41);
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1576793305"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1576793305"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1576793305"></script>
-    <script src="/v0/js/jquery.sticky.js?1576793305"></script>
-    <script src="/v0/js/featherlight.min.js?1576793305"></script>
-    <script src="/v0/js/highlight.pack.js?1576793305"></script>
+    <script src="/v0/js/clipboard.min.js?1576795677"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1576795677"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1576795677"></script>
+    <script src="/v0/js/jquery.sticky.js?1576795677"></script>
+    <script src="/v0/js/featherlight.min.js?1576795677"></script>
+    <script src="/v0/js/highlight.pack.js?1576795677"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1576793305"></script>
-    <script src="/v0/js/learn.js?1576793305"></script>
-    <script src="/v0/js/hugo-learn.js?1576793305"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1576795677"></script>
+    <script src="/v0/js/learn.js?1576795677"></script>
+    <script src="/v0/js/hugo-learn.js?1576795677"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1576793305" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1576793305"></script>
+    <link href="/v0/mermaid/mermaid.css?1576795677" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1576795677"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

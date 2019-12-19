@@ -41,23 +41,16 @@ For example:
 };
 ```
 
-Although less common, it is also possible to use a simple comment as doc string, for example:
+It is common to wrap a block scope within one or more functions.
+When this is the case, the doc string will be read from the the first argument,
+*only* if the first *non-function* argument contains a block scope with a doc string.
+
+For example, this closure contains a block scope wrapped with [return](../../collection-api/return) and [wse](../../collection-api/wse):
 
 ```thingsdb,should_pass
-|| {
-    // this is a doc string.
-    nil;
-};
-```
-
-It is common to wrap a block scope with [wse](../../collection-api/wse) if a closure has side-effects.
-When this is the case, the doc string will be read from the the first argument, *only* if the first argument contains a block scope with a doc string.
-
-For example:
-```thingsdb,should_pass
-|| wse({
-    "this is still a doc string, even while wrapped using `wse`.";
-});
+|| return(wse({
+    "this is still a doc string, even while wrapped using `return` and `wse`.";
+}), 2);
 ```
 
 ### Examples
@@ -101,7 +94,8 @@ Like explained, closures can accept multiple arguments and may contain a block s
     assert(isstr(name) && name.len());
     assert(isint(age) && age >= 0);
 
-    return {
+    // this is the last statement so it will be the return value
+    {
         name: name,
         age: age,
         time: now()

@@ -27,5 +27,5 @@ Returns `nil` when successful. A [lookup_err()](../../errors/lookup_err) is rais
 
 ```thingsdb,syntax_only,@t
 // Delete a token
-del_token('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX');
+del_token('XXXXXXXXXXXXXXXXXXXXXX');
 ```

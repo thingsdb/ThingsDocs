@@ -36,7 +36,7 @@ user = {name: 'Iris', age: 6};
  * Return a thing with only property age
  */
 
-user.filter(|prop| (prop == 'age'));
+user.filter(|prop| prop == 'age');
 ```
 
 > Return value in JSON format

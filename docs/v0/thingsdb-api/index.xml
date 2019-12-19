@@ -93,7 +93,7 @@ This function generates an event.
 Function del_token(key);
 Arguments    Argument Type Description     key str (required) Token key to delete.    Return value Returns nil when successful. A lookup_err() is raised if the token is not found.
 Example  This code will delete a token:
- // Delete a token del_token(&#39;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#39;);  </description>
+ // Delete a token del_token(&#39;XXXXXXXXXXXXXXXXXXXXXX&#39;);  </description>
     </item>
     
     <item>
