@@ -49,7 +49,7 @@ class TestDoc(TestBase):
         await self.node0.init_and_run()
 
         client = await get_client(self.node0)
-        client.use('stuff')
+        client.set_default_scope('//stuff')
 
         for root, dirs, files in os.walk(CONTENT_PATH):
             for file in files:

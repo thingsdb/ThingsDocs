@@ -121,6 +121,64 @@ It is not possible to set privileges on a specific node scope. Therefore scope @
     </item>
     
     <item>
+      <title>has_collection</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/has_collection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/has_collection/</guid>
+      <description>Determines if a collection exists in ThingsDB.
+This function does not generate an event.
+Function has_collection(name_or_id)
+Arguments    Argument Type Description     name_or_id str/int (required) Collection name or id to check.    Return value Returns true the collection exists and otherwise false.
+Example  This code shows an example use case of has_collection():
+ has_collection(&#39;stuff&#39;);   Return value in JSON format</description>
+    </item>
+    
+    <item>
+      <title>has_node</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/has_node/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/has_node/</guid>
+      <description>Determines if a node exists in ThingsDB.
+This function does not generate an event.
+Function has_node(id)
+Arguments    Argument Type Description     id int (required) Node id to check.    Return value Returns true a node with a given id exists and otherwise false.
+Example  This code shows an example use case of has_node():
+ has_node(0);   Return value in JSON format</description>
+    </item>
+    
+    <item>
+      <title>has_token</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/has_token/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/has_token/</guid>
+      <description>Determines if a token exists in ThingsDB.
+This function requires GRANT privileges on the @thingsdb scope.
+ This function does not generate an event.
+Function has_token(key)
+Arguments    Argument Type Description     key str (required) Token key to check.    Return value Returns true the token exists and otherwise false.
+Example  This code shows an example use case of has_token():
+ has_token(&#39;XXXXXXXXXXXXXXXXXXXXXX&#39;);   Return value in JSON format</description>
+    </item>
+    
+    <item>
+      <title>has_user</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/has_user/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/has_user/</guid>
+      <description>Determines if a user exists in ThingsDB.
+This function requires GRANT privileges on the @thingsdb scope.
+ This function does not generate an event.
+Function has_user(username)
+Arguments    Argument Type Description     username str (required) User to check.    Return value Returns true the user exists and otherwise false.
+Example  This code shows an example use case of has_user():
+ has_user(&#39;admin&#39;);   Return value in JSON format</description>
+    </item>
+    
+    <item>
       <title>new_collection</title>
       <link>https://docs.thingsdb.net/v0/thingsdb-api/new_collection/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

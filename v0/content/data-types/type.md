@@ -127,3 +127,16 @@ return(book, 2);
     "title": "hitchhiker's guide to the galaxy"
 }
 ```
+
+### Related functions
+
+Method | Description
+------ | -----------
+[del_type](../../collection-api/del_type) | Delete a `Type`.
+[mod_type](../../collection-api/mod_type) | Modify an existing `Type` definition.
+[new_type](../../collection-api/new_type) | Creates a new `Type`.
+[has_type](../../collection-api/has_type) | Determine if the current scope has a `Type`.
+[set_type](../../collection-api/set_type) | Set property definitions on a `Type` and creates the `Type` if it did not exist.
+[type_info](../../collection-api/type_info) | Return the `Type` definition.
+[types_info](../../collection-api/types_info) | Return all `Type` definitions in the current scope.
+

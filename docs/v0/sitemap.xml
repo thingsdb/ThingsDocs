@@ -387,6 +387,10 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/has_type/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/collection-api/if/</loc>
   </url>
   
@@ -567,6 +571,10 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/node-api/has_backup/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/node-api/new_backup/</loc>
   </url>
   
@@ -627,6 +635,22 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/has_collection/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/has_node/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/has_token/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/has_user/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/thingsdb-api/new_collection/</loc>
   </url>
   
@@ -672,6 +696,10 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v0/procedures-api/del_procedure/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/procedures-api/has_procedure/</loc>
   </url>
   
   <url>

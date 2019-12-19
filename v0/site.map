@@ -94,6 +94,7 @@ collection-api
     del_type
     err
     float
+    has_type
     if
     int
     isarray
@@ -139,6 +140,7 @@ node-api
     backups_info
     counters
     del_backup
+    has_backup
     new_backup
     node_info
     nodes_info
@@ -154,6 +156,10 @@ thingsdb-api
     del_token
     del_user
     grant
+    has_collection
+    has_node
+    has_token
+    has_user
     new_collection
     new_node
     new_token
@@ -166,6 +172,7 @@ thingsdb-api
     users_info
 procedures-api
     del_procedure
+    has_procedure
     new_procedure
     procedure_doc
     procedure_info
