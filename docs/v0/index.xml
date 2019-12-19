@@ -37,10 +37,9 @@ Use MessagePack if possible since this is the data serialization protocol which 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/connect/python/</guid>
-      <description>Use pip to install the python client:
- pip install python-thingsdb  The Python client supports both queries, watching and a framework for using ThingsDB in a really simple way.
- To authorize in Python, use this code:
- import asyncio from thingsdb.client import Client client = Client() loop = asyncio.get_event_loop() async def example(): # replace `localhost` with your ThingsDB server address await client.connect(&#39;localhost&#39;) # replace `admin` with your username and `pass` with your password await client.</description>
+      <description>Installation Just use pip:
+pip install python-thingsdb  Or, clone the project and use setup.py:
+python setup.py install  Quick usage import asyncio from thingsdb.client import Client async def hello_world(): client = Client() # replace `localhost` with your ThingsDB server address await client.connect(&#39;localhost&#39;) try: # replace `admin` and `pass` with your username and password # or use a valid token string await client.authenticate(&#39;admin&#39;, &#39;pass&#39;) # perform the hello world code.</description>
     </item>
     
     <item>
