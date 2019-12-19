@@ -1523,10 +1523,10 @@ Arguments    Argument Type Description     type_name str The name of the Type fo
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/type_info/</guid>
-      <description>Returns information about the properties of a given Type.
-This function does not generate an event.
+      <description>Returns information about a given Type.
+   Value Description     type_id Internal Type ID (can be used to identify types in collection events).   name Type name.   fields Array with arrays containing two strings, the property name and definition.    This function does not generate an event.
 Function type_info(type_name)
-Arguments    Argument Type Description     type_name str The name of the Type for which the information about the properties has to be returned.    Return value Returns info about the type.</description>
+Arguments    Argument Type Description     type_name str The name of the Type for which the information about the properties has to be returned.</description>
     </item>
     
     <item>
@@ -1535,11 +1535,12 @@ Arguments    Argument Type Description     type_name str The name of the Type fo
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/types_info/</guid>
-      <description>Returns information about the properties of all Types within a collection.
+      <description>Returns Type information about all the types within a collection.
+See the type_info() function documentation for an example of the exposed Type information.
 This function does not generate an event.
 Function types_info()
 Arguments None
-Return value Types info for all types in the collection.</description>
+Return value List with Type info for all types in the collection.</description>
     </item>
     
     <item>

@@ -52,15 +52,23 @@ set_type(type_b, {
 types_info();
 ```
 
-> Return value in JSON format
+> Example return value in JSON format
 
 ```json
-{
-    "A": {
-        "b": "B"
+[
+    {
+        "type_id": 0,
+        "name": "A",
+        "fields": [
+            ["b", "B"]
+        ]
     },
-    "B": {
-        "a": "A"
+    {
+        "type_id": 1,
+        "name": "B",
+        "fields": [
+            ["a", "A"]
+        ]
     }
-}
+]
 ```

@@ -858,7 +858,7 @@
 	"title": "new_type",
 	"tags": [],
 	"description": "",
-	"content": " Creates a new Type. This function only creates a new type and does not allow you to specify any fields. With the set_type() function you can define the fields for the new type.\nIt is possible to use set_type directly without calling new_type first. However, sometimes you want to cross reference two types so you want both type to exists before calling set_type.\n This function generates an event.\nFunction new_type(type_name)\nArguments    Argument Type Description     type_name string Name of the Type to be created.    Return value The name of the newly created Type.\nExample  This code shows a use case where new_type() is helpful:\n type_a = 'A'; type_b = 'B'; new_type(type_a); new_type(type_b); set_type(type_a, { b: type_b }); set_type(type_b, { a: type_a }); // Return type information types_info();   Return value in JSON format\n { \u0026quot;A\u0026quot;: { \u0026quot;b\u0026quot;: \u0026quot;B\u0026quot; }, \u0026quot;B\u0026quot;: { \u0026quot;a\u0026quot;: \u0026quot;A\u0026quot; } }  "
+	"content": " Creates a new Type. This function only creates a new type and does not allow you to specify any fields. With the set_type() function you can define the fields for the new type.\nIt is possible to use set_type directly without calling new_type first. However, sometimes you want to cross reference two types so you want both type to exists before calling set_type.\n This function generates an event.\nFunction new_type(type_name)\nArguments    Argument Type Description     type_name string Name of the Type to be created.    Return value The name of the newly created Type.\nExample  This code shows a use case where new_type() is helpful:\n type_a = 'A'; type_b = 'B'; new_type(type_a); new_type(type_b); set_type(type_a, { b: type_b }); set_type(type_b, { a: type_a }); // Return type information types_info();   Example return value in JSON format\n [ { \u0026quot;type_id\u0026quot;: 0, \u0026quot;name\u0026quot;: \u0026quot;A\u0026quot;, \u0026quot;fields\u0026quot;: [ [\u0026quot;b\u0026quot;, \u0026quot;B\u0026quot;] ] }, { \u0026quot;type_id\u0026quot;: 1, \u0026quot;name\u0026quot;: \u0026quot;B\u0026quot;, \u0026quot;fields\u0026quot;: [ [\u0026quot;a\u0026quot;, \u0026quot;A\u0026quot;] ] } ]  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/now/",
@@ -942,14 +942,14 @@
 	"title": "type_info",
 	"tags": [],
 	"description": "",
-	"content": " Returns information about the properties of a given Type.\nThis function does not generate an event.\nFunction type_info(type_name)\nArguments    Argument Type Description     type_name str The name of the Type for which the information about the properties has to be returned.    Return value Returns info about the type.\n"
+	"content": " Returns information about a given Type.\n   Value Description     type_id Internal Type ID (can be used to identify types in collection events).   name Type name.   fields Array with arrays containing two strings, the property name and definition.    This function does not generate an event.\nFunction type_info(type_name)\nArguments    Argument Type Description     type_name str The name of the Type for which the information about the properties has to be returned.    Return value Returns info about the type.\nExample  This code shows the output of type_info():\n // Just a type as an example set_type('Book', { title: 'str', year: 'int', }); // Return Type info type_info('Book');   Example return value in JSON format\n { \u0026quot;type_id\u0026quot;: 0, \u0026quot;name\u0026quot;: \u0026quot;Book\u0026quot;, \u0026quot;fields\u0026quot;: [ [\u0026quot;title\u0026quot;, \u0026quot;str\u0026quot;], [\u0026quot;year\u0026quot;, \u0026quot;int\u0026quot;] ] }  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/types_info/",
 	"title": "types_info",
 	"tags": [],
 	"description": "",
-	"content": " Returns information about the properties of all Types within a collection.\nThis function does not generate an event.\nFunction types_info()\nArguments None\nReturn value Types info for all types in the collection.\n"
+	"content": " Returns Type information about all the types within a collection.\nSee the type_info() function documentation for an example of the exposed Type information.\nThis function does not generate an event.\nFunction types_info()\nArguments None\nReturn value List with Type info for all types in the collection.\n"
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/wse/",
