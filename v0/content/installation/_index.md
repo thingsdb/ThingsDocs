@@ -4,20 +4,44 @@ weight: 1
 chapter: false
 ---
 
-## From source (linux)
+## Try for free
 
-Install dependencies
+Get your own **playground** for free at [http://thingsdb.net](http://thingsdb.net).
 
+Or.., build your own ThingsDB by cloning the [GitHub](https://github.com/thingsdb/ThingsDB) project and following one of the description
+
+
+## Build from source (linux)
+
+Install the following dependencies:
+
+ - libuv1
+ - libpcre2
+ - libyajl
+ - libmsgpack (`>=3.2.0`)
+ - libcleri (`>=0.11.0`)
+
+When using Debian/Ubuntu, *libuv1*, *libpcre2* and *libyajl* can be installed using apt:
 ```
 sudo apt-get install -y \
     libuv1-dev \
     libpcre2-dev \
-    libmsgpack-dev \
     libyajl-dev
 ```
 
+At least version `3.2.0` for library `libmsgpack-dev` is required.
 
-At least version `0.11.0` for Library `libcleri` is required.
+> It does not seem to work with `3.0.x` which is currently shipped with Ubuntu
+
+```
+git clone https://github.com/msgpack/msgpack-c.git
+cd msgpack-c
+cmake .
+make
+sudo make install
+```
+
+At least version `0.11.0` for library `libcleri-dev` is required.
 
 ```
 git clone https://github.com/transceptor-technology/libcleri.git
@@ -26,9 +50,7 @@ make
 sudo make install
 ```
 
-
-
-First clone the project
+Next, clone the project
 ```
 git clone https://github.com/thingsdb/ThingsDB.git
 ```

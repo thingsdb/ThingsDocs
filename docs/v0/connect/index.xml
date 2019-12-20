@@ -37,9 +37,10 @@ Use MessagePack if possible since this is the data serialization protocol which 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/connect/python/</guid>
-      <description>Installation Just use pip:
+      <description>Installation The python-thingsdb library requires Python 3.6 or higher.
+ Just use pip:
 pip install python-thingsdb  Or, clone the project and use setup.py:
-python setup.py install  Quick usage import asyncio from thingsdb.client import Client async def hello_world(): client = Client() # replace `localhost` with your ThingsDB server address await client.connect(&#39;localhost&#39;) try: # replace `admin` and `pass` with your username and password # or use a valid token string await client.authenticate(&#39;admin&#39;, &#39;pass&#39;) # perform the hello world code.</description>
+python setup.py install  Quick usage import asyncio from thingsdb.client import Client async def hello_world(): client = Client() # replace `localhost` with your ThingsDB server address await client.connect(&#39;localhost&#39;) try: # replace `admin` and `pass` with your username and password # or use a valid token string await client.</description>
     </item>
     
     <item>
@@ -48,7 +49,10 @@ python setup.py install  Quick usage import asyncio from thingsdb.client import 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/connect/go/</guid>
-      <description>Explain the Go client&amp;hellip;</description>
+      <description> Installation Simple install the package to your $GOPATH with the go tool from shell:
+$ go get github.com/thingsdb/go-thingsdb  Make sure Git is installed on your machine and in your system&amp;rsquo;s PATH.
+More info A more complete description of the Go client can be found in the link below.
+ https://github.com/thingsdb/go-thingsdb#readme  </description>
     </item>
     
   </channel>

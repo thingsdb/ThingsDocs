@@ -11,20 +11,20 @@
     <title>Installation :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1576848646" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1576848646" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1576848646" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1576848646" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1576848646" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1576848646" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1576848646" rel="stylesheet">
-    <link href="/v0/css/theme.css?1576848646" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1576848646" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1576851905" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1576851905" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1576851905" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1576851905" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1576851905" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1576851905" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1576851905" rel="stylesheet">
+    <link href="/v0/css/theme.css?1576851905" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1576851905" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1576848646" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1576851905" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1576848646"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1576851905"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1576848646"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1576848646"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1576851905"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1576851905"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1576848646"></script>
+<script type="text/javascript" src="/v0/js/search.js?1576851905"></script>
 
     
   </div>
@@ -4136,7 +4136,8 @@
 <ul>
 <li>
 <ul>
-<li><a href="#from-source-linux">From source (linux)</a></li>
+<li><a href="#try-for-free">Try for free</a></li>
+<li><a href="#build-from-source-linux">Build from source (linux)</a></li>
 <li><a href="#configuration">Configuration</a></li>
 <li><a href="#add-more-nodes">Add more nodes</a></li>
 </ul></li>
@@ -4168,18 +4169,46 @@
 
 	
 
-<h2 id="from-source-linux">From source (linux)</h2>
+<h2 id="try-for-free">Try for free</h2>
 
-<p>Install dependencies</p>
+<p>Get your own <strong>playground</strong> for free at <a href="http://thingsdb.net">http://thingsdb.net</a>.</p>
+
+<p>Or.., build your own ThingsDB by cloning the <a href="https://github.com/thingsdb/ThingsDB">GitHub</a> project and following one of the description</p>
+
+<h2 id="build-from-source-linux">Build from source (linux)</h2>
+
+<p>Install the following dependencies:</p>
+
+<ul>
+<li>libuv1</li>
+<li>libpcre2</li>
+<li>libyajl</li>
+<li>libmsgpack (<code>&gt;=3.2.0</code>)</li>
+<li>libcleri (<code>&gt;=0.11.0</code>)</li>
+</ul>
+
+<p>When using Debian/Ubuntu, <em>libuv1</em>, <em>libpcre2</em> and <em>libyajl</em> can be installed using apt:</p>
 
 <pre><code>sudo apt-get install -y \
     libuv1-dev \
     libpcre2-dev \
-    libmsgpack-dev \
     libyajl-dev
 </code></pre>
 
-<p>At least version <code>0.11.0</code> for Library <code>libcleri</code> is required.</p>
+<p>At least version <code>3.2.0</code> for library <code>libmsgpack-dev</code> is required.</p>
+
+<blockquote>
+<p>It does not seem to work with <code>3.0.x</code> which is currently shipped with Ubuntu</p>
+</blockquote>
+
+<pre><code>git clone https://github.com/msgpack/msgpack-c.git
+cd msgpack-c
+cmake .
+make
+sudo make install
+</code></pre>
+
+<p>At least version <code>0.11.0</code> for library <code>libcleri-dev</code> is required.</p>
 
 <pre><code>git clone https://github.com/transceptor-technology/libcleri.git
 cd libcleri/Release
@@ -4187,7 +4216,7 @@ make
 sudo make install
 </code></pre>
 
-<p>First clone the project</p>
+<p>Next, clone the project</p>
 
 <pre><code>git clone https://github.com/thingsdb/ThingsDB.git
 </code></pre>
@@ -4236,19 +4265,19 @@ Running on three nodes brings redundancy and ensures the database stays operatio
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1576848646"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1576848646"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1576848646"></script>
-    <script src="/v0/js/jquery.sticky.js?1576848646"></script>
-    <script src="/v0/js/featherlight.min.js?1576848646"></script>
-    <script src="/v0/js/highlight.pack.js?1576848646"></script>
+    <script src="/v0/js/clipboard.min.js?1576851905"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1576851905"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1576851905"></script>
+    <script src="/v0/js/jquery.sticky.js?1576851905"></script>
+    <script src="/v0/js/featherlight.min.js?1576851905"></script>
+    <script src="/v0/js/highlight.pack.js?1576851905"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1576848646"></script>
-    <script src="/v0/js/learn.js?1576848646"></script>
-    <script src="/v0/js/hugo-learn.js?1576848646"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1576851905"></script>
+    <script src="/v0/js/learn.js?1576851905"></script>
+    <script src="/v0/js/hugo-learn.js?1576851905"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1576848646" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1576848646"></script>
+    <link href="/v0/mermaid/mermaid.css?1576851905" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1576851905"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
