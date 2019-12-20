@@ -16,6 +16,6 @@ Make sure [Git](https://git-scm.com/downloads) is installed on your machine and 
 
 ### More info
 
-A more complete description of the Python client can be found in one of the links below.
+A more complete description of the Go client can be found in the link below.
 
 - https://github.com/thingsdb/go-thingsdb#readme
