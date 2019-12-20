@@ -52,5 +52,5 @@ asyncio.get_event_loop().run_until_complete(hello_world())
 
 A more complete description of the Python client can be found in one of the links below.
 
-- https://github.com/thingsdb/ThingsDB/tree/master/connectors/python3#readme
+- https://github.com/thingsdb/python-thingsdb#readme
 - https://pypi.org/project/python-thingsdb/
