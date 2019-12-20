@@ -3,4 +3,19 @@ title: "Go"
 weight: 6
 ---
 
-Explain the Go client...
+### Installation
+
+Simple install the package to your [$GOPATH](https://github.com/golang/go/wiki/GOPATH) with the [go tool](https://golang.org/cmd/go/) from shell:
+
+```shell
+$ go get github.com/thingsdb/go-thingsdb
+```
+
+Make sure [Git](https://git-scm.com/downloads) is installed on your machine and in your system's PATH.
+
+
+### More info
+
+A more complete description of the Python client can be found in one of the links below.
+
+- https://github.com/thingsdb/go-thingsdb#readme
