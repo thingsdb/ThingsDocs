@@ -5,6 +5,10 @@ weight: 5
 
 ### Installation
 
+{{% notice note %}}
+The **python-thingsdb** library requires **Python 3.6** or higher.
+{{% /notice %}}
+
 Just use pip:
 
 ```
