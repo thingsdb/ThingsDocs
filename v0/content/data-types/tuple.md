@@ -1,6 +1,6 @@
 ---
 title: "tuple"
-weight: 76
+weight: 77
 ---
 
 All nested *arrays* are immutable and thus tuples.
@@ -27,6 +27,7 @@ because ThingsDB needs to know which subscribers to update when changes are made
 
 Method | Description
 ------ | -----------
+[choice](..//list/choice) | Returns a random item from a tuple.
 [filter](../list/filter) | Returns a new `list` with elements that pass a given test.
 [find](../list/find) | Returns the first element that pass a given test.
 [findindex](../list/findindex) | Returns the index of the first element that pass a given test.

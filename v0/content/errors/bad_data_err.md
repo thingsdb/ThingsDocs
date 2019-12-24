@@ -1,6 +1,6 @@
 ---
 title: "bad_data_err"
-weight: 185
+weight: 188
 ---
 
 Returns an [error](../../data-types/error) when a request is malformed.

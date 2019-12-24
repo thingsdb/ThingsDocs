@@ -1,9 +1,10 @@
 ---
 title: "pop"
-weight: 41
+weight: 42
 ---
 
 Removes the last element from a [list](../../list) and returns that element.
+
 This method changes the length of the list. The `pop()` method works
 on a `list` type array, but not on a `tuple` since tuples are immutable.
 

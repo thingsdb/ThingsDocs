@@ -307,6 +307,21 @@ Notations    Base Example Description     2 0b1111011 Binary notation starts wit
     </item>
     
     <item>
+      <title>choice</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/choice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/list/choice/</guid>
+      <description>This function returns a pseudo-random item from the list. The list must contain at least one item, otherwise a lookup_err() is raised.
+This function does not generate an event.
+Function array.choice()
+Arguments None
+Return value A pseudo-random item from the list.
+Example  This code shows an example using choice():
+ // Returns either `a`, `b` or `c` [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;].choice();   Example return value in JSON format</description>
+    </item>
+    
+    <item>
       <title>extend</title>
       <link>https://docs.thingsdb.net/v0/data-types/list/extend/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -405,7 +420,8 @@ Example  This code shows an example using map():</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/list/pop/</guid>
-      <description>Removes the last element from a list and returns that element. This method changes the length of the list. The pop() method works on a list type array, but not on a tuple since tuples are immutable.
+      <description>Removes the last element from a list and returns that element.
+This method changes the length of the list. The pop() method works on a list type array, but not on a tuple since tuples are immutable.
 This function generates an event.
 Function list.pop()
 Arguments None
@@ -1406,6 +1422,33 @@ Function raise([error])
 Arguments    Argument Type Description     value error/str (optional) The error to raise.    Return value None
 Example  Some examples on how raise() can be used:
  raise (); // raise a default error &#39;This code is not reached&#39;;  raise (&#39;no licenses left&#39;); // raise with a custom message &#39;This code is not reached&#39;;  raise (value_err()); // raise a value error &#39;This code is not reached&#39;;  </description>
+    </item>
+    
+    <item>
+      <title>rand</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/rand/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/rand/</guid>
+      <description>Returns pseudo-random random number between 0.0 and 1.0.
+Do not use rand() when the purpose is security related since the linear congruential algorithms used by this function is too easy to break.
+ This function does not generate an event.
+Function rand()
+Arguments None
+Return value A pseudo-random float number between 0.0 and 1.0.
+Example  Some examples on how raise() can be used:
+ // Return a pseudo-random number between 0.</description>
+    </item>
+    
+    <item>
+      <title>randint</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/randint/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/randint/</guid>
+      <description>Returns pseudo-random random integer number between a given range.
+The first argument specifies the start of the range and must have a value less than the second argument when specifies the end of the range. The start is inclusive and the end is exclusive, for example: randint(0, 2) will return either 0 or 1.
+Do not use randint() when the purpose is security related since the linear congruential algorithms used by this function is too easy to break.</description>
     </item>
     
     <item>

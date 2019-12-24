@@ -1,6 +1,6 @@
 ---
 title: "num_arguments_err"
-weight: 190
+weight: 193
 ---
 
 Returns an [error](../../data-types/error) when a wrong number of arguments are given.

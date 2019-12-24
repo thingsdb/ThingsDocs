@@ -135,6 +135,10 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/list/choice/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/data-types/list/extend/</loc>
   </url>
   
@@ -500,6 +504,14 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v0/collection-api/raise/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/rand/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/randint/</loc>
   </url>
   
   <url>

@@ -16,6 +16,7 @@ because ThingsDB needs to know which subscribers to update with changes made to 
 
 Method | Description
 ------ | -----------
+[choice](./choice) | Returns a random item from a list.
 [extend](./extend) | Adds an array with items to the end of a list, and returns the new length.
 [filter](./filter) | Returns a new `list` with elements that pass a given test.
 [find](./find) | Returns the first element that pass a given test.
@@ -26,8 +27,8 @@ Method | Description
 [pop](./pop) | Removes the last element from an list and returns that element.
 [push](./push) | Adds new items to the end of an list, and returns the new length.
 [remove](./remove) | Removes the first element that pass a given test and returns that element.
-[splice](./splice) | Determines if a string starts with characters given by another string.
 [sort](./sort) | Returns a new sorted `list`.
+[splice](./splice) | Determines if a string starts with characters given by another string.
 
 {{% notice note %}}
 It is not possible to change an list while the list is in use, for example: \

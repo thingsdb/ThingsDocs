@@ -31,6 +31,7 @@ data-types
     info
     int
     list
+        choice
         extend
         filter
         find
@@ -123,6 +124,8 @@ collection-api
     new_type
     now
     raise
+    rand
+    randint
     refs
     return
     set

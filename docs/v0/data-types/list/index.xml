@@ -11,6 +11,21 @@
     
     
     <item>
+      <title>choice</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/choice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/list/choice/</guid>
+      <description>This function returns a pseudo-random item from the list. The list must contain at least one item, otherwise a lookup_err() is raised.
+This function does not generate an event.
+Function array.choice()
+Arguments None
+Return value A pseudo-random item from the list.
+Example  This code shows an example using choice():
+ // Returns either `a`, `b` or `c` [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;].choice();   Example return value in JSON format</description>
+    </item>
+    
+    <item>
       <title>extend</title>
       <link>https://docs.thingsdb.net/v0/data-types/list/extend/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -109,7 +124,8 @@ Example  This code shows an example using map():</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/list/pop/</guid>
-      <description>Removes the last element from a list and returns that element. This method changes the length of the list. The pop() method works on a list type array, but not on a tuple since tuples are immutable.
+      <description>Removes the last element from a list and returns that element.
+This method changes the length of the list. The pop() method works on a list type array, but not on a tuple since tuples are immutable.
 This function generates an event.
 Function list.pop()
 Arguments None

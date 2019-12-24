@@ -455,6 +455,33 @@ Example  Some examples on how raise() can be used:
     </item>
     
     <item>
+      <title>rand</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/rand/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/rand/</guid>
+      <description>Returns pseudo-random random number between 0.0 and 1.0.
+Do not use rand() when the purpose is security related since the linear congruential algorithms used by this function is too easy to break.
+ This function does not generate an event.
+Function rand()
+Arguments None
+Return value A pseudo-random float number between 0.0 and 1.0.
+Example  Some examples on how raise() can be used:
+ // Return a pseudo-random number between 0.</description>
+    </item>
+    
+    <item>
+      <title>randint</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/randint/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/randint/</guid>
+      <description>Returns pseudo-random random integer number between a given range.
+The first argument specifies the start of the range and must have a value less than the second argument when specifies the end of the range. The start is inclusive and the end is exclusive, for example: randint(0, 2) will return either 0 or 1.
+Do not use randint() when the purpose is security related since the linear congruential algorithms used by this function is too easy to break.</description>
+    </item>
+    
+    <item>
       <title>refs</title>
       <link>https://docs.thingsdb.net/v0/collection-api/refs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

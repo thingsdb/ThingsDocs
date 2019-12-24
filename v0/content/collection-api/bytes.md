@@ -1,6 +1,6 @@
 ---
 title: "bytes"
-weight: 92
+weight: 93
 ---
 
 Convert a value to a byte sequence. If no value is given, an empty byte sequence is returned.
