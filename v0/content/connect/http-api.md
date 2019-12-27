@@ -54,7 +54,7 @@ curl http://127.0.0.1:9210/thingsdb \
 2
 ```
 
-Besides the preferred **token** authentication, the HTTP API has also support for
+Besides the preferred **token** authentication, the HTTP API has also support for **basic** authentication.
 
 > Another *curl* example using *basic* authentication:
 
@@ -74,36 +74,36 @@ curl http://127.0.0.1:9210/node \
 
 ```json
 {
-  "node_id": 0,
-  "version": "0.2.18+debug",
-  "syntax_version": "v0",
-  "msgpack_version": "3.2.0",
-  "libcleri_version": "0.12.0",
-  "libuv_version": "1.30.1",
-  "libpcre2_version": "10.32",
-  "status": "READY",
-  "zone": 0,
-  "log_level": "DEBUG",
-  "hostname": "xjoente",
-  "client_port": 9200,
-  "node_port": 9220,
-  "ip_support": "ALL",
-  "storage_path": "/home/joente/workspace/thingsdb/itest/testdir/tdb0/",
-  "uptime": 9468.000403818,
-  "events_in_queue": 0,
-  "archived_in_memory": 26,
-  "archive_files": 0,
-  "local_stored_event_id": 12,
-  "local_committed_event_id": 38,
-  "global_stored_event_id": 12,
-  "global_committed_event_id": 38,
-  "db_stored_event_id": 12,
-  "next_event_id": 39,
-  "next_thing_id": 5,
-  "cached_names": 3,
-  "http_status_port": "disabled",
-  "http_api_port": 9210,
-  "scheduled_backups": 0,
-  "yajl_version": "2.1.0"
+    "archive_files": 1,
+    "archived_in_memory": 67,
+    "cached_names": 16,
+    "client_port": 9200,
+    "db_stored_event_id": 1,
+    "events_in_queue": 0,
+    "global_committed_event_id": 69,
+    "global_stored_event_id": 2,
+    "hostname": "node",
+    "http_api_port": 9210,
+    "http_status_port": "disabled",
+    "ip_support": "ALL",
+    "libcleri_version": "0.12.0",
+    "libpcre2_version": "10.32",
+    "libuv_version": "1.30.1",
+    "local_committed_event_id": 69,
+    "local_stored_event_id": 2,
+    "log_level": "WARNING",
+    "msgpack_version": "3.2.1",
+    "next_event_id": 70,
+    "next_thing_id": 12,
+    "node_id": 0,
+    "node_port": 9220,
+    "scheduled_backups": 0,
+    "status": "READY",
+    "storage_path": "/var/lib/thingsdb/",
+    "syntax_version": "v0",
+    "uptime": 26567.278152959,
+    "version": "0.3.5",
+    "yajl_version": "2.1.0",
+    "zone": 0
 }
 ```
