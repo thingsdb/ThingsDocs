@@ -33,7 +33,7 @@ encoded = 'YmFzZTY0IGVuY29kZWQgc3RyaW5n';
 data = base64_decode(encoded);
 
 // result is of type bytes
-assert( type(data) == 'bytes');
+assert(type(data) == 'bytes');
 
 // return as string
 str(data);

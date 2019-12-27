@@ -30,7 +30,7 @@ Encoded [str](../../data-types/str) value is returned.
 encoded = base64_encode('base64 encoded string');
 
 // result is of type str
-assert( type(encoded) == 'str');
+assert(type(encoded) == 'str');
 
 // return
 encoded;
