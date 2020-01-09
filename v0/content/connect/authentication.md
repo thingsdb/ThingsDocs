@@ -44,7 +44,7 @@ We can now use this token key to remove the password from user `admin`:
 
 ```bash
 curl http://127.0.0.1:9210/t \
--H "Authorization: TOKEN YyZcvq7BY3w+VgOTvXzTZp" \
+-H "Authorization: Bearer YyZcvq7BY3w+VgOTvXzTZp" \
 -H 'Content-Type: application/json' \
 -d \
 "
