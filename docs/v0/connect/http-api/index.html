@@ -11,20 +11,20 @@
     <title>HTTP API :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1577193944" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1577193944" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1577193944" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1577193944" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1577193944" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1577193944" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1577193944" rel="stylesheet">
-    <link href="/v0/css/theme.css?1577193944" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1577193944" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1578595932" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1578595932" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1578595932" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1578595932" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1578595932" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1578595932" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1578595932" rel="stylesheet">
+    <link href="/v0/css/theme.css?1578595932" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1578595932" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1577193944" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1578595932" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1577193944"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1578595932"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1577193944"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1577193944"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1578595932"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1578595932"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1577193944"></script>
+<script type="text/javascript" src="/v0/js/search.js?1578595932"></script>
 
     
   </div>
@@ -4300,7 +4300,7 @@ In most examples here we use JSON just because it is more readable.</p>
 <pre><code class="language-json">2
 </code></pre>
 
-<p>Besides the preferred <strong>token</strong> authentication, the HTTP API has also support for</p>
+<p>Besides the preferred <strong>token</strong> authentication, the HTTP API has also support for <strong>basic</strong> authentication.</p>
 
 <blockquote>
 <p>Another <em>curl</em> example using <em>basic</em> authentication:</p>
@@ -4322,37 +4322,37 @@ In most examples here we use JSON just because it is more readable.</p>
 </blockquote>
 
 <pre><code class="language-json">{
-  &quot;node_id&quot;: 0,
-  &quot;version&quot;: &quot;0.2.18+debug&quot;,
-  &quot;syntax_version&quot;: &quot;v0&quot;,
-  &quot;msgpack_version&quot;: &quot;3.2.0&quot;,
-  &quot;libcleri_version&quot;: &quot;0.12.0&quot;,
-  &quot;libuv_version&quot;: &quot;1.30.1&quot;,
-  &quot;libpcre2_version&quot;: &quot;10.32&quot;,
-  &quot;status&quot;: &quot;READY&quot;,
-  &quot;zone&quot;: 0,
-  &quot;log_level&quot;: &quot;DEBUG&quot;,
-  &quot;hostname&quot;: &quot;xjoente&quot;,
-  &quot;client_port&quot;: 9200,
-  &quot;node_port&quot;: 9220,
-  &quot;ip_support&quot;: &quot;ALL&quot;,
-  &quot;storage_path&quot;: &quot;/home/joente/workspace/thingsdb/itest/testdir/tdb0/&quot;,
-  &quot;uptime&quot;: 9468.000403818,
-  &quot;events_in_queue&quot;: 0,
-  &quot;archived_in_memory&quot;: 26,
-  &quot;archive_files&quot;: 0,
-  &quot;local_stored_event_id&quot;: 12,
-  &quot;local_committed_event_id&quot;: 38,
-  &quot;global_stored_event_id&quot;: 12,
-  &quot;global_committed_event_id&quot;: 38,
-  &quot;db_stored_event_id&quot;: 12,
-  &quot;next_event_id&quot;: 39,
-  &quot;next_thing_id&quot;: 5,
-  &quot;cached_names&quot;: 3,
-  &quot;http_status_port&quot;: &quot;disabled&quot;,
-  &quot;http_api_port&quot;: 9210,
-  &quot;scheduled_backups&quot;: 0,
-  &quot;yajl_version&quot;: &quot;2.1.0&quot;
+    &quot;archive_files&quot;: 1,
+    &quot;archived_in_memory&quot;: 67,
+    &quot;cached_names&quot;: 16,
+    &quot;client_port&quot;: 9200,
+    &quot;db_stored_event_id&quot;: 1,
+    &quot;events_in_queue&quot;: 0,
+    &quot;global_committed_event_id&quot;: 69,
+    &quot;global_stored_event_id&quot;: 2,
+    &quot;hostname&quot;: &quot;node&quot;,
+    &quot;http_api_port&quot;: 9210,
+    &quot;http_status_port&quot;: &quot;disabled&quot;,
+    &quot;ip_support&quot;: &quot;ALL&quot;,
+    &quot;libcleri_version&quot;: &quot;0.12.0&quot;,
+    &quot;libpcre2_version&quot;: &quot;10.32&quot;,
+    &quot;libuv_version&quot;: &quot;1.30.1&quot;,
+    &quot;local_committed_event_id&quot;: 69,
+    &quot;local_stored_event_id&quot;: 2,
+    &quot;log_level&quot;: &quot;WARNING&quot;,
+    &quot;msgpack_version&quot;: &quot;3.2.1&quot;,
+    &quot;next_event_id&quot;: 70,
+    &quot;next_thing_id&quot;: 12,
+    &quot;node_id&quot;: 0,
+    &quot;node_port&quot;: 9220,
+    &quot;scheduled_backups&quot;: 0,
+    &quot;status&quot;: &quot;READY&quot;,
+    &quot;storage_path&quot;: &quot;/var/lib/thingsdb/&quot;,
+    &quot;syntax_version&quot;: &quot;v0&quot;,
+    &quot;uptime&quot;: 26567.278152959,
+    &quot;version&quot;: &quot;0.3.5&quot;,
+    &quot;yajl_version&quot;: &quot;2.1.0&quot;,
+    &quot;zone&quot;: 0
 }
 </code></pre>
 
@@ -4385,19 +4385,19 @@ In most examples here we use JSON just because it is more readable.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1577193944"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1577193944"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1577193944"></script>
-    <script src="/v0/js/jquery.sticky.js?1577193944"></script>
-    <script src="/v0/js/featherlight.min.js?1577193944"></script>
-    <script src="/v0/js/highlight.pack.js?1577193944"></script>
+    <script src="/v0/js/clipboard.min.js?1578595932"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1578595932"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1578595932"></script>
+    <script src="/v0/js/jquery.sticky.js?1578595932"></script>
+    <script src="/v0/js/featherlight.min.js?1578595932"></script>
+    <script src="/v0/js/highlight.pack.js?1578595932"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1577193944"></script>
-    <script src="/v0/js/learn.js?1577193944"></script>
-    <script src="/v0/js/hugo-learn.js?1577193944"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1578595932"></script>
+    <script src="/v0/js/learn.js?1578595932"></script>
+    <script src="/v0/js/hugo-learn.js?1578595932"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1577193944" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1577193944"></script>
+    <link href="/v0/mermaid/mermaid.css?1578595932" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1578595932"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
