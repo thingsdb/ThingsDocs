@@ -46,10 +46,14 @@ curl --location --request POST 'https://playground.thingsdb.net//Doc' \
 }'
 ```
 
-> Response
+{{% notice note %}}
+[choice()](../../data-types/list/choice) returns a random item from the `.greetings` array)
+{{% /notice %}}
+
+> Possible response
 
 ```json
-2
+"Hi!"
 ```
 
 Besides the preferred **token** authentication, the HTTP API has also support for **basic** authentication.
@@ -82,7 +86,7 @@ field | description
 
 ## Run example
 
-The ThingsDB playground has a collection `Doc` with a [procedure](../../procedure-api) named `multiply` which accepts two arguments and returns the two arguments multiplied.
+The ThingsDB playground has a collection `Doc` with a [procedure](../../procedures-api) named `multiply` which accepts two arguments and returns the two arguments multiplied.
 
 > If you want to create the `multiply` procedure yourself, this is the code:
 
