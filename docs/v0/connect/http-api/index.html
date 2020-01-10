@@ -11,20 +11,20 @@
     <title>HTTP API :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1578595932" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1578595932" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1578595932" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1578595932" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1578595932" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1578595932" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1578595932" rel="stylesheet">
-    <link href="/v0/css/theme.css?1578595932" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1578595932" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1578670262" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1578670262" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1578670262" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1578670262" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1578670262" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1578670262" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1578670262" rel="stylesheet">
+    <link href="/v0/css/theme.css?1578670262" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1578670262" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1578595932" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1578670262" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1578595932"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1578670262"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1578595932"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1578595932"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1578670262"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1578670262"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1578595932"></script>
+<script type="text/javascript" src="/v0/js/search.js?1578670262"></script>
 
     
   </div>
@@ -368,6 +368,25 @@
       <li data-nav-id="/v0/overview/scopes/" title="Scopes" class="dd-item ">
         <a href="/v0/overview/scopes/">
         Scopes
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/overview/collections/" title="Collections" class="dd-item ">
+        <a href="/v0/overview/collections/">
+        Collections
         
         </a>
     </li>
@@ -4202,6 +4221,8 @@
 <li><a href="#headers">Headers</a></li>
 <li><a href="#query-request">Query request</a></li>
 <li><a href="#query-example">Query example</a></li>
+<li><a href="#run-request">Run request</a></li>
+<li><a href="#run-example">Run example</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -4279,18 +4300,16 @@ In most examples here we use JSON just because it is more readable.</p>
 <h2 id="query-example">Query example</h2>
 
 <blockquote>
-<p>Example using <em>curl</em> with <em>token</em> authentication:</p>
+<p>Example using <em>curl</em> with <em>token</em> authentication: (using a playground collection <code>Doc</code>)</p>
 </blockquote>
 
-<pre><code class="language-bash">curl http://127.0.0.1:9210/thingsdb \
--H &quot;Authorization: TOKEN RzDFlsoucQfDqrwrfGGEtc&quot; \
--H 'Content-Type: application/json' \
--d \
-&quot;
-{
-    \&quot;type\&quot;: \&quot;query\&quot;,
-    \&quot;code\&quot;: \&quot;1 + 1;\&quot;
-}&quot;
+<pre><code class="language-bash">curl --location --request POST 'https://playground.thingsdb.net//Doc' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer qF1OWst6YzUDEA/YcmZT6K' \
+--data-raw '{
+	&quot;type&quot;: &quot;query&quot;,
+	&quot;code&quot;: &quot;.greetings.choice();&quot;
+}'
 </code></pre>
 
 <blockquote>
@@ -4303,57 +4322,83 @@ In most examples here we use JSON just because it is more readable.</p>
 <p>Besides the preferred <strong>token</strong> authentication, the HTTP API has also support for <strong>basic</strong> authentication.</p>
 
 <blockquote>
-<p>Another <em>curl</em> example using <em>basic</em> authentication:</p>
+<p>Another <em>curl</em> example using <em>basic</em> authentication using user <code>Doc</code> with password <code>pass</code>:</p>
 </blockquote>
 
-<pre><code class="language-bash">curl http://127.0.0.1:9210/node \
---user admin:pass \
--H 'Content-Type: application/json' \
--d \
-&quot;
-{
-    \&quot;type\&quot;: \&quot;query\&quot;,
-    \&quot;code\&quot;: \&quot;node_info();\&quot;
-}&quot;
+<pre><code class="language-bash">curl --location --request POST 'https://playground.thingsdb.net//Doc' \
+--header 'Content-Type: application/json' \
+--user Doc:pass \
+--data-raw '{
+	&quot;type&quot;: &quot;query&quot;,
+	&quot;code&quot;: &quot;1 + 1;&quot;
+}'
 </code></pre>
 
 <blockquote>
 <p>Example response:</p>
 </blockquote>
 
-<pre><code class="language-json">{
-    &quot;archive_files&quot;: 1,
-    &quot;archived_in_memory&quot;: 67,
-    &quot;cached_names&quot;: 16,
-    &quot;client_port&quot;: 9200,
-    &quot;db_stored_event_id&quot;: 1,
-    &quot;events_in_queue&quot;: 0,
-    &quot;global_committed_event_id&quot;: 69,
-    &quot;global_stored_event_id&quot;: 2,
-    &quot;hostname&quot;: &quot;node&quot;,
-    &quot;http_api_port&quot;: 9210,
-    &quot;http_status_port&quot;: &quot;disabled&quot;,
-    &quot;ip_support&quot;: &quot;ALL&quot;,
-    &quot;libcleri_version&quot;: &quot;0.12.0&quot;,
-    &quot;libpcre2_version&quot;: &quot;10.32&quot;,
-    &quot;libuv_version&quot;: &quot;1.30.1&quot;,
-    &quot;local_committed_event_id&quot;: 69,
-    &quot;local_stored_event_id&quot;: 2,
-    &quot;log_level&quot;: &quot;WARNING&quot;,
-    &quot;msgpack_version&quot;: &quot;3.2.1&quot;,
-    &quot;next_event_id&quot;: 70,
-    &quot;next_thing_id&quot;: 12,
-    &quot;node_id&quot;: 0,
-    &quot;node_port&quot;: 9220,
-    &quot;scheduled_backups&quot;: 0,
-    &quot;status&quot;: &quot;READY&quot;,
-    &quot;storage_path&quot;: &quot;/var/lib/thingsdb/&quot;,
-    &quot;syntax_version&quot;: &quot;v0&quot;,
-    &quot;uptime&quot;: 26567.278152959,
-    &quot;version&quot;: &quot;0.3.5&quot;,
-    &quot;yajl_version&quot;: &quot;2.1.0&quot;,
-    &quot;zone&quot;: 0
-}
+<pre><code class="language-json">2
+</code></pre>
+
+<h2 id="run-request">Run request</h2>
+
+<table>
+<thead>
+<tr>
+<th>field</th>
+<th>description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td>Required and must be <code>run</code> for a run request.</td>
+</tr>
+
+<tr>
+<td><code>procedure</code></td>
+<td>Name of the procedure to run.</td>
+</tr>
+
+<tr>
+<td><code>args</code></td>
+<td>Array with arguments for the procedure.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="run-example">Run example</h2>
+
+<p>The ThingsDB playground has a collection <code>Doc</code> with a <a href="../../procedure-api">procedure</a> named <code>multiply</code> which accepts two arguments and returns the two arguments multiplied.</p>
+
+<blockquote>
+<p>If you want to create the <code>multiply</code> procedure yourself, this is the code:</p>
+</blockquote>
+
+<pre><code class="language-thingsdb,should_pass">new_procedure('multiply', |a, b| a*b);
+</code></pre>
+
+<blockquote>
+<p>Example using the playground:</p>
+</blockquote>
+
+<pre><code class="language-bash">curl --location --request POST 'https://playground.thingsdb.net//Doc' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer qF1OWst6YzUDEA/YcmZT6K' \
+--data-raw '{
+	&quot;type&quot;: &quot;run&quot;,
+	&quot;procedure&quot;: &quot;multiply&quot;,
+	&quot;args&quot;: [6, 7]
+}'
+</code></pre>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+
+<pre><code class="language-json">42
 </code></pre>
 
 
@@ -4385,19 +4430,19 @@ In most examples here we use JSON just because it is more readable.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1578595932"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1578595932"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1578595932"></script>
-    <script src="/v0/js/jquery.sticky.js?1578595932"></script>
-    <script src="/v0/js/featherlight.min.js?1578595932"></script>
-    <script src="/v0/js/highlight.pack.js?1578595932"></script>
+    <script src="/v0/js/clipboard.min.js?1578670262"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1578670262"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1578670262"></script>
+    <script src="/v0/js/jquery.sticky.js?1578670262"></script>
+    <script src="/v0/js/featherlight.min.js?1578670262"></script>
+    <script src="/v0/js/highlight.pack.js?1578670262"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1578595932"></script>
-    <script src="/v0/js/learn.js?1578595932"></script>
-    <script src="/v0/js/hugo-learn.js?1578595932"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1578670262"></script>
+    <script src="/v0/js/learn.js?1578670262"></script>
+    <script src="/v0/js/hugo-learn.js?1578670262"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1578595932" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1578595932"></script>
+    <link href="/v0/mermaid/mermaid.css?1578670262" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1578670262"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

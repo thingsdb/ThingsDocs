@@ -1,6 +1,6 @@
 ---
 title: "forbidden_err"
-weight: 189
+weight: 190
 ---
 
 Returns an [error](../../data-types/error) when the client or user is missing the required privileges.

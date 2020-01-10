@@ -1,6 +1,6 @@
 ---
 title: "type_info"
-weight: 138
+weight: 139
 ---
 
 Returns information about a given [Type](../../data-types/type).

@@ -34,18 +34,16 @@ field | description
 
 ## Query example
 
-> Example using *curl* with *token* authentication:
+> Example using *curl* with *token* authentication: (using a playground collection `Doc`)
 
 ```bash
-curl http://127.0.0.1:9210/thingsdb \
--H "Authorization: TOKEN RzDFlsoucQfDqrwrfGGEtc" \
--H 'Content-Type: application/json' \
--d \
-"
-{
-    \"type\": \"query\",
-    \"code\": \"1 + 1;\"
-}"
+curl --location --request POST 'https://playground.thingsdb.net//Doc' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer qF1OWst6YzUDEA/YcmZT6K' \
+--data-raw '{
+	"type": "query",
+	"code": ".greetings.choice();"
+}'
 ```
 
 > Response
@@ -56,54 +54,57 @@ curl http://127.0.0.1:9210/thingsdb \
 
 Besides the preferred **token** authentication, the HTTP API has also support for **basic** authentication.
 
-> Another *curl* example using *basic* authentication:
+> Another *curl* example using *basic* authentication using user `Doc` with password `pass`:
 
 ```bash
-curl http://127.0.0.1:9210/node \
---user admin:pass \
--H 'Content-Type: application/json' \
--d \
-"
-{
-    \"type\": \"query\",
-    \"code\": \"node_info();\"
-}"
+curl --location --request POST 'https://playground.thingsdb.net//Doc' \
+--header 'Content-Type: application/json' \
+--user Doc:pass \
+--data-raw '{
+	"type": "query",
+	"code": "1 + 1;"
+}'
 ```
 
 > Example response:
 
 ```json
-{
-    "archive_files": 1,
-    "archived_in_memory": 67,
-    "cached_names": 16,
-    "client_port": 9200,
-    "db_stored_event_id": 1,
-    "events_in_queue": 0,
-    "global_committed_event_id": 69,
-    "global_stored_event_id": 2,
-    "hostname": "node",
-    "http_api_port": 9210,
-    "http_status_port": "disabled",
-    "ip_support": "ALL",
-    "libcleri_version": "0.12.0",
-    "libpcre2_version": "10.32",
-    "libuv_version": "1.30.1",
-    "local_committed_event_id": 69,
-    "local_stored_event_id": 2,
-    "log_level": "WARNING",
-    "msgpack_version": "3.2.1",
-    "next_event_id": 70,
-    "next_thing_id": 12,
-    "node_id": 0,
-    "node_port": 9220,
-    "scheduled_backups": 0,
-    "status": "READY",
-    "storage_path": "/var/lib/thingsdb/",
-    "syntax_version": "v0",
-    "uptime": 26567.278152959,
-    "version": "0.3.5",
-    "yajl_version": "2.1.0",
-    "zone": 0
-}
+2
+```
+
+## Run request
+
+field | description
+----- | -----------
+`type` | Required and must be `run` for a run request.
+`procedure` | Name of the procedure to run.
+`args` | Array with arguments for the procedure.
+
+## Run example
+
+The ThingsDB playground has a collection `Doc` with a [procedure](../../procedure-api) named `multiply` which accepts two arguments and returns the two arguments multiplied.
+
+> If you want to create the `multiply` procedure yourself, this is the code:
+
+```thingsdb,should_pass
+new_procedure('multiply', |a, b| a*b);
+```
+
+> Example using the playground:
+
+```bash
+curl --location --request POST 'https://playground.thingsdb.net//Doc' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer qF1OWst6YzUDEA/YcmZT6K' \
+--data-raw '{
+	"type": "run",
+	"procedure": "multiply",
+	"args": [6, 7]
+}'
+```
+
+> Response
+
+```json
+42
 ```

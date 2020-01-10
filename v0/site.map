@@ -12,6 +12,7 @@ connect
         error-response
 overview
     scopes
+    collections
     names
     properties
     variable

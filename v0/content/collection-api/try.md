@@ -1,6 +1,6 @@
 ---
 title: "try"
-weight: 135
+weight: 136
 ---
 
 Try a statement and if the statement fails with an error, then the error is returned.

@@ -1,6 +1,6 @@
 ---
 title: "str"
-weight: 57
+weight: 58
 ---
 
 This is the `string` type of ThingsDB. A value of type `str` *should* contain valid UTF-8 characters. This

@@ -1,6 +1,6 @@
 ---
 title: "del_token"
-weight: 159
+weight: 160
 ---
 
 Delete a token.

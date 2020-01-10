@@ -1,6 +1,6 @@
 ---
 title: "Events"
-weight: 18
+weight: 19
 ---
 
 When a query uses a statement which makes a change to ThingsDB, then internally ThingsDB will create an *event* to apply these changes.

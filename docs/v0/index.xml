@@ -131,6 +131,15 @@ Serializing the above using MessagePack results in the following 11 bytes:</desc
     </item>
     
     <item>
+      <title>Collections</title>
+      <link>https://docs.thingsdb.net/v0/overview/collections/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/overview/collections/</guid>
+      <description>Each collection can be thought of as an object to which properties can be assigned. We call such an object a Thing. To access something in the collection, all you need is to start with a . (dot), followed by a function or property name. Another way to access the collection is to use the collection ID. All things which are stored in ThingsDB get an unique ID. Since the collection root is also a Thing, it has it&amp;rsquo;s own id.</description>
+    </item>
+    
+    <item>
       <title>Names</title>
       <link>https://docs.thingsdb.net/v0/overview/names/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
