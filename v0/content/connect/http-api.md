@@ -39,7 +39,7 @@ field | description
 ```bash
 curl --location --request POST 'https://playground.thingsdb.net//Doc' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Bearer qF1OWst6YzUDEA/YcmZT6K' \
+--header 'Authorization: Bearer Fai6NmH7QYxA6WLYPdtgcy' \
 --data-raw '{
 	"type": "query",
 	"code": ".greetings.choice();"
@@ -99,7 +99,7 @@ new_procedure('multiply', |a, b| a*b);
 ```bash
 curl --location --request POST 'https://playground.thingsdb.net//Doc' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Bearer qF1OWst6YzUDEA/YcmZT6K' \
+--header 'Authorization: Bearer Fai6NmH7QYxA6WLYPdtgcy' \
 --data-raw '{
 	"type": "run",
 	"name": "multiply",
