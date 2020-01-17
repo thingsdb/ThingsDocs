@@ -57,6 +57,7 @@ type_info('Book');
 {
     "type_id": 0,
     "created_at": 1579175900,
+    "modified_at": 1579175900,
     "name": "Book",
     "fields": [
         ["title", "str"],
