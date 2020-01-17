@@ -81,7 +81,7 @@ curl --location --request POST 'https://playground.thingsdb.net//Doc' \
 field | description
 ----- | -----------
 `type` | Required and must be `run` for a run request.
-`procedure` | Name of the procedure to run.
+`name` | Name of the procedure to run.
 `args` | Array with arguments for the procedure.
 
 ## Run example
@@ -102,7 +102,7 @@ curl --location --request POST 'https://playground.thingsdb.net//Doc' \
 --header 'Authorization: Bearer qF1OWst6YzUDEA/YcmZT6K' \
 --data-raw '{
 	"type": "run",
-	"procedure": "multiply",
+	"name": "multiply",
 	"args": [6, 7]
 }'
 ```
