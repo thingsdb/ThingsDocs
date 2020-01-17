@@ -17,7 +17,7 @@
       
       <guid>https://docs.thingsdb.net/v0/node-api/backup_info/</guid>
       <description>Returns information about a specific scheduled backup.
-   Value Description     file_template Backup file template.   id Backup ID.   next_run Only available when the backup job is scheduled to run. Contains a string with date/time for the next planned schedule, or pending when the backup is scheduled to start.   repeat Only available when the backup will repeat. Contains an integer value representing the repeat time in seconds.</description>
+   Value Description     created_at Time Stamp when the backup schedule is created.   file_template Backup file template.   id Backup ID.   next_run Only available when the backup job is scheduled to run. Contains a string with date/time for the next planned schedule, or pending when the backup is scheduled to start.   repeat Only available when the backup will repeat.</description>
     </item>
     
     <item>

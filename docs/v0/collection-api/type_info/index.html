@@ -11,20 +11,20 @@
     <title>type_info :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1578670689" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1578670689" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1578670689" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1578670689" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1578670689" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1578670689" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1578670689" rel="stylesheet">
-    <link href="/v0/css/theme.css?1578670689" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1578670689" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1579250724" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1579250724" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1579250724" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1579250724" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1579250724" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1579250724" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1579250724" rel="stylesheet">
+    <link href="/v0/css/theme.css?1579250724" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1579250724" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1578670689" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1579250724" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1578670689"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1579250724"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1578670689"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1578670689"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1579250724"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1579250724"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1578670689"></script>
+<script type="text/javascript" src="/v0/js/search.js?1579250724"></script>
 
     
   </div>
@@ -4265,21 +4265,38 @@
 
 <tbody>
 <tr>
-<td>type_id</td>
+<td><code>type_id</code></td>
 <td>Internal Type ID <em>(can be used to identify types in collection events)</em>.</td>
 </tr>
 
 <tr>
-<td>name</td>
+<td><code>created_at</code></td>
+<td><a href="https://wikipedia.org/wiki/Unix_time">Time Stamp</a> when the type is created.</td>
+</tr>
+
+<tr>
+<td><code>modified_at</code></td>
+<td><a href="https://wikipedia.org/wiki/Unix_time">Time Stamp</a> when the type is last modified or <code>nil</code> if never modified.</td>
+</tr>
+
+<tr>
+<td><code>name</code></td>
 <td>Type name.</td>
 </tr>
 
 <tr>
-<td>fields</td>
+<td><code>fields</code></td>
 <td>Array with arrays containing two strings, the property name and definition.</td>
 </tr>
 </tbody>
 </table>
+
+
+<div class="notices note" ><p>The <code>modified_at</code> time stamp is initially set to <code>nil</code> when the type is created using the <a href="../new_type">new_type(..)</a> function.
+It will be updated with a time stamp after modifying the type with either the <a href="../set_type">set_type(..)</a> or the <a href="../mod_type">mod_type(..)</a> function.
+When the type is created with <a href="../set_type">set_type(..)</a>, then the <code>modified_at</code> property will be equal to <code>created_at</code>.</p>
+</div>
+
 
 <p>This function does <em>not</em> generate an <a href="../../overview/events">event</a>.</p>
 
@@ -4317,7 +4334,7 @@
 <p>This code shows the output of <strong><em>type_info()</em></strong>:</p>
 </blockquote>
 
-<pre><code class="language-thingsdb,json_response">// Just a type as an example
+<pre><code class="language-thingsdb,should_pass">// Just a type as an example
 set_type('Book', {
     title: 'str',
     year: 'int',
@@ -4333,6 +4350,7 @@ type_info('Book');
 
 <pre><code class="language-json">{
     &quot;type_id&quot;: 0,
+    &quot;created_at&quot;: 1579175900,
     &quot;name&quot;: &quot;Book&quot;,
     &quot;fields&quot;: [
         [&quot;title&quot;, &quot;str&quot;],
@@ -4370,19 +4388,19 @@ type_info('Book');
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1578670689"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1578670689"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1578670689"></script>
-    <script src="/v0/js/jquery.sticky.js?1578670689"></script>
-    <script src="/v0/js/featherlight.min.js?1578670689"></script>
-    <script src="/v0/js/highlight.pack.js?1578670689"></script>
+    <script src="/v0/js/clipboard.min.js?1579250724"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1579250724"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1579250724"></script>
+    <script src="/v0/js/jquery.sticky.js?1579250724"></script>
+    <script src="/v0/js/featherlight.min.js?1579250724"></script>
+    <script src="/v0/js/highlight.pack.js?1579250724"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1578670689"></script>
-    <script src="/v0/js/learn.js?1578670689"></script>
-    <script src="/v0/js/hugo-learn.js?1578670689"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1579250724"></script>
+    <script src="/v0/js/learn.js?1579250724"></script>
+    <script src="/v0/js/hugo-learn.js?1579250724"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1578670689" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1578670689"></script>
+    <link href="/v0/mermaid/mermaid.css?1579250724" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1579250724"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
