@@ -37,6 +37,7 @@ collection_info('stuff');
 ```json
 {
     "collection_id": 782,
+    "created_at": 1579175900,
     "name": "stuff",
     "things": 61352
 }

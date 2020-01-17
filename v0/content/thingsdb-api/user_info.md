@@ -39,7 +39,7 @@ user_info();
 
 > Example output in JSON format:
 
-```
+```json
 {
     "access": [
         {
@@ -55,10 +55,12 @@ user_info();
             "scope": "@collection:stuff"
         }
     ],
+    "created_at": 1573981254,
     "has_password": true,
     "name": "admin",
     "tokens": [
         {
+            "created_on": "2019-11-17 09:25:36Z",
             "expiration_time": "2020-11-17 09:25:36Z",
             "key": "QpVmHOsfQaKKpjpOkW0SUt",
             "status": "OK"

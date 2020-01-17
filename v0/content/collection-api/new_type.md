@@ -33,7 +33,7 @@ The name of the newly created Type.
 
 > This code shows a use case where ***new_type()*** is helpful:
 
-```thingsdb,json_response
+```thingsdb,should_pass
 type_a = 'A';
 type_b = 'B';
 
@@ -58,6 +58,8 @@ types_info();
 [
     {
         "type_id": 0,
+        "created_at": 1579250574,
+        "modified_at": 1579250574,
         "name": "A",
         "fields": [
             ["b", "B"]
@@ -65,6 +67,8 @@ types_info();
     },
     {
         "type_id": 1,
+        "created_at": 1579250574,
+        "modified_at": 1579250574,
         "name": "B",
         "fields": [
             ["a", "A"]

@@ -7,11 +7,12 @@ Returns information about a procedure.
 
 Value | Description
 ------- | -----------
-arguments | Array with positional argument names.
-definition | Closure definition. *(Only available with `MODIFY` privileges)*
-doc | Doc string of the closure in the procedure.
-name | Name of the procedure.
-with_side_effects | Boolean value which indicates if this procedure has side effects.
+`arguments` | Array with positional argument names.
+`created_at` | [Time Stamp](https://wikipedia.org/wiki/Unix_time) when the procedure is created.
+`definition` | Closure definition. *(Only available with `MODIFY` privileges)*
+`doc` | Doc string of the closure in the procedure.
+`name` | Name of the procedure.
+`with_side_effects` | Boolean value which indicates if this procedure has side effects.
 
 This function does *not* generate an [event](../../overview/events).
 
@@ -33,7 +34,7 @@ Returns [info](../../data-types/info) about a given procedure.
 
 > Create a new procedure `add_one`:
 
-```thingsdb,json_response
+```thingsdb,should_pass
 new_procedure('add_one', |x| {
     "Adds one to a given value";
     x + 1;
@@ -50,6 +51,7 @@ procedure_info('add_one');
     "arguments": [
         "x"
     ],
+    "created_at": 1579175900,
     "definition": "|x|{\"Adds one to a given value\";x+1;}",
     "doc": "Adds one to a given value",
     "name": "add_one",

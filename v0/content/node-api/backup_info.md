@@ -8,6 +8,7 @@ Returns information about a specific scheduled backup.
 
 Value | Description
 ------- | -----------
+`created_at` | [Time Stamp](https://wikipedia.org/wiki/Unix_time) when the backup schedule is created.
 `file_template` | Backup [file template](../new_backup#file-template).
 `id` | Backup ID.
 `next_run` | Only available when the backup job is scheduled to run. Contains a [string](../../data-types/str) with date/time for the next planned schedule, or *pending* when the backup is scheduled to start.
@@ -43,6 +44,7 @@ backup_info(0);
 
 ```json
 {
+    "created_at": 1579175900,
     "file_template": "/var/backup/thingsdb_{DATE}{TIME}.tar.gz",
     "id": 0,
     "next_run": "2019-12-10 23:00:00Z",
