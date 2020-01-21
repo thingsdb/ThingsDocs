@@ -2128,6 +2128,63 @@ Example  Example code using run:
     </item>
     
     <item>
+      <title>node-status</title>
+      <link>https://docs.thingsdb.net/v0/watching/node-status/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/watching/node-status/</guid>
+      <description>The body of a Node Status notification contains only a string value. This string may be one of the following:
+   String Description     AWAY_SOON The node will enter away mode in a few seconds. Unless you really want to act on this state, this notification can be ignored.   AWAY The node is in away mode. Unless you really want to act on this state, this notification can be ignored.</description>
+    </item>
+    
+    <item>
+      <title>on-init</title>
+      <link>https://docs.thingsdb.net/v0/watching/on-init/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/watching/on-init/</guid>
+      <description>This notification will be pushed once for each thing which is added to the watch list.
+ Example on-init notification in JSON format:
+ { &amp;quot;event&amp;quot;: 123, &amp;quot;thing&amp;quot;: { &amp;quot;#&amp;quot;: 42, &amp;quot;name&amp;quot;: &amp;quot;Iris&amp;quot; } }  If the thing is actually a collection, then the init notification also contains all types and procedures inside the collection.
+ Example on-init notification for a collection in JSON format:
+ { &amp;quot;event&amp;quot;: 123, &amp;quot;thing&amp;quot;: { &amp;quot;#&amp;quot;: 3 }, &amp;quot;types&amp;quot;: [ { &amp;quot;type_id&amp;quot;: 1, &amp;quot;name&amp;quot;: &amp;quot;Sample&amp;quot;, &amp;quot;created_at&amp;quot;: 1579592122, &amp;quot;modified_at&amp;quot;: 1579592122, &amp;quot;fields&amp;quot;: [ [&amp;quot;name&amp;quot;, &amp;quot;str?</description>
+    </item>
+    
+    <item>
+      <title>on-update</title>
+      <link>https://docs.thingsdb.net/v0/watching/on-update/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/watching/on-update/</guid>
+      <description>An update notification is pushed when a thing which you are watching, is updated. If the thing contains other things, then these need to be watched separate to receive push notifications when they are changed.
+A not
+{ &amp;quot;#&amp;quot;: 3, &amp;quot;event&amp;quot;: 123, &amp;quot;jobs&amp;quot;: [ ... ] }     Job Target Description     splice thing    new_procedure collection A new procedure is added to the collection.</description>
+    </item>
+    
+    <item>
+      <title>on-delete</title>
+      <link>https://docs.thingsdb.net/v0/watching/on-delete/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/watching/on-delete/</guid>
+      <description>A delete notification will be pushed as soon as a thing which you are watching, is removed from ThingsDB.
+If this notification is not received when expected, there might exist circular references to the removed thing. In this case you have to wait until garbage collection has cleaned the thing from ThingsDB. This is done when the node is in away mode.
+  Example watch delete notification in JSON format:</description>
+    </item>
+    
+    <item>
+      <title>warning</title>
+      <link>https://docs.thingsdb.net/v0/watching/warning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/watching/warning/</guid>
+      <description>ThingsDB might send a warning message to a client. The warn_code can be used to determine the warning type.
+ThingsDB might push one of the following waning codes:
+   Code Description     1 This warning is pushed after attempting to watch a thing which does not exists in the collection.     Example warning notification in JSON format:
+ { &amp;quot;warn_code&amp;quot;: 1, &amp;quot;warn_msg&amp;quot;: &amp;quot;failed to watch thing .</description>
+    </item>
+    
+    <item>
       <title>assert_err</title>
       <link>https://docs.thingsdb.net/v0/errors/assert_err/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

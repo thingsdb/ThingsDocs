@@ -6,7 +6,7 @@ chapter: false
 
 ## Try for free
 
-Get your own **playground** for free at [http://thingsdb.net](http://thingsdb.net).
+Get your own **playground** for free at [https://thingsdb.net](https://thingsdb.net).
 
 Or.., build your own ThingsDB by cloning the [GitHub](https://github.com/thingsdb/ThingsDB) project and following one of the description
 
@@ -18,7 +18,6 @@ Install the following dependencies:
  - libuv1
  - libpcre2
  - libyajl
- - libmsgpack (`>=3.2.0`)
  - libcleri (`>=0.11.0`)
 
 When using Debian/Ubuntu, *libuv1*, *libpcre2* and *libyajl* can be installed using apt:
@@ -27,18 +26,6 @@ sudo apt-get install -y \
     libuv1-dev \
     libpcre2-dev \
     libyajl-dev
-```
-
-At least version `3.2.0` for library `libmsgpack-dev` is required.
-
-> It does not seem to work with `3.0.x` which is currently shipped with Ubuntu
-
-```
-git clone https://github.com/msgpack/msgpack-c.git
-cd msgpack-c
-cmake .
-make
-sudo make install
 ```
 
 At least version `0.11.0` for library `libcleri-dev` is required.
@@ -63,6 +50,22 @@ make
 ## Configuration
 
 ThingsDB can start with a configuration file and/or with environment variable.
+
+Variable | Default | Description
+-------- | ------- | -----------
+`THINGSDB_LISTEN_CLIENT_PORT` | `9200` | Listen on this TCP port for client socket connections.
+`THINGSDB_BIND_CLIENT_ADDR` | `0.0.0.0` | Bind client connections to this address. This may also be an IPv6 address like `::`.
+`THINGSDB_LISTEN_NODE_PORT` | `9210` | Listen on this TCP port for node connections.
+`THINGSDB_BIND_NODE_ADDR` | `0.0.0.0` | Bind node connections to this address. This may also be an IPv6 address like `::`.
+`THINGSDB_IP_SUPPORT` | `ALL` | Listen to IPv4 (`IPV4ONLY`), IPv6 (`IPV6ONLY`) or both (`ALL`) addresses.
+`THINGSDB_STORAGE_PATH` | *depends* | Location to store ThingsDB data. The default location depends on the user who is running ThingsDB. (`/var/lib/thingsdb/` for *root* and `~/.thingsdb/` for a normal user).
+`THINGSDB_PIPE_CLIENT_NAME` | *disabled* | Named PIPE for client connections. Support for client PIPE connections will be disabled if the value is not configured.
+`THINGSDB_THRESHOLD_FULL_STORAGE` | `1000` | Threshold for number of events before initiating a full database store.
+`THINGSDB_HTTP_STATUS_PORT` | *disabled* | TCP port for listening to health and readiness checks.
+`THINGSDB_HTTP_API_PORT` | *disabled* | TCP port for listening to HTTP API calls.
+`THINGSDB_ZONE` | `0` | Start node in this zone number. Zones are used for forwarding queries while in *away* mode.
+`THINGSDB_QUERY_DURATION_WARN` | *disabled* | Log a warning message when a query takes more than X second(s).
+`THINGSDB_QUERY_DURATION_ERROR` | *disabled* | Log an error message when a query takes more than X second(s).
 
 
 ## Add more nodes

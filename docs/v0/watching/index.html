@@ -11,20 +11,20 @@
     <title>Watching :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1579268983" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1579268983" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1579268983" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1579268983" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1579268983" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1579268983" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1579268983" rel="stylesheet">
-    <link href="/v0/css/theme.css?1579268983" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1579268983" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1579617478" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1579617478" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1579617478" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1579617478" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1579617478" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1579617478" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1579617478" rel="stylesheet">
+    <link href="/v0/css/theme.css?1579617478" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1579617478" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1579268983" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1579617478" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1579268983"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1579617478"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1579268983"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1579268983"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1579617478"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1579617478"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1579268983"></script>
+<script type="text/javascript" src="/v0/js/search.js?1579617478"></script>
 
     
   </div>
@@ -3848,6 +3848,111 @@
           
       </a>
       
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/watching/node-status/" title="node-status" class="dd-item ">
+        <a href="/v0/watching/node-status/">
+        node-status
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/watching/on-init/" title="on-init" class="dd-item ">
+        <a href="/v0/watching/on-init/">
+        on-init
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/watching/on-update/" title="on-update" class="dd-item ">
+        <a href="/v0/watching/on-update/">
+        on-update
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/watching/on-delete/" title="on-delete" class="dd-item ">
+        <a href="/v0/watching/on-delete/">
+        on-delete
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/watching/warning/" title="warning" class="dd-item ">
+        <a href="/v0/watching/warning/">
+        warning
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
               
     </li>
   
@@ -4185,6 +4290,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -4204,6 +4311,13 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -4211,9 +4325,12 @@
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Watching
+            </h1>
           
 
         
@@ -4221,11 +4338,53 @@
 
 
 
-	
+	<p>Socket connections can receive push notifications from ThingsDB. Push notification do only work when using a socket connection and cannot be used with the HTTP API.</p>
 
-<h1 id="watching">Watching</h1>
+<p>Before notification are received you have to <em>subscribe</em> for changes.</p>
 
-<p>Lorem Ipsum.</p>
+<p>Notifications which may be received by a client:</p>
+
+<table>
+<thead>
+<tr>
+<th>Notification</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><a href="./node-status">NODE_STATUS</a> (<code>0</code>)</td>
+<td>The connected node has changed its status.</td>
+</tr>
+
+<tr>
+<td><a href="./on-init">ON_INIT</a> (<code>1</code>)</td>
+<td>Initial data for the <a href="../data-types/thing">thing</a> which is added to the watch list.</td>
+</tr>
+
+<tr>
+<td><a href="./on-update">ON_UPDATE</a> (<code>2</code>)</td>
+<td>Update on a <a href="../data-types/thing">thing</a> is the watch list.</td>
+</tr>
+
+<tr>
+<td><a href="./on-delete">ON_DELETE</a> (<code>3</code>)</td>
+<td>A <a href="../data-types/thing">thing</a> from the watch list is removed.</td>
+</tr>
+
+<tr>
+<td><a href="./warning">WARNING</a> (<code>4</code>)</td>
+<td>A warning message.</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p>The number <code>0-4</code> represents the package type in a <a href="http://localhost:1313/v0/connect/socket/#package">package header</a>.</p>
+</blockquote>
+
+<p>TODO: explain how to subscribe</p>
 
 
 
@@ -4235,8 +4394,6 @@
 	
 </footer>
 
-        
-            </div> 
         
         </div>
         
@@ -4250,7 +4407,7 @@
             <a class="nav nav-prev" href="/v0/procedures-api/run/" title="run"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/v0/errors/" title="Errors" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/v0/watching/node-status/" title="node-status" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     
     </div>
@@ -4260,19 +4417,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1579268983"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1579268983"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1579268983"></script>
-    <script src="/v0/js/jquery.sticky.js?1579268983"></script>
-    <script src="/v0/js/featherlight.min.js?1579268983"></script>
-    <script src="/v0/js/highlight.pack.js?1579268983"></script>
+    <script src="/v0/js/clipboard.min.js?1579617478"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1579617478"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1579617478"></script>
+    <script src="/v0/js/jquery.sticky.js?1579617478"></script>
+    <script src="/v0/js/featherlight.min.js?1579617478"></script>
+    <script src="/v0/js/highlight.pack.js?1579617478"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1579268983"></script>
-    <script src="/v0/js/learn.js?1579268983"></script>
-    <script src="/v0/js/hugo-learn.js?1579268983"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1579617478"></script>
+    <script src="/v0/js/learn.js?1579617478"></script>
+    <script src="/v0/js/hugo-learn.js?1579617478"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1579268983" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1579268983"></script>
+    <link href="/v0/mermaid/mermaid.css?1579617478" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1579617478"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

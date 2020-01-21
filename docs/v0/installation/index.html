@@ -11,20 +11,20 @@
     <title>Installation :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1579268982" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1579268982" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1579268982" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1579268982" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1579268982" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1579268982" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1579268982" rel="stylesheet">
-    <link href="/v0/css/theme.css?1579268982" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1579268982" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1579617477" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1579617477" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1579617477" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1579617477" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1579617477" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1579617477" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1579617477" rel="stylesheet">
+    <link href="/v0/css/theme.css?1579617477" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1579617477" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1579268982" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1579617477" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1579268982"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1579617477"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1579268982"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1579268982"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1579617477"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1579617477"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1579268982"></script>
+<script type="text/javascript" src="/v0/js/search.js?1579617477"></script>
 
     
   </div>
@@ -3848,6 +3848,111 @@
           
       </a>
       
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/watching/node-status/" title="node-status" class="dd-item ">
+        <a href="/v0/watching/node-status/">
+        node-status
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/watching/on-init/" title="on-init" class="dd-item ">
+        <a href="/v0/watching/on-init/">
+        on-init
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/watching/on-update/" title="on-update" class="dd-item ">
+        <a href="/v0/watching/on-update/">
+        on-update
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/watching/on-delete/" title="on-delete" class="dd-item ">
+        <a href="/v0/watching/on-delete/">
+        on-delete
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/watching/warning/" title="warning" class="dd-item ">
+        <a href="/v0/watching/warning/">
+        warning
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
               
     </li>
   
@@ -4247,7 +4352,7 @@
 
 <h2 id="try-for-free">Try for free</h2>
 
-<p>Get your own <strong>playground</strong> for free at <a href="http://thingsdb.net">http://thingsdb.net</a>.</p>
+<p>Get your own <strong>playground</strong> for free at <a href="https://thingsdb.net">https://thingsdb.net</a>.</p>
 
 <p>Or.., build your own ThingsDB by cloning the <a href="https://github.com/thingsdb/ThingsDB">GitHub</a> project and following one of the description</p>
 
@@ -4259,7 +4364,6 @@
 <li>libuv1</li>
 <li>libpcre2</li>
 <li>libyajl</li>
-<li>libmsgpack (<code>&gt;=3.2.0</code>)</li>
 <li>libcleri (<code>&gt;=0.11.0</code>)</li>
 </ul>
 
@@ -4269,19 +4373,6 @@
     libuv1-dev \
     libpcre2-dev \
     libyajl-dev
-</code></pre>
-
-<p>At least version <code>3.2.0</code> for library <code>libmsgpack-dev</code> is required.</p>
-
-<blockquote>
-<p>It does not seem to work with <code>3.0.x</code> which is currently shipped with Ubuntu</p>
-</blockquote>
-
-<pre><code>git clone https://github.com/msgpack/msgpack-c.git
-cd msgpack-c
-cmake .
-make
-sudo make install
 </code></pre>
 
 <p>At least version <code>0.11.0</code> for library <code>libcleri-dev</code> is required.</p>
@@ -4304,6 +4395,96 @@ make
 <h2 id="configuration">Configuration</h2>
 
 <p>ThingsDB can start with a configuration file and/or with environment variable.</p>
+
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>THINGSDB_LISTEN_CLIENT_PORT</code></td>
+<td><code>9200</code></td>
+<td>Listen on this TCP port for client socket connections.</td>
+</tr>
+
+<tr>
+<td><code>THINGSDB_BIND_CLIENT_ADDR</code></td>
+<td><code>0.0.0.0</code></td>
+<td>Bind client connections to this address. This may also be an IPv6 address like <code>::</code>.</td>
+</tr>
+
+<tr>
+<td><code>THINGSDB_LISTEN_NODE_PORT</code></td>
+<td><code>9210</code></td>
+<td>Listen on this TCP port for node connections.</td>
+</tr>
+
+<tr>
+<td><code>THINGSDB_BIND_NODE_ADDR</code></td>
+<td><code>0.0.0.0</code></td>
+<td>Bind node connections to this address. This may also be an IPv6 address like <code>::</code>.</td>
+</tr>
+
+<tr>
+<td><code>THINGSDB_IP_SUPPORT</code></td>
+<td><code>ALL</code></td>
+<td>Listen to IPv4 (<code>IPV4ONLY</code>), IPv6 (<code>IPV6ONLY</code>) or both (<code>ALL</code>) addresses.</td>
+</tr>
+
+<tr>
+<td><code>THINGSDB_STORAGE_PATH</code></td>
+<td><em>depends</em></td>
+<td>Location to store ThingsDB data. The default location depends on the user who is running ThingsDB. (<code>/var/lib/thingsdb/</code> for <em>root</em> and <code>~/.thingsdb/</code> for a normal user).</td>
+</tr>
+
+<tr>
+<td><code>THINGSDB_PIPE_CLIENT_NAME</code></td>
+<td><em>disabled</em></td>
+<td>Named PIPE for client connections. Support for client PIPE connections will be disabled if the value is not configured.</td>
+</tr>
+
+<tr>
+<td><code>THINGSDB_THRESHOLD_FULL_STORAGE</code></td>
+<td><code>1000</code></td>
+<td>Threshold for number of events before initiating a full database store.</td>
+</tr>
+
+<tr>
+<td><code>THINGSDB_HTTP_STATUS_PORT</code></td>
+<td><em>disabled</em></td>
+<td>TCP port for listening to health and readiness checks.</td>
+</tr>
+
+<tr>
+<td><code>THINGSDB_HTTP_API_PORT</code></td>
+<td><em>disabled</em></td>
+<td>TCP port for listening to HTTP API calls.</td>
+</tr>
+
+<tr>
+<td><code>THINGSDB_ZONE</code></td>
+<td><code>0</code></td>
+<td>Start node in this zone number. Zones are used for forwarding queries while in <em>away</em> mode.</td>
+</tr>
+
+<tr>
+<td><code>THINGSDB_QUERY_DURATION_WARN</code></td>
+<td><em>disabled</em></td>
+<td>Log a warning message when a query takes more than X second(s).</td>
+</tr>
+
+<tr>
+<td><code>THINGSDB_QUERY_DURATION_ERROR</code></td>
+<td><em>disabled</em></td>
+<td>Log an error message when a query takes more than X second(s).</td>
+</tr>
+</tbody>
+</table>
 
 <h2 id="add-more-nodes">Add more nodes</h2>
 
@@ -4341,19 +4522,19 @@ Running on three nodes brings redundancy and ensures the database stays operatio
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1579268982"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1579268982"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1579268982"></script>
-    <script src="/v0/js/jquery.sticky.js?1579268982"></script>
-    <script src="/v0/js/featherlight.min.js?1579268982"></script>
-    <script src="/v0/js/highlight.pack.js?1579268982"></script>
+    <script src="/v0/js/clipboard.min.js?1579617477"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1579617477"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1579617477"></script>
+    <script src="/v0/js/jquery.sticky.js?1579617477"></script>
+    <script src="/v0/js/featherlight.min.js?1579617477"></script>
+    <script src="/v0/js/highlight.pack.js?1579617477"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1579268982"></script>
-    <script src="/v0/js/learn.js?1579268982"></script>
-    <script src="/v0/js/hugo-learn.js?1579268982"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1579617477"></script>
+    <script src="/v0/js/learn.js?1579617477"></script>
+    <script src="/v0/js/hugo-learn.js?1579617477"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1579268982" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1579268982"></script>
+    <link href="/v0/mermaid/mermaid.css?1579617477" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1579617477"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

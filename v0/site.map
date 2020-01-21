@@ -183,6 +183,11 @@ procedures-api
     procedures_info
     run
 watching
+    node-status
+    on-init
+    on-update
+    on-delete
+    warning
 errors
     assert_err
     auth_err

@@ -4,7 +4,7 @@
 	"title": "Installation",
 	"tags": [],
 	"description": "",
-	"content": " Try for free Get your own playground for free at http://thingsdb.net.\nOr.., build your own ThingsDB by cloning the GitHub project and following one of the description\nBuild from source (linux) Install the following dependencies:\n libuv1 libpcre2 libyajl libmsgpack (\u0026gt;=3.2.0) libcleri (\u0026gt;=0.11.0)  When using Debian/Ubuntu, libuv1, libpcre2 and libyajl can be installed using apt:\nsudo apt-get install -y \\ libuv1-dev \\ libpcre2-dev \\ libyajl-dev  At least version 3.2.0 for library libmsgpack-dev is required.\n It does not seem to work with 3.0.x which is currently shipped with Ubuntu\n git clone https://github.com/msgpack/msgpack-c.git cd msgpack-c cmake . make sudo make install  At least version 0.11.0 for library libcleri-dev is required.\ngit clone https://github.com/transceptor-technology/libcleri.git cd libcleri/Release make sudo make install  Next, clone the project\ngit clone https://github.com/thingsdb/ThingsDB.git  cd ThingsDB/Release make  Configuration ThingsDB can start with a configuration file and/or with environment variable.\nAdd more nodes ThingsDB can work with a single node but is designed to work with at least two nodes but three nodes are preferred. Running on three nodes brings redundancy and ensures the database stays operational, even while you for example upgrade ThingsDB to a newer version.\nSee new_node for more information about adding nodes to ThingsDB.\n"
+	"content": " Try for free Get your own playground for free at https://thingsdb.net.\nOr.., build your own ThingsDB by cloning the GitHub project and following one of the description\nBuild from source (linux) Install the following dependencies:\n libuv1 libpcre2 libyajl libcleri (\u0026gt;=0.11.0)  When using Debian/Ubuntu, libuv1, libpcre2 and libyajl can be installed using apt:\nsudo apt-get install -y \\ libuv1-dev \\ libpcre2-dev \\ libyajl-dev  At least version 0.11.0 for library libcleri-dev is required.\ngit clone https://github.com/transceptor-technology/libcleri.git cd libcleri/Release make sudo make install  Next, clone the project\ngit clone https://github.com/thingsdb/ThingsDB.git  cd ThingsDB/Release make  Configuration ThingsDB can start with a configuration file and/or with environment variable.\n   Variable Default Description     THINGSDB_LISTEN_CLIENT_PORT 9200 Listen on this TCP port for client socket connections.   THINGSDB_BIND_CLIENT_ADDR 0.0.0.0 Bind client connections to this address. This may also be an IPv6 address like ::.   THINGSDB_LISTEN_NODE_PORT 9210 Listen on this TCP port for node connections.   THINGSDB_BIND_NODE_ADDR 0.0.0.0 Bind node connections to this address. This may also be an IPv6 address like ::.   THINGSDB_IP_SUPPORT ALL Listen to IPv4 (IPV4ONLY), IPv6 (IPV6ONLY) or both (ALL) addresses.   THINGSDB_STORAGE_PATH depends Location to store ThingsDB data. The default location depends on the user who is running ThingsDB. (/var/lib/thingsdb/ for root and ~/.thingsdb/ for a normal user).   THINGSDB_PIPE_CLIENT_NAME disabled Named PIPE for client connections. Support for client PIPE connections will be disabled if the value is not configured.   THINGSDB_THRESHOLD_FULL_STORAGE 1000 Threshold for number of events before initiating a full database store.   THINGSDB_HTTP_STATUS_PORT disabled TCP port for listening to health and readiness checks.   THINGSDB_HTTP_API_PORT disabled TCP port for listening to HTTP API calls.   THINGSDB_ZONE 0 Start node in this zone number. Zones are used for forwarding queries while in away mode.   THINGSDB_QUERY_DURATION_WARN disabled Log a warning message when a query takes more than X second(s).   THINGSDB_QUERY_DURATION_ERROR disabled Log an error message when a query takes more than X second(s).    Add more nodes ThingsDB can work with a single node but is designed to work with at least two nodes but three nodes are preferred. Running on three nodes brings redundancy and ensures the database stays operational, even while you for example upgrade ThingsDB to a newer version.\nSee new_node for more information about adding nodes to ThingsDB.\n"
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/connect/",
@@ -1292,7 +1292,42 @@
 	"title": "Watching",
 	"tags": [],
 	"description": "",
-	"content": " Watching Lorem Ipsum.\n"
+	"content": "Socket connections can receive push notifications from ThingsDB. Push notification do only work when using a socket connection and cannot be used with the HTTP API.\nBefore notification are received you have to subscribe for changes.\nNotifications which may be received by a client:\n   Notification Description     NODE_STATUS (0) The connected node has changed its status.   ON_INIT (1) Initial data for the thing which is added to the watch list.   ON_UPDATE (2) Update on a thing is the watch list.   ON_DELETE (3) A thing from the watch list is removed.   WARNING (4) A warning message.     The number 0-4 represents the package type in a package header.\n TODO: explain how to subscribe\n"
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/watching/node-status/",
+	"title": "node-status",
+	"tags": [],
+	"description": "",
+	"content": "The body of a Node Status notification contains only a string value. This string may be one of the following:\n   String Description     AWAY_SOON The node will enter away mode in a few seconds. Unless you really want to act on this state, this notification can be ignored.   AWAY The node is in away mode. Unless you really want to act on this state, this notification can be ignored.   READY The node is back to ready state. Unless you really want to act on this state, this notification can be ignored.   SHUTTING_DOWN The node will shutdown in a few seconds. This notification may be used to initiate a connection to another node.   OFFLINE The node will be off-line after this notification is received.     Example node status notification in JSON format:\n \u0026quot;READY\u0026quot;  "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/watching/on-init/",
+	"title": "on-init",
+	"tags": [],
+	"description": "",
+	"content": "This notification will be pushed once for each thing which is added to the watch list.\n Example on-init notification in JSON format:\n { \u0026quot;event\u0026quot;: 123, \u0026quot;thing\u0026quot;: { \u0026quot;#\u0026quot;: 42, \u0026quot;name\u0026quot;: \u0026quot;Iris\u0026quot; } }  If the thing is actually a collection, then the init notification also contains all types and procedures inside the collection.\n Example on-init notification for a collection in JSON format:\n { \u0026quot;event\u0026quot;: 123, \u0026quot;thing\u0026quot;: { \u0026quot;#\u0026quot;: 3 }, \u0026quot;types\u0026quot;: [ { \u0026quot;type_id\u0026quot;: 1, \u0026quot;name\u0026quot;: \u0026quot;Sample\u0026quot;, \u0026quot;created_at\u0026quot;: 1579592122, \u0026quot;modified_at\u0026quot;: 1579592122, \u0026quot;fields\u0026quot;: [ [\u0026quot;name\u0026quot;, \u0026quot;str?\u0026quot;] ] } ], \u0026quot;procedures\u0026quot;: [ { \u0026quot;doc\u0026quot;: \u0026quot;Sample procedure\u0026quot;, \u0026quot;name\u0026quot;: \u0026quot;multiply\u0026quot;, \u0026quot;created_at\u0026quot;: 1579592122, \u0026quot;definition\u0026quot;: \u0026quot;|a,b|{'Sample procedure';a*b;}\u0026quot;, \u0026quot;with_side_effects\u0026quot;: false, \u0026quot;arguments\u0026quot;: [\u0026quot;a\u0026quot;, \u0026quot;b\u0026quot;] } ] }  "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/watching/on-update/",
+	"title": "on-update",
+	"tags": [],
+	"description": "",
+	"content": " An update notification is pushed when a thing which you are watching, is updated. If the thing contains other things, then these need to be watched separate to receive push notifications when they are changed.\nA not\n{ \u0026quot;#\u0026quot;: 3, \u0026quot;event\u0026quot;: 123, \u0026quot;jobs\u0026quot;: [ ... ] }     Job Target Description     splice thing    new_procedure collection A new procedure is added to the collection.    splice // .arr = [\u0026quot;a\u0026quot;, \u0026quot;b\u0026quot;]; .arr.push(\u0026quot;c\u0026quot;, \u0026quot;d\u0026quot;);  { \u0026quot;splice\u0026quot;: { \u0026quot;arr\u0026quot;: [2 , 0, \u0026quot;c\u0026quot;, \u0026quot;d\u0026quot;] } }  new_procedure new_procedure('multiply', |a, b| a*b);  { \u0026quot;new_procedure\u0026quot;: { \u0026quot;name\u0026quot;: \u0026quot;multiply\u0026quot;, \u0026quot;created_at\u0026quot;: 1579601906, \u0026quot;closure\u0026quot;: \u0026quot;|a,b|a*b\u0026quot; } }  "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/watching/on-delete/",
+	"title": "on-delete",
+	"tags": [],
+	"description": "",
+	"content": "A delete notification will be pushed as soon as a thing which you are watching, is removed from ThingsDB.\nIf this notification is not received when expected, there might exist circular references to the removed thing. In this case you have to wait until garbage collection has cleaned the thing from ThingsDB. This is done when the node is in away mode.\n  Example watch delete notification in JSON format:\n { \u0026quot;#\u0026quot;: 42 }  "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/watching/warning/",
+	"title": "warning",
+	"tags": [],
+	"description": "",
+	"content": "ThingsDB might send a warning message to a client. The warn_code can be used to determine the warning type.\nThingsDB might push one of the following waning codes:\n   Code Description     1 This warning is pushed after attempting to watch a thing which does not exists in the collection.     Example warning notification in JSON format:\n { \u0026quot;warn_code\u0026quot;: 1, \u0026quot;warn_msg\u0026quot;: \u0026quot;failed to watch thing ...\u0026quot; }  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/errors/",

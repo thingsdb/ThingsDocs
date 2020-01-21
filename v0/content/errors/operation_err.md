@@ -1,6 +1,6 @@
 ---
 title: "operation_err"
-weight: 195
+weight: 200
 ---
 
 Returns an [error](../../data-types/error) when an operation is not valid within the current context.

@@ -743,6 +743,26 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/watching/node-status/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/watching/on-init/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/watching/on-update/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/watching/on-delete/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/watching/warning/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/errors/</loc>
   </url>
   
