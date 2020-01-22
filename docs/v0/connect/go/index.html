@@ -11,20 +11,20 @@
     <title>Go :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1579617477" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1579617477" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1579617477" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1579617477" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1579617477" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1579617477" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1579617477" rel="stylesheet">
-    <link href="/v0/css/theme.css?1579617477" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1579617477" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1579706716" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1579706716" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1579706716" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1579706716" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1579706716" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1579706716" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1579706716" rel="stylesheet">
+    <link href="/v0/css/theme.css?1579706716" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1579706716" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1579617477" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1579706716" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1579617477"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1579706716"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1579617477"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1579617477"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1579706716"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1579706716"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1579617477"></script>
+<script type="text/javascript" src="/v0/js/search.js?1579706716"></script>
 
     
   </div>
@@ -4326,6 +4326,7 @@
 <li>
 <ul>
 <li><a href="#installation">Installation</a></li>
+<li><a href="#quick-usage">Quick usage</a></li>
 <li><a href="#more-info">More info</a></li>
 </ul></li>
 </ul></li>
@@ -4365,6 +4366,88 @@
 
 <p>Make sure <a href="https://git-scm.com/downloads">Git</a> is installed on your machine and in your system&rsquo;s PATH.</p>
 
+<h3 id="quick-usage">Quick usage</h3>
+
+<pre><code class="language-go">package main
+
+import (
+	&quot;crypto/tls&quot;
+	&quot;fmt&quot;
+
+	thingsdb &quot;github.com/thingsdb/go-thingsdb&quot;
+)
+
+func example(conn *thingsdb.Conn, res chan interface{}) {
+	var data interface{}
+	var err error
+
+	if err := conn.Connect(); err != nil {
+		res &lt;- err
+		return
+	}
+
+	defer conn.Close()
+
+	if err := conn.AuthToken(&quot;Fai6NmH7QYxA6WLYPdtgcy&quot;); err != nil {
+		res &lt;- err
+		return
+	}
+
+	if data, err = conn.Query(
+		&quot;//Doc&quot;,                // Scope
+		&quot;.greetings.choice();&quot;, // ThingsDB code
+		nil, // Optional array with variable (may be `nil`)
+		120, // Timeout in seconds
+	); err != nil {
+		res &lt;- err
+		return
+	}
+
+	res &lt;- data
+}
+
+func main() {
+	// Only required for a secure connection
+	conf := &amp;tls.Config{
+		InsecureSkipVerify: false,
+	}
+
+	// In this example we will use a channel to read the example response
+	res := make(chan interface{})
+
+	// Create a new ThingsDB connection
+	conn := thingsdb.NewConn(&quot;playground.thingsdb.net&quot;, 9400, conf)
+
+	// Set-up a log channel, this is not required
+	conn.LogCh = make(chan string)
+
+	// Start our example
+	go example(conn, res)
+
+	// Log handler
+	go func() {
+		for {
+			msg := &lt;-conn.LogCh
+			fmt.Printf(&quot;Log: %s\n&quot;, msg)
+		}
+	}()
+
+	// Wait for the response
+	data := &lt;-res
+
+	// Print the response (or error)
+	fmt.Printf(&quot;%v\n&quot;, data)
+}
+</code></pre>
+
+<blockquote>
+<p>Possible response</p>
+</blockquote>
+
+<pre><code class="language-bash">Log: connected to playground.thingsdb.net:9400 using a secure connection
+Welcome at ThingsDB!
+</code></pre>
+
 <h3 id="more-info">More info</h3>
 
 <p>A more complete description of the Go client can be found in the link below.</p>
@@ -4402,19 +4485,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1579617477"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1579617477"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1579617477"></script>
-    <script src="/v0/js/jquery.sticky.js?1579617477"></script>
-    <script src="/v0/js/featherlight.min.js?1579617477"></script>
-    <script src="/v0/js/highlight.pack.js?1579617477"></script>
+    <script src="/v0/js/clipboard.min.js?1579706716"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1579706716"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1579706716"></script>
+    <script src="/v0/js/jquery.sticky.js?1579706716"></script>
+    <script src="/v0/js/featherlight.min.js?1579706716"></script>
+    <script src="/v0/js/highlight.pack.js?1579706716"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1579617477"></script>
-    <script src="/v0/js/learn.js?1579617477"></script>
-    <script src="/v0/js/hugo-learn.js?1579617477"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1579706716"></script>
+    <script src="/v0/js/learn.js?1579706716"></script>
+    <script src="/v0/js/hugo-learn.js?1579706716"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1579617477" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1579617477"></script>
+    <link href="/v0/mermaid/mermaid.css?1579706716" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1579706716"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
