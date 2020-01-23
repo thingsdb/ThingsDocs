@@ -5,6 +5,11 @@ weight: 160
 
 Delete a token.
 
+{{% notice note %}}
+This function requires `GRANT` privileges on the `@thingsdb` scope unless the given token belongs
+to the logged on user. In the latter case, only `MODIFY` privileges are required.
+{{% /notice %}}
+
 This function generates an [event](../../overview/events).
 
 ### Function

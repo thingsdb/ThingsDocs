@@ -1794,7 +1794,8 @@ Example  This code will delete collection stuff:
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/del_expired/</guid>
       <description> Delete all expired tokens.
-This function generates an event.
+This function requires GRANT privileges on the @thingsdb scope.
+ This function generates an event.
 Function del_expired();
 Arguments None
 Return value Returns nil.
@@ -1821,12 +1822,11 @@ Arguments    Argument Type Description     node_id int (required) Id of the node
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/del_token/</guid>
-      <description> Delete a token.
-This function generates an event.
+      <description>Delete a token.
+This function requires GRANT privileges on the @thingsdb scope unless the given token belongs to the logged on user. In the latter case, only MODIFY privileges are required.
+ This function generates an event.
 Function del_token(key);
-Arguments    Argument Type Description     key str (required) Token key to delete.    Return value Returns nil when successful. A lookup_err() is raised if the token is not found.
-Example  This code will delete a token:
- // Delete a token del_token(&#39;XXXXXXXXXXXXXXXXXXXXXX&#39;);  </description>
+Arguments    Argument Type Description     key str (required) Token key to delete.    Return value Returns nil when successful. A lookup_err() is raised if the token is not found.</description>
     </item>
     
     <item>
@@ -1836,9 +1836,10 @@ Example  This code will delete a token:
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/del_user/</guid>
       <description>Delete a user. It is not possible to delete your own user account and a bad_data_err() will be raised in case you try to. Any tokens associated with the user will also be deleted.
-This function generates an event.
+This function requires GRANT privileges on the @thingsdb scope.
+ This function generates an event.
 Function del_user(username);
-Arguments    Argument Type Description     username str (required) Username of the user to delete.    Return value Returns nil when successful.</description>
+Arguments    Argument Type Description     username str (required) Username of the user to delete.</description>
     </item>
     
     <item>
@@ -1954,9 +1955,10 @@ Some valid date/time strings:
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/new_user/</guid>
       <description>Creates a new user to ThingsDB. The new user is created without a password, token and access privileges. You probably want to set a password or add a new token and assign some privileges using grant(&amp;hellip;).
-This function generates an event.
+This function requires GRANT privileges on the @thingsdb scope.
+ This function generates an event.
 Function new_user(user);
-Arguments    Argument Type Description     user str (required) Username, between 1 and 128 graphical characters.    Return value Returns the new user id if successful.</description>
+Arguments    Argument Type Description     user str (required) Username, between 1 and 128 graphical characters.</description>
     </item>
     
     <item>
@@ -1978,7 +1980,8 @@ Arguments    Argument Type Description     current_name str (required) Current c
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/rename_user/</guid>
       <description>Rename a user.
-This function generates an event.
+This function requires GRANT privileges on the @thingsdb scope.
+ This function generates an event.
 Function rename_user(current_name, new_name);
 Arguments    Argument Type Description     current_name str (required) Current user name.   new_name str (required) New name for the user.    Return value Returns nil when successful.</description>
     </item>
@@ -2003,9 +2006,8 @@ Arguments    Argument Type Description     target int/raw Can be either the @nod
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/set_password/</guid>
       <description>Change a users password. This function can also be used to remove an existing password by using nil as the new password.
 Passwords must contain 1 to 128 printable characters.
-This function generates an event.
-Function set_password(username, new_password);
-Arguments    Argument Type Description     username str (required) Name of the user   new_password nil/str (required) New password or nil    Return value Returns nil if successful.</description>
+This function requires GRANT privileges on the @thingsdb scope when a username other then the logged in user is given as argument. For the currently logged in user, MODIFY privileges on the @thingsdb scope are sufficient.
+ This function generates an event.</description>
     </item>
     
     <item>

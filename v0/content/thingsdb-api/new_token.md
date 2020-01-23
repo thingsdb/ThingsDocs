@@ -22,6 +22,12 @@ For example: `new_token('my_user', nil, 'some nice description');`
 There can be no more than 128 tokens assigned to a single user. A `MAX_QUOTA_ERROR` is raised if this limit
 is reached. Existing tokens can be removed with [del_token](../../thingsdb-api/del_token) and to view the current tokens you can use the [user_info(..)](../../thingsdb-api/user_info) (or [users_info()](../../thingsdb-api/users_info)) function.
 
+{{% notice note %}}
+This function requires `GRANT` privileges on the `@thingsdb` scope when a `username`
+other then the logged in user is given as argument. For the currently logged in user, `MODIFY`
+privileges on the `@thingsdb` scope are sufficient.
+{{% /notice %}}
+
 This function generates an [event](../../overview/events).
 
 ### Function

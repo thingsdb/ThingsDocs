@@ -8,6 +8,12 @@ password by using `nil` as the new password.
 
 Passwords must contain 1 to 128 printable characters.
 
+{{% notice note %}}
+This function requires `GRANT` privileges on the `@thingsdb` scope when a `username`
+other then the logged in user is given as argument. For the currently logged in user, `MODIFY`
+privileges on the `@thingsdb` scope are sufficient.
+{{% /notice %}}
+
 This function generates an [event](../../overview/events).
 
 ### Function

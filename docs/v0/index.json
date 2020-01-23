@@ -1103,7 +1103,7 @@
 	"title": "del_expired",
 	"tags": [],
 	"description": "",
-	"content": " Delete all expired tokens.\nThis function generates an event.\nFunction del_expired();\nArguments None\nReturn value Returns nil.\nExample  This code will delete all expired tokens:\n // Delete all expired tokens del_expired();  "
+	"content": " Delete all expired tokens.\nThis function requires GRANT privileges on the @thingsdb scope.\n This function generates an event.\nFunction del_expired();\nArguments None\nReturn value Returns nil.\nExample  This code will delete all expired tokens:\n // Delete all expired tokens del_expired();  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/del_node/",
@@ -1117,14 +1117,14 @@
 	"title": "del_token",
 	"tags": [],
 	"description": "",
-	"content": " Delete a token.\nThis function generates an event.\nFunction del_token(key);\nArguments    Argument Type Description     key str (required) Token key to delete.    Return value Returns nil when successful. A lookup_err() is raised if the token is not found.\nExample  This code will delete a token:\n // Delete a token del_token('XXXXXXXXXXXXXXXXXXXXXX');  "
+	"content": " Delete a token.\nThis function requires GRANT privileges on the @thingsdb scope unless the given token belongs to the logged on user. In the latter case, only MODIFY privileges are required.\n This function generates an event.\nFunction del_token(key);\nArguments    Argument Type Description     key str (required) Token key to delete.    Return value Returns nil when successful. A lookup_err() is raised if the token is not found.\nExample  This code will delete a token:\n // Delete a token del_token('XXXXXXXXXXXXXXXXXXXXXX');  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/del_user/",
 	"title": "del_user",
 	"tags": [],
 	"description": "",
-	"content": " Delete a user. It is not possible to delete your own user account and a bad_data_err() will be raised in case you try to. Any tokens associated with the user will also be deleted.\nThis function generates an event.\nFunction del_user(username);\nArguments    Argument Type Description     username str (required) Username of the user to delete.    Return value Returns nil when successful. A lookup_err() is raised if the user does not exist.\nExample  This code will delete user test:\n // Delete user `test` del_user('test');  "
+	"content": " Delete a user. It is not possible to delete your own user account and a bad_data_err() will be raised in case you try to. Any tokens associated with the user will also be deleted.\nThis function requires GRANT privileges on the @thingsdb scope.\n This function generates an event.\nFunction del_user(username);\nArguments    Argument Type Description     username str (required) Username of the user to delete.    Return value Returns nil when successful. A lookup_err() is raised if the user does not exist.\nExample  This code will delete user test:\n // Delete user `test` del_user('test');  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/grant/",
@@ -1180,14 +1180,14 @@
 	"title": "new_token",
 	"tags": [],
 	"description": "",
-	"content": " Adds a new token for a given user. An optional expiration time may be given after which the token cannot be used anymore. Use del_expired to cleanup expired tokens. The expiration time may be given as a UNIX time-stamp in seconds or a date/time string.\nSome valid date/time strings:\n 2021-01-01 2023-02-06 14:30 2023-07-05T13:23:20+01:00  Expiration dates in the past are not allowed an will raise a bad_data_err() error.\nIt is also possible to set a description for the token which can be used to identify where token is used for. If you only want to set a description, but no expiration time, then you can use nil as second argument. For example: new_token('my_user', nil, 'some nice description');\nThere can be no more than 128 tokens assigned to a single user. A MAX_QUOTA_ERROR is raised if this limit is reached. Existing tokens can be removed with del_token and to view the current tokens you can use the user_info(..) (or users_info()) function.\nThis function generates an event.\nFunction new_token(username, [, expiration_time] [, description]);\nArguments    Argument Type Description     username str (required) Name of the user.   expiration_time nil/int/float/raw (optional) Expiration date of the token.   description str (optional) Token description.    Return value Returns the new token key.\nExample  Create a new token for user admin:\n // ThingsDB must be started on node2 using the `--secret ...` argument new_token('admin', now() + 7*24*3600, 'token for one week');   Example return value in JSON format (the token key)\n \u0026quot;8Ay0ngISFa9je3o/MMu24U\u0026quot;  "
+	"content": " Adds a new token for a given user. An optional expiration time may be given after which the token cannot be used anymore. Use del_expired to cleanup expired tokens. The expiration time may be given as a UNIX time-stamp in seconds or a date/time string.\nSome valid date/time strings:\n 2021-01-01 2023-02-06 14:30 2023-07-05T13:23:20+01:00  Expiration dates in the past are not allowed an will raise a bad_data_err() error.\nIt is also possible to set a description for the token which can be used to identify where token is used for. If you only want to set a description, but no expiration time, then you can use nil as second argument. For example: new_token('my_user', nil, 'some nice description');\nThere can be no more than 128 tokens assigned to a single user. A MAX_QUOTA_ERROR is raised if this limit is reached. Existing tokens can be removed with del_token and to view the current tokens you can use the user_info(..) (or users_info()) function.\nThis function requires GRANT privileges on the @thingsdb scope when a username other then the logged in user is given as argument. For the currently logged in user, MODIFY privileges on the @thingsdb scope are sufficient.\n This function generates an event.\nFunction new_token(username, [, expiration_time] [, description]);\nArguments    Argument Type Description     username str (required) Name of the user.   expiration_time nil/int/float/raw (optional) Expiration date of the token.   description str (optional) Token description.    Return value Returns the new token key.\nExample  Create a new token for user admin:\n // ThingsDB must be started on node2 using the `--secret ...` argument new_token('admin', now() + 7*24*3600, 'token for one week');   Example return value in JSON format (the token key)\n \u0026quot;8Ay0ngISFa9je3o/MMu24U\u0026quot;  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/new_user/",
 	"title": "new_user",
 	"tags": [],
 	"description": "",
-	"content": " Creates a new user to ThingsDB. The new user is created without a password, token and access privileges. You probably want to set a password or add a new token and assign some privileges using grant(\u0026hellip;).\nThis function generates an event.\nFunction new_user(user);\nArguments    Argument Type Description     user str (required) Username, between 1 and 128 graphical characters.    Return value Returns the new user id if successful. A lookup_err() is raised if the user already exists.\nExample  Create a new user iris:\n new_user('iris');   Example return value in JSON format (the new user id)\n 19  "
+	"content": " Creates a new user to ThingsDB. The new user is created without a password, token and access privileges. You probably want to set a password or add a new token and assign some privileges using grant(\u0026hellip;).\nThis function requires GRANT privileges on the @thingsdb scope.\n This function generates an event.\nFunction new_user(user);\nArguments    Argument Type Description     user str (required) Username, between 1 and 128 graphical characters.    Return value Returns the new user id if successful. A lookup_err() is raised if the user already exists.\nExample  Create a new user iris:\n new_user('iris');   Example return value in JSON format (the new user id)\n 19  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/rename_collection/",
@@ -1201,7 +1201,7 @@
 	"title": "rename_user",
 	"tags": [],
 	"description": "",
-	"content": " Rename a user.\nThis function generates an event.\nFunction rename_user(current_name, new_name);\nArguments    Argument Type Description     current_name str (required) Current user name.   new_name str (required) New name for the user.    Return value Returns nil when successful.\n"
+	"content": " Rename a user.\nThis function requires GRANT privileges on the @thingsdb scope.\n This function generates an event.\nFunction rename_user(current_name, new_name);\nArguments    Argument Type Description     current_name str (required) Current user name.   new_name str (required) New name for the user.    Return value Returns nil when successful.\n"
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/revoke/",
@@ -1215,7 +1215,7 @@
 	"title": "set_password",
 	"tags": [],
 	"description": "",
-	"content": " Change a users password. This function can also be used to remove an existing password by using nil as the new password.\nPasswords must contain 1 to 128 printable characters.\nThis function generates an event.\nFunction set_password(username, new_password);\nArguments    Argument Type Description     username str (required) Name of the user   new_password nil/str (required) New password or nil    Return value Returns nil if successful. A lookup_err() is returned if the user does not exist and bad_data_err() if the new password is not compliant.\nExample  This code changes the password for user admin:\n // Change the password for user `admin` set_password('admin', 'my_secret_password');   Return value in JSON format\n null  "
+	"content": " Change a users password. This function can also be used to remove an existing password by using nil as the new password.\nPasswords must contain 1 to 128 printable characters.\nThis function requires GRANT privileges on the @thingsdb scope when a username other then the logged in user is given as argument. For the currently logged in user, MODIFY privileges on the @thingsdb scope are sufficient.\n This function generates an event.\nFunction set_password(username, new_password);\nArguments    Argument Type Description     username str (required) Name of the user   new_password nil/str (required) New password or nil    Return value Returns nil if successful. A lookup_err() is returned if the user does not exist and bad_data_err() if the new password is not compliant.\nExample  This code changes the password for user admin:\n // Change the password for user `admin` set_password('admin', 'my_secret_password');   Return value in JSON format\n null  "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/user_info/",

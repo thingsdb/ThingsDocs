@@ -5,6 +5,10 @@ weight: 172
 
 Rename a user.
 
+{{% notice note %}}
+This function requires `GRANT` privileges on the `@thingsdb` scope.
+{{% /notice %}}
+
 This function generates an [event](../../overview/events).
 
 ### Function
