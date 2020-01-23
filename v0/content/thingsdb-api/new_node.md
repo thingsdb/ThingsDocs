@@ -5,6 +5,25 @@ weight: 168
 
 Adds a new node to ThingsDB. Nodes are used for scaling and high availability.
 
+Before using this command, make sure another node is started and waiting for a join. This can be done by starting thingsdb with the `--secret` argument, for example:
+
+```bash
+$ thingsdb --secret "my-one-time-serect"
+```
+
+Next, you will see something like this:
+```text
+Waiting for an invite from a node to join ThingsDB...
+
+You can use one of the following queries to add this node:
+
+  interface: eth0
+    new_node('my-one-time-serect', '10.10.10.2', 9220);
+...
+```
+
+Now you can use the [new_node(..)](./) function to add the node to ThingsDB.
+
 This function generates an [event](../../overview/events).
 
 ### Function

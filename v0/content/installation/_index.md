@@ -8,7 +8,7 @@ chapter: false
 
 Get your own **playground** for free at [https://thingsdb.net](https://thingsdb.net).
 
-Or.., build your own ThingsDB by cloning the [GitHub](https://github.com/thingsdb/ThingsDB) project and following one of the description
+Or.., build your own ThingsDB by cloning the [GitHub](https://github.com/thingsdb/ThingsDB) project and follow the steps below.
 
 
 ## Build from source (linux)
