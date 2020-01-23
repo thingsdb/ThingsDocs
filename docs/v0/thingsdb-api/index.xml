@@ -199,9 +199,9 @@ Arguments    Argument Type Description     name str (required) Name of the new c
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/new_node/</guid>
       <description>Adds a new node to ThingsDB. Nodes are used for scaling and high availability.
-This function generates an event.
-Function new_node(secret, ip_address [, port]);
-Arguments    Argument Type Description     secret str (required) Secret used to initially connect to the new node.   ip_address str (required) IP Address (IPv4 or IPv6) of the new node.   port int (optional) Node port (listen_node_port), an integer between 0 an 65535, default 9220.</description>
+Before using this command, make sure another node is started and waiting for a join. This can be done by starting thingsdb with the --secret argument, for example:
+$ thingsdb --secret &amp;quot;my-one-time-serect&amp;quot;  Next, you will see something like this:
+Waiting for an invite from a node to join ThingsDB... You can use one of the following queries to add this node: interface: eth0 new_node(&#39;my-one-time-serect&#39;, &#39;10.</description>
     </item>
     
     <item>
