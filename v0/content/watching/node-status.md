@@ -1,9 +1,9 @@
 ---
 title: "node-status"
-weight: 186
+weight: 187
 ---
 
-The body of a *Node Status* notification contains only a string value.
+The body of a *Node Status* event contains only a string value.
 This string may be one of the following:
 
 String | Description
@@ -14,7 +14,7 @@ String | Description
 `SHUTTING_DOWN` | The node will shutdown in a few seconds. This notification may be used to initiate a connection to another node.
 `OFFLINE` | The node will be *off-line* after this notification is received.
 
-> Example *node status* notification in JSON format:
+> Example *node status* event in JSON format:
 
 ```json
 "READY"

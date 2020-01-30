@@ -42,6 +42,7 @@ data-types
         map
         pop
         push
+        reduce
         remove
         sort
         splice

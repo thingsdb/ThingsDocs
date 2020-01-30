@@ -1,17 +1,17 @@
 ---
 title: "Watching"
-weight: 185
+weight: 186
 chapter: false
 ---
 
-Socket connections can receive push notifications from ThingsDB. Push notification do only work when using a socket connection and cannot be used with the HTTP API.
+Socket connections can receive events from ThingsDB. Push events do only work when using a socket connection and cannot be used with the HTTP API.
 
-Before notification are received you have to *subscribe* for changes.
+Before events are received you have to *subscribe* for changes.
 
 
-Notifications which may be received by a client:
+The following events may be received by a client:
 
-Notification | Description
+Event | Description
 ------------ | -----------
 [NODE_STATUS](./node-status) (`0`) | The connected node has changed its status.
 [ON_INIT](./on-init) (`1`) | Initial data for the [thing](../data-types/thing) which is added to the watch list.

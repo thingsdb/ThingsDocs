@@ -1,10 +1,10 @@
 ---
 title: "on-update"
-weight: 188
+weight: 189
 ---
 
-An update notification is pushed when a `thing` which you are watching, is updated.
-If the thing contains other things, then these need to be watched separate to receive push notifications when they are changed.
+An update event is pushed when a `thing` which you are watching, is updated.
+If the thing contains other things, then these need to be watched separate to receive events when they are changed.
 
 A not
 ```json

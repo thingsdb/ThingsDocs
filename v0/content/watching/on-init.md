@@ -1,11 +1,11 @@
 ---
 title: "on-init"
-weight: 187
+weight: 188
 ---
 
-This notification will be pushed **once** for each [thing](../data-types/thing) which is added to the watch list.
+This event will be pushed **once** for each [thing](../../data-types/thing) which is added to the watch list.
 
-> Example *on-init* notification in JSON format:
+> Example *on-init* event in JSON format:
 
 ```json
 {
@@ -17,9 +17,9 @@ This notification will be pushed **once** for each [thing](../data-types/thing) 
 }
 ```
 
-If the [thing](../data-types/thing) is actually a collection, then the *init* notification also contains all [types](../data-types/type) and [procedures](../procedures-api) inside the collection.
+If the [thing](../../data-types/thing) is actually a collection, then the *init* event also contains all [types](../../data-types/type) and [procedures](../../procedures-api) inside the collection.
 
-> Example *on-init* notification for a collection in JSON format:
+> Example *on-init* event for a collection in JSON format:
 
 ```json
 {

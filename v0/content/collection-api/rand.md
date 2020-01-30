@@ -1,6 +1,6 @@
 ---
 title: "rand"
-weight: 128
+weight: 129
 ---
 
 Returns **pseudo-random** random number between `0.0` and `1.0`.

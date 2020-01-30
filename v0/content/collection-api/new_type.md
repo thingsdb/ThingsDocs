@@ -1,6 +1,6 @@
 ---
 title: "new_type"
-weight: 125
+weight: 126
 ---
 
 Creates a new [Type](../../data-types/type). This function *only* creates a new type
@@ -34,18 +34,15 @@ The name of the newly created Type.
 > This code shows a use case where ***new_type()*** is helpful:
 
 ```thingsdb,should_pass
-type_a = 'A';
-type_b = 'B';
+new_type('A');
+new_type('B');
 
-new_type(type_a);
-new_type(type_b);
-
-set_type(type_a, {
-    b: type_b
+set_type('A', {
+    b: 'B?'
 });
 
-set_type(type_b, {
-    a: type_a
+set_type('B', {
+    a: 'A?'
 });
 
 // Return type information
@@ -62,7 +59,7 @@ types_info();
         "modified_at": 1579250574,
         "name": "A",
         "fields": [
-            ["b", "B"]
+            ["b", "B?"]
         ]
     },
     {
@@ -71,7 +68,7 @@ types_info();
         "modified_at": 1579250574,
         "name": "B",
         "fields": [
-            ["a", "A"]
+            ["a", "A?"]
         ]
     }
 ]
