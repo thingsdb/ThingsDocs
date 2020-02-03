@@ -41,7 +41,7 @@ Return value of the given statement.
 
 wse({
     // without wse() this would raise an error
-    .take_license.call();
+    .take_license();
 });
 
 // Return the number of licenses left

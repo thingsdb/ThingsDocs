@@ -44,7 +44,7 @@ git clone https://github.com/thingsdb/ThingsDB.git
 
 ```
 cd ThingsDB/Release
-make
+make clean && make
 ```
 
 ## Configuration

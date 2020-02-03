@@ -65,7 +65,7 @@ add_one = |x| x+1;
 map_result = [1, 2, 3].map(add_one);
 
 // use the closure as a function call
-call_result = add_one.call(41);
+call_result = add_one(41);
 
 // return the result values
 [map_result, call_result];

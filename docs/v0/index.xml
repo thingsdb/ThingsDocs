@@ -226,13 +226,11 @@ Example  This code uses len() to return the length of a byte sequence:
       
       <guid>https://docs.thingsdb.net/v0/data-types/closure/call/</guid>
       <description>Call a closure.
+When assigned to a variable, it is not required to explicitly write the call function. Simply calling the closure by using () will work as well.
 This function does not generate an event.
 Function closure.call()
 Arguments The exact number of arguments for the closure must be given.
-It is not possible to assign default values to arguments but something similar can be accomplished by checking the argument within the closure. See the example below.
- Return value Returns the closure response.
-Example  Example code using call:
- // create a greet closure greet = |name| isstr(name) ?</description>
+It is not possible to assign default values to arguments but something similar can be accomplished by checking the argument within the closure.</description>
     </item>
     
     <item>

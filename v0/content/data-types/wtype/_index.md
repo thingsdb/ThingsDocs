@@ -73,7 +73,7 @@ set_type('_AllBooks', {
 
 // Create a procedure for adding a new book
 new_procedure('add_book', |author_name, book_title| wse({
-    writer = .upsert_writer.call(author_name);
+    writer = .upsert_writer(author_name);
     new_book = Book{
         title: book_title,
         author: writer,

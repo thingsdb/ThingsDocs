@@ -12,6 +12,7 @@ archive_files | Number of archive files. May decrease after a full store during 
 archived_in_memory | Number of events which are archived in memory.
 cached_names | Number of [names](../../overview/names) cached in memory.
 client_port | Listening for client TCP socket connections on this port.
+connected_clients | Number of connected clients to the node.
 db_stored_event_id | Last stored event ID in full database store.
 events_in_queue | Events which are pending in the queue.
 global_committed_event_id | Lowest known committed event ID by all nodes.
@@ -22,11 +23,11 @@ http_status_port | Listening to this HTTP port for status, readiness and livenes
 ip_support | Enabled IP support. May be IPv4/IPv6 or both.
 libcleri_version | Cleri language parser library version.
 libpcre2_version | PCRE regular expression library version.
-msgpack_version | MessagePack data protocol library version.
 libuv_version | UV asynchronous library version.
 local_committed_event_id | Last committed event ID on the node.
 local_stored_event_id | Last stored event ID on disk. Store takes place when in *away* mode.
 log_level | Current log level for the node. May be changed at runtime using [set_log_level(..)](../../node-api/set_log_level)
+msgpack_version | MessagePack data protocol library version.
 next_event_id | Next free event ID.
 next_thing_id | Next free things ID.
 node_id | The `id` which is assigned to the node.
@@ -67,6 +68,7 @@ node_info();
     "archived_in_memory": 0,
     "cached_names": 2,
     "client_port": 9200,
+    "connected_clients": 1,
     "db_stored_event_id": 1,
     "events_in_queue": 0,
     "global_committed_event_id": 2,
