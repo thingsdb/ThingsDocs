@@ -27,15 +27,13 @@ works before removing the password.
 > Replace `127.0.0.1:9210` with the address and port where your node is listening on for API requests
 
 ```bash
-curl http://127.0.0.1:9210/t \
+curl --location --request POST 'http://127.0.0.1:9210/thingsdb' \
+--header 'Content-Type: application/json' \
 --user admin:pass \
--H 'Content-Type: application/json' \
--d \
-"
-{
-    \"type\": \"query\",
-    \"code\": \"new_token('admin');\"
-}"
+--data-raw '{
+    "type": "query",
+    "code": "new_token('\''admin'\'');"
+}'
 ```
 
 The will return JSON string containing a new token, for example: `"YyZcvq7BY3w+VgOTvXzTZp"`
@@ -43,13 +41,11 @@ The will return JSON string containing a new token, for example: `"YyZcvq7BY3w+V
 We can now use this token key to remove the password from user `admin`:
 
 ```bash
-curl http://127.0.0.1:9210/t \
--H "Authorization: Bearer YyZcvq7BY3w+VgOTvXzTZp" \
--H 'Content-Type: application/json' \
--d \
-"
-{
-    \"type\": \"query\",
-    \"code\": \"set_password('admin', nil);\"
-}"
+curl --location --request POST 'http://127.0.0.1:9210/thingsdb' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer YyZcvq7BY3w+VgOTvXzTZp' \
+--data-raw '{
+    "type": "query",
+    "code": "set_password('\''admin'\'', nil);"
+}'
 ```

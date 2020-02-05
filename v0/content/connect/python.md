@@ -41,7 +41,7 @@ async def hello_world():
         # perform the hello world code...
         print(await client.query('''
             "Hello World!";
-        ''')
+        '''))
 
     finally:
         # the will close the client in a nice way

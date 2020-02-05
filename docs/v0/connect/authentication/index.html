@@ -11,20 +11,20 @@
     <title>Authentication :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1580717612" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1580717612" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1580717612" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1580717612" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1580717612" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1580717612" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1580717612" rel="stylesheet">
-    <link href="/v0/css/theme.css?1580717612" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1580717612" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1580916044" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1580916044" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1580916044" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1580916044" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1580916044" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1580916044" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1580916044" rel="stylesheet">
+    <link href="/v0/css/theme.css?1580916044" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1580916044" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1580717612" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1580916044" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1580717612"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1580916044"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1580717612"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1580717612"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1580916044"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1580916044"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1580717612"></script>
+<script type="text/javascript" src="/v0/js/search.js?1580916044"></script>
 
     
   </div>
@@ -4396,30 +4396,26 @@ works before removing the password.</p>
 <p>Replace <code>127.0.0.1:9210</code> with the address and port where your node is listening on for API requests</p>
 </blockquote>
 
-<pre><code class="language-bash">curl http://127.0.0.1:9210/t \
+<pre><code class="language-bash">curl --location --request POST 'http://127.0.0.1:9210/thingsdb' \
+--header 'Content-Type: application/json' \
 --user admin:pass \
--H 'Content-Type: application/json' \
--d \
-&quot;
-{
-    \&quot;type\&quot;: \&quot;query\&quot;,
-    \&quot;code\&quot;: \&quot;new_token('admin');\&quot;
-}&quot;
+--data-raw '{
+    &quot;type&quot;: &quot;query&quot;,
+    &quot;code&quot;: &quot;new_token('\''admin'\'');&quot;
+}'
 </code></pre>
 
 <p>The will return JSON string containing a new token, for example: <code>&quot;YyZcvq7BY3w+VgOTvXzTZp&quot;</code></p>
 
 <p>We can now use this token key to remove the password from user <code>admin</code>:</p>
 
-<pre><code class="language-bash">curl http://127.0.0.1:9210/t \
--H &quot;Authorization: Bearer YyZcvq7BY3w+VgOTvXzTZp&quot; \
--H 'Content-Type: application/json' \
--d \
-&quot;
-{
-    \&quot;type\&quot;: \&quot;query\&quot;,
-    \&quot;code\&quot;: \&quot;set_password('admin', nil);\&quot;
-}&quot;
+<pre><code class="language-bash">curl --location --request POST 'http://127.0.0.1:9210/thingsdb' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer YyZcvq7BY3w+VgOTvXzTZp' \
+--data-raw '{
+    &quot;type&quot;: &quot;query&quot;,
+    &quot;code&quot;: &quot;set_password('\''admin'\'', nil);&quot;
+}'
 </code></pre>
 
 
@@ -4451,19 +4447,19 @@ works before removing the password.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1580717612"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1580717612"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1580717612"></script>
-    <script src="/v0/js/jquery.sticky.js?1580717612"></script>
-    <script src="/v0/js/featherlight.min.js?1580717612"></script>
-    <script src="/v0/js/highlight.pack.js?1580717612"></script>
+    <script src="/v0/js/clipboard.min.js?1580916044"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1580916044"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1580916044"></script>
+    <script src="/v0/js/jquery.sticky.js?1580916044"></script>
+    <script src="/v0/js/featherlight.min.js?1580916044"></script>
+    <script src="/v0/js/highlight.pack.js?1580916044"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1580717612"></script>
-    <script src="/v0/js/learn.js?1580717612"></script>
-    <script src="/v0/js/hugo-learn.js?1580717612"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1580916044"></script>
+    <script src="/v0/js/learn.js?1580916044"></script>
+    <script src="/v0/js/hugo-learn.js?1580916044"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1580717612" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1580717612"></script>
+    <link href="/v0/mermaid/mermaid.css?1580916044" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1580916044"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
