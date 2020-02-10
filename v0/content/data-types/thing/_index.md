@@ -16,5 +16,7 @@ Method | Description
 [len](./len) | Returns the number of items.
 [map](./map) | Returns a [list](../list) with the results of calling a provided closure on every item.
 [set](./set) | Creates a new property on a thing.
+[unwatch](./unwatch) | Stop watching the `thing` for mutations.
 [values](./values) | Returns an array with all the property values of a thing.
+[watch](./watch) | Watch the `thing` for mutations.
 [wrap](./wrap) | Wrap the `thing` with a [Type](../type).

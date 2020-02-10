@@ -1,11 +1,11 @@
 ---
 title: "wrap"
-weight: 78
+weight: 80
 ---
 
 Wrap a thing with a [Type](../../type).
 
-For a more advanced example using [wrap()](.) and [unwrap()](../../wtype/unwrap) see [<Type>](../../wtype).
+For a more advanced example using [wrap()](..) and [unwrap()](../../wtype/unwrap) see [<Type>](../../wtype).
 
 ### Function
 

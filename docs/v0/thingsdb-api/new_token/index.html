@@ -11,20 +11,20 @@
     <title>new_token :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1580916045" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1580916045" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1580916045" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1580916045" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1580916045" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1580916045" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1580916045" rel="stylesheet">
-    <link href="/v0/css/theme.css?1580916045" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1580916045" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1581374404" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1581374404" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1581374404" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1581374404" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1581374404" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1581374404" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1581374404" rel="stylesheet">
+    <link href="/v0/css/theme.css?1581374404" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1581374404" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1580916045" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1581374404" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1580916045"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1581374404"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1580916045"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1580916045"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1581374404"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1581374404"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1580916045"></script>
+<script type="text/javascript" src="/v0/js/search.js?1581374404"></script>
 
     
   </div>
@@ -1673,9 +1673,47 @@
  
   
     
+      <li data-nav-id="/v0/data-types/thing/unwatch/" title="unwatch" class="dd-item ">
+        <a href="/v0/data-types/thing/unwatch/">
+        unwatch
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/v0/data-types/thing/values/" title="values" class="dd-item ">
         <a href="/v0/data-types/thing/values/">
         values
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/thing/watch/" title="watch" class="dd-item ">
+        <a href="/v0/data-types/thing/watch/">
+        watch
         
         </a>
     </li>
@@ -3958,6 +3996,25 @@
  
   
     
+      <li data-nav-id="/v0/watching/on-stop/" title="on-stop" class="dd-item ">
+        <a href="/v0/watching/on-stop/">
+        on-stop
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/v0/watching/warning/" title="warning" class="dd-item ">
         <a href="/v0/watching/warning/">
         warning
@@ -4395,7 +4452,7 @@ given as a UNIX time-stamp in seconds or a date/time string.</p>
 If you only want to set a description, but no expiration time, then you can use <code>nil</code> as second argument.
 For example: <code>new_token('my_user', nil, 'some nice description');</code></p>
 
-<p>There can be no more than 128 tokens assigned to a single user. A <code>MAX_QUOTA_ERROR</code> is raised if this limit
+<p>There can be no more than 128 tokens assigned to a single user. A <a href="../../errors/max_quota_err">max_quota_err()</a> is raised if this limit
 is reached. Existing tokens can be removed with <a href="../../thingsdb-api/del_token">del_token</a> and to view the current tokens you can use the <a href="../../thingsdb-api/user_info">user_info(..)</a> (or <a href="../../thingsdb-api/users_info">users_info()</a>) function.</p>
 
 
@@ -4493,19 +4550,19 @@ new_token('admin', now() + 7*24*3600, 'token for one week');
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1580916045"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1580916045"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1580916045"></script>
-    <script src="/v0/js/jquery.sticky.js?1580916045"></script>
-    <script src="/v0/js/featherlight.min.js?1580916045"></script>
-    <script src="/v0/js/highlight.pack.js?1580916045"></script>
+    <script src="/v0/js/clipboard.min.js?1581374404"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1581374404"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1581374404"></script>
+    <script src="/v0/js/jquery.sticky.js?1581374404"></script>
+    <script src="/v0/js/featherlight.min.js?1581374404"></script>
+    <script src="/v0/js/highlight.pack.js?1581374404"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1580916045"></script>
-    <script src="/v0/js/learn.js?1580916045"></script>
-    <script src="/v0/js/hugo-learn.js?1580916045"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1581374404"></script>
+    <script src="/v0/js/learn.js?1581374404"></script>
+    <script src="/v0/js/hugo-learn.js?1581374404"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1580916045" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1580916045"></script>
+    <link href="/v0/mermaid/mermaid.css?1581374404" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1581374404"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -1,6 +1,6 @@
 ---
 title: "has_user"
-weight: 167
+weight: 169
 ---
 
 Determines if a user exists in ThingsDB.

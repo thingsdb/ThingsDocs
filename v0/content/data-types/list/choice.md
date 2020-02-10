@@ -4,7 +4,7 @@ weight: 35
 ---
 
 This function returns a **pseudo-random** item from the list. The list must contain at least one
-item, otherwise a [lookup_err()](../../errors/lookup_err) is raised.
+item, otherwise a [lookup_err()](../../../errors/lookup_err) is raised.
 
 This function does *not* generate an [event](../../../overview/events).
 

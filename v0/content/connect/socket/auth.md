@@ -52,7 +52,7 @@ Now we create the header, for this example we just use ID 0:
 
 ## Example token
 
-First, a token is required and can be created using the [new_token()](../../thingsdb-api/new_token) function.
+First, a token is required and can be created using the [new_token()](../../../thingsdb-api/new_token) function.
 
 Suppose our token is `RzDFlsoucQfDqrwrfGGEtc`.
 

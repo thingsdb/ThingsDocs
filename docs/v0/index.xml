@@ -838,6 +838,22 @@ Arguments    Argument Type Description     name str (required) The name of the p
     </item>
     
     <item>
+      <title>unwatch</title>
+      <link>https://docs.thingsdb.net/v0/data-types/thing/unwatch/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/thing/unwatch/</guid>
+      <description> Stop watching for mutations on a thing. This method returns nil and triggers a stop event, only when the thing was being watched.
+This function does not generate an event.
+Function thing.unwatch()
+Arguments None
+Return value Returns nil.
+Example  This code shows how to use unwatch():
+ .unwatch();   Return value in JSON format:
+ null  </description>
+    </item>
+    
+    <item>
       <title>values</title>
       <link>https://docs.thingsdb.net/v0/data-types/thing/values/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -847,6 +863,16 @@ Arguments    Argument Type Description     name str (required) The name of the p
 (.values() == .map(|_, v| v))
 Although the values() and map() in the example above will return an list with the same order, the order of values in the list is not guaranteed and may be different each time you run the query.
  This function does not generate an event.</description>
+    </item>
+    
+    <item>
+      <title>watch</title>
+      <link>https://docs.thingsdb.net/v0/data-types/thing/watch/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/thing/watch/</guid>
+      <description>Subscribe for watching mutations on a stored thing. If this function is called on a thing which is not stored, and therefore has no #ID, then a value_err() is raised. This method returns nil but always triggers an init event, even when an earlier call to this function has been made.
+This function only works with socket connections. When using this function with an HTTP API request, it has no effect.</description>
     </item>
     
     <item>
@@ -1524,7 +1550,7 @@ Arguments    Argument Type Description     type_name str The name of the Type wh
       
       <guid>https://docs.thingsdb.net/v0/collection-api/str/</guid>
       <description>Convert a value to a string. If no value is given, an empty string &amp;quot;&amp;quot; is returned.
-When bytes are converted to str then the data will be checked if it contains valid UTF-8 characters. If this is not the case, a VALUE_ERROR will be raised.
+When bytes are converted to str then the data will be checked if it contains valid UTF-8 characters. If this is not the case, a value_err() will be raised.
 This function does not generate an event.
 Function str(value)
 Arguments    Argument Type Description     value any (optional) The value to create a string from.</description>
@@ -2167,9 +2193,9 @@ Example  Example code using run:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/watching/on-update/</guid>
-      <description>An update event is pushed when a thing which you are watching, is updated. If the thing contains other things, then these need to be watched separate to receive events when they are changed.
-A not
-{ &amp;quot;#&amp;quot;: 3, &amp;quot;event&amp;quot;: 123, &amp;quot;jobs&amp;quot;: [ ... ] }     Job Target Description     splice thing    new_procedure collection A new procedure is added to the collection.</description>
+      <description>An update event is pushed when changed are made to a thing you are watching. Nested things need to be watched separate.
+The event contains the Thing ID (#), an event number, and an jobs array containing all the mutations which are applied to the thing in the order as they are put in the array.
+{ &amp;quot;#&amp;quot;: 3, &amp;quot;event&amp;quot;: 123, &amp;quot;jobs&amp;quot;: [ ... ] }  Each mutation is a map {} with a single key.</description>
     </item>
     
     <item>
@@ -2181,6 +2207,18 @@ A not
       <description>A delete event will be pushed as soon as a thing which you are watching, is removed from ThingsDB.
 If this event is not received when expected, there might exist circular references to the removed thing. In this case you have to wait until garbage collection has cleaned the thing from ThingsDB. This is done when the node is in away mode.
   Example watch delete event in JSON format:</description>
+    </item>
+    
+    <item>
+      <title>on-stop</title>
+      <link>https://docs.thingsdb.net/v0/watching/on-stop/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/watching/on-stop/</guid>
+      <description>A stop event will be pushed as soon as a thing has stopped with watching.
+This event is not pushed when a connection to a node is lost but only when watching is stopped by the user.
+  Example watch stop event in JSON format:
+ { &amp;quot;#&amp;quot;: 42 }  </description>
     </item>
     
     <item>

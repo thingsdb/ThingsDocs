@@ -133,6 +133,22 @@ Arguments    Argument Type Description     name str (required) The name of the p
     </item>
     
     <item>
+      <title>unwatch</title>
+      <link>https://docs.thingsdb.net/v0/data-types/thing/unwatch/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/thing/unwatch/</guid>
+      <description> Stop watching for mutations on a thing. This method returns nil and triggers a stop event, only when the thing was being watched.
+This function does not generate an event.
+Function thing.unwatch()
+Arguments None
+Return value Returns nil.
+Example  This code shows how to use unwatch():
+ .unwatch();   Return value in JSON format:
+ null  </description>
+    </item>
+    
+    <item>
       <title>values</title>
       <link>https://docs.thingsdb.net/v0/data-types/thing/values/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -142,6 +158,16 @@ Arguments    Argument Type Description     name str (required) The name of the p
 (.values() == .map(|_, v| v))
 Although the values() and map() in the example above will return an list with the same order, the order of values in the list is not guaranteed and may be different each time you run the query.
  This function does not generate an event.</description>
+    </item>
+    
+    <item>
+      <title>watch</title>
+      <link>https://docs.thingsdb.net/v0/data-types/thing/watch/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/thing/watch/</guid>
+      <description>Subscribe for watching mutations on a stored thing. If this function is called on a thing which is not stored, and therefore has no #ID, then a value_err() is raised. This method returns nil but always triggers an init event, even when an earlier call to this function has been made.
+This function only works with socket connections. When using this function with an HTTP API request, it has no effect.</description>
     </item>
     
     <item>

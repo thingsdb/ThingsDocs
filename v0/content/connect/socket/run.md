@@ -21,7 +21,7 @@ See the [auth example](../auth) for how to authorize a socket connection.
 ## Example
 
 As an example we assume there is a procedure created in the `@thingsdb` scope, called *"add_one"* which just adds one to a given value.
-The procedure can be created using `new_procedure('add_one', |x| x + 1);`, see [new_procedure()](../../procedures-api/new_procedure).
+The procedure can be created using `new_procedure('add_one', |x| x + 1);`, see [new_procedure()](../../../procedures-api/new_procedure).
 
 This is the data we want to pack:
 

@@ -1,6 +1,6 @@
 ---
 title: "new_type"
-weight: 126
+weight: 128
 ---
 
 Creates a new [Type](../../data-types/type). This function *only* creates a new type

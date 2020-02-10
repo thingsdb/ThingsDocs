@@ -16,7 +16,7 @@ This function does *not* generate an [event](../../../overview/events).
 Argument | Type | Description
 -------- | ---- | -----------
 reducer | closure (required) | Closure to execute on each value (except for the first, if no initial value is supplied).
-initial | any (optional) | A value to use as the first argument to the first call of the callback. If no initial value is supplied, the first element in the array will be used and skipped. Calling reduce() on an empty array without an initial value will raise a [lookup_err()](../../errors/lookup_err).
+initial | any (optional) | A value to use as the first argument to the first call of the callback. If no initial value is supplied, the first element in the array will be used and skipped. Calling reduce() on an empty array without an initial value will raise a [lookup_err()](../../../errors/lookup_err).
 
 
 The *reducer* argument takes three optional arguments:

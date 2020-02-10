@@ -1,6 +1,6 @@
 ---
 title: "new_node"
-weight: 169
+weight: 171
 ---
 
 Adds a new node to ThingsDB. Nodes are used for scaling and high availability.
@@ -22,7 +22,7 @@ You can use one of the following queries to add this node:
 ...
 ```
 
-Now you can use the [new_node(..)](./) function to add the node to ThingsDB.
+Now you can use the [new_node(..)](../new_node) function to add the node to ThingsDB.
 
 This function generates an [event](../../overview/events).
 

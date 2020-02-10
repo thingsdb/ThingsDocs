@@ -1,6 +1,6 @@
 ---
 title: "Watching"
-weight: 186
+weight: 188
 chapter: false
 ---
 
@@ -17,9 +17,10 @@ Event | Description
 [ON_INIT](./on-init) (`1`) | Initial data for the [thing](../data-types/thing) which is added to the watch list.
 [ON_UPDATE](./on-update) (`2`) | Update on a [thing](../data-types/thing) is the watch list.
 [ON_DELETE](./on-delete) (`3`) | A [thing](../data-types/thing) from the watch list is removed.
-[WARNING](./warning) (`4`) | A warning message.
+[ON_STOP](./on-stop) (`4`) | A [thing](../data-types/thing) has been stopped watching.
+[WARNING](./warning) (`5`) | A warning message.
 
-> The number `0-4` represents the package type in a [package header](http://localhost:1313/v0/connect/socket/#package).
+> The number `0-5` represents the package type in a [package header](http://localhost:1313/v0/connect/socket/#package).
 
 
 TODO: explain how to subscribe

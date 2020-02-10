@@ -20,7 +20,7 @@ None
 
 ### Return value
 
-The removed element from the list. A [lookup_err()](../../errors/lookup_err) is raised if the list is empty.
+The removed element from the list. A [lookup_err()](../../../errors/lookup_err) is raised if the list is empty.
 
 ### Example
 

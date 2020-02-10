@@ -23,7 +23,7 @@ Method | Description
 {{% notice note %}}
 It is not possible to use closures with recursion, for example:
 `a = ||.map(a); .map(a);` \
-...will raise `OPERATION_ERROR` *(closures cannot be used recursively)*
+...will raise [operation_err()](../../errors/operation_err) *(closures cannot be used recursively)*
 {{% /notice %}}
 
 ### Doc string

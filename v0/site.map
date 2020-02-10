@@ -74,7 +74,9 @@ data-types
         len
         map
         set
+        unwatch
         values
+        watch
         wrap
     tuple
     type
@@ -188,6 +190,7 @@ watching
     on-init
     on-update
     on-delete
+    on-stop
     warning
 errors
     assert_err

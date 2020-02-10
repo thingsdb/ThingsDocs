@@ -11,20 +11,20 @@
     <title>on-update :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1580916045" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1580916045" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1580916045" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1580916045" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1580916045" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1580916045" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1580916045" rel="stylesheet">
-    <link href="/v0/css/theme.css?1580916045" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1580916045" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1581374404" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1581374404" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1581374404" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1581374404" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1581374404" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1581374404" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1581374404" rel="stylesheet">
+    <link href="/v0/css/theme.css?1581374404" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1581374404" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1580916045" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1581374404" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1580916045"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1581374404"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1580916045"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1580916045"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1581374404"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1581374404"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1580916045"></script>
+<script type="text/javascript" src="/v0/js/search.js?1581374404"></script>
 
     
   </div>
@@ -1673,9 +1673,47 @@
  
   
     
+      <li data-nav-id="/v0/data-types/thing/unwatch/" title="unwatch" class="dd-item ">
+        <a href="/v0/data-types/thing/unwatch/">
+        unwatch
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/v0/data-types/thing/values/" title="values" class="dd-item ">
         <a href="/v0/data-types/thing/values/">
         values
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/thing/watch/" title="watch" class="dd-item ">
+        <a href="/v0/data-types/thing/watch/">
+        watch
         
         </a>
     </li>
@@ -3958,6 +3996,25 @@
  
   
     
+      <li data-nav-id="/v0/watching/on-stop/" title="on-stop" class="dd-item ">
+        <a href="/v0/watching/on-stop/">
+        on-stop
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/v0/watching/warning/" title="warning" class="dd-item ">
         <a href="/v0/watching/warning/">
         warning
@@ -4342,8 +4399,19 @@
 <ul>
 <li>
 <ul>
+<li><a href="#set">set</a></li>
+<li><a href="#del">del</a></li>
+<li><a href="#add">add</a></li>
+<li><a href="#remove">remove</a></li>
 <li><a href="#splice">splice</a></li>
+<li><a href="#new-type">new_type</a></li>
+<li><a href="#set-type">set_type</a></li>
+<li><a href="#del-type">del_type</a></li>
+<li><a href="#mod-type-add">mod_type_add</a></li>
+<li><a href="#mod-type-del">mod_type_del</a></li>
+<li><a href="#mod-type-mod">mod_type_mod</a></li>
 <li><a href="#new-procedure">new_procedure</a></li>
+<li><a href="#del-procedure">del_procedure</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -4372,10 +4440,10 @@
 
 
 
-<p>An update event is pushed when a <code>thing</code> which you are watching, is updated.
-If the thing contains other things, then these need to be watched separate to receive events when they are changed.</p>
+<p>An update event is pushed when changed are made to a <code>thing</code> you are watching.
+Nested things need to be watched separate.</p>
 
-<p>A not</p>
+<p>The event contains the Thing ID (<code>#</code>), an event number, and an <em>jobs</em> array containing all the mutations which are applied to the thing in the order as they are put in the array.</p>
 
 <pre><code class="language-json">{
     &quot;#&quot;: 3,
@@ -4386,10 +4454,12 @@ If the thing contains other things, then these need to be watched separate to re
 }
 </code></pre>
 
+<p>Each mutation is a <em>map</em> <code>{}</code> with a single <em>key</em>. This key tells what kind of <em>mutation</em> is applied to the thing.</p>
+
 <table>
 <thead>
 <tr>
-<th>Job</th>
+<th>Mutation</th>
 <th>Target</th>
 <th>Description</th>
 </tr>
@@ -4397,9 +4467,69 @@ If the thing contains other things, then these need to be watched separate to re
 
 <tbody>
 <tr>
+<td><a href="#set">set</a></td>
+<td><code>thing</code></td>
+<td>Add a new property.</td>
+</tr>
+
+<tr>
+<td><a href="#del">del</a></td>
+<td><code>thing</code></td>
+<td>Delete a property.</td>
+</tr>
+
+<tr>
+<td><a href="#add">add</a></td>
+<td><code>thing</code></td>
+<td>Add one or more <a href="../../data-types/thing">things</a> to a <a href="../../data-types/set">set</a>.</td>
+</tr>
+
+<tr>
+<td><a href="#remove">remove</a></td>
+<td><code>thing</code></td>
+<td>Remove one or more <a href="../../data-types/thing">things</a> from a <a href="../../data-types/set">set</a>.</td>
+</tr>
+
+<tr>
 <td><a href="#splice">splice</a></td>
 <td><code>thing</code></td>
-<td></td>
+<td>Delete and/or add items to a <a href="../../data-types/list">list</a>.</td>
+</tr>
+
+<tr>
+<td><a href="#new_type">new_type</a></td>
+<td><code>collection</code></td>
+<td>A new <a href="../../data-types/type">type</a> is added to the collection.</td>
+</tr>
+
+<tr>
+<td><a href="#set_type">set_type</a></td>
+<td><code>collection</code></td>
+<td>A <a href="../../data-types/type">type</a> is initialized.</td>
+</tr>
+
+<tr>
+<td><a href="#del_type">del_type</a></td>
+<td><code>collection</code></td>
+<td>A <a href="../../data-types/type">type</a> is removed from the collection.</td>
+</tr>
+
+<tr>
+<td><a href="#mod_type_add">mod_type_add</a></td>
+<td><code>collection</code></td>
+<td>A new field is added to an existing <a href="../../data-types/type">type</a>.</td>
+</tr>
+
+<tr>
+<td><a href="#mod_type_del">mod_type_del</a></td>
+<td><code>collection</code></td>
+<td>A field is removed from an existing <a href="../../data-types/type">type</a>.</td>
+</tr>
+
+<tr>
+<td><a href="#mod_type_mod">mod_type_mod</a></td>
+<td><code>collection</code></td>
+<td>A filed is modified on an existing <a href="../../data-types/type">type</a>.</td>
 </tr>
 
 <tr>
@@ -4407,14 +4537,77 @@ If the thing contains other things, then these need to be watched separate to re
 <td><code>collection</code></td>
 <td>A new procedure is added to the collection.</td>
 </tr>
+
+<tr>
+<td><a href="#del_procedure">del_procedure</a></td>
+<td><code>collection</code></td>
+<td>A procedure is removed from the collection.</td>
+</tr>
 </tbody>
 </table>
+
+
+<div class="notices tip" ><p>When <em>new</em> things are contained inside the mutations <a href="#set">set</a>, <a href="#add">add</a> or <a href="#splice">splice</a>, Then the mutation will contain the <em>complete</em> thing with all properties. If on the other hand an <em>existing</em> thing is provided, then only the ID (<code>#</code>) and no other properties are contained.</p>
+</div>
+
+
+<h2 id="set">set</h2>
+
+<h2 id="del">del</h2>
+
+<h2 id="add">add</h2>
+
+<pre><code class="language-thingsdb.syntax_only">// .myset = set();
+.myset.add(#11, #23, {title: 'HG2G'});
+</code></pre>
+
+<blockquote>
+<p>Adds the existing things <code>#11</code>, <code>#23</code> and a new thing <code>#42</code> to a <em>set</em> on property <code>myset</code></p>
+</blockquote>
+
+<pre><code class="language-json">{
+    &quot;add&quot;: {
+        &quot;myset&quot;: [{
+            &quot;#&quot;: 11
+        }, {
+            &quot;#&quot;: 23
+        }, {
+            &quot;#&quot;: 42,
+            &quot;title&quot;: &quot;HG2G&quot;
+        }]
+    }
+}
+</code></pre>
+
+<h2 id="remove">remove</h2>
+
+<pre><code class="language-thingsdb,syntax_only">// .myset = set(#55, #123, #42);
+.myset.remove(#123, #42);
+</code></pre>
+
+<blockquote>
+<p>Removes the things <code>#123</code> and <code>#42</code> are removed from a <em>set</em> on property <code>myset</code></p>
+</blockquote>
+
+<pre><code class="language-json">{
+    &quot;remove&quot;: {
+        &quot;myset&quot;: [
+            123,
+            42
+        ]
+    }
+}
+</code></pre>
 
 <h2 id="splice">splice</h2>
 
 <pre><code class="language-thingsdb,syntax_only">// .arr = [&quot;a&quot;, &quot;b&quot;];
 .arr.push(&quot;c&quot;, &quot;d&quot;);
 </code></pre>
+
+<blockquote>
+<p>Add items <code>&quot;c&quot;</code> and <code>&quot;d&quot;</code> at position <code>2</code>, and deletes <code>0</code> items to a <em>list</em> on property <code>arr</code></p>
+</blockquote>
 
 <pre><code class="language-json">{
     &quot;splice&quot;: {
@@ -4423,10 +4616,26 @@ If the thing contains other things, then these need to be watched separate to re
 }
 </code></pre>
 
+<h2 id="new-type">new_type</h2>
+
+<h2 id="set-type">set_type</h2>
+
+<h2 id="del-type">del_type</h2>
+
+<h2 id="mod-type-add">mod_type_add</h2>
+
+<h2 id="mod-type-del">mod_type_del</h2>
+
+<h2 id="mod-type-mod">mod_type_mod</h2>
+
 <h2 id="new-procedure">new_procedure</h2>
 
 <pre><code class="language-thingsdb,should_pass">new_procedure('multiply', |a, b| a*b);
 </code></pre>
+
+<blockquote>
+<p>A new procedure named <code>multiply</code> is added to the collection</p>
+</blockquote>
 
 <pre><code class="language-json">{
     &quot;new_procedure&quot;: {
@@ -4436,6 +4645,8 @@ If the thing contains other things, then these need to be watched separate to re
     }
 }
 </code></pre>
+
+<h2 id="del-procedure">del_procedure</h2>
 
 
 <footer class=" footline" >
@@ -4466,19 +4677,19 @@ If the thing contains other things, then these need to be watched separate to re
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1580916045"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1580916045"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1580916045"></script>
-    <script src="/v0/js/jquery.sticky.js?1580916045"></script>
-    <script src="/v0/js/featherlight.min.js?1580916045"></script>
-    <script src="/v0/js/highlight.pack.js?1580916045"></script>
+    <script src="/v0/js/clipboard.min.js?1581374404"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1581374404"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1581374404"></script>
+    <script src="/v0/js/jquery.sticky.js?1581374404"></script>
+    <script src="/v0/js/featherlight.min.js?1581374404"></script>
+    <script src="/v0/js/highlight.pack.js?1581374404"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1580916045"></script>
-    <script src="/v0/js/learn.js?1580916045"></script>
-    <script src="/v0/js/hugo-learn.js?1580916045"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1581374404"></script>
+    <script src="/v0/js/learn.js?1581374404"></script>
+    <script src="/v0/js/hugo-learn.js?1581374404"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1580916045" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1580916045"></script>
+    <link href="/v0/mermaid/mermaid.css?1581374404" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1581374404"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

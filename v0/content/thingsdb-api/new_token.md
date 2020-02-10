@@ -1,6 +1,6 @@
 ---
 title: "new_token"
-weight: 170
+weight: 172
 ---
 
 Adds a new token for a given user. An optional expiration time may be given after which the token cannot
@@ -19,7 +19,7 @@ It is also possible to set a description for the token which can be used to iden
 If you only want to set a description, but no expiration time, then you can use `nil` as second argument.
 For example: `new_token('my_user', nil, 'some nice description');`
 
-There can be no more than 128 tokens assigned to a single user. A `MAX_QUOTA_ERROR` is raised if this limit
+There can be no more than 128 tokens assigned to a single user. A [max_quota_err()](../../errors/max_quota_err) is raised if this limit
 is reached. Existing tokens can be removed with [del_token](../../thingsdb-api/del_token) and to view the current tokens you can use the [user_info(..)](../../thingsdb-api/user_info) (or [users_info()](../../thingsdb-api/users_info)) function.
 
 {{% notice note %}}

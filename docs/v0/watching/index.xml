@@ -39,9 +39,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/watching/on-update/</guid>
-      <description>An update event is pushed when a thing which you are watching, is updated. If the thing contains other things, then these need to be watched separate to receive events when they are changed.
-A not
-{ &amp;quot;#&amp;quot;: 3, &amp;quot;event&amp;quot;: 123, &amp;quot;jobs&amp;quot;: [ ... ] }     Job Target Description     splice thing    new_procedure collection A new procedure is added to the collection.</description>
+      <description>An update event is pushed when changed are made to a thing you are watching. Nested things need to be watched separate.
+The event contains the Thing ID (#), an event number, and an jobs array containing all the mutations which are applied to the thing in the order as they are put in the array.
+{ &amp;quot;#&amp;quot;: 3, &amp;quot;event&amp;quot;: 123, &amp;quot;jobs&amp;quot;: [ ... ] }  Each mutation is a map {} with a single key.</description>
     </item>
     
     <item>
@@ -53,6 +53,18 @@ A not
       <description>A delete event will be pushed as soon as a thing which you are watching, is removed from ThingsDB.
 If this event is not received when expected, there might exist circular references to the removed thing. In this case you have to wait until garbage collection has cleaned the thing from ThingsDB. This is done when the node is in away mode.
   Example watch delete event in JSON format:</description>
+    </item>
+    
+    <item>
+      <title>on-stop</title>
+      <link>https://docs.thingsdb.net/v0/watching/on-stop/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/watching/on-stop/</guid>
+      <description>A stop event will be pushed as soon as a thing has stopped with watching.
+This event is not pushed when a connection to a node is lost but only when watching is stopped by the user.
+  Example watch stop event in JSON format:
+ { &amp;quot;#&amp;quot;: 42 }  </description>
     </item>
     
     <item>
