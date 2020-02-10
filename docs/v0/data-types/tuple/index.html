@@ -11,20 +11,20 @@
     <title>tuple :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1581374403" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1581374403" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1581374403" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1581374403" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1581374403" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1581374403" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1581374403" rel="stylesheet">
-    <link href="/v0/css/theme.css?1581374403" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1581374403" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1581376434" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1581376434" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1581376434" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1581376434" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1581376434" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1581376434" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1581376434" rel="stylesheet">
+    <link href="/v0/css/theme.css?1581376434" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1581376434" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1581374403" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1581376434" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1581374403"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1581376434"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1581374403"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1581374403"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1581376434"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1581376434"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1581374403"></script>
+<script type="text/javascript" src="/v0/js/search.js?1581376434"></script>
 
     
   </div>
@@ -4443,9 +4443,9 @@ assert(istuple(list[0]));
 assert(iserr(try(list[0].push('cannot be added to a tuple'))));
 </code></pre>
 
-<p>A tuple only becomes a <code>tuple</code> when it is nested inside a list, which means the &lsquo;list&rsquo; will be immutable.
+<p>A <code>tuple</code> only becomes a <code>tuple</code> when it is nested inside another <code>tuple</code> or <code>list</code>, which means the <code>tuple</code> will be immutable.
 ThingsDB does this because it wants to update all changes to subscribers and finds the subscribers by the parent object where
-the change is  made. Since the parent of a nested &lsquo;list&rsquo; is another list, the <code>thing</code> holding the list would not be found.</p>
+the change is made. Since the parent of a nested <code>tuple</code> is another <code>tuple</code> or <code>list</code>, the <code>thing</code> holding the <code>list</code> would not be found.</p>
 
 <p>Another property of <code>lists</code> and <code>tuples</code> in ThingsDB is that they both are always <em>copies</em>, and not by <em>reference</em> as in most languages. This is
 because ThingsDB needs to know which subscribers to update when changes are made.</p>
@@ -4497,6 +4497,11 @@ because ThingsDB needs to know which subscribers to update when changes are made
 </tr>
 
 <tr>
+<td><a href="../list/reduce">reduce</a></td>
+<td>Executes a reducer function on each element, resulting in a single output value.</td>
+</tr>
+
+<tr>
 <td><a href="../list/sort">sort</a></td>
 <td>Returns a new sorted <code>list</code>.</td>
 </tr>
@@ -4537,19 +4542,19 @@ because ThingsDB needs to know which subscribers to update when changes are made
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1581374403"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1581374403"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1581374403"></script>
-    <script src="/v0/js/jquery.sticky.js?1581374403"></script>
-    <script src="/v0/js/featherlight.min.js?1581374403"></script>
-    <script src="/v0/js/highlight.pack.js?1581374403"></script>
+    <script src="/v0/js/clipboard.min.js?1581376435"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1581376435"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1581376435"></script>
+    <script src="/v0/js/jquery.sticky.js?1581376435"></script>
+    <script src="/v0/js/featherlight.min.js?1581376435"></script>
+    <script src="/v0/js/highlight.pack.js?1581376435"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1581374403"></script>
-    <script src="/v0/js/learn.js?1581374403"></script>
-    <script src="/v0/js/hugo-learn.js?1581374403"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1581376435"></script>
+    <script src="/v0/js/learn.js?1581376435"></script>
+    <script src="/v0/js/hugo-learn.js?1581376435"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1581374403" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1581374403"></script>
+    <link href="/v0/mermaid/mermaid.css?1581376435" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1581376435"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

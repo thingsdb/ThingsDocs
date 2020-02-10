@@ -81,7 +81,7 @@ Methods that use regular expressions    Method Description     test A str method
       
       <guid>https://docs.thingsdb.net/v0/data-types/tuple/</guid>
       <description>All nested arrays are immutable and thus tuples.
-list = []; list.push([&#39;this list will be nested and therefore convert to a tuple&#39;]); // Check that the first item in `list` is indeed a `tuple` assert(istuple(list[0])); // Check that the `tuple` is indeed immutable assert(iserr(try(list[0].push(&#39;cannot be added to a tuple&#39;))));  A tuple only becomes a tuple when it is nested inside a list, which means the &amp;lsquo;list&amp;rsquo; will be immutable.</description>
+list = []; list.push([&#39;this list will be nested and therefore convert to a tuple&#39;]); // Check that the first item in `list` is indeed a `tuple` assert(istuple(list[0])); // Check that the `tuple` is indeed immutable assert(iserr(try(list[0].push(&#39;cannot be added to a tuple&#39;))));  A tuple only becomes a tuple when it is nested inside another tuple or list, which means the tuple will be immutable.</description>
     </item>
     
     <item>

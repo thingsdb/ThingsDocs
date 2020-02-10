@@ -16,9 +16,9 @@ assert(istuple(list[0]));
 assert(iserr(try(list[0].push('cannot be added to a tuple'))));
 ```
 
-A tuple only becomes a `tuple` when it is nested inside a list, which means the 'list' will be immutable.
+A `tuple` only becomes a `tuple` when it is nested inside another `tuple` or `list`, which means the `tuple` will be immutable.
 ThingsDB does this because it wants to update all changes to subscribers and finds the subscribers by the parent object where
-the change is  made. Since the parent of a nested 'list' is another list, the `thing` holding the list would not be found.
+the change is made. Since the parent of a nested `tuple` is another `tuple` or `list`, the `thing` holding the `list` would not be found.
 
 Another property of `lists` and `tuples` in ThingsDB is that they both are always *copies*, and not by *reference* as in most languages. This is
 because ThingsDB needs to know which subscribers to update when changes are made.
@@ -34,6 +34,7 @@ Method | Description
 [indexof](../list/indexof) | Returns the index of a given value, or `nil` if not found.
 [len](../list/len) | Returns the length of the tuple.
 [map](../list/map) | Returns a new `list` with the results of calling a provided closure on every element.
+[reduce](../list/reduce) | Executes a reducer function on each element, resulting in a single output value.
 [sort](../list/sort) | Returns a new sorted `list`.
 
 {{% notice info %}}
