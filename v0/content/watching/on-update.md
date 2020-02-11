@@ -13,12 +13,13 @@ The event contains the Thing ID (`#`), an event number, and an *jobs* array cont
     "#": 3,
     "event": 123,
     "jobs": [
-        ...
+        ...mutations
     ]
 }
 ```
 
-Each mutation is a *map* `{}` with a single *key*. This key tells what kind of *mutation* is applied to the thing.
+Each mutation is a *map* `{}` with a single *key*. This key tells what kind of *mutation* is applied to the thing. If the *thing* is actually a collection, you will receive both
+changes to the *thing*, as well as changes to the *collection*. This way you can also watch for collection mutations such as type or procedure changes.
 
 Mutation | Target | Description
 -------- | ------ | -----------
@@ -40,18 +41,85 @@ Mutation | Target | Description
 When *new* things are contained inside the mutations [set](#set), [add](#add) or [splice](#splice), Then the mutation will contain the *complete* thing with all properties. If on the other hand an *existing* thing is provided, then only the ID (`#`) and no other properties are contained.
 {{% /notice %}}
 
+{{% notice info %}}
+While most values inside mutation are easy to understand, a instance of a *Type* might seem a bit strange. For help on how to parse such mutation see the [set](#set) example below, and the [mutation format](../../data-types/type#mutation-format) documentation.
+{{% /notice %}}
+
 ## set
+
+```thingsdb,syntax_only
+// Adds a property `name` with value `"ThingsDB"`.
+
+.name = "ThingsDB";
+```
+> Mutation result from the above code:
+
+```json
+{
+    "set": {
+        "name": "ThingsDB"
+    }
+}
+```
+
+Most values like the one above are quite obvious but note that instances of
+a certain [Type](../../data-types/type) use the `type_id` and refer to fields
+with the values instead of the property names. For example:
+
+```thingsdb,syntax_only
+// set_type('Person', {name: 'str'});
+
+.person = Person{name: "Iris"};
+```
+
+The mutation event of creating the `Person` above contains a empty key `""` with
+and `array` of *fields*. They refer to the *fields* of type with `type_id:0`
+which can be found at key `"."`. The ID of the instance is equal to a normal *thing*
+and can be found with key `"#"`, so ID 5 in the example result below. For more
+information on how to parse a type instance, look at the [mutation format](../../data-types/type#mutation-format) documentation.
+
+```json
+{
+    "set": {
+        "person": {
+            "": [
+                "Iris"
+            ],
+            "#": 5,
+            ".": 0
+        }
+    }
+}
+```
 
 ## del
 
+```thingsdb,syntax_only
+// Delete property `name`.
+
+// .name = "ThingsDB";
+.del("name");
+```
+> Mutation result from the above code:
+
+```json
+{
+    "del": "name"
+}
+```
+
 ## add
 
-```thingsdb.syntax_only
+```thingsdb,syntax_only
+/*
+ * Adds the existing things `#11`, `#23` and a new
+ * thing `#42` to a *set* on property `myset`.
+ */
+
 // .myset = set();
 .myset.add(#11, #23, {title: 'HG2G'});
 ```
-
-> Adds the existing things `#11`, `#23` and a new thing `#42` to a *set* on property `myset`
+> Mutation result from the above code:
 
 ```json
 {
@@ -71,11 +139,15 @@ When *new* things are contained inside the mutations [set](#set), [add](#add) or
 ## remove
 
 ```thingsdb,syntax_only
+/*
+ * Removes the things `#123` and `#42` are removed
+ * from a *set* on property `myset`.
+ */
+
 // .myset = set(#55, #123, #42);
 .myset.remove(#123, #42);
 ```
-
-> Removes the things `#123` and `#42` are removed from a *set* on property `myset`
+> Mutation result from the above code:
 
 ```json
 {
@@ -91,11 +163,15 @@ When *new* things are contained inside the mutations [set](#set), [add](#add) or
 ## splice
 
 ```thingsdb,syntax_only
+/*
+ * Add items `"c"` and `"d"` at position `2`, and
+ * deletes `0` items to a *list* on property `arr`.
+ */
+
 // .arr = ["a", "b"];
 .arr.push("c", "d");
 ```
-
-> Add items `"c"` and `"d"` at position `2`, and deletes `0` items to a *list* on property `arr`
+> Mutation result from the above code:
 
 ```json
 {
@@ -107,9 +183,63 @@ When *new* things are contained inside the mutations [set](#set), [add](#add) or
 
 ## new_type
 
+```thingsdb,should_pass
+// A new type named `Person` is added to the collection
+// The `type_id` is usually not something you use, except
+// for other mutations which refer to `type_id` when creating
+// an instance of a Type.
+
+new_type('Person');
+```
+> Mutation result from the above code:
+
+```json
+{
+    "new_type": {
+        "created_at": 1581453937,
+        "name": "Person",
+        "type_id": 0
+    }
+}
+```
+
 ## set_type
 
+```thingsdb,should_pass
+// Set initial Type field definitions, field `name`
+// with definition `str` on type `Person` in this case.
+
+set_type('Person', {name: 'str'});
+```
+> Mutation result from the above code:
+
+```json
+{
+    "set_type": {
+        "fields": [
+            ["name", "str"]
+        ],
+        "modified_at": 1581455876,
+        "type_id": 0
+    }
+}
+```
+
 ## del_type
+
+```thingsdb,syntax_only
+// Delete a type named `Person`.
+
+// new_type('Person');
+del_type('Person');
+```
+> Mutation result from the above code:
+
+```json
+{
+    "del_type": 0
+}
+```
 
 ## mod_type_add
 
@@ -120,19 +250,37 @@ When *new* things are contained inside the mutations [set](#set), [add](#add) or
 ## new_procedure
 
 ```thingsdb,should_pass
+// A new procedure named `multiply` is added to the collection.
+
 new_procedure('multiply', |a, b| a*b);
 ```
-
-> A new procedure named `multiply` is added to the collection
+> Mutation result from the above code:
 
 ```json
 {
     "new_procedure": {
         "name": "multiply",
         "created_at": 1579601906,
-        "closure": "|a,b|a*b"
+        "closure": {
+            "/": "|a,b|a*b"
+        }
     }
 }
 ```
 
 ## del_procedure
+
+
+```thingsdb,syntax_only
+// Delete a  procedure named `multiply`.
+
+// new_procedure('multiply', |a, b| a*b);
+del_procedure('multiply');
+```
+> Mutation result from the above code:
+
+```json
+{
+    "del_procedure": "multiply"
+}
+```

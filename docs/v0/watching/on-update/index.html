@@ -11,20 +11,20 @@
     <title>on-update :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1581376435" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1581376435" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1581376435" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1581376435" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1581376435" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1581376435" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1581376435" rel="stylesheet">
-    <link href="/v0/css/theme.css?1581376435" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1581376435" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1581459050" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1581459050" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1581459050" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1581459050" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1581459050" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1581459050" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1581459050" rel="stylesheet">
+    <link href="/v0/css/theme.css?1581459050" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1581459050" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1581376435" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1581459050" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1581376435"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1581459050"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1581376435"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1581376435"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1581459050"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1581459050"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1581376435"></script>
+<script type="text/javascript" src="/v0/js/search.js?1581459050"></script>
 
     
   </div>
@@ -4449,12 +4449,13 @@ Nested things need to be watched separate.</p>
     &quot;#&quot;: 3,
     &quot;event&quot;: 123,
     &quot;jobs&quot;: [
-        ...
+        ...mutations
     ]
 }
 </code></pre>
 
-<p>Each mutation is a <em>map</em> <code>{}</code> with a single <em>key</em>. This key tells what kind of <em>mutation</em> is applied to the thing.</p>
+<p>Each mutation is a <em>map</em> <code>{}</code> with a single <em>key</em>. This key tells what kind of <em>mutation</em> is applied to the thing. If the <em>thing</em> is actually a collection, you will receive both
+changes to the <em>thing</em>, as well as changes to the <em>collection</em>. This way you can also watch for collection mutations such as type or procedure changes.</p>
 
 <table>
 <thead>
@@ -4551,18 +4552,87 @@ Nested things need to be watched separate.</p>
 </div>
 
 
+
+<div class="notices info" ><p>While most values inside mutation are easy to understand, a instance of a <em>Type</em> might seem a bit strange. For help on how to parse such mutation see the <a href="#set">set</a> example below, and the <a href="../../data-types/type#mutation-format">mutation format</a> documentation.</p>
+</div>
+
+
 <h2 id="set">set</h2>
+
+<pre><code class="language-thingsdb,syntax_only">// Adds a property `name` with value `&quot;ThingsDB&quot;`.
+
+.name = &quot;ThingsDB&quot;;
+</code></pre>
+
+<blockquote>
+<p>Mutation result from the above code:</p>
+</blockquote>
+
+<pre><code class="language-json">{
+    &quot;set&quot;: {
+        &quot;name&quot;: &quot;ThingsDB&quot;
+    }
+}
+</code></pre>
+
+<p>Most values like the one above are quite obvious but note that instances of
+a certain <a href="../../data-types/type">Type</a> use the <code>type_id</code> and refer to fields
+with the values instead of the property names. For example:</p>
+
+<pre><code class="language-thingsdb,syntax_only">// set_type('Person', {name: 'str'});
+
+.person = Person{name: &quot;Iris&quot;};
+</code></pre>
+
+<p>The mutation event of creating the <code>Person</code> above contains a empty key <code>&quot;&quot;</code> with
+and <code>array</code> of <em>fields</em>. They refer to the <em>fields</em> of type with <code>type_id:0</code>
+which can be found at key <code>&quot;.&quot;</code>. The ID of the instance is equal to a normal <em>thing</em>
+and can be found with key <code>&quot;#&quot;</code>, so ID 5 in the example result below. For more
+information on how to parse a type instance, look at the <a href="../../data-types/type#mutation-format">mutation format</a> documentation.</p>
+
+<pre><code class="language-json">{
+    &quot;set&quot;: {
+        &quot;person&quot;: {
+            &quot;&quot;: [
+                &quot;Iris&quot;
+            ],
+            &quot;#&quot;: 5,
+            &quot;.&quot;: 0
+        }
+    }
+}
+</code></pre>
 
 <h2 id="del">del</h2>
 
+<pre><code class="language-thingsdb,syntax_only">// Delete property `name`.
+
+// .name = &quot;ThingsDB&quot;;
+.del(&quot;name&quot;);
+</code></pre>
+
+<blockquote>
+<p>Mutation result from the above code:</p>
+</blockquote>
+
+<pre><code class="language-json">{
+    &quot;del&quot;: &quot;name&quot;
+}
+</code></pre>
+
 <h2 id="add">add</h2>
 
-<pre><code class="language-thingsdb.syntax_only">// .myset = set();
+<pre><code class="language-thingsdb,syntax_only">/*
+ * Adds the existing things `#11`, `#23` and a new
+ * thing `#42` to a *set* on property `myset`.
+ */
+
+// .myset = set();
 .myset.add(#11, #23, {title: 'HG2G'});
 </code></pre>
 
 <blockquote>
-<p>Adds the existing things <code>#11</code>, <code>#23</code> and a new thing <code>#42</code> to a <em>set</em> on property <code>myset</code></p>
+<p>Mutation result from the above code:</p>
 </blockquote>
 
 <pre><code class="language-json">{
@@ -4581,12 +4651,17 @@ Nested things need to be watched separate.</p>
 
 <h2 id="remove">remove</h2>
 
-<pre><code class="language-thingsdb,syntax_only">// .myset = set(#55, #123, #42);
+<pre><code class="language-thingsdb,syntax_only">/*
+ * Removes the things `#123` and `#42` are removed
+ * from a *set* on property `myset`.
+ */
+
+// .myset = set(#55, #123, #42);
 .myset.remove(#123, #42);
 </code></pre>
 
 <blockquote>
-<p>Removes the things <code>#123</code> and <code>#42</code> are removed from a <em>set</em> on property <code>myset</code></p>
+<p>Mutation result from the above code:</p>
 </blockquote>
 
 <pre><code class="language-json">{
@@ -4601,12 +4676,17 @@ Nested things need to be watched separate.</p>
 
 <h2 id="splice">splice</h2>
 
-<pre><code class="language-thingsdb,syntax_only">// .arr = [&quot;a&quot;, &quot;b&quot;];
+<pre><code class="language-thingsdb,syntax_only">/*
+ * Add items `&quot;c&quot;` and `&quot;d&quot;` at position `2`, and
+ * deletes `0` items to a *list* on property `arr`.
+ */
+
+// .arr = [&quot;a&quot;, &quot;b&quot;];
 .arr.push(&quot;c&quot;, &quot;d&quot;);
 </code></pre>
 
 <blockquote>
-<p>Add items <code>&quot;c&quot;</code> and <code>&quot;d&quot;</code> at position <code>2</code>, and deletes <code>0</code> items to a <em>list</em> on property <code>arr</code></p>
+<p>Mutation result from the above code:</p>
 </blockquote>
 
 <pre><code class="language-json">{
@@ -4618,9 +4698,66 @@ Nested things need to be watched separate.</p>
 
 <h2 id="new-type">new_type</h2>
 
+<pre><code class="language-thingsdb,should_pass">// A new type named `Person` is added to the collection
+// The `type_id` is usually not something you use, except
+// for other mutations which refer to `type_id` when creating
+// an instance of a Type.
+
+new_type('Person');
+</code></pre>
+
+<blockquote>
+<p>Mutation result from the above code:</p>
+</blockquote>
+
+<pre><code class="language-json">{
+    &quot;new_type&quot;: {
+        &quot;created_at&quot;: 1581453937,
+        &quot;name&quot;: &quot;Person&quot;,
+        &quot;type_id&quot;: 0
+    }
+}
+</code></pre>
+
 <h2 id="set-type">set_type</h2>
 
+<pre><code class="language-thingsdb,should_pass">// Set initial Type field definitions, field `name`
+// with definition `str` on type `Person` in this case.
+
+set_type('Person', {name: 'str'});
+</code></pre>
+
+<blockquote>
+<p>Mutation result from the above code:</p>
+</blockquote>
+
+<pre><code class="language-json">{
+    &quot;set_type&quot;: {
+        &quot;fields&quot;: [
+            [&quot;name&quot;, &quot;str&quot;]
+        ],
+        &quot;modified_at&quot;: 1581455876,
+        &quot;type_id&quot;: 0
+    }
+}
+</code></pre>
+
 <h2 id="del-type">del_type</h2>
+
+<pre><code class="language-thingsdb,syntax_only">// Delete a type named `Person`.
+
+// new_type('Person');
+del_type('Person');
+</code></pre>
+
+<blockquote>
+<p>Mutation result from the above code:</p>
+</blockquote>
+
+<pre><code class="language-json">{
+    &quot;del_type&quot;: 0
+}
+</code></pre>
 
 <h2 id="mod-type-add">mod_type_add</h2>
 
@@ -4630,23 +4767,42 @@ Nested things need to be watched separate.</p>
 
 <h2 id="new-procedure">new_procedure</h2>
 
-<pre><code class="language-thingsdb,should_pass">new_procedure('multiply', |a, b| a*b);
+<pre><code class="language-thingsdb,should_pass">// A new procedure named `multiply` is added to the collection.
+
+new_procedure('multiply', |a, b| a*b);
 </code></pre>
 
 <blockquote>
-<p>A new procedure named <code>multiply</code> is added to the collection</p>
+<p>Mutation result from the above code:</p>
 </blockquote>
 
 <pre><code class="language-json">{
     &quot;new_procedure&quot;: {
         &quot;name&quot;: &quot;multiply&quot;,
         &quot;created_at&quot;: 1579601906,
-        &quot;closure&quot;: &quot;|a,b|a*b&quot;
+        &quot;closure&quot;: {
+            &quot;/&quot;: &quot;|a,b|a*b&quot;
+        }
     }
 }
 </code></pre>
 
 <h2 id="del-procedure">del_procedure</h2>
+
+<pre><code class="language-thingsdb,syntax_only">// Delete a  procedure named `multiply`.
+
+// new_procedure('multiply', |a, b| a*b);
+del_procedure('multiply');
+</code></pre>
+
+<blockquote>
+<p>Mutation result from the above code:</p>
+</blockquote>
+
+<pre><code class="language-json">{
+    &quot;del_procedure&quot;: &quot;multiply&quot;
+}
+</code></pre>
 
 
 <footer class=" footline" >
@@ -4677,19 +4833,19 @@ Nested things need to be watched separate.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1581376435"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1581376435"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1581376435"></script>
-    <script src="/v0/js/jquery.sticky.js?1581376435"></script>
-    <script src="/v0/js/featherlight.min.js?1581376435"></script>
-    <script src="/v0/js/highlight.pack.js?1581376435"></script>
+    <script src="/v0/js/clipboard.min.js?1581459050"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1581459050"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1581459050"></script>
+    <script src="/v0/js/jquery.sticky.js?1581459050"></script>
+    <script src="/v0/js/featherlight.min.js?1581459050"></script>
+    <script src="/v0/js/highlight.pack.js?1581459050"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1581376435"></script>
-    <script src="/v0/js/learn.js?1581376435"></script>
-    <script src="/v0/js/hugo-learn.js?1581376435"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1581459050"></script>
+    <script src="/v0/js/learn.js?1581459050"></script>
+    <script src="/v0/js/hugo-learn.js?1581459050"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1581376435" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1581376435"></script>
+    <link href="/v0/mermaid/mermaid.css?1581459050" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1581459050"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

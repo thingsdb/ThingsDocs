@@ -2195,7 +2195,7 @@ Example  Example code using run:
       <guid>https://docs.thingsdb.net/v0/watching/on-update/</guid>
       <description>An update event is pushed when changed are made to a thing you are watching. Nested things need to be watched separate.
 The event contains the Thing ID (#), an event number, and an jobs array containing all the mutations which are applied to the thing in the order as they are put in the array.
-{ &amp;quot;#&amp;quot;: 3, &amp;quot;event&amp;quot;: 123, &amp;quot;jobs&amp;quot;: [ ... ] }  Each mutation is a map {} with a single key.</description>
+{ &amp;quot;#&amp;quot;: 3, &amp;quot;event&amp;quot;: 123, &amp;quot;jobs&amp;quot;: [ ...mutations ] }  Each mutation is a map {} with a single key.</description>
     </item>
     
     <item>

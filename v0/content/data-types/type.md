@@ -140,3 +140,47 @@ Method | Description
 [type_info](../../collection-api/type_info) | Return the `Type` definition.
 [types_info](../../collection-api/types_info) | Return all `Type` definitions in the current scope.
 
+### Mutation format
+
+A mutation format is only required to understand if you manually want to parse events
+when *watching* for mutations on *thongs*. While most values have a pretty straightforward
+format when packed in a *mutation*, a type instance is a bit more complex
+to understand.
+
+An example of a type mutation:
+
+```json
+{
+    ".": 10,
+    "#": 123,
+    "": [
+        "hitchhiker's guide to the galaxy"
+        4.2
+    ]
+}
+```
+
+Key | Description
+--- | -----------
+`"."` | The `type_id` of the Type.
+`"#"` | The `#ID` which is assigned to the Type instance.
+`""`  | Array with fields;
+
+In order to correctly to parse the mutation correctly you require the [types_info](../../collection-api/types_info) of a collection.
+Note that the types info is included inside an [init event](../../watching/on-init). Below is an example with an entry of `types_info`
+which shows the type **Book**, which is the type with id `10` from the mutation example above.
+
+```json
+...
+{
+    "created_at": 1581454041,
+    "fields": [
+        ["title", "str"]
+        ["rating", "float"]
+    ],
+    "modified_at": 1581455876,
+    "name": "Book",
+    "type_id": 10
+}
+...
+```
