@@ -1,9 +1,14 @@
 ---
 title: "del"
-weight: 68
+weight: 69
 ---
 
 Delete a property from a [thing](..).
+
+{{% notice info %}}
+While almost all function on *things* are also available on *Type instances*, this one is not. This is because a Type instance has a fixed set of properties and so you are not allowed to delete one of them on a single instance.
+Use [mod_type()](../../../collection-api/mod_type/del) instead, to delete the property from *all* instances if this is what you want.
+{{% /notice %}}
 
 This function generates an [event](../../../overview/events).
 

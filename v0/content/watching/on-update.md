@@ -1,6 +1,6 @@
 ---
 title: "on-update"
-weight: 191
+weight: 192
 ---
 
 An update event is pushed when changed are made to a `thing` you are watching.
@@ -32,8 +32,8 @@ Mutation | Target | Description
 [set_type](#set_type) | `collection` | A [type](../../data-types/type) is initialized.
 [del_type](#del_type) | `collection` | A [type](../../data-types/type) is removed from the collection.
 [mod_type_add](#mod_type_add) | `collection` | A new field is added to an existing [type](../../data-types/type).
-[mod_type_del](#mod_type_del) | `collection` | A field is removed from an existing [type](../../data-types/type).
 [mod_type_mod](#mod_type_mod) | `collection` | A filed is modified on an existing [type](../../data-types/type).
+[mod_type_del](#mod_type_del) | `collection` | A field is removed from an existing [type](../../data-types/type).
 [new_procedure](#new_procedure) | `collection` | A new procedure is added to the collection.
 [del_procedure](#del_procedure) | `collection` | A procedure is removed from the collection.
 
@@ -184,10 +184,12 @@ information on how to parse a type instance, look at the [mutation format](../..
 ## new_type
 
 ```thingsdb,should_pass
-// A new type named `Person` is added to the collection
-// The `type_id` is usually not something you use, except
-// for other mutations which refer to `type_id` when creating
-// an instance of a Type.
+/*
+ * A new type named `Person` is added to the collection
+ * The `type_id` is usually not something you use, except
+ * for other mutations which refer to `type_id` when creating
+ * an instance of a Type.
+ */
 
 new_type('Person');
 ```
@@ -206,8 +208,10 @@ new_type('Person');
 ## set_type
 
 ```thingsdb,should_pass
-// Set initial Type field definitions, field `name`
-// with definition `str` on type `Person` in this case.
+/*
+ * Set initial Type field definitions, field `name`
+ * with definition `str` on type `Person` in this case.
+ */
 
 set_type('Person', {name: 'str'});
 ```
@@ -243,9 +247,73 @@ del_type('Person');
 
 ## mod_type_add
 
-## mod_type_del
+```thingsdb,syntax_only
+/*
+ * Add a new field `rating` to type `Book`. If, and only if existing instances
+ * of the type `Book` exist, the mutation contains an `init` field with
+ * the given initial value. This value can be used to update earlier loaded
+ * instances of type `Book` and may be updated with this initial value to stay
+ * consistent with ThingsDB.
+ */
+
+// set_type('Book', {title: 'str'}); .book = Book{title: 'hhgttg'};
+mod_type('Book', 'add', 'rating', 'uint', 1);
+```
+> Mutation result from the above code:
+
+```json
+{
+    "mod_type_add": {
+        "init": 1,
+        "modified_at": 1581510638,
+        "name": "rating",
+        "spec": "uint",
+        "type_id": 2
+    }
+}
+```
 
 ## mod_type_mod
+
+```thingsdb,syntax_only
+// Change field definition `rating` of type `Book`.
+
+// set_type('Book', {title: 'str', rating: 'uint'});
+mod_type('Book', 'mod', 'rating', 'number');
+```
+
+> Mutation result from the above code:
+
+```json
+{
+    "mod_type_mod": {
+        "modified_at": 1581511115,
+        "name": "rating",
+        "spec": "number",
+        "type_id": 2
+    }
+}
+```
+
+## mod_type_del
+
+```thingsdb,syntax_only
+// Delete the `rating` field definition of type `Book`.
+
+// set_type('Book', {title: 'str', rating: 'number'});
+mod_type('Book', 'del', 'rating');
+```
+> Mutation result from the above code:
+
+```json
+{
+    "mod_type_del": {
+        "modified_at": 1581511233,
+        "name": "rating",
+        "type_id": 2
+    }
+}
+```
 
 ## new_procedure
 
@@ -269,7 +337,6 @@ new_procedure('multiply', |a, b| a*b);
 ```
 
 ## del_procedure
-
 
 ```thingsdb,syntax_only
 // Delete a  procedure named `multiply`.

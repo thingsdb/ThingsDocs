@@ -9,6 +9,7 @@ connect
         auth
         query
         run
+        watch
         error-response
 overview
     scopes

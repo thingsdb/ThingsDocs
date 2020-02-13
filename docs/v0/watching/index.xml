@@ -28,9 +28,9 @@
       <guid>https://docs.thingsdb.net/v0/watching/on-init/</guid>
       <description>This event will be pushed once for each thing which is added to the watch list.
  Example on-init event in JSON format:
- { &amp;quot;event&amp;quot;: 123, &amp;quot;thing&amp;quot;: { &amp;quot;#&amp;quot;: 42, &amp;quot;name&amp;quot;: &amp;quot;Iris&amp;quot; } }  If the thing is actually a collection, then the init event also contains all types and procedures inside the collection.
+ { &amp;quot;event&amp;quot;: 123, &amp;quot;collection&amp;quot;: &amp;quot;stuff&amp;quot;, &amp;quot;thing&amp;quot;: { &amp;quot;#&amp;quot;: 42, &amp;quot;name&amp;quot;: &amp;quot;Iris&amp;quot; } }  If the thing IS actually a collection, then the init event also contains all types and procedures inside the collection.
  Example on-init event for a collection in JSON format:
- { &amp;quot;event&amp;quot;: 123, &amp;quot;thing&amp;quot;: { &amp;quot;#&amp;quot;: 3 }, &amp;quot;types&amp;quot;: [ { &amp;quot;type_id&amp;quot;: 1, &amp;quot;name&amp;quot;: &amp;quot;Sample&amp;quot;, &amp;quot;created_at&amp;quot;: 1579592122, &amp;quot;modified_at&amp;quot;: 1579592122, &amp;quot;fields&amp;quot;: [ [&amp;quot;name&amp;quot;, &amp;quot;str?</description>
+ { &amp;quot;event&amp;quot;: 123, &amp;quot;collection&amp;quot;: &amp;quot;stuff&amp;quot;, &amp;quot;thing&amp;quot;: { &amp;quot;#&amp;quot;: 3 }, &amp;quot;types&amp;quot;: [ { &amp;quot;type_id&amp;quot;: 1, &amp;quot;name&amp;quot;: &amp;quot;Sample&amp;quot;, &amp;quot;created_at&amp;quot;: 1579592122, &amp;quot;modified_at&amp;quot;: 1579592122, &amp;quot;fields&amp;quot;: [ [&amp;quot;name&amp;quot;, &amp;quot;str?</description>
     </item>
     
     <item>

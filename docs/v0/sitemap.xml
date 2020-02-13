@@ -47,6 +47,10 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/connect/socket/watch/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/connect/socket/error-response/</loc>
   </url>
   

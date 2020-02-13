@@ -63,6 +63,19 @@ The socket needs to be authorized before for sending a run request. See the auth
     </item>
     
     <item>
+      <title>Example watch</title>
+      <link>https://docs.thingsdb.net/v0/connect/socket/watch/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/connect/socket/watch/</guid>
+      <description>Subscript for watching a node or things in ThingsDB. A successful run request will respond with a OK (17) package.
+ Syntax
+ [scope, ...IDs]  The IDs are the thing ID&amp;rsquo;s you want to watch.
+The socket needs to be authorized before for sending a watch request. See the auth example for how to authorize a socket connection.
+ Example As an example we assume that we want to watch a thing with ID 3 for changes.</description>
+    </item>
+    
+    <item>
       <title>Example error response</title>
       <link>https://docs.thingsdb.net/v0/connect/socket/error-response/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

@@ -17,10 +17,8 @@
       
       <guid>https://docs.thingsdb.net/v0/data-types/thing/del/</guid>
       <description>Delete a property from a thing.
-This function generates an event.
-Function thing.del(property)
-Arguments    Argument Type Description     property str (required) Name of the property to delete.    Return value Returns nil if successful. A lookup_err() is returned if the property does not exist or bad_data_err() in case the given property is not a valid name.
-Example  This code shows some return values for del():</description>
+While almost all function on things are also available on Type instances, this one is not. This is because a Type instance has a fixed set of properties and so you are not allowed to delete one of them on a single instance. Use mod_type() instead, to delete the property from all instances if this is what you want.
+ This function generates an event.</description>
     </item>
     
     <item>

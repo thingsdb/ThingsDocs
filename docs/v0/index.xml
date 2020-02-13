@@ -107,6 +107,19 @@ The socket needs to be authorized before for sending a run request. See the auth
     </item>
     
     <item>
+      <title>Example watch</title>
+      <link>https://docs.thingsdb.net/v0/connect/socket/watch/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/connect/socket/watch/</guid>
+      <description>Subscript for watching a node or things in ThingsDB. A successful run request will respond with a OK (17) package.
+ Syntax
+ [scope, ...IDs]  The IDs are the thing ID&amp;rsquo;s you want to watch.
+The socket needs to be authorized before for sending a watch request. See the auth example for how to authorize a socket connection.
+ Example As an example we assume that we want to watch a thing with ID 3 for changes.</description>
+    </item>
+    
+    <item>
       <title>Example error response</title>
       <link>https://docs.thingsdb.net/v0/connect/socket/error-response/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -722,10 +735,8 @@ Example  Example using upper():
       
       <guid>https://docs.thingsdb.net/v0/data-types/thing/del/</guid>
       <description>Delete a property from a thing.
-This function generates an event.
-Function thing.del(property)
-Arguments    Argument Type Description     property str (required) Name of the property to delete.    Return value Returns nil if successful. A lookup_err() is returned if the property does not exist or bad_data_err() in case the given property is not a valid name.
-Example  This code shows some return values for del():</description>
+While almost all function on things are also available on Type instances, this one is not. This is because a Type instance has a fixed set of properties and so you are not allowed to delete one of them on a single instance. Use mod_type() instead, to delete the property from all instances if this is what you want.
+ This function generates an event.</description>
     </item>
     
     <item>
@@ -2182,9 +2193,9 @@ Example  Example code using run:
       <guid>https://docs.thingsdb.net/v0/watching/on-init/</guid>
       <description>This event will be pushed once for each thing which is added to the watch list.
  Example on-init event in JSON format:
- { &amp;quot;event&amp;quot;: 123, &amp;quot;thing&amp;quot;: { &amp;quot;#&amp;quot;: 42, &amp;quot;name&amp;quot;: &amp;quot;Iris&amp;quot; } }  If the thing is actually a collection, then the init event also contains all types and procedures inside the collection.
+ { &amp;quot;event&amp;quot;: 123, &amp;quot;collection&amp;quot;: &amp;quot;stuff&amp;quot;, &amp;quot;thing&amp;quot;: { &amp;quot;#&amp;quot;: 42, &amp;quot;name&amp;quot;: &amp;quot;Iris&amp;quot; } }  If the thing IS actually a collection, then the init event also contains all types and procedures inside the collection.
  Example on-init event for a collection in JSON format:
- { &amp;quot;event&amp;quot;: 123, &amp;quot;thing&amp;quot;: { &amp;quot;#&amp;quot;: 3 }, &amp;quot;types&amp;quot;: [ { &amp;quot;type_id&amp;quot;: 1, &amp;quot;name&amp;quot;: &amp;quot;Sample&amp;quot;, &amp;quot;created_at&amp;quot;: 1579592122, &amp;quot;modified_at&amp;quot;: 1579592122, &amp;quot;fields&amp;quot;: [ [&amp;quot;name&amp;quot;, &amp;quot;str?</description>
+ { &amp;quot;event&amp;quot;: 123, &amp;quot;collection&amp;quot;: &amp;quot;stuff&amp;quot;, &amp;quot;thing&amp;quot;: { &amp;quot;#&amp;quot;: 3 }, &amp;quot;types&amp;quot;: [ { &amp;quot;type_id&amp;quot;: 1, &amp;quot;name&amp;quot;: &amp;quot;Sample&amp;quot;, &amp;quot;created_at&amp;quot;: 1579592122, &amp;quot;modified_at&amp;quot;: 1579592122, &amp;quot;fields&amp;quot;: [ [&amp;quot;name&amp;quot;, &amp;quot;str?</description>
     </item>
     
     <item>

@@ -1,6 +1,6 @@
 ---
 title: "sort"
-weight: 47
+weight: 48
 ---
 
 When this method is used on an [list](..) or [tuple](../../tuple), a new sorted list is returned.

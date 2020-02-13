@@ -1,6 +1,6 @@
 ---
 title: "isthing"
-weight: 119
+weight: 120
 ---
 
 This function determines whether the value passed to this function

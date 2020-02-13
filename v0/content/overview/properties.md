@@ -1,6 +1,6 @@
 ---
 title: "Properties"
-weight: 17
+weight: 18
 ---
 
 Properties are [names](../names) assigned to a `thing` with a value. The collection itself is also a `thing` to which properties can be assigned.

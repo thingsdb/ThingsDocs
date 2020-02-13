@@ -1,6 +1,6 @@
 ---
 title: "choice"
-weight: 35
+weight: 36
 ---
 
 This function returns a **pseudo-random** item from the list. The list must contain at least one

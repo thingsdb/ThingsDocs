@@ -96,4 +96,5 @@ Some more examples:
  - [sending an authentication request](./auth)
  - [sending a query request](./query)
  - [sending a run request](./run)
+ - [sending a watch request](./watch)
  - [receiving an error response](./error-response)

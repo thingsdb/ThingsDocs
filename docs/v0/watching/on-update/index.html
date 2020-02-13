@@ -11,20 +11,20 @@
     <title>on-update :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1581459050" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1581459050" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1581459050" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1581459050" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1581459050" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1581459050" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1581459050" rel="stylesheet">
-    <link href="/v0/css/theme.css?1581459050" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1581459050" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1581605756" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1581605756" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1581605756" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1581605756" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1581605756" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1581605756" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1581605756" rel="stylesheet">
+    <link href="/v0/css/theme.css?1581605756" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1581605756" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1581459050" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1581605756" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1581459050"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1581605756"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1581459050"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1581459050"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1581605756"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1581605756"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1581459050"></script>
+<script type="text/javascript" src="/v0/js/search.js?1581605756"></script>
 
     
   </div>
@@ -289,6 +289,25 @@
       <li data-nav-id="/v0/connect/socket/run/" title="Example run" class="dd-item ">
         <a href="/v0/connect/socket/run/">
         Example run
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/connect/socket/watch/" title="Example watch" class="dd-item ">
+        <a href="/v0/connect/socket/watch/">
+        Example watch
         
         </a>
     </li>
@@ -4408,8 +4427,8 @@
 <li><a href="#set-type">set_type</a></li>
 <li><a href="#del-type">del_type</a></li>
 <li><a href="#mod-type-add">mod_type_add</a></li>
-<li><a href="#mod-type-del">mod_type_del</a></li>
 <li><a href="#mod-type-mod">mod_type_mod</a></li>
+<li><a href="#mod-type-del">mod_type_del</a></li>
 <li><a href="#new-procedure">new_procedure</a></li>
 <li><a href="#del-procedure">del_procedure</a></li>
 </ul></li>
@@ -4522,15 +4541,15 @@ changes to the <em>thing</em>, as well as changes to the <em>collection</em>. Th
 </tr>
 
 <tr>
-<td><a href="#mod_type_del">mod_type_del</a></td>
-<td><code>collection</code></td>
-<td>A field is removed from an existing <a href="../../data-types/type">type</a>.</td>
-</tr>
-
-<tr>
 <td><a href="#mod_type_mod">mod_type_mod</a></td>
 <td><code>collection</code></td>
 <td>A filed is modified on an existing <a href="../../data-types/type">type</a>.</td>
+</tr>
+
+<tr>
+<td><a href="#mod_type_del">mod_type_del</a></td>
+<td><code>collection</code></td>
+<td>A field is removed from an existing <a href="../../data-types/type">type</a>.</td>
 </tr>
 
 <tr>
@@ -4698,10 +4717,12 @@ information on how to parse a type instance, look at the <a href="../../data-typ
 
 <h2 id="new-type">new_type</h2>
 
-<pre><code class="language-thingsdb,should_pass">// A new type named `Person` is added to the collection
-// The `type_id` is usually not something you use, except
-// for other mutations which refer to `type_id` when creating
-// an instance of a Type.
+<pre><code class="language-thingsdb,should_pass">/*
+ * A new type named `Person` is added to the collection
+ * The `type_id` is usually not something you use, except
+ * for other mutations which refer to `type_id` when creating
+ * an instance of a Type.
+ */
 
 new_type('Person');
 </code></pre>
@@ -4721,8 +4742,10 @@ new_type('Person');
 
 <h2 id="set-type">set_type</h2>
 
-<pre><code class="language-thingsdb,should_pass">// Set initial Type field definitions, field `name`
-// with definition `str` on type `Person` in this case.
+<pre><code class="language-thingsdb,should_pass">/*
+ * Set initial Type field definitions, field `name`
+ * with definition `str` on type `Person` in this case.
+ */
 
 set_type('Person', {name: 'str'});
 </code></pre>
@@ -4761,9 +4784,75 @@ del_type('Person');
 
 <h2 id="mod-type-add">mod_type_add</h2>
 
-<h2 id="mod-type-del">mod_type_del</h2>
+<pre><code class="language-thingsdb,syntax_only">/*
+ * Add a new field `rating` to type `Book`. If, and only if existing instances
+ * of the type `Book` exist, the mutation contains an `init` field with
+ * the given initial value. This value can be used to update earlier loaded
+ * instances of type `Book` and may be updated with this initial value to stay
+ * consistent with ThingsDB.
+ */
+
+// set_type('Book', {title: 'str'}); .book = Book{title: 'hhgttg'};
+mod_type('Book', 'add', 'rating', 'uint', 1);
+</code></pre>
+
+<blockquote>
+<p>Mutation result from the above code:</p>
+</blockquote>
+
+<pre><code class="language-json">{
+    &quot;mod_type_add&quot;: {
+        &quot;init&quot;: 1,
+        &quot;modified_at&quot;: 1581510638,
+        &quot;name&quot;: &quot;rating&quot;,
+        &quot;spec&quot;: &quot;uint&quot;,
+        &quot;type_id&quot;: 2
+    }
+}
+</code></pre>
 
 <h2 id="mod-type-mod">mod_type_mod</h2>
+
+<pre><code class="language-thingsdb,syntax_only">// Change field definition `rating` of type `Book`.
+
+// set_type('Book', {title: 'str', rating: 'uint'});
+mod_type('Book', 'mod', 'rating', 'number');
+</code></pre>
+
+<blockquote>
+<p>Mutation result from the above code:</p>
+</blockquote>
+
+<pre><code class="language-json">{
+    &quot;mod_type_mod&quot;: {
+        &quot;modified_at&quot;: 1581511115,
+        &quot;name&quot;: &quot;rating&quot;,
+        &quot;spec&quot;: &quot;number&quot;,
+        &quot;type_id&quot;: 2
+    }
+}
+</code></pre>
+
+<h2 id="mod-type-del">mod_type_del</h2>
+
+<pre><code class="language-thingsdb,syntax_only">// Delete the `rating` field definition of type `Book`.
+
+// set_type('Book', {title: 'str', rating: 'number'});
+mod_type('Book', 'del', 'rating');
+</code></pre>
+
+<blockquote>
+<p>Mutation result from the above code:</p>
+</blockquote>
+
+<pre><code class="language-json">{
+    &quot;mod_type_del&quot;: {
+        &quot;modified_at&quot;: 1581511233,
+        &quot;name&quot;: &quot;rating&quot;,
+        &quot;type_id&quot;: 2
+    }
+}
+</code></pre>
 
 <h2 id="new-procedure">new_procedure</h2>
 
@@ -4833,19 +4922,19 @@ del_procedure('multiply');
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1581459050"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1581459050"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1581459050"></script>
-    <script src="/v0/js/jquery.sticky.js?1581459050"></script>
-    <script src="/v0/js/featherlight.min.js?1581459050"></script>
-    <script src="/v0/js/highlight.pack.js?1581459050"></script>
+    <script src="/v0/js/clipboard.min.js?1581605756"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1581605756"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1581605756"></script>
+    <script src="/v0/js/jquery.sticky.js?1581605756"></script>
+    <script src="/v0/js/featherlight.min.js?1581605756"></script>
+    <script src="/v0/js/highlight.pack.js?1581605756"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1581459050"></script>
-    <script src="/v0/js/learn.js?1581459050"></script>
-    <script src="/v0/js/hugo-learn.js?1581459050"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1581605756"></script>
+    <script src="/v0/js/learn.js?1581605756"></script>
+    <script src="/v0/js/hugo-learn.js?1581605756"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1581459050" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1581459050"></script>
+    <link href="/v0/mermaid/mermaid.css?1581605756" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1581605756"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

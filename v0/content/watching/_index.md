@@ -1,6 +1,6 @@
 ---
 title: "Watching"
-weight: 188
+weight: 189
 chapter: false
 ---
 
@@ -23,4 +23,33 @@ Event | Description
 > The number `0-5` represents the package type in a [package header](http://localhost:1313/v0/connect/socket/#package).
 
 
-TODO: explain how to subscribe
+## Subscribe for node status changes
+
+For receiving [NODE_STATUS](./node-status) events you need to sent a  [watch request](../connect/socket/watch) to the `@node` scope. At least `WATCH` permissions for the `@node` scope are required.
+
+When using a client, this is pretty easy, for example using the Python client:
+
+```python
+await client.watch('@node')
+```
+
+If you want to write the request to the socket connection yourself, sending the following byte data on you socket connection will have the same result:
+
+```
+\x07\x00\x00\x00\x00\x00\x23\xdc\x91\xa5@node
+```
+
+(See the *"creating a [watch request](../connect/socket/watch) example"* on how we got the above byte code)
+
+
+## Subscribe for thing mutations
+
+If you start to watch a thing, the following events will be pushed in order:
+
+ - [ON_INIT](./on-init), This event will **always** be pushed, on each watch request.
+ - [ON_UPDATE](./on-update), You receive an update event for each **mutation** after the *initial* [ON_INIT](./on-init) event.
+ - [ON_DELETE](./on-delete) or [ON_STOP](./on-stop), No more events will be pushed for the thing after this event.
+
+To start watching one or more things, a [watch request](../connect/socket/watch) may be used, but as an alternative it is also
+possible to use the functions [watch()](../data-types/thing/watch) and [unwatch](../data-types/thing/unwatch). There is no
+alternative function for watching node status changes.
