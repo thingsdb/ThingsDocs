@@ -33,7 +33,7 @@ When using a client, this is pretty easy, for example using the Python client:
 await client.watch('@node')
 ```
 
-If you want to write the request to the socket connection yourself, sending the following byte data on you socket connection will have the same result:
+If you want to write the request to the socket connection yourself, sending the following byte data on your socket connection will have the same result:
 
 ```
 \x07\x00\x00\x00\x00\x00\x23\xdc\x91\xa5@node
