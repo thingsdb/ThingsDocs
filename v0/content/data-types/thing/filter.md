@@ -1,6 +1,6 @@
 ---
 title: "filter"
-weight: 70
+weight: 72
 ---
 
 When this method is used on a `thing`, then a new thing will be returned with only

@@ -1,6 +1,6 @@
 ---
 title: "on-stop"
-weight: 194
+weight: 196
 ---
 
 A stop event will be pushed as soon as a [thing](../../data-types/thing) has stopped with watching.

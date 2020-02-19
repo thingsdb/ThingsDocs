@@ -34,6 +34,7 @@ data-types
     int
     list
         choice
+        every
         extend
         filter
         find
@@ -45,6 +46,7 @@ data-types
         push
         reduce
         remove
+        some
         sort
         splice
     nil

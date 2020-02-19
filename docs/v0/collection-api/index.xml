@@ -137,9 +137,9 @@ Type bool values are converted to 1.0 for true and 0.0 for false.</description>
       <description>Determines if a Type exists in the current @collection scope.
 This function does not generate an event.
 Function has_type(type_name)
-Arguments    Argument Type Description     type_name str (required) Type name to check.    Return value Returns true a Type with a given name exists and otherwise false.
+Arguments    Argument Type Description     type_name str (required) Type name to check.    Return value Returns true if a Type with a given name exists and otherwise false.
 Example  This code shows an example use case of has_type():
- has_type(&#39;XXXXXXXXXXXXXXXXXXXXXX&#39;);   Return value in JSON format</description>
+ has_type(&#39;XXX&#39;);   Return value in JSON format</description>
     </item>
     
     <item>

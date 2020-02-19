@@ -1,6 +1,6 @@
 ---
 title: "Arithmetic operators"
-weight: 87
+weight: 89
 ---
 
 Operator | Description

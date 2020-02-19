@@ -1,6 +1,6 @@
 ---
 title: "findindex"
-weight: 40
+weight: 41
 ---
 
 This function returns the index of the first element in a [list](..) or [tuple](../../tuple) that satisfies the callback function.

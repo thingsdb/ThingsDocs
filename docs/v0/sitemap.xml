@@ -147,6 +147,10 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/list/every/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/data-types/list/extend/</loc>
   </url>
   
@@ -188,6 +192,10 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v0/data-types/list/remove/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/list/some/</loc>
   </url>
   
   <url>

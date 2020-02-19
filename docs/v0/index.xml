@@ -341,6 +341,19 @@ Example  This code shows an example using choice():
     </item>
     
     <item>
+      <title>every</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/every/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/list/every/</guid>
+      <description>This function tests whether all elements in the array pass a given test. It returns a boolean value.
+Calling this function on an empty array returns true for any condition!
+ This function does not generate an event.
+Function array.every(callback)
+Arguments    Argument Type Description     callback closure Closure to execute on each value until the closure evaluates to false.    Explanation of the callback argument:</description>
+    </item>
+    
+    <item>
       <title>extend</title>
       <link>https://docs.thingsdb.net/v0/data-types/list/extend/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -485,6 +498,19 @@ Arguments    Argument Type Description     reducer closure (required) Closure to
 This function generates an event.
 Function list.remove(callback, [alt])
 Arguments    Argument Type Description     callback closure Closure to execute on each value until the closure evaluates to true.   alt any (optional) Alternative value which is returned if no item has passed the callback test.</description>
+    </item>
+    
+    <item>
+      <title>some</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/some/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/list/some/</guid>
+      <description>This function tests whether at least one element in the array passes a given test. It returns a boolean value.
+Calling this function on an empty array returns false for any condition!
+ This function does not generate an event.
+Function array.some(callback)
+Arguments    Argument Type Description     callback closure Closure to execute on each value until the closure evaluates to true.    Explanation of the callback argument:</description>
     </item>
     
     <item>
@@ -1126,9 +1152,9 @@ Type bool values are converted to 1.0 for true and 0.0 for false.</description>
       <description>Determines if a Type exists in the current @collection scope.
 This function does not generate an event.
 Function has_type(type_name)
-Arguments    Argument Type Description     type_name str (required) Type name to check.    Return value Returns true a Type with a given name exists and otherwise false.
+Arguments    Argument Type Description     type_name str (required) Type name to check.    Return value Returns true if a Type with a given name exists and otherwise false.
 Example  This code shows an example use case of has_type():
- has_type(&#39;XXXXXXXXXXXXXXXXXXXXXX&#39;);   Return value in JSON format</description>
+ has_type(&#39;XXX&#39;);   Return value in JSON format</description>
     </item>
     
     <item>

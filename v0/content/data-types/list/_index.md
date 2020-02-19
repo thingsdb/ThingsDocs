@@ -17,6 +17,7 @@ because ThingsDB needs to know which subscribers to update with changes made to 
 Method | Description
 ------ | -----------
 [choice](./choice) | Returns a random item from a list.
+[every](./every) | Test whether all elements pass a given test.
 [extend](./extend) | Adds an array with items to the end of a list, and returns the new length.
 [filter](./filter) | Returns a new `list` with elements that pass a given test.
 [find](./find) | Returns the first element that pass a given test.
@@ -28,6 +29,7 @@ Method | Description
 [push](./push) | Adds new items to the end of an list, and returns the new length.
 [reduce](./reduce) | Executes a reducer function on each element, resulting in a single output value.
 [remove](./remove) | Removes the first element that pass a given test and returns that element.
+[some](./some) | Test whether at least one element passes a given test.
 [sort](./sort) | Returns a new sorted `list`.
 [splice](./splice) | Determines if a string starts with characters given by another string.
 

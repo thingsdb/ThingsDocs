@@ -1,6 +1,6 @@
 ---
 title: "isfloat"
-weight: 111
+weight: 113
 ---
 
 This function determines whether the value passed to this function

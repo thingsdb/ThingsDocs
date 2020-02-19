@@ -1,6 +1,6 @@
 ---
 title: "indexof"
-weight: 41
+weight: 42
 ---
 
 Returns the first index at which a given value can be found in the [list](..) or [tuple](../../tuple), or `nil` if it is not present.
