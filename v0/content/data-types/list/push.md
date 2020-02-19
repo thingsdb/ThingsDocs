@@ -21,11 +21,13 @@ Returns the new length of the list.
 
 ```thingsdb,json_response
 list = [1, 2, 3];
-list.push(4, 5, 6);
+list.push(4, 5, 6);  // Returns the new length, 6
+
+list;
 ```
 
 > Return value in JSON format
 
 ```json
-6
+[1, 2, 3, 4, 5, 6]
 ```

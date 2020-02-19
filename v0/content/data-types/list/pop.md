@@ -27,7 +27,7 @@ The removed element from the list. A [lookup_err()](../../../errors/lookup_err) 
 > This code show an example usage of ***pop()***:
 
 ```thingsdb,json_response
-(list = [1, 2, 3]).pop();
+(list = [1, 2, 3]).pop();  // 3
 list;
 ```
 
