@@ -1896,9 +1896,8 @@ Arguments    Argument Type Description     username str (required) Username of t
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/grant/</guid>
       <description>Grant collection or general privileges to a user. Access to a user is provided by setting a bit mask to either the @node, @thingsdb or a collection scope.
-It is not possible to set privileges on a specific node scope. Therefore scope @node will apply to all nodes in ThingsDB.
- The following pre-defined masks are available:
-   Mask Description     READ (1) Gives read access.</description>
+To use this function, at least MODIFY privileges on the @thingsdb scope and GRANT privileges on the target scope are required.
+It is not possible to set privileges on a specific node scope. Therefore scope @node will apply to all nodes in ThingsDB.</description>
     </item>
     
     <item>
@@ -2040,9 +2039,10 @@ Arguments    Argument Type Description     current_name str (required) Current u
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/revoke/</guid>
       <description>Revoke collection or general privileges from a user. See grant for more information on how access privileges can be set for a user.
+To use this function, at least MODIFY privileges on the @thingsdb scope and GRANT privileges on the target scope are required.
 This function generates an event.
 Function revoke(target, user, mask);
-Arguments    Argument Type Description     target int/raw Can be either the @node, @thingsdb, or a collection scope.   user str User to revoke privileges from.   mask int Bit-mask for revoking privileges.</description>
+Arguments    Argument Type Description     target int/raw Can be either the @node, @thingsdb, or a collection scope.</description>
     </item>
     
     <item>

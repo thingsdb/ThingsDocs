@@ -6,6 +6,8 @@ weight: 166
 Grant collection or general privileges to a user. Access to a user is provided by setting
 a bit mask to either the `@node`, `@thingsdb` or a collection [scope](../../overview/scopes).
 
+To use this function, at least `MODIFY` privileges on the `@thingsdb` scope and `GRANT` privileges on the target scope are required.
+
 {{% notice warning %}}
 It is not possible to set privileges on a specific node scope. Therefore scope `@node` will apply to *all* nodes in ThingsDB.
 {{% /notice %}}

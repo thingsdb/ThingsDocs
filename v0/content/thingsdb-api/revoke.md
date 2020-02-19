@@ -6,6 +6,8 @@ weight: 177
 Revoke collection or general privileges from a user. See [grant](../../thingsdb-api/grant) for more information on
 how access privileges can be set for a user.
 
+To use this function, at least `MODIFY` privileges on the `@thingsdb` scope and `GRANT` privileges on the target scope are required.
+
 This function generates an [event](../../overview/events).
 
 ### Function
