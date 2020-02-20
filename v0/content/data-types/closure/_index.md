@@ -21,9 +21,9 @@ Method | Description
 [doc](./doc) | Returns the doc string of the closure.
 
 {{% notice note %}}
-It is not possible to use closures with recursion, for example:
-`a = ||.map(a); .map(a);` \
-...will raise [operation_err()](../../errors/operation_err) *(closures cannot be used recursively)*
+Closures may be called recursively up to a **recursion depth of 24**. If this limit is exceeded, an error is raised.
+For example: `a = ||a(); a();` \
+...will raise [operation_err()](../../errors/operation_err) *(maximum recursion depth exceeded)*
 {{% /notice %}}
 
 ### Doc string

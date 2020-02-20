@@ -178,10 +178,9 @@ Serializing the above using MessagePack results in the following 11 bytes:</desc
       <guid>https://docs.thingsdb.net/v0/overview/variable/</guid>
       <description>Can be used to assign a value to a variable which can be used within a query.
 Variable can be created with READ privileges since they do not modify the collection data.
-To create a variable, just use a valid name.
+To create a variable, just assign a value to a valid name.
 Some valid examples:
- _ = ... tmp = ... var1 = ...   This code uses a variable:
- a = &#39;This is a variable!!!&#39;; b = &#39;Hello&#39;; { /* This will create a new variable `a` within this block */ a = &#39;New variable within this block&#39;; /* This will update the global variable `b` */ b += &#39; World&#39;; }; [a, b];   Return value in JSON format</description>
+ _ = ... tmp = ... var1 = ...  Variable created within a block become local. They can only be used within the block.</description>
     </item>
     
     <item>
@@ -472,8 +471,8 @@ This function generates an event.
 Function list.push(item1, item2, ..., itemX)
 Return value Returns the new length of the list.
 Example  This code pushes values to a list:
- list = [1, 2, 3]; list.push(4, 5, 6);   Return value in JSON format
- 6  </description>
+ list = [1, 2, 3]; list.push(4, 5, 6); // Returns the new length, 6 list;   Return value in JSON format
+ [1, 2, 3, 4, 5, 6]  </description>
     </item>
     
     <item>
@@ -625,7 +624,7 @@ Function set.len()
 Arguments None
 Return value Returns length of the set.
 Example  This code uses len() to return the number of items in a set:
- set({iten: &#39;a&#39;}, {item: &#39;b&#39;}).len();   Return value in JSON format
+ set({item: &#39;a&#39;}, {item: &#39;b&#39;}).len();   Return value in JSON format
  2  </description>
     </item>
     

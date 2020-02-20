@@ -11,20 +11,20 @@
     <title>closure :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1582150715" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1582150715" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1582150715" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1582150715" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1582150715" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1582150715" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1582150715" rel="stylesheet">
-    <link href="/v0/css/theme.css?1582150715" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1582150715" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1582235924" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1582235924" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1582235924" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1582235924" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1582235924" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1582235924" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1582235924" rel="stylesheet">
+    <link href="/v0/css/theme.css?1582235924" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1582235924" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1582150715" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1582235924" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1582150715"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1582235924"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1582150715"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1582150715"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1582235924"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1582235924"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1582150715"></script>
+<script type="text/javascript" src="/v0/js/search.js?1582235924"></script>
 
     
   </div>
@@ -4525,9 +4525,9 @@ The most simple closure is <code>||nil</code> which is a closure without argumen
 </table>
 
 
-<div class="notices note" ><p>It is not possible to use closures with recursion, for example:
-<code>a = ||.map(a); .map(a);</code> <br />
-&hellip;will raise <a href="../../errors/operation_err">operation_err()</a> <em>(closures cannot be used recursively)</em></p>
+<div class="notices note" ><p>Closures may be called recursively up to a <strong>recursion depth of 24</strong>. If this limit is exceeded, an error is raised.
+For example: <code>a = ||a(); a();</code> <br />
+&hellip;will raise <a href="../../errors/operation_err">operation_err()</a> <em>(maximum recursion depth exceeded)</em></p>
 </div>
 
 
@@ -4637,19 +4637,19 @@ call_result = add_one(41);
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1582150715"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1582150715"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1582150715"></script>
-    <script src="/v0/js/jquery.sticky.js?1582150715"></script>
-    <script src="/v0/js/featherlight.min.js?1582150715"></script>
-    <script src="/v0/js/highlight.pack.js?1582150715"></script>
+    <script src="/v0/js/clipboard.min.js?1582235924"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1582235924"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1582235924"></script>
+    <script src="/v0/js/jquery.sticky.js?1582235924"></script>
+    <script src="/v0/js/featherlight.min.js?1582235924"></script>
+    <script src="/v0/js/highlight.pack.js?1582235924"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1582150715"></script>
-    <script src="/v0/js/learn.js?1582150715"></script>
-    <script src="/v0/js/hugo-learn.js?1582150715"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1582235924"></script>
+    <script src="/v0/js/learn.js?1582235924"></script>
+    <script src="/v0/js/hugo-learn.js?1582235924"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1582150715" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1582150715"></script>
+    <link href="/v0/mermaid/mermaid.css?1582235924" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1582235924"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

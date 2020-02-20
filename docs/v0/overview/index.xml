@@ -56,10 +56,9 @@
       <guid>https://docs.thingsdb.net/v0/overview/variable/</guid>
       <description>Can be used to assign a value to a variable which can be used within a query.
 Variable can be created with READ privileges since they do not modify the collection data.
-To create a variable, just use a valid name.
+To create a variable, just assign a value to a valid name.
 Some valid examples:
- _ = ... tmp = ... var1 = ...   This code uses a variable:
- a = &#39;This is a variable!!!&#39;; b = &#39;Hello&#39;; { /* This will create a new variable `a` within this block */ a = &#39;New variable within this block&#39;; /* This will update the global variable `b` */ b += &#39; World&#39;; }; [a, b];   Return value in JSON format</description>
+ _ = ... tmp = ... var1 = ...  Variable created within a block become local. They can only be used within the block.</description>
     </item>
     
     <item>

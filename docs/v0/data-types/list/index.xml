@@ -157,8 +157,8 @@ This function generates an event.
 Function list.push(item1, item2, ..., itemX)
 Return value Returns the new length of the list.
 Example  This code pushes values to a list:
- list = [1, 2, 3]; list.push(4, 5, 6);   Return value in JSON format
- 6  </description>
+ list = [1, 2, 3]; list.push(4, 5, 6); // Returns the new length, 6 list;   Return value in JSON format
+ [1, 2, 3, 4, 5, 6]  </description>
     </item>
     
     <item>
