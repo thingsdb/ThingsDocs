@@ -945,6 +945,13 @@
 	"content": " Returns pseudo-random random integer number between a given range.\nThe first argument specifies the start of the range and must have a value less than the second argument when specifies the end of the range. The start is inclusive and the end is exclusive, for example: randint(0, 2) will return either 0 or 1.\nDo not use randint() when the purpose is security related since the linear congruential algorithms used by this function is too easy to break.\n This function does not generate an event.\nFunction randint(start, end)\nArguments    Argument Type Description     start int (required) Start of the range (inclusive).   end int (required) End of the range (exclusive).    Return value A pseudo-random int between start (inclusive) and end (exclusive).\nExample  Some examples on how randint(..) can be used:\n // Return a pseudo-random number between 10 (inclusive) and 20 (exclusive) randint(10, 20);  Example return value in JSON format:\n13  "
 },
 {
+	"uri": "https://docs.thingsdb.net/v0/collection-api/range/",
+	"title": "range",
+	"tags": [],
+	"description": "",
+	"content": " This function returns a list of numbers, starting from 0 by default, and increments by 1 (by default), and ends at a specified number.\nFunction range() may only be used for relatively small lists. An operation_err() (maximum range length exceeded) will be raised when trying to create a list with more than 1024 numbers.\n Function range(start, stop, step)\nArguments    Argument Type Description     start int (optional) An integer number specifying at which position to start. Default is 0   stop int (required) An integer number specifying at which position to end (exclusive).   step int (optional) An integer number specifying the increment value. Default is 1 and this value must not be zero.    Return value Returns a list of numbers.\nExamples  Return a list with numbers 0 to 5:\n range(6);  [0, 1, 2, 3, 4, 5]   Return a list with numbers 0 to 5 but increment by 2:\n range(0, 6, 2);  [0, 2, 4]   The step argument may also be a negative value:\n range(2, -3, -1);  [2, 1, 0, -1, -2]  "
+},
+{
 	"uri": "https://docs.thingsdb.net/v0/collection-api/refs/",
 	"title": "refs",
 	"tags": [],

@@ -482,6 +482,18 @@ Do not use randint() when the purpose is security related since the linear congr
     </item>
     
     <item>
+      <title>range</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/range/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/range/</guid>
+      <description>This function returns a list of numbers, starting from 0 by default, and increments by 1 (by default), and ends at a specified number.
+Function range() may only be used for relatively small lists. An operation_err() (maximum range length exceeded) will be raised when trying to create a list with more than 1024 numbers.
+ Function range(start, stop, step)
+Arguments    Argument Type Description     start int (optional) An integer number specifying at which position to start.</description>
+    </item>
+    
+    <item>
       <title>refs</title>
       <link>https://docs.thingsdb.net/v0/collection-api/refs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

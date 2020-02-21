@@ -133,6 +133,7 @@ collection-api
     raise
     rand
     randint
+    range
     refs
     return
     set

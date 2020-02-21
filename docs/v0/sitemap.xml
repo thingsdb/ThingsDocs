@@ -543,6 +543,10 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/range/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/collection-api/refs/</loc>
   </url>
   

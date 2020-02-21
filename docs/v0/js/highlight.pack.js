@@ -1513,7 +1513,7 @@ hljs.registerLanguage('thingsdb', function(hljs) {
                     'deep|del_type|err|float|has_type|if|int|isarray|' +
                     'isascii|isbool|isbytes|iserr|isfloat|isinf|isint|' +
                     'islist|isnan|isnil|israw|isset|isstr|isthing|istuple|' +
-                    'isutf8|list|mod_type|new|new_type|now|raise|rand|' +
+                    'isutf8|list|mod_type|new|new_type|now|raise|rand|range|' +
                     'randint|refs|return|set|set_type|str|thing|try|type|' +
                     'type_count|type_info|types_info|wse|' +
                     /* node functions */
