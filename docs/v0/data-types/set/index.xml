@@ -25,6 +25,20 @@ Example  This code adds things to a set:
     </item>
     
     <item>
+      <title>each</title>
+      <link>https://docs.thingsdb.net/v0/data-types/set/each/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/set/each/</guid>
+      <description>Iterate over items in an set.
+Be aware that the order when iterating over a set or a thing is not guaranteed.
+ This function does not generate an event.
+Function set.each(callback)
+Arguments    Argument Type Description     callback closure (required) Closure to execute on each value.    Explanation of the callback argument:
+   Iterable Arguments Description     set thing, id Iterate over things in the set.</description>
+    </item>
+    
+    <item>
       <title>filter</title>
       <link>https://docs.thingsdb.net/v0/data-types/set/filter/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -86,12 +100,12 @@ Example  This code uses len() to return the number of items in a set:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/set/map/</guid>
-      <description>Iterate over items in an set.
+      <description>Iterate over items in an set and return a new list based on the results of a given callback function.
 Be aware that the order when iterating over a set or a thing is not guaranteed.
  This function does not generate an event.
 Function set.map(callback)
 Arguments Explanation of the callback argument:
-   Iterable Arguments Description     set thing, id Iterate over things in the set. Both thing and id are optional.    Return value A new list with each element being the result of the callback function.</description>
+   Iterable Arguments Description     set thing, id Iterate over things in the set.</description>
     </item>
     
     <item>

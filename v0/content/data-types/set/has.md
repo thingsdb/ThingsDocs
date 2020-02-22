@@ -1,6 +1,6 @@
 ---
 title: "has"
-weight: 58
+weight: 60
 ---
 
 Determines if a [set](..) has a given thing.

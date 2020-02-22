@@ -26,6 +26,19 @@ Example  This code shows an example using choice():
     </item>
     
     <item>
+      <title>each</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/each/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/list/each/</guid>
+      <description>Iterate over all the items in an list or tuple. Use this functions instead of map when you are not interested in the return value.
+This function does not generate an event.
+Function array.each(callback)
+Arguments    Argument Type Description     callback closure (required) Closure to execute on each value.    Explanation of the callback argument:
+   Iterable Arguments Description     array item, index Iterate over all items in the array.</description>
+    </item>
+    
+    <item>
       <title>every</title>
       <link>https://docs.thingsdb.net/v0/data-types/list/every/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -123,12 +136,11 @@ Example  This code uses len() to return the number of items in a collection:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/list/map/</guid>
-      <description>Iterate over items in an list or tuple.
+      <description>Iterate over items in an list or tuple and return a new list based on the results of a given callback function.
 This function does not generate an event.
 Function array.map(callback)
-Arguments Explanation of the callback argument:
-   Iterable Arguments Description     array item, index Iterate over all items in the array. Both item and index are optional.    Return value A new list with each element being the result of the callback function.
-Example  This code shows an example using map():</description>
+Arguments    Argument Type Description     callback closure (required) Closure to execute on each value.    Explanation of the callback argument:
+   Iterable Arguments Description     array item, index Iterate over all items in the array.</description>
     </item>
     
     <item>

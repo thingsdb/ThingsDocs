@@ -1,9 +1,10 @@
 ---
 title: "map"
-weight: 78
+weight: 81
 ---
 
-Iterate over all properties on a [thing](..).
+Iterate over all properties on a [thing](..) and
+return a new [list](../../list) based on the results of a given callback function.
 
 {{% notice warning %}}
 Be aware that the order when iterating over a *thing* is not guaranteed.
@@ -16,6 +17,11 @@ This function does *not* generate an [event](../../../overview/events).
 *thing*.`map(callback)`
 
 ### Arguments
+
+Argument | Type | Description
+-------- | ---- | -----------
+callback | closure (required) | Closure to execute on each value.
+
 
 Explanation of the *callback* argument:
 

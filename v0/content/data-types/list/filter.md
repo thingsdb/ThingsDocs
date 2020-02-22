@@ -1,6 +1,6 @@
 ---
 title: "filter"
-weight: 39
+weight: 40
 ---
 
 When this method is used on an [list](..) or [tuple](../../tuple), a new list is returned with elements that pass the test.

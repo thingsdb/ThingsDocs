@@ -1,6 +1,6 @@
 ---
 title: "isutf8"
-weight: 124
+weight: 127
 ---
 
 This function determines whether the value passed to this function is of

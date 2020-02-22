@@ -1,6 +1,6 @@
 ---
 title: "overflow_err"
-weight: 209
+weight: 212
 ---
 
 Returns an [error](../../data-types/error) when an attempt is made to create an integer value out of the supported 64Bit (signed) range.

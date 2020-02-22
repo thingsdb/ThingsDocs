@@ -22,6 +22,20 @@ While almost all function on things are also available on Type instances, this o
     </item>
     
     <item>
+      <title>each</title>
+      <link>https://docs.thingsdb.net/v0/data-types/thing/each/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/thing/each/</guid>
+      <description>Iterate over all properties on a thing.
+Be aware that the order when iterating over a thing is not guaranteed.
+ This function does not generate an event.
+Function thing.each(callback)
+Arguments    Argument Type Description     callback closure (required) Closure to execute on each value.    Explanation of the callback argument:
+   Iterable Arguments Description     thing name, value Iterate over the thing properties.</description>
+    </item>
+    
+    <item>
       <title>filter</title>
       <link>https://docs.thingsdb.net/v0/data-types/thing/filter/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -110,12 +124,11 @@ Example  This code uses len() to return the number of items in a thing:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/thing/map/</guid>
-      <description>Iterate over all properties on a thing.
+      <description>Iterate over all properties on a thing and return a new list based on the results of a given callback function.
 Be aware that the order when iterating over a thing is not guaranteed.
  This function does not generate an event.
 Function thing.map(callback)
-Arguments Explanation of the callback argument:
-   Iterable Arguments Description     thing name, value Iterate over the thing properties. Both name and value are optional.    Return value A new list with each element being the result of the callback function.</description>
+Arguments    Argument Type Description     callback closure (required) Closure to execute on each value.    Explanation of the callback argument:</description>
     </item>
     
     <item>

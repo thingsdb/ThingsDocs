@@ -1,6 +1,6 @@
 ---
 title: "every"
-weight: 37
+weight: 38
 ---
 
 This function tests whether all elements in the array pass a given test. It returns a [boolean](../../bool) value.

@@ -1,6 +1,6 @@
 ---
 title: "some"
-weight: 49
+weight: 50
 ---
 
 This function tests whether at least one element in the array passes a given test. It returns a [boolean](../../bool) value.

@@ -1,6 +1,6 @@
 ---
 title: "thing"
-weight: 70
+weight: 72
 ---
 
 ### Methods
@@ -8,13 +8,14 @@ weight: 70
 Method | Description
 ------ | -----------
 [del](./del) | Remove a property.
+[each](./each) | Iterate over all properties of a thing.
 [filter](./filter) | Return a new `thing` with properties that pass a given test.
 [get](./get) | Return the value of a property on a thing by a given property name.
 [has](./has) | Determines if a thing has a given property.
 [id](./id) | Return the `id`.
 [keys](./keys) | Returns an array with all the property names of a thing.
 [len](./len) | Returns the number of items.
-[map](./map) | Returns a [list](../list) with the results of calling a provided closure on every item.
+[map](./map) | Returns a [list](../list) with the results of calling a provided closure on every property.
 [set](./set) | Creates a new property on a thing.
 [unwatch](./unwatch) | Stop watching the `thing` for mutations.
 [values](./values) | Returns an array with all the property values of a thing.

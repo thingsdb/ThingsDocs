@@ -1,9 +1,10 @@
 ---
 title: "map"
-weight: 60
+weight: 62
 ---
 
-Iterate over items in an [set](..).
+Iterate over items in an [set](..) and
+return a new [list](../../list) based on the results of a given callback function.
 
 {{% notice warning %}}
 Be aware that the order when iterating over a *set* or a *thing* is not guaranteed.

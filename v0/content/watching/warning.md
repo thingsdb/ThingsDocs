@@ -1,6 +1,6 @@
 ---
 title: "warning"
-weight: 198
+weight: 201
 ---
 
 ThingsDB might send a warning events to a client. The `warn_code` can be used

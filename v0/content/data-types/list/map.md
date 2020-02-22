@@ -1,9 +1,10 @@
 ---
 title: "map"
-weight: 44
+weight: 45
 ---
 
-Iterate over items in an [list](../../list) or [tuple](../../tuple).
+Iterate over items in an [list](../../list) or [tuple](../../tuple) and
+return a new [list](../../list) based on the results of a given callback function.
 
 This function does *not* generate an [event](../../../overview/events).
 
@@ -12,6 +13,11 @@ This function does *not* generate an [event](../../../overview/events).
 *array*.`map(callback)`
 
 ### Arguments
+
+Argument | Type | Description
+-------- | ---- | -----------
+callback | closure (required) | Closure to execute on each value.
+
 
 Explanation of the *callback* argument:
 

@@ -1,6 +1,6 @@
 ---
 title: "on-init"
-weight: 194
+weight: 197
 ---
 
 This event will be pushed **once** for each [thing](../../data-types/thing) which is added to the watch list.

@@ -1,6 +1,6 @@
 ---
 title: "set"
-weight: 54
+weight: 55
 ---
 
 A set is a collection which is unordered and can only contain things.
@@ -11,6 +11,7 @@ Each [thing](../thing) will only exists once in a collection.
 Method | Description
 ------ | -----------
 [add](./add) | Add things to a set.
+[each](./each) | Iterate over all items in a set.
 [filter](./filter) | Return a new `set` with things that pass a given test.
 [find](./find) | Returns the first `thing` which passes a given test.
 [has](./has) | Test if a set contains a given thing.

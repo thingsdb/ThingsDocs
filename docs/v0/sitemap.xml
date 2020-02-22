@@ -147,6 +147,10 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/list/each/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/data-types/list/every/</loc>
   </url>
   
@@ -223,6 +227,10 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/set/each/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/data-types/set/filter/</loc>
   </url>
   
@@ -284,6 +292,10 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v0/data-types/thing/del/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/thing/each/</loc>
   </url>
   
   <url>

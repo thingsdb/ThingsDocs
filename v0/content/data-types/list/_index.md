@@ -17,6 +17,7 @@ because ThingsDB needs to know which subscribers to update with changes made to 
 Method | Description
 ------ | -----------
 [choice](./choice) | Returns a random item from a list.
+[each](./each) | Iterate over all items in a list.
 [every](./every) | Test whether all elements pass a given test.
 [extend](./extend) | Adds an array with items to the end of a list, and returns the new length.
 [filter](./filter) | Returns a new `list` with elements that pass a given test.
