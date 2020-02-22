@@ -5,7 +5,7 @@ weight: 7
 
 This is a more in depth view of the socket protocol used for communication with ThingsDB.
 In case you just want to use ThingsDB using one of the language bindings, then this
-info can be skipped. If you plan to implement you own connector, then this info might
+info can be skipped. If you plan to implement your own connector, then this info might
 be useful to you.
 
 This section applies to communication with ThingsDB over a socket, either by using TCP or a UNIX PIPE connection.

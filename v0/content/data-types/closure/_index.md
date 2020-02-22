@@ -28,8 +28,8 @@ For example: `a = ||a(); a();` \
 
 ### Doc string
 
-Doc strings can be set for closures. This is especially useful for when closures
-are used inside a procedure but are not common when closures are used for other purposes.
+Doc strings can be set on closures. This is especially useful when closures
+are used inside a procedure since this gives the procedure a nice documentation string.
 
 Usually, a doc string is just a normal string on top of a block in the closure.
 

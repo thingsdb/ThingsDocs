@@ -15,7 +15,7 @@ The `vars` in the query are optional and may be omitted. When used, `vars` must 
 represent the variable names and the `values` the values for the variable.
 
 {{% notice warning %}}
-The socket needs to be authorized before for sending a `query` request.
+The socket needs to be authorized before sending a `query` request.
 See the [auth example](../auth) for how to authorize a socket connection.
 {{% /notice %}}
 

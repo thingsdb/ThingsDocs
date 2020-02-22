@@ -17,11 +17,10 @@
       
       <guid>https://docs.thingsdb.net/v0/data-types/set/add/</guid>
       <description>Adds new thing to the set and returns the number of things which are actually added to the set. For example my_set.add(#42); will return 0 if my_set already contains thing #42.
-This function generates an event.
+This function generates an event (except when called on a variable).
 Function set.add(thing1, thing1, ..., thingX)
 Return value Returns the number of things which are added to the set.
-Example  This code adds things to a set:
- s = set(); a = {item: &#39;a&#39;}; b = {item: &#39;b&#39;}; // add both `a` and `b` to set `s`; note that `a` is only added once; s.</description>
+Example  This code adds things to a set:</description>
     </item>
     
     <item>

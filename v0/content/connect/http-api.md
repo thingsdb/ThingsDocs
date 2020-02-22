@@ -15,7 +15,7 @@ The API has support for both [MessagePack](https://msgpack.org) and [JSON](https
 {{% notice tip %}}
 Use **MessagePack** if possible since this is the data serialization protocol which is used by ThingsDB
 internally and will therefore be a faster than JSON. It also allows for sending and receiving binary data and is usually more compact than JSON.
-In most examples here we use JSON just because it is more readable.
+In most examples we use JSON just because it is more readable.
 {{% /notice %}}
 
 

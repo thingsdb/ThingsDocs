@@ -14,7 +14,7 @@ Run a procedure in ThingsDB. A successful run request will respond with a `DATA 
 The `args` are parsed (and *must* match) to the procedure.
 
 {{% notice warning %}}
-The socket needs to be authorized before for sending a `run` request.
+The socket needs to be authorized before sending a `run` request.
 See the [auth example](../auth) for how to authorize a socket connection.
 {{% /notice %}}
 

@@ -12,7 +12,7 @@ It is also possible to specify `things` as arguments. In this case a list is ret
 all the things which are removed from the set, in the order that the arguments are used.
 Things which are not found in the set are ignored.
 
-This function generates an [event](../../../overview/events).
+This function generates an [event](../../../overview/events) *(except when called on a [variable](../../overview/variable))*.
 
 ### Function
 

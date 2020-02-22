@@ -3,8 +3,8 @@ title: "on-update"
 weight: 198
 ---
 
-An update event is pushed when changed are made to a `thing` you are watching.
-Nested things need to be watched separate.
+An update event is pushed when changes are made to a `thing` you are watching.
+Nested things need to be watched separately.
 
 The event contains the Thing ID (`#`), an event number, and an *jobs* array containing all the mutations which are applied to the thing in the order as they are put in the array.
 
