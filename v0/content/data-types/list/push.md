@@ -5,7 +5,7 @@ weight: 47
 
 Adds new items to the end of an list, and returns the new length.
 
-This function generates an [event](../../../overview/events) *(except when called on a [variable](../../overview/variable))*.
+This function generates an [event](../../../overview/events) *(except when called on a [variable](../../../overview/variable))*.
 
 ### Function
 

@@ -5,7 +5,7 @@ weight: 39
 
 Adds a [list](..) or [tuple](../../tuple) with items to the end of a [list](..), and returns the new length.
 
-This function generates an [event](../../../overview/events) *(except when called on a [variable](../../overview/variable))*.
+This function generates an [event](../../../overview/events) *(except when called on a [variable](../../../overview/variable))*.
 
 ### Function
 

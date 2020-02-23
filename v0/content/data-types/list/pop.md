@@ -8,7 +8,7 @@ Removes the last element from a [list](../../list) and returns that element.
 This method changes the length of the list. The `pop()` method works
 on a `list` type array, but not on a `tuple` since tuples are immutable.
 
-This function generates an [event](../../../overview/events) *(except when called on a [variable](../../overview/variable))*.
+This function generates an [event](../../../overview/events) *(except when called on a [variable](../../../overview/variable))*.
 
 ### Function
 
