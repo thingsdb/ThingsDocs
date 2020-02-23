@@ -11,20 +11,20 @@
     <title>list :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1582496450" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1582496450" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1582496450" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1582496450" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1582496450" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1582496450" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1582496450" rel="stylesheet">
-    <link href="/v0/css/theme.css?1582496450" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1582496450" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1582498939" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1582498939" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1582498939" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1582498939" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1582498939" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1582498939" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1582498939" rel="stylesheet">
+    <link href="/v0/css/theme.css?1582498939" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1582498939" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1582496450" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1582498939" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1582496450"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1582498939"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1582496450"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1582496450"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1582498939"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1582498939"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1582496450"></script>
+<script type="text/javascript" src="/v0/js/search.js?1582498939"></script>
 
     
   </div>
@@ -4535,6 +4535,7 @@
 <li>
 <ul>
 <li><a href="#methods">Methods</a></li>
+<li><a href="#reference-versus-copy">Reference versus copy</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -4570,9 +4571,6 @@
 <p>Nesting is also possible withing but each nested list will become a <a href="../tuple">tuple</a> which means the &lsquo;list&rsquo; will be immutable.
 ThingsDB does this because it wants to update all changes to subscribers and finds the subscribers by the parent object where
 the change is  made. Since the parent of a nested &lsquo;list&rsquo; is another list, the <code>thing</code> holding the list would not be found.</p>
-
-<p>Another <em>weird</em> property of ThingsDB is that <code>lists</code> are always <em>copies</em>, and not by <em>reference</em> as in most languages. This is
-because ThingsDB needs to know which subscribers to update with changes made to the <code>list</code>.</p>
 
 <h3 id="methods">Methods</h3>
 
@@ -4679,6 +4677,55 @@ because ThingsDB needs to know which subscribers to update with changes made to 
 </div>
 
 
+<h3 id="reference-versus-copy">Reference versus copy</h3>
+
+<p>It might be useful to understand when ThingsDB uses a <em>reference</em> to a <code>list</code>, and when it makes <em>copy</em>. As long as a <code>list</code>
+is used as a <a href="../../overview/variable">variable</a>, then ThingsDB uses a <em>reference</em> to the list. If a <code>list</code> will be assigned
+to a <a href="../thing">thing</a>, or if a <code>list</code> which <em>is</em> assigned to a <a href="../thing">thing</a>, will be assigned to a <a href="../../overview/variable">variable</a>, then a <em>copy</em> will be made.
+For example:</p>
+
+<pre><code class="language-thingsdb,json_response">a = [1, 2];
+b = a;  // both `a` and `b` are variable so a *reference* is used.
+.c = a;  // `c` is assigned, so a *copy* will be made.
+a.push(3);  // note that `.c` is not affected because `.c` is a *copy*.
+
+// Return the values
+[a, b, .c];
+</code></pre>
+
+<blockquote>
+<p>Response in JSON format:</p>
+</blockquote>
+
+<pre><code class="language-json">[
+    [1, 2, 3],
+    [1, 2, 3],
+    [1, 2]
+]
+</code></pre>
+
+<p>The same is true for when a <code>list</code> is used within a closure. For example:</p>
+
+<pre><code class="language-thingsdb,should_pass">a = [];    // `list` assigned to a variable
+
+// `a` stays a variable, so a reference will be used
+a2 = range(3).reduce(|arr, val| {arr.push(val); arr;}, a);   // [0, 1, 2]
+
+assert (a == a2);   // both `a` and `a2` are a reference to the same list
+</code></pre>
+
+<blockquote>
+<p>And when a <code>list</code> is assigned to a thing&hellip;</p>
+</blockquote>
+
+<pre><code class="language-thingsdb,should_pass">.b = [];   // `list` assigned to a thing
+
+// `.b` will be assigned to `arr`, so in the first iteration a *copy* will be made
+b2 = range(3).reduce(|arr, val| {arr.push(val); arr;}, .b);  // [0, 1, 2]
+
+assert (.b != b2);  // [] != [0, 1, 2]
+</code></pre>
+
 
 
 
@@ -4710,19 +4757,19 @@ because ThingsDB needs to know which subscribers to update with changes made to 
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1582496450"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1582496450"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1582496450"></script>
-    <script src="/v0/js/jquery.sticky.js?1582496450"></script>
-    <script src="/v0/js/featherlight.min.js?1582496450"></script>
-    <script src="/v0/js/highlight.pack.js?1582496450"></script>
+    <script src="/v0/js/clipboard.min.js?1582498939"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1582498939"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1582498939"></script>
+    <script src="/v0/js/jquery.sticky.js?1582498939"></script>
+    <script src="/v0/js/featherlight.min.js?1582498939"></script>
+    <script src="/v0/js/highlight.pack.js?1582498939"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1582496450"></script>
-    <script src="/v0/js/learn.js?1582496450"></script>
-    <script src="/v0/js/hugo-learn.js?1582496450"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1582498939"></script>
+    <script src="/v0/js/learn.js?1582498939"></script>
+    <script src="/v0/js/hugo-learn.js?1582498939"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1582496450" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1582496450"></script>
+    <link href="/v0/mermaid/mermaid.css?1582498939" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1582498939"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

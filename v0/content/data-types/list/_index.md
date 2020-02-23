@@ -9,8 +9,6 @@ Nesting is also possible withing but each nested list will become a [tuple](../t
 ThingsDB does this because it wants to update all changes to subscribers and finds the subscribers by the parent object where
 the change is  made. Since the parent of a nested 'list' is another list, the `thing` holding the list would not be found.
 
-Another *weird* property of ThingsDB is that `lists` are always *copies*, and not by *reference* as in most languages. This is
-because ThingsDB needs to know which subscribers to update with changes made to the `list`.
 
 ### Methods
 
@@ -39,3 +37,52 @@ It is not possible to change an list while the list is in use, for example: \
 `tmp = [1, 2, 3]; tmp.map(|i| tmp.push(i));` \
 ...will raise [bad_data_err()](../../errors/bad_data_err) *(cannot change type `list` while the value is being used)*
 {{% /notice %}}
+
+
+### Reference versus copy
+
+It might be useful to understand when ThingsDB uses a *reference* to a `list`, and when it makes *copy*. As long as a `list`
+is used as a [variable](../../overview/variable), then ThingsDB uses a *reference* to the list. If a `list` will be assigned
+to a [thing](../thing), or if a `list` which *is* assigned to a [thing](../thing), will be assigned to a [variable](../../overview/variable), then a *copy* will be made.
+For example:
+
+```thingsdb,json_response
+a = [1, 2];
+b = a;  // both `a` and `b` are variable so a *reference* is used.
+.c = a;  // `c` is assigned, so a *copy* will be made.
+a.push(3);  // note that `.c` is not affected because `.c` is a *copy*.
+
+// Return the values
+[a, b, .c];
+```
+> Response in JSON format:
+
+```json
+[
+    [1, 2, 3],
+    [1, 2, 3],
+    [1, 2]
+]
+```
+
+The same is true for when a `list` is used within a closure. For example:
+
+```thingsdb,should_pass
+a = [];    // `list` assigned to a variable
+
+// `a` stays a variable, so a reference will be used
+a2 = range(3).reduce(|arr, val| {arr.push(val); arr;}, a);   // [0, 1, 2]
+
+assert (a == a2);   // both `a` and `a2` are a reference to the same list
+```
+
+> And when a `list` is assigned to a thing...
+
+```thingsdb,should_pass
+.b = [];   // `list` assigned to a thing
+
+// `.b` will be assigned to `arr`, so in the first iteration a *copy* will be made
+b2 = range(3).reduce(|arr, val| {arr.push(val); arr;}, .b);  // [0, 1, 2]
+
+assert (.b != b2);  // [] != [0, 1, 2]
+```
