@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="ThingsDB documentation">
 
 
@@ -11,20 +11,20 @@
     <title>mod :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/theme.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1582628647" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583166348" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1582628647" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583166348" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1582628647"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583166348"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1582628647"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1582628647"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583166348"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583166348"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1582628647"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583166348"></script>
 
     
   </div>
@@ -4535,17 +4535,15 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#action">Action</a></li>
-<li><a href="#arguments">Arguments</a></li>
-<li><a href="#return-value">Return value</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#action">Action</a></li>
+        <li><a href="#arguments">Arguments</a></li>
+        <li><a href="#return-value">Return value</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -4570,22 +4568,15 @@
 
 
 
-
-
 <p>Modifies a property from an exinsting <a href="../../../data-types/type">Type</a>.</p>
 
-
-<div class="notices note" ><p>When modifying a property of a Type, the changed property type can only be less &lsquo;strict&rsquo;. <br />
+<div class="notices note" ><p>When modifying a property of a Type, the changed property type can only be less &lsquo;strict&rsquo;.<br>
 So for example, <code>age: 'int'</code> can become <code>age: 'int?'</code>, but not the other way around.</p>
 </div>
 
-
 <h3 id="action">Action</h3>
-
 <p><code>mod_type(type_name, 'mod', property_name, property_type)</code></p>
-
 <h3 id="arguments">Arguments</h3>
-
 <table>
 <thead>
 <tr>
@@ -4594,26 +4585,22 @@ So for example, <code>age: 'int'</code> can become <code>age: 'int?'</code>, but
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>type_name</td>
 <td>str</td>
 <td>Name of the Type where the property has to be modified from.</td>
 </tr>
-
 <tr>
 <td><code>'mod'</code></td>
 <td>str</td>
 <td>Passing this argument will result in a <em>modify</em> action.</td>
 </tr>
-
 <tr>
 <td>property_name</td>
 <td>str</td>
 <td>Name of the property that has to be modified.</td>
 </tr>
-
 <tr>
 <td>property_type</td>
 <td>str</td>
@@ -4621,16 +4608,12 @@ So for example, <code>age: 'int'</code> can become <code>age: 'int?'</code>, but
 </tr>
 </tbody>
 </table>
-
 <h3 id="return-value">Return value</h3>
-
 <p>The value <code>nil</code>.</p>
-
 <blockquote>
-<p>This code shows the return value for the action <strong><em>mod</em></strong>:</p>
+<p>This code shows the return value for the action <em><strong>mod</strong></em>:</p>
 </blockquote>
-
-<pre><code class="language-thingsdb,json_response">// Create type `Person`
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">// Create type `Person`
 set_type('Person', {
     name: 'str',
     age: 'int',
@@ -4639,15 +4622,11 @@ set_type('Person', {
 
 // Make `age` nillable
 mod_type('Person', 'mod', 'age', 'int?');
-</code></pre>
-
-<blockquote>
+</code></pre><blockquote>
 <p>Return value in JSON format</p>
 </blockquote>
-
-<pre><code class="language-json">null
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#66d9ef">null</span>
+</code></pre></div>
 
 <footer class=" footline" >
 	
@@ -4677,19 +4656,19 @@ mod_type('Person', 'mod', 'age', 'int?');
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1582628647"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1582628647"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1582628647"></script>
-    <script src="/v0/js/jquery.sticky.js?1582628647"></script>
-    <script src="/v0/js/featherlight.min.js?1582628647"></script>
-    <script src="/v0/js/highlight.pack.js?1582628647"></script>
+    <script src="/v0/js/clipboard.min.js?1583166348"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583166348"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583166348"></script>
+    <script src="/v0/js/jquery.sticky.js?1583166348"></script>
+    <script src="/v0/js/featherlight.min.js?1583166348"></script>
+    <script src="/v0/js/highlight.pack.js?1583166348"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1582628647"></script>
-    <script src="/v0/js/learn.js?1582628647"></script>
-    <script src="/v0/js/hugo-learn.js?1582628647"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583166348"></script>
+    <script src="/v0/js/learn.js?1583166348"></script>
+    <script src="/v0/js/hugo-learn.js?1583166348"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1582628647" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1582628647"></script>
+    <link href="/v0/mermaid/mermaid.css?1583166348" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583166348"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

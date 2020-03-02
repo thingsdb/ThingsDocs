@@ -18,7 +18,7 @@
       <guid>https://docs.thingsdb.net/v0/operators/arithmetic-operators/</guid>
       <description>Operator Description     + Addition operator.   - Subtraction operator.   / Division operator   * Multiplication operator.   % Modulo operator.    Division uses float division if either the numerator or denominator is of type float.
   Arithmetic examples:
- [ 5 + 2, 5 - 2, 5 / 2.0, 5 / 2, 5 * 2, 5 % 2, ];   Return value in JSON format</description>
+ [ 5 + 2, 5 - 2, 5 / 2.0, 5 / 2, 5 * 2, 5 % 2, ];  Return value in JSON format</description>
     </item>
     
     <item>
@@ -28,7 +28,7 @@
       
       <guid>https://docs.thingsdb.net/v0/operators/assignments/</guid>
       <description>Assignments will generate an event.
-   Operator Description     = Assignment operator.   *= Multiplication assignment.   /= Float division assignment.   %= Modulo assignment.   += Addition assignment.   -= Subtraction assignment   &amp;amp;= Bitwise AND assignment.   ^= Bitwise XOR assignment.   &amp;#124;= Bitwise OR assignment.    </description>
+   Operator Description     = Assignment operator.   *= Multiplication assignment.   /= Float division assignment.   %= Modulo assignment.   += Addition assignment.   -= Subtraction assignment   &amp;amp;= Bitwise AND assignment.   ^= Bitwise XOR assignment.   |= Bitwise OR assignment.    </description>
     </item>
     
     <item>
@@ -38,8 +38,8 @@
       
       <guid>https://docs.thingsdb.net/v0/operators/binary-bitwise-operators/</guid>
       <description>Can be used on integer values.
-   Operator Description     &amp;amp; Bitwise AND, true if both a and b are 1.   &amp;#124; Bitwise OR, true if at least a or b is 1.   ^ Bitwise XOR, true if a and b are different.     Binary bitwise operator examples:
- [ 0b110 &amp;amp; 0b011, 0b110 | 0b011, 0b110 ^ 0b011, ];   Return value in JSON format</description>
+   Operator Description     &amp;amp; Bitwise AND, true if both a and b are 1.   | Bitwise OR, true if at least a or b is 1.   ^ Bitwise XOR, true if a and b are different.     Binary bitwise operator examples:
+ [ 0b110 &amp;amp; 0b011, 0b110 | 0b011, 0b110 ^ 0b011, ];  Return value in JSON format</description>
     </item>
     
     <item>
@@ -51,8 +51,8 @@
       <description>The conditional operator returns one of two values based on the logical value of the condition.
 Syntax: expression ? if-true : if-false
  Conditional (ternary) operator examples:
- 2 &amp;gt; 1 ? &#39;two is greater than one&#39; : &#39;two is less than one&#39;;   Return value in JSON format
- &amp;quot;two is greater than one&amp;quot;  It is possible to use block scopes for the if-true and if-false part for the conditional operator.</description>
+ 2 &amp;gt; 1 ? &#39;two is greater than one&#39; : &#39;two is less than one&#39;;  Return value in JSON format
+ &amp;#34;two is greater than one&amp;#34; It is possible to use block scopes for the if-true and if-false part for the conditional operator.</description>
     </item>
     
     <item>
@@ -62,7 +62,7 @@ Syntax: expression ? if-true : if-false
       
       <guid>https://docs.thingsdb.net/v0/operators/logical-operators/</guid>
       <description>Logical operators are typically used with bool values.
-   Operator Description     &amp;amp;&amp;amp; Logical AND.   &amp;#124;&amp;#124; Logical OR.    As logical expressions are evaluated left to right, they are tested for possible &amp;ldquo;short-circuit&amp;rdquo; evaluation using the following rules:
+   Operator Description     &amp;amp;&amp;amp; Logical AND.   || Logical OR.    As logical expressions are evaluated left to right, they are tested for possible &amp;ldquo;short-circuit&amp;rdquo; evaluation using the following rules:
  (some falsy expression) &amp;amp;&amp;amp; expr is short-circuit evaluated to the falsy expression; (some truthy expression) || expr is short-circuit evaluated to the truthy expression.</description>
     </item>
     
@@ -72,7 +72,7 @@ Syntax: expression ? if-true : if-false
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/operators/precedence-and-associativity/</guid>
-      <description>Symbol Type of operation Associativity     () Expression parenthesis Left-to-right   ! Not operator Right-to-left   * / // % Multiplication, Modulo, (Integer) Division Left-to-right   + - Add, Subtract Left-to-right   &amp;amp; Bitwise AND Left-to-right   ^ Bitwise XOR Left-to-right   &amp;#124; Bitwise OR Left-to-right   == != &amp;lt;= &amp;gt;= &amp;lt; &amp;gt; Compare Left-to-right   &amp;amp;&amp;amp; Logical AND Left-to-right   &amp;#124;&amp;#124; Logical OR Left-to-right   ?</description>
+      <description>Symbol Type of operation Associativity     () Expression parenthesis Left-to-right   ! Not operator Right-to-left   * / // % Multiplication, Modulo, (Integer) Division Left-to-right   + - Add, Subtract Left-to-right   &amp;amp; Bitwise AND Left-to-right   ^ Bitwise XOR Left-to-right   | Bitwise OR Left-to-right   == != &amp;lt;= &amp;gt;= &amp;lt; &amp;gt; Compare Left-to-right   &amp;amp;&amp;amp; Logical AND Left-to-right   || Logical OR Left-to-right   ?</description>
     </item>
     
   </channel>

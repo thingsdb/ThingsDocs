@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="ThingsDB documentation">
 
 
@@ -11,20 +11,20 @@
     <title>Example ping :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/theme.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1582628646" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583166348" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1582628646" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583166348" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1582628646"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583166348"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1582628646"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583166348"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583166348"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583166348"></script>
 
     
   </div>
@@ -4535,12 +4535,9 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#example">Example</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#example">Example</a></li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -4565,40 +4562,28 @@
 
 
 
-
-
 <p>Can be used as keep-alive. A successful ping will respond with a <code>PONG (16)</code></p>
-
 
 <div class="notices note" ><p>No authorization is required for sending a <code>ping</code> request.</p>
 </div>
 
-
 <h2 id="example">Example</h2>
-
 <p>A Ping package has no data so we only need to construct the header:</p>
-
 <ul>
 <li>Data length (0) <code>\x00\x00\x00\x00</code></li>
 <li>Identifier (0) <code>\x00\x00</code></li>
 <li>Ping package type (32) <code>\x20</code></li>
 <li>Inverse type check bit (223) <code>\xdf</code></li>
 </ul>
-
 <blockquote>
 <p>Sending the <em>Ping</em> package</p>
 </blockquote>
-
 <pre><code>\x00\x00\x00\x00\x00\x00\x20\xdf
-</code></pre>
-
-<blockquote>
+</code></pre><blockquote>
 <p>Responding <em>Pong</em> package</p>
 </blockquote>
-
 <pre><code>\x00\x00\x00\x00\x00\x00\x10\xef
 </code></pre>
-
 
 <footer class=" footline" >
 	
@@ -4628,19 +4613,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1582628646"></script>
-    <script src="/v0/js/jquery.sticky.js?1582628646"></script>
-    <script src="/v0/js/featherlight.min.js?1582628646"></script>
-    <script src="/v0/js/highlight.pack.js?1582628646"></script>
+    <script src="/v0/js/clipboard.min.js?1583166348"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583166348"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583166348"></script>
+    <script src="/v0/js/jquery.sticky.js?1583166348"></script>
+    <script src="/v0/js/featherlight.min.js?1583166348"></script>
+    <script src="/v0/js/highlight.pack.js?1583166348"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1582628646"></script>
-    <script src="/v0/js/learn.js?1582628646"></script>
-    <script src="/v0/js/hugo-learn.js?1582628646"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583166348"></script>
+    <script src="/v0/js/learn.js?1583166348"></script>
+    <script src="/v0/js/hugo-learn.js?1583166348"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1582628646" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1582628646"></script>
+    <link href="/v0/mermaid/mermaid.css?1583166348" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583166348"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

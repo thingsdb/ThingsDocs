@@ -26,7 +26,7 @@ It might be a good idea to create a new user with minimal privileges and add a n
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/connect/http-api/</guid>
-      <description>Before using the HTTP API, make sure at least one node has the API port enabled. By default the API port is enabled and listening to TCP port 9210 but can be disabled or changed with the http_api_port in the configuration file or with the THINGSDB_HTTP_API_PORT environment variable.
+      <description>Before using the HTTP API, make sure at least one node has the API port enabled. By default the API port is enabled and listening to TCP port 9210, but can be disabled or changed with the http_api_port in the configuration file or with the THINGSDB_HTTP_API_PORT environment variable.
 The API has support for both MessagePack and JSON and can be used to perform queries and run procedures.
 Use MessagePack if possible since this is the data serialization protocol which is used by ThingsDB internally and will therefore be a faster than JSON.</description>
     </item>
@@ -39,8 +39,8 @@ Use MessagePack if possible since this is the data serialization protocol which 
       <guid>https://docs.thingsdb.net/v0/connect/python/</guid>
       <description>Installation The python-thingsdb library requires Python 3.6 or higher.
  Just use pip:
-pip install python-thingsdb  Or, clone the project and use setup.py:
-python setup.py install  Quick usage import asyncio from thingsdb.client import Client async def hello_world(): client = Client() # replace `localhost` with your ThingsDB server address await client.connect(&#39;localhost&#39;) try: # replace `admin` and `pass` with your username and password # or use a valid token string await client.</description>
+pip install python-thingsdb Or, clone the project and use setup.py:
+python setup.py install Quick usage import asyncio from thingsdb.client import Client async def hello_world(): client = Client() # replace `localhost` with your ThingsDB server address await client.connect(&amp;#39;localhost&amp;#39;) try: # replace `admin` and `pass` with your username and password # or use a valid token string await client.authenticate(&amp;#39;admin&amp;#39;, &amp;#39;pass&amp;#39;) # perform the hello world code.</description>
     </item>
     
     <item>
@@ -50,8 +50,8 @@ python setup.py install  Quick usage import asyncio from thingsdb.client import 
       
       <guid>https://docs.thingsdb.net/v0/connect/go/</guid>
       <description>Installation Simple install the package to your $GOPATH with the go tool from shell:
-$ go get github.com/thingsdb/go-thingsdb  Make sure Git is installed on your machine and in your system&amp;rsquo;s PATH.
-Quick usage package main import ( &amp;quot;crypto/tls&amp;quot; &amp;quot;fmt&amp;quot; thingsdb &amp;quot;github.com/thingsdb/go-thingsdb&amp;quot; ) func example(conn *thingsdb.Conn, res chan interface{}) { var data interface{} var err error if err := conn.Connect(); err != nil { res &amp;lt;- err return } defer conn.</description>
+$ go get github.com/thingsdb/go-thingsdb Make sure Git is installed on your machine and in your system&amp;rsquo;s PATH.
+Quick usage package main import ( &amp;#34;crypto/tls&amp;#34; &amp;#34;fmt&amp;#34; thingsdb &amp;#34;github.com/thingsdb/go-thingsdb&amp;#34; ) func example(conn *thingsdb.Conn, res chan interface{}) { var data interface{} var err error if err := conn.Connect(); err != nil { res &amp;lt;- err return } defer conn.Close() if err := conn.</description>
     </item>
     
   </channel>

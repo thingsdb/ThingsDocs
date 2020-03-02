@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="ThingsDB documentation">
 
 
@@ -11,20 +11,20 @@
     <title>nodes_info :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/theme.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1582628647" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583166349" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1582628647" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583166349" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1582628647"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583166349"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1582628647"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1582628647"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583166349"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583166349"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1582628647"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583166349"></script>
 
     
   </div>
@@ -4529,18 +4529,16 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#function">Function</a></li>
-<li><a href="#arguments">Arguments</a></li>
-<li><a href="#return-value">Return value</a></li>
-<li><a href="#example">Example</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#function">Function</a></li>
+        <li><a href="#arguments">Arguments</a></li>
+        <li><a href="#return-value">Return value</a></li>
+        <li><a href="#example">Example</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -4565,10 +4563,7 @@
 
 
 
-
-
 <p>Returns information about all ThingsDB nodes.</p>
-
 <table>
 <thead>
 <tr>
@@ -4576,110 +4571,87 @@
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>address</td>
 <td>IP address or hostname of the node.</td>
 </tr>
-
 <tr>
 <td>committed_event_id</td>
 <td>Last known committed event ID on the node.</td>
 </tr>
-
 <tr>
 <td>next_thing_id</td>
 <td>Next free thing ID on the node.</td>
 </tr>
-
 <tr>
 <td>node_id</td>
 <td>ID which is assigned to the node.</td>
 </tr>
-
 <tr>
 <td>port</td>
 <td>TCP port on which the node is listening for node connections.</td>
 </tr>
-
 <tr>
 <td>status</td>
 <td>Current status of the node.</td>
 </tr>
-
 <tr>
 <td>stored_event_id</td>
 <td>Last known stored event ID on the node.</td>
 </tr>
-
 <tr>
 <td>syntax_version</td>
 <td>Language or syntax version which is running on the node.</td>
 </tr>
-
 <tr>
 <td>zone</td>
 <td>Zone number to which the node is assigned.</td>
 </tr>
 </tbody>
 </table>
-
 <p>This function does <em>not</em> generate an <a href="../../overview/events">event</a>.</p>
-
 <h3 id="function">Function</h3>
-
 <p><code>nodes_info()</code></p>
-
 <h3 id="arguments">Arguments</h3>
-
 <p>None</p>
-
 <h3 id="return-value">Return value</h3>
-
 <p>List with node <a href="../../data-types/info">info</a> for all nodes in ThingsDB.</p>
-
 <h3 id="example">Example</h3>
-
 <blockquote>
 <p>This code returns info for all ThingsDB nodes:</p>
 </blockquote>
-
-<pre><code class="language-thingsdb,should_pass,@n">nodes_info();
-</code></pre>
-
-<blockquote>
+<pre><code class="language-thingsdb,should_pass,@n" data-lang="thingsdb,should_pass,@n">nodes_info();
+</code></pre><blockquote>
 <p>Example return value in JSON format</p>
 </blockquote>
-
-<pre><code class="language-json">[
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
     {
-        &quot;address&quot;: &quot;node0.local&quot;,
-        &quot;committed_event_id&quot;: 4,
-        &quot;next_thing_id&quot;: 5,
-        &quot;node_id&quot;: 0,
-        &quot;port&quot;: 9220,
-        &quot;status&quot;: &quot;READY&quot;,
-        &quot;stored_event_id&quot;: 4,
-        &quot;stream&quot;: null,
-        &quot;syntax_version&quot;: &quot;v0&quot;,
-        &quot;zone&quot;: 0
+        <span style="color:#f92672">&#34;address&#34;</span>: <span style="color:#e6db74">&#34;node0.local&#34;</span>,
+        <span style="color:#f92672">&#34;committed_event_id&#34;</span>: <span style="color:#ae81ff">4</span>,
+        <span style="color:#f92672">&#34;next_thing_id&#34;</span>: <span style="color:#ae81ff">5</span>,
+        <span style="color:#f92672">&#34;node_id&#34;</span>: <span style="color:#ae81ff">0</span>,
+        <span style="color:#f92672">&#34;port&#34;</span>: <span style="color:#ae81ff">9220</span>,
+        <span style="color:#f92672">&#34;status&#34;</span>: <span style="color:#e6db74">&#34;READY&#34;</span>,
+        <span style="color:#f92672">&#34;stored_event_id&#34;</span>: <span style="color:#ae81ff">4</span>,
+        <span style="color:#f92672">&#34;stream&#34;</span>: <span style="color:#66d9ef">null</span>,
+        <span style="color:#f92672">&#34;syntax_version&#34;</span>: <span style="color:#e6db74">&#34;v0&#34;</span>,
+        <span style="color:#f92672">&#34;zone&#34;</span>: <span style="color:#ae81ff">0</span>
     },
     {
-        &quot;address&quot;: &quot;node1.local&quot;,
-        &quot;committed_event_id&quot;: 4,
-        &quot;next_thing_id&quot;: 5,
-        &quot;node_id&quot;: 1,
-        &quot;port&quot;: 9220,
-        &quot;status&quot;: &quot;READY&quot;,
-        &quot;stored_event_id&quot;: 4,
-        &quot;stream&quot;: &quot;&lt;node-out:1&gt; 192.168.0.10:9220&quot;,
-        &quot;syntax_version&quot;: &quot;v0&quot;,
-        &quot;zone&quot;: 0
+        <span style="color:#f92672">&#34;address&#34;</span>: <span style="color:#e6db74">&#34;node1.local&#34;</span>,
+        <span style="color:#f92672">&#34;committed_event_id&#34;</span>: <span style="color:#ae81ff">4</span>,
+        <span style="color:#f92672">&#34;next_thing_id&#34;</span>: <span style="color:#ae81ff">5</span>,
+        <span style="color:#f92672">&#34;node_id&#34;</span>: <span style="color:#ae81ff">1</span>,
+        <span style="color:#f92672">&#34;port&#34;</span>: <span style="color:#ae81ff">9220</span>,
+        <span style="color:#f92672">&#34;status&#34;</span>: <span style="color:#e6db74">&#34;READY&#34;</span>,
+        <span style="color:#f92672">&#34;stored_event_id&#34;</span>: <span style="color:#ae81ff">4</span>,
+        <span style="color:#f92672">&#34;stream&#34;</span>: <span style="color:#e6db74">&#34;&lt;node-out:1&gt; 192.168.0.10:9220&#34;</span>,
+        <span style="color:#f92672">&#34;syntax_version&#34;</span>: <span style="color:#e6db74">&#34;v0&#34;</span>,
+        <span style="color:#f92672">&#34;zone&#34;</span>: <span style="color:#ae81ff">0</span>
     }
 ]
-</code></pre>
-
+</code></pre></div>
 
 <footer class=" footline" >
 	
@@ -4709,19 +4681,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1582628647"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1582628647"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1582628647"></script>
-    <script src="/v0/js/jquery.sticky.js?1582628647"></script>
-    <script src="/v0/js/featherlight.min.js?1582628647"></script>
-    <script src="/v0/js/highlight.pack.js?1582628647"></script>
+    <script src="/v0/js/clipboard.min.js?1583166349"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583166349"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583166349"></script>
+    <script src="/v0/js/jquery.sticky.js?1583166349"></script>
+    <script src="/v0/js/featherlight.min.js?1583166349"></script>
+    <script src="/v0/js/highlight.pack.js?1583166349"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1582628647"></script>
-    <script src="/v0/js/learn.js?1582628647"></script>
-    <script src="/v0/js/hugo-learn.js?1582628647"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583166349"></script>
+    <script src="/v0/js/learn.js?1583166349"></script>
+    <script src="/v0/js/hugo-learn.js?1583166349"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1582628647" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1582628647"></script>
+    <link href="/v0/mermaid/mermaid.css?1583166349" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583166349"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

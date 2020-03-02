@@ -57,7 +57,7 @@ try(return(.colors, 2));
 return(.colors, 2);
 ```
 
-> Example return value in JSON format (the #id's might be different)
+> Example return value in JSON format (the #ids might be different)
 
 ```json
 {

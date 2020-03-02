@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="ThingsDB documentation">
 
 
@@ -11,20 +11,20 @@
     <title>reduce :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/theme.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1582628646" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583166349" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1582628646" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583166349" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1582628646"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583166349"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1582628646"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583166349"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583166349"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583166349"></script>
 
     
   </div>
@@ -4535,18 +4535,16 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#function">Function</a></li>
-<li><a href="#arguments">Arguments</a></li>
-<li><a href="#return-value">Return value</a></li>
-<li><a href="#examples">Examples</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#function">Function</a></li>
+        <li><a href="#arguments">Arguments</a></li>
+        <li><a href="#return-value">Return value</a></li>
+        <li><a href="#examples">Examples</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -4571,18 +4569,11 @@
 
 
 
-
-
 <p>Executes a given reducer <a href="../../closure">closure</a> on each element of the list, resulting in a single output value.</p>
-
 <p>This function does <em>not</em> generate an <a href="../../../overview/events">event</a>.</p>
-
 <h3 id="function">Function</h3>
-
 <p><em>list</em>.<code>reduce(reducer, [initial])</code></p>
-
 <h3 id="arguments">Arguments</h3>
-
 <table>
 <thead>
 <tr>
@@ -4591,14 +4582,12 @@
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>reducer</td>
 <td>closure (required)</td>
 <td>Closure to execute on each value (except for the first, if no initial value is supplied).</td>
 </tr>
-
 <tr>
 <td>initial</td>
 <td>any (optional)</td>
@@ -4606,9 +4595,7 @@
 </tr>
 </tbody>
 </table>
-
 <p>The <em>reducer</em> argument takes three optional arguments:</p>
-
 <table>
 <thead>
 <tr>
@@ -4616,75 +4603,51 @@
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>(0)</code> accumulator</td>
 <td>The accumulator accumulates callback&rsquo;s return values. It is the accumulated value previously returned in the last invocation of the callback—or initialValue.</td>
 </tr>
-
 <tr>
 <td><code>(1)</code> current</td>
 <td>The current element being processed in the list.</td>
 </tr>
-
 <tr>
 <td><code>(2)</code> index</td>
 <td>The index of the current element being processed in the array. Starts from index <code>0</code> if an initial value is provided. Otherwise, it starts from index <code>1</code>.</td>
 </tr>
 </tbody>
 </table>
-
 <h3 id="return-value">Return value</h3>
-
 <p>The single value that results from the reduction.</p>
-
 <h3 id="examples">Examples</h3>
-
 <blockquote>
 <p>Sum all the values of a list:</p>
 </blockquote>
-
-<pre><code class="language-thingsdb,json_response">[0, 1, 2, 3].reduce(|a, b| a+b);
-</code></pre>
-
-<blockquote>
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">[0, 1, 2, 3].reduce(|a, b| a+b);
+</code></pre><blockquote>
 <p>Return value in JSON format</p>
 </blockquote>
-
-<pre><code class="language-json">6
-</code></pre>
-
-<blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#ae81ff">6</span>
+</code></pre></div><blockquote>
 <p>Sum values in a thing list:</p>
 </blockquote>
-
-<pre><code class="language-thingsdb,json_response">// An initial value is required
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">// An initial value is required
 [{x: 1}, {x: 2}, {x: 3}].reduce(|a, b| a+b.x, 0);
-</code></pre>
-
-<blockquote>
+</code></pre><blockquote>
 <p>Return value in JSON format</p>
 </blockquote>
-
-<pre><code class="language-json">6
-</code></pre>
-
-<blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#ae81ff">6</span>
+</code></pre></div><blockquote>
 <p>Flatten a list with tuples:</p>
 </blockquote>
-
-<pre><code class="language-thingsdb,json_response">// Use an empty list as initial value
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">// Use an empty list as initial value
 [[1, 2], [3, 4], [5, 6]].reduce(|a, b| {a.extend(b); a}, []);
-</code></pre>
-
-<blockquote>
+</code></pre><blockquote>
 <p>Return value in JSON format</p>
 </blockquote>
-
-<pre><code class="language-json">[1, 2, 3, 4, 5, 6]
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>]
+</code></pre></div>
 
 <footer class=" footline" >
 	
@@ -4714,19 +4677,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1582628646"></script>
-    <script src="/v0/js/jquery.sticky.js?1582628646"></script>
-    <script src="/v0/js/featherlight.min.js?1582628646"></script>
-    <script src="/v0/js/highlight.pack.js?1582628646"></script>
+    <script src="/v0/js/clipboard.min.js?1583166349"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583166349"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583166349"></script>
+    <script src="/v0/js/jquery.sticky.js?1583166349"></script>
+    <script src="/v0/js/featherlight.min.js?1583166349"></script>
+    <script src="/v0/js/highlight.pack.js?1583166349"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1582628646"></script>
-    <script src="/v0/js/learn.js?1582628646"></script>
-    <script src="/v0/js/hugo-learn.js?1582628646"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583166349"></script>
+    <script src="/v0/js/learn.js?1583166349"></script>
+    <script src="/v0/js/hugo-learn.js?1583166349"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1582628646" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1582628646"></script>
+    <link href="/v0/mermaid/mermaid.css?1583166349" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583166349"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

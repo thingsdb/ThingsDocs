@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="ThingsDB documentation">
 
 
@@ -11,20 +11,20 @@
     <title>thing :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/theme.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1582628646" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583166349" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1582628646" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583166349" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1582628646"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583166349"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1582628646"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583166349"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583166349"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583166349"></script>
 
     
   </div>
@@ -4529,15 +4529,13 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#methods">Methods</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#methods">Methods</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -4563,10 +4561,7 @@
 
 
 
-	
-
-<h3 id="methods">Methods</h3>
-
+	<h3 id="methods">Methods</h3>
 <table>
 <thead>
 <tr>
@@ -4574,73 +4569,59 @@
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><a href="./del">del</a></td>
 <td>Remove a property.</td>
 </tr>
-
 <tr>
 <td><a href="./each">each</a></td>
 <td>Iterate over all properties of a thing.</td>
 </tr>
-
 <tr>
 <td><a href="./filter">filter</a></td>
 <td>Return a new <code>thing</code> with properties that pass a given test.</td>
 </tr>
-
 <tr>
 <td><a href="./get">get</a></td>
 <td>Return the value of a property on a thing by a given property name.</td>
 </tr>
-
 <tr>
 <td><a href="./has">has</a></td>
 <td>Determines if a thing has a given property.</td>
 </tr>
-
 <tr>
 <td><a href="./id">id</a></td>
 <td>Return the <code>id</code>.</td>
 </tr>
-
 <tr>
 <td><a href="./keys">keys</a></td>
 <td>Returns an array with all the property names of a thing.</td>
 </tr>
-
 <tr>
 <td><a href="./len">len</a></td>
 <td>Returns the number of items.</td>
 </tr>
-
 <tr>
 <td><a href="./map">map</a></td>
 <td>Returns a <a href="../list">list</a> with the results of calling a provided closure on every property.</td>
 </tr>
-
 <tr>
 <td><a href="./set">set</a></td>
 <td>Creates a new property on a thing.</td>
 </tr>
-
 <tr>
 <td><a href="./unwatch">unwatch</a></td>
 <td>Stop watching the <code>thing</code> for mutations.</td>
 </tr>
-
 <tr>
 <td><a href="./values">values</a></td>
 <td>Returns an array with all the property values of a thing.</td>
 </tr>
-
 <tr>
 <td><a href="./watch">watch</a></td>
 <td>Watch the <code>thing</code> for mutations.</td>
 </tr>
-
 <tr>
 <td><a href="./wrap">wrap</a></td>
 <td>Wrap the <code>thing</code> with a <a href="../type">Type</a>.</td>
@@ -4679,19 +4660,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1582628646"></script>
-    <script src="/v0/js/jquery.sticky.js?1582628646"></script>
-    <script src="/v0/js/featherlight.min.js?1582628646"></script>
-    <script src="/v0/js/highlight.pack.js?1582628646"></script>
+    <script src="/v0/js/clipboard.min.js?1583166349"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583166349"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583166349"></script>
+    <script src="/v0/js/jquery.sticky.js?1583166349"></script>
+    <script src="/v0/js/featherlight.min.js?1583166349"></script>
+    <script src="/v0/js/highlight.pack.js?1583166349"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1582628646"></script>
-    <script src="/v0/js/learn.js?1582628646"></script>
-    <script src="/v0/js/hugo-learn.js?1582628646"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583166349"></script>
+    <script src="/v0/js/learn.js?1583166349"></script>
+    <script src="/v0/js/hugo-learn.js?1583166349"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1582628646" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1582628646"></script>
+    <link href="/v0/mermaid/mermaid.css?1583166349" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583166349"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

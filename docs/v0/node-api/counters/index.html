@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="ThingsDB documentation">
 
 
@@ -11,20 +11,20 @@
     <title>counters :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/theme.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1582628647" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583166349" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1582628647" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583166349" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1582628647"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583166349"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1582628647"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1582628647"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583166349"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583166349"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1582628647"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583166349"></script>
 
     
   </div>
@@ -4529,18 +4529,16 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#function">Function</a></li>
-<li><a href="#arguments">Arguments</a></li>
-<li><a href="#return-value">Return value</a></li>
-<li><a href="#example">Example</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#function">Function</a></li>
+        <li><a href="#arguments">Arguments</a></li>
+        <li><a href="#return-value">Return value</a></li>
+        <li><a href="#example">Example</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -4565,14 +4563,10 @@
 
 
 
-
-
 <p>Returns <code>counters</code> for the ThingsDB node in the selected scope. Counters start all at zero when ThingsDB
-is started, or when the counters are reset by using <a href="../../node-api/reset_counters">reset_counters()&rsquo;</a>.</p>
-
+is started, or when the counters are reset by using <a href="../../node-api/reset_counters">reset_counters()'</a>.</p>
 <p>Counters give information about things, queries and events. If you suspect failed queries, then
 counters might provide you with more information.</p>
-
 <table>
 <thead>
 <tr>
@@ -4580,132 +4574,103 @@ counters might provide you with more information.</p>
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>average_event_duration</td>
 <td>The average event duration in seconds.</td>
 </tr>
-
 <tr>
 <td>average_query_duration</td>
 <td>The average query duration in seconds.</td>
 </tr>
-
 <tr>
 <td>events_committed</td>
 <td>Events committed since last counters reset.</td>
 </tr>
-
 <tr>
 <td>events_failed</td>
 <td>Failed events. This is a critical counter which should be 0.</td>
 </tr>
-
 <tr>
 <td>events_killed</td>
 <td>Killed events took too long for receiving the <code>READY</code> status. These event may be processed later.</td>
 </tr>
-
 <tr>
 <td>events_quorum_lost</td>
 <td>Number of times a quorum was not received.</td>
 </tr>
-
 <tr>
 <td>events_skipped</td>
 <td>Events which cannot be committed since an event with a higher <code>id</code> is already processed. These events are moved to a skipped queue.</td>
 </tr>
-
 <tr>
 <td>events_unaligned</td>
 <td>Number of times an event cannot be pushed to the end of the queue and needs re-ordering.</td>
 </tr>
-
 <tr>
 <td>events_with_gap</td>
 <td>Events which are committed but at least one event <code>id</code> was skipped.</td>
 </tr>
-
 <tr>
 <td>garbage_collected</td>
 <td>Number of things which are garbage collected.</td>
 </tr>
-
 <tr>
 <td>longest_event_duration</td>
 <td>Longest event duration, in seconds.</td>
 </tr>
-
 <tr>
 <td>longest_query_duration</td>
 <td>Longest query duration, in seconds.</td>
 </tr>
-
 <tr>
 <td>queries_success</td>
 <td>Number of queries where this node acted as the master node and the query has successful finished.</td>
 </tr>
-
 <tr>
 <td>queries_with_error</td>
 <td>Number of queries where this node acted as the master node but the query has returned with an error.</td>
 </tr>
-
 <tr>
 <td>watcher_failed</td>
 <td>The value is increased if an update could not be forwarded to a registered watcher.</td>
 </tr>
 </tbody>
 </table>
-
 <p>This function does <em>not</em> generate an <a href="../../overview/events">event</a>.</p>
-
 <h3 id="function">Function</h3>
-
 <p><code>counters();</code></p>
-
 <h3 id="arguments">Arguments</h3>
-
 <p>None</p>
-
 <h3 id="return-value">Return value</h3>
-
 <p>Returns the current counter values.</p>
-
 <h3 id="example">Example</h3>
-
 <blockquote>
 <p>This code will return node counter values:</p>
 </blockquote>
-
-<pre><code class="language-thingsdb,should_pass,@n">// Returns the current counters the the node in this scope
+<pre><code class="language-thingsdb,should_pass,@n" data-lang="thingsdb,should_pass,@n">// Returns the current counters the the node in this scope
 counters();
-</code></pre>
-
-<blockquote>
+</code></pre><blockquote>
 <p>Example return value in JSON format</p>
 </blockquote>
-
-<pre><code class="language-json">{
-    &quot;average_event_duration&quot;: 0.0002218758461538461,
-    &quot;average_query_duration&quot;: 0.00007062491772151898,
-    &quot;events_committed&quot;: 26,
-    &quot;events_failed&quot;: 0,
-    &quot;events_killed&quot;: 0,
-    &quot;events_quorum_lost&quot;: 0,
-    &quot;events_skipped&quot;: 0,
-    &quot;events_unaligned&quot;: 0,
-    &quot;events_with_gap&quot;: 0,
-    &quot;garbage_collected&quot;: 0,
-    &quot;longest_event_duration&quot;: 0.000295981,
-    &quot;longest_query_duration&quot;: 0.000152664,
-    &quot;queries_success&quot;: 159,
-    &quot;queries_with_error&quot;: 0,
-    &quot;watcher_failed&quot;: 0
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;average_event_duration&#34;</span>: <span style="color:#ae81ff">0.0002218758461538461</span>,
+    <span style="color:#f92672">&#34;average_query_duration&#34;</span>: <span style="color:#ae81ff">0.00007062491772151898</span>,
+    <span style="color:#f92672">&#34;events_committed&#34;</span>: <span style="color:#ae81ff">26</span>,
+    <span style="color:#f92672">&#34;events_failed&#34;</span>: <span style="color:#ae81ff">0</span>,
+    <span style="color:#f92672">&#34;events_killed&#34;</span>: <span style="color:#ae81ff">0</span>,
+    <span style="color:#f92672">&#34;events_quorum_lost&#34;</span>: <span style="color:#ae81ff">0</span>,
+    <span style="color:#f92672">&#34;events_skipped&#34;</span>: <span style="color:#ae81ff">0</span>,
+    <span style="color:#f92672">&#34;events_unaligned&#34;</span>: <span style="color:#ae81ff">0</span>,
+    <span style="color:#f92672">&#34;events_with_gap&#34;</span>: <span style="color:#ae81ff">0</span>,
+    <span style="color:#f92672">&#34;garbage_collected&#34;</span>: <span style="color:#ae81ff">0</span>,
+    <span style="color:#f92672">&#34;longest_event_duration&#34;</span>: <span style="color:#ae81ff">0.000295981</span>,
+    <span style="color:#f92672">&#34;longest_query_duration&#34;</span>: <span style="color:#ae81ff">0.000152664</span>,
+    <span style="color:#f92672">&#34;queries_success&#34;</span>: <span style="color:#ae81ff">159</span>,
+    <span style="color:#f92672">&#34;queries_with_error&#34;</span>: <span style="color:#ae81ff">0</span>,
+    <span style="color:#f92672">&#34;watcher_failed&#34;</span>: <span style="color:#ae81ff">0</span>
 }
-</code></pre>
-
+</code></pre></div>
 
 <footer class=" footline" >
 	
@@ -4735,19 +4700,19 @@ counters();
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1582628647"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1582628647"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1582628647"></script>
-    <script src="/v0/js/jquery.sticky.js?1582628647"></script>
-    <script src="/v0/js/featherlight.min.js?1582628647"></script>
-    <script src="/v0/js/highlight.pack.js?1582628647"></script>
+    <script src="/v0/js/clipboard.min.js?1583166349"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583166349"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583166349"></script>
+    <script src="/v0/js/jquery.sticky.js?1583166349"></script>
+    <script src="/v0/js/featherlight.min.js?1583166349"></script>
+    <script src="/v0/js/highlight.pack.js?1583166349"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1582628647"></script>
-    <script src="/v0/js/learn.js?1582628647"></script>
-    <script src="/v0/js/hugo-learn.js?1582628647"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583166349"></script>
+    <script src="/v0/js/learn.js?1583166349"></script>
+    <script src="/v0/js/hugo-learn.js?1583166349"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1582628647" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1582628647"></script>
+    <link href="/v0/mermaid/mermaid.css?1583166349" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583166349"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

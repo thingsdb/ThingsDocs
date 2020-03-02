@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="ThingsDB documentation">
 
 
@@ -11,20 +11,20 @@
     <title>HTTP API :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/theme.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1582628646" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583166348" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1582628646" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583166348" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1582628646"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583166348"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1582628646"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583166348"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583166348"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583166348"></script>
 
     
   </div>
@@ -4529,16 +4529,13 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#headers">Headers</a></li>
-<li><a href="#query-request">Query request</a></li>
-<li><a href="#query-example">Query example</a></li>
-<li><a href="#run-request">Run request</a></li>
-<li><a href="#run-example">Run example</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#headers">Headers</a></li>
+    <li><a href="#query-request">Query request</a></li>
+    <li><a href="#query-example">Query example</a></li>
+    <li><a href="#run-request">Run request</a></li>
+    <li><a href="#run-example">Run example</a></li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -4563,28 +4560,20 @@
 
 
 
-
-
 <p>Before using the HTTP API, make sure at least one node has the API port enabled.
-By default the API port is enabled and listening to TCP port <code>9210</code> but can be disabled or changed
+By default the API port is enabled and listening to TCP port <code>9210</code>, but can be disabled or changed
 with the <code>http_api_port</code> in the <a href="https://github.com/thingsdb/ThingsDB/blob/master/thingsdb.example.conf">configuration file</a>
 or with the <code>THINGSDB_HTTP_API_PORT</code> environment variable.</p>
-
 <p>The API has support for both <a href="https://msgpack.org">MessagePack</a> and <a href="https://www.json.org">JSON</a> and can be used to perform queries and run procedures.</p>
-
 
 <div class="notices tip" ><p>Use <strong>MessagePack</strong> if possible since this is the data serialization protocol which is used by ThingsDB
 internally and will therefore be a faster than JSON. It also allows for sending and receiving binary data and is usually more compact than JSON.
 In most examples we use JSON just because it is more readable.</p>
 </div>
 
-
 <h2 id="headers">Headers</h2>
-
 <p>The header field <code>Content-Type</code> is required and needs to be either <code>application/msgpack</code> or <code>application/json</code>.</p>
-
 <h2 id="query-request">Query request</h2>
-
 <table>
 <thead>
 <tr>
@@ -4592,76 +4581,56 @@ In most examples we use JSON just because it is more readable.</p>
 <th>description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>type</code></td>
 <td>Required and must be <code>query</code> for a query request.</td>
 </tr>
-
 <tr>
 <td><code>code</code></td>
 <td>Required string with the query code to preform.</td>
 </tr>
-
 <tr>
 <td><code>vars</code></td>
 <td>Optional and may contain a <code>map</code> where the <code>keys</code> are variable names and the <code>values</code> will be the variable values.</td>
 </tr>
 </tbody>
 </table>
-
 <h2 id="query-example">Query example</h2>
-
 <blockquote>
 <p>Example using <em>curl</em> with <em>token</em> authentication: (using a playground collection <code>Doc</code>)</p>
 </blockquote>
-
-<pre><code class="language-bash">curl --location --request POST 'https://playground.thingsdb.net//Doc' \
---header 'Content-Type: application/json' \
---header 'Authorization: Bearer Fai6NmH7QYxA6WLYPdtgcy' \
---data-raw '{
-	&quot;type&quot;: &quot;query&quot;,
-	&quot;code&quot;: &quot;.greetings.choice();&quot;
-}'
-</code></pre>
-
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl --location --request POST <span style="color:#e6db74">&#39;https://playground.thingsdb.net//Doc&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--header <span style="color:#e6db74">&#39;Content-Type: application/json&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--header <span style="color:#e6db74">&#39;Authorization: Bearer Fai6NmH7QYxA6WLYPdtgcy&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--data-raw <span style="color:#e6db74">&#39;{
+</span><span style="color:#e6db74">	&#34;type&#34;: &#34;query&#34;,
+</span><span style="color:#e6db74">	&#34;code&#34;: &#34;.greetings.choice();&#34;
+</span><span style="color:#e6db74">}&#39;</span>
+</code></pre></div>
 <div class="notices note" ><p><a href="../../data-types/list/choice">choice()</a> returns a random item from the <code>.greetings</code> array)</p>
 </div>
-
 
 <blockquote>
 <p>Possible response</p>
 </blockquote>
-
-<pre><code class="language-json">&quot;Hi!&quot;
-</code></pre>
-
-<p>Besides the preferred <strong>token</strong> authentication, the HTTP API has also support for <strong>basic</strong> authentication.</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;Hi!&#34;</span>
+</code></pre></div><p>Besides the preferred <strong>token</strong> authentication, the HTTP API has also support for <strong>basic</strong> authentication.</p>
 <blockquote>
 <p>Another <em>curl</em> example using <em>basic</em> authentication using user <code>Doc</code> with password <code>pass</code>:</p>
 </blockquote>
-
-<pre><code class="language-bash">curl --location --request POST 'https://playground.thingsdb.net//Doc' \
---header 'Content-Type: application/json' \
---user Doc:pass \
---data-raw '{
-	&quot;type&quot;: &quot;query&quot;,
-	&quot;code&quot;: &quot;1 + 1;&quot;
-}'
-</code></pre>
-
-<blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl --location --request POST <span style="color:#e6db74">&#39;https://playground.thingsdb.net//Doc&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--header <span style="color:#e6db74">&#39;Content-Type: application/json&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--user Doc:pass <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--data-raw <span style="color:#e6db74">&#39;{
+</span><span style="color:#e6db74">	&#34;type&#34;: &#34;query&#34;,
+</span><span style="color:#e6db74">	&#34;code&#34;: &#34;1 + 1;&#34;
+</span><span style="color:#e6db74">}&#39;</span>
+</code></pre></div><blockquote>
 <p>Example response:</p>
 </blockquote>
-
-<pre><code class="language-json">2
-</code></pre>
-
-<h2 id="run-request">Run request</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#ae81ff">2</span>
+</code></pre></div><h2 id="run-request">Run request</h2>
 <table>
 <thead>
 <tr>
@@ -4669,57 +4638,43 @@ In most examples we use JSON just because it is more readable.</p>
 <th>description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>type</code></td>
 <td>Required and must be <code>run</code> for a run request.</td>
 </tr>
-
 <tr>
 <td><code>name</code></td>
 <td>Name of the procedure to run.</td>
 </tr>
-
 <tr>
 <td><code>args</code></td>
 <td>Array with arguments for the procedure.</td>
 </tr>
 </tbody>
 </table>
-
 <h2 id="run-example">Run example</h2>
-
 <p>The ThingsDB playground has a collection <code>Doc</code> with a <a href="../../procedures-api">procedure</a> named <code>multiply</code> which accepts two arguments and returns the two arguments multiplied.</p>
-
 <blockquote>
 <p>If you want to create the <code>multiply</code> procedure yourself, this is the code:</p>
 </blockquote>
-
-<pre><code class="language-thingsdb,should_pass">new_procedure('multiply', |a, b| a*b);
-</code></pre>
-
-<blockquote>
+<pre><code class="language-thingsdb,should_pass" data-lang="thingsdb,should_pass">new_procedure('multiply', |a, b| a*b);
+</code></pre><blockquote>
 <p>Example using the playground:</p>
 </blockquote>
-
-<pre><code class="language-bash">curl --location --request POST 'https://playground.thingsdb.net//Doc' \
---header 'Content-Type: application/json' \
---header 'Authorization: Bearer Fai6NmH7QYxA6WLYPdtgcy' \
---data-raw '{
-	&quot;type&quot;: &quot;run&quot;,
-	&quot;name&quot;: &quot;multiply&quot;,
-	&quot;args&quot;: [6, 7]
-}'
-</code></pre>
-
-<blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl --location --request POST <span style="color:#e6db74">&#39;https://playground.thingsdb.net//Doc&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--header <span style="color:#e6db74">&#39;Content-Type: application/json&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--header <span style="color:#e6db74">&#39;Authorization: Bearer Fai6NmH7QYxA6WLYPdtgcy&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--data-raw <span style="color:#e6db74">&#39;{
+</span><span style="color:#e6db74">	&#34;type&#34;: &#34;run&#34;,
+</span><span style="color:#e6db74">	&#34;name&#34;: &#34;multiply&#34;,
+</span><span style="color:#e6db74">	&#34;args&#34;: [6, 7]
+</span><span style="color:#e6db74">}&#39;</span>
+</code></pre></div><blockquote>
 <p>Response</p>
 </blockquote>
-
-<pre><code class="language-json">42
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#ae81ff">42</span>
+</code></pre></div>
 
 <footer class=" footline" >
 	
@@ -4749,19 +4704,19 @@ In most examples we use JSON just because it is more readable.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1582628646"></script>
-    <script src="/v0/js/jquery.sticky.js?1582628646"></script>
-    <script src="/v0/js/featherlight.min.js?1582628646"></script>
-    <script src="/v0/js/highlight.pack.js?1582628646"></script>
+    <script src="/v0/js/clipboard.min.js?1583166348"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583166348"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583166348"></script>
+    <script src="/v0/js/jquery.sticky.js?1583166348"></script>
+    <script src="/v0/js/featherlight.min.js?1583166348"></script>
+    <script src="/v0/js/highlight.pack.js?1583166348"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1582628646"></script>
-    <script src="/v0/js/learn.js?1582628646"></script>
-    <script src="/v0/js/hugo-learn.js?1582628646"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583166348"></script>
+    <script src="/v0/js/learn.js?1583166348"></script>
+    <script src="/v0/js/hugo-learn.js?1583166348"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1582628646" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1582628646"></script>
+    <link href="/v0/mermaid/mermaid.css?1583166348" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583166348"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

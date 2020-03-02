@@ -31,7 +31,7 @@ Serializing the above using [MessagePack](https://msgpack.org) results in the fo
 
 `\x92\xa5admin\xa4pass`
 
-Now we create the header, for this example we just use ID 0:
+Now we create the header. For this example we just use ID 0:
 
 - Data length (12) `\x0c\x00\x00\x00`
 - Identifier (0) `\x00\x00`
@@ -60,7 +60,7 @@ Serializing the token using [MessagePack](https://msgpack.org) results in the fo
 
 `\xb6RzDFlsoucQfDqrwrfGGEtc`
 
-Now we create the header, for this example we just use ID 0:
+Now we create the header. For this example we just use ID 0:
 
 - Data length (23) `\x17\x00\x00\x00`
 - Identifier (0) `\x00\x00`

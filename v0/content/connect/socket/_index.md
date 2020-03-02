@@ -22,8 +22,8 @@ Length of the *data*, stored as **Unsigned, 32-bit, Little Endian**. The header 
 #### ID (16bit)
 The ID can be used as an identifier of your package. When ThingsDB send a response
 on a request, it will use the same ID so this allows you to map a response to a
-request. This is useful if you want to send multiple request in parallel.
-Needs to be stored as **16-bit, Little Endian**.
+request. This is useful if you want to send multiple requests in parallel.
+It needs to be stored as **16-bit, Little Endian**.
 
 #### TYPE (Unsigned, 8bit)
 Package type is used to describe what kind of package is transmitted.
@@ -39,7 +39,7 @@ Type      | Number | Description
 `RUN`     | 37 | Run a procedure, see [procedures](../../procedures-api) for more info.
 
 ##### CHK (Unsigned, 8bit)
-Inverse of the type: `type ^ 0xff`, this is used as a check-bit.
+Inverse of the type: `type ^ 0xff`. This is used as a check-bit.
 
 #### DATA
 Data serialized using [MessagePack](https://msgpack.org).
@@ -75,7 +75,7 @@ Serializing the above using [MessagePack](https://msgpack.org) results in the fo
 
 `\x92\xa5admin\xa4pass`
 
-Now we create the header, for this example we just use ID 0:
+Now we create the header. For this example we just use ID 0:
 
 - Data length (12) `\x0c\x00\x00\x00`
 - Identifier (0) `\x00\x00`

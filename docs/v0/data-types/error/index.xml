@@ -16,14 +16,14 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/error/code/</guid>
-      <description> Returns the error code of an error type.
+      <description>Returns the error code of an error type.
 This function does not generate an event.
 Function error.code()
 Arguments None
 Return value Returns error code of an error.
 Example  This code uses code() to return the error code for an error:
- type_err(&amp;quot;incorrect type&amp;quot;).code();   Return value in JSON format
- -61  </description>
+ type_err(&amp;quot;incorrect type&amp;quot;).code();  Return value in JSON format
+ -61 </description>
     </item>
     
     <item>
@@ -32,14 +32,14 @@ Example  This code uses code() to return the error code for an error:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/error/msg/</guid>
-      <description> Returns the error message of an error type.
+      <description>Returns the error message of an error type.
 This function does not generate an event.
 Function error.msg()
 Arguments None
 Return value Returns error message of an error.
 Example  This code uses code() to return the error code for an error:
- type_err(&amp;quot;incorrect type&amp;quot;).msg();   Return value in JSON format
- &amp;quot;incorrect type&amp;quot;  </description>
+ type_err(&amp;quot;incorrect type&amp;quot;).msg();  Return value in JSON format
+ &amp;#34;incorrect type&amp;#34; </description>
     </item>
     
   </channel>

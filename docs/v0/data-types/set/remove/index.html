@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="ThingsDB documentation">
 
 
@@ -11,20 +11,20 @@
     <title>remove :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/theme.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1582628646" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583166349" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1582628646" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583166349" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1582628646"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583166349"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1582628646"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583166349"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583166349"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583166349"></script>
 
     
   </div>
@@ -4535,18 +4535,16 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#function">Function</a></li>
-<li><a href="#arguments">Arguments</a></li>
-<li><a href="#return-value">Return value</a></li>
-<li><a href="#example">Example</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#function">Function</a></li>
+        <li><a href="#arguments">Arguments</a></li>
+        <li><a href="#return-value">Return value</a></li>
+        <li><a href="#example">Example</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -4571,31 +4569,19 @@
 
 
 
-
-
 <p>This function can be used to remove <code>things</code> from a <code>set</code>.</p>
-
 <p>If a closure is used, then all things that satisfy the test are removed from the set
 and returned as list. The order of the removed things is not guaranteed since the set itself is unordered.</p>
-
 <p>It is also possible to specify <code>things</code> as arguments. In this case a list is returned with
 all the things which are removed from the set, in the order that the arguments are used.
 Things which are not found in the set are ignored.</p>
-
 <p>This function generates an <a href="../../../overview/events">event</a> <em>(except when called on a <a href="../../../overview/variable">variable</a>)</em>.</p>
-
 <h3 id="function">Function</h3>
-
 <p><em>set</em>.<code>remove(callback)</code></p>
-
 <p>Or</p>
-
 <p><em>set</em>.<code>remove(thing1, thing2, ..., thingX)</code></p>
-
 <h3 id="arguments">Arguments</h3>
-
 <p>Explanation of the <em>callback</em> argument:</p>
-
 <table>
 <thead>
 <tr>
@@ -4604,7 +4590,6 @@ Things which are not found in the set are ignored.</p>
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>set</td>
@@ -4613,49 +4598,40 @@ Things which are not found in the set are ignored.</p>
 </tr>
 </tbody>
 </table>
-
 <h3 id="return-value">Return value</h3>
-
 <p>A list with the removed <code>things</code> from the set or an empty list if nothing is removed.</p>
-
 <h3 id="example">Example</h3>
-
 <blockquote>
-<p>This code shows an example using <strong><em>remove()</em></strong> on a set:</p>
+<p>This code shows an example using <em><strong>remove()</strong></em> on a set:</p>
 </blockquote>
-
-<pre><code class="language-thingsdb,should_pass">t1 = {x:1}; t2 = {x:2}; t3 = {x:3}; t4 = {x:4};
+<pre><code class="language-thingsdb,should_pass" data-lang="thingsdb,should_pass">t1 = {x:1}; t2 = {x:2}; t3 = {x:3}; t4 = {x:4};
 s = set(t1, t2, t3, t4);
 [
     s.remove(|t| t.x &lt; 3),
     s.remove(t1, t2, t3, t4),
 ]
-</code></pre>
-
-<blockquote>
+</code></pre><blockquote>
 <p>Example return value in JSON format</p>
 </blockquote>
-
-<pre><code class="language-json">[
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
     [
         {
-            &quot;x&quot;: 1
+            <span style="color:#f92672">&#34;x&#34;</span>: <span style="color:#ae81ff">1</span>
         },
         {
-            &quot;x&quot;: 2
+            <span style="color:#f92672">&#34;x&#34;</span>: <span style="color:#ae81ff">2</span>
         }
     ],
     [
         {
-            &quot;x&quot;: 3
+            <span style="color:#f92672">&#34;x&#34;</span>: <span style="color:#ae81ff">3</span>
         },
         {
-            &quot;x&quot;: 4
+            <span style="color:#f92672">&#34;x&#34;</span>: <span style="color:#ae81ff">4</span>
         }
     ]
 ]
-</code></pre>
-
+</code></pre></div>
 
 <footer class=" footline" >
 	
@@ -4685,19 +4661,19 @@ s = set(t1, t2, t3, t4);
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1582628646"></script>
-    <script src="/v0/js/jquery.sticky.js?1582628646"></script>
-    <script src="/v0/js/featherlight.min.js?1582628646"></script>
-    <script src="/v0/js/highlight.pack.js?1582628646"></script>
+    <script src="/v0/js/clipboard.min.js?1583166349"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583166349"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583166349"></script>
+    <script src="/v0/js/jquery.sticky.js?1583166349"></script>
+    <script src="/v0/js/featherlight.min.js?1583166349"></script>
+    <script src="/v0/js/highlight.pack.js?1583166349"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1582628646"></script>
-    <script src="/v0/js/learn.js?1582628646"></script>
-    <script src="/v0/js/hugo-learn.js?1582628646"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583166349"></script>
+    <script src="/v0/js/learn.js?1583166349"></script>
+    <script src="/v0/js/hugo-learn.js?1583166349"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1582628646" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1582628646"></script>
+    <link href="/v0/mermaid/mermaid.css?1583166349" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583166349"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

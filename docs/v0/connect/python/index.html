@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="ThingsDB documentation">
 
 
@@ -11,20 +11,20 @@
     <title>Python :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/theme.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1582628646" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583166348" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1582628646" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583166348" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1582628646"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583166348"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1582628646"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583166348"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583166348"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583166348"></script>
 
     
   </div>
@@ -4529,17 +4529,15 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#installation">Installation</a></li>
-<li><a href="#quick-usage">Quick usage</a></li>
-<li><a href="#more-info">More info</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#quick-usage">Quick usage</a></li>
+        <li><a href="#more-info">More info</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -4564,59 +4562,44 @@
 
 
 
-
-
 <h3 id="installation">Installation</h3>
-
 
 <div class="notices note" ><p>The <strong>python-thingsdb</strong> library requires <strong>Python 3.6</strong> or higher.</p>
 </div>
 
-
 <p>Just use pip:</p>
-
 <pre><code>pip install python-thingsdb
-</code></pre>
-
-<p>Or, clone the project and use setup.py:</p>
-
+</code></pre><p>Or, clone the project and use setup.py:</p>
 <pre><code>python setup.py install
-</code></pre>
+</code></pre><h3 id="quick-usage">Quick usage</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
+<span style="color:#f92672">from</span> thingsdb.client <span style="color:#f92672">import</span> Client
 
-<h3 id="quick-usage">Quick usage</h3>
+async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">hello_world</span>():
+    client <span style="color:#f92672">=</span> Client()
 
-<pre><code class="language-python">import asyncio
-from thingsdb.client import Client
+    <span style="color:#75715e"># replace `localhost` with your ThingsDB server address</span>
+    await client<span style="color:#f92672">.</span>connect(<span style="color:#e6db74">&#39;localhost&#39;</span>)
 
-async def hello_world():
-    client = Client()
+    <span style="color:#66d9ef">try</span>:
+        <span style="color:#75715e"># replace `admin` and `pass` with your username and password</span>
+        <span style="color:#75715e"># or use a valid token string</span>
+        await client<span style="color:#f92672">.</span>authenticate(<span style="color:#e6db74">&#39;admin&#39;</span>, <span style="color:#e6db74">&#39;pass&#39;</span>)
 
-    # replace `localhost` with your ThingsDB server address
-    await client.connect('localhost')
+        <span style="color:#75715e"># perform the hello world code...</span>
+        <span style="color:#66d9ef">print</span>(await client<span style="color:#f92672">.</span>query(<span style="color:#e6db74">&#39;&#39;&#39;
+</span><span style="color:#e6db74">            &#34;Hello World!&#34;;
+</span><span style="color:#e6db74">        &#39;&#39;&#39;</span>))
 
-    try:
-        # replace `admin` and `pass` with your username and password
-        # or use a valid token string
-        await client.authenticate('admin', 'pass')
+    <span style="color:#66d9ef">finally</span>:
+        <span style="color:#75715e"># the will close the client in a nice way</span>
+        client<span style="color:#f92672">.</span>close()
+        await client<span style="color:#f92672">.</span>wait_closed()
 
-        # perform the hello world code...
-        print(await client.query('''
-            &quot;Hello World!&quot;;
-        '''))
-
-    finally:
-        # the will close the client in a nice way
-        client.close()
-        await client.wait_closed()
-
-# run the hello world example
-asyncio.get_event_loop().run_until_complete(hello_world())
-</code></pre>
-
-<h3 id="more-info">More info</h3>
-
+<span style="color:#75715e"># run the hello world example</span>
+asyncio<span style="color:#f92672">.</span>get_event_loop()<span style="color:#f92672">.</span>run_until_complete(hello_world())
+</code></pre></div><h3 id="more-info">More info</h3>
 <p>A more complete description of the Python client can be found in one of the links below.</p>
-
 <ul>
 <li><a href="https://github.com/thingsdb/python-thingsdb#readme">https://github.com/thingsdb/python-thingsdb#readme</a></li>
 <li><a href="https://pypi.org/project/python-thingsdb/">https://pypi.org/project/python-thingsdb/</a></li>
@@ -4651,19 +4634,19 @@ asyncio.get_event_loop().run_until_complete(hello_world())
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1582628646"></script>
-    <script src="/v0/js/jquery.sticky.js?1582628646"></script>
-    <script src="/v0/js/featherlight.min.js?1582628646"></script>
-    <script src="/v0/js/highlight.pack.js?1582628646"></script>
+    <script src="/v0/js/clipboard.min.js?1583166348"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583166348"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583166348"></script>
+    <script src="/v0/js/jquery.sticky.js?1583166348"></script>
+    <script src="/v0/js/featherlight.min.js?1583166348"></script>
+    <script src="/v0/js/highlight.pack.js?1583166348"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1582628646"></script>
-    <script src="/v0/js/learn.js?1582628646"></script>
-    <script src="/v0/js/hugo-learn.js?1582628646"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583166348"></script>
+    <script src="/v0/js/learn.js?1583166348"></script>
+    <script src="/v0/js/hugo-learn.js?1583166348"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1582628646" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1582628646"></script>
+    <link href="/v0/mermaid/mermaid.css?1583166348" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583166348"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

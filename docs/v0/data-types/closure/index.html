@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="ThingsDB documentation">
 
 
@@ -11,20 +11,20 @@
     <title>closure :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/theme.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1582628646" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583166349" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1582628646" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583166349" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1582628646"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583166349"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1582628646"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583166349"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583166349"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583166349"></script>
 
     
   </div>
@@ -4529,17 +4529,15 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#methods">Methods</a></li>
-<li><a href="#doc-string">Doc string</a></li>
-<li><a href="#examples">Examples</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#methods">Methods</a></li>
+        <li><a href="#doc-string">Doc string</a></li>
+        <li><a href="#examples">Examples</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -4565,20 +4563,13 @@
 
 
 
-	
-
-<p>Closures can be used to consume items from a <code>thing</code>, <code>list</code>, <code>tuple</code> or <code>set</code>.
+	<p>Closures can be used to consume items from a <code>thing</code>, <code>list</code>, <code>tuple</code> or <code>set</code>.
 They are also used by <a href="../../procedures-api">procedures</a> where they get the role of a function.</p>
-
 <p>Closure can be stored in a collection or assigned to a variable.</p>
-
 <p>A closure starts with a <code>|</code>, then takes optional arguments and a <code>|</code> to close, followed by a statement.
 The most simple closure is <code>||nil</code> which is a closure without arguments and returns the value <code>nil</code> when called.</p>
-
 <p>More complex closures are also possible, check the last example below.</p>
-
 <h3 id="methods">Methods</h3>
-
 <table>
 <thead>
 <tr>
@@ -4586,13 +4577,11 @@ The most simple closure is <code>||nil</code> which is a closure without argumen
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><a href="./call">call</a></td>
 <td>Call the closure with optional arguments.</td>
 </tr>
-
 <tr>
 <td><a href="./doc">doc</a></td>
 <td>Returns the doc string of the closure.</td>
@@ -4600,45 +4589,31 @@ The most simple closure is <code>||nil</code> which is a closure without argumen
 </tbody>
 </table>
 
-
 <div class="notices note" ><p>Closures may be called recursively up to a <strong>recursion depth of 24</strong>. If this limit is exceeded, an error is raised.
-For example: <code>a = ||a(); a();</code> <br />
+For example: <code>a = ||a(); a();</code><br>
 &hellip;will raise <a href="../../errors/operation_err">operation_err()</a> <em>(maximum recursion depth exceeded)</em></p>
 </div>
 
-
 <h3 id="doc-string">Doc string</h3>
-
 <p>Doc strings can be set on closures. This is especially useful when closures
 are used inside a procedure since this gives the procedure a nice documentation string.</p>
-
 <p>Usually, a doc string is just a normal string on top of a block in the closure.</p>
-
 <p>For example:</p>
-
-<pre><code class="language-thingsdb,should_pass">|| {
+<pre><code class="language-thingsdb,should_pass" data-lang="thingsdb,should_pass">|| {
     &quot;this is a doc string.&quot;;
 };
-</code></pre>
-
-<p>It is common to wrap a block scope within one or more functions.
-When this is the case, the doc string will be read from the the first argument,
+</code></pre><p>It is common to wrap a block scope within one or more functions.
+When this is the case, the doc string will be read from the first argument,
 <em>only</em> if the first <em>non-function</em> argument contains a block scope with a doc string.</p>
-
 <p>For example, this closure contains a block scope wrapped with <a href="../../collection-api/return">return</a> and <a href="../../collection-api/wse">wse</a>:</p>
-
-<pre><code class="language-thingsdb,should_pass">|| return(wse({
+<pre><code class="language-thingsdb,should_pass" data-lang="thingsdb,should_pass">|| return(wse({
     &quot;this is still a doc string, even while wrapped using `return` and `wse`.&quot;;
 }), 2);
-</code></pre>
-
-<h3 id="examples">Examples</h3>
-
+</code></pre><h3 id="examples">Examples</h3>
 <blockquote>
 <p>This code uses a simple closure together with <em>map</em> and <em>call</em>:</p>
 </blockquote>
-
-<pre><code class="language-thingsdb,json_response">// create a simple closure which just adds one to a given value
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">// create a simple closure which just adds one to a given value
 add_one = |x| x+1;
 
 // use the closure in a `map` function
@@ -4649,25 +4624,19 @@ call_result = add_one(41);
 
 // return the result values
 [map_result, call_result];
-</code></pre>
-
-<blockquote>
+</code></pre><blockquote>
 <p>Return value in JSON format</p>
 </blockquote>
-
-<pre><code class="language-json">[
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
     [
-        2,
-        3,
-        4
+        <span style="color:#ae81ff">2</span>,
+        <span style="color:#ae81ff">3</span>,
+        <span style="color:#ae81ff">4</span>
     ],
-    42
+    <span style="color:#ae81ff">42</span>
 ]
-</code></pre>
-
-<p>Like explained, closures can accept multiple arguments and may contain a block scope instead of just a single line statement. Here is an example:</p>
-
-<pre><code class="language-thingsdb,should_pass">|name, age| {
+</code></pre></div><p>Like explained, closures can accept multiple arguments and may contain a block scope instead of just a single line statement. Here is an example:</p>
+<pre><code class="language-thingsdb,should_pass" data-lang="thingsdb,should_pass">|name, age| {
     &quot;Returns a thing with properties `name`, `age` and `time`.&quot;;
 
     assert(isstr(name) &amp;&amp; name.len());
@@ -4681,7 +4650,6 @@ call_result = add_one(41);
     };
 };
 </code></pre>
-
 
 
 
@@ -4713,19 +4681,19 @@ call_result = add_one(41);
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1582628646"></script>
-    <script src="/v0/js/jquery.sticky.js?1582628646"></script>
-    <script src="/v0/js/featherlight.min.js?1582628646"></script>
-    <script src="/v0/js/highlight.pack.js?1582628646"></script>
+    <script src="/v0/js/clipboard.min.js?1583166349"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583166349"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583166349"></script>
+    <script src="/v0/js/jquery.sticky.js?1583166349"></script>
+    <script src="/v0/js/featherlight.min.js?1583166349"></script>
+    <script src="/v0/js/highlight.pack.js?1583166349"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1582628646"></script>
-    <script src="/v0/js/learn.js?1582628646"></script>
-    <script src="/v0/js/hugo-learn.js?1582628646"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583166349"></script>
+    <script src="/v0/js/learn.js?1583166349"></script>
+    <script src="/v0/js/hugo-learn.js?1583166349"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1582628646" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1582628646"></script>
+    <link href="/v0/mermaid/mermaid.css?1583166349" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583166349"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

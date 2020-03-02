@@ -20,7 +20,7 @@ Install the following dependencies:
  - libyajl
  - libcleri (`>=0.12.1`)
 
-When using Debian/Ubuntu, *libuv1*, *libpcre2* and *libyajl* can be installed using apt:
+When using Debian/Ubuntu; *libuv1*, *libpcre2* and *libyajl* can be installed using apt:
 ```
 sudo apt-get install -y \
     libuv1-dev \

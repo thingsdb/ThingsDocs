@@ -45,7 +45,7 @@ Arguments    Argument Type Description     callback closure (required) Closure t
 This function does not generate an event.
 Function thing.filter(callback)
 Arguments The callback argument must be a closure which input values depend on the type the method is called on.
-   Iterable Arguments Description     thing name, value Iterate over the thing properties.</description>
+   Iterable Arguments Description     thing name, value Iterate over the thing properties. Both name and value are optional.</description>
     </item>
     
     <item>
@@ -80,14 +80,14 @@ Example  This code shows an example use case of has():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/thing/id/</guid>
-      <description> Returns the id of a thing or nil if the thing is not stored.
+      <description>Returns the id of a thing or nil if the thing is not stored.
 This function does not generate an event.
 Function thing.id()
 Arguments None
 Return value Returns id of a thing or nil when the thing is not stored.
 Example  This code uses id() to return a collection id:
- .id(); // Returns the collection id   Example return value in JSON format
- 3  </description>
+ .id(); // Returns the collection id  Example return value in JSON format
+ 3 </description>
     </item>
     
     <item>
@@ -108,14 +108,14 @@ Although the keys() and map() functions in the example above will return an arra
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/thing/len/</guid>
-      <description> Returns the number of items in a thing.
+      <description>Returns the number of items in a thing.
 This function does not generate an event.
 Function thing.len()
 Arguments None
 Return value Returns the number of items in a thing.
 Example  This code uses len() to return the number of items in a thing:
- {name: &#39;Iris&#39;, age: 6}.len();   Return value in JSON format
- 2  </description>
+ {name: &#39;Iris&#39;, age: 6}.len();  Return value in JSON format
+ 2 </description>
     </item>
     
     <item>
@@ -149,14 +149,14 @@ Arguments    Argument Type Description     name str (required) The name of the p
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/thing/unwatch/</guid>
-      <description> Stop watching for mutations on a thing. This method returns nil and triggers a stop event, only when the thing was being watched.
+      <description>Stop watching for mutations on a thing. This method returns nil and triggers a stop event, only when the thing was being watched.
 This function does not generate an event.
 Function thing.unwatch()
 Arguments None
 Return value Returns nil.
 Example  This code shows how to use unwatch():
- .unwatch();   Return value in JSON format:
- null  </description>
+ .unwatch();  Return value in JSON format:
+ null </description>
     </item>
     
     <item>

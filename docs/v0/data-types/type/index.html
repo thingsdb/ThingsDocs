@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="ThingsDB documentation">
 
 
@@ -11,20 +11,20 @@
     <title>Type :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/theme.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1582628646" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583166349" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1582628646" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583166349" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1582628646"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583166349"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1582628646"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583166349"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583166349"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583166349"></script>
 
     
   </div>
@@ -4529,17 +4529,15 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#definable-properties">Definable properties</a></li>
-<li><a href="#related-functions">Related functions</a></li>
-<li><a href="#mutation-format">Mutation format</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#definable-properties">Definable properties</a></li>
+        <li><a href="#related-functions">Related functions</a></li>
+        <li><a href="#mutation-format">Mutation format</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -4564,12 +4562,8 @@
 
 
 
-
-
 <p>A Type is like a thing with pre-defined properties.</p>
-
 <h3 id="definable-properties">Definable properties</h3>
-
 <table>
 <thead>
 <tr>
@@ -4577,98 +4571,79 @@
 <th>description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>'str'</code></td>
 <td>requires type <a href="../str">str</a> (values of type <a href="../str">str</a> <em>should</em> contain valid UTF-8 characters).</td>
 </tr>
-
 <tr>
 <td><code>'utf8'</code></td>
 <td>requires type <a href="../str">str</a> and the value <em>must</em> contain valid UTF-8 characters.</td>
 </tr>
-
 <tr>
 <td><code>'raw'</code></td>
 <td>requires type <a href="../str">str</a> <em>or</em> <a href="../bytes">bytes</a>.</td>
 </tr>
-
 <tr>
 <td><code>'bytes'</code></td>
 <td>requires type <a href="../bytes">bytes</a>.</td>
 </tr>
-
 <tr>
 <td><code>'bool'</code></td>
 <td>requires type <a href="../bool">bool</a>.</td>
 </tr>
-
 <tr>
 <td><code>'int'</code></td>
 <td>requires type <a href="../int">int</a>.</td>
 </tr>
-
 <tr>
 <td><code>'uint'</code></td>
 <td>requires a <em>non-negative</em> integer (type <a href="../int">int</a>, <code>&gt;= 0</code>).</td>
 </tr>
-
 <tr>
 <td><code>'pint'</code></td>
 <td>requires a <em>positive</em> integer (type <a href="../int">int</a>, <code>&gt; 0</code>).</td>
 </tr>
-
 <tr>
 <td><code>'nint'</code></td>
 <td>requires a <em>negative</em> integer (type <a href="../int">int</a>, <code>&lt; 0</code>).</td>
 </tr>
-
 <tr>
 <td><code>'float'</code></td>
 <td>requires type <a href="../float">float</a>.</td>
 </tr>
-
 <tr>
 <td><code>'number'</code></td>
 <td>requires type <a href="../float">float</a> <em>or</em> type <a href="../int">int</a>.</td>
 </tr>
-
 <tr>
 <td><code>'thing'</code></td>
 <td>requires a <a href="../thing">thing</a>.</td>
 </tr>
-
 <tr>
 <td><code>'X'</code></td>
 <td>requires a instance of <a href="../type">Type</a> <code>X</code>. The value <code>X</code> should be replace with the <code>Type</code> name.</td>
 </tr>
-
 <tr>
 <td><code>'[]'</code></td>
 <td>requires a <a href="../list">list</a>.</td>
 </tr>
-
 <tr>
 <td><code>'{}'</code></td>
 <td>requires a <a href="../set">set</a>.</td>
 </tr>
-
 <tr>
 <td><code>'any'</code></td>
 <td>any type is valid.</td>
 </tr>
 </tbody>
 </table>
-
 <p>Each definition can be made optional by adding a question-mark <code>?</code> to the definition.
 If a property is made optional, then the value <code>nil</code> is allowed instead of the give type.
 The property will also be set to <code>nil</code> if no value for the property is given.</p>
-
 <blockquote>
 <p>For example</p>
 </blockquote>
-
 <pre><code>// Create a new type `User` with an optional property `name`.
 set_type('User', {name: 'str?'});
 
@@ -4686,12 +4661,9 @@ assert(iserr(try(User{name: 0})));
 
 // Return the results
 [unkown, user_nil, iris];
-</code></pre>
-
-<blockquote>
+</code></pre><blockquote>
 <p>Return value in JSON format</p>
 </blockquote>
-
 <pre><code>[
     {
         &quot;name&quot;: null
@@ -4703,21 +4675,16 @@ assert(iserr(try(User{name: 0})));
         &quot;name&quot;: &quot;Iris&quot;
     }
 ]
-</code></pre>
-
-<p>When using a list <code>'[]'</code> or set <code>'{}'</code> definition, it is also possible to make the list or set restricted to a certain type.
+</code></pre><p>When using a list <code>'[]'</code> or set <code>'{}'</code> definition, it is also possible to make the list or set restricted to a certain type.
 In this case only items of the given definition are allowed as members. For example <code>'[int]'</code> requires the members of a list
 to be integers and <code>'{User}'</code> is a restricted set which only allows things of type <em>User</em>.</p>
-
 <p>Both the list <em>and/or</em> the members can be made optional.
 For example, this <code>'[str?]?'</code> is a valid declaration. Since a set does not allow for <code>nil</code> values, it is not possible to
 make members of a <code>set</code> optional.</p>
-
 <blockquote>
 <p>This is an example using a restricted list:</p>
 </blockquote>
-
-<pre><code class="language-thingsdb,should_pass">// Very simple `Note` type
+<pre><code class="language-thingsdb,should_pass" data-lang="thingsdb,should_pass">// Very simple `Note` type
 set_type('Note', {
     text: 'str',
     timestamp: 'uint'
@@ -4746,25 +4713,19 @@ assert(iserr(try(book.notes.push({test: 'not a Note'}))));
 
 // Return the book, 2 levels deep to see the note
 return(book, 2);
-</code></pre>
-
-<blockquote>
+</code></pre><blockquote>
 <p>Return value in JSON format</p>
 </blockquote>
-
-<pre><code class="language-json">{
-    &quot;notes&quot;: [
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;notes&#34;</span>: [
         {
-            &quot;text&quot;: &quot;the answer is 42&quot;,
-            &quot;timestamp&quot;: 1573894579
+            <span style="color:#f92672">&#34;text&#34;</span>: <span style="color:#e6db74">&#34;the answer is 42&#34;</span>,
+            <span style="color:#f92672">&#34;timestamp&#34;</span>: <span style="color:#ae81ff">1573894579</span>
         }
     ],
-    &quot;title&quot;: &quot;hitchhiker's guide to the galaxy&quot;
+    <span style="color:#f92672">&#34;title&#34;</span>: <span style="color:#e6db74">&#34;hitchhiker&#39;s guide to the galaxy&#34;</span>
 }
-</code></pre>
-
-<h3 id="related-functions">Related functions</h3>
-
+</code></pre></div><h3 id="related-functions">Related functions</h3>
 <table>
 <thead>
 <tr>
@@ -4772,108 +4733,89 @@ return(book, 2);
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><a href="../../collection-api/del_type">del_type</a></td>
 <td>Delete a <code>Type</code>.</td>
 </tr>
-
 <tr>
 <td><a href="../../collection-api/mod_type">mod_type</a></td>
 <td>Modify an existing <code>Type</code> definition.</td>
 </tr>
-
 <tr>
 <td><a href="../../collection-api/new_type">new_type</a></td>
 <td>Creates a new <code>Type</code>.</td>
 </tr>
-
 <tr>
 <td><a href="../../collection-api/has_type">has_type</a></td>
 <td>Determine if the current scope has a <code>Type</code>.</td>
 </tr>
-
 <tr>
 <td><a href="../../collection-api/set_type">set_type</a></td>
 <td>Set property definitions on a <code>Type</code> and creates the <code>Type</code> if it did not exist.</td>
 </tr>
-
 <tr>
 <td><a href="../../collection-api/type_info">type_info</a></td>
 <td>Return the <code>Type</code> definition.</td>
 </tr>
-
 <tr>
 <td><a href="../../collection-api/types_info">types_info</a></td>
 <td>Return all <code>Type</code> definitions in the current scope.</td>
 </tr>
 </tbody>
 </table>
-
 <h3 id="mutation-format">Mutation format</h3>
-
 <p>A mutation format is only required to understand if you manually want to parse events
 when <em>watching</em> for mutations on <em>thongs</em>. While most values have a pretty straightforward
 format when packed in a <em>mutation</em>, a type instance is a bit more complex
 to understand.</p>
-
 <p>An example of a type mutation:</p>
-
-<pre><code class="language-json">{
-    &quot;.&quot;: 10,
-    &quot;#&quot;: 123,
-    &quot;&quot;: [
-        &quot;hitchhiker's guide to the galaxy&quot;
-        4.2
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;.&#34;</span>: <span style="color:#ae81ff">10</span>,
+    <span style="color:#f92672">&#34;#&#34;</span>: <span style="color:#ae81ff">123</span>,
+    <span style="color:#f92672">&#34;&#34;</span>: [
+        <span style="color:#e6db74">&#34;hitchhiker&#39;s guide to the galaxy&#34;</span>
+        <span style="color:#ae81ff">4.2</span>
     ]
 }
-</code></pre>
-
-<table>
+</code></pre></div><table>
 <thead>
 <tr>
 <th>Key</th>
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>&quot;.&quot;</code></td>
 <td>The <code>type_id</code> of the Type.</td>
 </tr>
-
 <tr>
 <td><code>&quot;#&quot;</code></td>
 <td>The <code>#ID</code> which is assigned to the Type instance.</td>
 </tr>
-
 <tr>
 <td><code>&quot;&quot;</code></td>
 <td>Array with fields;</td>
 </tr>
 </tbody>
 </table>
-
 <p>In order to correctly to parse the mutation correctly you require the <a href="../../collection-api/types_info">types_info</a> of a collection.
 Note that the types info is included inside an <a href="../../watching/on-init">init event</a>. Below is an example with an entry of <code>types_info</code>
-which shows the type <strong>Book</strong>, which is the type with id <code>10</code> from the mutation example above.</p>
-
-<pre><code class="language-json">...
+which shows the type <strong>Book</strong>, which is the type with ID <code>10</code> from the mutation example above.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#960050;background-color:#1e0010">...</span>
 {
-    &quot;created_at&quot;: 1581454041,
-    &quot;fields&quot;: [
-        [&quot;title&quot;, &quot;str&quot;]
-        [&quot;rating&quot;, &quot;float&quot;]
+    <span style="color:#f92672">&#34;created_at&#34;</span>: <span style="color:#ae81ff">1581454041</span>,
+    <span style="color:#f92672">&#34;fields&#34;</span>: [
+        [<span style="color:#e6db74">&#34;title&#34;</span>, <span style="color:#e6db74">&#34;str&#34;</span>]
+        [<span style="color:#e6db74">&#34;rating&#34;</span>, <span style="color:#e6db74">&#34;float&#34;</span>]
     ],
-    &quot;modified_at&quot;: 1581455876,
-    &quot;name&quot;: &quot;Book&quot;,
-    &quot;type_id&quot;: 10
+    <span style="color:#f92672">&#34;modified_at&#34;</span>: <span style="color:#ae81ff">1581455876</span>,
+    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Book&#34;</span>,
+    <span style="color:#f92672">&#34;type_id&#34;</span>: <span style="color:#ae81ff">10</span>
 }
-...
-</code></pre>
-
+<span style="color:#960050;background-color:#1e0010">...</span>
+</code></pre></div>
 
 <footer class=" footline" >
 	
@@ -4903,19 +4845,19 @@ which shows the type <strong>Book</strong>, which is the type with id <code>10</
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1582628646"></script>
-    <script src="/v0/js/jquery.sticky.js?1582628646"></script>
-    <script src="/v0/js/featherlight.min.js?1582628646"></script>
-    <script src="/v0/js/highlight.pack.js?1582628646"></script>
+    <script src="/v0/js/clipboard.min.js?1583166349"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583166349"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583166349"></script>
+    <script src="/v0/js/jquery.sticky.js?1583166349"></script>
+    <script src="/v0/js/featherlight.min.js?1583166349"></script>
+    <script src="/v0/js/highlight.pack.js?1583166349"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1582628646"></script>
-    <script src="/v0/js/learn.js?1582628646"></script>
-    <script src="/v0/js/hugo-learn.js?1582628646"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583166349"></script>
+    <script src="/v0/js/learn.js?1583166349"></script>
+    <script src="/v0/js/hugo-learn.js?1583166349"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1582628646" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1582628646"></script>
+    <link href="/v0/mermaid/mermaid.css?1583166349" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583166349"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

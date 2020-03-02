@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="ThingsDB documentation">
 
 
@@ -11,20 +11,20 @@
     <title>Example watch :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/theme.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1582628646" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583166348" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1582628646" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583166348" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1582628646"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583166348"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1582628646"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583166348"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583166348"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583166348"></script>
 
     
   </div>
@@ -4535,12 +4535,9 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#example">Example</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#example">Example</a></li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -4565,68 +4562,44 @@
 
 
 
-
-
 <p>Subscribe for watching a node or things in ThingsDB. A successful run request will respond with a <code>OK (17)</code> package.</p>
-
 <blockquote>
 <p>Syntax</p>
 </blockquote>
-
 <pre><code>[scope, ...IDs]
-</code></pre>
-
-<p>The <code>IDs</code> are the <em>thing</em> ID&rsquo;s you want to watch.</p>
-
+</code></pre><p>The <code>IDs</code> are the <em>thing</em>-IDs you want to watch.</p>
 
 <div class="notices warning" ><p>The socket needs to be authorized before sending a <code>watch</code> request.
 See the <a href="../auth">auth example</a> for how to authorize a socket connection.</p>
 </div>
 
-
 <h2 id="example">Example</h2>
-
-<p>As an example we assume that we want to watch a thing with ID 3 for changes. Instead of a single ID, we could add as much ID&rsquo;s as we wanted.</p>
-
+<p>As an example we assume that we want to watch a thing with ID 3 for mutations. Instead of a single ID, we could add as much IDs as we wanted.</p>
 
 <div class="notices info" ><p>ThingsDB will throw a <code>WARNING</code> event to you socket connection in case some given ID does not exist within the given collection scope.
-Other ID&rsquo;s will be watched and the response to you watch request will still be <code>OK (17)</code>.</p>
+Other IDs will be watched and the response to you watch request will still be <code>OK (17)</code>.</p>
 </div>
 
-
 <p>This is the data we want to pack:</p>
-
 <p><code>[&quot;//stuff&quot;, 3]</code></p>
-
 <p>Serializing the above using <a href="https://msgpack.org">MessagePack</a> results in the following <code>10</code> bytes:</p>
-
 <p><code>\x92\xa7//stuff\x03</code></p>
-
-<p>Now we create the header, for this example we just use ID 0:</p>
-
+<p>Now we create the header. For this example we just use ID 0:</p>
 <ul>
 <li>Data length (13) <code>\x0a\x00\x00\x00</code></li>
 <li>Identifier (0) <code>\x00\x00</code></li>
 <li>Run package type (35) <code>\x23</code></li>
 <li>Inverse type check bit (218) <code>\xdc</code></li>
 </ul>
-
 <blockquote>
 <p>Sending the <em>Query</em> package</p>
 </blockquote>
-
 <pre><code>\x0a\x00\x00\x00\x00\x00\x23\xdc\x92\xa7//stuff\x03
-</code></pre>
-
-<blockquote>
+</code></pre><blockquote>
 <p>Responding <em>OK</em> package</p>
 </blockquote>
-
 <pre><code>\x00\x00\x00\x00\x00\x00\x11\xee
-</code></pre>
-
-<p>A few seconds (or less) later, you will receive an <a href="../../../watching/on-init">init</a> or <a href="../../../watching/warning">warning</a> event on the socket connection.</p>
-
+</code></pre><p>A few seconds (or less) later, you will receive an <a href="../../../watching/on-init">init</a> or <a href="../../../watching/warning">warning</a> event on the socket connection.</p>
 <p>See the <a href="../../../watching">watching documentation</a> for more information.</p>
 
 
@@ -4658,19 +4631,19 @@ Other ID&rsquo;s will be watched and the response to you watch request will stil
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1582628646"></script>
-    <script src="/v0/js/jquery.sticky.js?1582628646"></script>
-    <script src="/v0/js/featherlight.min.js?1582628646"></script>
-    <script src="/v0/js/highlight.pack.js?1582628646"></script>
+    <script src="/v0/js/clipboard.min.js?1583166348"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583166348"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583166348"></script>
+    <script src="/v0/js/jquery.sticky.js?1583166348"></script>
+    <script src="/v0/js/featherlight.min.js?1583166348"></script>
+    <script src="/v0/js/highlight.pack.js?1583166348"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1582628646"></script>
-    <script src="/v0/js/learn.js?1582628646"></script>
-    <script src="/v0/js/hugo-learn.js?1582628646"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583166348"></script>
+    <script src="/v0/js/learn.js?1583166348"></script>
+    <script src="/v0/js/hugo-learn.js?1583166348"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1582628646" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1582628646"></script>
+    <link href="/v0/mermaid/mermaid.css?1583166348" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583166348"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

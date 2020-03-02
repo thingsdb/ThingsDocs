@@ -26,7 +26,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/overview/collections/</guid>
-      <description>Each collection can be thought of as an object to which properties can be assigned. We call such an object a Thing. To access something in the collection, all you need is to start with a . (dot), followed by a function or property name. Another way to access the collection is to use the collection ID. All things which are stored in ThingsDB get an unique ID. Since the collection root is also a Thing, it has it&amp;rsquo;s own id.</description>
+      <description>Each collection can be thought of as an object to which properties can be assigned. We call such an object a Thing. To access something in the collection, all you need to do, is to start with a . (dot), followed by a function or property name. Another way to access the collection is to use the collection&amp;rsquo;s ID. All things which are stored in ThingsDB get an unique ID. Since the collection root is also a Thing, it has its own id.</description>
     </item>
     
     <item>
@@ -55,10 +55,10 @@
       
       <guid>https://docs.thingsdb.net/v0/overview/variable/</guid>
       <description>Can be used to assign a value to a variable which can be used within a query.
-Variable can be created with READ privileges since they do not modify the collection data.
+Variable can be created with READ privileges since they do not modify the collection&amp;rsquo;s data.
 To create a variable, just assign a value to a valid name.
 Some valid examples:
- _ = ... tmp = ... var1 = ...  Variable created within a block become local. They can only be used within the block.</description>
+ _ = ... tmp = ... var1 = ...  Variables created within a block become local. They can only be used within the block.</description>
     </item>
     
     <item>
@@ -67,7 +67,7 @@ Some valid examples:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/overview/events/</guid>
-      <description>When a query uses a statement which makes a change to ThingsDB, then internally ThingsDB will create an event to apply these changes. Events are applied in order on each node so database consistency is guaranteed.
+      <description>When a query uses a statement which makes a change to ThingsDB, then internally ThingsDB will create an event to apply these changes. Events are applied in order on each node; so database consistency is guaranteed.
 A single query might contain several statements and make many changes. All changes within a query will be grouped in a single event.
 In the documentation we try to make clear if a function will generate an event or not.</description>
     </item>
@@ -79,7 +79,7 @@ In the documentation we try to make clear if a function will generate an event o
       
       <guid>https://docs.thingsdb.net/v0/overview/slices/</guid>
       <description>The following slice notation can be used:
-list[start:stop:step]  The start and stop value will default to nil and step has a default value of 1. For understanding slices it is important to remember that the :stop value represents the first value that is not in the selected slice. This means that the difference between stop and start is the number of selected elements. (assuming that step is the default value 1)</description>
+list[start:stop:step] The start and stop value will default to nil and step has a default value of 1. For understanding slices it is important to remember that the :stop value represents the first value that is not in the selected slice. This means that the difference between stop and start is the number of selected elements. (assuming that step is the default value 1)</description>
     </item>
     
   </channel>

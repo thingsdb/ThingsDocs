@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="ThingsDB documentation">
 
 
@@ -11,20 +11,20 @@
     <title>Collections :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/theme.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1582628646" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583166349" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1582628646" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583166349" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1582628646"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583166349"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1582628646"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583166349"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583166349"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583166349"></script>
 
     
   </div>
@@ -4528,7 +4528,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -4553,26 +4553,20 @@
 
 
 <p>Each collection can be thought of as an <em>object</em> to which properties can be
-assigned. We call such an object a <em>Thing</em>. To access something in the collection, all you need
+assigned. We call such an object a <em>Thing</em>. To access something in the collection, all you need to do,
 is to start with a <code>.</code> (dot), followed by a function or property name. Another way to access
-the collection is to use the collection ID. All things which are <em>stored</em> in
-ThingsDB get an unique ID. Since the collection root is also a Thing, it has it&rsquo;s own
+the collection is to use the collection&rsquo;s ID. All things which are <em>stored</em> in
+ThingsDB get an unique ID. Since the collection root is also a Thing, it has its own
 id.</p>
-
 <blockquote>
-<p>For example, to read the collection ID:</p>
+<p>For example, to read the collection&rsquo;s ID:</p>
 </blockquote>
-
-<pre><code class="language-thingsdb,should_pass">.id();  // This will return the collection ID
-</code></pre>
-
-<p>To store something inside the collection you only need to make sure the data is attached to the collection.</p>
-
+<pre><code class="language-thingsdb,should_pass" data-lang="thingsdb,should_pass">.id();  // This will return the collection ID
+</code></pre><p>To store something inside the collection you only need to make sure the data is attached to the collection.</p>
 <blockquote>
 <p>For example:</p>
 </blockquote>
-
-<pre><code class="language-thingsdb,should_pass">// Saves a number `42`
+<pre><code class="language-thingsdb,should_pass" data-lang="thingsdb,should_pass">// Saves a number `42`
 .number = 42;
 
 // Saves some text to property `txt`
@@ -4584,62 +4578,40 @@ id.</p>
     value: 1,
 };
 
-// The last value will be the return value, it may be just `nil`
+// The last value will be the return value. It may be just `nil`
 nil;
-</code></pre>
-
-<p>Reading data from a collection works similar, just ask for the property.</p>
-
+</code></pre><p>Reading data from a collection works similar. Just ask for the property.</p>
 <blockquote>
 <p>For example:</p>
 </blockquote>
-
-<pre><code class="language-thingsdb,syntax_only">.txt;  // Returns the value of property `txt`
-</code></pre>
-
-<blockquote>
+<pre><code class="language-thingsdb,syntax_only" data-lang="thingsdb,syntax_only">.txt;  // Returns the value of property `txt`
+</code></pre><blockquote>
 <p>Result in JSON format:</p>
 </blockquote>
-
-<pre><code class="language-json">&quot;Hello ThingsDB!&quot;
-</code></pre>
-
-<p>To return multiple properties at once, it is often useful to put them in an array:</p>
-
-<pre><code class="language-thingsdb,syntax_only">[.txt, .number];  // Returns both property `txt` and `number`
-</code></pre>
-
-<blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;Hello ThingsDB!&#34;</span>
+</code></pre></div><p>To return multiple properties at once, it is often useful to put them in an array:</p>
+<pre><code class="language-thingsdb,syntax_only" data-lang="thingsdb,syntax_only">[.txt, .number];  // Returns both property `txt` and `number`
+</code></pre><blockquote>
 <p>And the result in JSON format:</p>
 </blockquote>
-
-<pre><code class="language-json">[
-    &quot;Hello ThingsDB!&quot;,
-    42
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
+    <span style="color:#e6db74">&#34;Hello ThingsDB!&#34;</span>,
+    <span style="color:#ae81ff">42</span>
 ]
-</code></pre>
-
-<p>Stored <em>things</em> will get an ID (<code>#</code>) from ThingsDB.</p>
-
+</code></pre></div><p>Stored <em>things</em> will get an ID (<code>#</code>) from ThingsDB.</p>
 <blockquote>
 <p>For example look at our <code>card</code> example:</p>
 </blockquote>
-
-<pre><code class="language-thingsdb,syntax_only">.card;  // Returns the value of property `card`
-</code></pre>
-
-<blockquote>
-<p>Result in JSON format (The ID (<code>#</code>) might differ since it is auto generated by ThingsDB)</p>
+<pre><code class="language-thingsdb,syntax_only" data-lang="thingsdb,syntax_only">.card;  // Returns the value of property `card`
+</code></pre><blockquote>
+<p>Result in JSON format (The ID (<code>#</code>) might differ since it is auto-generated by ThingsDB)</p>
 </blockquote>
-
-<pre><code class="language-json">{
-    &quot;#&quot;: 17,
-    &quot;suit&quot;: &quot;Spades&quot;,
-    &quot;value&quot;: 1
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;#&#34;</span>: <span style="color:#ae81ff">17</span>,
+    <span style="color:#f92672">&#34;suit&#34;</span>: <span style="color:#e6db74">&#34;Spades&#34;</span>,
+    <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#ae81ff">1</span>
 }
-</code></pre>
-
-<p>See the <a href="../../collection-api">Collection API</a> documentation for functions which can be used to manipulate ThingsDB data.</p>
+</code></pre></div><p>See the <a href="../../collection-api">Collection API</a> documentation for functions which can be used to manipulate ThingsDB data.</p>
 
 
 <footer class=" footline" >
@@ -4670,19 +4642,19 @@ nil;
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1582628646"></script>
-    <script src="/v0/js/jquery.sticky.js?1582628646"></script>
-    <script src="/v0/js/featherlight.min.js?1582628646"></script>
-    <script src="/v0/js/highlight.pack.js?1582628646"></script>
+    <script src="/v0/js/clipboard.min.js?1583166349"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583166349"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583166349"></script>
+    <script src="/v0/js/jquery.sticky.js?1583166349"></script>
+    <script src="/v0/js/featherlight.min.js?1583166349"></script>
+    <script src="/v0/js/highlight.pack.js?1583166349"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1582628646"></script>
-    <script src="/v0/js/learn.js?1582628646"></script>
-    <script src="/v0/js/hugo-learn.js?1582628646"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583166349"></script>
+    <script src="/v0/js/learn.js?1583166349"></script>
+    <script src="/v0/js/hugo-learn.js?1583166349"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1582628646" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1582628646"></script>
+    <link href="/v0/mermaid/mermaid.css?1583166349" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583166349"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

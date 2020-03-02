@@ -16,13 +16,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/assert_err/</guid>
-      <description> Returns an error when an assertion has failed.
+      <description>Returns an error when an assertion has failed.
 This function does not generate an event.
 Function assert_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
 Example  This code shows assert_err():
- assert_err();   Return value in JSON format
- { &amp;quot;!&amp;quot;: &amp;quot;assert_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -50, &amp;quot;error_msg&amp;quot;: &amp;quot;assertion statement has failed&amp;quot; }  </description>
+ assert_err();  Return value in JSON format
+ { &amp;#34;!&amp;#34;: &amp;#34;assert_err()&amp;#34;, &amp;#34;error_code&amp;#34;: -50, &amp;#34;error_msg&amp;#34;: &amp;#34;assertion statement has failed&amp;#34; } </description>
     </item>
     
     <item>
@@ -31,13 +31,13 @@ Example  This code shows assert_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/auth_err/</guid>
-      <description> Returns an error when authentication has failed.
+      <description>Returns an error when authentication has failed.
 This function does not generate an event.
 Function auth_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
 Example  This code shows auth_err():
- auth_err();   Return value in JSON format
- { &amp;quot;!&amp;quot;: &amp;quot;auth_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -56, &amp;quot;error_msg&amp;quot;: &amp;quot;authentication error&amp;quot; }  </description>
+ auth_err();  Return value in JSON format
+ { &amp;#34;!&amp;#34;: &amp;#34;auth_err()&amp;#34;, &amp;#34;error_code&amp;#34;: -56, &amp;#34;error_msg&amp;#34;: &amp;#34;authentication error&amp;#34; } </description>
     </item>
     
     <item>
@@ -46,13 +46,13 @@ Example  This code shows auth_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/bad_data_err/</guid>
-      <description> Returns an error when a request is malformed.
+      <description>Returns an error when a request is malformed.
 This function does not generate an event.
 Function bad_data_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
 Example  This code shows bad_data_err():
- bad_data_err();   Return value in JSON format
- { &amp;quot;!&amp;quot;: &amp;quot;bad_data_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -53, &amp;quot;error_msg&amp;quot;: &amp;quot;unable to handle request due to invalid data&amp;quot; }  </description>
+ bad_data_err();  Return value in JSON format
+ { &amp;#34;!&amp;#34;: &amp;#34;bad_data_err()&amp;#34;, &amp;#34;error_code&amp;#34;: -53, &amp;#34;error_msg&amp;#34;: &amp;#34;unable to handle request due to invalid data&amp;#34; } </description>
     </item>
     
     <item>
@@ -61,13 +61,13 @@ Example  This code shows bad_data_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/forbidden_err/</guid>
-      <description> Returns an error when the client or user is missing the required privileges.
+      <description>Returns an error when the client or user is missing the required privileges.
 This function does not generate an event.
 Function forbidden_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
 Example  This code shows forbidden_err():
- forbidden_err();   Return value in JSON format
- { &amp;quot;!&amp;quot;: &amp;quot;forbidden_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -55, &amp;quot;error_msg&amp;quot;: &amp;quot;forbidden (access denied)&amp;quot; }  </description>
+ forbidden_err();  Return value in JSON format
+ { &amp;#34;!&amp;#34;: &amp;#34;forbidden_err()&amp;#34;, &amp;#34;error_code&amp;#34;: -55, &amp;#34;error_msg&amp;#34;: &amp;#34;forbidden (access denied)&amp;#34; } </description>
     </item>
     
     <item>
@@ -76,13 +76,13 @@ Example  This code shows forbidden_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/lookup_err/</guid>
-      <description> Returns an error when a requested resource is not found or when an index is out-of-range.
+      <description>Returns an error when a requested resource is not found or when an index is out-of-range.
 This function does not generate an event.
 Function lookup_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
 Example  This code shows lookup_err():
- lookup_err();   Return value in JSON format
- { &amp;quot;!&amp;quot;: &amp;quot;lookup_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -54, &amp;quot;error_msg&amp;quot;: &amp;quot;requested resource not found&amp;quot; }  </description>
+ lookup_err();  Return value in JSON format
+ { &amp;#34;!&amp;#34;: &amp;#34;lookup_err()&amp;#34;, &amp;#34;error_code&amp;#34;: -54, &amp;#34;error_msg&amp;#34;: &amp;#34;requested resource not found&amp;#34; } </description>
     </item>
     
     <item>
@@ -91,13 +91,13 @@ Example  This code shows lookup_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/max_quota_err/</guid>
-      <description> Returns an error when a quota limit is reached.
+      <description>Returns an error when a quota limit is reached.
 This function does not generate an event.
 Function max_quota_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
 Example  This code shows max_quota_err():
- max_quota_err();   Return value in JSON format
- { &amp;quot;!&amp;quot;: &amp;quot;max_quota_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -57, &amp;quot;error_msg&amp;quot;: &amp;quot;max quota is reached&amp;quot; }  </description>
+ max_quota_err();  Return value in JSON format
+ { &amp;#34;!&amp;#34;: &amp;#34;max_quota_err()&amp;#34;, &amp;#34;error_code&amp;#34;: -57, &amp;#34;error_msg&amp;#34;: &amp;#34;max quota is reached&amp;#34; } </description>
     </item>
     
     <item>
@@ -106,13 +106,13 @@ Example  This code shows max_quota_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/node_err/</guid>
-      <description> Returns an error when a node was not able to handle the request.
+      <description>Returns an error when a node was not able to handle the request.
 This function does not generate an event.
 Function node_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
 Example  This code shows node_err():
- node_err();   Return value in JSON format
- { &amp;quot;!&amp;quot;: &amp;quot;node_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -51, &amp;quot;error_msg&amp;quot;: &amp;quot;node is temporary unable to handle the request&amp;quot; }  </description>
+ node_err();  Return value in JSON format
+ { &amp;#34;!&amp;#34;: &amp;#34;node_err()&amp;#34;, &amp;#34;error_code&amp;#34;: -51, &amp;#34;error_msg&amp;#34;: &amp;#34;node is temporary unable to handle the request&amp;#34; } </description>
     </item>
     
     <item>
@@ -121,13 +121,13 @@ Example  This code shows node_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/num_arguments_err/</guid>
-      <description> Returns an error when a wrong number of arguments are given.
+      <description>Returns an error when a wrong number of arguments are given.
 This function does not generate an event.
 Function num_arguments_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
 Example  This code shows num_arguments_err():
- num_arguments_err();   Return value in JSON format
- { &amp;quot;!&amp;quot;: &amp;quot;num_arguments_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -62, &amp;quot;error_msg&amp;quot;: &amp;quot;wrong number of arguments&amp;quot; }  </description>
+ num_arguments_err();  Return value in JSON format
+ { &amp;#34;!&amp;#34;: &amp;#34;num_arguments_err()&amp;#34;, &amp;#34;error_code&amp;#34;: -62, &amp;#34;error_msg&amp;#34;: &amp;#34;wrong number of arguments&amp;#34; } </description>
     </item>
     
     <item>
@@ -136,13 +136,13 @@ Example  This code shows num_arguments_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/operation_err/</guid>
-      <description> Returns an error when an operation is not valid within the current context.
+      <description>Returns an error when an operation is not valid within the current context.
 This function does not generate an event.
 Function operation_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
 Example  This code shows operation_err():
- operation_err();   Return value in JSON format
- { &amp;quot;!&amp;quot;: &amp;quot;operation_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -63, &amp;quot;error_msg&amp;quot;: &amp;quot;operation is not valid in the current context&amp;quot; }  </description>
+ operation_err();  Return value in JSON format
+ { &amp;#34;!&amp;#34;: &amp;#34;operation_err()&amp;#34;, &amp;#34;error_code&amp;#34;: -63, &amp;#34;error_msg&amp;#34;: &amp;#34;operation is not valid in the current context&amp;#34; } </description>
     </item>
     
     <item>
@@ -156,7 +156,8 @@ This function does not generate an event.
 Function overflow_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
 Example  This code shows overflow_err():
- overflow_err();   Return value in JSON format</description>
+ overflow_err();  Return value in JSON format
+ { &amp;#34;!</description>
     </item>
     
     <item>
@@ -165,13 +166,13 @@ Example  This code shows overflow_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/syntax_err/</guid>
-      <description> Returns an error when the given ThingsDB code contains a syntax error.
+      <description>Returns an error when the given ThingsDB code contains a syntax error.
 This function does not generate an event.
 Function syntax_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
 Example  This code shows syntax_err():
- syntax_err();   Return value in JSON format
- { &amp;quot;!&amp;quot;: &amp;quot;syntax_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -52, &amp;quot;error_msg&amp;quot;: &amp;quot;syntax error in query&amp;quot; }  </description>
+ syntax_err();  Return value in JSON format
+ { &amp;#34;!&amp;#34;: &amp;#34;syntax_err()&amp;#34;, &amp;#34;error_code&amp;#34;: -52, &amp;#34;error_msg&amp;#34;: &amp;#34;syntax error in query&amp;#34; } </description>
     </item>
     
     <item>
@@ -180,13 +181,13 @@ Example  This code shows syntax_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/type_err/</guid>
-      <description> Returns an error when a given value is of the incorrect type.
+      <description>Returns an error when a given value is of the incorrect type.
 This function does not generate an event.
 Function type_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
 Example  This code shows type_err():
- type_err();   Return value in JSON format
- { &amp;quot;!&amp;quot;: &amp;quot;type_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -61, &amp;quot;error_msg&amp;quot;: &amp;quot;object of inappropriate type&amp;quot; }  </description>
+ type_err();  Return value in JSON format
+ { &amp;#34;!&amp;#34;: &amp;#34;type_err()&amp;#34;, &amp;#34;error_code&amp;#34;: -61, &amp;#34;error_msg&amp;#34;: &amp;#34;object of inappropriate type&amp;#34; } </description>
     </item>
     
     <item>
@@ -195,13 +196,13 @@ Example  This code shows type_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/value_err/</guid>
-      <description> Returns an error when a given value has the correct type but contains invalid data.
+      <description>Returns an error when a given value has the correct type but contains invalid data.
 This function does not generate an event.
 Function value_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
 Example  This code shows value_err():
- value_err();   Return value in JSON format
- { &amp;quot;!&amp;quot;: &amp;quot;value_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -60, &amp;quot;error_msg&amp;quot;: &amp;quot;object has the right type but an inappropriate value&amp;quot; }  </description>
+ value_err();  Return value in JSON format
+ { &amp;#34;!&amp;#34;: &amp;#34;value_err()&amp;#34;, &amp;#34;error_code&amp;#34;: -60, &amp;#34;error_msg&amp;#34;: &amp;#34;object has the right type but an inappropriate value&amp;#34; } </description>
     </item>
     
     <item>
@@ -210,13 +211,13 @@ Example  This code shows value_err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/errors/zero_div_err/</guid>
-      <description> Returns an error when an attempt is made to divide or take a modulo by zero.
+      <description>Returns an error when an attempt is made to divide or take a modulo by zero.
 This function does not generate an event.
 Function zero_div_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
 Example  This code shows zero_div_err():
- zero_div_err();   Return value in JSON format
- { &amp;quot;!&amp;quot;: &amp;quot;zero_div_err()&amp;quot;, &amp;quot;error_code&amp;quot;: -58, &amp;quot;error_msg&amp;quot;: &amp;quot;division or module by zero&amp;quot; }  </description>
+ zero_div_err();  Return value in JSON format
+ { &amp;#34;!&amp;#34;: &amp;#34;zero_div_err()&amp;#34;, &amp;#34;error_code&amp;#34;: -58, &amp;#34;error_msg&amp;#34;: &amp;#34;division or module by zero&amp;#34; } </description>
     </item>
     
   </channel>

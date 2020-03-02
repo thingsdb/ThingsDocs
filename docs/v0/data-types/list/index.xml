@@ -22,7 +22,8 @@ Function array.choice()
 Arguments None
 Return value A pseudo-random item from the list.
 Example  This code shows an example using choice():
- // Returns either `a`, `b` or `c` [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;].choice();   Example return value in JSON format</description>
+ // Returns either `a`, `b` or `c` [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;].choice();  Example return value in JSON format
+ &amp;#34;b&amp;#34; </description>
     </item>
     
     <item>
@@ -70,10 +71,10 @@ Example  This code extends a list with a given array:</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/list/filter/</guid>
-      <description>When this method is used on an list or tuple, a new list is returned with elements that pass the test.
+      <description>When this method is used on a list or tuple, a new list is returned with elements that pass the test.
 This function does not generate an event.
 Function array.filter(callback)
-Arguments The callback argument must be a closure which input values depend on the type the method is called on.
+Arguments    Argument Type Description     callback closure (required) Closure to execute on each value.    Explanation of the callback argument:
    Iterable Arguments Description     array item, index Iterate over all items in the array.</description>
     </item>
     
@@ -120,14 +121,14 @@ Arguments    Argument Type Description     value any The value to find the index
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/list/len/</guid>
-      <description> Returns the length of a list or tuple.
+      <description>Returns the length of a list or tuple.
 This function does not generate an event.
 Function array.len()
 Arguments None
 Return value Returns length of the array.
 Example  This code uses len() to return the number of items in a collection:
- [1, 2, 3, 4].len();   Return value in JSON format
- 4  </description>
+ [1, 2, 3, 4].len();  Return value in JSON format
+ 4 </description>
     </item>
     
     <item>
@@ -154,7 +155,8 @@ This method changes the length of the list. The pop() method works on a list typ
 This function generates an event (except when called on a variable).
 Function list.pop()
 Arguments None
-Return value The removed element from the list. A lookup_err() is raised if the list is empty.</description>
+Return value The removed element from the list. A lookup_err() is raised if the list is empty.
+Example  This code show an example usage of pop():</description>
     </item>
     
     <item>
@@ -168,7 +170,7 @@ This function generates an event (except when called on a variable).
 Function list.push(item1, item2, ..., itemX)
 Return value Returns the new length of the list.
 Example  This code pushes values to a list:
- list = [1, 2, 3]; list.push(4, 5, 6); // Returns the new length, 6 list;   Return value in JSON format</description>
+ list = [1, 2, 3]; list.push(4, 5, 6); // Returns the new length, 6 list;  Return value in JSON format</description>
     </item>
     
     <item>
@@ -214,7 +216,7 @@ Arguments    Argument Type Description     callback closure Closure to execute o
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/list/sort/</guid>
-      <description>When this method is used on an list or tuple, a new sorted list is returned.
+      <description>When this method is used on a list or tuple, a new sorted list is returned.
 This function does not generate an event.
 Function array.sort([closure, [reverse]])
 Arguments    Argument Type Description     callback closure (optional) Closure to execute on each value, which is used to determine how the list should be sorted.   reverse bool (optional) Determines the order of the returned list.    The reverse argument cannot be used together with a closure which takes two arguments.</description>

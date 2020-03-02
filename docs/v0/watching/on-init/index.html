@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="ThingsDB documentation">
 
 
@@ -11,20 +11,20 @@
     <title>on-init :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/theme.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1582628647" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583166349" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1582628647" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583166349" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1582628647"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583166349"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1582628647"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1582628647"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583166349"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583166349"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1582628647"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583166349"></script>
 
     
   </div>
@@ -4528,7 +4528,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -4553,57 +4553,50 @@
 
 
 <p>This event will be pushed <strong>once</strong> for each <a href="../../data-types/thing">thing</a> which is added to the watch list.</p>
-
 <blockquote>
 <p>Example <em>on-init</em> event in JSON format:</p>
 </blockquote>
-
-<pre><code class="language-json">{
-    &quot;event&quot;: 123,
-    &quot;collection&quot;: &quot;stuff&quot;,
-    &quot;thing&quot;: {
-        &quot;#&quot;: 42,
-        &quot;name&quot;: &quot;Iris&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;event&#34;</span>: <span style="color:#ae81ff">123</span>,
+    <span style="color:#f92672">&#34;collection&#34;</span>: <span style="color:#e6db74">&#34;stuff&#34;</span>,
+    <span style="color:#f92672">&#34;thing&#34;</span>: {
+        <span style="color:#f92672">&#34;#&#34;</span>: <span style="color:#ae81ff">42</span>,
+        <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Iris&#34;</span>
     }
 }
-</code></pre>
-
-<p>If the <a href="../../data-types/thing">thing</a> <em>IS</em> actually a collection, then the <em>init</em> event also contains all <a href="../../data-types/type">types</a> and <a href="../../procedures-api">procedures</a> inside the collection.</p>
-
+</code></pre></div><p>If the <a href="../../data-types/thing">thing</a> <em>IS</em> actually a collection, then the <em>init</em> event also contains all <a href="../../data-types/type">types</a> and <a href="../../procedures-api">procedures</a> inside the collection.</p>
 <blockquote>
 <p>Example <em>on-init</em> event for a collection in JSON format:</p>
 </blockquote>
-
-<pre><code class="language-json">{
-    &quot;event&quot;: 123,
-    &quot;collection&quot;: &quot;stuff&quot;,
-    &quot;thing&quot;: {
-        &quot;#&quot;: 3
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;event&#34;</span>: <span style="color:#ae81ff">123</span>,
+    <span style="color:#f92672">&#34;collection&#34;</span>: <span style="color:#e6db74">&#34;stuff&#34;</span>,
+    <span style="color:#f92672">&#34;thing&#34;</span>: {
+        <span style="color:#f92672">&#34;#&#34;</span>: <span style="color:#ae81ff">3</span>
     },
-    &quot;types&quot;: [
+    <span style="color:#f92672">&#34;types&#34;</span>: [
         {
-            &quot;type_id&quot;: 1,
-            &quot;name&quot;: &quot;Sample&quot;,
-            &quot;created_at&quot;: 1579592122,
-            &quot;modified_at&quot;: 1579592122,
-            &quot;fields&quot;: [
-                [&quot;name&quot;, &quot;str?&quot;]
+            <span style="color:#f92672">&#34;type_id&#34;</span>: <span style="color:#ae81ff">1</span>,
+            <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Sample&#34;</span>,
+            <span style="color:#f92672">&#34;created_at&#34;</span>: <span style="color:#ae81ff">1579592122</span>,
+            <span style="color:#f92672">&#34;modified_at&#34;</span>: <span style="color:#ae81ff">1579592122</span>,
+            <span style="color:#f92672">&#34;fields&#34;</span>: [
+                [<span style="color:#e6db74">&#34;name&#34;</span>, <span style="color:#e6db74">&#34;str?&#34;</span>]
             ]
         }
     ],
-    &quot;procedures&quot;: [
+    <span style="color:#f92672">&#34;procedures&#34;</span>: [
         {
-            &quot;doc&quot;: &quot;Sample procedure&quot;,
-            &quot;name&quot;: &quot;multiply&quot;,
-            &quot;created_at&quot;: 1579592122,
-            &quot;definition&quot;: &quot;|a,b|{'Sample procedure';a*b;}&quot;,
-            &quot;with_side_effects&quot;: false,
-            &quot;arguments&quot;: [&quot;a&quot;, &quot;b&quot;]
+            <span style="color:#f92672">&#34;doc&#34;</span>: <span style="color:#e6db74">&#34;Sample procedure&#34;</span>,
+            <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;multiply&#34;</span>,
+            <span style="color:#f92672">&#34;created_at&#34;</span>: <span style="color:#ae81ff">1579592122</span>,
+            <span style="color:#f92672">&#34;definition&#34;</span>: <span style="color:#e6db74">&#34;|a,b|{&#39;Sample procedure&#39;;a*b;}&#34;</span>,
+            <span style="color:#f92672">&#34;with_side_effects&#34;</span>: <span style="color:#66d9ef">false</span>,
+            <span style="color:#f92672">&#34;arguments&#34;</span>: [<span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>]
         }
     ]
 }
-</code></pre>
-
+</code></pre></div>
 
 <footer class=" footline" >
 	
@@ -4633,19 +4626,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1582628647"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1582628647"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1582628647"></script>
-    <script src="/v0/js/jquery.sticky.js?1582628647"></script>
-    <script src="/v0/js/featherlight.min.js?1582628647"></script>
-    <script src="/v0/js/highlight.pack.js?1582628647"></script>
+    <script src="/v0/js/clipboard.min.js?1583166349"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583166349"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583166349"></script>
+    <script src="/v0/js/jquery.sticky.js?1583166349"></script>
+    <script src="/v0/js/featherlight.min.js?1583166349"></script>
+    <script src="/v0/js/highlight.pack.js?1583166349"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1582628647"></script>
-    <script src="/v0/js/learn.js?1582628647"></script>
-    <script src="/v0/js/hugo-learn.js?1582628647"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583166349"></script>
+    <script src="/v0/js/learn.js?1583166349"></script>
+    <script src="/v0/js/hugo-learn.js?1583166349"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1582628647" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1582628647"></script>
+    <link href="/v0/mermaid/mermaid.css?1583166349" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583166349"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

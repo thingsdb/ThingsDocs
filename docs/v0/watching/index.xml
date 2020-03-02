@@ -28,9 +28,9 @@
       <guid>https://docs.thingsdb.net/v0/watching/on-init/</guid>
       <description>This event will be pushed once for each thing which is added to the watch list.
  Example on-init event in JSON format:
- { &amp;quot;event&amp;quot;: 123, &amp;quot;collection&amp;quot;: &amp;quot;stuff&amp;quot;, &amp;quot;thing&amp;quot;: { &amp;quot;#&amp;quot;: 42, &amp;quot;name&amp;quot;: &amp;quot;Iris&amp;quot; } }  If the thing IS actually a collection, then the init event also contains all types and procedures inside the collection.
+ { &amp;#34;event&amp;#34;: 123, &amp;#34;collection&amp;#34;: &amp;#34;stuff&amp;#34;, &amp;#34;thing&amp;#34;: { &amp;#34;#&amp;#34;: 42, &amp;#34;name&amp;#34;: &amp;#34;Iris&amp;#34; } } If the thing IS actually a collection, then the init event also contains all types and procedures inside the collection.
  Example on-init event for a collection in JSON format:
- { &amp;quot;event&amp;quot;: 123, &amp;quot;collection&amp;quot;: &amp;quot;stuff&amp;quot;, &amp;quot;thing&amp;quot;: { &amp;quot;#&amp;quot;: 3 }, &amp;quot;types&amp;quot;: [ { &amp;quot;type_id&amp;quot;: 1, &amp;quot;name&amp;quot;: &amp;quot;Sample&amp;quot;, &amp;quot;created_at&amp;quot;: 1579592122, &amp;quot;modified_at&amp;quot;: 1579592122, &amp;quot;fields&amp;quot;: [ [&amp;quot;name&amp;quot;, &amp;quot;str?</description>
+ { &amp;#34;event&amp;#34;: 123, &amp;#34;collection&amp;#34;: &amp;#34;stuff&amp;#34;, &amp;#34;thing&amp;#34;: { &amp;#34;#&amp;#34;: 3 }, &amp;#34;types&amp;#34;: [ { &amp;#34;type_id&amp;#34;: 1, &amp;#34;name&amp;#34;: &amp;#34;Sample&amp;#34;, &amp;#34;created_at&amp;#34;: 1579592122, &amp;#34;modified_at&amp;#34;: 1579592122, &amp;#34;fields&amp;#34;: [ [&amp;#34;name&amp;#34;, &amp;#34;str?</description>
     </item>
     
     <item>
@@ -41,7 +41,7 @@
       <guid>https://docs.thingsdb.net/v0/watching/on-update/</guid>
       <description>An update event is pushed when changes are made to a thing you are watching. Nested things need to be watched separately.
 The event contains the Thing ID (#), an event number, and an jobs array containing all the mutations which are applied to the thing in the order as they are put in the array.
-{ &amp;quot;#&amp;quot;: 3, &amp;quot;event&amp;quot;: 123, &amp;quot;jobs&amp;quot;: [ ...mutations ] }  Each mutation is a map {} with a single key.</description>
+{ &amp;#34;#&amp;#34;: 3, &amp;#34;event&amp;#34;: 123, &amp;#34;jobs&amp;#34;: [ ...mutations ] } Each mutation is a map {} with a single key.</description>
     </item>
     
     <item>
@@ -64,7 +64,7 @@ If this event is not received when expected, there might exist circular referenc
       <description>A stop event will be pushed as soon as a thing has stopped with watching.
 This event is not pushed when a connection to a node is lost but only when watching is stopped by the user.
   Example watch stop event in JSON format:
- { &amp;quot;#&amp;quot;: 42 }  </description>
+ { &amp;#34;#&amp;#34;: 42 } </description>
     </item>
     
     <item>
@@ -76,7 +76,7 @@ This event is not pushed when a connection to a node is lost but only when watch
       <description>ThingsDB might send a warning events to a client. The warn_code can be used to determine the warning type.
 ThingsDB might push one of the following waning codes:
    Code Description     1 This warning is pushed after attempting to watch a thing which does not exists in the collection.     Example warning event in JSON format:
- { &amp;quot;warn_code&amp;quot;: 1, &amp;quot;warn_msg&amp;quot;: &amp;quot;failed to watch thing .</description>
+ { &amp;#34;warn_code&amp;#34;: 1, &amp;#34;warn_msg&amp;#34;: &amp;#34;failed to watch thing .</description>
     </item>
     
   </channel>

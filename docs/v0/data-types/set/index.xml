@@ -20,7 +20,8 @@
 This function generates an event (except when called on a variable).
 Function set.add(thing1, thing1, ..., thingX)
 Return value Returns the number of things which are added to the set.
-Example  This code adds things to a set:</description>
+Example  This code adds things to a set:
+ s = set(); a = {item: &#39;a&#39;}; b = {item: &#39;b&#39;}; // add both `a` and `b` to set `s`; note that `a` is only added once; s.</description>
     </item>
     
     <item>
@@ -58,7 +59,9 @@ Arguments The callback argument must be a closure which input values depend on t
       <guid>https://docs.thingsdb.net/v0/data-types/set/find/</guid>
       <description>This function returns the value of the first element in the set that satisfies the callback function. Otherwise nil is returned unless an alternative return value is specified.
 This function does not generate an event.
-The return value when called on a set might be unpredictable since a set is not ordered. set({name: &#39;Iris&#39;}, {name: &#39;Cato&#39;}).find(||true); &amp;hellip;will return {Iris} or {Cato}.
+The return value when called on a set might be unpredictable since a set is not ordered.
+set({name: &#39;Iris&#39;}, {name: &#39;Cato&#39;}).find(||true);
+&amp;hellip;will return {Iris} or {Cato}.
  Function set.find(callback, [alt])
 Arguments    Argument Type Description     callback closure Closure to execute on each value until the closure evaluates to true.</description>
     </item>
@@ -83,14 +86,14 @@ Example  This code shows an example use case of has():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/set/len/</guid>
-      <description> Returns the length of a set.
+      <description>Returns the length of a set.
 This function does not generate an event.
 Function set.len()
 Arguments None
 Return value Returns length of the set.
 Example  This code uses len() to return the number of items in a set:
- set({item: &#39;a&#39;}, {item: &#39;b&#39;}).len();   Return value in JSON format
- 2  </description>
+ set({item: &#39;a&#39;}, {item: &#39;b&#39;}).len();  Return value in JSON format
+ 2 </description>
     </item>
     
     <item>

@@ -3,7 +3,7 @@ title: "filter"
 weight: 40
 ---
 
-When this method is used on an [list](..) or [tuple](../../tuple), a new list is returned with elements that pass the test.
+When this method is used on a [list](..) or [tuple](../../tuple), a new list is returned with elements that pass the test.
 
 This function does *not* generate an [event](../../../overview/events).
 
@@ -13,7 +13,13 @@ This function does *not* generate an [event](../../../overview/events).
 
 ### Arguments
 
-The *callback* argument must be a `closure` which input values depend on the type the method is called on.
+Argument | Type | Description
+-------- | ---- | -----------
+callback | closure (required) | Closure to execute on each value.
+
+
+Explanation of the *callback* argument:
+
 
 Iterable | Arguments   | Description
 -------- | ----------- | -----------

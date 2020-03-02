@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="ThingsDB documentation">
 
 
@@ -11,20 +11,20 @@
     <title>Socket :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/theme.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1582628646" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583166349" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1582628646" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583166349" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1582628646"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583166349"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1582628646"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583166349"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583166349"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583166349"></script>
 
     
   </div>
@@ -4529,28 +4529,16 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#package">Package</a>
-<ul>
-<li>
-<ul>
-<li><a href="#len-unsigned-32bit">LEN (Unsigned, 32bit)</a></li>
-<li><a href="#id-16bit">ID (16bit)</a></li>
-<li><a href="#type-unsigned-8bit">TYPE (Unsigned, 8bit)</a></li>
-<li><a href="#request-type">Request type</a>
-<ul>
-<li><a href="#chk-unsigned-8bit">CHK (Unsigned, 8bit)</a></li>
-</ul></li>
-<li><a href="#data">DATA</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#response-type">Response type</a></li>
-<li><a href="#example">Example</a></li>
-<li><a href="#more-examples">More examples</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#package">Package</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#response-type">Response type</a></li>
+    <li><a href="#example">Example</a></li>
+    <li><a href="#more-examples">More examples</a></li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -4576,38 +4564,26 @@
 
 
 
-	
-
-<p>This is a more in depth view of the socket protocol used for communication with ThingsDB.
+	<p>This is a more in depth view of the socket protocol used for communication with ThingsDB.
 In case you just want to use ThingsDB using one of the language bindings, then this
 info can be skipped. If you plan to implement your own connector, then this info might
 be useful to you.</p>
-
 <p>This section applies to communication with ThingsDB over a socket, either by using TCP or a UNIX PIPE connection.
 Once a connection is made, packages can be send to ThingsDB. Each package starts
 with a 8 bytes header using little endian, followed by optional data. Before you can
 send queries to ThingsDB, the connection must be authenticated. This can be done by
 sending an <code>AUTH</code> package.</p>
-
 <h2 id="package">Package</h2>
-
 <h4 id="len-unsigned-32bit">LEN (Unsigned, 32bit)</h4>
-
 <p>Length of the <em>data</em>, stored as <strong>Unsigned, 32-bit, Little Endian</strong>. The header size is <em>not</em> included in the length.</p>
-
 <h4 id="id-16bit">ID (16bit)</h4>
-
 <p>The ID can be used as an identifier of your package. When ThingsDB send a response
 on a request, it will use the same ID so this allows you to map a response to a
-request. This is useful if you want to send multiple request in parallel.
-Needs to be stored as <strong>16-bit, Little Endian</strong>.</p>
-
+request. This is useful if you want to send multiple requests in parallel.
+It needs to be stored as <strong>16-bit, Little Endian</strong>.</p>
 <h4 id="type-unsigned-8bit">TYPE (Unsigned, 8bit)</h4>
-
 <p>Package type is used to describe what kind of package is transmitted.</p>
-
 <h4 id="request-type">Request type</h4>
-
 <table>
 <thead>
 <tr>
@@ -4616,38 +4592,32 @@ Needs to be stored as <strong>16-bit, Little Endian</strong>.</p>
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>PING</code></td>
 <td>32</td>
 <td>Ping, useful as keep-alive.</td>
 </tr>
-
 <tr>
 <td><code>AUTH</code></td>
 <td>33</td>
 <td>Authorization., expects: <code>[username, password]</code> or a <code>token_string</code>.</td>
 </tr>
-
 <tr>
 <td><code>QUERY</code></td>
 <td>34</td>
 <td>Query ThingsDB.</td>
 </tr>
-
 <tr>
 <td><code>WATCH</code></td>
 <td>35</td>
 <td>Watch for changes on specific <em>things</em>.</td>
 </tr>
-
 <tr>
 <td><code>UNWATCH</code></td>
 <td>36</td>
 <td>Stop watching for changes on specific <em>things</em>.</td>
 </tr>
-
 <tr>
 <td><code>RUN</code></td>
 <td>37</td>
@@ -4655,28 +4625,18 @@ Needs to be stored as <strong>16-bit, Little Endian</strong>.</p>
 </tr>
 </tbody>
 </table>
-
 <h5 id="chk-unsigned-8bit">CHK (Unsigned, 8bit)</h5>
-
-<p>Inverse of the type: <code>type ^ 0xff</code>, this is used as a check-bit.</p>
-
+<p>Inverse of the type: <code>type ^ 0xff</code>. This is used as a check-bit.</p>
 <h4 id="data">DATA</h4>
-
 <p>Data serialized using <a href="https://msgpack.org">MessagePack</a>.</p>
-
 <blockquote>
 <p>Package format:</p>
 </blockquote>
-
 <pre><code>┌───────────┬───────────┬───────────┬───────────┬───────────┐
 │ LEN (4)   │ ID (2)    │ TYPE (1)  │ CHK (1)   │ DATA (..) │
 └───────────┴───────────┴───────────┴───────────┴───────────┘
-</code></pre>
-
-<h2 id="response-type">Response type</h2>
-
+</code></pre><h2 id="response-type">Response type</h2>
 <p>ThingsDB can respond with one of the following response type:</p>
-
 <table>
 <thead>
 <tr>
@@ -4685,26 +4645,22 @@ Needs to be stored as <strong>16-bit, Little Endian</strong>.</p>
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>PONG</code></td>
 <td>16</td>
 <td>Success response to <code>PING</code> (header only).</td>
 </tr>
-
 <tr>
 <td><code>OK</code></td>
 <td>17</td>
 <td>Success response to <code>AUTH</code>, <code>WATCH</code> and <code>UNWATCH</code> (header only).</td>
 </tr>
-
 <tr>
 <td><code>DATA</code></td>
 <td>18</td>
 <td>Success response to <code>QUERY</code> and <code>RUN</code> (with data).</td>
 </tr>
-
 <tr>
 <td><code>ERROR</code></td>
 <td>19</td>
@@ -4712,36 +4668,23 @@ Needs to be stored as <strong>16-bit, Little Endian</strong>.</p>
 </tr>
 </tbody>
 </table>
-
 <h2 id="example">Example</h2>
-
 <p>As an example we create an authentication package for the default <em>admin</em> user with password <em>pass</em>.</p>
-
 <p>This is the package data for our authentication request:</p>
-
 <p><code>[&quot;admin&quot;, &quot;pass&quot;]</code></p>
-
 <p>Serializing the above using <a href="https://msgpack.org">MessagePack</a> results in the following <code>12</code> bytes:</p>
-
 <p><code>\x92\xa5admin\xa4pass</code></p>
-
-<p>Now we create the header, for this example we just use ID 0:</p>
-
+<p>Now we create the header. For this example we just use ID 0:</p>
 <ul>
 <li>Data length (12) <code>\x0c\x00\x00\x00</code></li>
 <li>Identifier (0) <code>\x00\x00</code></li>
 <li>Auth package type (33) <code>\x21</code></li>
 <li>Inverse type check bit (222) <code>\xde</code></li>
 </ul>
-
 <p>So our total package will be:</p>
-
 <p><code>\x0c\x00\x00\x00\x00\x00\x21\xde\x92\xa5admin\xa4pass</code></p>
-
 <h2 id="more-examples">More examples</h2>
-
 <p>Some more examples:</p>
-
 <ul>
 <li><a href="./ping">sending a ping request</a></li>
 <li><a href="./auth">sending an authentication request</a></li>
@@ -4782,19 +4725,19 @@ Needs to be stored as <strong>16-bit, Little Endian</strong>.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1582628646"></script>
-    <script src="/v0/js/jquery.sticky.js?1582628646"></script>
-    <script src="/v0/js/featherlight.min.js?1582628646"></script>
-    <script src="/v0/js/highlight.pack.js?1582628646"></script>
+    <script src="/v0/js/clipboard.min.js?1583166349"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583166349"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583166349"></script>
+    <script src="/v0/js/jquery.sticky.js?1583166349"></script>
+    <script src="/v0/js/featherlight.min.js?1583166349"></script>
+    <script src="/v0/js/highlight.pack.js?1583166349"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1582628646"></script>
-    <script src="/v0/js/learn.js?1582628646"></script>
-    <script src="/v0/js/hugo-learn.js?1582628646"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583166349"></script>
+    <script src="/v0/js/learn.js?1583166349"></script>
+    <script src="/v0/js/hugo-learn.js?1583166349"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1582628646" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1582628646"></script>
+    <link href="/v0/mermaid/mermaid.css?1583166349" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583166349"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

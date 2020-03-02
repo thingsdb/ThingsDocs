@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="ThingsDB documentation">
 
 
@@ -11,20 +11,20 @@
     <title>Example auth :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/theme.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1582628646" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583166348" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1582628646" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583166348" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1582628646"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583166348"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1582628646"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583166348"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583166348"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583166348"></script>
 
     
   </div>
@@ -4535,13 +4535,10 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#example-username-password">Example username/password</a></li>
-<li><a href="#example-token">Example token</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#example-usernamepassword">Example username/password</a></li>
+    <li><a href="#example-token">Example token</a></li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -4566,94 +4563,58 @@
 
 
 
-
-
 <p>Used for authorizing the socket connection. A successful authentication will respond with <code>OK (17)</code></p>
-
 <p>Authorization can be done by using either a username and password combination or by a token.</p>
-
 <blockquote>
 <p>Syntax username/password</p>
 </blockquote>
-
-<pre><code class="language-none">[username, password]
-</code></pre>
-
-<blockquote>
+<pre><code class="language-none" data-lang="none">[username, password]
+</code></pre><blockquote>
 <p>Syntax token</p>
 </blockquote>
-
-<pre><code class="language-none">&quot;token_string&quot;
-</code></pre>
-
-<h2 id="example-username-password">Example username/password</h2>
-
+<pre><code class="language-none" data-lang="none">&quot;token_string&quot;
+</code></pre><h2 id="example-usernamepassword">Example username/password</h2>
 <p>As an example we create an authentication package for the default <em>admin</em> user with password <em>pass</em>.</p>
-
 <p>This is the package data for our authentication request:</p>
-
 <p><code>[&quot;admin&quot;, &quot;pass&quot;]</code></p>
-
 <p>Serializing the above using <a href="https://msgpack.org">MessagePack</a> results in the following <code>12</code> bytes:</p>
-
 <p><code>\x92\xa5admin\xa4pass</code></p>
-
-<p>Now we create the header, for this example we just use ID 0:</p>
-
+<p>Now we create the header. For this example we just use ID 0:</p>
 <ul>
 <li>Data length (12) <code>\x0c\x00\x00\x00</code></li>
 <li>Identifier (0) <code>\x00\x00</code></li>
 <li>Auth package type (33) <code>\x21</code></li>
 <li>Inverse type check bit (222) <code>\xde</code></li>
 </ul>
-
 <blockquote>
 <p>Sending the <em>Auth</em> package</p>
 </blockquote>
-
 <pre><code>\x0c\x00\x00\x00\x00\x00\x21\xde\x92\xa5admin\xa4pass
-</code></pre>
-
-<blockquote>
+</code></pre><blockquote>
 <p>Responding <em>OK</em> package</p>
 </blockquote>
-
 <pre><code>\x00\x00\x00\x00\x00\x00\x11\xee
-</code></pre>
-
-<h2 id="example-token">Example token</h2>
-
+</code></pre><h2 id="example-token">Example token</h2>
 <p>First, a token is required and can be created using the <a href="../../../thingsdb-api/new_token">new_token()</a> function.</p>
-
 <p>Suppose our token is <code>RzDFlsoucQfDqrwrfGGEtc</code>.</p>
-
 <p>Serializing the token using <a href="https://msgpack.org">MessagePack</a> results in the following <code>23</code> bytes:</p>
-
 <p><code>\xb6RzDFlsoucQfDqrwrfGGEtc</code></p>
-
-<p>Now we create the header, for this example we just use ID 0:</p>
-
+<p>Now we create the header. For this example we just use ID 0:</p>
 <ul>
 <li>Data length (23) <code>\x17\x00\x00\x00</code></li>
 <li>Identifier (0) <code>\x00\x00</code></li>
 <li>Auth package type (33) <code>\x21</code></li>
 <li>Inverse type check bit (222) <code>\xde</code></li>
 </ul>
-
 <blockquote>
 <p>Sending the <em>Auth</em> package</p>
 </blockquote>
-
 <pre><code>\x17\x00\x00\x00\x00\x00\x21\xde\xb6RzDFlsoucQfDqrwrfGGEtc
-</code></pre>
-
-<blockquote>
+</code></pre><blockquote>
 <p>Responding <em>OK</em> package</p>
 </blockquote>
-
 <pre><code>\x00\x00\x00\x00\x00\x00\x11\xee
 </code></pre>
-
 
 <footer class=" footline" >
 	
@@ -4683,19 +4644,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1582628646"></script>
-    <script src="/v0/js/jquery.sticky.js?1582628646"></script>
-    <script src="/v0/js/featherlight.min.js?1582628646"></script>
-    <script src="/v0/js/highlight.pack.js?1582628646"></script>
+    <script src="/v0/js/clipboard.min.js?1583166348"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583166348"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583166348"></script>
+    <script src="/v0/js/jquery.sticky.js?1583166348"></script>
+    <script src="/v0/js/featherlight.min.js?1583166348"></script>
+    <script src="/v0/js/highlight.pack.js?1583166348"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1582628646"></script>
-    <script src="/v0/js/learn.js?1582628646"></script>
-    <script src="/v0/js/hugo-learn.js?1582628646"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583166348"></script>
+    <script src="/v0/js/learn.js?1583166348"></script>
+    <script src="/v0/js/hugo-learn.js?1583166348"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1582628646" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1582628646"></script>
+    <link href="/v0/mermaid/mermaid.css?1583166348" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583166348"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

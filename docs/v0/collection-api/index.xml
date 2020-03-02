@@ -34,7 +34,7 @@ This function does not generate an event.
 Function base64_decode(encoded)
 Arguments    Argument Type Description     encoded str/bytes The string value to decode.    Return value Decoded bytes value is returned.
 Example  This code shows an example for base64_decode:
- encoded = &#39;YmFzZTY0IGVuY29kZWQgc3RyaW5n&#39;; // decode data = base64_decode(encoded); // result is of type bytes assert(type(data) == &#39;bytes&#39;); // return as string str(data);   Return value in JSON format</description>
+ encoded = &#39;YmFzZTY0IGVuY29kZWQgc3RyaW5n&#39;; // decode data = base64_decode(encoded); // result is of type bytes assert(type(data) == &#39;bytes&#39;); // return as string str(data);  Return value in JSON format</description>
     </item>
     
     <item>
@@ -49,7 +49,7 @@ This function does not generate an event.
 Function base64_encode(string)
 Arguments    Argument Type Description     string str/bytes The value to encode.    Return value Encoded str value is returned.
 Example  This code shows an example for base64_encode:
- encoded = base64_encode(&#39;base64 encoded string&#39;); // result is of type str assert(type(encoded) == &#39;str&#39;); // return encoded;   Return value in JSON format</description>
+ encoded = base64_encode(&#39;base64 encoded string&#39;); // result is of type str assert(type(encoded) == &#39;str&#39;); // return encoded;  Return value in JSON format</description>
     </item>
     
     <item>
@@ -71,7 +71,7 @@ Arguments    Argument Type Description     value any (optional) The value where 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/bytes/</guid>
-      <description> Convert a value to a byte sequence. If no value is given, an empty byte sequence is returned.
+      <description>Convert a value to a byte sequence. If no value is given, an empty byte sequence is returned.
 This function does not generate an event.
 Function bytes(value)
 Arguments    Argument Type Description     value any (optional) The value where to create a bytes value for.    </description>
@@ -89,7 +89,7 @@ Function deep()
 Arguments None
 Return value The current deep value for the running query.
 Example  This code uses deep() to return the default deep value:
- deep(); // returns the default since `deep` is not changed   Return value in JSON format</description>
+ deep(); // returns the default since `deep` is not changed  Return value in JSON format</description>
     </item>
     
     <item>
@@ -114,7 +114,7 @@ This function does not generate an event.
 Function err([code, [message]])
 Arguments    Argument Type Description     code int (optional) Integer error code between -127 and -50, defaults to -100.   message str (optional) Optional error message.    Return value An error value.
 Example  This code shows some return values for err():
- [ err(), err(-100, &#39;some error occurred&#39;), err(-101), err(-59), ];   Return value in JSON format</description>
+ [ err(), err(-100, &#39;some error occurred&#39;), err(-101), err(-59), ];  Return value in JSON format</description>
     </item>
     
     <item>
@@ -139,7 +139,7 @@ This function does not generate an event.
 Function has_type(type_name)
 Arguments    Argument Type Description     type_name str (required) Type name to check.    Return value Returns true if a Type with a given name exists and otherwise false.
 Example  This code shows an example use case of has_type():
- has_type(&#39;XXX&#39;);   Return value in JSON format</description>
+ has_type(&#39;XXX&#39;);  Return value in JSON format</description>
     </item>
     
     <item>
@@ -306,7 +306,7 @@ This function does not generate an event.
 Function isnil(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the given value is nil, else false.
 Example  This code shows some return values for isnil():
- [ isnil( nil ), isnil( 0 ), ];   Return value in JSON format</description>
+ [ isnil( nil ), isnil( 0 ), ];  Return value in JSON format</description>
     </item>
     
     <item>
@@ -370,7 +370,8 @@ Arguments    Argument Type Description     value any (required) The value to be 
       <description>This function determines whether the value passed to this function is a tuple or not. At least nested arrays are of kind tuple.
 This function does not generate an event.
 Function istuple(value)
-Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the passed value is a tuple else it returns false.</description>
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true is the passed value is a tuple else it returns false.
+Example  This code shows some return values for istuple():</description>
     </item>
     
     <item>
@@ -397,7 +398,7 @@ This function does not generate an event.
 Function list([value])
 Arguments    Argument Type Description     value set/list/tuple (optional) Optional value to initialize the list.    Return value A new list.
 Example  This code shows some return values for list():
- list( set({}, {}) );   Return value in JSON format</description>
+ list( set({}, {}) );  Return value in JSON format</description>
     </item>
     
     <item>
@@ -421,7 +422,8 @@ Arguments    Argument Type Description     type_name str The name of the Type th
       <guid>https://docs.thingsdb.net/v0/collection-api/new_type/</guid>
       <description>Creates a new Type. This function only creates a new type and does not allow you to specify any fields. With the set_type() function you can define the fields for the new type.
 It is possible to use set_type directly without calling new_type first. However, sometimes you want to cross reference two types so you want both type to exists before calling set_type.
- This function generates an event.</description>
+ This function generates an event.
+Function new_type(type_name)</description>
     </item>
     
     <item>
@@ -437,7 +439,7 @@ Function now()
 Arguments None
 Return value Current timestamp.
 Example  This code shows the current timestamp:
- // current timestamp now();   Example return value in JSON format</description>
+ // current timestamp now();  Example return value in JSON format</description>
     </item>
     
     <item>
@@ -446,12 +448,12 @@ Example  This code shows the current timestamp:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/raise/</guid>
-      <description> Raises an error.
+      <description>Raises an error.
 This function does not generate an event.
 Function raise([error])
 Arguments    Argument Type Description     value error/str (optional) The error to raise.    Return value None
 Example  Some examples on how raise() can be used:
- raise (); // raise a default error &#39;This code is not reached&#39;;  raise (&#39;no licenses left&#39;); // raise with a custom message &#39;This code is not reached&#39;;  raise (value_err()); // raise a value error &#39;This code is not reached&#39;;  </description>
+ raise (); // raise a default error &#39;This code is not reached&#39;; raise (&#39;no licenses left&#39;); // raise with a custom message &#39;This code is not reached&#39;; raise (value_err()); // raise a value error &#39;This code is not reached&#39;; </description>
     </item>
     
     <item>
@@ -590,7 +592,7 @@ This function does not generate an event.
 Function type(value)
 Arguments    Argument Type Description     value any (required) The value to return the type name for.    Return value Type name of the given value.
 Example  Returns the type name of a given value:
- [ type( nil ), type( 42 ), type( 3.14 ), ];   Example return value in JSON format</description>
+ [ type( nil ), type( 42 ), type( 3.14 ), ];  Example return value in JSON format</description>
     </item>
     
     <item>

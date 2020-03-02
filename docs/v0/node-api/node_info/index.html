@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="ThingsDB documentation">
 
 
@@ -11,20 +11,20 @@
     <title>node_info :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/theme.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1582628647" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583166349" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1582628647" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583166349" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1582628647"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583166349"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1582628647"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1582628647"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583166349"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583166349"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1582628647"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583166349"></script>
 
     
   </div>
@@ -4529,18 +4529,16 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#function">Function</a></li>
-<li><a href="#arguments">Arguments</a></li>
-<li><a href="#return-value">Return value</a></li>
-<li><a href="#example">Example</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#function">Function</a></li>
+        <li><a href="#arguments">Arguments</a></li>
+        <li><a href="#return-value">Return value</a></li>
+        <li><a href="#example">Example</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -4565,11 +4563,8 @@
 
 
 
-
-
 <p>Returns information about the node in the selected scope.
 See <a href="../../overview/scopes">scopes</a> for more information on how to target a specific node scope.</p>
-
 <table>
 <thead>
 <tr>
@@ -4577,233 +4572,187 @@ See <a href="../../overview/scopes">scopes</a> for more information on how to ta
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>archive_files</td>
 <td>Number of archive files. May decrease after a full store during <em>away</em> mode.</td>
 </tr>
-
 <tr>
 <td>archived_in_memory</td>
 <td>Number of events which are archived in memory.</td>
 </tr>
-
 <tr>
 <td>cached_names</td>
 <td>Number of <a href="../../overview/names">names</a> cached in memory.</td>
 </tr>
-
 <tr>
 <td>client_port</td>
 <td>Listening for client TCP socket connections on this port.</td>
 </tr>
-
 <tr>
 <td>connected_clients</td>
 <td>Number of connected clients to the node.</td>
 </tr>
-
 <tr>
 <td>db_stored_event_id</td>
 <td>Last stored event ID in full database store.</td>
 </tr>
-
 <tr>
 <td>events_in_queue</td>
 <td>Events which are pending in the queue.</td>
 </tr>
-
 <tr>
 <td>global_committed_event_id</td>
 <td>Lowest known committed event ID by all nodes.</td>
 </tr>
-
 <tr>
 <td>global_stored_event_id</td>
 <td>Lowest known stored event ID by all nodes.</td>
 </tr>
-
 <tr>
 <td>hostname</td>
 <td>Hostname of the node.</td>
 </tr>
-
 <tr>
 <td>http_api_port</td>
 <td>Listening to this HTTP port for API calls.</td>
 </tr>
-
 <tr>
 <td>http_status_port</td>
 <td>Listening to this HTTP port for status, readiness and liveness requests.</td>
 </tr>
-
 <tr>
 <td>ip_support</td>
 <td>Enabled IP support. May be IPv4/IPv6 or both.</td>
 </tr>
-
 <tr>
 <td>libcleri_version</td>
 <td>Cleri language parser library version.</td>
 </tr>
-
 <tr>
 <td>libpcre2_version</td>
 <td>PCRE regular expression library version.</td>
 </tr>
-
 <tr>
 <td>libuv_version</td>
 <td>UV asynchronous library version.</td>
 </tr>
-
 <tr>
 <td>local_committed_event_id</td>
 <td>Last committed event ID on the node.</td>
 </tr>
-
 <tr>
 <td>local_stored_event_id</td>
 <td>Last stored event ID on disk. Store takes place when in <em>away</em> mode.</td>
 </tr>
-
 <tr>
 <td>log_level</td>
 <td>Current log level for the node. May be changed at runtime using <a href="../../node-api/set_log_level">set_log_level(..)</a></td>
 </tr>
-
 <tr>
 <td>msgpack_version</td>
 <td>MessagePack data protocol library version.</td>
 </tr>
-
 <tr>
 <td>next_event_id</td>
 <td>Next free event ID.</td>
 </tr>
-
 <tr>
 <td>next_thing_id</td>
 <td>Next free things ID.</td>
 </tr>
-
 <tr>
 <td>node_id</td>
 <td>The <code>id</code> which is assigned to the node.</td>
 </tr>
-
 <tr>
 <td>node_port</td>
 <td>Listening for node TCP socket connections on this port.</td>
 </tr>
-
 <tr>
 <td>scheduled_backups</td>
 <td>Number of backups scheduled on this node. Only repeated backups or backups which are planned in the future are included.</td>
 </tr>
-
 <tr>
 <td>status</td>
 <td>Current status of the ThingsDB node.</td>
 </tr>
-
 <tr>
 <td>storage_path</td>
 <td>Path used for storing ThingsDB data.</td>
 </tr>
-
 <tr>
 <td>syntax_version</td>
 <td>Language or syntax version. A new version of ThingsDB might also have a new language version.</td>
 </tr>
-
 <tr>
 <td>uptime</td>
 <td>Uptime of the node in seconds.</td>
 </tr>
-
 <tr>
 <td>version</td>
 <td>Version of ThingsDB.</td>
 </tr>
-
 <tr>
 <td>yajl_version</td>
 <td>JSON parser library version.</td>
 </tr>
-
 <tr>
 <td>zone</td>
 <td>Zone number to which the node is assigned. May be changed in the ThingsDB configuration file.</td>
 </tr>
 </tbody>
 </table>
-
 <p>This function does <em>not</em> generate an <a href="../../overview/events">event</a>.</p>
-
 <h3 id="function">Function</h3>
-
 <p><code>node_info()</code></p>
-
 <h3 id="arguments">Arguments</h3>
-
 <p>None</p>
-
 <h3 id="return-value">Return value</h3>
-
 <p>Returns <a href="../../data-types/info">info</a> about the node. Which <em>node</em> is defined by the <a href="../../overview/scopes">scope</a>.</p>
-
 <h3 id="example">Example</h3>
-
 <blockquote>
 <p>This code returns info for the connected node:</p>
 </blockquote>
-
-<pre><code class="language-thingsdb,should_pass,@n">node_info();
-</code></pre>
-
-<blockquote>
+<pre><code class="language-thingsdb,should_pass,@n" data-lang="thingsdb,should_pass,@n">node_info();
+</code></pre><blockquote>
 <p>Example return value in JSON format</p>
 </blockquote>
-
-<pre><code class="language-json">{
-    &quot;archive_files&quot;: 1,
-    &quot;archived_in_memory&quot;: 0,
-    &quot;cached_names&quot;: 2,
-    &quot;client_port&quot;: 9200,
-    &quot;connected_clients&quot;: 1,
-    &quot;db_stored_event_id&quot;: 1,
-    &quot;events_in_queue&quot;: 0,
-    &quot;global_committed_event_id&quot;: 2,
-    &quot;global_stored_event_id&quot;: 2,
-    &quot;hostname&quot;: &quot;node0.local&quot;,
-    &quot;http_api_port&quot;: 9210,
-    &quot;http_status_port&quot;: &quot;disabled&quot;,
-    &quot;ip_support&quot;: &quot;ALL&quot;,
-    &quot;libcleri_version&quot;: &quot;0.12.1&quot;,
-    &quot;libpcre2_version&quot;: &quot;10.32&quot;,
-    &quot;libuv_version&quot;: &quot;1.24.1&quot;,
-    &quot;local_committed_event_id&quot;: 2,
-    &quot;local_stored_event_id&quot;: 2,
-    &quot;log_level&quot;: &quot;WARNING&quot;,
-    &quot;msgpack_version&quot;: &quot;3.2.0&quot;,
-    &quot;next_event_id&quot;: 3,
-    &quot;next_thing_id&quot;: 5,
-    &quot;node_id&quot;: 0,
-    &quot;node_port&quot;: 9220,
-    &quot;scheduled_backups&quot;: 0,
-    &quot;status&quot;: &quot;READY&quot;,
-    &quot;storage_path&quot;: &quot;/var/lib/thingsdb/&quot;,
-    &quot;syntax_version&quot;: &quot;v0&quot;,
-    &quot;uptime&quot;: 7.854678630828857,
-    &quot;version&quot;: &quot;0.2.13&quot;,
-    &quot;yajl_version&quot;: &quot;2.1.0&quot;,
-    &quot;zone&quot;: 0
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;archive_files&#34;</span>: <span style="color:#ae81ff">1</span>,
+    <span style="color:#f92672">&#34;archived_in_memory&#34;</span>: <span style="color:#ae81ff">0</span>,
+    <span style="color:#f92672">&#34;cached_names&#34;</span>: <span style="color:#ae81ff">2</span>,
+    <span style="color:#f92672">&#34;client_port&#34;</span>: <span style="color:#ae81ff">9200</span>,
+    <span style="color:#f92672">&#34;connected_clients&#34;</span>: <span style="color:#ae81ff">1</span>,
+    <span style="color:#f92672">&#34;db_stored_event_id&#34;</span>: <span style="color:#ae81ff">1</span>,
+    <span style="color:#f92672">&#34;events_in_queue&#34;</span>: <span style="color:#ae81ff">0</span>,
+    <span style="color:#f92672">&#34;global_committed_event_id&#34;</span>: <span style="color:#ae81ff">2</span>,
+    <span style="color:#f92672">&#34;global_stored_event_id&#34;</span>: <span style="color:#ae81ff">2</span>,
+    <span style="color:#f92672">&#34;hostname&#34;</span>: <span style="color:#e6db74">&#34;node0.local&#34;</span>,
+    <span style="color:#f92672">&#34;http_api_port&#34;</span>: <span style="color:#ae81ff">9210</span>,
+    <span style="color:#f92672">&#34;http_status_port&#34;</span>: <span style="color:#e6db74">&#34;disabled&#34;</span>,
+    <span style="color:#f92672">&#34;ip_support&#34;</span>: <span style="color:#e6db74">&#34;ALL&#34;</span>,
+    <span style="color:#f92672">&#34;libcleri_version&#34;</span>: <span style="color:#e6db74">&#34;0.12.1&#34;</span>,
+    <span style="color:#f92672">&#34;libpcre2_version&#34;</span>: <span style="color:#e6db74">&#34;10.32&#34;</span>,
+    <span style="color:#f92672">&#34;libuv_version&#34;</span>: <span style="color:#e6db74">&#34;1.24.1&#34;</span>,
+    <span style="color:#f92672">&#34;local_committed_event_id&#34;</span>: <span style="color:#ae81ff">2</span>,
+    <span style="color:#f92672">&#34;local_stored_event_id&#34;</span>: <span style="color:#ae81ff">2</span>,
+    <span style="color:#f92672">&#34;log_level&#34;</span>: <span style="color:#e6db74">&#34;WARNING&#34;</span>,
+    <span style="color:#f92672">&#34;msgpack_version&#34;</span>: <span style="color:#e6db74">&#34;3.2.0&#34;</span>,
+    <span style="color:#f92672">&#34;next_event_id&#34;</span>: <span style="color:#ae81ff">3</span>,
+    <span style="color:#f92672">&#34;next_thing_id&#34;</span>: <span style="color:#ae81ff">5</span>,
+    <span style="color:#f92672">&#34;node_id&#34;</span>: <span style="color:#ae81ff">0</span>,
+    <span style="color:#f92672">&#34;node_port&#34;</span>: <span style="color:#ae81ff">9220</span>,
+    <span style="color:#f92672">&#34;scheduled_backups&#34;</span>: <span style="color:#ae81ff">0</span>,
+    <span style="color:#f92672">&#34;status&#34;</span>: <span style="color:#e6db74">&#34;READY&#34;</span>,
+    <span style="color:#f92672">&#34;storage_path&#34;</span>: <span style="color:#e6db74">&#34;/var/lib/thingsdb/&#34;</span>,
+    <span style="color:#f92672">&#34;syntax_version&#34;</span>: <span style="color:#e6db74">&#34;v0&#34;</span>,
+    <span style="color:#f92672">&#34;uptime&#34;</span>: <span style="color:#ae81ff">7.854678630828857</span>,
+    <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;0.2.13&#34;</span>,
+    <span style="color:#f92672">&#34;yajl_version&#34;</span>: <span style="color:#e6db74">&#34;2.1.0&#34;</span>,
+    <span style="color:#f92672">&#34;zone&#34;</span>: <span style="color:#ae81ff">0</span>
 }
-</code></pre>
-
+</code></pre></div>
 
 <footer class=" footline" >
 	
@@ -4833,19 +4782,19 @@ See <a href="../../overview/scopes">scopes</a> for more information on how to ta
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1582628647"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1582628647"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1582628647"></script>
-    <script src="/v0/js/jquery.sticky.js?1582628647"></script>
-    <script src="/v0/js/featherlight.min.js?1582628647"></script>
-    <script src="/v0/js/highlight.pack.js?1582628647"></script>
+    <script src="/v0/js/clipboard.min.js?1583166349"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583166349"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583166349"></script>
+    <script src="/v0/js/jquery.sticky.js?1583166349"></script>
+    <script src="/v0/js/featherlight.min.js?1583166349"></script>
+    <script src="/v0/js/highlight.pack.js?1583166349"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1582628647"></script>
-    <script src="/v0/js/learn.js?1582628647"></script>
-    <script src="/v0/js/hugo-learn.js?1582628647"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583166349"></script>
+    <script src="/v0/js/learn.js?1583166349"></script>
+    <script src="/v0/js/hugo-learn.js?1583166349"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1582628647" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1582628647"></script>
+    <link href="/v0/mermaid/mermaid.css?1583166349" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583166349"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

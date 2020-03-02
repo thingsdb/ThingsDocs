@@ -11,7 +11,7 @@ Subscribe for watching a node or things in ThingsDB. A successful run request wi
 [scope, ...IDs]
 ```
 
-The `IDs` are the *thing* ID's you want to watch.
+The `IDs` are the *thing*-IDs you want to watch.
 
 {{% notice warning %}}
 The socket needs to be authorized before sending a `watch` request.
@@ -20,11 +20,11 @@ See the [auth example](../auth) for how to authorize a socket connection.
 
 ## Example
 
-As an example we assume that we want to watch a thing with ID 3 for changes. Instead of a single ID, we could add as much ID's as we wanted.
+As an example we assume that we want to watch a thing with ID 3 for mutations. Instead of a single ID, we could add as much IDs as we wanted.
 
 {{% notice info %}}
 ThingsDB will throw a `WARNING` event to you socket connection in case some given ID does not exist within the given collection scope.
-Other ID's will be watched and the response to you watch request will still be `OK (17)`.
+Other IDs will be watched and the response to you watch request will still be `OK (17)`.
 {{% /notice %}}
 
 This is the data we want to pack:
@@ -35,7 +35,7 @@ Serializing the above using [MessagePack](https://msgpack.org) results in the fo
 
 `\x92\xa7//stuff\x03`
 
-Now we create the header, for this example we just use ID 0:
+Now we create the header. For this example we just use ID 0:
 
 - Data length (13) `\x0a\x00\x00\x00`
 - Identifier (0) `\x00\x00`

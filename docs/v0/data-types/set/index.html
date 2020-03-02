@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="ThingsDB documentation">
 
 
@@ -11,20 +11,20 @@
     <title>set :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/theme.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1582628646" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583166349" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1582628646" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583166349" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1582628646"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583166349"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1582628646"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583166349"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583166349"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583166349"></script>
 
     
   </div>
@@ -4529,17 +4529,15 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#methods">Methods</a></li>
-<li><a href="#operators">Operators</a></li>
-<li><a href="#related-functions">Related functions</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#methods">Methods</a></li>
+        <li><a href="#operators">Operators</a></li>
+        <li><a href="#related-functions">Related functions</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -4565,13 +4563,9 @@
 
 
 
-	
-
-<p>A set is a collection which is unordered and can only contain things.
+	<p>A set is a collection which is unordered and can only contain things.
 Each <a href="../thing">thing</a> will only exists once in a collection.</p>
-
 <h3 id="methods">Methods</h3>
-
 <table>
 <thead>
 <tr>
@@ -4579,52 +4573,42 @@ Each <a href="../thing">thing</a> will only exists once in a collection.</p>
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><a href="./add">add</a></td>
 <td>Add things to a set.</td>
 </tr>
-
 <tr>
 <td><a href="./each">each</a></td>
 <td>Iterate over all items in a set.</td>
 </tr>
-
 <tr>
 <td><a href="./filter">filter</a></td>
 <td>Return a new <code>set</code> with things that pass a given test.</td>
 </tr>
-
 <tr>
 <td><a href="./find">find</a></td>
 <td>Returns the first <code>thing</code> which passes a given test.</td>
 </tr>
-
 <tr>
 <td><a href="./has">has</a></td>
 <td>Test if a set contains a given thing.</td>
 </tr>
-
 <tr>
 <td><a href="./len">len</a></td>
 <td>Returns the length of a set.</td>
 </tr>
-
 <tr>
 <td><a href="./map">map</a></td>
 <td>Return an <a href="../list">list</a> with the results of calling a provided closure on every thing.</td>
 </tr>
-
 <tr>
 <td><a href="./remove">remove</a></td>
 <td>Remove things from a set.</td>
 </tr>
 </tbody>
 </table>
-
 <h3 id="operators">Operators</h3>
-
 <table>
 <thead>
 <tr>
@@ -4632,35 +4616,29 @@ Each <a href="../thing">thing</a> will only exists once in a collection.</p>
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td><code>&#124;</code> <em>(union)</em></td>
+<td><!-- raw HTML omitted -->|<!-- raw HTML omitted --> <em>(union)</em></td>
 <td>Set with things from both <code>a</code> and <code>b</code>.</td>
 </tr>
-
 <tr>
 <td><code>&amp;</code> <em>(intersection)</em></td>
 <td>Set with things common to <code>a</code> and <code>b</code>.</td>
 </tr>
-
 <tr>
 <td><code>-</code> <em>(difference)</em></td>
 <td>Set with things in <code>a</code> but not in <code>b</code>.</td>
 </tr>
-
 <tr>
 <td><code>^</code> <em>(symmetric difference)</em></td>
 <td>Set with things in either <code>a</code> or <code>b</code> but not both.</td>
 </tr>
 </tbody>
 </table>
-
 <blockquote>
 <p>Example set operators</p>
 </blockquote>
-
-<pre><code class="language-thingsdb,should_pass">anna = {};
+<pre><code class="language-thingsdb,should_pass" data-lang="thingsdb,should_pass">anna = {};
 cato = {};
 iris = {};
 
@@ -4672,16 +4650,12 @@ assert (a &amp; b == set(cato));                // Intersection
 assert (a - b == set(iris));                // Difference
 assert (a ^ b == set(anna, iris));          // Symmetric difference
 </code></pre>
-
-
 <div class="notices warning" ><p>Be careful using assignment operators on <em>stored</em> sets. Although set operations are processed very efficient, a change to a <em>stored</em> set requires an event. This event is still an <em>assignment</em> and
-will therefore contain the <strong>complete resulting set</strong>. <br />
+will therefore contain the <strong>complete resulting set</strong>.<br>
 In practice this means that it is perfect to write something like <code>set_a |= set_b</code>, but avoid using a stored set like <code>.set_a |= set_b</code>.</p>
 </div>
 
-
 <h3 id="related-functions">Related functions</h3>
-
 <table>
 <thead>
 <tr>
@@ -4689,7 +4663,6 @@ In practice this means that it is perfect to write something like <code>set_a |=
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><a href="../../collection-api/set">set</a></td>
@@ -4729,19 +4702,19 @@ In practice this means that it is perfect to write something like <code>set_a |=
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1582628646"></script>
-    <script src="/v0/js/jquery.sticky.js?1582628646"></script>
-    <script src="/v0/js/featherlight.min.js?1582628646"></script>
-    <script src="/v0/js/highlight.pack.js?1582628646"></script>
+    <script src="/v0/js/clipboard.min.js?1583166349"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583166349"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583166349"></script>
+    <script src="/v0/js/jquery.sticky.js?1583166349"></script>
+    <script src="/v0/js/featherlight.min.js?1583166349"></script>
+    <script src="/v0/js/highlight.pack.js?1583166349"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1582628646"></script>
-    <script src="/v0/js/learn.js?1582628646"></script>
-    <script src="/v0/js/hugo-learn.js?1582628646"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583166349"></script>
+    <script src="/v0/js/learn.js?1583166349"></script>
+    <script src="/v0/js/hugo-learn.js?1583166349"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1582628646" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1582628646"></script>
+    <link href="/v0/mermaid/mermaid.css?1583166349" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583166349"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -49,7 +49,7 @@ Function str.len()
 Arguments None
 Return value Returns length of the string.
 Example  This code uses len() to return the length of a string:
- [ {&#39;Hello&#39;.len(); /* 5 bytes */ }, {&#39;π&#39;.len(); /* 2 bytes, not 1 */ }, ]   Return value in JSON format</description>
+ [ {&#39;Hello&#39;.len(); /* 5 bytes */ }, {&#39;π&#39;.len(); /* 2 bytes, not 1 */ }, ]  Return value in JSON format</description>
     </item>
     
     <item>
@@ -58,14 +58,14 @@ Example  This code uses len() to return the length of a string:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/str/lower/</guid>
-      <description> Return a new string in which all case-based characters are in lower case.
+      <description>Return a new string in which all case-based characters are in lower case.
 This function does not generate an event.
 Function str.lower()
 Arguments None
 Return value Returns a new string with all characters in lower case.
 Example  Example using lower():
- &#39;Hello World!!&#39;.lower();   Return value in JSON format
- &amp;quot;hello world!!&amp;quot;  </description>
+ &#39;Hello World!!&#39;.lower();  Return value in JSON format
+ &amp;#34;hello world!!&amp;#34; </description>
     </item>
     
     <item>
@@ -100,14 +100,14 @@ Example  Examples using test():</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/str/upper/</guid>
-      <description> Return a new string in which all case-based characters are in upper case.
+      <description>Return a new string in which all case-based characters are in upper case.
 This function does not generate an event.
 Function str.upper()
 Arguments None
 Return value Returns a new string with all characters in upper case.
 Example  Example using upper():
- &#39;Hello World!!&#39;.upper();   Return value in JSON format
- &amp;quot;HELLO WORLD!!&amp;quot;  </description>
+ &#39;Hello World!!&#39;.upper();  Return value in JSON format
+ &amp;#34;HELLO WORLD!!&amp;#34; </description>
     </item>
     
   </channel>

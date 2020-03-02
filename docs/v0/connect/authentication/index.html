@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="ThingsDB documentation">
 
 
@@ -11,20 +11,20 @@
     <title>Authentication :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/theme.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1582628646" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583166348" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1582628646" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583166348" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1582628646"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583166348"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1582628646"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583166348"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583166348"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583166348"></script>
 
     
   </div>
@@ -4529,12 +4529,9 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#token-authentication">Token authentication</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#token-authentication">Token authentication</a></li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -4559,55 +4556,41 @@
 
 
 
-
-
 <p>ThingsDB supports authentication by using a <em>user</em> and <em>password</em> combination, or with a <em>token</em>. A default user <code>admin</code> with password <code>pass</code> is created on a fresh installation.
 If you did not yet change the default password, you might want to jump to <a href="../../thingsdb-api/set_password">set password</a> or jump to <a href="#token-authentication">token authentication</a>.</p>
-
 <p>It might be a good idea to create a <a href="../../thingsdb-api/new_user">new user</a> with minimal privileges and add a <a href="../../thingsdb-api/new_token">new token</a> for this user.
 See the <a href="../../thingsdb-api/grant">grant</a> and <a href="../../thingsdb-api/revoke">revoke</a> functions for managing privileges for a user.</p>
-
 
 <div class="notices note" ><p>For connecting to ThingsDB with a auto-reconnect client, <code>WATCH</code> privileges on the <code>.node</code> scope are required.</p>
 </div>
 
-
 <h2 id="token-authentication">Token authentication</h2>
-
 <p>This is a small tutorial to create a <em>token</em> and remove the <em>password</em> for the default <code>admin</code> user.
 This can be done with any client but in this tutorial the <a href="../http-api">HTTP API</a> is used with simple <code>curl</code>
 commands.</p>
-
 <p>First we create a new token, and then we remove the password from the <code>admin</code> user.
 Although this could be done in one step, we do this in <em>two</em> steps to be sure the new token
 works before removing the password.</p>
-
 <blockquote>
 <p>Replace <code>127.0.0.1:9210</code> with the address and port where your node is listening on for API requests</p>
 </blockquote>
-
-<pre><code class="language-bash">curl --location --request POST 'http://127.0.0.1:9210/thingsdb' \
---header 'Content-Type: application/json' \
---user admin:pass \
---data-raw '{
-    &quot;type&quot;: &quot;query&quot;,
-    &quot;code&quot;: &quot;new_token('\''admin'\'');&quot;
-}'
-</code></pre>
-
-<p>The will return JSON string containing a new token, for example: <code>&quot;YyZcvq7BY3w+VgOTvXzTZp&quot;</code></p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl --location --request POST <span style="color:#e6db74">&#39;http://127.0.0.1:9210/thingsdb&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--header <span style="color:#e6db74">&#39;Content-Type: application/json&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--user admin:pass <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--data-raw <span style="color:#e6db74">&#39;{
+</span><span style="color:#e6db74">    &#34;type&#34;: &#34;query&#34;,
+</span><span style="color:#e6db74">    &#34;code&#34;: &#34;new_token(&#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39;admin&#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39;);&#34;
+</span><span style="color:#e6db74">}&#39;</span>
+</code></pre></div><p>The will return a JSON string containing a new token, for example: <code>&quot;YyZcvq7BY3w+VgOTvXzTZp&quot;</code></p>
 <p>We can now use this token key to remove the password from user <code>admin</code>:</p>
-
-<pre><code class="language-bash">curl --location --request POST 'http://127.0.0.1:9210/thingsdb' \
---header 'Content-Type: application/json' \
---header 'Authorization: Bearer YyZcvq7BY3w+VgOTvXzTZp' \
---data-raw '{
-    &quot;type&quot;: &quot;query&quot;,
-    &quot;code&quot;: &quot;set_password('\''admin'\'', nil);&quot;
-}'
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl --location --request POST <span style="color:#e6db74">&#39;http://127.0.0.1:9210/thingsdb&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--header <span style="color:#e6db74">&#39;Content-Type: application/json&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--header <span style="color:#e6db74">&#39;Authorization: Bearer YyZcvq7BY3w+VgOTvXzTZp&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--data-raw <span style="color:#e6db74">&#39;{
+</span><span style="color:#e6db74">    &#34;type&#34;: &#34;query&#34;,
+</span><span style="color:#e6db74">    &#34;code&#34;: &#34;set_password(&#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39;admin&#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39;, nil);&#34;
+</span><span style="color:#e6db74">}&#39;</span>
+</code></pre></div>
 
 <footer class=" footline" >
 	
@@ -4637,19 +4620,19 @@ works before removing the password.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1582628646"></script>
-    <script src="/v0/js/jquery.sticky.js?1582628646"></script>
-    <script src="/v0/js/featherlight.min.js?1582628646"></script>
-    <script src="/v0/js/highlight.pack.js?1582628646"></script>
+    <script src="/v0/js/clipboard.min.js?1583166348"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583166348"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583166348"></script>
+    <script src="/v0/js/jquery.sticky.js?1583166348"></script>
+    <script src="/v0/js/featherlight.min.js?1583166348"></script>
+    <script src="/v0/js/highlight.pack.js?1583166348"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1582628646"></script>
-    <script src="/v0/js/learn.js?1582628646"></script>
-    <script src="/v0/js/hugo-learn.js?1582628646"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583166348"></script>
+    <script src="/v0/js/learn.js?1583166348"></script>
+    <script src="/v0/js/hugo-learn.js?1583166348"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1582628646" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1582628646"></script>
+    <link href="/v0/mermaid/mermaid.css?1583166348" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583166348"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

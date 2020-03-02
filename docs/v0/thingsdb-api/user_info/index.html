@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="ThingsDB documentation">
 
 
@@ -11,20 +11,20 @@
     <title>user_info :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/theme.css?1582628647" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1582628647" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583166349" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1582628647" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583166349" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1582628647"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583166349"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1582628647"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1582628647"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583166349"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583166349"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1582628647"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583166349"></script>
 
     
   </div>
@@ -4529,18 +4529,16 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#function">Function</a></li>
-<li><a href="#arguments">Arguments</a></li>
-<li><a href="#return-value">Return value</a></li>
-<li><a href="#example">Example</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#function">Function</a></li>
+        <li><a href="#arguments">Arguments</a></li>
+        <li><a href="#return-value">Return value</a></li>
+        <li><a href="#example">Example</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -4565,26 +4563,18 @@
 
 
 
-
-
 <p>Returns information about a user. If no argument is given, this method will return
 information about the current logged in user.</p>
-
 
 <div class="notices note" ><p>This function requires <code>GRANT</code> privileges on the <code>@thingsdb</code> scope when a <code>username</code>
 other then the logged in user is given as argument. For the currently logged in user, <code>READ</code>
 privileges on the <code>@thingsdb</code> scope are sufficient.</p>
 </div>
 
-
 <p>This function does <em>not</em> generate an <a href="../../overview/events">event</a>.</p>
-
 <h3 id="function">Function</h3>
-
 <p><code>user_info([username]);</code></p>
-
 <h3 id="arguments">Arguments</h3>
-
 <table>
 <thead>
 <tr>
@@ -4593,7 +4583,6 @@ privileges on the <code>@thingsdb</code> scope are sufficient.</p>
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>username</td>
@@ -4602,55 +4591,46 @@ privileges on the <code>@thingsdb</code> scope are sufficient.</p>
 </tr>
 </tbody>
 </table>
-
 <h3 id="return-value">Return value</h3>
-
 <p>Returns <a href="../../data-types/info">info</a> about the user.</p>
-
 <h3 id="example">Example</h3>
-
 <blockquote>
 <p>This code returns info for the authenticated user:</p>
 </blockquote>
-
-<pre><code class="language-thingsdb,should_pass,@t">// Without a `username`, info about the currently logged in user is returned
+<pre><code class="language-thingsdb,should_pass,@t" data-lang="thingsdb,should_pass,@t">// Without a `username`, info about the currently logged in user is returned
 user_info();
-</code></pre>
-
-<blockquote>
+</code></pre><blockquote>
 <p>Example output in JSON format:</p>
 </blockquote>
-
-<pre><code class="language-json">{
-    &quot;access&quot;: [
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;access&#34;</span>: [
         {
-            &quot;privileges&quot;: &quot;FULL&quot;,
-            &quot;scope&quot;: &quot;@node&quot;
+            <span style="color:#f92672">&#34;privileges&#34;</span>: <span style="color:#e6db74">&#34;FULL&#34;</span>,
+            <span style="color:#f92672">&#34;scope&#34;</span>: <span style="color:#e6db74">&#34;@node&#34;</span>
         },
         {
-            &quot;privileges&quot;: &quot;FULL&quot;,
-            &quot;scope&quot;: &quot;@thingsdb&quot;
+            <span style="color:#f92672">&#34;privileges&#34;</span>: <span style="color:#e6db74">&#34;FULL&#34;</span>,
+            <span style="color:#f92672">&#34;scope&#34;</span>: <span style="color:#e6db74">&#34;@thingsdb&#34;</span>
         },
         {
-            &quot;privileges&quot;: &quot;FULL&quot;,
-            &quot;scope&quot;: &quot;@collection:stuff&quot;
+            <span style="color:#f92672">&#34;privileges&#34;</span>: <span style="color:#e6db74">&#34;FULL&#34;</span>,
+            <span style="color:#f92672">&#34;scope&#34;</span>: <span style="color:#e6db74">&#34;@collection:stuff&#34;</span>
         }
     ],
-    &quot;created_at&quot;: 1573981254,
-    &quot;has_password&quot;: true,
-    &quot;name&quot;: &quot;admin&quot;,
-    &quot;tokens&quot;: [
+    <span style="color:#f92672">&#34;created_at&#34;</span>: <span style="color:#ae81ff">1573981254</span>,
+    <span style="color:#f92672">&#34;has_password&#34;</span>: <span style="color:#66d9ef">true</span>,
+    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;admin&#34;</span>,
+    <span style="color:#f92672">&#34;tokens&#34;</span>: [
         {
-            &quot;created_on&quot;: &quot;2019-11-17 09:25:36Z&quot;,
-            &quot;expiration_time&quot;: &quot;2020-11-17 09:25:36Z&quot;,
-            &quot;key&quot;: &quot;QpVmHOsfQaKKpjpOkW0SUt&quot;,
-            &quot;status&quot;: &quot;OK&quot;
+            <span style="color:#f92672">&#34;created_on&#34;</span>: <span style="color:#e6db74">&#34;2019-11-17 09:25:36Z&#34;</span>,
+            <span style="color:#f92672">&#34;expiration_time&#34;</span>: <span style="color:#e6db74">&#34;2020-11-17 09:25:36Z&#34;</span>,
+            <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;QpVmHOsfQaKKpjpOkW0SUt&#34;</span>,
+            <span style="color:#f92672">&#34;status&#34;</span>: <span style="color:#e6db74">&#34;OK&#34;</span>
         }
     ],
-    &quot;user_id&quot;: 1
+    <span style="color:#f92672">&#34;user_id&#34;</span>: <span style="color:#ae81ff">1</span>
 }
-</code></pre>
-
+</code></pre></div>
 
 <footer class=" footline" >
 	
@@ -4680,19 +4660,19 @@ user_info();
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1582628647"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1582628647"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1582628647"></script>
-    <script src="/v0/js/jquery.sticky.js?1582628647"></script>
-    <script src="/v0/js/featherlight.min.js?1582628647"></script>
-    <script src="/v0/js/highlight.pack.js?1582628647"></script>
+    <script src="/v0/js/clipboard.min.js?1583166349"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583166349"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583166349"></script>
+    <script src="/v0/js/jquery.sticky.js?1583166349"></script>
+    <script src="/v0/js/featherlight.min.js?1583166349"></script>
+    <script src="/v0/js/highlight.pack.js?1583166349"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1582628647"></script>
-    <script src="/v0/js/learn.js?1582628647"></script>
-    <script src="/v0/js/hugo-learn.js?1582628647"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583166349"></script>
+    <script src="/v0/js/learn.js?1583166349"></script>
+    <script src="/v0/js/hugo-learn.js?1583166349"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1582628647" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1582628647"></script>
+    <link href="/v0/mermaid/mermaid.css?1583166349" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583166349"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

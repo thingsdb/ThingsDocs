@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="ThingsDB documentation">
 
 
@@ -11,20 +11,20 @@
     <title>Go :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/theme.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1582628646" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583166348" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1582628646" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583166348" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1582628646"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583166348"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1582628646"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583166348"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583166348"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583166348"></script>
 
     
   </div>
@@ -4529,17 +4529,15 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#installation">Installation</a></li>
-<li><a href="#quick-usage">Quick usage</a></li>
-<li><a href="#more-info">More info</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#quick-usage">Quick usage</a></li>
+        <li><a href="#more-info">More info</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -4564,103 +4562,88 @@
 
 
 
-
-
 <h3 id="installation">Installation</h3>
-
 <p>Simple install the package to your <a href="https://github.com/golang/go/wiki/GOPATH">$GOPATH</a> with the <a href="https://golang.org/cmd/go/">go tool</a> from shell:</p>
-
-<pre><code class="language-shell">$ go get github.com/thingsdb/go-thingsdb
-</code></pre>
-
-<p>Make sure <a href="https://git-scm.com/downloads">Git</a> is installed on your machine and in your system&rsquo;s PATH.</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ go get github.com/thingsdb/go-thingsdb
+</code></pre></div><p>Make sure <a href="https://git-scm.com/downloads">Git</a> is installed on your machine and in your system&rsquo;s PATH.</p>
 <h3 id="quick-usage">Quick usage</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 
-<pre><code class="language-go">package main
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;crypto/tls&#34;</span>
+	<span style="color:#e6db74">&#34;fmt&#34;</span>
 
-import (
-	&quot;crypto/tls&quot;
-	&quot;fmt&quot;
-
-	thingsdb &quot;github.com/thingsdb/go-thingsdb&quot;
+	<span style="color:#a6e22e">thingsdb</span> <span style="color:#e6db74">&#34;github.com/thingsdb/go-thingsdb&#34;</span>
 )
 
-func example(conn *thingsdb.Conn, res chan interface{}) {
-	var data interface{}
-	var err error
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">example</span>(<span style="color:#a6e22e">conn</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">thingsdb</span>.<span style="color:#a6e22e">Conn</span>, <span style="color:#a6e22e">res</span> <span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">interface</span>{}) {
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">data</span> <span style="color:#66d9ef">interface</span>{}
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>
 
-	if err := conn.Connect(); err != nil {
-		res &lt;- err
-		return
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">conn</span>.<span style="color:#a6e22e">Connect</span>(); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+		<span style="color:#a6e22e">res</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">err</span>
+		<span style="color:#66d9ef">return</span>
 	}
 
-	defer conn.Close()
+	<span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">conn</span>.<span style="color:#a6e22e">Close</span>()
 
-	if err := conn.AuthToken(&quot;Fai6NmH7QYxA6WLYPdtgcy&quot;); err != nil {
-		res &lt;- err
-		return
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">conn</span>.<span style="color:#a6e22e">AuthToken</span>(<span style="color:#e6db74">&#34;Fai6NmH7QYxA6WLYPdtgcy&#34;</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+		<span style="color:#a6e22e">res</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">err</span>
+		<span style="color:#66d9ef">return</span>
 	}
 
-	if data, err = conn.Query(
-		&quot;//Doc&quot;,                // Scope
-		&quot;.greetings.choice();&quot;, // ThingsDB code
-		nil, // Optional array with variable (may be `nil`)
-		120, // Timeout in seconds
-	); err != nil {
-		res &lt;- err
-		return
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">data</span>, <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">conn</span>.<span style="color:#a6e22e">Query</span>(
+		<span style="color:#e6db74">&#34;//Doc&#34;</span>,                <span style="color:#75715e">// Scope
+</span><span style="color:#75715e"></span>		<span style="color:#e6db74">&#34;.greetings.choice();&#34;</span>, <span style="color:#75715e">// ThingsDB code
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">nil</span>, <span style="color:#75715e">// Optional array with variable (may be `nil`)
+</span><span style="color:#75715e"></span>		<span style="color:#ae81ff">120</span>, <span style="color:#75715e">// Timeout in seconds
+</span><span style="color:#75715e"></span>	); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+		<span style="color:#a6e22e">res</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">err</span>
+		<span style="color:#66d9ef">return</span>
 	}
 
-	res &lt;- data
+	<span style="color:#a6e22e">res</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data</span>
 }
 
-func main() {
-	// Only required for a secure connection
-	conf := &amp;tls.Config{
-		InsecureSkipVerify: false,
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#75715e">// Only required for a secure connection
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">conf</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">tls</span>.<span style="color:#a6e22e">Config</span>{
+		<span style="color:#a6e22e">InsecureSkipVerify</span>: <span style="color:#66d9ef">false</span>,
 	}
 
-	// In this example we will use a channel to read the example response
-	res := make(chan interface{})
+	<span style="color:#75715e">// In this example we will use a channel to read the example response
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">res</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">interface</span>{})
 
-	// Create a new ThingsDB connection
-	conn := thingsdb.NewConn(&quot;playground.thingsdb.net&quot;, 9400, conf)
+	<span style="color:#75715e">// Create a new ThingsDB connection
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">conn</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">thingsdb</span>.<span style="color:#a6e22e">NewConn</span>(<span style="color:#e6db74">&#34;playground.thingsdb.net&#34;</span>, <span style="color:#ae81ff">9400</span>, <span style="color:#a6e22e">conf</span>)
 
-	// Set-up a log channel, this is not required
-	conn.LogCh = make(chan string)
+	<span style="color:#75715e">// Set-up a log channel, this is not required
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">conn</span>.<span style="color:#a6e22e">LogCh</span> = make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">string</span>)
 
-	// Start our example
-	go example(conn, res)
+	<span style="color:#75715e">// Start our example
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">go</span> <span style="color:#a6e22e">example</span>(<span style="color:#a6e22e">conn</span>, <span style="color:#a6e22e">res</span>)
 
-	// Log handler
-	go func() {
-		for {
-			msg := &lt;-conn.LogCh
-			fmt.Printf(&quot;Log: %s\n&quot;, msg)
+	<span style="color:#75715e">// Log handler
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">go</span> <span style="color:#66d9ef">func</span>() {
+		<span style="color:#66d9ef">for</span> {
+			<span style="color:#a6e22e">msg</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">conn</span>.<span style="color:#a6e22e">LogCh</span>
+			<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Log: %s\n&#34;</span>, <span style="color:#a6e22e">msg</span>)
 		}
 	}()
 
-	// Wait for the response
-	data := &lt;-res
+	<span style="color:#75715e">// Wait for the response
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">data</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">res</span>
 
-	// Print the response (or error)
-	fmt.Printf(&quot;%v\n&quot;, data)
+	<span style="color:#75715e">// Print the response (or error)
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;%v\n&#34;</span>, <span style="color:#a6e22e">data</span>)
 }
-</code></pre>
-
-<blockquote>
+</code></pre></div><blockquote>
 <p>Possible response</p>
 </blockquote>
-
-<pre><code class="language-bash">Log: connected to playground.thingsdb.net:9400 using a secure connection
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Log: connected to playground.thingsdb.net:9400 using a secure connection
 Welcome at ThingsDB!
-</code></pre>
-
-<h3 id="more-info">More info</h3>
-
+</code></pre></div><h3 id="more-info">More info</h3>
 <p>A more complete description of the Go client can be found in the link below.</p>
-
 <ul>
 <li><a href="https://github.com/thingsdb/go-thingsdb#readme">https://github.com/thingsdb/go-thingsdb#readme</a></li>
 </ul>
@@ -4694,19 +4677,19 @@ Welcome at ThingsDB!
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1582628646"></script>
-    <script src="/v0/js/jquery.sticky.js?1582628646"></script>
-    <script src="/v0/js/featherlight.min.js?1582628646"></script>
-    <script src="/v0/js/highlight.pack.js?1582628646"></script>
+    <script src="/v0/js/clipboard.min.js?1583166348"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583166348"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583166348"></script>
+    <script src="/v0/js/jquery.sticky.js?1583166348"></script>
+    <script src="/v0/js/featherlight.min.js?1583166348"></script>
+    <script src="/v0/js/highlight.pack.js?1583166348"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1582628646"></script>
-    <script src="/v0/js/learn.js?1582628646"></script>
-    <script src="/v0/js/hugo-learn.js?1582628646"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583166348"></script>
+    <script src="/v0/js/learn.js?1583166348"></script>
+    <script src="/v0/js/hugo-learn.js?1583166348"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1582628646" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1582628646"></script>
+    <link href="/v0/mermaid/mermaid.css?1583166348" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583166348"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

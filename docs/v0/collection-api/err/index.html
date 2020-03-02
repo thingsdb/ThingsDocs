@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="ThingsDB documentation">
 
 
@@ -11,20 +11,20 @@
     <title>err :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/theme.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1582628646" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583166348" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1582628646" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583166348" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1582628646"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583166348"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1582628646"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583166348"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583166348"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583166348"></script>
 
     
   </div>
@@ -4529,18 +4529,16 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#function">Function</a></li>
-<li><a href="#arguments">Arguments</a></li>
-<li><a href="#return-value">Return value</a></li>
-<li><a href="#example">Example</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#function">Function</a></li>
+        <li><a href="#arguments">Arguments</a></li>
+        <li><a href="#return-value">Return value</a></li>
+        <li><a href="#example">Example</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -4565,18 +4563,11 @@
 
 
 
-
-
 <p>Returns an <a href="../../data-types/error">error</a>.</p>
-
 <p>This function does <em>not</em> generate an <a href="../../overview/events">event</a>.</p>
-
 <h3 id="function">Function</h3>
-
 <p><code>err([code, [message]])</code></p>
-
 <h3 id="arguments">Arguments</h3>
-
 <table>
 <thead>
 <tr>
@@ -4585,14 +4576,12 @@
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>code</td>
 <td>int (optional)</td>
 <td>Integer error code between -127 and -50, defaults to -100.</td>
 </tr>
-
 <tr>
 <td>message</td>
 <td>str (optional)</td>
@@ -4600,53 +4589,44 @@
 </tr>
 </tbody>
 </table>
-
 <h3 id="return-value">Return value</h3>
-
 <p>An error value.</p>
-
 <h3 id="example">Example</h3>
-
 <blockquote>
-<p>This code shows some return values for <strong><em>err()</em></strong>:</p>
+<p>This code shows some return values for <em><strong>err()</strong></em>:</p>
 </blockquote>
-
-<pre><code class="language-thingsdb,json_response">[
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">[
     err(),
     err(-100, 'some error occurred'),
     err(-101),
     err(-59),
 ];
-</code></pre>
-
-<blockquote>
+</code></pre><blockquote>
 <p>Return value in JSON format</p>
 </blockquote>
-
-<pre><code class="language-json">[
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
     {
-        &quot;!&quot;: &quot;err(-100)&quot;,
-        &quot;error_code&quot;: -100,
-        &quot;error_msg&quot;: &quot;error:-100&quot;
+        <span style="color:#f92672">&#34;!&#34;</span>: <span style="color:#e6db74">&#34;err(-100)&#34;</span>,
+        <span style="color:#f92672">&#34;error_code&#34;</span>: <span style="color:#ae81ff">-100</span>,
+        <span style="color:#f92672">&#34;error_msg&#34;</span>: <span style="color:#e6db74">&#34;error:-100&#34;</span>
     },
     {
-        &quot;!&quot;: &quot;err(-100)&quot;,
-        &quot;error_code&quot;: -100,
-        &quot;error_msg&quot;: &quot;some error occurred&quot;
+        <span style="color:#f92672">&#34;!&#34;</span>: <span style="color:#e6db74">&#34;err(-100)&#34;</span>,
+        <span style="color:#f92672">&#34;error_code&#34;</span>: <span style="color:#ae81ff">-100</span>,
+        <span style="color:#f92672">&#34;error_msg&#34;</span>: <span style="color:#e6db74">&#34;some error occurred&#34;</span>
     },
     {
-        &quot;!&quot;: &quot;err(-101)&quot;,
-        &quot;error_code&quot;: -101,
-        &quot;error_msg&quot;: &quot;error:-101&quot;
+        <span style="color:#f92672">&#34;!&#34;</span>: <span style="color:#e6db74">&#34;err(-101)&#34;</span>,
+        <span style="color:#f92672">&#34;error_code&#34;</span>: <span style="color:#ae81ff">-101</span>,
+        <span style="color:#f92672">&#34;error_msg&#34;</span>: <span style="color:#e6db74">&#34;error:-101&#34;</span>
     },
     {
-        &quot;!&quot;: &quot;overflow_err()&quot;,
-        &quot;error_code&quot;: -59,
-        &quot;error_msg&quot;: &quot;integer overflow&quot;
+        <span style="color:#f92672">&#34;!&#34;</span>: <span style="color:#e6db74">&#34;overflow_err()&#34;</span>,
+        <span style="color:#f92672">&#34;error_code&#34;</span>: <span style="color:#ae81ff">-59</span>,
+        <span style="color:#f92672">&#34;error_msg&#34;</span>: <span style="color:#e6db74">&#34;integer overflow&#34;</span>
     }
 ]
-</code></pre>
-
+</code></pre></div>
 
 <footer class=" footline" >
 	
@@ -4676,19 +4656,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1582628646"></script>
-    <script src="/v0/js/jquery.sticky.js?1582628646"></script>
-    <script src="/v0/js/featherlight.min.js?1582628646"></script>
-    <script src="/v0/js/highlight.pack.js?1582628646"></script>
+    <script src="/v0/js/clipboard.min.js?1583166348"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583166348"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583166348"></script>
+    <script src="/v0/js/jquery.sticky.js?1583166348"></script>
+    <script src="/v0/js/featherlight.min.js?1583166348"></script>
+    <script src="/v0/js/highlight.pack.js?1583166348"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1582628646"></script>
-    <script src="/v0/js/learn.js?1582628646"></script>
-    <script src="/v0/js/hugo-learn.js?1582628646"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583166348"></script>
+    <script src="/v0/js/learn.js?1583166348"></script>
+    <script src="/v0/js/hugo-learn.js?1583166348"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1582628646" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1582628646"></script>
+    <link href="/v0/mermaid/mermaid.css?1583166348" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583166348"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

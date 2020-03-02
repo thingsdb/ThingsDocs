@@ -40,7 +40,7 @@ Return value List with backup schedule info for all backup schedules in the sele
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/node-api/counters/</guid>
-      <description>Returns counters for the ThingsDB node in the selected scope. Counters start all at zero when ThingsDB is started, or when the counters are reset by using reset_counters()&amp;rsquo;.
+      <description>Returns counters for the ThingsDB node in the selected scope. Counters start all at zero when ThingsDB is started, or when the counters are reset by using reset_counters()&#39;.
 Counters give information about things, queries and events. If you suspect failed queries, then counters might provide you with more information.
    Counter Description     average_event_duration The average event duration in seconds.   average_query_duration The average query duration in seconds.</description>
     </item>
@@ -69,7 +69,7 @@ This function does not generate an event.
 Function has_backup(ID)
 Arguments    Argument Type Description     ID int (required) Backup ID to check.    Return value Returns true a backup with a given ID exists and otherwise false.
 Example  This code shows an example use case of has_backup():
- has_backup(123);   Return value in JSON format</description>
+ has_backup(123);  Return value in JSON format</description>
     </item>
     
     <item>
@@ -109,14 +109,14 @@ See the example recovery section below on how to recover from a backup file.</de
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/node-api/reset_counters/</guid>
-      <description> Resets the counters for the ThingsDB node you are connected too. Other nodes are not affected.
+      <description>Resets the counters for the ThingsDB node you are connected too. Other nodes are not affected.
 This function does not generate an event.
 Function reset_counters();
 Arguments None
 Return value Returns nil.
 Example  This code will reset the counters on a node:
- // resets counters on `localhost:9200` reset_counters();   Example return value in JSON format (the new collection id)
- null  </description>
+ // resets counters on `localhost:9200` reset_counters();  Example return value in JSON format (the new collection id)
+ null </description>
     </item>
     
     <item>
@@ -128,7 +128,7 @@ Example  This code will reset the counters on a node:
       <description>Change the log level for the node in the selected scope.
 ThingsDB will then log all levels greater than or equal to the specified level. For example, a default log_level of warning will log warning, error and critical messages.
 This function does not generate an event.
-Log Levels    Name Int Description     DEBUG 0 Display debug messages (can result in large amount of logging).</description>
+Log Levels    Name Int Description     DEBUG 0 Display debug messages (can result in large amount of logging).   INFO 1 Informational messages.</description>
     </item>
     
     <item>

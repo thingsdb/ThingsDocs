@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="ThingsDB documentation">
 
 
@@ -11,20 +11,20 @@
     <title>Slices :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/theme.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1582628646" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583166349" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1582628646" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583166349" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1582628646"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583166349"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1582628646"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583166349"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583166349"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583166349"></script>
 
     
   </div>
@@ -4528,7 +4528,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -4553,24 +4553,18 @@
 
 
 <p>The following slice notation can be used:</p>
-
-<pre><code class="language-thingsdb,syntax_only">list[start:stop:step]
-</code></pre>
-
-<p>The <code>start</code> and <code>stop</code> value will default to <code>nil</code> and <code>step</code> has a default value of <code>1</code>.
+<pre><code class="language-thingsdb,syntax_only" data-lang="thingsdb,syntax_only">list[start:stop:step]
+</code></pre><p>The <code>start</code> and <code>stop</code> value will default to <code>nil</code> and <code>step</code> has a default value of <code>1</code>.
 For understanding slices it is important to remember that the <code>:stop</code> value represents the
 first value that is <em>not</em> in the selected slice. This means that the
 difference between <code>stop</code> and <code>start</code> is the number of selected elements.
 (assuming that <code>step</code> is the default value <code>1</code>)</p>
-
 <p>Another feature is that <em>negative</em> numbers may be used. For <code>start</code> and <code>stop</code> this means that it
 will count from the end of the array instead of the beginning.</p>
-
 <blockquote>
 <p>Some examples using <code>start</code> and <code>stop</code> to select some elements:</p>
 </blockquote>
-
-<pre><code class="language-thingsdb,json_response">months = ['January', 'February', 'March', 'April',
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">months = ['January', 'February', 'March', 'April',
           'May', 'June', 'July', 'August',
           'September', 'October', 'November', 'December'];
 
@@ -4579,44 +4573,37 @@ will count from the end of the array instead of the beginning.</p>
     { months[-2:];  /* last two months */ },
     { months[:-2];  /* all, except the last two months */ },
 ];
-</code></pre>
-
-<blockquote>
+</code></pre><blockquote>
 <p>&hellip;and the corresponding result in JSON format:</p>
 </blockquote>
-
-<pre><code class="language-json">[
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
     [
-        &quot;January&quot;,
-        &quot;February&quot;
+        <span style="color:#e6db74">&#34;January&#34;</span>,
+        <span style="color:#e6db74">&#34;February&#34;</span>
     ],
     [
-        &quot;November&quot;,
-        &quot;December&quot;
+        <span style="color:#e6db74">&#34;November&#34;</span>,
+        <span style="color:#e6db74">&#34;December&#34;</span>
     ],
     [
-        &quot;January&quot;,
-        &quot;February&quot;,
-        &quot;March&quot;,
-        &quot;April&quot;,
-        &quot;May&quot;,
-        &quot;June&quot;,
-        &quot;July&quot;,
-        &quot;August&quot;,
-        &quot;September&quot;,
-        &quot;October&quot;
+        <span style="color:#e6db74">&#34;January&#34;</span>,
+        <span style="color:#e6db74">&#34;February&#34;</span>,
+        <span style="color:#e6db74">&#34;March&#34;</span>,
+        <span style="color:#e6db74">&#34;April&#34;</span>,
+        <span style="color:#e6db74">&#34;May&#34;</span>,
+        <span style="color:#e6db74">&#34;June&#34;</span>,
+        <span style="color:#e6db74">&#34;July&#34;</span>,
+        <span style="color:#e6db74">&#34;August&#34;</span>,
+        <span style="color:#e6db74">&#34;September&#34;</span>,
+        <span style="color:#e6db74">&#34;October&#34;</span>
     ]
 ]
-</code></pre>
-
-<p>Another feature is the <code>step</code> argument, which also may be <em>negative</em> to reverse the
+</code></pre></div><p>Another feature is the <code>step</code> argument, which also may be <em>negative</em> to reverse the
 slice direction.</p>
-
 <blockquote>
 <p>Some examples using the <code>step</code> value:</p>
 </blockquote>
-
-<pre><code class="language-thingsdb,json_response">months = ['January', 'February', 'March', 'April',
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">months = ['January', 'February', 'March', 'April',
           'May', 'June', 'July', 'August',
           'September', 'October', 'November', 'December'];
 
@@ -4624,84 +4611,66 @@ slice direction.</p>
     { months[::2];   /* only the odd months */ },
     { months[::-1];  /* months in reverse order */ },
 ];
-</code></pre>
-
-<blockquote>
+</code></pre><blockquote>
 <p>&hellip;the corresponding result in JSON format:</p>
 </blockquote>
-
-<pre><code class="language-json">[
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
     [
-        &quot;January&quot;,
-        &quot;March&quot;,
-        &quot;May&quot;,
-        &quot;July&quot;,
-        &quot;September&quot;,
-        &quot;November&quot;
+        <span style="color:#e6db74">&#34;January&#34;</span>,
+        <span style="color:#e6db74">&#34;March&#34;</span>,
+        <span style="color:#e6db74">&#34;May&#34;</span>,
+        <span style="color:#e6db74">&#34;July&#34;</span>,
+        <span style="color:#e6db74">&#34;September&#34;</span>,
+        <span style="color:#e6db74">&#34;November&#34;</span>
     ],
     [
-        &quot;December&quot;,
-        &quot;November&quot;,
-        &quot;October&quot;,
-        &quot;September&quot;,
-        &quot;August&quot;,
-        &quot;July&quot;,
-        &quot;June&quot;,
-        &quot;May&quot;,
-        &quot;April&quot;,
-        &quot;March&quot;,
-        &quot;February&quot;,
-        &quot;January&quot;
+        <span style="color:#e6db74">&#34;December&#34;</span>,
+        <span style="color:#e6db74">&#34;November&#34;</span>,
+        <span style="color:#e6db74">&#34;October&#34;</span>,
+        <span style="color:#e6db74">&#34;September&#34;</span>,
+        <span style="color:#e6db74">&#34;August&#34;</span>,
+        <span style="color:#e6db74">&#34;July&#34;</span>,
+        <span style="color:#e6db74">&#34;June&#34;</span>,
+        <span style="color:#e6db74">&#34;May&#34;</span>,
+        <span style="color:#e6db74">&#34;April&#34;</span>,
+        <span style="color:#e6db74">&#34;March&#34;</span>,
+        <span style="color:#e6db74">&#34;February&#34;</span>,
+        <span style="color:#e6db74">&#34;January&#34;</span>
     ]
 ]
-</code></pre>
-
-<p>Slices can also be used to replace the <a href="../../data-types/list/splice">splice</a> function.</p>
-
+</code></pre></div><p>Slices can also be used to replace the <a href="../../data-types/list/splice">splice</a> function.</p>
 
 <div class="notices note" ><p>It is not possible to use the <code>step</code> value when assigning items using the slice syntax.</p>
 </div>
 
-
 <blockquote>
 <p>Example using the slice syntax to replace items in a list:</p>
 </blockquote>
-
-<pre><code class="language-thingsdb,json_response">months = ['January', 'February', 'XXX', 'May'];
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">months = ['January', 'February', 'XXX', 'May'];
 
 /* Replace 'XXX' with 'March' and 'April' */
 months[2:3] = ['March', 'April'];
 
 /* Return result */
 months;
-</code></pre>
-
-<blockquote>
+</code></pre><blockquote>
 <p>Once again the result in JSON format:</p>
 </blockquote>
-
-<pre><code class="language-json">[
-    &quot;January&quot;,
-    &quot;February&quot;,
-    &quot;March&quot;,
-    &quot;April&quot;,
-    &quot;May&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
+    <span style="color:#e6db74">&#34;January&#34;</span>,
+    <span style="color:#e6db74">&#34;February&#34;</span>,
+    <span style="color:#e6db74">&#34;March&#34;</span>,
+    <span style="color:#e6db74">&#34;April&#34;</span>,
+    <span style="color:#e6db74">&#34;May&#34;</span>
 ]
-</code></pre>
-
-<p>Instead of <a href="../../data-types/list">lists</a> and <a href="../../data-types/tuple">tuples</a> it also possible to use the slice notion on <a href="../../data-types/str">strings</a></p>
-
+</code></pre></div><p>Instead of <a href="../../data-types/list">lists</a> and <a href="../../data-types/tuple">tuples</a> it also possible to use the slice notion on <a href="../../data-types/str">strings</a></p>
 <blockquote>
 <p>Slice on string example:</p>
 </blockquote>
-
-<pre><code class="language-thingsdb,json_response">/* Return 'abcdef' in reverse order */
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">/* Return 'abcdef' in reverse order */
 &quot;abcdef&quot;[::-1];
-</code></pre>
-
-<pre><code class="language-json">&quot;fedcba&quot;
-</code></pre>
-
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;fedcba&#34;</span>
+</code></pre></div>
 
 <footer class=" footline" >
 	
@@ -4731,19 +4700,19 @@ months;
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1582628646"></script>
-    <script src="/v0/js/jquery.sticky.js?1582628646"></script>
-    <script src="/v0/js/featherlight.min.js?1582628646"></script>
-    <script src="/v0/js/highlight.pack.js?1582628646"></script>
+    <script src="/v0/js/clipboard.min.js?1583166349"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583166349"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583166349"></script>
+    <script src="/v0/js/jquery.sticky.js?1583166349"></script>
+    <script src="/v0/js/featherlight.min.js?1583166349"></script>
+    <script src="/v0/js/highlight.pack.js?1583166349"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1582628646"></script>
-    <script src="/v0/js/learn.js?1582628646"></script>
-    <script src="/v0/js/hugo-learn.js?1582628646"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583166349"></script>
+    <script src="/v0/js/learn.js?1583166349"></script>
+    <script src="/v0/js/hugo-learn.js?1583166349"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1582628646" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1582628646"></script>
+    <link href="/v0/mermaid/mermaid.css?1583166349" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583166349"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

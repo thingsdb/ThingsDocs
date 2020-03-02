@@ -42,7 +42,7 @@ For example:
 ```
 
 It is common to wrap a block scope within one or more functions.
-When this is the case, the doc string will be read from the the first argument,
+When this is the case, the doc string will be read from the first argument,
 *only* if the first *non-function* argument contains a block scope with a doc string.
 
 For example, this closure contains a block scope wrapped with [return](../../collection-api/return) and [wse](../../collection-api/wse):

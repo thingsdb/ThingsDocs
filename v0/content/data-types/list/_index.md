@@ -5,7 +5,7 @@ weight: 35
 
 An empty list can be constructed as follows: `list = [];`
 
-Nesting is also possible withing but each nested list will become a [tuple](../tuple) which means the 'list' will be immutable.
+Nesting is also possible but each nested list will become a [tuple](../tuple) which means the 'list' will be immutable.
 ThingsDB does this because it wants to update all changes to subscribers and finds the subscribers by the parent object where
 the change is  made. Since the parent of a nested 'list' is another list, the `thing` holding the list would not be found.
 
@@ -17,23 +17,23 @@ Method | Description
 [choice](./choice) | Returns a random item from a list.
 [each](./each) | Iterate over all items in a list.
 [every](./every) | Test whether all elements pass a given test.
-[extend](./extend) | Adds an array with items to the end of a list, and returns the new length.
-[filter](./filter) | Returns a new `list` with elements that pass a given test.
-[find](./find) | Returns the first element that pass a given test.
-[findindex](./findindex) | Returns the index of the first element that pass a given test.
+[extend](./extend) | Adds an array with items to the end of a list and returns the new length.
+[filter](./filter) | Returns a new `list` with elements that passed a given test.
+[find](./find) | Returns the first element that passed a given test.
+[findindex](./findindex) | Returns the index of the first element that passed a given test.
 [indexof](./indexof) | Returns the index of a given value, or `nil` if not found.
 [len](./len) | Returns the length of the list.
 [map](./map) | Returns a new `list` with the results of calling a provided closure on every element.
-[pop](./pop) | Removes the last element from an list and returns that element.
-[push](./push) | Adds new items to the end of an list, and returns the new length.
+[pop](./pop) | Removes the last element from a list and returns that element.
+[push](./push) | Adds new items to the end of a list and returns the new length.
 [reduce](./reduce) | Executes a reducer function on each element, resulting in a single output value.
-[remove](./remove) | Removes the first element that pass a given test and returns that element.
+[remove](./remove) | Removes the first element that passed a given test and returns that element.
 [some](./some) | Test whether at least one element passes a given test.
 [sort](./sort) | Returns a new sorted `list`.
 [splice](./splice) | Determines if a string starts with characters given by another string.
 
 {{% notice note %}}
-It is not possible to change an list while the list is in use, for example: \
+It is not possible to change a list while the list is in use, for example: \
 `tmp = [1, 2, 3]; tmp.map(|i| tmp.push(i));` \
 ...will raise [bad_data_err()](../../errors/bad_data_err) *(cannot change type `list` while the value is being used)*
 {{% /notice %}}

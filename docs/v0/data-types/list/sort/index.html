@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="ThingsDB documentation">
 
 
@@ -11,20 +11,20 @@
     <title>sort :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/theme.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1582628646" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583166349" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1582628646" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583166349" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1582628646"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583166349"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1582628646"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583166349"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583166349"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583166349"></script>
 
     
   </div>
@@ -4535,18 +4535,16 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#function">Function</a></li>
-<li><a href="#arguments">Arguments</a></li>
-<li><a href="#return-value">Return value</a></li>
-<li><a href="#examples">Examples</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#function">Function</a></li>
+        <li><a href="#arguments">Arguments</a></li>
+        <li><a href="#return-value">Return value</a></li>
+        <li><a href="#examples">Examples</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -4571,18 +4569,11 @@
 
 
 
-
-
-<p>When this method is used on an <a href="..">list</a> or <a href="../../tuple">tuple</a>, a new sorted list is returned.</p>
-
+<p>When this method is used on a <a href="..">list</a> or <a href="../../tuple">tuple</a>, a new sorted list is returned.</p>
 <p>This function does <em>not</em> generate an <a href="../../../overview/events">event</a>.</p>
-
 <h3 id="function">Function</h3>
-
 <p><em>array</em>.<code>sort([closure, [reverse]])</code></p>
-
 <h3 id="arguments">Arguments</h3>
-
 <table>
 <thead>
 <tr>
@@ -4591,14 +4582,12 @@
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>callback</td>
 <td>closure (optional)</td>
 <td>Closure to execute on each value, which is used to determine how the list should be sorted.</td>
 </tr>
-
 <tr>
 <td>reverse</td>
 <td>bool (optional)</td>
@@ -4607,110 +4596,79 @@
 </tbody>
 </table>
 
-
 <div class="notices note" ><p>The <em>reverse</em> argument cannot be used together with a closure which takes two arguments. In this case the order should be specified within the closure.</p>
 </div>
 
-
 <h3 id="return-value">Return value</h3>
-
 <p>A new sorted list.</p>
-
 <h3 id="examples">Examples</h3>
-
 <blockquote>
 <p>Simple sort</p>
 </blockquote>
-
-<pre><code class="language-thingsdb,json_response">// return a new list in ascending order
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">// return a new list in ascending order
 [3, 1, 2].sort();
-</code></pre>
-
-<blockquote>
+</code></pre><blockquote>
 <p>Return value in JSON format</p>
 </blockquote>
-
-<pre><code class="language-json">[
-    1,
-    2,
-    3
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
+    <span style="color:#ae81ff">1</span>,
+    <span style="color:#ae81ff">2</span>,
+    <span style="color:#ae81ff">3</span>
 ]
-</code></pre>
-
-<p>With the <code>reverse</code> argument set to <code>true</code>, a new list will be returned in descending order.</p>
-
+</code></pre></div><p>With the <code>reverse</code> argument set to <code>true</code>, a new list will be returned in descending order.</p>
 <blockquote>
 <p>Reverse sort</p>
 </blockquote>
-
-<pre><code class="language-thingsdb,json_response">// return a new list in descending order
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">// return a new list in descending order
 [3, 1, 2].sort(true);
-</code></pre>
-
-<blockquote>
+</code></pre><blockquote>
 <p>Return value in JSON format</p>
 </blockquote>
-
-<pre><code class="language-json">[
-    3,
-    2,
-    1
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
+    <span style="color:#ae81ff">3</span>,
+    <span style="color:#ae81ff">2</span>,
+    <span style="color:#ae81ff">1</span>
 ]
-</code></pre>
-
-<p>When using a <a href="../../closure">closure</a> the sort behavior depends on the number of arguments the give closure accepts.
+</code></pre></div><p>When using a <a href="../../closure">closure</a> the sort behavior depends on the number of arguments the give closure accepts.
 With <em>one</em> argument, each item in the list will be parser to the closure and the <em>return</em> value of the closure will be
 used as compare value. Below is an example which uses such closure to do a case-insensitive sort. Another common use
 case is when you want to sort <a href="../../thing">things</a> based on a property. For example a closure like <code>|u| u.age</code>
 could be used to sort users based on a <code>age</code> property.</p>
-
 <blockquote>
 <p>Sort using a one-argument callback</p>
 </blockquote>
-
-<pre><code class="language-thingsdb,json_response">// return a new list in ascending order, case-insensitive
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">// return a new list in ascending order, case-insensitive
 [&quot;charlie&quot;, &quot;alpha&quot;, &quot;Beta&quot;].sort(|s| s.lower());
-</code></pre>
-
-<blockquote>
+</code></pre><blockquote>
 <p>Return value in JSON format</p>
 </blockquote>
-
-<pre><code class="language-json">[
-    &quot;alpha&quot;,
-    &quot;Beta&quot;,
-    &quot;charlie&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
+    <span style="color:#e6db74">&#34;alpha&#34;</span>,
+    <span style="color:#e6db74">&#34;Beta&#34;</span>,
+    <span style="color:#e6db74">&#34;charlie&#34;</span>
 ]
-</code></pre>
-
-<p>As a second option the sort function can accept a closure with two arguments. The return value of the given closure
+</code></pre></div><p>As a second option the sort function can accept a closure with two arguments. The return value of the given closure
 must return an <a href="../../int">integer</a> value. When the <em>integer</em> is <code>&lt; 0</code>, then <code>a</code> goes before <code>b</code>, when <code>0</code>
 both <code>a</code> and <code>b</code> are considered equal and if <code>&gt;0</code> then <code>a</code> goes after <code>b</code>.</p>
-
 <blockquote>
 <p>Sort using a two-argument callback</p>
 </blockquote>
-
-<pre><code class="language-thingsdb,json_response">// list with `nil` values
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">// list with `nil` values
 arr = [nil, &quot;charlie&quot;, nil, &quot;alpha&quot;, &quot;beta&quot;];
 
 // return a new list in ascending order with `nil` values at the end
 arr.sort(|a, b| isnil(a) ? 1 : isnil(b) ? -1 : a &lt; b ? -1 : a &gt; b ? 1 : 0);
-</code></pre>
-
-<blockquote>
+</code></pre><blockquote>
 <p>Return value in JSON format</p>
 </blockquote>
-
-<pre><code class="language-json">[
-    &quot;alpha&quot;,
-    &quot;beta&quot;,
-    &quot;charlie&quot;,
-    null,
-    null
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
+    <span style="color:#e6db74">&#34;alpha&#34;</span>,
+    <span style="color:#e6db74">&#34;beta&#34;</span>,
+    <span style="color:#e6db74">&#34;charlie&#34;</span>,
+    <span style="color:#66d9ef">null</span>,
+    <span style="color:#66d9ef">null</span>
 ]
-</code></pre>
-
+</code></pre></div>
 
 <footer class=" footline" >
 	
@@ -4740,19 +4698,19 @@ arr.sort(|a, b| isnil(a) ? 1 : isnil(b) ? -1 : a &lt; b ? -1 : a &gt; b ? 1 : 0)
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1582628646"></script>
-    <script src="/v0/js/jquery.sticky.js?1582628646"></script>
-    <script src="/v0/js/featherlight.min.js?1582628646"></script>
-    <script src="/v0/js/highlight.pack.js?1582628646"></script>
+    <script src="/v0/js/clipboard.min.js?1583166349"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583166349"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583166349"></script>
+    <script src="/v0/js/jquery.sticky.js?1583166349"></script>
+    <script src="/v0/js/featherlight.min.js?1583166349"></script>
+    <script src="/v0/js/highlight.pack.js?1583166349"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1582628646"></script>
-    <script src="/v0/js/learn.js?1582628646"></script>
-    <script src="/v0/js/hugo-learn.js?1582628646"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583166349"></script>
+    <script src="/v0/js/learn.js?1583166349"></script>
+    <script src="/v0/js/hugo-learn.js?1583166349"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1582628646" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1582628646"></script>
+    <link href="/v0/mermaid/mermaid.css?1583166349" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583166349"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

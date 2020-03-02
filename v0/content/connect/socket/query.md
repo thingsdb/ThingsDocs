@@ -31,7 +31,7 @@ Serializing the above using [MessagePack](https://msgpack.org) results in the fo
 
 `\x92\xa2@t\xa61 + 1;`
 
-Now we create the header, for this example we just use ID 0:
+Now we create the header. For this example we just use ID 0:
 
 - Data length (11) `\x0b\x00\x00\x00`
 - Identifier (0) `\x00\x00`

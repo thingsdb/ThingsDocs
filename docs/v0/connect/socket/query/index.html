@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.65.3" />
     <meta name="description" content="ThingsDB documentation">
 
 
@@ -11,20 +11,20 @@
     <title>Example query :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/theme.css?1582628646" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1582628646" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583166348" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583166348" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1582628646" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583166348" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1582628646"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583166348"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1582628646"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583166348"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583166348"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1582628646"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583166348"></script>
 
     
   </div>
@@ -4535,12 +4535,9 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#example">Example</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#example">Example</a></li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -4565,65 +4562,41 @@
 
 
 
-
-
 <p>Query ThingsDB. A successful query request will respond with a <code>DATA (18)</code> package.</p>
-
 <blockquote>
 <p>Syntax</p>
 </blockquote>
-
 <pre><code>[scope, code, {vars}]
-</code></pre>
-
-<p>The <code>vars</code> in the query are optional and may be omitted. When used, <code>vars</code> must be a <code>map</code> where the <code>keys</code>
+</code></pre><p>The <code>vars</code> in the query are optional and may be omitted. When used, <code>vars</code> must be a <code>map</code> where the <code>keys</code>
 represent the variable names and the <code>values</code> the values for the variable.</p>
-
 
 <div class="notices warning" ><p>The socket needs to be authorized before sending a <code>query</code> request.
 See the <a href="../auth">auth example</a> for how to authorize a socket connection.</p>
 </div>
 
-
 <h2 id="example">Example</h2>
-
 <p>As an example we will perform a useless query with as code just the simple equation <code>1 + 1;</code> and we will use the <code>@thingsdb</code> scope to perform the query on.</p>
-
 <p>This is the data we want to pack:</p>
-
 <p><code>[&quot;@t&quot;, &quot;1 + 1;&quot;]</code></p>
-
 <p>Serializing the above using <a href="https://msgpack.org">MessagePack</a> results in the following <code>11</code> bytes:</p>
-
 <p><code>\x92\xa2@t\xa61 + 1;</code></p>
-
-<p>Now we create the header, for this example we just use ID 0:</p>
-
+<p>Now we create the header. For this example we just use ID 0:</p>
 <ul>
 <li>Data length (11) <code>\x0b\x00\x00\x00</code></li>
 <li>Identifier (0) <code>\x00\x00</code></li>
 <li>Query package type (34) <code>\x22</code></li>
 <li>Inverse type check bit (221) <code>\xdd</code></li>
 </ul>
-
 <blockquote>
 <p>Sending the <em>Query</em> package</p>
 </blockquote>
-
 <pre><code>\x0b\x00\x00\x00\x00\x00\x22\xdd\x92\xa2@t\xa61 + 1;
-</code></pre>
-
-<blockquote>
+</code></pre><blockquote>
 <p>Responding <em>Data</em> package</p>
 </blockquote>
-
 <pre><code>\x01\x00\x00\x00\x00\x00\x12\xed\x02
-</code></pre>
-
-<p>We see that the <code>DATA</code> response package has a header with attached data of length <code>1</code>.</p>
-
+</code></pre><p>We see that the <code>DATA</code> response package has a header with attached data of length <code>1</code>.</p>
 <p>Unpacking the data <code>\x02</code> using <a href="https://msgpack.org">MessagePack</a> will return the expected value <code>2</code> which is the answer to our equation.</p>
-
 
 <div class="notices warning" ><p>If your socket connection is not authenticated then you will receive an <a href="../error-response">error response</a>.</p>
 </div>
@@ -4658,19 +4631,19 @@ See the <a href="../auth">auth example</a> for how to authorize a socket connect
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1582628646"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1582628646"></script>
-    <script src="/v0/js/jquery.sticky.js?1582628646"></script>
-    <script src="/v0/js/featherlight.min.js?1582628646"></script>
-    <script src="/v0/js/highlight.pack.js?1582628646"></script>
+    <script src="/v0/js/clipboard.min.js?1583166348"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583166348"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583166348"></script>
+    <script src="/v0/js/jquery.sticky.js?1583166348"></script>
+    <script src="/v0/js/featherlight.min.js?1583166348"></script>
+    <script src="/v0/js/highlight.pack.js?1583166348"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1582628646"></script>
-    <script src="/v0/js/learn.js?1582628646"></script>
-    <script src="/v0/js/hugo-learn.js?1582628646"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583166348"></script>
+    <script src="/v0/js/learn.js?1583166348"></script>
+    <script src="/v0/js/hugo-learn.js?1583166348"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1582628646" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1582628646"></script>
+    <link href="/v0/mermaid/mermaid.css?1583166348" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583166348"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

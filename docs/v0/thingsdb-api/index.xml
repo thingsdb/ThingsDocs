@@ -22,7 +22,7 @@ This function does not generate an event.
 Function collection_info(name_or_id);
 Arguments    Argument Type Description     name_or_id str/int Name or Id of the collection    Return value Returns info about the collection.
 Example  Returns information about collection stuff:
- collection_info(&#39;stuff&#39;);   Example return value in JSON format</description>
+ collection_info(&#39;stuff&#39;);  Example return value in JSON format</description>
     </item>
     
     <item>
@@ -46,12 +46,12 @@ Return value List with collection info for all collections in ThingsDB.</descrip
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/del_collection/</guid>
-      <description> Delete a collection.
+      <description>Delete a collection.
 This function generates an event.
 Function del_collection(name);
 Arguments    Argument Type Description     name str (required) Name of the collection to delete.    Return value Returns nil when successful. A lookup_err() is raised if the collection does not exist.
 Example  This code will delete collection stuff:
- // Delete collection `stuff` del_collection(&#39;stuff&#39;);  </description>
+ // Delete collection `stuff` del_collection(&#39;stuff&#39;); </description>
     </item>
     
     <item>
@@ -60,14 +60,14 @@ Example  This code will delete collection stuff:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/del_expired/</guid>
-      <description> Delete all expired tokens.
+      <description>Delete all expired tokens.
 This function requires GRANT privileges on the @thingsdb scope.
  This function generates an event.
 Function del_expired();
 Arguments None
 Return value Returns nil.
 Example  This code will delete all expired tokens:
- // Delete all expired tokens del_expired();  </description>
+ // Delete all expired tokens del_expired(); </description>
     </item>
     
     <item>
@@ -131,7 +131,8 @@ This function does not generate an event.
 Function has_collection(name_or_id)
 Arguments    Argument Type Description     name_or_id str/int (required) Collection name or id to check.    Return value Returns true the collection exists and otherwise false.
 Example  This code shows an example use case of has_collection():
- has_collection(&#39;stuff&#39;);   Return value in JSON format</description>
+ has_collection(&#39;stuff&#39;);  Return value in JSON format
+ true </description>
     </item>
     
     <item>
@@ -145,7 +146,7 @@ This function does not generate an event.
 Function has_node(id)
 Arguments    Argument Type Description     id int (required) Node id to check.    Return value Returns true a node with a given id exists and otherwise false.
 Example  This code shows an example use case of has_node():
- has_node(0);   Return value in JSON format</description>
+ has_node(0);  Return value in JSON format</description>
     </item>
     
     <item>
@@ -160,7 +161,7 @@ This function requires GRANT privileges on the @thingsdb scope.
 Function has_token(key)
 Arguments    Argument Type Description     key str (required) Token key to check.    Return value Returns true the token exists and otherwise false.
 Example  This code shows an example use case of has_token():
- has_token(&#39;XXXXXXXXXXXXXXXXXXXXXX&#39;);   Return value in JSON format</description>
+ has_token(&#39;XXXXXXXXXXXXXXXXXXXXXX&#39;);  Return value in JSON format</description>
     </item>
     
     <item>
@@ -175,7 +176,7 @@ This function requires GRANT privileges on the @thingsdb scope.
 Function has_user(username)
 Arguments    Argument Type Description     username str (required) User to check.    Return value Returns true the user exists and otherwise false.
 Example  This code shows an example use case of has_user():
- has_user(&#39;admin&#39;);   Return value in JSON format</description>
+ has_user(&#39;admin&#39;);  Return value in JSON format</description>
     </item>
     
     <item>
@@ -188,7 +189,7 @@ Example  This code shows an example use case of has_user():
 This function generates an event.
 Function new_collection(name);
 Arguments    Argument Type Description     name str (required) Name of the new collection.    The user who has created the collection will automatically receive full access rights to the new collection. Use grant to give other users access to the collection.
- Return value Returns the new collection id if successful.</description>
+ Return value Returns the new collection id if successful. A lookup_err() is raised if the collection already exists.</description>
     </item>
     
     <item>
@@ -199,8 +200,8 @@ Arguments    Argument Type Description     name str (required) Name of the new c
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/new_node/</guid>
       <description>Adds a new node to ThingsDB. Nodes are used for scaling and high availability.
 Before using this command, make sure another node is started and waiting for a join. This can be done by starting thingsdb with the --secret argument, for example:
-$ thingsdb --secret &amp;quot;my-one-time-serect&amp;quot;  Next, you will see something like this:
-Waiting for an invite from a node to join ThingsDB... You can use one of the following queries to add this node: interface: eth0 new_node(&#39;my-one-time-serect&#39;, &#39;10.</description>
+$ thingsdb --secret &amp;#34;my-one-time-serect&amp;#34; Next, you will see something like this:
+Waiting for an invite from a node to join ThingsDB... You can use one of the following queries to add this node: interface: eth0 new_node(&amp;#39;my-one-time-serect&amp;#39;, &amp;#39;10.</description>
     </item>
     
     <item>
@@ -211,7 +212,8 @@ Waiting for an invite from a node to join ThingsDB... You can use one of the fol
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/new_token/</guid>
       <description>Adds a new token for a given user. An optional expiration time may be given after which the token cannot be used anymore. Use del_expired to cleanup expired tokens. The expiration time may be given as a UNIX time-stamp in seconds or a date/time string.
 Some valid date/time strings:
- 2021-01-01 2023-02-06 14:30 2023-07-05T13:23:20+01:00  Expiration dates in the past are not allowed an will raise a bad_data_err() error.</description>
+ 2021-01-01 2023-02-06 14:30 2023-07-05T13:23:20+01:00  Expiration dates in the past are not allowed an will raise a bad_data_err() error.
+It is also possible to set a description for the token which can be used to identify where token is used for.</description>
     </item>
     
     <item>

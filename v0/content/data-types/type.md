@@ -168,7 +168,7 @@ Key | Description
 
 In order to correctly to parse the mutation correctly you require the [types_info](../../collection-api/types_info) of a collection.
 Note that the types info is included inside an [init event](../../watching/on-init). Below is an example with an entry of `types_info`
-which shows the type **Book**, which is the type with id `10` from the mutation example above.
+which shows the type **Book**, which is the type with ID `10` from the mutation example above.
 
 ```json
 ...

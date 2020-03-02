@@ -20,7 +20,7 @@
 No authorization is required for sending a ping request.
  Example A Ping package has no data so we only need to construct the header:
  Data length (0) \x00\x00\x00\x00 Identifier (0) \x00\x00 Ping package type (32) \x20 Inverse type check bit (223) \xdf   Sending the Ping package
- \x00\x00\x00\x00\x00\x00\x20\xdf   Responding Pong package</description>
+ \x00\x00\x00\x00\x00\x00\x20\xdf  Responding Pong package</description>
     </item>
     
     <item>
@@ -32,9 +32,10 @@ No authorization is required for sending a ping request.
       <description>Used for authorizing the socket connection. A successful authentication will respond with OK (17)
 Authorization can be done by using either a username and password combination or by a token.
  Syntax username/password
- [username, password]   Syntax token
- &amp;quot;token_string&amp;quot;  Example username/password As an example we create an authentication package for the default admin user with password pass.
-This is the package data for our authentication request:</description>
+ [username, password]  Syntax token
+ &amp;quot;token_string&amp;quot; Example username/password As an example we create an authentication package for the default admin user with password pass.
+This is the package data for our authentication request:
+[&amp;quot;admin&amp;quot;, &amp;quot;pass&amp;quot;]</description>
     </item>
     
     <item>
@@ -45,7 +46,7 @@ This is the package data for our authentication request:</description>
       <guid>https://docs.thingsdb.net/v0/connect/socket/query/</guid>
       <description>Query ThingsDB. A successful query request will respond with a DATA (18) package.
  Syntax
- [scope, code, {vars}]  The vars in the query are optional and may be omitted. When used, vars must be a map where the keys represent the variable names and the values the values for the variable.
+ [scope, code, {vars}] The vars in the query are optional and may be omitted. When used, vars must be a map where the keys represent the variable names and the values the values for the variable.
 The socket needs to be authorized before sending a query request. See the auth example for how to authorize a socket connection.</description>
     </item>
     
@@ -57,7 +58,7 @@ The socket needs to be authorized before sending a query request. See the auth e
       <guid>https://docs.thingsdb.net/v0/connect/socket/run/</guid>
       <description>Run a procedure in ThingsDB. A successful run request will respond with a DATA (18) package.
  Syntax
- [scope, procedure, ...args]  The args are parsed (and must match) to the procedure.
+ [scope, procedure, ...args] The args are parsed (and must match) to the procedure.
 The socket needs to be authorized before sending a run request. See the auth example for how to authorize a socket connection.
  Example As an example we assume there is a procedure created in the @thingsdb scope, called &amp;ldquo;add_one&amp;rdquo; which just adds one to a given value.</description>
     </item>
@@ -70,9 +71,9 @@ The socket needs to be authorized before sending a run request. See the auth exa
       <guid>https://docs.thingsdb.net/v0/connect/socket/watch/</guid>
       <description>Subscribe for watching a node or things in ThingsDB. A successful run request will respond with a OK (17) package.
  Syntax
- [scope, ...IDs]  The IDs are the thing ID&amp;rsquo;s you want to watch.
+ [scope, ...IDs] The IDs are the thing-IDs you want to watch.
 The socket needs to be authorized before sending a watch request. See the auth example for how to authorize a socket connection.
- Example As an example we assume that we want to watch a thing with ID 3 for changes.</description>
+ Example As an example we assume that we want to watch a thing with ID 3 for mutations.</description>
     </item>
     
     <item>

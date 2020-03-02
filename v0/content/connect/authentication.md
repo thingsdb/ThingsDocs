@@ -36,7 +36,7 @@ curl --location --request POST 'http://127.0.0.1:9210/thingsdb' \
 }'
 ```
 
-The will return JSON string containing a new token, for example: `"YyZcvq7BY3w+VgOTvXzTZp"`
+The will return a JSON string containing a new token, for example: `"YyZcvq7BY3w+VgOTvXzTZp"`
 
 We can now use this token key to remove the password from user `admin`:
 

@@ -37,7 +37,7 @@ Function closure.doc()
 Arguments None
 Return value Returns the doc string.
 Example  This code creates a closure with a doc string:
- add_one = |x| { &amp;quot;Adds one to a given value.&amp;quot;; x+1; }; // Return the doc string add_one.doc();   Return value in JSON format</description>
+ add_one = |x| { &amp;quot;Adds one to a given value.&amp;quot;; x+1; }; // Return the doc string add_one.doc();  Return value in JSON format</description>
     </item>
     
   </channel>
