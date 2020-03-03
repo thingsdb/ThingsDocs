@@ -3,13 +3,13 @@ title: "values"
 weight: 84
 ---
 
-Returns an list with all the property values of a [thing](..).
+Returns a list with all the property values of a [thing](..).
 The same could be returned using map so the following statement is `true`:
 
 `(.values() == .map(|_, v| v))`
 
 {{% notice warning %}}
-Although the `values()` and `map()` in the example above will return an list with the same order,
+Although the `values()` and `map()` in the example above will return a list with the same order,
 the order of *values* in the list is not guaranteed and may be different each time you run the query.
 {{% /notice %}}
 
@@ -25,7 +25,7 @@ None
 
 ### Return value
 
-Returns an list with property values.
+Returns a list with property values.
 
 ### Example
 

@@ -3,8 +3,8 @@ title: "find"
 weight: 41
 ---
 
-This function returns the value of the first element in the [list](..) or [tuple](../../tuple) that satisfies the callback function.
-Otherwise `nil` is returned unless an alternative return value is specified.
+This function returns the value of the first item in the [list](..) or [tuple](../../tuple) that passes the test.
+Otherwise `nil` is returned  if no alternative return value is specified.
 
 This function does *not* generate an [event](../../../overview/events).
 
@@ -26,7 +26,7 @@ Iterable | Arguments   | Description
 array    | item, index | Iterate over items in the array. Both `item` and `index` are optional.
 
 {{% notice note %}}
-The `alt` argument will be *lazy* evaluated. Consider the following example: \
+The `alt` argument will be *lazily* evaluated. Consider the following example: \
 \
   `elems.find(|e| e.name == "foo", items.pop());` \
 \
@@ -35,7 +35,7 @@ Here, the item will *only* be popped, in case `e` with `name` *foo* is *not* fou
 
 ### Return value
 
-The value of the first element in the array that satisfies the provided testing function;
+The value of the first item in the array that passes the test;
 otherwise, `nil` or a specified alternative value is returned.
 
 ### Example

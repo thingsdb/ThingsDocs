@@ -3,8 +3,8 @@ title: "remove"
 weight: 49
 ---
 
-This function removes and returns the value of the *first* element in the [list](../../list) that satisfies the callback function.
-Otherwise `nil` is returned unless an alternative return value is specified.
+This function removes and returns the value of the *first* item in the [list](../../list) that satisfies the callback function.
+Otherwise `nil` is returned if no alternative return value is specified.
 
 This function generates an [event](../../../overview/events) *(except when called on a [variable](../../../overview/variable))*.
 
@@ -26,14 +26,14 @@ Iterable | Arguments | Description
 list | item, index | Iterate over items in the list. Both item and index are optional.
 
 {{% notice note %}}
-The `alt` argument will be *lazy* evaluated. Consider the following example: \
+The `alt` argument will be *lazily* evaluated. Consider the following example: \
 `elems.remove(|e| (e.name == "foo"), items.pop());` \
 Here, the item will *only* be popped, in case `e` with `name` *foo* is *not* found in `elems`.
 {{% /notice %}}
 
 ### Return value
 
-The value of the first element in the list that satisfies the provided testing function;
+The value of the first item in the list that satisfies the provided testing function;
 otherwise, `nil` or a specified alternative value is returned.
 
 ### Example

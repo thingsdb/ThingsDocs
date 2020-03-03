@@ -3,7 +3,7 @@ title: "push"
 weight: 47
 ---
 
-Adds new items to the end of an list, and returns the new length.
+Adds new items to the end of a list, and returns the new length.
 
 This function generates an [event](../../../overview/events) *(except when called on a [variable](../../../overview/variable))*.
 

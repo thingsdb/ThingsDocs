@@ -19,7 +19,7 @@ search_string | str (required) | The characters to be searched for at the end of
 
 ### Return value
 
-Returns `true` the given characters are found at the end of the string and otherwise `false`.
+Returns `true` if the given characters are found at the end of the string and otherwise `false`.
 
 ### Example
 

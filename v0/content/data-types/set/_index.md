@@ -13,10 +13,10 @@ Method | Description
 [add](./add) | Add things to a set.
 [each](./each) | Iterate over all items in a set.
 [filter](./filter) | Return a new `set` with things that pass a given test.
-[find](./find) | Returns the first `thing` which passes a given test.
+[find](./find) | Return the first `thing` which passes a given test. 
 [has](./has) | Test if a set contains a given thing.
-[len](./len) | Returns the length of a set.
-[map](./map) | Return an [list](../list) with the results of calling a provided closure on every thing.
+[len](./len) | Return the length of a set. 
+[map](./map) | Return a [list](../list) with the results of calling a provided closure on every thing. 
 [remove](./remove) | Remove things from a set.
 
 ### Operators
@@ -55,4 +55,5 @@ In practice this means that it is perfect to write something like `set_a |= set_
 
 Method | Description
 ------ | -----------
-[set](../../collection-api/set) | Create a new empty set or convert an [list](../list) to a new set.
+[set](../../collection-api/set) | Create a new empty set or convert a [list](../list) to a new set. 
+

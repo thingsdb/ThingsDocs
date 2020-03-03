@@ -15,7 +15,7 @@ As logical expressions are evaluated left to right, they are tested for possible
 - `(some falsy expression) && expr` is short-circuit evaluated to the falsy expression;
 - `(some truthy expression) || expr` is short-circuit evaluated to the truthy expression.
 
-Short circuit means that the `expr` parts above are not evaluated, hence any side effects of doing so do not take effect
+Short circuit means that the `expr` parts above are not evaluated, hence any side effects of doing so do not take place
 (e.g., if expr is a function call, the calling never takes place).
 This happens because the value of the operator is already determined after the evaluation of the first operand.
 

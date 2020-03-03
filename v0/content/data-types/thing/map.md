@@ -3,8 +3,8 @@ title: "map"
 weight: 81
 ---
 
-Iterate over all properties on a [thing](..) and
-return a new [list](../../list) based on the results of a given callback function.
+The function iterates over all properties on a [thing](..) and
+returns a new [list](../../list) based on the results of a given callback function.
 
 {{% notice warning %}}
 Be aware that the order when iterating over a *thing* is not guaranteed.
@@ -31,7 +31,7 @@ thing    | name, value | Iterate over the thing properties. Both name and value 
 
 ### Return value
 
-A new list with each element being the result of the callback function.
+A new list of items that are the result of the callback function.
 
 ### Example
 

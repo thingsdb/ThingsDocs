@@ -5,7 +5,7 @@ weight: 53
 
 Probably the most simple type, it can be used as *no value*.
 
-It might be useful to use `nil` as the last statement in a query to prevent
+It might be convenient to use `nil` as the last statement in a query to prevent
 returning data which is not required. See the code example.
 
 > This code uses `nil` to prevent returning unused data:

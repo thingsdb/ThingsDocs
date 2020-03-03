@@ -12,7 +12,7 @@ list[start:stop:step]
 The `start` and `stop` value will default to `nil` and `step` has a default value of `1`.
 For understanding slices it is important to remember that the `:stop` value represents the
 first value that is *not* in the selected slice. This means that the
-difference between `stop` and `start` is the number of selected elements.
+difference between `stop` and `start` is the number of selected items.
 (assuming that `step` is the default value `1`)
 
 
@@ -20,7 +20,7 @@ Another feature is that *negative* numbers may be used. For `start` and `stop` t
 will count from the end of the array instead of the beginning.
 
 
-> Some examples using `start` and `stop` to select some elements:
+> Some examples using `start` and `stop` to select some items:
 
 ```thingsdb,json_response
 months = ['January', 'February', 'March', 'April',

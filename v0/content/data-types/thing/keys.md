@@ -5,14 +5,14 @@ weight: 79
 
 ## keys
 
-Returns an array with all the property names of a [thing](..).
+The function returns a list with all the property names of a [thing](..).
 The same could be returned using map so the following statement is `true`:
 
 `.keys() == .map(|k| k)`
 
 {{% notice warning %}}
-Although the `keys()` and `map()` functions in the example above will return an array with the same order,
-the order of *keys* in the array is not guaranteed and may be different each time you run the query.
+Although the `keys()` and `map()` functions in the example above will return a list with the same order,
+the order of *keys* in the list is not guaranteed and may be different each time you run the query.
 {{% /notice %}}
 
 This function does *not* generate an [event](../../../overview/events).
@@ -27,7 +27,7 @@ None
 
 ### Return value
 
-Returns an array with property names.
+Returns a list with property names.
 
 ### Example
 

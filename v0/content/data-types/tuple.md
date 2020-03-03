@@ -20,25 +20,25 @@ A `tuple` only becomes a `tuple` when it is nested inside another `tuple` or `li
 ThingsDB does this because it wants to update all changes to subscribers and finds the subscribers by the parent object where
 the change is made. Since the parent of a nested `tuple` is another `tuple` or `list`, the `thing` holding the `list` would not be found.
 
-Another property of `lists` and `tuples` in ThingsDB is that they both are always *copies*, and not by *reference* as in most languages. This is
+Another property of `lists` and `tuples` in ThingsDB is that they both are always *copies*, and not a *reference* as in most languages. This is
 because ThingsDB needs to know which subscribers to update when changes are made.
 
 ### Methods
 
 Method | Description
 ------ | -----------
-[choice](../list/choice) | Returns a random item from a tuple.
+[choice](../list/choice) | Return a random item from a tuple. 
 [each](../list/each) | Iterate over all items in a tuple.
-[every](../list/every) | Test whether all elements pass a given test.
-[filter](../list/filter) | Returns a new `list` with elements that pass a given test.
-[find](../list/find) | Returns the first element that pass a given test.
-[findindex](../list/findindex) | Returns the index of the first element that pass a given test.
-[indexof](../list/indexof) | Returns the index of a given value, or `nil` if not found.
-[len](../list/len) | Returns the length of the tuple.
-[map](../list/map) | Returns a new `list` with the results of calling a provided closure on every element.
-[reduce](../list/reduce) | Executes a reducer function on each element, resulting in a single output value.
-[some](../list/some) | Test whether at least one element passes a given test.
-[sort](../list/sort) | Returns a new sorted `list`.
+[every](../list/every) | Test whether all items pass a given test. 
+[filter](../list/filter) | Return a new `list` with items that pass a given test. 
+[find](../list/find) | Return the first item that pass a given test. 
+[findindex](../list/findindex) | Return the index of the first item that pass a given test. 
+[indexof](../list/indexof) | Return the index of a given value, or `nil` if not found. 
+[len](../list/len) | Return the length of the tuple. 
+[map](../list/map) | Return a new `list` with the results of calling a provided closure on every item. 
+[reduce](../list/reduce) | Execute a reducer function on each item, resulting in a single output value. 
+[some](../list/some) | Test whether at least one item passes a given test. 
+[sort](../list/sort) | Return a new sorted `list`. 
 
 {{% notice info %}}
 The above methods correspond to those of a `list`. For that reason, they are only listed under the data type `list`.

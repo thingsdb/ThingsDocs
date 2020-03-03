@@ -3,7 +3,7 @@ title: "each"
 weight: 57
 ---
 
-Iterate over items in an [set](..).
+Iterate over items in a [set](..).
 
 {{% notice warning %}}
 Be aware that the order when iterating over a *set* or a *thing* is not guaranteed.

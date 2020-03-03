@@ -3,7 +3,7 @@ title: "every"
 weight: 38
 ---
 
-This function tests whether all elements in the array pass a given test. It returns a [boolean](../../bool) value.
+This function checks if all items in the  [list](..) or [tuple](../../tuple) pass a given test. It returns a [boolean](../../bool) value.
 
 {{% notice info %}}
 Calling this function on an empty array returns `true` for any condition!
@@ -30,7 +30,7 @@ array    | item, index | Iterate over items in the array. Both `item` and `index
 
 ### Return value
 
-Returns `true` if the callback function returns a *truthy* value for every array element. Otherwise, `false`.
+Returns `true` if every item in the array satisfies the check in the callback function. Otherwise, `false`.
 
 ### Example
 

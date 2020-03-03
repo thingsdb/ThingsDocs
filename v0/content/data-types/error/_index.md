@@ -9,8 +9,8 @@ When an error occurs within a method, an object can be returned. The object, cal
 
 Method | Description
 ------ | -----------
-[code](./code) | Returns the error code.
-[msg](./msg) | Returns the error message.
+[code](./code) | Return the error code. 
+[msg](./msg) | Return the error message. 
 
 
 ### Related functions

@@ -3,7 +3,7 @@ title: "findindex"
 weight: 42
 ---
 
-This function returns the index of the first element in a [list](..) or [tuple](../../tuple) that satisfies the callback function.
+This function returns the index of the first item in a [list](..) or [tuple](../../tuple) that passes the test.
 Otherwise `nil` is returned.
 
 This function does *not* generate an [event](../../../overview/events).
@@ -26,7 +26,7 @@ array | item, index | Iterate over items in the array. Both item and index are o
 
 ### Return value
 
-The index of the first element in the array that satisfies the provided testing function;
+The index of the first item in the array that passes the test;
 otherwise, `nil` is returned.
 
 ### Example

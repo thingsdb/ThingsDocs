@@ -3,7 +3,7 @@ title: "add"
 weight: 56
 ---
 
-Adds new thing to the [set](..) and returns the number of things which are
+Adds a new thing to the [set](..) and returns the number of things which are
 actually added to the set. For example `my_set.add(#42);` will return `0`
 if `my_set` already contains thing `#42`.
 

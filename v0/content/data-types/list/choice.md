@@ -3,7 +3,7 @@ title: "choice"
 weight: 36
 ---
 
-This function returns a **pseudo-random** item from the list. The list must contain at least one
+This function returns a **pseudo-random** item from a [list](..) or [tuple](../../tuple) . The array must contain at least one
 item, otherwise a [lookup_err()](../../../errors/lookup_err) is raised.
 
 This function does *not* generate an [event](../../../overview/events).
@@ -18,7 +18,7 @@ None
 
 ### Return value
 
-A pseudo-random item from the list.
+A pseudo-random item from the array.
 
 ### Example
 

@@ -3,8 +3,8 @@ title: "map"
 weight: 45
 ---
 
-Iterate over items in an [list](../../list) or [tuple](../../tuple) and
-return a new [list](../../list) based on the results of a given callback function.
+The function iterates over items in an [list](../../list) or [tuple](../../tuple) and
+returns a new [list](../../list) based on the results of a given callback function.
 
 This function does *not* generate an [event](../../../overview/events).
 
@@ -27,7 +27,7 @@ array    | item, index | Iterate over all items in the array. Both item and inde
 
 ### Return value
 
-A new list with each element being the result of the callback function.
+A new list of items that are the result of the callback function.
 
 ### Example
 

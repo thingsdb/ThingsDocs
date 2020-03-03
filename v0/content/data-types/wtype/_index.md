@@ -38,7 +38,7 @@ set_type('Writer', {
     books: '{Book}',
 });
 
-// Create a Type to just return a writers `name`
+// Create a Type to just return a writer's `name`
 set_type('_WriterName', {
     name: 'any'
 });
@@ -54,7 +54,7 @@ set_type('_AllBooks', {
     books: '{_Book}'
 });
 
-// Create two sets `writers` and `books` to store all books and writers in
+// Create two sets, `writers` and `books`, to store all books and writers in
 .writers = set();
 .books = set();
 
@@ -91,7 +91,7 @@ wse({
 
 /*
  * Now we can simply wrap the collection to return the books with titles and
- * the author names including the thing ids.
+ * the author names including the thing-ids.
  */
 return(.wrap('_AllBooks'), 3);
 ```

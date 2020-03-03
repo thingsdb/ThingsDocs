@@ -3,7 +3,7 @@ title: "filter"
 weight: 40
 ---
 
-When this method is used on a [list](..) or [tuple](../../tuple), a new list is returned with elements that pass the test.
+The function returns a new list with items that pass the test. 
 
 This function does *not* generate an [event](../../../overview/events).
 
@@ -27,8 +27,8 @@ array    | item, index | Iterate over all items in the array. Both `item` and `i
 
 ### Return value
 
-A new `list` with the elements that pass the test.
-If no elements pass the test, an empty list will be returned.
+A new `list` with the items that pass the test.
+If no items passed the test, an empty list will be returned.
 
 ### Example
 

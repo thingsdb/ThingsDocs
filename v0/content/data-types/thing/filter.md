@@ -3,8 +3,7 @@ title: "filter"
 weight: 75
 ---
 
-When this method is used on a `thing`, then a new thing will be returned with only
-the properties that pass the test.
+The function returns a new thing with properties that pass the test. 
 
 This function does *not* generate an [event](../../../overview/events).
 
@@ -14,7 +13,12 @@ This function does *not* generate an [event](../../../overview/events).
 
 ### Arguments
 
-The *callback* argument must be a `closure` which input values depend on the type the method is called on.
+| Argument | Type               | Description                       |
+| -------- | ------------------ | --------------------------------- |
+| callback | closure (required) | Closure to execute on each value. |
+
+
+Explanation of the *callback* argument:
 
 Iterable | Arguments   | Description
 -------- | ----------- | -----------

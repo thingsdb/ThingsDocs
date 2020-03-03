@@ -3,7 +3,7 @@ title: "set"
 weight: 82
 ---
 
-Creates a new property on a [thing](..). If the property already existed then the old
+Creates a new property on a [thing](..). If the property already exists then the old
 property will be overwritten. This function is equal to an assignment except that
 it can be used when the `name` of the property is dynamic.
 

@@ -18,7 +18,7 @@ More complex closures are also possible, check the last example below.
 Method | Description
 ------ | -----------
 [call](./call) | Call the closure with optional arguments.
-[doc](./doc) | Returns the doc string of the closure.
+[doc](./doc) | Return the doc string of the closure. 
 
 {{% notice note %}}
 Closures may be called recursively up to a **recursion depth of 24**. If this limit is exceeded, an error is raised.

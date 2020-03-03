@@ -13,7 +13,7 @@ Method | Description
 ------ | -----------
 [test](../../data-types/str/test) | A [str](../../data-types/str) method that tests for a match in a string. It returns `true` or `false`.
 
-> This code uses a regular expression for an overly simple email check:
+> This code uses a regular expression for an oversimplified email check:
 
 ```thingsdb,json_response
 // Note: the email check is oversimplified, do not use in production

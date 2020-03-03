@@ -3,7 +3,7 @@ title: "indexof"
 weight: 43
 ---
 
-Returns the first index at which a given value can be found in the [list](..) or [tuple](../../tuple), or `nil` if it is not present.
+The function returns the first index of the item in a [list](..) or [tuple](../../tuple) that matches the provided value, otherwise `nil` if it is not present.
 The index of an array starts at `0`, so the first item has index `0` the second `1` and so on.
 
 This function does *not* generate an [event](../../../overview/events).

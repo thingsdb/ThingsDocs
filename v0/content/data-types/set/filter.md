@@ -3,7 +3,7 @@ title: "filter"
 weight: 58
 ---
 
-When this method is used on a `set`, then the return value will be a new set.
+The function returns a new set with things that pass the test. 
 
 This function does *not* generate an [event](../../../overview/events).
 
@@ -13,7 +13,12 @@ This function does *not* generate an [event](../../../overview/events).
 
 ### Arguments
 
-The *callback* argument must be a `closure` which input values depend on the type the method is called on.
+| Argument | Type               | Description                       |
+| -------- | ------------------ | --------------------------------- |
+| callback | closure (required) | Closure to execute on each value. |
+
+
+Explanation of the *callback* argument:
 
 Iterable | Arguments   | Description
 -------- | ----------- | -----------
@@ -21,8 +26,8 @@ set      | thing, id   | Iterate over things in the set. Both `thing` and `id` a
 
 ### Return value
 
-A new `set` with the elements that pass the test.
-If no elements pass the test, an empty set will be returned.
+A new `set` with the things that pass the test.
+If no items passed the test, an empty set will be returned.
 
 ### Example
 

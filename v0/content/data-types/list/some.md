@@ -3,7 +3,7 @@ title: "some"
 weight: 50
 ---
 
-This function tests whether at least one element in the array passes a given test. It returns a [boolean](../../bool) value.
+This function checks if at least one item in the [list](..) or [tuple](../../tuple) passes a given test. It returns a [boolean](../../bool) value.
 
 {{% notice info %}}
 Calling this function on an empty array returns `false` for any condition!
@@ -29,7 +29,7 @@ array    | item, index | Iterate over items in the array. Both `item` and `index
 
 ### Return value
 
-Returns `true` if the callback function returns a *truthy* value for at least one element in the array. Otherwise, `false`.
+Returns `true` if at least one item in the array satisfies the check in the callback function. Otherwise, `false`.
 
 ### Example
 

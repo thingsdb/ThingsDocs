@@ -3,8 +3,8 @@ title: "map"
 weight: 62
 ---
 
-Iterate over items in an [set](..) and
-return a new [list](../../list) based on the results of a given callback function.
+The function iterates over items in a [set](..) and
+returns a new [list](../../list) based on the results of a given callback function.
 
 {{% notice warning %}}
 Be aware that the order when iterating over a *set* or a *thing* is not guaranteed.
@@ -26,7 +26,7 @@ set      | thing, id   | Iterate over things in the set. Both `thing` and `id` a
 
 ### Return value
 
-A new list with each element being the result of the callback function.
+A new list of items that are the result of the callback function.
 
 ### Example
 

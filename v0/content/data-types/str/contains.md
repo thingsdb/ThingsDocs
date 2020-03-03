@@ -19,7 +19,7 @@ search_string | str (required) | The characters to be searched for in the string
 
 ### Return value
 
-Returns `true` the given characters are found as a substring and otherwise `false`.
+Returns `true` if the given characters are found as a substring and otherwise `false`.
 
 ### Example
 

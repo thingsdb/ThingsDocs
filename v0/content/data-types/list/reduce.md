@@ -3,7 +3,7 @@ title: "reduce"
 weight: 48
 ---
 
-Executes a given reducer [closure](../../closure) on each element of the list, resulting in a single output value.
+Executes a given reducer [closure](../../closure) on every item of the list, accumulating to a single return value.
 
 This function does *not* generate an [event](../../../overview/events).
 
@@ -15,17 +15,17 @@ This function does *not* generate an [event](../../../overview/events).
 
 Argument | Type | Description
 -------- | ---- | -----------
-reducer | closure (required) | Closure to execute on each value (except for the first, if no initial value is supplied).
-initial | any (optional) | A value to use as the first argument to the first call of the callback. If no initial value is supplied, the first element in the array will be used and skipped. Calling reduce() on an empty array without an initial value will raise a [lookup_err()](../../../errors/lookup_err).
+reducer | closure (required) | Closure to execute on every value (except for the first, if no initial value is provided). 
+initial | any (optional) | The initial value serves as the first argument of the callback during the first call. If no initial value is provided, the first item in the array will be used instead and not processed by the callback. Calling reduce() on an empty list without an initial value will raise a [lookup_err()](../../../errors/lookup_err). 
 
 
 The *reducer* argument takes three optional arguments:
 
 Argument | Description
 -------- | -----------
-`(0)` accumulator | The accumulator accumulates callback's return values. It is the accumulated value previously returned in the last invocation of the callback—or initialValue.
-`(1)` current | The current element being processed in the list.
-`(2)` index | The index of the current element being processed in the array. Starts from index `0` if an initial value is provided. Otherwise, it starts from index `1`.
+`(0)` accumulator | An accumulated value that is returned by the previously invoked callback—or initial value. 
+`(1)` current | The current item in the list that is being processed by the callback. 
+`(2)` index | The index of the current item in the list that is being processed by the callback. If an initial value is given, it start from index `0`, else, it starts from index `1`. 
 
 ### Return value
 

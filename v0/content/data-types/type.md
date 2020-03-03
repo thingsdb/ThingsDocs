@@ -28,9 +28,8 @@ definition | description
 `'{}'` | requires a [set](../set).
 `'any'` | any type is valid.
 
-
 Each definition can be made optional by adding a question-mark `?` to the definition.
-If a property is made optional, then the value `nil` is allowed instead of the give type.
+If a property is made optional, then the value `nil` is allowed instead of the given type.
 The property will also be set to `nil` if no value for the property is given.
 
 > For example
@@ -42,7 +41,7 @@ set_type('User', {name: 'str?'});
 // Create a instance of type `User` without a name
 unknown = User{};
 
-// ..or explicit set name to `nil`
+// ..or explicitly set name to `nil`
 user_nil = User{name: nil};
 
 // ..a `str` is also ok
@@ -134,7 +133,7 @@ Method | Description
 ------ | -----------
 [del_type](../../collection-api/del_type) | Delete a `Type`.
 [mod_type](../../collection-api/mod_type) | Modify an existing `Type` definition.
-[new_type](../../collection-api/new_type) | Creates a new `Type`.
+[new_type](../../collection-api/new_type) | Create a new `Type`. 
 [has_type](../../collection-api/has_type) | Determine if the current scope has a `Type`.
 [set_type](../../collection-api/set_type) | Set property definitions on a `Type` and creates the `Type` if it did not exist.
 [type_info](../../collection-api/type_info) | Return the `Type` definition.
@@ -143,7 +142,7 @@ Method | Description
 ### Mutation format
 
 A mutation format is only required to understand if you manually want to parse events
-when *watching* for mutations on *thongs*. While most values have a pretty straightforward
+when *watching* for mutations on *things*. While most values have a pretty straightforward
 format when packed in a *mutation*, a type instance is a bit more complex
 to understand.
 
@@ -166,9 +165,8 @@ Key | Description
 `"#"` | The `#ID` which is assigned to the Type instance.
 `""`  | Array with fields;
 
-In order to correctly to parse the mutation correctly you require the [types_info](../../collection-api/types_info) of a collection.
-Note that the types info is included inside an [init event](../../watching/on-init). Below is an example with an entry of `types_info`
-which shows the type **Book**, which is the type with ID `10` from the mutation example above.
+In order to correctly parse the mutation you require the [types_info](../../collection-api/types_info) of a collection.
+Note that the types info is included inside an [init event](../../watching/on-init). Below is an example with an entry of `types_info`. This shows type **Book** which has ID `10` from the mutation example above.
 
 ```json
 ...
