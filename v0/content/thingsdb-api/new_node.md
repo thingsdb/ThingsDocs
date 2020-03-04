@@ -11,15 +11,20 @@ Before using this command, make sure another node is started and waiting for a j
 $ thingsdb --secret "my-one-time-serect"
 ```
 
+Or, alternatively you may use an environment variable
+
+```bash
+$ thingsdb --secret "my-one-time-serect"
+```
+
+
 Next, you will see something like this:
 ```text
 Waiting for an invite from a node to join ThingsDB...
 
-You can use one of the following queries to add this node:
+You can use the following query to add this node:
 
-  interface: eth0
-    new_node('my-one-time-serect', '10.10.10.2', 9220);
-...
+    new_node('my-one-time-secret', '10.10.10.2', 9220);
 ```
 
 Now you can use the [new_node(..)](../new_node) function to add the node to ThingsDB.
@@ -27,13 +32,13 @@ Now you can use the [new_node(..)](../new_node) function to add the node to Thin
 This function generates an [event](../../overview/events).
 
 ### Function
-`new_node(secret, ip_address [, port]);`
+`new_node(secret, name [, port]);`
 
 ### Arguments
 Argument | Type | Description
 -------- | ---- | -----------
 `secret` | str (required) | Secret used to initially connect to the new node.
-`ip_address` | str (required) | IP Address (IPv4 or IPv6) of the new node.
+`name` | str (required) | Node name (host-name or IP address) of the new node.
 `port` | int (optional) | Node port (`listen_node_port`), an integer between 0 an 65535, default **9220**.
 
 
@@ -47,7 +52,7 @@ Returns the new node `id` if successful.
 
 ```thingsdb,syntax_only,@t
 // ThingsDB must be started on node2 using the `--secret ...` argument
-new_node('my-one-time-serect', 'node2.local');
+new_node('my-one-time-secret', 'node2.local');
 ```
 
 > Example return value in JSON format (the new node id)
