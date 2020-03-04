@@ -1,6 +1,6 @@
 ---
 title: "doc"
-weight: 28
+weight: 29
 ---
 
 Returns a doc string from a [closure](..).

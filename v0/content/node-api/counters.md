@@ -1,6 +1,6 @@
 ---
 title: "counters"
-weight: 155
+weight: 156
 ---
 
 Returns `counters` for the ThingsDB node in the selected scope. Counters start all at zero when ThingsDB
@@ -16,7 +16,7 @@ average_query_duration | The average query duration in seconds.
 events_committed | Events committed since last counters reset.
 events_failed | Failed events. This is a critical counter which should be 0.
 events_killed | Killed events took too long for receiving the `READY` status. These events may be processed later. 
-events_quorum_lost | Number of times a quorum was not received. 
+events_quorum_lost | Number of times a [quorum](../../overview/dictionary). was not received. 
 events_skipped | Events which cannot be committed since an event with a higher `id` is already processed. These events are moved to a skipped queue.
 events_unaligned | Number of times an event cannot be pushed to the end of the queue and needs re-ordering.
 events_with_gap | Events which are committed but at least one event `id` was skipped.

@@ -1,6 +1,6 @@
 ---
 title: "set_log_level"
-weight: 162
+weight: 163
 ---
 
 Change the log level for the node in the selected scope.
@@ -17,7 +17,7 @@ Name  | Int | Description
 DEBUG | 0 | Display debug messages (can result in large amount of logging).
 INFO | 1 | Informational messages.
 WARNING | 2 | Warning messages (default log level).
-ERROR | 3 | Error messages, can occur if for example a node is not available.
+ERROR | 3 | Error messages, can occur if for example a node is not available. 
 CRITICAL | 4 | Critical messages, should never occur unless something is really wrong. 
 
 

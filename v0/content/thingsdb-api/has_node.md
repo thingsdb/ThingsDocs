@@ -1,6 +1,6 @@
 ---
 title: "has_node"
-weight: 174
+weight: 175
 ---
 
 Determines if a node exists in ThingsDB.
@@ -19,7 +19,7 @@ id | int (required) | Node id to check.
 
 ### Return value
 
-Returns `true` a node with a given id exists and otherwise `false`.
+Returns `true` if a node with a given id exists and otherwise `false`.
 
 ### Example
 

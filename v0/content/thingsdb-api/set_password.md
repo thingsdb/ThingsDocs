@@ -1,9 +1,9 @@
 ---
 title: "set_password"
-weight: 184
+weight: 185
 ---
 
-Change a users password. This function can also be used to remove an existing
+Change a user's password. This function can also be used to remove an existing
 password by using `nil` as the new password.
 
 Passwords must contain 1 to 128 printable characters.

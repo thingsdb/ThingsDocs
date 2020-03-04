@@ -1,6 +1,6 @@
 ---
 title: "has_token"
-weight: 175
+weight: 176
 ---
 
 Determines if a token exists in ThingsDB.
@@ -23,7 +23,7 @@ key | str (required) | Token key to check.
 
 ### Return value
 
-Returns `true` the token exists and otherwise `false`.
+Returns `true` if the token exists and otherwise `false`.
 
 ### Example
 

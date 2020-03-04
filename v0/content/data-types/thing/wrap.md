@@ -1,6 +1,6 @@
 ---
 title: "wrap"
-weight: 86
+weight: 87
 ---
 
 Wrap a thing with a [Type](../../type).

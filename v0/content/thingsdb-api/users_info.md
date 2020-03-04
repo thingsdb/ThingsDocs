@@ -1,9 +1,9 @@
 ---
 title: "users_info"
-weight: 186
+weight: 187
 ---
 
-Returns user information for all users in ThingsDB.
+Returns user information about all users in ThingsDB.
 
 See the [user_info()](../../thingsdb-api/user_info) function documentation for an example of the exposed user information.
 
@@ -19,4 +19,4 @@ This function does *not* generate an [event](../../overview/events).
 None
 
 ### Return value
-List with user [info](../../data-types/info) for all users in ThingsDB.
+List with user [info](../../data-types/info) about all users in ThingsDB.

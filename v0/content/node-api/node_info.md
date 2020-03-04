@@ -1,6 +1,6 @@
 ---
 title: "node_info"
-weight: 159
+weight: 160
 ---
 
 Returns information about the node in the selected scope.
@@ -39,7 +39,7 @@ syntax_version | Language or syntax version. A new version of ThingsDB might als
 uptime | Uptime of the node in seconds.
 version | Version of ThingsDB.
 yajl_version | JSON parser library version.
-zone | Zone number to which the node is assigned. May be changed in the ThingsDB configuration file.
+zone | [Zone](../../overview/dictionary) number to which the node is assigned. May be changed in the ThingsDB configuration file. 
 
 This function does *not* generate an [event](../../overview/events).
 

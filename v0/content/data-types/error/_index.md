@@ -1,6 +1,6 @@
 ---
 title: "error"
-weight: 29
+weight: 30
 ---
 
 When an error occurs within a method, an object can be returned. The object, called an error, contains information about the error, including its type and a message.
@@ -25,3 +25,4 @@ Method | Description
 ### Build-in errors
 
 See [errors](../../errors) for a list of all the build-in error type.
+

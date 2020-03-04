@@ -1,6 +1,6 @@
 ---
 title: "mod_type"
-weight: 129
+weight: 130
 ---
 
 This function is used to modify an existing [Type](../../data-types/type). A number of actions can be performed with this function.

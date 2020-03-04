@@ -1,6 +1,6 @@
 ---
 title: "nodes_info"
-weight: 160
+weight: 161
 ---
 
 Returns information about all ThingsDB nodes.
@@ -15,7 +15,7 @@ port | TCP port on which the node is listening for node connections.
 status | Current status of the node.
 stored_event_id | Last known stored event ID on the node.
 syntax_version | Language or syntax version which is running on the node.
-zone | Zone number to which the node is assigned.
+zone | [Zone](../../overview/dictionary) number to which the node is assigned. 
 
 
 This function does *not* generate an [event](../../overview/events).
@@ -30,11 +30,11 @@ None
 
 ### Return value
 
-List with node [info](../../data-types/info) for all nodes in ThingsDB.
+List with node [info](../../data-types/info) about all nodes in ThingsDB.
 
 ### Example
 
-> This code returns info for all ThingsDB nodes:
+> This code returns info about all ThingsDB nodes:
 
 ```thingsdb,should_pass,@n
 nodes_info();

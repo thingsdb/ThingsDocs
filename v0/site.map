@@ -19,6 +19,7 @@ overview
     variable
     events
     slices
+    dictionary
 data-types
     bool
     bytes

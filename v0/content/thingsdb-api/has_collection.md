@@ -1,6 +1,6 @@
 ---
 title: "has_collection"
-weight: 173
+weight: 174
 ---
 
 Determines if a collection exists in ThingsDB.
@@ -19,7 +19,7 @@ name_or_id | str/int (required) | Collection name or id to check.
 
 ### Return value
 
-Returns `true` the collection exists and otherwise `false`.
+Returns `true` if the collection exists and otherwise `false`.
 
 ### Example
 

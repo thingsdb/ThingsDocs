@@ -1,6 +1,6 @@
 ---
 title: "bytes"
-weight: 24
+weight: 25
 ---
 
 The bytes type can be used to store a sequence of byte values.

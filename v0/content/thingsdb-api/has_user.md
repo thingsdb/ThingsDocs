@@ -1,6 +1,6 @@
 ---
 title: "has_user"
-weight: 176
+weight: 177
 ---
 
 Determines if a user exists in ThingsDB.
@@ -23,7 +23,7 @@ username | str (required) | User to check.
 
 ### Return value
 
-Returns `true` the user exists and otherwise `false`.
+Returns if `true` the user exists and otherwise `false`.
 
 ### Example
 

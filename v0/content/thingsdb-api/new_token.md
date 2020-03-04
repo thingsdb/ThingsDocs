@@ -1,9 +1,9 @@
 ---
 title: "new_token"
-weight: 179
+weight: 180
 ---
 
-Adds a new token for a given user. An optional expiration time may be given after which the token cannot
+Adds a new token for a given user. An optional expiration time may be given; after this time the token cannot
 be used anymore. Use [del_expired](../../thingsdb-api/del_expired) to cleanup expired tokens. The expiration time may be
 given as a UNIX time-stamp in seconds or a date/time string.
 
@@ -15,8 +15,8 @@ Some valid date/time strings:
 
 Expiration dates in the past are not allowed an will raise a [bad_data_err()](../../errors/bad_data_err) error.
 
-It is also possible to set a description for the token which can be used to identify where token is used for.
-If you only want to set a description, but no expiration time, then you can use `nil` as second argument.
+It is also possible to set a description for the token which can be used to identify the token.
+If you only want to set a description, but no expiration time, then you can use `nil` as a second argument.
 For example: `new_token('my_user', nil, 'some nice description');`
 
 There can be no more than 128 tokens assigned to a single user. A [max_quota_err()](../../errors/max_quota_err) is raised if this limit
@@ -51,7 +51,7 @@ Returns the new token key.
 > Create a new token for user `admin`:
 
 ```thingsdb,should_pass,@t
-// ThingsDB must be started on node2 using the `--secret ...` argument
+// A new token with an expiration date and description
 new_token('admin', now() + 7*24*3600, 'token for one week');
 ```
 

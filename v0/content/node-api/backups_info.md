@@ -1,9 +1,9 @@
 ---
 title: "backups_info"
-weight: 154
+weight: 155
 ---
 
-Returns backup schedule information for all backup schedules in the selected node scope.
+Returns backup schedule information about all backup schedules in the selected node scope.
 
 See the [backup_info()](../backup_info) function documentation for an example of the exposed backup schedule information.
 
@@ -16,4 +16,5 @@ This function does *not* generate an [event](../../overview/events).
 None
 
 ### Return value
-List with backup schedule [info](../../data-types/info) for all backup schedules in the selected node scope.
+List with backup schedule [info](../../data-types/info)  about all backup schedules in the selected node scope.
+

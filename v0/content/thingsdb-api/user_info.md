@@ -1,10 +1,10 @@
 ---
 title: "user_info"
-weight: 185
+weight: 186
 ---
 
 Returns information about a user. If no argument is given, this method will return
-information about the current logged in user.
+information about the currently logged in user.
 
 {{% notice note %}}
 This function requires `GRANT` privileges on the `@thingsdb` scope when a `username`
