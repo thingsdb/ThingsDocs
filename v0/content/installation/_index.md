@@ -55,6 +55,7 @@ Variable | Default | Description
 -------- | ------- | -----------
 `THINGSDB_LISTEN_CLIENT_PORT` | `9200` | Listen on this TCP port for client socket connections.
 `THINGSDB_BIND_CLIENT_ADDR` | `0.0.0.0` | Bind client connections to this address. This may also be an IPv6 address like `::`.
+`THINGSDB_NODE_NAME` | *hostname* | ThingsDB will publish itself to other nodes using this node name.
 `THINGSDB_LISTEN_NODE_PORT` | `9210` | Listen on this TCP port for node connections.
 `THINGSDB_BIND_NODE_ADDR` | `0.0.0.0` | Bind node connections to this address. This may also be an IPv6 address like `::`.
 `THINGSDB_IP_SUPPORT` | `ALL` | Listen to IPv4 (`IPV4ONLY`), IPv6 (`IPV6ONLY`) or both (`ALL`) addresses.

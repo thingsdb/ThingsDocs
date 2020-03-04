@@ -17,7 +17,6 @@ db_stored_event_id | Last stored event ID in full database store.
 events_in_queue | Events which are pending in the queue.
 global_committed_event_id | Lowest known committed event ID by all nodes.
 global_stored_event_id | Lowest known stored event ID by all nodes.
-hostname | Hostname of the node.
 http_api_port | Listening to this HTTP port for API calls.
 http_status_port | Listening to this HTTP port for status, readiness and liveness requests.
 ip_support | Enabled IP support. May be IPv4/IPv6 or both.
@@ -31,6 +30,7 @@ msgpack_version | MessagePack data protocol library version.
 next_event_id | Next free event ID.
 next_thing_id | Next free things ID.
 node_id | The `id` which is assigned to the node.
+node_name | This node will publish itself to other nodes using the node name.
 node_port | Listening for node TCP socket connections on this port.
 scheduled_backups | Number of backups scheduled on this node. Only repeated backups or backups which are planned in the future are included.
 status | Current status of the ThingsDB node.
@@ -73,7 +73,7 @@ node_info();
     "events_in_queue": 0,
     "global_committed_event_id": 2,
     "global_stored_event_id": 2,
-    "hostname": "node0.local",
+    "node_name": "node0.local",
     "http_api_port": 9210,
     "http_status_port": "disabled",
     "ip_support": "ALL",
