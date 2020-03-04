@@ -3,7 +3,7 @@ title: "randint"
 weight: 138
 ---
 
-Returns **pseudo-random** random [integer](../../data-types/int) number between a given range.
+Returns **pseudo-random** [integer](../../data-types/int) number between a given range.
 
 The first argument specifies the *start* of the range and must have a value *less* than the
 second argument when specifies the *end* of the range. The *start* is *inclusive* and the *end* is

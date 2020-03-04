@@ -3,8 +3,7 @@ title: "isinf"
 weight: 117
 ---
 
-This function determines whether the value passed to this function
-is a positive or negative *infinity*.
+This function determines whether the provided value is a positive or negative *infinity*.
 
 This function does *not* generate an [event](../../overview/events).
 
@@ -20,7 +19,7 @@ value | any (required) | The value to be tested.
 
 ### Return value
 
-Returns `true` is the passed value is a positive or negative *infinity* else it returns `false`.
+Returns `true` if the given value is a positive or negative *infinity*, else it returns `false`.
 
 ### Example
 

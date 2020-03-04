@@ -3,8 +3,7 @@ title: "istuple"
 weight: 126
 ---
 
-This function determines whether the value passed to this function
-is a [tuple](../../data-types/tuple) or not. At least nested arrays are of kind tuple.
+This function determines whether the provided value is a [tuple](../../data-types/tuple) or not. At least nested arrays are of kind tuple.
 
 This function does *not* generate an [event](../../overview/events).
 
@@ -20,7 +19,7 @@ value | any (required) | The value to be tested.
 
 ### Return value
 
-Returns `true` is the passed value is a tuple else it returns `false`.
+Returns `true` if the given value is a tuple, else it returns `false`.
 
 ### Example
 

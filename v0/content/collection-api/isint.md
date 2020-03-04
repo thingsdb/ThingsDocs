@@ -3,8 +3,7 @@ title: "isint"
 weight: 118
 ---
 
-This function determines whether the value passed to this function
-is an [integer](../../data-types/int) or not.
+This function determines whether the provided value is an [integer](../../data-types/int) or not.
 
 This function does *not* generate an [event](../../overview/events).
 
@@ -20,7 +19,7 @@ value | any (required) | The value to be tested.
 
 ### Return value
 
-Returns `true` is the passed value is an integer else it returns `false`.
+Returns `true` if the given value is an integer, else it returns `false`.
 
 ### Example
 

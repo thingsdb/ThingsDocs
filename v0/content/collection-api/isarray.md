@@ -3,8 +3,7 @@ title: "isarray"
 weight: 111
 ---
 
-This function determines whether the value passed to this function
-is a [list](../../data-types/list) or [tuple](../../data-types/tuple) type or not. The functions [islist](../../collection-api/islist) and
+This function determines whether the provided value is of type [list](../../data-types/list) or [tuple](../../data-types/tuple) or not. The functions [islist](../../collection-api/islist) and
 [istuple](../../collection-api/istuple) can be used to check if the array is mutable.
 
 This function does *not* generate an [event](../../overview/events).
@@ -17,11 +16,11 @@ This function does *not* generate an [event](../../overview/events).
 
 Argument | Type | Description
 -------- | ---- | -----------
-value | any (required) | The value to be tested for being an array.
+value | any (required) | The value to be tested. 
 
 ### Return value
 
-Returns `true` the value passed is array else it returns `false`.
+Returns `true` if the value passed is an array, else it returns `false`.
 
 ### Example
 

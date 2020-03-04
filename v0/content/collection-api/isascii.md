@@ -3,7 +3,7 @@ title: "isascii"
 weight: 112
 ---
 
-This function determines whether the value passed to this function is of
+This function determines whether the provided value is of
 type [str](../../data-types/str) and contains only valid ascii characters.
 
 This function does *not* generate an [event](../../overview/events).
@@ -20,7 +20,7 @@ value | any (required) | The value to be tested.
 
 ### Return value
 
-Returns `true` is the given value is of type `str` and contains only ascii characters, else `false`.
+Returns `true` if the given value is of type `str` and contains only ascii characters, else `false`.
 
 ### Example
 

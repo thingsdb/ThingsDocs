@@ -3,8 +3,7 @@ title: "islist"
 weight: 119
 ---
 
-This function determines whether the value passed to this function
-is a [list](../../data-types/list) or not.
+This function determines whether the provided value is a [list](../../data-types/list) or not.
 
 This function does *not* generate an [event](../../overview/events).
 
@@ -20,7 +19,7 @@ value | any (required) | The value to be tested.
 
 ### Return value
 
-Returns `true` is the passed value is a `list`, else it returns `false`.
+Returns `true` if the given value is a `list`, else it returns `false`.
 
 ### Example
 

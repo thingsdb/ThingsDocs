@@ -3,7 +3,7 @@ title: "range"
 weight: 139
 ---
 
-This function returns a [list](../../data-types/list) of numbers, starting from 0 by default, and increments by 1 (by default), and ends at a specified number.
+This function returns a [list](../../data-types/list) of numbers, starting from 0 (by default), increments by 1 (by default), and ends at a specified number.
 
 {{% notice warning %}}
 Function **range()** may only be used for relatively small lists.

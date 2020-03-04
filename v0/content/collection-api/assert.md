@@ -20,7 +20,7 @@ msg | str (optional) | Custom error message.
 
 ### Return value
 
-Assert returns with the return value of the given statement when the statement evaluates to `true`. Otherwise
+Assert returns the value of the given statement when it evaluates to `true`. Otherwise
 an [assert_err()](../../errors/assert_err) is raised.
 
 ### Example

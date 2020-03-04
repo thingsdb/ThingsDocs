@@ -3,8 +3,7 @@ title: "isthing"
 weight: 125
 ---
 
-This function determines whether the value passed to this function
-is a [thing](../../data-types/thing) or not.
+This function determines whether the provided value is a [thing](../../data-types/thing) or not.
 
 {{% notice note %}}
 [Type](../../data-types/type) instances are also things, so this function returns `true` for a type instance as well.
@@ -24,7 +23,7 @@ value | any (required) | The value to be tested.
 
 ### Return value
 
-Returns `true` is the passed value is a thing else it returns `false`.
+Returns `true` if the given value is a thing, else it returns `false`.
 
 ### Example
 

@@ -30,7 +30,7 @@ Argument | Type | Description
 --------- | ----------- | -----------
 `file_template` | str | Backup schedule file template. See [file-template](#file-template) for more information.
 `start_ts` | nil/int/float/raw (optional) | Start date/time of the backup. If no `start_ts` is given, the backup starts as soon as possible.
-`repeat` | int (optional) | Repeat the backup schedule every `repeat` seconds. If not `repeat` value is set, the backup job will run only once.
+`repeat` | int (optional) | Repeat the backup schedule every `repeat` seconds. If no `repeat` value is set, the backup job will run only once. 
 
 ### File template
 
@@ -54,7 +54,7 @@ Returns the backup `ID` for the scheduled backup.
 > Use *new_backup* to schedule a ThingsDB backup:
 
 ```thingsdb,syntax_only,@n
-// Create a new backup immediately, and then at 23:00 and then repeat each day
+// Create a new backup immediately, then at 23:00 and then repeat each day
 new_backup('/var/backup/thingsdb_{DATE}{TIME}.tar.gz', '2000-01-01 23:00', 24*3600);
 ```
 

@@ -3,8 +3,7 @@ title: "isbytes"
 weight: 114
 ---
 
-This function determines whether the value passed to this function
-is of type [bytes](../../data-types/bytes) or not.
+This function determines whether the provided value is of type [bytes](../../data-types/bytes) or not.
 
 This function does *not* generate an [event](../../overview/events).
 
@@ -20,7 +19,7 @@ value | any (required) | The value to be tested.
 
 ### Return value
 
-Returns `true` is the passed value is of type `bytes` else it returns `false`.
+Returns `true` if the given value is of type `bytes`,  else it returns `false`.
 
 ### Example
 

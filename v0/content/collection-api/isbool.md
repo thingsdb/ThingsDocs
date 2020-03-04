@@ -3,8 +3,7 @@ title: "isbool"
 weight: 113
 ---
 
-This function determines whether the value passed to this function
-is a [bool](../../data-types/bool) or not.
+This function determines whether the provided value is a [bool](../../data-types/bool) or not.
 
 This function does *not* generate an [event](../../overview/events).
 
@@ -20,7 +19,7 @@ value | any (required) | The value to be tested.
 
 ### Return value
 
-Returns `true` is the passed value is a boolean else it returns `false`.
+Returns `true` if the given value is a boolean, else it returns `false`.
 
 ### Example
 

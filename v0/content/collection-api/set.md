@@ -4,8 +4,8 @@ weight: 142
 ---
 
 Returns a new empty [set](../../data-types/set). If an array is given, then all items in the
-given array must be or type `thing` and a new set is returned based on the
-given things. Instead of an array, it is also possible to provide things comma separated.
+given array must be of type `thing` and a new set is returned based on the
+given things. Instead of an array, it is also possible to provide one thing or multiple comma-separated things.
 
 This function does *not* generate an [event](../../overview/events).
 

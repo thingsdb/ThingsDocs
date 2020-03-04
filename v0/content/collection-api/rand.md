@@ -3,7 +3,7 @@ title: "rand"
 weight: 137
 ---
 
-Returns **pseudo-random** random number between `0.0` and `1.0`.
+Returns **pseudo-random** number between `0.0` and `1.0`.
 
 {{% notice warning %}}
 Do not use **rand()** when the purpose is security related since the linear

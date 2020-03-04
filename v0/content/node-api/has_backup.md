@@ -19,7 +19,7 @@ ID | int (required) | Backup ID to check.
 
 ### Return value
 
-Returns `true` a backup with a given ID exists and otherwise `false`.
+Returns `true` if a backup with a given ID exists and otherwise `false`.
 
 ### Example
 

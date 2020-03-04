@@ -3,7 +3,7 @@ title: "isnan"
 weight: 120
 ---
 
-This function determines whether the value passed to this function is a number.
+This function determines whether the provided value is a number.
 
 This function does *not* generate an [event](../../overview/events).
 
@@ -19,7 +19,7 @@ value | any (required) | The value to be tested.
 
 ### Return value
 
-Returns `true` is the given value is not a number, else `false`.
+Returns `true` if the given value is not a number, else `false`.
 
 ### Example
 

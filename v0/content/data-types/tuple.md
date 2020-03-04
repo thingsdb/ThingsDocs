@@ -17,11 +17,9 @@ assert(iserr(try(list[0].push('cannot be added to a tuple'))));
 ```
 
 A `tuple` only becomes a `tuple` when it is nested inside another `tuple` or `list`, which means the `tuple` will be immutable.
-ThingsDB does this because it wants to update all changes to subscribers and finds the subscribers by the parent object where
-the change is made. Since the parent of a nested `tuple` is another `tuple` or `list`, the `thing` holding the `list` would not be found.
+ThingsDB does this to make watching things possible; it wants to update all changes within a thing to the subscribers that are watching, and finds them by thing. Since the parent of a nested `tuple` is another `tuple` or `list`, the watched `thing` holding the `list`with nested lists would not be found.
 
-Another property of `lists` and `tuples` in ThingsDB is that they both are always *copies*, and not a *reference* as in most languages. This is
-because ThingsDB needs to know which subscribers to update when changes are made.
+Another property of `lists` and `tuples` in ThingsDB is that they both are always *copies*, and not a *reference* as in most languages. This is also done to enable watching.
 
 ### Methods
 

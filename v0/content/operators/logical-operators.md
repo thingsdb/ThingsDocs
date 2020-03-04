@@ -3,21 +3,20 @@ title: "Logical operators"
 weight: 96
 ---
 
-Logical operators are typically used with [bool](../../data-types/bool) values.
+Logical operators are generally used with [bool](../../data-types/bool) values.
 
 Operator | Description
 -------- | -----------
 `&&` | Logical AND.
 <code>&#124;&#124;</code> | Logical OR.
 
-As logical expressions are evaluated left to right, they are tested for possible *"short-circuit"* evaluation using the following rules:
+As logical expressions are evaluated left to right, they are tested for possible *"short-circuit"* evaluation. This means that the evaluation of an expression is stopped when the outcome is determined. This applies in the following two cases:
 
-- `(some falsy expression) && expr` is short-circuit evaluated to the falsy expression;
-- `(some truthy expression) || expr` is short-circuit evaluated to the truthy expression.
+* `expression_1 && expression_2` : if `expression_1` evaluates to `false` then `expression_2` is not evaluated. Any side effects of doing so do not take place.
 
-Short circuit means that the `expr` parts above are not evaluated, hence any side effects of doing so do not take place
-(e.g., if expr is a function call, the calling never takes place).
-This happens because the value of the operator is already determined after the evaluation of the first operand.
+* `expression_1 || expression_2`: if `expression_1` evaluates to `true` then `expression_2` is not evaluated. Any side effects of doing so do not take place.
+
+  
 
 > Logical *short-circuit* examples:
 

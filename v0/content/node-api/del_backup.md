@@ -4,7 +4,7 @@ weight: 156
 ---
 
 
-Delete a scheduled backup. If the schedule was *pending*, the backup job will be cancelled.
+Delete a scheduled backup. If the scheduled backup was *pending*, the backup job will be cancelled.
 
 {{% notice warning %}}
 Files associated with the backup will **not** be removed. Only the schedule will be deleted.

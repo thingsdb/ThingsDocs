@@ -5,7 +5,7 @@ weight: 140
 
 Returns the reference count of a value.
 
-The count returned is generally one higher than you might expect,
+Generally, the count returned is one higher than you might expect,
 because it includes the (temporary) reference.
 
 {{% notice info %}}

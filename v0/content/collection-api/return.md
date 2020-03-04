@@ -9,12 +9,12 @@ If no `return` is specified, then the last value will be the value which is retu
 A second argument can be given to the return function which can be used to specify how `deep`
 the result should be returned. The default `deep` value is set to 1, but any value between 0 and 127 is possible.
 
-A query can run different procedures and/or closures which might have change the `deep` value. In case you
+A query can run different procedures and/or closures which might have changed the `deep` value. In case you
 need to know the current `deep` value, the function [deep()](../../collection-api/deep) can be used.
 
 {{% notice warning %}}
 Be careful with using a high deep value, especially when circular references are made since this can result
-in returning very much data.
+in returning a large amount of data.
 {{% /notice %}}
 
 When no arguments are used the return value will be `nil`.

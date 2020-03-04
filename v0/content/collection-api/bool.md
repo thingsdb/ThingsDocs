@@ -3,10 +3,10 @@ title: "bool"
 weight: 102
 ---
 
-Returns an [bool](../../data-types/bool) from a specified value.
+Returns a [bool](../../data-types/bool) from a specified value.
 If no value is given, `false` is returned.
 
-Types with a *length* evaluate to `true` when the length is *not* `0` and `false` otherwise.
+Types with a *length* evaluate to `true` when the length is *not* `0`, and `false` otherwise.
 
 This function does *not* generate an [event](../../overview/events).
 
@@ -18,7 +18,7 @@ This function does *not* generate an [event](../../overview/events).
 
 Argument | Type | Description
 -------- | ---- | -----------
-value | any (optional) | The value where to return a boolean value for.
+value | any (optional) | The value to convert to a boolean value. 
 
 ### Return value
 

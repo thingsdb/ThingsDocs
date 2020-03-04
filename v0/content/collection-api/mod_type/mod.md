@@ -3,7 +3,7 @@ title: "mod"
 weight: 132
 ---
 
-Modifies a property from an exinsting [Type](../../../data-types/type).
+Modifies the type definition of a property from an exinsting [Type](../../../data-types/type).
 
 {{% notice note %}}
 When modifying a property of a Type, the changed property type can only be less 'strict'. \

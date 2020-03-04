@@ -11,6 +11,6 @@ This function generates an [event](../../overview/events).
 
 Action | Description
 ------ | -----------
-[add](./add) | Adds a property to an exinsting Type.
-[del](./del) | Deletes a property of an existing Type.
-[mod](./mod) | Modifies a property of an existing Type.
+[add](./add) | Add a property to an exinsting Type. 
+[del](./del) | Delete a property of an existing Type. 
+[mod](./mod) | Modify a property of an existing Type. 

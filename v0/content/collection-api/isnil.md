@@ -3,7 +3,7 @@ title: "isnil"
 weight: 121
 ---
 
-This function determines whether the value passed to this function is [nil](../../data-types/nil).
+This function determines whether the provided value is [nil](../../data-types/nil).
 
 This function does *not* generate an [event](../../overview/events).
 
@@ -19,7 +19,7 @@ value | any (required) | The value to be tested.
 
 ### Return value
 
-Returns `true` is the given value is `nil`, else `false`.
+Returns `true` if the given value is `nil`, else `false`.
 
 ### Example
 

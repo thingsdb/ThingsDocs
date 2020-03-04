@@ -8,8 +8,7 @@ Stored closures which can potentially make changes to ThingsDB are called
 This allows ThingsDB before running the query to make an event.
 
 {{% notice info %}}
-You should use `wse` only when required since otherwise this would unnecessary
-create events.
+You should use `wse` only when required, otherwise this would lead to unnecessary events.
 {{% /notice %}}
 
 This function generates an [event](../../overview/events).
