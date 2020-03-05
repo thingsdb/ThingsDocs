@@ -10,7 +10,7 @@ because it includes the (temporary) reference.
 
 {{% notice info %}}
 Different nodes might return different reference values since the reference counter
-can be higher of lower depending on how the value is stored and used.
+can be higher or lower depending on how the value is stored and used.
 {{% /notice %}}
 
 This function does *not* generate an [event](../../overview/events).
