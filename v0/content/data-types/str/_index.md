@@ -10,9 +10,9 @@ data and it is also possible to create an `utf8` property on a custom [Type](../
 with valid UTF-8 data.
 
 
-### Methods
+### Functions
 
-Method | Description
+Function | Description
 ------ | -----------
 [contains](./contains) | Determine if a given string is a substring of a string. 
 [endswith](./endswith) | Determine if a string ends with characters given by another string. 

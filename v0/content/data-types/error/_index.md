@@ -3,11 +3,11 @@ title: "error"
 weight: 30
 ---
 
-When an error occurs within a method, an object can be returned. The object, called an error, contains information about the error, including its type and a message.
+When an error occurs within a function, an object can be returned. The object, called an error, contains information about the error, including its type and a message.
 
-### Methods
+### Functions
 
-Method | Description
+Function | Description
 ------ | -----------
 [code](./code) | Return the error code. 
 [msg](./msg) | Return the error message. 
@@ -15,7 +15,7 @@ Method | Description
 
 ### Related functions
 
-Method | Description
+Function | Description
 ------ | -----------
 [err](../../collection-api/err) | Initialize a new error.
 [raise](../../collection-api/raise) | Raise an error.

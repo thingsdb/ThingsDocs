@@ -21,9 +21,9 @@ ThingsDB does this to make watching things possible; it wants to update all chan
 
 Another property of `lists` and `tuples` in ThingsDB is that they both are always *copies*, and not a *reference* as in most languages. This is also done to enable watching.
 
-### Methods
+### Functions
 
-Method | Description
+Function | Description
 ------ | -----------
 [choice](../list/choice) | Return a random item from a tuple. 
 [each](../list/each) | Iterate over all items in a tuple.
@@ -39,5 +39,5 @@ Method | Description
 [sort](../list/sort) | Return a new sorted `list`. 
 
 {{% notice info %}}
-The above methods correspond to those of a `list`. For that reason, they are only listed under the data type `list`.
+The above functions correspond to those of a `list`. For that reason, they are only listed under the data type `list`.
 {{% /notice %}}

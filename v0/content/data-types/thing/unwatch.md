@@ -4,7 +4,7 @@ weight: 84
 ---
 
 Stop watching for mutations on a [thing](..).
-This method returns `nil` and triggers a [stop event](../../../watching/on-stop), *only* when the thing was being watched.
+This function returns `nil` and triggers a [stop event](../../../watching/on-stop), *only* when the thing was being watched.
 
 This function does *not* generate an [event](../../../overview/events).
 

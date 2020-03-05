@@ -10,9 +10,9 @@ ThingsDB does this because it wants to update all changes to subscribers and fin
 the change is  made. Since the parent of a nested 'list' is another list, the `thing` holding the list would not be found.
 
 
-### Methods
+### Functions
 
-Method | Description
+Function | Description
 ------ | -----------
 [choice](./choice) | Return a random item from a list. 
 [each](./each) | Iterate over all items in a list.

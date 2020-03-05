@@ -129,7 +129,7 @@ return(book, 2);
 
 ### Related functions
 
-Method | Description
+Function | Description
 ------ | -----------
 [del_type](../../collection-api/del_type) | Delete a `Type`.
 [mod_type](../../collection-api/mod_type) | Modify an existing `Type` definition.
@@ -143,10 +143,10 @@ Method | Description
 
 A mutation format is only required to understand if you manually want to parse events
 when *watching* for mutations on *things*. While most values have a pretty straightforward
-format when packed in a *mutation*, a type instance is a bit more complex
+format when packed in a *mutation*, a Type instance is a bit more complex
 to understand.
 
-An example of a type mutation:
+An example of a Type mutation:
 
 ```json
 {

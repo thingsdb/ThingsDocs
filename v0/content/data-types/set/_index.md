@@ -6,9 +6,9 @@ weight: 56
 A set is a collection which is unordered and can only contain things.
 Each [thing](../thing) will only exists once in a collection.
 
-### Methods
+### Functions
 
-Method | Description
+Function | Description
 ------ | -----------
 [add](./add) | Add things to a set.
 [each](./each) | Iterate over all items in a set.
@@ -53,7 +53,7 @@ In practice this means that it is perfect to write something like `set_a |= set_
 
 ### Related functions
 
-Method | Description
+Function | Description
 ------ | -----------
 [set](../../collection-api/set) | Create a new empty set or convert a [list](../list) to a new set. 
 

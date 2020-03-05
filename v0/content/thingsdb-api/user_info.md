@@ -3,7 +3,7 @@ title: "user_info"
 weight: 186
 ---
 
-Returns information about a user. If no argument is given, this method will return
+Returns information about a user. If no argument is given, this function will return
 information about the currently logged in user.
 
 {{% notice note %}}

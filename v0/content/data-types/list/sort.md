@@ -3,7 +3,7 @@ title: "sort"
 weight: 52
 ---
 
-When this method is used on a [list](..) or [tuple](../../tuple), a new sorted list is returned.
+When this function is used on a [list](..) or [tuple](../../tuple), a new sorted list is returned.
 
 This function does *not* generate an [event](../../../overview/events).
 

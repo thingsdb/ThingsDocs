@@ -11,15 +11,15 @@ The bytes type can be used to store a sequence of byte values.
 .as_bytes = bytes("Hello ThingsDB!");
 ```
 
-### Methods
+### Functions
 
-Method | Description
+Function | Description
 ------ | -----------
 [len](./len) | Return the length of the byte sequence. 
 
 ### Related functions
 
-Method | Description
+Function | Description
 ------ | -----------
 [bytes](../../collection-api/bytes) | Create a new bytes value.
 [isbytes](../../collection-api/isbytes) | Test if a given value is of type bytes.

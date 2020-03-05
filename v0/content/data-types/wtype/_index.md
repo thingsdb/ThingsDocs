@@ -14,9 +14,9 @@ In the [example](#example) below we show a use case for wrapping a book type. Th
 but once the Types are defined, it is rather easy to use.
 
 
-### Methods
+### Functions
 
-Method | Description
+Function | Description
 ------ | -----------
 [unwrap](./unwrap) | Unwrap to access the *wrapped* thing..
 

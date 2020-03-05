@@ -7,11 +7,11 @@ Regular expression can be constructed using a literal which consists of a patter
 It is probably a good idea to store a `regex` in a variable if you plan to use the regular expression multiple times. This prevents the
 requirement to compile the regular expression each time.
 
-### Methods that use regular expressions
+### Functions that use regular expressions
 
-Method | Description
+Function | Description
 ------ | -----------
-[test](../../data-types/str/test) | A [str](../../data-types/str) method that tests for a match in a string. It returns `true` or `false`.
+[test](../../data-types/str/test) | A [str](../../data-types/str) function`true` or `false`. 
 
 > This code uses a regular expression for an oversimplified email check:
 

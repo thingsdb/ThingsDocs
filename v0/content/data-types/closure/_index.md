@@ -13,9 +13,9 @@ The most simple closure is `||nil` which is a closure without arguments and retu
 
 More complex closures are also possible, check the last example below.
 
-### Methods
+### Functions
 
-Method | Description
+Function | Description
 ------ | -----------
 [call](./call) | Call the closure with optional arguments.
 [doc](./doc) | Return the doc string of the closure. 

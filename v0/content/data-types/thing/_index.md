@@ -3,9 +3,9 @@ title: "thing"
 weight: 73
 ---
 
-### Methods
+### Functions
 
-Method | Description
+Function | Description
 ------ | -----------
 [del](./del) | Remove a property.
 [each](./each) | Iterate over all properties of a thing.

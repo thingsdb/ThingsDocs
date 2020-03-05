@@ -6,9 +6,9 @@ weight: 33
 ThingsDB uses 64bit to store float values and has support for the `e` notation and
 special *float* values like `inf`, `-inf` and `nan`.
 
-### Useful methods
+### Useful functions
 
-Method | Description
+Function | Description
 ------ | -----------
 [float](../../collection-api/float) | return a float type for a given value.
 [isfloat](../../collection-api/isfloat) | check if the given value is of the float type.
