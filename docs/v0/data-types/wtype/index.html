@@ -11,20 +11,20 @@
     <title>˂Type˃ :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1583427533" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1583427533" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1583427533" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1583427533" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1583427533" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1583427533" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1583427533" rel="stylesheet">
-    <link href="/v0/css/theme.css?1583427533" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1583427533" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583436073" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583436073" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583436073" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583436073" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583436073" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583436073" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583436073" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583436073" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583436073" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1583427533" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583436073" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1583427533"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583436073"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1583427533"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1583427533"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583436073"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583436073"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1583427533"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583436073"></script>
 
     
   </div>
@@ -4745,7 +4745,7 @@ set_type('PersonName', {
     <span style="color:#f92672">&#34;lastName&#34;</span>: <span style="color:#e6db74">&#34;Lightyear&#34;</span>
 }
 </code></pre></div><p>But now the type <code>PersonName</code>will be deleted.</p>
-<pre><code class="language-thingsdb,should_pass" data-lang="thingsdb,should_pass">// Delete type `PersonName`. After deleting this Type `.WrappedBob` is not filtered
+<pre><code class="language-thingsdb,syntax_only" data-lang="thingsdb,syntax_only">// Delete type `PersonName`. After deleting this Type `.WrappedBob` is not filtered
 del_type('PersonName');
 
 // ...but returns all properties stored.
@@ -4759,7 +4759,7 @@ del_type('PersonName');
     <span style="color:#f92672">&#34;lastName&#34;</span>: <span style="color:#e6db74">&#34;Lightyear&#34;</span>
 }
 </code></pre></div><p>If we subsequently add a type called <code>PersonName</code>again (with in this case a different set of properties), then the output to querying <code>.WrappedBob</code> is filtered by the type <code>PersonName</code> again.</p>
-<pre><code class="language-thingsdb,should_pass" data-lang="thingsdb,should_pass">// Create the type `PersonName` again, but with a different set of properties.
+<pre><code class="language-thingsdb,syntax_only" data-lang="thingsdb,syntax_only">// Create the type `PersonName` again, but with a different set of properties.
 set_type('PersonName', {
     lastName: 'str',
 });
@@ -4803,19 +4803,19 @@ set_type('PersonName', {
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1583427533"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1583427533"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583427533"></script>
-    <script src="/v0/js/jquery.sticky.js?1583427533"></script>
-    <script src="/v0/js/featherlight.min.js?1583427533"></script>
-    <script src="/v0/js/highlight.pack.js?1583427533"></script>
+    <script src="/v0/js/clipboard.min.js?1583436073"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583436073"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583436073"></script>
+    <script src="/v0/js/jquery.sticky.js?1583436073"></script>
+    <script src="/v0/js/featherlight.min.js?1583436073"></script>
+    <script src="/v0/js/highlight.pack.js?1583436073"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1583427533"></script>
-    <script src="/v0/js/learn.js?1583427533"></script>
-    <script src="/v0/js/hugo-learn.js?1583427533"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583436073"></script>
+    <script src="/v0/js/learn.js?1583436073"></script>
+    <script src="/v0/js/hugo-learn.js?1583436073"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1583427533" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1583427533"></script>
+    <link href="/v0/mermaid/mermaid.css?1583436073" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583436073"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
