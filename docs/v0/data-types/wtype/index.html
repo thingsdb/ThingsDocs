@@ -11,20 +11,20 @@
     <title>˂Type˃ :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1583426879" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1583426879" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1583426879" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1583426879" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1583426879" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1583426879" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1583426879" rel="stylesheet">
-    <link href="/v0/css/theme.css?1583426879" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583427470" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583427470" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583427470" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583427470" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583427470" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583427470" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583427470" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583427470" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583427470" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1583426879" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583427470" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1583426879"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583427470"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1583426879"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1583426879"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583427470"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583427470"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1583426879"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583427470"></script>
 
     
   </div>
@@ -4588,10 +4588,10 @@ be able to filter-out properties which are not required.</p>
 <p>One feature to return only specific properties from a thing, is to work with <em>wrapped</em> Types.
 This feature is especially useful <em>(and fast)</em> if your source thing is <a href="../type">Type</a> instance.</p>
 
-<div class="notices note" ><p>When ThingsDB wraps a normal thing with a Type, each property must be compared to the definition of that Type to determine if it comes in the end result. However, if the source is an intance of Type, ThingsDB only needs to do this once and can use an internal cache for every other transition from that Type to Type.</p>
+<div class="notices note" ><p>When ThingsDB wraps a normal thing with a Type, each property must be compared to the definition of that Type to determine if it comes in the end result. However, if the source is an instance of Type, ThingsDB only needs to do this once and can use an internal cache for every other transition from that Type to Type.</p>
 </div>
 
-<p>In the <a href="#example">example</a> below we show a use case for wrapping a book type. The set-up requires some code
+<p>In the <a href="#example-1">example</a> below we show a use case for wrapping a book type. The set-up requires some code
 but once the Types are defined, it is rather easy to use.</p>
 <h3 id="functions">Functions</h3>
 <table>
@@ -4709,7 +4709,7 @@ return(.wrap('_AllBooks'), 3);
     ]
 }
 </code></pre></div><h3 id="what-if-a-type-is-removed">What if a Type is removed?</h3>
-<p>When a Type is removed that was wrapping things, all these things are not filtered anymore. However these things are still connected to the removed Type&rsquo;s name. In case you decide to add a Type with the same name, then the wrapped things will be filtered again according to the Type&rsquo;s new definition. The following example will demostrate this event.</p>
+<p>When a Type is removed that was wrapping things, all these things are not filtered anymore. However these things are still connected to the removed Type&rsquo;s name. In case you decide to add a Type with the same name, then the wrapped things will be filtered again according to the Type&rsquo;s new definition. The following <a href="#example-2">example</a> will demonstrate this event.</p>
 <h3 id="example-2">Example 2</h3>
 <pre><code class="language-thingsdb,should_pass" data-lang="thingsdb,should_pass">// Create type `Person`
 set_type('Person', {
@@ -4745,7 +4745,7 @@ set_type('PersonName', {
     <span style="color:#f92672">&#34;lastName&#34;</span>: <span style="color:#e6db74">&#34;Lightyear&#34;</span>
 }
 </code></pre></div><p>But now the type <code>PersonName</code>will be deleted.</p>
-<pre><code class="language-thingsdb,should_pass" data-lang="thingsdb,should_pass">// Delete type `PersonName`. After deleting this Type `.WrappedBob` is not filtered 
+<pre><code class="language-thingsdb,should_pass" data-lang="thingsdb,should_pass">// Delete type `PersonName`. After deleting this Type `.WrappedBob` is not filtered
 del_type('PersonName');
 
 // ...but returns all properties stored.
@@ -4764,7 +4764,7 @@ set_type('PersonName', {
     lastName: 'str',
 });
 
-// And return `.WrappedBob` again. 
+// And return `.WrappedBob` again.
 .WrappedBob;
 </code></pre><p>The output now only includes the <code>lastName</code> property. Thus the property <code>.WrappedBob</code> did not loose its wrapping with type <code>PersonName</code> after it got deleted.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
@@ -4803,19 +4803,19 @@ set_type('PersonName', {
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1583426879"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1583426879"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583426879"></script>
-    <script src="/v0/js/jquery.sticky.js?1583426879"></script>
-    <script src="/v0/js/featherlight.min.js?1583426879"></script>
-    <script src="/v0/js/highlight.pack.js?1583426879"></script>
+    <script src="/v0/js/clipboard.min.js?1583427470"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583427470"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583427470"></script>
+    <script src="/v0/js/jquery.sticky.js?1583427470"></script>
+    <script src="/v0/js/featherlight.min.js?1583427470"></script>
+    <script src="/v0/js/highlight.pack.js?1583427470"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1583426879"></script>
-    <script src="/v0/js/learn.js?1583426879"></script>
-    <script src="/v0/js/hugo-learn.js?1583426879"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583427470"></script>
+    <script src="/v0/js/learn.js?1583427470"></script>
+    <script src="/v0/js/hugo-learn.js?1583427470"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1583426879" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1583426879"></script>
+    <link href="/v0/mermaid/mermaid.css?1583427470" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583427470"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

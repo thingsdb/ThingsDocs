@@ -12,11 +12,11 @@ This feature is especially useful *(and fast)* if your source thing is [Type](..
 
 {{% notice note %}}
 
-When ThingsDB wraps a normal thing with a Type, each property must be compared to the definition of that Type to determine if it comes in the end result. However, if the source is an intance of Type, ThingsDB only needs to do this once and can use an internal cache for every other transition from that Type to Type.
+When ThingsDB wraps a normal thing with a Type, each property must be compared to the definition of that Type to determine if it comes in the end result. However, if the source is an instance of Type, ThingsDB only needs to do this once and can use an internal cache for every other transition from that Type to Type.
 
 {{% /notice %}}
 
-In the [example](#example) below we show a use case for wrapping a book type. The set-up requires some code
+In the [example](#example-1) below we show a use case for wrapping a book type. The set-up requires some code
 but once the Types are defined, it is rather easy to use.
 
 
@@ -138,7 +138,7 @@ return(.wrap('_AllBooks'), 3);
 
 ### What if a Type is removed?
 
-When a Type is removed that was wrapping things, all these things are not filtered anymore. However these things are still connected to the removed Type's name. In case you decide to add a Type with the same name, then the wrapped things will be filtered again according to the Type's new definition. The following example will demostrate this event.
+When a Type is removed that was wrapping things, all these things are not filtered anymore. However these things are still connected to the removed Type's name. In case you decide to add a Type with the same name, then the wrapped things will be filtered again according to the Type's new definition. The following [example](#example-2) will demonstrate this event.
 
 ### Example 2
 
@@ -186,7 +186,7 @@ The output:
 But now the type `PersonName`will be deleted.
 
 ```thingsdb,should_pass
-// Delete type `PersonName`. After deleting this Type `.WrappedBob` is not filtered 
+// Delete type `PersonName`. After deleting this Type `.WrappedBob` is not filtered
 del_type('PersonName');
 
 // ...but returns all properties stored.
@@ -213,7 +213,7 @@ set_type('PersonName', {
     lastName: 'str',
 });
 
-// And return `.WrappedBob` again. 
+// And return `.WrappedBob` again.
 .WrappedBob;
 ```
 
