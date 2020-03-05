@@ -11,20 +11,20 @@
     <title>Watching :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/theme.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583426879" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1583166349" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583426879" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1583166349"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583426879"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1583166349"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1583166349"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583426879"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583426879"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1583166349"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583426879"></script>
 
     
   </div>
@@ -501,6 +501,25 @@
       <li data-nav-id="/v0/overview/slices/" title="Slices" class="dd-item ">
         <a href="/v0/overview/slices/">
         Slices
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/overview/dictionary/" title="Dictionary" class="dd-item ">
+        <a href="/v0/overview/dictionary/">
+        Dictionary
         
         </a>
     </li>
@@ -4573,15 +4592,15 @@
 </tr>
 <tr>
 <td><a href="./on-update">ON_UPDATE</a> (<code>2</code>)</td>
-<td>Update on a <a href="../data-types/thing">thing</a> is the watch list.</td>
+<td>Update on a <a href="../data-types/thing">thing</a> in the watch list.</td>
 </tr>
 <tr>
 <td><a href="./on-delete">ON_DELETE</a> (<code>3</code>)</td>
-<td>A <a href="../data-types/thing">thing</a> from the watch list is removed.</td>
+<td>A <a href="../data-types/thing">thing</a> in the watch list is removed.</td>
 </tr>
 <tr>
 <td><a href="./on-stop">ON_STOP</a> (<code>4</code>)</td>
-<td>A <a href="../data-types/thing">thing</a> has been stopped watching.</td>
+<td>A <a href="../data-types/thing">thing</a> is no longer being watched.</td>
 </tr>
 <tr>
 <td><a href="./warning">WARNING</a> (<code>5</code>)</td>
@@ -4598,17 +4617,17 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">await client<span style="color:#f92672">.</span>watch(<span style="color:#e6db74">&#39;@node&#39;</span>)
 </code></pre></div><p>If you want to write the request to the socket connection yourself, sending the following byte data on your socket connection will have the same result:</p>
 <pre><code>\x07\x00\x00\x00\x00\x00\x23\xdc\x91\xa5@node
-</code></pre><p>(See the <em>&ldquo;creating a <a href="../connect/socket/watch">watch request</a> example&rdquo;</em> on how we got the above byte code)</p>
+</code></pre><p>(See the <em>&ldquo;creating a <a href="../connect/socket/watch">watch request</a> example&rdquo;</em> on how we got the above bytes code)</p>
 <h2 id="subscribe-for-thing-mutations">Subscribe for thing mutations</h2>
 <p>If you start to watch a thing, the following events will be pushed in order:</p>
 <ul>
-<li><a href="./on-init">ON_INIT</a>, This event will <strong>always</strong> be pushed, on each watch request.</li>
+<li><a href="./on-init">ON_INIT</a>, This event will <strong>always</strong> be pushed on each watch request.</li>
 <li><a href="./on-update">ON_UPDATE</a>, You receive an update event for each <strong>mutation</strong> after the <em>initial</em> <a href="./on-init">ON_INIT</a> event.</li>
 <li><a href="./on-delete">ON_DELETE</a> or <a href="./on-stop">ON_STOP</a>, No more events will be pushed for the thing after this event.</li>
 </ul>
 <p>To start watching one or more things, a <a href="../connect/socket/watch">watch request</a> may be used, but as an alternative it is also
 possible to use the functions <a href="../data-types/thing/watch">watch()</a> and <a href="../data-types/thing/unwatch">unwatch</a>. There is no
-alternative function for watching node status changes.</p>
+alternative function for watching the node status.</p>
 
 
 
@@ -4641,19 +4660,19 @@ alternative function for watching node status changes.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1583166349"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1583166349"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583166349"></script>
-    <script src="/v0/js/jquery.sticky.js?1583166349"></script>
-    <script src="/v0/js/featherlight.min.js?1583166349"></script>
-    <script src="/v0/js/highlight.pack.js?1583166349"></script>
+    <script src="/v0/js/clipboard.min.js?1583426879"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583426879"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583426879"></script>
+    <script src="/v0/js/jquery.sticky.js?1583426879"></script>
+    <script src="/v0/js/featherlight.min.js?1583426879"></script>
+    <script src="/v0/js/highlight.pack.js?1583426879"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1583166349"></script>
-    <script src="/v0/js/learn.js?1583166349"></script>
-    <script src="/v0/js/hugo-learn.js?1583166349"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583426879"></script>
+    <script src="/v0/js/learn.js?1583426879"></script>
+    <script src="/v0/js/hugo-learn.js?1583426879"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1583166349" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1583166349"></script>
+    <link href="/v0/mermaid/mermaid.css?1583426879" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583426879"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -20,8 +20,7 @@
 When assigned to a variable, it is not required to explicitly write the call function. Simply calling the closure by using () will work as well.
 This function does not generate an event.
 Function closure.call()
-Arguments The exact number of arguments for the closure must be given.
-It is not possible to assign default values to arguments but something similar can be accomplished by checking the argument within the closure.</description>
+Arguments The arguments for the closure. If more arguments are given than the closure expects, the redundant arguments will be ignored. If too few arguments are given, then the remaining arguments will be set to nil.</description>
     </item>
     
     <item>

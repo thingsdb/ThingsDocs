@@ -11,20 +11,20 @@
     <title>filter :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/theme.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583426879" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1583166349" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583426879" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1583166349"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583426879"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1583166349"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1583166349"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583426879"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583426879"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1583166349"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583426879"></script>
 
     
   </div>
@@ -501,6 +501,25 @@
       <li data-nav-id="/v0/overview/slices/" title="Slices" class="dd-item ">
         <a href="/v0/overview/slices/">
         Slices
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/overview/dictionary/" title="Dictionary" class="dd-item ">
+        <a href="/v0/overview/dictionary/">
+        Dictionary
         
         </a>
     </li>
@@ -4569,12 +4588,28 @@
 
 
 
-<p>When this method is used on a <code>set</code>, then the return value will be a new set.</p>
+<p>The function returns a new set with things that pass the test.</p>
 <p>This function does <em>not</em> generate an <a href="../../../overview/events">event</a>.</p>
 <h3 id="function">Function</h3>
 <p><em>set</em>.<code>filter(callback)</code></p>
 <h3 id="arguments">Arguments</h3>
-<p>The <em>callback</em> argument must be a <code>closure</code> which input values depend on the type the method is called on.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>callback</td>
+<td>closure (required)</td>
+<td>Closure to execute on each value.</td>
+</tr>
+</tbody>
+</table>
+<p>Explanation of the <em>callback</em> argument:</p>
 <table>
 <thead>
 <tr>
@@ -4592,8 +4627,8 @@
 </tbody>
 </table>
 <h3 id="return-value">Return value</h3>
-<p>A new <code>set</code> with the elements that pass the test.
-If no elements pass the test, an empty set will be returned.</p>
+<p>A new <code>set</code> with the things that pass the test.
+If no items passed the test, an empty set will be returned.</p>
 <h3 id="example">Example</h3>
 <blockquote>
 <p>This code shows an example using <em><strong>filter()</strong></em>:</p>
@@ -4644,19 +4679,19 @@ users.filter(|user| (user.name == 'Iris'));
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1583166349"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1583166349"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583166349"></script>
-    <script src="/v0/js/jquery.sticky.js?1583166349"></script>
-    <script src="/v0/js/featherlight.min.js?1583166349"></script>
-    <script src="/v0/js/highlight.pack.js?1583166349"></script>
+    <script src="/v0/js/clipboard.min.js?1583426879"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583426879"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583426879"></script>
+    <script src="/v0/js/jquery.sticky.js?1583426879"></script>
+    <script src="/v0/js/featherlight.min.js?1583426879"></script>
+    <script src="/v0/js/highlight.pack.js?1583426879"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1583166349"></script>
-    <script src="/v0/js/learn.js?1583166349"></script>
-    <script src="/v0/js/hugo-learn.js?1583166349"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583426879"></script>
+    <script src="/v0/js/learn.js?1583426879"></script>
+    <script src="/v0/js/hugo-learn.js?1583426879"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1583166349" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1583166349"></script>
+    <link href="/v0/mermaid/mermaid.css?1583426879" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583426879"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

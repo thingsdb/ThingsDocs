@@ -11,20 +11,20 @@
     <title>sort :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/theme.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583426879" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1583166349" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583426879" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1583166349"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583426879"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1583166349"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1583166349"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583426879"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583426879"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1583166349"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583426879"></script>
 
     
   </div>
@@ -501,6 +501,25 @@
       <li data-nav-id="/v0/overview/slices/" title="Slices" class="dd-item ">
         <a href="/v0/overview/slices/">
         Slices
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/overview/dictionary/" title="Dictionary" class="dd-item ">
+        <a href="/v0/overview/dictionary/">
+        Dictionary
         
         </a>
     </li>
@@ -4569,7 +4588,7 @@
 
 
 
-<p>When this method is used on a <a href="..">list</a> or <a href="../../tuple">tuple</a>, a new sorted list is returned.</p>
+<p>When this function is used on a <a href="..">list</a> or <a href="../../tuple">tuple</a>, a new sorted list is returned.</p>
 <p>This function does <em>not</em> generate an <a href="../../../overview/events">event</a>.</p>
 <h3 id="function">Function</h3>
 <p><em>array</em>.<code>sort([closure, [reverse]])</code></p>
@@ -4629,13 +4648,13 @@
     <span style="color:#ae81ff">2</span>,
     <span style="color:#ae81ff">1</span>
 ]
-</code></pre></div><p>When using a <a href="../../closure">closure</a> the sort behavior depends on the number of arguments the give closure accepts.
-With <em>one</em> argument, each item in the list will be parser to the closure and the <em>return</em> value of the closure will be
-used as compare value. Below is an example which uses such closure to do a case-insensitive sort. Another common use
+</code></pre></div><p>When using a <a href="../../closure">closure</a> the sort behavior depends on the number of arguments the closure accepts.
+With <em>one</em> argument, each item in the list will be passed to the closure and the <em>return</em> value of the closure will be
+used to compare. Below is an example which uses such a closure to do a case-insensitive sort. Another common use
 case is when you want to sort <a href="../../thing">things</a> based on a property. For example a closure like <code>|u| u.age</code>
-could be used to sort users based on a <code>age</code> property.</p>
+could be used to sort users based on an <code>age</code> property.</p>
 <blockquote>
-<p>Sort using a one-argument callback</p>
+<p>Sort using an one-argument callback</p>
 </blockquote>
 <pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">// return a new list in ascending order, case-insensitive
 [&quot;charlie&quot;, &quot;alpha&quot;, &quot;Beta&quot;].sort(|s| s.lower());
@@ -4648,8 +4667,7 @@ could be used to sort users based on a <code>age</code> property.</p>
     <span style="color:#e6db74">&#34;charlie&#34;</span>
 ]
 </code></pre></div><p>As a second option the sort function can accept a closure with two arguments. The return value of the given closure
-must return an <a href="../../int">integer</a> value. When the <em>integer</em> is <code>&lt; 0</code>, then <code>a</code> goes before <code>b</code>, when <code>0</code>
-both <code>a</code> and <code>b</code> are considered equal and if <code>&gt;0</code> then <code>a</code> goes after <code>b</code>.</p>
+must return an <a href="../../int">integer</a> value. When this value is <code>&lt; 0</code> then <code>a</code> goes before <code>b</code>, when <code>0</code> then both <code>a</code> and <code>b</code> are considered equal, and when <code>&gt;0</code> then <code>a</code> goes after <code>b</code>.</p>
 <blockquote>
 <p>Sort using a two-argument callback</p>
 </blockquote>
@@ -4698,19 +4716,19 @@ arr.sort(|a, b| isnil(a) ? 1 : isnil(b) ? -1 : a &lt; b ? -1 : a &gt; b ? 1 : 0)
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1583166349"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1583166349"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583166349"></script>
-    <script src="/v0/js/jquery.sticky.js?1583166349"></script>
-    <script src="/v0/js/featherlight.min.js?1583166349"></script>
-    <script src="/v0/js/highlight.pack.js?1583166349"></script>
+    <script src="/v0/js/clipboard.min.js?1583426879"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583426879"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583426879"></script>
+    <script src="/v0/js/jquery.sticky.js?1583426879"></script>
+    <script src="/v0/js/featherlight.min.js?1583426879"></script>
+    <script src="/v0/js/highlight.pack.js?1583426879"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1583166349"></script>
-    <script src="/v0/js/learn.js?1583166349"></script>
-    <script src="/v0/js/hugo-learn.js?1583166349"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583426879"></script>
+    <script src="/v0/js/learn.js?1583426879"></script>
+    <script src="/v0/js/hugo-learn.js?1583426879"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1583166349" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1583166349"></script>
+    <link href="/v0/mermaid/mermaid.css?1583426879" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583426879"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

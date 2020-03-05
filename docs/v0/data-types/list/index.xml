@@ -16,14 +16,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/list/choice/</guid>
-      <description>This function returns a pseudo-random item from the list. The list must contain at least one item, otherwise a lookup_err() is raised.
+      <description>This function returns a pseudo-random item from a list or tuple . The array must contain at least one item, otherwise a lookup_err() is raised.
 This function does not generate an event.
 Function array.choice()
 Arguments None
-Return value A pseudo-random item from the list.
+Return value A pseudo-random item from the array.
 Example  This code shows an example using choice():
- // Returns either `a`, `b` or `c` [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;].choice();  Example return value in JSON format
- &amp;#34;b&amp;#34; </description>
+ // Returns either `a`, `b` or `c` [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;].choice();  Example return value in JSON format</description>
     </item>
     
     <item>
@@ -45,7 +44,7 @@ Arguments    Argument Type Description     callback closure (required) Closure t
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/list/every/</guid>
-      <description>This function tests whether all elements in the array pass a given test. It returns a boolean value.
+      <description>This function checks if all items in the list or tuple pass a given test. It returns a boolean value.
 Calling this function on an empty array returns true for any condition!
  This function does not generate an event.
 Function array.every(callback)
@@ -71,11 +70,11 @@ Example  This code extends a list with a given array:</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/list/filter/</guid>
-      <description>When this method is used on a list or tuple, a new list is returned with elements that pass the test.
+      <description>The function returns a new list with items that pass the test.
 This function does not generate an event.
 Function array.filter(callback)
 Arguments    Argument Type Description     callback closure (required) Closure to execute on each value.    Explanation of the callback argument:
-   Iterable Arguments Description     array item, index Iterate over all items in the array.</description>
+   Iterable Arguments Description     array item, index Iterate over all items in the array. Both item and index are optional.</description>
     </item>
     
     <item>
@@ -84,7 +83,7 @@ Arguments    Argument Type Description     callback closure (required) Closure t
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/list/find/</guid>
-      <description>This function returns the value of the first element in the list or tuple that satisfies the callback function. Otherwise nil is returned unless an alternative return value is specified.
+      <description>This function returns the value of the first item in the list or tuple that passes the test. Otherwise nil is returned if no alternative return value is specified.
 This function does not generate an event.
 Function array.find(callback, [alt])
 Arguments    Argument Type Description     callback closure Closure to execute on each value until the closure evaluates to true.   alt any (optional) Alternative value which is returned if no item has passed the callback test.</description>
@@ -96,7 +95,7 @@ Arguments    Argument Type Description     callback closure Closure to execute o
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/list/findindex/</guid>
-      <description>This function returns the index of the first element in a list or tuple that satisfies the callback function. Otherwise nil is returned.
+      <description>This function returns the index of the first item in a list or tuple that passes the test. Otherwise nil is returned.
 This function does not generate an event.
 Function array.findindex(callback)
 Arguments    Argument Type Description     callback closure The statement to try.    Explanation of the callback argument:
@@ -109,7 +108,7 @@ Arguments    Argument Type Description     callback closure The statement to try
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/list/indexof/</guid>
-      <description>Returns the first index at which a given value can be found in the list or tuple, or nil if it is not present. The index of an array starts at 0, so the first item has index 0 the second 1 and so on.
+      <description>The function returns the first index of the item in a list or tuple that matches the provided value, otherwise nil if it is not present. The index of an array starts at 0, so the first item has index 0 the second 1 and so on.
 This function does not generate an event.
 Function array.indexof(value)
 Arguments    Argument Type Description     value any The value to find the index for.</description>
@@ -137,7 +136,7 @@ Example  This code uses len() to return the number of items in a collection:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/list/map/</guid>
-      <description>Iterate over items in an list or tuple and return a new list based on the results of a given callback function.
+      <description>The function iterates over items in an list or tuple and returns a new list based on the results of a given callback function.
 This function does not generate an event.
 Function array.map(callback)
 Arguments    Argument Type Description     callback closure (required) Closure to execute on each value.    Explanation of the callback argument:
@@ -150,12 +149,12 @@ Arguments    Argument Type Description     callback closure (required) Closure t
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/list/pop/</guid>
-      <description>Removes the last element from a list and returns that element.
-This method changes the length of the list. The pop() method works on a list type array, but not on a tuple since tuples are immutable.
+      <description>Removes the last item from a list and returns that item.
+This function changes the length of the list. The pop() function works on a list type array, but not on a tuple since tuples are immutable.
 This function generates an event (except when called on a variable).
 Function list.pop()
 Arguments None
-Return value The removed element from the list. A lookup_err() is raised if the list is empty.
+Return value The removed item from the list. A lookup_err() is raised if the list is empty.
 Example  This code show an example usage of pop():</description>
     </item>
     
@@ -165,7 +164,7 @@ Example  This code show an example usage of pop():</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/list/push/</guid>
-      <description>Adds new items to the end of an list, and returns the new length.
+      <description>Adds new items to the end of a list, and returns the new length.
 This function generates an event (except when called on a variable).
 Function list.push(item1, item2, ..., itemX)
 Return value Returns the new length of the list.
@@ -179,10 +178,10 @@ Example  This code pushes values to a list:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/list/reduce/</guid>
-      <description>Executes a given reducer closure on each element of the list, resulting in a single output value.
+      <description>Executes a given reducer closure on every item of the list, accumulating to a single return value.
 This function does not generate an event.
 Function list.reduce(reducer, [initial])
-Arguments    Argument Type Description     reducer closure (required) Closure to execute on each value (except for the first, if no initial value is supplied).   initial any (optional) A value to use as the first argument to the first call of the callback.</description>
+Arguments    Argument Type Description     reducer closure (required) Closure to execute on every value (except for the first, if no initial value is provided).   initial any (optional) The initial value serves as the first argument of the callback during the first call.</description>
     </item>
     
     <item>
@@ -191,7 +190,7 @@ Arguments    Argument Type Description     reducer closure (required) Closure to
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/list/remove/</guid>
-      <description>This function removes and returns the value of the first element in the list that satisfies the callback function. Otherwise nil is returned unless an alternative return value is specified.
+      <description>This function removes and returns the value of the first item in the list that satisfies the callback function. Otherwise nil is returned if no alternative return value is specified.
 This function generates an event (except when called on a variable).
 Function list.remove(callback, [alt])
 Arguments    Argument Type Description     callback closure Closure to execute on each value until the closure evaluates to true.   alt any (optional) Alternative value which is returned if no item has passed the callback test.</description>
@@ -203,7 +202,7 @@ Arguments    Argument Type Description     callback closure Closure to execute o
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/list/some/</guid>
-      <description>This function tests whether at least one element in the array passes a given test. It returns a boolean value.
+      <description>This function checks if at least one item in the list or tuple passes a given test. It returns a boolean value.
 Calling this function on an empty array returns false for any condition!
  This function does not generate an event.
 Function array.some(callback)
@@ -216,7 +215,7 @@ Arguments    Argument Type Description     callback closure Closure to execute o
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/list/sort/</guid>
-      <description>When this method is used on a list or tuple, a new sorted list is returned.
+      <description>When this function is used on a list or tuple, a new sorted list is returned.
 This function does not generate an event.
 Function array.sort([closure, [reverse]])
 Arguments    Argument Type Description     callback closure (optional) Closure to execute on each value, which is used to determine how the list should be sorted.   reverse bool (optional) Determines the order of the returned list.    The reverse argument cannot be used together with a closure which takes two arguments.</description>
@@ -228,10 +227,10 @@ Arguments    Argument Type Description     callback closure (optional) Closure t
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/list/splice/</guid>
-      <description>The splice() method changes the contents of an list by removing or replacing existing elements and/or adding new elements in place.
+      <description>The splice() function changes a list by removing or replacing existing items and/or adding new items.
 This function generates an event (except when called on a variable).
 Function list.splice(start, [delete_count, [item1, item2, ..., itemX]]))`
-Arguments    Argument Type Description     start int (required) Start index in the list. If negative, it will begin that many elements from the end of the list.</description>
+Arguments    Argument Type Description     start int (required) Start index in the list. If it is negative, it will start that many items from the end of the list.   delete_count int (optional) Number of item to remove from thestart of the list.</description>
     </item>
     
   </channel>

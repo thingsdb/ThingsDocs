@@ -11,20 +11,20 @@
     <title>list :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/theme.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583426879" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1583166349" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583426879" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1583166349"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583426879"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1583166349"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1583166349"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583426879"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583426879"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1583166349"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583426879"></script>
 
     
   </div>
@@ -501,6 +501,25 @@
       <li data-nav-id="/v0/overview/slices/" title="Slices" class="dd-item ">
         <a href="/v0/overview/slices/">
         Slices
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/overview/dictionary/" title="Dictionary" class="dd-item ">
+        <a href="/v0/overview/dictionary/">
+        Dictionary
         
         </a>
     </li>
@@ -4532,7 +4551,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#methods">Methods</a></li>
+        <li><a href="#functions">Functions</a></li>
         <li><a href="#reference-versus-copy">Reference versus copy</a></li>
       </ul>
     </li>
@@ -4566,18 +4585,18 @@
 <p>Nesting is also possible but each nested list will become a <a href="../tuple">tuple</a> which means the &lsquo;list&rsquo; will be immutable.
 ThingsDB does this because it wants to update all changes to subscribers and finds the subscribers by the parent object where
 the change is  made. Since the parent of a nested &lsquo;list&rsquo; is another list, the <code>thing</code> holding the list would not be found.</p>
-<h3 id="methods">Methods</h3>
+<h3 id="functions">Functions</h3>
 <table>
 <thead>
 <tr>
-<th>Method</th>
+<th>Function</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><a href="./choice">choice</a></td>
-<td>Returns a random item from a list.</td>
+<td>Return a random item from a list.</td>
 </tr>
 <tr>
 <td><a href="./each">each</a></td>
@@ -4585,63 +4604,63 @@ the change is  made. Since the parent of a nested &lsquo;list&rsquo; is another 
 </tr>
 <tr>
 <td><a href="./every">every</a></td>
-<td>Test whether all elements pass a given test.</td>
+<td>Check if all items pass a given test.</td>
 </tr>
 <tr>
 <td><a href="./extend">extend</a></td>
-<td>Adds an array with items to the end of a list and returns the new length.</td>
+<td>Add an array with items to the end of a list and returns the new length.</td>
 </tr>
 <tr>
 <td><a href="./filter">filter</a></td>
-<td>Returns a new <code>list</code> with elements that passed a given test.</td>
+<td>Return a new <code>list</code> with items that passed a given test.</td>
 </tr>
 <tr>
 <td><a href="./find">find</a></td>
-<td>Returns the first element that passed a given test.</td>
+<td>Return the first item that passed a given test.</td>
 </tr>
 <tr>
 <td><a href="./findindex">findindex</a></td>
-<td>Returns the index of the first element that passed a given test.</td>
+<td>Return the index of the first item that passed a given test.</td>
 </tr>
 <tr>
 <td><a href="./indexof">indexof</a></td>
-<td>Returns the index of a given value, or <code>nil</code> if not found.</td>
+<td>Return the index of a given value, or <code>nil</code> if not found.</td>
 </tr>
 <tr>
 <td><a href="./len">len</a></td>
-<td>Returns the length of the list.</td>
+<td>Return the length of the list.</td>
 </tr>
 <tr>
 <td><a href="./map">map</a></td>
-<td>Returns a new <code>list</code> with the results of calling a provided closure on every element.</td>
+<td>Return a new <code>list</code> with the results of calling a provided closure on every item.</td>
 </tr>
 <tr>
 <td><a href="./pop">pop</a></td>
-<td>Removes the last element from a list and returns that element.</td>
+<td>Remove the last item from a list and returns that item.</td>
 </tr>
 <tr>
 <td><a href="./push">push</a></td>
-<td>Adds new items to the end of a list and returns the new length.</td>
+<td>Add new items to the end of a list and returns the new length.</td>
 </tr>
 <tr>
 <td><a href="./reduce">reduce</a></td>
-<td>Executes a reducer function on each element, resulting in a single output value.</td>
+<td>Execute a reducer function on each item, resulting in a single output value.</td>
 </tr>
 <tr>
 <td><a href="./remove">remove</a></td>
-<td>Removes the first element that passed a given test and returns that element.</td>
+<td>Remove the first item that passed a given test and returns that item.</td>
 </tr>
 <tr>
 <td><a href="./some">some</a></td>
-<td>Test whether at least one element passes a given test.</td>
+<td>Check if at least one item passes a given test.</td>
 </tr>
 <tr>
 <td><a href="./sort">sort</a></td>
-<td>Returns a new sorted <code>list</code>.</td>
+<td>Return a new sorted <code>list</code>.</td>
 </tr>
 <tr>
 <td><a href="./splice">splice</a></td>
-<td>Determines if a string starts with characters given by another string.</td>
+<td>Change a list by removing or replacing existing items and/or adding new items.</td>
 </tr>
 </tbody>
 </table>
@@ -4719,19 +4738,19 @@ assert (.b != b2);  // [] != [0, 1, 2]
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1583166349"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1583166349"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583166349"></script>
-    <script src="/v0/js/jquery.sticky.js?1583166349"></script>
-    <script src="/v0/js/featherlight.min.js?1583166349"></script>
-    <script src="/v0/js/highlight.pack.js?1583166349"></script>
+    <script src="/v0/js/clipboard.min.js?1583426879"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583426879"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583426879"></script>
+    <script src="/v0/js/jquery.sticky.js?1583426879"></script>
+    <script src="/v0/js/featherlight.min.js?1583426879"></script>
+    <script src="/v0/js/highlight.pack.js?1583426879"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1583166349"></script>
-    <script src="/v0/js/learn.js?1583166349"></script>
-    <script src="/v0/js/hugo-learn.js?1583166349"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583426879"></script>
+    <script src="/v0/js/learn.js?1583426879"></script>
+    <script src="/v0/js/hugo-learn.js?1583426879"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1583166349" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1583166349"></script>
+    <link href="/v0/mermaid/mermaid.css?1583426879" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583426879"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

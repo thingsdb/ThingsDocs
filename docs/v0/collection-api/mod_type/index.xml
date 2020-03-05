@@ -29,7 +29,7 @@ Arguments    Argument Type Description     type_name str Name of the Type where 
       
       <guid>https://docs.thingsdb.net/v0/collection-api/mod_type/del/</guid>
       <description>Deletes a property from an existing Type.
-The property will be removed from all the active instances of that type.
+The property will be removed from all the active instances of that Type.
  Action mod_type(type_name, &#39;del&#39;, property_name)
 Arguments    Argument Type Description     type_name str Name of the Type where the property has to be removed from.   &#39;del&#39; str Passing this argument will result in a delete action.   property_name str Name of the property that has to be removed.</description>
     </item>
@@ -40,11 +40,11 @@ Arguments    Argument Type Description     type_name str Name of the Type where 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/mod_type/mod/</guid>
-      <description>Modifies a property from an exinsting Type.
+      <description>Modifies the type definition of a property from an exinsting Type.
 When modifying a property of a Type, the changed property type can only be less &amp;lsquo;strict&amp;rsquo;.
 So for example, age: &#39;int&#39; can become age: &#39;int?&#39;, but not the other way around.
  Action mod_type(type_name, &#39;mod&#39;, property_name, property_type)
-Arguments    Argument Type Description     type_name str Name of the Type where the property has to be modified from.   &#39;mod&#39; str Passing this argument will result in a modify action.</description>
+Arguments    Argument Type Description     type_name str Name of the Type where the property has to be modified from.</description>
     </item>
     
   </channel>

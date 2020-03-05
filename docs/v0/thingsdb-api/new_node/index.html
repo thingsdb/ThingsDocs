@@ -11,20 +11,20 @@
     <title>new_node :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/theme.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583426879" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1583166349" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583426879" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1583166349"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583426879"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1583166349"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1583166349"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583426879"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583426879"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1583166349"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583426879"></script>
 
     
   </div>
@@ -501,6 +501,25 @@
       <li data-nav-id="/v0/overview/slices/" title="Slices" class="dd-item ">
         <a href="/v0/overview/slices/">
         Slices
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/overview/dictionary/" title="Dictionary" class="dd-item ">
+        <a href="/v0/overview/dictionary/">
+        Dictionary
         
         </a>
     </li>
@@ -4566,18 +4585,18 @@
 <p>Adds a new node to ThingsDB. Nodes are used for scaling and high availability.</p>
 <p>Before using this command, make sure another node is started and waiting for a join. This can be done by starting thingsdb with the <code>--secret</code> argument, for example:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ thingsdb --secret <span style="color:#e6db74">&#34;my-one-time-serect&#34;</span>
+</code></pre></div><p>Or, alternatively you may use an environment variable</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ thingsdb --secret <span style="color:#e6db74">&#34;my-one-time-serect&#34;</span>
 </code></pre></div><p>Next, you will see something like this:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Waiting for an invite from a node to join ThingsDB...
 
-You can use one of the following queries to add this node:
+You can use the following query to add this node:
 
-  interface: eth0
-    new_node(&#39;my-one-time-serect&#39;, &#39;10.10.10.2&#39;, 9220);
-...
+    new_node(&#39;my-one-time-secret&#39;, &#39;10.10.10.2&#39;, 9220);
 </code></pre></div><p>Now you can use the <a href="../new_node">new_node(..)</a> function to add the node to ThingsDB.</p>
 <p>This function generates an <a href="../../overview/events">event</a>.</p>
 <h3 id="function">Function</h3>
-<p><code>new_node(secret, ip_address [, port]);</code></p>
+<p><code>new_node(secret, name [, port]);</code></p>
 <h3 id="arguments">Arguments</h3>
 <table>
 <thead>
@@ -4594,9 +4613,9 @@ You can use one of the following queries to add this node:
 <td>Secret used to initially connect to the new node.</td>
 </tr>
 <tr>
-<td><code>ip_address</code></td>
+<td><code>name</code></td>
 <td>str (required)</td>
-<td>IP Address (IPv4 or IPv6) of the new node.</td>
+<td>Node name (host-name or IP address) of the new node.</td>
 </tr>
 <tr>
 <td><code>port</code></td>
@@ -4605,6 +4624,10 @@ You can use one of the following queries to add this node:
 </tr>
 </tbody>
 </table>
+
+<div class="notices tip" ><p>Best practice is to set the argument &ldquo;<strong>name</strong>&rdquo; to the same name as specified by the environment variable <strong>THINGSDB_NODE_NAME</strong> or the <strong>node_name</strong> found in the configuration file (view the chapter on <a href="../Installation">installation</a>).</p>
+</div>
+
 <h3 id="return-value">Return value</h3>
 <p>Returns the new node <code>id</code> if successful.</p>
 <h3 id="example">Example</h3>
@@ -4612,7 +4635,7 @@ You can use one of the following queries to add this node:
 <p>Add a new node to ThingsDB:</p>
 </blockquote>
 <pre><code class="language-thingsdb,syntax_only,@t" data-lang="thingsdb,syntax_only,@t">// ThingsDB must be started on node2 using the `--secret ...` argument
-new_node('my-one-time-serect', 'node2.local');
+new_node('my-one-time-secret', 'node2.local');
 </code></pre><blockquote>
 <p>Example return value in JSON format (the new node id)</p>
 </blockquote>
@@ -4647,19 +4670,19 @@ new_node('my-one-time-serect', 'node2.local');
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1583166349"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1583166349"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583166349"></script>
-    <script src="/v0/js/jquery.sticky.js?1583166349"></script>
-    <script src="/v0/js/featherlight.min.js?1583166349"></script>
-    <script src="/v0/js/highlight.pack.js?1583166349"></script>
+    <script src="/v0/js/clipboard.min.js?1583426879"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583426879"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583426879"></script>
+    <script src="/v0/js/jquery.sticky.js?1583426879"></script>
+    <script src="/v0/js/featherlight.min.js?1583426879"></script>
+    <script src="/v0/js/highlight.pack.js?1583426879"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1583166349"></script>
-    <script src="/v0/js/learn.js?1583166349"></script>
-    <script src="/v0/js/hugo-learn.js?1583166349"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583426879"></script>
+    <script src="/v0/js/learn.js?1583426879"></script>
+    <script src="/v0/js/hugo-learn.js?1583426879"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1583166349" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1583166349"></script>
+    <link href="/v0/mermaid/mermaid.css?1583426879" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583426879"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

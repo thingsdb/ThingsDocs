@@ -11,20 +11,20 @@
     <title>Type :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/theme.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583426879" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1583166349" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583426879" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1583166349"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583426879"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1583166349"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1583166349"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583426879"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583426879"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1583166349"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583426879"></script>
 
     
   </div>
@@ -501,6 +501,25 @@
       <li data-nav-id="/v0/overview/slices/" title="Slices" class="dd-item ">
         <a href="/v0/overview/slices/">
         Slices
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/overview/dictionary/" title="Dictionary" class="dd-item ">
+        <a href="/v0/overview/dictionary/">
+        Dictionary
         
         </a>
     </li>
@@ -4639,7 +4658,7 @@
 </tbody>
 </table>
 <p>Each definition can be made optional by adding a question-mark <code>?</code> to the definition.
-If a property is made optional, then the value <code>nil</code> is allowed instead of the give type.
+If a property is made optional, then the value <code>nil</code> is allowed instead of the given type.
 The property will also be set to <code>nil</code> if no value for the property is given.</p>
 <blockquote>
 <p>For example</p>
@@ -4650,7 +4669,7 @@ set_type('User', {name: 'str?'});
 // Create a instance of type `User` without a name
 unknown = User{};
 
-// ..or explicit set name to `nil`
+// ..or explicitly set name to `nil`
 user_nil = User{name: nil};
 
 // ..a `str` is also ok
@@ -4729,7 +4748,7 @@ return(book, 2);
 <table>
 <thead>
 <tr>
-<th>Method</th>
+<th>Function</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -4744,7 +4763,7 @@ return(book, 2);
 </tr>
 <tr>
 <td><a href="../../collection-api/new_type">new_type</a></td>
-<td>Creates a new <code>Type</code>.</td>
+<td>Create a new <code>Type</code>.</td>
 </tr>
 <tr>
 <td><a href="../../collection-api/has_type">has_type</a></td>
@@ -4766,10 +4785,10 @@ return(book, 2);
 </table>
 <h3 id="mutation-format">Mutation format</h3>
 <p>A mutation format is only required to understand if you manually want to parse events
-when <em>watching</em> for mutations on <em>thongs</em>. While most values have a pretty straightforward
-format when packed in a <em>mutation</em>, a type instance is a bit more complex
+when <em>watching</em> for mutations on <em>things</em>. While most values have a pretty straightforward
+format when packed in a <em>mutation</em>, a Type instance is a bit more complex
 to understand.</p>
-<p>An example of a type mutation:</p>
+<p>An example of a Type mutation:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;.&#34;</span>: <span style="color:#ae81ff">10</span>,
     <span style="color:#f92672">&#34;#&#34;</span>: <span style="color:#ae81ff">123</span>,
@@ -4800,9 +4819,8 @@ to understand.</p>
 </tr>
 </tbody>
 </table>
-<p>In order to correctly to parse the mutation correctly you require the <a href="../../collection-api/types_info">types_info</a> of a collection.
-Note that the types info is included inside an <a href="../../watching/on-init">init event</a>. Below is an example with an entry of <code>types_info</code>
-which shows the type <strong>Book</strong>, which is the type with ID <code>10</code> from the mutation example above.</p>
+<p>In order to correctly parse the mutation you require the <a href="../../collection-api/types_info">types_info</a> of a collection.
+Note that the types info is included inside an <a href="../../watching/on-init">init event</a>. Below is an example with an entry of <code>types_info</code>. This shows type <strong>Book</strong> which has ID <code>10</code> from the mutation example above.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#960050;background-color:#1e0010">...</span>
 {
     <span style="color:#f92672">&#34;created_at&#34;</span>: <span style="color:#ae81ff">1581454041</span>,
@@ -4845,19 +4863,19 @@ which shows the type <strong>Book</strong>, which is the type with ID <code>10</
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1583166349"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1583166349"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583166349"></script>
-    <script src="/v0/js/jquery.sticky.js?1583166349"></script>
-    <script src="/v0/js/featherlight.min.js?1583166349"></script>
-    <script src="/v0/js/highlight.pack.js?1583166349"></script>
+    <script src="/v0/js/clipboard.min.js?1583426879"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583426879"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583426879"></script>
+    <script src="/v0/js/jquery.sticky.js?1583426879"></script>
+    <script src="/v0/js/featherlight.min.js?1583426879"></script>
+    <script src="/v0/js/highlight.pack.js?1583426879"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1583166349"></script>
-    <script src="/v0/js/learn.js?1583166349"></script>
-    <script src="/v0/js/hugo-learn.js?1583166349"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583426879"></script>
+    <script src="/v0/js/learn.js?1583426879"></script>
+    <script src="/v0/js/hugo-learn.js?1583426879"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1583166349" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1583166349"></script>
+    <link href="/v0/mermaid/mermaid.css?1583426879" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583426879"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

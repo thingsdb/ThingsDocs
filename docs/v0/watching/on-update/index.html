@@ -11,20 +11,20 @@
     <title>on-update :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/theme.css?1583166349" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1583166349" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583426879" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583426879" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1583166349" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583426879" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1583166349"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583426879"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1583166349"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1583166349"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583426879"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583426879"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1583166349"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583426879"></script>
 
     
   </div>
@@ -501,6 +501,25 @@
       <li data-nav-id="/v0/overview/slices/" title="Slices" class="dd-item ">
         <a href="/v0/overview/slices/">
         Slices
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/overview/dictionary/" title="Dictionary" class="dd-item ">
+        <a href="/v0/overview/dictionary/">
+        Dictionary
         
         </a>
     </li>
@@ -4570,7 +4589,7 @@
 
 <p>An update event is pushed when changes are made to a <code>thing</code> you are watching.
 Nested things need to be watched separately.</p>
-<p>The event contains the Thing ID (<code>#</code>), an event number, and an <em>jobs</em> array containing all the mutations which are applied to the thing in the order as they are put in the array.</p>
+<p>The event contains the Thing ID (<code>#</code>), an event number, and a <em>jobs</em> array containing all the mutations to the thing in the  applied order.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;#&#34;</span>: <span style="color:#ae81ff">3</span>,
     <span style="color:#f92672">&#34;event&#34;</span>: <span style="color:#ae81ff">123</span>,
@@ -4579,7 +4598,7 @@ Nested things need to be watched separately.</p>
     ]
 }
 </code></pre></div><p>Each mutation is a <em>map</em> <code>{}</code> with a single <em>key</em>. This key tells what kind of <em>mutation</em> is applied to the thing. If the <em>thing</em> is actually a collection, you will receive both
-changes to the <em>thing</em>, as well as changes to the <em>collection</em>. This way you can also watch for collection mutations such as type or procedure changes.</p>
+changes to the <em>thing</em>, as well as changes to the <em>collection</em>. This way you can also watch for collection mutations such as Type or procedure changes.</p>
 <table>
 <thead>
 <tr>
@@ -4637,7 +4656,7 @@ changes to the <em>thing</em>, as well as changes to the <em>collection</em>. Th
 <tr>
 <td><a href="#mod_type_mod">mod_type_mod</a></td>
 <td><code>collection</code></td>
-<td>A filed is modified on an existing <a href="../../data-types/type">type</a>.</td>
+<td>A field is modified on an existing <a href="../../data-types/type">type</a>.</td>
 </tr>
 <tr>
 <td><a href="#mod_type_del">mod_type_del</a></td>
@@ -4657,11 +4676,11 @@ changes to the <em>thing</em>, as well as changes to the <em>collection</em>. Th
 </tbody>
 </table>
 
-<div class="notices tip" ><p>When <em>new</em> things are contained inside the mutations <a href="#set">set</a>, <a href="#add">add</a> or <a href="#splice">splice</a>, Then the mutation will contain the <em>complete</em> thing with all properties. If on the other hand an <em>existing</em> thing is provided, then only the ID (<code>#</code>) and no other properties are contained.</p>
+<div class="notices tip" ><p>When <em>new</em> things are added via the mutations <a href="#set">set</a>, <a href="#add">add</a> or <a href="#splice">splice</a>, Then the mutation will contain the <em>complete</em> thing with all properties. If on the other hand an <em>existing</em> thing is provided, then only the ID (<code>#</code>) is included.</p>
 </div>
 
 
-<div class="notices info" ><p>While most values inside mutation are easy to understand, a instance of a <em>Type</em> might seem a bit strange. For help on how to parse such mutation see the <a href="#set">set</a> example below, and the <a href="../../data-types/type#mutation-format">mutation format</a> documentation.</p>
+<div class="notices info" ><p>While most values inside mutation are easy to understand, a instance of a <em>Type</em> might seem a bit strange. For help with parsing such mutations see the <a href="#set">set</a> example below, and the <a href="../../data-types/type#mutation-format">mutation format</a> documentation.</p>
 </div>
 
 <h2 id="set">set</h2>
@@ -4682,11 +4701,11 @@ with the values instead of the property names. For example:</p>
 <pre><code class="language-thingsdb,syntax_only" data-lang="thingsdb,syntax_only">// set_type('Person', {name: 'str'});
 
 .person = Person{name: &quot;Iris&quot;};
-</code></pre><p>The mutation event of creating the <code>Person</code> above contains a empty key <code>&quot;&quot;</code> with
-and <code>array</code> of <em>fields</em>. They refer to the <em>fields</em> of type with <code>type_id:0</code>
+</code></pre><p>The mutation event of creating the <code>Person</code> above contains an empty key <code>&quot;&quot;</code> with
+an <code>array</code> of <em>fields</em>. They refer to the <em>fields</em> of the Type with <code>type_id:0</code>
 which can be found at key <code>&quot;.&quot;</code>. The ID of the instance is equal to a normal <em>thing</em>
-and can be found with key <code>&quot;#&quot;</code>, so ID 5 in the example result below. For more
-information on how to parse a type instance, look at the <a href="../../data-types/type#mutation-format">mutation format</a> documentation.</p>
+and can be found with key <code>&quot;#&quot;</code>, so the ID is 5 in the example result below. For more
+information on how to parse a Type instance, look at the <a href="../../data-types/type#mutation-format">mutation format</a> documentation.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;set&#34;</span>: {
         <span style="color:#f92672">&#34;person&#34;</span>: {
@@ -4769,7 +4788,7 @@ information on how to parse a type instance, look at the <a href="../../data-typ
 }
 </code></pre></div><h2 id="new_type">new_type</h2>
 <pre><code class="language-thingsdb,should_pass" data-lang="thingsdb,should_pass">/*
- * A new type named `Person` is added to the collection
+ * A new Type named `Person` is added to the collection
  * The `type_id` is usually not something you use, except
  * for other mutations which refer to `type_id` when creating
  * an instance of a Type.
@@ -4806,7 +4825,7 @@ set_type('Person', {name: 'str'});
     }
 }
 </code></pre></div><h2 id="del_type">del_type</h2>
-<pre><code class="language-thingsdb,syntax_only" data-lang="thingsdb,syntax_only">// Delete a type named `Person`.
+<pre><code class="language-thingsdb,syntax_only" data-lang="thingsdb,syntax_only">// Delete a Type named `Person`.
 
 // new_type('Person');
 del_type('Person');
@@ -4927,19 +4946,19 @@ del_procedure('multiply');
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1583166349"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1583166349"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583166349"></script>
-    <script src="/v0/js/jquery.sticky.js?1583166349"></script>
-    <script src="/v0/js/featherlight.min.js?1583166349"></script>
-    <script src="/v0/js/highlight.pack.js?1583166349"></script>
+    <script src="/v0/js/clipboard.min.js?1583426879"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583426879"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583426879"></script>
+    <script src="/v0/js/jquery.sticky.js?1583426879"></script>
+    <script src="/v0/js/featherlight.min.js?1583426879"></script>
+    <script src="/v0/js/highlight.pack.js?1583426879"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1583166349"></script>
-    <script src="/v0/js/learn.js?1583166349"></script>
-    <script src="/v0/js/hugo-learn.js?1583166349"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583426879"></script>
+    <script src="/v0/js/learn.js?1583426879"></script>
+    <script src="/v0/js/hugo-learn.js?1583426879"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1583166349" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1583166349"></script>
+    <link href="/v0/mermaid/mermaid.css?1583426879" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583426879"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

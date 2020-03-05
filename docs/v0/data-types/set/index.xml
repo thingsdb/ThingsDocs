@@ -16,12 +16,11 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/set/add/</guid>
-      <description>Adds new thing to the set and returns the number of things which are actually added to the set. For example my_set.add(#42); will return 0 if my_set already contains thing #42.
+      <description>Adds a new thing to the set and returns the number of things which are actually added to the set. For example my_set.add(#42); will return 0 if my_set already contains thing #42.
 This function generates an event (except when called on a variable).
 Function set.add(thing1, thing1, ..., thingX)
 Return value Returns the number of things which are added to the set.
-Example  This code adds things to a set:
- s = set(); a = {item: &#39;a&#39;}; b = {item: &#39;b&#39;}; // add both `a` and `b` to set `s`; note that `a` is only added once; s.</description>
+Example  This code adds things to a set:</description>
     </item>
     
     <item>
@@ -30,7 +29,7 @@ Example  This code adds things to a set:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/set/each/</guid>
-      <description>Iterate over items in an set.
+      <description>Iterate over items in a set.
 Be aware that the order when iterating over a set or a thing is not guaranteed.
  This function does not generate an event.
 Function set.each(callback)
@@ -44,10 +43,10 @@ Arguments    Argument Type Description     callback closure (required) Closure t
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/set/filter/</guid>
-      <description>When this method is used on a set, then the return value will be a new set.
+      <description>The function returns a new set with things that pass the test.
 This function does not generate an event.
 Function set.filter(callback)
-Arguments The callback argument must be a closure which input values depend on the type the method is called on.
+Arguments    Argument Type Description     callback closure (required) Closure to execute on each value.    Explanation of the callback argument:
    Iterable Arguments Description     set thing, id Iterate over things in the set. Both thing and id are optional.</description>
     </item>
     
@@ -57,7 +56,7 @@ Arguments The callback argument must be a closure which input values depend on t
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/set/find/</guid>
-      <description>This function returns the value of the first element in the set that satisfies the callback function. Otherwise nil is returned unless an alternative return value is specified.
+      <description>This function returns the value of the first item in the set that passes the test. Otherwise nil is returned if no alternative return value is specified.
 This function does not generate an event.
 The return value when called on a set might be unpredictable since a set is not ordered.
 set({name: &#39;Iris&#39;}, {name: &#39;Cato&#39;}).find(||true);
@@ -75,7 +74,7 @@ Arguments    Argument Type Description     callback closure Closure to execute o
       <description>Determines if a set has a given thing.
 This function does not generate an event.
 Function set.has(thing)
-Arguments    Argument Type Description     thing thing (required) Thing to check.    Return value Returns true the given thing is found in the set and otherwise false.
+Arguments    Argument Type Description     thing thing (required) Thing to check.    Return value Returns true if the given thing is found in the set and otherwise false.
 Example  This code shows an example use case of has():
  iris = {name: &#39;Iris&#39;}; s = set(iris); /* Check if iris is in set `s` */ s.</description>
     </item>
@@ -102,7 +101,7 @@ Example  This code uses len() to return the number of items in a set:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/set/map/</guid>
-      <description>Iterate over items in an set and return a new list based on the results of a given callback function.
+      <description>The function iterates over items in a set and returns a new list based on the results of a given callback function.
 Be aware that the order when iterating over a set or a thing is not guaranteed.
  This function does not generate an event.
 Function set.map(callback)

@@ -18,7 +18,7 @@
       <guid>https://docs.thingsdb.net/v0/data-types/bool/</guid>
       <description>Booleans are either true or false. Other types can convert to bool by using the ! (not) operator or the bool function.
  This code creates a bool property is_the_earth_flat to collection stuff:
- .is_the_earth_flat = !true; Related functions    Method Description     bool Create a new boolean value.   isbool Test if a given value is of type bool.    </description>
+ .is_the_earth_flat = !true; Related functions    Function Description     bool Create a new boolean value.   isbool Test if a given value is of type bool.    </description>
     </item>
     
     <item>
@@ -28,7 +28,7 @@
       
       <guid>https://docs.thingsdb.net/v0/data-types/float/</guid>
       <description>ThingsDB uses 64bit to store float values and has support for the e notation and special float values like inf, -inf and nan.
-Useful methods    Method Description     float return a float type for a given value.   isfloat check if the given value is of the float type.   isinf check if the given value is infinite.   isnan check if the given value is not-a-number.</description>
+Useful functions    Function Description     float return a float type for a given value.   isfloat check if the given value is of the float type.   isinf check if the given value is infinite.   isnan check if the given value is not-a-number.</description>
     </item>
     
     <item>
@@ -59,7 +59,7 @@ Notations    Base Example Description     2 0b1111011 Binary notation starts wit
       
       <guid>https://docs.thingsdb.net/v0/data-types/nil/</guid>
       <description>Probably the most simple type, it can be used as no value.
-It might be useful to use nil as the last statement in a query to prevent returning data which is not required. See the code example.
+It might be convenient to use nil as the last statement in a query to prevent returning data which is not required. See the code example.
  This code uses nil to prevent returning unused data:
  my_array = [1, 2, 3, 42]; nil; /* without nil, the array above would be returned */  Return value in JSON format</description>
     </item>
@@ -71,7 +71,7 @@ It might be useful to use nil as the last statement in a query to prevent return
       
       <guid>https://docs.thingsdb.net/v0/data-types/regex/</guid>
       <description>Regular expression can be constructed using a literal which consists of a pattern enclosed between slashes, as follows: re = /ab+c/;. It is probably a good idea to store a regex in a variable if you plan to use the regular expression multiple times. This prevents the requirement to compile the regular expression each time.
-Methods that use regular expressions    Method Description     test A str method that tests for a match in a string.</description>
+Functions that use regular expressions    Function Description     test A str functiontrue or false.</description>
     </item>
     
     <item>

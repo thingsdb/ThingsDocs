@@ -31,13 +31,13 @@ Example  Returns information about collection stuff:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/collections_info/</guid>
-      <description>Returns collection information for all collections in ThingsDB.
+      <description>Returns collection information about all collections in ThingsDB.
 See the collection_info() function documentation for an example of the exposed collection information.
-If the user has no MODIFY permissions on the @thingsdb scope, then only collection where the user has at least READ privileges are included in the result.
+If the user has no MODIFY permissions on the @thingsdb scope, then only the collections where the user has at least READ privileges are included in the result.
  This function does not generate an event.
 Function collections_info()
 Arguments None
-Return value List with collection info for all collections in ThingsDB.</description>
+Return value List with collection info about all collections in ThingsDB.</description>
     </item>
     
     <item>
@@ -115,7 +115,7 @@ Arguments    Argument Type Description     username str (required) Username of t
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/grant/</guid>
-      <description>Grant collection or general privileges to a user. Access to a user is provided by setting a bit mask to either the @node, @thingsdb or a collection scope.
+      <description>Grant, collection or general, privileges to a user. Access to a user is provided by setting a bit mask to either the @node, @thingsdb or a @collection scope.
 To use this function, at least MODIFY privileges on the @thingsdb scope and GRANT privileges on the target scope are required.
 It is not possible to set privileges on a specific node scope. Therefore scope @node will apply to all nodes in ThingsDB.</description>
     </item>
@@ -129,7 +129,7 @@ It is not possible to set privileges on a specific node scope. Therefore scope @
       <description>Determines if a collection exists in ThingsDB.
 This function does not generate an event.
 Function has_collection(name_or_id)
-Arguments    Argument Type Description     name_or_id str/int (required) Collection name or id to check.    Return value Returns true the collection exists and otherwise false.
+Arguments    Argument Type Description     name_or_id str/int (required) Collection name or id to check.    Return value Returns true if the collection exists and otherwise false.
 Example  This code shows an example use case of has_collection():
  has_collection(&#39;stuff&#39;);  Return value in JSON format
  true </description>
@@ -144,7 +144,7 @@ Example  This code shows an example use case of has_collection():
       <description>Determines if a node exists in ThingsDB.
 This function does not generate an event.
 Function has_node(id)
-Arguments    Argument Type Description     id int (required) Node id to check.    Return value Returns true a node with a given id exists and otherwise false.
+Arguments    Argument Type Description     id int (required) Node id to check.    Return value Returns true if a node with a given id exists and otherwise false.
 Example  This code shows an example use case of has_node():
  has_node(0);  Return value in JSON format</description>
     </item>
@@ -159,7 +159,7 @@ Example  This code shows an example use case of has_node():
 This function requires GRANT privileges on the @thingsdb scope.
  This function does not generate an event.
 Function has_token(key)
-Arguments    Argument Type Description     key str (required) Token key to check.    Return value Returns true the token exists and otherwise false.
+Arguments    Argument Type Description     key str (required) Token key to check.    Return value Returns true if the token exists and otherwise false.
 Example  This code shows an example use case of has_token():
  has_token(&#39;XXXXXXXXXXXXXXXXXXXXXX&#39;);  Return value in JSON format</description>
     </item>
@@ -174,7 +174,7 @@ Example  This code shows an example use case of has_token():
 This function requires GRANT privileges on the @thingsdb scope.
  This function does not generate an event.
 Function has_user(username)
-Arguments    Argument Type Description     username str (required) User to check.    Return value Returns true the user exists and otherwise false.
+Arguments    Argument Type Description     username str (required) User to check.    Return value Returns if true the user exists and otherwise false.
 Example  This code shows an example use case of has_user():
  has_user(&#39;admin&#39;);  Return value in JSON format</description>
     </item>
@@ -200,8 +200,9 @@ Arguments    Argument Type Description     name str (required) Name of the new c
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/new_node/</guid>
       <description>Adds a new node to ThingsDB. Nodes are used for scaling and high availability.
 Before using this command, make sure another node is started and waiting for a join. This can be done by starting thingsdb with the --secret argument, for example:
+$ thingsdb --secret &amp;#34;my-one-time-serect&amp;#34; Or, alternatively you may use an environment variable
 $ thingsdb --secret &amp;#34;my-one-time-serect&amp;#34; Next, you will see something like this:
-Waiting for an invite from a node to join ThingsDB... You can use one of the following queries to add this node: interface: eth0 new_node(&amp;#39;my-one-time-serect&amp;#39;, &amp;#39;10.</description>
+Waiting for an invite from a node to join ThingsDB.</description>
     </item>
     
     <item>
@@ -210,10 +211,9 @@ Waiting for an invite from a node to join ThingsDB... You can use one of the fol
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/new_token/</guid>
-      <description>Adds a new token for a given user. An optional expiration time may be given after which the token cannot be used anymore. Use del_expired to cleanup expired tokens. The expiration time may be given as a UNIX time-stamp in seconds or a date/time string.
+      <description>Adds a new token for a given user. An optional expiration time may be given; after this time the token cannot be used anymore. Use del_expired to cleanup expired tokens. The expiration time may be given as a UNIX time-stamp in seconds or a date/time string.
 Some valid date/time strings:
- 2021-01-01 2023-02-06 14:30 2023-07-05T13:23:20+01:00  Expiration dates in the past are not allowed an will raise a bad_data_err() error.
-It is also possible to set a description for the token which can be used to identify where token is used for.</description>
+ 2021-01-01 2023-02-06 14:30 2023-07-05T13:23:20+01:00  Expiration dates in the past are not allowed an will raise a bad_data_err() error.</description>
     </item>
     
     <item>
@@ -222,7 +222,7 @@ It is also possible to set a description for the token which can be used to iden
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/new_user/</guid>
-      <description>Creates a new user to ThingsDB. The new user is created without a password, token and access privileges. You probably want to set a password or add a new token and assign some privileges using grant(&amp;hellip;).
+      <description>Creates a new user to ThingsDB. The new user is created without a password, token and access privileges. You probably want to set a password or add a new token, and assign some privileges using grant(&amp;hellip;).
 This function requires GRANT privileges on the @thingsdb scope.
  This function generates an event.
 Function new_user(user);
@@ -260,11 +260,11 @@ Arguments    Argument Type Description     current_name str (required) Current u
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/revoke/</guid>
-      <description>Revoke collection or general privileges from a user. See grant for more information on how access privileges can be set for a user.
+      <description>Revoke, collection or general, privileges from a user. See grant for more information on how access privileges can be set for a user.
 To use this function, at least MODIFY privileges on the @thingsdb scope and GRANT privileges on the target scope are required.
 This function generates an event.
 Function revoke(target, user, mask);
-Arguments    Argument Type Description     target int/raw Can be either the @node, @thingsdb, or a collection scope.</description>
+Arguments    Argument Type Description     target int/raw Can be either the @node, @thingsdb, or a @collection scope.</description>
     </item>
     
     <item>
@@ -273,7 +273,7 @@ Arguments    Argument Type Description     target int/raw Can be either the @nod
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/set_password/</guid>
-      <description>Change a users password. This function can also be used to remove an existing password by using nil as the new password.
+      <description>Change a user&amp;rsquo;s password. This function can also be used to remove an existing password by using nil as the new password.
 Passwords must contain 1 to 128 printable characters.
 This function requires GRANT privileges on the @thingsdb scope when a username other then the logged in user is given as argument. For the currently logged in user, MODIFY privileges on the @thingsdb scope are sufficient.
  This function generates an event.</description>
@@ -285,7 +285,7 @@ This function requires GRANT privileges on the @thingsdb scope when a username o
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/user_info/</guid>
-      <description>Returns information about a user. If no argument is given, this method will return information about the current logged in user.
+      <description>Returns information about a user. If no argument is given, this function will return information about the currently logged in user.
 This function requires GRANT privileges on the @thingsdb scope when a username other then the logged in user is given as argument. For the currently logged in user, READ privileges on the @thingsdb scope are sufficient.
  This function does not generate an event.
 Function user_info([username]);
@@ -298,13 +298,13 @@ Arguments    Argument Type Description     username str (optional) Name of the u
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/users_info/</guid>
-      <description>Returns user information for all users in ThingsDB.
+      <description>Returns user information about all users in ThingsDB.
 See the user_info() function documentation for an example of the exposed user information.
 This function requires GRANT privileges on the @thingdb scope since it exposes user access and token information.
 This function does not generate an event.
 Function users_info()
 Arguments None
-Return value List with user info for all users in ThingsDB.</description>
+Return value List with user info about all users in ThingsDB.</description>
     </item>
     
   </channel>

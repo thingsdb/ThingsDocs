@@ -17,7 +17,7 @@
       
       <guid>https://docs.thingsdb.net/v0/data-types/thing/del/</guid>
       <description>Delete a property from a thing.
-While almost all function on things are also available on Type instances, this one is not. This is because a Type instance has a fixed set of properties and so you are not allowed to delete one of them on a single instance. Use mod_type() instead, to delete the property from all instances if this is what you want.
+While almost all functions on things are also available on Type instances, this one is not. This is because a Type instance has a fixed set of properties and so you are not allowed to delete one of them on a single instance. Use mod_type() instead, to delete the property from all instances if this is what you want.
  This function generates an event.</description>
     </item>
     
@@ -41,10 +41,10 @@ Arguments    Argument Type Description     callback closure (required) Closure t
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/thing/filter/</guid>
-      <description>When this method is used on a thing, then a new thing will be returned with only the properties that pass the test.
+      <description>The function returns a new thing with properties that pass the test.
 This function does not generate an event.
 Function thing.filter(callback)
-Arguments The callback argument must be a closure which input values depend on the type the method is called on.
+Arguments    Argument Type Description     callback closure (required) Closure to execute on each value.    Explanation of the callback argument:
    Iterable Arguments Description     thing name, value Iterate over the thing properties. Both name and value are optional.</description>
     </item>
     
@@ -96,9 +96,9 @@ Example  This code uses id() to return a collection id:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/thing/keys/</guid>
-      <description>keys Returns an array with all the property names of a thing. The same could be returned using map so the following statement is true:
+      <description>keys The function returns a list with all the property names of a thing. The same could be returned using map so the following statement is true:
 .keys() == .map(|k| k)
-Although the keys() and map() functions in the example above will return an array with the same order, the order of keys in the array is not guaranteed and may be different each time you run the query.
+Although the keys() and map() functions in the example above will return a list with the same order, the order of keys in the list is not guaranteed and may be different each time you run the query.
  This function does not generate an event.</description>
     </item>
     
@@ -124,7 +124,7 @@ Example  This code uses len() to return the number of items in a thing:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/thing/map/</guid>
-      <description>Iterate over all properties on a thing and return a new list based on the results of a given callback function.
+      <description>The function iterates over all properties on a thing and returns a new list based on the results of a given callback function.
 Be aware that the order when iterating over a thing is not guaranteed.
  This function does not generate an event.
 Function thing.map(callback)
@@ -137,7 +137,7 @@ Arguments    Argument Type Description     callback closure (required) Closure t
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/thing/set/</guid>
-      <description>Creates a new property on a thing. If the property already existed then the old property will be overwritten. This function is equal to an assignment except that it can be used when the name of the property is dynamic.
+      <description>Creates a new property on a thing. If the property already exists then the old property will be overwritten. This function is equal to an assignment except that it can be used when the name of the property is dynamic.
 This function generates an event.
 Function thing.set(name, value)
 Arguments    Argument Type Description     name str (required) The name of the property to set.   value any (required) The value which will be assigned to the property.</description>
@@ -149,7 +149,7 @@ Arguments    Argument Type Description     name str (required) The name of the p
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/thing/unwatch/</guid>
-      <description>Stop watching for mutations on a thing. This method returns nil and triggers a stop event, only when the thing was being watched.
+      <description>Stop watching for mutations on a thing. This function returns nil and triggers a stop event, only when the thing was being watched.
 This function does not generate an event.
 Function thing.unwatch()
 Arguments None
@@ -165,9 +165,9 @@ Example  This code shows how to use unwatch():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/thing/values/</guid>
-      <description>Returns an list with all the property values of a thing. The same could be returned using map so the following statement is true:
+      <description>Returns a list with all the property values of a thing. The same could be returned using map so the following statement is true:
 (.values() == .map(|_, v| v))
-Although the values() and map() in the example above will return an list with the same order, the order of values in the list is not guaranteed and may be different each time you run the query.
+Although the values() and map() in the example above will return a list with the same order, the order of values in the list is not guaranteed and may be different each time you run the query.
  This function does not generate an event.</description>
     </item>
     
@@ -177,7 +177,7 @@ Although the values() and map() in the example above will return an list with th
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/thing/watch/</guid>
-      <description>Subscribe for watching mutations on a stored thing. If this function is called on a thing which is not stored, and therefore has no #ID, then a value_err() is raised. This method returns nil but always triggers an init event, even when an earlier call to this function has been made.
+      <description>Subscribe for watching mutations on a stored thing. If this function is called on a thing which is not stored, and therefore has no #ID, then a value_err() is raised. This function returns nil, but every call always triggers an init event, even if it envolves multiple calls of this function on the same thing.
 This function only works with socket connections. When using this function with an HTTP API request, it has no effect.</description>
     </item>
     
@@ -187,12 +187,12 @@ This function only works with socket connections. When using this function with 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/thing/wrap/</guid>
-      <description>Wrap a thing with a Type.
-For a more advanced example using wrap() and unwrap() see .
-Function thing.wrap(type)
-Arguments    Argument Arguments Description     type str Type name to wrap the thing with.    Return value A wrapped thing.
+      <description>Wrap a thing with a another Type to filter out properties, while preserving the ID.
+For a more advanced example using wrap() and unwrap() see &amp;lt;Type&amp;gt;.
+Function thing.wrap(Type)
+Arguments    Argument Arguments Description     Type str Type&amp;rsquo;s name to wrap the thing with.    Return value A wrapped thing.
 Example  This code shows an example using wrap():
- // Create a Type to return just an email field. set_type(&#39;_Email&#39;, {email: &#39;str&#39;}); // Store a thing .</description>
+ // Create a Type to return just an email field.</description>
     </item>
     
   </channel>
