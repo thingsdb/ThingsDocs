@@ -10,7 +10,7 @@ ThingsDB might push one of the following waning codes:
 
 Code | Description
 ---- | -----------
-`1` | This warning is pushed after attempting to *watch* a thing which does not exists in the collection.
+`1` | This warning is pushed after attempting to *watch* a thing which does not exist in the collection. 
 
 
 > Example *warning* event in JSON format:

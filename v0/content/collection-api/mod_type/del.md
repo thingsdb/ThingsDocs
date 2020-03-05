@@ -6,7 +6,7 @@ weight: 132
 Deletes a property from an existing [Type](../../../data-types/type).
 
 {{% notice warning %}}
-The property will be removed from all the active instances of that type.
+The property will be removed from all the active instances of that Type.
 {{% /notice %}}
 
 ### Action

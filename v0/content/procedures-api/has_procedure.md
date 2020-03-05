@@ -26,7 +26,7 @@ Returns `true` if a procedure with a given name exists in the current scope and 
 > This code shows an example use case of ***has_procedure()***:
 
 ```thingsdb,json_response,@t
-has_procedure('i_most_likely_do_not_exist');
+has_procedure('I_most_likely_do_not_exist');
 ```
 
 > Return value in JSON format

@@ -7,7 +7,7 @@ Returns information about all ThingsDB nodes.
 
 Value | Description
 ------- | -----------
-address | IP address or hostname of the node.
+node_name | A node will publish itself to other nodes using the node name. This can be for example an IP address,  hostname , or a fully qualified domain name (FQDN) of the node. 
 committed_event_id | Last known committed event ID on the node.
 next_thing_id | Next free thing ID on the node.
 node_id | ID which is assigned to the node.

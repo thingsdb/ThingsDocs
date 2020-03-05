@@ -6,7 +6,7 @@ weight: 126
 This function determines whether the provided value is a [thing](../../data-types/thing) or not.
 
 {{% notice note %}}
-[Type](../../data-types/type) instances are also things, so this function returns `true` for a type instance as well.
+[Type](../../data-types/type) instances are also things, so this function returns `true` for a Type instance as well.
 {{% /notice %}}
 
 This function does *not* generate an [event](../../overview/events).

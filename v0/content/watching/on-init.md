@@ -3,7 +3,7 @@ title: "on-init"
 weight: 198
 ---
 
-This event will be pushed **once** for each [thing](../../data-types/thing) which is added to the watch list.
+This event will be pushed on every request to watch a [thing](../../data-types/thing).
 
 > Example *on-init* event in JSON format:
 

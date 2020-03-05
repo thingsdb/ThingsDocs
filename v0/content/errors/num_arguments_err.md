@@ -3,7 +3,7 @@ title: "num_arguments_err"
 weight: 211
 ---
 
-Returns an [error](../../data-types/error) when a wrong number of arguments are given.
+Returns an [error](../../data-types/error) when a wrong number of arguments is given.
 
 This function does *not* generate an [event](../../overview/events).
 

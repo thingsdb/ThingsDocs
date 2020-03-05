@@ -30,7 +30,7 @@ msgpack_version | MessagePack data protocol library version.
 next_event_id | Next free event ID.
 next_thing_id | Next free things ID.
 node_id | The `id` which is assigned to the node.
-node_name | This node will publish itself to other nodes using the node name.
+node_name | This node will publish itself to other nodes using the node name. This can be for example an IP address,  hostname , or a fully qualified domain name (FQDN) of the node. 
 node_port | Listening for node TCP socket connections on this port.
 scheduled_backups | Number of backups scheduled on this node. Only repeated backups or backups which are planned in the future are included.
 status | Current status of the ThingsDB node.

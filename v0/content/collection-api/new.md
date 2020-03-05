@@ -6,7 +6,7 @@ weight: 134
 Creates a new instance of a defined [Type](../../data-types/type).
 
 {{% notice info %}}
-When possible it is preferred to use the syntax `MyType{...}` to create a instance of a certain type. However, sometimes you need to create an instance dynamically with the type name as variable and then `new()` can be used.
+When possible it is preferred to use the syntax `MyType{...}` to create a instance of a certain Type. However, sometimes you need to create an instance dynamically with the Type's name as variable and then `new()` can be used.
 {{% /notice %}}
 
 This function generates an [event](../../overview/events).

@@ -16,7 +16,7 @@ This function does *not* generate an [event](../../overview/events).
 Argument | Type | Description
 -------- | ---- | -----------
 procedure | str (required) | Name of the procedure to run.
-...args | any | The exact number of arguments for the procedure must be given.
+...args | any | The arguments for the procedure. If more arguments are given than the procedure expects, the redundant arguments will be ignored. If too few arguments are given, then the remaining arguments will be set to nil. 
 
 ### Return value
 

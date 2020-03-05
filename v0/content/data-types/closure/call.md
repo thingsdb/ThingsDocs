@@ -16,7 +16,7 @@ This function does *not* generate an [event](../../../overview/events).
 
 ### Arguments
 
-The exact number of arguments for the closure must be given.
+The arguments for the closure. If more arguments are given than the closure expects, the redundant arguments will be ignored. If too few arguments are given, then the remaining arguments will be set to nil.
 
 {{% notice tip %}}
 It is not possible to assign default values to arguments but something similar

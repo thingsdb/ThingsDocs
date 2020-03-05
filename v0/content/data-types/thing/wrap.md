@@ -3,19 +3,19 @@ title: "wrap"
 weight: 87
 ---
 
-Wrap a thing with a [Type](../../type).
+Wrap a thing with a another [Type](../../type) to filter out properties, while preserving the ID.
 
-For a more advanced example using [wrap()](..) and [unwrap()](../../wtype/unwrap) see [<Type>](../../wtype).
+For a more advanced example using [wrap()](..) and [unwrap()](../../wtype/unwrap) see [\<Type\>](../../wtype/#example).
 
 ### Function
 
-*thing*.`wrap(type)`
+*thing*.`wrap(Type)`
 
 ### Arguments
 
 Argument | Arguments   | Description
 -------- | ----------- | -----------
-type     | str         | Type name to wrap the thing with.
+Type     | str         | Type's name to wrap the thing with. 
 
 ### Return value
 

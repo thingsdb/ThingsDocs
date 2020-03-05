@@ -6,7 +6,7 @@ weight: 199
 An update event is pushed when changes are made to a `thing` you are watching.
 Nested things need to be watched separately.
 
-The event contains the Thing ID (`#`), an event number, and an *jobs* array containing all the mutations which are applied to the thing in the order as they are put in the array.
+The event contains the Thing ID (`#`), an event number, and a *jobs* array containing all the mutations to the thing in the  applied order.
 
 ```json
 {
@@ -19,7 +19,7 @@ The event contains the Thing ID (`#`), an event number, and an *jobs* array cont
 ```
 
 Each mutation is a *map* `{}` with a single *key*. This key tells what kind of *mutation* is applied to the thing. If the *thing* is actually a collection, you will receive both
-changes to the *thing*, as well as changes to the *collection*. This way you can also watch for collection mutations such as type or procedure changes.
+changes to the *thing*, as well as changes to the *collection*. This way you can also watch for collection mutations such as Type or procedure changes.
 
 Mutation | Target | Description
 -------- | ------ | -----------
@@ -32,17 +32,17 @@ Mutation | Target | Description
 [set_type](#set_type) | `collection` | A [type](../../data-types/type) is initialized.
 [del_type](#del_type) | `collection` | A [type](../../data-types/type) is removed from the collection.
 [mod_type_add](#mod_type_add) | `collection` | A new field is added to an existing [type](../../data-types/type).
-[mod_type_mod](#mod_type_mod) | `collection` | A filed is modified on an existing [type](../../data-types/type).
+[mod_type_mod](#mod_type_mod) | `collection` | A field is modified on an existing [type](../../data-types/type). 
 [mod_type_del](#mod_type_del) | `collection` | A field is removed from an existing [type](../../data-types/type).
 [new_procedure](#new_procedure) | `collection` | A new procedure is added to the collection.
 [del_procedure](#del_procedure) | `collection` | A procedure is removed from the collection.
 
 {{% notice tip %}}
-When *new* things are contained inside the mutations [set](#set), [add](#add) or [splice](#splice), Then the mutation will contain the *complete* thing with all properties. If on the other hand an *existing* thing is provided, then only the ID (`#`) and no other properties are contained.
+When *new* things are added via the mutations [set](#set), [add](#add) or [splice](#splice), Then the mutation will contain the *complete* thing with all properties. If on the other hand an *existing* thing is provided, then only the ID (`#`) is included.
 {{% /notice %}}
 
 {{% notice info %}}
-While most values inside mutation are easy to understand, a instance of a *Type* might seem a bit strange. For help on how to parse such mutation see the [set](#set) example below, and the [mutation format](../../data-types/type#mutation-format) documentation.
+While most values inside mutation are easy to understand, a instance of a *Type* might seem a bit strange. For help with parsing such mutations see the [set](#set) example below, and the [mutation format](../../data-types/type#mutation-format) documentation.
 {{% /notice %}}
 
 ## set
@@ -72,11 +72,11 @@ with the values instead of the property names. For example:
 .person = Person{name: "Iris"};
 ```
 
-The mutation event of creating the `Person` above contains a empty key `""` with
-and `array` of *fields*. They refer to the *fields* of type with `type_id:0`
+The mutation event of creating the `Person` above contains an empty key `""` with
+an `array` of *fields*. They refer to the *fields* of the Type with `type_id:0`
 which can be found at key `"."`. The ID of the instance is equal to a normal *thing*
-and can be found with key `"#"`, so ID 5 in the example result below. For more
-information on how to parse a type instance, look at the [mutation format](../../data-types/type#mutation-format) documentation.
+and can be found with key `"#"`, so the ID is 5 in the example result below. For more
+information on how to parse a Type instance, look at the [mutation format](../../data-types/type#mutation-format) documentation.
 
 ```json
 {
@@ -185,7 +185,7 @@ information on how to parse a type instance, look at the [mutation format](../..
 
 ```thingsdb,should_pass
 /*
- * A new type named `Person` is added to the collection
+ * A new Type named `Person` is added to the collection
  * The `type_id` is usually not something you use, except
  * for other mutations which refer to `type_id` when creating
  * an instance of a Type.
@@ -232,7 +232,7 @@ set_type('Person', {name: 'str'});
 ## del_type
 
 ```thingsdb,syntax_only
-// Delete a type named `Person`.
+// Delete a Type named `Person`.
 
 // new_type('Person');
 del_type('Person');

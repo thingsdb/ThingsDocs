@@ -7,8 +7,14 @@ weight: 90
 It is sometimes useful to get things with their ID (`#`) but still
 be able to filter-out properties which are not required.
 
-One feature to return only specific properties from a thing, is to work with *wrapped* types.
-This feature is especially useful *(and fast)* if your source things are [Type](../type) instances.
+One feature to return only specific properties from a thing, is to work with *wrapped* Types.
+This feature is especially useful *(and fast)* if your source thing is [Type](../type) instance.
+
+{{% notice note %}}
+
+When ThingsDB wraps a normal thing with a Type, each property must be compared to the definition of that Type to determine if it comes in the end result. However, if the source is an intance of Type, ThingsDB only needs to do this once and can use an internal cache for every other transition from that Type to Type.
+
+{{% /notice %}}
 
 In the [example](#example) below we show a use case for wrapping a book type. The set-up requires some code
 but once the Types are defined, it is rather easy to use.
@@ -21,7 +27,7 @@ Function | Description
 [unwrap](./unwrap) | Unwrap to access the *wrapped* thing..
 
 
-### Example
+### Example 1
 
 ```thingsdb,should_pass
 new_type('Writer');
@@ -127,3 +133,96 @@ return(.wrap('_AllBooks'), 3);
     ]
 }
 ```
+
+
+
+### What if a Type is removed?
+
+When a Type is removed that was wrapping things, all these things are not filtered anymore. However these things are still connected to the removed Type's name. In case you decide to add a Type with the same name, then the wrapped things will be filtered again according to the Type's new definition. The following example will demostrate this event.
+
+### Example 2
+
+```thingsdb,should_pass
+// Create type `Person`
+set_type('Person', {
+    firstName: 'str',
+    lastName: 'str',
+    age: 'int',
+    gender: 'str',
+});
+
+// Create type `PersonName`, only includes the names of the person.
+set_type('PersonName', {
+    firstName: 'str',
+    lastName: 'str',
+});
+
+// Create a thing with type `Person`
+.Bob = Person{
+	firstName: 'Bob',
+	lastName: 'Lightyear',
+	age: 43,
+	gender: 'male',
+};
+
+// Wrap .Bob and store the wrapped thing.
+.WrappedBob = .Bob.wrap('PersonName');
+
+// Return the wrapped type
+.WrappedBob;
+```
+
+The output:
+
+
+```json
+{
+    "#": 21,
+    "firstName": "Bob",
+    "lastName": "Lightyear"
+}
+```
+
+But now the type `PersonName`will be deleted.
+
+```thingsdb,should_pass
+// Delete type `PersonName`. After deleting this Type `.WrappedBob` is not filtered 
+del_type('PersonName');
+
+// ...but returns all properties stored.
+.WrappedBob;
+```
+
+The output of the property `.WrappedBob` is not filtered, but in fact returns all its containing properties.
+
+```json
+{
+    "#": 21,
+    "age": 43,
+    "firstName": "Bob",
+    "gender": "male",
+    "lastName": "Lightyear"
+}
+```
+
+If we subsequently add a type called `PersonName`again (with in this case a different set of properties), then the output to querying `.WrappedBob` is filtered by the type `PersonName` again.
+
+```thingsdb,should_pass
+// Create the type `PersonName` again, but with a different set of properties.
+set_type('PersonName', {
+    lastName: 'str',
+});
+
+// And return `.WrappedBob` again. 
+.WrappedBob;
+```
+
+The output now only includes the `lastName` property. Thus the property `.WrappedBob` did not loose its wrapping with type `PersonName` after it got deleted.
+
+```json
+{
+    "#": 21,
+    "lastName": "Lightyear"
+}
+```
+

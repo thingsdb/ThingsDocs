@@ -16,7 +16,7 @@ Function | Description
 ------ | -----------
 [choice](./choice) | Return a random item from a list. 
 [each](./each) | Iterate over all items in a list.
-[every](./every) | Test whether all items pass a given test. 
+[every](./every) | Check if all items pass a given test. 
 [extend](./extend) | Add an array with items to the end of a list and returns the new length. 
 [filter](./filter) | Return a new `list` with items that passed a given test. 
 [find](./find) | Return the first item that passed a given test. 
@@ -28,9 +28,9 @@ Function | Description
 [push](./push) | Add new items to the end of a list and returns the new length. 
 [reduce](./reduce) | Execute a reducer function on each item, resulting in a single output value. 
 [remove](./remove) | Remove the first item that passed a given test and returns that item. 
-[some](./some) | Test whether at least one item passes a given test. 
+[some](./some) | Check if at least one item passes a given test. 
 [sort](./sort) | Return a new sorted `list`. 
-[splice](./splice) | Determine if a string starts with characters given by another string. 
+[splice](./splice) | Change a list by removing or replacing existing items and/or adding new items. 
 
 {{% notice note %}}
 It is not possible to change a list while the list is in use, for example: \

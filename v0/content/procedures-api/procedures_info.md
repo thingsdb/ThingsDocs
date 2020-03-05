@@ -16,4 +16,4 @@ This function does *not* generate an [event](../../overview/events).
 None
 
 ### Return value
-List with procedure [info](../../data-types/info)  about all procedure in the scope.
+List with procedure [info](../../data-types/info)  about all procedures in the scope.

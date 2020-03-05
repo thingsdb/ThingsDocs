@@ -34,7 +34,7 @@ new_procedure('create_user', |name| {
 });
 ```
 
-Once a procedure is created, it can be used by using the [run](./run) function or by performing a `RUN` request. See the [connect](../connect) section and then one of the connection functions on how to make a *run* request, or look at the [socket run example](../connect/socket/run) for a low-level example.
+Once a procedure is created, it can be easily used via a [run](./run) function in one of the native ThingsDB clients available (see the example below) or by performing a `RUN` request using the HTTP API (see [connect](../connect/http-api/#run-request) section). For a more low-level example view the [socket run example](../connect/socket/run).
 
 > Here is a complete working example where we use the Python client to call our procedure.
 

@@ -82,7 +82,7 @@ field | description
 ----- | -----------
 `type` | Required and must be `run` for a run request.
 `name` | Name of the procedure to run.
-`args` | Array with arguments for the procedure.
+`args` | Array or map with arguments for the procedure. 
 
 ## Run example
 
@@ -112,3 +112,9 @@ curl --location --request POST 'https://playground.thingsdb.net//Doc' \
 ```json
 42
 ```
+
+{{% notice note %}}
+
+Instead of providing the arguments as an array, they also could be given as a map, for example `{"a": 6, "b": 7}`. 
+
+{{% /notice %}}

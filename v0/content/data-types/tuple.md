@@ -27,7 +27,7 @@ Function | Description
 ------ | -----------
 [choice](../list/choice) | Return a random item from a tuple. 
 [each](../list/each) | Iterate over all items in a tuple.
-[every](../list/every) | Test whether all items pass a given test. 
+[every](../list/every) | Check if all items pass a given test. 
 [filter](../list/filter) | Return a new `list` with items that pass a given test. 
 [find](../list/find) | Return the first item that pass a given test. 
 [findindex](../list/findindex) | Return the index of the first item that pass a given test. 
@@ -35,7 +35,7 @@ Function | Description
 [len](../list/len) | Return the length of the tuple. 
 [map](../list/map) | Return a new `list` with the results of calling a provided closure on every item. 
 [reduce](../list/reduce) | Execute a reducer function on each item, resulting in a single output value. 
-[some](../list/some) | Test whether at least one item passes a given test. 
+[some](../list/some) | Check if at least one item passes a given test. 
 [sort](../list/sort) | Return a new sorted `list`. 
 
 {{% notice info %}}
