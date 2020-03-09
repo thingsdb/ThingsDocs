@@ -1,6 +1,6 @@
 ---
 title: "bytes"
-weight: 25
+weight: 29
 ---
 
 The bytes type can be used to store a sequence of byte values.
@@ -15,7 +15,7 @@ The bytes type can be used to store a sequence of byte values.
 
 Function | Description
 ------ | -----------
-[len](./len) | Return the length of the byte sequence. 
+[len](./len) | Return the length of the byte sequence.
 
 ### Related functions
 

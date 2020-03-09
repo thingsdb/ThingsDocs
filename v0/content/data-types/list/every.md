@@ -1,6 +1,6 @@
 ---
 title: "every"
-weight: 39
+weight: 43
 ---
 
 This function checks if all items in the  [list](..) or [tuple](../../tuple) pass a given test. It returns a [boolean](../../bool) value.
@@ -8,7 +8,6 @@ This function checks if all items in the  [list](..) or [tuple](../../tuple) pas
 {{% notice info %}}
 Calling this function on an empty array returns `true` for any condition!
 {{% /notice %}}
-
 
 This function does *not* generate an [event](../../../overview/events).
 

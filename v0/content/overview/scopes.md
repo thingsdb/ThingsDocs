@@ -1,11 +1,10 @@
 ---
 title: "Scopes"
-weight: 15
+weight: 19
 ---
 
 When sending a query, calling a procedure or subscribing to a thing, the request
-will require you to provide a scope. ThingsDB has three main scopes: *@thingsdb*, *@node* and *@collection*.
-
+will require you to provide a scope. ThingsDB has three scope categories: *@thingsdb*, *@node* and *@collection*.
 
 scope | short | description
 ----- | ----- | -----------
@@ -14,7 +13,6 @@ scope | short | description
 `@node:ID` | `@n:ID` | Specific node scope; Get node info and statistics from a specific node id (`ID` should be replaced with a node ID, for example `0`).
 `@collection:NAME` | `@:NAME` | [Collection](../collections) scope; A collection where things are stored.
 `@collection:ID` | `@:ID` | [Collection](../collections) scope; By collection `ID` instead of the using the collection name.
-
 
 {{% notice tip %}}
 Scopes names do allow an alternative syntax where the `@` and `:` are replaced with the `/` character.

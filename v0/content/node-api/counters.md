@@ -1,6 +1,6 @@
 ---
 title: "counters"
-weight: 156
+weight: 160
 ---
 
 Returns `counters` for the ThingsDB node in the selected scope. Counters start all at zero when ThingsDB
@@ -15,8 +15,8 @@ average_event_duration | The average event duration in seconds.
 average_query_duration | The average query duration in seconds.
 events_committed | Events committed since last counters reset.
 events_failed | Failed events. This is a critical counter which should be 0.
-events_killed | Killed events took too long for receiving the `READY` status. These events may be processed later. 
-events_quorum_lost | Number of times a [quorum](../../overview/dictionary). was not received. 
+events_killed | Killed events took too long for receiving the `READY` status. These events may be processed later.
+events_quorum_lost | Number of times a [quorum](../../overview/dictionary). was not received.
 events_skipped | Events which cannot be committed since an event with a higher `id` is already processed. These events are moved to a skipped queue.
 events_unaligned | Number of times an event cannot be pushed to the end of the queue and needs re-ordering.
 events_with_gap | Events which are committed but at least one event `id` was skipped.
@@ -27,16 +27,18 @@ queries_success | Number of queries where this node acted as the master node and
 queries_with_error | Number of queries where this node acted as the master node but the query has returned with an error.
 watcher_failed | The value is increased if an update could not be forwarded to a registered watcher.
 
-
 This function does *not* generate an [event](../../overview/events).
 
 ### Function
+
 `counters();`
 
 ### Arguments
+
 None
 
 ### Return value
+
 Returns the current counter values.
 
 ### Example

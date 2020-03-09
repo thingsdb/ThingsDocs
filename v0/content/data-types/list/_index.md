@@ -1,6 +1,6 @@
 ---
 title: "list"
-weight: 36
+weight: 40
 ---
 
 An empty list can be constructed as follows: `list = [];`
@@ -9,35 +9,33 @@ Nesting is also possible but each nested list will become a [tuple](../tuple) wh
 ThingsDB does this because it wants to update all changes to subscribers and finds the subscribers by the parent object where
 the change is  made. Since the parent of a nested 'list' is another list, the `thing` holding the list would not be found.
 
-
 ### Functions
 
 Function | Description
 ------ | -----------
-[choice](./choice) | Return a random item from a list. 
+[choice](./choice) | Return a random item from a list.
 [each](./each) | Iterate over all items in a list.
-[every](./every) | Check if all items pass a given test. 
-[extend](./extend) | Add an array with items to the end of a list and returns the new length. 
-[filter](./filter) | Return a new `list` with items that passed a given test. 
-[find](./find) | Return the first item that passed a given test. 
-[findindex](./findindex) | Return the index of the first item that passed a given test. 
-[indexof](./indexof) | Return the index of a given value, or `nil` if not found. 
-[len](./len) | Return the length of the list. 
-[map](./map) | Return a new `list` with the results of calling a provided closure on every item. 
-[pop](./pop) | Remove the last item from a list and returns that item. 
-[push](./push) | Add new items to the end of a list and returns the new length. 
-[reduce](./reduce) | Execute a reducer function on each item, resulting in a single output value. 
-[remove](./remove) | Remove the first item that passed a given test and returns that item. 
-[some](./some) | Check if at least one item passes a given test. 
-[sort](./sort) | Return a new sorted `list`. 
-[splice](./splice) | Change a list by removing or replacing existing items and/or adding new items. 
+[every](./every) | Check if all items pass a given test.
+[extend](./extend) | Add an array with items to the end of a list and returns the new length.
+[filter](./filter) | Return a new `list` with items that passed a given test.
+[find](./find) | Return the first item that passed a given test.
+[findindex](./findindex) | Return the index of the first item that passed a given test.
+[indexof](./indexof) | Return the index of a given value, or `nil` if not found.
+[len](./len) | Return the length of the list.
+[map](./map) | Return a new `list` with the results of calling a provided closure on every item.
+[pop](./pop) | Remove the last item from a list and returns that item.
+[push](./push) | Add new items to the end of a list and returns the new length.
+[reduce](./reduce) | Execute a reducer function on each item, resulting in a single output value.
+[remove](./remove) | Remove the first item that passed a given test and returns that item.
+[some](./some) | Check if at least one item passes a given test.
+[sort](./sort) | Return a new sorted `list`.
+[splice](./splice) | Change a list by removing or replacing existing items and/or adding new items.
 
 {{% notice note %}}
 It is not possible to change a list while the list is in use, for example: \
 `tmp = [1, 2, 3]; tmp.map(|i| tmp.push(i));` \
 ...will raise [bad_data_err()](../../errors/bad_data_err) *(cannot change type `list` while the value is being used)*
 {{% /notice %}}
-
 
 ### Reference versus copy
 
@@ -55,6 +53,7 @@ a.push(3);  // note that `.c` is not affected because `.c` is a *copy*.
 // Return the values
 [a, b, .c];
 ```
+
 > Response in JSON format:
 
 ```json

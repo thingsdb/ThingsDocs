@@ -1,6 +1,6 @@
 ---
 title: "set"
-weight: 56
+weight: 60
 ---
 
 A set is a collection which is unordered and can only contain things.
@@ -13,10 +13,10 @@ Function | Description
 [add](./add) | Add things to a set.
 [each](./each) | Iterate over all items in a set.
 [filter](./filter) | Return a new `set` with things that pass a given test.
-[find](./find) | Return the first `thing` which passes a given test. 
+[find](./find) | Return the first `thing` which passes a given test.
 [has](./has) | Test if a set contains a given thing.
-[len](./len) | Return the length of a set. 
-[map](./map) | Return a [list](../list) with the results of calling a provided closure on every thing. 
+[len](./len) | Return the length of a set.
+[map](./map) | Return a [list](../list) with the results of calling a provided closure on every thing.
 [remove](./remove) | Remove things from a set.
 
 ### Operators
@@ -50,10 +50,8 @@ will therefore contain the **complete resulting set**. \
 In practice this means that it is perfect to write something like `set_a |= set_b`, but avoid using a stored set like `.set_a |= set_b`.
 {{% /notice %}}
 
-
 ### Related functions
 
 Function | Description
 ------ | -----------
-[set](../../collection-api/set) | Create a new empty set or convert a [list](../list) to a new set. 
-
+[set](../../collection-api/set) | Create a new empty set or convert a [list](../list) to a new set.

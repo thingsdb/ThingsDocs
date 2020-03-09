@@ -1,6 +1,6 @@
 ---
 title: "each"
-weight: 58
+weight: 62
 ---
 
 Iterate over items in a [set](..).
@@ -20,7 +20,6 @@ This function does *not* generate an [event](../../../overview/events).
 Argument | Type | Description
 -------- | ---- | -----------
 callback | closure (required) | Closure to execute on each value.
-
 
 Explanation of the *callback* argument:
 

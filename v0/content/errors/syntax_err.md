@@ -1,6 +1,6 @@
 ---
 title: "syntax_err"
-weight: 214
+weight: 218
 ---
 
 Returns an [error](../../data-types/error) when the given ThingsDB code contains a syntax error.
@@ -8,14 +8,17 @@ Returns an [error](../../data-types/error) when the given ThingsDB code contains
 This function does *not* generate an [event](../../overview/events).
 
 ### Function
+
 `syntax_err([message])`
 
 ### Arguments
+
 Argument | Type | Description
 -------- | ---- | -----------
 message | str (optional) | Alternative error message.
 
 ### Return value
+
 An error value.
 
 ### Example

@@ -1,11 +1,10 @@
 ---
 title: "Example error response"
-weight: 13
+weight: 17
 ---
 
 In this example we perform a [query](../query) request and assume the socket connection is not authenticated yet.
 We then look at the error response.
-
 
 ## Example
 
@@ -26,7 +25,6 @@ Now we create the header. For this example we just use ID 0:
 - Query package type (34) `\x22`
 - Inverse type check bit (221) `\xdd`
 
-
 > Sending the *Query* package
 
 ```
@@ -45,7 +43,6 @@ The first 8 bytes (`8\x00\x00\x00\x00\x00\x13\xec`) contain the header:
 - Package ID: `\x00\x00` = `0`
 - Type: `\x13` = `19 (ERROR)`
 - Check-bit: `\xec` = `236 (19^255)`
-
 
 We see that the `ERROR` response package data of length `56`.
 

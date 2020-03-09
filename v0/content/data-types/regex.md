@@ -1,6 +1,6 @@
 ---
 title: "regex"
-weight: 55
+weight: 59
 ---
 
 Regular expression can be constructed using a literal which consists of a pattern enclosed between slashes, as follows: `re = /ab+c/;`.
@@ -11,7 +11,7 @@ requirement to compile the regular expression each time.
 
 Function | Description
 ------ | -----------
-[test](../../data-types/str/test) | A [str](../../data-types/str) function`true` or `false`. 
+[test](../../data-types/str/test) | A [str](../../data-types/str) function`true` or `false`.
 
 > This code uses a regular expression for an oversimplified email check:
 

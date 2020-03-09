@@ -1,6 +1,6 @@
 ---
 title: "base64_encode"
-weight: 102
+weight: 106
 ---
 
 Encode a [str](../../data-types/str) or [bytes](../../data-types/bytes) value using Base64.
@@ -20,6 +20,7 @@ Argument | Type | Description
 string | str/bytes | The value to encode.
 
 ### Return value
+
 Encoded [str](../../data-types/str) value is returned.
 
 ### Example
@@ -41,4 +42,3 @@ encoded;
 ```json
 "YmFzZTY0IGVuY29kZWQgc3RyaW5n"
 ```
-

@@ -1,6 +1,6 @@
 ---
 title: "map"
-weight: 46
+weight: 50
 ---
 
 The function iterates over items in an [list](../../list) or [tuple](../../tuple) and
@@ -17,7 +17,6 @@ This function does *not* generate an [event](../../../overview/events).
 Argument | Type | Description
 -------- | ---- | -----------
 callback | closure (required) | Closure to execute on each value.
-
 
 Explanation of the *callback* argument:
 

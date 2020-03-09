@@ -1,6 +1,6 @@
 ---
 title: "new"
-weight: 134
+weight: 138
 ---
 
 Creates a new instance of a defined [Type](../../data-types/type).
@@ -19,8 +19,8 @@ This function generates an [event](../../overview/events).
 
 Argument | Type | Description
 -------- | ---- | -----------
-type_name | str | The name of the Type that an instance must be made of. 
-value | thing | Thing containing all the properties that must be added to the new instance of the given Type. 
+type_name | str | The name of the Type that an instance must be made of.
+value | thing | Thing containing all the properties that must be added to the new instance of the given Type.
 
 ### Return value
 

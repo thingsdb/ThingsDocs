@@ -1,6 +1,6 @@
 ---
 title: "on-update"
-weight: 199
+weight: 203
 ---
 
 An update event is pushed when changes are made to a `thing` you are watching.
@@ -32,7 +32,7 @@ Mutation | Target | Description
 [set_type](#set_type) | `collection` | A [type](../../data-types/type) is initialized.
 [del_type](#del_type) | `collection` | A [type](../../data-types/type) is removed from the collection.
 [mod_type_add](#mod_type_add) | `collection` | A new field is added to an existing [type](../../data-types/type).
-[mod_type_mod](#mod_type_mod) | `collection` | A field is modified on an existing [type](../../data-types/type). 
+[mod_type_mod](#mod_type_mod) | `collection` | A field is modified on an existing [type](../../data-types/type).
 [mod_type_del](#mod_type_del) | `collection` | A field is removed from an existing [type](../../data-types/type).
 [new_procedure](#new_procedure) | `collection` | A new procedure is added to the collection.
 [del_procedure](#del_procedure) | `collection` | A procedure is removed from the collection.
@@ -52,6 +52,7 @@ While most values inside mutation are easy to understand, a instance of a *Type*
 
 .name = "ThingsDB";
 ```
+
 > Mutation result from the above code:
 
 ```json
@@ -100,6 +101,7 @@ information on how to parse a Type instance, look at the [mutation format](../..
 // .name = "ThingsDB";
 .del("name");
 ```
+
 > Mutation result from the above code:
 
 ```json
@@ -119,6 +121,7 @@ information on how to parse a Type instance, look at the [mutation format](../..
 // .myset = set();
 .myset.add(#11, #23, {title: 'HG2G'});
 ```
+
 > Mutation result from the above code:
 
 ```json
@@ -147,6 +150,7 @@ information on how to parse a Type instance, look at the [mutation format](../..
 // .myset = set(#55, #123, #42);
 .myset.remove(#123, #42);
 ```
+
 > Mutation result from the above code:
 
 ```json
@@ -171,6 +175,7 @@ information on how to parse a Type instance, look at the [mutation format](../..
 // .arr = ["a", "b"];
 .arr.push("c", "d");
 ```
+
 > Mutation result from the above code:
 
 ```json
@@ -193,6 +198,7 @@ information on how to parse a Type instance, look at the [mutation format](../..
 
 new_type('Person');
 ```
+
 > Mutation result from the above code:
 
 ```json
@@ -215,6 +221,7 @@ new_type('Person');
 
 set_type('Person', {name: 'str'});
 ```
+
 > Mutation result from the above code:
 
 ```json
@@ -237,6 +244,7 @@ set_type('Person', {name: 'str'});
 // new_type('Person');
 del_type('Person');
 ```
+
 > Mutation result from the above code:
 
 ```json
@@ -259,6 +267,7 @@ del_type('Person');
 // set_type('Book', {title: 'str'}); .book = Book{title: 'hhgttg'};
 mod_type('Book', 'add', 'rating', 'uint', 1);
 ```
+
 > Mutation result from the above code:
 
 ```json
@@ -303,6 +312,7 @@ mod_type('Book', 'mod', 'rating', 'number');
 // set_type('Book', {title: 'str', rating: 'number'});
 mod_type('Book', 'del', 'rating');
 ```
+
 > Mutation result from the above code:
 
 ```json
@@ -322,6 +332,7 @@ mod_type('Book', 'del', 'rating');
 
 new_procedure('multiply', |a, b| a*b);
 ```
+
 > Mutation result from the above code:
 
 ```json
@@ -344,6 +355,7 @@ new_procedure('multiply', |a, b| a*b);
 // new_procedure('multiply', |a, b| a*b);
 del_procedure('multiply');
 ```
+
 > Mutation result from the above code:
 
 ```json

@@ -1,6 +1,6 @@
 ---
 title: "randint"
-weight: 139
+weight: 143
 ---
 
 Returns **pseudo-random** [integer](../../data-types/int) number between a given range.
@@ -27,7 +27,6 @@ Argument | Type | Description
 `start` | int (required) | Start of the range **(inclusive)**.
 `end` | int (required) | End of the range **(exclusive)**.
 
-
 ### Return value
 
 A pseudo-random [int](../../data-types/float) between `start` (inclusive) and `end` (exclusive).
@@ -42,6 +41,7 @@ randint(10, 20);
 ```
 
 Example return value in JSON format:
+
 ```json
 13
 ```

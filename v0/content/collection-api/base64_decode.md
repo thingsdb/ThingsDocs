@@ -1,6 +1,6 @@
 ---
 title: "base64_decode"
-weight: 101
+weight: 105
 ---
 
 Decode a Base64 encoded string.
@@ -20,6 +20,7 @@ Argument | Type | Description
 encoded | str/bytes | The string value to decode.
 
 ### Return value
+
 Decoded [bytes](../../data-types/bytes) value is returned.
 
 ### Example
@@ -44,4 +45,3 @@ str(data);
 ```json
 "base64 encoded string"
 ```
-

@@ -1,6 +1,6 @@
 ---
 title: "new_type"
-weight: 135
+weight: 139
 ---
 
 Creates a new [Type](../../data-types/type). This function *only* creates a new type
@@ -11,7 +11,6 @@ you can define the fields for the new type.
 It is possible to use `set_type` directly without calling `new_type` first. However, sometimes
 you want to cross reference two types so you want both type to exists before calling `set_type`.
 {{% /notice %}}
-
 
 This function generates an [event](../../overview/events).
 

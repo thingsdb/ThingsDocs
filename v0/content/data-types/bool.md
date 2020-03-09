@@ -1,6 +1,6 @@
 ---
 title: "bool"
-weight: 24
+weight: 28
 ---
 
 Booleans are either `true` or `false`.
@@ -11,7 +11,6 @@ Other types can convert to `bool` by using the `!` (not) operator or the [bool](
 ```thingsdb,should_pass
 .is_the_earth_flat = !true;
 ```
-
 
 ### Related functions
 

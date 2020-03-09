@@ -1,6 +1,6 @@
 ---
 title: "add"
-weight: 131
+weight: 135
 ---
 
 Adds a property to an existing [Type](../../../data-types/type).
@@ -9,7 +9,6 @@ Adds a property to an existing [Type](../../../data-types/type).
 If there are active instances of the type you want to modify, then an *initial_value* is required.
 This value is used *only once* for applying the value to the existing instances and is not used when new instances are created.
 {{% /notice %}}
-
 
 ### Action
 

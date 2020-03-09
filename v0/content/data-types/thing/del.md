@@ -1,6 +1,6 @@
 ---
 title: "del"
-weight: 74
+weight: 78
 ---
 
 Delete a property from a [thing](..).

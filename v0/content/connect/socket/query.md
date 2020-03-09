@@ -1,6 +1,6 @@
 ---
 title: "Example query"
-weight: 10
+weight: 14
 ---
 
 Query ThingsDB. A successful query request will respond with a `DATA (18)` package.
@@ -37,7 +37,6 @@ Now we create the header. For this example we just use ID 0:
 - Identifier (0) `\x00\x00`
 - Query package type (34) `\x22`
 - Inverse type check bit (221) `\xdd`
-
 
 > Sending the *Query* package
 

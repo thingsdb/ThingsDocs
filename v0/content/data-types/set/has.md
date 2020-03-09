@@ -1,6 +1,6 @@
 ---
 title: "has"
-weight: 61
+weight: 65
 ---
 
 Determines if a [set](..) has a given thing.
@@ -19,7 +19,7 @@ thing | thing (required) | Thing to check.
 
 ### Return value
 
-Returns `true` if the given thing is found in the set and otherwise `false`. 
+Returns `true` if the given thing is found in the set and otherwise `false`.
 
 ### Example
 

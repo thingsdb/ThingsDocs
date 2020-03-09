@@ -1,15 +1,14 @@
 ---
 title: "mod"
-weight: 133
+weight: 137
 ---
 
-Modifies the type definition of a property from an exinsting [Type](../../../data-types/type).
+Modifies the type definition of a property from an existing [Type](../../../data-types/type).
 
 {{% notice note %}}
 When modifying a property of a Type, the changed property type can only be less 'strict'. \
 So for example, `age: 'int'` can become `age: 'int?'`, but not the other way around.
 {{% /notice %}}
-
 
 ### Action
 
@@ -47,4 +46,3 @@ mod_type('Person', 'mod', 'age', 'int?');
 ```json
 null
 ```
-

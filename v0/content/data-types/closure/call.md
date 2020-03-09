@@ -1,6 +1,6 @@
 ---
 title: "call"
-weight: 28
+weight: 32
 ---
 
 Call a closure.
@@ -55,4 +55,3 @@ greet_nil = greet(nil);
     "Hello unnamed user!"
 ]
 ```
-

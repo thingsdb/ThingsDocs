@@ -1,6 +1,6 @@
 ---
 title: "wrap"
-weight: 87
+weight: 91
 ---
 
 Wrap a thing with a another [Type](../../type) to filter out properties, while preserving the ID.
@@ -15,7 +15,7 @@ For a more advanced example using [wrap()](..) and [unwrap()](../../wtype/unwrap
 
 Argument | Arguments   | Description
 -------- | ----------- | -----------
-Type     | str         | Type's name to wrap the thing with. 
+Type     | str         | Type's name to wrap the thing with.
 
 ### Return value
 
@@ -39,6 +39,7 @@ set_type('_Email', {email: 'str'});
 // Return the email field and ID (#)
 .joente.wrap('_Email');
 ```
+
 > Example return value in JSON format
 
 ```json

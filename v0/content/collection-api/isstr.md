@@ -1,6 +1,6 @@
 ---
 title: "isstr"
-weight: 125
+weight: 129
 ---
 
 This function determines whether the provided value is of

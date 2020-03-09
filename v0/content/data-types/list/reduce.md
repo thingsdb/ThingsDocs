@@ -1,6 +1,6 @@
 ---
 title: "reduce"
-weight: 49
+weight: 53
 ---
 
 Executes a given reducer [closure](../../closure) on every item of the list, accumulating to a single return value.
@@ -15,17 +15,16 @@ This function does *not* generate an [event](../../../overview/events).
 
 Argument | Type | Description
 -------- | ---- | -----------
-reducer | closure (required) | Closure to execute on every value (except for the first, if no initial value is provided). 
-initial | any (optional) | The initial value serves as the first argument of the callback during the first call. If no initial value is provided, the first item in the array will be used instead and not processed by the callback. Calling reduce() on an empty list without an initial value will raise a [lookup_err()](../../../errors/lookup_err). 
-
+reducer | closure (required) | Closure to execute on every value (except for the first, if no initial value is provided).
+initial | any (optional) | The initial value serves as the first argument of the callback during the first call. If no initial value is provided, the first item in the array will be used instead and not processed by the callback. Calling reduce() on an empty list without an initial value will raise a [lookup_err()](../../../errors/lookup_err).
 
 The *reducer* argument takes three optional arguments:
 
 Argument | Description
 -------- | -----------
-`(0)` accumulator | An accumulated value that is returned by the previously invoked callback—or initial value. 
-`(1)` current | The current item in the list that is being processed by the callback. 
-`(2)` index | The index of the current item in the list that is being processed by the callback. If an initial value is given, it start from index `0`, else, it starts from index `1`. 
+`(0)` accumulator | An accumulated value that is returned by the previously invoked callback—or initial value.
+`(1)` current | The current item in the list that is being processed by the callback.
+`(2)` index | The index of the current item in the list that is being processed by the callback. If an initial value is given, it start from index `0`, else, it starts from index `1`.
 
 ### Return value
 

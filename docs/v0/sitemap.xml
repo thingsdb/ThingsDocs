@@ -3,7 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/installation/</loc>
+    <loc>https://docs.thingsdb.net/v0/getting-started/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/getting-started/build-from-source/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/getting-started/configuration/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/getting-started/start-up-node/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/getting-started/readiness-liveness/</loc>
   </url>
   
   <url>

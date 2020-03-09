@@ -1,6 +1,6 @@
 ---
 title: "Example run"
-weight: 11
+weight: 15
 ---
 
 Run a procedure in ThingsDB. A successful run request will respond with a `DATA (18)` package.
@@ -37,7 +37,6 @@ Now we create the header. For this example we just use ID 0:
 - Identifier (0) `\x00\x00`
 - Run package type (37) `\x25`
 - Inverse type check bit (218) `\xda`
-
 
 > Sending the *Query* package
 

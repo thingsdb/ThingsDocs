@@ -1,6 +1,6 @@
 ---
 title: "backup_info"
-weight: 154
+weight: 158
 ---
 
 
@@ -29,7 +29,6 @@ Argument | Type | Description
 `ID` | int | ID of the backup schedule to return info for.
 
 ### Return value
-
 
 ### Example
 

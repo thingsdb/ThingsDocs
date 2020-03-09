@@ -1,6 +1,6 @@
 ---
 title: "has"
-weight: 78
+weight: 82
 ---
 
 Determines if a [thing](..) has a given property.
@@ -19,7 +19,7 @@ name | str (required) | Name of the property to check.
 
 ### Return value
 
-Returns `true` when the given propery name is found and otherwise `false`.
+Returns `true` when the given property name is found and otherwise `false`.
 
 ### Example
 

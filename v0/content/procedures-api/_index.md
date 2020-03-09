@@ -1,12 +1,12 @@
 ---
 title: "Procedures API"
-weight: 188
+weight: 192
 chapter: true
 ---
 
 # Procedures API
 
-A procedure in ThingsDB is a prepared piece of code that you can save, so the code can be reused over and over again.
+A procedure in ThingsDB is a named closure that is attached to a scope and available to use in an API call.
 
 Procedures can be used in the `@thingsdb` scope and in `@collection` scopes.
 

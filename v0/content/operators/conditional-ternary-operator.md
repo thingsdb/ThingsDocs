@@ -1,11 +1,12 @@
 ---
 title: "Conditional ternary operator"
-weight: 96
+weight: 100
 ---
 
 The conditional operator returns one of two values based on the logical value of the condition.
 
 ### Syntax:
+
 `expression ? if-true : if-false`
 
 > Conditional (ternary) operator examples:

@@ -1,6 +1,6 @@
 ---
 title: "users_info"
-weight: 187
+weight: 191
 ---
 
 Returns user information about all users in ThingsDB.
@@ -13,10 +13,13 @@ exposes user access and token information.
 This function does *not* generate an [event](../../overview/events).
 
 ### Function
+
 `users_info()`
 
 ### Arguments
+
 None
 
 ### Return value
+
 List with user [info](../../data-types/info) about all users in ThingsDB.

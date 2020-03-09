@@ -1,6 +1,6 @@
 ---
 title: "Socket"
-weight: 7
+weight: 11
 ---
 
 This is a more in depth view of the socket protocol used for communication with ThingsDB.
@@ -17,18 +17,22 @@ sending an `AUTH` package.
 ## Package
 
 #### LEN (Unsigned, 32bit)
+
 Length of the *data*, stored as **Unsigned, 32-bit, Little Endian**. The header size is *not* included in the length.
 
 #### ID (16bit)
+
 The ID can be used as an identifier of your package. When ThingsDB send a response
 on a request, it will use the same ID so this allows you to map a response to a
 request. This is useful if you want to send multiple requests in parallel.
 It needs to be stored as **16-bit, Little Endian**.
 
 #### TYPE (Unsigned, 8bit)
+
 Package type is used to describe what kind of package is transmitted.
 
 #### Request type
+
 Type      | Number | Description
 ----------| -----| -----------
 `PING`    | 32 | Ping, useful as keep-alive.
@@ -39,9 +43,11 @@ Type      | Number | Description
 `RUN`     | 37 | Run a procedure, see [procedures](../../procedures-api) for more info.
 
 ##### CHK (Unsigned, 8bit)
+
 Inverse of the type: `type ^ 0xff`. This is used as a check-bit.
 
 #### DATA
+
 Data serialized using [MessagePack](https://msgpack.org).
 
 > Package format:
@@ -82,19 +88,17 @@ Now we create the header. For this example we just use ID 0:
 - Auth package type (33) `\x21`
 - Inverse type check bit (222) `\xde`
 
-
 So our total package will be:
 
 `\x0c\x00\x00\x00\x00\x00\x21\xde\x92\xa5admin\xa4pass`
-
 
 ## More examples
 
 Some more examples:
 
- - [sending a ping request](./ping)
- - [sending an authentication request](./auth)
- - [sending a query request](./query)
- - [sending a run request](./run)
- - [sending a watch request](./watch)
- - [receiving an error response](./error-response)
+- [sending a ping request](./ping)
+- [sending an authentication request](./auth)
+- [sending a query request](./query)
+- [sending a run request](./run)
+- [sending a watch request](./watch)
+- [receiving an error response](./error-response)

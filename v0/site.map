@@ -1,4 +1,8 @@
-installation
+getting-started
+    build-from-source
+    configuration
+    start-up-node
+    readiness-liveness
 connect
     authentication
     http-api

@@ -1,6 +1,6 @@
 ---
 title: "new_collection"
-weight: 178
+weight: 182
 ---
 
 Create a new collection.
@@ -12,6 +12,7 @@ This function generates an [event](../../overview/events).
 `new_collection(name);`
 
 ### Arguments
+
 Argument | Type | Description
 --------- | ----------- | -----------
 name | str (required) | Name of the new collection.

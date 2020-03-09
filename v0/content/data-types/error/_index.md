@@ -1,6 +1,6 @@
 ---
 title: "error"
-weight: 30
+weight: 34
 ---
 
 When an error occurs within a function, an object can be returned. The object, called an error, contains information about the error, including its type and a message.
@@ -9,9 +9,8 @@ When an error occurs within a function, an object can be returned. The object, c
 
 Function | Description
 ------ | -----------
-[code](./code) | Return the error code. 
-[msg](./msg) | Return the error message. 
-
+[code](./code) | Return the error code.
+[msg](./msg) | Return the error message.
 
 ### Related functions
 
@@ -21,8 +20,6 @@ Function | Description
 [raise](../../collection-api/raise) | Raise an error.
 [try](../../collection-api/try) | Try a statement and catch if an error is raised.
 
-
 ### Build-in errors
 
 See [errors](../../errors) for a list of all the build-in error type.
-

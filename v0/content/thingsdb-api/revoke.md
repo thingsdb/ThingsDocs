@@ -1,6 +1,6 @@
 ---
 title: "revoke"
-weight: 184
+weight: 188
 ---
 
 Revoke, collection or general, privileges from a user. See [grant](../../thingsdb-api/grant) for more information on
@@ -18,7 +18,7 @@ This function generates an [event](../../overview/events).
 
 Argument | Type | Description
 -------- | ---- | -----------
-`target` | int/raw | Can be either the `@node`, `@thingsdb`, or a `@collection` [scope](../../overview/scopes). 
+`target` | int/raw | Can be either the `@node`, `@thingsdb`, or a `@collection` [scope](../../overview/scopes).
 `user` | str | User to revoke privileges from.
 `mask` | int | Bit-mask for revoking privileges.
 

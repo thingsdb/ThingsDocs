@@ -1,6 +1,6 @@
 ---
 title: "rand"
-weight: 138
+weight: 142
 ---
 
 Returns **pseudo-random** number between `0.0` and `1.0`.
@@ -34,6 +34,7 @@ rand();
 ```
 
 Example return value in JSON format:
+
 ```json
 0.54747654169214726
 ```

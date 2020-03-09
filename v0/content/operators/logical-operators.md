@@ -1,6 +1,6 @@
 ---
 title: "Logical operators"
-weight: 97
+weight: 101
 ---
 
 Logical operators are generally used with [bool](../../data-types/bool) values.
@@ -15,8 +15,6 @@ As logical expressions are evaluated left to right, they are tested for possible
 * `expression_1 && expression_2` : if `expression_1` evaluates to `false` then `expression_2` is not evaluated. Any side effects of doing so do not take place.
 
 * `expression_1 || expression_2`: if `expression_1` evaluates to `true` then `expression_2` is not evaluated. Any side effects of doing so do not take place.
-
-  
 
 > Logical *short-circuit* examples:
 

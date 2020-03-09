@@ -1,6 +1,6 @@
 ---
 title: "on-stop"
-weight: 201
+weight: 205
 ---
 
 A stop event will be pushed as soon as a [thing](../../data-types/thing) is no longer being watched.
@@ -16,4 +16,3 @@ This event is not pushed when a connection to a node is lost but only when watch
     "#": 42
 }
 ```
-

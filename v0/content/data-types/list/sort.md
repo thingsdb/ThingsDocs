@@ -1,6 +1,6 @@
 ---
 title: "sort"
-weight: 52
+weight: 56
 ---
 
 When this function is used on a [list](..) or [tuple](../../tuple), a new sorted list is returned.
@@ -111,4 +111,3 @@ arr.sort(|a, b| isnil(a) ? 1 : isnil(b) ? -1 : a < b ? -1 : a > b ? 1 : 0);
     null
 ]
 ```
-

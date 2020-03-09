@@ -1,6 +1,6 @@
 ---
 title: "new_backup"
-weight: 159
+weight: 163
 ---
 
 Schedule a new backup.
@@ -12,11 +12,9 @@ about the backup schedule job, or can be used to [delete](../del_backup) the bac
 
 See the [example recovery](#example-recovery) section below on how to recover from a backup file.
 
-
 {{% notice note %}}
 At least **two nodes** are required to create a new backup schedule. This is required because ThingsDB needs to enter *away* mode to actually create the backup and this happens only with two or more nodes.
 {{% /notice %}}
-
 
 This function does *not* generate an [event](../../overview/events).
 
@@ -30,7 +28,7 @@ Argument | Type | Description
 --------- | ----------- | -----------
 `file_template` | str | Backup schedule file template. See [file-template](#file-template) for more information.
 `start_ts` | nil/int/float/raw (optional) | Start date/time of the backup. If no `start_ts` is given, the backup starts as soon as possible.
-`repeat` | int (optional) | Repeat the backup schedule every `repeat` seconds. If no `repeat` value is set, the backup job will run only once. 
+`repeat` | int (optional) | Repeat the backup schedule every `repeat` seconds. If no `repeat` value is set, the backup job will run only once.
 
 ### File template
 

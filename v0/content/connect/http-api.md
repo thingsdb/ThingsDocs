@@ -1,6 +1,6 @@
 ---
 title: "HTTP API"
-weight: 4
+weight: 8
 ---
 
 
@@ -11,18 +11,15 @@ or with the `THINGSDB_HTTP_API_PORT` environment variable.
 
 The API has support for both [MessagePack](https://msgpack.org) and [JSON](https://www.json.org) and can be used to perform queries and run procedures.
 
-
 {{% notice tip %}}
 Use **MessagePack** if possible since this is the data serialization protocol which is used by ThingsDB
 internally and will therefore be a faster than JSON. It also allows for sending and receiving binary data and is usually more compact than JSON.
 In most examples we use JSON just because it is more readable.
 {{% /notice %}}
 
-
 ## Headers
 
 The header field `Content-Type` is required and needs to be either `application/msgpack` or `application/json`.
-
 
 ## Query request
 
@@ -82,7 +79,7 @@ field | description
 ----- | -----------
 `type` | Required and must be `run` for a run request.
 `name` | Name of the procedure to run.
-`args` | Array or map with arguments for the procedure. 
+`args` | Array or map with arguments for the procedure.
 
 ## Run example
 
@@ -115,6 +112,6 @@ curl --location --request POST 'https://playground.thingsdb.net//Doc' \
 
 {{% notice note %}}
 
-Instead of providing the arguments as an array, they also could be given as a map, for example `{"a": 6, "b": 7}`. 
+Instead of providing the arguments as an array, they also could be given as a map, for example `{"a": 6, "b": 7}`.
 
 {{% /notice %}}

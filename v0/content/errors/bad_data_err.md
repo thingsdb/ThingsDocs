@@ -1,6 +1,6 @@
 ---
 title: "bad_data_err"
-weight: 206
+weight: 210
 ---
 
 Returns an [error](../../data-types/error) when a request is malformed.
@@ -8,14 +8,17 @@ Returns an [error](../../data-types/error) when a request is malformed.
 This function does *not* generate an [event](../../overview/events).
 
 ### Function
+
 `bad_data_err([message])`
 
 ### Arguments
+
 Argument | Type | Description
 -------- | ---- | -----------
 message | str (optional) | Alternative error message.
 
 ### Return value
+
 An error value.
 
 ### Example

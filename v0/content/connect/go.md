@@ -1,6 +1,6 @@
 ---
 title: "Go"
-weight: 6
+weight: 10
 ---
 
 ### Installation
@@ -13,29 +13,28 @@ $ go get github.com/thingsdb/go-thingsdb
 
 Make sure [Git](https://git-scm.com/downloads) is installed on your machine and in your system's PATH.
 
-
 ### Quick usage
 
 ```go
 package main
 
 import (
-	"crypto/tls"
-	"fmt"
+    "crypto/tls"
+    "fmt"
 
-	thingsdb "github.com/thingsdb/go-thingsdb"
+    thingsdb "github.com/thingsdb/go-thingsdb"
 )
 
 func example(conn *thingsdb.Conn, res chan interface{}) {
-	var data interface{}
-	var err error
+    var data interface{}
+    var err error
 
-	if err := conn.Connect(); err != nil {
-		res <- err
-		return
-	}
+    if err := conn.Connect(); err != nil {
+        res <- err
+        return
+    }
 
-	defer conn.Close()
+    defer conn.Close()
 
 	if err := conn.AuthToken("Fai6NmH7QYxA6WLYPdtgcy"); err != nil {
 		res <- err

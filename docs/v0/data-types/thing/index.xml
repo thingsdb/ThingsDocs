@@ -69,7 +69,7 @@ Arguments    Argument Type Description     name str (required) Name of the prope
       <description>Determines if a thing has a given property.
 This function does not generate an event.
 Function thing.has(name)
-Arguments    Argument Type Description     name str (required) Name of the property to check.    Return value Returns true when the given propery name is found and otherwise false.
+Arguments    Argument Type Description     name str (required) Name of the property to check.    Return value Returns true when the given property name is found and otherwise false.
 Example  This code shows an example use case of has():
  tmp = {name: &#39;Iris&#39;}; /* Check if `tmp` has a property `name` */ tmp.</description>
     </item>
@@ -177,7 +177,7 @@ Although the values() and map() in the example above will return a list with the
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/thing/watch/</guid>
-      <description>Subscribe for watching mutations on a stored thing. If this function is called on a thing which is not stored, and therefore has no #ID, then a value_err() is raised. This function returns nil, but every call always triggers an init event, even if it envolves multiple calls of this function on the same thing.
+      <description>Subscribe for watching mutations on a stored thing. If this function is called on a thing which is not stored, and therefore has no #ID, then a value_err() is raised. This function returns nil, but every call always triggers an init event, even if it involves multiple calls of this function on the same thing.
 This function only works with socket connections. When using this function with an HTTP API request, it has no effect.</description>
     </item>
     

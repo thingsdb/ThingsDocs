@@ -1,6 +1,6 @@
 ---
 title: "value_err"
-weight: 216
+weight: 220
 ---
 
 Returns an [error](../../data-types/error) when a given value has the correct type but contains invalid data.
@@ -8,14 +8,17 @@ Returns an [error](../../data-types/error) when a given value has the correct ty
 This function does *not* generate an [event](../../overview/events).
 
 ### Function
+
 `value_err([message])`
 
 ### Arguments
+
 Argument | Type | Description
 -------- | ---- | -----------
 message | str (optional) | Alternative error message.
 
 ### Return value
+
 An error value.
 
 ### Example

@@ -1,6 +1,6 @@
 ---
 title: "˂Type˃"
-weight: 90
+weight: 94
 ---
 
 
@@ -19,13 +19,11 @@ When ThingsDB wraps a normal thing with a Type, each property must be compared t
 In the [example](#example-1) below we show a use case for wrapping a book type. The set-up requires some code
 but once the Types are defined, it is rather easy to use.
 
-
 ### Functions
 
 Function | Description
 ------ | -----------
 [unwrap](./unwrap) | Unwrap to access the *wrapped* thing..
-
 
 ### Example 1
 
@@ -134,8 +132,6 @@ return(.wrap('_AllBooks'), 3);
 }
 ```
 
-
-
 ### What if a Type is removed?
 
 When a Type is removed that was wrapping things, all these things are not filtered anymore. However these things are still connected to the removed Type's name. In case you decide to add a Type with the same name, then the wrapped things will be filtered again according to the Type's new definition. The following [example](#example-2) will demonstrate this event.
@@ -159,10 +155,10 @@ set_type('PersonName', {
 
 // Create a thing with type `Person`
 .Bob = Person{
-	firstName: 'Bob',
-	lastName: 'Lightyear',
-	age: 43,
-	gender: 'male',
+    firstName: 'Bob',
+    lastName: 'Lightyear',
+    age: 43,
+    gender: 'male',
 };
 
 // Wrap .Bob and store the wrapped thing.
@@ -173,7 +169,6 @@ set_type('PersonName', {
 ```
 
 The output:
-
 
 ```json
 {
@@ -225,4 +220,3 @@ The output now only includes the `lastName` property. Thus the property `.Wrappe
     "lastName": "Lightyear"
 }
 ```
-

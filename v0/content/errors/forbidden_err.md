@@ -1,6 +1,6 @@
 ---
 title: "forbidden_err"
-weight: 207
+weight: 211
 ---
 
 Returns an [error](../../data-types/error) when the client or user is missing the required privileges.
@@ -8,14 +8,17 @@ Returns an [error](../../data-types/error) when the client or user is missing th
 This function does *not* generate an [event](../../overview/events).
 
 ### Function
+
 `forbidden_err([message])`
 
 ### Arguments
+
 Argument | Type | Description
 -------- | ---- | -----------
 message | str (optional) | Alternative error message.
 
 ### Return value
+
 An error value.
 
 ### Example

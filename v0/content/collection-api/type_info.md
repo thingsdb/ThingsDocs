@@ -1,16 +1,16 @@
 ---
 title: "type_info"
-weight: 150
+weight: 154
 ---
 
 Returns information about a given [Type](../../data-types/type).
 
 Value | Description
 ------- | -----------
-`type_id` | Internal Type ID *(can be used to identify Types in collection events)*. 
-`created_at` | [Time Stamp](https://wikipedia.org/wiki/Unix_time) when the Type is created. 
-`modified_at` | [Time Stamp](https://wikipedia.org/wiki/Unix_time) when the Type is last modified or `nil` if never modified. 
-`name` | Type's name. 
+`type_id` | Internal Type ID *(can be used to identify Types in collection events)*.
+`created_at` | [Time Stamp](https://wikipedia.org/wiki/Unix_time) when the Type is created.
+`modified_at` | [Time Stamp](https://wikipedia.org/wiki/Unix_time) when the Type is last modified or `nil` if never modified.
+`name` | Type's name.
 `fields` | Array with arrays containing two strings, the property name and definition.
 
 {{% notice note %}}
@@ -30,7 +30,6 @@ This function does *not* generate an [event](../../overview/events).
 Argument | Type | Description
 -------- | ---- | -----------
 type_name | str | The name of the Type for which the information about the properties has to be returned.
-
 
 ### Return value
 
@@ -65,4 +64,3 @@ type_info('Book');
     ]
 }
 ```
-

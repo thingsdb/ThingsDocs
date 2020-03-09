@@ -1,6 +1,6 @@
 ---
 title: "try"
-weight: 147
+weight: 151
 ---
 
 Try a statement and if the statement fails with an error, then the error is returned.
@@ -22,7 +22,7 @@ This function does *not* generate an [event](../../overview/events).
 Argument | Type | Description
 -------- | ---- | -----------
 statement | any (required) | The statement to try.
-e0, e1, ..., eX | int/raw (optional) | Only catch specific errors, if omitted, catch all errors. Both error codes and names are accepted. 
+e0, e1, ..., eX | int/raw (optional) | Only catch specific errors, if omitted, catch all errors. Both error codes and names are accepted.
 
 ### Return value
 

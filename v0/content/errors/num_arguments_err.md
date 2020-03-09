@@ -1,6 +1,6 @@
 ---
 title: "num_arguments_err"
-weight: 211
+weight: 215
 ---
 
 Returns an [error](../../data-types/error) when a wrong number of arguments is given.
@@ -8,14 +8,17 @@ Returns an [error](../../data-types/error) when a wrong number of arguments is g
 This function does *not* generate an [event](../../overview/events).
 
 ### Function
+
 `num_arguments_err([message])`
 
 ### Arguments
+
 Argument | Type | Description
 -------- | ---- | -----------
 message | str (optional) | Alternative error message.
 
 ### Return value
+
 An error value.
 
 ### Example

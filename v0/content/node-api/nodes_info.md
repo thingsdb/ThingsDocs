@@ -1,13 +1,13 @@
 ---
 title: "nodes_info"
-weight: 161
+weight: 165
 ---
 
 Returns information about all ThingsDB nodes.
 
 Value | Description
 ------- | -----------
-node_name | A node will publish itself to other nodes using the node name. This can be for example an IP address,  hostname , or a fully qualified domain name (FQDN) of the node. 
+node_name | A node will publish itself to other nodes using the node name. This can be for example an IP address,  hostname , or a fully qualified domain name (FQDN) of the node.
 committed_event_id | Last known committed event ID on the node.
 next_thing_id | Next free thing ID on the node.
 node_id | ID which is assigned to the node.
@@ -15,8 +15,7 @@ port | TCP port on which the node is listening for node connections.
 status | Current status of the node.
 stored_event_id | Last known stored event ID on the node.
 syntax_version | Language or syntax version which is running on the node.
-zone | [Zone](../../overview/dictionary) number to which the node is assigned. 
-
+zone | [Zone](../../overview/dictionary) number to which the node is assigned.
 
 This function does *not* generate an [event](../../overview/events).
 

@@ -1,11 +1,9 @@
 ---
 title: "unwrap"
-weight: 91
+weight: 95
 ---
 
 Unwrap a [wrapped](../) thing.
-
-
 
 ### Function
 
@@ -40,6 +38,7 @@ set_type('_Email', {email: 'str'});
 // Return the original `thing`
 .w.unwrap();
 ```
+
 > Example return value in JSON format
 
 ```json

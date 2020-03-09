@@ -1,10 +1,10 @@
 ---
 title: "closure"
-weight: 27
+weight: 31
 ---
 
-Closures can be used to consume items from a `thing`, `list`, `tuple` or `set`.
-They are also used by [procedures](../../procedures-api) where they get the role of a function.
+Closures are user defined methods which can be saved. They can be used as a prepared piece of code or to consume items from a `thing`, `list`, `tuple` or `set`.
+They can also be used by [procedures](../../procedures-api).
 
 Closure can be stored in a collection or assigned to a variable.
 
@@ -18,7 +18,7 @@ More complex closures are also possible, check the last example below.
 Function | Description
 ------ | -----------
 [call](./call) | Call the closure with optional arguments.
-[doc](./doc) | Return the doc string of the closure. 
+[doc](./doc) | Return the doc string of the closure.
 
 {{% notice note %}}
 Closures may be called recursively up to a **recursion depth of 24**. If this limit is exceeded, an error is raised.
@@ -85,7 +85,6 @@ call_result = add_one(41);
 ```
 
 Like explained, closures can accept multiple arguments and may contain a block scope instead of just a single line statement. Here is an example:
-
 
 ```thingsdb,should_pass
 |name, age| {

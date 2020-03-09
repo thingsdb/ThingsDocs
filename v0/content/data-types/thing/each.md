@@ -1,6 +1,6 @@
 ---
 title: "each"
-weight: 75
+weight: 79
 ---
 
 Iterate over all properties on a [thing](..).
@@ -20,7 +20,6 @@ This function does *not* generate an [event](../../../overview/events).
 Argument | Type | Description
 -------- | ---- | -----------
 callback | closure (required) | Closure to execute on each value.
-
 
 Explanation of the *callback* argument:
 

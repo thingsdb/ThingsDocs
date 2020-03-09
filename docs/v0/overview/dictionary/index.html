@@ -11,20 +11,20 @@
     <title>Dictionary :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1583427533" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1583427533" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1583427533" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1583427533" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1583427533" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1583427533" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1583427533" rel="stylesheet">
-    <link href="/v0/css/theme.css?1583427533" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1583427533" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583769016" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583769016" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583769016" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583769016" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583769016" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583769016" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583769016" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583769016" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583769016" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1583427533" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583769016" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1583427533"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583769016"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1583427533"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1583427533"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583769016"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583769016"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1583427533"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583769016"></script>
 
     
   </div>
@@ -79,16 +79,102 @@
  
   
     
-    <li data-nav-id="/v0/installation/" title="Installation" class="dd-item 
+    <li data-nav-id="/v0/getting-started/" title="Getting started" class="dd-item 
         
         
         
         ">
-      <a href="/v0/installation/">
-          Installation
+      <a href="/v0/getting-started/">
+          Getting started
           
       </a>
       
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/getting-started/build-from-source/" title="Build from source (linux)" class="dd-item ">
+        <a href="/v0/getting-started/build-from-source/">
+        Build from source (linux)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/getting-started/configuration/" title="Configuration" class="dd-item ">
+        <a href="/v0/getting-started/configuration/">
+        Configuration
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/getting-started/start-up-node/" title="Start up node (Linux)" class="dd-item ">
+        <a href="/v0/getting-started/start-up-node/">
+        Start up node (Linux)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/getting-started/readiness-liveness/" title="Readiness and liveness" class="dd-item ">
+        <a href="/v0/getting-started/readiness-liveness/">
+        Readiness and liveness
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
               
     </li>
   
@@ -4581,8 +4667,40 @@
 </thead>
 <tbody>
 <tr>
-<td>Qourum</td>
-<td align="left">ThingsDB ensures consistency acrrosss multiple nodes. This is achieved by events. Events get an ID which are in applied order. Before a node can assign an ID to an event, it needs approval of the majority of the existing nodes. Once a node has connected to the others, it takes part in the quorum. If a node goes down it still gets accounted for, but will negatively influence the quorum as it cannot repond. When a node is deleted it does not take part in the quorum anymore.</td>
+<td>Collection</td>
+<td align="left">The <a href="../collections">collection</a> is the root thing. Every collection has its own scope.</td>
+</tr>
+<tr>
+<td>Closure</td>
+<td align="left">A <a href="../../data-types/closure">Closure</a> is a user defined method which can be saved. It can be used as a prepared piece of code or to consume items from a <code>thing</code>, <code>list</code>, <code>tuple</code> or <code>set</code>.</td>
+</tr>
+<tr>
+<td>Event</td>
+<td align="left">ThingsDB creates an <a href="../events">event</a> when a query modifies something.  Events are applied in order by each node to guarantee consistency.</td>
+</tr>
+<tr>
+<td>Function</td>
+<td align="left">Function in ThingsDB means a built in function. A function needs the exact number of arguments that is expected, which is different for a closure or procedure.</td>
+</tr>
+<tr>
+<td>Node</td>
+<td align="left"><a href="../../node-api">Node</a> is the process running ThingsDB. ThingsDB can <em>work</em> with a single node but is designed to work with multiple nodes. Running on at least three nodes brings redundancy and ensures the database stays operational.</td>
+</tr>
+<tr>
+<td>Procedure</td>
+<td align="left">A <a href="../../procedures-api">procedure</a> in ThingsDB is a named closure that is attached to a scope (<em>@thingsdb</em> or <em>@collection</em>) and available to use in an API call.</td>
+</tr>
+<tr>
+<td>Scope</td>
+<td align="left">When sending a query, calling a procedure or subscribing to a thing, the request will require you to provide a scope. ThingsDB has three <a href="../scopes">scope</a> categories: <em>@thingsdb</em>, <em>@node</em> and <em>@collection</em>.</td>
+</tr>
+<tr>
+<td>Thing</td>
+<td align="left">A thing is an object to which properties can be assigned.</td>
+</tr>
+<tr>
+<td>Quorum</td>
+<td align="left">ThingsDB ensures consistency across multiple nodes. This is achieved by events. Events get an ID which are in applied order. Before a node can assign an ID to an event, it needs approval of the majority of the existing nodes. Once a node has connected to the others, it takes part in the quorum. If a node goes down it still gets accounted for, but will negatively influence the quorum as it cannot respond. When a node is deleted it does not take part in the quorum anymore.</td>
 </tr>
 <tr>
 <td>Zone</td>
@@ -4620,19 +4738,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1583427533"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1583427533"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583427533"></script>
-    <script src="/v0/js/jquery.sticky.js?1583427533"></script>
-    <script src="/v0/js/featherlight.min.js?1583427533"></script>
-    <script src="/v0/js/highlight.pack.js?1583427533"></script>
+    <script src="/v0/js/clipboard.min.js?1583769016"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583769016"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583769016"></script>
+    <script src="/v0/js/jquery.sticky.js?1583769016"></script>
+    <script src="/v0/js/featherlight.min.js?1583769016"></script>
+    <script src="/v0/js/highlight.pack.js?1583769016"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1583427533"></script>
-    <script src="/v0/js/learn.js?1583427533"></script>
-    <script src="/v0/js/hugo-learn.js?1583427533"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583769016"></script>
+    <script src="/v0/js/learn.js?1583769016"></script>
+    <script src="/v0/js/hugo-learn.js?1583769016"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1583427533" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1583427533"></script>
+    <link href="/v0/mermaid/mermaid.css?1583769016" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583769016"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

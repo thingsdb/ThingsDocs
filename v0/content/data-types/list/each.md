@@ -1,11 +1,10 @@
 ---
 title: "each"
-weight: 38
+weight: 42
 ---
 
 Iterate over all the items in an [list](../../list) or [tuple](../../tuple).
 Use this functions instead of [map](../map) when you are *not* interested in the return value.
-
 
 This function does *not* generate an [event](../../../overview/events).
 
@@ -18,7 +17,6 @@ This function does *not* generate an [event](../../../overview/events).
 Argument | Type | Description
 -------- | ---- | -----------
 callback | closure (required) | Closure to execute on each value.
-
 
 Explanation of the *callback* argument:
 

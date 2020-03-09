@@ -1,6 +1,6 @@
 ---
 title: "Authentication"
-weight: 3
+weight: 7
 ---
 
 ThingsDB supports authentication by using a *user* and *password* combination, or with a *token*. A default user `admin` with password `pass` is created on a fresh installation.
@@ -12,7 +12,6 @@ See the [grant](../../thingsdb-api/grant) and [revoke](../../thingsdb-api/revoke
 {{% notice note %}}
 For connecting to ThingsDB with a auto-reconnect client, `WATCH` privileges on the `.node` scope are required.
 {{% /notice %}}
-
 
 ## Token authentication
 

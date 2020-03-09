@@ -1,6 +1,6 @@
 ---
 title: "type_err"
-weight: 215
+weight: 219
 ---
 
 Returns an [error](../../data-types/error) when a given value is of the incorrect type.
@@ -8,14 +8,17 @@ Returns an [error](../../data-types/error) when a given value is of the incorrec
 This function does *not* generate an [event](../../overview/events).
 
 ### Function
+
 `type_err([message])`
 
 ### Arguments
+
 Argument | Type | Description
 -------- | ---- | -----------
 message | str (optional) | Alternative error message.
 
 ### Return value
+
 An error value.
 
 ### Example

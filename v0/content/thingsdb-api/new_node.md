@@ -1,6 +1,6 @@
 ---
 title: "new_node"
-weight: 179
+weight: 183
 ---
 
 Adds a new node to ThingsDB. Nodes are used for scaling and high availability.
@@ -8,17 +8,11 @@ Adds a new node to ThingsDB. Nodes are used for scaling and high availability.
 Before using this command, make sure another node is started and waiting for a join. This can be done by starting thingsdb with the `--secret` argument, for example:
 
 ```bash
-$ thingsdb --secret "my-one-time-serect"
+$ thingsdb --secret "my-one-time-secret"
 ```
-
-Or, alternatively you may use an environment variable
-
-```bash
-$ thingsdb --secret "my-one-time-serect"
-```
-
 
 Next, you will see something like this:
+
 ```text
 Waiting for an invite from a node to join ThingsDB...
 
@@ -32,9 +26,11 @@ Now you can use the [new_node(..)](../new_node) function to add the node to Thin
 This function generates an [event](../../overview/events).
 
 ### Function
+
 `new_node(secret, name [, port]);`
 
 ### Arguments
+
 Argument | Type | Description
 -------- | ---- | -----------
 `secret` | str (required) | Secret used to initially connect to the new node.

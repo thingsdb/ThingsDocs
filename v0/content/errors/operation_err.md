@@ -1,6 +1,6 @@
 ---
 title: "operation_err"
-weight: 212
+weight: 216
 ---
 
 Returns an [error](../../data-types/error) when an operation is not valid within the current context.
@@ -8,14 +8,17 @@ Returns an [error](../../data-types/error) when an operation is not valid within
 This function does *not* generate an [event](../../overview/events).
 
 ### Function
+
 `operation_err([message])`
 
 ### Arguments
+
 Argument | Type | Description
 -------- | ---- | -----------
 message | str (optional) | Alternative error message.
 
 ### Return value
+
 An error value.
 
 ### Example

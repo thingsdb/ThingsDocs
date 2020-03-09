@@ -1,6 +1,6 @@
 ---
 title: "iserr"
-weight: 116
+weight: 120
 ---
 
 This function determines whether the provided value is a [error](../../data-types/error) or not.

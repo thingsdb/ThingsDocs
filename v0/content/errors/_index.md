@@ -1,6 +1,6 @@
 ---
 title: "Errors"
-weight: 203
+weight: 207
 chapter: true
 ---
 
@@ -15,7 +15,7 @@ Error | Code | Meaning
 [type_err](./type_err) | -61 | Object of inappropriate type.
 [value_err](./value_err) | -60 | Object has the right type but an inappropriate value.
 [overflow_err](./overflow_err) | -59 | Integer is too large to fit a 64 bit signed integer.
-[zero_div_err](./zero_div_err) | -58 | Trying a division or modulo by zero. 
+[zero_div_err](./zero_div_err) | -58 | Trying a division or modulo by zero.
 [max_quota_err](./max_quota_err) | -57 | Some quota limit is reached.
 [auth_err](./auth_err)| -56 | Wrong credentials or a request while the connection is not authenticated.
 [forbidden_err](./forbidden_err) | -55 | You lack the privileges to do the request.

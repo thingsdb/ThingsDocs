@@ -1,9 +1,9 @@
 ---
 title: "filter"
-weight: 59
+weight: 63
 ---
 
-The function returns a new set with things that pass the test. 
+The function returns a new set with things that pass the test.
 
 This function does *not* generate an [event](../../../overview/events).
 
@@ -16,7 +16,6 @@ This function does *not* generate an [event](../../../overview/events).
 | Argument | Type               | Description                       |
 | -------- | ------------------ | --------------------------------- |
 | callback | closure (required) | Closure to execute on each value. |
-
 
 Explanation of the *callback* argument:
 

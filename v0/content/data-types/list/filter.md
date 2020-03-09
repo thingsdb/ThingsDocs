@@ -1,9 +1,9 @@
 ---
 title: "filter"
-weight: 41
+weight: 45
 ---
 
-The function returns a new list with items that pass the test. 
+The function returns a new list with items that pass the test.
 
 This function does *not* generate an [event](../../../overview/events).
 
@@ -17,9 +17,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 callback | closure (required) | Closure to execute on each value.
 
-
 Explanation of the *callback* argument:
-
 
 Iterable | Arguments   | Description
 -------- | ----------- | -----------

@@ -1,6 +1,6 @@
 ---
 title: "map"
-weight: 82
+weight: 86
 ---
 
 The function iterates over all properties on a [thing](..) and
@@ -21,7 +21,6 @@ This function does *not* generate an [event](../../../overview/events).
 Argument | Type | Description
 -------- | ---- | -----------
 callback | closure (required) | Closure to execute on each value.
-
 
 Explanation of the *callback* argument:
 

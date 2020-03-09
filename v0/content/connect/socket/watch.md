@@ -1,6 +1,6 @@
 ---
 title: "Example watch"
-weight: 12
+weight: 16
 ---
 
 Subscribe for watching a node or things in ThingsDB. A successful run request will respond with a `OK (17)` package.
@@ -42,7 +42,6 @@ Now we create the header. For this example we just use ID 0:
 - Run package type (35) `\x23`
 - Inverse type check bit (218) `\xdc`
 
-
 > Sending the *Query* package
 
 ```
@@ -58,4 +57,3 @@ Now we create the header. For this example we just use ID 0:
 A few seconds (or less) later, you will receive an [init](../../../watching/on-init) or [warning](../../../watching/warning) event on the socket connection.
 
 See the [watching documentation](../../../watching) for more information.
-

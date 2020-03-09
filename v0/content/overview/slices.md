@@ -1,6 +1,6 @@
 ---
 title: "Slices"
-weight: 21
+weight: 25
 ---
 
 The following slice notation can be used:
@@ -15,10 +15,8 @@ first value that is *not* in the selected slice. This means that the
 difference between `stop` and `start` is the number of selected items.
 (assuming that `step` is the default value `1`)
 
-
 Another feature is that *negative* numbers may be used. For `start` and `stop` this means that it
 will count from the end of the array instead of the beginning.
-
 
 > Some examples using `start` and `stop` to select some items:
 

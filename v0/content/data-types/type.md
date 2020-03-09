@@ -1,11 +1,10 @@
 ---
 title: "Type"
-weight: 89
+weight: 93
 ---
 
 
 A Type is like a thing with pre-defined properties.
-
 
 ### Definable properties
 
@@ -51,7 +50,7 @@ iris = User{name: 'Iris'};
 assert(iserr(try(User{name: 0})));
 
 // Return the results
-[unkown, user_nil, iris];
+[unknown, user_nil, iris];
 ```
 
 > Return value in JSON format
@@ -73,7 +72,6 @@ assert(iserr(try(User{name: 0})));
 When using a list `'[]'` or set `'{}'` definition, it is also possible to make the list or set restricted to a certain type.
 In this case only items of the given definition are allowed as members. For example `'[int]'` requires the members of a list
 to be integers and `'{User}'` is a restricted set which only allows things of type *User*.
-
 
 Both the list *and/or* the members can be made optional.
 For example, this `'[str?]?'` is a valid declaration. Since a set does not allow for `nil` values, it is not possible to
@@ -133,7 +131,7 @@ Function | Description
 ------ | -----------
 [del_type](../../collection-api/del_type) | Delete a `Type`.
 [mod_type](../../collection-api/mod_type) | Modify an existing `Type` definition.
-[new_type](../../collection-api/new_type) | Create a new `Type`. 
+[new_type](../../collection-api/new_type) | Create a new `Type`.
 [has_type](../../collection-api/has_type) | Determine if the current scope has a `Type`.
 [set_type](../../collection-api/set_type) | Set property definitions on a `Type` and creates the `Type` if it did not exist.
 [type_info](../../collection-api/type_info) | Return the `Type` definition.

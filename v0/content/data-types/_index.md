@@ -1,6 +1,6 @@
 ---
 title: "Data Types"
-weight: 23
+weight: 27
 chapter: true
 ---
 
@@ -15,7 +15,7 @@ type | Description
 [closure](./closure) | Closures can be used as functions or to consume items from a `thing`, `list`, `tuple` or `set`.
 [error](./error) | An object containing information about an error.
 [float](./float) | Floating point type.
-[info](./info) | Return value of all `*_info()` functions. 
+[info](./info) | Return value of all `*_info()` functions.
 [int](./int) | Integer type.
 [list](./list) | Mutable array type.
 [nil](./nil) | Used to define a null value, or no value at all.

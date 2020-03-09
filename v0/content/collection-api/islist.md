@@ -1,6 +1,6 @@
 ---
 title: "islist"
-weight: 120
+weight: 124
 ---
 
 This function determines whether the provided value is a [list](../../data-types/list) or not.

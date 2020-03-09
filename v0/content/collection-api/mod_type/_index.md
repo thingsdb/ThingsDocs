@@ -1,6 +1,6 @@
 ---
 title: "mod_type"
-weight: 130
+weight: 134
 ---
 
 This function is used to modify an existing [Type](../../data-types/type). A number of actions can be performed with this function.
@@ -11,6 +11,6 @@ This function generates an [event](../../overview/events).
 
 Action | Description
 ------ | -----------
-[add](./add) | Add a property to an exinsting Type. 
-[del](./del) | Delete a property of an existing Type. 
-[mod](./mod) | Modify a property of an existing Type. 
+[add](./add) | Add a property to an existing Type.
+[del](./del) | Delete a property of an existing Type.
+[mod](./mod) | Modify a property of an existing Type.

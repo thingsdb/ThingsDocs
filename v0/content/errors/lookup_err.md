@@ -1,6 +1,6 @@
 ---
 title: "lookup_err"
-weight: 208
+weight: 212
 ---
 
 Returns an [error](../../data-types/error) when a requested resource is not found or when an index is out-of-range.
@@ -8,14 +8,17 @@ Returns an [error](../../data-types/error) when a requested resource is not foun
 This function does *not* generate an [event](../../overview/events).
 
 ### Function
+
 `lookup_err([message])`
 
 ### Arguments
+
 Argument | Type | Description
 -------- | ---- | -----------
 message | str (optional) | Alternative error message.
 
 ### Return value
+
 An error value.
 
 ### Example

@@ -1,6 +1,6 @@
 ---
 title: "auth_err"
-weight: 205
+weight: 209
 ---
 
 Returns an [error](../../data-types/error) when authentication has failed.
@@ -8,14 +8,17 @@ Returns an [error](../../data-types/error) when authentication has failed.
 This function does *not* generate an [event](../../overview/events).
 
 ### Function
+
 `auth_err([message])`
 
 ### Arguments
+
 Argument | Type | Description
 -------- | ---- | -----------
 message | str (optional) | Alternative error message.
 
 ### Return value
+
 An error value.
 
 ### Example
