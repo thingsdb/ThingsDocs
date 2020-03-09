@@ -38,7 +38,7 @@ Argument | Type | Description
 `port` | int (optional) | Node port (`listen_node_port`), an integer between 0 an 65535, default **9220**.
 
 {{% notice tip %}}
-Best practice is to set the argument "**name**" to the same name as specified by the environment variable **THINGSDB_NODE_NAME** or the **node_name** found in the configuration file (view the chapter on [installation](../Installation)).
+Best practice is to set the argument "**name**" to the same name as specified by the environment variable **THINGSDB_NODE_NAME** or the **node_name** found in the configuration file (view the chapter on [installation](../../installation)).
 {{% /notice %}}
 
 ### Return value

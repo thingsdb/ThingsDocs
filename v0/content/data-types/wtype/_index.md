@@ -180,7 +180,7 @@ The output:
 
 But now the type `PersonName`will be deleted.
 
-```thingsdb,should_pass
+```thingsdb,syntax_only
 // Delete type `PersonName`. After deleting this Type `.WrappedBob` is not filtered
 del_type('PersonName');
 
@@ -202,7 +202,7 @@ The output of the property `.WrappedBob` is not filtered, but in fact returns al
 
 If we subsequently add a type called `PersonName`again (with in this case a different set of properties), then the output to querying `.WrappedBob` is filtered by the type `PersonName` again.
 
-```thingsdb,should_pass
+```thingsdb,syntax_only
 // Create the type `PersonName` again, but with a different set of properties.
 set_type('PersonName', {
     lastName: 'str',

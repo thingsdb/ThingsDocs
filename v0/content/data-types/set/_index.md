@@ -23,7 +23,7 @@ Function | Description
 
 Operation | Description
 --------- | -----------
-<code>&#124;</code> *(union)* | Set with things from both `a` and `b`.
+`|` *(union)* | Set with things from both `a` and `b`.
 `&` *(intersection)* | Set with things common to `a` and `b`.
 `-` *(difference)* | Set with things in `a` but not in `b`.
 `^` *(symmetric difference)* | Set with things in either `a` or `b` but not both.

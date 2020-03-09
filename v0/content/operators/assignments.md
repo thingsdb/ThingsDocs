@@ -15,4 +15,4 @@ Operator | Description
 `-=` | Subtraction assignment
 `&=` | Bitwise AND assignment.
 `^=` | Bitwise XOR assignment.
-<code>&#124;=</code> | Bitwise OR assignment.
+`|=` | Bitwise OR assignment.
