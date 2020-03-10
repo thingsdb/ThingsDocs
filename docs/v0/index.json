@@ -8,7 +8,7 @@
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/getting-started/build-from-source/",
-	"title": "Build from source (linux)",
+	"title": "Build from source",
 	"tags": [],
 	"description": "",
 	"content": "Install the following dependencies:\n libuv1 libpcre2 libyajl libcleri (\u0026gt;=0.12.1)  When using Debian/Ubuntu; libuv1, libpcre2 and libyajl can be installed using apt:\nsudo apt-get install -y \\ libuv1-dev \\ libpcre2-dev \\ libyajl-dev At least version 0.12.1 for library libcleri-dev is required.\ngit clone https://github.com/transceptor-technology/libcleri.git cd libcleri/Release make sudo make install Next, clone the project\ngit clone https://github.com/thingsdb/ThingsDB.git cd ThingsDB/Release make clean \u0026amp;\u0026amp; make You might want to create a symlink like this:\nsudo ln -s ~/ThingsDB/Release/thingsdb /usr/local/bin/thingsdb "

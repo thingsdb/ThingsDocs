@@ -1,5 +1,5 @@
 ---
-title: "Build from source (linux)"
+title: "Build from source"
 weight: 2
 chapter: false
 ---
