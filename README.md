@@ -80,3 +80,23 @@ Copy the build to the Docs project
 ```bash
 cp build/highlight.pack.js ../ThingsDocs/themes/hugo-theme-learn/static/js/highlight.pack.js
 ```
+
+## Adding a chapter or paragraph
+
+When you like to add another document to the content, it needs a weight value. The weight value determines the ordering of the files. This means that when a file is added at the beginning, the weight value of all the files that follow needs to be changed. This process can be time consuming, therefore we made a python script that does this for you.
+
+After the file is added run the next command:
+
+```bash
+./weight_map.py --export > site.map
+```
+
+Now the site.map is created. Open this file. You will see all the chapters and paragraphs. Check if the order from top to down is correct. Otherwise you can change it in this file.
+
+Next run the following command:
+
+```bash
+./weight_map.py --apply site.map
+```
+
+The weight value of all files has been updated according to the order in the site.map file.
