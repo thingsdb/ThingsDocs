@@ -1485,7 +1485,7 @@ hljs.registerLanguage('thingsdb', function(hljs) {
 
     var REGEXP = {
         className: 'regexp',
-        begin: new RegExp('(/[^/\\\\\\n]+(?:\\\\.[^/\\\\]*)*/i?)'),
+        begin: new RegExp('(^\/[^\/\\\\\\n]+(?:\\\\.[^\/\\\\]*)*\/i?)'),
         relevance: 0,
     }
 

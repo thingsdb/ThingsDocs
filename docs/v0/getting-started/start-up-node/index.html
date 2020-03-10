@@ -3,28 +3,28 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.65.3" />
+    <meta name="generator" content="Hugo 0.67.0" />
     <meta name="description" content="ThingsDB documentation">
 
 
     <link rel="shortcut icon" href='/v0/images/favicon.ico' type="image/x-icon" />
-    <title>Start up node (Linux) :: ThingsDB documentation</title>
+    <title>Start up node :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1583770924" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1583770924" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1583770924" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1583770924" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1583770924" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1583770924" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1583770924" rel="stylesheet">
-    <link href="/v0/css/theme.css?1583770924" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1583770924" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1583838558" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1583838558" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1583838558" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1583838558" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1583838558" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1583838558" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1583838558" rel="stylesheet">
+    <link href="/v0/css/theme.css?1583838558" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1583838558" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1583770924" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1583838558" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1583770924"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1583838558"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1583770924"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1583770924"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1583838558"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1583838558"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1583770924"></script>
+<script type="text/javascript" src="/v0/js/search.js?1583838558"></script>
 
     
   </div>
@@ -142,9 +142,9 @@
  
   
     
-      <li data-nav-id="/v0/getting-started/start-up-node/" title="Start up node (Linux)" class="dd-item active">
+      <li data-nav-id="/v0/getting-started/start-up-node/" title="Start up node" class="dd-item active">
         <a href="/v0/getting-started/start-up-node/">
-        Start up node (Linux)
+        Start up node
         
         </a>
     </li>
@@ -4620,7 +4620,7 @@
             
           
           
-            <a href='/v0/'></a> > <a href='/v0/getting-started/'>Getting started</a> > Start up node (Linux)
+            <a href='/v0/'></a> > <a href='/v0/getting-started/'>Getting started</a> > Start up node
           
          
           
@@ -4635,9 +4635,12 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#flag-information">Flag information</a>
+    <li><a href="#flag-information">Flag information</a></li>
+    <li><a href="#use-cases">Use cases</a>
       <ul>
-        <li><a href="#managed-containerized-environments">Managed, containerized environments</a></li>
+        <li><a href="#containerized-environments">Containerized environments</a></li>
+        <li><a href="#restore-from-backup">Restore from backup</a></li>
+        <li><a href="#fix-a-corrupted-node">Fix a corrupted node</a></li>
       </ul>
     </li>
   </ul>
@@ -4657,7 +4660,7 @@
           
             <h1>
               
-              Start up node (Linux)
+              Start up node
             </h1>
           
 
@@ -4670,80 +4673,73 @@
 Running on three nodes brings redundancy and ensures the database stays operational, even while you for example upgrade ThingsDB to a newer version.</p>
 </div>
 
-<p>After building the source code, making a symlink and a configuration file, you can start your first node using the following command. You need to add the <code>--init</code> flag to initialize a new ThingsDB store.</p>
-<pre><code>thingsdb -c ./thingsdb.example.conf --init
-</code></pre><p>Starting a second (or other) node needs a secret that identifies it.</p>
-<pre><code>thingsdb -c ./thingsdb.example2.conf --secret second
-</code></pre><p>The secret is used when adding a node; see <a href="../../thingsdb-api/new_node">new_node</a> documentation on how to add this second (or other) node to ThingsDB.</p>
+<p>After building the source code and making a symlink, you can start your first node using the following command. You need to add the <code>--init</code> flag to initialize a new ThingsDB store.</p>
+<pre><code>thingsdb --init
+</code></pre><p>Starting a second (or other) node needs a secret.</p>
+<pre><code>thingsdb --secret second
+</code></pre><p>The secret is used when adding this node; see <a href="../../thingsdb-api/new_node">new_node</a> documentation on how to add a second (or other) node to ThingsDB.</p>
 <h2 id="flag-information">Flag information</h2>
 <table>
 <thead>
 <tr>
 <th>Flag</th>
 <th>Description</th>
-<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>-h</code>, <code>--help</code></td>
 <td>Show the help message and exit.</td>
-<td></td>
 </tr>
 <tr>
 <td><code>-c</code>, <code>--config CONFIG</code></td>
-<td>Define which ThingsDB configuration file to use.</td>
-<td></td>
+<td>Define which ThingsDB <a href="https://github.com/thingsdb/ThingsDB/blob/master/thingsdb.example.conf">configuration file</a> to use.</td>
 </tr>
 <tr>
 <td><code>--deploy</code></td>
-<td>Auto set <code>--init</code> or <code>--secret</code> based on the <code>THINGSDB_NODE_NAME</code> and <code>THINGSDB_NODE_SECRET</code> environment variable. A use case is explained in the <a href="#managed-containerized-environments">next paragraph</a>.</td>
-<td></td>
+<td>Auto set <code>--init</code> or <code>--secret</code> based on the <code>THINGSDB_NODE_NAME</code> and <code>THINGSDB_NODE_SECRET</code> <a href="../configuration">environment variable</a>. A use case is explained in the <a href="#containerized-environments">next paragraph</a>.</td>
 </tr>
 <tr>
 <td><code>--init</code></td>
 <td>Initialize a new ThingsDB store.</td>
-<td></td>
 </tr>
 <tr>
 <td><code>--force</code></td>
 <td>Force <code>--init</code> or <code>--secret</code> to remove existing data if exists.</td>
-<td></td>
 </tr>
 <tr>
 <td><code>--secret SECRET</code></td>
 <td>Set one time secret and wait for request to join.</td>
-<td></td>
 </tr>
 <tr>
 <td><code>--rebuild</code></td>
-<td>Rebuild the node (can only be used when having &gt;1 nodes).</td>
-<td></td>
+<td>Rebuild the node (can only be used when having &gt;1 nodes). A use case is explained in the <a href="#fix-a-corrupted-node">next paragraph</a>.</td>
 </tr>
 <tr>
 <td><code>--forget-nodes</code></td>
-<td>Forget all nodes info and load ThingsDB with a single node.</td>
-<td></td>
+<td>Forget all nodes info and load ThingsDB with a single node. A use case is explained in the <a href="#restore-from-backup">next paragraph</a>.</td>
 </tr>
 <tr>
 <td><code>-v</code>, <code>--version</code></td>
 <td>Show version information and exit.</td>
-<td></td>
 </tr>
 <tr>
 <td><code>-l</code>, <code>--log-level</code></td>
 <td>Set initial log level: <em>debug</em>, <em>info</em>, <em>warning</em>, <em>error</em>, <em>critical</em>.</td>
-<td></td>
 </tr>
 <tr>
 <td><code>--log-colorized</code></td>
 <td>Use colorized logging.</td>
-<td></td>
+</tr>
+<tr>
+<td><code>-y</code>, <code>--yes</code></td>
+<td>Confirm questions with yes.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="managed-containerized-environments">Managed, containerized environments</h3>
-<p>In managed, containerized environments like kubernetes it is often useful to initialize automatically based on the node name.
+<h2 id="use-cases">Use cases</h2>
+<h3 id="containerized-environments">Containerized environments</h3>
+<p>In containerized environments like kubernetes it is often useful to initialize automatically based on the node name.
 The <code>--deploy</code> argument is created for this purpose and triggers the following behavior.</p>
 <ul>
 <li>If the node name ends with <code>-0</code>, the node is considered to be the first node and will automatically set
@@ -4752,6 +4748,18 @@ the <code>--init</code> argument in case the node is started for the first time.
 for the first time. The secret will be equal to the node name unless the environment
 variable <code>THINGSDB_NODE_SECRET</code> is set.</li>
 </ul>
+<h3 id="restore-from-backup">Restore from backup</h3>
+<p>When you need to restore from a back up you will need to set the environment variable <code>THINGSDB_STORAGE_PATH</code> to the latest backup file (.tar.gz). Then you can start ThingsDB again with the following command:</p>
+<pre><code>thingsdb --forget-nodes
+</code></pre><p>The <code>--forget-nodes</code> flag is in this case very useful. The flag causes to forget all nodes. You can just start with one node without getting in a situation where the <a href="../../overview/dictionary">quorum</a> will not be reached when multiple nodes are down. After the first node has started you can then simply add other nodes again.</p>
+<h3 id="fix-a-corrupted-node">Fix a corrupted node</h3>
+<p>When you get in the situation that one of your nodes is corrupted for some reason, you can shutdown the node and start it again with the following flag:</p>
+<pre><code>thingsdb --rebuild
+</code></pre><p>This causes the node to wipe its corrupted data and synchronize again with one of the other healthy nodes.</p>
+<p>Using the <code>--rebuild</code> flag is a simplified way of doing the following but same thing. You shutdown the corrupted node. Delete it as well, so the other nodes forget about this node. Then start the node again with the following command:</p>
+<pre><code>thingsdb --force
+</code></pre><p>The <code>--force</code> flag causes to wipe all the stored data and start fresh. Then you can add this node again to the ThingsDB store.</p>
+<p>As you will notice this takes a couple of more steps, so it is easier to just use the <code>--rebuild</code>	flag.</p>
 
 
 <footer class=" footline" >
@@ -4782,19 +4790,19 @@ variable <code>THINGSDB_NODE_SECRET</code> is set.</li>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1583770924"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1583770924"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583770924"></script>
-    <script src="/v0/js/jquery.sticky.js?1583770924"></script>
-    <script src="/v0/js/featherlight.min.js?1583770924"></script>
-    <script src="/v0/js/highlight.pack.js?1583770924"></script>
+    <script src="/v0/js/clipboard.min.js?1583838558"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1583838558"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1583838558"></script>
+    <script src="/v0/js/jquery.sticky.js?1583838558"></script>
+    <script src="/v0/js/featherlight.min.js?1583838558"></script>
+    <script src="/v0/js/highlight.pack.js?1583838558"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1583770924"></script>
-    <script src="/v0/js/learn.js?1583770924"></script>
-    <script src="/v0/js/hugo-learn.js?1583770924"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1583838558"></script>
+    <script src="/v0/js/learn.js?1583838558"></script>
+    <script src="/v0/js/hugo-learn.js?1583838558"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1583770924" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1583770924"></script>
+    <link href="/v0/mermaid/mermaid.css?1583838558" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1583838558"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
