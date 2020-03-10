@@ -27,13 +27,13 @@ Now we create the header. For this example we just use ID 0:
 
 > Sending the *Query* package
 
-```
+```bash
 \x0b\x00\x00\x00\x00\x00\x22\xdd\x92\xa2@t\xa61 + 1;
 ```
 
 > If the connection is *not* authenticated, this will be the responding *Data* package
 
-```
+```bash
 8\x00\x00\x00\x00\x00\x13\xec\x82\xaaerror_code\xd0\xc8\xa9error_msg\xbfconnection is not authenticated
 ```
 

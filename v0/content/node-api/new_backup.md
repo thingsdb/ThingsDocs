@@ -78,7 +78,7 @@ THINGSDB_STORAGE_PATH=./ thingsdb --forget-nodes
 
 > Confirm with `yes` so we can start with a single node
 
-```
+```none
 Warning: all nodes information will be lost!!
 
 Type `yes` + ENTER if you really want to continue: yes

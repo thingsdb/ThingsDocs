@@ -40,13 +40,13 @@ Now we create the header. For this example we just use ID 0:
 
 > Sending the *Auth* package
 
-```
+```bash
 \x0c\x00\x00\x00\x00\x00\x21\xde\x92\xa5admin\xa4pass
 ```
 
 > Responding *OK* package
 
-```
+```bash
 \x00\x00\x00\x00\x00\x00\x11\xee
 ```
 
@@ -69,12 +69,12 @@ Now we create the header. For this example we just use ID 0:
 
 > Sending the *Auth* package
 
-```
+```bash
 \x17\x00\x00\x00\x00\x00\x21\xde\xb6RzDFlsoucQfDqrwrfGGEtc
 ```
 
 > Responding *OK* package
 
-```
+```bash
 \x00\x00\x00\x00\x00\x00\x11\xee
 ```

@@ -52,7 +52,7 @@ Data serialized using [MessagePack](https://msgpack.org).
 
 > Package format:
 
-```
+```none
 ┌───────────┬───────────┬───────────┬───────────┬───────────┐
 │ LEN (4)   │ ID (2)    │ TYPE (1)  │ CHK (1)   │ DATA (..) │
 └───────────┴───────────┴───────────┴───────────┴───────────┘

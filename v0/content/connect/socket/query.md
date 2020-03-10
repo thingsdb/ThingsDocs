@@ -7,7 +7,7 @@ Query ThingsDB. A successful query request will respond with a `DATA (18)` packa
 
 > Syntax
 
-```
+```none
 [scope, code, {vars}]
 ```
 
@@ -40,13 +40,13 @@ Now we create the header. For this example we just use ID 0:
 
 > Sending the *Query* package
 
-```
+```bash
 \x0b\x00\x00\x00\x00\x00\x22\xdd\x92\xa2@t\xa61 + 1;
 ```
 
 > Responding *Data* package
 
-```
+```bash
 \x01\x00\x00\x00\x00\x00\x12\xed\x02
 ```
 

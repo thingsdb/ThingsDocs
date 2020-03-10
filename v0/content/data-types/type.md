@@ -33,7 +33,7 @@ The property will also be set to `nil` if no value for the property is given.
 
 > For example
 
-```
+```thingsdb,json_response
 // Create a new type `User` with an optional property `name`.
 set_type('User', {name: 'str?'});
 
@@ -55,7 +55,7 @@ assert(iserr(try(User{name: 0})));
 
 > Return value in JSON format
 
-```
+```json
 [
     {
         "name": null

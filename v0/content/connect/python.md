@@ -11,13 +11,13 @@ The **python-thingsdb** library requires **Python 3.6** or higher.
 
 Just use pip:
 
-```
+```bash
 pip install python-thingsdb
 ```
 
 Or, clone the project and use setup.py:
 
-```
+```bash
 python setup.py install
 ```
 

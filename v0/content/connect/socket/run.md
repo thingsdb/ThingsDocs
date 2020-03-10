@@ -7,7 +7,7 @@ Run a procedure in ThingsDB. A successful run request will respond with a `DATA 
 
 > Syntax
 
-```
+```none
 [scope, procedure, ...args]
 ```
 
@@ -40,13 +40,13 @@ Now we create the header. For this example we just use ID 0:
 
 > Sending the *Query* package
 
-```
+```bash
 \x0d\x00\x00\x00\x00\x00\x25\xda\x93\xa2@t\xa7add_one)
 ```
 
 > Responding *Data* package
 
-```
+```bash
 \x01\x00\x00\x00\x00\x00\x12\xed*
 ```
 
