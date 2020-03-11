@@ -40,7 +40,7 @@ This function generates an [event](../../overview/events).
 
 Argument | Type | Description
 -------- | ---- | -----------
-`target` | int/raw | Can be either the `@node`, `@thingsdb`, or a `@collection` [scope](../../overview/scopes). 
+`target` | int/raw | Can be either the `@node`, `@thingsdb`, or a `@collection` [scope](../../overview/scopes).
 `user` | str | User to grant privileges to.
 `mask` | int | Bit-mask for setting privileges.
 
@@ -56,17 +56,16 @@ does not exist.
 ```thingsdb,json_response,@t
 new_user('iris');
 new_token('iris');
-[
-    grant('@node', 'iris', WATCH),
-    grant('@:stuff', 'iris', (READ|WATCH)),
-];
+
+// Assign WATCH privileges on all node scopes to user `iris`
+grant('@node', 'iris', WATCH);
+
+// Assign READ and WATCH privileges on collection `stuff` to user `iris`
+grant('@:stuff', 'iris', READ|WATCH);
 ```
 
 > Return value in JSON format
 
 ```json
-[
-    null,
-    null
-]
+null
 ```

@@ -19,6 +19,6 @@ Variable | Default | Description
 `THINGSDB_THRESHOLD_FULL_STORAGE` | `1000` | Threshold for number of events before initiating a full database store.
 `THINGSDB_HTTP_STATUS_PORT` | *disabled* | TCP port for listening to health and readiness checks.
 `THINGSDB_HTTP_API_PORT` | *disabled* | TCP port for listening to HTTP API calls.
-`THINGSDB_ZONE` | `0` | Start node in this [zone](../overview/dictionary) number. Zones are used for forwarding queries while in *away* mode.
+`THINGSDB_ZONE` | `0` | Start node in this [zone](../../overview/dictionary) number. Zones are used for forwarding queries while in *away* mode.
 `THINGSDB_QUERY_DURATION_WARN` | *disabled* | Log a warning message when a query takes more than X second(s).
 `THINGSDB_QUERY_DURATION_ERROR` | *disabled* | Log an error message when a query takes more than X second(s).
