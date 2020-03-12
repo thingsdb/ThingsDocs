@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>str on ThingsDB documentation</title>
+    <link>https://docs.thingsdb.net/v0/data-types/str/</link>
+    <description>Recent content in str on ThingsDB documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://docs.thingsdb.net/v0/data-types/str/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>contains</title>
+      <link>https://docs.thingsdb.net/v0/data-types/str/contains/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/str/contains/</guid>
+      <description>Determines if a given string is a substring of a string.
+This function does not generate an event.
+Function str.contains(search_string)
+Arguments    Argument Type Description     search_string str (required) The characters to be searched for in the string.    Return value Returns true if the given characters are found as a substring and otherwise false.
+Example  This code shows an example using contains():</description>
+    </item>
+    
+    <item>
+      <title>endswith</title>
+      <link>https://docs.thingsdb.net/v0/data-types/str/endswith/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/str/endswith/</guid>
+      <description>Determines if a string ends with characters given by another string.
+This function does not generate an event.
+Function str.endswith(search_string)
+Arguments    Argument Type Description     search_string str (required) The characters to be searched for at the end of this string.    Return value Returns true if the given characters are found at the end of the string and otherwise false.
+Example  This code shows an example using endswith():</description>
+    </item>
+    
+    <item>
+      <title>len</title>
+      <link>https://docs.thingsdb.net/v0/data-types/str/len/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/str/len/</guid>
+      <description>Returns the length of a string.
+Be aware that the length represents the number of bytes and not the number of characters. see example below.
+ This function does not generate an event.
+Function str.len()
+Arguments None
+Return value Returns length of the string.
+Example  This code uses len() to return the length of a string:
+ [ {&#39;Hello&#39;.len(); /* 5 bytes */ }, {&#39;π&#39;.len(); /* 2 bytes, not 1 */ }, ]  Return value in JSON format</description>
+    </item>
+    
+    <item>
+      <title>lower</title>
+      <link>https://docs.thingsdb.net/v0/data-types/str/lower/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/str/lower/</guid>
+      <description>Return a new string in which all case-based characters are in lower case.
+This function does not generate an event.
+Function str.lower()
+Arguments None
+Return value Returns a new string with all characters in lower case.
+Example  Example using lower():
+ &#39;Hello World!!&#39;.lower();  Return value in JSON format
+ &amp;#34;hello world!!&amp;#34; </description>
+    </item>
+    
+    <item>
+      <title>startswith</title>
+      <link>https://docs.thingsdb.net/v0/data-types/str/startswith/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/str/startswith/</guid>
+      <description>Determines if a string starts with characters given by another string.
+This function does not generate an event.
+Function str.startswith(search_string)
+Arguments    Argument Type Description     search_string str (required) The characters to be searched for at the start of this string.    Return value Returns true if the given characters are found at the start of the string and otherwise false.
+Example  This code shows an example using startswith():</description>
+    </item>
+    
+    <item>
+      <title>test</title>
+      <link>https://docs.thingsdb.net/v0/data-types/str/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/str/test/</guid>
+      <description>Test if a string matches a given regular expression and return true or false.
+This function does not generate an event.
+Function str.test(regex)
+Arguments    Argument Type Description     regex regex (required) The regular expression to test against the string.    Return value true if there is a match between the string and the specified regular expression, otherwise false.
+Example  Examples using test():</description>
+    </item>
+    
+    <item>
+      <title>upper</title>
+      <link>https://docs.thingsdb.net/v0/data-types/str/upper/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/str/upper/</guid>
+      <description>Return a new string in which all case-based characters are in upper case.
+This function does not generate an event.
+Function str.upper()
+Arguments None
+Return value Returns a new string with all characters in upper case.
+Example  Example using upper():
+ &#39;Hello World!!&#39;.upper();  Return value in JSON format
+ &amp;#34;HELLO WORLD!!&amp;#34; </description>
+    </item>
+    
+  </channel>
+</rss>

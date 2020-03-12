@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mod_type on ThingsDB documentation</title>
+    <link>https://docs.thingsdb.net/v0/collection-api/mod_type/</link>
+    <description>Recent content in mod_type on ThingsDB documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://docs.thingsdb.net/v0/collection-api/mod_type/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>add</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/mod_type/add/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/mod_type/add/</guid>
+      <description>Adds a property to an existing Type.
+If there are active instances of the type you want to modify, then an initial_value is required. This value is used only once for applying the value to the existing instances and is not used when new instances are created.
+ Action mod_type(type_name, &#39;add&#39;, property_name, property_type, [initial_value])
+Arguments    Argument Type Description     type_name str Name of the Type where the property has to be added to.</description>
+    </item>
+    
+    <item>
+      <title>del</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/mod_type/del/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/mod_type/del/</guid>
+      <description>Deletes a property from an existing Type.
+The property will be removed from all the active instances of that Type.
+ Action mod_type(type_name, &#39;del&#39;, property_name)
+Arguments    Argument Type Description     type_name str Name of the Type where the property has to be removed from.   &#39;del&#39; str Passing this argument will result in a delete action.   property_name str Name of the property that has to be removed.</description>
+    </item>
+    
+    <item>
+      <title>mod</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/mod_type/mod/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/mod_type/mod/</guid>
+      <description>Modifies the type definition of a property from an existing Type.
+When modifying a property of a Type, the changed property type can only be less &amp;lsquo;strict&amp;rsquo;.
+So for example, age: &#39;int&#39; can become age: &#39;int?&#39;, but not the other way around.
+ Action mod_type(type_name, &#39;mod&#39;, property_name, property_type)
+Arguments    Argument Type Description     type_name str Name of the Type where the property has to be modified from.</description>
+    </item>
+    
+  </channel>
+</rss>

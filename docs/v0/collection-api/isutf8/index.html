@@ -1,0 +1,4760 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.67.0" />
+    <meta name="description" content="ThingsDB documentation">
+
+
+    <link rel="shortcut icon" href='/v0/images/favicon.ico' type="image/x-icon" />
+    <title>isutf8 :: ThingsDB documentation</title>
+
+    
+    <link href="/v0/css/nucleus.css?1584005165" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1584005165" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1584005165" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1584005165" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1584005165" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1584005165" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1584005165" rel="stylesheet">
+    <link href="/v0/css/theme.css?1584005165" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1584005165" rel="stylesheet">
+    
+      <link href="/v0/css/theme-mine.css?1584005165" rel="stylesheet">
+    
+
+    <script src="/v0/js/jquery-3.3.1.min.js?1584005165"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/v0/collection-api/isutf8/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a href="/">
+    <img src='/v0/images/logo.png' alt="Logo">
+</a>
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/v0/js/lunr.min.js?1584005165"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1584005165"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
+    
+</script>
+<script type="text/javascript" src="/v0/js/search.js?1584005165"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/v0/getting-started/" title="Getting started" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/v0/getting-started/">
+          Getting started
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/getting-started/build-from-source/" title="Build from source" class="dd-item ">
+        <a href="/v0/getting-started/build-from-source/">
+        Build from source
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/getting-started/configuration/" title="Configuration" class="dd-item ">
+        <a href="/v0/getting-started/configuration/">
+        Configuration
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/getting-started/start-up-node/" title="Start up node" class="dd-item ">
+        <a href="/v0/getting-started/start-up-node/">
+        Start up node
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/getting-started/readiness-liveness/" title="Readiness and liveness" class="dd-item ">
+        <a href="/v0/getting-started/readiness-liveness/">
+        Readiness and liveness
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/v0/connect/" title="Connect" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/v0/connect/">
+          Connect
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/connect/authentication/" title="Authentication" class="dd-item ">
+        <a href="/v0/connect/authentication/">
+        Authentication
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/connect/http-api/" title="HTTP API" class="dd-item ">
+        <a href="/v0/connect/http-api/">
+        HTTP API
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/connect/python/" title="Python" class="dd-item ">
+        <a href="/v0/connect/python/">
+        Python
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/connect/go/" title="Go" class="dd-item ">
+        <a href="/v0/connect/go/">
+        Go
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/v0/connect/socket/" title="Socket" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/v0/connect/socket/">
+          Socket
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/connect/socket/ping/" title="Example ping" class="dd-item ">
+        <a href="/v0/connect/socket/ping/">
+        Example ping
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/connect/socket/auth/" title="Example auth" class="dd-item ">
+        <a href="/v0/connect/socket/auth/">
+        Example auth
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/connect/socket/query/" title="Example query" class="dd-item ">
+        <a href="/v0/connect/socket/query/">
+        Example query
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/connect/socket/run/" title="Example run" class="dd-item ">
+        <a href="/v0/connect/socket/run/">
+        Example run
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/connect/socket/watch/" title="Example watch" class="dd-item ">
+        <a href="/v0/connect/socket/watch/">
+        Example watch
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/connect/socket/error-response/" title="Example error response" class="dd-item ">
+        <a href="/v0/connect/socket/error-response/">
+        Example error response
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/v0/overview/" title="Overview" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/v0/overview/">
+          Overview
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/overview/scopes/" title="Scopes" class="dd-item ">
+        <a href="/v0/overview/scopes/">
+        Scopes
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/overview/collections/" title="Collections" class="dd-item ">
+        <a href="/v0/overview/collections/">
+        Collections
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/overview/names/" title="Names" class="dd-item ">
+        <a href="/v0/overview/names/">
+        Names
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/overview/properties/" title="Properties" class="dd-item ">
+        <a href="/v0/overview/properties/">
+        Properties
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/overview/variable/" title="Variable" class="dd-item ">
+        <a href="/v0/overview/variable/">
+        Variable
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/overview/events/" title="Events" class="dd-item ">
+        <a href="/v0/overview/events/">
+        Events
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/overview/slices/" title="Slices" class="dd-item ">
+        <a href="/v0/overview/slices/">
+        Slices
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/overview/dictionary/" title="Dictionary" class="dd-item ">
+        <a href="/v0/overview/dictionary/">
+        Dictionary
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/v0/data-types/" title="Data Types" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/v0/data-types/">
+          Data Types
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/bool/" title="bool" class="dd-item ">
+        <a href="/v0/data-types/bool/">
+        bool
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/v0/data-types/bytes/" title="bytes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/v0/data-types/bytes/">
+          bytes
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/bytes/len/" title="len" class="dd-item ">
+        <a href="/v0/data-types/bytes/len/">
+        len
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/v0/data-types/closure/" title="closure" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/v0/data-types/closure/">
+          closure
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/closure/call/" title="call" class="dd-item ">
+        <a href="/v0/data-types/closure/call/">
+        call
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/closure/doc/" title="doc" class="dd-item ">
+        <a href="/v0/data-types/closure/doc/">
+        doc
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/v0/data-types/error/" title="error" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/v0/data-types/error/">
+          error
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/error/code/" title="code" class="dd-item ">
+        <a href="/v0/data-types/error/code/">
+        code
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/error/msg/" title="msg" class="dd-item ">
+        <a href="/v0/data-types/error/msg/">
+        msg
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/float/" title="float" class="dd-item ">
+        <a href="/v0/data-types/float/">
+        float
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/info/" title="info" class="dd-item ">
+        <a href="/v0/data-types/info/">
+        info
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/int/" title="int" class="dd-item ">
+        <a href="/v0/data-types/int/">
+        int
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/v0/data-types/list/" title="list" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/v0/data-types/list/">
+          list
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/list/choice/" title="choice" class="dd-item ">
+        <a href="/v0/data-types/list/choice/">
+        choice
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/list/each/" title="each" class="dd-item ">
+        <a href="/v0/data-types/list/each/">
+        each
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/list/every/" title="every" class="dd-item ">
+        <a href="/v0/data-types/list/every/">
+        every
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/list/extend/" title="extend" class="dd-item ">
+        <a href="/v0/data-types/list/extend/">
+        extend
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/list/filter/" title="filter" class="dd-item ">
+        <a href="/v0/data-types/list/filter/">
+        filter
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/list/find/" title="find" class="dd-item ">
+        <a href="/v0/data-types/list/find/">
+        find
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/list/findindex/" title="findindex" class="dd-item ">
+        <a href="/v0/data-types/list/findindex/">
+        findindex
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/list/indexof/" title="indexof" class="dd-item ">
+        <a href="/v0/data-types/list/indexof/">
+        indexof
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/list/len/" title="len" class="dd-item ">
+        <a href="/v0/data-types/list/len/">
+        len
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/list/map/" title="map" class="dd-item ">
+        <a href="/v0/data-types/list/map/">
+        map
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/list/pop/" title="pop" class="dd-item ">
+        <a href="/v0/data-types/list/pop/">
+        pop
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/list/push/" title="push" class="dd-item ">
+        <a href="/v0/data-types/list/push/">
+        push
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/list/reduce/" title="reduce" class="dd-item ">
+        <a href="/v0/data-types/list/reduce/">
+        reduce
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/list/remove/" title="remove" class="dd-item ">
+        <a href="/v0/data-types/list/remove/">
+        remove
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/list/some/" title="some" class="dd-item ">
+        <a href="/v0/data-types/list/some/">
+        some
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/list/sort/" title="sort" class="dd-item ">
+        <a href="/v0/data-types/list/sort/">
+        sort
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/list/splice/" title="splice" class="dd-item ">
+        <a href="/v0/data-types/list/splice/">
+        splice
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/nil/" title="nil" class="dd-item ">
+        <a href="/v0/data-types/nil/">
+        nil
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/regex/" title="regex" class="dd-item ">
+        <a href="/v0/data-types/regex/">
+        regex
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/v0/data-types/set/" title="set" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/v0/data-types/set/">
+          set
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/set/add/" title="add" class="dd-item ">
+        <a href="/v0/data-types/set/add/">
+        add
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/set/each/" title="each" class="dd-item ">
+        <a href="/v0/data-types/set/each/">
+        each
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/set/filter/" title="filter" class="dd-item ">
+        <a href="/v0/data-types/set/filter/">
+        filter
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/set/find/" title="find" class="dd-item ">
+        <a href="/v0/data-types/set/find/">
+        find
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/set/has/" title="has" class="dd-item ">
+        <a href="/v0/data-types/set/has/">
+        has
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/set/len/" title="len" class="dd-item ">
+        <a href="/v0/data-types/set/len/">
+        len
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/set/map/" title="map" class="dd-item ">
+        <a href="/v0/data-types/set/map/">
+        map
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/set/remove/" title="remove" class="dd-item ">
+        <a href="/v0/data-types/set/remove/">
+        remove
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/v0/data-types/str/" title="str" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/v0/data-types/str/">
+          str
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/str/contains/" title="contains" class="dd-item ">
+        <a href="/v0/data-types/str/contains/">
+        contains
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/str/endswith/" title="endswith" class="dd-item ">
+        <a href="/v0/data-types/str/endswith/">
+        endswith
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/str/len/" title="len" class="dd-item ">
+        <a href="/v0/data-types/str/len/">
+        len
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/str/lower/" title="lower" class="dd-item ">
+        <a href="/v0/data-types/str/lower/">
+        lower
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/str/startswith/" title="startswith" class="dd-item ">
+        <a href="/v0/data-types/str/startswith/">
+        startswith
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/str/test/" title="test" class="dd-item ">
+        <a href="/v0/data-types/str/test/">
+        test
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/str/upper/" title="upper" class="dd-item ">
+        <a href="/v0/data-types/str/upper/">
+        upper
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/v0/data-types/thing/" title="thing" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/v0/data-types/thing/">
+          thing
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/thing/del/" title="del" class="dd-item ">
+        <a href="/v0/data-types/thing/del/">
+        del
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/thing/each/" title="each" class="dd-item ">
+        <a href="/v0/data-types/thing/each/">
+        each
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/thing/filter/" title="filter" class="dd-item ">
+        <a href="/v0/data-types/thing/filter/">
+        filter
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/thing/get/" title="get" class="dd-item ">
+        <a href="/v0/data-types/thing/get/">
+        get
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/thing/has/" title="has" class="dd-item ">
+        <a href="/v0/data-types/thing/has/">
+        has
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/thing/id/" title="id" class="dd-item ">
+        <a href="/v0/data-types/thing/id/">
+        id
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/thing/keys/" title="keys" class="dd-item ">
+        <a href="/v0/data-types/thing/keys/">
+        keys
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/thing/len/" title="len" class="dd-item ">
+        <a href="/v0/data-types/thing/len/">
+        len
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/thing/map/" title="map" class="dd-item ">
+        <a href="/v0/data-types/thing/map/">
+        map
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/thing/set/" title="set" class="dd-item ">
+        <a href="/v0/data-types/thing/set/">
+        set
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/thing/unwatch/" title="unwatch" class="dd-item ">
+        <a href="/v0/data-types/thing/unwatch/">
+        unwatch
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/thing/values/" title="values" class="dd-item ">
+        <a href="/v0/data-types/thing/values/">
+        values
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/thing/watch/" title="watch" class="dd-item ">
+        <a href="/v0/data-types/thing/watch/">
+        watch
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/thing/wrap/" title="wrap" class="dd-item ">
+        <a href="/v0/data-types/thing/wrap/">
+        wrap
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/tuple/" title="tuple" class="dd-item ">
+        <a href="/v0/data-types/tuple/">
+        tuple
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/type/" title="Type" class="dd-item ">
+        <a href="/v0/data-types/type/">
+        Type
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/v0/data-types/wtype/" title="˂Type˃" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/v0/data-types/wtype/">
+          ˂Type˃
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/wtype/unwrap/" title="unwrap" class="dd-item ">
+        <a href="/v0/data-types/wtype/unwrap/">
+        unwrap
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/v0/operators/" title="Operators" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/v0/operators/">
+          Operators
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/operators/arithmetic-operators/" title="Arithmetic operators" class="dd-item ">
+        <a href="/v0/operators/arithmetic-operators/">
+        Arithmetic operators
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/operators/assignments/" title="Assignments" class="dd-item ">
+        <a href="/v0/operators/assignments/">
+        Assignments
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/operators/binary-bitwise-operators/" title="Binary bitwise operators" class="dd-item ">
+        <a href="/v0/operators/binary-bitwise-operators/">
+        Binary bitwise operators
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/operators/conditional-ternary-operator/" title="Conditional ternary operator" class="dd-item ">
+        <a href="/v0/operators/conditional-ternary-operator/">
+        Conditional ternary operator
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/operators/logical-operators/" title="Logical operators" class="dd-item ">
+        <a href="/v0/operators/logical-operators/">
+        Logical operators
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/operators/precedence-and-associativity/" title="Precedence and associativity" class="dd-item ">
+        <a href="/v0/operators/precedence-and-associativity/">
+        Precedence and associativity
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/v0/collection-api/" title="Collection API" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/v0/collection-api/">
+          Collection API
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/assert/" title="assert" class="dd-item ">
+        <a href="/v0/collection-api/assert/">
+        assert
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/base64_decode/" title="base64_decode" class="dd-item ">
+        <a href="/v0/collection-api/base64_decode/">
+        base64_decode
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/base64_encode/" title="base64_encode" class="dd-item ">
+        <a href="/v0/collection-api/base64_encode/">
+        base64_encode
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/bool/" title="bool" class="dd-item ">
+        <a href="/v0/collection-api/bool/">
+        bool
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/bytes/" title="bytes" class="dd-item ">
+        <a href="/v0/collection-api/bytes/">
+        bytes
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/deep/" title="deep" class="dd-item ">
+        <a href="/v0/collection-api/deep/">
+        deep
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/del_type/" title="del_type" class="dd-item ">
+        <a href="/v0/collection-api/del_type/">
+        del_type
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/err/" title="err" class="dd-item ">
+        <a href="/v0/collection-api/err/">
+        err
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/float/" title="float" class="dd-item ">
+        <a href="/v0/collection-api/float/">
+        float
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/has_type/" title="has_type" class="dd-item ">
+        <a href="/v0/collection-api/has_type/">
+        has_type
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/if/" title="if" class="dd-item ">
+        <a href="/v0/collection-api/if/">
+        if
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/int/" title="int" class="dd-item ">
+        <a href="/v0/collection-api/int/">
+        int
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/isarray/" title="isarray" class="dd-item ">
+        <a href="/v0/collection-api/isarray/">
+        isarray
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/isascii/" title="isascii" class="dd-item ">
+        <a href="/v0/collection-api/isascii/">
+        isascii
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/isbool/" title="isbool" class="dd-item ">
+        <a href="/v0/collection-api/isbool/">
+        isbool
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/isbytes/" title="isbytes" class="dd-item ">
+        <a href="/v0/collection-api/isbytes/">
+        isbytes
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/iserr/" title="iserr" class="dd-item ">
+        <a href="/v0/collection-api/iserr/">
+        iserr
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/isfloat/" title="isfloat" class="dd-item ">
+        <a href="/v0/collection-api/isfloat/">
+        isfloat
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/isinf/" title="isinf" class="dd-item ">
+        <a href="/v0/collection-api/isinf/">
+        isinf
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/isint/" title="isint" class="dd-item ">
+        <a href="/v0/collection-api/isint/">
+        isint
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/islist/" title="islist" class="dd-item ">
+        <a href="/v0/collection-api/islist/">
+        islist
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/isnan/" title="isnan" class="dd-item ">
+        <a href="/v0/collection-api/isnan/">
+        isnan
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/isnil/" title="isnil" class="dd-item ">
+        <a href="/v0/collection-api/isnil/">
+        isnil
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/israw/" title="israw" class="dd-item ">
+        <a href="/v0/collection-api/israw/">
+        israw
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/isset/" title="isset" class="dd-item ">
+        <a href="/v0/collection-api/isset/">
+        isset
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/isstr/" title="isstr" class="dd-item ">
+        <a href="/v0/collection-api/isstr/">
+        isstr
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/isthing/" title="isthing" class="dd-item ">
+        <a href="/v0/collection-api/isthing/">
+        isthing
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/istuple/" title="istuple" class="dd-item ">
+        <a href="/v0/collection-api/istuple/">
+        istuple
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/isutf8/" title="isutf8" class="dd-item active">
+        <a href="/v0/collection-api/isutf8/">
+        isutf8
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/list/" title="list" class="dd-item ">
+        <a href="/v0/collection-api/list/">
+        list
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/v0/collection-api/mod_type/" title="mod_type" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/v0/collection-api/mod_type/">
+          mod_type
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/mod_type/add/" title="add" class="dd-item ">
+        <a href="/v0/collection-api/mod_type/add/">
+        add
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/mod_type/del/" title="del" class="dd-item ">
+        <a href="/v0/collection-api/mod_type/del/">
+        del
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/mod_type/mod/" title="mod" class="dd-item ">
+        <a href="/v0/collection-api/mod_type/mod/">
+        mod
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/new/" title="new" class="dd-item ">
+        <a href="/v0/collection-api/new/">
+        new
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/new_type/" title="new_type" class="dd-item ">
+        <a href="/v0/collection-api/new_type/">
+        new_type
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/now/" title="now" class="dd-item ">
+        <a href="/v0/collection-api/now/">
+        now
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/raise/" title="raise" class="dd-item ">
+        <a href="/v0/collection-api/raise/">
+        raise
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/rand/" title="rand" class="dd-item ">
+        <a href="/v0/collection-api/rand/">
+        rand
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/randint/" title="randint" class="dd-item ">
+        <a href="/v0/collection-api/randint/">
+        randint
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/range/" title="range" class="dd-item ">
+        <a href="/v0/collection-api/range/">
+        range
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/refs/" title="refs" class="dd-item ">
+        <a href="/v0/collection-api/refs/">
+        refs
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/return/" title="return" class="dd-item ">
+        <a href="/v0/collection-api/return/">
+        return
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/set/" title="set" class="dd-item ">
+        <a href="/v0/collection-api/set/">
+        set
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/set_type/" title="set_type" class="dd-item ">
+        <a href="/v0/collection-api/set_type/">
+        set_type
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/str/" title="str" class="dd-item ">
+        <a href="/v0/collection-api/str/">
+        str
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/thing/" title="thing" class="dd-item ">
+        <a href="/v0/collection-api/thing/">
+        thing
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/try/" title="try" class="dd-item ">
+        <a href="/v0/collection-api/try/">
+        try
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/type/" title="type" class="dd-item ">
+        <a href="/v0/collection-api/type/">
+        type
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/type_count/" title="type_count" class="dd-item ">
+        <a href="/v0/collection-api/type_count/">
+        type_count
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/type_info/" title="type_info" class="dd-item ">
+        <a href="/v0/collection-api/type_info/">
+        type_info
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/types_info/" title="types_info" class="dd-item ">
+        <a href="/v0/collection-api/types_info/">
+        types_info
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/wse/" title="wse" class="dd-item ">
+        <a href="/v0/collection-api/wse/">
+        wse
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/v0/node-api/" title="Node API" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/v0/node-api/">
+          Node API
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/node-api/backup_info/" title="backup_info" class="dd-item ">
+        <a href="/v0/node-api/backup_info/">
+        backup_info
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/node-api/backups_info/" title="backups_info" class="dd-item ">
+        <a href="/v0/node-api/backups_info/">
+        backups_info
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/node-api/counters/" title="counters" class="dd-item ">
+        <a href="/v0/node-api/counters/">
+        counters
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/node-api/del_backup/" title="del_backup" class="dd-item ">
+        <a href="/v0/node-api/del_backup/">
+        del_backup
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/node-api/has_backup/" title="has_backup" class="dd-item ">
+        <a href="/v0/node-api/has_backup/">
+        has_backup
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/node-api/new_backup/" title="new_backup" class="dd-item ">
+        <a href="/v0/node-api/new_backup/">
+        new_backup
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/node-api/node_info/" title="node_info" class="dd-item ">
+        <a href="/v0/node-api/node_info/">
+        node_info
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/node-api/nodes_info/" title="nodes_info" class="dd-item ">
+        <a href="/v0/node-api/nodes_info/">
+        nodes_info
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/node-api/reset_counters/" title="reset_counters" class="dd-item ">
+        <a href="/v0/node-api/reset_counters/">
+        reset_counters
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/node-api/set_log_level/" title="set_log_level" class="dd-item ">
+        <a href="/v0/node-api/set_log_level/">
+        set_log_level
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/node-api/shutdown/" title="shutdown" class="dd-item ">
+        <a href="/v0/node-api/shutdown/">
+        shutdown
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/v0/thingsdb-api/" title="ThingsDB API" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/v0/thingsdb-api/">
+          ThingsDB API
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/thingsdb-api/collection_info/" title="collection_info" class="dd-item ">
+        <a href="/v0/thingsdb-api/collection_info/">
+        collection_info
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/thingsdb-api/collections_info/" title="collections_info" class="dd-item ">
+        <a href="/v0/thingsdb-api/collections_info/">
+        collections_info
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/thingsdb-api/del_collection/" title="del_collection" class="dd-item ">
+        <a href="/v0/thingsdb-api/del_collection/">
+        del_collection
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/thingsdb-api/del_expired/" title="del_expired" class="dd-item ">
+        <a href="/v0/thingsdb-api/del_expired/">
+        del_expired
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/thingsdb-api/del_node/" title="del_node" class="dd-item ">
+        <a href="/v0/thingsdb-api/del_node/">
+        del_node
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/thingsdb-api/del_token/" title="del_token" class="dd-item ">
+        <a href="/v0/thingsdb-api/del_token/">
+        del_token
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/thingsdb-api/del_user/" title="del_user" class="dd-item ">
+        <a href="/v0/thingsdb-api/del_user/">
+        del_user
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/thingsdb-api/grant/" title="grant" class="dd-item ">
+        <a href="/v0/thingsdb-api/grant/">
+        grant
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/thingsdb-api/has_collection/" title="has_collection" class="dd-item ">
+        <a href="/v0/thingsdb-api/has_collection/">
+        has_collection
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/thingsdb-api/has_node/" title="has_node" class="dd-item ">
+        <a href="/v0/thingsdb-api/has_node/">
+        has_node
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/thingsdb-api/has_token/" title="has_token" class="dd-item ">
+        <a href="/v0/thingsdb-api/has_token/">
+        has_token
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/thingsdb-api/has_user/" title="has_user" class="dd-item ">
+        <a href="/v0/thingsdb-api/has_user/">
+        has_user
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/thingsdb-api/new_collection/" title="new_collection" class="dd-item ">
+        <a href="/v0/thingsdb-api/new_collection/">
+        new_collection
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/thingsdb-api/new_node/" title="new_node" class="dd-item ">
+        <a href="/v0/thingsdb-api/new_node/">
+        new_node
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/thingsdb-api/new_token/" title="new_token" class="dd-item ">
+        <a href="/v0/thingsdb-api/new_token/">
+        new_token
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/thingsdb-api/new_user/" title="new_user" class="dd-item ">
+        <a href="/v0/thingsdb-api/new_user/">
+        new_user
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/thingsdb-api/rename_collection/" title="rename_collection" class="dd-item ">
+        <a href="/v0/thingsdb-api/rename_collection/">
+        rename_collection
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/thingsdb-api/rename_user/" title="rename_user" class="dd-item ">
+        <a href="/v0/thingsdb-api/rename_user/">
+        rename_user
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/thingsdb-api/revoke/" title="revoke" class="dd-item ">
+        <a href="/v0/thingsdb-api/revoke/">
+        revoke
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/thingsdb-api/set_password/" title="set_password" class="dd-item ">
+        <a href="/v0/thingsdb-api/set_password/">
+        set_password
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/thingsdb-api/user_info/" title="user_info" class="dd-item ">
+        <a href="/v0/thingsdb-api/user_info/">
+        user_info
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/thingsdb-api/users_info/" title="users_info" class="dd-item ">
+        <a href="/v0/thingsdb-api/users_info/">
+        users_info
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/v0/procedures-api/" title="Procedures API" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/v0/procedures-api/">
+          Procedures API
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/procedures-api/del_procedure/" title="del_procedure" class="dd-item ">
+        <a href="/v0/procedures-api/del_procedure/">
+        del_procedure
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/procedures-api/has_procedure/" title="has_procedure" class="dd-item ">
+        <a href="/v0/procedures-api/has_procedure/">
+        has_procedure
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/procedures-api/new_procedure/" title="new_procedure" class="dd-item ">
+        <a href="/v0/procedures-api/new_procedure/">
+        new_procedure
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/procedures-api/procedure_doc/" title="procedure_doc" class="dd-item ">
+        <a href="/v0/procedures-api/procedure_doc/">
+        procedure_doc
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/procedures-api/procedure_info/" title="procedure_info" class="dd-item ">
+        <a href="/v0/procedures-api/procedure_info/">
+        procedure_info
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/procedures-api/procedures_info/" title="procedures_info" class="dd-item ">
+        <a href="/v0/procedures-api/procedures_info/">
+        procedures_info
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/procedures-api/run/" title="run" class="dd-item ">
+        <a href="/v0/procedures-api/run/">
+        run
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/v0/watching/" title="Watching" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/v0/watching/">
+          Watching
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/watching/node-status/" title="node-status" class="dd-item ">
+        <a href="/v0/watching/node-status/">
+        node-status
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/watching/on-init/" title="on-init" class="dd-item ">
+        <a href="/v0/watching/on-init/">
+        on-init
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/watching/on-update/" title="on-update" class="dd-item ">
+        <a href="/v0/watching/on-update/">
+        on-update
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/watching/on-delete/" title="on-delete" class="dd-item ">
+        <a href="/v0/watching/on-delete/">
+        on-delete
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/watching/on-stop/" title="on-stop" class="dd-item ">
+        <a href="/v0/watching/on-stop/">
+        on-stop
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/watching/warning/" title="warning" class="dd-item ">
+        <a href="/v0/watching/warning/">
+        warning
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/v0/errors/" title="Errors" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/v0/errors/">
+          Errors
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/errors/assert_err/" title="assert_err" class="dd-item ">
+        <a href="/v0/errors/assert_err/">
+        assert_err
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/errors/auth_err/" title="auth_err" class="dd-item ">
+        <a href="/v0/errors/auth_err/">
+        auth_err
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/errors/bad_data_err/" title="bad_data_err" class="dd-item ">
+        <a href="/v0/errors/bad_data_err/">
+        bad_data_err
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/errors/forbidden_err/" title="forbidden_err" class="dd-item ">
+        <a href="/v0/errors/forbidden_err/">
+        forbidden_err
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/errors/lookup_err/" title="lookup_err" class="dd-item ">
+        <a href="/v0/errors/lookup_err/">
+        lookup_err
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/errors/max_quota_err/" title="max_quota_err" class="dd-item ">
+        <a href="/v0/errors/max_quota_err/">
+        max_quota_err
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/errors/node_err/" title="node_err" class="dd-item ">
+        <a href="/v0/errors/node_err/">
+        node_err
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/errors/num_arguments_err/" title="num_arguments_err" class="dd-item ">
+        <a href="/v0/errors/num_arguments_err/">
+        num_arguments_err
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/errors/operation_err/" title="operation_err" class="dd-item ">
+        <a href="/v0/errors/operation_err/">
+        operation_err
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/errors/overflow_err/" title="overflow_err" class="dd-item ">
+        <a href="/v0/errors/overflow_err/">
+        overflow_err
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/errors/syntax_err/" title="syntax_err" class="dd-item ">
+        <a href="/v0/errors/syntax_err/">
+        syntax_err
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/errors/type_err/" title="type_err" class="dd-item ">
+        <a href="/v0/errors/type_err/">
+        type_err
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/errors/value_err/" title="value_err" class="dd-item ">
+        <a href="/v0/errors/value_err/">
+        value_err
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/errors/zero_div_err/" title="zero_div_err" class="dd-item ">
+        <a href="/v0/errors/zero_div_err/">
+        zero_div_err
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/v0/'></a> > <a href='/v0/collection-api/'>Collection API</a> > isutf8
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#function">Function</a></li>
+        <li><a href="#arguments">Arguments</a></li>
+        <li><a href="#return-value">Return value</a></li>
+        <li><a href="#example">Example</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              isutf8
+            </h1>
+          
+
+        
+
+
+
+<p>This function determines whether the provided value is of
+type <a href="../../data-types/str">str</a> and contains valid UTF-8 characters.</p>
+<p>This function does <em>not</em> generate an <a href="../../overview/events">event</a>.</p>
+<h3 id="function">Function</h3>
+<p><code>isutf8(value)</code></p>
+<h3 id="arguments">Arguments</h3>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>any (required)</td>
+<td>The value to be tested.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-value">Return value</h3>
+<p>Returns <code>true</code> if the given value is of type <code>raw</code> and contains valid utf8, else <code>false</code>.</p>
+<h3 id="example">Example</h3>
+<blockquote>
+<p>This code shows some return values for <em><strong>isutf8()</strong></em>:</p>
+</blockquote>
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">[
+    isutf8( 'ԉ' ),
+    isutf8( 'pi' ),
+];
+</code></pre><blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
+    <span style="color:#66d9ef">true</span>,
+    <span style="color:#66d9ef">true</span>
+]
+</code></pre></div>
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+    
+        
+            <a class="nav nav-prev" href="/v0/collection-api/istuple/" title="istuple"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/v0/collection-api/list/" title="list" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/v0/js/clipboard.min.js?1584005165"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1584005165"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1584005165"></script>
+    <script src="/v0/js/jquery.sticky.js?1584005165"></script>
+    <script src="/v0/js/featherlight.min.js?1584005165"></script>
+    <script src="/v0/js/highlight.pack.js?1584005165"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1584005165"></script>
+    <script src="/v0/js/learn.js?1584005165"></script>
+    <script src="/v0/js/hugo-learn.js?1584005165"></script>
+
+    <link href="/v0/mermaid/mermaid.css?1584005165" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1584005165"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+
