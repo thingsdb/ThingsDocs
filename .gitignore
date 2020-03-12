@@ -32,3 +32,6 @@ testdir/
 
 # vscode
 .vscode/
+
+# Build
+/docs/v*/
