@@ -20,12 +20,12 @@ A Ping package has no data so we only need to construct the header:
 
 > Sending the *Ping* package
 
-```bash
+```none
 \x00\x00\x00\x00\x00\x00\x20\xdf
 ```
 
 > Responding *Pong* package
 
-```bash
+```none
 \x00\x00\x00\x00\x00\x00\x10\xef
 ```

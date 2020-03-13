@@ -8,7 +8,7 @@ Adds a new node to ThingsDB. Nodes are used for scaling and high availability.
 Before using this command, make sure another node is started and waiting for a join. This can be done by starting thingsdb with the `--secret` argument, for example:
 
 ```bash
-$ thingsdb --secret "my-one-time-secret"
+thingsdb --secret "my-one-time-secret"
 ```
 
 Next, you will see something like this:

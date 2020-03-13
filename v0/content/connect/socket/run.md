@@ -40,13 +40,13 @@ Now we create the header. For this example we just use ID 0:
 
 > Sending the *Query* package
 
-```bash
+```none
 \x0d\x00\x00\x00\x00\x00\x25\xda\x93\xa2@t\xa7add_one)
 ```
 
 > Responding *Data* package
 
-```bash
+```none
 \x01\x00\x00\x00\x00\x00\x12\xed*
 ```
 
