@@ -7,7 +7,7 @@ Symbol | Type of operation | Associativity
 ------ | ----------------- | -------------
 `()`   | Expression parenthesis | Left-to-right
 `!`    | Not operator | Right-to-left
-`*` `/` `//` `%` | Multiplication, Modulo, (Integer) Division | Left-to-right
+`*` `/` `%` | Multiplication, Modulo, Division | Left-to-right
 `+` `-` | Add, Subtract | Left-to-right
 `&` | Bitwise AND | Left-to-right
 `^` | Bitwise XOR | Left-to-right
