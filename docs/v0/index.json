@@ -711,7 +711,7 @@
 	"title": "Precedence and associativity",
 	"tags": [],
 	"description": "",
-	"content": "   Symbol Type of operation Associativity     () Expression parenthesis Left-to-right   ! Not operator Right-to-left   * / // % Multiplication, Modulo, (Integer) Division Left-to-right   + - Add, Subtract Left-to-right   \u0026amp; Bitwise AND Left-to-right   ^ Bitwise XOR Left-to-right   | Bitwise OR Left-to-right   == != \u0026lt;= \u0026gt;= \u0026lt; \u0026gt; Compare Left-to-right   \u0026amp;\u0026amp; Logical AND Left-to-right   || Logical OR Left-to-right   ? : Conditional Right-to-left   = *= /= %= += -= \u0026amp;= ^= |= Assignments Right-to-left    "
+	"content": "   Symbol Type of operation Associativity     () Expression parenthesis Left-to-right   ! Not operator Right-to-left   * / % Multiplication, Modulo, Division Left-to-right   + - Add, Subtract Left-to-right   \u0026amp; Bitwise AND Left-to-right   ^ Bitwise XOR Left-to-right   | Bitwise OR Left-to-right   == != \u0026lt;= \u0026gt;= \u0026lt; \u0026gt; Compare Left-to-right   \u0026amp;\u0026amp; Logical AND Left-to-right   || Logical OR Left-to-right   ? : Conditional Right-to-left   = *= /= %= += -= \u0026amp;= ^= |= Assignments Right-to-left    "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/",
