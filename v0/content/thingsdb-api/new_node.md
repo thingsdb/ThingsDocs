@@ -18,7 +18,7 @@ Waiting for an invite from a node to join ThingsDB...
 
 You can use the following query to add this node:
 
-    new_node('my-one-time-secret', '10.10.10.2', 9220);
+    new_node('my-one-time-secret', 'node.local', 9220);
 ```
 
 Now you can use the [new_node(..)](../new_node) function to add the node to ThingsDB.
