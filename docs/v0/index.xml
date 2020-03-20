@@ -248,6 +248,17 @@ list[start:stop:step] The start and stop value will default to nil and step has 
     </item>
     
     <item>
+      <title>Template Strings</title>
+      <link>https://docs.thingsdb.net/v0/overview/template-strings/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/overview/template-strings/</guid>
+      <description>Template strings allows you to use embedded ThingsDB expressions to generate a string constant. Template strings are enclosed by the backtick (`) character instead of double or single quotes.
+Here is an example of how they may be used:
+a = 6; b = 7; `The sum of {a} plus {b} is {a + b}.`; &amp;#34;The sum of 6 plus 7 is 13.&amp;#34; If you wish to use the backtick character or curly brackets inside your string, then you need to escape those by using the same character twice.</description>
+    </item>
+    
+    <item>
       <title>Dictionary</title>
       <link>https://docs.thingsdb.net/v0/overview/dictionary/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -2113,8 +2124,8 @@ Arguments    Argument Type Description     name str (required) Name of the new c
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/new_node/</guid>
       <description>Adds a new node to ThingsDB. Nodes are used for scaling and high availability.
 Before using this command, make sure another node is started and waiting for a join. This can be done by starting thingsdb with the --secret argument, for example:
-$ thingsdb --secret &amp;#34;my-one-time-secret&amp;#34; Next, you will see something like this:
-Waiting for an invite from a node to join ThingsDB... You can use the following query to add this node: new_node(&amp;#39;my-one-time-secret&amp;#39;, &amp;#39;10.</description>
+thingsdb --secret &amp;#34;my-one-time-secret&amp;#34; Next, you will see something like this:
+Waiting for an invite from a node to join ThingsDB... You can use the following query to add this node: new_node(&amp;#39;my-one-time-secret&amp;#39;, &amp;#39;node.</description>
     </item>
     
     <item>

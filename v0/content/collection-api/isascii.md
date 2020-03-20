@@ -1,6 +1,6 @@
 ---
 title: "isascii"
-weight: 117
+weight: 118
 ---
 
 This function determines whether the provided value is of

@@ -1,6 +1,6 @@
 ---
 title: "new_token"
-weight: 184
+weight: 185
 ---
 
 Adds a new token for a given user. An optional expiration time may be given; after this time the token cannot

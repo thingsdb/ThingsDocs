@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.67.0" />
+    <meta name="generator" content="Hugo 0.67.1" />
     <meta name="description" content="ThingsDB documentation">
 
 
@@ -11,20 +11,20 @@
     <title>Example query :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1584135717" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1584135717" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1584135717" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1584135717" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1584135717" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1584135717" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1584135717" rel="stylesheet">
-    <link href="/v0/css/theme.css?1584135717" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1584135717" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1584701225" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1584701225" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1584701225" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1584701225" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1584701225" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1584701225" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1584701225" rel="stylesheet">
+    <link href="/v0/css/theme.css?1584701225" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1584701225" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1584135717" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1584701225" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1584135717"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1584701225"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1584135717"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1584135717"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1584701225"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1584701225"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1584135717"></script>
+<script type="text/javascript" src="/v0/js/search.js?1584701225"></script>
 
     
   </div>
@@ -587,6 +587,25 @@
       <li data-nav-id="/v0/overview/slices/" title="Slices" class="dd-item ">
         <a href="/v0/overview/slices/">
         Slices
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/overview/template-strings/" title="Template Strings" class="dd-item ">
+        <a href="/v0/overview/template-strings/">
+        Template Strings
         
         </a>
     </li>
@@ -4695,12 +4714,12 @@ See the <a href="../auth">auth example</a> for how to authorize a socket connect
 <blockquote>
 <p>Sending the <em>Query</em> package</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">\x</span>0b<span style="color:#ae81ff">\x</span>00<span style="color:#ae81ff">\x</span>00<span style="color:#ae81ff">\x</span>00<span style="color:#ae81ff">\x</span>00<span style="color:#ae81ff">\x</span>00<span style="color:#ae81ff">\x</span>22<span style="color:#ae81ff">\x</span>dd<span style="color:#ae81ff">\x</span>92<span style="color:#ae81ff">\x</span>a2@t<span style="color:#ae81ff">\x</span>a61 + 1;
-</code></pre></div><blockquote>
+<pre><code class="language-none" data-lang="none">\x0b\x00\x00\x00\x00\x00\x22\xdd\x92\xa2@t\xa61 + 1;
+</code></pre><blockquote>
 <p>Responding <em>Data</em> package</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">\x</span>01<span style="color:#ae81ff">\x</span>00<span style="color:#ae81ff">\x</span>00<span style="color:#ae81ff">\x</span>00<span style="color:#ae81ff">\x</span>00<span style="color:#ae81ff">\x</span>00<span style="color:#ae81ff">\x</span>12<span style="color:#ae81ff">\x</span>ed<span style="color:#ae81ff">\x</span><span style="color:#ae81ff">02</span>
-</code></pre></div><p>We see that the <code>DATA</code> response package has a header with attached data of length <code>1</code>.</p>
+<pre><code class="language-none" data-lang="none">\x01\x00\x00\x00\x00\x00\x12\xed\x02
+</code></pre><p>We see that the <code>DATA</code> response package has a header with attached data of length <code>1</code>.</p>
 <p>Unpacking the data <code>\x02</code> using <a href="https://msgpack.org">MessagePack</a> will return the expected value <code>2</code> which is the answer to our equation.</p>
 
 <div class="notices warning" ><p>If your socket connection is not authenticated then you will receive an <a href="../error-response">error response</a>.</p>
@@ -4736,19 +4755,19 @@ See the <a href="../auth">auth example</a> for how to authorize a socket connect
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1584135717"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1584135717"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1584135717"></script>
-    <script src="/v0/js/jquery.sticky.js?1584135717"></script>
-    <script src="/v0/js/featherlight.min.js?1584135717"></script>
-    <script src="/v0/js/highlight.pack.js?1584135717"></script>
+    <script src="/v0/js/clipboard.min.js?1584701225"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1584701225"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1584701225"></script>
+    <script src="/v0/js/jquery.sticky.js?1584701225"></script>
+    <script src="/v0/js/featherlight.min.js?1584701225"></script>
+    <script src="/v0/js/highlight.pack.js?1584701225"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1584135717"></script>
-    <script src="/v0/js/learn.js?1584135717"></script>
-    <script src="/v0/js/hugo-learn.js?1584135717"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1584701225"></script>
+    <script src="/v0/js/learn.js?1584701225"></script>
+    <script src="/v0/js/hugo-learn.js?1584701225"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1584135717" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1584135717"></script>
+    <link href="/v0/mermaid/mermaid.css?1584701225" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1584701225"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

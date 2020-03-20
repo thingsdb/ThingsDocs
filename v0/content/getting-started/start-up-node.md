@@ -55,9 +55,11 @@ The `--deploy` argument is created for this purpose and triggers the following b
 
 ### Restore from backup
 When you need to restore from a back up you will need to set the environment variable `THINGSDB_STORAGE_PATH` to the latest backup file (.tar.gz). Then you can start ThingsDB again with the following command:
+
 ```bash
 thingsdb --forget-nodes
 ```
+
 The `--forget-nodes` flag is in this case very useful. The flag causes to forget all nodes. You can just start with one node without getting in a situation where the [quorum](../../overview/dictionary) will not be reached when multiple nodes are down. After the first node has started you can then simply add other nodes again.
 
 
