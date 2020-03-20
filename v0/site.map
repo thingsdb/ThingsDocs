@@ -23,6 +23,7 @@ overview
     variable
     events
     slices
+    template-strings
     dictionary
 data-types
     bool
