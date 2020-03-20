@@ -1,6 +1,6 @@
 ---
 title: "bool"
-weight: 28
+weight: 29
 ---
 
 Booleans are either `true` or `false`.

@@ -1,6 +1,6 @@
 ---
 title: "isfloat"
-weight: 121
+weight: 122
 ---
 
 This function determines whether the provided value is a [floating point](../../data-types/float) value or not.
