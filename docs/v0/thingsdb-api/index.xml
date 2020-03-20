@@ -200,8 +200,8 @@ Arguments    Argument Type Description     name str (required) Name of the new c
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/new_node/</guid>
       <description>Adds a new node to ThingsDB. Nodes are used for scaling and high availability.
 Before using this command, make sure another node is started and waiting for a join. This can be done by starting thingsdb with the --secret argument, for example:
-$ thingsdb --secret &amp;#34;my-one-time-secret&amp;#34; Next, you will see something like this:
-Waiting for an invite from a node to join ThingsDB... You can use the following query to add this node: new_node(&amp;#39;my-one-time-secret&amp;#39;, &amp;#39;10.</description>
+thingsdb --secret &amp;#34;my-one-time-secret&amp;#34; Next, you will see something like this:
+Waiting for an invite from a node to join ThingsDB... You can use the following query to add this node: new_node(&amp;#39;my-one-time-secret&amp;#39;, &amp;#39;node.</description>
     </item>
     
     <item>

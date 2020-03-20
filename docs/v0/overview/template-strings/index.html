@@ -8,7 +8,7 @@
 
 
     <link rel="shortcut icon" href='/v0/images/favicon.ico' type="image/x-icon" />
-    <title>auth_err :: ThingsDB documentation</title>
+    <title>Template Strings :: ThingsDB documentation</title>
 
     
     <link href="/v0/css/nucleus.css?1584701225" rel="stylesheet">
@@ -38,7 +38,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/v0/errors/auth_err/">
+  <body class="" data-url="/v0/overview/template-strings/">
     <nav id="sidebar" class="">
 
 
@@ -446,7 +446,7 @@
   
     
     <li data-nav-id="/v0/overview/" title="Overview" class="dd-item 
-        
+        parent
         
         
         ">
@@ -603,7 +603,7 @@
  
   
     
-      <li data-nav-id="/v0/overview/template-strings/" title="Template Strings" class="dd-item ">
+      <li data-nav-id="/v0/overview/template-strings/" title="Template Strings" class="dd-item active">
         <a href="/v0/overview/template-strings/">
         Template Strings
         
@@ -4299,7 +4299,7 @@
   
     
     <li data-nav-id="/v0/errors/" title="Errors" class="dd-item 
-        parent
+        
         
         
         ">
@@ -4342,7 +4342,7 @@
  
   
     
-      <li data-nav-id="/v0/errors/auth_err/" title="auth_err" class="dd-item active">
+      <li data-nav-id="/v0/errors/auth_err/" title="auth_err" class="dd-item ">
         <a href="/v0/errors/auth_err/">
         auth_err
         
@@ -4639,7 +4639,7 @@
             
           
           
-            <a href='/v0/'></a> > <a href='/v0/errors/'>Errors</a> > auth_err
+            <a href='/v0/'></a> > <a href='/v0/overview/'>Overview</a> > Template Strings
           
          
           
@@ -4652,18 +4652,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#function">Function</a></li>
-        <li><a href="#arguments">Arguments</a></li>
-        <li><a href="#return-value">Return value</a></li>
-        <li><a href="#example">Example</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -4679,7 +4668,7 @@
           
             <h1>
               
-              auth_err
+              Template Strings
             </h1>
           
 
@@ -4687,42 +4676,14 @@
 
 
 
-<p>Returns an <a href="../../data-types/error">error</a> when authentication has failed.</p>
-<p>This function does <em>not</em> generate an <a href="../../overview/events">event</a>.</p>
-<h3 id="function">Function</h3>
-<p><code>auth_err([message])</code></p>
-<h3 id="arguments">Arguments</h3>
-<table>
-<thead>
-<tr>
-<th>Argument</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>message</td>
-<td>str (optional)</td>
-<td>Alternative error message.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="return-value">Return value</h3>
-<p>An error value.</p>
-<h3 id="example">Example</h3>
-<blockquote>
-<p>This code shows <em><strong>auth_err()</strong></em>:</p>
-</blockquote>
-<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">auth_err();
-</code></pre><blockquote>
-<p>Return value in JSON format</p>
-</blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-    <span style="color:#f92672">&#34;!&#34;</span>: <span style="color:#e6db74">&#34;auth_err()&#34;</span>,
-    <span style="color:#f92672">&#34;error_code&#34;</span>: <span style="color:#ae81ff">-56</span>,
-    <span style="color:#f92672">&#34;error_msg&#34;</span>: <span style="color:#e6db74">&#34;authentication error&#34;</span>
-}
+<p>Template strings allows you to use embedded ThingsDB expressions to generate a string constant. Template strings are enclosed by the backtick (`) character instead of double or single quotes.</p>
+<p>Here is an example of how they may be used:</p>
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">a = 6; b = 7;
+`The sum of {a} plus {b} is {a + b}.`;
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;The sum of 6 plus 7 is 13.&#34;</span>
+</code></pre></div><p>If you wish to use the backtick character or curly brackets inside your string, then you need to escape those by using the same character twice. For example:</p>
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">`Example with ``Backticks`` and {{Curlies}}.`
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;Example with `Backticks` and {Curlies}.&#34;</span>
 </code></pre></div>
 
 <footer class=" footline" >
@@ -4740,10 +4701,10 @@
         
     
         
-            <a class="nav nav-prev" href="/v0/errors/assert_err/" title="assert_err"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/v0/overview/slices/" title="Slices"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/v0/errors/bad_data_err/" title="bad_data_err" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/v0/overview/dictionary/" title="Dictionary" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     
     </div>
