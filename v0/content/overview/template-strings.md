@@ -11,6 +11,7 @@ Here is an example of how they may be used:
 a = 6; b = 7;
 `The sum of {a} plus {b} is {a + b}.`;
 ```
+> Result in JSON format:
 
 ```json
 "The sum of 6 plus 7 is 13."
@@ -21,6 +22,7 @@ If you wish to use the backtick character or curly brackets inside your string, 
 ```thingsdb,json_response
 `Example with ``Backticks`` and {{Curlies}}.`
 ```
+> Result in JSON format:
 
 ```json
 "Example with `Backticks` and {Curlies}."
