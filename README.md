@@ -78,7 +78,7 @@ Copy the build to the Docs project
 > Here we assume `ThingsDocs` is a sibling of `highlight.js` in the folder structure
 
 ```bash
-cp build/highlight.pack.js ../ThingsDocs/themes/hugo-theme-learn/static/js/highlight.pack.js
+cp build/highlight.js ../ThingsDocs/themes/hugo-theme-learn/static/js/highlight.pack.js
 ```
 
 ## Adding a chapter or paragraph
