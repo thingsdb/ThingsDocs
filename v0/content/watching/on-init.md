@@ -1,6 +1,6 @@
 ---
 title: "on-init"
-weight: 203
+weight: 204
 ---
 
 This event will be pushed on every request to watch a [thing](../../data-types/thing).

@@ -186,6 +186,7 @@ thingsdb-api
     new_user
     rename_collection
     rename_user
+    restore
     revoke
     set_password
     user_info
