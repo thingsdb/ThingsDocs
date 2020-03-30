@@ -755,6 +755,10 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/restore/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/thingsdb-api/revoke/</loc>
   </url>
   

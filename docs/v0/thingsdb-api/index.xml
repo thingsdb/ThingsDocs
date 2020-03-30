@@ -254,6 +254,17 @@ Arguments    Argument Type Description     current_name str (required) Current u
     </item>
     
     <item>
+      <title>restore</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/restore/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/restore/</guid>
+      <description>Restore from a backup file created with the new_backup function.
+Before using this function the following list of requirements must be must be fulfilled:
+ The user performing the restore must have FULL privileges on the@thingsdb scope. No collections may exists. Use collections_info() and del_collection(..) to remove existing collections. All nodes must be online and ready. If this is not the case, then either remove the node or wait for the node to become ready.</description>
+    </item>
+    
+    <item>
       <title>revoke</title>
       <link>https://docs.thingsdb.net/v0/thingsdb-api/revoke/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
