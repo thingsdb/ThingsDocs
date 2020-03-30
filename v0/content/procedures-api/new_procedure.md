@@ -1,6 +1,6 @@
 ---
 title: "new_procedure"
-weight: 196
+weight: 197
 ---
 
 Creates a new procedure to the `@thingsdb` or a `@collection` scope. The name of the procedure must be unique within the scope.

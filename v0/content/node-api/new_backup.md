@@ -10,7 +10,7 @@ file can be used to recover ThingsDB, or can be used to load the ThingsDB into a
 The result value is a backup ID. This ID can be used by [backup_info(..)](../backup_info) for details
 about the backup schedule job, or can be used to [delete](../del_backup) the backup schedule.
 
-See the [example recovery](#example-recovery) section below on how to recover from a backup file.
+Restoring from a backup file can be done with either the [restore(..)](../../thingsdb-api/restore) function or by starting the node from a backup file. See the [example recovery](#example-recovery) section below on how to start a node from a backup file.
 
 {{% notice note %}}
 At least **two nodes** are required to create a new backup schedule. This is required because ThingsDB needs to enter *away* mode to actually create the backup and this happens only with two or more nodes.
