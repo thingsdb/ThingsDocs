@@ -52,7 +52,7 @@ procedure_info('add_one');
         "x"
     ],
     "created_at": 1579175900,
-    "definition": "|x|{\"Adds one to a given value\";x+1;}",
+    "definition": "|x| {\n    \"Adds one to a given value\";\n    x + 1;\n}",
     "doc": "Adds one to a given value",
     "name": "add_one",
     "with_side_effects": false
