@@ -8,7 +8,7 @@
 
 
     <link rel="shortcut icon" href='/v0/images/favicon.ico' type="image/x-icon" />
-    <title>isstr :: ThingsDB documentation</title>
+    <title>def :: ThingsDB documentation</title>
 
     
     <link href="/v0/css/nucleus.css?1588749024" rel="stylesheet">
@@ -38,7 +38,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/v0/collection-api/isstr/">
+  <body class="" data-url="/v0/data-types/closure/def/">
     <nav id="sidebar" class="">
 
 
@@ -649,7 +649,7 @@
   
     
     <li data-nav-id="/v0/data-types/" title="Data Types" class="dd-item 
-        
+        parent
         
         
         ">
@@ -748,7 +748,7 @@
   
     
     <li data-nav-id="/v0/data-types/closure/" title="closure" class="dd-item 
-        
+        parent
         
         
         ">
@@ -791,7 +791,7 @@
  
   
     
-      <li data-nav-id="/v0/data-types/closure/def/" title="def" class="dd-item ">
+      <li data-nav-id="/v0/data-types/closure/def/" title="def" class="dd-item active">
         <a href="/v0/data-types/closure/def/">
         def
         
@@ -2260,7 +2260,7 @@
   
     
     <li data-nav-id="/v0/collection-api/" title="Collection API" class="dd-item 
-        parent
+        
         
         
         ">
@@ -2761,7 +2761,7 @@
  
   
     
-      <li data-nav-id="/v0/collection-api/isstr/" title="isstr" class="dd-item active">
+      <li data-nav-id="/v0/collection-api/isstr/" title="isstr" class="dd-item ">
         <a href="/v0/collection-api/isstr/">
         isstr
         
@@ -4677,7 +4677,13 @@
             
           
           
-            <a href='/v0/'></a> > <a href='/v0/collection-api/'>Collection API</a> > isstr
+            
+            
+          
+          
+            <a href='/v0/'></a> > <a href='/v0/data-types/'>Data Types</a> > <a href='/v0/data-types/closure/'>closure</a> > def
+          
+         
           
          
           
@@ -4717,7 +4723,7 @@
           
             <h1>
               
-              isstr
+              def
             </h1>
           
 
@@ -4725,46 +4731,34 @@
 
 
 
-<p>This function determines whether the provided value is of
-type <a href="../../data-types/str">str</a>.</p>
-<p>The value is <em>not</em> explicitly checked for valid UTF-8 characters, use <a href="../isutf8">isutf8()</a> if you want to check for valid UTF-8 data.</p>
-<p>This function does <em>not</em> generate an <a href="../../overview/events">event</a>.</p>
+<p>Returns the <a href="..">closure</a> definition using spaces, line-breaks and indentation <em>(4 spaces)</em>.</p>
+<p>This function does <em>not</em> generate an <a href="../../../overview/events">event</a>.</p>
 <h3 id="function">Function</h3>
-<p><code>isstr(value)</code></p>
+<p><em>closure</em>.<code>def()</code></p>
 <h3 id="arguments">Arguments</h3>
-<table>
-<thead>
-<tr>
-<th>Argument</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>value</td>
-<td>any (required)</td>
-<td>The value to be tested.</td>
-</tr>
-</tbody>
-</table>
+<p>None</p>
 <h3 id="return-value">Return value</h3>
-<p>Returns <code>true</code> if the given value is of type <code>str</code>, else <code>false</code>.</p>
+<p>Returns the closure definition.</p>
 <h3 id="example">Example</h3>
 <blockquote>
-<p>This code shows some return values for <em><strong>isutf8()</strong></em>:</p>
+<p>This code creates a closure with a doc string:</p>
 </blockquote>
-<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">[
-    isstr( 'ԉ' ),
-    isstr( 'pi' ),
-];
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">add_one = |x| {
+    x + 1;
+};
+
+// Return the definition as a string
+add_one.def();
 </code></pre><blockquote>
 <p>Return value in JSON format</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
-    <span style="color:#66d9ef">true</span>,
-    <span style="color:#66d9ef">true</span>
-]
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;|x| {\n    x + 1;\n}&#34;</span>
+</code></pre></div><blockquote>
+<p>Or, when printed:</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">|x| {
+    x + 1;
+}
 </code></pre></div>
 
 <footer class=" footline" >
@@ -4782,10 +4776,10 @@ type <a href="../../data-types/str">str</a>.</p>
         
     
         
-            <a class="nav nav-prev" href="/v0/collection-api/isset/" title="isset"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/v0/data-types/closure/call/" title="call"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/v0/collection-api/isthing/" title="isthing" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/v0/data-types/closure/doc/" title="doc" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     
     </div>

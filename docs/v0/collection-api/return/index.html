@@ -11,20 +11,20 @@
     <title>return :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1585638530" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1585638530" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1585638530" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1585638530" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1585638530" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1585638530" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1585638530" rel="stylesheet">
-    <link href="/v0/css/theme.css?1585638530" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1585638530" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1588749024" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1588749024" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1588749024" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1588749024" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1588749024" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1588749024" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1588749024" rel="stylesheet">
+    <link href="/v0/css/theme.css?1588749024" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1588749024" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1585638530" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1588749024" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1585638530"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1588749024"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1585638530"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1585638530"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1588749024"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1588749024"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1585638530"></script>
+<script type="text/javascript" src="/v0/js/search.js?1588749024"></script>
 
     
   </div>
@@ -775,6 +775,25 @@
       <li data-nav-id="/v0/data-types/closure/call/" title="call" class="dd-item ">
         <a href="/v0/data-types/closure/call/">
         call
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/closure/def/" title="def" class="dd-item ">
+        <a href="/v0/data-types/closure/def/">
+        def
         
         </a>
     </li>
@@ -4679,6 +4698,7 @@
         <li><a href="#arguments">Arguments</a></li>
         <li><a href="#return-value">Return value</a></li>
         <li><a href="#example">Example</a></li>
+        <li><a href="#deep">Deep</a></li>
       </ul>
     </li>
   </ul>
@@ -4709,7 +4729,8 @@
 <p>The <code>return</code> function moves the argument to the output of the current query/closure call.</p>
 <p>If no <code>return</code> is specified, then the last value will be the value which is returned.
 A second argument can be given to the return function which can be used to specify how <code>deep</code>
-the result should be returned. The default <code>deep</code> value is set to 1, but any value between 0 and 127 is possible.</p>
+the result should be returned. The default <code>deep</code> value is set to 1, but any value between 0 and 127 is possible.
+See the <a href="#deep">deep</a> section for a detailed explanation of this argument.</p>
 <p>A query can run different procedures and/or closures which might have changed the <code>deep</code> value. In case you
 need to know the current <code>deep</code> value, the function <a href="../../collection-api/deep">deep()</a> can be used.</p>
 
@@ -4775,7 +4796,40 @@ return(.colors, 2);
         <span style="color:#f92672">&#34;R&#34;</span>: <span style="color:#ae81ff">94</span>
     }
 }
-</code></pre></div>
+</code></pre></div><h3 id="deep">Deep</h3>
+<p>To understand the <code>deep</code> argument, suppose you have the following data:</p>
+<pre><code class="language-thingsdb,syntax_only" data-lang="thingsdb,syntax_only">.artists = [{
+    artist: &quot;David Bowie&quot;,
+    albums: [{
+        name: &quot;The Rise and Fall of Ziggy Stardust and the Spiders from Mars&quot;,
+        songs: [{
+            title: &quot;Five Years&quot;
+            duration: 4.42
+        }]
+    ]}
+}];
+</code></pre><p>If you only require the ID&rsquo;s from all <code>.artists</code> and do not any other properties, a value of <code>0</code> should be used for <code>deep</code>:</p>
+<pre><code class="language-thingsdb,syntax_only" data-lang="thingsdb,syntax_only">return(.artists, 0);
+</code></pre><p>Something like this will be returned. (the ID <code>#</code> might be different since this is auto generated)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
+    {
+        <span style="color:#f92672">&#34;#&#34;</span>: <span style="color:#ae81ff">10</span>
+    }
+]
+</code></pre></div><p>If you also want the own properties from <code>.a</code>, then a <code>deep</code> value of <code>1</code> is required.</p>
+<pre><code class="language-thingsdb,should_pass" data-lang="thingsdb,should_pass">.a;  // Since `1` is the default you do not even need the `return()` function.
+</code></pre><p>The return value now looks like this: (again, the ID&rsquo;s(`#)  might be different)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;#&#34;</span>: <span style="color:#ae81ff">10</span>,
+    <span style="color:#f92672">&#34;b&#34;</span>: {
+        <span style="color:#f92672">&#34;#&#34;</span>: <span style="color:#ae81ff">11</span>
+    }
+}
+</code></pre></div><p>For all properties in <code>.a.b.c</code> a <code>deep</code> value of <code>3</code> is required:</p>
+<pre><code class="language-thingsdb,should_pass" data-lang="thingsdb,should_pass">
+
+
+</code></pre>
 
 <footer class=" footline" >
 	
@@ -4805,19 +4859,19 @@ return(.colors, 2);
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1585638530"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1585638530"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1585638530"></script>
-    <script src="/v0/js/jquery.sticky.js?1585638530"></script>
-    <script src="/v0/js/featherlight.min.js?1585638530"></script>
-    <script src="/v0/js/highlight.pack.js?1585638530"></script>
+    <script src="/v0/js/clipboard.min.js?1588749024"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1588749024"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1588749024"></script>
+    <script src="/v0/js/jquery.sticky.js?1588749024"></script>
+    <script src="/v0/js/featherlight.min.js?1588749024"></script>
+    <script src="/v0/js/highlight.pack.js?1588749024"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1585638530"></script>
-    <script src="/v0/js/learn.js?1585638530"></script>
-    <script src="/v0/js/hugo-learn.js?1585638530"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1588749024"></script>
+    <script src="/v0/js/learn.js?1588749024"></script>
+    <script src="/v0/js/hugo-learn.js?1588749024"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1585638530" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1585638530"></script>
+    <link href="/v0/mermaid/mermaid.css?1588749024" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1588749024"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
