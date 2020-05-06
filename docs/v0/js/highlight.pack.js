@@ -1890,7 +1890,7 @@ hljs.registerLanguage('thingsdb', function () {
                 {
                     className: 'function',
                     begin: new RegExp(
-                        '\\.\\s*(len|call|choice|doc|code|msg|each|every|extend|filter|find|' +
+                        '\\.\\s*(len|call|choice|def|doc|code|msg|each|every|extend|filter|find|' +
                         'findindex|indexof|map|pop|push|remove|sort|splice|' +
                         'add|has|contains|endswith|lower|startswith|test|upper|' +
                         'del|get|id|keys|reduce|set|some|values|watch|wrap|unwatch|unwrap)\\s*(?=\\()'
