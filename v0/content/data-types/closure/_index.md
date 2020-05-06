@@ -18,6 +18,7 @@ More complex closures are also possible, check the last example below.
 Function | Description
 ------ | -----------
 [call](./call) | Call the closure with optional arguments.
+[def](./def) | Return the definition of a closure using spaces, line-breaks and indentation.
 [doc](./doc) | Return the doc string of the closure.
 
 {{% notice note %}}
