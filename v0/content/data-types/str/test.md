@@ -1,6 +1,6 @@
 ---
 title: "test"
-weight: 76
+weight: 77
 ---
 
 Test if a [string](..) matches a given [regular expression](../../regex) and return `true` or `false`.

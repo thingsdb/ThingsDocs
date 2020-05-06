@@ -1,6 +1,6 @@
 ---
 title: "extend"
-weight: 45
+weight: 46
 ---
 
 Adds a [list](..) or [tuple](../../tuple) with items to the end of a [list](..), and returns the new length.

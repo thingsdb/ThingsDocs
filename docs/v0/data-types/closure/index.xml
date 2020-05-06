@@ -24,6 +24,22 @@ Arguments The arguments for the closure. If more arguments are given than the cl
     </item>
     
     <item>
+      <title>def</title>
+      <link>https://docs.thingsdb.net/v0/data-types/closure/def/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/closure/def/</guid>
+      <description>Returns the closure definition using spaces, line-breaks and indentation (4 spaces).
+This function does not generate an event.
+Function closure.def()
+Arguments None
+Return value Returns the closure definition.
+Example  This code creates a closure with a doc string:
+ add_one = |x| { x + 1; }; // Return the definition as a string add_one.def();  Return value in JSON format
+ &amp;#34;|x| {\n x + 1;\n}&amp;#34;  Or, when printed:</description>
+    </item>
+    
+    <item>
       <title>doc</title>
       <link>https://docs.thingsdb.net/v0/data-types/closure/doc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

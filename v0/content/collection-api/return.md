@@ -1,6 +1,6 @@
 ---
 title: "return"
-weight: 147
+weight: 148
 ---
 
 The `return` function moves the argument to the output of the current query/closure call.
@@ -8,12 +8,13 @@ The `return` function moves the argument to the output of the current query/clos
 If no `return` is specified, then the last value will be the value which is returned.
 A second argument can be given to the return function which can be used to specify how `deep`
 the result should be returned. The default `deep` value is set to 1, but any value between 0 and 127 is possible.
+See the [deep](#deep) section for a detailed explanation of this argument.
 
 A query can run different procedures and/or closures which might have changed the `deep` value. In case you
 need to know the current `deep` value, the function [deep()](../../collection-api/deep) can be used.
 
 {{% notice warning %}}
-Be careful with using a high deep value, especially when circular references are made since this can result
+Be careful with using a deep value greater than one, especially when circular references are made since this can result
 in returning a large amount of data.
 {{% /notice %}}
 
@@ -70,3 +71,114 @@ return(.colors, 2);
     }
 }
 ```
+
+### Deep
+
+To understand the `deep` argument, suppose you have the following data:
+
+```thingsdb,syntax_only
+.artists = [{
+    artist: "David Bowie",
+    albums: [{
+        name: "The Rise and Fall of Ziggy Stardust and the Spiders from Mars",
+        songs: [{
+            title: "Five Years",
+            duration: 4.42
+        }]
+    }]
+}];
+```
+
+If you only require the ID's from all `.artists` and do not any other properties, a value of `0` should be used for `deep`:
+
+```thingsdb,syntax_only
+return(.artists, 0);
+```
+
+Something like this will be returned. (the ID `#` might be different since this is auto generated)
+
+```json
+[
+    {
+        "#": 34580
+    }
+]
+```
+
+Here are some more examples using different values of *deep*:
+
+> Return the artists, albums will be returned only with (#) ID's:
+
+```thingsdb,syntax_only
+.artists;  // Uses the default deep value of `1`
+```
+
+```json
+[
+    {
+        "#": 34580,
+        "albums": [
+            {
+                "#": 34581
+            }
+        ],
+        "artist": "David Bowie"
+    }
+]
+```
+
+> Return the artists and albums, songs will be returned only with (#) ID's:
+
+```thingsdb,syntax_only
+return(.artists, 2);
+```
+
+```json
+[
+    {
+        "#": 34580,
+        "albums": [
+            {
+                "#": 34581,
+                "name": "The Rise and Fall of Ziggy Stardust and the Spiders from Mars",
+                "songs": [
+                    {
+                        "#": 34582
+                    }
+                ]
+            }
+        ],
+        "artist": "David Bowie"
+    }
+]
+```
+
+> Return the artists, albums and songs:
+
+```thingsdb,syntax_only
+return(.artists, 3);
+```
+
+```json
+[
+    {
+        "#": 34580,
+        "albums": [
+            {
+                "#": 34581,
+                "name": "The Rise and Fall of Ziggy Stardust and the Spiders from Mars",
+                "songs": [
+                    {
+                        "#": 34582,
+                        "duration": 4.42,
+                        "title": "Five Years"
+                    }
+                ]
+            }
+        ],
+        "artist": "David Bowie"
+    }
+]
+```
+
+Using custom [Type](../../data-types/type) and the [wrap()](../../data-types/thing/wrap) function to gain more control on what properties to return.

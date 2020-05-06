@@ -11,20 +11,20 @@
     <title>return :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1585638530" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1585638530" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1585638530" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1585638530" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1585638530" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1585638530" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1585638530" rel="stylesheet">
-    <link href="/v0/css/theme.css?1585638530" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1585638530" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1588750349" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1588750349" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1588750349" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1588750349" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1588750349" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1588750349" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1588750349" rel="stylesheet">
+    <link href="/v0/css/theme.css?1588750349" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1588750349" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1585638530" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1588750349" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1585638530"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1588750349"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1585638530"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1585638530"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1588750349"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1588750349"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1585638530"></script>
+<script type="text/javascript" src="/v0/js/search.js?1588750349"></script>
 
     
   </div>
@@ -775,6 +775,25 @@
       <li data-nav-id="/v0/data-types/closure/call/" title="call" class="dd-item ">
         <a href="/v0/data-types/closure/call/">
         call
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/data-types/closure/def/" title="def" class="dd-item ">
+        <a href="/v0/data-types/closure/def/">
+        def
         
         </a>
     </li>
@@ -4679,6 +4698,7 @@
         <li><a href="#arguments">Arguments</a></li>
         <li><a href="#return-value">Return value</a></li>
         <li><a href="#example">Example</a></li>
+        <li><a href="#deep">Deep</a></li>
       </ul>
     </li>
   </ul>
@@ -4709,11 +4729,12 @@
 <p>The <code>return</code> function moves the argument to the output of the current query/closure call.</p>
 <p>If no <code>return</code> is specified, then the last value will be the value which is returned.
 A second argument can be given to the return function which can be used to specify how <code>deep</code>
-the result should be returned. The default <code>deep</code> value is set to 1, but any value between 0 and 127 is possible.</p>
+the result should be returned. The default <code>deep</code> value is set to 1, but any value between 0 and 127 is possible.
+See the <a href="#deep">deep</a> section for a detailed explanation of this argument.</p>
 <p>A query can run different procedures and/or closures which might have changed the <code>deep</code> value. In case you
 need to know the current <code>deep</code> value, the function <a href="../../collection-api/deep">deep()</a> can be used.</p>
 
-<div class="notices warning" ><p>Be careful with using a high deep value, especially when circular references are made since this can result
+<div class="notices warning" ><p>Be careful with using a deep value greater than one, especially when circular references are made since this can result
 in returning a large amount of data.</p>
 </div>
 
@@ -4775,7 +4796,88 @@ return(.colors, 2);
         <span style="color:#f92672">&#34;R&#34;</span>: <span style="color:#ae81ff">94</span>
     }
 }
-</code></pre></div>
+</code></pre></div><h3 id="deep">Deep</h3>
+<p>To understand the <code>deep</code> argument, suppose you have the following data:</p>
+<pre><code class="language-thingsdb,syntax_only" data-lang="thingsdb,syntax_only">.artists = [{
+    artist: &quot;David Bowie&quot;,
+    albums: [{
+        name: &quot;The Rise and Fall of Ziggy Stardust and the Spiders from Mars&quot;,
+        songs: [{
+            title: &quot;Five Years&quot;,
+            duration: 4.42
+        }]
+    }]
+}];
+</code></pre><p>If you only require the ID&rsquo;s from all <code>.artists</code> and do not any other properties, a value of <code>0</code> should be used for <code>deep</code>:</p>
+<pre><code class="language-thingsdb,syntax_only" data-lang="thingsdb,syntax_only">return(.artists, 0);
+</code></pre><p>Something like this will be returned. (the ID <code>#</code> might be different since this is auto generated)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
+    {
+        <span style="color:#f92672">&#34;#&#34;</span>: <span style="color:#ae81ff">34580</span>
+    }
+]
+</code></pre></div><p>Here are some more examples using different values of <em>deep</em>:</p>
+<blockquote>
+<p>Return the artists, albums will be returned only with (#) ID&rsquo;s:</p>
+</blockquote>
+<pre><code class="language-thingsdb,syntax_only" data-lang="thingsdb,syntax_only">.artists;  // Uses the default deep value of `1`
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
+    {
+        <span style="color:#f92672">&#34;#&#34;</span>: <span style="color:#ae81ff">34580</span>,
+        <span style="color:#f92672">&#34;albums&#34;</span>: [
+            {
+                <span style="color:#f92672">&#34;#&#34;</span>: <span style="color:#ae81ff">34581</span>
+            }
+        ],
+        <span style="color:#f92672">&#34;artist&#34;</span>: <span style="color:#e6db74">&#34;David Bowie&#34;</span>
+    }
+]
+</code></pre></div><blockquote>
+<p>Return the artists and albums, songs will be returned only with (#) ID&rsquo;s:</p>
+</blockquote>
+<pre><code class="language-thingsdb,syntax_only" data-lang="thingsdb,syntax_only">return(.artists, 2);
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
+    {
+        <span style="color:#f92672">&#34;#&#34;</span>: <span style="color:#ae81ff">34580</span>,
+        <span style="color:#f92672">&#34;albums&#34;</span>: [
+            {
+                <span style="color:#f92672">&#34;#&#34;</span>: <span style="color:#ae81ff">34581</span>,
+                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;The Rise and Fall of Ziggy Stardust and the Spiders from Mars&#34;</span>,
+                <span style="color:#f92672">&#34;songs&#34;</span>: [
+                    {
+                        <span style="color:#f92672">&#34;#&#34;</span>: <span style="color:#ae81ff">34582</span>
+                    }
+                ]
+            }
+        ],
+        <span style="color:#f92672">&#34;artist&#34;</span>: <span style="color:#e6db74">&#34;David Bowie&#34;</span>
+    }
+]
+</code></pre></div><blockquote>
+<p>Return the artists, albums and songs:</p>
+</blockquote>
+<pre><code class="language-thingsdb,syntax_only" data-lang="thingsdb,syntax_only">return(.artists, 3);
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
+    {
+        <span style="color:#f92672">&#34;#&#34;</span>: <span style="color:#ae81ff">34580</span>,
+        <span style="color:#f92672">&#34;albums&#34;</span>: [
+            {
+                <span style="color:#f92672">&#34;#&#34;</span>: <span style="color:#ae81ff">34581</span>,
+                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;The Rise and Fall of Ziggy Stardust and the Spiders from Mars&#34;</span>,
+                <span style="color:#f92672">&#34;songs&#34;</span>: [
+                    {
+                        <span style="color:#f92672">&#34;#&#34;</span>: <span style="color:#ae81ff">34582</span>,
+                        <span style="color:#f92672">&#34;duration&#34;</span>: <span style="color:#ae81ff">4.42</span>,
+                        <span style="color:#f92672">&#34;title&#34;</span>: <span style="color:#e6db74">&#34;Five Years&#34;</span>
+                    }
+                ]
+            }
+        ],
+        <span style="color:#f92672">&#34;artist&#34;</span>: <span style="color:#e6db74">&#34;David Bowie&#34;</span>
+    }
+]
+</code></pre></div><p>Using custom <a href="../../data-types/type">Type</a> and the <a href="../../data-types/thing/wrap">wrap()</a> function to gain more control on what properties to return.</p>
+
 
 <footer class=" footline" >
 	
@@ -4805,19 +4907,19 @@ return(.colors, 2);
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1585638530"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1585638530"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1585638530"></script>
-    <script src="/v0/js/jquery.sticky.js?1585638530"></script>
-    <script src="/v0/js/featherlight.min.js?1585638530"></script>
-    <script src="/v0/js/highlight.pack.js?1585638530"></script>
+    <script src="/v0/js/clipboard.min.js?1588750349"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1588750349"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1588750349"></script>
+    <script src="/v0/js/jquery.sticky.js?1588750349"></script>
+    <script src="/v0/js/featherlight.min.js?1588750349"></script>
+    <script src="/v0/js/highlight.pack.js?1588750349"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1585638530"></script>
-    <script src="/v0/js/learn.js?1585638530"></script>
-    <script src="/v0/js/hugo-learn.js?1585638530"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1588750349"></script>
+    <script src="/v0/js/learn.js?1588750349"></script>
+    <script src="/v0/js/hugo-learn.js?1588750349"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1585638530" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1585638530"></script>
+    <link href="/v0/mermaid/mermaid.css?1588750349" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1588750349"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
