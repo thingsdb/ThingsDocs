@@ -1,6 +1,6 @@
 ---
 title: "return"
-weight: 147
+weight: 148
 ---
 
 The `return` function moves the argument to the output of the current query/closure call.
@@ -8,6 +8,7 @@ The `return` function moves the argument to the output of the current query/clos
 If no `return` is specified, then the last value will be the value which is returned.
 A second argument can be given to the return function which can be used to specify how `deep`
 the result should be returned. The default `deep` value is set to 1, but any value between 0 and 127 is possible.
+See the [deep](#deep) section for a detailed explanation of this argument.
 
 A query can run different procedures and/or closures which might have changed the `deep` value. In case you
 need to know the current `deep` value, the function [deep()](../../collection-api/deep) can be used.
@@ -70,3 +71,59 @@ return(.colors, 2);
     }
 }
 ```
+
+### Deep
+
+To understand the `deep` argument, suppose you have the following data:
+
+```thingsdb,syntax_only
+.artists = [{
+    artist: "David Bowie",
+    albums: [{
+        name: "The Rise and Fall of Ziggy Stardust and the Spiders from Mars",
+        songs: [{
+            title: "Five Years"
+            duration: 4.42
+        }]
+    ]}
+}];
+```
+
+If you only require the ID's from all `.artists` and do not any other properties, a value of `0` should be used for `deep`:
+
+```thingsdb,syntax_only
+return(.artists, 0);
+```
+
+Something like this will be returned. (the ID `#` might be different since this is auto generated)
+
+```json
+[
+    {
+        "#": 10
+    }
+]
+```
+
+If you also want the own properties from `.a`, then a `deep` value of `1` is required.
+
+```thingsdb,should_pass
+.a;  // Since `1` is the default you do not even need the `return()` function.
+```
+
+The return value now looks like this: (again, the ID's(`#)  might be different)
+
+```json
+{
+    "#": 10,
+    "b": {
+        "#": 11
+    }
+}
+```
+
+For all properties in `.a.b.c` a `deep` value of `3` is required:
+```thingsdb,should_pass
+
+
+

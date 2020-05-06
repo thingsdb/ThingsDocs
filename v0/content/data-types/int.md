@@ -1,6 +1,6 @@
 ---
 title: "int"
-weight: 40
+weight: 41
 ---
 
 ThingsDB can store 64bit signed integer values. When assigning integer values
