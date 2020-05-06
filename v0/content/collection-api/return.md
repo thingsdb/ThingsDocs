@@ -14,7 +14,7 @@ A query can run different procedures and/or closures which might have changed th
 need to know the current `deep` value, the function [deep()](../../collection-api/deep) can be used.
 
 {{% notice warning %}}
-Be careful with using a high deep value, especially when circular references are made since this can result
+Be careful with using a deep value greater than one, especially when circular references are made since this can result
 in returning a large amount of data.
 {{% /notice %}}
 
@@ -82,10 +82,10 @@ To understand the `deep` argument, suppose you have the following data:
     albums: [{
         name: "The Rise and Fall of Ziggy Stardust and the Spiders from Mars",
         songs: [{
-            title: "Five Years"
+            title: "Five Years",
             duration: 4.42
         }]
-    ]}
+    }]
 }];
 ```
 
@@ -100,30 +100,85 @@ Something like this will be returned. (the ID `#` might be different since this 
 ```json
 [
     {
-        "#": 10
+        "#": 34580
     }
 ]
 ```
 
-If you also want the own properties from `.a`, then a `deep` value of `1` is required.
+Here are some more examples using different values of *deep*:
 
-```thingsdb,should_pass
-.a;  // Since `1` is the default you do not even need the `return()` function.
+> Return the artists, albums will be returned only with (#) ID's:
+
+```thingsdb,syntax_only
+.artists;  // Uses the default deep value of `1`
 ```
-
-The return value now looks like this: (again, the ID's(`#)  might be different)
 
 ```json
-{
-    "#": 10,
-    "b": {
-        "#": 11
+[
+    {
+        "#": 34580,
+        "albums": [
+            {
+                "#": 34581
+            }
+        ],
+        "artist": "David Bowie"
     }
-}
+]
 ```
 
-For all properties in `.a.b.c` a `deep` value of `3` is required:
-```thingsdb,should_pass
+> Return the artists and albums, songs will be returned only with (#) ID's:
 
+```thingsdb,syntax_only
+return(.artists, 2);
+```
 
+```json
+[
+    {
+        "#": 34580,
+        "albums": [
+            {
+                "#": 34581,
+                "name": "The Rise and Fall of Ziggy Stardust and the Spiders from Mars",
+                "songs": [
+                    {
+                        "#": 34582
+                    }
+                ]
+            }
+        ],
+        "artist": "David Bowie"
+    }
+]
+```
 
+> Return the artists, albums and songs:
+
+```thingsdb,syntax_only
+return(.artists, 3);
+```
+
+```json
+[
+    {
+        "#": 34580,
+        "albums": [
+            {
+                "#": 34581,
+                "name": "The Rise and Fall of Ziggy Stardust and the Spiders from Mars",
+                "songs": [
+                    {
+                        "#": 34582,
+                        "duration": 4.42,
+                        "title": "Five Years"
+                    }
+                ]
+            }
+        ],
+        "artist": "David Bowie"
+    }
+]
+```
+
+Using custom [Type](../../data-types/type) and the [wrap()](../../data-types/thing/wrap) function to gain more control on what properties to return.
