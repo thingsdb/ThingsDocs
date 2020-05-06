@@ -14,7 +14,7 @@ A query can run different procedures and/or closures which might have changed th
 need to know the current `deep` value, the function [deep()](../../collection-api/deep) can be used.
 
 {{% notice warning %}}
-Be careful with using a high deep value, especially when circular references are made since this can result
+Be careful with using a deep value greater than one, especially when circular references are made since this can result
 in returning a large amount of data.
 {{% /notice %}}
 
@@ -105,9 +105,9 @@ Something like this will be returned. (the ID `#` might be different since this 
 ]
 ```
 
-Here are some more examples:
+Here are some more examples using different values of *deep*:
 
-> Return the artists, albums will be returned only with (`#`) ID's:
+> Return the artists, albums will be returned only with (#) ID's:
 
 ```thingsdb,syntax_only
 .artists;  // Uses the default deep value of `1`
@@ -127,7 +127,7 @@ Here are some more examples:
 ]
 ```
 
-> Return the artists and albums, songs will be returned only with (`#`) ID's:
+> Return the artists and albums, songs will be returned only with (#) ID's:
 
 ```thingsdb,syntax_only
 return(.artists, 2);
@@ -181,4 +181,4 @@ return(.artists, 3);
 ]
 ```
 
-Using custom [Type](../../data-types/Type) and the [wrap()](../../data-types/thing/wrap) function to gain more control on what properties to return.
+Using custom [Type](../../data-types/type) and the [wrap()](../../data-types/thing/wrap) function to gain more control on what properties to return.
