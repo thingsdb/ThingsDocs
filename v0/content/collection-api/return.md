@@ -181,4 +181,7 @@ return(.artists, 3);
 ]
 ```
 
-Using custom [Type](../../data-types/type) and the [wrap()](../../data-types/thing/wrap) function to gain more control on what properties to return.
+{{% notice tip %}}
+Use custom [Type](../../data-types/type) and the [wrap()](../../data-types/thing/wrap) function to gain more control on which properties to return.
+{{% /notice %}}
+
