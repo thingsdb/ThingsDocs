@@ -1,6 +1,6 @@
 ---
 title: "choice"
-weight: 43
+weight: 46
 ---
 
 This function returns a **pseudo-random** item from a [list](..) or [tuple](../../tuple) . The array must contain at least one

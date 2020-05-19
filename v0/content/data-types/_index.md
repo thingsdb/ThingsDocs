@@ -13,6 +13,7 @@ type | Description
 [bool](./bool) | Booleans are either `true` or `false`.
 [bytes](./bytes) | Byte sequence.
 [closure](./closure) | Closures can be used as functions or to consume items from a `thing`, `list`, `tuple` or `set`.
+[enum](./enum) | Enumerators.
 [error](./error) | An object containing information about an error.
 [float](./float) | Floating point type.
 [info](./info) | Return value of all `*_info()` functions.

@@ -1,6 +1,6 @@
 ---
 title: "add"
-weight: 137
+weight: 150
 ---
 
 Adds a property to an existing [Type](../../../data-types/type).
@@ -28,7 +28,7 @@ initial_value | any | The default value to set on existing instances of this [Ty
 
 The value `nil`.
 
-> This code shows the return value for the action ***add***:
+> This code shows how to use the action ***add***:
 
 ```thingsdb,json_response
 // Create type `Person`

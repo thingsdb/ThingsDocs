@@ -1,6 +1,6 @@
 ---
 title: "get"
-weight: 83
+weight: 86
 ---
 
 Return the value of a property on a [thing](..) by a given property name.
