@@ -1,0 +1,62 @@
+---
+title: "enum_info"
+weight: 118
+---
+
+Returns information about a given [enumeration type](../../data-types/enum).
+
+Value | Description
+------- | -----------
+`enum_id` | Internal enum ID *(can be used to identify Enums in collection events)*.
+`created_at` | [Time Stamp](https://wikipedia.org/wiki/Unix_time) when the enum is created.
+`modified_at` | [Time Stamp](https://wikipedia.org/wiki/Unix_time) when the enum is last modified or `nil` if never modified.
+`name` | Enum's name.
+`members` | Array with arrays containing two strings, the name and value.
+
+This function does *not* generate an [event](../../overview/events).
+
+### Function
+
+`enum_info(enum)`
+
+### Arguments
+
+Argument | Type | Description
+-------- | ---- | -----------
+enum | str | The name of the enum for which the information has to be returned.
+
+### Return value
+
+Returns [info](../../data-types/info) about the enumeration type.
+
+### Example
+
+> This code shows the output of ***enum_info()***:
+
+```thingsdb,should_pass
+// Just a Type as an example
+set_enum('Color', {
+    RED: '#ff0000',
+    GREEN: '#00ff00',
+    BLUE: '#0000ff',
+});
+
+// Return Type info
+enum_info('Color');
+```
+
+> Example return value in JSON format
+
+```json
+{
+    "enum_id": 0,
+    "created_at": 1589917348,
+    "modified_at": null,
+    "name": "Color",
+    "members": [
+        ["RED", "#ff0000"],
+        ["GREEN", "#00ff00"],
+        ["BLUE", "#0000ff"]
+    ]
+}
+```

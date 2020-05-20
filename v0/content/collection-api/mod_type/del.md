@@ -1,6 +1,6 @@
 ---
 title: "del"
-weight: 138
+weight: 151
 ---
 
 Deletes a property from an existing [Type](../../../data-types/type).
@@ -25,7 +25,7 @@ property_name | str | Name of the property that has to be removed.
 
 The value `nil`.
 
-> This code shows the return value for the action ***del***:
+> This code shows how to use the action ***del***:
 
 ```thingsdb,json_response
 // Create type `Person`

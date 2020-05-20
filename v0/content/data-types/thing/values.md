@@ -1,6 +1,6 @@
 ---
 title: "values"
-weight: 91
+weight: 94
 ---
 
 Returns a list with all the property values of a [thing](..).
