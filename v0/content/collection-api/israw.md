@@ -1,6 +1,6 @@
 ---
 title: "israw"
-weight: 129
+weight: 138
 ---
 
 This function determines whether the provided value is of

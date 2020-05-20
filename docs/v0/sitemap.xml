@@ -143,6 +143,18 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/enum/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/enum/name/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/enum/value/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/data-types/error/</loc>
   </url>
   
@@ -447,7 +459,23 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/del_enum/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/collection-api/del_type/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/enum/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/enum_info/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/enums_info/</loc>
   </url>
   
   <url>
@@ -456,6 +484,10 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v0/collection-api/float/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/has_enum/</loc>
   </url>
   
   <url>
@@ -484,6 +516,10 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v0/collection-api/isbytes/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/isenum/</loc>
   </url>
   
   <url>
@@ -543,6 +579,22 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/mod_enum/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/mod_enum/add/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/mod_enum/del/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/mod_enum/mod/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/collection-api/mod_type/</loc>
   </url>
   
@@ -596,6 +648,10 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v0/collection-api/set/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/set_enum/</loc>
   </url>
   
   <url>

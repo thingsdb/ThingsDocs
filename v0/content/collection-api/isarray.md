@@ -1,6 +1,6 @@
 ---
 title: "isarray"
-weight: 118
+weight: 126
 ---
 
 This function determines whether the provided value is of type [list](../../data-types/list) or [tuple](../../data-types/tuple) or not. The functions [islist](../../collection-api/islist) and

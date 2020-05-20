@@ -33,6 +33,9 @@ data-types
         call
         def
         doc
+    enum
+        name
+        value
     error
         code
         msg
@@ -109,9 +112,14 @@ collection-api
     bool
     bytes
     deep
+    del_enum
     del_type
+    enum
+    enum_info
+    enums_info
     err
     float
+    has_enum
     has_type
     if
     int
@@ -119,6 +127,7 @@ collection-api
     isascii
     isbool
     isbytes
+    isenum
     iserr
     isfloat
     isinf
@@ -133,6 +142,10 @@ collection-api
     istuple
     isutf8
     list
+    mod_enum
+        add
+        del
+        mod
     mod_type
         add
         del
@@ -147,6 +160,7 @@ collection-api
     refs
     return
     set
+    set_enum
     set_type
     str
     thing
