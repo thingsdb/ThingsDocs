@@ -193,7 +193,7 @@
 	"title": "Data Types",
 	"tags": [],
 	"description": "",
-	"content": "Data Types ThingsDB uses the following data types:\n   type Description     bool Booleans are either true or false.   bytes Byte sequence.   closure Closures can be used as functions or to consume items from a thing, list, tuple or set.   error An object containing information about an error.   float Floating point type.   info Return value of all *_info() functions.   int Integer type.   list Mutable array type.   nil Used to define a null value, or no value at all.   regex Regular expression.   set Unordered group of unique things.   str String type.   thing Object with key value pairs.   tuple Nested and immutable list.   Type Type are things with pre-defined properties.   \u0026lt;Type\u0026gt; Wrapped thing by a Type.    "
+	"content": "Data Types ThingsDB uses the following data types:\n   type Description     bool Booleans are either true or false.   bytes Byte sequence.   closure Closures can be used as functions or to consume items from a thing, list, tuple or set.   enum Enumerators.   error An object containing information about an error.   float Floating point type.   info Return value of all *_info() functions.   int Integer type.   list Mutable array type.   nil Used to define a null value, or no value at all.   regex Regular expression.   set Unordered group of unique things.   str String type.   thing Object with key value pairs.   tuple Nested and immutable list.   Type Type are things with pre-defined properties.   \u0026lt;Type\u0026gt; Wrapped thing by a Type.    "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/data-types/bool/",
@@ -243,6 +243,27 @@
 	"tags": [],
 	"description": "",
 	"content": "Returns a doc string from a closure.\nAn empty string (\u0026quot;\u0026quot;) is returned if the closure has no doc string.\nThis function does not generate an event.\nFunction closure.doc()\nArguments None\nReturn value Returns the doc string.\nExample  This code creates a closure with a doc string:\n add_one = |x| { \u0026quot;Adds one to a given value.\u0026quot;; x+1; }; // Return the doc string add_one.doc();  Return value in JSON format\n \u0026#34;Adds one to a given value.\u0026#34; "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/data-types/enum/",
+	"title": "enum",
+	"tags": [],
+	"description": "",
+	"content": "Enumerators are a set of unique names coupled to a unique set of values. ThingsDB support enumerators for type int, float, str, bytes and thing, where all members must have the same type. Thus, it is not possible to have an enum type with for example both values of type int and str. Enumerators with type thing may contain things using different Type as each instance of a Type is still a thing.\nFunctions    Function Description     name Return the name of the enum member.   value Return the value of the enum member.    Related functions    Function Description     del_enum Delete an enumerator type.   enum Get an enum member by value.   enum_info Return info about the enumerator type.   enums_info Return info about all the enumerator types in the current scope.   has_enum Determine if the current scope has a given enumerator type.   isenum Test if a given value is a member of an enumerator type.   mod_enum Modify an existing enumerator type.   set_enum Create a new enumerator type.    Example // Create an enumeration type using `set_enum` set_enum('Severity', { CRITICAL: 1, MAJOR: 2, MINOR: 3 }); // Get a member by name a = Severity{CRITICAL}; // Or, dynamically by name b = Severity{||'MAJOR'}; // Get a member by it's value c = enum('Severity', 3); // Variable `a`, `b` and `c` are all members of type `Severity` assert( type(a) == 'Severity' ); // The actual value can be accessed via the `.value()` function assert( b.value() == 2 ); // Or, the name can be returned using the `.name()` function assert( c.name() == 'MINOR'); // The value of the members will be returned in a response [a, b, c];  Return value in JSON format\n [ 1, 2, 3 ] "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/data-types/enum/name/",
+	"title": "name",
+	"tags": [],
+	"description": "",
+	"content": "Returns the name of the enumerator member.\nThis function does not generate an event.\nFunction member.name()\nArguments None\nReturn value Returns the name of the enumerator member.\nExample  This code creates a closure with a doc string:\n set_enum(\u0026quot;Color\u0026quot;, { RED: '#f00' }); // Return the name of Color{RED} Color{RED}.name();  Return value in JSON format\n \u0026#34;RED\u0026#34; "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/data-types/enum/value/",
+	"title": "value",
+	"tags": [],
+	"description": "",
+	"content": "Returns the value of the enumerator member.\nThis function does not generate an event.\nFunction member.value()\nArguments None\nReturn value Returns the name of the enumerator member.\nExample  This code creates a closure with a doc string:\n set_enum(\u0026quot;Color\u0026quot;, { RED: '#f00' }); val = Color{RED}.value(); assert( isstr( val ) ); // the value is of type `str` val.upper(); // Return the value upper case  Return value in JSON format\n \u0026#34;#F00\u0026#34; "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/data-types/error/",
@@ -777,11 +798,39 @@
 	"content": "Returns the current deep value for the running query. The deep value indicates how far down the result of a query is returned. For example, thing1 may contain a thing2 that contains a thing3. A deep value of 1 would only show the content of thing1 and a deep value of 3 will go as deep as the content of thing3.\nThe deep value changes when a function with a return(..) is called which has changed the deep value for this query.\nThis function does not generate an event.\nFunction deep()\nArguments None\nReturn value The current deep value for the running query.\nExample  This code uses deep() to return the default deep value:\n deep(); // returns the default since `deep` is not changed  Return value in JSON format\n 1 "
 },
 {
+	"uri": "https://docs.thingsdb.net/v0/collection-api/del_enum/",
+	"title": "del_enum",
+	"tags": [],
+	"description": "",
+	"content": "Deletes an existing enumerator type.\nIt is not possible to delete a enumerator type which is used by a Type or if one of the enumerator members is still being used. See example below.\nThis function generates an event.\nFunction del_enum(enum)\nArguments    Argument Type Description     enum string Name of the enumerator type to be deleted.    Return value The value nil.\nExample  This code shows how to use del_enum():\n // Create type `B` which has a reference to type `A` set_enum('Status', { OK: 0, NOK: -1, }); status = enum('Status', 0); // Cannot delete `Status` since one of the members is being used assert(iserr(try(del_enum('Status')))); // Assign `nil` to status so the enum member is released status = nil; // Now we can remove type `A` del_enum('Status');  Return value in JSON format\n null "
+},
+{
 	"uri": "https://docs.thingsdb.net/v0/collection-api/del_type/",
 	"title": "del_type",
 	"tags": [],
 	"description": "",
 	"content": "Deletes an existing Type.\nIt is not possible to delete a Type which is used by another Type. You should first change or delete the other Type before you are able to delete this Type. See the example below.\nIf there are still instances of the Type you delete, then all instances will be converted to normal things. No properties will be removed in this process. With type_count(..) you can view the number of instances of a certain Type.\n This function generates an event.\nFunction del_type(type_name)\nArguments    Argument Type Description     type_name string Name of the Type to be deleted.    Return value The value nil.\nExample  This code shows how to use del_type():\n // Create type `A` new_type('A'); // Create type `B` which has a reference to type `A` set_type('B', { a: 'A' }); // Cannot delete `A` since it is referenced by type `B`. assert(iserr(try(del_type('A')))); // First change type `B` mod_type('B', 'mod', 'a', 'thing'); // Now we can remove type `A` del_type('A');  Return value in JSON format\n null "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/collection-api/enum/",
+	"title": "enum",
+	"tags": [],
+	"description": "",
+	"content": "Returns a enum member from a given value. A lookup_err() is raised if either the enum or value is not found.\nThis function does not generate an event.\nFunction enum(enum, value)\nArguments    Argument Type Description     enum str (required) The name of the enumeration type.   value any (required) The value to search the enum member for.    Return value Member within the given enum equal to the given value.\nExample  This code shows some return values for enum(..):\n set_enum('Status', { OK: 0, NOK: -1 }); // get the `Status` member with value `0` status = enum('Status', 0); status.name(); // return the `name` of the enum member  Return value in JSON format\n \u0026#34;OK\u0026#34; "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/collection-api/enum_info/",
+	"title": "enum_info",
+	"tags": [],
+	"description": "",
+	"content": "Returns information about a given enumeration type.\n   Value Description     enum_id Internal enum ID (can be used to identify Enums in collection events).   created_at Time Stamp when the enum is created.   modified_at Time Stamp when the enum is last modified or nil if never modified.   name Enum\u0026rsquo;s name.   members Array with arrays containing two strings, the name and value.    This function does not generate an event.\nFunction enum_info(enum)\nArguments    Argument Type Description     enum str The name of the enum for which the information has to be returned.    Return value Returns info about the enumeration type.\nExample  This code shows the output of enum_info():\n // Just a Type as an example set_enum('Color', { RED: '#ff0000', GREEN: '#00ff00', BLUE: '#0000ff', }); // Return Type info enum_info('Color');  Example return value in JSON format\n { \u0026#34;enum_id\u0026#34;: 0, \u0026#34;created_at\u0026#34;: 1589917348, \u0026#34;modified_at\u0026#34;: null, \u0026#34;name\u0026#34;: \u0026#34;Color\u0026#34;, \u0026#34;members\u0026#34;: [ [\u0026#34;RED\u0026#34;, \u0026#34;#ff0000\u0026#34;], [\u0026#34;GREEN\u0026#34;, \u0026#34;#00ff00\u0026#34;], [\u0026#34;BLUE\u0026#34;, \u0026#34;#0000ff\u0026#34;] ] } "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/collection-api/enums_info/",
+	"title": "enums_info",
+	"tags": [],
+	"description": "",
+	"content": "Returns enumeration type information about all the enum\u0026rsquo;s within a collection scope.\nSee the enum_info() function documentation for an example of the exposed information.\nThis function does not generate an event.\nFunction enums_info()\nArguments None\nReturn value List with info about all enumeration types in the collection scope.\n"
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/err/",
@@ -796,6 +845,13 @@
 	"tags": [],
 	"description": "",
 	"content": "Returns a float from a specified value. If no value is given, the default float 0.0 is returned.\nIf the specified value is of type str, then the initial characters of the string are converted until a non-digit character is found. Initial white space is ignored and the number may start with an optional + or - sign.\nType bool values are converted to 1.0 for true and 0.0 for false.\nThis function does not generate an event.\nFunction float(value)\nArguments    Argument Type Description     value any (optional) The value where to create a floating point value for.    Return value A floating point value. Other type than float, str, bool or int will raise a bad_data_err().\nExample  This code shows some return values for float():\n [ float(), float(42), float('0.365e+3 days'), float('0xFF'), float(true), float(false), ];  Return value in JSON format\n [ 0, 42.0, 365.0, 255.0, 1.0, 0.0 ] "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/collection-api/has_enum/",
+	"title": "has_enum",
+	"tags": [],
+	"description": "",
+	"content": "Determines if a enumerator type exists in the current @collection scope.\nThis function does not generate an event.\nFunction has_enum(enum)\nArguments    Argument Type Description     enum str (required) Enum name to check.    Return value Returns true if a enumerator type with a given name exists and otherwise false.\nExample  This code shows an example use case of has_enum():\n has_enum('XXX');  Return value in JSON format\n false "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/has_type/",
@@ -845,6 +901,13 @@
 	"tags": [],
 	"description": "",
 	"content": "This function determines whether the provided value is of type bytes or not.\nThis function does not generate an event.\nFunction isbytes(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type bytes, else it returns false.\nExample  This code shows some return values for isbytes():\n [ isbytes( bytes() ), isbytes( 'abc' ), ];  Return value in JSON format\n [ true, false ] "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/collection-api/isenum/",
+	"title": "isenum",
+	"tags": [],
+	"description": "",
+	"content": "This function determines whether the provided value is an enumeration type member or not.\nThis function does not generate an event.\nFunction isenum(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type enum, else it returns false.\nExample  This code shows some return values for isenum():\n set_enum('Status', { OK: 0, NOK: -1, }); [ isenum( Status{OK} ), isenum( 0 ), ];  Return value in JSON format\n [ true, false ] "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/iserr/",
@@ -945,6 +1008,34 @@
 	"content": "Returns a new empty list or returns a list for a given set.\nThis function does not generate an event.\nFunction list([value])\nArguments    Argument Type Description     value set/list/tuple (optional) Optional value to initialize the list.    Return value A new list.\nExample  This code shows some return values for list():\n list( set({}, {}) );  Return value in JSON format\n [ {}, {} ] "
 },
 {
+	"uri": "https://docs.thingsdb.net/v0/collection-api/mod_enum/",
+	"title": "mod_enum",
+	"tags": [],
+	"description": "",
+	"content": "This function is used to modify an existing enumerator type. A number of actions can be performed with this function.\nThis function generates an event.\nActions    Action Description     add Add a member to an existing enumerator type.   del Delete a member of an existing enumerator type.   mod Modify a member value of an existing enumerator type.    "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/collection-api/mod_enum/add/",
+	"title": "add",
+	"tags": [],
+	"description": "",
+	"content": "Adds a member to an existing enumerator type.\nAction mod_enum(enum, 'add', name, value)\nArguments    Argument Type Description     enum str Name of the enumerator type where the member has to be added to.   'add' str Passing this argument will result in an add action.   name str Name of the member that has to be added.   value depends Value of the member that has to be added. The type of the member must be equal to the other enum values.    Return value The value nil.\n This code shows how to use the action add:\n // Create enum `Color` set_enum('Color', { RED: '#ff0000', BLUE: '#00ff00' }); // Add `GREEN` to enum `Color` mod_enum('Color', 'add', 'GREEN', '#0000ff');  Return value in JSON format\n null "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/collection-api/mod_enum/del/",
+	"title": "del",
+	"tags": [],
+	"description": "",
+	"content": "Delete a member from an existing enumerator type.\nA member may only be removed if the member is no longer being used. Otherwise an operation_err() is raised.\n Action mod_enum(enum, 'del', name)\nArguments    Argument Type Description     enum str Name of the enumerator type where the member has to be removed from.   'del' str Passing this argument will result in a delete action.   name str Name of the member to be removed.    Return value The value nil.\n This code shows how to use the action del:\n // Create enum `Color` set_enum('Color', { RED: '#ff0000', BLUE: '#00ff00' }); // Remove `BLUE` from enum `Color` mod_enum('Color', 'del', 'BLUE');  Return value in JSON format\n null "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/collection-api/mod_enum/mod/",
+	"title": "mod",
+	"tags": [],
+	"description": "",
+	"content": "Modify a member value from an existing enumerator type.\nAction mod_enum(enum, 'mod', name, value)\nArguments    Argument Type Description     enum str Name of the enumerator type where the member has to be removed from.   'mod' str Passing this argument will result in a modify action.   name str Name of the member that has to be modified.   value any New value for the member that has to be modified.    Return value The value nil.\n This code shows how to use the action mod:\n // Create enum `Color` set_enum('Color', { RED: '#ff0000', BLUE: '#00ff00', GREEN: '#0000aa', }); // Modify the value for `GREEN` mod_enum('Color', 'mod', 'GREEN', '#0000ff');  Return value in JSON format\n null "
+},
+{
 	"uri": "https://docs.thingsdb.net/v0/collection-api/mod_type/",
 	"title": "mod_type",
 	"tags": [],
@@ -956,14 +1047,14 @@
 	"title": "add",
 	"tags": [],
 	"description": "",
-	"content": "Adds a property to an existing Type.\nIf there are active instances of the type you want to modify, then an initial_value is required. This value is used only once for applying the value to the existing instances and is not used when new instances are created.\n Action mod_type(type_name, 'add', property_name, property_type, [initial_value])\nArguments    Argument Type Description     type_name str Name of the Type where the property has to be added to.   'add' str Passing this argument will result in an add action.   property_name str Name of the property that has to be added.   property_type str Type definition of the property that has to be added.   initial_value any The default value to set on existing instances of this Type.    Return value The value nil.\n This code shows the return value for the action add:\n // Create type `Person` set_type('Person', { name: 'str', age: 'int' }); // Add `hobbies` to type `Person` mod_type('Person', 'add', 'hobbies', '[str]');  Return value in JSON format\n null "
+	"content": "Adds a property to an existing Type.\nIf there are active instances of the type you want to modify, then an initial_value is required. This value is used only once for applying the value to the existing instances and is not used when new instances are created.\n Action mod_type(type_name, 'add', property_name, property_type, [initial_value])\nArguments    Argument Type Description     type_name str Name of the Type where the property has to be added to.   'add' str Passing this argument will result in an add action.   property_name str Name of the property that has to be added.   property_type str Type definition of the property that has to be added.   initial_value any The default value to set on existing instances of this Type.    Return value The value nil.\n This code shows how to use the action add:\n // Create type `Person` set_type('Person', { name: 'str', age: 'int' }); // Add `hobbies` to type `Person` mod_type('Person', 'add', 'hobbies', '[str]');  Return value in JSON format\n null "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/mod_type/del/",
 	"title": "del",
 	"tags": [],
 	"description": "",
-	"content": "Deletes a property from an existing Type.\nThe property will be removed from all the active instances of that Type.\n Action mod_type(type_name, 'del', property_name)\nArguments    Argument Type Description     type_name str Name of the Type where the property has to be removed from.   'del' str Passing this argument will result in a delete action.   property_name str Name of the property that has to be removed.    Return value The value nil.\n This code shows the return value for the action del:\n // Create type `Person` set_type('Person', { name: 'str', age: 'int', hobbies: '[str]' }); // Delete `hobbies` from type `Person` mod_type('Person', 'del', 'hobbies');  Return value in JSON format\n null "
+	"content": "Deletes a property from an existing Type.\nThe property will be removed from all the active instances of that Type.\n Action mod_type(type_name, 'del', property_name)\nArguments    Argument Type Description     type_name str Name of the Type where the property has to be removed from.   'del' str Passing this argument will result in a delete action.   property_name str Name of the property that has to be removed.    Return value The value nil.\n This code shows how to use the action del:\n // Create type `Person` set_type('Person', { name: 'str', age: 'int', hobbies: '[str]' }); // Delete `hobbies` from type `Person` mod_type('Person', 'del', 'hobbies');  Return value in JSON format\n null "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/mod_type/mod/",
@@ -1041,6 +1132,13 @@
 	"tags": [],
 	"description": "",
 	"content": "Returns a new empty set. If an array is given, then all items in the given array must be of type thing and a new set is returned based on the given things. Instead of an array, it is also possible to provide one thing or multiple comma-separated things.\nThis function does not generate an event.\nFunction set(array_or_things)\nArguments    Argument Type Description     array_or_things array/things (optional) Optional array or things to initialize the set.    Return value A new set.\nExample  This code shows some return values for set():\n set({name: 'Iris'});  Return value in JSON format\n [ { \u0026#34;name\u0026#34;: \u0026#34;Iris\u0026#34; } ] "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/collection-api/set_enum/",
+	"title": "set_enum",
+	"tags": [],
+	"description": "",
+	"content": "Creates a new enumerator type.\nThis function generates an event.\nFunction set_enum(enum, members)\nArguments    Argument Type Description     enum str The name of the enumerator type to create.   members thing Thing containing all the members to be set.    Return value The value nil.\nExample  This code shows how to use set_enum():\n set_enum('Status', { OK: 0, NOK: -1 });  Return value in JSON format\n null "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/set_type/",
@@ -1397,7 +1495,7 @@
 	"title": "procedure_info",
 	"tags": [],
 	"description": "",
-	"content": "Returns information about a procedure.\n   Value Description     arguments Array with positional argument names.   created_at Time Stamp when the procedure is created.   definition Closure definition. (Only available with MODIFY privileges)   doc Doc string of the closure in the procedure.   name Name of the procedure.   with_side_effects Boolean value which indicates if this procedure has side effects.    This function does not generate an event.\nFunction procedure_info(procedure);\nArguments    Argument Type Description     procedure str (required) Name of the procedure where to return the info for.    Return value Returns info about a given procedure.\nExample  Create a new procedure add_one:\n new_procedure('add_one', |x| { \u0026quot;Adds one to a given value\u0026quot;; x + 1; }); // Return the doc string for procedure `add_one` procedure_info('add_one');  Return value in JSON format\n { \u0026#34;arguments\u0026#34;: [ \u0026#34;x\u0026#34; ], \u0026#34;created_at\u0026#34;: 1579175900, \u0026#34;definition\u0026#34;: \u0026#34;|x|{\\\u0026#34;Adds one to a given value\\\u0026#34;;x+1;}\u0026#34;, \u0026#34;doc\u0026#34;: \u0026#34;Adds one to a given value\u0026#34;, \u0026#34;name\u0026#34;: \u0026#34;add_one\u0026#34;, \u0026#34;with_side_effects\u0026#34;: false } "
+	"content": "Returns information about a procedure.\n   Value Description     arguments Array with positional argument names.   created_at Time Stamp when the procedure is created.   definition Closure definition. (Only available with MODIFY privileges)   doc Doc string of the closure in the procedure.   name Name of the procedure.   with_side_effects Boolean value which indicates if this procedure has side effects.    This function does not generate an event.\nFunction procedure_info(procedure);\nArguments    Argument Type Description     procedure str (required) Name of the procedure where to return the info for.    Return value Returns info about a given procedure.\nExample  Create a new procedure add_one:\n new_procedure('add_one', |x| { \u0026quot;Adds one to a given value\u0026quot;; x + 1; }); // Return the doc string for procedure `add_one` procedure_info('add_one');  Return value in JSON format\n { \u0026#34;arguments\u0026#34;: [ \u0026#34;x\u0026#34; ], \u0026#34;created_at\u0026#34;: 1579175900, \u0026#34;definition\u0026#34;: \u0026#34;|x| {\\n \\\u0026#34;Adds one to a given value\\\u0026#34;;\\n x + 1;\\n}\u0026#34;, \u0026#34;doc\u0026#34;: \u0026#34;Adds one to a given value\u0026#34;, \u0026#34;name\u0026#34;: \u0026#34;add_one\u0026#34;, \u0026#34;with_side_effects\u0026#34;: false } "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/procedures-api/procedures_info/",
