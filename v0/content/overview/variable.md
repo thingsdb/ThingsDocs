@@ -54,14 +54,14 @@ client.query('.a = a;', a=1)
 
 ### Prevent code injection
 
-Consider you have some user input which is supposed to contain a name which you want to store in ThingsDB.
+Consider you have some user input which is supposed to contain a *name*, and you want to store that *name* in ThingsDB.
 
 ```python
 # Variable `user_input` is supposed to contain a name like `Bob`
 client.query(f'.name = "{user_input}";')
 ```
 
-Instead of a simple name, a user could insert something like this: `Bob"; .XXX = "This system is hacked!`. This would result in the following query statement:
+Instead of a *name*, a user could insert something like this: `Bob"; .XXX = "This system is hacked!`. This would result in the following query statement:
 
 ```thingsdb,should_pass
 .name = "Bob"; .XXX = "This system is hacked!";
