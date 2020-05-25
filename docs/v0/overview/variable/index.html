@@ -11,20 +11,20 @@
     <title>Variable :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1589956867" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1589956867" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1589956867" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1589956867" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1589956867" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1589956867" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1589956867" rel="stylesheet">
-    <link href="/v0/css/theme.css?1589956867" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1589956867" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1590410915" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1590410915" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1590410915" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1590410915" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1590410915" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1590410915" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1590410915" rel="stylesheet">
+    <link href="/v0/css/theme.css?1590410915" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1590410915" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1589956867" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1590410915" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1589956867"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1590410915"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1589956867"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1589956867"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1590410915"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1590410915"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1589956867"></script>
+<script type="text/javascript" src="/v0/js/search.js?1590410915"></script>
 
     
   </div>
@@ -4988,7 +4988,11 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#injecting-variable">Injecting variable</a></li>
+    <li><a href="#injecting-variable">Injecting variable</a>
+      <ul>
+        <li><a href="#prevent-code-injection">Prevent code injection</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -5044,13 +5048,22 @@ b = 'Hello';
 ]
 </code></pre></div><h2 id="injecting-variable">Injecting variable</h2>
 <p>When running a query to ThingsDB, it is possible to <em>inject</em> variables into the code.
-This can be both easy for some data and in some cases necessary when inserting binary data.</p>
+This is easy, safe, and in some cases even necessary when for example inserting binary data.</p>
 <blockquote>
 <p>Python example:</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#75715e"># inject a variable into the code:</span>
-    client<span style="color:#f92672">.</span>query(<span style="color:#e6db74">&#39;.a = a;&#39;</span>, a<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
-</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># inject a variable into the code:</span>
+client<span style="color:#f92672">.</span>query(<span style="color:#e6db74">&#39;.a = a;&#39;</span>, a<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</code></pre></div><h3 id="prevent-code-injection">Prevent code injection</h3>
+<p>Consider you have some user input which is supposed to contain a name which you want to store in ThingsDB.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Variable `user_input` is supposed to contain a name like `Bob`</span>
+client<span style="color:#f92672">.</span>query(f<span style="color:#e6db74">&#39;.name = &#34;{user_input}&#34;;&#39;</span>)
+</code></pre></div><p>Instead of a simple name, a user could insert something like this: <code>Bob&quot;; .XXX = &quot;This system is hacked!</code>. This would result in the following query statement:</p>
+<pre><code class="language-thingsdb,should_pass" data-lang="thingsdb,should_pass">.name = &quot;Bob&quot;; .XXX = &quot;This system is hacked!&quot;;
+</code></pre><p>This is very dangerous and definitely not what we want but luckily ThingsDB has a simple solution: <em>variable injection</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">client<span style="color:#f92672">.</span>query(<span style="color:#e6db74">&#39;.name = inp;&#39;</span>, inp<span style="color:#f92672">=</span>user_input)
+</code></pre></div><p>Using <em>variable injection</em> we can parse user input in a safe and secure way to ThingsDB.</p>
+
 
 <footer class=" footline" >
 	
@@ -5080,19 +5093,19 @@ This can be both easy for some data and in some cases necessary when inserting b
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1589956867"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1589956867"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1589956867"></script>
-    <script src="/v0/js/jquery.sticky.js?1589956867"></script>
-    <script src="/v0/js/featherlight.min.js?1589956867"></script>
-    <script src="/v0/js/highlight.pack.js?1589956867"></script>
+    <script src="/v0/js/clipboard.min.js?1590410915"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1590410915"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1590410915"></script>
+    <script src="/v0/js/jquery.sticky.js?1590410915"></script>
+    <script src="/v0/js/featherlight.min.js?1590410915"></script>
+    <script src="/v0/js/highlight.pack.js?1590410915"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1589956867"></script>
-    <script src="/v0/js/learn.js?1589956867"></script>
-    <script src="/v0/js/hugo-learn.js?1589956867"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1590410915"></script>
+    <script src="/v0/js/learn.js?1590410915"></script>
+    <script src="/v0/js/hugo-learn.js?1590410915"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1589956867" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1589956867"></script>
+    <link href="/v0/mermaid/mermaid.css?1590410915" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1590410915"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

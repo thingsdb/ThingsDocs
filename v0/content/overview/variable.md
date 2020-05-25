@@ -43,11 +43,35 @@ b = 'Hello';
 ## Injecting variable
 
 When running a query to ThingsDB, it is possible to *inject* variables into the code.
-This can be both easy for some data and in some cases necessary when inserting binary data.
+This is easy, safe, and in some cases even necessary when for example inserting binary data.
 
 > Python example:
 
 ```python
-    # inject a variable into the code:
-    client.query('.a = a;', a=1)
+# inject a variable into the code:
+client.query('.a = a;', a=1)
 ```
+
+### Prevent code injection
+
+Consider you have some user input which is supposed to contain a name which you want to store in ThingsDB.
+
+```python
+# Variable `user_input` is supposed to contain a name like `Bob`
+client.query(f'.name = "{user_input}";')
+```
+
+Instead of a simple name, a user could insert something like this: `Bob"; .XXX = "This system is hacked!`. This would result in the following query statement:
+
+```thingsdb,should_pass
+.name = "Bob"; .XXX = "This system is hacked!";
+```
+
+This is very dangerous and definitely not what we want but luckily ThingsDB has a simple solution: *variable injection*
+
+```python
+client.query('.name = inp;', inp=user_input)
+```
+
+Using *variable injection* we can parse user input in a safe and secure way to ThingsDB.
+
