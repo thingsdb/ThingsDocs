@@ -4,7 +4,7 @@ weight: 178
 ---
 
 Returns `counters` for the ThingsDB node in the selected scope. Counters start all at zero when ThingsDB
-is started, or when the counters are reset by using [reset_counters()'](../../node-api/reset_counters).
+is started, or when the counters are reset by using [reset_counters()'](../reset_counters).
 
 Counters give information about things, queries and events. If you suspect failed queries, then
 the counters might provide you with more information.
@@ -25,6 +25,7 @@ longest_event_duration | Longest event duration, in seconds.
 longest_query_duration | Longest query duration, in seconds.
 queries_success | Number of queries where this node acted as the master node and the query has successful finished.
 queries_with_error | Number of queries where this node acted as the master node but the query has returned with an error.
+started_at | UNIX time-stamp in seconds when the counters started counting. See [reset_counters()](../reset_counters).
 watcher_failed | The value is increased if an update could not be forwarded to a registered watcher.
 
 This function does *not* generate an [event](../../overview/events).
@@ -68,6 +69,7 @@ counters();
     "longest_query_duration": 0.000152664,
     "queries_success": 159,
     "queries_with_error": 0,
+    "started_at": 1590496024,
     "watcher_failed": 0
 }
 ```
