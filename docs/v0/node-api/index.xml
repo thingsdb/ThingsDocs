@@ -109,14 +109,13 @@ Restoring from a backup file can be done with either the restore(.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/node-api/reset_counters/</guid>
-      <description>Resets the counters for the ThingsDB node you are connected too. Other nodes are not affected.
+      <description>Resets the counters for the ThingsDB node you are connected too. Other nodes are not affected. This will set the started_at counter value to the current UNIX time-stamp in seconds and all other counters to 0 (zero).
 This function does not generate an event.
 Function reset_counters();
 Arguments None
 Return value Returns nil.
 Example  This code will reset the counters on a node:
- // resets counters on `localhost:9200` reset_counters();  Example return value in JSON format (the new collection id)
- null </description>
+ // resets counters on the connected node reset_counters();  Example return value in JSON format (the new collection id)</description>
     </item>
     
     <item>
