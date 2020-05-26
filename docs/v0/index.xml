@@ -1359,8 +1359,8 @@ Example  This code shows an example use case of has_enum():
       <guid>https://docs.thingsdb.net/v0/collection-api/has_type/</guid>
       <description>Determines if a Type exists in the current @collection scope.
 This function does not generate an event.
-Function has_type(type_name)
-Arguments    Argument Type Description     type_name str (required) Type name to check.    Return value Returns true if a Type with a given name exists and otherwise false.
+Function has_type(type)
+Arguments    Argument Type Description     type str (required) Type name to check.    Return value Returns true if a Type with a given name exists and otherwise false.
 Example  This code shows an example use case of has_type():
  has_type(&#39;XXX&#39;);  Return value in JSON format</description>
     </item>
@@ -1678,6 +1678,17 @@ Arguments    Argument Type Description     enum str Name of the enumerator type 
     </item>
     
     <item>
+      <title>ren</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/mod_enum/ren/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/mod_enum/ren/</guid>
+      <description>Rename a member value from an existing enumerator type.
+Action mod_enum(enum, &#39;ren&#39;, name, to)
+Arguments    Argument Type Description     enum str Name of the enumerator type where the member has to be removed from.   &#39;ren&#39; str Passing this argument will result in a rename action.   name str Name of the member that has to be modified.   to str New name for the member that has to be modified.</description>
+    </item>
+    
+    <item>
       <title>add</title>
       <link>https://docs.thingsdb.net/v0/collection-api/mod_type/add/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1685,8 +1696,8 @@ Arguments    Argument Type Description     enum str Name of the enumerator type 
       <guid>https://docs.thingsdb.net/v0/collection-api/mod_type/add/</guid>
       <description>Adds a property to an existing Type.
 If there are active instances of the type you want to modify, then an initial_value is required. This value is used only once for applying the value to the existing instances and is not used when new instances are created.
- Action mod_type(type_name, &#39;add&#39;, property_name, property_type, [initial_value])
-Arguments    Argument Type Description     type_name str Name of the Type where the property has to be added to.</description>
+ Action mod_type(type, &#39;add&#39;, name, definition, [initial_value])
+Arguments    Argument Type Description     type str Name of the Type where the property has to be added to.</description>
     </item>
     
     <item>
@@ -1697,8 +1708,8 @@ Arguments    Argument Type Description     type_name str Name of the Type where 
       <guid>https://docs.thingsdb.net/v0/collection-api/mod_type/del/</guid>
       <description>Deletes a property from an existing Type.
 The property will be removed from all the active instances of that Type.
- Action mod_type(type_name, &#39;del&#39;, property_name)
-Arguments    Argument Type Description     type_name str Name of the Type where the property has to be removed from.   &#39;del&#39; str Passing this argument will result in a delete action.   property_name str Name of the property that has to be removed.</description>
+ Action mod_type(type, &#39;del&#39;, name)
+Arguments    Argument Type Description     type str Name of the Type where the property has to be removed from.   &#39;del&#39; str Passing this argument will result in a delete action.   name str Name of the property that has to be removed.</description>
     </item>
     
     <item>
@@ -1710,8 +1721,19 @@ Arguments    Argument Type Description     type_name str Name of the Type where 
       <description>Modifies the type definition of a property from an existing Type.
 When modifying a property of a Type, the changed property type can only be less &amp;lsquo;strict&amp;rsquo;.
 So for example, age: &#39;int&#39; can become age: &#39;int?&#39;, but not the other way around.
- Action mod_type(type_name, &#39;mod&#39;, property_name, property_type)
-Arguments    Argument Type Description     type_name str Name of the Type where the property has to be modified from.</description>
+ Action mod_type(type, &#39;mod&#39;, name, definition)
+Arguments    Argument Type Description     type str Name of the Type where the property has to be modified from.</description>
+    </item>
+    
+    <item>
+      <title>ren</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/mod_type/ren/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/mod_type/ren/</guid>
+      <description>Rename a property from an existing Type.
+Action mod_type(type, &#39;ren&#39;, name, to)
+Arguments    Argument Type Description     type str Name of the Type where the property has to be modified from.   &#39;ren&#39; str Passing this argument will result in a modify action.   name str Name of the property that has to be modified.   to str New name for the property that has to be modified.</description>
     </item>
     
     <item>
@@ -1723,8 +1745,8 @@ Arguments    Argument Type Description     type_name str Name of the Type where 
       <description>Creates a new instance of a defined Type.
 When possible it is preferred to use the syntax MyType{...} to create a instance of a certain Type. However, sometimes you need to create an instance dynamically with the Type&amp;rsquo;s name as variable and then new() can be used.
  This function generates an event.
-Function new(type_name, value)
-Arguments    Argument Type Description     type_name str The name of the Type that an instance must be made of.</description>
+Function new(type, value)
+Arguments    Argument Type Description     type str The name of the Type that an instance must be made of.</description>
     </item>
     
     <item>
@@ -1736,7 +1758,7 @@ Arguments    Argument Type Description     type_name str The name of the Type th
       <description>Creates a new Type. This function only creates a new type and does not allow you to specify any fields. With the set_type() function you can define the fields for the new type.
 It is possible to use set_type directly without calling new_type first. However, sometimes you want to cross reference two types so you want both type to exists before calling set_type.
  This function generates an event.
-Function new_type(type_name)</description>
+Function new_type(type)</description>
     </item>
     
     <item>
@@ -1866,8 +1888,8 @@ Example  This code shows how to use set_enum():
       <guid>https://docs.thingsdb.net/v0/collection-api/set_type/</guid>
       <description>Defines the properties of a Type. Function set_type works only on a new Type. Use mod_type() if you want to change an existing Type, see mod_type.
 This function generates an event.
-Function set_type(type_name, value)
-Arguments    Argument Type Description     type_name str The name of the Type where the properties have to be set.   value thing Thing containing all the properties to be set.</description>
+Function set_type(type, value)
+Arguments    Argument Type Description     type str The name of the Type where the properties have to be set.   value thing Thing containing all the properties to be set.</description>
     </item>
     
     <item>
@@ -1930,8 +1952,8 @@ Example  Returns the type name of a given value:
       <guid>https://docs.thingsdb.net/v0/collection-api/type_count/</guid>
       <description>Returns the number of instances of a given Type within a collection.
 This function does not generate an event.
-Function type_count(type_name)
-Arguments    Argument Type Description     type_name str The name of the Type for which the number of instances must be returned.    Return value An int representing the number of occurrences.</description>
+Function type_count(type)
+Arguments    Argument Type Description     type str The name of the Type for which the number of instances must be returned.    Return value An int representing the number of occurrences.</description>
     </item>
     
     <item>

@@ -1,6 +1,6 @@
 ---
 title: "new_type"
-weight: 154
+weight: 156
 ---
 
 Creates a new [Type](../../data-types/type). This function *only* creates a new type
@@ -16,13 +16,13 @@ This function generates an [event](../../overview/events).
 
 ### Function
 
-`new_type(type_name)`
+`new_type(type)`
 
 ### Arguments
 
 Argument | Type | Description
 -------- | ---- | -----------
-type_name | string | Name of the Type to be created.
+type | string | Name of the Type to be created.
 
 ### Return value
 

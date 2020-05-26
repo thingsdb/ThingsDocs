@@ -1,6 +1,6 @@
 ---
 title: "new"
-weight: 153
+weight: 155
 ---
 
 Creates a new instance of a defined [Type](../../data-types/type).
@@ -13,13 +13,13 @@ This function generates an [event](../../overview/events).
 
 ### Function
 
-`new(type_name, value)`
+`new(type, value)`
 
 ### Arguments
 
 Argument | Type | Description
 -------- | ---- | -----------
-type_name | str | The name of the Type that an instance must be made of.
+type | str | The name of the Type that an instance must be made of.
 value | thing | Thing containing all the properties that must be added to the new instance of the given Type.
 
 ### Return value
@@ -31,17 +31,15 @@ A Thing containing all the properties which have been added to the new instance 
 > This code shows how to use ***new()***:
 
 ```thingsdb,json_response
-type_name = 'Person';
-
 // Create type `Person`
-set_type(type_name, {
+set_type('Person', {
     name: 'str',
     age: 'int',
     hobbies: '[str]'
 });
 
 // Create an instance of type `Person`
-new(type_name, {
+new('Person', {
     name: 'John',
     age: 34,
     hobbies: ['Football']

@@ -195,8 +195,8 @@ Example  This code shows an example use case of has_enum():
       <guid>https://docs.thingsdb.net/v0/collection-api/has_type/</guid>
       <description>Determines if a Type exists in the current @collection scope.
 This function does not generate an event.
-Function has_type(type_name)
-Arguments    Argument Type Description     type_name str (required) Type name to check.    Return value Returns true if a Type with a given name exists and otherwise false.
+Function has_type(type)
+Arguments    Argument Type Description     type str (required) Type name to check.    Return value Returns true if a Type with a given name exists and otherwise false.
 Example  This code shows an example use case of has_type():
  has_type(&#39;XXX&#39;);  Return value in JSON format</description>
     </item>
@@ -488,8 +488,8 @@ Example  This code shows some return values for list():
       <description>Creates a new instance of a defined Type.
 When possible it is preferred to use the syntax MyType{...} to create a instance of a certain Type. However, sometimes you need to create an instance dynamically with the Type&amp;rsquo;s name as variable and then new() can be used.
  This function generates an event.
-Function new(type_name, value)
-Arguments    Argument Type Description     type_name str The name of the Type that an instance must be made of.</description>
+Function new(type, value)
+Arguments    Argument Type Description     type str The name of the Type that an instance must be made of.</description>
     </item>
     
     <item>
@@ -501,7 +501,7 @@ Arguments    Argument Type Description     type_name str The name of the Type th
       <description>Creates a new Type. This function only creates a new type and does not allow you to specify any fields. With the set_type() function you can define the fields for the new type.
 It is possible to use set_type directly without calling new_type first. However, sometimes you want to cross reference two types so you want both type to exists before calling set_type.
  This function generates an event.
-Function new_type(type_name)</description>
+Function new_type(type)</description>
     </item>
     
     <item>
@@ -631,8 +631,8 @@ Example  This code shows how to use set_enum():
       <guid>https://docs.thingsdb.net/v0/collection-api/set_type/</guid>
       <description>Defines the properties of a Type. Function set_type works only on a new Type. Use mod_type() if you want to change an existing Type, see mod_type.
 This function generates an event.
-Function set_type(type_name, value)
-Arguments    Argument Type Description     type_name str The name of the Type where the properties have to be set.   value thing Thing containing all the properties to be set.</description>
+Function set_type(type, value)
+Arguments    Argument Type Description     type str The name of the Type where the properties have to be set.   value thing Thing containing all the properties to be set.</description>
     </item>
     
     <item>
@@ -695,8 +695,8 @@ Example  Returns the type name of a given value:
       <guid>https://docs.thingsdb.net/v0/collection-api/type_count/</guid>
       <description>Returns the number of instances of a given Type within a collection.
 This function does not generate an event.
-Function type_count(type_name)
-Arguments    Argument Type Description     type_name str The name of the Type for which the number of instances must be returned.    Return value An int representing the number of occurrences.</description>
+Function type_count(type)
+Arguments    Argument Type Description     type str The name of the Type for which the number of instances must be returned.    Return value An int representing the number of occurrences.</description>
     </item>
     
     <item>

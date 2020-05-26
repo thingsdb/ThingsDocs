@@ -1,6 +1,6 @@
 ---
 title: "mod"
-weight: 152
+weight: 153
 ---
 
 Modifies the type definition of a property from an existing [Type](../../../data-types/type).
@@ -12,16 +12,16 @@ So for example, `age: 'int'` can become `age: 'int?'`, but not the other way aro
 
 ### Action
 
-`mod_type(type_name, 'mod', property_name, property_type)`
+`mod_type(type, 'mod', name, definition)`
 
 ### Arguments
 
 Argument | Type | Description
 -------- | ---- | -----------
-type_name | str | Name of the Type where the property has to be modified from.
+type | str | Name of the Type where the property has to be modified from.
 `'mod'` | str | Passing this argument will result in a *modify* action.
-property_name | str | Name of the property that has to be modified.
-property_type | str | New type definition of the property that has to be modified.
+name | str | Name of the property that has to be modified.
+definition | str | New type definition of the property that has to be modified.
 
 ### Return value
 

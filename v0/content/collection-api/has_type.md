@@ -9,13 +9,13 @@ This function does *not* generate an [event](../../overview/events).
 
 ### Function
 
-`has_type(type_name)`
+`has_type(type)`
 
 ### Arguments
 
 Argument | Type | Description
 -------- | ---- | -----------
-type_name | str (required) | [Type](../../data-types/type) name to check.
+type | str (required) | [Type](../../data-types/type) name to check.
 
 ### Return value
 

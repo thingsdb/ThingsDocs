@@ -809,7 +809,7 @@
 	"title": "del_type",
 	"tags": [],
 	"description": "",
-	"content": "Deletes an existing Type.\nIt is not possible to delete a Type which is used by another Type. You should first change or delete the other Type before you are able to delete this Type. See the example below.\nIf there are still instances of the Type you delete, then all instances will be converted to normal things. No properties will be removed in this process. With type_count(..) you can view the number of instances of a certain Type.\n This function generates an event.\nFunction del_type(type_name)\nArguments    Argument Type Description     type_name string Name of the Type to be deleted.    Return value The value nil.\nExample  This code shows how to use del_type():\n // Create type `A` new_type('A'); // Create type `B` which has a reference to type `A` set_type('B', { a: 'A' }); // Cannot delete `A` since it is referenced by type `B`. assert(iserr(try(del_type('A')))); // First change type `B` mod_type('B', 'mod', 'a', 'thing'); // Now we can remove type `A` del_type('A');  Return value in JSON format\n null "
+	"content": "Deletes an existing Type.\nIt is not possible to delete a Type which is used by another Type. You should first change or delete the other Type before you are able to delete this Type. See the example below.\nIf there are still instances of the Type you delete, then all instances will be converted to normal things. No properties will be removed in this process. With type_count(..) you can view the number of instances of a certain Type.\n This function generates an event.\nFunction del_type(type)\nArguments    Argument Type Description     type string Name of the Type to be deleted.    Return value The value nil.\nExample  This code shows how to use del_type():\n // Create type `A` new_type('A'); // Create type `B` which has a reference to type `A` set_type('B', { a: 'A' }); // Cannot delete `A` since it is referenced by type `B`. assert(iserr(try(del_type('A')))); // First change type `B` mod_type('B', 'mod', 'a', 'thing'); // Now we can remove type `A` del_type('A');  Return value in JSON format\n null "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/enum/",
@@ -858,7 +858,7 @@
 	"title": "has_type",
 	"tags": [],
 	"description": "",
-	"content": "Determines if a Type exists in the current @collection scope.\nThis function does not generate an event.\nFunction has_type(type_name)\nArguments    Argument Type Description     type_name str (required) Type name to check.    Return value Returns true if a Type with a given name exists and otherwise false.\nExample  This code shows an example use case of has_type():\n has_type('XXX');  Return value in JSON format\n false "
+	"content": "Determines if a Type exists in the current @collection scope.\nThis function does not generate an event.\nFunction has_type(type)\nArguments    Argument Type Description     type str (required) Type name to check.    Return value Returns true if a Type with a given name exists and otherwise false.\nExample  This code shows an example use case of has_type():\n has_type('XXX');  Return value in JSON format\n false "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/if/",
@@ -1012,7 +1012,7 @@
 	"title": "mod_enum",
 	"tags": [],
 	"description": "",
-	"content": "This function is used to modify an existing enumerator type. A number of actions can be performed with this function.\nThis function generates an event.\nActions    Action Description     add Add a member to an existing enumerator type.   del Delete a member of an existing enumerator type.   mod Modify a member value of an existing enumerator type.    "
+	"content": "This function is used to modify an existing enumerator type. A number of actions can be performed with this function.\nThis function generates an event.\nActions    Action Description     add Add a member to an existing enumerator type.   del Delete a member of an existing enumerator type.   mod Modify a member value of an existing enumerator type.   ren Rename a member of an existing enumerator type.    "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/mod_enum/add/",
@@ -1036,46 +1036,60 @@
 	"content": "Modify a member value from an existing enumerator type.\nAction mod_enum(enum, 'mod', name, value)\nArguments    Argument Type Description     enum str Name of the enumerator type where the member has to be removed from.   'mod' str Passing this argument will result in a modify action.   name str Name of the member that has to be modified.   value any New value for the member that has to be modified.    Return value The value nil.\n This code shows how to use the action mod:\n // Create enum `Color` set_enum('Color', { RED: '#ff0000', BLUE: '#00ff00', GREEN: '#0000aa', }); // Modify the value for `GREEN` mod_enum('Color', 'mod', 'GREEN', '#0000ff');  Return value in JSON format\n null "
 },
 {
+	"uri": "https://docs.thingsdb.net/v0/collection-api/mod_enum/ren/",
+	"title": "ren",
+	"tags": [],
+	"description": "",
+	"content": "Rename a member value from an existing enumerator type.\nAction mod_enum(enum, 'ren', name, to)\nArguments    Argument Type Description     enum str Name of the enumerator type where the member has to be removed from.   'ren' str Passing this argument will result in a rename action.   name str Name of the member that has to be modified.   to str New name for the member that has to be modified.    Return value The value nil.\n This code shows how to use the action ren:\n // Create enum `Color` set_enum('Color', { RED: '#ff0000', BLUE: '#00ff00', GRAS: '#0000ff', }); // Modify `GRAS` to `GREEN` mod_enum('Color', 'ren', 'GRAS', 'GREEN');  Return value in JSON format\n null "
+},
+{
 	"uri": "https://docs.thingsdb.net/v0/collection-api/mod_type/",
 	"title": "mod_type",
 	"tags": [],
 	"description": "",
-	"content": "This function is used to modify an existing Type. A number of actions can be performed with this function.\nThis function generates an event.\nActions    Action Description     add Add a property to an existing Type.   del Delete a property of an existing Type.   mod Modify a property of an existing Type.    "
+	"content": "This function is used to modify an existing Type. A number of actions can be performed with this function.\nThis function generates an event.\nActions    Action Description     add Add a property to an existing Type.   del Delete a property of an existing Type.   mod Modify a property of an existing Type.   ren Rename a property of an existing Type.    "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/mod_type/add/",
 	"title": "add",
 	"tags": [],
 	"description": "",
-	"content": "Adds a property to an existing Type.\nIf there are active instances of the type you want to modify, then an initial_value is required. This value is used only once for applying the value to the existing instances and is not used when new instances are created.\n Action mod_type(type_name, 'add', property_name, property_type, [initial_value])\nArguments    Argument Type Description     type_name str Name of the Type where the property has to be added to.   'add' str Passing this argument will result in an add action.   property_name str Name of the property that has to be added.   property_type str Type definition of the property that has to be added.   initial_value any The default value to set on existing instances of this Type.    Return value The value nil.\n This code shows how to use the action add:\n // Create type `Person` set_type('Person', { name: 'str', age: 'int' }); // Add `hobbies` to type `Person` mod_type('Person', 'add', 'hobbies', '[str]');  Return value in JSON format\n null "
+	"content": "Adds a property to an existing Type.\nIf there are active instances of the type you want to modify, then an initial_value is required. This value is used only once for applying the value to the existing instances and is not used when new instances are created.\n Action mod_type(type, 'add', name, definition, [initial_value])\nArguments    Argument Type Description     type str Name of the Type where the property has to be added to.   'add' str Passing this argument will result in an add action.   name str Name of the property that has to be added.   definition str Type definition of the property that has to be added.   initial_value any The default value to set on existing instances of this Type.    Return value The value nil.\n This code shows how to use the action add:\n // Create type `Person` set_type('Person', { name: 'str', age: 'int' }); // Add `hobbies` to type `Person` mod_type('Person', 'add', 'hobbies', '[str]');  Return value in JSON format\n null "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/mod_type/del/",
 	"title": "del",
 	"tags": [],
 	"description": "",
-	"content": "Deletes a property from an existing Type.\nThe property will be removed from all the active instances of that Type.\n Action mod_type(type_name, 'del', property_name)\nArguments    Argument Type Description     type_name str Name of the Type where the property has to be removed from.   'del' str Passing this argument will result in a delete action.   property_name str Name of the property that has to be removed.    Return value The value nil.\n This code shows how to use the action del:\n // Create type `Person` set_type('Person', { name: 'str', age: 'int', hobbies: '[str]' }); // Delete `hobbies` from type `Person` mod_type('Person', 'del', 'hobbies');  Return value in JSON format\n null "
+	"content": "Deletes a property from an existing Type.\nThe property will be removed from all the active instances of that Type.\n Action mod_type(type, 'del', name)\nArguments    Argument Type Description     type str Name of the Type where the property has to be removed from.   'del' str Passing this argument will result in a delete action.   name str Name of the property that has to be removed.    Return value The value nil.\n This code shows how to use the action del:\n // Create type `Person` set_type('Person', { name: 'str', age: 'int', hobbies: '[str]' }); // Delete `hobbies` from type `Person` mod_type('Person', 'del', 'hobbies');  Return value in JSON format\n null "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/mod_type/mod/",
 	"title": "mod",
 	"tags": [],
 	"description": "",
-	"content": "Modifies the type definition of a property from an existing Type.\nWhen modifying a property of a Type, the changed property type can only be less \u0026lsquo;strict\u0026rsquo;.\nSo for example, age: 'int' can become age: 'int?', but not the other way around.\n Action mod_type(type_name, 'mod', property_name, property_type)\nArguments    Argument Type Description     type_name str Name of the Type where the property has to be modified from.   'mod' str Passing this argument will result in a modify action.   property_name str Name of the property that has to be modified.   property_type str New type definition of the property that has to be modified.    Return value The value nil.\n This code shows the return value for the action mod:\n // Create type `Person` set_type('Person', { name: 'str', age: 'int', hobbies: '[str]' }); // Make `age` nillable mod_type('Person', 'mod', 'age', 'int?');  Return value in JSON format\n null "
+	"content": "Modifies the type definition of a property from an existing Type.\nWhen modifying a property of a Type, the changed property type can only be less \u0026lsquo;strict\u0026rsquo;.\nSo for example, age: 'int' can become age: 'int?', but not the other way around.\n Action mod_type(type, 'mod', name, definition)\nArguments    Argument Type Description     type str Name of the Type where the property has to be modified from.   'mod' str Passing this argument will result in a modify action.   name str Name of the property that has to be modified.   definition str New type definition of the property that has to be modified.    Return value The value nil.\n This code shows the return value for the action mod:\n // Create type `Person` set_type('Person', { name: 'str', age: 'int', hobbies: '[str]' }); // Make `age` nillable mod_type('Person', 'mod', 'age', 'int?');  Return value in JSON format\n null "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/collection-api/mod_type/ren/",
+	"title": "ren",
+	"tags": [],
+	"description": "",
+	"content": "Rename a property from an existing Type.\nAction mod_type(type, 'ren', name, to)\nArguments    Argument Type Description     type str Name of the Type where the property has to be modified from.   'ren' str Passing this argument will result in a modify action.   name str Name of the property that has to be modified.   to str New name for the property that has to be modified.    Return value The value nil.\n This code shows the return value for the action ren:\n // Create type `Person` set_type('Person', { name: 'str', a: 'int', }); // Rename `a` to `age` mod_type('Person', 'ren', 'a', 'age');  Return value in JSON format\n null "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/new/",
 	"title": "new",
 	"tags": [],
 	"description": "",
-	"content": "Creates a new instance of a defined Type.\nWhen possible it is preferred to use the syntax MyType{...} to create a instance of a certain Type. However, sometimes you need to create an instance dynamically with the Type\u0026rsquo;s name as variable and then new() can be used.\n This function generates an event.\nFunction new(type_name, value)\nArguments    Argument Type Description     type_name str The name of the Type that an instance must be made of.   value thing Thing containing all the properties that must be added to the new instance of the given Type.    Return value A Thing containing all the properties which have been added to the new instance of the given Type.\nExample  This code shows how to use new():\n type_name = 'Person'; // Create type `Person` set_type(type_name, { name: 'str', age: 'int', hobbies: '[str]' }); // Create an instance of type `Person` new(type_name, { name: 'John', age: 34, hobbies: ['Football'] });  Return value in JSON format\n { \u0026#34;name\u0026#34;: \u0026#34;John\u0026#34;, \u0026#34;age\u0026#34;: 34, \u0026#34;hobbies\u0026#34;: [\u0026#34;Football\u0026#34;] }  The property names and (data) types of the values that are added to an instance of an existing type must exactly match that Type.\n "
+	"content": "Creates a new instance of a defined Type.\nWhen possible it is preferred to use the syntax MyType{...} to create a instance of a certain Type. However, sometimes you need to create an instance dynamically with the Type\u0026rsquo;s name as variable and then new() can be used.\n This function generates an event.\nFunction new(type, value)\nArguments    Argument Type Description     type str The name of the Type that an instance must be made of.   value thing Thing containing all the properties that must be added to the new instance of the given Type.    Return value A Thing containing all the properties which have been added to the new instance of the given Type.\nExample  This code shows how to use new():\n // Create type `Person` set_type('Person', { name: 'str', age: 'int', hobbies: '[str]' }); // Create an instance of type `Person` new('Person', { name: 'John', age: 34, hobbies: ['Football'] });  Return value in JSON format\n { \u0026#34;name\u0026#34;: \u0026#34;John\u0026#34;, \u0026#34;age\u0026#34;: 34, \u0026#34;hobbies\u0026#34;: [\u0026#34;Football\u0026#34;] }  The property names and (data) types of the values that are added to an instance of an existing type must exactly match that Type.\n "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/new_type/",
 	"title": "new_type",
 	"tags": [],
 	"description": "",
-	"content": "Creates a new Type. This function only creates a new type and does not allow you to specify any fields. With the set_type() function you can define the fields for the new type.\nIt is possible to use set_type directly without calling new_type first. However, sometimes you want to cross reference two types so you want both type to exists before calling set_type.\n This function generates an event.\nFunction new_type(type_name)\nArguments    Argument Type Description     type_name string Name of the Type to be created.    Return value The name of the newly created Type.\nExample  This code shows a use case where new_type() is helpful:\n new_type('A'); new_type('B'); set_type('A', { b: 'B?' }); set_type('B', { a: 'A?' }); // Return type information types_info();  Example return value in JSON format\n [ { \u0026#34;type_id\u0026#34;: 0, \u0026#34;created_at\u0026#34;: 1579250574, \u0026#34;modified_at\u0026#34;: 1579250574, \u0026#34;name\u0026#34;: \u0026#34;A\u0026#34;, \u0026#34;fields\u0026#34;: [ [\u0026#34;b\u0026#34;, \u0026#34;B?\u0026#34;] ] }, { \u0026#34;type_id\u0026#34;: 1, \u0026#34;created_at\u0026#34;: 1579250574, \u0026#34;modified_at\u0026#34;: 1579250574, \u0026#34;name\u0026#34;: \u0026#34;B\u0026#34;, \u0026#34;fields\u0026#34;: [ [\u0026#34;a\u0026#34;, \u0026#34;A?\u0026#34;] ] } ] "
+	"content": "Creates a new Type. This function only creates a new type and does not allow you to specify any fields. With the set_type() function you can define the fields for the new type.\nIt is possible to use set_type directly without calling new_type first. However, sometimes you want to cross reference two types so you want both type to exists before calling set_type.\n This function generates an event.\nFunction new_type(type)\nArguments    Argument Type Description     type string Name of the Type to be created.    Return value The name of the newly created Type.\nExample  This code shows a use case where new_type() is helpful:\n new_type('A'); new_type('B'); set_type('A', { b: 'B?' }); set_type('B', { a: 'A?' }); // Return type information types_info();  Example return value in JSON format\n [ { \u0026#34;type_id\u0026#34;: 0, \u0026#34;created_at\u0026#34;: 1579250574, \u0026#34;modified_at\u0026#34;: 1579250574, \u0026#34;name\u0026#34;: \u0026#34;A\u0026#34;, \u0026#34;fields\u0026#34;: [ [\u0026#34;b\u0026#34;, \u0026#34;B?\u0026#34;] ] }, { \u0026#34;type_id\u0026#34;: 1, \u0026#34;created_at\u0026#34;: 1579250574, \u0026#34;modified_at\u0026#34;: 1579250574, \u0026#34;name\u0026#34;: \u0026#34;B\u0026#34;, \u0026#34;fields\u0026#34;: [ [\u0026#34;a\u0026#34;, \u0026#34;A?\u0026#34;] ] } ] "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/now/",
@@ -1145,7 +1159,7 @@
 	"title": "set_type",
 	"tags": [],
 	"description": "",
-	"content": "Defines the properties of a Type. Function set_type works only on a new Type. Use mod_type() if you want to change an existing Type, see mod_type.\nThis function generates an event.\nFunction set_type(type_name, value)\nArguments    Argument Type Description     type_name str The name of the Type where the properties have to be set.   value thing Thing containing all the properties to be set.    Return value The value nil.\nExample  This code shows how to use set_type():\n set_type('Person', { name: 'str', age: 'uint', hobbies: '[str]' });  Return value in JSON format\n null "
+	"content": "Defines the properties of a Type. Function set_type works only on a new Type. Use mod_type() if you want to change an existing Type, see mod_type.\nThis function generates an event.\nFunction set_type(type, value)\nArguments    Argument Type Description     type str The name of the Type where the properties have to be set.   value thing Thing containing all the properties to be set.    Return value The value nil.\nExample  This code shows how to use set_type():\n set_type('Person', { name: 'str', age: 'uint', hobbies: '[str]' });  Return value in JSON format\n null "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/str/",
@@ -1180,14 +1194,14 @@
 	"title": "type_count",
 	"tags": [],
 	"description": "",
-	"content": "Returns the number of instances of a given Type within a collection.\nThis function does not generate an event.\nFunction type_count(type_name)\nArguments    Argument Type Description     type_name str The name of the Type for which the number of instances must be returned.    Return value An int representing the number of occurrences.\n"
+	"content": "Returns the number of instances of a given Type within a collection.\nThis function does not generate an event.\nFunction type_count(type)\nArguments    Argument Type Description     type str The name of the Type for which the number of instances must be returned.    Return value An int representing the number of occurrences.\n"
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/type_info/",
 	"title": "type_info",
 	"tags": [],
 	"description": "",
-	"content": "Returns information about a given Type.\n   Value Description     type_id Internal Type ID (can be used to identify Types in collection events).   created_at Time Stamp when the Type is created.   modified_at Time Stamp when the Type is last modified or nil if never modified.   name Type\u0026rsquo;s name.   fields Array with arrays containing two strings, the property name and definition.    The modified_at time stamp is initially set to nil when the Type is created using the new_type(..) function. It will be updated with a time stamp after modifying the Type with either the set_type(..) or the mod_type(..) function. When the Type is created with set_type(..), then the modified_at property will be equal to created_at.\n This function does not generate an event.\nFunction type_info(type_name)\nArguments    Argument Type Description     type_name str The name of the Type for which the information about the properties has to be returned.    Return value Returns info about the Type.\nExample  This code shows the output of type_info():\n // Just a Type as an example set_type('Book', { title: 'str', year: 'int', }); // Return Type info type_info('Book');  Example return value in JSON format\n { \u0026#34;type_id\u0026#34;: 0, \u0026#34;created_at\u0026#34;: 1579175900, \u0026#34;modified_at\u0026#34;: 1579175900, \u0026#34;name\u0026#34;: \u0026#34;Book\u0026#34;, \u0026#34;fields\u0026#34;: [ [\u0026#34;title\u0026#34;, \u0026#34;str\u0026#34;], [\u0026#34;year\u0026#34;, \u0026#34;int\u0026#34;] ] } "
+	"content": "Returns information about a given Type.\n   Value Description     type_id Internal Type ID (can be used to identify Types in collection events).   created_at Time Stamp when the Type is created.   modified_at Time Stamp when the Type is last modified or nil if never modified.   name Type\u0026rsquo;s name.   fields Array with arrays containing two strings, the property name and definition.    The modified_at time stamp is initially set to nil when the Type is created using the new_type(..) function. It will be updated with a time stamp after modifying the Type with either the set_type(..) or the mod_type(..) function. When the Type is created with set_type(..), then the modified_at property will be equal to created_at.\n This function does not generate an event.\nFunction type_info(type)\nArguments    Argument Type Description     type str The name of the Type for which the information about the properties has to be returned.    Return value Returns info about the Type.\nExample  This code shows the output of type_info():\n // Just a Type as an example set_type('Book', { title: 'str', year: 'int', }); // Return Type info type_info('Book');  Example return value in JSON format\n { \u0026#34;type_id\u0026#34;: 0, \u0026#34;created_at\u0026#34;: 1579175900, \u0026#34;modified_at\u0026#34;: 1579175900, \u0026#34;name\u0026#34;: \u0026#34;Book\u0026#34;, \u0026#34;fields\u0026#34;: [ [\u0026#34;title\u0026#34;, \u0026#34;str\u0026#34;], [\u0026#34;year\u0026#34;, \u0026#34;int\u0026#34;] ] } "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/types_info/",

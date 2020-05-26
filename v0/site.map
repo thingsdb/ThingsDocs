@@ -146,10 +146,12 @@ collection-api
         add
         del
         mod
+        ren
     mod_type
         add
         del
         mod
+        ren
     new
     new_type
     now
