@@ -1,6 +1,6 @@
 ---
 title: "del"
-weight: 151
+weight: 152
 ---
 
 Deletes a property from an existing [Type](../../../data-types/type).
@@ -11,15 +11,15 @@ The property will be removed from all the active instances of that Type.
 
 ### Action
 
-`mod_type(type_name, 'del', property_name)`
+`mod_type(type, 'del', name)`
 
 ### Arguments
 
 Argument | Type | Description
 -------- | ---- | -----------
-type_name | str | Name of the Type where the property has to be removed from.
+type | str | Name of the Type where the property has to be removed from.
 `'del'` | str | Passing this argument will result in a *delete* action.
-property_name | str | Name of the property that has to be removed.
+name | str | Name of the property that has to be removed.
 
 ### Return value
 
