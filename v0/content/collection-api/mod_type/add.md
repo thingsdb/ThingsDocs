@@ -1,6 +1,6 @@
 ---
 title: "add"
-weight: 150
+weight: 151
 ---
 
 Adds a property to an existing [Type](../../../data-types/type).
@@ -12,16 +12,16 @@ This value is used *only once* for applying the value to the existing instances 
 
 ### Action
 
-`mod_type(type_name, 'add', property_name, property_type, [initial_value])`
+`mod_type(type, 'add', name, definition, [initial_value])`
 
 ### Arguments
 
 Argument | Type | Description
 -------- | ---- | -----------
-type_name | str | Name of the [Type](../../../data-types/type) where the property has to be added to.
+type | str | Name of the [Type](../../../data-types/type) where the property has to be added to.
 `'add'` | str | Passing this argument will result in an *add* action.
-property_name | str | Name of the property that has to be added.
-property_type | str | Type definition of the property that has to be added.
+name | str | Name of the property that has to be added.
+definition | str | Type definition of the property that has to be added.
 initial_value | any | The default value to set on existing instances of this [Type](../../../data-types/type).
 
 ### Return value

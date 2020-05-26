@@ -1,6 +1,6 @@
 ---
 title: "backups_info"
-weight: 175
+weight: 177
 ---
 
 Returns backup schedule information about all backup schedules in the selected node scope.

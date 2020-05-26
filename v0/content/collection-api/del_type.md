@@ -20,13 +20,13 @@ This function generates an [event](../../overview/events).
 
 ### Function
 
-`del_type(type_name)`
+`del_type(type)`
 
 ### Arguments
 
 Argument | Type | Description
 -------- | ---- | -----------
-type_name | string | Name of the Type to be deleted.
+type | string | Name of the Type to be deleted.
 
 ### Return value
 

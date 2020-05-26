@@ -1,6 +1,6 @@
 ---
 title: "type_info"
-weight: 170
+weight: 172
 ---
 
 Returns information about a given [Type](../../data-types/type).
@@ -23,13 +23,13 @@ This function does *not* generate an [event](../../overview/events).
 
 ### Function
 
-`type_info(type_name)`
+`type_info(type)`
 
 ### Arguments
 
 Argument | Type | Description
 -------- | ---- | -----------
-type_name | str | The name of the Type for which the information about the properties has to be returned.
+type | str | The name of the Type for which the information about the properties has to be returned.
 
 ### Return value
 
