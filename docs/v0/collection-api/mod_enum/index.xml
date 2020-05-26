@@ -44,5 +44,16 @@ Action mod_enum(enum, &#39;mod&#39;, name, value)
 Arguments    Argument Type Description     enum str Name of the enumerator type where the member has to be removed from.   &#39;mod&#39; str Passing this argument will result in a modify action.   name str Name of the member that has to be modified.   value any New value for the member that has to be modified.</description>
     </item>
     
+    <item>
+      <title>ren</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/mod_enum/ren/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/mod_enum/ren/</guid>
+      <description>Rename a member value from an existing enumerator type.
+Action mod_enum(enum, &#39;ren&#39;, name, to)
+Arguments    Argument Type Description     enum str Name of the enumerator type where the member has to be removed from.   &#39;ren&#39; str Passing this argument will result in a rename action.   name str Name of the member that has to be modified.   to str New name for the member that has to be modified.</description>
+    </item>
+    
   </channel>
 </rss>
