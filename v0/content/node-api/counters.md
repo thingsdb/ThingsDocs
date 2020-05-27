@@ -47,7 +47,7 @@ Returns the current counter values.
 > This code will return node counter values:
 
 ```thingsdb,should_pass,@n
-// Returns the current counters the the node in this scope
+// Returns the current counters for the node in this scope
 counters();
 ```
 
