@@ -26,7 +26,7 @@ Returns `nil`.
 > This code will reset the counters on a node:
 
 ```thingsdb,json_response,@n
-// resets counters on the connected node
+// resets counters on the node in this scope
 reset_counters();
 ```
 

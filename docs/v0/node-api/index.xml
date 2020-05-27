@@ -115,7 +115,7 @@ Function reset_counters();
 Arguments None
 Return value Returns nil.
 Example  This code will reset the counters on a node:
- // resets counters on the connected node reset_counters();  Example return value in JSON format (the new collection id)</description>
+ // resets counters on the node in this scope reset_counters();  Example return value in JSON format (the new collection id)</description>
     </item>
     
     <item>

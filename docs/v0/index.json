@@ -1285,7 +1285,7 @@
 	"title": "reset_counters",
 	"tags": [],
 	"description": "",
-	"content": "Resets the counters for the ThingsDB node you are connected too. Other nodes are not affected. This will set the started_at counter value to the current UNIX time-stamp in seconds and all other counters to 0 (zero).\nThis function does not generate an event.\nFunction reset_counters();\nArguments None\nReturn value Returns nil.\nExample  This code will reset the counters on a node:\n // resets counters on the connected node reset_counters();  Example return value in JSON format (the new collection id)\n null "
+	"content": "Resets the counters for the ThingsDB node you are connected too. Other nodes are not affected. This will set the started_at counter value to the current UNIX time-stamp in seconds and all other counters to 0 (zero).\nThis function does not generate an event.\nFunction reset_counters();\nArguments None\nReturn value Returns nil.\nExample  This code will reset the counters on a node:\n // resets counters on the node in this scope reset_counters();  Example return value in JSON format (the new collection id)\n null "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/node-api/set_log_level/",
