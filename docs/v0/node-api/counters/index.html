@@ -11,20 +11,20 @@
     <title>counters :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1590523555" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1590523555" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1590523555" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1590523555" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1590523555" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1590523555" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1590523555" rel="stylesheet">
-    <link href="/v0/css/theme.css?1590523555" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1590523555" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1590568608" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1590568608" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1590568608" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1590568608" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1590568608" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1590568608" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1590568608" rel="stylesheet">
+    <link href="/v0/css/theme.css?1590568608" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1590568608" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1590523555" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1590568608" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1590523555"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1590568608"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1590523555"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1590523555"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1590568608"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1590568608"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1590523555"></script>
+<script type="text/javascript" src="/v0/js/search.js?1590568608"></script>
 
     
   </div>
@@ -5073,19 +5073,19 @@ the counters might provide you with more information.</p>
 <tbody>
 <tr>
 <td>average_event_duration</td>
-<td>The average event duration in seconds.</td>
+<td>The average <a href="../../overview/events">event</a> duration in seconds. Event duration is measured from the time an event is created <em>(before the final ID is assigned)</em>, until the actual event is committed to ThingsDB.</td>
 </tr>
 <tr>
 <td>average_query_duration</td>
-<td>The average query duration in seconds.</td>
+<td>The average query duration in seconds. Query duration is measured from the time a query <em>(or procedure run)</em> request is unpacked, until the response is created to send back to the client.</td>
 </tr>
 <tr>
 <td>events_committed</td>
-<td>Events committed since last counters reset.</td>
+<td><a href="../../overview/events">Events</a> committed since last the counters reset.</td>
 </tr>
 <tr>
 <td>events_failed</td>
-<td>Failed events. This is a critical counter which should be 0.</td>
+<td>Failed events. This is a <em>critical</em> counter which should be <code>0</code>.</td>
 </tr>
 <tr>
 <td>events_killed</td>
@@ -5093,11 +5093,11 @@ the counters might provide you with more information.</p>
 </tr>
 <tr>
 <td>events_quorum_lost</td>
-<td>Number of times a <a href="../../overview/dictionary">quorum</a>. was not received.</td>
+<td>Number of times this node did not get an event ID accepted by the <a href="../../overview/dictionary">quorum</a> of nodes. An event ID will not be accepted if another node is attempting to assign the same event ID. This is not an issue since the node will just try another event ID. It only indicates the number of collisions occurred while trying to assign an event ID.</td>
 </tr>
 <tr>
 <td>events_skipped</td>
-<td>Events which cannot be committed since an event with a higher <code>id</code> is already processed. These events are moved to a skipped queue.</td>
+<td>Events which cannot be committed since an event with a higher <code>id</code> is already processed.</td>
 </tr>
 <tr>
 <td>events_unaligned</td>
@@ -5109,7 +5109,7 @@ the counters might provide you with more information.</p>
 </tr>
 <tr>
 <td>garbage_collected</td>
-<td>Number of things which are garbage collected.</td>
+<td>Number of <a href="../../data-types/thing">things</a> which are garbage collected.</td>
 </tr>
 <tr>
 <td>longest_event_duration</td>
@@ -5201,19 +5201,19 @@ counters();
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1590523555"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1590523555"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1590523555"></script>
-    <script src="/v0/js/jquery.sticky.js?1590523555"></script>
-    <script src="/v0/js/featherlight.min.js?1590523555"></script>
-    <script src="/v0/js/highlight.pack.js?1590523555"></script>
+    <script src="/v0/js/clipboard.min.js?1590568608"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1590568608"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1590568608"></script>
+    <script src="/v0/js/jquery.sticky.js?1590568608"></script>
+    <script src="/v0/js/featherlight.min.js?1590568608"></script>
+    <script src="/v0/js/highlight.pack.js?1590568608"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1590523555"></script>
-    <script src="/v0/js/learn.js?1590523555"></script>
-    <script src="/v0/js/hugo-learn.js?1590523555"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1590568608"></script>
+    <script src="/v0/js/learn.js?1590568608"></script>
+    <script src="/v0/js/hugo-learn.js?1590568608"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1590523555" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1590523555"></script>
+    <link href="/v0/mermaid/mermaid.css?1590568608" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1590568608"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -2025,7 +2025,7 @@ Return value List with backup schedule info about all backup schedules in the se
       <guid>https://docs.thingsdb.net/v0/node-api/counters/</guid>
       <description>Returns counters for the ThingsDB node in the selected scope. Counters start all at zero when ThingsDB is started, or when the counters are reset by using reset_counters()&#39;.
 Counters give information about things, queries and events. If you suspect failed queries, then the counters might provide you with more information.
-   Counter Description     average_event_duration The average event duration in seconds.   average_query_duration The average query duration in seconds.</description>
+   Counter Description     average_event_duration The average event duration in seconds. Event duration is measured from the time an event is created (before the final ID is assigned), until the actual event is committed to ThingsDB.</description>
     </item>
     
     <item>
