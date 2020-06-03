@@ -120,8 +120,8 @@ If there are still instances of the Type you delete, then all instances will be 
       <guid>https://docs.thingsdb.net/v0/collection-api/enum/</guid>
       <description>Returns a enum member from a given value. A lookup_err() is raised if either the enum or value is not found.
 This function does not generate an event.
-Function enum(enum, value)
-Arguments    Argument Type Description     enum str (required) The name of the enumeration type.   value any (required) The value to search the enum member for.    Return value Member within the given enum equal to the given value.</description>
+Function enum(enum, [value])
+Arguments    Argument Type Description     enum str (required) The name of the enumeration type.   value any (optional) The value to search the enum member for. If omitted, the default member is returned.</description>
     </item>
     
     <item>
@@ -131,7 +131,7 @@ Arguments    Argument Type Description     enum str (required) The name of the e
       
       <guid>https://docs.thingsdb.net/v0/collection-api/enum_info/</guid>
       <description>Returns information about a given enumeration type.
-   Value Description     enum_id Internal enum ID (can be used to identify Enums in collection events).   created_at Time Stamp when the enum is created.   modified_at Time Stamp when the enum is last modified or nil if never modified.   name Enum&amp;rsquo;s name.   members Array with arrays containing two strings, the name and value.</description>
+   Value Description     enum_id Internal enum ID (can be used to identify Enums in collection events).   created_at Time Stamp when the enum is created.   default Default member of this enumerator. The default member is used when implicitly creating a value of this enumerator type. See mod_enum(..) to change the deafult member.   modified_at Time Stamp when the enum is last modified or nil if never modified.</description>
     </item>
     
     <item>
@@ -487,9 +487,7 @@ Example  This code shows some return values for list():
       <guid>https://docs.thingsdb.net/v0/collection-api/new/</guid>
       <description>Creates a new instance of a defined Type.
 When possible it is preferred to use the syntax MyType{...} to create a instance of a certain Type. However, sometimes you need to create an instance dynamically with the Type&amp;rsquo;s name as variable and then new() can be used.
- This function generates an event.
-Function new(type, value)
-Arguments    Argument Type Description     type str The name of the Type that an instance must be made of.</description>
+ Since version v0.9.2 the value argument is no longer required. If not given all properties will be set to their default values.</description>
     </item>
     
     <item>

@@ -1091,8 +1091,8 @@ list = []; list.push([&#39;this list will be nested and therefore convert to a t
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/type/</guid>
-      <description>A Type is like a thing with pre-defined properties.
-Definable properties    definition description     &#39;str&#39; requires type str (values of type str should contain valid UTF-8 characters).   &#39;utf8&#39; requires type str and the value must contain valid UTF-8 characters.   &#39;raw&#39; requires type str or bytes.   &#39;bytes&#39; requires type bytes.   &#39;bool&#39; requires type bool.   &#39;int&#39; requires type int.</description>
+      <description>A Type is like a thing with pre-defined properties. When an instance of a Type is created, all defined properties are guaranteed to exist with a value matching the Type definition.
+Definable properties    definition default description     &#39;str&#39; &amp;quot;&amp;quot; requires type str (values of type str should contain valid UTF-8 characters).   &#39;utf8&#39; &amp;quot;&amp;quot; requires type str and the value must contain valid UTF-8 characters.</description>
     </item>
     
     <item>
@@ -1284,8 +1284,8 @@ If there are still instances of the Type you delete, then all instances will be 
       <guid>https://docs.thingsdb.net/v0/collection-api/enum/</guid>
       <description>Returns a enum member from a given value. A lookup_err() is raised if either the enum or value is not found.
 This function does not generate an event.
-Function enum(enum, value)
-Arguments    Argument Type Description     enum str (required) The name of the enumeration type.   value any (required) The value to search the enum member for.    Return value Member within the given enum equal to the given value.</description>
+Function enum(enum, [value])
+Arguments    Argument Type Description     enum str (required) The name of the enumeration type.   value any (optional) The value to search the enum member for. If omitted, the default member is returned.</description>
     </item>
     
     <item>
@@ -1295,7 +1295,7 @@ Arguments    Argument Type Description     enum str (required) The name of the e
       
       <guid>https://docs.thingsdb.net/v0/collection-api/enum_info/</guid>
       <description>Returns information about a given enumeration type.
-   Value Description     enum_id Internal enum ID (can be used to identify Enums in collection events).   created_at Time Stamp when the enum is created.   modified_at Time Stamp when the enum is last modified or nil if never modified.   name Enum&amp;rsquo;s name.   members Array with arrays containing two strings, the name and value.</description>
+   Value Description     enum_id Internal enum ID (can be used to identify Enums in collection events).   created_at Time Stamp when the enum is created.   default Default member of this enumerator. The default member is used when implicitly creating a value of this enumerator type. See mod_enum(..) to change the deafult member.   modified_at Time Stamp when the enum is last modified or nil if never modified.</description>
     </item>
     
     <item>
@@ -1655,6 +1655,17 @@ Arguments    Argument Type Description     enum str Name of the enumerator type 
     </item>
     
     <item>
+      <title>def</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/mod_enum/def/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/mod_enum/def/</guid>
+      <description>Set a member from an existing enumerator type as default member. The default member is also selected when a instance of a Type is created using the enumerator as a required property.
+Action mod_enum(enum, &#39;def&#39;, name)
+Arguments    Argument Type Description     enum str Name of the enumerator type where the member has to be removed from.   &#39;def&#39; str Passing this argument will result in a set default action.</description>
+    </item>
+    
+    <item>
       <title>del</title>
       <link>https://docs.thingsdb.net/v0/collection-api/mod_enum/del/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1695,8 +1706,8 @@ Arguments    Argument Type Description     enum str Name of the enumerator type 
       
       <guid>https://docs.thingsdb.net/v0/collection-api/mod_type/add/</guid>
       <description>Adds a property to an existing Type.
-If there are active instances of the type you want to modify, then an initial_value is required. This value is used only once for applying the value to the existing instances and is not used when new instances are created.
- Action mod_type(type, &#39;add&#39;, name, definition, [initial_value])
+Since version v0.9.2 an initial value is no longer required when having active instances of the given Type. If the initial value is omitted, then the default value according the Type definition will be applied.
+ Action mod_type(type, &#39;add&#39;, name, definition, [init])
 Arguments    Argument Type Description     type str Name of the Type where the property has to be added to.</description>
     </item>
     
@@ -1744,9 +1755,7 @@ Arguments    Argument Type Description     type str Name of the Type where the p
       <guid>https://docs.thingsdb.net/v0/collection-api/new/</guid>
       <description>Creates a new instance of a defined Type.
 When possible it is preferred to use the syntax MyType{...} to create a instance of a certain Type. However, sometimes you need to create an instance dynamically with the Type&amp;rsquo;s name as variable and then new() can be used.
- This function generates an event.
-Function new(type, value)
-Arguments    Argument Type Description     type str The name of the Type that an instance must be made of.</description>
+ Since version v0.9.2 the value argument is no longer required. If not given all properties will be set to their default values.</description>
     </item>
     
     <item>

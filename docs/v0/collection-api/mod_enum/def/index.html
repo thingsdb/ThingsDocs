@@ -8,7 +8,7 @@
 
 
     <link rel="shortcut icon" href='/v0/images/favicon.ico' type="image/x-icon" />
-    <title>enum :: ThingsDB documentation</title>
+    <title>def :: ThingsDB documentation</title>
 
     
     <link href="/v0/css/nucleus.css?1591192559" rel="stylesheet">
@@ -38,7 +38,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/v0/data-types/enum/">
+  <body class="" data-url="/v0/collection-api/mod_enum/def/">
     <nav id="sidebar" class="">
 
 
@@ -649,7 +649,7 @@
   
     
     <li data-nav-id="/v0/data-types/" title="Data Types" class="dd-item 
-        parent
+        
         
         
         ">
@@ -839,8 +839,8 @@
   
     
     <li data-nav-id="/v0/data-types/enum/" title="enum" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/v0/data-types/enum/">
@@ -2332,7 +2332,7 @@
   
     
     <li data-nav-id="/v0/collection-api/" title="Collection API" class="dd-item 
-        
+        parent
         
         
         ">
@@ -3043,7 +3043,7 @@
   
     
     <li data-nav-id="/v0/collection-api/mod_enum/" title="mod_enum" class="dd-item 
-        
+        parent
         
         
         ">
@@ -3086,7 +3086,7 @@
  
   
     
-      <li data-nav-id="/v0/collection-api/mod_enum/def/" title="def" class="dd-item ">
+      <li data-nav-id="/v0/collection-api/mod_enum/def/" title="def" class="dd-item active">
         <a href="/v0/collection-api/mod_enum/def/">
         def
         
@@ -5030,7 +5030,13 @@
             
           
           
-            <a href='/v0/'></a> > <a href='/v0/data-types/'>Data Types</a> > enum
+            
+            
+          
+          
+            <a href='/v0/'></a> > <a href='/v0/collection-api/'>Collection API</a> > <a href='/v0/collection-api/mod_enum/'>mod_enum</a> > def
+          
+         
           
          
           
@@ -5047,8 +5053,9 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#functions">Functions</a></li>
-        <li><a href="#related-functions">Related functions</a></li>
+        <li><a href="#action">Action</a></li>
+        <li><a href="#arguments">Arguments</a></li>
+        <li><a href="#return-value">Return value</a></li>
         <li><a href="#example">Example</a></li>
       </ul>
     </li>
@@ -5069,7 +5076,7 @@
           
             <h1>
               
-              enum
+              def
             </h1>
           
 
@@ -5077,116 +5084,63 @@
 
 
 
-
-	<p>Enumerators are a set of unique names coupled to a unique set of values. ThingsDB support enumerators for type <code>int</code>, <code>float</code>, <code>str</code>, <code>bytes</code> and <code>thing</code>, where all members
-must have the same type. Thus, it is not possible to have an enum type with for example both values of type <code>int</code> and <code>str</code>. Enumerators with type <code>thing</code> may contain <code>things</code>
-using different <a href="../type">Type</a> as each instance of a Type is still a <a href="../thing">thing</a>.</p>
-<h3 id="functions">Functions</h3>
+<p>Set a member from an existing <a href="../../../data-types/enum">enumerator type</a> as default member.
+The default member is also selected when a instance of a <a href="../../../data-types/type">Type</a> is created using the enumerator as a required property.</p>
+<h3 id="action">Action</h3>
+<p><code>mod_enum(enum, 'def', name)</code></p>
+<h3 id="arguments">Arguments</h3>
 <table>
 <thead>
 <tr>
-<th>Function</th>
+<th>Argument</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="./name">name</a></td>
-<td>Return the name of the enum member.</td>
+<td>enum</td>
+<td>str</td>
+<td>Name of the <a href="../../../data-types/enum">enumerator type</a> where the member has to be removed from.</td>
 </tr>
 <tr>
-<td><a href="./value">value</a></td>
-<td>Return the value of the enum member.</td>
+<td><code>'def'</code></td>
+<td>str</td>
+<td>Passing this argument will result in a <em>set default</em> action.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>str</td>
+<td>Name of the member to set as default.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="related-functions">Related functions</h3>
-<table>
-<thead>
-<tr>
-<th>Function</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../../collection-api/del_enum">del_enum</a></td>
-<td>Delete an enumerator type.</td>
-</tr>
-<tr>
-<td><a href="../../collection-api/enum">enum</a></td>
-<td>Get an enum member by value.</td>
-</tr>
-<tr>
-<td><a href="../../collection-api/enum_info">enum_info</a></td>
-<td>Return info about the enumerator type.</td>
-</tr>
-<tr>
-<td><a href="../../collection-api/enums_info">enums_info</a></td>
-<td>Return info about all the enumerator types in the current scope.</td>
-</tr>
-<tr>
-<td><a href="../../collection-api/has_enum">has_enum</a></td>
-<td>Determine if the current scope has a given enumerator type.</td>
-</tr>
-<tr>
-<td><a href="../../collection-api/isenum">isenum</a></td>
-<td>Test if a given value is a member of an enumerator type.</td>
-</tr>
-<tr>
-<td><a href="../../collection-api/mod_enum">mod_enum</a></td>
-<td>Modify an existing enumerator type.</td>
-</tr>
-<tr>
-<td><a href="../../collection-api/set_enum">set_enum</a></td>
-<td>Create a new enumerator type.</td>
-</tr>
-</tbody>
-</table>
+<h3 id="return-value">Return value</h3>
+<p>The value <code>nil</code>.</p>
 <h3 id="example">Example</h3>
-<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">// Create an enumeration type using `set_enum`
-set_enum('Severity', {
-    CRITICAL: 1,
-    MAJOR: 2,
-    MINOR: 3
+<blockquote>
+<p>This code shows how to use the action <em><strong>def</strong></em>:</p>
+</blockquote>
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">set_enum('Color', {
+    RED: '#f00',
+    GREEN: '#0f0',
+    BLUE: '#00f'
 });
 
-// Get a member by name
-a = Severity{CRITICAL};
+// set GREEN as the default color
+mod_enum('Color', 'def', 'GREEN');
 
-// Or, dynamically by name
-b = Severity{||'MAJOR'};
-
-// Get a member by it's value
-c = enum('Severity', 3);
-
-// Variable `a`, `b` and `c` are all members of type `Severity`
-assert( type(a) == 'Severity' );
-
-// The actual value can be accessed via the `.value()` function
-assert( b.value() == 2 );
-
-// Or, the name can be returned using the `.name()` function
-assert( c.name() == 'MINOR');
-
-// The value of the members will be returned in a response
-[a, b, c];
+enum('Color').name();  // color now defaults to GREEN
 </code></pre><blockquote>
 <p>Return value in JSON format</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
-    <span style="color:#ae81ff">1</span>,
-    <span style="color:#ae81ff">2</span>,
-    <span style="color:#ae81ff">3</span>
-]
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;GREEN&#34;</span>
 </code></pre></div>
-
-
-
 
 <footer class=" footline" >
 	
 </footer>
+
 
         
         </div>
@@ -5198,10 +5152,10 @@ assert( c.name() == 'MINOR');
         
     
         
-            <a class="nav nav-prev" href="/v0/data-types/closure/doc/" title="doc"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/v0/collection-api/mod_enum/add/" title="add"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/v0/data-types/enum/name/" title="name" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/v0/collection-api/mod_enum/del/" title="del" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     
     </div>
@@ -5231,3 +5185,4 @@ assert( c.name() == 'MINOR');
 
   </body>
 </html>
+

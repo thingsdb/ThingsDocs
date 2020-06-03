@@ -22,6 +22,17 @@ Arguments    Argument Type Description     enum str Name of the enumerator type 
     </item>
     
     <item>
+      <title>def</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/mod_enum/def/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/mod_enum/def/</guid>
+      <description>Set a member from an existing enumerator type as default member. The default member is also selected when a instance of a Type is created using the enumerator as a required property.
+Action mod_enum(enum, &#39;def&#39;, name)
+Arguments    Argument Type Description     enum str Name of the enumerator type where the member has to be removed from.   &#39;def&#39; str Passing this argument will result in a set default action.</description>
+    </item>
+    
+    <item>
       <title>del</title>
       <link>https://docs.thingsdb.net/v0/collection-api/mod_enum/del/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

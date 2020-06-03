@@ -17,8 +17,8 @@
       
       <guid>https://docs.thingsdb.net/v0/collection-api/mod_type/add/</guid>
       <description>Adds a property to an existing Type.
-If there are active instances of the type you want to modify, then an initial_value is required. This value is used only once for applying the value to the existing instances and is not used when new instances are created.
- Action mod_type(type, &#39;add&#39;, name, definition, [initial_value])
+Since version v0.9.2 an initial value is no longer required when having active instances of the given Type. If the initial value is omitted, then the default value according the Type definition will be applied.
+ Action mod_type(type, &#39;add&#39;, name, definition, [init])
 Arguments    Argument Type Description     type str Name of the Type where the property has to be added to.</description>
     </item>
     
