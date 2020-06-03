@@ -144,6 +144,7 @@ collection-api
     list
     mod_enum
         add
+        def
         del
         mod
         ren

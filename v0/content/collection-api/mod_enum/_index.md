@@ -12,6 +12,7 @@ This function generates an [event](../../overview/events).
 Action | Description
 ------ | -----------
 [add](./add) | Add a member to an existing enumerator type.
+[def](./def) | Set a member as default for an existing enumerator type.
 [del](./del) | Delete a member of an existing enumerator type.
 [mod](./mod) | Modify a member value of an existing enumerator type.
 [ren](./ren) | Rename a member of an existing enumerator type.

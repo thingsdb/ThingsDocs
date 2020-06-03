@@ -1,6 +1,6 @@
 ---
 title: "add"
-weight: 151
+weight: 152
 ---
 
 Adds a property to an existing [Type](../../../data-types/type).
@@ -55,8 +55,8 @@ Instead of a fixed initial value, a [closure](../../../data-types/closure) may b
 The return value of the closure will be used as the new value, unless:
 
 * `nil` is returned by the closure.
-* The return value does not match the definition. In this case an [operation_err()](../../errors/operation_err) is raised *after* `mod_type(..)` has finished.
-* An error is raised inside the closure. In this case an [operation_err()](../../errors/operation_err) is raised *after* `mod_type(..)` has finished.
+* The return value does not match the definition. In this case an [operation_err()](../../../errors/operation_err) is raised *after* `mod_type(..)` has finished.
+* An error is raised inside the closure. In this case an [operation_err()](../../../errors/operation_err) is raised *after* `mod_type(..)` has finished.
 
 In all three cases above, the value will be untouched after the callback. Thus, unless you have changed the property yourself, the default will be applied.
 

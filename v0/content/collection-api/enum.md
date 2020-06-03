@@ -10,14 +10,14 @@ This function does *not* generate an [event](../../overview/events).
 
 ### Function
 
-`enum(enum, value)`
+`enum(enum, [value])`
 
 ### Arguments
 
 Argument | Type | Description
 -------- | ---- | -----------
 enum | str (required) | The name of the enumeration type.
-value | any (required) | The value to search the enum member for.
+value | any (optional) | The value to search the enum member for. If omitted, the default member is returned.
 
 ### Return value
 

@@ -9,6 +9,7 @@ Value | Description
 ------- | -----------
 `enum_id` | Internal enum ID *(can be used to identify Enums in collection events)*.
 `created_at` | [Time Stamp](https://wikipedia.org/wiki/Unix_time) when the enum is created.
+`default` | Default member of this enumerator. The default member is used when implicitly creating a value of this enumerator type. See [mod_enum(..)](../mod_enum/def) to change the deafult member.
 `modified_at` | [Time Stamp](https://wikipedia.org/wiki/Unix_time) when the enum is last modified or `nil` if never modified.
 `name` | Enum's name.
 `members` | Array with arrays containing two strings, the name and value.
@@ -51,6 +52,7 @@ enum_info('Color');
 {
     "enum_id": 0,
     "created_at": 1589917348,
+    "default": "RED",
     "modified_at": null,
     "name": "Color",
     "members": [
