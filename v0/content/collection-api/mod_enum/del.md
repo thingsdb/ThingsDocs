@@ -26,6 +26,8 @@ name | str | Name of the member to be removed.
 
 The value `nil`.
 
+### Example
+
 > This code shows how to use the action ***del***:
 
 ```thingsdb,json_response

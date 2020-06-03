@@ -23,6 +23,8 @@ value | depends | Value of the member that has to be added. The type of the memb
 
 The value `nil`.
 
+### Example
+
 > This code shows how to use the action ***add***:
 
 ```thingsdb,json_response

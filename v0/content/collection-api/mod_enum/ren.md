@@ -23,6 +23,8 @@ to | str | New name for the member that has to be modified.
 
 The value `nil`.
 
+### Example
+
 > This code shows how to use the action ***ren***:
 
 ```thingsdb,json_response

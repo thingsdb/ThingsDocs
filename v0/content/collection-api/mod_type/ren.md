@@ -22,6 +22,8 @@ to | str | New name for the property that has to be modified.
 
 The value `nil`.
 
+### Example
+
 > This code shows the return value for the action ***ren***:
 
 ```thingsdb,json_response

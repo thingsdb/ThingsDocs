@@ -25,6 +25,8 @@ name | str | Name of the property that has to be removed.
 
 The value `nil`.
 
+### Example
+
 > This code shows how to use the action ***del***:
 
 ```thingsdb,json_response

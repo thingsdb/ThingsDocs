@@ -4,32 +4,33 @@ weight: 98
 ---
 
 
-A Type is like a thing with pre-defined properties.
+A Type is like a thing with pre-defined properties. When an instance of a Type is created, all defined properties
+are guaranteed to exist with a value matching the Type definition.
 
 ### Definable properties
 
-definition | description
----------- | -----------
-`'str'` | requires type [str](../str) (values of type [str](../str) *should* contain valid UTF-8 characters).
-`'utf8'` | requires type [str](../str) and the value *must* contain valid UTF-8 characters.
-`'raw'` | requires type [str](../str) *or* [bytes](../bytes).
-`'bytes'` | requires type [bytes](../bytes).
-`'bool'` | requires type [bool](../bool).
-`'int'` | requires type [int](../int).
-`'uint'` | requires a *non-negative* integer (type [int](../int), `>= 0`).
-`'pint'` | requires a *positive* integer (type [int](../int), `> 0`).
-`'nint'` | requires a *negative* integer (type [int](../int), `< 0`).
-`'float'` | requires type [float](../float).
-`'number'` | requires type [float](../float) *or* type [int](../int).
-`'thing'` | requires a [thing](../thing).
-`'X'` | requires a instance of [Type](../type) `X`. The value `X` should be replace with the `Type` name.
-`'[]'` | requires a [list](../list).
-`'{}'` | requires a [set](../set).
-`'any'` | any type is valid.
+definition | default | description
+---------- | ------- | -----------
+`'str'` | `""` | requires type [str](../str) (values of type [str](../str) *should* contain valid UTF-8 characters).
+`'utf8'` | `""` | requires type [str](../str) and the value *must* contain valid UTF-8 characters.
+`'raw'` | `""` | requires type [str](../str) *or* [bytes](../bytes).
+`'bytes'` | `bytes()` | requires type [bytes](../bytes).
+`'bool'` | `false` | requires type [bool](../bool).
+`'int'` | `0` | requires type [int](../int).
+`'uint'` | `0` | requires a *non-negative* integer (type [int](../int), `>= 0`).
+`'pint'` | `1` | requires a *positive* integer (type [int](../int), `> 0`).
+`'nint'` | `-1` | requires a *negative* integer (type [int](../int), `< 0`).
+`'float'` | `0.0` | requires type [float](../float).
+`'number'` | `0` | requires type [float](../float) *or* type [int](../int).
+`'thing'` | `{}` | requires a [thing](../thing).
+`'X'` | `X{}` | requires a instance of [Type](../type) `X`. The value `X` should be replace with the `Type` name.
+`'[]'` | `[]` | requires a [list](../list).
+`'{}'` | `set()` | requires a [set](../set).
+`'any'` | `nil` | any type is valid.
 
 Each definition can be made optional by adding a question-mark `?` to the definition.
-If a property is made optional, then the value `nil` is allowed instead of the given type.
-The property will also be set to `nil` if no value for the property is given.
+If a property is made optional, then the value `nil` is allowed instead of the given type
+and `nil` will also be the default if the property is missing.
 
 > For example
 
@@ -95,7 +96,6 @@ set_type('Book', {
 // Create a new book
 book = Book{
     title: "hitchhiker's guide to the galaxy",
-    notes: []
 };
 
 // Add a note to the book

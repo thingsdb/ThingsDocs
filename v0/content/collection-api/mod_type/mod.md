@@ -27,6 +27,8 @@ definition | str | New type definition of the property that has to be modified.
 
 The value `nil`.
 
+### Example
+
 > This code shows the return value for the action ***mod***:
 
 ```thingsdb,json_response
