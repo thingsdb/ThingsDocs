@@ -180,7 +180,7 @@ Example  This code pushes values to a list:
       <guid>https://docs.thingsdb.net/v0/data-types/list/reduce/</guid>
       <description>Executes a given reducer closure on every item of the list, accumulating to a single return value.
 This function does not generate an event.
-Function list.reduce(reducer, [initial])
+Function array.reduce(reducer, [initial])
 Arguments    Argument Type Description     reducer closure (required) Closure to execute on every value (except for the first, if no initial value is provided).   initial any (optional) The initial value serves as the first argument of the callback during the first call.</description>
     </item>
     

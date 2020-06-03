@@ -38,6 +38,19 @@ Arguments    Argument Type Description     callback closure (required) Closure t
     </item>
     
     <item>
+      <title>every</title>
+      <link>https://docs.thingsdb.net/v0/data-types/set/every/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/set/every/</guid>
+      <description>This function checks if all things in the set pass a given test. It returns a boolean value.
+Calling this function on an empty set returns true for any condition!
+ This function does not generate an event.
+Function set.every(callback)
+Arguments    Argument Type Description     callback closure Closure to execute on each thing until the closure evaluates to false.    Explanation of the callback argument:</description>
+    </item>
+    
+    <item>
       <title>filter</title>
       <link>https://docs.thingsdb.net/v0/data-types/set/filter/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -110,6 +123,19 @@ Arguments Explanation of the callback argument:
     </item>
     
     <item>
+      <title>reduce</title>
+      <link>https://docs.thingsdb.net/v0/data-types/set/reduce/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/set/reduce/</guid>
+      <description>Executes a given reducer closure on every thing in the set, accumulating to a single return value.
+A set is unordered and therefore the order how things are processed by the reducer might be different from what you expect.
+ This function does not generate an event.
+Function set.reduce(reducer, [initial])
+Arguments    Argument Type Description     reducer closure (required) Closure to execute on every thing (except for the first, if no initial value is provided).</description>
+    </item>
+    
+    <item>
       <title>remove</title>
       <link>https://docs.thingsdb.net/v0/data-types/set/remove/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -118,6 +144,19 @@ Arguments Explanation of the callback argument:
       <description>This function can be used to remove things from a set.
 If a closure is used, then all things that satisfy the test are removed from the set and returned as list. The order of the removed things is not guaranteed since the set itself is unordered.
 It is also possible to specify things as arguments. In this case a list is returned with all the things which are removed from the set, in the order that the arguments are used.</description>
+    </item>
+    
+    <item>
+      <title>some</title>
+      <link>https://docs.thingsdb.net/v0/data-types/set/some/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/set/some/</guid>
+      <description>This function checks if at least one thing in the set passes a given test. It returns a boolean value.
+Calling this function on an empty set returns false for any condition!
+ This function does not generate an event.
+Function set.some(callback)
+Arguments    Argument Type Description     callback closure Closure to execute on each thing until the closure evaluates to true.    Explanation of the callback argument:</description>
     </item>
     
   </channel>

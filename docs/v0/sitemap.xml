@@ -271,6 +271,10 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/set/every/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/data-types/set/filter/</loc>
   </url>
   
@@ -291,7 +295,15 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/set/reduce/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/data-types/set/remove/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/set/some/</loc>
   </url>
   
   <url>
