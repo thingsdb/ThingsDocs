@@ -1,6 +1,6 @@
 ---
 title: "isthing"
-weight: 141
+weight: 144
 ---
 
 This function determines whether the provided value is a [thing](../../data-types/thing) or not.

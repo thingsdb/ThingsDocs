@@ -1,6 +1,6 @@
 ---
 title: "isnan"
-weight: 136
+weight: 139
 ---
 
 This function determines whether the provided value is a number.

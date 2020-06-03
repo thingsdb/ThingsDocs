@@ -1,6 +1,6 @@
 ---
 title: "isnil"
-weight: 137
+weight: 140
 ---
 
 This function determines whether the provided value is [nil](../../data-types/nil).

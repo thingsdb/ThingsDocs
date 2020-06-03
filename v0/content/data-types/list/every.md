@@ -33,7 +33,7 @@ Returns `true` if every item in the array satisfies the check in the callback fu
 
 ### Example
 
-> This code shows an example using ***find()***:
+> This code shows an example using ***every()***:
 
 ```thingsdb,json_response
 a = [12, 5, 8, 130, 44].every(|x| x >= 10);   // false

@@ -1,6 +1,6 @@
 ---
 title: "on-update"
-weight: 223
+weight: 226
 ---
 
 An update event is pushed when changes are made to a `thing` you are watching.

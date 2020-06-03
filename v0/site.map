@@ -65,12 +65,15 @@ data-types
     set
         add
         each
+        every
         filter
         find
         has
         len
         map
+        reduce
         remove
+        some
     str
         contains
         endswith

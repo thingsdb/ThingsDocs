@@ -9,7 +9,7 @@ This function does *not* generate an [event](../../../overview/events).
 
 ### Function
 
-*list*.`reduce(reducer, [initial])`
+*array*.`reduce(reducer, [initial])`
 
 ### Arguments
 

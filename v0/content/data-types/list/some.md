@@ -33,7 +33,7 @@ Returns `true` if at least one item in the array satisfies the check in the call
 
 ### Example
 
-> This code shows an example using ***find()***:
+> This code shows an example using ***some()***:
 
 ```thingsdb,json_response
 a = [2, 5, 8, 1, 4].some(|x| x >= 10);   // false
