@@ -12,12 +12,15 @@ Function | Description
 ------ | -----------
 [add](./add) | Add things to a set.
 [each](./each) | Iterate over all items in a set.
+[every](./every) | Check if all things pass a given test.
 [filter](./filter) | Return a new `set` with things that pass a given test.
 [find](./find) | Return the first `thing` which passes a given test.
 [has](./has) | Test if a set contains a given thing.
 [len](./len) | Return the length of a set.
 [map](./map) | Return a [list](../list) with the results of calling a provided closure on every thing.
+[reduce](./reduce) | Execute a reducer function on each thing, resulting in a single output value.
 [remove](./remove) | Remove things from a set.
+[some](./some) | Check if at least one thing passes a given test.
 
 ### Operators
 
