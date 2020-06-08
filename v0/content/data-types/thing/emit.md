@@ -50,5 +50,5 @@ None
 > Return value in JSON format
 
 ```json
-None
+null
 ```
