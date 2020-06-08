@@ -85,6 +85,7 @@ data-types
     thing
         del
         each
+        emit
         filter
         get
         has

@@ -9,6 +9,7 @@ Function | Description
 ------ | -----------
 [del](./del) | Remove a property.
 [each](./each) | Iterate over all properties of a thing.
+[emit](./emit) | Emit an event to all watchers of a thing.
 [filter](./filter) | Return a new `thing` with properties that pass a given test.
 [get](./get) | Return the value of a property on a thing by a given property name.
 [has](./has) | Determine if a thing has a given property.

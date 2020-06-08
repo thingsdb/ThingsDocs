@@ -1,6 +1,6 @@
 ---
 title: "new"
-weight: 159
+weight: 160
 ---
 
 Creates a new instance of a defined [Type](../../data-types/type).

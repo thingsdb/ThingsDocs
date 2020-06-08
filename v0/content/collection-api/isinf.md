@@ -1,6 +1,6 @@
 ---
 title: "isinf"
-weight: 136
+weight: 137
 ---
 
 This function determines whether the provided value is a positive or negative *infinity*.

@@ -1,10 +1,9 @@
 ---
 title: "del"
-weight: 151
+weight: 152
 ---
 
 Delete a member from an existing [enumerator type](../../../data-types/enum).
-
 
 {{% notice warning %}}
 A member may only be removed if the member is no longer being used. Otherwise an [operation_err()](../../../errors/operation_err) is raised.

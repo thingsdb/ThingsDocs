@@ -1,6 +1,6 @@
 ---
 title: "node-status"
-weight: 224
+weight: 225
 ---
 
 The body of a *Node Status* event contains only a string value.

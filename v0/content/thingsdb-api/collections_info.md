@@ -1,6 +1,6 @@
 ---
 title: "collections_info"
-weight: 193
+weight: 194
 ---
 
 Returns collection information about all collections in ThingsDB.

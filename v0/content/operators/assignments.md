@@ -1,6 +1,6 @@
 ---
 title: "Assignments"
-weight: 106
+weight: 107
 ---
 
 Assignments will generate an [event](../../overview/events).

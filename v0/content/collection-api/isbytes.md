@@ -1,6 +1,6 @@
 ---
 title: "isbytes"
-weight: 132
+weight: 133
 ---
 
 This function determines whether the provided value is of type [bytes](../../data-types/bytes) or not.
