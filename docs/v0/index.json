@@ -592,7 +592,7 @@
 	"title": "thing",
 	"tags": [],
 	"description": "",
-	"content": "Functions    Function Description     del Remove a property.   each Iterate over all properties of a thing.   filter Return a new thing with properties that pass a given test.   get Return the value of a property on a thing by a given property name.   has Determine if a thing has a given property.   id Return the id.   keys Return a list with all the property names of a thing.   len Return the number of items.   map Return a list with the results of calling a provided closure on every property.   set Create a new property on a thing.   unwatch Stop watching the thing for mutations.   values Return a list with all the property values of a thing.   watch Watch the thing for mutations.   wrap Wrap the thing with a Type.    "
+	"content": "Functions    Function Description     del Remove a property.   each Iterate over all properties of a thing.   emit Emit an event to all watchers of a thing.   filter Return a new thing with properties that pass a given test.   get Return the value of a property on a thing by a given property name.   has Determine if a thing has a given property.   id Return the id.   keys Return a list with all the property names of a thing.   len Return the number of items.   map Return a list with the results of calling a provided closure on every property.   set Create a new property on a thing.   unwatch Stop watching the thing for mutations.   values Return a list with all the property values of a thing.   watch Watch the thing for mutations.   wrap Wrap the thing with a Type.    "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/data-types/thing/del/",
@@ -607,6 +607,13 @@
 	"tags": [],
 	"description": "",
 	"content": "Iterate over all properties on a thing.\nBe aware that the order when iterating over a thing is not guaranteed.\n This function does not generate an event.\nFunction thing.each(callback)\nArguments    Argument Type Description     callback closure (required) Closure to execute on each value.    Explanation of the callback argument:\n   Iterable Arguments Description     thing name, value Iterate over the thing properties. Both name and value are optional.    Return value None\nExample  This code shows an example using each():\n scores = { cato: 99, iris: 110, job: 170, sasha: 67, tijs: 159, }; // Just an example, the same could be achieved using `filter` and `map`. above100 = []; scores.each(|name, score| score \u0026gt; 100 \u0026amp;\u0026amp; above100.push(name) ); // Return all players with a score above 100 above100;  Return value in JSON format\n [ \u0026#34;iris\u0026#34;, \u0026#34;job\u0026#34;, \u0026#34;tijs\u0026#34; ] "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/data-types/thing/emit/",
+	"title": "emit",
+	"tags": [],
+	"description": "",
+	"content": "Emit an event to all watchers of a thing. The event is a string value which you are free to choose. It is possible, but not required, to send extra arguments with the event.\nWhen you emit an event, the event is handled by ThingsDB just as any other event and thus the order in which they are send to the client is guaranteed.\n This function generates an event.\nUsing events enables a user to write code like this example of a ChatRoom in the Python language:\nclass ChatRoom(Thing): @event(\u0026#39;message/new\u0026#39;) def on_new_message(self, msg): pass # do something with the message Function thing.emit(event, ...)\nArguments    Argument Type Description     event str (required) Event name to emit.   \u0026hellip; any (optional) Arguments send together with the event.    Return value None\nExample  This code shows an example using emit():\n .emit('new/message', 'Hello Everyone!');  Return value in JSON format\n null "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/data-types/thing/filter/",

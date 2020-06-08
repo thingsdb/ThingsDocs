@@ -955,6 +955,17 @@ Arguments    Argument Type Description     callback closure (required) Closure t
     </item>
     
     <item>
+      <title>emit</title>
+      <link>https://docs.thingsdb.net/v0/data-types/thing/emit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/thing/emit/</guid>
+      <description>Emit an event to all watchers of a thing. The event is a string value which you are free to choose. It is possible, but not required, to send extra arguments with the event.
+When you emit an event, the event is handled by ThingsDB just as any other event and thus the order in which they are send to the client is guaranteed.
+ This function generates an event.</description>
+    </item>
+    
+    <item>
       <title>filter</title>
       <link>https://docs.thingsdb.net/v0/data-types/thing/filter/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

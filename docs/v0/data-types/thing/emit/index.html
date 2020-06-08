@@ -8,23 +8,23 @@
 
 
     <link rel="shortcut icon" href='/v0/images/favicon.ico' type="image/x-icon" />
-    <title>mod :: ThingsDB documentation</title>
+    <title>emit :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1591616653" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1591616653" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1591616653" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1591616653" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1591616653" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1591616653" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1591616653" rel="stylesheet">
-    <link href="/v0/css/theme.css?1591616653" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1591616653" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1591616654" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1591616654" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1591616654" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1591616654" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1591616654" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1591616654" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1591616654" rel="stylesheet">
+    <link href="/v0/css/theme.css?1591616654" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1591616654" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1591616653" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1591616654" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1591616653"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1591616654"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -38,7 +38,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/v0/collection-api/mod_type/mod/">
+  <body class="" data-url="/v0/data-types/thing/emit/">
     <nav id="sidebar" class="">
 
 
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1591616653"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1591616653"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1591616654"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1591616654"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1591616653"></script>
+<script type="text/javascript" src="/v0/js/search.js?1591616654"></script>
 
     
   </div>
@@ -649,7 +649,7 @@
   
     
     <li data-nav-id="/v0/data-types/" title="Data Types" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1845,7 +1845,7 @@
   
     
     <li data-nav-id="/v0/data-types/thing/" title="thing" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1907,7 +1907,7 @@
  
   
     
-      <li data-nav-id="/v0/data-types/thing/emit/" title="emit" class="dd-item ">
+      <li data-nav-id="/v0/data-types/thing/emit/" title="emit" class="dd-item active">
         <a href="/v0/data-types/thing/emit/">
         emit
         
@@ -2408,7 +2408,7 @@
   
     
     <li data-nav-id="/v0/collection-api/" title="Collection API" class="dd-item 
-        parent
+        
         
         
         ">
@@ -3248,7 +3248,7 @@
   
     
     <li data-nav-id="/v0/collection-api/mod_type/" title="mod_type" class="dd-item 
-        parent
+        
         
         
         ">
@@ -3310,7 +3310,7 @@
  
   
     
-      <li data-nav-id="/v0/collection-api/mod_type/mod/" title="mod" class="dd-item active">
+      <li data-nav-id="/v0/collection-api/mod_type/mod/" title="mod" class="dd-item ">
         <a href="/v0/collection-api/mod_type/mod/">
         mod
         
@@ -5110,7 +5110,7 @@
             
           
           
-            <a href='/v0/'></a> > <a href='/v0/collection-api/'>Collection API</a> > <a href='/v0/collection-api/mod_type/'>mod_type</a> > mod
+            <a href='/v0/'></a> > <a href='/v0/data-types/'>Data Types</a> > <a href='/v0/data-types/thing/'>thing</a> > emit
           
          
           
@@ -5129,7 +5129,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#action">Action</a></li>
+        <li><a href="#function">Function</a></li>
         <li><a href="#arguments">Arguments</a></li>
         <li><a href="#return-value">Return value</a></li>
         <li><a href="#example">Example</a></li>
@@ -5152,7 +5152,7 @@
           
             <h1>
               
-              mod
+              emit
             </h1>
           
 
@@ -5160,14 +5160,21 @@
 
 
 
-<p>Modifies the type definition of a property from an existing <a href="../../../data-types/type">Type</a>.</p>
+<p>Emit an event to all watchers of a <a href="..">thing</a>.
+The event is a string value which you are free to choose. It is possible, but not required, to send extra arguments with the event.</p>
 
-<div class="notices note" ><p>When modifying a property of a Type, the changed property type can only be less &lsquo;strict&rsquo;.<br>
-So for example, <code>age: 'int'</code> can become <code>age: 'int?'</code>, but not the other way around.</p>
+<div class="notices note" ><p>When you emit an event, the event is handled by ThingsDB just as any other event and thus the order in which they are send
+to the client is guaranteed.</p>
 </div>
 
-<h3 id="action">Action</h3>
-<p><code>mod_type(type, 'mod', name, definition)</code></p>
+<p>This function generates an <a href="../../../overview/events">event</a>.</p>
+<p>Using events enables a user to write code like this example of a ChatRoom in the Python language:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ChatRoom</span>(Thing):
+    <span style="color:#a6e22e">@event</span>(<span style="color:#e6db74">&#39;message/new&#39;</span>)
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">on_new_message</span>(self, msg):
+        <span style="color:#66d9ef">pass</span>  <span style="color:#75715e"># do something with the message</span>
+</code></pre></div><h3 id="function">Function</h3>
+<p><em>thing</em>.<code>emit(event, ...)</code></p>
 <h3 id="arguments">Arguments</h3>
 <table>
 <thead>
@@ -5179,42 +5186,24 @@ So for example, <code>age: 'int'</code> can become <code>age: 'int?'</code>, but
 </thead>
 <tbody>
 <tr>
-<td>type</td>
-<td>str</td>
-<td>Name of the Type where the property has to be modified from.</td>
+<td>event</td>
+<td>str (required)</td>
+<td>Event name to emit.</td>
 </tr>
 <tr>
-<td><code>'mod'</code></td>
-<td>str</td>
-<td>Passing this argument will result in a <em>modify</em> action.</td>
-</tr>
-<tr>
-<td>name</td>
-<td>str</td>
-<td>Name of the property that has to be modified.</td>
-</tr>
-<tr>
-<td>definition</td>
-<td>str</td>
-<td>New type definition of the property that has to be modified.</td>
+<td>&hellip;</td>
+<td>any (optional)</td>
+<td>Arguments send together with the event.</td>
 </tr>
 </tbody>
 </table>
 <h3 id="return-value">Return value</h3>
-<p>The value <code>nil</code>.</p>
+<p>None</p>
 <h3 id="example">Example</h3>
 <blockquote>
-<p>This code shows the return value for the action <em><strong>mod</strong></em>:</p>
+<p>This code shows an example using <em><strong>emit()</strong></em>:</p>
 </blockquote>
-<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">// Create type `Person`
-set_type('Person', {
-    name: 'str',
-    age: 'int',
-    hobbies: '[str]'
-});
-
-// Make `age` nillable
-mod_type('Person', 'mod', 'age', 'int?');
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">.emit('new/message', 'Hello Everyone!');
 </code></pre><blockquote>
 <p>Return value in JSON format</p>
 </blockquote>
@@ -5236,10 +5225,10 @@ mod_type('Person', 'mod', 'age', 'int?');
         
     
         
-            <a class="nav nav-prev" href="/v0/collection-api/mod_type/del/" title="del"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/v0/data-types/thing/each/" title="each"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/v0/collection-api/mod_type/ren/" title="ren" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/v0/data-types/thing/filter/" title="filter" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     
     </div>

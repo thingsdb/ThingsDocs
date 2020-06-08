@@ -351,6 +351,10 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/thing/emit/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/data-types/thing/filter/</loc>
   </url>
   
