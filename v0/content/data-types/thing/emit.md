@@ -1,6 +1,6 @@
 ---
 title: "emit"
-weight: 88
+weight: 89
 ---
 
 Emit an event to all watchers of a [thing](..).

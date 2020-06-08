@@ -83,6 +83,7 @@ data-types
         test
         upper
     thing
+        assign
         del
         each
         emit

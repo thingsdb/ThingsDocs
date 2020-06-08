@@ -1,6 +1,6 @@
 ---
 title: "isset"
-weight: 143
+weight: 144
 ---
 
 This function determines whether the provided value is a [set](../../data-types/set) or not.

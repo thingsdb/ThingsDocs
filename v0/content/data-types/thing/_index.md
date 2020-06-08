@@ -7,6 +7,7 @@ weight: 85
 
 Function | Description
 ------ | -----------
+[assign](./assign) | Copies properties from a thing.
 [del](./del) | Remove a property.
 [each](./each) | Iterate over all properties of a thing.
 [emit](./emit) | Emit an event to all watchers of a thing.
