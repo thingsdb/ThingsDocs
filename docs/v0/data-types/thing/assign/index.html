@@ -8,7 +8,7 @@
 
 
     <link rel="shortcut icon" href='/v0/images/favicon.ico' type="image/x-icon" />
-    <title>reset_counters :: ThingsDB documentation</title>
+    <title>assign :: ThingsDB documentation</title>
 
     
     <link href="/v0/css/nucleus.css?1591634474" rel="stylesheet">
@@ -38,7 +38,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/v0/node-api/reset_counters/">
+  <body class="" data-url="/v0/data-types/thing/assign/">
     <nav id="sidebar" class="">
 
 
@@ -649,7 +649,7 @@
   
     
     <li data-nav-id="/v0/data-types/" title="Data Types" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1845,7 +1845,7 @@
   
     
     <li data-nav-id="/v0/data-types/thing/" title="thing" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1869,7 +1869,7 @@
  
   
     
-      <li data-nav-id="/v0/data-types/thing/assign/" title="assign" class="dd-item ">
+      <li data-nav-id="/v0/data-types/thing/assign/" title="assign" class="dd-item active">
         <a href="/v0/data-types/thing/assign/">
         assign
         
@@ -3764,7 +3764,7 @@
   
     
     <li data-nav-id="/v0/node-api/" title="Node API" class="dd-item 
-        parent
+        
         
         
         ">
@@ -3940,7 +3940,7 @@
  
   
     
-      <li data-nav-id="/v0/node-api/reset_counters/" title="reset_counters" class="dd-item active">
+      <li data-nav-id="/v0/node-api/reset_counters/" title="reset_counters" class="dd-item ">
         <a href="/v0/node-api/reset_counters/">
         reset_counters
         
@@ -5125,7 +5125,13 @@
             
           
           
-            <a href='/v0/'></a> > <a href='/v0/node-api/'>Node API</a> > reset_counters
+            
+            
+          
+          
+            <a href='/v0/'></a> > <a href='/v0/data-types/'>Data Types</a> > <a href='/v0/data-types/thing/'>thing</a> > assign
+          
+         
           
          
           
@@ -5165,7 +5171,7 @@
           
             <h1>
               
-              reset_counters
+              assign
             </h1>
           
 
@@ -5173,26 +5179,52 @@
 
 
 
-<p>Resets the <a href="../../node-api/counters">counters</a> for the ThingsDB node you are connected too.
-Other nodes are not affected.
-This will set the <code>started_at</code> counter value to the current UNIX time-stamp in seconds and all other counters to <code>0</code> (zero).</p>
-<p>This function does <em>not</em> generate an <a href="../../overview/events">event</a>.</p>
+<p>Copies properties from a given <a href="..">thing</a>. Existing properties will be overwritten and new properties will be added. If this function is used on an instance of a custom <a href="../../type">Type</a>, <em>all</em> properties of the source must be valid according the type specification, otherwise an exception will be raised and no properties will be copied.</p>
+<p>This function generates an <a href="../../../overview/events">event</a>.</p>
 <h3 id="function">Function</h3>
-<p><code>reset_counters();</code></p>
+<p><em>thing</em>.<code>assign(source)</code></p>
 <h3 id="arguments">Arguments</h3>
-<p>None</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>source</td>
+<td>thing (required)</td>
+<td>Thing from which the properties are copied.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="return-value">Return value</h3>
-<p>Returns <code>nil</code>.</p>
+<p>None</p>
 <h3 id="example">Example</h3>
 <blockquote>
-<p>This code will reset the counters on a node:</p>
+<p>This code shows an example using <em><strong>assign()</strong></em>:</p>
 </blockquote>
-<pre><code class="language-thingsdb,json_response,@n" data-lang="thingsdb,json_response,@n">// resets counters on the node in this scope
-reset_counters();
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">scores = {
+    iris: 10,
+    job: 20
+};
+
+scores.assign({
+    job: 80,
+    tijs: 90
+});
+
+scores;  // Return the scores
 </code></pre><blockquote>
-<p>Example return value in JSON format (the new collection id)</p>
+<p>Return value in JSON format</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#66d9ef">null</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;iris&#34;</span>: <span style="color:#ae81ff">10</span>,
+    <span style="color:#f92672">&#34;job&#34;</span>: <span style="color:#ae81ff">80</span>,
+    <span style="color:#f92672">&#34;tijs&#34;</span>: <span style="color:#ae81ff">90</span>
+}
 </code></pre></div>
 
 <footer class=" footline" >
@@ -5210,10 +5242,10 @@ reset_counters();
         
     
         
-            <a class="nav nav-prev" href="/v0/node-api/nodes_info/" title="nodes_info"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/v0/data-types/thing/" title="thing"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/v0/node-api/set_log_level/" title="set_log_level" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/v0/data-types/thing/del/" title="del" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     
     </div>

@@ -1,5 +1,5 @@
 /*
-  Highlight.js 10.0.0-beta.0 (db2f3ead)
+  Highlight.js 10.0.0-beta.0 (c2589421)
   License: BSD-3-Clause
   Copyright (c) 2006-2020, Ivan Sagalaev
 */
@@ -1890,7 +1890,7 @@ hljs.registerLanguage('thingsdb', function () {
                 {
                     className: 'function',
                     begin: new RegExp(
-                        '\\.\\s*(len|call|choice|def|doc|code|msg|each|every|extend|filter|find|' +
+                        '\\.\\s*(assign|len|call|choice|def|doc|emit|code|msg|each|every|extend|filter|find|' +
                         'findindex|indexof|map|name|pop|push|remove|sort|splice|' +
                         'add|has|contains|endswith|lower|startswith|test|upper|' +
                         'del|get|id|keys|reduce|set|some|value|values|watch|wrap|unwatch|unwrap)\\s*(?=\\()'

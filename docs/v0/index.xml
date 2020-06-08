@@ -930,6 +930,18 @@ Example  Example using upper():
     </item>
     
     <item>
+      <title>assign</title>
+      <link>https://docs.thingsdb.net/v0/data-types/thing/assign/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/thing/assign/</guid>
+      <description>Copies properties from a given thing. Existing properties will be overwritten and new properties will be added. If this function is used on an instance of a custom Type, all properties of the source must be valid according the type specification, otherwise an exception will be raised and no properties will be copied.
+This function generates an event.
+Function thing.assign(source)
+Arguments    Argument Type Description     source thing (required) Thing from which the properties are copied.</description>
+    </item>
+    
+    <item>
       <title>del</title>
       <link>https://docs.thingsdb.net/v0/data-types/thing/del/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

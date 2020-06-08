@@ -592,7 +592,14 @@
 	"title": "thing",
 	"tags": [],
 	"description": "",
-	"content": "Functions    Function Description     del Remove a property.   each Iterate over all properties of a thing.   emit Emit an event to all watchers of a thing.   filter Return a new thing with properties that pass a given test.   get Return the value of a property on a thing by a given property name.   has Determine if a thing has a given property.   id Return the id.   keys Return a list with all the property names of a thing.   len Return the number of items.   map Return a list with the results of calling a provided closure on every property.   set Create a new property on a thing.   unwatch Stop watching the thing for mutations.   values Return a list with all the property values of a thing.   watch Watch the thing for mutations.   wrap Wrap the thing with a Type.    "
+	"content": "Functions    Function Description     assign Copies properties from a thing.   del Remove a property.   each Iterate over all properties of a thing.   emit Emit an event to all watchers of a thing.   filter Return a new thing with properties that pass a given test.   get Return the value of a property on a thing by a given property name.   has Determine if a thing has a given property.   id Return the id.   keys Return a list with all the property names of a thing.   len Return the number of items.   map Return a list with the results of calling a provided closure on every property.   set Create a new property on a thing.   unwatch Stop watching the thing for mutations.   values Return a list with all the property values of a thing.   watch Watch the thing for mutations.   wrap Wrap the thing with a Type.    "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/data-types/thing/assign/",
+	"title": "assign",
+	"tags": [],
+	"description": "",
+	"content": "Copies properties from a given thing. Existing properties will be overwritten and new properties will be added. If this function is used on an instance of a custom Type, all properties of the source must be valid according the type specification, otherwise an exception will be raised and no properties will be copied.\nThis function generates an event.\nFunction thing.assign(source)\nArguments    Argument Type Description     source thing (required) Thing from which the properties are copied.    Return value None\nExample  This code shows an example using assign():\n scores = { iris: 10, job: 20 }; scores.assign({ job: 80, tijs: 90 }); scores; // Return the scores  Return value in JSON format\n { \u0026#34;iris\u0026#34;: 10, \u0026#34;job\u0026#34;: 80, \u0026#34;tijs\u0026#34;: 90 } "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/data-types/thing/del/",
