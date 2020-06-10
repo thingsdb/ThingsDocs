@@ -41,10 +41,8 @@ Arguments    Argument Type Description     type str Name of the Type where the p
       
       <guid>https://docs.thingsdb.net/v0/collection-api/mod_type/mod/</guid>
       <description>Modifies the type definition of a property from an existing Type.
-When modifying a property of a Type, the changed property type can only be less &amp;lsquo;strict&amp;rsquo;.
-So for example, age: &#39;int&#39; can become age: &#39;int?&#39;, but not the other way around.
- Action mod_type(type, &#39;mod&#39;, name, definition)
-Arguments    Argument Type Description     type str Name of the Type where the property has to be modified from.</description>
+Without an additional callback it is possible to modify to a less &amp;lsquo;strict&amp;rsquo; definition. So for example, age: &#39;int&#39; can become age: &#39;int?&#39;, but not the other way around. Since version v0.9.3 it is possible to migrate to a more strict or completely different definition by using an additional callback closure for generating new values.
+ Action mod_type(type, &#39;mod&#39;, name, definition, [callback])</description>
     </item>
     
     <item>

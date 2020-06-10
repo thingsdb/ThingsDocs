@@ -11,20 +11,20 @@
     <title>mod :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1591634473" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1591634473" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1591634473" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1591634473" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1591634473" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1591634473" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1591634473" rel="stylesheet">
-    <link href="/v0/css/theme.css?1591634473" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1591634473" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1591812991" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1591812991" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1591812991" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1591812991" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1591812991" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1591812991" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1591812991" rel="stylesheet">
+    <link href="/v0/css/theme.css?1591812991" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1591812991" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1591634473" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1591812991" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1591634473"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1591812991"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1591634473"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1591634473"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1591812991"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1591812991"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1591634473"></script>
+<script type="text/javascript" src="/v0/js/search.js?1591812991"></script>
 
     
   </div>
@@ -5152,6 +5152,7 @@
         <li><a href="#arguments">Arguments</a></li>
         <li><a href="#return-value">Return value</a></li>
         <li><a href="#example">Example</a></li>
+        <li><a href="#modify-using-callback">Modify using callback</a></li>
       </ul>
     </li>
   </ul>
@@ -5181,12 +5182,14 @@
 
 <p>Modifies the type definition of a property from an existing <a href="../../../data-types/type">Type</a>.</p>
 
-<div class="notices note" ><p>When modifying a property of a Type, the changed property type can only be less &lsquo;strict&rsquo;.<br>
-So for example, <code>age: 'int'</code> can become <code>age: 'int?'</code>, but not the other way around.</p>
+<div class="notices note" ><p>Without an additional <code>callback</code> it is possible to modify to a less &lsquo;strict&rsquo; definition.
+So for example, <code>age: 'int'</code> can become <code>age: 'int?'</code>, but not the other way around.
+Since version <strong>v0.9.3</strong> it is possible to migrate to a more strict or completely different definition by using an additional
+callback closure for generating new values.</p>
 </div>
 
 <h3 id="action">Action</h3>
-<p><code>mod_type(type, 'mod', name, definition)</code></p>
+<p><code>mod_type(type, 'mod', name, definition, [callback])</code></p>
 <h3 id="arguments">Arguments</h3>
 <table>
 <thead>
@@ -5217,6 +5220,11 @@ So for example, <code>age: 'int'</code> can become <code>age: 'int?'</code>, but
 <td>str</td>
 <td>New type definition of the property that has to be modified.</td>
 </tr>
+<tr>
+<td>callback</td>
+<td>closure</td>
+<td>The closure will be called on each existing instance and can be used to set a new value, see <a href="#modify-using-callback">modify using callback</a>.</td>
+</tr>
 </tbody>
 </table>
 <h3 id="return-value">Return value</h3>
@@ -5238,6 +5246,43 @@ mod_type('Person', 'mod', 'age', 'int?');
 <p>Return value in JSON format</p>
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#66d9ef">null</span>
+</code></pre></div><h3 id="modify-using-callback">Modify using callback</h3>
+<p>If you want to migrate an exiting property definition to a complete different or more strict definition, an addition <a href="../../../data-types/closure">closure</a> argument must be used to generate new values for existing instances.
+The return value of the closure will be used as the new value, unless:</p>
+<ul>
+<li><code>nil</code> is returned by the closure.</li>
+<li>The return value does not match the new definition. In this case an <a href="../../../errors/operation_err">operation_err()</a> is raised <em>after</em> <code>mod_type(..)</code> has finished.</li>
+<li>An error is raised inside the closure. In this case an <a href="../../../errors/operation_err">operation_err()</a> is raised <em>after</em> <code>mod_type(..)</code> has finished.</li>
+</ul>
+<p>In all three cases above, the value will be untouched after the callback <em>unless</em> the existing property does not match with the new definition. In the latter case, a default value will be applied <em>after</em> the callback has finished.</p>
+<p>During the migration, each instance has <em>any</em> definition for the property which is being modified. This is done by ThingsDB so we ensure that both the <em>old</em> value, and the <em>new</em> value will match the definition. This means that when the callbacks are executed, everything may be attached to the property. This value will be corrected by ThingsDB if there is no match between the value and the new definition.</p>
+<p>Suppose we want to modify a <code>chat</code> property on type <code>Room</code> from definition <code>&quot;str&quot;</code> to definition <code>&quot;Chat&quot;</code>:</p>
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">set_type('Room', {
+    chat: 'str'
+});
+
+my_room = Room{
+    chat: 'My Chat Room!'
+};
+
+// Create a new Chat type
+set_type('Chat', {
+    messages: '[str]',
+    name: 'str',
+});
+
+// Replace the `chat` string with the `Chat` type.
+// As name for the new Chat type we apply the `old` chat string
+mod_type('Room', 'mod', 'chat', 'Chat', |room| Chat{name: room.chat});
+
+my_room.chat;  // Return my chat room
+</code></pre><blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;messages&#34;</span>: [],
+    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;My Chat Room!&#34;</span>
+}
 </code></pre></div>
 
 <footer class=" footline" >
@@ -5268,19 +5313,19 @@ mod_type('Person', 'mod', 'age', 'int?');
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1591634474"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1591634474"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1591634474"></script>
-    <script src="/v0/js/jquery.sticky.js?1591634474"></script>
-    <script src="/v0/js/featherlight.min.js?1591634474"></script>
-    <script src="/v0/js/highlight.pack.js?1591634474"></script>
+    <script src="/v0/js/clipboard.min.js?1591812991"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1591812991"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1591812991"></script>
+    <script src="/v0/js/jquery.sticky.js?1591812991"></script>
+    <script src="/v0/js/featherlight.min.js?1591812991"></script>
+    <script src="/v0/js/highlight.pack.js?1591812991"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1591634474"></script>
-    <script src="/v0/js/learn.js?1591634474"></script>
-    <script src="/v0/js/hugo-learn.js?1591634474"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1591812991"></script>
+    <script src="/v0/js/learn.js?1591812991"></script>
+    <script src="/v0/js/hugo-learn.js?1591812991"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1591634474" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1591634474"></script>
+    <link href="/v0/mermaid/mermaid.css?1591812991" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1591812991"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

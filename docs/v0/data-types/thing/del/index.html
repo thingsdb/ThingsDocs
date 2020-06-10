@@ -11,20 +11,20 @@
     <title>del :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1591634474" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1591634474" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1591634474" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1591634474" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1591634474" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1591634474" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1591634474" rel="stylesheet">
-    <link href="/v0/css/theme.css?1591634474" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1591634474" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1591812991" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1591812991" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1591812991" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1591812991" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1591812991" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1591812991" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1591812991" rel="stylesheet">
+    <link href="/v0/css/theme.css?1591812991" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1591812991" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1591634474" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1591812991" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1591634474"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1591812991"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1591634474"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1591634474"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1591812991"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1591812991"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1591634474"></script>
+<script type="text/javascript" src="/v0/js/search.js?1591812991"></script>
 
     
   </div>
@@ -5206,9 +5206,13 @@ Use <a href="../../../collection-api/mod_type/del">mod_type()</a> instead, to de
 </tbody>
 </table>
 <h3 id="return-value">Return value</h3>
-<p>Returns <code>nil</code> if successful. A <a href="../../../errors/lookup_err">lookup_err()</a> is returned
+<p>Returns the removed value if successful. A <a href="../../../errors/lookup_err">lookup_err()</a> is returned
 if the property does not exist or <a href="../../../errors/bad_data_err">bad_data_err()</a> in case the given property is
 not a valid <a href="../../../overview/names">name</a>.</p>
+
+<div class="notices warning" ><p>In versions before <strong>v0.9.3</strong> the return value of <code>.del(..)</code> used to be <code>nil</code> when successful.</p>
+</div>
+
 <h3 id="example">Example</h3>
 <blockquote>
 <p>This code shows some return values for <em><strong>del()</strong></em>:</p>
@@ -5218,7 +5222,7 @@ not a valid <a href="../../../overview/names">name</a>.</p>
 </code></pre><blockquote>
 <p>Return value in JSON format</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#66d9ef">null</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;create and delete this prop&#34;</span>
 </code></pre></div>
 
 <footer class=" footline" >
@@ -5249,19 +5253,19 @@ not a valid <a href="../../../overview/names">name</a>.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1591634474"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1591634474"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1591634474"></script>
-    <script src="/v0/js/jquery.sticky.js?1591634474"></script>
-    <script src="/v0/js/featherlight.min.js?1591634474"></script>
-    <script src="/v0/js/highlight.pack.js?1591634474"></script>
+    <script src="/v0/js/clipboard.min.js?1591812991"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1591812991"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1591812991"></script>
+    <script src="/v0/js/jquery.sticky.js?1591812991"></script>
+    <script src="/v0/js/featherlight.min.js?1591812991"></script>
+    <script src="/v0/js/highlight.pack.js?1591812991"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1591634474"></script>
-    <script src="/v0/js/learn.js?1591634474"></script>
-    <script src="/v0/js/hugo-learn.js?1591634474"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1591812991"></script>
+    <script src="/v0/js/learn.js?1591812991"></script>
+    <script src="/v0/js/hugo-learn.js?1591812991"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1591634474" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1591634474"></script>
+    <link href="/v0/mermaid/mermaid.css?1591812991" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1591812991"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
