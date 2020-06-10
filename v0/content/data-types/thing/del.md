@@ -24,9 +24,13 @@ property | str (required) | Name of the property to delete.
 
 ### Return value
 
-Returns `nil` if successful. A [lookup_err()](../../../errors/lookup_err) is returned
+Returns the removed value if successful. A [lookup_err()](../../../errors/lookup_err) is returned
 if the property does not exist or [bad_data_err()](../../../errors/bad_data_err) in case the given property is
 not a valid [name](../../../overview/names).
+
+{{% notice warning %}}
+In versions before **v0.9.3** the return value of `.del(..)` used to be `nil` when successful.
+{{% /notice %}}
 
 ### Example
 
@@ -40,5 +44,5 @@ not a valid [name](../../../overview/names).
 > Return value in JSON format
 
 ```json
-null
+"create and delete this prop"
 ```

@@ -19,7 +19,7 @@ source | thing (required) | Thing from which the properties are copied.
 
 ### Return value
 
-None
+Returns the `thing` to which the properties are assigned.
 
 ### Example
 
@@ -35,8 +35,6 @@ scores.assign({
     job: 80,
     tijs: 90
 });
-
-scores;  // Return the scores
 ```
 
 > Return value in JSON format
