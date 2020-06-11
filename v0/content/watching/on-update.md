@@ -28,12 +28,19 @@ Mutation | Target | Description
 [add](#add) | `thing` | Add one or more [things](../../data-types/thing) to a [set](../../data-types/set).
 [remove](#remove) | `thing` | Remove one or more [things](../../data-types/thing) from a [set](../../data-types/set).
 [splice](#splice) | `thing` | Delete and/or add items to a [list](../../data-types/list).
+[event](#event) | `thing` | An event is emitted.
 [new_type](#new_type) | `collection` | A new [type](../../data-types/type) is added to the collection.
 [set_type](#set_type) | `collection` | A [type](../../data-types/type) is initialized.
 [del_type](#del_type) | `collection` | A [type](../../data-types/type) is removed from the collection.
+[mod_enum_add](#mod_enum_add) | `collection` | A new member is added to an existing [enum](../../data-types/enum).
+[mod_enum_def](#mod_enum_def) | `collection` | The default member is changed for an existing [enum](../../data-types/enum).
+[mod_enum_del](#mod_enum_del) | `collection` | A member is removed from an existing [enum](../../data-types/enum).
+[mod_enum_mod](#mod_enum_mod) | `collection` | A member value is modified on an existing [enum](../../data-types/enum).
+[mod_enum_ren](#mod_enum_ren) | `collection` | A member name is modified on an existing [enum](../../data-types/enum).
 [mod_type_add](#mod_type_add) | `collection` | A new field is added to an existing [type](../../data-types/type).
-[mod_type_mod](#mod_type_mod) | `collection` | A field is modified on an existing [type](../../data-types/type).
 [mod_type_del](#mod_type_del) | `collection` | A field is removed from an existing [type](../../data-types/type).
+[mod_type_mod](#mod_type_mod) | `collection` | A field is modified on an existing [type](../../data-types/type).
+[mod_type_ren](#mod_type_ren) | `collection` | A field is renamed on an existing [type](../../data-types/type).
 [new_procedure](#new_procedure) | `collection` | A new procedure is added to the collection.
 [del_procedure](#del_procedure) | `collection` | A procedure is removed from the collection.
 
@@ -166,6 +173,11 @@ information on how to parse a Type instance, look at the [mutation format](../..
 
 ## splice
 
+Mutations on a list are always converted to a `splice` event. From this it follows that
+no matter when using [splice](../../data-types/list/splice), [push](../../data-types/list/push),
+[pop](../../data-types/list/pop) or another function to make modifications to a list,
+the resulting event contains a `splice` mutation.
+
 ```thingsdb,syntax_only
 /*
  * Add items `"c"` and `"d"` at position `2`, and
@@ -176,7 +188,7 @@ information on how to parse a Type instance, look at the [mutation format](../..
 .arr.push("c", "d");
 ```
 
-> Mutation result from the above code:
+> Mutation result from the above code: *(at position 2, 0 deletions, and 2 new items)*
 
 ```json
 {
@@ -185,6 +197,28 @@ information on how to parse a Type instance, look at the [mutation format](../..
     }
 }
 ```
+
+
+## event
+
+Events are always triggered using the [emit(..)](../../data-types/thing/emit) function.
+
+```thingsdb,should_pass
+.emit('greet', "Hello", "universe!);
+```
+
+> Mutation result from the above code:
+
+```json
+{
+    "event": [
+        "greet",
+        "Hello",
+        "universe!"
+    ]
+}
+```
+
 
 ## new_type
 
@@ -253,6 +287,114 @@ del_type('Person');
 }
 ```
 
+## mod_enum_add
+
+```thingsdb,syntax_only
+// Add a member `BLUE` to enumerator `Color`.
+
+// set_enum('Color', {RED: '#f00', GREEN: '#0f0'});
+mod_enum('Color', 'add', 'BLUE', '#00f);
+```
+
+> Mutation result from the above code:
+
+```json
+{
+    "mod_type_add": {
+        "enum_id": 2,
+        "modified_at": 1581511233,
+        "name": "BLUE",
+        "value": "#00f"
+    }
+}
+```
+
+## mod_enum_def
+
+```thingsdb,syntax_only
+// Set member `GREEN` as the default member for enumerator `Color`.
+
+// set_enum('Color', {RED: '#f00', GREEN: '#0f0', BLUE: '#00f'});
+mod_enum('Color', 'def', 'GREEN');
+```
+
+> Mutation result from the above code:
+
+```json
+{
+    "mod_enum_def": {
+        "enum_id": 2,
+        "index": 1,
+        "modified_at": 1581511233
+    }
+}
+```
+
+## mod_enum_del
+
+```thingsdb,syntax_only
+// Delete member `GREEN` from enumerator `Color`.
+
+// set_enum('Color', {RED: '#f00', GREEN: '#0f0', BLUE: '#00f'});
+mod_enum('Color', 'del', 'GREEN');
+```
+
+> Mutation result from the above code:
+
+```json
+{
+    "mod_enum_del": {
+        "enum_id": 2,
+        "index": 1,
+        "modified_at": 1581511233
+    }
+}
+```
+
+## mod_enum_mod
+
+```thingsdb,syntax_only
+// Modify the value of member `BLUE` on enumerator `Color`.
+
+// set_enum('Color', {RED: '#f00', GREEN: '#0f0', BLUE: '#fff'});
+mod_enum('Color', 'mod', 'BLUE', '#00f);
+```
+
+> Mutation result from the above code:
+
+```json
+{
+    "mod_enum_mod": {
+        "enum_id": 2,
+        "index": 2,
+        "modified_at": 1581511233,
+        "value": "#00f"
+    }
+}
+```
+
+## mod_enum_ren
+
+```thingsdb,syntax_only
+// Rename member `MOON` to `BLUE` of enumerator `Color`.
+
+// set_enum('Color', {RED: '#f00', GREEN: '#0f0', MOON: '#00f'});
+mod_enum('Color', 'ren', 'MOON', 'BLUE');
+```
+
+> Mutation result from the above code:
+
+```json
+{
+    "mod_enum_ren": {
+        "enum_id": 2,
+        "index": 2,
+        "modified_at": 1581511233,
+        "name": "BLUE"
+    }
+}
+```
+
 ## mod_type_add
 
 ```thingsdb,syntax_only
@@ -282,6 +424,35 @@ mod_type('Book', 'add', 'rating', 'uint', 1);
 }
 ```
 
+Instead of adding a new field using a default value, it is possible to use a closure to generate
+initial values *(see [mod_type(..add)](../../collection-api/mod_type/add))*. In this case the following mutations are pushed
+to watchers:
+
+1. Mutation `mod_type_add`.
+2. Things with initial value *other than* the default value will receive a `set` mutation with the new initial value.
+
+
+## mod_type_del
+
+```thingsdb,syntax_only
+// Delete the `rating` field definition of type `Book`.
+
+// set_type('Book', {title: 'str', rating: 'number'});
+mod_type('Book', 'del', 'rating');
+```
+
+> Mutation result from the above code:
+
+```json
+{
+    "mod_type_del": {
+        "modified_at": 1581511233,
+        "name": "rating",
+        "type_id": 2
+    }
+}
+```
+
 ## mod_type_mod
 
 ```thingsdb,syntax_only
@@ -304,22 +475,32 @@ mod_type('Book', 'mod', 'rating', 'number');
 }
 ```
 
-## mod_type_del
+Instead of migrating to a `less` strict definition, it is possible to use a closure
+and migrate to a complete new definition *(see [mod_type(..mod)](../../collection-api/mod_type/mod))*. In this case the following mutations are pushed
+to watchers:
+
+1. Mutation `mod_type_mod` with a `any` spec.
+2. At *least* things with incompatible data on the field will receive a `set` mutation with a new value according the new spec.
+3. Mutation `mod_type_mod` with the required spec.
+
+
+## mod_type_ren
 
 ```thingsdb,syntax_only
-// Delete the `rating` field definition of type `Book`.
+// Rename the `rate` field of type `Book` to `rating`.
 
-// set_type('Book', {title: 'str', rating: 'number'});
-mod_type('Book', 'del', 'rating');
+// set_type('Book', {title: 'str', rate: 'number'});
+mod_type('Book', 'ren', 'rate', 'rating');
 ```
 
 > Mutation result from the above code:
 
 ```json
 {
-    "mod_type_del": {
+    "mod_type_ren": {
         "modified_at": 1581511233,
-        "name": "rating",
+        "name": "rate",
+        "to": "rating",
         "type_id": 2
     }
 }
