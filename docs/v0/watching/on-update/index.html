@@ -11,20 +11,20 @@
     <title>on-update :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1591812991" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1591812991" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1591812991" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1591812991" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1591812991" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1591812991" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1591812991" rel="stylesheet">
-    <link href="/v0/css/theme.css?1591812991" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1591812991" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1591879608" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1591879608" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1591879608" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1591879608" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1591879608" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1591879608" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1591879608" rel="stylesheet">
+    <link href="/v0/css/theme.css?1591879608" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1591879608" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1591812991" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1591879608" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1591812991"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1591879608"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1591812991"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1591812991"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1591879608"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1591879608"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1591812991"></script>
+<script type="text/javascript" src="/v0/js/search.js?1591879608"></script>
 
     
   </div>
@@ -5145,12 +5145,19 @@
     <li><a href="#add">add</a></li>
     <li><a href="#remove">remove</a></li>
     <li><a href="#splice">splice</a></li>
+    <li><a href="#event">event</a></li>
     <li><a href="#new_type">new_type</a></li>
     <li><a href="#set_type">set_type</a></li>
     <li><a href="#del_type">del_type</a></li>
+    <li><a href="#mod_enum_add">mod_enum_add</a></li>
+    <li><a href="#mod_enum_def">mod_enum_def</a></li>
+    <li><a href="#mod_enum_del">mod_enum_del</a></li>
+    <li><a href="#mod_enum_mod">mod_enum_mod</a></li>
+    <li><a href="#mod_enum_ren">mod_enum_ren</a></li>
     <li><a href="#mod_type_add">mod_type_add</a></li>
-    <li><a href="#mod_type_mod">mod_type_mod</a></li>
     <li><a href="#mod_type_del">mod_type_del</a></li>
+    <li><a href="#mod_type_mod">mod_type_mod</a></li>
+    <li><a href="#mod_type_ren">mod_type_ren</a></li>
     <li><a href="#new_procedure">new_procedure</a></li>
     <li><a href="#del_procedure">del_procedure</a></li>
   </ul>
@@ -5225,6 +5232,11 @@ changes to the <em>thing</em>, as well as changes to the <em>collection</em>. Th
 <td>Delete and/or add items to a <a href="../../data-types/list">list</a>.</td>
 </tr>
 <tr>
+<td><a href="#event">event</a></td>
+<td><code>thing</code></td>
+<td>An event is emitted.</td>
+</tr>
+<tr>
 <td><a href="#new_type">new_type</a></td>
 <td><code>collection</code></td>
 <td>A new <a href="../../data-types/type">type</a> is added to the collection.</td>
@@ -5240,9 +5252,39 @@ changes to the <em>thing</em>, as well as changes to the <em>collection</em>. Th
 <td>A <a href="../../data-types/type">type</a> is removed from the collection.</td>
 </tr>
 <tr>
+<td><a href="#mod_enum_add">mod_enum_add</a></td>
+<td><code>collection</code></td>
+<td>A new member is added to an existing <a href="../../data-types/enum">enum</a>.</td>
+</tr>
+<tr>
+<td><a href="#mod_enum_def">mod_enum_def</a></td>
+<td><code>collection</code></td>
+<td>The default member is changed for an existing <a href="../../data-types/enum">enum</a>.</td>
+</tr>
+<tr>
+<td><a href="#mod_enum_del">mod_enum_del</a></td>
+<td><code>collection</code></td>
+<td>A member is removed from an existing <a href="../../data-types/enum">enum</a>.</td>
+</tr>
+<tr>
+<td><a href="#mod_enum_mod">mod_enum_mod</a></td>
+<td><code>collection</code></td>
+<td>A member value is modified on an existing <a href="../../data-types/enum">enum</a>.</td>
+</tr>
+<tr>
+<td><a href="#mod_enum_ren">mod_enum_ren</a></td>
+<td><code>collection</code></td>
+<td>A member name is modified on an existing <a href="../../data-types/enum">enum</a>.</td>
+</tr>
+<tr>
 <td><a href="#mod_type_add">mod_type_add</a></td>
 <td><code>collection</code></td>
 <td>A new field is added to an existing <a href="../../data-types/type">type</a>.</td>
+</tr>
+<tr>
+<td><a href="#mod_type_del">mod_type_del</a></td>
+<td><code>collection</code></td>
+<td>A field is removed from an existing <a href="../../data-types/type">type</a>.</td>
 </tr>
 <tr>
 <td><a href="#mod_type_mod">mod_type_mod</a></td>
@@ -5250,9 +5292,9 @@ changes to the <em>thing</em>, as well as changes to the <em>collection</em>. Th
 <td>A field is modified on an existing <a href="../../data-types/type">type</a>.</td>
 </tr>
 <tr>
-<td><a href="#mod_type_del">mod_type_del</a></td>
+<td><a href="#mod_type_ren">mod_type_ren</a></td>
 <td><code>collection</code></td>
-<td>A field is removed from an existing <a href="../../data-types/type">type</a>.</td>
+<td>A field is renamed on an existing <a href="../../data-types/type">type</a>.</td>
 </tr>
 <tr>
 <td><a href="#new_procedure">new_procedure</a></td>
@@ -5362,6 +5404,10 @@ information on how to parse a Type instance, look at the <a href="../../data-typ
     }
 }
 </code></pre></div><h2 id="splice">splice</h2>
+<p>Mutations on a list are always converted to a <code>splice</code> event. From this it follows that
+no matter when using <a href="../../data-types/list/splice">splice</a>, <a href="../../data-types/list/push">push</a>,
+<a href="../../data-types/list/pop">pop</a> or another function to make modifications to a list,
+the resulting event contains a <code>splice</code> mutation.</p>
 <pre><code class="language-thingsdb,syntax_only" data-lang="thingsdb,syntax_only">/*
  * Add items `&quot;c&quot;` and `&quot;d&quot;` at position `2`, and
  * deletes `0` items to a *list* on property `arr`.
@@ -5370,12 +5416,25 @@ information on how to parse a Type instance, look at the <a href="../../data-typ
 // .arr = [&quot;a&quot;, &quot;b&quot;];
 .arr.push(&quot;c&quot;, &quot;d&quot;);
 </code></pre><blockquote>
-<p>Mutation result from the above code:</p>
+<p>Mutation result from the above code: <em>(at position 2, 0 deletions, and 2 new items)</em></p>
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;splice&#34;</span>: {
         <span style="color:#f92672">&#34;arr&#34;</span>: [<span style="color:#ae81ff">2</span> , <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#34;c&#34;</span>, <span style="color:#e6db74">&#34;d&#34;</span>]
     }
+}
+</code></pre></div><h2 id="event">event</h2>
+<p>Events are always triggered using the <a href="../../data-types/thing/emit">emit(..)</a> function.</p>
+<pre><code class="language-thingsdb,should_pass" data-lang="thingsdb,should_pass">.emit('greet', &quot;Hello&quot;, &quot;universe!);
+</code></pre><blockquote>
+<p>Mutation result from the above code:</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;event&#34;</span>: [
+        <span style="color:#e6db74">&#34;greet&#34;</span>,
+        <span style="color:#e6db74">&#34;Hello&#34;</span>,
+        <span style="color:#e6db74">&#34;universe!&#34;</span>
+    ]
 }
 </code></pre></div><h2 id="new_type">new_type</h2>
 <pre><code class="language-thingsdb,should_pass" data-lang="thingsdb,should_pass">/*
@@ -5426,6 +5485,84 @@ del_type('Person');
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;del_type&#34;</span>: <span style="color:#ae81ff">0</span>
 }
+</code></pre></div><h2 id="mod_enum_add">mod_enum_add</h2>
+<pre><code class="language-thingsdb,syntax_only" data-lang="thingsdb,syntax_only">// Add a member `BLUE` to enumerator `Color`.
+
+// set_enum('Color', {RED: '#f00', GREEN: '#0f0'});
+mod_enum('Color', 'add', 'BLUE', '#00f);
+</code></pre><blockquote>
+<p>Mutation result from the above code:</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;mod_type_add&#34;</span>: {
+        <span style="color:#f92672">&#34;enum_id&#34;</span>: <span style="color:#ae81ff">2</span>,
+        <span style="color:#f92672">&#34;modified_at&#34;</span>: <span style="color:#ae81ff">1581511233</span>,
+        <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;BLUE&#34;</span>,
+        <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;#00f&#34;</span>
+    }
+}
+</code></pre></div><h2 id="mod_enum_def">mod_enum_def</h2>
+<pre><code class="language-thingsdb,syntax_only" data-lang="thingsdb,syntax_only">// Set member `GREEN` as the default member for enumerator `Color`.
+
+// set_enum('Color', {RED: '#f00', GREEN: '#0f0', BLUE: '#00f'});
+mod_enum('Color', 'def', 'GREEN');
+</code></pre><blockquote>
+<p>Mutation result from the above code:</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;mod_enum_def&#34;</span>: {
+        <span style="color:#f92672">&#34;enum_id&#34;</span>: <span style="color:#ae81ff">2</span>,
+        <span style="color:#f92672">&#34;index&#34;</span>: <span style="color:#ae81ff">1</span>,
+        <span style="color:#f92672">&#34;modified_at&#34;</span>: <span style="color:#ae81ff">1581511233</span>
+    }
+}
+</code></pre></div><h2 id="mod_enum_del">mod_enum_del</h2>
+<pre><code class="language-thingsdb,syntax_only" data-lang="thingsdb,syntax_only">// Delete member `GREEN` from enumerator `Color`.
+
+// set_enum('Color', {RED: '#f00', GREEN: '#0f0', BLUE: '#00f'});
+mod_enum('Color', 'del', 'GREEN');
+</code></pre><blockquote>
+<p>Mutation result from the above code:</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;mod_enum_del&#34;</span>: {
+        <span style="color:#f92672">&#34;enum_id&#34;</span>: <span style="color:#ae81ff">2</span>,
+        <span style="color:#f92672">&#34;index&#34;</span>: <span style="color:#ae81ff">1</span>,
+        <span style="color:#f92672">&#34;modified_at&#34;</span>: <span style="color:#ae81ff">1581511233</span>
+    }
+}
+</code></pre></div><h2 id="mod_enum_mod">mod_enum_mod</h2>
+<pre><code class="language-thingsdb,syntax_only" data-lang="thingsdb,syntax_only">// Modify the value of member `BLUE` on enumerator `Color`.
+
+// set_enum('Color', {RED: '#f00', GREEN: '#0f0', BLUE: '#fff'});
+mod_enum('Color', 'mod', 'BLUE', '#00f);
+</code></pre><blockquote>
+<p>Mutation result from the above code:</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;mod_enum_mod&#34;</span>: {
+        <span style="color:#f92672">&#34;enum_id&#34;</span>: <span style="color:#ae81ff">2</span>,
+        <span style="color:#f92672">&#34;index&#34;</span>: <span style="color:#ae81ff">2</span>,
+        <span style="color:#f92672">&#34;modified_at&#34;</span>: <span style="color:#ae81ff">1581511233</span>,
+        <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;#00f&#34;</span>
+    }
+}
+</code></pre></div><h2 id="mod_enum_ren">mod_enum_ren</h2>
+<pre><code class="language-thingsdb,syntax_only" data-lang="thingsdb,syntax_only">// Rename member `MOON` to `BLUE` of enumerator `Color`.
+
+// set_enum('Color', {RED: '#f00', GREEN: '#0f0', MOON: '#00f'});
+mod_enum('Color', 'ren', 'MOON', 'BLUE');
+</code></pre><blockquote>
+<p>Mutation result from the above code:</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;mod_enum_ren&#34;</span>: {
+        <span style="color:#f92672">&#34;enum_id&#34;</span>: <span style="color:#ae81ff">2</span>,
+        <span style="color:#f92672">&#34;index&#34;</span>: <span style="color:#ae81ff">2</span>,
+        <span style="color:#f92672">&#34;modified_at&#34;</span>: <span style="color:#ae81ff">1581511233</span>,
+        <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;BLUE&#34;</span>
+    }
+}
 </code></pre></div><h2 id="mod_type_add">mod_type_add</h2>
 <pre><code class="language-thingsdb,syntax_only" data-lang="thingsdb,syntax_only">/*
  * Add a new field `rating` to type `Book`. If, and only if existing instances
@@ -5449,6 +5586,28 @@ mod_type('Book', 'add', 'rating', 'uint', 1);
         <span style="color:#f92672">&#34;type_id&#34;</span>: <span style="color:#ae81ff">2</span>
     }
 }
+</code></pre></div><p>Instead of adding a new field using a default value, it is possible to use a closure to generate
+initial values <em>(see <a href="../../collection-api/mod_type/add">mod_type(..add)</a>)</em>. In this case the following mutations are pushed
+to watchers:</p>
+<ol>
+<li>Mutation <code>mod_type_add</code>.</li>
+<li>Things with initial value <em>other than</em> the default value will receive a <code>set</code> mutation with the new initial value.</li>
+</ol>
+<h2 id="mod_type_del">mod_type_del</h2>
+<pre><code class="language-thingsdb,syntax_only" data-lang="thingsdb,syntax_only">// Delete the `rating` field definition of type `Book`.
+
+// set_type('Book', {title: 'str', rating: 'number'});
+mod_type('Book', 'del', 'rating');
+</code></pre><blockquote>
+<p>Mutation result from the above code:</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;mod_type_del&#34;</span>: {
+        <span style="color:#f92672">&#34;modified_at&#34;</span>: <span style="color:#ae81ff">1581511233</span>,
+        <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;rating&#34;</span>,
+        <span style="color:#f92672">&#34;type_id&#34;</span>: <span style="color:#ae81ff">2</span>
+    }
+}
 </code></pre></div><h2 id="mod_type_mod">mod_type_mod</h2>
 <pre><code class="language-thingsdb,syntax_only" data-lang="thingsdb,syntax_only">// Change field definition `rating` of type `Book`.
 
@@ -5465,18 +5624,27 @@ mod_type('Book', 'mod', 'rating', 'number');
         <span style="color:#f92672">&#34;type_id&#34;</span>: <span style="color:#ae81ff">2</span>
     }
 }
-</code></pre></div><h2 id="mod_type_del">mod_type_del</h2>
-<pre><code class="language-thingsdb,syntax_only" data-lang="thingsdb,syntax_only">// Delete the `rating` field definition of type `Book`.
+</code></pre></div><p>Instead of migrating to a <code>less</code> strict definition, it is possible to use a closure
+and migrate to a complete new definition <em>(see <a href="../../collection-api/mod_type/mod">mod_type(..mod)</a>)</em>. In this case the following mutations are pushed
+to watchers:</p>
+<ol>
+<li>Mutation <code>mod_type_mod</code> with a <code>any</code> spec.</li>
+<li>At <em>least</em> things with incompatible data on the field will receive a <code>set</code> mutation with a new value according the new spec.</li>
+<li>Mutation <code>mod_type_mod</code> with the required spec.</li>
+</ol>
+<h2 id="mod_type_ren">mod_type_ren</h2>
+<pre><code class="language-thingsdb,syntax_only" data-lang="thingsdb,syntax_only">// Rename the `rate` field of type `Book` to `rating`.
 
-// set_type('Book', {title: 'str', rating: 'number'});
-mod_type('Book', 'del', 'rating');
+// set_type('Book', {title: 'str', rate: 'number'});
+mod_type('Book', 'ren', 'rate', 'rating');
 </code></pre><blockquote>
 <p>Mutation result from the above code:</p>
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-    <span style="color:#f92672">&#34;mod_type_del&#34;</span>: {
+    <span style="color:#f92672">&#34;mod_type_ren&#34;</span>: {
         <span style="color:#f92672">&#34;modified_at&#34;</span>: <span style="color:#ae81ff">1581511233</span>,
-        <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;rating&#34;</span>,
+        <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;rate&#34;</span>,
+        <span style="color:#f92672">&#34;to&#34;</span>: <span style="color:#e6db74">&#34;rating&#34;</span>,
         <span style="color:#f92672">&#34;type_id&#34;</span>: <span style="color:#ae81ff">2</span>
     }
 }
@@ -5537,19 +5705,19 @@ del_procedure('multiply');
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1591812991"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1591812991"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1591812991"></script>
-    <script src="/v0/js/jquery.sticky.js?1591812991"></script>
-    <script src="/v0/js/featherlight.min.js?1591812991"></script>
-    <script src="/v0/js/highlight.pack.js?1591812991"></script>
+    <script src="/v0/js/clipboard.min.js?1591879608"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1591879608"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1591879608"></script>
+    <script src="/v0/js/jquery.sticky.js?1591879608"></script>
+    <script src="/v0/js/featherlight.min.js?1591879608"></script>
+    <script src="/v0/js/highlight.pack.js?1591879608"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1591812991"></script>
-    <script src="/v0/js/learn.js?1591812991"></script>
-    <script src="/v0/js/hugo-learn.js?1591812991"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1591879608"></script>
+    <script src="/v0/js/learn.js?1591879608"></script>
+    <script src="/v0/js/hugo-learn.js?1591879608"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1591812991" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1591812991"></script>
+    <link href="/v0/mermaid/mermaid.css?1591879608" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1591879608"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
