@@ -23,7 +23,7 @@ definition | default | description
 `'float'` | `0.0` | requires type [float](../float).
 `'number'` | `0` | requires type [float](../float) *or* type [int](../int).
 `'thing'` | `{}` | requires a [thing](../thing).
-`'X'` | `X{}` | requires a instance of [Type](../type) `X`. The value `X` should be replace with the `Type` name.
+`'X'` | `X{}` | requires a instance of [Type](../type) `X`, or a member of [enumerator](../enum) `X`. The value `X` should be replaced with the `Type` / `enum` name.
 `'[]'` | `[]` | requires a [list](../list).
 `'{}'` | `set()` | requires a [set](../set).
 `'any'` | `nil` | any type is valid.
