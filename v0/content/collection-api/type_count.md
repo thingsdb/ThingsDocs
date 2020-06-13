@@ -1,6 +1,6 @@
 ---
 title: "type_count"
-weight: 177
+weight: 178
 ---
 
 Returns the number of instances of a given [Type](../../data-types/type) within a collection.

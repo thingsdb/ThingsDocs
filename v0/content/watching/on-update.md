@@ -1,6 +1,6 @@
 ---
 title: "on-update"
-weight: 228
+weight: 229
 ---
 
 An update event is pushed when changes are made to a `thing` you are watching.
@@ -204,7 +204,7 @@ the resulting event contains a `splice` mutation.
 Events are always triggered using the [emit(..)](../../data-types/thing/emit) function.
 
 ```thingsdb,should_pass
-.emit('greet', "Hello", "universe!);
+.emit("greet", "Hello", "universe!");
 ```
 
 > Mutation result from the above code:
@@ -293,7 +293,7 @@ del_type('Person');
 // Add a member `BLUE` to enumerator `Color`.
 
 // set_enum('Color', {RED: '#f00', GREEN: '#0f0'});
-mod_enum('Color', 'add', 'BLUE', '#00f);
+mod_enum('Color', 'add', 'BLUE', '#00f');
 ```
 
 > Mutation result from the above code:
@@ -357,7 +357,7 @@ mod_enum('Color', 'del', 'GREEN');
 // Modify the value of member `BLUE` on enumerator `Color`.
 
 // set_enum('Color', {RED: '#f00', GREEN: '#0f0', BLUE: '#fff'});
-mod_enum('Color', 'mod', 'BLUE', '#00f);
+mod_enum('Color', 'mod', 'BLUE', '#00f');
 ```
 
 > Mutation result from the above code:

@@ -3,25 +3,29 @@ title: "assert"
 weight: 114
 ---
 
-Raises [assert_err()](../../errors/assert_err) if the specified statement evaluates to `false`.
+Raises an [assert_err()](../../errors/assert_err) if the specified expression evaluates to `false`.
 
 This function does *not* generate an [event](../../overview/events).
 
 ### Function
 
-`assert(statement [, error_msg])`
+`assert(expression [, error_msg])`
 
 ### Arguments
 
 Argument | Type | Description
 -------- | ---- | -----------
-statement | any (required) | The statement to evaluate.
-msg | str (optional) | Custom error message.
+expression | any (required) | The expression to evaluate.
+error_msg | str (optional) | Custom error message.
 
 ### Return value
 
-Assert returns the value of the given statement when it evaluates to `true`. Otherwise
+Returns `nil` if the type of the expression evaluates to `true`. Otherwise
 an [assert_err()](../../errors/assert_err) is raised.
+
+{{% notice warning %}}
+In versions before **v0.9.4** the return value of `assert(..)` used to be the return value from the expression *(when evaluated as `true`)*.
+{{% /notice %}}
 
 ### Example
 

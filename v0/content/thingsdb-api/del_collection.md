@@ -1,6 +1,6 @@
 ---
 title: "del_collection"
-weight: 196
+weight: 197
 ---
 
 Delete a collection.
