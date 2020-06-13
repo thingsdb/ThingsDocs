@@ -11,20 +11,20 @@
     <title>assert :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1591994628" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1591994628" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1591994628" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1591994628" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1591994628" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1591994628" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1591994628" rel="stylesheet">
-    <link href="/v0/css/theme.css?1591994628" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1591994628" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1592075981" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1592075981" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1592075981" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1592075981" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1592075981" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1592075981" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1592075981" rel="stylesheet">
+    <link href="/v0/css/theme.css?1592075981" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1592075981" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1591994628" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1592075981" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1591994628"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1592075981"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1591994628"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1591994628"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1592075981"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1592075981"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1591994628"></script>
+<script type="text/javascript" src="/v0/js/search.js?1592075981"></script>
 
     
   </div>
@@ -3680,6 +3680,25 @@
  
   
     
+      <li data-nav-id="/v0/collection-api/type_assert/" title="type_assert" class="dd-item ">
+        <a href="/v0/collection-api/type_assert/">
+        type_assert
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/v0/collection-api/type_count/" title="type_count" class="dd-item ">
         <a href="/v0/collection-api/type_count/">
         type_count
@@ -5173,10 +5192,10 @@
 
 
 
-<p>Raises <a href="../../errors/assert_err">assert_err()</a> if the specified statement evaluates to <code>false</code>.</p>
+<p>Raises an <a href="../../errors/assert_err">assert_err()</a> if the specified expression evaluates to <code>false</code>.</p>
 <p>This function does <em>not</em> generate an <a href="../../overview/events">event</a>.</p>
 <h3 id="function">Function</h3>
-<p><code>assert(statement [, error_msg])</code></p>
+<p><code>assert(expression [, error_msg])</code></p>
 <h3 id="arguments">Arguments</h3>
 <table>
 <thead>
@@ -5188,20 +5207,24 @@
 </thead>
 <tbody>
 <tr>
-<td>statement</td>
+<td>expression</td>
 <td>any (required)</td>
-<td>The statement to evaluate.</td>
+<td>The expression to evaluate.</td>
 </tr>
 <tr>
-<td>msg</td>
+<td>error_msg</td>
 <td>str (optional)</td>
 <td>Custom error message.</td>
 </tr>
 </tbody>
 </table>
 <h3 id="return-value">Return value</h3>
-<p>Assert returns the value of the given statement when it evaluates to <code>true</code>. Otherwise
+<p>Returns <code>nil</code> if the type of the expression evaluates to <code>true</code>. Otherwise
 an <a href="../../errors/assert_err">assert_err()</a> is raised.</p>
+
+<div class="notices warning" ><p>In versions before <strong>v0.9.4</strong> the return value of <code>assert(..)</code> used to be the return value from the expression <em>(when evaluated as <code>true</code>)</em>.</p>
+</div>
+
 <h3 id="example">Example</h3>
 <blockquote>
 <p>This code shows how assert can be used:</p>
@@ -5244,19 +5267,19 @@ an <a href="../../errors/assert_err">assert_err()</a> is raised.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1591994628"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1591994628"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1591994628"></script>
-    <script src="/v0/js/jquery.sticky.js?1591994628"></script>
-    <script src="/v0/js/featherlight.min.js?1591994628"></script>
-    <script src="/v0/js/highlight.pack.js?1591994628"></script>
+    <script src="/v0/js/clipboard.min.js?1592075981"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1592075981"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1592075981"></script>
+    <script src="/v0/js/jquery.sticky.js?1592075981"></script>
+    <script src="/v0/js/featherlight.min.js?1592075981"></script>
+    <script src="/v0/js/highlight.pack.js?1592075981"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1591994628"></script>
-    <script src="/v0/js/learn.js?1591994628"></script>
-    <script src="/v0/js/hugo-learn.js?1591994628"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1592075981"></script>
+    <script src="/v0/js/learn.js?1592075981"></script>
+    <script src="/v0/js/hugo-learn.js?1592075981"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1591994628" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1591994628"></script>
+    <link href="/v0/mermaid/mermaid.css?1592075981" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1592075981"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -8,7 +8,7 @@
 
 
     <link rel="shortcut icon" href='/v0/images/favicon.ico' type="image/x-icon" />
-    <title>restore :: ThingsDB documentation</title>
+    <title>type_assert :: ThingsDB documentation</title>
 
     
     <link href="/v0/css/nucleus.css?1592075982" rel="stylesheet">
@@ -38,7 +38,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/v0/thingsdb-api/restore/">
+  <body class="" data-url="/v0/collection-api/type_assert/">
     <nav id="sidebar" class="">
 
 
@@ -2427,7 +2427,7 @@
   
     
     <li data-nav-id="/v0/collection-api/" title="Collection API" class="dd-item 
-        
+        parent
         
         
         ">
@@ -3680,7 +3680,7 @@
  
   
     
-      <li data-nav-id="/v0/collection-api/type_assert/" title="type_assert" class="dd-item ">
+      <li data-nav-id="/v0/collection-api/type_assert/" title="type_assert" class="dd-item active">
         <a href="/v0/collection-api/type_assert/">
         type_assert
         
@@ -4024,7 +4024,7 @@
   
     
     <li data-nav-id="/v0/thingsdb-api/" title="ThingsDB API" class="dd-item 
-        parent
+        
         
         
         ">
@@ -4390,7 +4390,7 @@
  
   
     
-      <li data-nav-id="/v0/thingsdb-api/restore/" title="restore" class="dd-item active">
+      <li data-nav-id="/v0/thingsdb-api/restore/" title="restore" class="dd-item ">
         <a href="/v0/thingsdb-api/restore/">
         restore
         
@@ -5144,7 +5144,7 @@
             
           
           
-            <a href='/v0/'></a> > <a href='/v0/thingsdb-api/'>ThingsDB API</a> > restore
+            <a href='/v0/'></a> > <a href='/v0/collection-api/'>Collection API</a> > type_assert
           
          
           
@@ -5184,7 +5184,7 @@
           
             <h1>
               
-              restore
+              type_assert
             </h1>
           
 
@@ -5192,21 +5192,10 @@
 
 
 
-<p>Restore from a backup file created with the <a href="#../../node-api/new_backup">new_backup</a> function.</p>
-<p>Before using this function the following list of requirements must be must be fulfilled:</p>
-<ul>
-<li>The user performing the restore must have <code>FULL</code> privileges on the<code>@thingsdb</code> <a href="../../overview/scopes">scope</a>.</li>
-<li>No collections may exists. Use <a href="../collections_info">collections_info()</a> and <a href="../del_collection">del_collection(..)</a> to remove existing collections.</li>
-<li>All nodes must be <em>online</em> and <em>ready</em>. If this is <em>not</em> the case, then either remove the node or wait for the node to become <em>ready</em>. Use <a href="../../node-api/nodes_info">nodes_info()</a> to check for the status of the nodes.</li>
-<li>When having multiple nodes, all committed events must be stored as well.</li>
-</ul>
-
-<div class="notices warning" ><p>After running this function, <strong>all existing users and tokens will be overwritten</strong>, including the user performing the <em>restore</em>.</p>
-</div>
-
-<p>This function generates an <a href="../../overview/events">event</a>.</p>
+<p>Raises a <a href="../../errors/type_err">type_err()</a> if the specified expression evaluates to <code>false</code>.</p>
+<p>This function does <em>not</em> generate an <a href="../../overview/events">event</a>.</p>
 <h3 id="function">Function</h3>
-<p><code>restore(fn);</code></p>
+<p><code>assert(expression, type(s) [, error_msg])</code></p>
 <h3 id="arguments">Arguments</h3>
 <table>
 <thead>
@@ -5218,19 +5207,39 @@
 </thead>
 <tbody>
 <tr>
-<td><code>fn</code></td>
-<td>str</td>
-<td>Tar file containing the backup, usually a file ending with <code>.tar.gz</code>.</td>
+<td>expression</td>
+<td>any (required)</td>
+<td>The result of this expression will be <em>type tested</em>.</td>
+</tr>
+<tr>
+<td>type(s)</td>
+<td>str/list (required)</td>
+<td>Type name <em>or</em> list with type names to check.</td>
+</tr>
+<tr>
+<td>error_msg</td>
+<td>str (optional)</td>
+<td>Custom error message.</td>
 </tr>
 </tbody>
 </table>
 <h3 id="return-value">Return value</h3>
-<p>Returns <code>nil</code> when successful.</p>
+<p>Returns <code>nil</code> if the type of the expression evaluates to <code>true</code>. Otherwise
+an <a href="../../errors/type_err">type_err()</a> is raised.</p>
 <h3 id="example">Example</h3>
 <blockquote>
-<p>Restore from a backup file</p>
+<p>This code shows how assert can be used:</p>
 </blockquote>
-<pre><code class="language-thingsdb,syntax_only,@t" data-lang="thingsdb,syntax_only,@t">restore('/tmp/backup.tar.gz');
+<pre><code class="language-thingsdb,should_err" data-lang="thingsdb,should_err">type_assert(&quot;one&quot;, &quot;int&quot;);
+</code></pre><blockquote>
+<p>Raises a <a href="../../errors/type_err">type_err()</a> exception</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;error_msg&#34;</span>: <span style="color:#e6db74">&#34;invalid type `str`&#34;</span>,
+    <span style="color:#f92672">&#34;error_code&#34;</span>: <span style="color:#ae81ff">-61</span>
+}
+</code></pre></div><p>Or, use a <code>list</code> of type names to check</p>
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">type_assert(3.14, [&quot;int&quot;, &quot;float&quot;]);
 </code></pre><blockquote>
 <p>Return value in JSON format</p>
 </blockquote>
@@ -5252,10 +5261,10 @@
         
     
         
-            <a class="nav nav-prev" href="/v0/thingsdb-api/rename_user/" title="rename_user"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/v0/collection-api/type/" title="type"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/v0/thingsdb-api/revoke/" title="revoke" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/v0/collection-api/type_count/" title="type_count" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     
     </div>
@@ -5265,19 +5274,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1592075983"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1592075983"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1592075983"></script>
-    <script src="/v0/js/jquery.sticky.js?1592075983"></script>
-    <script src="/v0/js/featherlight.min.js?1592075983"></script>
-    <script src="/v0/js/highlight.pack.js?1592075983"></script>
+    <script src="/v0/js/clipboard.min.js?1592075982"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1592075982"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1592075982"></script>
+    <script src="/v0/js/jquery.sticky.js?1592075982"></script>
+    <script src="/v0/js/featherlight.min.js?1592075982"></script>
+    <script src="/v0/js/highlight.pack.js?1592075982"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1592075983"></script>
-    <script src="/v0/js/learn.js?1592075983"></script>
-    <script src="/v0/js/hugo-learn.js?1592075983"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1592075982"></script>
+    <script src="/v0/js/learn.js?1592075982"></script>
+    <script src="/v0/js/hugo-learn.js?1592075982"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1592075983" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1592075983"></script>
+    <link href="/v0/mermaid/mermaid.css?1592075982" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1592075982"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
