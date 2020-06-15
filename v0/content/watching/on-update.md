@@ -32,15 +32,17 @@ Mutation | Target | Description
 [new_type](#new_type) | `collection` | A new [type](../../data-types/type) is added to the collection.
 [set_type](#set_type) | `collection` | A [type](../../data-types/type) is initialized.
 [del_type](#del_type) | `collection` | A [type](../../data-types/type) is removed from the collection.
+[mod_type_add](#mod_type_add) | `collection` | A new field is added to an existing [type](../../data-types/type).
+[mod_type_del](#mod_type_del) | `collection` | A field is removed from an existing [type](../../data-types/type).
+[mod_type_mod](#mod_type_mod) | `collection` | A field is modified on an existing [type](../../data-types/type).
+[mod_type_ren](#mod_type_ren) | `collection` | A field is renamed on an existing [type](../../data-types/type).
+[set_enum](#set_enum) | `collection` | A new [enum](../../data-types/enum) type is created.
+[del_enum](#del_enum) | `collection` | An [enum](../../data-types/enum) type is removed from the collection.
 [mod_enum_add](#mod_enum_add) | `collection` | A new member is added to an existing [enum](../../data-types/enum).
 [mod_enum_def](#mod_enum_def) | `collection` | The default member is changed for an existing [enum](../../data-types/enum).
 [mod_enum_del](#mod_enum_del) | `collection` | A member is removed from an existing [enum](../../data-types/enum).
 [mod_enum_mod](#mod_enum_mod) | `collection` | A member value is modified on an existing [enum](../../data-types/enum).
 [mod_enum_ren](#mod_enum_ren) | `collection` | A member name is modified on an existing [enum](../../data-types/enum).
-[mod_type_add](#mod_type_add) | `collection` | A new field is added to an existing [type](../../data-types/type).
-[mod_type_del](#mod_type_del) | `collection` | A field is removed from an existing [type](../../data-types/type).
-[mod_type_mod](#mod_type_mod) | `collection` | A field is modified on an existing [type](../../data-types/type).
-[mod_type_ren](#mod_type_ren) | `collection` | A field is renamed on an existing [type](../../data-types/type).
 [new_procedure](#new_procedure) | `collection` | A new procedure is added to the collection.
 [del_procedure](#del_procedure) | `collection` | A procedure is removed from the collection.
 
@@ -287,114 +289,6 @@ del_type('Person');
 }
 ```
 
-## mod_enum_add
-
-```thingsdb,syntax_only
-// Add a member `BLUE` to enumerator `Color`.
-
-// set_enum('Color', {RED: '#f00', GREEN: '#0f0'});
-mod_enum('Color', 'add', 'BLUE', '#00f');
-```
-
-> Mutation result from the above code:
-
-```json
-{
-    "mod_type_add": {
-        "enum_id": 2,
-        "modified_at": 1581511233,
-        "name": "BLUE",
-        "value": "#00f"
-    }
-}
-```
-
-## mod_enum_def
-
-```thingsdb,syntax_only
-// Set member `GREEN` as the default member for enumerator `Color`.
-
-// set_enum('Color', {RED: '#f00', GREEN: '#0f0', BLUE: '#00f'});
-mod_enum('Color', 'def', 'GREEN');
-```
-
-> Mutation result from the above code:
-
-```json
-{
-    "mod_enum_def": {
-        "enum_id": 2,
-        "index": 1,
-        "modified_at": 1581511233
-    }
-}
-```
-
-## mod_enum_del
-
-```thingsdb,syntax_only
-// Delete member `GREEN` from enumerator `Color`.
-
-// set_enum('Color', {RED: '#f00', GREEN: '#0f0', BLUE: '#00f'});
-mod_enum('Color', 'del', 'GREEN');
-```
-
-> Mutation result from the above code:
-
-```json
-{
-    "mod_enum_del": {
-        "enum_id": 2,
-        "index": 1,
-        "modified_at": 1581511233
-    }
-}
-```
-
-## mod_enum_mod
-
-```thingsdb,syntax_only
-// Modify the value of member `BLUE` on enumerator `Color`.
-
-// set_enum('Color', {RED: '#f00', GREEN: '#0f0', BLUE: '#fff'});
-mod_enum('Color', 'mod', 'BLUE', '#00f');
-```
-
-> Mutation result from the above code:
-
-```json
-{
-    "mod_enum_mod": {
-        "enum_id": 2,
-        "index": 2,
-        "modified_at": 1581511233,
-        "value": "#00f"
-    }
-}
-```
-
-## mod_enum_ren
-
-```thingsdb,syntax_only
-// Rename member `MOON` to `BLUE` of enumerator `Color`.
-
-// set_enum('Color', {RED: '#f00', GREEN: '#0f0', MOON: '#00f'});
-mod_enum('Color', 'ren', 'MOON', 'BLUE');
-```
-
-> Mutation result from the above code:
-
-```json
-{
-    "mod_enum_ren": {
-        "enum_id": 2,
-        "index": 2,
-        "modified_at": 1581511233,
-        "name": "BLUE"
-    }
-}
-```
-
 ## mod_type_add
 
 ```thingsdb,syntax_only
@@ -433,6 +327,11 @@ to watchers:
 
 
 ## mod_type_del
+
+{{% notice note %}}
+Delete is always performed using a `swap_remove` *(the removed value will be replaced with the last value)*. For example when having the type properties `[A, B, C, D]` and then remove `B` will result in  `[A, D, C]`.
+{{% /notice %}}
+
 
 ```thingsdb,syntax_only
 // Delete the `rating` field definition of type `Book`.
@@ -502,6 +401,170 @@ mod_type('Book', 'ren', 'rate', 'rating');
         "name": "rate",
         "to": "rating",
         "type_id": 2
+    }
+}
+```
+
+## set_enum
+
+```thingsdb,should_pass
+/*
+ * Create and set initial enumerator.
+ */
+
+set_enum('Color', {
+    RED: '#f00',
+    GREEN: '#0f0',
+    BLUE: '#00f'
+});
+```
+
+> Mutation result from the above code:
+
+```json
+{
+    "set_enum": {
+        "created_at": 1581455876,
+        "enum_id": 0,
+        "name": "Color",
+        "members": [
+            ["RED", "#f00"],
+            ["GREEN", "#0f0"],
+            ["BLUE", "#00f"]
+        ]
+    }
+}
+```
+
+## del_enum
+
+```thingsdb,syntax_only
+// Delete a enumerator named `Color`.
+
+del_enum('Color');
+```
+
+> Mutation result from the above code:
+
+```json
+{
+    "del_enum": 0
+}
+```
+
+## mod_enum_add
+
+```thingsdb,syntax_only
+// Add a member `BLUE` to enumerator `Color`.
+
+// set_enum('Color', {RED: '#f00', GREEN: '#0f0'});
+mod_enum('Color', 'add', 'BLUE', '#00f');
+```
+
+> Mutation result from the above code:
+
+```json
+{
+    "mod_type_add": {
+        "enum_id": 2,
+        "modified_at": 1581511233,
+        "name": "BLUE",
+        "value": "#00f"
+    }
+}
+```
+
+## mod_enum_def
+
+{{% notice note %}}
+Defaults are always changed using a `swap` with the previous default. For example when having the enum values `[A, B, C, D]` and then change the default from `A` to `C` will result in order `[C, B, A, D]`.
+{{% /notice %}}
+
+```thingsdb,syntax_only
+// Set member `GREEN` as the default member for enumerator `Color`.
+
+// set_enum('Color', {RED: '#f00', GREEN: '#0f0', BLUE: '#00f'});
+mod_enum('Color', 'def', 'GREEN');
+```
+
+> Mutation result from the above code:
+
+```json
+{
+    "mod_enum_def": {
+        "enum_id": 2,
+        "index": 1,
+        "modified_at": 1581511233
+    }
+}
+```
+
+## mod_enum_del
+
+{{% notice note %}}
+Delete is always performed using a `swap_remove` *(the removed value will be replaced with the last value)*. For example when having the enum members `[A, B, C, D]` and then remove `B` will result in  `[A, D, C]`.
+{{% /notice %}}
+
+
+```thingsdb,syntax_only
+// Delete member `GREEN` from enumerator `Color`.
+
+// set_enum('Color', {RED: '#f00', GREEN: '#0f0', BLUE: '#00f'});
+mod_enum('Color', 'del', 'GREEN');
+```
+
+> Mutation result from the above code:
+
+```json
+{
+    "mod_enum_del": {
+        "enum_id": 2,
+        "index": 1,
+        "modified_at": 1581511233
+    }
+}
+```
+
+## mod_enum_mod
+
+```thingsdb,syntax_only
+// Modify the value of member `BLUE` on enumerator `Color`.
+
+// set_enum('Color', {RED: '#f00', GREEN: '#0f0', BLUE: '#fff'});
+mod_enum('Color', 'mod', 'BLUE', '#00f');
+```
+
+> Mutation result from the above code:
+
+```json
+{
+    "mod_enum_mod": {
+        "enum_id": 2,
+        "index": 2,
+        "modified_at": 1581511233,
+        "value": "#00f"
+    }
+}
+```
+
+## mod_enum_ren
+
+```thingsdb,syntax_only
+// Rename member `MOON` to `BLUE` of enumerator `Color`.
+
+// set_enum('Color', {RED: '#f00', GREEN: '#0f0', MOON: '#00f'});
+mod_enum('Color', 'ren', 'MOON', 'BLUE');
+```
+
+> Mutation result from the above code:
+
+```json
+{
+    "mod_enum_ren": {
+        "enum_id": 2,
+        "index": 2,
+        "modified_at": 1581511233,
+        "name": "BLUE"
     }
 }
 ```
