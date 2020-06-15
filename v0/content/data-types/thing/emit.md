@@ -31,7 +31,7 @@ class ChatRoom(Thing):
 
 Argument | Type | Description
 -------- | ---- | -----------
-deep | int (optional) | Specify how [deep](../../collection-api/return/#deep) the arguments must be send with the event. (defaults to `1`)
+deep | int (optional) | Specify how [deep](../../../collection-api/return/#deep) the arguments must be send with the event. (defaults to `1`)
 event | str (required) | Event name to emit.
 ... | any (optional) | Arguments send together with the event.
 
