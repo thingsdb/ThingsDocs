@@ -123,6 +123,7 @@ collection-api
     enum_info
     enums_info
     err
+    event_id
     float
     has_enum
     has_type

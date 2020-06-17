@@ -1,6 +1,6 @@
 ---
 title: "has_procedure"
-weight: 220
+weight: 221
 ---
 
 Determines if a procedure exists in the current scope.

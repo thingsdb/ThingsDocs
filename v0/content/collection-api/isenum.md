@@ -1,6 +1,6 @@
 ---
 title: "isenum"
-weight: 135
+weight: 136
 ---
 
 This function determines whether the provided value is an [enumeration type](../../data-types/enum) member or not.

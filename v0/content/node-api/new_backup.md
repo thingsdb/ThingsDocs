@@ -1,6 +1,6 @@
 ---
 title: "new_backup"
-weight: 188
+weight: 189
 ---
 
 Schedule a new backup.
@@ -64,7 +64,8 @@ new_backup('/var/backup/thingsdb_{DATE}{TIME}.tar.gz', '2000-01-01 23:00', 24*36
 
 ### Example recovery
 
-To start a ThingsDB node data from a backup file, the following steps can be done
+There are two options to restore data from a ThingsDB backup file. One option is to use the [restore(..)](../../thingsdb-api/restore) function
+and the other option is explained in the steps below:
 
 ```bash
 # Unpack a backup file in some storage directory.

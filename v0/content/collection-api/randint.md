@@ -1,6 +1,6 @@
 ---
 title: "randint"
-weight: 166
+weight: 167
 ---
 
 Returns **pseudo-random** [integer](../../data-types/int) number between a given range.
