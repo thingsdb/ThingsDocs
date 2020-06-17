@@ -1,5 +1,5 @@
 /*
-  Highlight.js 10.0.0-beta.0 (20b4870f)
+  Highlight.js 10.0.0-beta.0 (5f17ff2e)
   License: BSD-3-Clause
   Copyright (c) 2006-2020, Ivan Sagalaev
 */
@@ -1858,7 +1858,7 @@ hljs.registerLanguage('thingsdb', function () {
                         '\\b(' +
                         /* collection functions */
                         'assert|base64_encode|base64_decode|bool|bytes|' +
-                        'deep|del_enum|del_type|enum|enum_info|enums_info|err|float|has_enum|has_type|if|int|isarray|' +
+                        'deep|del_enum|del_type|enum|enum_info|enums_info|err|event_id|float|has_enum|has_type|if|int|isarray|' +
                         'isascii|isbool|isbytes|isenum|iserr|isfloat|isinf|isint|' +
                         'islist|isnan|isnil|israw|isset|isstr|isthing|istuple|' +
                         'isutf8|list|mod_enum|mod_type|new|new_type|now|raise|rand|range|' +

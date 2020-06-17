@@ -163,6 +163,22 @@ Example  This code shows some return values for err():
     </item>
     
     <item>
+      <title>event_id</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/event_id/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/event_id/</guid>
+      <description>Returns the current event ID for the running query. The return value will be nil if the query does not require an event.
+This function does not generate an event.
+Function event_id()
+Arguments None
+Return value The current event ID or nil when the query has no event.
+Example  Example using event_id():
+ event_id(); // nil, since no event is required  Return value in JSON format
+ null  Using event_id() when the query does require an event:</description>
+    </item>
+    
+    <item>
       <title>float</title>
       <link>https://docs.thingsdb.net/v0/collection-api/float/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

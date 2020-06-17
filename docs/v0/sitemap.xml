@@ -503,6 +503,10 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/event_id/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/collection-api/float/</loc>
   </url>
   
