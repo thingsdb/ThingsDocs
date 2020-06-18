@@ -37,20 +37,27 @@ Function | Description
 set_enum('Severity', {
     CRITICAL: 1,
     MAJOR: 2,
-    MINOR: 3
+    MINOR: 3,
+    DEBUG: 4,
 });
 
 // Get a member by name
 a = Severity{CRITICAL};
 
-// Or, dynamically by name
-b = Severity{||'MAJOR'};
+// Get a member by value
+b = Severity(2);  // MAJOR
 
-// Get a member by it's value
-c = enum('Severity', 3);
+// Dynamically by name
+c = Severity{||'MINOR'};
 
-// Variable `a`, `b` and `c` are all members of type `Severity`
-assert( type(a) == 'Severity' );
+// Or, dynamically both by name and value
+d = enum('Severity', 4);  // DEBUG
+
+// Variable `a`, `b`, `c` and `d` are all members of type `Severity`
+type_assert(a, 'Severity');
+type_assert(b, 'Severity');
+type_assert(c, 'Severity');
+type_assert(d, 'Severity');
 
 // The actual value can be accessed via the `.value()` function
 assert( b.value() == 2 );
@@ -59,7 +66,7 @@ assert( b.value() == 2 );
 assert( c.name() == 'MINOR');
 
 // The value of the members will be returned in a response
-[a, b, c];
+[a, b, c, d];
 ```
 
 > Return value in JSON format
@@ -68,6 +75,7 @@ assert( c.name() == 'MINOR');
 [
     1,
     2,
-    3
+    3,
+    4
 ]
 ```

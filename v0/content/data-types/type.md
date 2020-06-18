@@ -125,6 +125,26 @@ return(book, 2);
 }
 ```
 
+### Get instance of a type
+
+The [thing(..)](../../collection-api/thing) function may be used to get an instance
+of a given ID. This does not guarantee that the *thing* is truly of the type you expect.
+Instead of adding a [type_assert(..)](../../collection-api/type_assert) on the *thing*, it is also possible to
+call the type as a function with the ID as it's first argument.
+
+For example:
+
+```thingsdb,syntax_only
+// Suppose we have a user_id and want to get the user
+user = User(user_id);
+```
+
+Possible errors:
+
+- A [lookup_err()](../../errors/lookup_err) will be raised if no *thing* with the given `user_id` exists.
+- A [type_err()](../../errors/type_err) will be raised if a *thing* is found, but the *thing* is not of the *User* type,
+
+
 ### Related functions
 
 Function | Description

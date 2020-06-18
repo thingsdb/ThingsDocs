@@ -6,12 +6,13 @@ weight: 162
 Creates a new instance of a defined [Type](../../data-types/type).
 
 {{% notice info %}}
-When possible it is preferred to use the syntax `MyType{...}` to create a instance of a certain Type. However, sometimes you need to create an instance dynamically with the Type's name as variable and then `new()` can be used.
-{{% /notice %}}
+When possible it is preferred to use the syntax `MyType{...}` to create a instance of a certain Type. However, sometimes you need to create an instance dynamically with the Type's name as variable and then `new()` can be used. {{% /notice %}}
 
 {{% notice tip %}}
 Since version **v0.9.2** the `value` argument is no longer required. If not given all properties will be set to their default values.
 {{% /notice %}}
+
+The `new()` function may also be used to create an instance from a given `thing` but since **v0.9.5** ThingsDB has support for the syntax `Type(thing)` instead of writing `new("Type", thing)`.
 
 This function generates an [event](../../overview/events).
 
