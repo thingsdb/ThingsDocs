@@ -12,7 +12,9 @@ When possible it is preferred to use the syntax `MyType{...}` to create a instan
 Since version **v0.9.2** the `value` argument is no longer required. If not given all properties will be set to their default values.
 {{% /notice %}}
 
-The `new()` function may also be used to create an instance from a given `thing` but since **v0.9.5** ThingsDB has support for the syntax `Type(thing)` instead of writing `new("Type", thing)`.
+{{% notice tip %}}
+Since version **v0.9.5** it is also possible to create an instance using the shorter syntax `Type(thing)` *(instead of writing `new("Type", thing)`)*.
+{{% /notice %}}
 
 This function generates an [event](../../overview/events).
 
