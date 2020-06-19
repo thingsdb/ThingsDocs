@@ -11,20 +11,20 @@
     <title>emit :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1592512113" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1592512113" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1592512113" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1592512113" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1592512113" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1592512113" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1592512113" rel="stylesheet">
-    <link href="/v0/css/theme.css?1592512113" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1592512113" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1592570294" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1592570294" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1592570294" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1592570294" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1592570294" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1592570294" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1592570294" rel="stylesheet">
+    <link href="/v0/css/theme.css?1592570294" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1592570294" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1592512113" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1592570294" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1592512113"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1592570294"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1592512113"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1592512113"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1592570294"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1592570294"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1592512113"></script>
+<script type="text/javascript" src="/v0/js/search.js?1592570294"></script>
 
     
   </div>
@@ -5226,10 +5226,31 @@ to the client is guaranteed.</p>
 
 <p>This function generates an <a href="../../../overview/events">event</a>.</p>
 <p>Using events enables a user to write code like this example of a ChatRoom in the Python language:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ChatRoom</span>(Thing):
-    <span style="color:#a6e22e">@event</span>(<span style="color:#e6db74">&#39;message/new&#39;</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
+<span style="color:#f92672">from</span> thingsdb.model <span style="color:#f92672">import</span> Emitter
+<span style="color:#f92672">from</span> thingsdb.util <span style="color:#f92672">import</span> event
+<span style="color:#f92672">from</span> thingsdb.client <span style="color:#f92672">import</span> Client
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ChatRoom</span>(Emitter):
+
+    <span style="color:#a6e22e">@event</span>(<span style="color:#e6db74">&#39;new-message&#39;</span>)
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">on_new_message</span>(self, msg):
         <span style="color:#66d9ef">pass</span>  <span style="color:#75715e"># do something with the message</span>
+
+client <span style="color:#f92672">=</span> Client()
+
+loop <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>get_event_loop()
+loop<span style="color:#f92672">.</span>run_until_complete(client<span style="color:#f92672">.</span>connect(<span style="color:#e6db74">&#39;localhost&#39;</span>))
+loop<span style="color:#f92672">.</span>run_until_complete(client<span style="color:#f92672">.</span>authenticate(<span style="color:#e6db74">&#39;admin&#39;</span>, <span style="color:#e6db74">&#39;pass&#39;</span>))
+
+chat <span style="color:#f92672">=</span> ChatRoom(
+    client,                     <span style="color:#75715e"># ThingsDB Client() instance</span>
+    emitter<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>,                 <span style="color:#75715e"># The &#39;thing&#39; to watch. Defaults to the</span>
+                                <span style="color:#75715e"># collection root by using an empty string.</span>
+    scope<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;//stuff&#39;</span>)            <span style="color:#75715e"># Collection Scope, defaults the the default</span>
+                                <span style="color:#75715e"># scope of the client.</span>
+
+loop<span style="color:#f92672">.</span>run_forever()
 </code></pre></div><h3 id="function">Function</h3>
 <p><em>thing</em>.<code>emit([deep], event, ...)</code></p>
 <h3 id="arguments">Arguments</h3>
@@ -5265,7 +5286,7 @@ to the client is guaranteed.</p>
 <blockquote>
 <p>This code shows an example using <em><strong>emit()</strong></em>:</p>
 </blockquote>
-<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">.emit('new/message', 'Hello Everyone!');
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">.emit('new-message', 'Hello Everyone!');
 </code></pre><blockquote>
 <p>Return value in JSON format</p>
 </blockquote>
@@ -5300,19 +5321,19 @@ to the client is guaranteed.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1592512113"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1592512113"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1592512113"></script>
-    <script src="/v0/js/jquery.sticky.js?1592512113"></script>
-    <script src="/v0/js/featherlight.min.js?1592512113"></script>
-    <script src="/v0/js/highlight.pack.js?1592512113"></script>
+    <script src="/v0/js/clipboard.min.js?1592570294"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1592570294"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1592570294"></script>
+    <script src="/v0/js/jquery.sticky.js?1592570294"></script>
+    <script src="/v0/js/featherlight.min.js?1592570294"></script>
+    <script src="/v0/js/highlight.pack.js?1592570294"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1592512113"></script>
-    <script src="/v0/js/learn.js?1592512113"></script>
-    <script src="/v0/js/hugo-learn.js?1592512113"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1592570294"></script>
+    <script src="/v0/js/learn.js?1592570294"></script>
+    <script src="/v0/js/hugo-learn.js?1592570294"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1592512113" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1592512113"></script>
+    <link href="/v0/mermaid/mermaid.css?1592570294" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1592570294"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
