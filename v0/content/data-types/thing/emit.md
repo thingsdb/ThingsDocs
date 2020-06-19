@@ -17,10 +17,31 @@ This function generates an [event](../../../overview/events).
 Using events enables a user to write code like this example of a ChatRoom in the Python language:
 
 ```python
-class ChatRoom(Thing):
-    @event('message/new')
+import asyncio
+from thingsdb.model import Emitter
+from thingsdb.util import event
+from thingsdb.client import Client
+
+class ChatRoom(Emitter):
+
+    @event('new-message')
     def on_new_message(self, msg):
         pass  # do something with the message
+
+client = Client()
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(client.connect('localhost'))
+loop.run_until_complete(client.authenticate('admin', 'pass'))
+
+chat = ChatRoom(
+    client,                     # ThingsDB Client() instance
+    emitter='',                 # The 'thing' to watch. Defaults to the
+                                # collection root by using an empty string.
+    scope='//stuff')            # Collection Scope, defaults the the default
+                                # scope of the client.
+
+loop.run_forever()
 ```
 
 ### Function
@@ -45,7 +66,7 @@ None
 > This code shows an example using ***emit()***:
 
 ```thingsdb,json_response
-.emit('new/message', 'Hello Everyone!');
+.emit('new-message', 'Hello Everyone!');
 ```
 
 > Return value in JSON format
