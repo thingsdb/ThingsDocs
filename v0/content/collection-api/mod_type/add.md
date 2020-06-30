@@ -12,7 +12,7 @@ If the initial value is omitted, then the default value according the [Type defi
 
 ### Action
 
-`mod_type(type, 'add', name, definition, [init])`
+`mod_type(type, 'add', name, definition/closure, [init])`
 
 ### Arguments
 
@@ -21,8 +21,8 @@ Argument | Type | Description
 type | str | Name of the [Type](../../../data-types/type) where the property has to be added to.
 `'add'` | str | Passing this argument will result in an *add* action.
 name | str | Name of the property that has to be added.
-definition | str | Type definition of the property that has to be added.
-init | any/closure | The default value to set on existing instances of this [Type](../../../data-types/type). If a closure is used, then the closure will be called on each existing instance, see [init using callback](#init-using-callback).
+definition/closure | str/closure | Type definition of the *property* or closure for the *method* that has to be added
+init | any/closure | The default value to set on existing instances of this [Type](../../../data-types/type). If a closure is used, then the closure will be called on each existing instance, see [init using callback](#init-using-callback). The `init` argument is only accepted when adding a new property and must be omitted when adding a new method.
 
 ### Return value
 
@@ -41,6 +41,9 @@ set_type('Person', {
 
 // Add `hobbies` to type `Person`
 mod_type('Person', 'add', 'hobbies', '[str]');
+
+// Add a `whoami` method to type `Person`
+mod_type('Person', 'add', 'whoami', |this| `My name is {this.name} and I am {this.age} years old.`);
 ```
 
 > Return value in JSON format

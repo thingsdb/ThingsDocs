@@ -3,7 +3,8 @@ title: "mod"
 weight: 160
 ---
 
-Modifies the type definition of a property from an existing [Type](../../../data-types/type).
+Modifies the type definition of a property or the closure of a method from an existing [Type](../../../data-types/type).
+It is not possible to convert a *property* to a *method* or the other way around.
 
 {{% notice note %}}
 Without an additional `callback` it is possible to modify to a less 'strict' definition.
@@ -23,7 +24,7 @@ Argument | Type | Description
 type | str | Name of the Type where the property has to be modified from.
 `'mod'` | str | Passing this argument will result in a *modify* action.
 name | str | Name of the property that has to be modified.
-definition | str | New type definition of the property that has to be modified.
+definition/closure | str/closure | New type definition of the property or closure for the method that has to be modified.
 callback | closure | The closure will be called on each existing instance and can be used to set a new value, see [modify using callback](#modify-using-callback).
 
 
@@ -40,11 +41,18 @@ The value `nil`.
 set_type('Person', {
     name: 'str',
     age: 'int',
-    hobbies: '[str]'
+    whoami: |this| `My name is {this.name} and I am {this.age} years old.`
 });
 
 // Make `age` nillable
 mod_type('Person', 'mod', 'age', 'int?');
+
+// Change the `whoami` method
+mod_type('Person', 'mod', 'whoami', |this| {
+    isint(this.age)
+        ? `My name is {this.name} and I am {this.age} years old.`
+        : `My name is {this.name} and my age is a well kept secret.`;
+});
 ```
 
 > Return value in JSON format

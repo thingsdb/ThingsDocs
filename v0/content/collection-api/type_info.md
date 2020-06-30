@@ -44,6 +44,12 @@ Returns [info](../../data-types/info) about the Type.
 set_type('Book', {
     title: 'str',
     year: 'int',
+    ratings: '[int]',
+    get_rating: |this| {
+        this.ratings
+            ? this.ratings.reduce(|a, b| a+b, 0) / this.ratings.len()
+            : nil;
+    }
 });
 
 // Return Type info
@@ -54,13 +60,33 @@ type_info('Book');
 
 ```json
 {
-    "type_id": 0,
-    "created_at": 1579175900,
-    "modified_at": 1579175900,
-    "name": "Book",
+    "created_at": 1593527321,
     "fields": [
-        ["title", "str"],
-        ["year", "int"]
-    ]
+        [
+            "title",
+            "str"
+        ],
+        [
+            "year",
+            "int"
+        ],
+        [
+            "ratings",
+            "[int]"
+        ]
+    ],
+    "methods": {
+        "get_rating": {
+            "arguments": [
+                "this"
+            ],
+            "definition": "|this| {\n    this.ratings\n        ? this.ratings.reduce(|a, b| a + b, 0) / this.ratings.len()\n        : nil;\n}",
+            "doc": "",
+            "with_side_effects": false
+        }
+    },
+    "modified_at": null,
+    "name": "Book",
+    "type_id": 1
 }
 ```

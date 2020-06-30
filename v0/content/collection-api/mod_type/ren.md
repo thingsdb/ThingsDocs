@@ -3,7 +3,7 @@ title: "ren"
 weight: 161
 ---
 
-Rename a property from an existing [Type](../../../data-types/type).
+Rename a property or method from an existing [Type](../../../data-types/type).
 
 ### Action
 
@@ -13,10 +13,10 @@ Rename a property from an existing [Type](../../../data-types/type).
 
 Argument | Type | Description
 -------- | ---- | -----------
-type | str | Name of the Type where the property has to be modified from.
+type | str | Name of the Type where the property or method has to be modified from.
 `'ren'` | str | Passing this argument will result in a *modify* action.
-name | str | Name of the property that has to be modified.
-to | str | New name for the property that has to be modified.
+name | str | Name of the property or method that has to be modified.
+to | str | New name for the property or method that has to be modified.
 
 ### Return value
 

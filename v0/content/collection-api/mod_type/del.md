@@ -3,10 +3,10 @@ title: "del"
 weight: 159
 ---
 
-Deletes a property from an existing [Type](../../../data-types/type).
+Deletes a property or method from an existing [Type](../../../data-types/type).
 
 {{% notice warning %}}
-The property will be removed from all the active instances of that Type.
+A property will be removed from all the active instances of that Type.
 {{% /notice %}}
 
 ### Action
@@ -19,7 +19,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 type | str | Name of the Type where the property has to be removed from.
 `'del'` | str | Passing this argument will result in a *delete* action.
-name | str | Name of the property that has to be removed.
+name | str | Name of the property or method that has to be removed.
 
 ### Return value
 

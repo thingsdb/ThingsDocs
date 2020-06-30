@@ -4,8 +4,9 @@ weight: 103
 ---
 
 
-A Type is like a thing with pre-defined properties. When an instance of a Type is created, all defined properties
-are guaranteed to exist with a value matching the Type definition.
+A Type is like a thing with pre-defined properties and/or methods. When an instance of a Type is created,
+all defined properties are guaranteed to exist with a value matching the Type definition.
+
 
 ### Definable properties
 
@@ -143,6 +144,34 @@ Possible errors:
 
 - A [lookup_err()](../../errors/lookup_err) will be raised if no *thing* with the given `user_id` exists.
 - A [type_err()](../../errors/type_err) will be raised if a *thing* is found, but the *thing* is not of the *User* type,
+
+### Methods
+
+A method is a closure attached to a type. Methods are defined when creating a type by attaching a closure instead of a [definition](#definable-properties).
+When a method is used on an instance of a type, the first argument will be the *instance* itself. It is therefore common to name the first argument `this`.
+
+For example:
+
+```thingsdb,json_response
+set_type('Person', {
+    name: 'str',
+    age: 'int',
+    whoami: |this| `My name is {this.name} and I am {this.age} years old.`
+});
+
+.iris = Person{
+    name: 'Iris',
+    age: 7
+};
+
+.iris.whoami();
+```
+
+> Return value in JSON format
+
+```json
+"My name is Iris and I am 7 years old."
+```
 
 
 ### Related functions
