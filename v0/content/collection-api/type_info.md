@@ -12,6 +12,11 @@ Value | Description
 `modified_at` | [Time Stamp](https://wikipedia.org/wiki/Unix_time) when the Type is last modified or `nil` if never modified.
 `name` | Type's name.
 `fields` | Array with arrays containing two strings, the property name and definition.
+`methods` | Object with methods where the key is the method name and the value an object containing information about the closure.
+
+{{% notice info %}}
+Methods information will contain the definition of the attached closure ***only*** when the user has at least `MODIFY` privileges on the collection containing the type.
+{{% /notice %}}
 
 {{% notice note %}}
 The `modified_at` time stamp is initially set to `nil` when the Type is created using the [new_type(..)](../new_type) function.
