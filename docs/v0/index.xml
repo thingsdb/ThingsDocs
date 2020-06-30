@@ -1153,7 +1153,7 @@ list = []; list.push([&#39;this list will be nested and therefore convert to a t
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/type/</guid>
-      <description>A Type is like a thing with pre-defined properties. When an instance of a Type is created, all defined properties are guaranteed to exist with a value matching the Type definition.
+      <description>A Type is like a thing with pre-defined properties and/or methods. When an instance of a Type is created, all defined properties are guaranteed to exist with a value matching the Type definition.
 Definable properties    definition default description     &#39;str&#39; &amp;quot;&amp;quot; requires type str (values of type str should contain valid UTF-8 characters).   &#39;utf8&#39; &amp;quot;&amp;quot; requires type str and the value must contain valid UTF-8 characters.</description>
     </item>
     
@@ -1785,7 +1785,7 @@ Arguments    Argument Type Description     enum str Name of the enumerator type 
       <guid>https://docs.thingsdb.net/v0/collection-api/mod_type/add/</guid>
       <description>Adds a property to an existing Type.
 Since version v0.9.2 an initial value is no longer required when having active instances of the given Type. If the initial value is omitted, then the default value according the Type definition will be applied.
- Action mod_type(type, &#39;add&#39;, name, definition, [init])
+ Action mod_type(type, &#39;add&#39;, name, definition/closure, [init])
 Arguments    Argument Type Description     type str Name of the Type where the property has to be added to.</description>
     </item>
     
@@ -1795,10 +1795,10 @@ Arguments    Argument Type Description     type str Name of the Type where the p
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/mod_type/del/</guid>
-      <description>Deletes a property from an existing Type.
-The property will be removed from all the active instances of that Type.
+      <description>Deletes a property or method from an existing Type.
+A property will be removed from all the active instances of that Type.
  Action mod_type(type, &#39;del&#39;, name)
-Arguments    Argument Type Description     type str Name of the Type where the property has to be removed from.   &#39;del&#39; str Passing this argument will result in a delete action.   name str Name of the property that has to be removed.</description>
+Arguments    Argument Type Description     type str Name of the Type where the property has to be removed from.   &#39;del&#39; str Passing this argument will result in a delete action.   name str Name of the property or method that has to be removed.</description>
     </item>
     
     <item>
@@ -1807,9 +1807,8 @@ Arguments    Argument Type Description     type str Name of the Type where the p
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/mod_type/mod/</guid>
-      <description>Modifies the type definition of a property from an existing Type.
-Without an additional callback it is possible to modify to a less &amp;lsquo;strict&amp;rsquo; definition. So for example, age: &#39;int&#39; can become age: &#39;int?&#39;, but not the other way around. Since version v0.9.3 it is possible to migrate to a more strict or completely different definition by using an additional callback closure for generating new values.
- Action mod_type(type, &#39;mod&#39;, name, definition, [callback])</description>
+      <description>Modifies the type definition of a property or the closure of a method from an existing Type. It is not possible to convert a property to a method or the other way around.
+Without an additional callback it is possible to modify to a less &amp;lsquo;strict&amp;rsquo; definition. So for example, age: &#39;int&#39; can become age: &#39;int?&#39;, but not the other way around. Since version v0.9.3 it is possible to migrate to a more strict or completely different definition by using an additional callback closure for generating new values.</description>
     </item>
     
     <item>
@@ -1818,9 +1817,9 @@ Without an additional callback it is possible to modify to a less &amp;lsquo;str
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/mod_type/ren/</guid>
-      <description>Rename a property from an existing Type.
+      <description>Rename a property or method from an existing Type.
 Action mod_type(type, &#39;ren&#39;, name, to)
-Arguments    Argument Type Description     type str Name of the Type where the property has to be modified from.   &#39;ren&#39; str Passing this argument will result in a modify action.   name str Name of the property that has to be modified.   to str New name for the property that has to be modified.</description>
+Arguments    Argument Type Description     type str Name of the Type where the property or method has to be modified from.   &#39;ren&#39; str Passing this argument will result in a modify action.   name str Name of the property or method that has to be modified.   to str New name for the property or method that has to be modified.</description>
     </item>
     
     <item>

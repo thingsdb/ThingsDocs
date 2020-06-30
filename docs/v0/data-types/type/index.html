@@ -11,20 +11,20 @@
     <title>Type :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1592570294" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1592570294" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1592570294" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1592570294" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1592570294" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1592570294" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1592570294" rel="stylesheet">
-    <link href="/v0/css/theme.css?1592570294" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1592570294" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1593528445" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1593528445" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1593528445" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1593528445" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1593528445" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1593528445" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1593528445" rel="stylesheet">
+    <link href="/v0/css/theme.css?1593528445" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1593528445" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1592570294" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1593528445" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1592570294"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1593528445"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1592570294"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1592570294"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1593528445"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1593528445"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1592570294"></script>
+<script type="text/javascript" src="/v0/js/search.js?1593528445"></script>
 
     
   </div>
@@ -5182,6 +5182,7 @@
       <ul>
         <li><a href="#definable-properties">Definable properties</a></li>
         <li><a href="#get-instance-of-a-type">Get instance of a type</a></li>
+        <li><a href="#methods">Methods</a></li>
         <li><a href="#related-functions">Related functions</a></li>
         <li><a href="#mutation-format">Mutation format</a></li>
       </ul>
@@ -5211,8 +5212,8 @@
 
 
 
-<p>A Type is like a thing with pre-defined properties. When an instance of a Type is created, all defined properties
-are guaranteed to exist with a value matching the Type definition.</p>
+<p>A Type is like a thing with pre-defined properties and/or methods. When an instance of a Type is created,
+all defined properties are guaranteed to exist with a value matching the Type definition.</p>
 <h3 id="definable-properties">Definable properties</h3>
 <table>
 <thead>
@@ -5404,7 +5405,27 @@ user = User(user_id);
 <li>A <a href="../../errors/lookup_err">lookup_err()</a> will be raised if no <em>thing</em> with the given <code>user_id</code> exists.</li>
 <li>A <a href="../../errors/type_err">type_err()</a> will be raised if a <em>thing</em> is found, but the <em>thing</em> is not of the <em>User</em> type,</li>
 </ul>
-<h3 id="related-functions">Related functions</h3>
+<h3 id="methods">Methods</h3>
+<p>A method is a closure attached to a type. Methods are defined when creating a type by attaching a closure instead of a <a href="#definable-properties">definition</a>.
+When a method is used on an instance of a type, the first argument will be the <em>instance</em> itself. It is therefore common to name the first argument <code>this</code>.</p>
+<p>For example:</p>
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">set_type('Person', {
+    name: 'str',
+    age: 'int',
+    whoami: |this| `My name is {this.name} and I am {this.age} years old.`
+});
+
+.iris = Person{
+    name: 'Iris',
+    age: 7
+};
+
+.iris.whoami();
+</code></pre><blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;My name is Iris and I am 7 years old.&#34;</span>
+</code></pre></div><h3 id="related-functions">Related functions</h3>
 <table>
 <thead>
 <tr>
@@ -5523,19 +5544,19 @@ Note that the types info is included inside an <a href="../../watching/on-init">
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1592570294"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1592570294"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1592570294"></script>
-    <script src="/v0/js/jquery.sticky.js?1592570294"></script>
-    <script src="/v0/js/featherlight.min.js?1592570294"></script>
-    <script src="/v0/js/highlight.pack.js?1592570294"></script>
+    <script src="/v0/js/clipboard.min.js?1593528445"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1593528445"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1593528445"></script>
+    <script src="/v0/js/jquery.sticky.js?1593528445"></script>
+    <script src="/v0/js/featherlight.min.js?1593528445"></script>
+    <script src="/v0/js/highlight.pack.js?1593528445"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1592570294"></script>
-    <script src="/v0/js/learn.js?1592570294"></script>
-    <script src="/v0/js/hugo-learn.js?1592570294"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1593528445"></script>
+    <script src="/v0/js/learn.js?1593528445"></script>
+    <script src="/v0/js/hugo-learn.js?1593528445"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1592570294" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1592570294"></script>
+    <link href="/v0/mermaid/mermaid.css?1593528445" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1593528445"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
