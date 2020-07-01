@@ -7,8 +7,10 @@ weight: 104
 It is sometimes useful to get things with their ID (`#`) but still
 be able to filter-out properties which are not required.
 
-One feature to return only specific properties from a thing, is to work with *wrapped* Types.
-This feature is especially useful *(and fast)* if your source thing is [Type](../type) instance.
+A solution to return only specific properties from a thing, is to work with *wrapped* Types.
+This feature is especially useful *(and fast)* if your source thing is a [Type](../type) instance.
+
+Besides filtering properties, a wrapped *thing* also inherits the [methods](../type/#methods) from the *type* it is wrapped with *(see [example 3](#example-3))*.
 
 {{% notice note %}}
 
@@ -219,4 +221,33 @@ The output now only includes the `lastName` property. Thus the property `.Wrappe
     "#": 21,
     "lastName": "Lightyear"
 }
+```
+
+### Example 3
+
+> This last example show how methods of a type are inherited by a wrapped type:
+
+```thingsdb,json_response
+set_type('MathXY', {
+    multiply: |this| this.x * this.y,
+    add: |this| this.x + this.y,
+});
+
+set_type('Point2d', {
+    x: 'number',
+    y: 'number',
+});
+
+point = Point2d{
+    x: 6,
+    y: 7,
+};
+
+point.wrap('MathXY').multiply();
+```
+
+> Return value in JSON format:
+
+```json
+42
 ```
