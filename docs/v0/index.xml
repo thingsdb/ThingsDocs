@@ -1129,12 +1129,11 @@ This function only works with socket connections. When using this function with 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/thing/wrap/</guid>
-      <description>Wrap a thing with a another Type to filter out properties, while preserving the ID.
+      <description>Wrap a thing with a another Type to filter out properties, while preserving the ID. A wrapped thing inherits the methods from the type it is wrapped with.
 For a more advanced example using wrap() and unwrap() see &amp;lt;Type&amp;gt;.
 Function thing.wrap(Type)
 Arguments    Argument Arguments Description     Type str Type&amp;rsquo;s name to wrap the thing with.    Return value A wrapped thing.
-Example  This code shows an example using wrap():
- // Create a Type to return just an email field.</description>
+Example  This code shows an example using wrap():</description>
     </item>
     
     <item>
