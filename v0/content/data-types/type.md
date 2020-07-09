@@ -13,15 +13,19 @@ all defined properties are guaranteed to exist with a value matching the Type de
 definition | default | description
 ---------- | ------- | -----------
 `'str'` | `""` | requires type [str](../str) (values of type [str](../str) *should* contain valid UTF-8 characters).
+`'str<..>'` | *depends* | requires type [str](../str) with a certain length *(see [length condition](#length-condition))*.
+`/pattern/` | *depends* | requires type [str](../str) with a math to a specified pattern *(see [pattern condition](#pattern-condition))*.
 `'utf8'` | `""` | requires type [str](../str) and the value *must* contain valid UTF-8 characters.
 `'raw'` | `""` | requires type [str](../str) *or* [bytes](../bytes).
 `'bytes'` | `bytes()` | requires type [bytes](../bytes).
 `'bool'` | `false` | requires type [bool](../bool).
 `'int'` | `0` | requires type [int](../int).
+`'int<..>'` | *depends* | requires type [int](../int) within a given range *(see [range condition](#range-condition))*.
 `'uint'` | `0` | requires a *non-negative* integer (type [int](../int), `>= 0`).
 `'pint'` | `1` | requires a *positive* integer (type [int](../int), `> 0`).
 `'nint'` | `-1` | requires a *negative* integer (type [int](../int), `< 0`).
 `'float'` | `0.0` | requires type [float](../float).
+`'float<..>'` | *depends* | requires type [float](../float) within a given range *(see [range condition](#range-condition))*.
 `'number'` | `0` | requires type [float](../float) *or* type [int](../int).
 `'thing'` | `{}` | requires a [thing](../thing).
 `'X'` | `X{}` | requires a instance of [Type](../type) `X`, or a member of [enumerator](../enum) `X`. The value `X` should be replaced with the `Type` / `enum` name.
@@ -125,6 +129,156 @@ return(book, 2);
     "title": "hitchhiker's guide to the galaxy"
 }
 ```
+
+### Length condition
+
+A length condition may be added to a `str` type specification using the following syntax:
+
+```
+str<min:max:default>
+```
+
+argument  | description
+--------  | -----------
+`min`     | minimal length *(inclusive)*.
+`max`     | maximum length *(inclusive, this value must be equal to or greater than `min`)*.
+`default` | Optional default value. If not given, the default value will be the smallest possible string filled with the dash (`-`) character.
+
+For example:
+
+```thingsdb,json_response
+set_type('Person', {
+    name: 'str<1:10>',
+    email: 'str<3:50:info@thingsdb.net>'
+});
+
+/*
+ *  Each Person instance will contain a name with at least 1 character
+ *  and at most 10 characters and an email property with a string of at
+ *  least 3 and at most 50 characters.
+ */
+
+Person{};  // return a Person with default values
+```
+
+> Return value in JSON format
+
+```json
+{
+    "name": "-",
+    "email": "info@thingsdb.net"
+}
+```
+
+{{% notice warning %}}
+A length condition cannot be used as a nested array specification, thus something like `"[str<1:10>]"` is ***not*** possible.
+{{% /notice %}}
+
+### Pattern condition
+
+A pattern condition applies to type `str` and may be used using the following syntax:
+
+```text
+/pattern/i
+```
+
+The `i` is optional and tells the pattern to be case insensitive. If left away, the pattern will thus be case sensitive.
+
+The specification must be either *nillable* by adding a `?` to the specification or an empty string must match with the given pattern. If this is *not* the case, then a default value ***must*** be given using the syntax below:
+
+```text
+/pattern/i<default>
+```
+
+{{% notice note %}}
+It is always possible to set a default value as long as the default value matches
+with the given pattern.
+{{% /notice %}}
+
+Here is an example using some pattern conditions:
+
+```thingsdb,json_response
+set_type('Words', {
+    example1: '/^(e|h|l|o)*$/',
+    example2: '/thingsdb/i<ThingsDB>',
+    example3: '/^[0-9]{4}[A-Z]{2}$/?',
+    example4: '/^[0-9]{4}[A-Z]{2}$/<1234AB>?',
+});
+
+/*
+ *  example1 - matches an empty string so a default value is not required
+ *  example2 - case insensitive and requires a default value
+ *  example3 - nillable and thus no default value is required
+ *  example4 - exactly the same as example3 but with a default value
+ */
+
+Words{};  // return a Person with default values
+```
+
+> Return value in JSON format
+
+```json
+{
+    "example1": "",
+    "example2": "ThingsDB",
+    "example3": null,
+    "example4": "1234AB"
+}
+```
+
+{{% notice warning %}}
+A pattern condition cannot be used as a nested array specification, thus something like `"[/pattern/i]"` is ***not*** possible.
+{{% /notice %}}
+
+### Range condition
+
+A range condition may be added to a `int` or `float` type specification using the following syntax:
+
+```
+int<min:max:default>
+```
+
+Or
+
+```
+float<min:max:default>
+```
+
+argument  | description
+--------  | -----------
+`min`     | minimal value *(inclusive)*.
+`max`     | maximum value *(inclusive, this value must be equal to or greater than `min`)*.
+`default` | Optional default value. If not given, the default value will be the closest possible value towards zero (`0`).
+
+For example:
+
+```thingsdb,json_response
+set_type('Values', {
+    a: 'int<10:20>',
+    b: 'int<0:10:5>',
+    c: 'float<-1:1>',
+    d: 'float<0:1:0.5>',
+});
+
+
+Values{};  // return a `Values` instance with default values
+```
+
+> Return value in JSON format
+
+```json
+{
+    "a": 10,
+    "b": 5,
+    "c": 0,
+    "d": 0.5
+}
+```
+
+{{% notice warning %}}
+A range condition cannot be used as a nested array specification, thus something like `"[int<1:10>]"` is ***not*** possible.
+{{% /notice %}}
+
 
 ### Get instance of a type
 
