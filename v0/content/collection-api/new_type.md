@@ -1,6 +1,6 @@
 ---
 title: "new_type"
-weight: 163
+weight: 164
 ---
 
 Creates a new [Type](../../data-types/type). This function *only* creates a new type
@@ -16,13 +16,19 @@ This function generates an [event](../../overview/events).
 
 ### Function
 
-`new_type(type)`
+`new_type(type, [wrap_only])`
 
 ### Arguments
 
 Argument | Type | Description
 -------- | ---- | -----------
 type | string | Name of the Type to be created.
+wrap_only | bool (optional) | When `true` the new type will be created with *wrap-only* mode enabled. Default is `false`.
+
+{{% notice note %}}
+If **wrap-only** mode is enabled, no instances of this type can be
+created nor can the type be used by other type. In **wrap-only** mode the only purpose of the type is to [wrap](../../data-types/thing/wrap) other things.
+{{% /notice %}}
 
 ### Return value
 

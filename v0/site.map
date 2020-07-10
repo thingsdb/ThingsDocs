@@ -159,6 +159,7 @@ collection-api
         del
         mod
         ren
+        wpo
     new
     new_type
     now

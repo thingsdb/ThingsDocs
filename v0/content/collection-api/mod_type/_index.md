@@ -15,3 +15,4 @@ Action | Description
 [del](./del) | Delete a property of an existing Type.
 [mod](./mod) | Modify a property of an existing Type.
 [ren](./ren) | Rename a property of an existing Type.
+[wpo](./wpo) | Enable or disable *wrap-only* mode.

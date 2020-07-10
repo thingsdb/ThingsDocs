@@ -1,6 +1,6 @@
 ---
 title: "procedures_info"
-weight: 225
+weight: 226
 ---
 
 Returns procedure information about all procedures in the scope.
