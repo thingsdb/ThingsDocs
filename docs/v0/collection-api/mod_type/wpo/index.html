@@ -8,7 +8,7 @@
 
 
     <link rel="shortcut icon" href='/v0/images/favicon.ico' type="image/x-icon" />
-    <title>enum_info :: ThingsDB documentation</title>
+    <title>wpo :: ThingsDB documentation</title>
 
     
     <link href="/v0/css/nucleus.css?1594383002" rel="stylesheet">
@@ -38,7 +38,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/v0/collection-api/enum_info/">
+  <body class="" data-url="/v0/collection-api/mod_type/wpo/">
     <nav id="sidebar" class="">
 
 
@@ -2624,7 +2624,7 @@
  
   
     
-      <li data-nav-id="/v0/collection-api/enum_info/" title="enum_info" class="dd-item active">
+      <li data-nav-id="/v0/collection-api/enum_info/" title="enum_info" class="dd-item ">
         <a href="/v0/collection-api/enum_info/">
         enum_info
         
@@ -3286,7 +3286,7 @@
   
     
     <li data-nav-id="/v0/collection-api/mod_type/" title="mod_type" class="dd-item 
-        
+        parent
         
         
         ">
@@ -3386,7 +3386,7 @@
  
   
     
-      <li data-nav-id="/v0/collection-api/mod_type/wpo/" title="wpo" class="dd-item ">
+      <li data-nav-id="/v0/collection-api/mod_type/wpo/" title="wpo" class="dd-item active">
         <a href="/v0/collection-api/mod_type/wpo/">
         wpo
         
@@ -5182,7 +5182,13 @@
             
           
           
-            <a href='/v0/'></a> > <a href='/v0/collection-api/'>Collection API</a> > enum_info
+            
+            
+          
+          
+            <a href='/v0/'></a> > <a href='/v0/collection-api/'>Collection API</a> > <a href='/v0/collection-api/mod_type/'>mod_type</a> > wpo
+          
+         
           
          
           
@@ -5199,7 +5205,8 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#function">Function</a></li>
+        <li></li>
+        <li><a href="#action">Action</a></li>
         <li><a href="#arguments">Arguments</a></li>
         <li><a href="#return-value">Return value</a></li>
         <li><a href="#example">Example</a></li>
@@ -5222,7 +5229,7 @@
           
             <h1>
               
-              enum_info
+              wpo
             </h1>
           
 
@@ -5230,44 +5237,15 @@
 
 
 
-<p>Returns information about a given <a href="../../data-types/enum">enumeration type</a>.</p>
-<table>
-<thead>
-<tr>
-<th>Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>enum_id</code></td>
-<td>Internal enum ID <em>(can be used to identify Enums in collection events)</em>.</td>
-</tr>
-<tr>
-<td><code>created_at</code></td>
-<td><a href="https://wikipedia.org/wiki/Unix_time">Time Stamp</a> when the enum is created.</td>
-</tr>
-<tr>
-<td><code>default</code></td>
-<td>Default member of this enumerator. The default member is used when implicitly creating a value of this enumerator type. See <a href="../mod_enum/def">mod_enum(..)</a> to change the deafult member.</td>
-</tr>
-<tr>
-<td><code>modified_at</code></td>
-<td><a href="https://wikipedia.org/wiki/Unix_time">Time Stamp</a> when the enum is last modified or <code>nil</code> if never modified.</td>
-</tr>
-<tr>
-<td><code>name</code></td>
-<td>Enum&rsquo;s name.</td>
-</tr>
-<tr>
-<td><code>members</code></td>
-<td>Array with arrays containing two strings, the name and value.</td>
-</tr>
-</tbody>
-</table>
-<p>This function does <em>not</em> generate an <a href="../../overview/events">event</a>.</p>
-<h3 id="function">Function</h3>
-<p><code>enum_info(enum)</code></p>
+<p>Enable or disable <em>wrap-only</em> mode for an existing <a href="../../../data-types/type">Type</a>.</p>
+<p>When wrap-only mode is enabled, no instances of the type can be created and the type
+can not be used by other type unless that type is also in wrap-only mode. The only purpose of a type in wrap-only mode is to <a href="../../../data-types/thing/wrap">wrap</a> things with but this gives you the assurance that no data is created using this type.</p>
+<h4 id="enable-wrap-only-mode">Enable wrap-only mode</h4>
+<p>To enable wrap-only mode, make sure no instances of this type exist, and also be sure that no <em>other</em> type without wrap-only mode is dependent on the type you want to change. Loosely dependencies, like <em>nillable (<code>&quot;Type?&quot;</code>)</em>, <em>array-of (<code>&quot;[Type]&quot;</code>)</em> or <em>set-of (<code>&quot;{Type}&quot;</code>)</em> dependencies are allowed.</p>
+<h4 id="disable-wrap-only-mode">Disable wrap-only mode</h4>
+<p>To disable wrap-only mode, make sure the type has no dependencies to type with <em>wrap-only</em> mode enabled. Loosely dependencies, like <em>nillable (<code>&quot;Type?&quot;</code>)</em>, <em>array-of (<code>&quot;[Type]&quot;</code>)</em> or <em>set-of (<code>&quot;{Type}&quot;</code>)</em> dependencies are allowed.</p>
+<h3 id="action">Action</h3>
+<p><code>mod_type(type, 'wpo', mode)</code></p>
 <h3 id="arguments">Arguments</h3>
 <table>
 <thead>
@@ -5279,43 +5257,41 @@
 </thead>
 <tbody>
 <tr>
-<td>enum</td>
+<td>type</td>
 <td>str</td>
-<td>The name of the enum for which the information has to be returned.</td>
+<td>Name of the Type where to set the wrap-mode for.</td>
+</tr>
+<tr>
+<td><code>'wpo'</code></td>
+<td>str</td>
+<td>Passing this argument will result in a <em>set-wrap-mode</em> action.</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>bool</td>
+<td>Enable or disable wrap-mode.</td>
 </tr>
 </tbody>
 </table>
 <h3 id="return-value">Return value</h3>
-<p>Returns <a href="../../data-types/info">info</a> about the enumeration type.</p>
+<p>The value <code>nil</code>.</p>
 <h3 id="example">Example</h3>
 <blockquote>
-<p>This code shows the output of <em><strong>enum_info()</strong></em>:</p>
+<p>This code shows the return value for the action <em><strong>wpo</strong></em>:</p>
 </blockquote>
-<pre><code class="language-thingsdb,should_pass" data-lang="thingsdb,should_pass">// Just a Type as an example
-set_enum('Color', {
-    RED: '#ff0000',
-    GREEN: '#00ff00',
-    BLUE: '#0000ff',
+<pre><code class="language-thingsdb,should_err" data-lang="thingsdb,should_err">// Create type `Person`
+set_type('Person', {
+    name: 'str',
+    a: 'int',
 });
 
-// Return Type info
-enum_info('Color');
-</code></pre><blockquote>
-<p>Example return value in JSON format</p>
-</blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-    <span style="color:#f92672">&#34;enum_id&#34;</span>: <span style="color:#ae81ff">0</span>,
-    <span style="color:#f92672">&#34;created_at&#34;</span>: <span style="color:#ae81ff">1589917348</span>,
-    <span style="color:#f92672">&#34;default&#34;</span>: <span style="color:#e6db74">&#34;RED&#34;</span>,
-    <span style="color:#f92672">&#34;modified_at&#34;</span>: <span style="color:#66d9ef">null</span>,
-    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Color&#34;</span>,
-    <span style="color:#f92672">&#34;members&#34;</span>: [
-        [<span style="color:#e6db74">&#34;RED&#34;</span>, <span style="color:#e6db74">&#34;#ff0000&#34;</span>],
-        [<span style="color:#e6db74">&#34;GREEN&#34;</span>, <span style="color:#e6db74">&#34;#00ff00&#34;</span>],
-        [<span style="color:#e6db74">&#34;BLUE&#34;</span>, <span style="color:#e6db74">&#34;#0000ff&#34;</span>]
-    ]
-}
-</code></pre></div>
+// Rename `a` to `age`
+mod_type('Person', 'wpo', true);
+
+// Raises a type error
+Person{};
+</code></pre><p>Raises a <a href="../../../errors/type_err">type_err()</a>: <em>type <code>Person</code> has wrap-only mode enabled</em></p>
+
 
 <footer class=" footline" >
 	
@@ -5332,10 +5308,10 @@ enum_info('Color');
         
     
         
-            <a class="nav nav-prev" href="/v0/collection-api/enum/" title="enum"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/v0/collection-api/mod_type/ren/" title="ren"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/v0/collection-api/enums_info/" title="enums_info" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/v0/collection-api/new/" title="new" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     
     </div>

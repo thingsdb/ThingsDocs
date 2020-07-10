@@ -11,20 +11,20 @@
     <title>Type :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1593607463" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1593607463" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1593607463" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1593607463" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1593607463" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1593607463" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1593607463" rel="stylesheet">
-    <link href="/v0/css/theme.css?1593607463" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1593607463" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1594383003" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1594383003" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1594383003" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1594383003" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1594383003" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1594383003" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1594383003" rel="stylesheet">
+    <link href="/v0/css/theme.css?1594383003" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1594383003" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1593607463" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1594383003" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1593607463"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1594383003"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1593607463"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1593607463"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1594383003"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1594383003"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1593607463"></script>
+<script type="text/javascript" src="/v0/js/search.js?1594383003"></script>
 
     
   </div>
@@ -3379,6 +3379,25 @@
 
             
           
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/collection-api/mod_type/wpo/" title="wpo" class="dd-item ">
+        <a href="/v0/collection-api/mod_type/wpo/">
+        wpo
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
         
         </ul>
               
@@ -5181,6 +5200,9 @@
     <li>
       <ul>
         <li><a href="#definable-properties">Definable properties</a></li>
+        <li><a href="#length-condition">Length condition</a></li>
+        <li><a href="#pattern-condition">Pattern condition</a></li>
+        <li><a href="#range-condition">Range condition</a></li>
         <li><a href="#get-instance-of-a-type">Get instance of a type</a></li>
         <li><a href="#methods">Methods</a></li>
         <li><a href="#related-functions">Related functions</a></li>
@@ -5230,6 +5252,16 @@ all defined properties are guaranteed to exist with a value matching the Type de
 <td>requires type <a href="../str">str</a> (values of type <a href="../str">str</a> <em>should</em> contain valid UTF-8 characters).</td>
 </tr>
 <tr>
+<td><code>'str&lt;..&gt;'</code></td>
+<td><em>depends</em></td>
+<td>requires type <a href="../str">str</a> with a certain length <em>(see <a href="#length-condition">length condition</a>)</em>.</td>
+</tr>
+<tr>
+<td><code>/pattern/</code></td>
+<td><em>depends</em></td>
+<td>requires type <a href="../str">str</a> with a math to a specified pattern <em>(see <a href="#pattern-condition">pattern condition</a>)</em>.</td>
+</tr>
+<tr>
 <td><code>'utf8'</code></td>
 <td><code>&quot;&quot;</code></td>
 <td>requires type <a href="../str">str</a> and the value <em>must</em> contain valid UTF-8 characters.</td>
@@ -5255,6 +5287,11 @@ all defined properties are guaranteed to exist with a value matching the Type de
 <td>requires type <a href="../int">int</a>.</td>
 </tr>
 <tr>
+<td><code>'int&lt;..&gt;'</code></td>
+<td><em>depends</em></td>
+<td>requires type <a href="../int">int</a> within a given range <em>(see <a href="#range-condition">range condition</a>)</em>.</td>
+</tr>
+<tr>
 <td><code>'uint'</code></td>
 <td><code>0</code></td>
 <td>requires a <em>non-negative</em> integer (type <a href="../int">int</a>, <code>&gt;= 0</code>).</td>
@@ -5273,6 +5310,11 @@ all defined properties are guaranteed to exist with a value matching the Type de
 <td><code>'float'</code></td>
 <td><code>0.0</code></td>
 <td>requires type <a href="../float">float</a>.</td>
+</tr>
+<tr>
+<td><code>'float&lt;..&gt;'</code></td>
+<td><em>depends</em></td>
+<td>requires type <a href="../float">float</a> within a given range <em>(see <a href="#range-condition">range condition</a>)</em>.</td>
 </tr>
 <tr>
 <td><code>'number'</code></td>
@@ -5392,7 +5434,146 @@ return(book, 2);
     ],
     <span style="color:#f92672">&#34;title&#34;</span>: <span style="color:#e6db74">&#34;hitchhiker&#39;s guide to the galaxy&#34;</span>
 }
-</code></pre></div><h3 id="get-instance-of-a-type">Get instance of a type</h3>
+</code></pre></div><h3 id="length-condition">Length condition</h3>
+<p>A length condition may be added to a <code>str</code> type specification using the following syntax:</p>
+<pre><code>str&lt;min:max:default&gt;
+</code></pre><table>
+<thead>
+<tr>
+<th>argument</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>min</code></td>
+<td>minimal length <em>(inclusive)</em>.</td>
+</tr>
+<tr>
+<td><code>max</code></td>
+<td>maximum length <em>(inclusive, this value must be equal to or greater than <code>min</code>)</em>.</td>
+</tr>
+<tr>
+<td><code>default</code></td>
+<td>Optional default value. If not given, the default value will be the smallest possible string filled with the dash (<code>-</code>) character.</td>
+</tr>
+</tbody>
+</table>
+<p>For example:</p>
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">set_type('Person', {
+    name: 'str&lt;1:10&gt;',
+    email: 'str&lt;3:50:info@thingsdb.net&gt;'
+});
+
+/*
+ *  Each Person instance will contain a name with at least 1 character
+ *  and at most 10 characters and an email property with a string of at
+ *  least 3 and at most 50 characters.
+ */
+
+Person{};  // return a Person with default values
+</code></pre><blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;-&#34;</span>,
+    <span style="color:#f92672">&#34;email&#34;</span>: <span style="color:#e6db74">&#34;info@thingsdb.net&#34;</span>
+}
+</code></pre></div>
+<div class="notices warning" ><p>A length condition cannot be used as a nested array specification, thus something like <code>&quot;[str&lt;1:10&gt;]&quot;</code> is <em><strong>not</strong></em> possible.</p>
+</div>
+
+<h3 id="pattern-condition">Pattern condition</h3>
+<p>A pattern condition applies to type <code>str</code> and may be used using the following syntax:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">/pattern/i
+</code></pre></div><p>The <code>i</code> is optional and tells the pattern to be case insensitive. If left away, the pattern will thus be case sensitive.</p>
+<p>The specification must be either <em>nillable</em> by adding a <code>?</code> to the specification or an empty string must match with the given pattern. If this is <em>not</em> the case, then a default value <em><strong>must</strong></em> be given using the syntax below:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">/pattern/i&lt;default&gt;
+</code></pre></div>
+<div class="notices note" ><p>It is always possible to set a default value as long as the default value matches
+with the given pattern.</p>
+</div>
+
+<p>Here is an example using some pattern conditions:</p>
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">set_type('Words', {
+    example1: '/^(e|h|l|o)*$/',
+    example2: '/thingsdb/i&lt;ThingsDB&gt;',
+    example3: '/^[0-9]{4}[A-Z]{2}$/?',
+    example4: '/^[0-9]{4}[A-Z]{2}$/&lt;1234AB&gt;?',
+});
+
+/*
+ *  example1 - matches an empty string so a default value is not required
+ *  example2 - case insensitive and requires a default value
+ *  example3 - nillable and thus no default value is required
+ *  example4 - exactly the same as example3 but with a default value
+ */
+
+Words{};  // return a Person with default values
+</code></pre><blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;example1&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+    <span style="color:#f92672">&#34;example2&#34;</span>: <span style="color:#e6db74">&#34;ThingsDB&#34;</span>,
+    <span style="color:#f92672">&#34;example3&#34;</span>: <span style="color:#66d9ef">null</span>,
+    <span style="color:#f92672">&#34;example4&#34;</span>: <span style="color:#e6db74">&#34;1234AB&#34;</span>
+}
+</code></pre></div>
+<div class="notices warning" ><p>A pattern condition cannot be used as a nested array specification, thus something like <code>&quot;[/pattern/i]&quot;</code> is <em><strong>not</strong></em> possible.</p>
+</div>
+
+<h3 id="range-condition">Range condition</h3>
+<p>A range condition may be added to a <code>int</code> or <code>float</code> type specification using the following syntax:</p>
+<pre><code>int&lt;min:max:default&gt;
+</code></pre><p>Or</p>
+<pre><code>float&lt;min:max:default&gt;
+</code></pre><table>
+<thead>
+<tr>
+<th>argument</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>min</code></td>
+<td>minimal value <em>(inclusive)</em>.</td>
+</tr>
+<tr>
+<td><code>max</code></td>
+<td>maximum value <em>(inclusive, this value must be equal to or greater than <code>min</code>)</em>.</td>
+</tr>
+<tr>
+<td><code>default</code></td>
+<td>Optional default value. If not given, the default value will be the closest possible value towards zero (<code>0</code>).</td>
+</tr>
+</tbody>
+</table>
+<p>For example:</p>
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">set_type('Values', {
+    a: 'int&lt;10:20&gt;',
+    b: 'int&lt;0:10:5&gt;',
+    c: 'float&lt;-1:1&gt;',
+    d: 'float&lt;0:1:0.5&gt;',
+});
+
+
+Values{};  // return a `Values` instance with default values
+</code></pre><blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;a&#34;</span>: <span style="color:#ae81ff">10</span>,
+    <span style="color:#f92672">&#34;b&#34;</span>: <span style="color:#ae81ff">5</span>,
+    <span style="color:#f92672">&#34;c&#34;</span>: <span style="color:#ae81ff">0</span>,
+    <span style="color:#f92672">&#34;d&#34;</span>: <span style="color:#ae81ff">0.5</span>
+}
+</code></pre></div>
+<div class="notices warning" ><p>A range condition cannot be used as a nested array specification, thus something like <code>&quot;[int&lt;1:10&gt;]&quot;</code> is <em><strong>not</strong></em> possible.</p>
+</div>
+
+<h3 id="get-instance-of-a-type">Get instance of a type</h3>
 <p>The <a href="../../collection-api/thing">thing(..)</a> function may be used to get an instance
 of a given ID. This does not guarantee that the <em>thing</em> is truly of the type you expect.
 Instead of adding a <a href="../../collection-api/type_assert">type_assert(..)</a> on the <em>thing</em>, it is also possible to
@@ -5544,19 +5725,19 @@ Note that the types info is included inside an <a href="../../watching/on-init">
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1593607463"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1593607463"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1593607463"></script>
-    <script src="/v0/js/jquery.sticky.js?1593607463"></script>
-    <script src="/v0/js/featherlight.min.js?1593607463"></script>
-    <script src="/v0/js/highlight.pack.js?1593607463"></script>
+    <script src="/v0/js/clipboard.min.js?1594383003"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1594383003"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1594383003"></script>
+    <script src="/v0/js/jquery.sticky.js?1594383003"></script>
+    <script src="/v0/js/featherlight.min.js?1594383003"></script>
+    <script src="/v0/js/highlight.pack.js?1594383003"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1593607463"></script>
-    <script src="/v0/js/learn.js?1593607463"></script>
-    <script src="/v0/js/hugo-learn.js?1593607463"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1594383003"></script>
+    <script src="/v0/js/learn.js?1594383003"></script>
+    <script src="/v0/js/hugo-learn.js?1594383003"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1593607463" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1593607463"></script>
+    <link href="/v0/mermaid/mermaid.css?1594383003" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1594383003"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

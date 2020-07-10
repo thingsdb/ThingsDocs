@@ -515,7 +515,7 @@ When possible it is preferred to use the syntax MyType{...} to create a instance
       <description>Creates a new Type. This function only creates a new type and does not allow you to specify any fields. With the set_type() function you can define the fields for the new type.
 It is possible to use set_type directly without calling new_type first. However, sometimes you want to cross reference two types so you want both type to exists before calling set_type.
  This function generates an event.
-Function new_type(type)</description>
+Function new_type(type, [wrap_only])</description>
     </item>
     
     <item>
@@ -645,7 +645,7 @@ Example  This code shows how to use set_enum():
       <guid>https://docs.thingsdb.net/v0/collection-api/set_type/</guid>
       <description>Defines the properties of a Type. Function set_type works only on a new Type. Use mod_type() if you want to change an existing Type, see mod_type.
 This function generates an event.
-Function set_type(type, value)
+Function set_type(type, value, [wrap_only])
 Arguments    Argument Type Description     type str The name of the Type where the properties have to be set.   value thing Thing containing all the properties to be set.</description>
     </item>
     

@@ -1153,7 +1153,7 @@ list = []; list.push([&#39;this list will be nested and therefore convert to a t
       
       <guid>https://docs.thingsdb.net/v0/data-types/type/</guid>
       <description>A Type is like a thing with pre-defined properties and/or methods. When an instance of a Type is created, all defined properties are guaranteed to exist with a value matching the Type definition.
-Definable properties    definition default description     &#39;str&#39; &amp;quot;&amp;quot; requires type str (values of type str should contain valid UTF-8 characters).   &#39;utf8&#39; &amp;quot;&amp;quot; requires type str and the value must contain valid UTF-8 characters.</description>
+Definable properties    definition default description     &#39;str&#39; &amp;quot;&amp;quot; requires type str (values of type str should contain valid UTF-8 characters).   &#39;str&amp;lt;..&amp;gt;&#39; depends requires type str with a certain length (see length condition).</description>
     </item>
     
     <item>
@@ -1822,6 +1822,17 @@ Arguments    Argument Type Description     type str Name of the Type where the p
     </item>
     
     <item>
+      <title>wpo</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/mod_type/wpo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/mod_type/wpo/</guid>
+      <description>Enable or disable wrap-only mode for an existing Type.
+When wrap-only mode is enabled, no instances of the type can be created and the type can not be used by other type unless that type is also in wrap-only mode. The only purpose of a type in wrap-only mode is to wrap things with but this gives you the assurance that no data is created using this type.
+Enable wrap-only mode To enable wrap-only mode, make sure no instances of this type exist, and also be sure that no other type without wrap-only mode is dependent on the type you want to change.</description>
+    </item>
+    
+    <item>
       <title>new</title>
       <link>https://docs.thingsdb.net/v0/collection-api/new/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1841,7 +1852,7 @@ When possible it is preferred to use the syntax MyType{...} to create a instance
       <description>Creates a new Type. This function only creates a new type and does not allow you to specify any fields. With the set_type() function you can define the fields for the new type.
 It is possible to use set_type directly without calling new_type first. However, sometimes you want to cross reference two types so you want both type to exists before calling set_type.
  This function generates an event.
-Function new_type(type)</description>
+Function new_type(type, [wrap_only])</description>
     </item>
     
     <item>
@@ -1971,7 +1982,7 @@ Example  This code shows how to use set_enum():
       <guid>https://docs.thingsdb.net/v0/collection-api/set_type/</guid>
       <description>Defines the properties of a Type. Function set_type works only on a new Type. Use mod_type() if you want to change an existing Type, see mod_type.
 This function generates an event.
-Function set_type(type, value)
+Function set_type(type, value, [wrap_only])
 Arguments    Argument Type Description     type str The name of the Type where the properties have to be set.   value thing Thing containing all the properties to be set.</description>
     </item>
     

@@ -55,5 +55,16 @@ Action mod_type(type, &#39;ren&#39;, name, to)
 Arguments    Argument Type Description     type str Name of the Type where the property or method has to be modified from.   &#39;ren&#39; str Passing this argument will result in a modify action.   name str Name of the property or method that has to be modified.   to str New name for the property or method that has to be modified.</description>
     </item>
     
+    <item>
+      <title>wpo</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/mod_type/wpo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/mod_type/wpo/</guid>
+      <description>Enable or disable wrap-only mode for an existing Type.
+When wrap-only mode is enabled, no instances of the type can be created and the type can not be used by other type unless that type is also in wrap-only mode. The only purpose of a type in wrap-only mode is to wrap things with but this gives you the assurance that no data is created using this type.
+Enable wrap-only mode To enable wrap-only mode, make sure no instances of this type exist, and also be sure that no other type without wrap-only mode is dependent on the type you want to change.</description>
+    </item>
+    
   </channel>
 </rss>

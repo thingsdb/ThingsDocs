@@ -91,7 +91,7 @@ list = []; list.push([&#39;this list will be nested and therefore convert to a t
       
       <guid>https://docs.thingsdb.net/v0/data-types/type/</guid>
       <description>A Type is like a thing with pre-defined properties and/or methods. When an instance of a Type is created, all defined properties are guaranteed to exist with a value matching the Type definition.
-Definable properties    definition default description     &#39;str&#39; &amp;quot;&amp;quot; requires type str (values of type str should contain valid UTF-8 characters).   &#39;utf8&#39; &amp;quot;&amp;quot; requires type str and the value must contain valid UTF-8 characters.</description>
+Definable properties    definition default description     &#39;str&#39; &amp;quot;&amp;quot; requires type str (values of type str should contain valid UTF-8 characters).   &#39;str&amp;lt;..&amp;gt;&#39; depends requires type str with a certain length (see length condition).</description>
     </item>
     
   </channel>
