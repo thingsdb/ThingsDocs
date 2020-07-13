@@ -37,7 +37,9 @@ If the [thing](../../data-types/thing) *IS* actually a collection, then the *ini
             "modified_at": 1579592122,
             "fields": [
                 ["name", "str?"]
-            ]
+            ],
+            "methods": {},
+            "wrap_only": false
         }
     ],
     "procedures": [

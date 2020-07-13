@@ -92,6 +92,7 @@ type_info('Book');
     },
     "modified_at": null,
     "name": "Book",
-    "type_id": 1
+    "type_id": 1,
+    "wrap_only": false
 }
 ```

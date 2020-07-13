@@ -377,9 +377,11 @@ Note that the types info is included inside an [init event](../../watching/on-in
         ["title", "str"]
         ["rating", "float"]
     ],
+    "methods": {},
     "modified_at": 1581455876,
     "name": "Book",
-    "type_id": 10
+    "type_id": 10,
+    "wrap_only": false
 }
 ...
 ```

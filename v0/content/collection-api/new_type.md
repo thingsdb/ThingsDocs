@@ -59,22 +59,26 @@ types_info();
 ```json
 [
     {
-        "type_id": 0,
-        "created_at": 1579250574,
-        "modified_at": 1579250574,
-        "name": "A",
+        "created_at": 1594384634,
         "fields": [
             ["b", "B?"]
-        ]
+        ],
+        "methods": {},
+        "modified_at": 1594384634,
+        "name": "A",
+        "type_id": 0,
+        "wrap_only": false
     },
     {
-        "type_id": 1,
-        "created_at": 1579250574,
-        "modified_at": 1579250574,
-        "name": "B",
+        "created_at": 1594384634,
         "fields": [
             ["a", "A?"]
-        ]
+        ],
+        "methods": {},
+        "modified_at": 1594384634,
+        "name": "B",
+        "type_id": 1,
+        "wrap_only": false
     }
 ]
 ```

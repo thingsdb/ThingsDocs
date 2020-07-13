@@ -36,6 +36,7 @@ Mutation | Target | Description
 [mod_type_del](#mod_type_del) | `collection` | A field is removed from an existing [type](../../data-types/type).
 [mod_type_mod](#mod_type_mod) | `collection` | A field is modified on an existing [type](../../data-types/type).
 [mod_type_ren](#mod_type_ren) | `collection` | A field is renamed on an existing [type](../../data-types/type).
+[mod_type_wpo](#mod_type_wpo) | `collection` | Wrap-only mode is changed for a [type](../../data-types/type).
 [set_enum](#set_enum) | `collection` | A new [enum](../../data-types/enum) type is created.
 [del_enum](#del_enum) | `collection` | An [enum](../../data-types/enum) type is removed from the collection.
 [mod_enum_add](#mod_enum_add) | `collection` | A new member is added to an existing [enum](../../data-types/enum).
@@ -242,7 +243,8 @@ new_type('Person');
     "new_type": {
         "created_at": 1581453937,
         "name": "Person",
-        "type_id": 0
+        "type_id": 0,
+        "wrap_only": false
     }
 }
 ```
@@ -266,6 +268,7 @@ set_type('Person', {name: 'str'});
         "fields": [
             ["name", "str"]
         ],
+        "methods": {},
         "modified_at": 1581455876,
         "type_id": 0
     }
@@ -400,6 +403,27 @@ mod_type('Book', 'ren', 'rate', 'rating');
         "modified_at": 1581511233,
         "name": "rate",
         "to": "rating",
+        "type_id": 2
+    }
+}
+```
+
+## mod_type_wpo
+
+```thingsdb,syntax_only
+// Enable wrap-only mode
+
+// set_type('Book', {title: 'str', rate: 'number'});
+mod_type('Book', 'wpo', true);
+```
+
+> Mutation result from the above code:
+
+```json
+{
+    "mod_type_wpo": {
+        "modified_at": 1581511233,
+        "wrap_only": true,
         "type_id": 2
     }
 }
