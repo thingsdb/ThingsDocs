@@ -43,7 +43,7 @@ set_type('Person', {
     a: 'int',
 });
 
-// Rename `a` to `age`
+// Set type Person in wrap-only mode
 mod_type('Person', 'wpo', true);
 
 // Raises a type error
