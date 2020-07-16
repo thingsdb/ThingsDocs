@@ -43,12 +43,18 @@ backup_info(0);
 
 ```json
 {
-    "created_at": 1579175900,
-    "file_template": "/var/backup/thingsdb_{DATE}{TIME}.tar.gz",
+    "created_at": 1594902231,
+    "file_template": "/tmp/backup_{DATE}_{TIME}.tar.gz",
+    "files": [
+        "/tmp/backup_20200714_230014.tar.gz",
+        "/tmp/backup_20200715_230019.tar.gz",
+        "/tmp/backup_20200716_230018.tar.gz"
+    ],
     "id": 0,
-    "next_run": "2019-12-10 23:00:00Z",
+    "max_files": 3,
+    "next_run": "2020-07-17 23:00:00Z",
     "repeat": 86400,
     "result_code": 0,
-    "result_message": "success - 2019-12-09 23:01:13Z"
+    "result_message": "success - 2020-07-16 23:00:18Z"
 }
 ```

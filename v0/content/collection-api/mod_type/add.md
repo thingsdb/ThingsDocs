@@ -22,7 +22,7 @@ type | str | Name of the [Type](../../../data-types/type) where the property has
 `'add'` | str | Passing this argument will result in an *add* action.
 name | str | Name of the property that has to be added.
 definition/closure | str/closure | Type definition of the *property* or closure for the *method* that has to be added
-init | any/closure | The default value to set on existing instances of this [Type](../../../data-types/type). If a closure is used, then the closure will be called on each existing instance, see [init using callback](#init-using-callback). The `init` argument is only accepted when adding a new property and must be omitted when adding a new method.
+init | any/closure | The default value to set on existing instances of this [Type](../../../data-types/type). If a closure is used, then the closure will be called on each existing instance, see [init using callback](#init-using-callback). The `init` argument is only accepted when adding a new *property* on a type with [wrap-only](../wpo) mode disabled and must be omitted when adding a new *method* or changing a type with *wrap-only* mode enabled.
 
 ### Return value
 
@@ -55,6 +55,11 @@ null
 ### Init using callback
 
 Instead of a fixed initial value, a [closure](../../../data-types/closure) may be used. The closure will be called on each instance of the Type, with the instance as it's first argument.
+
+{{% notice warning %}}
+For types with *wrap-only* mode enabled there are no instances to migrate and therefore the `init` argument cannot be used.
+{{% /notice %}}
+
 The return value of the closure will be used as the new value, unless:
 
 * `nil` is returned by the closure.

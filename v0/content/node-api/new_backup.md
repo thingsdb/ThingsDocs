@@ -20,7 +20,7 @@ This function does *not* generate an [event](../../overview/events).
 
 ### Function
 
-`new_backup(file_template, [start_ts, [repeat]]);`
+`new_backup(file_template, [start_ts, [repeat, [max_files]]]);`
 
 ### Arguments
 
@@ -29,6 +29,7 @@ Argument | Type | Description
 `file_template` | str | Backup schedule file template. See [file-template](#file-template) for more information.
 `start_ts` | nil/int/float/raw (optional) | Start date/time of the backup. If no `start_ts` is given, the backup starts as soon as possible.
 `repeat` | int (optional) | Repeat the backup schedule every `repeat` seconds. If no `repeat` value is set, the backup job will run only once.
+`max_files` | int (optional) | As soon as `max_files` successful backups are created, the first backup (including the file on disk) will be removed. Default is `7`.
 
 ### File template
 

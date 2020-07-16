@@ -25,7 +25,7 @@ type | str | Name of the Type where the property has to be modified from.
 `'mod'` | str | Passing this argument will result in a *modify* action.
 name | str | Name of the property that has to be modified.
 definition/closure | str/closure | New type definition of the property or closure for the method that has to be modified.
-callback | closure | The closure will be called on each existing instance and can be used to set a new value, see [modify using callback](#modify-using-callback).
+callback | closure | The closure will be called on each existing instance and can be used to set a new value, see [modify using callback](#modify-using-callback). The `callback` argument is only accepted when modifying a *property* on a type with [wrap-only](../wpo) mode disabled and must be omitted when modifying a *method* or changing a type with *wrap-only* mode enabled.
 
 
 ### Return value
@@ -63,7 +63,12 @@ null
 
 ### Modify using callback
 
-If you want to migrate an exiting property definition to a complete different or more strict definition, an addition [closure](../../../data-types/closure) argument must be used to generate new values for existing instances.
+If you want to migrate an exiting property definition to a complete different or more strict definition, an addition [closure](../../../data-types/closure) argument *must* be used to generate new values for existing instances *(with the exception of types with wrap-only mode enabled)*.
+
+{{% notice warning %}}
+For types with *wrap-only* mode enabled there are no instances to migrate and therefore the `callback` argument cannot be used.
+{{% /notice %}}
+
 The return value of the closure will be used as the new value, unless:
 
 * `nil` is returned by the closure.

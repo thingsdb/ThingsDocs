@@ -14,13 +14,14 @@ This function does *not* generate an [event](../../overview/events).
 
 ### Function
 
-`del_backup(ID);`
+`del_backup(ID, [delete_files]);`
 
 ### Arguments
 
 Argument | Type | Description
 --------- | ----------- | -----------
 `ID` | int | Backup ID to delete.
+`delete_files` | bool (optional) | Delete related backup files from disk. Default is `false`.
 
 ### Return value
 
