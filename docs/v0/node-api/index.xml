@@ -54,8 +54,8 @@ Counters give information about things, queries and events. If you suspect faile
       <description>Delete a scheduled backup. If the scheduled backup was pending, the backup job will be cancelled.
 Files associated with the backup will not be removed. Only the schedule will be deleted.
  This function does not generate an event.
-Function del_backup(ID);
-Arguments    Argument Type Description     ID int Backup ID to delete.    Return value Returns nil.</description>
+Function del_backup(ID, [delete_files]);
+Arguments    Argument Type Description     ID int Backup ID to delete.   delete_files bool (optional) Delete related backup files from disk. Default is false.</description>
     </item>
     
     <item>

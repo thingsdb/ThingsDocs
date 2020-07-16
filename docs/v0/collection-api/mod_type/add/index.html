@@ -11,20 +11,20 @@
     <title>add :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1594630453" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1594630453" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1594630453" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1594630453" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1594630453" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1594630453" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1594630453" rel="stylesheet">
-    <link href="/v0/css/theme.css?1594630453" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1594630453" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1594907489" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1594907489" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1594907489" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1594907489" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1594907489" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1594907489" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1594907489" rel="stylesheet">
+    <link href="/v0/css/theme.css?1594907489" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1594907489" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1594630453" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1594907489" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1594630453"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1594907489"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1594630453"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1594630453"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1594907489"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1594907489"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1594630453"></script>
+<script type="text/javascript" src="/v0/js/search.js?1594907489"></script>
 
     
   </div>
@@ -5278,7 +5278,7 @@ If the initial value is omitted, then the default value according the <a href=".
 <tr>
 <td>init</td>
 <td>any/closure</td>
-<td>The default value to set on existing instances of this <a href="../../../data-types/type">Type</a>. If a closure is used, then the closure will be called on each existing instance, see <a href="#init-using-callback">init using callback</a>. The <code>init</code> argument is only accepted when adding a new property and must be omitted when adding a new method.</td>
+<td>The default value to set on existing instances of this <a href="../../../data-types/type">Type</a>. If a closure is used, then the closure will be called on each existing instance, see <a href="#init-using-callback">init using callback</a>. The <code>init</code> argument is only accepted when adding a new <em>property</em> on a type with <a href="../wpo">wrap-only</a> mode disabled and must be omitted when adding a new <em>method</em> or changing a type with <em>wrap-only</em> mode enabled.</td>
 </tr>
 </tbody>
 </table>
@@ -5304,8 +5304,12 @@ mod_type('Person', 'add', 'whoami', |this| `My name is {this.name} and I am {thi
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#66d9ef">null</span>
 </code></pre></div><h3 id="init-using-callback">Init using callback</h3>
-<p>Instead of a fixed initial value, a <a href="../../../data-types/closure">closure</a> may be used. The closure will be called on each instance of the Type, with the instance as it&rsquo;s first argument.
-The return value of the closure will be used as the new value, unless:</p>
+<p>Instead of a fixed initial value, a <a href="../../../data-types/closure">closure</a> may be used. The closure will be called on each instance of the Type, with the instance as it&rsquo;s first argument.</p>
+
+<div class="notices warning" ><p>For types with <em>wrap-only</em> mode enabled there are no instances to migrate and therefore the <code>init</code> argument cannot be used.</p>
+</div>
+
+<p>The return value of the closure will be used as the new value, unless:</p>
 <ul>
 <li><code>nil</code> is returned by the closure.</li>
 <li>The return value does not match the definition. In this case an <a href="../../../errors/operation_err">operation_err()</a> is raised <em>after</em> <code>mod_type(..)</code> has finished.</li>
@@ -5391,19 +5395,19 @@ mod_type('Room', 'add', 'chat', 'Chat', |room| {
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1594630453"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1594630453"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1594630453"></script>
-    <script src="/v0/js/jquery.sticky.js?1594630453"></script>
-    <script src="/v0/js/featherlight.min.js?1594630453"></script>
-    <script src="/v0/js/highlight.pack.js?1594630453"></script>
+    <script src="/v0/js/clipboard.min.js?1594907489"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1594907489"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1594907489"></script>
+    <script src="/v0/js/jquery.sticky.js?1594907489"></script>
+    <script src="/v0/js/featherlight.min.js?1594907489"></script>
+    <script src="/v0/js/highlight.pack.js?1594907489"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1594630453"></script>
-    <script src="/v0/js/learn.js?1594630453"></script>
-    <script src="/v0/js/hugo-learn.js?1594630453"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1594907489"></script>
+    <script src="/v0/js/learn.js?1594907489"></script>
+    <script src="/v0/js/hugo-learn.js?1594907489"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1594630453" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1594630453"></script>
+    <link href="/v0/mermaid/mermaid.css?1594907489" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1594907489"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
