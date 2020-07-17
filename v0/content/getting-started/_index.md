@@ -17,17 +17,9 @@ Or.., build your own ThingsDB by cloning the [GitHub](https://github.com/thingsd
 Docker images are available at [docker hub](https://hub.docker.com/r/thingsdb/node).
 
 
-Each version has two images:
+Supported tags:
 
-A minimal ThingsDB image (using Alpine Linux)
+`thingsdb/node:VERSION` *(Minimal ThingsDB image based on Alpine Linux.)*
 
-```
-thingsdb/node:v0.x.x
-```
-
-And one with the Google Cloud SDK installed so ThingsDB can created backups in the Google Cloud
-
-```
-thingsdb/node:gcloud-v0.x.x
-```
+`thingsdb/node:gcloud-VERSION` *(Includes Google Cloud Utilities so ThingsDB can created backups in the Google Cloud.)*
 
