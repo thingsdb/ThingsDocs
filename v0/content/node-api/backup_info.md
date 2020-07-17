@@ -10,7 +10,9 @@ Value | Description
 ------- | -----------
 `created_at` | [Time Stamp](https://wikipedia.org/wiki/Unix_time) when the backup schedule is created.
 `file_template` | Backup [file template](../new_backup#file-template).
+`files` | List of successful backup files.
 `id` | Backup ID.
+`max_files` | Maximum number of backup files to store. The oldest file will be removed once `max_files` is reached.
 `next_run` | Only available when the backup job is scheduled to run. Contains a [string](../../data-types/str) with date/time for the next planned schedule, or *pending* when the backup is scheduled to start.
 `repeat` | Only available when the backup will repeat. Contains an [integer](../../data-types/int) value representing the repeat time in seconds.
 `result_code` | Only available if the backup job has started at least once. Contains the last result code. (`0` when successful)
