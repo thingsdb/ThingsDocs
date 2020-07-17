@@ -4,7 +4,7 @@
 	"title": "Getting started",
 	"tags": [],
 	"description": "",
-	"content": "Getting started Try for free Get your own playground for free at https://thingsdb.net and continue reading at connect.\nOr.., build your own ThingsDB by cloning the GitHub project and follow the steps in the next paragraphs.\n"
+	"content": "Getting started Try for free Get your own playground for free at https://thingsdb.net and continue reading at connect.\nOr.., build your own ThingsDB by cloning the GitHub project and follow the steps in the next paragraphs.\nDocker images Docker images are available at docker hub.\nEach version has two images:\nA minimal ThingsDB image (using Alpine Linux)\nthingsdb/node:v0.x.x And one with the Google Cloud SDK installed so ThingsDB can created backups in the Google Cloud\nthingsdb/node:gcloud-v0.x.x "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/getting-started/build-from-source/",
