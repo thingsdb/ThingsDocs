@@ -6,10 +6,6 @@ weight: 188
 
 Delete a scheduled backup. If the scheduled backup was *pending*, the backup job will be cancelled.
 
-{{% notice warning %}}
-Files associated with the backup will **not** be removed. Only the schedule will be deleted.
-{{% /notice %}}
-
 This function does *not* generate an [event](../../overview/events).
 
 ### Function
@@ -21,7 +17,7 @@ This function does *not* generate an [event](../../overview/events).
 Argument | Type | Description
 --------- | ----------- | -----------
 `ID` | int | Backup ID to delete.
-`delete_files` | bool (optional) | Delete related backup files from disk. Default is `false`.
+`delete_files` | bool (optional) | Delete related backup files from disk *(or Google Cloud Storage)*. Default is `false`.
 
 ### Return value
 

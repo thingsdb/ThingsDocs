@@ -22,3 +22,4 @@ Variable | Default | Description
 `THINGSDB_ZONE` | `0` | Start node in this [zone](../../overview/dictionary) number. Zones are used for forwarding queries while in *away* mode.
 `THINGSDB_QUERY_DURATION_WARN` | *disabled* | Log a warning message when a query takes more than X second(s).
 `THINGSDB_QUERY_DURATION_ERROR` | *disabled* | Log an error message when a query takes more than X second(s).
+`THINGSDB_GCLOUD_KEY_FILE` | *disabled* | Service Authentication file *(e.g service_account.json)* used for creating backups in Google Cloud Storage. Support for Google Cloud Storage will be disabled if the value is not configured. Note that `gcloud` and `gsutil` must be installed to use this service.
