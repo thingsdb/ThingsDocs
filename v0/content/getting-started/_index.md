@@ -23,3 +23,9 @@ Supported tags:
 
 `thingsdb/node:gcloud-VERSION` *(Includes Google Cloud Utilities so ThingsDB can created backups in the Google Cloud.)*
 
+
+### Run ThingsDB in GKE (Google Kubernetes Engine)
+
+The following link will explain how to deploy ThingsDB in GKE (Google Kubernetes Engine):
+
+[https://github.com/thingsdb/ThingsDB/tree/master/gke#readme](https://github.com/thingsdb/ThingsDB/tree/master/gke#readme)

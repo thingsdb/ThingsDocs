@@ -16,7 +16,7 @@ Base | Example | Description
 10 | `123` | Decimal notation, numbers between zero and nine (`0-9`).
 16 | `0x7b` | Hexadecimal notation start with a `0x` (zero, lower case `x`), followed by hexadecimal digits (`0-9`, `a-f` or `A-F`).
 
-> This code creates a *int* property *count* to collection *stuff*:
+> This code creates a *int* property *count* to the root of a collection:
 
 ```thingsdb,should_pass
 .count = 123;

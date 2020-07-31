@@ -58,7 +58,7 @@ Returns the backup `ID` for the scheduled backup.
 > Use *new_backup* to schedule a ThingsDB backup:
 
 ```thingsdb,syntax_only,@n
-// Create a new backup immediately, then at 23:00 and then repeat each day
+// Create a new backup immediately (because 2000-01-01 is in the past), then at 23:00 and repeat each day
 new_backup('/var/backup/thingsdb_{DATE}{TIME}.tar.gz', '2000-01-01 23:00', 24*3600);
 ```
 
