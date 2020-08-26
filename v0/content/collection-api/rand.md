@@ -7,7 +7,7 @@ Returns **pseudo-random** number between `0.0` and `1.0`.
 
 {{% notice warning %}}
 Do not use **rand()** when the purpose is security related since the linear
-congruential algorithms used by this function is too easy to break.
+congruential algorithms used by this function are too easy to break.
 {{% /notice %}}
 
 This function does *not* generate an [event](../../overview/events).
