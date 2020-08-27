@@ -3,7 +3,7 @@ title: "list"
 weight: 45
 ---
 
-An empty list can be constructed as follows: `list = [];`
+An empty list can be constructed like this: `list = [];`
 
 Nesting is also possible but each nested list will become a [tuple](../tuple) which means the 'list' will be immutable.
 ThingsDB does this because it wants to update all changes to subscribers and finds the subscribers by the parent object where

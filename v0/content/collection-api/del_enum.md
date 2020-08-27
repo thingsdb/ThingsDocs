@@ -29,7 +29,7 @@ The value `nil`.
 > This code shows how to use ***del_enum()***:
 
 ```thingsdb,json_response
-// Create type `B` which has a reference to type `A`
+// Create enum `Status` with two members
 set_enum('Status', {
     OK: 0,
     NOK: -1,
@@ -43,7 +43,7 @@ assert(iserr(try(del_enum('Status'))));
 // Assign `nil` to status so the enum member is released
 status = nil;
 
-// Now we can remove type `A`
+// Now we can remove enum `Status`
 del_enum('Status');
 ```
 

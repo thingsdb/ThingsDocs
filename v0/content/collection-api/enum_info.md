@@ -35,14 +35,14 @@ Returns [info](../../data-types/info) about the enumeration type.
 > This code shows the output of ***enum_info()***:
 
 ```thingsdb,should_pass
-// Just a Type as an example
+// Just a simple enum as an example
 set_enum('Color', {
     RED: '#ff0000',
     GREEN: '#00ff00',
     BLUE: '#0000ff',
 });
 
-// Return Type info
+// Return enum info
 enum_info('Color');
 ```
 
