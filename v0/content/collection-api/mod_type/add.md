@@ -7,7 +7,7 @@ Adds a property to an existing [Type](../../../data-types/type).
 
 {{% notice info %}}
 Since version **v0.9.2** an initial value is no longer required when having active instances of the given Type.
-If the initial value is omitted, then the default value according the [Type definition](../../..//data-types/type/#definable-properties) will be applied.
+If the initial value is omitted, then ***a single*** default value according the [Type definition](../../..//data-types/type/#definable-properties) will be created and applied to ***all instances***. See section ["init using callback"](#init-using-callback) for information on how to create a new initial value for each instance.
 {{% /notice %}}
 
 ### Action
@@ -93,9 +93,9 @@ set_type('Room', {
  *
  *   mod_type('Room', 'add', 'chat', 'Chat');
  *
- * This would give `room A` and `room B` both the SAME instance of type Chat. THus
- * when adding for example a message to room A, the message would also appear in
- * room B.
+ * This would give `room A` and `room B` both the SAME instance of type Chat.
+ * Thus when adding for example a message to room A, the message would also
+ * appear in room B.
  *
  * This can be solved using a closure to assign a new instance to each instance of room.
  *
