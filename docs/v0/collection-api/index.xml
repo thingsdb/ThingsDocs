@@ -602,6 +602,30 @@ Arguments    Argument Type Description     value any (required) The value to ret
     </item>
     
     <item>
+      <title>rename_enum</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/rename_enum/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/rename_enum/</guid>
+      <description>Rename an enum type.
+This function generates an event.
+Function rename_enum(current_name, new_name);
+Arguments    Argument Type Description     current_name str (required) Current enum type name.   new_name str (required) New name for the enum type.    Return value Returns nil when successful.</description>
+    </item>
+    
+    <item>
+      <title>rename_type</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/rename_type/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/rename_type/</guid>
+      <description>Rename a type.
+This function generates an event.
+Function rename_type(current_name, new_name);
+Arguments    Argument Type Description     current_name str (required) Current type name.   new_name str (required) New name for the type.    Return value Returns nil when successful.</description>
+    </item>
+    
+    <item>
       <title>return</title>
       <link>https://docs.thingsdb.net/v0/collection-api/return/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

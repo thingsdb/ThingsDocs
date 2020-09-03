@@ -88,6 +88,18 @@ Return value List with procedure info about all procedures in the scope.</descri
     </item>
     
     <item>
+      <title>rename_procedure</title>
+      <link>https://docs.thingsdb.net/v0/procedures-api/rename_procedure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/procedures-api/rename_procedure/</guid>
+      <description>Rename a procedure.
+This function generates an event.
+Function rename_procedure(current_name, new_name);
+Arguments    Argument Type Description     current_name str (required) Current procedure name.   new_name str (required) New name for the procedure.    Return value Returns nil when successful.</description>
+    </item>
+    
+    <item>
       <title>run</title>
       <link>https://docs.thingsdb.net/v0/procedures-api/run/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

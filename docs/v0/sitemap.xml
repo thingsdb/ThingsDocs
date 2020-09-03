@@ -683,6 +683,14 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/rename_enum/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/rename_type/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/collection-api/return/</loc>
   </url>
   
@@ -904,6 +912,10 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v0/procedures-api/procedures_info/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/procedures-api/rename_procedure/</loc>
   </url>
   
   <url>
