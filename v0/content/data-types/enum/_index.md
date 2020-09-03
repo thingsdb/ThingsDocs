@@ -21,14 +21,14 @@ Function | Description
 Function | Description
 ------ | -----------
 [del_enum](../../collection-api/del_enum) | Delete an enumerator type.
-[enum](../../collection-api/enum) | Get an enum member by value.
+[enum](../../collection-api/enum) | Get an enumerator member by value.
 [enum_info](../../collection-api/enum_info) | Return info about the enumerator type.
 [enums_info](../../collection-api/enums_info) |Return info about all the enumerator types in the current scope.
 [has_enum](../../collection-api/has_enum) | Determine if the current scope has a given enumerator type.
 [isenum](../../collection-api/isenum) | Test if a given value is a member of an enumerator type.
 [mod_enum](../../collection-api/mod_enum) | Modify an existing enumerator type.
+[rename_enum](../../collection-api/rename_enum) | Rename the enumerator type.
 [set_enum](../../collection-api/set_enum) | Create a new enumerator type.
-
 
 ### Example
 

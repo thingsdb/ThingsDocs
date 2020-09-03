@@ -1,6 +1,6 @@
 ---
 title: "set"
-weight: 172
+weight: 174
 ---
 
 Returns a new empty [set](../../data-types/set). If an array is given, then all items in the

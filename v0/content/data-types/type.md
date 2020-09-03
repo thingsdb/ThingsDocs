@@ -333,12 +333,14 @@ set_type('Person', {
 Function | Description
 ------ | -----------
 [del_type](../../collection-api/del_type) | Delete a `Type`.
+[has_type](../../collection-api/has_type) | Determine if the current scope has a `Type`.
 [mod_type](../../collection-api/mod_type) | Modify an existing `Type` definition.
 [new_type](../../collection-api/new_type) | Create a new `Type`.
-[has_type](../../collection-api/has_type) | Determine if the current scope has a `Type`.
+[rename_type](../../collection-api/rename_type) | Rename the `Type`.
 [set_type](../../collection-api/set_type) | Set property definitions on a `Type` and creates the `Type` if it did not exist.
 [type_info](../../collection-api/type_info) | Return the `Type` definition.
 [types_info](../../collection-api/types_info) | Return all `Type` definitions in the current scope.
+
 
 ### Mutation format
 

@@ -168,6 +168,8 @@ collection-api
     randint
     range
     refs
+    rename_enum
+    rename_type
     return
     set
     set_enum
@@ -224,6 +226,7 @@ procedures-api
     procedure_doc
     procedure_info
     procedures_info
+    rename_procedure
     run
 watching
     node-status
