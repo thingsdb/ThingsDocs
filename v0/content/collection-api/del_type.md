@@ -1,6 +1,6 @@
 ---
 title: "del_type"
-weight: 121
+weight: 129
 ---
 
 Deletes an existing [Type](../../data-types/type).
@@ -46,7 +46,7 @@ set_type('B', {
 });
 
 // Cannot delete `A` since it is referenced by type `B`.
-assert(iserr(try(del_type('A'))));
+assert(is_err(try(del_type('A'))));
 
 // First change type `B`
 mod_type('B', 'mod', 'a', 'thing');

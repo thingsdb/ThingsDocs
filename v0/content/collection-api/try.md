@@ -1,6 +1,6 @@
 ---
 title: "try"
-weight: 179
+weight: 187
 ---
 
 Try a statement and if the statement fails with an error, then the error is returned.
@@ -34,8 +34,8 @@ The value for the specified *statement*, or an error if the statement has failed
 
 ```thingsdb,json_response
 [
-    iserr( try( x = (1/0) )),
-    iserr( try( (1/0), zero_div_err() )),
+    is_err( try( x = (1/0) )),
+    is_err( try( (1/0), zero_div_err() )),
 ];
 ```
 

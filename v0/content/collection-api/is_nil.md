@@ -1,15 +1,19 @@
 ---
-title: "isnil"
-weight: 143
+title: "is_nil"
+weight: 151
 ---
 
 This function determines whether the provided value is [nil](../../data-types/nil).
 
 This function does *not* generate an [event](../../overview/events).
 
+{{% notice warning %}}
+This function has a deprecated alias `isnil` which will be removed in the next *minor* release.
+{{% /notice %}}
+
 ### Function
 
-`isnil(value)`
+`is_nil(value)`
 
 ### Arguments
 
@@ -23,12 +27,12 @@ Returns `true` if the given value is `nil`, else `false`.
 
 ### Example
 
-> This code shows some return values for ***isnil()***:
+> This code shows some return values for ***is_nil()***:
 
 ```thingsdb,json_response
 [
-    isnil( nil ),
-    isnil( 0 ),
+    is_nil( nil ),
+    is_nil( 0 ),
 ];
 ```
 

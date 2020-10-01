@@ -17,4 +17,4 @@ Other types can convert to `bool` by using the `!` (not) operator or the [bool](
 Function | Description
 ------ | -----------
 [bool](../../collection-api/bool) | Create a new boolean value.
-[isbool](../../collection-api/isbool) | Test if a given value is of type bool.
+[is_bool](../../collection-api/is_bool) | Test if a given value is of type bool.

@@ -1,5 +1,5 @@
 ---
-title: "findindex"
+title: "find_index"
 weight: 52
 ---
 
@@ -8,9 +8,13 @@ Otherwise `nil` is returned.
 
 This function does *not* generate an [event](../../../overview/events).
 
+{{% notice warning %}}
+This function has a deprecated alias `findindex` which will be removed in the next *minor* release.
+{{% /notice %}}
+
 ### Function
 
-*array*.`findindex(callback)`
+*array*.`find_index(callback)`
 
 ### Arguments
 
@@ -31,14 +35,14 @@ otherwise, `nil` is returned.
 
 ### Example
 
-> This code shows an example using ***findindex()***:
+> This code shows an example using ***find_index()***:
 
 ```thingsdb,json_response
 // some sports as an example
 sports = ['cycling', 'baseball', 'running', 'tennis', 'skateboarding'];
 
 // return the index of `running` in list
-sports.findindex(|sport| sport == 'running');
+sports.find_index(|sport| sport == 'running');
 ```
 
 > Return value in JSON format

@@ -1,6 +1,6 @@
 ---
-title: "isthing"
-weight: 147
+title: "is_thing"
+weight: 155
 ---
 
 This function determines whether the provided value is a [thing](../../data-types/thing) or not.
@@ -9,11 +9,15 @@ This function determines whether the provided value is a [thing](../../data-type
 [Type](../../data-types/type) instances are also things, so this function returns `true` for a Type instance as well.
 {{% /notice %}}
 
+{{% notice warning %}}
+This function has a deprecated alias `isthing` which will be removed in the next *minor* release.
+{{% /notice %}}
+
 This function does *not* generate an [event](../../overview/events).
 
 ### Function
 
-`isthing(value)`
+`is_thing(value)`
 
 ### Arguments
 
@@ -27,14 +31,14 @@ Returns `true` if the given value is a thing, else it returns `false`.
 
 ### Example
 
-> This code shows some return values for ***isthing()***:
+> This code shows some return values for ***is_thing()***:
 
 ```thingsdb,json_response
 new_type('A');
 [
-    isthing( {} ),
-    isthing( A{} ),
-    isthing( [] ),
+    is_thing( {} ),
+    is_thing( A{} ),
+    is_thing( [] ),
 ];
 ```
 

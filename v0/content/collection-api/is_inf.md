@@ -1,15 +1,19 @@
 ---
-title: "isinf"
-weight: 139
+title: "is_inf"
+weight: 147
 ---
 
 This function determines whether the provided value is a positive or negative *infinity*.
 
 This function does *not* generate an [event](../../overview/events).
 
+{{% notice warning %}}
+This function has a deprecated alias `isinf` which will be removed in the next *minor* release.
+{{% /notice %}}
+
 ### Function
 
-`isinf(value)`
+`is_inf(value)`
 
 ### Arguments
 
@@ -23,14 +27,14 @@ Returns `true` if the given value is a positive or negative *infinity*, else it 
 
 ### Example
 
-> This code shows some return values for ***isinf()***:
+> This code shows some return values for ***is_inf()***:
 
 ```thingsdb,json_response
 [
-    isinf( -inf ),
-    isinf( inf ),
-    isinf( 0 ),
-    isinf( nan ),
+    is_inf( -inf ),
+    is_inf( inf ),
+    is_inf( 0 ),
+    is_inf( nan ),
 ];
 ```
 

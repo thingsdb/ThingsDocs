@@ -1,6 +1,6 @@
 ---
 title: "map"
-weight: 96
+weight: 103
 ---
 
 The function iterates over all properties on a [thing](..) and

@@ -1,15 +1,19 @@
 ---
-title: "istuple"
-weight: 148
+title: "is_tuple"
+weight: 156
 ---
 
 This function determines whether the provided value is a [tuple](../../data-types/tuple) or not. At least nested arrays are of kind tuple.
 
 This function does *not* generate an [event](../../overview/events).
 
+{{% notice warning %}}
+This function has a deprecated alias `istuple` which will be removed in the next *minor* release.
+{{% /notice %}}
+
 ### Function
 
-`istuple(value)`
+`is_tuple(value)`
 
 ### Arguments
 
@@ -23,14 +27,14 @@ Returns `true` if the given value is a tuple, else it returns `false`.
 
 ### Example
 
-> This code shows some return values for ***istuple()***:
+> This code shows some return values for ***is_tuple()***:
 
 ```thingsdb,json_response
 [
-    istuple( [] ),
-    istuple( tmp = [['nested'], set()] ),
-    istuple( tmp[0] ),
-    istuple( tmp[1] ),
+    is_tuple( [] ),
+    is_tuple( tmp = [['nested'], set()] ),
+    is_tuple( tmp[0] ),
+    is_tuple( tmp[1] ),
 ];
 ```
 

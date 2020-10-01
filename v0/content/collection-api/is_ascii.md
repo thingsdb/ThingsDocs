@@ -1,6 +1,6 @@
 ---
-title: "isascii"
-weight: 133
+title: "is_ascii"
+weight: 141
 ---
 
 This function determines whether the provided value is of
@@ -8,9 +8,13 @@ type [str](../../data-types/str) and contains only valid ascii characters.
 
 This function does *not* generate an [event](../../overview/events).
 
+{{% notice warning %}}
+This function has a deprecated alias `isascii` which will be removed in the next *minor* release.
+{{% /notice %}}
+
 ### Function
 
-`isascii(value)`
+`is_ascii(value)`
 
 ### Arguments
 
@@ -24,12 +28,12 @@ Returns `true` if the given value is of type `str` and contains only ascii chara
 
 ### Example
 
-> This code shows some return values for ***isascii()***:
+> This code shows some return values for ***is_ascii()***:
 
 ```thingsdb,json_response
 [
-    isascii( 'ԉ' ),
-    isascii( 'pi' ),
+    is_ascii( 'ԉ' ),
+    is_ascii( 'pi' ),
 ];
 ```
 

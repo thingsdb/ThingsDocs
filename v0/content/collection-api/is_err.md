@@ -1,15 +1,19 @@
 ---
-title: "iserr"
-weight: 137
+title: "is_err"
+weight: 145
 ---
 
 This function determines whether the provided value is a [error](../../data-types/error) or not.
 
 This function does *not* generate an [event](../../overview/events).
 
+{{% notice warning %}}
+This function has a deprecated alias `iserr` which will be removed in the next *minor* release.
+{{% /notice %}}
+
 ### Function
 
-`iserr(value)`
+`is_err(value)`
 
 ### Arguments
 
@@ -23,14 +27,14 @@ Returns `true` if the given value is an error, else it returns `false`.
 
 ### Example
 
-> This code shows some return values for ***iserr()***:
+> This code shows some return values for ***is_err()***:
 
 ```thingsdb,json_response
 [
-    iserr( err() ),
-    iserr( zero_div_err() ),
-    iserr( try((1 / 0)) ),
-    iserr( try((1 / 1)) ),
+    is_err( err() ),
+    is_err( zero_div_err() ),
+    is_err( try((1 / 0)) ),
+    is_err( try((1 / 1)) ),
 ];
 ```
 

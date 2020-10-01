@@ -1,6 +1,6 @@
 ---
 title: "del_enum"
-weight: 120
+weight: 128
 ---
 
 Deletes an existing [enumerator type](../../data-types/enum).
@@ -38,7 +38,7 @@ set_enum('Status', {
 status = enum('Status', 0);
 
 // Cannot delete `Status` since one of the members is being used
-assert(iserr(try(del_enum('Status'))));
+assert(is_err(try(del_enum('Status'))));
 
 // Assign `nil` to status so the enum member is released
 status = nil;

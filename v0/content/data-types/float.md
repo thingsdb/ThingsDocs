@@ -11,9 +11,9 @@ special *float* values like `inf`, `-inf` and `nan`.
 Function | Description
 ------ | -----------
 [float](../../collection-api/float) | return a float type for a given value.
-[isfloat](../../collection-api/isfloat) | check if the given value is of the float type.
-[isinf](../../collection-api/isinf) | check if the given value is infinite.
-[isnan](../../collection-api/isnan) | check if the given value is not-a-number.
+[is_float](../../collection-api/is_float) | check if the given value is of the float type.
+[is_inf](../../collection-api/is_inf) | check if the given value is infinite.
+[is_nan](../../collection-api/is_nan) | check if the given value is not-a-number.
 
 > This code creates a *float* property *plank_constant* to collection *stuff*:
 

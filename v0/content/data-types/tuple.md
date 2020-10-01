@@ -1,6 +1,6 @@
 ---
 title: "tuple"
-weight: 102
+weight: 109
 ---
 
 All nested *arrays* are immutable and thus tuples.
@@ -10,10 +10,10 @@ list = [];
 list.push(['this list will be nested and therefore convert to a tuple']);
 
 // Check that the first item in `list` is indeed a `tuple`
-assert(istuple(list[0]));
+assert(is_tuple(list[0]));
 
 // Check that the `tuple` is indeed immutable
-assert(iserr(try(list[0].push('cannot be added to a tuple'))));
+assert(is_err(try(list[0].push('cannot be added to a tuple'))));
 ```
 
 A `tuple` only becomes a `tuple` when it is nested inside another `tuple` or `list`, which means the `tuple` will be immutable.
@@ -30,11 +30,13 @@ Function | Description
 [every](../list/every) | Check if all items pass a given test.
 [filter](../list/filter) | Return a new `list` with items that pass a given test.
 [find](../list/find) | Return the first item that pass a given test.
-[findindex](../list/findindex) | Return the index of the first item that pass a given test.
-[indexof](../list/indexof) | Return the index of a given value, or `nil` if not found.
+[find_index](../list/find_index) | Return the index of the first item that pass a given test.
+[has](../list/has) | Return `true` if a given value is found in the list, or `false` if not found.
+[index_of](../list/index_of) | Return the index of a given value, or `nil` if not found.
 [len](../list/len) | Return the length of the tuple.
 [map](../list/map) | Return a new `list` with the results of calling a provided closure on every item.
 [reduce](../list/reduce) | Execute a reducer function on each item, resulting in a single output value.
+[reverse](../list/reverse) | Return a new list with the items in reverse order.
 [some](../list/some) | Check if at least one item passes a given test.
 [sort](../list/sort) | Return a new sorted `list`.
 

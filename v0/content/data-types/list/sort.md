@@ -1,6 +1,6 @@
 ---
 title: "sort"
-weight: 61
+weight: 64
 ---
 
 When this function is used on a [list](..) or [tuple](../../tuple), a new sorted list is returned.
@@ -97,7 +97,7 @@ must return an [integer](../../int) value. When this value is `< 0` then `a` goe
 arr = [nil, "charlie", nil, "alpha", "beta"];
 
 // return a new list in ascending order with `nil` values at the end
-arr.sort(|a, b| isnil(a) ? 1 : isnil(b) ? -1 : a < b ? -1 : a > b ? 1 : 0);
+arr.sort(|a, b| is_nil(a) ? 1 : is_nil(b) ? -1 : a < b ? -1 : a > b ? 1 : 0);
 ```
 
 > Return value in JSON format

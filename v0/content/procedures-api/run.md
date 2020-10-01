@@ -1,6 +1,6 @@
 ---
 title: "run"
-weight: 230
+weight: 238
 ---
 
 Run a procedure.
@@ -28,7 +28,7 @@ Returns the procedure response.
 
 ```thingsdb,json_response
 // create a greet procedure
-new_procedure('greet', |name| isstr(name)
+new_procedure('greet', |name| is_str(name)
     ? "Hello " + name
     : "Hello unnamed user!"
 );

@@ -1,15 +1,19 @@
 ---
-title: "isenum"
-weight: 136
+title: "is_enum"
+weight: 144
 ---
 
 This function determines whether the provided value is an [enumeration type](../../data-types/enum) member or not.
 
 This function does *not* generate an [event](../../overview/events).
 
+{{% notice warning %}}
+This function has a deprecated alias `isenum` which will be removed in the next *minor* release.
+{{% /notice %}}
+
 ### Function
 
-`isenum(value)`
+`is_enum(value)`
 
 ### Arguments
 
@@ -23,7 +27,7 @@ Returns `true` if the given value is of type `enum`,  else it returns `false`.
 
 ### Example
 
-> This code shows some return values for ***isenum()***:
+> This code shows some return values for ***is_enum()***:
 
 ```thingsdb,json_response
 set_enum('Status', {
@@ -32,8 +36,8 @@ set_enum('Status', {
 });
 
 [
-    isenum( Status{OK} ),
-    isenum( 0 ),
+    is_enum( Status{OK} ),
+    is_enum( 0 ),
 ];
 ```
 

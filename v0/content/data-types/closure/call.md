@@ -33,7 +33,7 @@ Returns the closure response.
 
 ```thingsdb,json_response
 // create a greet closure
-greet = |name| isstr(name)
+greet = |name| is_str(name)
     ? "Hello " + name
     : "Hello unnamed user!";
 

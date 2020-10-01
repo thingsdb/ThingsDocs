@@ -22,4 +22,4 @@ Function | Description
 Function | Description
 ------ | -----------
 [bytes](../../collection-api/bytes) | Create a new bytes value.
-[isbytes](../../collection-api/isbytes) | Test if a given value is of type bytes.
+[is_bytes](../../collection-api/is_bytes) | Test if a given value is of type bytes.

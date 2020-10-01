@@ -91,8 +91,8 @@ Like explained, closures can accept multiple arguments and may contain a block s
 |name, age| {
     "Returns a thing with properties `name`, `age` and `time`.";
 
-    assert(isstr(name) && name.len());
-    assert(isint(age) && age >= 0);
+    assert(is_str(name) && name.len());
+    assert(is_int(age) && age >= 0);
 
     // this is the last statement so it will be the return value
     {

@@ -30,7 +30,7 @@ set_enum("Color", {
 
 val = Color{RED}.value();
 
-assert( isstr( val ) );  // the value is of type `str`
+assert( is_str( val ) );  // the value is of type `str`
 
 val.upper();  // Return the value upper case
 ```

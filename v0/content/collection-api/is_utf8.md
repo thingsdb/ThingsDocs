@@ -1,6 +1,6 @@
 ---
-title: "isutf8"
-weight: 149
+title: "is_utf8"
+weight: 157
 ---
 
 This function determines whether the provided value is of
@@ -8,9 +8,13 @@ type [str](../../data-types/str) and contains valid UTF-8 characters.
 
 This function does *not* generate an [event](../../overview/events).
 
+{{% notice warning %}}
+This function has a deprecated alias `isutf8` which will be removed in the next *minor* release.
+{{% /notice %}}
+
 ### Function
 
-`isutf8(value)`
+`is_utf8(value)`
 
 ### Arguments
 
@@ -24,12 +28,12 @@ Returns `true` if the given value is of type `raw` and contains valid utf8, else
 
 ### Example
 
-> This code shows some return values for ***isutf8()***:
+> This code shows some return values for ***is_utf8()***:
 
 ```thingsdb,json_response
 [
-    isutf8( 'ԉ' ),
-    isutf8( 'pi' ),
+    is_utf8( 'ԉ' ),
+    is_utf8( 'pi' ),
 ];
 ```
 

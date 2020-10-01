@@ -1,18 +1,20 @@
 ---
-title: "isstr"
-weight: 146
+title: "is_raw"
+weight: 152
 ---
 
 This function determines whether the provided value is of
-type [str](../../data-types/str).
-
-The value is *not* explicitly checked for valid UTF-8 characters, use [isutf8()](../isutf8) if you want to check for valid UTF-8 data.
+type `str` *or* `bytes`.
 
 This function does *not* generate an [event](../../overview/events).
 
+{{% notice warning %}}
+This function has a deprecated alias `israw` which will be removed in the next *minor* release.
+{{% /notice %}}
+
 ### Function
 
-`isstr(value)`
+`is_raw(value)`
 
 ### Arguments
 
@@ -22,16 +24,16 @@ value | any (required) | The value to be tested.
 
 ### Return value
 
-Returns `true` if the given value is of type `str`, else `false`.
+Returns `true` if the given value is of type `str` *or* `bytes`, else `false`.
 
 ### Example
 
-> This code shows some return values for ***isutf8()***:
+> This code shows some return values for ***is_raw()***:
 
 ```thingsdb,json_response
 [
-    isstr( 'ԉ' ),
-    isstr( 'pi' ),
+    is_raw( 'some string' ),
+    is_raw( bytes('xxxx') ),
 ];
 ```
 

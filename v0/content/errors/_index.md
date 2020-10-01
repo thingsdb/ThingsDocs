@@ -1,10 +1,8 @@
 ---
 title: "Errors"
-weight: 238
-chapter: true
+weight: 246
+chapter: false
 ---
-
-# Errors
 
 ThingsDB uses the following error codes:
 
@@ -24,3 +22,8 @@ Error | Code | Meaning
 [syntax_err](./syntax_err)| -52 | Syntax error in the query.
 [node_err](./node_err) | -51 | At least one node has an issue while processing the request.
 [assert_err](./assert_err)| -50 | [Assertion](../collection-api/assert) statement has failed.
+
+## Custom errors
+
+The range `-127 .. -100` is reserved by ThingsDB for custom error codes although technically this range can be extended from `-127` up to `-64`.
+See [err(..)](../collection-api/err) and [alt_raise(..)](../collection-api/err) for more information on how to use custom error codes.

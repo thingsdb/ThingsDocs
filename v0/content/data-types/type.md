@@ -1,6 +1,6 @@
 ---
 title: "Type"
-weight: 103
+weight: 110
 ---
 
 
@@ -53,7 +53,7 @@ user_nil = User{name: nil};
 iris = User{name: 'Iris'};
 
 // ..but another type than `str` or `nil` is not allowed
-assert(iserr(try(User{name: 0})));
+assert(is_err(try(User{name: 0})));
 
 // Return the results
 [unknown, user_nil, iris];
@@ -110,7 +110,7 @@ book.notes.push(Note{
 });
 
 // It *must* be a `Note`, something else is not allowed
-assert(iserr(try(book.notes.push({test: 'not a Note'}))));
+assert(is_err(try(book.notes.push({test: 'not a Note'}))));
 
 // Return the book, 2 levels deep to see the note
 return(book, 2);

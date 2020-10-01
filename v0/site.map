@@ -49,17 +49,21 @@ data-types
         extend
         filter
         find
-        findindex
-        indexof
+        find_index
+        has
+        index_of
         len
         map
         pop
         push
         reduce
         remove
+        reverse
+        shift
         some
         sort
         splice
+        unshift
     nil
     regex
     set
@@ -76,11 +80,14 @@ data-types
         some
     str
         contains
-        endswith
+        ends_with
         len
         lower
-        startswith
+        starts_with
         test
+        trim
+        trim_left
+        trim_right
         upper
     thing
         assign
@@ -111,6 +118,7 @@ operators
     logical-operators
     precedence-and-associativity
 collection-api
+    alt_raise
     assert
     base64_decode
     base64_encode
@@ -129,24 +137,24 @@ collection-api
     has_type
     if
     int
-    isarray
-    isascii
-    isbool
-    isbytes
-    isenum
-    iserr
-    isfloat
-    isinf
-    isint
-    islist
-    isnan
-    isnil
-    israw
-    isset
-    isstr
-    isthing
-    istuple
-    isutf8
+    is_array
+    is_ascii
+    is_bool
+    is_bytes
+    is_enum
+    is_err
+    is_float
+    is_inf
+    is_int
+    is_list
+    is_nan
+    is_nil
+    is_raw
+    is_set
+    is_str
+    is_thing
+    is_tuple
+    is_utf8
     list
     mod_enum
         add

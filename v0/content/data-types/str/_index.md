@@ -1,11 +1,11 @@
 ---
 title: "str"
-weight: 77
+weight: 81
 ---
 
 This is the `string` type of ThingsDB. A value of type `str` *should* contain valid UTF-8 characters. This
 is not guaranteed but rather depends on [MessagePack](https://msgpack.org) to pack data correctly.
-There is an [isutf8](../../collection-api/isutf8) function which can be used to test a `str` value for valid UTF-8
+There is an [is_utf8](../../collection-api/is_utf8) function which can be used to test a `str` value for valid UTF-8
 data and it is also possible to create an `utf8` property on a custom [Type](../type) which only allows strings
 with valid UTF-8 data.
 
@@ -14,11 +14,14 @@ with valid UTF-8 data.
 Function | Description
 ------ | -----------
 [contains](./contains) | Determine if a given string is a substring of a string.
-[endswith](./endswith) | Determine if a string ends with characters given by another string.
+[ends_with](./ends_with) | Determine if a string ends with characters given by another string.
 [len](./len) | Return the length of a string.
 [lower](./lower) | Return a new string in which all case-based characters are in lower case.
-[startswith](./startswith) | Determine if a string starts with characters given by another string.
+[starts_with](./starts_with) | Determine if a string starts with characters given by another string.
 [test](./test) | Test if a string matches a given regular expression and return `true` or `false`.
+[trim](./trim) | Returns a new string with whitespace characters removed from both the *start* and *end* of a string.
+[trim_left](./trim_left) | Returns a new string with whitespace characters removed from the *start* of a string.
+[trim_right](./trim_right) | Returns a new string with whitespace characters removed from the the *end* of a string.
 [upper](./upper) | Return a new string in which all case-based characters are in upper case.
 
 > This code creates a *raw* property *greet* to collection *stuff*:

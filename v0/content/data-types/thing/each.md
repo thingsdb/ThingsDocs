@@ -1,6 +1,6 @@
 ---
 title: "each"
-weight: 88
+weight: 95
 ---
 
 Iterate over all properties on a [thing](..).

@@ -1,15 +1,19 @@
 ---
-title: "isset"
-weight: 145
+title: "is_set"
+weight: 153
 ---
 
 This function determines whether the provided value is a [set](../../data-types/set) or not.
 
 This function does *not* generate an [event](../../overview/events).
 
+{{% notice warning %}}
+This function has a deprecated alias `isset` which will be removed in the next *minor* release.
+{{% /notice %}}
+
 ### Function
 
-`isset(value)`
+`is_set(value)`
 
 ### Arguments
 
@@ -23,12 +27,12 @@ Returns `true` if the given value is a `set`, else it returns `false`.
 
 ### Example
 
-> This code shows some return values for ***isset()***:
+> This code shows some return values for ***is_set()***:
 
 ```thingsdb,json_response
 [
-    isset( [] ),
-    isset( set() ),
+    is_set( [] ),
+    is_set( set() ),
 ];
 ```
 

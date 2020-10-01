@@ -19,17 +19,21 @@ Function | Description
 [extend](./extend) | Add an array with items to the end of a list and returns the new length.
 [filter](./filter) | Return a new `list` with items that passed a given test.
 [find](./find) | Return the first item that passed a given test.
-[findindex](./findindex) | Return the index of the first item that passed a given test.
-[indexof](./indexof) | Return the index of a given value, or `nil` if not found.
+[find_index](./find_index) | Return the index of the first item that passed a given test.
+[has](./has) | Return `true` if a given value is found in the list, or `false` if not found.
+[index_of](./index_of) | Return the index of a given value, or `nil` if not found.
 [len](./len) | Return the length of the list.
 [map](./map) | Return a new `list` with the results of calling a provided closure on every item.
 [pop](./pop) | Remove the last item from a list and returns that item.
 [push](./push) | Add new items to the end of a list and returns the new length.
 [reduce](./reduce) | Execute a reducer function on each item, resulting in a single output value.
 [remove](./remove) | Remove the first item that passed a given test and returns that item.
+[reverse](./reverse) | Return a new list with the items in reverse order.
+[shift](./shift) | Remove the first item from a list and returns that item.
 [some](./some) | Check if at least one item passes a given test.
 [sort](./sort) | Return a new sorted `list`.
 [splice](./splice) | Change a list by removing or replacing existing items and/or adding new items.
+[unshift](./unshift) | Add new items to the start of a list and returns the new length.
 
 {{% notice note %}}
 It is not possible to change a list while the list is in use, for example: \

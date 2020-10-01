@@ -1,15 +1,19 @@
 ---
-title: "startswith"
-weight: 82
+title: "starts_with"
+weight: 86
 ---
 
 Determines if a [string](..) starts with characters given by another string.
 
 This function does *not* generate an [event](../../../overview/events).
 
+{{% notice warning %}}
+This function has a deprecated alias `startswith` which will be removed in the next *minor* release.
+{{% /notice %}}
+
 ### Function
 
-*str*.`startswith(search_string)`
+*str*.`starts_with(search_string)`
 
 ### Arguments
 
@@ -23,10 +27,10 @@ Returns `true` if the given characters are found at the start of the string and 
 
 ### Example
 
-> This code shows an example using ***startswith()***:
+> This code shows an example using ***starts_with()***:
 
 ```thingsdb,json_response
-'the answer to life the universe and everything'.startswith('the answer');
+'the answer to life the universe and everything'.starts_with('the answer');
 ```
 
 > Return value in JSON format

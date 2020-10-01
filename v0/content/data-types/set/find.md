@@ -1,6 +1,6 @@
 ---
 title: "find"
-weight: 70
+weight: 74
 ---
 
 This function returns the value of the first item in the [set](..) that passes the test.
@@ -47,7 +47,7 @@ otherwise, `nil` or a specified alternative value is returned.
 > This code shows an example using ***find()***:
 
 ```thingsdb,syntax_only
-users.find(|user| user.name.startswith('Jeroen'));
+users.find(|user| user.name.starts_with('Jeroen'));
 ```
 
 > Example return value in JSON format

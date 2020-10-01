@@ -71,7 +71,7 @@ months = ['January', 'February', 'March', 'April',
 
 [
     { months[::2];   /* only the odd months */ },
-    { months[::-1];  /* months in reverse order */ },
+    { months[::-1];  /* months in reverse order, equal to months.reverse() */ },
 ];
 ```
 

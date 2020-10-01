@@ -1,6 +1,6 @@
 ---
-title: "indexof"
-weight: 53
+title: "index_of"
+weight: 54
 ---
 
 The function returns the first index of the item in a [list](..) or [tuple](../../tuple) that matches the provided value, otherwise `nil` if it is not present.
@@ -8,9 +8,13 @@ The index of an array starts at `0`, so the first item has index `0` the second 
 
 This function does *not* generate an [event](../../../overview/events).
 
+{{% notice warning %}}
+This function has a deprecated alias `indexof` which will be removed in the next *minor* release.
+{{% /notice %}}
+
 ### Function
 
-*array*.`indexof(value)`
+*array*.`index_of(value)`
 
 ### Arguments
 
@@ -24,10 +28,10 @@ Index at which the first item matches a given value, or `nil` if it is not prese
 
 ### Example
 
-> This code shows an example using ***indexof()***:
+> This code shows an example using ***index_of()***:
 
 ```thingsdb,json_response
-["January", "February", "March", "April"].indexof("March");
+["January", "February", "March", "April"].index_of("March");
 ```
 
 > Return value in JSON format

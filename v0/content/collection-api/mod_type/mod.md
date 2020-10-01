@@ -1,6 +1,6 @@
 ---
 title: "mod"
-weight: 160
+weight: 168
 ---
 
 Modifies the type definition of a property or the closure of a method from an existing [Type](../../../data-types/type).
@@ -49,7 +49,7 @@ mod_type('Person', 'mod', 'age', 'int?');
 
 // Change the `whoami` method
 mod_type('Person', 'mod', 'whoami', |this| {
-    isint(this.age)
+    is_int(this.age)
         ? `My name is {this.name} and I am {this.age} years old.`
         : `My name is {this.name} and my age is a well kept secret.`;
 });
