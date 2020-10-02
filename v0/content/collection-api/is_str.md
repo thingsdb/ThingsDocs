@@ -1,6 +1,6 @@
 ---
 title: "is_str"
-weight: 154
+weight: 155
 ---
 
 This function determines whether the provided value is of

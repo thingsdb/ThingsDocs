@@ -1,6 +1,6 @@
 ---
 title: "return"
-weight: 181
+weight: 182
 ---
 
 The `return` function moves the argument to the output of the current query/closure call.

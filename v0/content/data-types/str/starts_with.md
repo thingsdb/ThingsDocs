@@ -1,6 +1,6 @@
 ---
 title: "starts_with"
-weight: 86
+weight: 87
 ---
 
 Determines if a [string](..) starts with characters given by another string.

@@ -1,6 +1,6 @@
 ---
 title: "raise"
-weight: 174
+weight: 175
 ---
 
 Raises an [error](../../data-types/error).

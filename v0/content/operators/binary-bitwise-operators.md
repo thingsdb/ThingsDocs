@@ -1,6 +1,6 @@
 ---
 title: "Binary bitwise operators"
-weight: 116
+weight: 117
 ---
 
 Can be used on [integer](../../data-types/int) values.

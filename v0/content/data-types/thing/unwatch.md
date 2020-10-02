@@ -1,6 +1,6 @@
 ---
 title: "unwatch"
-weight: 105
+weight: 106
 ---
 
 Stop watching for mutations on a [thing](..).

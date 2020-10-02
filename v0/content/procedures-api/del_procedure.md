@@ -1,6 +1,6 @@
 ---
 title: "del_procedure"
-weight: 231
+weight: 232
 ---
 
 Delete a procedure.
