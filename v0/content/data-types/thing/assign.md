@@ -1,6 +1,6 @@
 ---
 title: "assign"
-weight: 94
+weight: 95
 ---
 
 Copies properties from a given [thing](..). Existing properties will be overwritten and new properties will be added. If this function is used on an instance of a custom [Type](../../type), *all* properties of the source must be valid according the type specification, otherwise an exception will be raised and no properties will be copied.

@@ -1,6 +1,6 @@
 ---
 title: "ren"
-weight: 165
+weight: 166
 ---
 
 Rename a member value from an existing [enumerator type](../../../data-types/enum).
