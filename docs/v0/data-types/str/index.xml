@@ -24,16 +24,16 @@ Example  This code shows an example using contains():</description>
     </item>
     
     <item>
-      <title>endswith</title>
-      <link>https://docs.thingsdb.net/v0/data-types/str/endswith/</link>
+      <title>ends_with</title>
+      <link>https://docs.thingsdb.net/v0/data-types/str/ends_with/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/data-types/str/endswith/</guid>
+      <guid>https://docs.thingsdb.net/v0/data-types/str/ends_with/</guid>
       <description>Determines if a string ends with characters given by another string.
 This function does not generate an event.
-Function str.endswith(search_string)
-Arguments    Argument Type Description     search_string str (required) The characters to be searched for at the end of this string.    Return value Returns true if the given characters are found at the end of the string and otherwise false.
-Example  This code shows an example using endswith():</description>
+This function has a deprecated alias endswith which will be removed in the next minor release.
+ Function str.ends_with(search_string)
+Arguments    Argument Type Description     search_string str (required) The characters to be searched for at the end of this string.    Return value Returns true if the given characters are found at the end of the string and otherwise false.</description>
     </item>
     
     <item>
@@ -69,16 +69,40 @@ Example  Example using lower():
     </item>
     
     <item>
-      <title>startswith</title>
-      <link>https://docs.thingsdb.net/v0/data-types/str/startswith/</link>
+      <title>replace</title>
+      <link>https://docs.thingsdb.net/v0/data-types/str/replace/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/data-types/str/startswith/</guid>
+      <guid>https://docs.thingsdb.net/v0/data-types/str/replace/</guid>
+      <description>Return a new string in which in which the occurrences of old have been replaced with new. Optionally, the number of replacements can be restricted and may start from either left or right.
+This function does not generate an event.
+Function str.replace(old, new, [number])
+Arguments    Argument Type Description     old str (required) The old substring to replace.   limit str (required) String which will replace the old substring.</description>
+    </item>
+    
+    <item>
+      <title>split</title>
+      <link>https://docs.thingsdb.net/v0/data-types/str/split/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/str/split/</guid>
+      <description>Return a new string in which all case-based characters are in lower case.
+This function does not generate an event.
+Function str.split([separator], [limit])
+Arguments    Argument Type Description     separator str (optional) The string used to split the original string. If omitted, white-space will be used as separator.   limit int (optional) Split at most limit times. If this value is negative, splitting starts from the end of the string.</description>
+    </item>
+    
+    <item>
+      <title>starts_with</title>
+      <link>https://docs.thingsdb.net/v0/data-types/str/starts_with/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/str/starts_with/</guid>
       <description>Determines if a string starts with characters given by another string.
 This function does not generate an event.
-Function str.startswith(search_string)
-Arguments    Argument Type Description     search_string str (required) The characters to be searched for at the start of this string.    Return value Returns true if the given characters are found at the start of the string and otherwise false.
-Example  This code shows an example using startswith():</description>
+This function has a deprecated alias startswith which will be removed in the next minor release.
+ Function str.starts_with(search_string)
+Arguments    Argument Type Description     search_string str (required) The characters to be searched for at the start of this string.    Return value Returns true if the given characters are found at the start of the string and otherwise false.</description>
     </item>
     
     <item>
@@ -92,6 +116,51 @@ This function does not generate an event.
 Function str.test(regex)
 Arguments    Argument Type Description     regex regex (required) The regular expression to test against the string.    Return value true if there is a match between the string and the specified regular expression, otherwise false.
 Example  Examples using test():</description>
+    </item>
+    
+    <item>
+      <title>trim</title>
+      <link>https://docs.thingsdb.net/v0/data-types/str/trim/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/str/trim/</guid>
+      <description>This function can be used to remove all white-space characters from both the start and end of a string. Whitespace characters include spaces, tabs, new-line characters etc.
+This function does not generate an event.
+Function str.trim()
+Arguments None
+Return value Returns a new string with whitespace characters removed from the start and end of the string.
+See also  trim_left trim_right  Example  Example using trim():
+ &#39; Hello World!</description>
+    </item>
+    
+    <item>
+      <title>trim_left</title>
+      <link>https://docs.thingsdb.net/v0/data-types/str/trim_left/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/str/trim_left/</guid>
+      <description>This function can be used to remove all white-space characters from the start of a string. Whitespace characters include spaces, tabs, new-line characters etc.
+This function does not generate an event.
+Function str.trim_left()
+Arguments None
+Return value Returns a new string with whitespace characters removed from the start of the string.
+See also  trim trim_right  Example  Example using trim_left():
+ &#39; Hello World!! &#39;.trim_left();  Return value in JSON format</description>
+    </item>
+    
+    <item>
+      <title>trim_right</title>
+      <link>https://docs.thingsdb.net/v0/data-types/str/trim_right/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/str/trim_right/</guid>
+      <description>This function can be used to remove all white-space characters from the end of a string. Whitespace characters include spaces, tabs, new-line characters etc.
+This function does not generate an event.
+Function str.trim_right()
+Arguments None
+Return value Returns a new string with whitespace characters removed from the end of the string.
+See also  trim trim_left  Example  Example using trim_right():
+ &#39; Hello World!! &#39;.trim_right();  Return value in JSON format</description>
     </item>
     
     <item>

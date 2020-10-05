@@ -38,7 +38,7 @@ Function member.value()
 Arguments None
 Return value Returns the name of the enumerator member.
 Example  This code creates a closure with a doc string:
- set_enum(&amp;quot;Color&amp;quot;, { RED: &#39;#f00&#39; }); val = Color{RED}.value(); assert( isstr( val ) ); // the value is of type `str` val.upper(); // Return the value upper case  Return value in JSON format</description>
+ set_enum(&amp;quot;Color&amp;quot;, { RED: &#39;#f00&#39; }); val = Color{RED}.value(); assert( is_str( val ) ); // the value is of type `str` val.upper(); // Return the value upper case  Return value in JSON format</description>
     </item>
     
   </channel>

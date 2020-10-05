@@ -90,28 +90,41 @@ Arguments    Argument Type Description     callback closure Closure to execute o
     </item>
     
     <item>
-      <title>findindex</title>
-      <link>https://docs.thingsdb.net/v0/data-types/list/findindex/</link>
+      <title>find_index</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/find_index/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/data-types/list/findindex/</guid>
+      <guid>https://docs.thingsdb.net/v0/data-types/list/find_index/</guid>
       <description>This function returns the index of the first item in a list or tuple that passes the test. Otherwise nil is returned.
 This function does not generate an event.
-Function array.findindex(callback)
-Arguments    Argument Type Description     callback closure The statement to try.    Explanation of the callback argument:
-   Iterable Callback arguments Description     array item, index Iterate over items in the array.</description>
+This function has a deprecated alias findindex which will be removed in the next minor release.
+ Function array.find_index(callback)
+Arguments    Argument Type Description     callback closure The statement to try.    Explanation of the callback argument:</description>
     </item>
     
     <item>
-      <title>indexof</title>
-      <link>https://docs.thingsdb.net/v0/data-types/list/indexof/</link>
+      <title>has</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/has/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/data-types/list/indexof/</guid>
+      <guid>https://docs.thingsdb.net/v0/data-types/list/has/</guid>
+      <description>Determines if a list or tuple has a given value.
+This function does not generate an event.
+Function array.has(value)
+Arguments    Argument Type Description     value any (required) Value to check.    Return value Returns true if the given value is found in the list and otherwise false.
+Example  This code shows an example use case of has():
+ months = [&amp;quot;January&amp;quot;, &amp;quot;February&amp;quot;, &amp;quot;March&amp;quot;, &amp;quot;April&amp;quot;]; [ months.</description>
+    </item>
+    
+    <item>
+      <title>index_of</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/index_of/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/list/index_of/</guid>
       <description>The function returns the first index of the item in a list or tuple that matches the provided value, otherwise nil if it is not present. The index of an array starts at 0, so the first item has index 0 the second 1 and so on.
 This function does not generate an event.
-Function array.indexof(value)
-Arguments    Argument Type Description     value any The value to find the index for.</description>
+This function has a deprecated alias indexof which will be removed in the next minor release.</description>
     </item>
     
     <item>
@@ -197,6 +210,37 @@ Arguments    Argument Type Description     callback closure Closure to execute o
     </item>
     
     <item>
+      <title>reverse</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/reverse/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/list/reverse/</guid>
+      <description>The function returns a new list with items in reverse order.
+This function does not generate an event.
+Function array.reverse()
+Arguments None
+Return value A new list in reverse order.
+Examples  Simple sort
+ // return a range in reverse order range(5).reverse()  Return value in JSON format
+ [ 4, 3, 2, 1, 0 ] </description>
+    </item>
+    
+    <item>
+      <title>shift</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/shift/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/list/shift/</guid>
+      <description>Removes the first item from a list and returns that item.
+This function changes the length of the list. The shift() function works on a list type array, but not on a tuple since tuples are immutable.
+This function generates an event (except when called on a variable).
+Function list.shift()
+Arguments None
+Return value The removed item from the list. A lookup_err() is raised if the list is empty.
+Example  This code show an example usage of shift():</description>
+    </item>
+    
+    <item>
       <title>some</title>
       <link>https://docs.thingsdb.net/v0/data-types/list/some/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -231,6 +275,20 @@ Arguments    Argument Type Description     callback closure (optional) Closure t
 This function generates an event (except when called on a variable).
 Function list.splice(start, [delete_count, [item1, item2, ..., itemX]]))`
 Arguments    Argument Type Description     start int (required) Start index in the list. If it is negative, it will start that many items from the end of the list.   delete_count int (optional) Number of item to remove from thestart of the list.</description>
+    </item>
+    
+    <item>
+      <title>unshift</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/unshift/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/list/unshift/</guid>
+      <description>Adds new items to the start of a list, and returns the new length.
+This function generates an event (except when called on a variable).
+Function list.unshift(item1, item2, ..., itemX)
+Return value Returns the new length of the list.
+Example  This code inserts values to the start of a list:
+ list = [4, 5, 6]; list.unshift(1, 2, 3); // Returns the new length, 6 list;  Return value in JSON format</description>
     </item>
     
   </channel>

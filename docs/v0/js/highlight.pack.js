@@ -1,5 +1,5 @@
 /*
-  Highlight.js 10.0.0-beta.0 (30d5fa67)
+  Highlight.js 10.0.0-beta.0 (41b9f38e)
   License: BSD-3-Clause
   Copyright (c) 2006-2020, Ivan Sagalaev
 */
@@ -1857,11 +1857,11 @@ hljs.registerLanguage('thingsdb', function () {
                     begin: new RegExp(
                         '\\b(' +
                         /* collection functions */
-                        'assert|base64_encode|base64_decode|bool|bytes|' +
-                        'deep|del_enum|del_type|enum|enum_info|enums_info|err|event_id|float|has_enum|has_type|if|int|isarray|' +
-                        'isascii|isbool|isbytes|isenum|iserr|isfloat|isinf|isint|' +
-                        'islist|isnan|isnil|israw|isset|isstr|isthing|istuple|' +
-                        'isutf8|list|mod_enum|mod_type|new|new_type|now|raise|rand|range|' +
+                        'alt_raise|assert|base64_encode|base64_decode|bool|bytes|' +
+                        'deep|del_enum|del_type|enum|enum_info|enums_info|err|event_id|float|has_enum|has_type|if|int|is_array|' +
+                        'is_ascii|is_bool|is_bytes|is_enum|is_err|is_float|is_inf|is_int|' +
+                        'is_list|is_nan|is_nil|is_raw|is_set|is_str|is_thing|is_tuple|' +
+                        'is_utf8|list|mod_enum|mod_type|new|new_type|now|raise|rand|range|' +
                         'randint|refs|rename_enum|rename_type|return|set|set_enum|set_type|str|thing|try|type|' +
                         'type_assert|type_count|type_info|types_info|wse|' +
                         /* node functions */
@@ -1891,9 +1891,9 @@ hljs.registerLanguage('thingsdb', function () {
                     className: 'function',
                     begin: new RegExp(
                         '\\.\\s*(assign|len|call|choice|def|doc|emit|code|msg|each|every|extend|filter|find|' +
-                        'findindex|indexof|map|name|pop|push|remove|sort|splice|' +
-                        'add|has|contains|endswith|lower|startswith|test|upper|' +
-                        'del|get|id|keys|reduce|set|some|value|values|watch|wrap|unwatch|unwrap)\\s*(?=\\()'
+                        'find_index|index_of|map|name|pop|push|remove|replace|reverse|split|sort|splice|' +
+                        'add|has|contains|ends_with|lower|starts_with|test|trim|trim_left|trim_right|upper|' +
+                        'del|get|id|keys|reduce|set|shift|some|value|values|watch|wrap|unshift|unwatch|unwrap)\\s*(?=\\()'
                     ),
                 },
                 {

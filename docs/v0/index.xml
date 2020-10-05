@@ -277,7 +277,7 @@ a = 6; b = 7; `The sum of {a} plus {b} is {a + b}.`;  Result in JSON format:
       <guid>https://docs.thingsdb.net/v0/data-types/bool/</guid>
       <description>Booleans are either true or false. Other types can convert to bool by using the ! (not) operator or the bool function.
  This code creates a bool property is_the_earth_flat to collection stuff:
- .is_the_earth_flat = !true; Related functions    Function Description     bool Create a new boolean value.   isbool Test if a given value is of type bool.    </description>
+ .is_the_earth_flat = !true; Related functions    Function Description     bool Create a new boolean value.   is_bool Test if a given value is of type bool.    </description>
     </item>
     
     <item>
@@ -369,7 +369,7 @@ Function member.value()
 Arguments None
 Return value Returns the name of the enumerator member.
 Example  This code creates a closure with a doc string:
- set_enum(&amp;quot;Color&amp;quot;, { RED: &#39;#f00&#39; }); val = Color{RED}.value(); assert( isstr( val ) ); // the value is of type `str` val.upper(); // Return the value upper case  Return value in JSON format</description>
+ set_enum(&amp;quot;Color&amp;quot;, { RED: &#39;#f00&#39; }); val = Color{RED}.value(); assert( is_str( val ) ); // the value is of type `str` val.upper(); // Return the value upper case  Return value in JSON format</description>
     </item>
     
     <item>
@@ -411,7 +411,7 @@ Example  This code uses code() to return the error code for an error:
       
       <guid>https://docs.thingsdb.net/v0/data-types/float/</guid>
       <description>ThingsDB uses 64bit to store float values and has support for the e notation and special float values like inf, -inf and nan.
-Useful functions    Function Description     float return a float type for a given value.   isfloat check if the given value is of the float type.   isinf check if the given value is infinite.   isnan check if the given value is not-a-number.</description>
+Useful functions    Function Description     float return a float type for a given value.   is_float check if the given value is of the float type.   is_inf check if the given value is infinite.   is_nan check if the given value is not-a-number.</description>
     </item>
     
     <item>
@@ -515,28 +515,41 @@ Arguments    Argument Type Description     callback closure Closure to execute o
     </item>
     
     <item>
-      <title>findindex</title>
-      <link>https://docs.thingsdb.net/v0/data-types/list/findindex/</link>
+      <title>find_index</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/find_index/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/data-types/list/findindex/</guid>
+      <guid>https://docs.thingsdb.net/v0/data-types/list/find_index/</guid>
       <description>This function returns the index of the first item in a list or tuple that passes the test. Otherwise nil is returned.
 This function does not generate an event.
-Function array.findindex(callback)
-Arguments    Argument Type Description     callback closure The statement to try.    Explanation of the callback argument:
-   Iterable Callback arguments Description     array item, index Iterate over items in the array.</description>
+This function has a deprecated alias findindex which will be removed in the next minor release.
+ Function array.find_index(callback)
+Arguments    Argument Type Description     callback closure The statement to try.    Explanation of the callback argument:</description>
     </item>
     
     <item>
-      <title>indexof</title>
-      <link>https://docs.thingsdb.net/v0/data-types/list/indexof/</link>
+      <title>has</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/has/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/data-types/list/indexof/</guid>
+      <guid>https://docs.thingsdb.net/v0/data-types/list/has/</guid>
+      <description>Determines if a list or tuple has a given value.
+This function does not generate an event.
+Function array.has(value)
+Arguments    Argument Type Description     value any (required) Value to check.    Return value Returns true if the given value is found in the list and otherwise false.
+Example  This code shows an example use case of has():
+ months = [&amp;quot;January&amp;quot;, &amp;quot;February&amp;quot;, &amp;quot;March&amp;quot;, &amp;quot;April&amp;quot;]; [ months.</description>
+    </item>
+    
+    <item>
+      <title>index_of</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/index_of/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/list/index_of/</guid>
       <description>The function returns the first index of the item in a list or tuple that matches the provided value, otherwise nil if it is not present. The index of an array starts at 0, so the first item has index 0 the second 1 and so on.
 This function does not generate an event.
-Function array.indexof(value)
-Arguments    Argument Type Description     value any The value to find the index for.</description>
+This function has a deprecated alias indexof which will be removed in the next minor release.</description>
     </item>
     
     <item>
@@ -622,6 +635,37 @@ Arguments    Argument Type Description     callback closure Closure to execute o
     </item>
     
     <item>
+      <title>reverse</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/reverse/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/list/reverse/</guid>
+      <description>The function returns a new list with items in reverse order.
+This function does not generate an event.
+Function array.reverse()
+Arguments None
+Return value A new list in reverse order.
+Examples  Simple sort
+ // return a range in reverse order range(5).reverse()  Return value in JSON format
+ [ 4, 3, 2, 1, 0 ] </description>
+    </item>
+    
+    <item>
+      <title>shift</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/shift/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/list/shift/</guid>
+      <description>Removes the first item from a list and returns that item.
+This function changes the length of the list. The shift() function works on a list type array, but not on a tuple since tuples are immutable.
+This function generates an event (except when called on a variable).
+Function list.shift()
+Arguments None
+Return value The removed item from the list. A lookup_err() is raised if the list is empty.
+Example  This code show an example usage of shift():</description>
+    </item>
+    
+    <item>
       <title>some</title>
       <link>https://docs.thingsdb.net/v0/data-types/list/some/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -656,6 +700,20 @@ Arguments    Argument Type Description     callback closure (optional) Closure t
 This function generates an event (except when called on a variable).
 Function list.splice(start, [delete_count, [item1, item2, ..., itemX]]))`
 Arguments    Argument Type Description     start int (required) Start index in the list. If it is negative, it will start that many items from the end of the list.   delete_count int (optional) Number of item to remove from thestart of the list.</description>
+    </item>
+    
+    <item>
+      <title>unshift</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/unshift/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/list/unshift/</guid>
+      <description>Adds new items to the start of a list, and returns the new length.
+This function generates an event (except when called on a variable).
+Function list.unshift(item1, item2, ..., itemX)
+Return value Returns the new length of the list.
+Example  This code inserts values to the start of a list:
+ list = [4, 5, 6]; list.unshift(1, 2, 3); // Returns the new length, 6 list;  Return value in JSON format</description>
     </item>
     
     <item>
@@ -843,16 +901,16 @@ Example  This code shows an example using contains():</description>
     </item>
     
     <item>
-      <title>endswith</title>
-      <link>https://docs.thingsdb.net/v0/data-types/str/endswith/</link>
+      <title>ends_with</title>
+      <link>https://docs.thingsdb.net/v0/data-types/str/ends_with/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/data-types/str/endswith/</guid>
+      <guid>https://docs.thingsdb.net/v0/data-types/str/ends_with/</guid>
       <description>Determines if a string ends with characters given by another string.
 This function does not generate an event.
-Function str.endswith(search_string)
-Arguments    Argument Type Description     search_string str (required) The characters to be searched for at the end of this string.    Return value Returns true if the given characters are found at the end of the string and otherwise false.
-Example  This code shows an example using endswith():</description>
+This function has a deprecated alias endswith which will be removed in the next minor release.
+ Function str.ends_with(search_string)
+Arguments    Argument Type Description     search_string str (required) The characters to be searched for at the end of this string.    Return value Returns true if the given characters are found at the end of the string and otherwise false.</description>
     </item>
     
     <item>
@@ -888,16 +946,40 @@ Example  Example using lower():
     </item>
     
     <item>
-      <title>startswith</title>
-      <link>https://docs.thingsdb.net/v0/data-types/str/startswith/</link>
+      <title>replace</title>
+      <link>https://docs.thingsdb.net/v0/data-types/str/replace/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/data-types/str/startswith/</guid>
+      <guid>https://docs.thingsdb.net/v0/data-types/str/replace/</guid>
+      <description>Return a new string in which in which the occurrences of old have been replaced with new. Optionally, the number of replacements can be restricted and may start from either left or right.
+This function does not generate an event.
+Function str.replace(old, new, [number])
+Arguments    Argument Type Description     old str (required) The old substring to replace.   limit str (required) String which will replace the old substring.</description>
+    </item>
+    
+    <item>
+      <title>split</title>
+      <link>https://docs.thingsdb.net/v0/data-types/str/split/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/str/split/</guid>
+      <description>Return a new string in which all case-based characters are in lower case.
+This function does not generate an event.
+Function str.split([separator], [limit])
+Arguments    Argument Type Description     separator str (optional) The string used to split the original string. If omitted, white-space will be used as separator.   limit int (optional) Split at most limit times. If this value is negative, splitting starts from the end of the string.</description>
+    </item>
+    
+    <item>
+      <title>starts_with</title>
+      <link>https://docs.thingsdb.net/v0/data-types/str/starts_with/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/str/starts_with/</guid>
       <description>Determines if a string starts with characters given by another string.
 This function does not generate an event.
-Function str.startswith(search_string)
-Arguments    Argument Type Description     search_string str (required) The characters to be searched for at the start of this string.    Return value Returns true if the given characters are found at the start of the string and otherwise false.
-Example  This code shows an example using startswith():</description>
+This function has a deprecated alias startswith which will be removed in the next minor release.
+ Function str.starts_with(search_string)
+Arguments    Argument Type Description     search_string str (required) The characters to be searched for at the start of this string.    Return value Returns true if the given characters are found at the start of the string and otherwise false.</description>
     </item>
     
     <item>
@@ -911,6 +993,51 @@ This function does not generate an event.
 Function str.test(regex)
 Arguments    Argument Type Description     regex regex (required) The regular expression to test against the string.    Return value true if there is a match between the string and the specified regular expression, otherwise false.
 Example  Examples using test():</description>
+    </item>
+    
+    <item>
+      <title>trim</title>
+      <link>https://docs.thingsdb.net/v0/data-types/str/trim/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/str/trim/</guid>
+      <description>This function can be used to remove all white-space characters from both the start and end of a string. Whitespace characters include spaces, tabs, new-line characters etc.
+This function does not generate an event.
+Function str.trim()
+Arguments None
+Return value Returns a new string with whitespace characters removed from the start and end of the string.
+See also  trim_left trim_right  Example  Example using trim():
+ &#39; Hello World!</description>
+    </item>
+    
+    <item>
+      <title>trim_left</title>
+      <link>https://docs.thingsdb.net/v0/data-types/str/trim_left/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/str/trim_left/</guid>
+      <description>This function can be used to remove all white-space characters from the start of a string. Whitespace characters include spaces, tabs, new-line characters etc.
+This function does not generate an event.
+Function str.trim_left()
+Arguments None
+Return value Returns a new string with whitespace characters removed from the start of the string.
+See also  trim trim_right  Example  Example using trim_left():
+ &#39; Hello World!! &#39;.trim_left();  Return value in JSON format</description>
+    </item>
+    
+    <item>
+      <title>trim_right</title>
+      <link>https://docs.thingsdb.net/v0/data-types/str/trim_right/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/str/trim_right/</guid>
+      <description>This function can be used to remove all white-space characters from the end of a string. Whitespace characters include spaces, tabs, new-line characters etc.
+This function does not generate an event.
+Function str.trim_right()
+Arguments None
+Return value Returns a new string with whitespace characters removed from the end of the string.
+See also  trim trim_left  Example  Example using trim_right():
+ &#39; Hello World!! &#39;.trim_right();  Return value in JSON format</description>
     </item>
     
     <item>
@@ -1143,7 +1270,7 @@ Example  This code shows an example using wrap():</description>
       
       <guid>https://docs.thingsdb.net/v0/data-types/tuple/</guid>
       <description>All nested arrays are immutable and thus tuples.
-list = []; list.push([&#39;this list will be nested and therefore convert to a tuple&#39;]); // Check that the first item in `list` is indeed a `tuple` assert(istuple(list[0])); // Check that the `tuple` is indeed immutable assert(iserr(try(list[0].push(&#39;cannot be added to a tuple&#39;)))); A tuple only becomes a tuple when it is nested inside another tuple or list, which means the tuple will be immutable.</description>
+list = []; list.push([&#39;this list will be nested and therefore convert to a tuple&#39;]); // Check that the first item in `list` is indeed a `tuple` assert(is_tuple(list[0])); // Check that the `tuple` is indeed immutable assert(is_err(try(list[0].push(&#39;cannot be added to a tuple&#39;)))); A tuple only becomes a tuple when it is nested inside another tuple or list, which means the tuple will be immutable.</description>
     </item>
     
     <item>
@@ -1233,6 +1360,17 @@ Syntax: expression ? if-true : if-false
       
       <guid>https://docs.thingsdb.net/v0/operators/precedence-and-associativity/</guid>
       <description>Symbol Type of operation Associativity     () Expression parenthesis Left-to-right   ! Not operator Right-to-left   * / % Multiplication, Modulo, Division Left-to-right   + - Add, Subtract Left-to-right   &amp;amp; Bitwise AND Left-to-right   ^ Bitwise XOR Left-to-right   | Bitwise OR Left-to-right   == != &amp;lt;= &amp;gt;= &amp;lt; &amp;gt; Compare Left-to-right   &amp;amp;&amp;amp; Logical AND Left-to-right   || Logical OR Left-to-right   ?</description>
+    </item>
+    
+    <item>
+      <title>alt_raise</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/alt_raise/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/alt_raise/</guid>
+      <description>This function will try a statement. If the statement is successful it will just return the result but in case of an error, it will re-raise the error using a given error code. The following code below will illustrate how alt_raise works:
+ Without an optional error message
+ // the following code: res = alt_raise(statement, error_code); // is equivalent to: res = try(statement); if (is_err(res), { raise(error_code, res.msg()); });  With an error message</description>
     </item>
     
     <item>
@@ -1467,243 +1605,239 @@ If the specified value is of type str, then the initial characters of the string
     </item>
     
     <item>
-      <title>isarray</title>
-      <link>https://docs.thingsdb.net/v0/collection-api/isarray/</link>
+      <title>is_array</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/is_array/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/collection-api/isarray/</guid>
-      <description>This function determines whether the provided value is of type list or tuple or not. The functions islist and istuple can be used to check if the array is mutable.
+      <guid>https://docs.thingsdb.net/v0/collection-api/is_array/</guid>
+      <description>This function determines whether the provided value is of type list or tuple or not. The functions is_list and is_tuple can be used to check if the array is mutable.
 This function does not generate an event.
-Function isarray(value)
+Function is_array(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the value passed is an array, else it returns false.</description>
     </item>
     
     <item>
-      <title>isascii</title>
-      <link>https://docs.thingsdb.net/v0/collection-api/isascii/</link>
+      <title>is_ascii</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/is_ascii/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/collection-api/isascii/</guid>
+      <guid>https://docs.thingsdb.net/v0/collection-api/is_ascii/</guid>
       <description>This function determines whether the provided value is of type str and contains only valid ascii characters.
 This function does not generate an event.
-Function isascii(value)
-Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type str and contains only ascii characters, else false.
-Example  This code shows some return values for isascii():</description>
+This function has a deprecated alias isascii which will be removed in the next minor release.
+ Function is_ascii(value)
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type str and contains only ascii characters, else false.</description>
     </item>
     
     <item>
-      <title>isbool</title>
-      <link>https://docs.thingsdb.net/v0/collection-api/isbool/</link>
+      <title>is_bool</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/is_bool/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/collection-api/isbool/</guid>
+      <guid>https://docs.thingsdb.net/v0/collection-api/is_bool/</guid>
       <description>This function determines whether the provided value is a bool or not.
 This function does not generate an event.
-Function isbool(value)
-Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a boolean, else it returns false.
-Example  This code shows some return values for isbool():
- [ isbool( true ), isbool( &#39;true&#39; ), isbool( nil ), ];  Return value in JSON format</description>
+This function has a deprecated alias isbool which will be removed in the next minor release.
+ Function is_bool(value)
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a boolean, else it returns false.</description>
     </item>
     
     <item>
-      <title>isbytes</title>
-      <link>https://docs.thingsdb.net/v0/collection-api/isbytes/</link>
+      <title>is_bytes</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/is_bytes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/collection-api/isbytes/</guid>
+      <guid>https://docs.thingsdb.net/v0/collection-api/is_bytes/</guid>
       <description>This function determines whether the provided value is of type bytes or not.
 This function does not generate an event.
-Function isbytes(value)
-Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type bytes, else it returns false.
-Example  This code shows some return values for isbytes():</description>
+This function has a deprecated alias isbytes which will be removed in the next minor release.
+ Function is_bytes(value)
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type bytes, else it returns false.</description>
     </item>
     
     <item>
-      <title>isenum</title>
-      <link>https://docs.thingsdb.net/v0/collection-api/isenum/</link>
+      <title>is_enum</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/is_enum/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/collection-api/isenum/</guid>
+      <guid>https://docs.thingsdb.net/v0/collection-api/is_enum/</guid>
       <description>This function determines whether the provided value is an enumeration type member or not.
 This function does not generate an event.
-Function isenum(value)
-Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type enum, else it returns false.
-Example  This code shows some return values for isenum():</description>
+This function has a deprecated alias isenum which will be removed in the next minor release.
+ Function is_enum(value)
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type enum, else it returns false.</description>
     </item>
     
     <item>
-      <title>iserr</title>
-      <link>https://docs.thingsdb.net/v0/collection-api/iserr/</link>
+      <title>is_err</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/is_err/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/collection-api/iserr/</guid>
+      <guid>https://docs.thingsdb.net/v0/collection-api/is_err/</guid>
       <description>This function determines whether the provided value is a error or not.
 This function does not generate an event.
-Function iserr(value)
-Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is an error, else it returns false.
-Example  This code shows some return values for iserr():
- [ iserr( err() ), iserr( zero_div_err() ), iserr( try((1 / 0)) ), iserr( try((1 / 1)) ), ];  Return value in JSON format</description>
+This function has a deprecated alias iserr which will be removed in the next minor release.
+ Function is_err(value)
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is an error, else it returns false.</description>
     </item>
     
     <item>
-      <title>isfloat</title>
-      <link>https://docs.thingsdb.net/v0/collection-api/isfloat/</link>
+      <title>is_float</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/is_float/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/collection-api/isfloat/</guid>
+      <guid>https://docs.thingsdb.net/v0/collection-api/is_float/</guid>
       <description>This function determines whether the provided value is a floating point value or not.
 This function does not generate an event.
-Function isfloat(value)
-Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a float, else it returns false.
-Example  This code shows some return values for isfloat():</description>
+This function has a deprecated alias isfloat which will be removed in the next minor release.
+ Function is_float(value)
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a float, else it returns false.</description>
     </item>
     
     <item>
-      <title>isinf</title>
-      <link>https://docs.thingsdb.net/v0/collection-api/isinf/</link>
+      <title>is_inf</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/is_inf/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/collection-api/isinf/</guid>
+      <guid>https://docs.thingsdb.net/v0/collection-api/is_inf/</guid>
       <description>This function determines whether the provided value is a positive or negative infinity.
 This function does not generate an event.
-Function isinf(value)
-Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a positive or negative infinity, else it returns false.
-Example  This code shows some return values for isinf():</description>
+This function has a deprecated alias isinf which will be removed in the next minor release.
+ Function is_inf(value)
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a positive or negative infinity, else it returns false.</description>
     </item>
     
     <item>
-      <title>isint</title>
-      <link>https://docs.thingsdb.net/v0/collection-api/isint/</link>
+      <title>is_int</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/is_int/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/collection-api/isint/</guid>
+      <guid>https://docs.thingsdb.net/v0/collection-api/is_int/</guid>
       <description>This function determines whether the provided value is an integer or not.
 This function does not generate an event.
-Function isint(value)
-Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is an integer, else it returns false.
-Example  This code shows some return values for isint():
- [ isint( 42 ), isint( 0x2a ), isint( 42.</description>
+This function has a deprecated alias isint which will be removed in the next minor release.
+ Function is_int(value)
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is an integer, else it returns false.</description>
     </item>
     
     <item>
-      <title>islist</title>
-      <link>https://docs.thingsdb.net/v0/collection-api/islist/</link>
+      <title>is_list</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/is_list/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/collection-api/islist/</guid>
+      <guid>https://docs.thingsdb.net/v0/collection-api/is_list/</guid>
       <description>This function determines whether the provided value is a list or not.
 This function does not generate an event.
-Function islist(value)
-Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a list, else it returns false.
-Example  This code shows some return values for islist():
- [ islist( [] ), islist( tmp = [[&#39;nested&#39;]] ), islist( tmp[0] ), ];  Return value in JSON format</description>
+This function has a deprecated alias islist which will be removed in the next minor release.
+ Function is_list(value)
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a list, else it returns false.</description>
     </item>
     
     <item>
-      <title>isnan</title>
-      <link>https://docs.thingsdb.net/v0/collection-api/isnan/</link>
+      <title>is_nan</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/is_nan/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/collection-api/isnan/</guid>
+      <guid>https://docs.thingsdb.net/v0/collection-api/is_nan/</guid>
       <description>This function determines whether the provided value is a number.
 This function does not generate an event.
-Function isnan(value)
-Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is not a number, else false.
-Example  This code shows some return values for isnan():
- [ isnan( true ), isnan( 123 ), isnan( 3.</description>
+This function has a deprecated alias isnan which will be removed in the next minor release.
+ Function is_nan(value)
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is not a number, else false.</description>
     </item>
     
     <item>
-      <title>isnil</title>
-      <link>https://docs.thingsdb.net/v0/collection-api/isnil/</link>
+      <title>is_nil</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/is_nil/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/collection-api/isnil/</guid>
+      <guid>https://docs.thingsdb.net/v0/collection-api/is_nil/</guid>
       <description>This function determines whether the provided value is nil.
 This function does not generate an event.
-Function isnil(value)
+This function has a deprecated alias isnil which will be removed in the next minor release.
+ Function is_nil(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is nil, else false.
-Example  This code shows some return values for isnil():
- [ isnil( nil ), isnil( 0 ), ];  Return value in JSON format</description>
+Example  This code shows some return values for is_nil():</description>
     </item>
     
     <item>
-      <title>israw</title>
-      <link>https://docs.thingsdb.net/v0/collection-api/israw/</link>
+      <title>is_raw</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/is_raw/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/collection-api/israw/</guid>
+      <guid>https://docs.thingsdb.net/v0/collection-api/is_raw/</guid>
       <description>This function determines whether the provided value is of type str or bytes.
 This function does not generate an event.
-Function israw(value)
-Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type str or bytes, else false.
-Example  This code shows some return values for israw():</description>
+This function has a deprecated alias israw which will be removed in the next minor release.
+ Function is_raw(value)
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type str or bytes, else false.</description>
     </item>
     
     <item>
-      <title>isset</title>
-      <link>https://docs.thingsdb.net/v0/collection-api/isset/</link>
+      <title>is_set</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/is_set/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/collection-api/isset/</guid>
+      <guid>https://docs.thingsdb.net/v0/collection-api/is_set/</guid>
       <description>This function determines whether the provided value is a set or not.
 This function does not generate an event.
-Function isset(value)
-Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a set, else it returns false.
-Example  This code shows some return values for isset():
- [ isset( [] ), isset( set() ), ];  Return value in JSON format</description>
+This function has a deprecated alias isset which will be removed in the next minor release.
+ Function is_set(value)
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a set, else it returns false.</description>
     </item>
     
     <item>
-      <title>isstr</title>
-      <link>https://docs.thingsdb.net/v0/collection-api/isstr/</link>
+      <title>is_str</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/is_str/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/collection-api/isstr/</guid>
+      <guid>https://docs.thingsdb.net/v0/collection-api/is_str/</guid>
       <description>This function determines whether the provided value is of type str.
-The value is not explicitly checked for valid UTF-8 characters, use isutf8() if you want to check for valid UTF-8 data.
+The value is not explicitly checked for valid UTF-8 characters, use is_utf8() if you want to check for valid UTF-8 data.
 This function does not generate an event.
-Function isstr(value)
-Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type str, else false.</description>
+This function has a deprecated alias isstr which will be removed in the next minor release.
+ Function is_str(value)
+Arguments    Argument Type Description     value any (required) The value to be tested.</description>
     </item>
     
     <item>
-      <title>isthing</title>
-      <link>https://docs.thingsdb.net/v0/collection-api/isthing/</link>
+      <title>is_thing</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/is_thing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/collection-api/isthing/</guid>
+      <guid>https://docs.thingsdb.net/v0/collection-api/is_thing/</guid>
       <description>This function determines whether the provided value is a thing or not.
 Type instances are also things, so this function returns true for a Type instance as well.
+ This function has a deprecated alias isthing which will be removed in the next minor release.
  This function does not generate an event.
-Function isthing(value)
-Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a thing, else it returns false.</description>
+Function is_thing(value)
+Arguments    Argument Type Description     value any (required) The value to be tested.</description>
     </item>
     
     <item>
-      <title>istuple</title>
-      <link>https://docs.thingsdb.net/v0/collection-api/istuple/</link>
+      <title>is_tuple</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/is_tuple/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/collection-api/istuple/</guid>
+      <guid>https://docs.thingsdb.net/v0/collection-api/is_tuple/</guid>
       <description>This function determines whether the provided value is a tuple or not. At least nested arrays are of kind tuple.
 This function does not generate an event.
-Function istuple(value)
-Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a tuple, else it returns false.
-Example  This code shows some return values for istuple():</description>
+This function has a deprecated alias istuple which will be removed in the next minor release.
+ Function is_tuple(value)
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a tuple, else it returns false.</description>
     </item>
     
     <item>
-      <title>isutf8</title>
-      <link>https://docs.thingsdb.net/v0/collection-api/isutf8/</link>
+      <title>is_utf8</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/is_utf8/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/collection-api/isutf8/</guid>
+      <guid>https://docs.thingsdb.net/v0/collection-api/is_utf8/</guid>
       <description>This function determines whether the provided value is of type str and contains valid UTF-8 characters.
 This function does not generate an event.
-Function isutf8(value)
-Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type raw and contains valid utf8, else false.
-Example  This code shows some return values for isutf8():</description>
+This function has a deprecated alias isutf8 which will be removed in the next minor release.
+ Function is_utf8(value)
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type raw and contains valid utf8, else false.</description>
     </item>
     
     <item>

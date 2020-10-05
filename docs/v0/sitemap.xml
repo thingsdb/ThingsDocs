@@ -207,11 +207,15 @@
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/list/findindex/</loc>
+    <loc>https://docs.thingsdb.net/v0/data-types/list/find_index/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/list/indexof/</loc>
+    <loc>https://docs.thingsdb.net/v0/data-types/list/has/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/list/index_of/</loc>
   </url>
   
   <url>
@@ -239,6 +243,14 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/list/reverse/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/list/shift/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/data-types/list/some/</loc>
   </url>
   
@@ -248,6 +260,10 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v0/data-types/list/splice/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/list/unshift/</loc>
   </url>
   
   <url>
@@ -315,7 +331,7 @@
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/str/endswith/</loc>
+    <loc>https://docs.thingsdb.net/v0/data-types/str/ends_with/</loc>
   </url>
   
   <url>
@@ -327,11 +343,31 @@
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/str/startswith/</loc>
+    <loc>https://docs.thingsdb.net/v0/data-types/str/replace/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/str/split/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/str/starts_with/</loc>
   </url>
   
   <url>
     <loc>https://docs.thingsdb.net/v0/data-types/str/test/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/str/trim/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/str/trim_left/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/str/trim_right/</loc>
   </url>
   
   <url>
@@ -455,6 +491,10 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/alt_raise/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/collection-api/assert/</loc>
   </url>
   
@@ -527,75 +567,75 @@
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/isarray/</loc>
+    <loc>https://docs.thingsdb.net/v0/collection-api/is_array/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/isascii/</loc>
+    <loc>https://docs.thingsdb.net/v0/collection-api/is_ascii/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/isbool/</loc>
+    <loc>https://docs.thingsdb.net/v0/collection-api/is_bool/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/isbytes/</loc>
+    <loc>https://docs.thingsdb.net/v0/collection-api/is_bytes/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/isenum/</loc>
+    <loc>https://docs.thingsdb.net/v0/collection-api/is_enum/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/iserr/</loc>
+    <loc>https://docs.thingsdb.net/v0/collection-api/is_err/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/isfloat/</loc>
+    <loc>https://docs.thingsdb.net/v0/collection-api/is_float/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/isinf/</loc>
+    <loc>https://docs.thingsdb.net/v0/collection-api/is_inf/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/isint/</loc>
+    <loc>https://docs.thingsdb.net/v0/collection-api/is_int/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/islist/</loc>
+    <loc>https://docs.thingsdb.net/v0/collection-api/is_list/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/isnan/</loc>
+    <loc>https://docs.thingsdb.net/v0/collection-api/is_nan/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/isnil/</loc>
+    <loc>https://docs.thingsdb.net/v0/collection-api/is_nil/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/israw/</loc>
+    <loc>https://docs.thingsdb.net/v0/collection-api/is_raw/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/isset/</loc>
+    <loc>https://docs.thingsdb.net/v0/collection-api/is_set/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/isstr/</loc>
+    <loc>https://docs.thingsdb.net/v0/collection-api/is_str/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/isthing/</loc>
+    <loc>https://docs.thingsdb.net/v0/collection-api/is_thing/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/istuple/</loc>
+    <loc>https://docs.thingsdb.net/v0/collection-api/is_tuple/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/isutf8/</loc>
+    <loc>https://docs.thingsdb.net/v0/collection-api/is_utf8/</loc>
   </url>
   
   <url>
