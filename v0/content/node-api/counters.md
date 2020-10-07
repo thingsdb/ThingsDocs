@@ -21,7 +21,7 @@ events_skipped | Events which cannot be committed since an event with a higher `
 events_unaligned | Number of times an event cannot be pushed to the end of the queue and needs re-ordering.
 events_with_gap | Events which are committed but at least one event `id` was skipped.
 garbage_collected | Number of [things](../../data-types/thing) which are garbage collected.
-longest_event_duration | Longest event duration, in seconds.
+longest_event_duration | Longest event duration, in seconds. Event duration is measured from the moment an event is created, until the event is finished. During `AWAY` mode, a node will still create events, but waits before processing events and thus may result in rather long duration values.
 longest_query_duration | Longest query duration, in seconds.
 queries_success | Number of queries where this node acted as the master node and the query has successful finished.
 queries_with_error | Number of queries where this node acted as the master node but the query has returned with an error.
