@@ -291,6 +291,20 @@ Arguments    Argument Type Description     value any (required) The value to be 
     </item>
     
     <item>
+      <title>is_closure</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/is_closure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/is_closure/</guid>
+      <description>This function determines whether the provided value is a closure or not.
+This function does not generate an event.
+Function is_closure(value)
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a closure, else it returns false.
+Example  This code shows some return values for is_closure():
+ [ is_closure( || nil ), is_closure( nil ), ];  Return value in JSON format</description>
+    </item>
+    
+    <item>
       <title>is_bytes</title>
       <link>https://docs.thingsdb.net/v0/collection-api/is_bytes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

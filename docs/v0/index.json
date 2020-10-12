@@ -1008,6 +1008,13 @@
 	"content": "This function determines whether the provided value is a bool or not.\nThis function does not generate an event.\nThis function has a deprecated alias isbool which will be removed in the next minor release.\n Function is_bool(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a boolean, else it returns false.\nExample  This code shows some return values for is_bool():\n [ is_bool( true ), is_bool( 'true' ), is_bool( nil ), ];  Return value in JSON format\n [ true, false, false ] "
 },
 {
+	"uri": "https://docs.thingsdb.net/v0/collection-api/is_closure/",
+	"title": "is_closure",
+	"tags": [],
+	"description": "",
+	"content": "This function determines whether the provided value is a closure or not.\nThis function does not generate an event.\nFunction is_closure(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a closure, else it returns false.\nExample  This code shows some return values for is_closure():\n [ is_closure( || nil ), is_closure( nil ), ];  Return value in JSON format\n [ true, false ] "
+},
+{
 	"uri": "https://docs.thingsdb.net/v0/collection-api/is_bytes/",
 	"title": "is_bytes",
 	"tags": [],
