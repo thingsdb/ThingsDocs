@@ -1,6 +1,6 @@
 ---
 title: "assert_err"
-weight: 249
+weight: 250
 ---
 
 Returns an [error](../../data-types/error) when an assertion has failed.

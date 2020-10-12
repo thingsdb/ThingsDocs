@@ -1,6 +1,6 @@
 ---
 title: "reset_counters"
-weight: 205
+weight: 206
 ---
 
 Resets the [counters](../../node-api/counters) for the ThingsDB node you are connected too.

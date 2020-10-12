@@ -1,6 +1,6 @@
 ---
 title: "collection_info"
-weight: 209
+weight: 210
 ---
 
 Returns information about a specific collection.

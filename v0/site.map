@@ -142,6 +142,7 @@ collection-api
     is_array
     is_ascii
     is_bool
+    is_closure
     is_bytes
     is_enum
     is_err
