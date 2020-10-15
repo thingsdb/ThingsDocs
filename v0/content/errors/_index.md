@@ -23,6 +23,17 @@ Error | Code | Meaning
 [node_err](./node_err) | -51 | At least one node has an issue while processing the request.
 [assert_err](./assert_err)| -50 | [Assertion](../collection-api/assert) statement has failed.
 
+## Internal errors
+
+Error | Code | Meaning
+------| ---- | -------
+`RESULT_TOO_LARGE` | -6 | Result size limit is exceeded. See the [configuration page](../getting-started/configuration) to configure this limit.
+`REQUEST_TIMEOUT` | -5 | Timeout during this request.
+`REQUEST_CANCEL` | -4 | A request is cancelled.
+`WRITE_UV` | -3 | Write to stream error.
+`MEMORY` | -2 | Memory allocation error.
+`INTERNAL` | -1 | General internal error.
+
 ## Custom errors
 
 The range `-127 .. -100` is reserved by ThingsDB for custom error codes although technically this range can be extended from `-127` up to `-64`.

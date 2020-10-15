@@ -32,6 +32,7 @@ next_thing_id | Next free things ID.
 node_id | The `id` which is assigned to the node.
 node_name | This node will publish itself to other nodes using the node name. This can be an IP address, hostname, or a fully qualified domain name (FQDN) of the node.
 node_port | Listening for node TCP socket connections on this port.
+result_size_limit | The result size limit is checked when packing properties for a thing. At this point, and only then, this data limit is checked and if exceeded, a [RESULT_TOO_LARGE](../../errors/#internal-errors) error will be returned. This limit is set in bytes and is used to prevent a huge amount of data, typically when a high `deep` value is used. See the [configuration page](../../getting-started/configuration) to configure this limit.
 scheduled_backups | Number of backups scheduled on this node. Only repeated backups or backups which are planned in the future are included.
 status | Current status of the ThingsDB node.
 storage_path | Path used for storing ThingsDB data.
