@@ -11,20 +11,20 @@
     <title>Errors :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1602488730" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1602488730" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1602488730" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1602488730" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1602488730" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1602488730" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1602488730" rel="stylesheet">
-    <link href="/v0/css/theme.css?1602488730" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1602488730" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1602778036" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1602778036" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1602778036" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1602778036" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1602778036" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1602778036" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1602778036" rel="stylesheet">
+    <link href="/v0/css/theme.css?1602778036" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1602778036" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1602488730" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1602778036" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1602488730"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1602778036"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1602488730"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1602488730"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1602778036"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1602778036"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1602488730"></script>
+<script type="text/javascript" src="/v0/js/search.js?1602778036"></script>
 
     
   </div>
@@ -5457,6 +5457,7 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
+    <li><a href="#internal-errors">Internal errors</a></li>
     <li><a href="#custom-errors">Custom errors</a></li>
   </ul>
 </nav>
@@ -5566,6 +5567,48 @@
 </tr>
 </tbody>
 </table>
+<h2 id="internal-errors">Internal errors</h2>
+<table>
+<thead>
+<tr>
+<th>Error</th>
+<th>Code</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>RESULT_TOO_LARGE</code></td>
+<td>-6</td>
+<td>Result size limit is exceeded. See the <a href="../getting-started/configuration">configuration page</a> to configure this limit.</td>
+</tr>
+<tr>
+<td><code>REQUEST_TIMEOUT</code></td>
+<td>-5</td>
+<td>Timeout during this request.</td>
+</tr>
+<tr>
+<td><code>REQUEST_CANCEL</code></td>
+<td>-4</td>
+<td>A request is cancelled.</td>
+</tr>
+<tr>
+<td><code>WRITE_UV</code></td>
+<td>-3</td>
+<td>Write to stream error.</td>
+</tr>
+<tr>
+<td><code>MEMORY</code></td>
+<td>-2</td>
+<td>Memory allocation error.</td>
+</tr>
+<tr>
+<td><code>INTERNAL</code></td>
+<td>-1</td>
+<td>General internal error.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="custom-errors">Custom errors</h2>
 <p>The range <code>-127 .. -100</code> is reserved by ThingsDB for custom error codes although technically this range can be extended from <code>-127</code> up to <code>-64</code>.
 See <a href="../collection-api/err">err(..)</a> and <a href="../collection-api/err">alt_raise(..)</a> for more information on how to use custom error codes.</p>
@@ -5601,19 +5644,19 @@ See <a href="../collection-api/err">err(..)</a> and <a href="../collection-api/e
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1602488730"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1602488730"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1602488730"></script>
-    <script src="/v0/js/jquery.sticky.js?1602488730"></script>
-    <script src="/v0/js/featherlight.min.js?1602488730"></script>
-    <script src="/v0/js/highlight.pack.js?1602488730"></script>
+    <script src="/v0/js/clipboard.min.js?1602778036"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1602778036"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1602778036"></script>
+    <script src="/v0/js/jquery.sticky.js?1602778036"></script>
+    <script src="/v0/js/featherlight.min.js?1602778036"></script>
+    <script src="/v0/js/highlight.pack.js?1602778036"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1602488730"></script>
-    <script src="/v0/js/learn.js?1602488730"></script>
-    <script src="/v0/js/hugo-learn.js?1602488730"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1602778036"></script>
+    <script src="/v0/js/learn.js?1602778036"></script>
+    <script src="/v0/js/hugo-learn.js?1602778036"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1602488730" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1602488730"></script>
+    <link href="/v0/mermaid/mermaid.css?1602778036" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1602778036"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
