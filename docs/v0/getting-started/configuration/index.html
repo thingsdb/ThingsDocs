@@ -11,20 +11,20 @@
     <title>Configuration :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1602778581" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1602778581" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1602778581" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1602778581" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1602778581" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1602778581" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1602778581" rel="stylesheet">
-    <link href="/v0/css/theme.css?1602778581" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1602778581" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1602779398" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1602779398" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1602779398" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1602779398" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1602779398" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1602779398" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1602779398" rel="stylesheet">
+    <link href="/v0/css/theme.css?1602779398" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1602779398" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1602778581" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1602779398" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1602778581"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1602779398"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1602778581"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1602778581"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1602779398"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1602779398"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1602778581"></script>
+<script type="text/javascript" src="/v0/js/search.js?1602779398"></script>
 
     
   </div>
@@ -5542,8 +5542,8 @@
 </tr>
 <tr>
 <td><code>THINGSDB_RESULT_SIZE_LIMIT</code></td>
-<td><code>20971520</code></td>
-<td>The result size limit is checked when packing properties for a thing. At this point, and only then, this data limit is checked and if exceeded, a <a href="../../errors/#internal-errors">RESULT_TOO_LARGE</a> error will be returned. This limit is set in bytes and is used to prevent a huge amount of data, typically when a high <code>deep</code> value is used. The default value is <code>20MB</code>.</td>
+<td><code>20971520</code> <em>(20MB)</em></td>
+<td>Result size limit is checked when packing properties for a thing. If, at the check moment, the packed data size exceeds the limit, packing stops and an <a href="../../errors/#internal-errors">RESULT_TOO_LARGE</a> error will be returned. This limit is set in bytes and is used to prevent a huge amount of data, typically when a high <code>deep</code> value is used.</td>
 </tr>
 <tr>
 <td><code>THINGSDB_HTTP_STATUS_PORT</code></td>
@@ -5607,19 +5607,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1602778581"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1602778581"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1602778581"></script>
-    <script src="/v0/js/jquery.sticky.js?1602778581"></script>
-    <script src="/v0/js/featherlight.min.js?1602778581"></script>
-    <script src="/v0/js/highlight.pack.js?1602778581"></script>
+    <script src="/v0/js/clipboard.min.js?1602779398"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1602779398"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1602779398"></script>
+    <script src="/v0/js/jquery.sticky.js?1602779398"></script>
+    <script src="/v0/js/featherlight.min.js?1602779398"></script>
+    <script src="/v0/js/highlight.pack.js?1602779398"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1602778581"></script>
-    <script src="/v0/js/learn.js?1602778581"></script>
-    <script src="/v0/js/hugo-learn.js?1602778581"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1602779398"></script>
+    <script src="/v0/js/learn.js?1602779398"></script>
+    <script src="/v0/js/hugo-learn.js?1602779398"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1602778581" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1602778581"></script>
+    <link href="/v0/mermaid/mermaid.css?1602779398" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1602779398"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
