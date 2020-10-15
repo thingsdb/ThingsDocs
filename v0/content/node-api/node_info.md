@@ -92,6 +92,7 @@ node_info();
     "next_thing_id": 5,
     "node_id": 0,
     "node_port": 9220,
+    "result_size_limit": 20971520,
     "scheduled_backups": 0,
     "status": "READY",
     "storage_path": "/var/lib/thingsdb/",
