@@ -11,20 +11,20 @@
     <title>Readiness and liveness :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1602836028" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1602836028" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1602836028" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1602836028" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1602836028" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1602836028" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1602836028" rel="stylesheet">
-    <link href="/v0/css/theme.css?1602836028" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1602836028" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1604956680" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1604956680" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1604956680" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1604956680" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1604956680" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1604956680" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1604956680" rel="stylesheet">
+    <link href="/v0/css/theme.css?1604956680" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1604956680" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1602836028" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1604956680" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1602836028"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1604956680"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1602836028"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1602836028"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1604956680"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1604956680"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1602836028"></script>
+<script type="text/javascript" src="/v0/js/search.js?1604956680"></script>
 
     
   </div>
@@ -5461,7 +5461,16 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#liveness">Liveness</a></li>
+        <li><a href="#readiness">Readiness</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -5485,8 +5494,24 @@
 
 
 
-<p>When <code>http_status_port</code> in the configuration file or the environment variable <code>THINGSDB_HTTP_STATUS_PORT</code> is set then <code>/status</code>, <code>/ready</code> and <code>/healthy</code> are available.
+<p>When <code>http_status_port</code> is set in the configuration file or the environment variable <code>THINGSDB_HTTP_STATUS_PORT</code> then <code>/status</code>, <code>/ready</code> and <code>/healthy</code> are available.
 These can be used for readiness and liveness requests.</p>
+<h3 id="liveness">Liveness</h3>
+<p>The ThingsDB <code>/healthy</code> check will respond with a <code>200 OK</code> whenever possible and will never respond with an error. So only if <em>no response</em> is received in some reasonable amount of time, the node should be considered as unhealthy.
+It is common to use the <code>/healthy</code> check as liveness probe in environments like Kubernetes.</p>
+<h3 id="readiness">Readiness</h3>
+<p>Besides the <code>/healthy</code> check there is also a <code>/ready</code> check. This check responds with <code>200 OK</code> if the node has one of the following status: <code>READY</code>, <code>AWAY</code>, or <code>AWAY_SOON</code>. With any other status, for example, <code>SYNCHRONIZING</code>, the <code>/ready</code> check will respond with <code>503 Service Unavailable</code> <em>(NOK)</em>.</p>
+<p>Since <strong>v0.9.20</strong> ThingsDB will <em>also</em> respond with <code>200 OK</code> to a <code>/ready</code> request when all of the following conditions are met:</p>
+<ul>
+<li>ThingsDB must be started with the <code>--deploy</code> argument.</li>
+<li>The ThingsDB node status is <code>SYNCHRONIZING</code>.</li>
+<li>At least one ThingsDB node is unavailable (checked using at least 3 attempts).</li>
+</ul>
+
+<div class="notices tip" ><p>The following link will explain how to deploy ThingsDB in GKE (Google Kubernetes Engine) and can be used as an example for using the <code>/ready</code> and <code>/healthy</code> handlers:
+<a href="https://github.com/thingsdb/ThingsDB/tree/master/gke#readme">https://github.com/thingsdb/ThingsDB/tree/master/gke#readme</a></p>
+</div>
+
 
 
 <footer class=" footline" >
@@ -5517,19 +5542,19 @@ These can be used for readiness and liveness requests.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1602836029"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1602836029"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1602836029"></script>
-    <script src="/v0/js/jquery.sticky.js?1602836029"></script>
-    <script src="/v0/js/featherlight.min.js?1602836029"></script>
-    <script src="/v0/js/highlight.pack.js?1602836029"></script>
+    <script src="/v0/js/clipboard.min.js?1604956680"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1604956680"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1604956680"></script>
+    <script src="/v0/js/jquery.sticky.js?1604956680"></script>
+    <script src="/v0/js/featherlight.min.js?1604956680"></script>
+    <script src="/v0/js/highlight.pack.js?1604956680"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1602836029"></script>
-    <script src="/v0/js/learn.js?1602836029"></script>
-    <script src="/v0/js/hugo-learn.js?1602836029"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1604956680"></script>
+    <script src="/v0/js/learn.js?1604956680"></script>
+    <script src="/v0/js/hugo-learn.js?1604956680"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1602836029" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1602836029"></script>
+    <link href="/v0/mermaid/mermaid.css?1604956680" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1604956680"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

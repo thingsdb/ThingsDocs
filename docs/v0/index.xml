@@ -49,7 +49,8 @@ git clone https://github.com/thingsdb/ThingsDB.git cd ThingsDB/Release make clea
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/getting-started/readiness-liveness/</guid>
-      <description>When http_status_port in the configuration file or the environment variable THINGSDB_HTTP_STATUS_PORT is set then /status, /ready and /healthy are available. These can be used for readiness and liveness requests.</description>
+      <description>When http_status_port is set in the configuration file or the environment variable THINGSDB_HTTP_STATUS_PORT then /status, /ready and /healthy are available. These can be used for readiness and liveness requests.
+Liveness The ThingsDB /healthy check will respond with a 200 OK whenever possible and will never respond with an error. So only if no response is received in some reasonable amount of time, the node should be considered as unhealthy. It is common to use the /healthy check as liveness probe in environments like Kubernetes.</description>
     </item>
     
     <item>
