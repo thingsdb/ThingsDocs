@@ -1,5 +1,5 @@
 /*
-  Highlight.js 10.0.0-beta.0 (2d777444)
+  Highlight.js 10.0.0-beta.0 (19874710)
   License: BSD-3-Clause
   Copyright (c) 2006-2020, Ivan Sagalaev
 */
@@ -1862,7 +1862,7 @@ hljs.registerLanguage('thingsdb', function () {
                         'is_ascii|is_bool|is_bytes|is_closure|is_enum|is_err|is_float|is_inf|is_int|' +
                         'is_list|is_nan|is_nil|is_raw|is_set|is_str|is_thing|is_tuple|' +
                         'is_utf8|list|mod_enum|mod_type|new|new_type|now|raise|rand|range|' +
-                        'randint|refs|rename_enum|rename_type|return|set|set_enum|set_type|str|thing|try|type|' +
+                        'randint|randstr|refs|rename_enum|rename_type|return|set|set_enum|set_type|str|thing|try|type|' +
                         'type_assert|type_count|type_info|types_info|wse|' +
                         /* node functions */
                         'backup_info|backups_info|counters|del_backup|' +
@@ -1890,7 +1890,7 @@ hljs.registerLanguage('thingsdb', function () {
                 {
                     className: 'function',
                     begin: new RegExp(
-                        '\\.\\s*(assign|len|call|choice|def|doc|emit|code|msg|each|every|extend|filter|find|' +
+                        '\\.\\s*(assign|len|call|choice|join|def|doc|emit|code|msg|each|every|extend|filter|find|' +
                         'find_index|index_of|map|name|pop|push|remove|replace|reverse|split|sort|splice|' +
                         'add|has|contains|ends_with|lower|starts_with|test|trim|trim_left|trim_right|upper|' +
                         'del|get|id|keys|reduce|set|shift|some|value|values|watch|wrap|unshift|unwatch|unwrap)\\s*(?=\\()'

@@ -219,6 +219,10 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/list/join/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/data-types/list/len/</loc>
   </url>
   
@@ -716,6 +720,10 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v0/collection-api/randint/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/randstr/</loc>
   </url>
   
   <url>

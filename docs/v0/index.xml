@@ -554,6 +554,18 @@ This function has a deprecated alias indexof which will be removed in the next m
     </item>
     
     <item>
+      <title>join</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/join/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/list/join/</guid>
+      <description>This function returns a new string by concatenating all items in a list or tuple. All items in the list or tuple must be of type str, otherwise a type_err() is raised.
+This function does not generate an event.
+Function array.join([separator])
+Arguments    Argument Type Description     separator str (optional) Optional separator. The default separator is an empty string (&amp;quot;&amp;quot;) which results in a string with all items joined without any characters in between.</description>
+    </item>
+    
+    <item>
       <title>len</title>
       <link>https://docs.thingsdb.net/v0/data-types/list/len/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -2058,6 +2070,17 @@ Example  Some examples on how raise() can be used:
       <description>Returns pseudo-random integer number between a given range.
 The first argument specifies the start of the range and must have a value less than the second argument when specifies the end of the range. The start is inclusive and the end is exclusive, for example: randint(0, 2) will return either 0 or 1.
 Do not use randint() when the purpose is security related since the linear congruential algorithms used by this function are too easy to break.</description>
+    </item>
+    
+    <item>
+      <title>randstr</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/randstr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/randstr/</guid>
+      <description>Returns a string with random characters.
+The default characters to generate a string are URL-safe and contain the characters 0-9, A-Z, a-z, - and _.
+Instead of the default character set, it is possible to use your own set. This custom set may contain duplicated characters which increase the chance for certain characters to occur in the final string. For example, a random string based on the character set AAB will most likely contain more A&#39;s than B&#39;s.</description>
     </item>
     
     <item>

@@ -597,6 +597,17 @@ Do not use randint() when the purpose is security related since the linear congr
     </item>
     
     <item>
+      <title>randstr</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/randstr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/randstr/</guid>
+      <description>Returns a string with random characters.
+The default characters to generate a string are URL-safe and contain the characters 0-9, A-Z, a-z, - and _.
+Instead of the default character set, it is possible to use your own set. This custom set may contain duplicated characters which increase the chance for certain characters to occur in the final string. For example, a random string based on the character set AAB will most likely contain more A&#39;s than B&#39;s.</description>
+    </item>
+    
+    <item>
       <title>range</title>
       <link>https://docs.thingsdb.net/v0/collection-api/range/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
