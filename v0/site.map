@@ -52,6 +52,7 @@ data-types
         find_index
         has
         index_of
+        join
         len
         map
         pop
@@ -177,6 +178,7 @@ collection-api
     raise
     rand
     randint
+    randstr
     range
     refs
     rename_enum

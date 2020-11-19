@@ -1,6 +1,6 @@
 ---
 title: "replace"
-weight: 86
+weight: 87
 ---
 
 Return a new [string](..) in which in which the occurrences of *old* have been replaced with *new*.

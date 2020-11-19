@@ -1,6 +1,6 @@
 ---
 title: "watch"
-weight: 109
+weight: 110
 ---
 
 Subscribe for watching mutations on a stored [thing](..). If this function is called on a [thing](..) which is *not* stored, and therefore has no *#ID*, then a [value_err()](../../../errors/value_err) is raised.

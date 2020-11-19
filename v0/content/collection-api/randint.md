@@ -1,6 +1,6 @@
 ---
 title: "randint"
-weight: 179
+weight: 180
 ---
 
 Returns **pseudo-random** [integer](../../data-types/int) number between a given range.
@@ -29,11 +29,11 @@ Argument | Type | Description
 
 ### Return value
 
-A pseudo-random [int](../../data-types/float) between `start` (inclusive) and `end` (exclusive).
+A pseudo-random [int](../../data-types/int) between `start` (inclusive) and `end` (exclusive).
 
 ### Example
 
-> Some examples on how ***randint(..)*** can be used:
+> Example on how ***randint(..)*** can be used:
 
 ```thingsdb,should_pass
 // Return a pseudo-random number between 10 (inclusive) and 20 (exclusive)

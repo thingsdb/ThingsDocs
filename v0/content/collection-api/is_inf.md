@@ -1,6 +1,6 @@
 ---
 title: "is_inf"
-weight: 150
+weight: 151
 ---
 
 This function determines whether the provided value is a positive or negative *infinity*.
