@@ -16,18 +16,18 @@ Some valid examples:
 - `tmp = ...`
 - `var1 = ...`
 
-Variables created within a block become *local*. They can only be used within the block. See the example below:
+Variables created within a closure become *local*. They can only be used within the closure body. See the example below:
 
 ```thingsdb,json_response
 a = 'This is a variable!!!';
 b = 'Hello';
-{
-    /* This will create a new variable `a` within this block */
+(||{
+    /* This will create a new, local, variable `a` */
     a = 'New variable within this block';
 
     /* This will update the global variable `b` */
     b += ' World';
-};
+}).call();
 [a, b];
 ```
 
