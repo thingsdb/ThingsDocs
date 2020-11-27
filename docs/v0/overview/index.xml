@@ -58,7 +58,7 @@
 Variable can be created with READ privileges since they do not modify the collection&amp;rsquo;s data.
 To create a variable, just assign a value to a valid name.
 Some valid examples:
- _ = ... tmp = ... var1 = ...  Variables created within a block become local. They can only be used within the block.</description>
+ _ = ... tmp = ... var1 = ...  Variables created within a closure become local. They can only be used within the closure body.</description>
     </item>
     
     <item>
