@@ -39,6 +39,7 @@ collection_info('stuff');
     "collection_id": 782,
     "created_at": 1579175900,
     "name": "stuff",
-    "things": 61352
+    "things": 61352,
+    "time_zone": "UTC"
 }
 ```

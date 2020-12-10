@@ -19,8 +19,8 @@
       <description>Returns information about a specific collection.
 This function requires READ privileges on the requested collection, or MODIFY privileges on the @thingsdb scope.
 This function does not generate an event.
-Function collection_info(name_or_id);
-Arguments    Argument Type Description     name_or_id str/int Name or Id of the collection    Return value Returns info about the collection.
+Function collection_info(collection);
+Arguments    Argument Type Description     collection str/int (required) Name or Id of the collection    Return value Returns info about the collection.
 Example  Returns information about collection stuff:
  collection_info(&#39;stuff&#39;);  Example return value in JSON format</description>
     </item>
@@ -128,8 +128,8 @@ It is not possible to set privileges on a specific node scope. Therefore scope @
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/has_collection/</guid>
       <description>Determines if a collection exists in ThingsDB.
 This function does not generate an event.
-Function has_collection(name_or_id)
-Arguments    Argument Type Description     name_or_id str/int (required) Collection name or id to check.    Return value Returns true if the collection exists and otherwise false.
+Function has_collection(collection)
+Arguments    Argument Type Description     collection str/int (required) Collection name or id to check.    Return value Returns true if the collection exists and otherwise false.
 Example  This code shows an example use case of has_collection():
  has_collection(&#39;stuff&#39;);  Return value in JSON format
  true </description>
@@ -287,6 +287,18 @@ Arguments    Argument Type Description     target int/raw Can be either the @nod
 Passwords must contain 1 to 128 printable characters.
 This function requires GRANT privileges on the @thingsdb scope when a username other then the logged in user is given as argument. For the currently logged in user, MODIFY privileges on the @thingsdb scope are sufficient.
  This function generates an event.</description>
+    </item>
+    
+    <item>
+      <title>set_time_zone</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/set_time_zone/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/set_time_zone/</guid>
+      <description>By default each collection will be created with time zone UTC. This function can be used to change the time zone for a collection. If changed, the functions datetime(..) and timeval(..) will use the collections time zone unless specified otherwise. See available time zones for a list of all available timezones.
+Use collection_info(..) to view the current time zone for a collection.
+This function generates an event.
+Function set_time_zone(collection, zone);</description>
     </item>
     
     <item>

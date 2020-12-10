@@ -27,6 +27,8 @@ definition | default | description
 `'float'` | `0.0` | requires type [float](../float).
 `'float<..>'` | *depends* | requires type [float](../float) within a given range *(see [range condition](#range-condition))*.
 `'number'` | `0` | requires type [float](../float) *or* type [int](../int).
+`'datetime'` | `datetime()` | requires type [datetime](../datetime). *(defaults to the current date/time)*
+`'timeval'` | `timeval()` | requires type [timeval](../timeval). *(defaults to the current date/time)*
 `'thing'` | `{}` | requires a [thing](../thing).
 `'X'` | `X{}` | requires a instance of [Type](../type) `X`, or a member of [enumerator](../enum) `X`. The value `X` should be replaced with the `Type` / `enum` name.
 `'[]'` | `[]` | requires a [list](../list).

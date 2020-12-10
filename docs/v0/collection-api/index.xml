@@ -90,6 +90,17 @@ Arguments    Argument Type Description     value any (optional) The value where 
     </item>
     
     <item>
+      <title>datetime</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/datetime/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/datetime/</guid>
+      <description>Returns a datetime depending on some optional values.
+This function does not generate an event.
+Function    Interface Arguments Description     datetime() None Return a datetime with the current date/tine.   datetime(ts) int/float Return a datetime from a given UNIX time stamp.   datetime(str, [fmt]) str Return a datetime from a given string. See initialize from string for a details.   datetime(int, int, int, [int, [int, [int]]], [zone]) int, int,&amp;hellip; str Return a datetime using values for individual time units, with optional time zone.</description>
+    </item>
+    
+    <item>
       <title>deep</title>
       <link>https://docs.thingsdb.net/v0/collection-api/deep/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -291,6 +302,19 @@ Arguments    Argument Type Description     value any (required) The value to be 
     </item>
     
     <item>
+      <title>is_bytes</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/is_bytes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/is_bytes/</guid>
+      <description>This function determines whether the provided value is of type bytes or not.
+This function does not generate an event.
+This function has a deprecated alias isbytes which will be removed in the next minor release.
+ Function is_bytes(value)
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type bytes, else it returns false.</description>
+    </item>
+    
+    <item>
       <title>is_closure</title>
       <link>https://docs.thingsdb.net/v0/collection-api/is_closure/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -305,16 +329,17 @@ Example  This code shows some return values for is_closure():
     </item>
     
     <item>
-      <title>is_bytes</title>
-      <link>https://docs.thingsdb.net/v0/collection-api/is_bytes/</link>
+      <title>is_datetime</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/is_datetime/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/collection-api/is_bytes/</guid>
-      <description>This function determines whether the provided value is of type bytes or not.
+      <guid>https://docs.thingsdb.net/v0/collection-api/is_datetime/</guid>
+      <description>This function determines whether the provided value is of type datetime.
 This function does not generate an event.
-This function has a deprecated alias isbytes which will be removed in the next minor release.
- Function is_bytes(value)
-Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type bytes, else it returns false.</description>
+Function is_datetime(value)
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type timeval, else false.
+Example  This code shows some return values for is_utf8():
+ [ is_datetime( timeval(2013, 2, 6) ), is_datetime( datetime(2013, 2, 6) ), ];  Return value in JSON format</description>
     </item>
     
     <item>
@@ -474,6 +499,20 @@ Type instances are also things, so this function returns true for a Type instanc
  This function does not generate an event.
 Function is_thing(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.</description>
+    </item>
+    
+    <item>
+      <title>is_timeval</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/is_timeval/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/is_timeval/</guid>
+      <description>This function determines whether the provided value is of type timeval.
+This function does not generate an event.
+Function is_timeval(value)
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type timeval, else false.
+Example  This code shows some return values for is_utf8():
+ [ is_timeval( timeval(2013, 2, 6) ), is_timeval( datetime(2013, 2, 6) ), ];  Return value in JSON format</description>
     </item>
     
     <item>
@@ -728,6 +767,17 @@ Arguments    Argument Type Description     value any (optional) The value to cre
 This function does not generate an event.
 Function thing([id])
 Arguments    Argument Type Description     id int (optional) The id for the thing to return.    Return value Returns a thing. A lookup_err() is returned in case an id is given which is not found inside the collection.</description>
+    </item>
+    
+    <item>
+      <title>timeval</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/timeval/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/timeval/</guid>
+      <description>Returns a timeval depending on some optional values.
+This function does not generate an event.
+Function    Interface Arguments Description     timeval() None Return a timeval with the current date/tine.   timeval(ts) int/float Return a timeval from a given UNIX time stamp.   timeval(str, [fmt]) str Return a timeval from a given string. See initialize from string for a details.   datetime(int, int, int, [int, [int, [int]]], [zone]) int, int,&amp;hellip; str Return a timeval using values for individual time units, with optional time zone.</description>
     </item>
     
     <item>

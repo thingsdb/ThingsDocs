@@ -75,6 +75,16 @@ Functions that use regular expressions    Function Description     test A str fu
     </item>
     
     <item>
+      <title>timeval</title>
+      <link>https://docs.thingsdb.net/v0/data-types/timeval/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/timeval/</guid>
+      <description>Type timeval is exactly the same as type datetime. The only difference is the default return. The return value of a timeval type is the value as a UNIX time stamp, while type datetime returns with the time as a string in ISO8601 format.
+Why type timeval? It is possible to return a datetime as int(datetime) to get the UNIX time stamp, so why use timeval? It is often easier to work with time stamps then with time as string values.</description>
+    </item>
+    
+    <item>
       <title>tuple</title>
       <link>https://docs.thingsdb.net/v0/data-types/tuple/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

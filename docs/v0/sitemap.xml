@@ -143,6 +143,46 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/datetime/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/datetime/extract/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/datetime/format/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/datetime/move/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/datetime/replace/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/datetime/to/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/datetime/week/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/datetime/weekday/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/datetime/yday/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/datetime/zone/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/data-types/enum/</loc>
   </url>
   
@@ -447,6 +487,10 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/timeval/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/data-types/tuple/</loc>
   </url>
   
@@ -519,6 +563,10 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/datetime/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/collection-api/deep/</loc>
   </url>
   
@@ -583,11 +631,15 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/is_bytes/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/collection-api/is_closure/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/is_bytes/</loc>
+    <loc>https://docs.thingsdb.net/v0/collection-api/is_datetime/</loc>
   </url>
   
   <url>
@@ -636,6 +688,10 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v0/collection-api/is_thing/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/is_timeval/</loc>
   </url>
   
   <url>
@@ -764,6 +820,10 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v0/collection-api/thing/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/timeval/</loc>
   </url>
   
   <url>
@@ -928,6 +988,10 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v0/thingsdb-api/set_password/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/set_time_zone/</loc>
   </url>
   
   <url>

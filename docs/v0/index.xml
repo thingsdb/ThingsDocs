@@ -343,6 +343,133 @@ Example  This code creates a closure with a doc string:
     </item>
     
     <item>
+      <title>extract</title>
+      <link>https://docs.thingsdb.net/v0/data-types/datetime/extract/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/datetime/extract/</guid>
+      <description>Return a thing with second, minute, hour, day, month, year and gmt_offset as individual properties.
+This function does not generate an event.
+Function datetime.extract()
+Arguments None
+Return value Returns a thing.
+Example  This code uses extract() as an example:
+ datetime(2013, 2, 6, 13, 12, 28, &#39;Europe/Amsterdam&#39;).extract();  Return value in JSON format
+ { &amp;#34;day&amp;#34;: 6, &amp;#34;gmt_offset&amp;#34;: 3600, &amp;#34;hour&amp;#34;: 13, &amp;#34;minute&amp;#34;: 12, &amp;#34;month&amp;#34;: 2, &amp;#34;second&amp;#34;: 28, &amp;#34;year&amp;#34;: 2013 } </description>
+    </item>
+    
+    <item>
+      <title>format</title>
+      <link>https://docs.thingsdb.net/v0/data-types/datetime/format/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/datetime/format/</guid>
+      <description>Returns a string representation for a datetime object using a custom format.
+This function does not generate an event.
+Function datetime.format(fmt)
+Arguments    Argument Type Description     fmt str (required) Custom output format.    Format specifiers The following specifiers may be used:
+   Specifier Example Description     %a Wed Abbreviated weekday name. *   %A Wednesday Full weekday name.</description>
+    </item>
+    
+    <item>
+      <title>move</title>
+      <link>https://docs.thingsdb.net/v0/data-types/datetime/move/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/datetime/move/</guid>
+      <description>Return a new datetime (or timeval) object, which is shifted in time relative to the original date/time. The amount the new date/time will be shifted must be given by one of the following units
+When using years of months as a unit, it might not be possible to move to the exact same day in the month. If this is the case, the last possible day of the month will be used.</description>
+    </item>
+    
+    <item>
+      <title>replace</title>
+      <link>https://docs.thingsdb.net/v0/data-types/datetime/replace/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/datetime/replace/</guid>
+      <description>Return a new datetime (or timeval) object with altered properties. The new properties must be given by a thing.
+This function does not generate an event.
+Function datetime.replace(values)
+Arguments    Argument Type Description     values thing (required) Only the properties year, month, day, hour, minute, second will be used, all other properties are simply ignored.    Return value Returns a new datetime (or timeval) object.</description>
+    </item>
+    
+    <item>
+      <title>to</title>
+      <link>https://docs.thingsdb.net/v0/data-types/datetime/to/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/datetime/to/</guid>
+      <description>Return a new datetime (or timeval) object with new time zone information. Note that the proper time does not change, only the time zone will change.
+See set_time_zone(..) for a list of all available time zones.
+If zone information is given using a fixed offset (+hh[mm] or -hh[mm]), then the new datetime object has no proper time zone information and thus has no day-light-saving information.
+ This function does not generate an event.</description>
+    </item>
+    
+    <item>
+      <title>week</title>
+      <link>https://docs.thingsdb.net/v0/data-types/datetime/week/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/datetime/week/</guid>
+      <description>Return the week of the year as an integer between 0..53. Week 1 starts at the first Sunday in January.
+This function does not generate an event.
+Function datetime.week()
+Arguments None
+Return value Returns the week in the year as a number between 0 and 53.
+Example  This code uses week() as an example:
+ datetime(2020, 12, 10).week();  Return value in JSON format
+ 49 </description>
+    </item>
+    
+    <item>
+      <title>weekday</title>
+      <link>https://docs.thingsdb.net/v0/data-types/datetime/weekday/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/datetime/weekday/</guid>
+      <description>Return the number of days (0..6) since the last Sunday.
+This function does not generate an event.
+Function datetime.weekday()
+Arguments None
+Return value Returns the day of the week as a number between 0 (Sunday) and 6.
+Example  This code uses weekday() as an example:
+ datetime(2020, 12, 10).weekday();  Return value in JSON format
+ 4 </description>
+    </item>
+    
+    <item>
+      <title>yday</title>
+      <link>https://docs.thingsdb.net/v0/data-types/datetime/yday/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/datetime/yday/</guid>
+      <description>Return the day in the year as an integer value between 0..365 where the first of January is day 0.
+This function does not generate an event.
+Function datetime.yday()
+Arguments None
+Return value Returns the day in the year as a number between 0 and 365.
+Example  This code uses yday() as an example:
+ datetime(2020, 12, 10).yday();  Return value in JSON format
+ 344 </description>
+    </item>
+    
+    <item>
+      <title>zone</title>
+      <link>https://docs.thingsdb.net/v0/data-types/datetime/zone/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/datetime/zone/</guid>
+      <description>Return zone information as a string about the datetime (or timeval) object. If no zone information is available, nil will be returned.
+This function does not generate an event.
+Function datetime.zone()
+Arguments None
+Return value Returns zone information or nil if no zone information is available.
+Example  This code uses zone() as an example:
+ [ datetime().zone(), datetime().to(&#39;Europe/Amsterdam&#39;).zone(), datetime().to(&#39;+00&#39;).zone(), ]  Return value in JSON format
+ [ &amp;#34;UTC&amp;#34;, &amp;#34;Europe/Amsterdam&amp;#34;, null ] </description>
+    </item>
+    
+    <item>
       <title>name</title>
       <link>https://docs.thingsdb.net/v0/data-types/enum/name/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1277,6 +1404,16 @@ Example  This code shows an example using wrap():</description>
     </item>
     
     <item>
+      <title>timeval</title>
+      <link>https://docs.thingsdb.net/v0/data-types/timeval/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/timeval/</guid>
+      <description>Type timeval is exactly the same as type datetime. The only difference is the default return. The return value of a timeval type is the value as a UNIX time stamp, while type datetime returns with the time as a string in ISO8601 format.
+Why type timeval? It is possible to return a datetime as int(datetime) to get the UNIX time stamp, so why use timeval? It is often easier to work with time stamps then with time as string values.</description>
+    </item>
+    
+    <item>
       <title>tuple</title>
       <link>https://docs.thingsdb.net/v0/data-types/tuple/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1452,6 +1589,17 @@ Arguments    Argument Type Description     value any (optional) The value to con
 This function does not generate an event.
 Function bytes(value)
 Arguments    Argument Type Description     value any (optional) The value where to create a bytes value for.    </description>
+    </item>
+    
+    <item>
+      <title>datetime</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/datetime/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/datetime/</guid>
+      <description>Returns a datetime depending on some optional values.
+This function does not generate an event.
+Function    Interface Arguments Description     datetime() None Return a datetime with the current date/tine.   datetime(ts) int/float Return a datetime from a given UNIX time stamp.   datetime(str, [fmt]) str Return a datetime from a given string. See initialize from string for a details.   datetime(int, int, int, [int, [int, [int]]], [zone]) int, int,&amp;hellip; str Return a datetime using values for individual time units, with optional time zone.</description>
     </item>
     
     <item>
@@ -1656,6 +1804,19 @@ Arguments    Argument Type Description     value any (required) The value to be 
     </item>
     
     <item>
+      <title>is_bytes</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/is_bytes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/is_bytes/</guid>
+      <description>This function determines whether the provided value is of type bytes or not.
+This function does not generate an event.
+This function has a deprecated alias isbytes which will be removed in the next minor release.
+ Function is_bytes(value)
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type bytes, else it returns false.</description>
+    </item>
+    
+    <item>
       <title>is_closure</title>
       <link>https://docs.thingsdb.net/v0/collection-api/is_closure/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1670,16 +1831,17 @@ Example  This code shows some return values for is_closure():
     </item>
     
     <item>
-      <title>is_bytes</title>
-      <link>https://docs.thingsdb.net/v0/collection-api/is_bytes/</link>
+      <title>is_datetime</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/is_datetime/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/collection-api/is_bytes/</guid>
-      <description>This function determines whether the provided value is of type bytes or not.
+      <guid>https://docs.thingsdb.net/v0/collection-api/is_datetime/</guid>
+      <description>This function determines whether the provided value is of type datetime.
 This function does not generate an event.
-This function has a deprecated alias isbytes which will be removed in the next minor release.
- Function is_bytes(value)
-Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type bytes, else it returns false.</description>
+Function is_datetime(value)
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type timeval, else false.
+Example  This code shows some return values for is_utf8():
+ [ is_datetime( timeval(2013, 2, 6) ), is_datetime( datetime(2013, 2, 6) ), ];  Return value in JSON format</description>
     </item>
     
     <item>
@@ -1839,6 +2001,20 @@ Type instances are also things, so this function returns true for a Type instanc
  This function does not generate an event.
 Function is_thing(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.</description>
+    </item>
+    
+    <item>
+      <title>is_timeval</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/is_timeval/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/is_timeval/</guid>
+      <description>This function determines whether the provided value is of type timeval.
+This function does not generate an event.
+Function is_timeval(value)
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type timeval, else false.
+Example  This code shows some return values for is_utf8():
+ [ is_timeval( timeval(2013, 2, 6) ), is_timeval( datetime(2013, 2, 6) ), ];  Return value in JSON format</description>
     </item>
     
     <item>
@@ -2207,6 +2383,17 @@ Arguments    Argument Type Description     id int (optional) The id for the thin
     </item>
     
     <item>
+      <title>timeval</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/timeval/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/timeval/</guid>
+      <description>Returns a timeval depending on some optional values.
+This function does not generate an event.
+Function    Interface Arguments Description     timeval() None Return a timeval with the current date/tine.   timeval(ts) int/float Return a timeval from a given UNIX time stamp.   timeval(str, [fmt]) str Return a timeval from a given string. See initialize from string for a details.   datetime(int, int, int, [int, [int, [int]]], [zone]) int, int,&amp;hellip; str Return a timeval using values for individual time units, with optional time zone.</description>
+    </item>
+    
+    <item>
       <title>try</title>
       <link>https://docs.thingsdb.net/v0/collection-api/try/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -2436,8 +2623,8 @@ Return value Returns nil.</description>
       <description>Returns information about a specific collection.
 This function requires READ privileges on the requested collection, or MODIFY privileges on the @thingsdb scope.
 This function does not generate an event.
-Function collection_info(name_or_id);
-Arguments    Argument Type Description     name_or_id str/int Name or Id of the collection    Return value Returns info about the collection.
+Function collection_info(collection);
+Arguments    Argument Type Description     collection str/int (required) Name or Id of the collection    Return value Returns info about the collection.
 Example  Returns information about collection stuff:
  collection_info(&#39;stuff&#39;);  Example return value in JSON format</description>
     </item>
@@ -2545,8 +2732,8 @@ It is not possible to set privileges on a specific node scope. Therefore scope @
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/has_collection/</guid>
       <description>Determines if a collection exists in ThingsDB.
 This function does not generate an event.
-Function has_collection(name_or_id)
-Arguments    Argument Type Description     name_or_id str/int (required) Collection name or id to check.    Return value Returns true if the collection exists and otherwise false.
+Function has_collection(collection)
+Arguments    Argument Type Description     collection str/int (required) Collection name or id to check.    Return value Returns true if the collection exists and otherwise false.
 Example  This code shows an example use case of has_collection():
  has_collection(&#39;stuff&#39;);  Return value in JSON format
  true </description>
@@ -2704,6 +2891,18 @@ Arguments    Argument Type Description     target int/raw Can be either the @nod
 Passwords must contain 1 to 128 printable characters.
 This function requires GRANT privileges on the @thingsdb scope when a username other then the logged in user is given as argument. For the currently logged in user, MODIFY privileges on the @thingsdb scope are sufficient.
  This function generates an event.</description>
+    </item>
+    
+    <item>
+      <title>set_time_zone</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/set_time_zone/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/set_time_zone/</guid>
+      <description>By default each collection will be created with time zone UTC. This function can be used to change the time zone for a collection. If changed, the functions datetime(..) and timeval(..) will use the collections time zone unless specified otherwise. See available time zones for a list of all available timezones.
+Use collection_info(..) to view the current time zone for a collection.
+This function generates an event.
+Function set_time_zone(collection, zone);</description>
     </item>
     
     <item>
