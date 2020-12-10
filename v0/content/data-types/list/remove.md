@@ -1,6 +1,6 @@
 ---
 title: "remove"
-weight: 61
+weight: 71
 ---
 
 This function removes and returns the value of the *first* item in the [list](../../list) that satisfies the callback function.

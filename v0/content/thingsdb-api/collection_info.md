@@ -1,6 +1,6 @@
 ---
 title: "collection_info"
-weight: 212
+weight: 227
 ---
 
 Returns information about a specific collection.
@@ -12,13 +12,13 @@ This function does *not* generate an [event](../../overview/events).
 
 ### Function
 
-`collection_info(name_or_id);`
+`collection_info(collection);`
 
 ### Arguments
 
 Argument | Type | Description
 --------- | ----------- | -----------
-name_or_id | str/int | Name or Id of the collection
+collection | str/int (required) | Name or Id of the collection
 
 ### Return value
 

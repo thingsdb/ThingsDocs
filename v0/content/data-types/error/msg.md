@@ -1,6 +1,6 @@
 ---
 title: "msg"
-weight: 41
+weight: 51
 ---
 
 Returns the error *message* of an [error](..) type.

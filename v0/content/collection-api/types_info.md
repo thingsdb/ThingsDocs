@@ -1,6 +1,6 @@
 ---
 title: "types_info"
-weight: 197
+weight: 212
 ---
 
 Returns [Type](../../data-types/type) information about all the Types within a collection.

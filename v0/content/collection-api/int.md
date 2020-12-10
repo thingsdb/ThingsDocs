@@ -1,6 +1,6 @@
 ---
 title: "int"
-weight: 142
+weight: 154
 ---
 
 Returns an [int](../../data-types/int) from a specified value.

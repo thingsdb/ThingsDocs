@@ -1,6 +1,6 @@
 ---
 title: "has_collection"
-weight: 220
+weight: 235
 ---
 
 Determines if a collection exists in ThingsDB.
@@ -9,13 +9,13 @@ This function does *not* generate an [event](../../overview/events).
 
 ### Function
 
-`has_collection(name_or_id)`
+`has_collection(collection)`
 
 ### Arguments
 
 Argument | Type | Description
 -------- | ---- | -----------
-name_or_id | str/int (required) | Collection name or id to check.
+collection | str/int (required) | Collection name or id to check.
 
 ### Return value
 

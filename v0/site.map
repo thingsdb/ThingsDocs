@@ -33,6 +33,16 @@ data-types
         call
         def
         doc
+    datetime
+        extract
+        format
+        move
+        replace
+        to
+        week
+        weekday
+        yday
+        zone
     enum
         name
         value
@@ -109,6 +119,7 @@ data-types
         values
         watch
         wrap
+    timeval
     tuple
     type
     wtype
@@ -127,6 +138,7 @@ collection-api
     base64_encode
     bool
     bytes
+    datetime
     deep
     del_enum
     del_type
@@ -143,8 +155,9 @@ collection-api
     is_array
     is_ascii
     is_bool
-    is_closure
     is_bytes
+    is_closure
+    is_datetime
     is_enum
     is_err
     is_float
@@ -157,6 +170,7 @@ collection-api
     is_set
     is_str
     is_thing
+    is_timeval
     is_tuple
     is_utf8
     list
@@ -189,6 +203,7 @@ collection-api
     set_type
     str
     thing
+    timeval
     try
     type
     type_assert
@@ -230,6 +245,7 @@ thingsdb-api
     restore
     revoke
     set_password
+    set_time_zone
     user_info
     users_info
 procedures-api

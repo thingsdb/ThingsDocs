@@ -1,6 +1,6 @@
 ---
 title: "push"
-weight: 59
+weight: 69
 ---
 
 Adds new items to the end of a list, and returns the new length.
