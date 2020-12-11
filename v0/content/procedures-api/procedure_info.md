@@ -1,6 +1,6 @@
 ---
 title: "procedure_info"
-weight: 256
+weight: 257
 ---
 
 Returns information about a procedure.
@@ -18,7 +18,7 @@ This function does *not* generate an [event](../../overview/events).
 
 ### Function
 
-`procedure_info(procedure);`
+`procedure_info(procedure)`
 
 ### Arguments
 

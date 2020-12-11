@@ -10,7 +10,7 @@ This function does *not* generate an [event](../../overview/events).
 
 ### Function
 
-`del_backup(ID, [delete_files]);`
+`del_backup(ID, [delete_files])`
 
 ### Arguments
 

@@ -6,7 +6,7 @@ weight: 41
 Return a new [datetime](../) (or [timeval](../../timeval)) object with new time zone information.
 Note that the proper time does not change, only the time zone will change.
 
-See [set_time_zone(..)](../../collection-api/set_time_zone/#available-time-zones) for a list of all available time zones.
+See [time_zones_info()](../../../thingsdb-api/time_zones_info/#available-time-zones) for a list of all available time zones.
 
 {{% notice warning %}}
 If zone information is given using a fixed offset (`+hh[mm]` or `-hh[mm]`), then the new `datetime` object has no proper time zone information and thus has no

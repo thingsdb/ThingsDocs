@@ -22,7 +22,7 @@ This function does *not* generate an [event](../../overview/events).
 
 ### Function
 
-`backup_info(ID);`
+`backup_info(ID)`
 
 ### Arguments
 

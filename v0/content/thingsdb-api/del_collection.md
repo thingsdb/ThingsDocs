@@ -9,7 +9,7 @@ This function generates an [event](../../overview/events).
 
 ### Function
 
-`del_collection(name);`
+`del_collection(name)`
 
 ### Arguments
 

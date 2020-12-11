@@ -32,7 +32,7 @@ This function generates an [event](../../overview/events).
 
 ### Function
 
-`new_token(username, [, expiration_time] [, description]);`
+`new_token(username, [, expiration_time] [, description])`
 
 ### Arguments
 

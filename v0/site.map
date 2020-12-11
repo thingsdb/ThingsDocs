@@ -246,6 +246,7 @@ thingsdb-api
     revoke
     set_password
     set_time_zone
+    time_zones_info
     user_info
     users_info
 procedures-api

@@ -22,7 +22,7 @@ CRITICAL | 4 | Critical messages, should never occur unless something is really 
 
 ### Function
 
-`set_log_level(log_level);`
+`set_log_level(log_level)`
 
 ### Arguments
 

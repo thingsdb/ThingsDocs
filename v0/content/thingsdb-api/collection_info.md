@@ -12,7 +12,7 @@ This function does *not* generate an [event](../../overview/events).
 
 ### Function
 
-`collection_info(collection);`
+`collection_info(collection)`
 
 ### Arguments
 

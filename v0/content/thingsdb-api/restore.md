@@ -20,7 +20,7 @@ This function generates an [event](../../overview/events).
 
 ### Function
 
-`restore(filename, [take_access]);`
+`restore(filename, [take_access])`
 
 ### Arguments
 

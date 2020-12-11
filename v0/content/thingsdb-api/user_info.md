@@ -1,6 +1,6 @@
 ---
 title: "user_info"
-weight: 249
+weight: 250
 ---
 
 Returns information about a user. If no argument is given, this function will return
@@ -16,7 +16,7 @@ This function does *not* generate an [event](../../overview/events).
 
 ### Function
 
-`user_info([username]);`
+`user_info([username])`
 
 ### Arguments
 

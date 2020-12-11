@@ -11,7 +11,7 @@ This function does *not* generate an [event](../../overview/events).
 
 ### Function
 
-`reset_counters();`
+`reset_counters()`
 
 ### Arguments
 

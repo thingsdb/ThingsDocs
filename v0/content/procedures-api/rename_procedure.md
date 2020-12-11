@@ -1,6 +1,6 @@
 ---
 title: "rename_procedure"
-weight: 258
+weight: 259
 ---
 
 Rename a procedure.
@@ -9,7 +9,7 @@ This function generates an [event](../../overview/events).
 
 ### Function
 
-`rename_procedure(current_name, new_name);`
+`rename_procedure(current_name, new_name)`
 
 ### Arguments
 

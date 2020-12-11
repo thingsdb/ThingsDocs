@@ -13,7 +13,7 @@ This function generates an [event](../../overview/events).
 
 ### Function
 
-`rename_user(current_name, new_name);`
+`rename_user(current_name, new_name)`
 
 ### Arguments
 

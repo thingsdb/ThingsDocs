@@ -12,7 +12,7 @@ This function generates an [event](../../overview/events).
 
 ### Function
 
-`revoke(target, user, mask);`
+`revoke(target, user, mask)`
 
 ### Arguments
 

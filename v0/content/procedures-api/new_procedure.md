@@ -1,6 +1,6 @@
 ---
 title: "new_procedure"
-weight: 254
+weight: 255
 ---
 
 Creates a new procedure to the `@thingsdb` or a `@collection` scope. The name of the procedure must be unique within the scope.
@@ -10,7 +10,7 @@ This function generates an [event](../../overview/events).
 
 ### Function
 
-`new_procedure(name, closure);`
+`new_procedure(name, closure)`
 
 ### Arguments
 

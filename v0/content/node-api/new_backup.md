@@ -25,7 +25,7 @@ This function does *not* generate an [event](../../overview/events).
 
 ### Function
 
-`new_backup(file_template, [start_ts, [repeat, [max_files]]]);`
+`new_backup(file_template, [start_ts, [repeat, [max_files]]])`
 
 ### Arguments
 

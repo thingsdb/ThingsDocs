@@ -9,7 +9,7 @@ This function generates an [event](../../overview/events).
 
 ### Function
 
-`new_collection(name);`
+`new_collection(name)`
 
 ### Arguments
 

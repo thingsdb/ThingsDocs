@@ -1,6 +1,6 @@
 ---
 title: "del_procedure"
-weight: 252
+weight: 253
 ---
 
 Delete a procedure.
@@ -9,7 +9,7 @@ This function generates an [event](../../overview/events).
 
 ### Function
 
-`del_procedure(procedure);`
+`del_procedure(procedure)`
 
 ### Arguments
 

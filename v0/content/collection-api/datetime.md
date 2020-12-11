@@ -28,7 +28,7 @@ Format | Example | Description
 `YYYY-mm-dd` | `"2020-09-14"` | A `datetime` at the given date, at `00:00` using the [time zone](../../thingsdb-api/set_time_zone) from the collection.
 `YYYY-mm-ddTHH` | `"2020-09-14T20"` | A `datetime` at the given date, at `HH:00` using the [time zone](../../thingsdb-api/set_time_zone) from the collection.
 `YYYY-mm-ddTHH:MM` | `"2020-09-14T20:52"` | A `datetime` at the given date, at `HH:MM` using the [time zone](../../thingsdb-api/set_time_zone) from the collection.
-`YYYY-mm-ddTHH:MM:SS` | `"2020-09-14T20:52:28"` | A `datetime` using the [time zone](../../thingsdb-api/set_time_zone).
+`YYYY-mm-ddTHH:MM:SS` | `"2020-09-14T20:52:28"` | A `datetime` using the [time zone](../../thingsdb-api/set_time_zone) from the collection..
 `YYYY-mm-ddTHH:MM:SSZ` | `"2020-09-14T20:52:28Z"` | A `datetime` using the Coordinated Universal Time (UTC).
 `YYYY-mm-ddTHH:MM:SS+-hh` | `"2020-09-14T20:52:28+01"` | A `datetime` relative to the Coordinated Universal Time (UTC) with a given offset `+hh` or `-hh`.
 `YYYY-mm-ddTHH:MM:SS+-hhmm` | `"2020-09-14T20:52:28+0100"` | A `datetime` with an offset relative to the Coordinated Universal Time (UTC).

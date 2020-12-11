@@ -1,6 +1,6 @@
 ---
 title: "on-delete"
-weight: 264
+weight: 265
 ---
 
 A delete event will be pushed as soon as a [thing](../../data-types/thing) which you are watching, is removed from ThingsDB.

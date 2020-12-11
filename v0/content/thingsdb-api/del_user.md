@@ -14,7 +14,7 @@ This function generates an [event](../../overview/events).
 
 ### Function
 
-`del_user(username);`
+`del_user(username)`
 
 ### Arguments
 

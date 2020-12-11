@@ -27,7 +27,7 @@ This function generates an [event](../../overview/events).
 
 ### Function
 
-`new_node(secret, name [, port]);`
+`new_node(secret, name [, port])`
 
 ### Arguments
 

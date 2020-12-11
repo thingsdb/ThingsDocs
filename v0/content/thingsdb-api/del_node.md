@@ -14,7 +14,7 @@ This function generates an [event](../../overview/events).
 
 ### Function
 
-`del_node(node_id);`
+`del_node(node_id)`
 
 ### Arguments
 

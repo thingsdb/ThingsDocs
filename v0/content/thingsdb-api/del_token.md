@@ -14,7 +14,7 @@ This function generates an [event](../../overview/events).
 
 ### Function
 
-`del_token(key);`
+`del_token(key)`
 
 ### Arguments
 

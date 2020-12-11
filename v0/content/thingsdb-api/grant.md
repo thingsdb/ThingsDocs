@@ -34,7 +34,7 @@ This function generates an [event](../../overview/events).
 
 ### Function
 
-`grant(target, user, mask);`
+`grant(target, user, mask)`
 
 ### Arguments
 

@@ -18,7 +18,7 @@ This function generates an [event](../../overview/events).
 
 ### Function
 
-`set_password(username, new_password);`
+`set_password(username, new_password)`
 
 ### Arguments
 

@@ -14,7 +14,7 @@ This function generates an [event](../../overview/events).
 
 ### Function
 
-`new_user(user);`
+`new_user(user)`
 
 ### Arguments
 

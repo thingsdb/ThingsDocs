@@ -9,7 +9,7 @@ This function generates an [event](../../overview/events).
 
 ### Function
 
-`rename_enum(current_name, new_name);`
+`rename_enum(current_name, new_name)`
 
 ### Arguments
 

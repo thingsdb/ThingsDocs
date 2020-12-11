@@ -9,7 +9,7 @@ This function generates an [event](../../overview/events).
 
 ### Function
 
-`rename_collection(current_name, new_name);`
+`rename_collection(current_name, new_name)`
 
 ### Arguments
 

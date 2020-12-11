@@ -1,6 +1,6 @@
 ---
 title: "procedure_doc"
-weight: 255
+weight: 256
 ---
 
 Returns the doc string for a given procedure. An *empty* string is returned if the procedure has no doc string.
@@ -9,7 +9,7 @@ This function does *not* generate an [event](../../overview/events).
 
 ### Function
 
-`procedure_doc(procedure);`
+`procedure_doc(procedure)`
 
 ### Arguments
 

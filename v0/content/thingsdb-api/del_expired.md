@@ -13,7 +13,7 @@ This function generates an [event](../../overview/events).
 
 ### Function
 
-`del_expired();`
+`del_expired()`
 
 ### Arguments
 

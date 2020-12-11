@@ -33,7 +33,7 @@ This function does *not* generate an [event](../../overview/events).
 
 ### Function
 
-`counters();`
+`counters()`
 
 ### Arguments
 

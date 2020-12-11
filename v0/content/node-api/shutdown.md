@@ -13,7 +13,7 @@ This function does *not* generate an [event](../../overview/events).
 
 ### Function
 
-`shutdown();`
+`shutdown()`
 
 ### Arguments
 
