@@ -400,7 +400,7 @@ Arguments    Argument Type Description     values thing (required) Only the prop
       
       <guid>https://docs.thingsdb.net/v0/data-types/datetime/to/</guid>
       <description>Return a new datetime (or timeval) object with new time zone information. Note that the proper time does not change, only the time zone will change.
-See set_time_zone(..) for a list of all available time zones.
+See time_zones_info() for a list of all available time zones.
 If zone information is given using a fixed offset (+hh[mm] or -hh[mm]), then the new datetime object has no proper time zone information and thus has no day-light-saving information.
  This function does not generate an event.</description>
     </item>
@@ -2293,7 +2293,7 @@ Arguments    Argument Type Description     value any (required) The value to ret
       <guid>https://docs.thingsdb.net/v0/collection-api/rename_enum/</guid>
       <description>Rename an enum type.
 This function generates an event.
-Function rename_enum(current_name, new_name);
+Function rename_enum(current_name, new_name)
 Arguments    Argument Type Description     current_name str (required) Current enum type name.   new_name str (required) New name for the enum type.    Return value Returns nil when successful.</description>
     </item>
     
@@ -2305,7 +2305,7 @@ Arguments    Argument Type Description     current_name str (required) Current e
       <guid>https://docs.thingsdb.net/v0/collection-api/rename_type/</guid>
       <description>Rename a type.
 This function generates an event.
-Function rename_type(current_name, new_name);
+Function rename_type(current_name, new_name)
 Arguments    Argument Type Description     current_name str (required) Current type name.   new_name str (required) New name for the type.    Return value Returns nil when successful.</description>
     </item>
     
@@ -2524,7 +2524,7 @@ Counters give information about things, queries and events. If you suspect faile
       <guid>https://docs.thingsdb.net/v0/node-api/del_backup/</guid>
       <description>Delete a scheduled backup. If the scheduled backup was pending, the backup job will be cancelled.
 This function does not generate an event.
-Function del_backup(ID, [delete_files]);
+Function del_backup(ID, [delete_files])
 Arguments    Argument Type Description     ID int Backup ID to delete.   delete_files bool (optional) Delete related backup files from disk (or Google Cloud Storage). Default is false.    Return value Returns nil.</description>
     </item>
     
@@ -2581,7 +2581,7 @@ If Google Cloud Storage is configured then it is possible to create backups dire
       <guid>https://docs.thingsdb.net/v0/node-api/reset_counters/</guid>
       <description>Resets the counters for the ThingsDB node you are connected too. Other nodes are not affected. This will set the started_at counter value to the current UNIX time-stamp in seconds and all other counters to 0 (zero).
 This function does not generate an event.
-Function reset_counters();
+Function reset_counters()
 Arguments None
 Return value Returns nil.
 Example  This code will reset the counters on a node:
@@ -2609,7 +2609,7 @@ Log Levels    Name Int Description     DEBUG 0 Display debug messages (can resul
       <description>Shutdown the node in the selected scope. This is a clean shutdown, allowing all other nodes (and clients) to disconnect.
 At least MODIFY privileges on the @node scope are required to shutdown a node.
  This function does not generate an event.
-Function shutdown();
+Function shutdown()
 Arguments None.
 Return value Returns nil.</description>
     </item>
@@ -2623,7 +2623,7 @@ Return value Returns nil.</description>
       <description>Returns information about a specific collection.
 This function requires READ privileges on the requested collection, or MODIFY privileges on the @thingsdb scope.
 This function does not generate an event.
-Function collection_info(collection);
+Function collection_info(collection)
 Arguments    Argument Type Description     collection str/int (required) Name or Id of the collection    Return value Returns info about the collection.
 Example  Returns information about collection stuff:
  collection_info(&#39;stuff&#39;);  Example return value in JSON format</description>
@@ -2652,7 +2652,7 @@ Return value List with collection info about all collections in ThingsDB.</descr
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/del_collection/</guid>
       <description>Delete a collection.
 This function generates an event.
-Function del_collection(name);
+Function del_collection(name)
 Arguments    Argument Type Description     name str (required) Name of the collection to delete.    Return value Returns nil when successful. A lookup_err() is raised if the collection does not exist.
 Example  This code will delete collection stuff:
  // Delete collection `stuff` del_collection(&#39;stuff&#39;); </description>
@@ -2667,7 +2667,7 @@ Example  This code will delete collection stuff:
       <description>Delete all expired tokens.
 This function requires GRANT privileges on the @thingsdb scope.
  This function generates an event.
-Function del_expired();
+Function del_expired()
 Arguments None
 Return value Returns nil.
 Example  This code will delete all expired tokens:
@@ -2683,7 +2683,7 @@ Example  This code will delete all expired tokens:
       <description>Delete a node from ThingsDB.
 Before deleting a node, the node must be offline. As long is the node is active, you are not allowed to delete the node. See shutdown for shutting down a node by using a query.
  This function generates an event.
-Function del_node(node_id);
+Function del_node(node_id)
 Arguments    Argument Type Description     node_id int (required) Id of the node to delete.    Return value Returns nil when successful.</description>
     </item>
     
@@ -2696,7 +2696,7 @@ Arguments    Argument Type Description     node_id int (required) Id of the node
       <description>Delete a token.
 This function requires GRANT privileges on the @thingsdb scope unless the given token belongs to the logged on user. In the latter case, only MODIFY privileges are required.
  This function generates an event.
-Function del_token(key);
+Function del_token(key)
 Arguments    Argument Type Description     key str (required) Token key to delete.    Return value Returns nil when successful. A lookup_err() is raised if the token is not found.</description>
     </item>
     
@@ -2709,7 +2709,7 @@ Arguments    Argument Type Description     key str (required) Token key to delet
       <description>Delete a user. It is not possible to delete your own user account and a bad_data_err() will be raised in case you try to. Any tokens associated with the user will also be deleted.
 This function requires GRANT privileges on the @thingsdb scope.
  This function generates an event.
-Function del_user(username);
+Function del_user(username)
 Arguments    Argument Type Description     username str (required) Username of the user to delete.</description>
     </item>
     
@@ -2791,7 +2791,7 @@ Example  This code shows an example use case of has_user():
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/new_collection/</guid>
       <description>Create a new collection.
 This function generates an event.
-Function new_collection(name);
+Function new_collection(name)
 Arguments    Argument Type Description     name str (required) Name of the new collection.    The user who has created the collection will automatically receive full access rights to the new collection. Use grant to give other users access to the collection.
  Return value Returns the new collection id if successful. A lookup_err() is raised if the collection already exists.</description>
     </item>
@@ -2828,7 +2828,7 @@ Some valid date/time strings:
       <description>Creates a new user to ThingsDB. The new user is created without a password, token and access privileges. You probably want to set a password or add a new token, and assign some privileges using grant(&amp;hellip;).
 This function requires GRANT privileges on the @thingsdb scope.
  This function generates an event.
-Function new_user(user);
+Function new_user(user)
 Arguments    Argument Type Description     user str (required) Username, between 1 and 128 graphical characters.</description>
     </item>
     
@@ -2840,7 +2840,7 @@ Arguments    Argument Type Description     user str (required) Username, between
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/rename_collection/</guid>
       <description>Rename a collection.
 This function generates an event.
-Function rename_collection(current_name, new_name);
+Function rename_collection(current_name, new_name)
 Arguments    Argument Type Description     current_name str (required) Current collection name.   new_name str (required) New name for the collection.    Return value Returns nil when successful.</description>
     </item>
     
@@ -2853,7 +2853,7 @@ Arguments    Argument Type Description     current_name str (required) Current c
       <description>Rename a user.
 This function requires GRANT privileges on the @thingsdb scope.
  This function generates an event.
-Function rename_user(current_name, new_name);
+Function rename_user(current_name, new_name)
 Arguments    Argument Type Description     current_name str (required) Current user name.   new_name str (required) New name for the user.    Return value Returns nil when successful.</description>
     </item>
     
@@ -2877,7 +2877,7 @@ Before using this function the following list of requirements must be must be fu
       <description>Revoke, collection or general, privileges from a user. See grant for more information on how access privileges can be set for a user.
 To use this function, at least MODIFY privileges on the @thingsdb scope and GRANT privileges on the target scope are required.
 This function generates an event.
-Function revoke(target, user, mask);
+Function revoke(target, user, mask)
 Arguments    Argument Type Description     target int/raw Can be either the @node, @thingsdb, or a @collection scope.</description>
     </item>
     
@@ -2899,10 +2899,25 @@ This function requires GRANT privileges on the @thingsdb scope when a username o
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/set_time_zone/</guid>
-      <description>By default each collection will be created with time zone UTC. This function can be used to change the time zone for a collection. If changed, the functions datetime(..) and timeval(..) will use the collections time zone unless specified otherwise. See available time zones for a list of all available timezones.
+      <description>By default each collection will be created with time zone UTC. This function can be used to change the time zone for a collection. If changed, the functions datetime(..) and timeval(..) will use the collections time zone unless specified otherwise. See time_zones_info() for a list of all available timezones.
 Use collection_info(..) to view the current time zone for a collection.
 This function generates an event.
-Function set_time_zone(collection, zone);</description>
+Function set_time_zone(collection, zone)
+Arguments    Argument Type Description     collection str/int (required) Collection name or id to change the time zone for.</description>
+    </item>
+    
+    <item>
+      <title>time_zones_info</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/time_zones_info/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/time_zones_info/</guid>
+      <description>Returns all available time zones in ThingsDB.
+This function does not generate an event.
+Function time_zones_info()
+Arguments None
+Return value Returns a list with all available time zones in ThingsDB.
+Available Time Zones  Africa/Abidjan Africa/Accra Africa/Addis_Ababa Africa/Algiers Africa/Asmara Africa/Bamako Africa/Bangui Africa/Banjul Africa/Bissau Africa/Blantyre Africa/Brazzaville Africa/Bujumbura Africa/Cairo Africa/Casablanca Africa/Ceuta Africa/Conakry Africa/Dakar Africa/Dar_es_Salaam Africa/Djibouti Africa/Douala Africa/El_Aaiun Africa/Freetown Africa/Gaborone Africa/Harare Africa/Johannesburg Africa/Juba Africa/Kampala Africa/Khartoum Africa/Kigali Africa/Kinshasa Africa/Lagos Africa/Libreville Africa/Lome Africa/Luanda Africa/Lubumbashi Africa/Lusaka Africa/Malabo Africa/Maputo Africa/Maseru Africa/Mbabane Africa/Mogadishu Africa/Monrovia Africa/Nairobi Africa/Ndjamena Africa/Niamey Africa/Nouakchott Africa/Ouagadougou Africa/Porto-Novo Africa/Sao_Tome Africa/Tripoli Africa/Tunis Africa/Windhoek America/Adak America/Anchorage America/Anguilla America/Antigua America/Araguaina America/Argentina/Buenos_Aires America/Argentina/Catamarca America/Argentina/Cordoba America/Argentina/Jujuy America/Argentina/La_Rioja America/Argentina/Mendoza America/Argentina/Rio_Gallegos America/Argentina/Salta America/Argentina/San_Juan America/Argentina/San_Luis America/Argentina/Tucuman America/Argentina/Ushuaia America/Aruba America/Asuncion America/Atikokan America/Bahia America/Bahia_Banderas America/Barbados America/Belem America/Belize America/Blanc-Sablon America/Boa_Vista America/Bogota America/Boise America/Cambridge_Bay America/Campo_Grande America/Cancun America/Caracas America/Cayenne America/Cayman America/Chicago America/Chihuahua America/Costa_Rica America/Creston America/Cuiaba America/Curacao America/Danmarkshavn America/Dawson America/Dawson_Creek America/Denver America/Detroit America/Dominica America/Edmonton America/Eirunepe America/El_Salvador America/Fort_Nelson America/Fortaleza America/Glace_Bay America/Goose_Bay America/Grand_Turk America/Grenada America/Guadeloupe America/Guatemala America/Guayaquil America/Guyana America/Halifax America/Havana America/Hermosillo America/Indiana/Indianapolis America/Indiana/Knox America/Indiana/Marengo America/Indiana/Petersburg America/Indiana/Tell_City America/Indiana/Vevay America/Indiana/Vincennes America/Indiana/Winamac America/Inuvik America/Iqaluit America/Jamaica America/Juneau America/Kentucky/Louisville America/Kentucky/Monticello America/Kralendijk America/La_Paz America/Lima America/Los_Angeles America/Lower_Princes America/Maceio America/Managua America/Manaus America/Marigot America/Martinique America/Matamoros America/Mazatlan America/Menominee America/Merida America/Metlakatla America/Mexico_City America/Miquelon America/Moncton America/Monterrey America/Montevideo America/Montserrat America/Nassau America/New_York America/Nipigon America/Nome America/Noronha America/North_Dakota/Beulah America/North_Dakota/Center America/North_Dakota/New_Salem America/Nuuk America/Ojinaga America/Panama America/Pangnirtung America/Paramaribo America/Phoenix America/Port-au-Prince America/Port_of_Spain America/Porto_Velho America/Puerto_Rico America/Punta_Arenas America/Rainy_River America/Rankin_Inlet America/Recife America/Regina America/Resolute America/Rio_Branco America/Santarem America/Santiago America/Santo_Domingo America/Sao_Paulo America/Scoresbysund America/Sitka America/St_Barthelemy America/St_Johns America/St_Kitts America/St_Lucia America/St_Thomas America/St_Vincent America/Swift_Current America/Tegucigalpa America/Thule America/Thunder_Bay America/Tijuana America/Toronto America/Tortola America/Vancouver America/Whitehorse America/Winnipeg America/Yakutat America/Yellowknife Antarctica/Casey Antarctica/Davis Antarctica/DumontDUrville Antarctica/Macquarie Antarctica/Mawson Antarctica/McMurdo Antarctica/Palmer Antarctica/Rothera Antarctica/Syowa Antarctica/Troll Antarctica/Vostok Arctic/Longyearbyen Asia/Aden Asia/Almaty Asia/Amman Asia/Anadyr Asia/Aqtau Asia/Aqtobe Asia/Ashgabat Asia/Atyrau Asia/Baghdad Asia/Bahrain Asia/Baku Asia/Bangkok Asia/Barnaul Asia/Beirut Asia/Bishkek Asia/Brunei Asia/Chita Asia/Choibalsan Asia/Colombo Asia/Damascus Asia/Dhaka Asia/Dili Asia/Dubai Asia/Dushanbe Asia/Famagusta Asia/Gaza Asia/Hebron Asia/Ho_Chi_Minh Asia/Hong_Kong Asia/Hovd Asia/Irkutsk Asia/Jakarta Asia/Jayapura Asia/Jerusalem Asia/Kabul Asia/Kamchatka Asia/Karachi Asia/Kathmandu Asia/Khandyga Asia/Kolkata Asia/Krasnoyarsk Asia/Kuala_Lumpur Asia/Kuching Asia/Kuwait Asia/Macau Asia/Magadan Asia/Makassar Asia/Manila Asia/Muscat Asia/Nicosia Asia/Novokuznetsk Asia/Novosibirsk Asia/Omsk Asia/Oral Asia/Phnom_Penh Asia/Pontianak Asia/Pyongyang Asia/Qatar Asia/Qostanay Asia/Qyzylorda Asia/Riyadh Asia/Sakhalin Asia/Samarkand Asia/Seoul Asia/Shanghai Asia/Singapore Asia/Srednekolymsk Asia/Taipei Asia/Tashkent Asia/Tbilisi Asia/Tehran Asia/Thimphu Asia/Tokyo Asia/Tomsk Asia/Ulaanbaatar Asia/Urumqi Asia/Ust-Nera Asia/Vientiane Asia/Vladivostok Asia/Yakutsk Asia/Yangon Asia/Yekaterinburg Asia/Yerevan Atlantic/Azores Atlantic/Bermuda Atlantic/Canary Atlantic/Cape_Verde Atlantic/Faroe Atlantic/Madeira Atlantic/Reykjavik Atlantic/South_Georgia Atlantic/St_Helena Atlantic/Stanley Australia/Adelaide Australia/Brisbane Australia/Broken_Hill Australia/Currie Australia/Darwin Australia/Eucla Australia/Hobart Australia/Lindeman Australia/Lord_Howe Australia/Melbourne Australia/Perth Australia/Sydney Canada/Atlantic Canada/Central Canada/Eastern Canada/Mountain Canada/Newfoundland Canada/Pacific Europe/Amsterdam Europe/Andorra Europe/Astrakhan Europe/Athens Europe/Belgrade Europe/Berlin Europe/Bratislava Europe/Brussels Europe/Bucharest Europe/Budapest Europe/Busingen Europe/Chisinau Europe/Copenhagen Europe/Dublin Europe/Gibraltar Europe/Guernsey Europe/Helsinki Europe/Isle_of_Man Europe/Istanbul Europe/Jersey Europe/Kaliningrad Europe/Kiev Europe/Kirov Europe/Lisbon Europe/Ljubljana Europe/London Europe/Luxembourg Europe/Madrid Europe/Malta Europe/Mariehamn Europe/Minsk Europe/Monaco Europe/Moscow Europe/Oslo Europe/Paris Europe/Podgorica Europe/Prague Europe/Riga Europe/Rome Europe/Samara Europe/San_Marino Europe/Sarajevo Europe/Saratov Europe/Simferopol Europe/Skopje Europe/Sofia Europe/Stockholm Europe/Tallinn Europe/Tirane Europe/Ulyanovsk Europe/Uzhgorod Europe/Vaduz Europe/Vatican Europe/Vienna Europe/Vilnius Europe/Volgograd Europe/Warsaw Europe/Zagreb Europe/Zaporozhye Europe/Zurich GMT Indian/Antananarivo Indian/Chagos Indian/Christmas Indian/Cocos Indian/Comoro Indian/Kerguelen Indian/Mahe Indian/Maldives Indian/Mauritius Indian/Mayotte Indian/Reunion Pacific/Apia Pacific/Auckland Pacific/Bougainville Pacific/Chatham Pacific/Chuuk Pacific/Easter Pacific/Efate Pacific/Enderbury Pacific/Fakaofo Pacific/Fiji Pacific/Funafuti Pacific/Galapagos Pacific/Gambier Pacific/Guadalcanal Pacific/Guam Pacific/Honolulu Pacific/Kiritimati Pacific/Kosrae Pacific/Kwajalein Pacific/Majuro Pacific/Marquesas Pacific/Midway Pacific/Nauru Pacific/Niue Pacific/Norfolk Pacific/Noumea Pacific/Pago_Pago Pacific/Palau Pacific/Pitcairn Pacific/Pohnpei Pacific/Port_Moresby Pacific/Rarotonga Pacific/Saipan Pacific/Tahiti Pacific/Tarawa Pacific/Tongatapu Pacific/Wake Pacific/Wallis US/Alaska US/Arizona US/Central US/Eastern US/Hawaii US/Mountain US/Pacific UTC  </description>
     </item>
     
     <item>
@@ -2914,7 +2929,7 @@ Function set_time_zone(collection, zone);</description>
       <description>Returns information about a user. If no argument is given, this function will return information about the currently logged in user.
 This function requires GRANT privileges on the @thingsdb scope when a username other then the logged in user is given as argument. For the currently logged in user, READ privileges on the @thingsdb scope are sufficient.
  This function does not generate an event.
-Function user_info([username]);
+Function user_info([username])
 Arguments    Argument Type Description     username str (optional) Name of the user    Return value Returns info about the user.</description>
     </item>
     
@@ -2941,7 +2956,7 @@ Return value List with user info about all users in ThingsDB.</description>
       <guid>https://docs.thingsdb.net/v0/procedures-api/del_procedure/</guid>
       <description>Delete a procedure.
 This function generates an event.
-Function del_procedure(procedure);
+Function del_procedure(procedure)
 Arguments    Argument Type Description     procedure str (required) Procedure name to delete.    Return value Returns nil when successful. A lookup_err() is raised if the procedure does not exist.
 Example  This code will delete procedure add_one:
  new_procedure(&#39;add_one&#39;, |x| { &amp;quot;Adds one to a given value&amp;quot;; x + 1; }); // Delete procedure `add_one` del_procedure(&#39;add_one&#39;);  Return value in JSON format</description>
@@ -2969,7 +2984,7 @@ Example  This code shows an example use case of has_procedure():
       <guid>https://docs.thingsdb.net/v0/procedures-api/new_procedure/</guid>
       <description>Creates a new procedure to the @thingsdb or a @collection scope. The name of the procedure must be unique within the scope. The given closure will be copied to the procedure, so this is not a reference to this closure.
 This function generates an event.
-Function new_procedure(name, closure);
+Function new_procedure(name, closure)
 Arguments    Argument Type Description     name str (required) Name of the new procedure.   closure closure (required) Closure which will be attached to the procedure.</description>
     </item>
     
@@ -2981,7 +2996,7 @@ Arguments    Argument Type Description     name str (required) Name of the new p
       <guid>https://docs.thingsdb.net/v0/procedures-api/procedure_doc/</guid>
       <description>Returns the doc string for a given procedure. An empty string is returned if the procedure has no doc string.
 This function does not generate an event.
-Function procedure_doc(procedure);
+Function procedure_doc(procedure)
 Arguments    Argument Type Description     procedure str (required) Name of the procedure where to return the doc string for.    Return value Returns the doc string for a given procedure.
 Example  Create a new procedure add_one:</description>
     </item>
@@ -3018,7 +3033,7 @@ Return value List with procedure info about all procedures in the scope.</descri
       <guid>https://docs.thingsdb.net/v0/procedures-api/rename_procedure/</guid>
       <description>Rename a procedure.
 This function generates an event.
-Function rename_procedure(current_name, new_name);
+Function rename_procedure(current_name, new_name)
 Arguments    Argument Type Description     current_name str (required) Current procedure name.   new_name str (required) New name for the procedure.    Return value Returns nil when successful.</description>
     </item>
     

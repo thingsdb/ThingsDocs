@@ -53,7 +53,7 @@ Counters give information about things, queries and events. If you suspect faile
       <guid>https://docs.thingsdb.net/v0/node-api/del_backup/</guid>
       <description>Delete a scheduled backup. If the scheduled backup was pending, the backup job will be cancelled.
 This function does not generate an event.
-Function del_backup(ID, [delete_files]);
+Function del_backup(ID, [delete_files])
 Arguments    Argument Type Description     ID int Backup ID to delete.   delete_files bool (optional) Delete related backup files from disk (or Google Cloud Storage). Default is false.    Return value Returns nil.</description>
     </item>
     
@@ -110,7 +110,7 @@ If Google Cloud Storage is configured then it is possible to create backups dire
       <guid>https://docs.thingsdb.net/v0/node-api/reset_counters/</guid>
       <description>Resets the counters for the ThingsDB node you are connected too. Other nodes are not affected. This will set the started_at counter value to the current UNIX time-stamp in seconds and all other counters to 0 (zero).
 This function does not generate an event.
-Function reset_counters();
+Function reset_counters()
 Arguments None
 Return value Returns nil.
 Example  This code will reset the counters on a node:
@@ -138,7 +138,7 @@ Log Levels    Name Int Description     DEBUG 0 Display debug messages (can resul
       <description>Shutdown the node in the selected scope. This is a clean shutdown, allowing all other nodes (and clients) to disconnect.
 At least MODIFY privileges on the @node scope are required to shutdown a node.
  This function does not generate an event.
-Function shutdown();
+Function shutdown()
 Arguments None.
 Return value Returns nil.</description>
     </item>

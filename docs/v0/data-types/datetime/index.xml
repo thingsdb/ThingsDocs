@@ -68,7 +68,7 @@ Arguments    Argument Type Description     values thing (required) Only the prop
       
       <guid>https://docs.thingsdb.net/v0/data-types/datetime/to/</guid>
       <description>Return a new datetime (or timeval) object with new time zone information. Note that the proper time does not change, only the time zone will change.
-See set_time_zone(..) for a list of all available time zones.
+See time_zones_info() for a list of all available time zones.
 If zone information is given using a fixed offset (+hh[mm] or -hh[mm]), then the new datetime object has no proper time zone information and thus has no day-light-saving information.
  This function does not generate an event.</description>
     </item>

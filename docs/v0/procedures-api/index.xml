@@ -18,7 +18,7 @@
       <guid>https://docs.thingsdb.net/v0/procedures-api/del_procedure/</guid>
       <description>Delete a procedure.
 This function generates an event.
-Function del_procedure(procedure);
+Function del_procedure(procedure)
 Arguments    Argument Type Description     procedure str (required) Procedure name to delete.    Return value Returns nil when successful. A lookup_err() is raised if the procedure does not exist.
 Example  This code will delete procedure add_one:
  new_procedure(&#39;add_one&#39;, |x| { &amp;quot;Adds one to a given value&amp;quot;; x + 1; }); // Delete procedure `add_one` del_procedure(&#39;add_one&#39;);  Return value in JSON format</description>
@@ -46,7 +46,7 @@ Example  This code shows an example use case of has_procedure():
       <guid>https://docs.thingsdb.net/v0/procedures-api/new_procedure/</guid>
       <description>Creates a new procedure to the @thingsdb or a @collection scope. The name of the procedure must be unique within the scope. The given closure will be copied to the procedure, so this is not a reference to this closure.
 This function generates an event.
-Function new_procedure(name, closure);
+Function new_procedure(name, closure)
 Arguments    Argument Type Description     name str (required) Name of the new procedure.   closure closure (required) Closure which will be attached to the procedure.</description>
     </item>
     
@@ -58,7 +58,7 @@ Arguments    Argument Type Description     name str (required) Name of the new p
       <guid>https://docs.thingsdb.net/v0/procedures-api/procedure_doc/</guid>
       <description>Returns the doc string for a given procedure. An empty string is returned if the procedure has no doc string.
 This function does not generate an event.
-Function procedure_doc(procedure);
+Function procedure_doc(procedure)
 Arguments    Argument Type Description     procedure str (required) Name of the procedure where to return the doc string for.    Return value Returns the doc string for a given procedure.
 Example  Create a new procedure add_one:</description>
     </item>
@@ -95,7 +95,7 @@ Return value List with procedure info about all procedures in the scope.</descri
       <guid>https://docs.thingsdb.net/v0/procedures-api/rename_procedure/</guid>
       <description>Rename a procedure.
 This function generates an event.
-Function rename_procedure(current_name, new_name);
+Function rename_procedure(current_name, new_name)
 Arguments    Argument Type Description     current_name str (required) Current procedure name.   new_name str (required) New name for the procedure.    Return value Returns nil when successful.</description>
     </item>
     

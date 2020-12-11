@@ -995,6 +995,10 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/time_zones_info/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/thingsdb-api/user_info/</loc>
   </url>
   

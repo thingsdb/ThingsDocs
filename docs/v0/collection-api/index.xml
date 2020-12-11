@@ -680,7 +680,7 @@ Arguments    Argument Type Description     value any (required) The value to ret
       <guid>https://docs.thingsdb.net/v0/collection-api/rename_enum/</guid>
       <description>Rename an enum type.
 This function generates an event.
-Function rename_enum(current_name, new_name);
+Function rename_enum(current_name, new_name)
 Arguments    Argument Type Description     current_name str (required) Current enum type name.   new_name str (required) New name for the enum type.    Return value Returns nil when successful.</description>
     </item>
     
@@ -692,7 +692,7 @@ Arguments    Argument Type Description     current_name str (required) Current e
       <guid>https://docs.thingsdb.net/v0/collection-api/rename_type/</guid>
       <description>Rename a type.
 This function generates an event.
-Function rename_type(current_name, new_name);
+Function rename_type(current_name, new_name)
 Arguments    Argument Type Description     current_name str (required) Current type name.   new_name str (required) New name for the type.    Return value Returns nil when successful.</description>
     </item>
     

@@ -8,23 +8,23 @@
 
 
     <link rel="shortcut icon" href='/v0/images/favicon.ico' type="image/x-icon" />
-    <title>Authentication :: ThingsDB documentation</title>
+    <title>time_zones_info :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1607685791" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1607685791" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1607685791" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1607685791" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1607685791" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1607685791" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1607685791" rel="stylesheet">
-    <link href="/v0/css/theme.css?1607685791" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1607685791" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1607685792" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1607685792" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1607685792" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1607685792" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1607685792" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1607685792" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1607685792" rel="stylesheet">
+    <link href="/v0/css/theme.css?1607685792" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1607685792" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1607685791" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1607685792" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1607685791"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1607685792"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -38,7 +38,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/v0/connect/authentication/">
+  <body class="" data-url="/v0/thingsdb-api/time_zones_info/">
     <nav id="sidebar" class="">
 
 
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1607685791"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1607685791"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1607685792"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1607685792"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1607685791"></script>
+<script type="text/javascript" src="/v0/js/search.js?1607685792"></script>
 
     
   </div>
@@ -188,7 +188,7 @@
   
     
     <li data-nav-id="/v0/connect/" title="Connect" class="dd-item 
-        parent
+        
         
         
         ">
@@ -214,7 +214,7 @@
  
   
     
-      <li data-nav-id="/v0/connect/authentication/" title="Authentication" class="dd-item active">
+      <li data-nav-id="/v0/connect/authentication/" title="Authentication" class="dd-item ">
         <a href="/v0/connect/authentication/">
         Authentication
         
@@ -4647,7 +4647,7 @@
   
     
     <li data-nav-id="/v0/thingsdb-api/" title="ThingsDB API" class="dd-item 
-        
+        parent
         
         
         ">
@@ -5089,7 +5089,7 @@
  
   
     
-      <li data-nav-id="/v0/thingsdb-api/time_zones_info/" title="time_zones_info" class="dd-item ">
+      <li data-nav-id="/v0/thingsdb-api/time_zones_info/" title="time_zones_info" class="dd-item active">
         <a href="/v0/thingsdb-api/time_zones_info/">
         time_zones_info
         
@@ -5824,7 +5824,7 @@
             
           
           
-            <a href='/v0/'></a> > <a href='/v0/connect/'>Connect</a> > Authentication
+            <a href='/v0/'></a> > <a href='/v0/thingsdb-api/'>ThingsDB API</a> > time_zones_info
           
          
           
@@ -5839,7 +5839,14 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#token-authentication">Token authentication</a></li>
+    <li>
+      <ul>
+        <li><a href="#function">Function</a></li>
+        <li><a href="#arguments">Arguments</a></li>
+        <li><a href="#return-value">Return value</a></li>
+        <li><a href="#available-time-zones">Available Time Zones</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -5857,7 +5864,7 @@
           
             <h1>
               
-              Authentication
+              time_zones_info
             </h1>
           
 
@@ -5865,41 +5872,458 @@
 
 
 
-<p>ThingsDB supports authentication by using a <em>user</em> and <em>password</em> combination, or with a <em>token</em>. A default user <code>admin</code> with password <code>pass</code> is created on a fresh installation.
-If you did not yet change the default password, you might want to jump to <a href="../../thingsdb-api/set_password">set password</a> or jump to <a href="#token-authentication">token authentication</a>.</p>
-<p>It might be a good idea to create a <a href="../../thingsdb-api/new_user">new user</a> with minimal privileges and add a <a href="../../thingsdb-api/new_token">new token</a> for this user.
-See the <a href="../../thingsdb-api/grant">grant</a> and <a href="../../thingsdb-api/revoke">revoke</a> functions for managing privileges for a user.</p>
+<p>Returns all available time zones in ThingsDB.</p>
+<p>This function does <em>not</em> generate an <a href="../../overview/events">event</a>.</p>
+<h3 id="function">Function</h3>
+<p><code>time_zones_info()</code></p>
+<h3 id="arguments">Arguments</h3>
+<p>None</p>
+<h3 id="return-value">Return value</h3>
+<p>Returns a list with all available time zones in ThingsDB.</p>
+<h3 id="available-time-zones">Available Time Zones</h3>
+<ul>
+<li>Africa/Abidjan</li>
+<li>Africa/Accra</li>
+<li>Africa/Addis_Ababa</li>
+<li>Africa/Algiers</li>
+<li>Africa/Asmara</li>
+<li>Africa/Bamako</li>
+<li>Africa/Bangui</li>
+<li>Africa/Banjul</li>
+<li>Africa/Bissau</li>
+<li>Africa/Blantyre</li>
+<li>Africa/Brazzaville</li>
+<li>Africa/Bujumbura</li>
+<li>Africa/Cairo</li>
+<li>Africa/Casablanca</li>
+<li>Africa/Ceuta</li>
+<li>Africa/Conakry</li>
+<li>Africa/Dakar</li>
+<li>Africa/Dar_es_Salaam</li>
+<li>Africa/Djibouti</li>
+<li>Africa/Douala</li>
+<li>Africa/El_Aaiun</li>
+<li>Africa/Freetown</li>
+<li>Africa/Gaborone</li>
+<li>Africa/Harare</li>
+<li>Africa/Johannesburg</li>
+<li>Africa/Juba</li>
+<li>Africa/Kampala</li>
+<li>Africa/Khartoum</li>
+<li>Africa/Kigali</li>
+<li>Africa/Kinshasa</li>
+<li>Africa/Lagos</li>
+<li>Africa/Libreville</li>
+<li>Africa/Lome</li>
+<li>Africa/Luanda</li>
+<li>Africa/Lubumbashi</li>
+<li>Africa/Lusaka</li>
+<li>Africa/Malabo</li>
+<li>Africa/Maputo</li>
+<li>Africa/Maseru</li>
+<li>Africa/Mbabane</li>
+<li>Africa/Mogadishu</li>
+<li>Africa/Monrovia</li>
+<li>Africa/Nairobi</li>
+<li>Africa/Ndjamena</li>
+<li>Africa/Niamey</li>
+<li>Africa/Nouakchott</li>
+<li>Africa/Ouagadougou</li>
+<li>Africa/Porto-Novo</li>
+<li>Africa/Sao_Tome</li>
+<li>Africa/Tripoli</li>
+<li>Africa/Tunis</li>
+<li>Africa/Windhoek</li>
+<li>America/Adak</li>
+<li>America/Anchorage</li>
+<li>America/Anguilla</li>
+<li>America/Antigua</li>
+<li>America/Araguaina</li>
+<li>America/Argentina/Buenos_Aires</li>
+<li>America/Argentina/Catamarca</li>
+<li>America/Argentina/Cordoba</li>
+<li>America/Argentina/Jujuy</li>
+<li>America/Argentina/La_Rioja</li>
+<li>America/Argentina/Mendoza</li>
+<li>America/Argentina/Rio_Gallegos</li>
+<li>America/Argentina/Salta</li>
+<li>America/Argentina/San_Juan</li>
+<li>America/Argentina/San_Luis</li>
+<li>America/Argentina/Tucuman</li>
+<li>America/Argentina/Ushuaia</li>
+<li>America/Aruba</li>
+<li>America/Asuncion</li>
+<li>America/Atikokan</li>
+<li>America/Bahia</li>
+<li>America/Bahia_Banderas</li>
+<li>America/Barbados</li>
+<li>America/Belem</li>
+<li>America/Belize</li>
+<li>America/Blanc-Sablon</li>
+<li>America/Boa_Vista</li>
+<li>America/Bogota</li>
+<li>America/Boise</li>
+<li>America/Cambridge_Bay</li>
+<li>America/Campo_Grande</li>
+<li>America/Cancun</li>
+<li>America/Caracas</li>
+<li>America/Cayenne</li>
+<li>America/Cayman</li>
+<li>America/Chicago</li>
+<li>America/Chihuahua</li>
+<li>America/Costa_Rica</li>
+<li>America/Creston</li>
+<li>America/Cuiaba</li>
+<li>America/Curacao</li>
+<li>America/Danmarkshavn</li>
+<li>America/Dawson</li>
+<li>America/Dawson_Creek</li>
+<li>America/Denver</li>
+<li>America/Detroit</li>
+<li>America/Dominica</li>
+<li>America/Edmonton</li>
+<li>America/Eirunepe</li>
+<li>America/El_Salvador</li>
+<li>America/Fort_Nelson</li>
+<li>America/Fortaleza</li>
+<li>America/Glace_Bay</li>
+<li>America/Goose_Bay</li>
+<li>America/Grand_Turk</li>
+<li>America/Grenada</li>
+<li>America/Guadeloupe</li>
+<li>America/Guatemala</li>
+<li>America/Guayaquil</li>
+<li>America/Guyana</li>
+<li>America/Halifax</li>
+<li>America/Havana</li>
+<li>America/Hermosillo</li>
+<li>America/Indiana/Indianapolis</li>
+<li>America/Indiana/Knox</li>
+<li>America/Indiana/Marengo</li>
+<li>America/Indiana/Petersburg</li>
+<li>America/Indiana/Tell_City</li>
+<li>America/Indiana/Vevay</li>
+<li>America/Indiana/Vincennes</li>
+<li>America/Indiana/Winamac</li>
+<li>America/Inuvik</li>
+<li>America/Iqaluit</li>
+<li>America/Jamaica</li>
+<li>America/Juneau</li>
+<li>America/Kentucky/Louisville</li>
+<li>America/Kentucky/Monticello</li>
+<li>America/Kralendijk</li>
+<li>America/La_Paz</li>
+<li>America/Lima</li>
+<li>America/Los_Angeles</li>
+<li>America/Lower_Princes</li>
+<li>America/Maceio</li>
+<li>America/Managua</li>
+<li>America/Manaus</li>
+<li>America/Marigot</li>
+<li>America/Martinique</li>
+<li>America/Matamoros</li>
+<li>America/Mazatlan</li>
+<li>America/Menominee</li>
+<li>America/Merida</li>
+<li>America/Metlakatla</li>
+<li>America/Mexico_City</li>
+<li>America/Miquelon</li>
+<li>America/Moncton</li>
+<li>America/Monterrey</li>
+<li>America/Montevideo</li>
+<li>America/Montserrat</li>
+<li>America/Nassau</li>
+<li>America/New_York</li>
+<li>America/Nipigon</li>
+<li>America/Nome</li>
+<li>America/Noronha</li>
+<li>America/North_Dakota/Beulah</li>
+<li>America/North_Dakota/Center</li>
+<li>America/North_Dakota/New_Salem</li>
+<li>America/Nuuk</li>
+<li>America/Ojinaga</li>
+<li>America/Panama</li>
+<li>America/Pangnirtung</li>
+<li>America/Paramaribo</li>
+<li>America/Phoenix</li>
+<li>America/Port-au-Prince</li>
+<li>America/Port_of_Spain</li>
+<li>America/Porto_Velho</li>
+<li>America/Puerto_Rico</li>
+<li>America/Punta_Arenas</li>
+<li>America/Rainy_River</li>
+<li>America/Rankin_Inlet</li>
+<li>America/Recife</li>
+<li>America/Regina</li>
+<li>America/Resolute</li>
+<li>America/Rio_Branco</li>
+<li>America/Santarem</li>
+<li>America/Santiago</li>
+<li>America/Santo_Domingo</li>
+<li>America/Sao_Paulo</li>
+<li>America/Scoresbysund</li>
+<li>America/Sitka</li>
+<li>America/St_Barthelemy</li>
+<li>America/St_Johns</li>
+<li>America/St_Kitts</li>
+<li>America/St_Lucia</li>
+<li>America/St_Thomas</li>
+<li>America/St_Vincent</li>
+<li>America/Swift_Current</li>
+<li>America/Tegucigalpa</li>
+<li>America/Thule</li>
+<li>America/Thunder_Bay</li>
+<li>America/Tijuana</li>
+<li>America/Toronto</li>
+<li>America/Tortola</li>
+<li>America/Vancouver</li>
+<li>America/Whitehorse</li>
+<li>America/Winnipeg</li>
+<li>America/Yakutat</li>
+<li>America/Yellowknife</li>
+<li>Antarctica/Casey</li>
+<li>Antarctica/Davis</li>
+<li>Antarctica/DumontDUrville</li>
+<li>Antarctica/Macquarie</li>
+<li>Antarctica/Mawson</li>
+<li>Antarctica/McMurdo</li>
+<li>Antarctica/Palmer</li>
+<li>Antarctica/Rothera</li>
+<li>Antarctica/Syowa</li>
+<li>Antarctica/Troll</li>
+<li>Antarctica/Vostok</li>
+<li>Arctic/Longyearbyen</li>
+<li>Asia/Aden</li>
+<li>Asia/Almaty</li>
+<li>Asia/Amman</li>
+<li>Asia/Anadyr</li>
+<li>Asia/Aqtau</li>
+<li>Asia/Aqtobe</li>
+<li>Asia/Ashgabat</li>
+<li>Asia/Atyrau</li>
+<li>Asia/Baghdad</li>
+<li>Asia/Bahrain</li>
+<li>Asia/Baku</li>
+<li>Asia/Bangkok</li>
+<li>Asia/Barnaul</li>
+<li>Asia/Beirut</li>
+<li>Asia/Bishkek</li>
+<li>Asia/Brunei</li>
+<li>Asia/Chita</li>
+<li>Asia/Choibalsan</li>
+<li>Asia/Colombo</li>
+<li>Asia/Damascus</li>
+<li>Asia/Dhaka</li>
+<li>Asia/Dili</li>
+<li>Asia/Dubai</li>
+<li>Asia/Dushanbe</li>
+<li>Asia/Famagusta</li>
+<li>Asia/Gaza</li>
+<li>Asia/Hebron</li>
+<li>Asia/Ho_Chi_Minh</li>
+<li>Asia/Hong_Kong</li>
+<li>Asia/Hovd</li>
+<li>Asia/Irkutsk</li>
+<li>Asia/Jakarta</li>
+<li>Asia/Jayapura</li>
+<li>Asia/Jerusalem</li>
+<li>Asia/Kabul</li>
+<li>Asia/Kamchatka</li>
+<li>Asia/Karachi</li>
+<li>Asia/Kathmandu</li>
+<li>Asia/Khandyga</li>
+<li>Asia/Kolkata</li>
+<li>Asia/Krasnoyarsk</li>
+<li>Asia/Kuala_Lumpur</li>
+<li>Asia/Kuching</li>
+<li>Asia/Kuwait</li>
+<li>Asia/Macau</li>
+<li>Asia/Magadan</li>
+<li>Asia/Makassar</li>
+<li>Asia/Manila</li>
+<li>Asia/Muscat</li>
+<li>Asia/Nicosia</li>
+<li>Asia/Novokuznetsk</li>
+<li>Asia/Novosibirsk</li>
+<li>Asia/Omsk</li>
+<li>Asia/Oral</li>
+<li>Asia/Phnom_Penh</li>
+<li>Asia/Pontianak</li>
+<li>Asia/Pyongyang</li>
+<li>Asia/Qatar</li>
+<li>Asia/Qostanay</li>
+<li>Asia/Qyzylorda</li>
+<li>Asia/Riyadh</li>
+<li>Asia/Sakhalin</li>
+<li>Asia/Samarkand</li>
+<li>Asia/Seoul</li>
+<li>Asia/Shanghai</li>
+<li>Asia/Singapore</li>
+<li>Asia/Srednekolymsk</li>
+<li>Asia/Taipei</li>
+<li>Asia/Tashkent</li>
+<li>Asia/Tbilisi</li>
+<li>Asia/Tehran</li>
+<li>Asia/Thimphu</li>
+<li>Asia/Tokyo</li>
+<li>Asia/Tomsk</li>
+<li>Asia/Ulaanbaatar</li>
+<li>Asia/Urumqi</li>
+<li>Asia/Ust-Nera</li>
+<li>Asia/Vientiane</li>
+<li>Asia/Vladivostok</li>
+<li>Asia/Yakutsk</li>
+<li>Asia/Yangon</li>
+<li>Asia/Yekaterinburg</li>
+<li>Asia/Yerevan</li>
+<li>Atlantic/Azores</li>
+<li>Atlantic/Bermuda</li>
+<li>Atlantic/Canary</li>
+<li>Atlantic/Cape_Verde</li>
+<li>Atlantic/Faroe</li>
+<li>Atlantic/Madeira</li>
+<li>Atlantic/Reykjavik</li>
+<li>Atlantic/South_Georgia</li>
+<li>Atlantic/St_Helena</li>
+<li>Atlantic/Stanley</li>
+<li>Australia/Adelaide</li>
+<li>Australia/Brisbane</li>
+<li>Australia/Broken_Hill</li>
+<li>Australia/Currie</li>
+<li>Australia/Darwin</li>
+<li>Australia/Eucla</li>
+<li>Australia/Hobart</li>
+<li>Australia/Lindeman</li>
+<li>Australia/Lord_Howe</li>
+<li>Australia/Melbourne</li>
+<li>Australia/Perth</li>
+<li>Australia/Sydney</li>
+<li>Canada/Atlantic</li>
+<li>Canada/Central</li>
+<li>Canada/Eastern</li>
+<li>Canada/Mountain</li>
+<li>Canada/Newfoundland</li>
+<li>Canada/Pacific</li>
+<li>Europe/Amsterdam</li>
+<li>Europe/Andorra</li>
+<li>Europe/Astrakhan</li>
+<li>Europe/Athens</li>
+<li>Europe/Belgrade</li>
+<li>Europe/Berlin</li>
+<li>Europe/Bratislava</li>
+<li>Europe/Brussels</li>
+<li>Europe/Bucharest</li>
+<li>Europe/Budapest</li>
+<li>Europe/Busingen</li>
+<li>Europe/Chisinau</li>
+<li>Europe/Copenhagen</li>
+<li>Europe/Dublin</li>
+<li>Europe/Gibraltar</li>
+<li>Europe/Guernsey</li>
+<li>Europe/Helsinki</li>
+<li>Europe/Isle_of_Man</li>
+<li>Europe/Istanbul</li>
+<li>Europe/Jersey</li>
+<li>Europe/Kaliningrad</li>
+<li>Europe/Kiev</li>
+<li>Europe/Kirov</li>
+<li>Europe/Lisbon</li>
+<li>Europe/Ljubljana</li>
+<li>Europe/London</li>
+<li>Europe/Luxembourg</li>
+<li>Europe/Madrid</li>
+<li>Europe/Malta</li>
+<li>Europe/Mariehamn</li>
+<li>Europe/Minsk</li>
+<li>Europe/Monaco</li>
+<li>Europe/Moscow</li>
+<li>Europe/Oslo</li>
+<li>Europe/Paris</li>
+<li>Europe/Podgorica</li>
+<li>Europe/Prague</li>
+<li>Europe/Riga</li>
+<li>Europe/Rome</li>
+<li>Europe/Samara</li>
+<li>Europe/San_Marino</li>
+<li>Europe/Sarajevo</li>
+<li>Europe/Saratov</li>
+<li>Europe/Simferopol</li>
+<li>Europe/Skopje</li>
+<li>Europe/Sofia</li>
+<li>Europe/Stockholm</li>
+<li>Europe/Tallinn</li>
+<li>Europe/Tirane</li>
+<li>Europe/Ulyanovsk</li>
+<li>Europe/Uzhgorod</li>
+<li>Europe/Vaduz</li>
+<li>Europe/Vatican</li>
+<li>Europe/Vienna</li>
+<li>Europe/Vilnius</li>
+<li>Europe/Volgograd</li>
+<li>Europe/Warsaw</li>
+<li>Europe/Zagreb</li>
+<li>Europe/Zaporozhye</li>
+<li>Europe/Zurich</li>
+<li>GMT</li>
+<li>Indian/Antananarivo</li>
+<li>Indian/Chagos</li>
+<li>Indian/Christmas</li>
+<li>Indian/Cocos</li>
+<li>Indian/Comoro</li>
+<li>Indian/Kerguelen</li>
+<li>Indian/Mahe</li>
+<li>Indian/Maldives</li>
+<li>Indian/Mauritius</li>
+<li>Indian/Mayotte</li>
+<li>Indian/Reunion</li>
+<li>Pacific/Apia</li>
+<li>Pacific/Auckland</li>
+<li>Pacific/Bougainville</li>
+<li>Pacific/Chatham</li>
+<li>Pacific/Chuuk</li>
+<li>Pacific/Easter</li>
+<li>Pacific/Efate</li>
+<li>Pacific/Enderbury</li>
+<li>Pacific/Fakaofo</li>
+<li>Pacific/Fiji</li>
+<li>Pacific/Funafuti</li>
+<li>Pacific/Galapagos</li>
+<li>Pacific/Gambier</li>
+<li>Pacific/Guadalcanal</li>
+<li>Pacific/Guam</li>
+<li>Pacific/Honolulu</li>
+<li>Pacific/Kiritimati</li>
+<li>Pacific/Kosrae</li>
+<li>Pacific/Kwajalein</li>
+<li>Pacific/Majuro</li>
+<li>Pacific/Marquesas</li>
+<li>Pacific/Midway</li>
+<li>Pacific/Nauru</li>
+<li>Pacific/Niue</li>
+<li>Pacific/Norfolk</li>
+<li>Pacific/Noumea</li>
+<li>Pacific/Pago_Pago</li>
+<li>Pacific/Palau</li>
+<li>Pacific/Pitcairn</li>
+<li>Pacific/Pohnpei</li>
+<li>Pacific/Port_Moresby</li>
+<li>Pacific/Rarotonga</li>
+<li>Pacific/Saipan</li>
+<li>Pacific/Tahiti</li>
+<li>Pacific/Tarawa</li>
+<li>Pacific/Tongatapu</li>
+<li>Pacific/Wake</li>
+<li>Pacific/Wallis</li>
+<li>US/Alaska</li>
+<li>US/Arizona</li>
+<li>US/Central</li>
+<li>US/Eastern</li>
+<li>US/Hawaii</li>
+<li>US/Mountain</li>
+<li>US/Pacific</li>
+<li>UTC</li>
+</ul>
 
-<div class="notices note" ><p>For connecting to ThingsDB with a auto-reconnect client, <code>WATCH</code> privileges on the <code>.node</code> scope are required.</p>
-</div>
-
-<h2 id="token-authentication">Token authentication</h2>
-<p>This is a small tutorial to create a <em>token</em> and remove the <em>password</em> for the default <code>admin</code> user.
-This can be done with any client but in this tutorial the <a href="../http-api">HTTP API</a> is used with simple <code>curl</code>
-commands.</p>
-<p>First we create a new token, and then we remove the password from the <code>admin</code> user.
-Although this could be done in one step, we do this in <em>two</em> steps to be sure the new token
-works before removing the password.</p>
-<blockquote>
-<p>Replace <code>127.0.0.1:9210</code> with the address and port where your node is listening on for API requests</p>
-</blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl --location --request POST <span style="color:#e6db74">&#39;http://127.0.0.1:9210/thingsdb&#39;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--header <span style="color:#e6db74">&#39;Content-Type: application/json&#39;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--user admin:pass <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--data-raw <span style="color:#e6db74">&#39;{
-</span><span style="color:#e6db74">    &#34;type&#34;: &#34;query&#34;,
-</span><span style="color:#e6db74">    &#34;code&#34;: &#34;new_token(&#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39;admin&#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39;);&#34;
-</span><span style="color:#e6db74">}&#39;</span>
-</code></pre></div><p>The will return a JSON string containing a new token, for example: <code>&quot;YyZcvq7BY3w+VgOTvXzTZp&quot;</code></p>
-<p>We can now use this token key to remove the password from user <code>admin</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl --location --request POST <span style="color:#e6db74">&#39;http://127.0.0.1:9210/thingsdb&#39;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--header <span style="color:#e6db74">&#39;Content-Type: application/json&#39;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--header <span style="color:#e6db74">&#39;Authorization: Bearer YyZcvq7BY3w+VgOTvXzTZp&#39;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--data-raw <span style="color:#e6db74">&#39;{
-</span><span style="color:#e6db74">    &#34;type&#34;: &#34;query&#34;,
-</span><span style="color:#e6db74">    &#34;code&#34;: &#34;set_password(&#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39;admin&#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39;, nil);&#34;
-</span><span style="color:#e6db74">}&#39;</span>
-</code></pre></div>
 
 <footer class=" footline" >
 	
@@ -5916,10 +6340,10 @@ works before removing the password.</p>
         
     
         
-            <a class="nav nav-prev" href="/v0/connect/" title="Connect"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/v0/thingsdb-api/set_time_zone/" title="set_time_zone"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/v0/connect/http-api/" title="HTTP API" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/v0/thingsdb-api/user_info/" title="user_info" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     
     </div>
@@ -5929,19 +6353,19 @@ works before removing the password.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1607685791"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1607685791"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1607685791"></script>
-    <script src="/v0/js/jquery.sticky.js?1607685791"></script>
-    <script src="/v0/js/featherlight.min.js?1607685791"></script>
-    <script src="/v0/js/highlight.pack.js?1607685791"></script>
+    <script src="/v0/js/clipboard.min.js?1607685792"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1607685792"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1607685792"></script>
+    <script src="/v0/js/jquery.sticky.js?1607685792"></script>
+    <script src="/v0/js/featherlight.min.js?1607685792"></script>
+    <script src="/v0/js/highlight.pack.js?1607685792"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1607685791"></script>
-    <script src="/v0/js/learn.js?1607685791"></script>
-    <script src="/v0/js/hugo-learn.js?1607685791"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1607685792"></script>
+    <script src="/v0/js/learn.js?1607685792"></script>
+    <script src="/v0/js/hugo-learn.js?1607685792"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1607685791" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1607685791"></script>
+    <link href="/v0/mermaid/mermaid.css?1607685792" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1607685792"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
