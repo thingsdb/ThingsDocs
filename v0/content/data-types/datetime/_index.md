@@ -10,6 +10,10 @@ The `datetime` and `timeval` types have *second* precision. If more than *second
 use your own type. For example the function [now()](../../collection-api/now) returns the current time-stamp as a floating point type.
 {{% /notice %}}
 
+{{% notice tip %}}
+Type `datetime` will appear as an ISO8601 formatted string in query results. It might be more convenient to get the value as a UNIX time stamp instead.
+If so, you might want to look at the [timeval](../timeval) type which is created for this purpose.
+{{% /notice %}}
 
 ### Functions
 
