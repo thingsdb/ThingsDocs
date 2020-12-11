@@ -11,20 +11,20 @@
     <title>extract :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1607697266" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1607697266" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1607697266" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1607697266" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1607697266" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1607697266" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1607697266" rel="stylesheet">
-    <link href="/v0/css/theme.css?1607697266" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1607697266" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1607699397" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1607699397" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1607699397" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1607699397" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1607699397" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1607699397" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1607699397" rel="stylesheet">
+    <link href="/v0/css/theme.css?1607699397" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1607699397" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1607697266" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1607699397" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1607697266"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1607699397"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1607697266"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1607697266"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1607699397"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1607699397"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1607697266"></script>
+<script type="text/javascript" src="/v0/js/search.js?1607699397"></script>
 
     
   </div>
@@ -5879,13 +5879,29 @@
 
 
 <p>Return a <code>thing</code> with <code>second</code>, <code>minute</code>, <code>hour</code>, <code>day</code>, <code>month</code>, <code>year</code> and <code>gmt_offset</code> as individual properties.</p>
+<p>It is possible to get a single property by using the name of the property as the first argument.</p>
 <p>This function does <em>not</em> generate an <a href="../../../overview/events">event</a>.</p>
 <h3 id="function">Function</h3>
-<p><em>datetime</em>.<code>extract()</code></p>
+<p><em>datetime</em>.<code>extract([key])</code></p>
 <h3 id="arguments">Arguments</h3>
-<p>None</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>key</code></td>
+<td><code>str</code> (optional)</td>
+<td>May be a specific property, one of <code>second</code>, <code>minute</code>, <code>hour</code>, <code>day</code>, <code>month</code>, <code>year</code> or <code>gmt_offset</code>.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="return-value">Return value</h3>
-<p>Returns a thing.</p>
+<p>Returns a thing or the value for a specific property.</p>
 <h3 id="example">Example</h3>
 <blockquote>
 <p>This code uses <code>extract()</code> as an example:</p>
@@ -5903,6 +5919,14 @@
     <span style="color:#f92672">&#34;second&#34;</span>: <span style="color:#ae81ff">28</span>,
     <span style="color:#f92672">&#34;year&#34;</span>: <span style="color:#ae81ff">2013</span>
 }
+</code></pre></div><blockquote>
+<p>Another example to get the <code>gmt_offset</code> only with <code>extract()</code>:</p>
+</blockquote>
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">datetime(2013, 2, 6, 13, 12, 28, 'Europe/Amsterdam').extract('gmt_offset');
+</code></pre><blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#ae81ff">3600</span>
 </code></pre></div>
 
 <footer class=" footline" >
@@ -5933,19 +5957,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1607697266"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1607697266"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1607697266"></script>
-    <script src="/v0/js/jquery.sticky.js?1607697266"></script>
-    <script src="/v0/js/featherlight.min.js?1607697266"></script>
-    <script src="/v0/js/highlight.pack.js?1607697266"></script>
+    <script src="/v0/js/clipboard.min.js?1607699397"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1607699397"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1607699397"></script>
+    <script src="/v0/js/jquery.sticky.js?1607699397"></script>
+    <script src="/v0/js/featherlight.min.js?1607699397"></script>
+    <script src="/v0/js/highlight.pack.js?1607699397"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1607697266"></script>
-    <script src="/v0/js/learn.js?1607697266"></script>
-    <script src="/v0/js/hugo-learn.js?1607697266"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1607699397"></script>
+    <script src="/v0/js/learn.js?1607699397"></script>
+    <script src="/v0/js/hugo-learn.js?1607699397"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1607697266" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1607697266"></script>
+    <link href="/v0/mermaid/mermaid.css?1607699397" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1607699397"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

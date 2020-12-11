@@ -17,13 +17,10 @@
       
       <guid>https://docs.thingsdb.net/v0/data-types/datetime/extract/</guid>
       <description>Return a thing with second, minute, hour, day, month, year and gmt_offset as individual properties.
+It is possible to get a single property by using the name of the property as the first argument.
 This function does not generate an event.
-Function datetime.extract()
-Arguments None
-Return value Returns a thing.
-Example  This code uses extract() as an example:
- datetime(2013, 2, 6, 13, 12, 28, &#39;Europe/Amsterdam&#39;).extract();  Return value in JSON format
- { &amp;#34;day&amp;#34;: 6, &amp;#34;gmt_offset&amp;#34;: 3600, &amp;#34;hour&amp;#34;: 13, &amp;#34;minute&amp;#34;: 12, &amp;#34;month&amp;#34;: 2, &amp;#34;second&amp;#34;: 28, &amp;#34;year&amp;#34;: 2013 } </description>
+Function datetime.extract([key])
+Arguments    Argument Type Description     key str (optional) May be a specific property, one of second, minute, hour, day, month, year or gmt_offset.</description>
     </item>
     
     <item>
