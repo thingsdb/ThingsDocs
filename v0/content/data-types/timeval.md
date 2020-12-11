@@ -50,3 +50,10 @@ Function | Description
 {{% notice info %}}
 The above functions correspond to those of a `datetime` object. For that reason, they are only listed under the data type `datetime`.
 {{% /notice %}}
+
+### Related functions
+
+Function | Description
+------ | -----------
+[timeval](../../collection-api/timeval) | Create a new timeval value.
+[is_timeval](../../collection-api/is_timeval) | Test if a given value is of type timeval.

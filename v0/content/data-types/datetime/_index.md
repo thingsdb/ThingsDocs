@@ -29,3 +29,9 @@ Function | Description
 [yday](../datetime/yday) | Return the day in the year as an integer value between `0..365` where the first of January is day `0`.
 [zone](../datetime/zone) | Return the time zone as a string, of `nil` if not zone information is available.
 
+### Related functions
+
+Function | Description
+------ | -----------
+[datetime](../../collection-api/datetime) | Create a new datetime value.
+[is_datetime](../../collection-api/is_datetime) | Test if a given value is of type datetime.
