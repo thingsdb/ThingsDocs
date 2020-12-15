@@ -24,9 +24,11 @@ garbage_collected | Number of [things](../../data-types/thing) which are garbage
 largest_result_size | Largest query result size in bytes. Check [node_info()](../node_info) to see the maximum allowed query result size.
 longest_event_duration | Longest event duration, in seconds. Event duration is measured from the moment an event is created, until the event is finished. During `AWAY` mode, a node will still create events, but waits before processing events and thus may result in rather long duration values.
 longest_query_duration | Longest query duration, in seconds.
+queries_from_cache | Number of queries which are loaded from cache.
 queries_success | Number of queries where this node acted as the master node and the query has successful finished.
 queries_with_error | Number of queries where this node acted as the master node but the query has returned with an error.
 started_at | UNIX time-stamp in seconds when the counters started counting. See [reset_counters()](../reset_counters).
+wasted_cache | Number of cached queries which are cleaned from the cache without ever being used.
 watcher_failed | The value is increased if an update could not be forwarded to a registered watcher.
 
 This function does *not* generate an [event](../../overview/events).
@@ -69,9 +71,11 @@ counters();
     "largest_result_size": 778,
     "longest_event_duration": 0.000295981,
     "longest_query_duration": 0.000152664,
+    "queries_from_cache": 63,
     "queries_success": 159,
     "queries_with_error": 0,
     "started_at": 1590496024,
+    "wasted_cache": 9,
     "watcher_failed": 0
 }
 ```

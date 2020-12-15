@@ -10,7 +10,9 @@ Value | Description
 ------- | -----------
 archive_files | Number of archive files. May decrease after a full store during *away* mode.
 archived_in_memory | Number of events which are archived in memory.
+cache_expiration_time | Time in seconds when a query expires in cache. Cleanup takes place when in *away* mode.
 cached_names | Number of [names](../../overview/names) cached in memory.
+cached_queries | Number of queries the node has in stored in cache.
 client_port | Listening for client TCP socket connections on this port.
 connected_clients | Number of connected clients to the node.
 db_stored_event_id | Last stored event ID in full database store.
@@ -37,6 +39,7 @@ scheduled_backups | Number of backups scheduled on this node. Only repeated back
 status | Current status of the ThingsDB node.
 storage_path | Path used for storing ThingsDB data.
 syntax_version | Language or syntax version. A new version of ThingsDB might also have a new language version.
+threshold_query_cache | Queries with a length equal or larger than this value will be cached by the node. See the [configuration page](../../getting-started/configuration) to configure this threshold.
 uptime | Uptime of the node in seconds.
 version | Version of ThingsDB.
 yajl_version | JSON parser library version.
@@ -70,7 +73,9 @@ node_info();
 {
     "archive_files": 1,
     "archived_in_memory": 0,
-    "cached_names": 2,
+    "cache_expiration_time": 900,
+    "cached_names": 36,
+    "cached_queries": 23,
     "client_port": 9200,
     "connected_clients": 1,
     "db_stored_event_id": 1,
@@ -97,6 +102,7 @@ node_info();
     "status": "READY",
     "storage_path": "/var/lib/thingsdb/",
     "syntax_version": "v0",
+    "threshold_query_cache": 160,
     "uptime": 7.854678630828857,
     "version": "0.2.13",
     "yajl_version": "2.1.0",
