@@ -11,20 +11,20 @@
     <title>counters :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1607699397" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1607699397" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1607699397" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1607699397" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1607699397" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1607699397" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1607699397" rel="stylesheet">
-    <link href="/v0/css/theme.css?1607699397" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1607699397" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1608048108" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1608048108" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1608048108" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1608048108" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1608048108" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1608048108" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1608048108" rel="stylesheet">
+    <link href="/v0/css/theme.css?1608048108" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1608048108" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1607699397" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1608048108" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1607699397"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1608048108"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1607699397"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1607699397"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1608048108"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1608048108"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1607699397"></script>
+<script type="text/javascript" src="/v0/js/search.js?1608048108"></script>
 
     
   </div>
@@ -5937,6 +5937,10 @@ the counters might provide you with more information.</p>
 <td>Longest query duration, in seconds.</td>
 </tr>
 <tr>
+<td>queries_from_cache</td>
+<td>Number of queries which are loaded from cache.</td>
+</tr>
+<tr>
 <td>queries_success</td>
 <td>Number of queries where this node acted as the master node and the query has successful finished.</td>
 </tr>
@@ -5947,6 +5951,10 @@ the counters might provide you with more information.</p>
 <tr>
 <td>started_at</td>
 <td>UNIX time-stamp in seconds when the counters started counting. See <a href="../reset_counters">reset_counters()</a>.</td>
+</tr>
+<tr>
+<td>wasted_cache</td>
+<td>Number of cached queries which are cleaned from the cache without ever being used.</td>
 </tr>
 <tr>
 <td>watcher_failed</td>
@@ -5984,9 +5992,11 @@ counters();
     <span style="color:#f92672">&#34;largest_result_size&#34;</span>: <span style="color:#ae81ff">778</span>,
     <span style="color:#f92672">&#34;longest_event_duration&#34;</span>: <span style="color:#ae81ff">0.000295981</span>,
     <span style="color:#f92672">&#34;longest_query_duration&#34;</span>: <span style="color:#ae81ff">0.000152664</span>,
+    <span style="color:#f92672">&#34;queries_from_cache&#34;</span>: <span style="color:#ae81ff">63</span>,
     <span style="color:#f92672">&#34;queries_success&#34;</span>: <span style="color:#ae81ff">159</span>,
     <span style="color:#f92672">&#34;queries_with_error&#34;</span>: <span style="color:#ae81ff">0</span>,
     <span style="color:#f92672">&#34;started_at&#34;</span>: <span style="color:#ae81ff">1590496024</span>,
+    <span style="color:#f92672">&#34;wasted_cache&#34;</span>: <span style="color:#ae81ff">9</span>,
     <span style="color:#f92672">&#34;watcher_failed&#34;</span>: <span style="color:#ae81ff">0</span>
 }
 </code></pre></div>
@@ -6019,19 +6029,19 @@ counters();
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1607699397"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1607699397"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1607699397"></script>
-    <script src="/v0/js/jquery.sticky.js?1607699397"></script>
-    <script src="/v0/js/featherlight.min.js?1607699397"></script>
-    <script src="/v0/js/highlight.pack.js?1607699397"></script>
+    <script src="/v0/js/clipboard.min.js?1608048108"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1608048108"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1608048108"></script>
+    <script src="/v0/js/jquery.sticky.js?1608048108"></script>
+    <script src="/v0/js/featherlight.min.js?1608048108"></script>
+    <script src="/v0/js/highlight.pack.js?1608048108"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1607699397"></script>
-    <script src="/v0/js/learn.js?1607699397"></script>
-    <script src="/v0/js/hugo-learn.js?1607699397"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1608048108"></script>
+    <script src="/v0/js/learn.js?1608048108"></script>
+    <script src="/v0/js/hugo-learn.js?1608048108"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1607699397" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1607699397"></script>
+    <link href="/v0/mermaid/mermaid.css?1608048108" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1608048108"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

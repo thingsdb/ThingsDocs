@@ -11,20 +11,20 @@
     <title>Configuration :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1607699397" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1607699397" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1607699397" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1607699397" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1607699397" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1607699397" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1607699397" rel="stylesheet">
-    <link href="/v0/css/theme.css?1607699397" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1607699397" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1608048108" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1608048108" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1608048108" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1608048108" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1608048108" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1608048108" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1608048108" rel="stylesheet">
+    <link href="/v0/css/theme.css?1608048108" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1608048108" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1607699397" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1608048108" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1607699397"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1608048108"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1607699397"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1607699397"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1608048108"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1608048108"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1607699397"></script>
+<script type="text/javascript" src="/v0/js/search.js?1608048108"></script>
 
     
   </div>
@@ -5872,24 +5872,9 @@
 </thead>
 <tbody>
 <tr>
-<td><code>THINGSDB_LISTEN_CLIENT_PORT</code></td>
-<td><code>9200</code></td>
-<td>Listen on this TCP port for client socket connections.</td>
-</tr>
-<tr>
 <td><code>THINGSDB_BIND_CLIENT_ADDR</code></td>
 <td><code>0.0.0.0</code></td>
 <td>Bind client connections to this address. This may also be an IPv6 address like <code>::</code>.</td>
-</tr>
-<tr>
-<td><code>THINGSDB_NODE_NAME</code></td>
-<td><em>hostname</em></td>
-<td>ThingsDB will publish itself to other nodes using this node name.</td>
-</tr>
-<tr>
-<td><code>THINGSDB_LISTEN_NODE_PORT</code></td>
-<td><code>9210</code></td>
-<td>Listen on this TCP port for node connections.</td>
 </tr>
 <tr>
 <td><code>THINGSDB_BIND_NODE_ADDR</code></td>
@@ -5897,34 +5882,14 @@
 <td>Bind node connections to this address. This may also be an IPv6 address like <code>::</code>.</td>
 </tr>
 <tr>
-<td><code>THINGSDB_IP_SUPPORT</code></td>
-<td><code>ALL</code></td>
-<td>Listen to IPv4 (<code>IPV4ONLY</code>), IPv6 (<code>IPV6ONLY</code>) or both (<code>ALL</code>) addresses.</td>
+<td><code>THINGSDB_CACHE_EXPIRATION_TIME</code></td>
+<td><code>900</code></td>
+<td>Cached queries which are not used within this expiration time <em>(in seconds)</em> will be removed from the cache while the node is in <em>away</em> mode. A value of <code>0</code> will disable the query cache.</td>
 </tr>
 <tr>
-<td><code>THINGSDB_STORAGE_PATH</code></td>
-<td><em>depends</em></td>
-<td>Location to store ThingsDB data. The default location depends on the user who is running ThingsDB. (<code>/var/lib/thingsdb/</code> for <em>root</em> and <code>~/.thingsdb/</code> for a normal user).</td>
-</tr>
-<tr>
-<td><code>THINGSDB_PIPE_CLIENT_NAME</code></td>
+<td><code>THINGSDB_GCLOUD_KEY_FILE</code></td>
 <td><em>disabled</em></td>
-<td>Named PIPE for client connections. Support for client PIPE connections will be disabled if the value is not configured.</td>
-</tr>
-<tr>
-<td><code>THINGSDB_THRESHOLD_FULL_STORAGE</code></td>
-<td><code>1000</code></td>
-<td>Threshold for number of events before initiating a full database store.</td>
-</tr>
-<tr>
-<td><code>THINGSDB_RESULT_SIZE_LIMIT</code></td>
-<td><code>20971520</code> <em>(20 MiB)</em></td>
-<td>Result size limit is checked when packing properties for a thing. If, at the check moment, the packed data size exceeds the limit, packing stops and an <a href="../../errors/#internal-errors">RESULT_TOO_LARGE</a> error will be returned. This limit is set in bytes and is used to prevent a huge amount of data, typically when a high <code>deep</code> value is used.</td>
-</tr>
-<tr>
-<td><code>THINGSDB_HTTP_STATUS_PORT</code></td>
-<td><em>disabled</em></td>
-<td>TCP port for listening to health and readiness checks.</td>
+<td>Service Authentication file <em>(e.g service_account.json)</em> used for creating backups in Google Cloud Storage. Support for Google Cloud Storage will be disabled if the value is not configured. Note that <code>gcloud</code> and <code>gsutil</code> must be installed to use this service.</td>
 </tr>
 <tr>
 <td><code>THINGSDB_HTTP_API_PORT</code></td>
@@ -5932,14 +5897,34 @@
 <td>TCP port for listening to HTTP API calls.</td>
 </tr>
 <tr>
-<td><code>THINGSDB_ZONE</code></td>
-<td><code>0</code></td>
-<td>Start node in this <a href="../../overview/dictionary">zone</a> number. Zones are used for forwarding queries while in <em>away</em> mode.</td>
+<td><code>THINGSDB_HTTP_STATUS_PORT</code></td>
+<td><em>disabled</em></td>
+<td>TCP port for listening to health and readiness checks.</td>
 </tr>
 <tr>
-<td><code>THINGSDB_QUERY_DURATION_WARN</code></td>
+<td><code>THINGSDB_IP_SUPPORT</code></td>
+<td><code>ALL</code></td>
+<td>Listen to IPv4 (<code>IPV4ONLY</code>), IPv6 (<code>IPV6ONLY</code>) or both (<code>ALL</code>) addresses.</td>
+</tr>
+<tr>
+<td><code>THINGSDB_LISTEN_CLIENT_PORT</code></td>
+<td><code>9200</code></td>
+<td>Listen on this TCP port for client socket connections.</td>
+</tr>
+<tr>
+<td><code>THINGSDB_LISTEN_NODE_PORT</code></td>
+<td><code>9210</code></td>
+<td>Listen on this TCP port for node connections.</td>
+</tr>
+<tr>
+<td><code>THINGSDB_NODE_NAME</code></td>
+<td><em>hostname</em></td>
+<td>ThingsDB will publish itself to other nodes using this node name.</td>
+</tr>
+<tr>
+<td><code>THINGSDB_PIPE_CLIENT_NAME</code></td>
 <td><em>disabled</em></td>
-<td>Log a warning message when a query takes more than X second(s).</td>
+<td>Named PIPE for client connections. Support for client PIPE connections will be disabled if the value is not configured.</td>
 </tr>
 <tr>
 <td><code>THINGSDB_QUERY_DURATION_ERROR</code></td>
@@ -5947,9 +5932,34 @@
 <td>Log an error message when a query takes more than X second(s).</td>
 </tr>
 <tr>
-<td><code>THINGSDB_GCLOUD_KEY_FILE</code></td>
+<td><code>THINGSDB_QUERY_DURATION_WARN</code></td>
 <td><em>disabled</em></td>
-<td>Service Authentication file <em>(e.g service_account.json)</em> used for creating backups in Google Cloud Storage. Support for Google Cloud Storage will be disabled if the value is not configured. Note that <code>gcloud</code> and <code>gsutil</code> must be installed to use this service.</td>
+<td>Log a warning message when a query takes more than X second(s).</td>
+</tr>
+<tr>
+<td><code>THINGSDB_RESULT_SIZE_LIMIT</code></td>
+<td><code>20971520</code> <em>(20 MiB)</em></td>
+<td>Result size limit is checked when packing properties for a thing. If, at the check moment, the packed data size exceeds the limit, packing stops and an <a href="../../errors/#internal-errors">RESULT_TOO_LARGE</a> error will be returned. This limit is set in bytes and is used to prevent a huge amount of data, typically when a high <code>deep</code> value is used.</td>
+</tr>
+<tr>
+<td><code>THINGSDB_STORAGE_PATH</code></td>
+<td><em>depends</em></td>
+<td>Location to store ThingsDB data. The default location depends on the user who is running ThingsDB. (<code>/var/lib/thingsdb/</code> for <em>root</em> and <code>~/.thingsdb/</code> for a normal user).</td>
+</tr>
+<tr>
+<td><code>THINGSDB_THRESHOLD_FULL_STORAGE</code></td>
+<td><code>1000</code></td>
+<td>Threshold for number of events before initiating a full database store.</td>
+</tr>
+<tr>
+<td><code>THINGSDB_THRESHOLD_QUERY_CACHE</code></td>
+<td><code>160</code></td>
+<td>Queries with a length equal to, or greater than this threshold will be cached by the node.</td>
+</tr>
+<tr>
+<td><code>THINGSDB_ZONE</code></td>
+<td><code>0</code></td>
+<td>Start node in this <a href="../../overview/dictionary">zone</a> number. Zones are used for forwarding queries while in <em>away</em> mode.</td>
 </tr>
 </tbody>
 </table>
@@ -5983,19 +5993,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1607699397"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1607699397"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1607699397"></script>
-    <script src="/v0/js/jquery.sticky.js?1607699397"></script>
-    <script src="/v0/js/featherlight.min.js?1607699397"></script>
-    <script src="/v0/js/highlight.pack.js?1607699397"></script>
+    <script src="/v0/js/clipboard.min.js?1608048108"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1608048108"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1608048108"></script>
+    <script src="/v0/js/jquery.sticky.js?1608048108"></script>
+    <script src="/v0/js/featherlight.min.js?1608048108"></script>
+    <script src="/v0/js/highlight.pack.js?1608048108"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1607699397"></script>
-    <script src="/v0/js/learn.js?1607699397"></script>
-    <script src="/v0/js/hugo-learn.js?1607699397"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1608048108"></script>
+    <script src="/v0/js/learn.js?1608048108"></script>
+    <script src="/v0/js/hugo-learn.js?1608048108"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1607699397" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1607699397"></script>
+    <link href="/v0/mermaid/mermaid.css?1608048108" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1608048108"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

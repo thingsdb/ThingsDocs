@@ -89,7 +89,7 @@ If Google Cloud Storage is configured then it is possible to create backups dire
       
       <guid>https://docs.thingsdb.net/v0/node-api/node_info/</guid>
       <description>Returns information about the node in the selected scope. See scopes for more information on how to target a specific node scope.
-   Value Description     archive_files Number of archive files. May decrease after a full store during away mode.   archived_in_memory Number of events which are archived in memory.   cached_names Number of names cached in memory.   client_port Listening for client TCP socket connections on this port.</description>
+   Value Description     archive_files Number of archive files. May decrease after a full store during away mode.   archived_in_memory Number of events which are archived in memory.   cache_expiration_time Time in seconds when a query expires in cache. Cleanup takes place when in away mode.</description>
     </item>
     
     <item>
