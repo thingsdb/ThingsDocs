@@ -5,13 +5,7 @@ weight: 241
 
 Adds a new token for a given user. An optional expiration time may be given; after this time the token cannot
 be used anymore. Use [del_expired](../../thingsdb-api/del_expired) to cleanup expired tokens. The expiration time may be
-given as a UNIX time-stamp in seconds or a date/time string.
-
-Some valid date/time strings:
-
-- `2021-01-01`
-- `2023-02-06 14:30`
-- `2023-07-05T13:23:20+01:00`
+given as a [datetime](../../data-types/datetime) or [timeval](../../data-types/timeval) type.
 
 Expiration dates in the past are not allowed an will raise a [bad_data_err()](../../errors/bad_data_err) error.
 
@@ -51,8 +45,8 @@ Returns the new token key.
 > Create a new token for user `admin`:
 
 ```thingsdb,should_pass,@t
-// A new token with an expiration date and description
-new_token('admin', now() + 7*24*3600, 'token for one week');
+// A new token with an expiration date in one week and description
+new_token('admin', datetime().move('weeks', 1), 'token for one week');
 ```
 
 > Example return value in JSON format (the token key)

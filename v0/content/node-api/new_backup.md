@@ -32,7 +32,7 @@ This function does *not* generate an [event](../../overview/events).
 Argument | Type | Description
 --------- | ----------- | -----------
 `file_template` | str | Backup schedule file template. See [file-template](#file-template) for more information.
-`start_ts` | nil/int/float/raw (optional) | Start date/time of the backup. If no `start_ts` is given, the backup starts as soon as possible.
+`start_ts` | nil/datetime/timeval (optional) | Start date/time of the backup. If no `start_ts` is given, the backup starts as soon as possible.
 `repeat` | int (optional) | Repeat the backup schedule every `repeat` seconds. If no `repeat` value is set, the backup job will run only once.
 `max_files` | int (optional) | As soon as `max_files` successful backups are created, the first backup (including the file on disk) will be removed. Default is `7`.
 
@@ -59,7 +59,7 @@ Returns the backup `ID` for the scheduled backup.
 
 ```thingsdb,syntax_only,@n
 // Create a new backup immediately (because 2000-01-01 is in the past), then at 23:00 and repeat each day
-new_backup('/var/backup/thingsdb_{DATE}{TIME}.tar.gz', '2000-01-01 23:00', 24*3600);
+new_backup('/var/backup/thingsdb_{DATE}{TIME}.tar.gz', datetime(2000, 1, 1), 24*3600);
 ```
 
 > Example result in JSON format:

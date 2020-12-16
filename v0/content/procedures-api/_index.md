@@ -23,7 +23,7 @@ new_procedure('create_user', |name| {
     new_user(name);
 
     // Create a `token` for one day
-    token = new_token(name, now() + 3600 * 24);
+    token = new_token(name, datetime().move('days', 1));
 
     // Give watch access to the @node scope and read on collection `stuff`
     grant('@node', name, WATCH);

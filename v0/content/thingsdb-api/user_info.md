@@ -60,8 +60,8 @@ user_info();
     "name": "admin",
     "tokens": [
         {
-            "created_on": "2019-11-17 09:25:36Z",
-            "expiration_time": "2020-11-17 09:25:36Z",
+            "created_on": "2019-11-17T09:25:36Z",
+            "expiration_time": "2020-11-17T09:25:36Z",
             "key": "QpVmHOsfQaKKpjpOkW0SUt",
             "status": "OK"
         }
