@@ -11,20 +11,20 @@
     <title>new_backup :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1608048108" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1608048108" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1608048108" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1608048108" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1608048108" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1608048108" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1608048108" rel="stylesheet">
-    <link href="/v0/css/theme.css?1608048108" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1608048108" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1608116107" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1608116107" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1608116107" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1608116107" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1608116107" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1608116107" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1608116107" rel="stylesheet">
+    <link href="/v0/css/theme.css?1608116107" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1608116107" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1608048108" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1608116107" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1608048108"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1608116107"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1608048108"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1608048108"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1608116107"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1608116107"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1608048108"></script>
+<script type="text/javascript" src="/v0/js/search.js?1608116107"></script>
 
     
   </div>
@@ -5909,7 +5909,7 @@ To use Google Cloud Storage simply create the backup with a <code>file_template<
 </tr>
 <tr>
 <td><code>start_ts</code></td>
-<td>nil/int/float/raw (optional)</td>
+<td>nil/datetime/timeval (optional)</td>
 <td>Start date/time of the backup. If no <code>start_ts</code> is given, the backup starts as soon as possible.</td>
 </tr>
 <tr>
@@ -5957,7 +5957,7 @@ for creating unique file names.</p>
 <p>Use <em>new_backup</em> to schedule a ThingsDB backup:</p>
 </blockquote>
 <pre><code class="language-thingsdb,syntax_only,@n" data-lang="thingsdb,syntax_only,@n">// Create a new backup immediately (because 2000-01-01 is in the past), then at 23:00 and repeat each day
-new_backup('/var/backup/thingsdb_{DATE}{TIME}.tar.gz', '2000-01-01 23:00', 24*3600);
+new_backup('/var/backup/thingsdb_{DATE}{TIME}.tar.gz', datetime(2000, 1, 1), 24*3600);
 </code></pre><blockquote>
 <p>Example result in JSON format:</p>
 </blockquote>
@@ -6006,19 +6006,19 @@ Type `yes` + ENTER if you really want to continue: yes
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1608048108"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1608048108"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1608048108"></script>
-    <script src="/v0/js/jquery.sticky.js?1608048108"></script>
-    <script src="/v0/js/featherlight.min.js?1608048108"></script>
-    <script src="/v0/js/highlight.pack.js?1608048108"></script>
+    <script src="/v0/js/clipboard.min.js?1608116107"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1608116107"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1608116107"></script>
+    <script src="/v0/js/jquery.sticky.js?1608116107"></script>
+    <script src="/v0/js/featherlight.min.js?1608116107"></script>
+    <script src="/v0/js/highlight.pack.js?1608116107"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1608048108"></script>
-    <script src="/v0/js/learn.js?1608048108"></script>
-    <script src="/v0/js/hugo-learn.js?1608048108"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1608116107"></script>
+    <script src="/v0/js/learn.js?1608116107"></script>
+    <script src="/v0/js/hugo-learn.js?1608116107"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1608048108" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1608048108"></script>
+    <link href="/v0/mermaid/mermaid.css?1608116107" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1608116107"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

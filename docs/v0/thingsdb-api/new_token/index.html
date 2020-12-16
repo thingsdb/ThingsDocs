@@ -11,20 +11,20 @@
     <title>new_token :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1608048108" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1608048108" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1608048108" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1608048108" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1608048108" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1608048108" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1608048108" rel="stylesheet">
-    <link href="/v0/css/theme.css?1608048108" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1608048108" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1608116107" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1608116107" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1608116107" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1608116107" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1608116107" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1608116107" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1608116107" rel="stylesheet">
+    <link href="/v0/css/theme.css?1608116107" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1608116107" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1608048108" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1608116107" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1608048108"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1608116107"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1608048108"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1608048108"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1608116107"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1608116107"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1608048108"></script>
+<script type="text/javascript" src="/v0/js/search.js?1608116107"></script>
 
     
   </div>
@@ -5874,13 +5874,7 @@
 
 <p>Adds a new token for a given user. An optional expiration time may be given; after this time the token cannot
 be used anymore. Use <a href="../../thingsdb-api/del_expired">del_expired</a> to cleanup expired tokens. The expiration time may be
-given as a UNIX time-stamp in seconds or a date/time string.</p>
-<p>Some valid date/time strings:</p>
-<ul>
-<li><code>2021-01-01</code></li>
-<li><code>2023-02-06 14:30</code></li>
-<li><code>2023-07-05T13:23:20+01:00</code></li>
-</ul>
+given as a <a href="../../data-types/datetime">datetime</a> or <a href="../../data-types/timeval">timeval</a> type.</p>
 <p>Expiration dates in the past are not allowed an will raise a <a href="../../errors/bad_data_err">bad_data_err()</a> error.</p>
 <p>It is also possible to set a description for the token which can be used to identify the token.
 If you only want to set a description, but no expiration time, then you can use <code>nil</code> as a second argument.
@@ -5929,8 +5923,8 @@ privileges on the <code>@thingsdb</code> scope are sufficient.</p>
 <blockquote>
 <p>Create a new token for user <code>admin</code>:</p>
 </blockquote>
-<pre><code class="language-thingsdb,should_pass,@t" data-lang="thingsdb,should_pass,@t">// A new token with an expiration date and description
-new_token('admin', now() + 7*24*3600, 'token for one week');
+<pre><code class="language-thingsdb,should_pass,@t" data-lang="thingsdb,should_pass,@t">// A new token with an expiration date in one week and description
+new_token('admin', datetime().move('weeks', 1), 'token for one week');
 </code></pre><blockquote>
 <p>Example return value in JSON format (the token key)</p>
 </blockquote>
@@ -5965,19 +5959,19 @@ new_token('admin', now() + 7*24*3600, 'token for one week');
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1608048108"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1608048108"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1608048108"></script>
-    <script src="/v0/js/jquery.sticky.js?1608048108"></script>
-    <script src="/v0/js/featherlight.min.js?1608048108"></script>
-    <script src="/v0/js/highlight.pack.js?1608048108"></script>
+    <script src="/v0/js/clipboard.min.js?1608116107"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1608116107"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1608116107"></script>
+    <script src="/v0/js/jquery.sticky.js?1608116107"></script>
+    <script src="/v0/js/featherlight.min.js?1608116107"></script>
+    <script src="/v0/js/highlight.pack.js?1608116107"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1608048108"></script>
-    <script src="/v0/js/learn.js?1608048108"></script>
-    <script src="/v0/js/hugo-learn.js?1608048108"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1608116107"></script>
+    <script src="/v0/js/learn.js?1608116107"></script>
+    <script src="/v0/js/hugo-learn.js?1608116107"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1608048108" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1608048108"></script>
+    <link href="/v0/mermaid/mermaid.css?1608116107" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1608116107"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
