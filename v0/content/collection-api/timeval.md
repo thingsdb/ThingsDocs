@@ -26,12 +26,12 @@ Returns a [timeval](../../data-types/timeval) object.
 
 ```thingsdb,should_pass
 [
-    {timeval();                         /* current time                 */ },
-    {timeval(1607609782);               /* Thu, 10 Dec 2020 14:16:22    */ },
-    {timeval(2013, 2, 6, 12);           /* Wed, 06 Feb 2013             */ },
-    {timeval(2013, 2, 6, 13, 'Europe/Amsterdam');  /* with a time zone  */ },
-    {timeval('1978-08-07T13:30:00Z');   /* Mon, 07 Aug 1978 13:30       */ },
-    {timeval('12/10/2020', '%M/%s/%Y'); /* Thu, 10 Dec 2020             */ },
+    {timeval();                                     /* current time                 */ },
+    {timeval(1607609782);                           /* Thu, 10 Dec 2020 14:16:22    */ },
+    {timeval(2013, 2, 6, 12);                       /* Wed, 06 Feb 2013             */ },
+    {timeval(2013, 2, 6, 13, 'Europe/Amsterdam');   /* with a time zone             */ },
+    {timeval('1978-08-07T13:30:00Z');               /* Mon, 07 Aug 1978 13:30       */ },
+    {timeval('12/10/2020', '%M/%s/%Y');             /* Thu, 10 Dec 2020             */ },
 ];
 ```
 

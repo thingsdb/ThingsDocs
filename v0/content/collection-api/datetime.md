@@ -91,12 +91,12 @@ Returns a [datetime](../../data-types/datetime) object.
 
 ```thingsdb,should_pass
 [
-    {datetime();                         /* current time                 */ },
-    {datetime(1607609782);               /* Thu, 10 Dec 2020 14:16:22    */ },
-    {datetime(2013, 2, 6, 12);           /* Wed, 06 Feb 2013             */ },
-    {datetime(2013, 2, 6, 13, 'Europe/Amsterdam');  /* with a time zone  */ },
-    {datetime('1978-08-07T13:30:00Z');   /* Mon, 07 Aug 1978 13:30       */ },
-    {datetime('12/10/2020', '%M/%s/%Y'); /* Thu, 10 Dec 2020             */ },
+    {datetime();                                    /* current time                 */ },
+    {datetime(1607609782);                          /* Thu, 10 Dec 2020 14:16:22    */ },
+    {datetime(2013, 2, 6, 12);                      /* Wed, 06 Feb 2013             */ },
+    {datetime(2013, 2, 6, 13, 'Europe/Amsterdam');  /* with a time zone             */ },
+    {datetime('1978-08-07T13:30:00Z');              /* Mon, 07 Aug 1978 13:30       */ },
+    {datetime('12/10/2020', '%M/%s/%Y');            /* Thu, 10 Dec 2020             */ },
 ];
 ```
 
@@ -104,8 +104,7 @@ Returns a [datetime](../../data-types/datetime) object.
 
 ```json
 [
-[
-    "2020-12-10T14:34:25Z",
+    "2020-12-17T15:58:25Z",
     "2020-12-10T14:16:22Z",
     "2013-02-06T12:00:00Z",
     "2013-02-06T13:00:00+0100",
