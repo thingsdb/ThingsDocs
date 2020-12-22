@@ -18,7 +18,7 @@ This function does *not* generate an [event](../../overview/events).
 
 Argument | Type | Description
 -------- | ---- | -----------
-value | any (optional) | The value to convert to a boolean value. 
+value | any (optional) | The value to convert to a boolean value.
 
 ### Return value
 
@@ -30,14 +30,20 @@ A boolean value.
 
 ```thingsdb,json_response
 [
-    bool(),
-    bool(nil),
-    bool({}),
-    bool({answer: 42}),
-    bool([]),
-    bool([1, 2, 3]),
-    bool(''),
-    bool('forty two'),
+    { bool();                           /* default bool is false                    */},
+    { bool(0);                          /* zero (0) evaluates to false              */},
+    { bool(0.0);                        /* zero float (0.0) evaluates to false      */},
+    { bool(nil);                        /* nil evaluates to false                   */},
+    { bool({});                         /* an empty thing evaluates to false        */},
+    { bool(err());                      /* any error evaluates to false             */},
+    { bool('');                         /* an empty string evaluates to false       */},
+    { bool([]);                         /* an empty array evaluates to false        */},
+
+    { bool(42);                         /* non zero integers evaluates to true      */},
+    { bool(-1.0);                       /* non zero float values evaluates to true  */},
+    { bool({answer: 42});               /* non empty thing evaluates to true        */},
+    { bool([1, 2, 3]);                  /* non empty array evaluates to true        */},
+    { bool('forty two');                /* non empty string evaluates to true       */},
 ];
 ```
 
@@ -48,10 +54,15 @@ A boolean value.
     false,
     false,
     false,
-    true,
+    false,
+    false,
+    false,
+    false,
     false,
     true,
-    false,
+    true,
+    true,
+    true,
     true
 ]
 ```
