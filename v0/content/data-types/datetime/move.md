@@ -4,7 +4,7 @@ weight: 39
 ---
 
 Return a new [datetime](../) (or [timeval](../../timeval)) object, which is shifted in time relative to the original date/time.
-The amount the new date/time will be shifted must be given by one of the following units
+The amount the new date/time will be shifted must be given by one of the following units: `years`, `months`, `weeks`, `days`, `hours`, `minutes` or `seconds`.
 
 {{% notice note %}}
 When using `years` of `months` as a *unit*, it might not be possible to *move* to the exact same day in the month. If this is the case, the last possible day of the month will be used.
