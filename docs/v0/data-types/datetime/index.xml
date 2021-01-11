@@ -42,7 +42,7 @@ Arguments    Argument Type Description     fmt str (required) Custom output form
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/datetime/move/</guid>
-      <description>Return a new datetime (or timeval) object, which is shifted in time relative to the original date/time. The amount the new date/time will be shifted must be given by one of the following units
+      <description>Return a new datetime (or timeval) object, which is shifted in time relative to the original date/time. The amount the new date/time will be shifted must be given by one of the following units: years, months, weeks, days, hours, minutes or seconds.
 When using years of months as a unit, it might not be possible to move to the exact same day in the month. If this is the case, the last possible day of the month will be used.</description>
     </item>
     
