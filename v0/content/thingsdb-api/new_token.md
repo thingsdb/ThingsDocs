@@ -1,6 +1,6 @@
 ---
 title: "new_token"
-weight: 241
+weight: 251
 ---
 
 Adds a new token for a given user. An optional expiration time may be given; after this time the token cannot
@@ -18,7 +18,7 @@ is reached. Existing tokens can be removed with [del_token](../../thingsdb-api/d
 
 {{% notice note %}}
 This function requires `GRANT` privileges on the `@thingsdb` scope when a `username`
-other then the logged in user is given as argument. For the currently logged in user, `MODIFY`
+other then the logged in user is given as argument. For the currently logged in user, `EVENT`
 privileges on the `@thingsdb` scope are sufficient.
 {{% /notice %}}
 

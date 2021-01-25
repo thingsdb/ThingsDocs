@@ -1,6 +1,6 @@
 ---
 title: "procedure_info"
-weight: 257
+weight: 270
 ---
 
 Returns information about a procedure.
@@ -9,7 +9,7 @@ Value | Description
 ------- | -----------
 `arguments` | Array with positional argument names.
 `created_at` | [Time Stamp](https://wikipedia.org/wiki/Unix_time) when the procedure is created.
-`definition` | Closure definition. *(Only available with `MODIFY` privileges)*
+`definition` | Closure definition. *(Only available with `EVENT` privileges)*
 `doc` | Doc string of the closure in the procedure.
 `name` | Name of the procedure.
 `with_side_effects` | Boolean value which indicates if this procedure has side effects.

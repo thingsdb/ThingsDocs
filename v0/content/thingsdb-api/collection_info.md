@@ -1,11 +1,11 @@
 ---
 title: "collection_info"
-weight: 227
+weight: 233
 ---
 
 Returns information about a specific collection.
 
-This function requires `READ` privileges on the requested `collection`, or `MODIFY`
+This function requires `QUERY` privileges on the requested `collection`, or `EVENT`
 privileges on the `@thingsdb` scope.
 
 This function does *not* generate an [event](../../overview/events).

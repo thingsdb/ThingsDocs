@@ -1,6 +1,6 @@
 ---
 title: "set_password"
-weight: 247
+weight: 260
 ---
 
 Change a user's password. This function can also be used to remove an existing
@@ -10,7 +10,7 @@ Passwords must contain 1 to 128 printable characters.
 
 {{% notice note %}}
 This function requires `GRANT` privileges on the `@thingsdb` scope when a `username`
-other then the logged in user is given as argument. For the currently logged in user, `MODIFY`
+other then the logged in user is given as argument. For the currently logged in user, `EVENT`
 privileges on the `@thingsdb` scope are sufficient.
 {{% /notice %}}
 

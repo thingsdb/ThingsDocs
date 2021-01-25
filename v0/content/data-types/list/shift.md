@@ -1,6 +1,6 @@
 ---
 title: "shift"
-weight: 73
+weight: 76
 ---
 
 Removes the first item from a [list](../../list) and returns that item.

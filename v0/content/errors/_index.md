@@ -1,6 +1,6 @@
 ---
 title: "Errors"
-weight: 268
+weight: 282
 chapter: false
 ---
 
@@ -8,6 +8,7 @@ ThingsDB uses the following error codes:
 
 Error | Code | Meaning
 ------| ---- | -------
+[cancelled_err](./cancelled_err) | -64 | Operation is cancelled before completion.
 [operation_err](./operation_err) | -63 | Operation is not valid in the current context.
 [num_arguments_err](./num_arguments_err) | -62 | Wrong number of arguments.
 [type_err](./type_err) | -61 | Object of inappropriate type.

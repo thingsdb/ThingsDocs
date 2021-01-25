@@ -1,6 +1,6 @@
 ---
 title: "Procedures API"
-weight: 252
+weight: 265
 chapter: true
 ---
 
@@ -27,7 +27,7 @@ new_procedure('create_user', |name| {
 
     // Give watch access to the @node scope and read on collection `stuff`
     grant('@node', name, WATCH);
-    grant('@:stuff', name, READ);
+    grant('@:stuff', name, QUERY|RUN);
 
     // Return the token
     token;

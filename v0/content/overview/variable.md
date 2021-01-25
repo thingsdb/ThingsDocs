@@ -5,7 +5,7 @@ weight: 23
 
 Can be used to assign a value to a variable which can be used within a query.
 
-Variable can be created with `READ` privileges since they do not modify
+Variable can be created with `QUERY` privileges since they do not modify
 the collection's data.
 
 To create a variable, just assign a value to a valid [name](../names).

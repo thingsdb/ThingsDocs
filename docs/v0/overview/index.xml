@@ -55,7 +55,7 @@
       
       <guid>https://docs.thingsdb.net/v0/overview/variable/</guid>
       <description>Can be used to assign a value to a variable which can be used within a query.
-Variable can be created with READ privileges since they do not modify the collection&amp;rsquo;s data.
+Variable can be created with QUERY privileges since they do not modify the collection&amp;rsquo;s data.
 To create a variable, just assign a value to a valid name.
 Some valid examples:
  _ = ... tmp = ... var1 = ...  Variables created within a closure become local. They can only be used within the closure body.</description>

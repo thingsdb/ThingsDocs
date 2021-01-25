@@ -1,6 +1,6 @@
 ---
 title: "type_info"
-weight: 211
+weight: 216
 ---
 
 Returns information about a given [Type](../../data-types/type).
@@ -15,7 +15,7 @@ Value | Description
 `methods` | Object with methods where the key is the method name and the value an object containing information about the closure.
 
 {{% notice info %}}
-Methods information will contain the definition of the attached closure ***only*** when the user has at least `MODIFY` privileges on the collection containing the type.
+Methods information will contain the definition of the attached closure ***only*** when the user has at least `EVENT` privileges on the collection containing the type.
 {{% /notice %}}
 
 {{% notice note %}}

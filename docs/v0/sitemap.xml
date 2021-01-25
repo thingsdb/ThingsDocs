@@ -211,6 +211,18 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/future/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/future/then/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/future/else/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/data-types/info/</loc>
   </url>
   
@@ -603,6 +615,10 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/future/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/collection-api/has_enum/</loc>
   </url>
   
@@ -652,6 +668,10 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v0/collection-api/is_float/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/is_future/</loc>
   </url>
   
   <url>
@@ -895,6 +915,10 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/node-api/restart_module/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/node-api/set_log_level/</loc>
   </url>
   
@@ -912,6 +936,10 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v0/thingsdb-api/collections_info/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/modules_info/</loc>
   </url>
   
   <url>
@@ -943,6 +971,10 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/has_module/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/thingsdb-api/has_node/</loc>
   </url>
   
@@ -955,7 +987,15 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/module_info/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/thingsdb-api/new_collection/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/new_module/</loc>
   </url>
   
   <url>
@@ -975,6 +1015,10 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/rename_module/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/thingsdb-api/rename_user/</loc>
   </url>
   
@@ -984,6 +1028,14 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v0/thingsdb-api/revoke/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/set_module_conf/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/set_module_scope/</loc>
   </url>
   
   <url>
@@ -1040,6 +1092,10 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v0/procedures-api/run/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/modules/</loc>
   </url>
   
   <url>
@@ -1124,6 +1180,10 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v0/errors/value_err/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/errors/cancelled_err/</loc>
   </url>
   
   <url>

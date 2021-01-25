@@ -114,7 +114,22 @@ Function reset_counters()
 Arguments None
 Return value Returns nil.
 Example  This code will reset the counters on a node:
- // resets counters on the node in this scope reset_counters();  Example return value in JSON format (the new collection id)</description>
+ // resets counters on the node in this scope reset_counters();  Return value in JSON format</description>
+    </item>
+    
+    <item>
+      <title>restart_module</title>
+      <link>https://docs.thingsdb.net/v0/node-api/restart_module/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/node-api/restart_module/</guid>
+      <description>Restarts a given module.
+This function does not generate an event.
+Function restart_module(name)
+Arguments    Argument Type Description     name str (required) Module to restart.    Return value Returns nil.
+Example  This code will reset the counters on a node:
+ restart_module(&#39;DEMO&#39;);  Return value in JSON format
+ null </description>
     </item>
     
     <item>
@@ -136,7 +151,7 @@ Log Levels    Name Int Description     DEBUG 0 Display debug messages (can resul
       
       <guid>https://docs.thingsdb.net/v0/node-api/shutdown/</guid>
       <description>Shutdown the node in the selected scope. This is a clean shutdown, allowing all other nodes (and clients) to disconnect.
-At least MODIFY privileges on the @node scope are required to shutdown a node.
+At least EVENT privileges on the @node scope are required to shutdown a node.
  This function does not generate an event.
 Function shutdown()
 Arguments None.

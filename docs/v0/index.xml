@@ -221,7 +221,7 @@ Serializing the above using MessagePack results in the following 11 bytes:</desc
       
       <guid>https://docs.thingsdb.net/v0/overview/variable/</guid>
       <description>Can be used to assign a value to a variable which can be used within a query.
-Variable can be created with READ privileges since they do not modify the collection&amp;rsquo;s data.
+Variable can be created with QUERY privileges since they do not modify the collection&amp;rsquo;s data.
 To create a variable, just assign a value to a valid name.
 Some valid examples:
  _ = ... tmp = ... var1 = ...  Variables created within a closure become local. They can only be used within the closure body.</description>
@@ -537,6 +537,26 @@ Example  This code uses code() to return the error code for an error:
       <guid>https://docs.thingsdb.net/v0/data-types/float/</guid>
       <description>ThingsDB uses 64bit to store float values and has support for the e notation and special float values like inf, -inf and nan.
 Useful functions    Function Description     float return a float type for a given value.   is_float check if the given value is of the float type.   is_inf check if the given value is infinite.   is_nan check if the given value is not-a-number.</description>
+    </item>
+    
+    <item>
+      <title>then</title>
+      <link>https://docs.thingsdb.net/v0/data-types/future/then/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/future/then/</guid>
+      <description>Function then accepts a closure as argument which will be executed only when the future is successful. The code inside the closure will only generate an event then the closure code is executed. The return value of the closure will be used as the new future value.
+The closure will be called with the same arguments as given to the future, except for the first argument, which can be the result of a module.</description>
+    </item>
+    
+    <item>
+      <title>else</title>
+      <link>https://docs.thingsdb.net/v0/data-types/future/else/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/future/else/</guid>
+      <description>Function else accepts a closure as argument which will be executed only when the future is using a module which has failed with some error. The code inside the closure will only generate an event then the closure code is executed. The return value of the closure will be used as the new future value.
+The closure will be called with the same arguments as given to the future, except for the first argument, which is the error from the module.</description>
     </item>
     
     <item>
@@ -1711,6 +1731,19 @@ Type bool values are converted to 1.0 for true and 0.0 for false.</description>
     </item>
     
     <item>
+      <title>future</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/future/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/future/</guid>
+      <description>Returns a future. It is not possible to assign a future to a collection or add the future to a list. If you do, then nil will be assigned instead.
+If you want to use the return value from a future, you need to use then(..) and
+This function does not generate an event.
+Function future(request, arg1, arg2, ..., argX)
+Arguments    Argument Type Description     request thing/nil (required) The request or nil for a plain future.</description>
+    </item>
+    
+    <item>
       <title>has_enum</title>
       <link>https://docs.thingsdb.net/v0/collection-api/has_enum/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1878,6 +1911,20 @@ This function does not generate an event.
 This function has a deprecated alias isfloat which will be removed in the next minor release.
  Function is_float(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a float, else it returns false.</description>
+    </item>
+    
+    <item>
+      <title>is_future</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/is_future/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/is_future/</guid>
+      <description>This function determines whether the provided value is a future value or not.
+This function does not generate an event.
+Function is_future(value)
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a future, else it returns false.
+Example  This code shows some return values for is_float():
+ [ is_future( future(nil) ), is_future( future(nil).</description>
     </item>
     
     <item>
@@ -2582,7 +2629,22 @@ Function reset_counters()
 Arguments None
 Return value Returns nil.
 Example  This code will reset the counters on a node:
- // resets counters on the node in this scope reset_counters();  Example return value in JSON format (the new collection id)</description>
+ // resets counters on the node in this scope reset_counters();  Return value in JSON format</description>
+    </item>
+    
+    <item>
+      <title>restart_module</title>
+      <link>https://docs.thingsdb.net/v0/node-api/restart_module/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/node-api/restart_module/</guid>
+      <description>Restarts a given module.
+This function does not generate an event.
+Function restart_module(name)
+Arguments    Argument Type Description     name str (required) Module to restart.    Return value Returns nil.
+Example  This code will reset the counters on a node:
+ restart_module(&#39;DEMO&#39;);  Return value in JSON format
+ null </description>
     </item>
     
     <item>
@@ -2604,7 +2666,7 @@ Log Levels    Name Int Description     DEBUG 0 Display debug messages (can resul
       
       <guid>https://docs.thingsdb.net/v0/node-api/shutdown/</guid>
       <description>Shutdown the node in the selected scope. This is a clean shutdown, allowing all other nodes (and clients) to disconnect.
-At least MODIFY privileges on the @node scope are required to shutdown a node.
+At least EVENT privileges on the @node scope are required to shutdown a node.
  This function does not generate an event.
 Function shutdown()
 Arguments None.
@@ -2618,7 +2680,7 @@ Return value Returns nil.</description>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/collection_info/</guid>
       <description>Returns information about a specific collection.
-This function requires READ privileges on the requested collection, or MODIFY privileges on the @thingsdb scope.
+This function requires QUERY privileges on the requested collection, or EVENT privileges on the @thingsdb scope.
 This function does not generate an event.
 Function collection_info(collection)
 Arguments    Argument Type Description     collection str/int (required) Name or Id of the collection    Return value Returns info about the collection.
@@ -2634,11 +2696,25 @@ Example  Returns information about collection stuff:
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/collections_info/</guid>
       <description>Returns collection information about all collections in ThingsDB.
 See the collection_info() function documentation for an example of the exposed collection information.
-If the user has no MODIFY permissions on the @thingsdb scope, then only the collections where the user has at least READ privileges are included in the result.
+If the user has no EVENT permissions on the @thingsdb scope, then only the collections where the user has at least QUERY privileges are included in the result.
  This function does not generate an event.
 Function collections_info()
 Arguments None
 Return value List with collection info about all collections in ThingsDB.</description>
+    </item>
+    
+    <item>
+      <title>modules_info</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/modules_info/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/modules_info/</guid>
+      <description>Returns module information about all modules in ThingsDB.
+See the module_info() function documentation for an example of the exposed module information.
+This function does not generate an event.
+Function modules_info()
+Arguments None
+Return value List with modules info about all modules in ThingsDB.</description>
     </item>
     
     <item>
@@ -2691,7 +2767,7 @@ Arguments    Argument Type Description     node_id int (required) Id of the node
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/del_token/</guid>
       <description>Delete a token.
-This function requires GRANT privileges on the @thingsdb scope unless the given token belongs to the logged on user. In the latter case, only MODIFY privileges are required.
+This function requires GRANT privileges on the @thingsdb scope unless the given token belongs to the logged on user. In the latter case, only EVENT privileges are required.
  This function generates an event.
 Function del_token(key)
 Arguments    Argument Type Description     key str (required) Token key to delete.    Return value Returns nil when successful. A lookup_err() is raised if the token is not found.</description>
@@ -2717,7 +2793,7 @@ Arguments    Argument Type Description     username str (required) Username of t
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/grant/</guid>
       <description>Grant, collection or general, privileges to a user. Access to a user is provided by setting a bit mask to either the @node, @thingsdb or a @collection scope.
-To use this function, at least MODIFY privileges on the @thingsdb scope and GRANT privileges on the target scope are required.
+To use this function, at least EVENT privileges on the @thingsdb scope and GRANT privileges on the target scope are required.
 It is not possible to set privileges on a specific node scope. Therefore scope @node will apply to all nodes in ThingsDB.</description>
     </item>
     
@@ -2734,6 +2810,19 @@ Arguments    Argument Type Description     collection str/int (required) Collect
 Example  This code shows an example use case of has_collection():
  has_collection(&#39;stuff&#39;);  Return value in JSON format
  true </description>
+    </item>
+    
+    <item>
+      <title>has_module</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/has_module/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/has_module/</guid>
+      <description>Determines if a module exists in ThingsDB. The scope restriction of the module has no impact on the result of this function.
+This function does not generate an event.
+Function has_module(name)
+Arguments    Argument Type Description     name str (required) Module to check.    Return value Returns true if the module exists and otherwise false.
+Example  This code shows an example use case of has_module():</description>
     </item>
     
     <item>
@@ -2775,9 +2864,19 @@ Example  This code shows an example use case of has_token():
 This function requires GRANT privileges on the @thingsdb scope.
  This function does not generate an event.
 Function has_user(username)
-Arguments    Argument Type Description     username str (required) User to check.    Return value Returns if true the user exists and otherwise false.
+Arguments    Argument Type Description     username str (required) User to check.    Return value Returns true if the user exists and otherwise false.
 Example  This code shows an example use case of has_user():
  has_user(&#39;admin&#39;);  Return value in JSON format</description>
+    </item>
+    
+    <item>
+      <title>module_info</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/module_info/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/module_info/</guid>
+      <description>Returns information about a specific module.
+   Value Description     conf Configuration for the module. (Only visible when the user has EVENT privileges in the @thingsdb scope)   created_at Time Stamp when the module was created.   file Module file name.   name Name of the module.   restarts Number of time the module is restarted. Manual restarts are excluded and will reset the counter to zero.</description>
     </item>
     
     <item>
@@ -2791,6 +2890,19 @@ This function generates an event.
 Function new_collection(name)
 Arguments    Argument Type Description     name str (required) Name of the new collection.    The user who has created the collection will automatically receive full access rights to the new collection. Use grant to give other users access to the collection.
  Return value Returns the new collection id if successful. A lookup_err() is raised if the collection already exists.</description>
+    </item>
+    
+    <item>
+      <title>new_module</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/new_module/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/new_module/</guid>
+      <description>Configures a new module for ThingsDB.
+By default a module can be used in all scopes. It is possible however, to restrict the usage by using set_module_scope(..).
+ This function generates an event.
+Function new_module(name, file, [configuration])
+Arguments    Argument Type Description     name str (required) Username, between 1 and 128 graphical characters.   file str (required) Filename of the module. The same file might be configured multiple times.</description>
     </item>
     
     <item>
@@ -2842,6 +2954,18 @@ Arguments    Argument Type Description     current_name str (required) Current c
     </item>
     
     <item>
+      <title>rename_module</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/rename_module/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/rename_module/</guid>
+      <description>Rename a module.
+This function generates an event.
+Function rename_module(current_name, new_name)
+Arguments    Argument Type Description     current_name str (required) Current module name.   new_name str (required) New name for the module.    Return value Returns nil when successful.</description>
+    </item>
+    
+    <item>
       <title>rename_user</title>
       <link>https://docs.thingsdb.net/v0/thingsdb-api/rename_user/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -2872,10 +2996,34 @@ Before using this function the following list of requirements must be must be fu
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/revoke/</guid>
       <description>Revoke, collection or general, privileges from a user. See grant for more information on how access privileges can be set for a user.
-To use this function, at least MODIFY privileges on the @thingsdb scope and GRANT privileges on the target scope are required.
+To use this function, at least EVENT privileges on the @thingsdb scope and GRANT privileges on the target scope are required.
 This function generates an event.
 Function revoke(target, user, mask)
 Arguments    Argument Type Description     target int/raw Can be either the @node, @thingsdb, or a @collection scope.</description>
+    </item>
+    
+    <item>
+      <title>set_module_conf</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/set_module_conf/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/set_module_conf/</guid>
+      <description>Change the module configuration. This will (re-send) the module configuration to the module. If the module was not started, ThingsDB will also auto-load the module and send the configuration. Any Value is accepted as config but value nil will not be considered as a configuration and thus will not be send to the module.
+This function generates an event.
+Function set_module_conf(name, configuration)
+Arguments    Argument Type Description     name str (required) Name of the module.</description>
+    </item>
+    
+    <item>
+      <title>set_module_scope</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/set_module_scope/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/set_module_scope/</guid>
+      <description>Modules can be restricted for usage in a single scope. This can be a @collection:.. scope, but also a @node or @thingsdb scope. This function can be used to change the module scope. When the scope is set to nil, the module can be used in any scope.
+This function generates an event.
+Function set_module_scope(name, scope)
+Arguments    Argument Type Description     name str (required) Name of the module.</description>
     </item>
     
     <item>
@@ -2886,7 +3034,7 @@ Arguments    Argument Type Description     target int/raw Can be either the @nod
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/set_password/</guid>
       <description>Change a user&amp;rsquo;s password. This function can also be used to remove an existing password by using nil as the new password.
 Passwords must contain 1 to 128 printable characters.
-This function requires GRANT privileges on the @thingsdb scope when a username other then the logged in user is given as argument. For the currently logged in user, MODIFY privileges on the @thingsdb scope are sufficient.
+This function requires GRANT privileges on the @thingsdb scope when a username other then the logged in user is given as argument. For the currently logged in user, EVENT privileges on the @thingsdb scope are sufficient.
  This function generates an event.</description>
     </item>
     
@@ -2924,7 +3072,7 @@ Available Time Zones  Africa/Abidjan Africa/Accra Africa/Addis_Ababa Africa/Algi
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/user_info/</guid>
       <description>Returns information about a user. If no argument is given, this function will return information about the currently logged in user.
-This function requires GRANT privileges on the @thingsdb scope when a username other then the logged in user is given as argument. For the currently logged in user, READ privileges on the @thingsdb scope are sufficient.
+This function requires GRANT privileges on the @thingsdb scope when a username other then the logged in user is given as argument. For the currently logged in user, QUERY privileges on the @thingsdb scope are sufficient.
  This function does not generate an event.
 Function user_info([username])
 Arguments    Argument Type Description     username str (optional) Name of the user    Return value Returns info about the user.</description>
@@ -3005,7 +3153,7 @@ Example  Create a new procedure add_one:</description>
       
       <guid>https://docs.thingsdb.net/v0/procedures-api/procedure_info/</guid>
       <description>Returns information about a procedure.
-   Value Description     arguments Array with positional argument names.   created_at Time Stamp when the procedure is created.   definition Closure definition. (Only available with MODIFY privileges)   doc Doc string of the closure in the procedure.   name Name of the procedure.   with_side_effects Boolean value which indicates if this procedure has side effects.</description>
+   Value Description     arguments Array with positional argument names.   created_at Time Stamp when the procedure is created.   definition Closure definition. (Only available with EVENT privileges)   doc Doc string of the closure in the procedure.   name Name of the procedure.   with_side_effects Boolean value which indicates if this procedure has side effects.</description>
     </item>
     
     <item>
@@ -3308,6 +3456,21 @@ Arguments    Argument Type Description     message str (optional) Alternative er
 Example  This code shows value_err():
  value_err();  Return value in JSON format
  { &amp;#34;!&amp;#34;: &amp;#34;value_err()&amp;#34;, &amp;#34;error_code&amp;#34;: -60, &amp;#34;error_msg&amp;#34;: &amp;#34;object has the right type but an inappropriate value&amp;#34; } </description>
+    </item>
+    
+    <item>
+      <title>cancelled_err</title>
+      <link>https://docs.thingsdb.net/v0/errors/cancelled_err/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/errors/cancelled_err/</guid>
+      <description>Returns an error when an operation is cancelled before completion. Fox example by a time-out or stop of service.
+This function does not generate an event.
+Function cancelled_err([message])
+Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
+Example  This code shows cancelled_err():
+ cancelled_err();  Return value in JSON format
+ { &amp;#34;!&amp;#34;: &amp;#34;cancelled_err()&amp;#34;, &amp;#34;error_code&amp;#34;: -64, &amp;#34;error_msg&amp;#34;: &amp;#34;operation is cancelled before completion&amp;#34; } </description>
     </item>
     
     <item>

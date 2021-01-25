@@ -212,6 +212,19 @@ Type bool values are converted to 1.0 for true and 0.0 for false.</description>
     </item>
     
     <item>
+      <title>future</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/future/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/future/</guid>
+      <description>Returns a future. It is not possible to assign a future to a collection or add the future to a list. If you do, then nil will be assigned instead.
+If you want to use the return value from a future, you need to use then(..) and
+This function does not generate an event.
+Function future(request, arg1, arg2, ..., argX)
+Arguments    Argument Type Description     request thing/nil (required) The request or nil for a plain future.</description>
+    </item>
+    
+    <item>
       <title>has_enum</title>
       <link>https://docs.thingsdb.net/v0/collection-api/has_enum/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -379,6 +392,20 @@ This function does not generate an event.
 This function has a deprecated alias isfloat which will be removed in the next minor release.
  Function is_float(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a float, else it returns false.</description>
+    </item>
+    
+    <item>
+      <title>is_future</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/is_future/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/is_future/</guid>
+      <description>This function determines whether the provided value is a future value or not.
+This function does not generate an event.
+Function is_future(value)
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a future, else it returns false.
+Example  This code shows some return values for is_float():
+ [ is_future( future(nil) ), is_future( future(nil).</description>
     </item>
     
     <item>

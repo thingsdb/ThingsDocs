@@ -1,6 +1,6 @@
 ---
 title: "reset_counters"
-weight: 223
+weight: 228
 ---
 
 Resets the [counters](../../node-api/counters) for the ThingsDB node you are connected too.
@@ -30,7 +30,7 @@ Returns `nil`.
 reset_counters();
 ```
 
-> Example return value in JSON format (the new collection id)
+> Return value in JSON format
 
 ```json
 null

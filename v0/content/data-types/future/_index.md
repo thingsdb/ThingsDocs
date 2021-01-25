@@ -1,0 +1,71 @@
+---
+title: "future"
+weight: 53
+---
+
+Futures are mainly used for modules, but they can also be used to run some code at some later time.
+A future does not require an event. If the future is followed with a `then` or `else` closure, then the
+code inside this closure will generate it's own event if required.
+
+For example, the code below will always create an event, no matter what the value of `x` is. This is because ThingsDB
+has to know if an event is required before it knows the value of `x`.
+
+```thingsdb,syntax_only
+if (x > 10, {
+    .answers.push(x);
+});
+```
+
+When using a future we could optimize the code:
+
+```thingsdb,syntax_only
+if (x > 10, {
+    future(nil, x).then(|_, x| {
+        .answers.push(x);  // This will still require an event, but the event
+                           // is only created when x > 10.
+    });
+});
+```
+
+### Modules
+
+When a future is used to call a [module](../modules), the first argument of the future will be the request for the module and must be a thing containing at least a `module` property.
+
+For example, the code below will trigger the [module](../modules) `DEMO`. The module would receive `{module: "DEMO"}` as request.
+
+```thingsdb,syntax_only
+future({
+    module: 'DEMO'
+});
+```
+
+Besides the required `module` property, a property `deep` will be understood and will tell ThingsDB how [deep](../../collections-api/deep) the request must be packed. The default *deep* value is one (`1`).
+
+For example:
+
+```thingsdb,syntax_only
+// Deep must be at least 2, otherwise the items are not packed for the module request
+future({
+    module: 'DEMO',
+    deep: 2,
+    items: [{
+        name: 'item1'
+    }, {
+        name: 'item2'
+    }]
+});
+```
+
+### Functions
+
+Function | Description
+------ | -----------
+[then](./then) | Accepts a closure which will be executed when the future was successful.
+[else](./else) | Accepts a closure which will be executed when the future has failed.
+
+### Related functions
+
+Function | Description
+------ | -----------
+[future](../../collection-api/future) | Create a new future.
+[is_future](../../collection-api/is_future) | Test if a given value is of type future.

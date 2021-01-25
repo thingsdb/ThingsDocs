@@ -206,6 +206,21 @@ Example  This code shows value_err():
     </item>
     
     <item>
+      <title>cancelled_err</title>
+      <link>https://docs.thingsdb.net/v0/errors/cancelled_err/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/errors/cancelled_err/</guid>
+      <description>Returns an error when an operation is cancelled before completion. Fox example by a time-out or stop of service.
+This function does not generate an event.
+Function cancelled_err([message])
+Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
+Example  This code shows cancelled_err():
+ cancelled_err();  Return value in JSON format
+ { &amp;#34;!&amp;#34;: &amp;#34;cancelled_err()&amp;#34;, &amp;#34;error_code&amp;#34;: -64, &amp;#34;error_msg&amp;#34;: &amp;#34;operation is cancelled before completion&amp;#34; } </description>
+    </item>
+    
+    <item>
       <title>zero_div_err</title>
       <link>https://docs.thingsdb.net/v0/errors/zero_div_err/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
