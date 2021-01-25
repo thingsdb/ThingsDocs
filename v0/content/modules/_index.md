@@ -13,6 +13,7 @@ ThingsDB can be extended with modules.
 
 Function | scope | description
 -------- | ----- | -----------
+[del_module](../thingsdb-api/del_module) | `@thingsdb` | Delete a module.
 [has_module](../thingsdb-api/has_module) | `@thingsdb` | Check if a module exists.
 [module_info](../thingsdb-api/module_info) | *all scopes* | Show information about a module.
 [modules_info](../thingsdb-api/modules_info) | *all scopes* | Show information about all module.
