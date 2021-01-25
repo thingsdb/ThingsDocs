@@ -1,5 +1,5 @@
 /*
-  Highlight.js 10.0.0-beta.0 (d1145c27)
+  Highlight.js 10.0.0-beta.0 (eb143ae7)
   License: BSD-3-Clause
   Copyright (c) 2006-2020, Ivan Sagalaev
 */
@@ -1867,7 +1867,7 @@ hljs.registerLanguage('thingsdb', function () {
                         /* node functions */
                         'backup_info|backups_info|counters|del_backup|' +
                         'has_backup|new_backup|node_info|nodes_info|' +
-                        'reset_counters|set_log_level|shutdown|' +
+                        'reset_counters|restart_module|set_log_level|shutdown|' +
                         /* thingsdb functions */
                         'collection_info|collections_info|del_collection|' +
                         'del_expired|del_node|del_token|del_user|grant|' +
@@ -1875,11 +1875,12 @@ hljs.registerLanguage('thingsdb', function () {
                         'new_collection|new_node|new_token|new_user|' +
                         'rename_collection|rename_user|restore|revoke|set_password|set_time_zone|' +
                         'time_zones_info|user_info|users_info|' +
+                        'future|is_future|has_module|module_info|modules_info|new_module|rename_module|set_module_conf|set_module_scope|' +
                         /* procedure functions */
                         'del_procedure|has_procedure|new_procedure|rename_procedure|' +
                         'procedure_doc|procedure_info|procedures_info|run|' +
                         /* error functions */
-                        'assert_err|auth_err|bad_data_err|forbidden_err|' +
+                        'assert_err|auth_err|bad_data_err|cancelled_err|forbidden_err|' +
                         'lookup_err|max_quota_err|node_err|num_arguments_err|' +
                         'operation_err|overflow_err|syntax_err|type_err|' +
                         'value_err|zero_div_err' +
@@ -1894,7 +1895,7 @@ hljs.registerLanguage('thingsdb', function () {
                         'find_index|index_of|map|name|pop|push|remove|replace|reverse|split|sort|splice|' +
                         'add|has|contains|ends_with|lower|starts_with|test|trim|trim_left|trim_right|upper|' +
                         'del|get|id|keys|reduce|set|shift|some|value|values|watch|wrap|unshift|unwatch|unwrap|' +
-                        'extract|format|move|to|week|weekday|yday|zone)\\s*(?=\\()'
+                        'extract|then|else|format|move|to|week|weekday|yday|zone)\\s*(?=\\()'
                     ),
                 },
                 {
