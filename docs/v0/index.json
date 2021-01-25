@@ -382,7 +382,7 @@
 	"title": "else",
 	"tags": [],
 	"description": "",
-	"content": "Function else accepts a closure as argument which will be executed only when the future is using a module which has failed with some error. The code inside the closure will only generate an event then the closure code is executed. The return value of the closure will be used as the new future value.\nThe closure will be called with the same arguments as given to the future, except for the first argument, which is the error from the module.\nThis function does not generate an event.\nFunction future.else(closure)\nArguments    Argument Type Description     callback closure (required) Closure when will be executed when successful    Return value Returns the parent future.\nExample  This code shows an example using then():\n // This module will not work since `dummy` does not exist new_module('DUMMY', 'dummy', nil, nil); // Some values for this example a = 6; b = 7; future({ module: 'DUMMY' }, a, b).else(|err, a, b| { assert( is_err(err) ); // the first argument is of type `error` assert (a * b == 42 ); // arguments are also available in the `else` case err.msg(); // set the error message as return value });  Example return value in JSON format\n \u0026#34;module `DUMMY` is not running (status: no such file or directory)\u0026#34; "
+	"content": "Function else accepts a closure as argument which will be executed only when the future is using a module which has failed with some error. The code inside the closure will only generate an event then the closure code is executed. The return value of the closure will be used as the new future value.\nThe closure will be called with the same arguments as given to the future, except for the first argument, which is the error from the module.\nThis function does not generate an event.\nFunction future.else(closure)\nArguments    Argument Type Description     callback closure (required) Closure when will be executed when successful    Return value Returns the parent future.\nExample  This code shows an example using then():\n // This module will not work since `dummy` does not exist new_module('DUMMY', 'dummy'); // Some values for this example a = 6; b = 7; future({ module: 'DUMMY' }, a, b).else(|err, a, b| { assert( is_err(err) ); // the first argument is of type `error` assert (a * b == 42 ); // arguments are also available in the `else` case err.msg(); // set the error message as return value });  Example return value in JSON format\n \u0026#34;module `DUMMY` is not running (status: no such file or directory)\u0026#34; "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/data-types/info/",
@@ -1657,6 +1657,13 @@
 	"tags": [],
 	"description": "",
 	"content": "Delete all expired tokens.\nThis function requires GRANT privileges on the @thingsdb scope.\n This function generates an event.\nFunction del_expired()\nArguments None\nReturn value Returns nil.\nExample  This code will delete all expired tokens:\n // Delete all expired tokens del_expired(); "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/del_module/",
+	"title": "del_module",
+	"tags": [],
+	"description": "",
+	"content": "Delete a module. A SIGTERM signal will be send to the process for the module which might cancel running futures.\nThis function generates an event.\nFunction del_module(name)\nArguments    Argument Type Description     name str (required) Name of the module to delete.    Return value Returns nil when successful.\nExample  This code will delete module DEMO:\n // Delete module `DEMO` del_module('DEMO'); "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/thingsdb-api/del_node/",

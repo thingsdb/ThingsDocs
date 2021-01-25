@@ -85,6 +85,20 @@ Example  This code will delete all expired tokens:
     </item>
     
     <item>
+      <title>del_module</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/del_module/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/del_module/</guid>
+      <description>Delete a module. A SIGTERM signal will be send to the process for the module which might cancel running futures.
+This function generates an event.
+Function del_module(name)
+Arguments    Argument Type Description     name str (required) Name of the module to delete.    Return value Returns nil when successful.
+Example  This code will delete module DEMO:
+ // Delete module `DEMO` del_module(&#39;DEMO&#39;); </description>
+    </item>
+    
+    <item>
       <title>del_node</title>
       <link>https://docs.thingsdb.net/v0/thingsdb-api/del_node/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

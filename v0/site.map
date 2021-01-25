@@ -235,6 +235,7 @@ thingsdb-api
     modules_info
     del_collection
     del_expired
+    del_module
     del_node
     del_token
     del_user

@@ -951,6 +951,10 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/thingsdb-api/del_module/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/thingsdb-api/del_node/</loc>
   </url>
   

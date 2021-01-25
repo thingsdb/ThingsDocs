@@ -1,6 +1,6 @@
 ---
 title: "new_module"
-weight: 249
+weight: 250
 ---
 
 Configures a new module for ThingsDB.
@@ -21,7 +21,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `name` | str (required) | Username, between 1 and 128 *graphical* characters.
 `file` | str (required) | Filename of the module. The same file might be configured multiple times. The file must be path relative to the [modules path](../../getting-started/configuration))
-`configuration` | any (optional) | Configuration for the module. The configuration will be packed using a fixed [deep](../deep) value of two (`2`). If omitted (or `nil`), no configuration will be used for the module.
+`configuration` | any (optional) | Configuration for the module. The configuration will be packed using a fixed [deep](../../collection-api/deep) value of two (`2`). If omitted (or `nil`), no configuration will be used for the module.
 
 ### Return value
 

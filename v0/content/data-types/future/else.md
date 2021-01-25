@@ -32,7 +32,7 @@ Returns the parent future.
 
 ```thingsdb,json_response,@t
 // This module will not work since `dummy` does not exist
-new_module('DUMMY', 'dummy', nil, nil);
+new_module('DUMMY', 'dummy');
 
 // Some values for this example
 a = 6;

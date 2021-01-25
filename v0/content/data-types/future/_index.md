@@ -29,9 +29,9 @@ if (x > 10, {
 
 ### Modules
 
-When a future is used to call a [module](../modules), the first argument of the future will be the request for the module and must be a thing containing at least a `module` property.
+When a future is used to call a [module](../../modules), the first argument of the future will be the request for the module and must be a thing containing at least a `module` property.
 
-For example, the code below will trigger the [module](../modules) `DEMO`. The module would receive `{module: "DEMO"}` as request.
+For example, the code below will trigger the [module](../../modules) `DEMO`. The module would receive `{module: "DEMO"}` as request.
 
 ```thingsdb,syntax_only
 future({
@@ -39,7 +39,7 @@ future({
 });
 ```
 
-Besides the required `module` property, a property `deep` will be understood and will tell ThingsDB how [deep](../../collections-api/deep) the request must be packed. The default *deep* value is one (`1`).
+Besides the required `module` property, a property `deep` will be understood and will tell ThingsDB how [deep](../../collection-api/deep) the request must be packed. The default *deep* value is one (`1`).
 
 For example:
 
