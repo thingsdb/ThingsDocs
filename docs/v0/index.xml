@@ -1262,6 +1262,18 @@ When you emit an event, the event is handled by ThingsDB just as any other event
     </item>
     
     <item>
+      <title>equals</title>
+      <link>https://docs.thingsdb.net/v0/data-types/thing/equals/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/thing/equals/</guid>
+      <description>Determines if a thing is equal to another thing.
+Comparing things is usually done with a strict compare, for example:
+{} == {}; // This is *false* because left and right are not the same object Function equals can be used to perform a weak compare, for example:
+{}.equals({}); // This is *true*, both objects have the same content.  By default the equals function will only compare values one level deep.</description>
+    </item>
+    
+    <item>
       <title>filter</title>
       <link>https://docs.thingsdb.net/v0/data-types/thing/filter/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1284,18 +1296,6 @@ Arguments    Argument Type Description     callback closure (required) Closure t
 This function does not generate an event.
 Function thing.get(name [, alt])
 Arguments    Argument Type Description     name str (required) Name of the property where to return the value for.   alt any (optional) Optional return value.</description>
-    </item>
-    
-    <item>
-      <title>equals</title>
-      <link>https://docs.thingsdb.net/v0/data-types/thing/equals/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/data-types/thing/equals/</guid>
-      <description>Determines if a thing is equal to another thing.
-Comparing things is usually done with a strict compare, for example:
-{} == {}; // This is *false* because left and right are not the same object Function equals can be used to perform a weak compare, for example:
-{}.equals({}); // This is *true*, both objects have the same content.  By default the equals function will only compare values one level deep.</description>
     </item>
     
     <item>

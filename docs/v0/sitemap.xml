@@ -451,15 +451,15 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/thing/equals/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/data-types/thing/filter/</loc>
   </url>
   
   <url>
     <loc>https://docs.thingsdb.net/v0/data-types/thing/get/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/thing/equals/</loc>
   </url>
   
   <url>
