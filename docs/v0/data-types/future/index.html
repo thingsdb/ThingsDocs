@@ -11,20 +11,20 @@
     <title>future :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1611657709" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1611657709" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1611657709" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1611657709" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1611657709" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1611657709" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1611657709" rel="stylesheet">
-    <link href="/v0/css/theme.css?1611657709" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1611657709" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1611665885" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1611665885" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1611665885" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1611665885" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1611665885" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1611665885" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1611665885" rel="stylesheet">
+    <link href="/v0/css/theme.css?1611665885" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1611665885" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1611657709" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1611665885" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1611657709"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1611665885"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1611657709"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1611657709"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1611665885"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1611665885"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1611657709"></script>
+<script type="text/javascript" src="/v0/js/search.js?1611665885"></script>
 
     
   </div>
@@ -6209,6 +6209,13 @@ has to know if an event is required before it knows the value of <code>x</code>.
                            // is only created when x &gt; 10.
     });
 });
+</code></pre><p>Instead of using the <code>future(nil, ..).then(|_, ..| ..)</code> construction, a future accepts a closure as first argument to be used as a shortcut. So the above can be written as:</p>
+<pre><code class="language-thingsdb,syntax_only" data-lang="thingsdb,syntax_only">if (x &gt; 10, {
+    future(|x| {
+        .answers.push(x);  // This will still require an event, but the event
+                           // is only created when x &gt; 10.
+    });
+});
 </code></pre><h3 id="modules">Modules</h3>
 <p>When a future is used to call a <a href="../../modules">module</a>, the first argument of the future will be the request for the module and must be a thing containing at least a <code>module</code> property.</p>
 <p>For example, the code below will trigger the <a href="../../modules">module</a> <code>DEMO</code>. The module would receive <code>{module: &quot;DEMO&quot;}</code> as request.</p>
@@ -6297,19 +6304,19 @@ future({
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1611657709"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1611657709"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1611657709"></script>
-    <script src="/v0/js/jquery.sticky.js?1611657709"></script>
-    <script src="/v0/js/featherlight.min.js?1611657709"></script>
-    <script src="/v0/js/highlight.pack.js?1611657709"></script>
+    <script src="/v0/js/clipboard.min.js?1611665885"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1611665885"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1611665885"></script>
+    <script src="/v0/js/jquery.sticky.js?1611665885"></script>
+    <script src="/v0/js/featherlight.min.js?1611665885"></script>
+    <script src="/v0/js/highlight.pack.js?1611665885"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1611657709"></script>
-    <script src="/v0/js/learn.js?1611657709"></script>
-    <script src="/v0/js/hugo-learn.js?1611657709"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1611665885"></script>
+    <script src="/v0/js/learn.js?1611665885"></script>
+    <script src="/v0/js/hugo-learn.js?1611665885"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1611657709" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1611657709"></script>
+    <link href="/v0/mermaid/mermaid.css?1611665885" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1611665885"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

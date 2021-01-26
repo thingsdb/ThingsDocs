@@ -221,7 +221,7 @@ Type bool values are converted to 1.0 for true and 0.0 for false.</description>
 If you want to use the return value from a future, you need to use then(..) and
 This function does not generate an event.
 Function future(request, arg1, arg2, ..., argX)
-Arguments    Argument Type Description     request thing/nil (required) The request or nil for a plain future.</description>
+Arguments    Argument Type Description     request thing/closure/nil (required) The request or nil for a plain future.</description>
     </item>
     
     <item>
