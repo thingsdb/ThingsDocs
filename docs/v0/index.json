@@ -753,7 +753,7 @@
 	"title": "thing",
 	"tags": [],
 	"description": "",
-	"content": "Functions    Function Description     assign Copies properties from a thing.   del Remove a property.   each Iterate over all properties of a thing.   emit Emit an event to all watchers of a thing.   filter Return a new thing with properties that pass a given test.   get Return the value of a property on a thing by a given property name.   has Determine if a thing has a given property.   id Return the id.   keys Return a list with all the property names of a thing.   len Return the number of items.   map Return a list with the results of calling a provided closure on every property.   set Create a new property on a thing.   unwatch Stop watching the thing for mutations.   values Return a list with all the property values of a thing.   watch Watch the thing for mutations.   wrap Wrap the thing with a Type.    "
+	"content": "Functions    Function Description     assign Copies properties from a thing.   del Remove a property.   each Iterate over all properties of a thing.   emit Emit an event to all watchers of a thing.   equals Test if two things are equal.   filter Return a new thing with properties that pass a given test.   get Return the value of a property on a thing by a given property name.   has Determine if a thing has a given property.   id Return the id.   keys Return a list with all the property names of a thing.   len Return the number of items.   map Return a list with the results of calling a provided closure on every property.   set Create a new property on a thing.   unwatch Stop watching the thing for mutations.   values Return a list with all the property values of a thing.   watch Watch the thing for mutations.   wrap Wrap the thing with a Type.    "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/data-types/thing/assign/",
@@ -796,6 +796,13 @@
 	"tags": [],
 	"description": "",
 	"content": "Return the value of a property on a thing by a given property name. If the property is not found then the return value will be nil, unless an alternative return value is given.\nThis function does not generate an event.\nFunction thing.get(name [, alt])\nArguments    Argument Type Description     name str (required) Name of the property where to return the value for.   alt any (optional) Optional return value.    Return value Returns the value for the given property name. If the property is not found the the return value will be nil unless an alternative return value is given as second argument.\nExample  This code shows an example use case of get():\n tmp = {name: 'Iris'}; tmp.get('name');  Return value in JSON format\n \u0026#34;Iris\u0026#34; "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/data-types/thing/equals/",
+	"title": "equals",
+	"tags": [],
+	"description": "",
+	"content": "Determines if a thing is equal to another thing.\nComparing things is usually done with a strict compare, for example:\n{} == {}; // This is *false* because left and right are not the same object Function equals can be used to perform a weak compare, for example:\n{}.equals({}); // This is *true*, both objects have the same content.  By default the equals function will only compare values one level deep. An optional second argument can be used to change this behavior. Any integer value between 0 and 127 is allowed.\n This function does not generate an event.\nFunction thing.equals(other, [deep])\nArguments    Argument Type Description     other any (required) Value to compare.   deep int (required) How deep to compare the values. Default is 1.    Return value Returns true when the other thing has the same properties and values as the original thing, otherwise false.\nExample  This code shows an example use case of equals():\n a = { name: 'Iris', sport: { name: 'Cycling' } }; b = { name: 'Iris', sport: { name: 'Swimming' } }; assert (a != b ); // a and b are not equal assert (a.equals(b) ); // a and b are equal on the first \u0026quot;level\u0026quot; a.equals(b, 2); // return `false`, as sport is different  Return value in JSON format\n false "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/data-types/thing/has/",

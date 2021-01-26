@@ -84,6 +84,18 @@ Arguments    Argument Type Description     name str (required) Name of the prope
     </item>
     
     <item>
+      <title>equals</title>
+      <link>https://docs.thingsdb.net/v0/data-types/thing/equals/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/thing/equals/</guid>
+      <description>Determines if a thing is equal to another thing.
+Comparing things is usually done with a strict compare, for example:
+{} == {}; // This is *false* because left and right are not the same object Function equals can be used to perform a weak compare, for example:
+{}.equals({}); // This is *true*, both objects have the same content.  By default the equals function will only compare values one level deep.</description>
+    </item>
+    
+    <item>
       <title>has</title>
       <link>https://docs.thingsdb.net/v0/data-types/thing/has/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
