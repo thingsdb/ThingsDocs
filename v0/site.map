@@ -110,6 +110,7 @@ data-types
         del
         each
         emit
+        equals
         filter
         get
         has
