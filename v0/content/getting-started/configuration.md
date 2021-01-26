@@ -17,7 +17,7 @@ Variable | Default | Description
 `THINGSDB_IP_SUPPORT` | `ALL` | Listen to IPv4 (`IPV4ONLY`), IPv6 (`IPV6ONLY`) or both (`ALL`) addresses.
 `THINGSDB_LISTEN_CLIENT_PORT` | `9200` | Listen on this TCP port for client socket connections.
 `THINGSDB_LISTEN_NODE_PORT` | `9210` | Listen on this TCP port for node connections.
-`THINGSDB_MODULES_PATH` | */var/lib/thingsdb/modules* | Path where ThingsDB modules are stored.
+`THINGSDB_MODULES_PATH` | */usr/lib/thingsdb/modules* | Path where ThingsDB modules are stored.
 `THINGSDB_NODE_NAME` | *hostname* | ThingsDB will publish itself to other nodes using this node name.
 `THINGSDB_PIPE_CLIENT_NAME` | *disabled* | Named PIPE for client connections. Support for client PIPE connections will be disabled if the value is not configured.
 `THINGSDB_QUERY_DURATION_ERROR` | *disabled* | Log an error message when a query takes more than X second(s).

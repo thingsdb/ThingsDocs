@@ -46,7 +46,7 @@ module_info('DEMO');
 {
     "conf": null,
     "created_at": 1579175900,
-    "file": "/var/lib/thingsdb/modules/demo",
+    "file": "/usr/lib/thingsdb/modules/demo",
     "name": "DEMO",
     "restarts": 0,
     "scope": null,
