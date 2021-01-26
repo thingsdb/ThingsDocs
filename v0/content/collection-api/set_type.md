@@ -1,6 +1,6 @@
 ---
 title: "set_type"
-weight: 208
+weight: 209
 ---
 
 Defines the properties of a [Type](../../data-types/type). Function `set_type` works only on a new Type. Use `mod_type()` if you want to change an existing Type, see [mod_type](../mod_type).
