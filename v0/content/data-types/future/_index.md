@@ -27,6 +27,19 @@ if (x > 10, {
 });
 ```
 
+Instead of using the `future(nil, ..).then(|_, ..| ..)` construction, a future accepts a closure as first argument to be used as a shortcut. So the above can be written as:
+
+```thingsdb,syntax_only
+if (x > 10, {
+    future(|x| {
+        .answers.push(x);  // This will still require an event, but the event
+                           // is only created when x > 10.
+    });
+});
+```
+
+
+
 ### Modules
 
 When a future is used to call a [module](../../modules), the first argument of the future will be the request for the module and must be a thing containing at least a `module` property.

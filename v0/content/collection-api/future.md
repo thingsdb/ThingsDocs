@@ -18,7 +18,7 @@ This function does *not* generate an [event](../../overview/events).
 
 Argument | Type | Description
 -------- | ---- | -----------
-request | thing/nil (required) | The request or `nil` for a plain future.
+request | thing/closure/nil (required) | The request or `nil` for a plain future. A `closure` can be used as a shortcut for `future(..).then(||...)`.
 arg1..argX | any (optional) | Arguments which will be used in the *result*.
 
 ### Return value
