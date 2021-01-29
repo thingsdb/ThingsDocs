@@ -45,7 +45,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/overview/properties/</guid>
-      <description>Properties are names assigned to a thing with a value. The collection itself is also a thing to which properties can be assigned. For example: .answer = 42; creates a property answer with value 42 and the property will be assigned to the collection.</description>
+      <description>Properties are key/value pairs which are assigned to a thing. The collection itself is also a thing to which properties can be assigned. For example: .answer = 42; creates a property answer with value 42 and the property will be assigned to the collection.
+The key of a property must be of type string. If the key is not a valid name, then the property can be set by using the square bracket [.</description>
     </item>
     
     <item>

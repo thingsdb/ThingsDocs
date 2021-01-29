@@ -11,20 +11,20 @@
     <title>Properties :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1611688485" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1611688485" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1611688485" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1611688485" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1611688485" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1611688485" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1611688485" rel="stylesheet">
-    <link href="/v0/css/theme.css?1611688485" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1611688485" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1611934691" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1611934691" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1611934691" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1611934691" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1611934691" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1611934691" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1611934691" rel="stylesheet">
+    <link href="/v0/css/theme.css?1611934691" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1611934691" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1611688485" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1611934691" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1611688485"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1611934691"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1611688485"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1611688485"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1611934691"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1611934691"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1611688485"></script>
+<script type="text/javascript" src="/v0/js/search.js?1611934691"></script>
 
     
   </div>
@@ -6202,8 +6202,85 @@
 
 
 
-<p>Properties are <a href="../names">names</a> assigned to a <code>thing</code> with a value. The collection itself is also a <code>thing</code> to which properties can be assigned.
+<p>Properties are key/value pairs which are assigned to a <code>thing</code>. The collection itself is also a <code>thing</code> to which properties can be assigned.
 For example: <code>.answer = 42;</code> creates a property <code>answer</code> with value <code>42</code> and the property will be assigned to the collection.</p>
+<p>The <code>key</code> of a property must be of type <a href="../../data-types/str">string</a>. If the key is <em>not</em> a valid <a href="../names">name</a>, then the property can be set by using
+the square bracket <code>[..]</code> notation or the <a href="../../data-types/thing/set">set(..)</a> / <a href="../../data-types/thing/get">get(..)</a> functions can be used.</p>
+<p>There are 16, single character keys that are reserved for ThingsDB and cannot be used as key strings:</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code> </code> <em>(space)</em></td>
+<td><em>unused</em></td>
+</tr>
+<tr>
+<td><code>!</code></td>
+<td>Reserved for errors.</td>
+</tr>
+<tr>
+<td><code>&quot;</code></td>
+<td>Reserved for timeval.</td>
+</tr>
+<tr>
+<td><code>#</code></td>
+<td>Reserved for thing ID&rsquo;s.</td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>Reserved for sets.</td>
+</tr>
+<tr>
+<td><code>%</code></td>
+<td>Reserved for enumerator members.</td>
+</tr>
+<tr>
+<td><code>&amp;</code></td>
+<td>Reserved for wrapped things.</td>
+</tr>
+<tr>
+<td><code>'</code></td>
+<td>Reserved for datetime.</td>
+</tr>
+<tr>
+<td><code>(</code></td>
+<td><em>unused</em></td>
+</tr>
+<tr>
+<td><code>)</code></td>
+<td><em>unused</em></td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>Reserved for regular expressions.</td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td><em>unused</em></td>
+</tr>
+<tr>
+<td><code>,</code></td>
+<td><em>unused</em></td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td><em>unused</em></td>
+</tr>
+<tr>
+<td><code>.</code></td>
+<td>Reserved for type.</td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td>Reserved for closures.</td>
+</tr>
+</tbody>
+</table>
 
 
 <footer class=" footline" >
@@ -6234,19 +6311,19 @@ For example: <code>.answer = 42;</code> creates a property <code>answer</code> w
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1611688485"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1611688485"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1611688485"></script>
-    <script src="/v0/js/jquery.sticky.js?1611688485"></script>
-    <script src="/v0/js/featherlight.min.js?1611688485"></script>
-    <script src="/v0/js/highlight.pack.js?1611688485"></script>
+    <script src="/v0/js/clipboard.min.js?1611934691"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1611934691"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1611934691"></script>
+    <script src="/v0/js/jquery.sticky.js?1611934691"></script>
+    <script src="/v0/js/featherlight.min.js?1611934691"></script>
+    <script src="/v0/js/highlight.pack.js?1611934691"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1611688485"></script>
-    <script src="/v0/js/learn.js?1611688485"></script>
-    <script src="/v0/js/hugo-learn.js?1611688485"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1611934691"></script>
+    <script src="/v0/js/learn.js?1611934691"></script>
+    <script src="/v0/js/hugo-learn.js?1611934691"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1611688485" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1611688485"></script>
+    <link href="/v0/mermaid/mermaid.css?1611934691" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1611934691"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

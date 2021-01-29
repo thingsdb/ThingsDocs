@@ -889,10 +889,7 @@ Return value List with Type info about all Types in the collection.</description
       
       <guid>https://docs.thingsdb.net/v0/collection-api/wse/</guid>
       <description>Stored closures which can potentially make changes to ThingsDB are called closures with side effects and must be wrapped with the wse(..) function. This allows ThingsDB before running the query to make an event.
-You should use wse only when required, otherwise this would lead to unnecessary events.
- This function generates an event.
-Function wse(statement)
-Arguments    Argument Type Description     statement any Statement or block to wrap.</description>
+Function wse() might also be called without arguments which can be used to force ThingsDB to generate an event. This might be useful for when it is really important that a query returns a result based on a state where all previous events are processed.</description>
     </item>
     
   </channel>
