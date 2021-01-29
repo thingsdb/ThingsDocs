@@ -7,6 +7,10 @@ Stored closures which can potentially make changes to ThingsDB are called
 *closures with side effects* and must be wrapped with the `wse(..)` function.
 This allows ThingsDB before running the query to make an event.
 
+Function `wse()` might also be called without arguments which can be used to force ThingsDB
+to generate an event. This might be useful for when it is really important that a query
+returns a result based on a state where all previous events are processed.
+
 {{% notice info %}}
 You should use `wse` only when required, otherwise this would lead to unnecessary events.
 {{% /notice %}}
@@ -15,13 +19,13 @@ This function generates an [event](../../overview/events).
 
 ### Function
 
-`wse(statement)`
+`wse([statement])`
 
 ### Arguments
 
 Argument | Type | Description
 -------- | ---- | -----------
-statement | any | Statement or block to wrap.
+statement | any (optional) | Statement or block to wrap.
 
 ### Return value
 
