@@ -263,6 +263,10 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/list/first/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/data-types/list/has/</loc>
   </url>
   
@@ -272,6 +276,10 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v0/data-types/list/join/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/list/last/</loc>
   </url>
   
   <url>
@@ -328,6 +336,10 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v0/data-types/regex/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/regex/test/</loc>
   </url>
   
   <url>
@@ -703,6 +715,10 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/is_regex/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/collection-api/is_set/</loc>
   </url>
   
@@ -812,6 +828,10 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v0/collection-api/refs/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/regex/</loc>
   </url>
   
   <url>

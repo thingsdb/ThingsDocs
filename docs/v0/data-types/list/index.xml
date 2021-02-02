@@ -103,6 +103,17 @@ Arguments    Argument Type Description     callback closure The statement to try
     </item>
     
     <item>
+      <title>first</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/first/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/list/first/</guid>
+      <description>Returns the first item in the list. A lookup_err() is raised when this function is used on an empty list unless a default value is given, in which case the given value will be returned.
+ThingsDB uses lazy-evaluation of function arguments. For this reason the default value might be a function call or code block which will only be evaluated when the list is empty.
+ This function does not generate an event.</description>
+    </item>
+    
+    <item>
       <title>has</title>
       <link>https://docs.thingsdb.net/v0/data-types/list/has/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -137,6 +148,17 @@ This function has a deprecated alias indexof which will be removed in the next m
 This function does not generate an event.
 Function array.join([separator])
 Arguments    Argument Type Description     separator str (optional) Optional separator. The default separator is an empty string (&amp;quot;&amp;quot;) which results in a string with all items joined without any characters in between.</description>
+    </item>
+    
+    <item>
+      <title>last</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/last/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/list/last/</guid>
+      <description>Returns the last item in the list. A lookup_err() is raised when this function is used on an empty list unless a default value is given, in which case the given value will be returned.
+ThingsDB uses lazy-evaluation of function arguments. For this reason the default value might be a function call or code block which will only be evaluated when the list is empty.
+ This function does not generate an event.</description>
     </item>
     
     <item>

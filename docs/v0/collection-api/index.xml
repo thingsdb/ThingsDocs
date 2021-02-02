@@ -488,6 +488,19 @@ Arguments    Argument Type Description     value any (required) The value to be 
     </item>
     
     <item>
+      <title>is_regex</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/is_regex/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/is_regex/</guid>
+      <description>This function determines whether the provided value is of type regex or not.
+This function does not generate an event.
+Function is_regex(value)
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type regex, else it returns false.
+Example  This code shows some return values for is_regex():</description>
+    </item>
+    
+    <item>
       <title>is_set</title>
       <link>https://docs.thingsdb.net/v0/collection-api/is_set/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -697,6 +710,19 @@ Different nodes might return different reference values since the reference coun
  This function does not generate an event.
 Function refs(value)
 Arguments    Argument Type Description     value any (required) The value to return the reference count for.</description>
+    </item>
+    
+    <item>
+      <title>regex</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/regex/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/regex/</guid>
+      <description>Create a new regular expression.
+This function can be used to create a regular expression from a given pattern with optional flags.
+This function does not generate an event.
+Function regex(pattern, [flags])
+Arguments    Argument Type Description     pattern str (required) The pattern to use as a regular expression.   flags str (optional) Optional flags, see the regex for more information.    Return value A new regular expression.</description>
     </item>
     
     <item>

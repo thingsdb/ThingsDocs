@@ -674,6 +674,17 @@ Arguments    Argument Type Description     callback closure The statement to try
     </item>
     
     <item>
+      <title>first</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/first/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/list/first/</guid>
+      <description>Returns the first item in the list. A lookup_err() is raised when this function is used on an empty list unless a default value is given, in which case the given value will be returned.
+ThingsDB uses lazy-evaluation of function arguments. For this reason the default value might be a function call or code block which will only be evaluated when the list is empty.
+ This function does not generate an event.</description>
+    </item>
+    
+    <item>
       <title>has</title>
       <link>https://docs.thingsdb.net/v0/data-types/list/has/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -708,6 +719,17 @@ This function has a deprecated alias indexof which will be removed in the next m
 This function does not generate an event.
 Function array.join([separator])
 Arguments    Argument Type Description     separator str (optional) Optional separator. The default separator is an empty string (&amp;quot;&amp;quot;) which results in a string with all items joined without any characters in between.</description>
+    </item>
+    
+    <item>
+      <title>last</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/last/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/list/last/</guid>
+      <description>Returns the last item in the list. A lookup_err() is raised when this function is used on an empty list unless a default value is given, in which case the given value will be returned.
+ThingsDB uses lazy-evaluation of function arguments. For this reason the default value might be a function call or code block which will only be evaluated when the list is empty.
+ This function does not generate an event.</description>
     </item>
     
     <item>
@@ -887,13 +909,17 @@ It might be convenient to use nil as the last statement in a query to prevent re
     </item>
     
     <item>
-      <title>regex</title>
-      <link>https://docs.thingsdb.net/v0/data-types/regex/</link>
+      <title>test</title>
+      <link>https://docs.thingsdb.net/v0/data-types/regex/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v0/data-types/regex/</guid>
-      <description>Regular expression can be constructed using a literal which consists of a pattern enclosed between slashes, as follows: re = /ab+c/;. It is probably a good idea to store a regex in a variable if you plan to use the regular expression multiple times. This prevents the requirement to compile the regular expression each time.
-Functions that use regular expressions    Function Description     test A str functiontrue or false.</description>
+      <guid>https://docs.thingsdb.net/v0/data-types/regex/test/</guid>
+      <description>Test if a string matches a given regular expression and return true or false.
+This function does not generate an event.
+Function regex.test(string)
+Arguments    Argument Type Description     string str (required) The string to test.    Return value true if there is a match between the string and the regular expression, otherwise false.
+Example  Examples using test():
+ // The first regex is case sensitive, the second is case insensitive [ regex(&amp;quot;^hello&amp;quot;).</description>
     </item>
     
     <item>
@@ -1146,11 +1172,11 @@ Arguments    Argument Type Description     search_string str (required) The char
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/str/test/</guid>
-      <description>Test if a string matches a given regular expression and return true or false.
+      <description>This function is deprecated and should be replaced with test(..) on type regex.
+ Test if a string matches a given regular expression and return true or false.
 This function does not generate an event.
 Function str.test(regex)
-Arguments    Argument Type Description     regex regex (required) The regular expression to test against the string.    Return value true if there is a match between the string and the specified regular expression, otherwise false.
-Example  Examples using test():</description>
+Arguments    Argument Type Description     regex regex (required) The regular expression to test against the string.    Return value true if there is a match between the string and the specified regular expression, otherwise false.</description>
     </item>
     
     <item>
@@ -2020,6 +2046,19 @@ Arguments    Argument Type Description     value any (required) The value to be 
     </item>
     
     <item>
+      <title>is_regex</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/is_regex/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/is_regex/</guid>
+      <description>This function determines whether the provided value is of type regex or not.
+This function does not generate an event.
+Function is_regex(value)
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type regex, else it returns false.
+Example  This code shows some return values for is_regex():</description>
+    </item>
+    
+    <item>
       <title>is_set</title>
       <link>https://docs.thingsdb.net/v0/collection-api/is_set/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -2340,6 +2379,19 @@ Different nodes might return different reference values since the reference coun
  This function does not generate an event.
 Function refs(value)
 Arguments    Argument Type Description     value any (required) The value to return the reference count for.</description>
+    </item>
+    
+    <item>
+      <title>regex</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/regex/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/regex/</guid>
+      <description>Create a new regular expression.
+This function can be used to create a regular expression from a given pattern with optional flags.
+This function does not generate an event.
+Function regex(pattern, [flags])
+Arguments    Argument Type Description     pattern str (required) The pattern to use as a regular expression.   flags str (optional) Optional flags, see the regex for more information.    Return value A new regular expression.</description>
     </item>
     
     <item>

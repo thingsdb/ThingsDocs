@@ -65,16 +65,6 @@ It might be convenient to use nil as the last statement in a query to prevent re
     </item>
     
     <item>
-      <title>regex</title>
-      <link>https://docs.thingsdb.net/v0/data-types/regex/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/data-types/regex/</guid>
-      <description>Regular expression can be constructed using a literal which consists of a pattern enclosed between slashes, as follows: re = /ab+c/;. It is probably a good idea to store a regex in a variable if you plan to use the regular expression multiple times. This prevents the requirement to compile the regular expression each time.
-Functions that use regular expressions    Function Description     test A str functiontrue or false.</description>
-    </item>
-    
-    <item>
       <title>timeval</title>
       <link>https://docs.thingsdb.net/v0/data-types/timeval/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
