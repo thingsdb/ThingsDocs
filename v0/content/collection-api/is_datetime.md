@@ -1,6 +1,6 @@
 ---
 title: "is_datetime"
-weight: 165
+weight: 168
 ---
 
 This function determines whether the provided value is of

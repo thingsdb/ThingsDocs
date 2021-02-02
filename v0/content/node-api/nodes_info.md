@@ -1,6 +1,6 @@
 ---
 title: "nodes_info"
-weight: 228
+weight: 233
 ---
 
 Returns information about all ThingsDB nodes.

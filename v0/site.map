@@ -63,9 +63,11 @@ data-types
         filter
         find
         find_index
+        first
         has
         index_of
         join
+        last
         len
         map
         pop
@@ -80,6 +82,7 @@ data-types
         unshift
     nil
     regex
+        test
     set
         add
         each
@@ -173,6 +176,7 @@ collection-api
     is_nan
     is_nil
     is_raw
+    is_regex
     is_set
     is_str
     is_thing
@@ -201,6 +205,7 @@ collection-api
     randstr
     range
     refs
+    regex
     rename_enum
     rename_type
     return

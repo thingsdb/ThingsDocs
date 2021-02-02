@@ -1,6 +1,6 @@
 ---
 title: "lower"
-weight: 99
+weight: 102
 ---
 
 Return a new [string](..) in which all case-based characters are in lower case.

@@ -1,6 +1,6 @@
 ---
 title: "is_timeval"
-weight: 179
+weight: 183
 ---
 
 This function determines whether the provided value is of

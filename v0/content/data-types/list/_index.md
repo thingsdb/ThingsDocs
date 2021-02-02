@@ -20,9 +20,11 @@ Function | Description
 [filter](./filter) | Return a new `list` with items that passed a given test.
 [find](./find) | Return the first item that passed a given test.
 [find_index](./find_index) | Return the index of the first item that passed a given test.
+[first](./first) | Return the first item from a list.
 [has](./has) | Return `true` if a given value is found in the list, or `false` if not found.
 [index_of](./index_of) | Return the index of a given value, or `nil` if not found.
 [join](./join) | Returns a string with all items joined.
+[last](./last) | Return the last item from a list.
 [len](./len) | Return the length of the list.
 [map](./map) | Return a new `list` with the results of calling a provided closure on every item.
 [pop](./pop) | Remove the last item from a list and returns that item.

@@ -1,6 +1,6 @@
 ---
 title: "event_id"
-weight: 153
+weight: 156
 ---
 
 Returns the current event ID for the running query. The return value will be `nil` if the query does not require an event.

@@ -1,6 +1,6 @@
 ---
 title: "type"
-weight: 214
+weight: 219
 ---
 
 Returns the type name of a value.

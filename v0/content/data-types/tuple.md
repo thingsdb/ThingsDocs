@@ -1,6 +1,6 @@
 ---
 title: "tuple"
-weight: 127
+weight: 130
 ---
 
 All nested *arrays* are immutable and thus tuples.
@@ -31,9 +31,11 @@ Function | Description
 [filter](../list/filter) | Return a new `list` with items that pass a given test.
 [find](../list/find) | Return the first item that pass a given test.
 [find_index](../list/find_index) | Return the index of the first item that pass a given test.
-[has](../list/has) | Return `true` if a given value is found in the list, or `false` if not found.
+[first](../list/first) | Return the first item from a tuple.
+[has](../list/has) | Return `true` if a given value is found in the tuple, or `false` if not found.
 [index_of](../list/index_of) | Return the index of a given value, or `nil` if not found.
 [join](../list/join) | Returns a string with all items joined.
+[last](../list/last) | Return the last item from a tuple.
 [len](../list/len) | Return the length of the tuple.
 [map](../list/map) | Return a new `list` with the results of calling a provided closure on every item.
 [reduce](../list/reduce) | Execute a reducer function on each item, resulting in a single output value.

@@ -1,7 +1,11 @@
 ---
 title: "test"
-weight: 103
+weight: 106
 ---
+
+{{% notice warning %}}
+This function is deprecated and should be replaced with [test(..)](../../../data-types/regex/test) on type [regex](../../../data-types/regex).
+{{% /notice %}}
 
 Test if a [string](..) matches a given [regular expression](../../regex) and return `true` or `false`.
 
