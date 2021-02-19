@@ -8,23 +8,23 @@
 
 
     <link rel="shortcut icon" href='/v0/images/favicon.ico' type="image/x-icon" />
-    <title>Watching :: ThingsDB documentation</title>
+    <title>rel :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1613738293" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1613738293" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1613738293" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1613738293" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1613738293" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1613738293" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1613738293" rel="stylesheet">
-    <link href="/v0/css/theme.css?1613738293" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1613738293" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1613738291" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1613738291" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1613738291" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1613738291" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1613738291" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1613738291" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1613738291" rel="stylesheet">
+    <link href="/v0/css/theme.css?1613738291" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1613738291" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1613738293" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1613738291" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1613738293"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1613738291"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -38,7 +38,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/v0/watching/">
+  <body class="" data-url="/v0/collection-api/mod_type/rel/">
     <nav id="sidebar" class="">
 
 
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1613738293"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1613738293"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1613738291"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1613738291"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1613738293"></script>
+<script type="text/javascript" src="/v0/js/search.js?1613738291"></script>
 
     
   </div>
@@ -3004,7 +3004,7 @@
   
     
     <li data-nav-id="/v0/collection-api/" title="Collection API" class="dd-item 
-        
+        parent
         
         
         ">
@@ -4015,7 +4015,7 @@
   
     
     <li data-nav-id="/v0/collection-api/mod_type/" title="mod_type" class="dd-item 
-        
+        parent
         
         
         ">
@@ -4096,7 +4096,7 @@
  
   
     
-      <li data-nav-id="/v0/collection-api/mod_type/rel/" title="rel" class="dd-item ">
+      <li data-nav-id="/v0/collection-api/mod_type/rel/" title="rel" class="dd-item active">
         <a href="/v0/collection-api/mod_type/rel/">
         rel
         
@@ -5789,8 +5789,8 @@
   
     
     <li data-nav-id="/v0/watching/" title="Watching" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/v0/watching/">
@@ -6290,7 +6290,19 @@
             
           
           
-            <a href='/v0/'></a> > Watching
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/v0/'></a> > <a href='/v0/collection-api/'>Collection API</a> > <a href='/v0/collection-api/mod_type/'>mod_type</a> > rel
+          
+         
+          
+         
           
          
           
@@ -6303,8 +6315,14 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#subscribe-for-node-status-changes">Subscribe for node status changes</a></li>
-    <li><a href="#subscribe-for-thing-mutations">Subscribe for thing mutations</a></li>
+    <li>
+      <ul>
+        <li><a href="#action">Action</a></li>
+        <li><a href="#arguments">Arguments</a></li>
+        <li><a href="#return-value">Return value</a></li>
+        <li><a href="#example">Example</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -6322,7 +6340,7 @@
           
             <h1>
               
-              Watching
+              rel
             </h1>
           
 
@@ -6330,72 +6348,135 @@
 
 
 
-
-	<p>Socket connections can receive events from ThingsDB. Push events do only work when using a socket connection and cannot be used with the HTTP API.</p>
-<p>Before events are received you have to <em>subscribe</em> for changes.</p>
-<p>The following events may be received by a client:</p>
+<p>Add or delete a relation between properties of the same or different types.</p>
+<p>Relations can only be created between <em>nillable</em> type definitions and/or restricted sets. This results in the following combinations:</p>
 <table>
 <thead>
 <tr>
-<th>Event</th>
+<th>Combination</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="./node-status">NODE_STATUS</a> (<code>0</code>)</td>
-<td>The connected node has changed its status.</td>
+<td><code>Type?</code> &lt;-&gt; <code>Type?</code></td>
+<td>One to one relation.</td>
 </tr>
 <tr>
-<td><a href="./on-init">ON_INIT</a> (<code>1</code>)</td>
-<td>Initial data for the <a href="../data-types/thing">thing</a> which is added to the watch list.</td>
+<td><code>Type?</code> &lt;-&gt; <code>{Type}</code></td>
+<td>One to many relation.</td>
 </tr>
 <tr>
-<td><a href="./on-update">ON_UPDATE</a> (<code>2</code>)</td>
-<td>Update on a <a href="../data-types/thing">thing</a> in the watch list.</td>
-</tr>
-<tr>
-<td><a href="./on-delete">ON_DELETE</a> (<code>3</code>)</td>
-<td>A <a href="../data-types/thing">thing</a> in the watch list is removed.</td>
-</tr>
-<tr>
-<td><a href="./on-stop">ON_STOP</a> (<code>4</code>)</td>
-<td>A <a href="../data-types/thing">thing</a> is no longer being watched.</td>
-</tr>
-<tr>
-<td><a href="./warning">WARNING</a> (<code>5</code>)</td>
-<td>A warning message.</td>
+<td><code>{Type}</code> &lt;-&gt; <code>{Type}</code></td>
+<td>Many to many relation.</td>
 </tr>
 </tbody>
 </table>
+<p>All missing relations on existing instances will be automatically created. With a <em>one-to-one</em> or a <em>one-to-many</em> relation this might not be possible because
+you might be in a state where the existing instances are not related correctly. For example, you want to create a <em>one-to-many</em> relation but one of the <em>thing</em>s
+exists in sets of two different things. One of them is obviously incorrect. In such state ThingsDB will raise a <a href="../../../errors/type_err">type_err()</a> and does not
+create the relation.</p>
+<h3 id="action">Action</h3>
+<p><code>mod_type(type, 'rel', property, to)</code></p>
+<h3 id="arguments">Arguments</h3>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>str</td>
+<td>Name of the Type where to set the wrap-mode for.</td>
+</tr>
+<tr>
+<td><code>'rel'</code></td>
+<td>str</td>
+<td>Passing this argument will result in a <em>relation</em> action.</td>
+</tr>
+<tr>
+<td>property</td>
+<td>str</td>
+<td>Property to create a relation for.</td>
+</tr>
+<tr>
+<td>to</td>
+<td>str/nil</td>
+<td>Property on the <em>other</em> type to create a relation with. When <code>nil</code>, an existing relation will be removed.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-value">Return value</h3>
+<p>The value <code>nil</code>.</p>
+<h3 id="example">Example</h3>
 <blockquote>
-<p>The number <code>0-5</code> represents the package type in a <a href="http://localhost:1313/v0/connect/socket/#package">package header</a>.</p>
+<p>This code shows a one-to-many relation between two types:</p>
 </blockquote>
-<h2 id="subscribe-for-node-status-changes">Subscribe for node status changes</h2>
-<p>For receiving <a href="./node-status">NODE_STATUS</a> events you need to sent a  <a href="../connect/socket/watch">watch request</a> to the <code>@node</code> scope. At least <code>WATCH</code> permissions for the <code>@node</code> scope are required.</p>
-<p>When using a client, this is pretty easy, for example using the Python client:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">await client<span style="color:#f92672">.</span>watch(<span style="color:#e6db74">&#39;@node&#39;</span>)
-</code></pre></div><p>If you want to write the request to the socket connection yourself, sending the following byte data on your socket connection will have the same result:</p>
-<pre><code class="language-none" data-lang="none">\x07\x00\x00\x00\x00\x00\x23\xdc\x91\xa5@node
-</code></pre><p>(See the <em>&ldquo;creating a <a href="../connect/socket/watch">watch request</a> example&rdquo;</em> on how we got the above bytes code)</p>
-<h2 id="subscribe-for-thing-mutations">Subscribe for thing mutations</h2>
-<p>If you start to watch a thing, the following events will be pushed in order:</p>
-<ul>
-<li><a href="./on-init">ON_INIT</a>, This event will <strong>always</strong> be pushed on each watch request.</li>
-<li><a href="./on-update">ON_UPDATE</a>, You receive an update event for each <strong>mutation</strong> after the <em>initial</em> <a href="./on-init">ON_INIT</a> event.</li>
-<li><a href="./on-delete">ON_DELETE</a> or <a href="./on-stop">ON_STOP</a>, No more events will be pushed for the thing after this event.</li>
-</ul>
-<p>To start watching one or more things, a <a href="../connect/socket/watch">watch request</a> may be used, but as an alternative it is also
-possible to use the functions <a href="../data-types/thing/watch">watch()</a> and <a href="../data-types/thing/unwatch">unwatch</a>. There is no
-alternative function for watching the node status.</p>
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">new_type('Workspace');
+new_type('Person');
 
+set_type('Workspace', {
+    people: '{Person}'
+});
 
+set_type('Person', {
+    workspace: 'Workspace?'
+});
 
+/* Create a relation between Person.workspace and Workspace.people
+ *
+ * Note: We could have used mod_type('Workspace', ...); just as well, it does
+ *       not matter from which direction the relation is made.
+ */
+mod_type('Person', 'rel', 'workspace', 'people');
 
+// Create a workspace
+blue = Workspace{};
+
+// Create a person and assign workspace `blue`:
+alice = Person{
+    workspace: blue
+};
+
+// alice is automatically assigned to people in workspace blue:
+blue.people.has(alice);  // true
+</code></pre><blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#66d9ef">true</span>
+</code></pre></div><p>Another example using a many-to-many relation within a single type:</p>
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">new_type('Album');
+
+set_type('Album', {
+    title: 'str',
+    similar: '{Album}'
+});
+
+// Create a relation for Album.similar
+mod_type('Album', 'rel', 'similar', 'similar');
+
+hoss = Album{title: 'Hoss'};
+punk_in_drublic = Album{title: 'Punk in Drublic'};
+
+// Add punk_in_drublic as a similar album as hoss
+hoss.similar.add(punk_in_drublic);
+
+// note that hoss is also added as a similar album to punk_in_drublic:
+punk_in_drublic.similar.has(hoss);  // true
+</code></pre><blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#66d9ef">true</span>
+</code></pre></div>
 
 <footer class=" footline" >
 	
 </footer>
+
 
         
         </div>
@@ -6407,10 +6488,10 @@ alternative function for watching the node status.</p>
         
     
         
-            <a class="nav nav-prev" href="/v0/modules/" title="Modules"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/v0/collection-api/mod_type/mod/" title="mod"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/v0/watching/node-status/" title="node-status" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/v0/collection-api/mod_type/ren/" title="ren" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     
     </div>
@@ -6420,19 +6501,19 @@ alternative function for watching the node status.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1613738293"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1613738293"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1613738293"></script>
-    <script src="/v0/js/jquery.sticky.js?1613738293"></script>
-    <script src="/v0/js/featherlight.min.js?1613738293"></script>
-    <script src="/v0/js/highlight.pack.js?1613738293"></script>
+    <script src="/v0/js/clipboard.min.js?1613738291"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1613738291"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1613738291"></script>
+    <script src="/v0/js/jquery.sticky.js?1613738291"></script>
+    <script src="/v0/js/featherlight.min.js?1613738291"></script>
+    <script src="/v0/js/highlight.pack.js?1613738291"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1613738293"></script>
-    <script src="/v0/js/learn.js?1613738293"></script>
-    <script src="/v0/js/hugo-learn.js?1613738293"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1613738291"></script>
+    <script src="/v0/js/learn.js?1613738291"></script>
+    <script src="/v0/js/hugo-learn.js?1613738291"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1613738293" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1613738293"></script>
+    <link href="/v0/mermaid/mermaid.css?1613738291" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1613738291"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
@@ -6440,3 +6521,4 @@ alternative function for watching the node status.</p>
 
   </body>
 </html>
+
