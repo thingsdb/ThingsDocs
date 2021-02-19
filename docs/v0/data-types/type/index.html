@@ -11,20 +11,20 @@
     <title>Type :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1613738292" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1613738292" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1613738292" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1613738292" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1613738292" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1613738292" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1613738292" rel="stylesheet">
-    <link href="/v0/css/theme.css?1613738292" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1613738292" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1613738440" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1613738440" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1613738440" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1613738440" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1613738440" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1613738440" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1613738440" rel="stylesheet">
+    <link href="/v0/css/theme.css?1613738440" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1613738440" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1613738292" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1613738440" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1613738292"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1613738440"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1613738292"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1613738292"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1613738440"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1613738440"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1613738292"></script>
+<script type="text/javascript" src="/v0/js/search.js?1613738440"></script>
 
     
   </div>
@@ -6557,7 +6557,7 @@ return(book, 2);
     <span style="color:#f92672">&#34;title&#34;</span>: <span style="color:#e6db74">&#34;hitchhiker&#39;s guide to the galaxy&#34;</span>
 }
 </code></pre></div><h3 id="length-condition">Length condition</h3>
-<p>A length condition may be added to a <code>str</code> type specification using the following syntax:</p>
+<p>A length condition may be added to a <code>str</code> type definition using the following syntax:</p>
 <pre><code>str&lt;min:max:default&gt;
 </code></pre><table>
 <thead>
@@ -6602,14 +6602,14 @@ Person{};  // return a Person with default values
     <span style="color:#f92672">&#34;email&#34;</span>: <span style="color:#e6db74">&#34;info@thingsdb.net&#34;</span>
 }
 </code></pre></div>
-<div class="notices warning" ><p>A length condition cannot be used as a nested array specification, thus something like <code>&quot;[str&lt;1:10&gt;]&quot;</code> is <em><strong>not</strong></em> possible.</p>
+<div class="notices warning" ><p>A length condition cannot be used as a nested array definition, thus something like <code>&quot;[str&lt;1:10&gt;]&quot;</code> is <em><strong>not</strong></em> possible.</p>
 </div>
 
 <h3 id="pattern-condition">Pattern condition</h3>
 <p>A pattern condition applies to type <code>str</code> and may be used using the following syntax:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">/pattern/i
 </code></pre></div><p>The <code>i</code> is optional and tells the pattern to be case insensitive. If left away, the pattern will thus be case sensitive.</p>
-<p>The specification must be either <em>nillable</em> by adding a <code>?</code> to the specification or an empty string must match with the given pattern. If this is <em>not</em> the case, then a default value <em><strong>must</strong></em> be given using the syntax below:</p>
+<p>The definition must be either <em>nillable</em> by adding a <code>?</code> to the definition or an empty string must match with the given pattern. If this is <em>not</em> the case, then a default value <em><strong>must</strong></em> be given using the syntax below:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">/pattern/i&lt;default&gt;
 </code></pre></div>
 <div class="notices note" ><p>It is always possible to set a default value as long as the default value matches
@@ -6642,11 +6642,11 @@ Words{};  // return a Person with default values
     <span style="color:#f92672">&#34;example4&#34;</span>: <span style="color:#e6db74">&#34;1234AB&#34;</span>
 }
 </code></pre></div>
-<div class="notices warning" ><p>A pattern condition cannot be used as a nested array specification, thus something like <code>&quot;[/pattern/i]&quot;</code> is <em><strong>not</strong></em> possible.</p>
+<div class="notices warning" ><p>A pattern condition cannot be used as a nested array definition, thus something like <code>&quot;[/pattern/i]&quot;</code> is <em><strong>not</strong></em> possible.</p>
 </div>
 
 <h3 id="range-condition">Range condition</h3>
-<p>A range condition may be added to a <code>int</code> or <code>float</code> type specification using the following syntax:</p>
+<p>A range condition may be added to a <code>int</code> or <code>float</code> type definition using the following syntax:</p>
 <pre><code>int&lt;min:max:default&gt;
 </code></pre><p>Or</p>
 <pre><code>float&lt;min:max:default&gt;
@@ -6692,7 +6692,7 @@ Values{};  // return a `Values` instance with default values
     <span style="color:#f92672">&#34;d&#34;</span>: <span style="color:#ae81ff">0.5</span>
 }
 </code></pre></div>
-<div class="notices warning" ><p>A range condition cannot be used as a nested array specification, thus something like <code>&quot;[int&lt;1:10&gt;]&quot;</code> is <em><strong>not</strong></em> possible.</p>
+<div class="notices warning" ><p>A range condition cannot be used as a nested array definition, thus something like <code>&quot;[int&lt;1:10&gt;]&quot;</code> is <em><strong>not</strong></em> possible.</p>
 </div>
 
 <h3 id="get-instance-of-a-type">Get instance of a type</h3>
@@ -6853,19 +6853,19 @@ Note that the types info is included inside an <a href="../../watching/on-init">
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1613738292"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1613738292"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1613738292"></script>
-    <script src="/v0/js/jquery.sticky.js?1613738292"></script>
-    <script src="/v0/js/featherlight.min.js?1613738292"></script>
-    <script src="/v0/js/highlight.pack.js?1613738292"></script>
+    <script src="/v0/js/clipboard.min.js?1613738440"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1613738440"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1613738440"></script>
+    <script src="/v0/js/jquery.sticky.js?1613738440"></script>
+    <script src="/v0/js/featherlight.min.js?1613738440"></script>
+    <script src="/v0/js/highlight.pack.js?1613738440"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1613738292"></script>
-    <script src="/v0/js/learn.js?1613738292"></script>
-    <script src="/v0/js/hugo-learn.js?1613738292"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1613738440"></script>
+    <script src="/v0/js/learn.js?1613738440"></script>
+    <script src="/v0/js/hugo-learn.js?1613738440"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1613738292" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1613738292"></script>
+    <link href="/v0/mermaid/mermaid.css?1613738440" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1613738440"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
