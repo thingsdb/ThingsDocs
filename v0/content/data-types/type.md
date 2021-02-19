@@ -134,7 +134,7 @@ return(book, 2);
 
 ### Length condition
 
-A length condition may be added to a `str` type specification using the following syntax:
+A length condition may be added to a `str` type definition using the following syntax:
 
 ```
 str<min:max:default>
@@ -173,7 +173,7 @@ Person{};  // return a Person with default values
 ```
 
 {{% notice warning %}}
-A length condition cannot be used as a nested array specification, thus something like `"[str<1:10>]"` is ***not*** possible.
+A length condition cannot be used as a nested array definition, thus something like `"[str<1:10>]"` is ***not*** possible.
 {{% /notice %}}
 
 ### Pattern condition
@@ -186,7 +186,7 @@ A pattern condition applies to type `str` and may be used using the following sy
 
 The `i` is optional and tells the pattern to be case insensitive. If left away, the pattern will thus be case sensitive.
 
-The specification must be either *nillable* by adding a `?` to the specification or an empty string must match with the given pattern. If this is *not* the case, then a default value ***must*** be given using the syntax below:
+The definition must be either *nillable* by adding a `?` to the definition or an empty string must match with the given pattern. If this is *not* the case, then a default value ***must*** be given using the syntax below:
 
 ```text
 /pattern/i<default>
@@ -229,12 +229,12 @@ Words{};  // return a Person with default values
 ```
 
 {{% notice warning %}}
-A pattern condition cannot be used as a nested array specification, thus something like `"[/pattern/i]"` is ***not*** possible.
+A pattern condition cannot be used as a nested array definition, thus something like `"[/pattern/i]"` is ***not*** possible.
 {{% /notice %}}
 
 ### Range condition
 
-A range condition may be added to a `int` or `float` type specification using the following syntax:
+A range condition may be added to a `int` or `float` type definition using the following syntax:
 
 ```
 int<min:max:default>
@@ -278,7 +278,7 @@ Values{};  // return a `Values` instance with default values
 ```
 
 {{% notice warning %}}
-A range condition cannot be used as a nested array specification, thus something like `"[int<1:10>]"` is ***not*** possible.
+A range condition cannot be used as a nested array definition, thus something like `"[int<1:10>]"` is ***not*** possible.
 {{% /notice %}}
 
 
