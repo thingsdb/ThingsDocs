@@ -14,5 +14,6 @@ Action | Description
 [add](./add) | Add a property to an existing Type.
 [del](./del) | Delete a property of an existing Type.
 [mod](./mod) | Modify a property of an existing Type.
+[rel](./rel) | Create a relation between existing Type/properties.
 [ren](./ren) | Rename a property of an existing Type.
 [wpo](./wpo) | Enable or disable *wrap-only* mode.

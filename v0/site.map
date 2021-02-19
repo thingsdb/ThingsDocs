@@ -194,6 +194,7 @@ collection-api
         add
         del
         mod
+        rel
         ren
         wpo
     new

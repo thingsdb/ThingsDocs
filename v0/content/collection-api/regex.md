@@ -1,6 +1,6 @@
 ---
 title: "regex"
-weight: 208
+weight: 209
 ---
 
 Create a new regular expression.

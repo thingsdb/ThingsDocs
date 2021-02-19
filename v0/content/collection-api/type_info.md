@@ -1,6 +1,6 @@
 ---
 title: "type_info"
-weight: 222
+weight: 223
 ---
 
 Returns information about a given [Type](../../data-types/type).
@@ -13,6 +13,7 @@ Value | Description
 `name` | Type's name.
 `fields` | Array with arrays containing two strings, the property name and definition.
 `methods` | Object with methods where the key is the method name and the value an object containing information about the closure.
+`relations` | Object with [relations](../mod_type/rel).
 
 {{% notice info %}}
 Methods information will contain the definition of the attached closure ***only*** when the user has at least `EVENT` privileges on the collection containing the type.
@@ -45,6 +46,8 @@ Returns [info](../../data-types/info) about the Type.
 > This code shows the output of ***type_info()***:
 
 ```thingsdb,should_pass
+new_type('Book');
+
 // Just a Type as an example
 set_type('Book', {
     title: 'str',
@@ -54,8 +57,14 @@ set_type('Book', {
         this.ratings
             ? this.ratings.reduce(|a, b| a+b, 0) / this.ratings.len()
             : nil;
-    }
+    },
+    similar: '{Book}'
 });
+
+// Create a relation on Book.similar
+// If a book is similar to a book, it is most likely also true the other
+// way around.
+mod_type('Book', 'rel', 'similar', 'similar');
 
 // Return Type info
 type_info('Book');
@@ -65,7 +74,7 @@ type_info('Book');
 
 ```json
 {
-    "created_at": 1593527321,
+    "created_at": 1613736754,
     "fields": [
         [
             "title",
@@ -78,6 +87,10 @@ type_info('Book');
         [
             "ratings",
             "[int]"
+        ],
+        [
+            "similar",
+            "{Book}"
         ]
     ],
     "methods": {
@@ -90,9 +103,16 @@ type_info('Book');
             "with_side_effects": false
         }
     },
-    "modified_at": null,
+    "modified_at": 1613736754,
     "name": "Book",
-    "type_id": 1,
+    "relations": {
+        "similar": {
+            "definition": "{Book}",
+            "property": "similar",
+            "type": "Book"
+        }
+    },
+    "type_id": 0,
     "wrap_only": false
 }
 ```

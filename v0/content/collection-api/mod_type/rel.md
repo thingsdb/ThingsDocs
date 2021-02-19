@@ -1,0 +1,106 @@
+---
+title: "rel"
+weight: 197
+---
+
+Add or delete a relation between properties of the same or different types.
+
+Relations can only be created between *nillable* type definitions and/or restricted sets. This results in the following combinations:
+
+Combination | Description
+----------- | -----------
+`Type?` <-> `Type?` | One to one relation.
+`Type?` <-> `{Type}`| One to many relation.
+`{Type}` <-> `{Type}` | Many to many relation.
+
+All missing relations on existing instances will be automatically created. With a *one-to-one* or a *one-to-many* relation this might not be possible because
+you might be in a state where the existing instances are not related correctly. For example, you want to create a *one-to-many* relation but one of the *thing*s
+exists in sets of two different things. One of them is obviously incorrect. In such state ThingsDB will raise a [type_err()](../../../errors/type_err) and does not
+create the relation.
+
+### Action
+
+`mod_type(type, 'rel', property, to)`
+
+### Arguments
+
+Argument | Type | Description
+-------- | ---- | -----------
+type | str | Name of the Type where to set the wrap-mode for.
+`'rel'` | str | Passing this argument will result in a *relation* action.
+property | str | Property to create a relation for.
+to | str/nil | Property on the *other* type to create a relation with. When `nil`, an existing relation will be removed.
+
+### Return value
+
+The value `nil`.
+
+### Example
+
+> This code shows a one-to-many relation between two types:
+
+```thingsdb,json_response
+new_type('Workspace');
+new_type('Person');
+
+set_type('Workspace', {
+    people: '{Person}'
+});
+
+set_type('Person', {
+    workspace: 'Workspace?'
+});
+
+/* Create a relation between Person.workspace and Workspace.people
+ *
+ * Note: We could have used mod_type('Workspace', ...); just as well, it does
+ *       not matter from which direction the relation is made.
+ */
+mod_type('Person', 'rel', 'workspace', 'people');
+
+// Create a workspace
+blue = Workspace{};
+
+// Create a person and assign workspace `blue`:
+alice = Person{
+    workspace: blue
+};
+
+// alice is automatically assigned to people in workspace blue:
+blue.people.has(alice);  // true
+```
+
+> Return value in JSON format
+
+```json
+true
+```
+
+Another example using a many-to-many relation within a single type:
+
+```thingsdb,json_response
+new_type('Album');
+
+set_type('Album', {
+    title: 'str',
+    similar: '{Album}'
+});
+
+// Create a relation for Album.similar
+mod_type('Album', 'rel', 'similar', 'similar');
+
+hoss = Album{title: 'Hoss'};
+punk_in_drublic = Album{title: 'Punk in Drublic'};
+
+// Add punk_in_drublic as a similar album as hoss
+hoss.similar.add(punk_in_drublic);
+
+// note that hoss is also added as a similar album to punk_in_drublic:
+punk_in_drublic.similar.has(hoss);  // true
+```
+
+> Return value in JSON format
+
+```json
+true
+```
