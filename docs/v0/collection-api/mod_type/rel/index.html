@@ -11,20 +11,20 @@
     <title>rel :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1613738439" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1613738439" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1613738439" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1613738439" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1613738439" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1613738439" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1613738439" rel="stylesheet">
-    <link href="/v0/css/theme.css?1613738439" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1613738439" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1614097991" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1614097991" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1614097991" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1614097991" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1614097991" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1614097991" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1614097991" rel="stylesheet">
+    <link href="/v0/css/theme.css?1614097991" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1614097991" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1613738439" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1614097991" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1613738439"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1614097991"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1613738439"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1613738439"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1614097991"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1614097991"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1613738439"></script>
+<script type="text/javascript" src="/v0/js/search.js?1614097991"></script>
 
     
   </div>
@@ -6429,21 +6429,21 @@ set_type('Person', {
 
 /* Create a relation between Person.workspace and Workspace.people
  *
- * Note: We could have used mod_type('Workspace', ...); just as well, it does
- *       not matter from which direction the relation is made.
+ * Note: We could have used mod_type('Workspace', ...); just as well,
+ *       it does not matter from which direction the relation is made.
  */
 mod_type('Person', 'rel', 'workspace', 'people');
 
 // Create a workspace
-blue = Workspace{};
+foo = Workspace{};
 
-// Create a person and assign workspace `blue`:
+// Create a person and assign workspace `foo`:
 alice = Person{
-    workspace: blue
+    workspace: foo
 };
 
-// alice is automatically assigned to people in workspace blue:
-blue.people.has(alice);  // true
+// alice is automatically assigned to people in workspace foo:
+foo.people.has(alice);  // true
 </code></pre><blockquote>
 <p>Return value in JSON format</p>
 </blockquote>
@@ -6462,10 +6462,10 @@ mod_type('Album', 'rel', 'similar', 'similar');
 hoss = Album{title: 'Hoss'};
 punk_in_drublic = Album{title: 'Punk in Drublic'};
 
-// Add punk_in_drublic as a similar album as hoss
+// Add `punk_in_drublic` as a similar album to `hoss`
 hoss.similar.add(punk_in_drublic);
 
-// note that hoss is also added as a similar album to punk_in_drublic:
+// note that `hoss` is also added as a similar album to `punk_in_drublic`:
 punk_in_drublic.similar.has(hoss);  // true
 </code></pre><blockquote>
 <p>Return value in JSON format</p>
@@ -6501,19 +6501,19 @@ punk_in_drublic.similar.has(hoss);  // true
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1613738439"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1613738439"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1613738439"></script>
-    <script src="/v0/js/jquery.sticky.js?1613738439"></script>
-    <script src="/v0/js/featherlight.min.js?1613738439"></script>
-    <script src="/v0/js/highlight.pack.js?1613738439"></script>
+    <script src="/v0/js/clipboard.min.js?1614097991"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1614097991"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1614097991"></script>
+    <script src="/v0/js/jquery.sticky.js?1614097991"></script>
+    <script src="/v0/js/featherlight.min.js?1614097991"></script>
+    <script src="/v0/js/highlight.pack.js?1614097991"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1613738439"></script>
-    <script src="/v0/js/learn.js?1613738439"></script>
-    <script src="/v0/js/hugo-learn.js?1613738439"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1614097991"></script>
+    <script src="/v0/js/learn.js?1614097991"></script>
+    <script src="/v0/js/hugo-learn.js?1614097991"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1613738439" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1613738439"></script>
+    <link href="/v0/mermaid/mermaid.css?1614097991" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1614097991"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
