@@ -53,21 +53,21 @@ set_type('Person', {
 
 /* Create a relation between Person.workspace and Workspace.people
  *
- * Note: We could have used mod_type('Workspace', ...); just as well, it does
- *       not matter from which direction the relation is made.
+ * Note: We could have used mod_type('Workspace', ...); just as well,
+ *       it does not matter from which direction the relation is made.
  */
 mod_type('Person', 'rel', 'workspace', 'people');
 
 // Create a workspace
-blue = Workspace{};
+foo = Workspace{};
 
-// Create a person and assign workspace `blue`:
+// Create a person and assign workspace `foo`:
 alice = Person{
-    workspace: blue
+    workspace: foo
 };
 
-// alice is automatically assigned to people in workspace blue:
-blue.people.has(alice);  // true
+// alice is automatically assigned to people in workspace foo:
+foo.people.has(alice);  // true
 ```
 
 > Return value in JSON format
@@ -92,10 +92,10 @@ mod_type('Album', 'rel', 'similar', 'similar');
 hoss = Album{title: 'Hoss'};
 punk_in_drublic = Album{title: 'Punk in Drublic'};
 
-// Add punk_in_drublic as a similar album as hoss
+// Add `punk_in_drublic` as a similar album to `hoss`
 hoss.similar.add(punk_in_drublic);
 
-// note that hoss is also added as a similar album to punk_in_drublic:
+// note that `hoss` is also added as a similar album to `punk_in_drublic`:
 punk_in_drublic.similar.has(hoss);  // true
 ```
 

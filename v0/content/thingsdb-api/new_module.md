@@ -35,7 +35,7 @@ Returns `nil`. You might want to use [module_info(..)](../module_info) to check 
 new_module('DEMO1', 'demo');
 ```
 
-> Return value in JSON format (the new user id)
+> Return value in JSON format
 
 ```json
 null
