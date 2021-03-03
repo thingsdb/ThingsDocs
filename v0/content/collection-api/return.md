@@ -95,7 +95,7 @@ If you only require the ID's from all `.artists` and do not any other properties
 return(.artists, 0);
 ```
 
-Something like this will be returned. (the ID `#` might be different since this is auto generated)
+Something like this will be returned. (the Id `#` might be different since this is auto generated)
 
 ```json
 [

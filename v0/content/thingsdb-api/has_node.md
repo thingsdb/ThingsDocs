@@ -15,11 +15,11 @@ This function does *not* generate an [event](../../overview/events).
 
 Argument | Type | Description
 -------- | ---- | -----------
-id | int (required) | Node id to check.
+id | int (required) | Node Id to check.
 
 ### Return value
 
-Returns `true` if a node with a given id exists and otherwise `false`.
+Returns `true` if a node with a given Id exists and otherwise `false`.
 
 ### Example
 

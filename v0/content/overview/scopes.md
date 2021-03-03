@@ -10,9 +10,9 @@ scope | short | description
 ----- | ----- | -----------
 `@thingsdb` | `@t` | ThingsDB scope; Used for managing user accounts, collections and nodes.
 `@node` | `@n` | Current node scope; For node info and statistics from the connected node.
-`@node:ID` | `@n:ID` | Specific node scope; Get node info and statistics from a specific node id (`ID` should be replaced with a node ID, for example `0`).
+`@node:ID` | `@n:ID` | Specific node scope; Get node info and statistics from a specific node Id (`Id` should be replaced with a node ID, for example `0`).
 `@collection:NAME` | `@:NAME` | [Collection](../collections) scope; A collection where things are stored.
-`@collection:ID` | `@:ID` | [Collection](../collections) scope; By collection `ID` instead of the using the collection name.
+`@collection:ID` | `@:ID` | [Collection](../collections) scope; By collection `Id` instead of the using the collection name.
 
 {{% notice tip %}}
 Scopes names do allow an alternative syntax where the `@` and `:` are replaced with the `/` character.

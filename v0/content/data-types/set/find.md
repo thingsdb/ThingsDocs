@@ -29,7 +29,7 @@ Explanation of the *callback* argument:
 
 Iterable | Arguments   | Description
 -------- | ----------- | -----------
-set      | thing, id   | Iterate over things in the set. Both `thing` and `id` are optional.
+set      | thing, Id   | Iterate over things in the set. Both `thing` and `id` are optional.
 
 {{% notice note %}}
 The `alt` argument will be *lazily* evaluated. Consider the following example: \

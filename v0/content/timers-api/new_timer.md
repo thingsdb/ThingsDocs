@@ -23,5 +23,5 @@ Argument | Type | Description
 
 ### Return value
 
-Returns the ID of the new timer.
+Returns the Id of the new timer.
 

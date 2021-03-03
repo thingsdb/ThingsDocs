@@ -6,7 +6,7 @@ weight: 295
 An update event is pushed when changes are made to a `thing` you are watching.
 Nested things need to be watched separately.
 
-The event contains the Thing ID (`#`), an event number, and a *jobs* array containing all the mutations to the thing in the  applied order.
+The event contains the Thing Id (`#`), an event number, and a *jobs* array containing all the mutations to the thing in the  applied order.
 
 ```json
 {
@@ -48,7 +48,7 @@ Mutation | Target | Description
 [del_procedure](#del_procedure) | `collection` | A procedure is removed from the collection.
 
 {{% notice tip %}}
-When *new* things are added via the mutations [set](#set), [add](#add) or [splice](#splice), Then the mutation will contain the *complete* thing with all properties. If on the other hand an *existing* thing is provided, then only the ID (`#`) is included.
+When *new* things are added via the mutations [set](#set), [add](#add) or [splice](#splice), Then the mutation will contain the *complete* thing with all properties. If on the other hand an *existing* thing is provided, then only the Id (`#`) is included.
 {{% /notice %}}
 
 {{% notice info %}}
@@ -85,8 +85,8 @@ with the values instead of the property names. For example:
 
 The mutation event of creating the `Person` above contains an empty key `""` with
 an `array` of *fields*. They refer to the *fields* of the Type with `type_id:0`
-which can be found at key `"."`. The ID of the instance is equal to a normal *thing*
-and can be found with key `"#"`, so the ID is 5 in the example result below. For more
+which can be found at key `"."`. The Id of the instance is equal to a normal *thing*
+and can be found with key `"#"`, so the Id is 5 in the example result below. For more
 information on how to parse a Type instance, look at the [mutation format](../../data-types/type#mutation-format) documentation.
 
 ```json

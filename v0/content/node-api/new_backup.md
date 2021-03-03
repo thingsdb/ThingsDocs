@@ -7,7 +7,7 @@ Schedule a new backup.
 
 Backups are created using `tar` and `gzip`. Once a backup is made, the `.tar.gz` backup
 file can be used to recover ThingsDB, or can be used to load the ThingsDB into another node.
-The result value is a backup ID. This ID can be used by [backup_info(..)](../backup_info) for details
+The result value is a backup Id. This Id can be used by [backup_info(..)](../backup_info) for details
 about the backup schedule job, or can be used to [delete](../del_backup) the backup schedule.
 
 {{% notice tip %}}
@@ -51,7 +51,7 @@ An example file-name could be `/tmp/backup_{EVENT}.tar.gz`.
 
 ### Return value
 
-Returns the backup `ID` for the scheduled backup.
+Returns the backup `Id` for the scheduled backup.
 
 ### Example
 

@@ -24,4 +24,4 @@ node_id | int (required) | Id of the node to delete.
 
 ### Return value
 
-Returns `nil` when successful. A [lookup_err()](../../errors/lookup_err) is raised if the node id does not exist.
+Returns `nil` when successful. A [lookup_err()](../../errors/lookup_err) is raised if the node Id does not exist.

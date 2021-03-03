@@ -15,12 +15,12 @@ This function does *not* generate an [event](../../overview/events).
 
 Argument | Type | Description
 -------- | ---- | -----------
-id | int (optional) | The id for the thing to return.
+id | int (optional) | The Id for the thing to return.
 
 ### Return value
 
 Returns a [thing](../../data-types/thing).
-A [lookup_err()](../../errors/lookup_err) is returned in case an id is given which is not found inside the collection.
+A [lookup_err()](../../errors/lookup_err) is returned in case an Id is given which is not found inside the collection.
 
 ### Example
 

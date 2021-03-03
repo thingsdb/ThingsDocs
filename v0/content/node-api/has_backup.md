@@ -9,17 +9,17 @@ This function does *not* generate an [event](../../overview/events).
 
 ### Function
 
-`has_backup(ID)`
+`has_backup(Id)`
 
 ### Arguments
 
 Argument | Type | Description
 -------- | ---- | -----------
-ID | int (required) | Backup ID to check.
+Id | int (required) | Backup Id to check.
 
 ### Return value
 
-Returns `true` if a backup with a given ID exists and otherwise `false`.
+Returns `true` if a backup with a given Id exists and otherwise `false`.
 
 ### Example
 

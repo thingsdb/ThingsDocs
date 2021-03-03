@@ -10,13 +10,13 @@ This function does *not* generate an [event](../../overview/events).
 
 ### Function
 
-`del_backup(ID, [delete_files])`
+`del_backup(Id, [delete_files])`
 
 ### Arguments
 
 Argument | Type | Description
 --------- | ----------- | -----------
-`ID` | int | Backup ID to delete.
+`Id` | int | Backup Id to delete.
 `delete_files` | bool (optional) | Delete related backup files from disk *(or Google Cloud Storage)*. Default is `false`.
 
 ### Return value

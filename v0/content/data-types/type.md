@@ -285,9 +285,9 @@ A range condition cannot be used as a nested array definition, thus something li
 ### Get instance of a type
 
 The [thing(..)](../../collection-api/thing) function may be used to get an instance
-of a given ID. This does not guarantee that the *thing* is truly of the type you expect.
+of a given Id. This does not guarantee that the *thing* is truly of the type you expect.
 Instead of adding a [type_assert(..)](../../collection-api/type_assert) on the *thing*, it is also possible to
-call the type as a function with the ID as it's first argument.
+call the type as a function with the Id as it's first argument.
 
 For example:
 
@@ -371,7 +371,7 @@ Key | Description
 `""`  | Array with fields;
 
 In order to correctly parse the mutation you require the [types_info](../../collection-api/types_info) of a collection.
-Note that the types info is included inside an [init event](../../watching/on-init). Below is an example with an entry of `types_info`. This shows type **Book** which has ID `10` from the mutation example above.
+Note that the types info is included inside an [init event](../../watching/on-init). Below is an example with an entry of `types_info`. This shows type **Book** which has Id `10` from the mutation example above.
 
 ```json
 ...

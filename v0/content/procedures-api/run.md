@@ -6,7 +6,7 @@ weight: 281
 Run a procedure.
 
 {{% notice info %}}
-The **run(..)** function may also be used to *run* a [timer](../timer-api/run).
+The **run(..)** function may also be used to *run* a [timer](../../timers-api/run).
 {{% /notice %}}
 
 This function does *not* generate an [event](../../overview/events).

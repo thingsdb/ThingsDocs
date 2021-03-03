@@ -20,10 +20,10 @@ See the [auth example](../auth) for how to authorize a socket connection.
 
 ## Example
 
-As an example we assume that we want to watch a thing with ID 3 for mutations. Instead of a single ID, we could add as much IDs as we wanted.
+As an example we assume that we want to watch a thing with Id 3 for mutations. Instead of a single ID, we could add as much IDs as we wanted.
 
 {{% notice info %}}
-ThingsDB will throw a `WARNING` event to you socket connection in case some given ID does not exist within the given collection scope.
+ThingsDB will throw a `WARNING` event to you socket connection in case some given Id does not exist within the given collection scope.
 Other IDs will be watched and the response to you watch request will still be `OK (17)`.
 {{% /notice %}}
 
@@ -35,7 +35,7 @@ Serializing the above using [MessagePack](https://msgpack.org) results in the fo
 
 `\x92\xa7//stuff\x03`
 
-Now we create the header. For this example we just use ID 0:
+Now we create the header. For this example we just use Id 0:
 
 - Data length (13) `\x0a\x00\x00\x00`
 - Identifier (0) `\x00\x00`

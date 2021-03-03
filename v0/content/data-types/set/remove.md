@@ -28,7 +28,7 @@ Explanation of the *callback* argument:
 
 Iterable | Arguments | Description
 -------- | -------- | -----------
-set | thing, thing ID | Iterate over things in the set. Both `thing` and `thing ID` are optional.
+set | thing, thing Id | Iterate over things in the set. Both `thing` and `thing ID` are optional.
 
 ### Return value
 

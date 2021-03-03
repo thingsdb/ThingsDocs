@@ -28,7 +28,7 @@ Argument | Description
 -------- | -----------
 `(0)` accumulator | An accumulated value that is returned by the previously invoked callback—or initial value.
 `(1)` current | The current thing in the set that is being processed by the callback.
-`(2)` id | ID of the current thing in the set that is being processed by the callback.
+`(2)` Id | Id of the current thing in the set that is being processed by the callback.
 
 ### Return value
 

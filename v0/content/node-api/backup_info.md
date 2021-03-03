@@ -11,7 +11,7 @@ Value | Description
 `created_at` | [Time Stamp](https://wikipedia.org/wiki/Unix_time) when the backup schedule is created.
 `file_template` | Backup [file template](../new_backup#file-template).
 `files` | List of successful backup files.
-`id` | Backup ID.
+`id` | Backup Id.
 `max_files` | Maximum number of backup files to store. The oldest file will be removed once `max_files` is reached.
 `next_run` | Only available when the backup job is scheduled to run. Contains a [string](../../data-types/str) with date/time for the next planned schedule, or *pending* when the backup is scheduled to start.
 `repeat` | Only available when the backup will repeat. Contains an [integer](../../data-types/int) value representing the repeat time in seconds.
@@ -22,13 +22,13 @@ This function does *not* generate an [event](../../overview/events).
 
 ### Function
 
-`backup_info(ID)`
+`backup_info(Id)`
 
 ### Arguments
 
 Argument | Type | Description
 --------- | ----------- | -----------
-`ID` | int | ID of the backup schedule to return info for.
+`Id` | int | Id of the backup schedule to return info for.
 
 ### Return value
 
@@ -37,7 +37,7 @@ Argument | Type | Description
 >
 
 ```thingsdb,syntax_only,@n
-// Return backup info of scheduled backup with ID 0:
+// Return backup info of scheduled backup with Id 0:
 backup_info(0);
 ```
 

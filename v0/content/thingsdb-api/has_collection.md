@@ -15,7 +15,7 @@ This function does *not* generate an [event](../../overview/events).
 
 Argument | Type | Description
 -------- | ---- | -----------
-collection | str/int (required) | Collection name or id to check.
+collection | str/int (required) | Collection name or Id to check.
 
 ### Return value
 

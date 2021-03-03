@@ -10,5 +10,5 @@ A timer in ThingsDB is a closure that is attached to a scope and runs at a sched
 
 Timers can be used in the `@thingsdb` scope and in `@collection` scopes.
 
-Timers always have a unique ID by which they can be identified.
+Timers always have a unique Id by which they can be identified.
 

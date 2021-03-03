@@ -3,7 +3,7 @@ title: "wrap"
 weight: 128
 ---
 
-Wrap a thing with a another [Type](../../type) to filter out properties, while preserving the ID.
+Wrap a thing with a another [Type](../../type) to filter out properties, while preserving the Id.
 A wrapped *thing* inherits the [methods](../../type/#methods) from the *type* it is wrapped with.
 
 For a more advanced example using [wrap()](..) and [unwrap()](../../wtype/unwrap) see [\<Type\>](../../wtype/#example).
@@ -37,7 +37,7 @@ set_type('_Email', {email: 'str'});
     gender: 'male',
 };
 
-// Return the email field and ID (#)
+// Return the email field and Id (#)
 .joente.wrap('_Email');
 ```
 

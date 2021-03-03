@@ -4,7 +4,7 @@ weight: 132
 ---
 
 
-It is sometimes useful to get things with their ID (`#`) but still
+It is sometimes useful to get things with their Id (`#`) but still
 be able to filter-out properties which are not required.
 
 A solution to return only specific properties from a thing, is to work with *wrapped* Types.

@@ -8,10 +8,12 @@ Returns information about a timer.
 Value | Description
 ------- | -----------
 `arguments` | Array with positional argument names.
-`created_at` | [Time Stamp](https://wikipedia.org/wiki/Unix_time) when the timer is created.
 `definition` | Closure definition. *(Only available with `EVENT` privileges)*
 `doc` | Doc string of the closure in the timer.
-`name` | Name of the timer.
+`id` | Id of the timer.
+`next_run` | Scheduled time when the timer wil run.
+`repeat` | Repeat the timer each `X` seconds. *(Only when this is a repeating timer)*
+`user` | User which credentials are used for the timer. *(Only available with `EVENT` privileges)*
 `with_side_effects` | Boolean value which indicates if this timer has side effects.
 
 This function does *not* generate an [event](../../overview/events).
@@ -35,26 +37,29 @@ Returns [info](../../data-types/info) about a given timer.
 > Create a new timer `add_one`:
 
 ```thingsdb,should_pass
-new_timer('add_one', |x| {
-    "Adds one to a given value";
-    x + 1;
-});
+timer = new_timer(
+    datetime(),
+    3600,
+    || {
+        "Remove disabled users each hour.";
+        .users.remove(|user| user.disabled);
+    }
+);
 
-// Return the doc string for timer `add_one`
-timer_info('add_one');
+timer_info(timer);
 ```
 
-> Return value in JSON format
+> Example return value in JSON format
 
 ```json
 {
-    "arguments": [
-        "x"
-    ],
-    "created_at": 1579175900,
-    "definition": "|x| {\n    \"Adds one to a given value\";\n    x + 1;\n}",
-    "doc": "Adds one to a given value",
-    "name": "add_one",
-    "with_side_effects": false
+    "arguments": [],
+    "definition": "|| {\n    \"Remove disabled users each hour.\";\n    .users.remove(|user| user.disabled);\n}",
+    "doc": "Remove disabled users each hour.",
+    "id": 9,
+    "next_run": "2021-03-03 12:50:47Z",
+    "repeat": 3600,
+    "user": "admin",
+    "with_side_effects": true
 }
 ```

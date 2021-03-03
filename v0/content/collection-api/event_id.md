@@ -3,7 +3,7 @@ title: "event_id"
 weight: 156
 ---
 
-Returns the current event ID for the running query. The return value will be `nil` if the query does not require an event.
+Returns the current event Id for the running query. The return value will be `nil` if the query does not require an event.
 
 This function does *not* generate an [event](../../overview/events).
 
@@ -17,7 +17,7 @@ None
 
 ### Return value
 
-The current event ID or `nil` when the query has no event.
+The current event Id or `nil` when the query has no event.
 
 ### Example
 

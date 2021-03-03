@@ -11,12 +11,12 @@ the counters might provide you with more information.
 
 Counter | Description
 ------- | -----------
-average_event_duration | The average [event](../../overview/events) duration in seconds. Event duration is measured from the time an event is created *(before the final ID is assigned)*, until the actual event is committed to ThingsDB.
+average_event_duration | The average [event](../../overview/events) duration in seconds. Event duration is measured from the time an event is created *(before the final Id is assigned)*, until the actual event is committed to ThingsDB.
 average_query_duration | The average query duration in seconds. Query duration is measured from the time a query *(or procedure run)* request is unpacked, until the response is created to send back to the client.
 events_committed | [Events](../../overview/events) committed since last the counters reset.
 events_failed | Failed events. This is a *critical* counter which should be `0`.
 events_killed | Killed events took too long for receiving the `READY` status. These events may be processed later.
-events_quorum_lost | Number of times this node did not get an event ID accepted by the [quorum](../../overview/dictionary) of nodes. An event ID will not be accepted if another node is attempting to assign the same event ID. This is not an issue since the node will just try another event ID. It only indicates the number of collisions occurred while trying to assign an event ID.
+events_quorum_lost | Number of times this node did not get an event Id accepted by the [quorum](../../overview/dictionary) of nodes. An event Id will not be accepted if another node is attempting to assign the same event Id. This is not an issue since the node will just try another event Id. It only indicates the number of collisions occurred while trying to assign an event Id.
 events_skipped | Events which cannot be committed since an event with a higher `id` is already processed.
 events_unaligned | Number of times an event cannot be pushed to the end of the queue and needs re-ordering.
 events_with_gap | Events which are committed but at least one event `id` was skipped.

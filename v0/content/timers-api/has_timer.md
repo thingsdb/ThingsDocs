@@ -15,11 +15,11 @@ This function does *not* generate an [event](../../overview/events).
 
 Argument | Type | Description
 -------- | ---- | -----------
-timer | int (required) | Timer ID to check.
+timer | int (required) | Timer Id to check.
 
 ### Return value
 
-Returns `true` if a timer with a given ID exists in the current scope and otherwise `false`.
+Returns `true` if a timer with a given Id exists in the current scope and otherwise `false`.
 
 ### Example
 

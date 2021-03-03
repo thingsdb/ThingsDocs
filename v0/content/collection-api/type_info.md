@@ -7,7 +7,7 @@ Returns information about a given [Type](../../data-types/type).
 
 Value | Description
 ------- | -----------
-`type_id` | Internal Type ID *(can be used to identify Types in collection events)*.
+`type_id` | Internal Type Id *(can be used to identify Types in collection events)*.
 `created_at` | [Time Stamp](https://wikipedia.org/wiki/Unix_time) when the Type is created.
 `modified_at` | [Time Stamp](https://wikipedia.org/wiki/Unix_time) when the Type is last modified or `nil` if never modified.
 `name` | Type's name.

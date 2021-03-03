@@ -7,7 +7,7 @@ Returns information about a given [enumeration type](../../data-types/enum).
 
 Value | Description
 ------- | -----------
-`enum_id` | Internal enum ID *(can be used to identify Enums in collection events)*.
+`enum_id` | Internal enum Id *(can be used to identify Enums in collection events)*.
 `created_at` | [Time Stamp](https://wikipedia.org/wiki/Unix_time) when the enum is created.
 `default` | Default member of this enumerator. The default member is used when implicitly creating a value of this enumerator type. See [mod_enum(..)](../mod_enum/def) to change the deafult member.
 `modified_at` | [Time Stamp](https://wikipedia.org/wiki/Unix_time) when the enum is last modified or `nil` if never modified.

@@ -15,22 +15,22 @@ cached_names | Number of [names](../../overview/names) cached in memory.
 cached_queries | Number of queries the node has in stored in cache.
 client_port | Listening for client TCP socket connections on this port.
 connected_clients | Number of connected clients to the node.
-db_stored_event_id | Last stored event ID in full database store.
+db_stored_event_id | Last stored event Id in full database store.
 events_in_queue | Events which are pending in the queue.
-global_committed_event_id | Lowest known committed event ID by all nodes.
-global_stored_event_id | Lowest known stored event ID by all nodes.
+global_committed_event_id | Lowest known committed event Id by all nodes.
+global_stored_event_id | Lowest known stored event Id by all nodes.
 http_api_port | Listening to this HTTP port for API calls.
 http_status_port | Listening to this HTTP port for status, readiness and liveness requests.
 ip_support | Enabled IP support. May be IPv4/IPv6 or both.
 libcleri_version | Cleri language parser library version.
 libpcre2_version | PCRE regular expression library version.
 libuv_version | UV asynchronous library version.
-local_committed_event_id | Last committed event ID on the node.
-local_stored_event_id | Last stored event ID on disk. Store takes place when in *away* mode.
+local_committed_event_id | Last committed event Id on the node.
+local_stored_event_id | Last stored event Id on disk. Store takes place when in *away* mode.
 log_level | Current log level for the node. May be changed at runtime using [set_log_level(..)](../../node-api/set_log_level)
 msgpack_version | MessagePack data protocol library version.
-next_event_id | Next free event ID.
-next_thing_id | Next free things ID.
+next_event_id | Next free event Id.
+next_thing_id | Next free things Id.
 node_id | The `id` which is assigned to the node.
 node_name | This node will publish itself to other nodes using the node name. This can be an IP address, hostname, or a fully qualified domain name (FQDN) of the node.
 node_port | Listening for node TCP socket connections on this port.

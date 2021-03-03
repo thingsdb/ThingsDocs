@@ -15,7 +15,7 @@ This function generates an [event](../../overview/events).
 
 Argument | Type | Description
 -------- | ---- | -----------
-timer | int (required) | Timer ID to delete.
+timer | int (required) | Timer Id to delete.
 
 ### Return value
 

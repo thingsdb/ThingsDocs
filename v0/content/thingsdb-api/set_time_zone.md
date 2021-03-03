@@ -21,7 +21,7 @@ This function generates an [event](../../overview/events).
 
 Argument | Type | Description
 --------- | ----------- | -----------
-collection | str/int (required) | Collection name or id to change the time zone for.
+collection | str/int (required) | Collection name or Id to change the time zone for.
 zone | str (required) | New time zone.
 
 ### Return value
