@@ -44,9 +44,10 @@ Example  This code shows an example use case of has_timer():
       
       <guid>https://docs.thingsdb.net/v0/timers-api/new_timer/</guid>
       <description>Creates a new timer to the @thingsdb or a @collection scope. The given closure will be copied to the timer, so this is not a reference to the given closure.
-This function generates an event.
+When the timer is created in the @thingsdb scope, only type nil, int, float, bool, str, bytes, datetime and regex are allowed as argument values.
+ This function generates an event.
 Function new_timer(start, [repeat], closure, [arguments])
-Arguments    Argument Type Description     start datetime (required) Time when the timer should start.   repeat int (optional) Repeat the timer each X seconds.</description>
+Arguments    Argument Type Description     start datetime (required) Time when the timer should start.</description>
     </item>
     
     <item>
@@ -72,9 +73,10 @@ Example  Example code using run:
       <guid>https://docs.thingsdb.net/v0/timers-api/set_timer_args/</guid>
       <description>Set timer arguments.
 If less than the required arguments are given, then the remaining arguments will be set using nil. More arguments than the closure accepts are simply removed and thus not used.
-This function generates an event.
+When the timer is created in the @thingsdb scope, only type nil, int, float, bool, str, bytes, datetime and regex are allowed as argument values.
+ This function generates an event.
 Function set_timer_args(timer, args)
-Arguments    Argument Type Description     timer int (required) Timer to set new arguments for.   args list (required) List with timer arguments.    Return value Returns nil when successful.</description>
+Arguments    Argument Type Description     timer int (required) Timer to set new arguments for.</description>
     </item>
     
     <item>

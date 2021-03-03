@@ -1992,7 +1992,7 @@
 	"title": "new_timer",
 	"tags": [],
 	"description": "",
-	"content": "Creates a new timer to the @thingsdb or a @collection scope. The given closure will be copied to the timer, so this is not a reference to the given closure.\nThis function generates an event.\nFunction new_timer(start, [repeat], closure, [arguments])\nArguments    Argument Type Description     start datetime (required) Time when the timer should start.   repeat int (optional) Repeat the timer each X seconds.   closure closure (required) Closure which will be attached to the timer.   arguments array (optional) Argument parsed to the closure.    Return value Returns the Id of the new timer.\n"
+	"content": "Creates a new timer to the @thingsdb or a @collection scope. The given closure will be copied to the timer, so this is not a reference to the given closure.\nWhen the timer is created in the @thingsdb scope, only type nil, int, float, bool, str, bytes, datetime and regex are allowed as argument values.\n This function generates an event.\nFunction new_timer(start, [repeat], closure, [arguments])\nArguments    Argument Type Description     start datetime (required) Time when the timer should start.   repeat int/nil (optional) Repeat the timer each X seconds. Value nil will disable repeat and will fire the timer only once. The minimal repeat value is 30 seconds.   closure closure (required) Closure which will be attached to the timer.   arguments array (optional) Argument parsed to the closure.    Return value Returns the Id of the new timer.\n"
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/timers-api/run/",
@@ -2006,7 +2006,7 @@
 	"title": "set_timer_args",
 	"tags": [],
 	"description": "",
-	"content": "Set timer arguments.\nIf less than the required arguments are given, then the remaining arguments will be set using nil. More arguments than the closure accepts are simply removed and thus not used.\nThis function generates an event.\nFunction set_timer_args(timer, args)\nArguments    Argument Type Description     timer int (required) Timer to set new arguments for.   args list (required) List with timer arguments.    Return value Returns nil when successful. A lookup_err() is raised if the timer does not exist.\nExample  This code will will be called every minute for 10 times and then it the timer will be removed.\n new_timer( datetime(), 60, |timer, x| { set_timer_args(timer, [x+1]); if (x == 10, { del_timer(timer); // stop this timer }); }, [1] ); "
+	"content": "Set timer arguments.\nIf less than the required arguments are given, then the remaining arguments will be set using nil. More arguments than the closure accepts are simply removed and thus not used.\nWhen the timer is created in the @thingsdb scope, only type nil, int, float, bool, str, bytes, datetime and regex are allowed as argument values.\n This function generates an event.\nFunction set_timer_args(timer, args)\nArguments    Argument Type Description     timer int (required) Timer to set new arguments for.   args list (required) List with timer arguments.    Return value Returns nil when successful. A lookup_err() is raised if the timer does not exist.\nExample  This code will will be called every minute for 10 times and then it the timer will be removed.\n new_timer( datetime(), 60, |timer, x| { set_timer_args(timer, [x+1]); if (x == 10, { del_timer(timer); // stop this timer }); }, [1] ); "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/timers-api/timer_args/",
