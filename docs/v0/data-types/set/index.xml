@@ -34,7 +34,7 @@ Be aware that the order when iterating over a set or a thing is not guaranteed.
  This function does not generate an event.
 Function set.each(callback)
 Arguments    Argument Type Description     callback closure (required) Closure to execute on each value.    Explanation of the callback argument:
-   Iterable Arguments Description     set thing, id Iterate over things in the set.</description>
+   Iterable Arguments Description     set thing, Id Iterate over things in the set.</description>
     </item>
     
     <item>
@@ -60,7 +60,7 @@ Arguments    Argument Type Description     callback closure Closure to execute o
 This function does not generate an event.
 Function set.filter(callback)
 Arguments    Argument Type Description     callback closure (required) Closure to execute on each value.    Explanation of the callback argument:
-   Iterable Arguments Description     set thing, id Iterate over things in the set. Both thing and id are optional.</description>
+   Iterable Arguments Description     set thing, Id Iterate over things in the set. Both thing and id are optional.</description>
     </item>
     
     <item>
@@ -119,7 +119,7 @@ Be aware that the order when iterating over a set or a thing is not guaranteed.
  This function does not generate an event.
 Function set.map(callback)
 Arguments Explanation of the callback argument:
-   Iterable Arguments Description     set thing, id Iterate over things in the set.</description>
+   Iterable Arguments Description     set thing, Id Iterate over things in the set.</description>
     </item>
     
     <item>

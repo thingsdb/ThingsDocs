@@ -153,7 +153,7 @@ Arguments    Argument Type Description     enum str (required) The name of the e
       
       <guid>https://docs.thingsdb.net/v0/collection-api/enum_info/</guid>
       <description>Returns information about a given enumeration type.
-   Value Description     enum_id Internal enum ID (can be used to identify Enums in collection events).   created_at Time Stamp when the enum is created.   default Default member of this enumerator. The default member is used when implicitly creating a value of this enumerator type. See mod_enum(..) to change the deafult member.   modified_at Time Stamp when the enum is last modified or nil if never modified.</description>
+   Value Description     enum_id Internal enum Id (can be used to identify Enums in collection events).   created_at Time Stamp when the enum is created.   default Default member of this enumerator. The default member is used when implicitly creating a value of this enumerator type. See mod_enum(..) to change the deafult member.   modified_at Time Stamp when the enum is last modified or nil if never modified.</description>
     </item>
     
     <item>
@@ -190,11 +190,11 @@ Example  This code shows some return values for err():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/event_id/</guid>
-      <description>Returns the current event ID for the running query. The return value will be nil if the query does not require an event.
+      <description>Returns the current event Id for the running query. The return value will be nil if the query does not require an event.
 This function does not generate an event.
 Function event_id()
 Arguments None
-Return value The current event ID or nil when the query has no event.
+Return value The current event Id or nil when the query has no event.
 Example  Example using event_id():
  event_id(); // nil, since no event is required  Return value in JSON format
  null  Using event_id() when the query does require an event:</description>
@@ -819,7 +819,7 @@ Arguments    Argument Type Description     value any (optional) The value to cre
       <description>Returns a thing from a specified value, that may be dynamic. If no value is given, a new thing is returned.
 This function does not generate an event.
 Function thing([id])
-Arguments    Argument Type Description     id int (optional) The id for the thing to return.    Return value Returns a thing. A lookup_err() is returned in case an id is given which is not found inside the collection.</description>
+Arguments    Argument Type Description     id int (optional) The Id for the thing to return.    Return value Returns a thing. A lookup_err() is returned in case an Id is given which is not found inside the collection.</description>
     </item>
     
     <item>
@@ -891,7 +891,7 @@ Arguments    Argument Type Description     type str The name of the Type for whi
       
       <guid>https://docs.thingsdb.net/v0/collection-api/type_info/</guid>
       <description>Returns information about a given Type.
-   Value Description     type_id Internal Type ID (can be used to identify Types in collection events).   created_at Time Stamp when the Type is created.   modified_at Time Stamp when the Type is last modified or nil if never modified.   name Type&amp;rsquo;s name.   fields Array with arrays containing two strings, the property name and definition.</description>
+   Value Description     type_id Internal Type Id (can be used to identify Types in collection events).   created_at Time Stamp when the Type is created.   modified_at Time Stamp when the Type is last modified or nil if never modified.   name Type&amp;rsquo;s name.   fields Array with arrays containing two strings, the property name and definition.</description>
     </item>
     
     <item>

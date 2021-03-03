@@ -17,7 +17,7 @@
       
       <guid>https://docs.thingsdb.net/v0/overview/scopes/</guid>
       <description>When sending a query, calling a procedure or subscribing to a thing, the request will require you to provide a scope. ThingsDB has three scope categories: @thingsdb, @node and @collection.
-   scope short description     @thingsdb @t ThingsDB scope; Used for managing user accounts, collections and nodes.   @node @n Current node scope; For node info and statistics from the connected node.   @node:ID @n:ID Specific node scope; Get node info and statistics from a specific node id (ID should be replaced with a node ID, for example 0).</description>
+   scope short description     @thingsdb @t ThingsDB scope; Used for managing user accounts, collections and nodes.   @node @n Current node scope; For node info and statistics from the connected node.   @node:ID @n:ID Specific node scope; Get node info and statistics from a specific node Id (Id should be replaced with a node ID, for example 0).</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/overview/collections/</guid>
-      <description>Each collection can be thought of as an object to which properties can be assigned. We call such an object a Thing. To access something in the collection, all you need to do, is to start with a . (dot), followed by a function or property name. Another way to access the collection is to use the collection&amp;rsquo;s ID. All things which are stored in ThingsDB get an unique ID. Since the collection root is also a Thing, it has its own id.</description>
+      <description>Each collection can be thought of as an object to which properties can be assigned. We call such an object a Thing. To access something in the collection, all you need to do, is to start with a . (dot), followed by a function or property name. Another way to access the collection is to use the collection&amp;rsquo;s Id. All things which are stored in ThingsDB get an unique Id. Since the collection root is also a Thing, it has its own id.</description>
     </item>
     
     <item>

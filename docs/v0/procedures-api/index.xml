@@ -44,7 +44,7 @@ Example  This code shows an example use case of has_procedure():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/procedures-api/new_procedure/</guid>
-      <description>Creates a new procedure to the @thingsdb or a @collection scope. The name of the procedure must be unique within the scope. The given closure will be copied to the procedure, so this is not a reference to this closure.
+      <description>Creates a new procedure to the @thingsdb or a @collection scope. The name of the procedure must be unique within the scope. The given closure will be copied to the procedure, so this is not a reference to the given closure.
 This function generates an event.
 Function new_procedure(name, closure)
 Arguments    Argument Type Description     name str (required) Name of the new procedure.   closure closure (required) Closure which will be attached to the procedure.</description>
@@ -106,7 +106,8 @@ Arguments    Argument Type Description     current_name str (required) Current p
       
       <guid>https://docs.thingsdb.net/v0/procedures-api/run/</guid>
       <description>Run a procedure.
-This function does not generate an event.
+The run(..) function may also be used to run a timer.
+ This function does not generate an event.
 Function run(procedure, ...args)
 Arguments    Argument Type Description     procedure str (required) Name of the procedure to run.   &amp;hellip;args any The arguments for the procedure. If more arguments are given than the procedure expects, the redundant arguments will be ignored. If too few arguments are given, then the remaining arguments will be set to nil.</description>
     </item>

@@ -1127,6 +1127,42 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/timers-api/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/timers-api/del_timer/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/timers-api/has_timer/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/timers-api/new_timer/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/timers-api/run/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/timers-api/set_timer_args/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/timers-api/timer_args/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/timers-api/timer_info/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/timers-api/timers_info/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/modules/</loc>
   </url>
   

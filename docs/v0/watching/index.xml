@@ -40,7 +40,7 @@
       
       <guid>https://docs.thingsdb.net/v0/watching/on-update/</guid>
       <description>An update event is pushed when changes are made to a thing you are watching. Nested things need to be watched separately.
-The event contains the Thing ID (#), an event number, and a jobs array containing all the mutations to the thing in the applied order.
+The event contains the Thing Id (#), an event number, and a jobs array containing all the mutations to the thing in the applied order.
 { &amp;#34;#&amp;#34;: 3, &amp;#34;event&amp;#34;: 123, &amp;#34;jobs&amp;#34;: [ ...mutations ] } Each mutation is a map {} with a single key. This key tells what kind of mutation is applied to the thing.</description>
     </item>
     

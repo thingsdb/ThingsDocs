@@ -73,7 +73,7 @@ The socket needs to be authorized before sending a run request. See the auth exa
  Syntax
  [scope, ...IDs] The IDs are the thing-IDs you want to watch.
 The socket needs to be authorized before sending a watch request. See the auth example for how to authorize a socket connection.
- Example As an example we assume that we want to watch a thing with ID 3 for mutations.</description>
+ Example As an example we assume that we want to watch a thing with Id 3 for mutations.</description>
     </item>
     
     <item>

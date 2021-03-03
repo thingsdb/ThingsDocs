@@ -17,7 +17,7 @@
       
       <guid>https://docs.thingsdb.net/v0/node-api/backup_info/</guid>
       <description>Returns information about a specific scheduled backup.
-   Value Description     created_at Time Stamp when the backup schedule is created.   file_template Backup file template.   files List of successful backup files.   id Backup ID.   max_files Maximum number of backup files to store. The oldest file will be removed once max_files is reached.   next_run Only available when the backup job is scheduled to run.</description>
+   Value Description     created_at Time Stamp when the backup schedule is created.   file_template Backup file template.   files List of successful backup files.   id Backup Id.   max_files Maximum number of backup files to store. The oldest file will be removed once max_files is reached.   next_run Only available when the backup job is scheduled to run.</description>
     </item>
     
     <item>
@@ -42,7 +42,7 @@ Return value List with backup schedule info about all backup schedules in the se
       <guid>https://docs.thingsdb.net/v0/node-api/counters/</guid>
       <description>Returns counters for the ThingsDB node in the selected scope. Counters start all at zero when ThingsDB is started, or when the counters are reset by using reset_counters()&#39;.
 Counters give information about things, queries and events. If you suspect failed queries, then the counters might provide you with more information.
-   Counter Description     average_event_duration The average event duration in seconds. Event duration is measured from the time an event is created (before the final ID is assigned), until the actual event is committed to ThingsDB.</description>
+   Counter Description     average_event_duration The average event duration in seconds. Event duration is measured from the time an event is created (before the final Id is assigned), until the actual event is committed to ThingsDB.</description>
     </item>
     
     <item>
@@ -53,8 +53,8 @@ Counters give information about things, queries and events. If you suspect faile
       <guid>https://docs.thingsdb.net/v0/node-api/del_backup/</guid>
       <description>Delete a scheduled backup. If the scheduled backup was pending, the backup job will be cancelled.
 This function does not generate an event.
-Function del_backup(ID, [delete_files])
-Arguments    Argument Type Description     ID int Backup ID to delete.   delete_files bool (optional) Delete related backup files from disk (or Google Cloud Storage). Default is false.    Return value Returns nil.</description>
+Function del_backup(Id, [delete_files])
+Arguments    Argument Type Description     Id int Backup Id to delete.   delete_files bool (optional) Delete related backup files from disk (or Google Cloud Storage). Default is false.    Return value Returns nil.</description>
     </item>
     
     <item>
@@ -65,8 +65,8 @@ Arguments    Argument Type Description     ID int Backup ID to delete.   delete_
       <guid>https://docs.thingsdb.net/v0/node-api/has_backup/</guid>
       <description>Determines if a backup exists in ThingsDB.
 This function does not generate an event.
-Function has_backup(ID)
-Arguments    Argument Type Description     ID int (required) Backup ID to check.    Return value Returns true if a backup with a given ID exists and otherwise false.
+Function has_backup(Id)
+Arguments    Argument Type Description     Id int (required) Backup Id to check.    Return value Returns true if a backup with a given Id exists and otherwise false.
 Example  This code shows an example use case of has_backup():
  has_backup(123);  Return value in JSON format</description>
     </item>
@@ -78,7 +78,7 @@ Example  This code shows an example use case of has_backup():
       
       <guid>https://docs.thingsdb.net/v0/node-api/new_backup/</guid>
       <description>Schedule a new backup.
-Backups are created using tar and gzip. Once a backup is made, the .tar.gz backup file can be used to recover ThingsDB, or can be used to load the ThingsDB into another node. The result value is a backup ID. This ID can be used by backup_info(..) for details about the backup schedule job, or can be used to delete the backup schedule.
+Backups are created using tar and gzip. Once a backup is made, the .tar.gz backup file can be used to recover ThingsDB, or can be used to load the ThingsDB into another node. The result value is a backup Id. This Id can be used by backup_info(..) for details about the backup schedule job, or can be used to delete the backup schedule.
 If Google Cloud Storage is configured then it is possible to create backups directly into Google Cloud Storage.</description>
     </item>
     
@@ -99,7 +99,7 @@ If Google Cloud Storage is configured then it is possible to create backups dire
       
       <guid>https://docs.thingsdb.net/v0/node-api/nodes_info/</guid>
       <description>Returns information about all ThingsDB nodes.
-   Value Description     node_name A node will publish itself to other nodes using the node name. This can be for example an IP address, hostname , or a fully qualified domain name (FQDN) of the node.   committed_event_id Last known committed event ID on the node.   next_thing_id Next free thing ID on the node.   node_id ID which is assigned to the node.</description>
+   Value Description     node_name A node will publish itself to other nodes using the node name. This can be for example an IP address, hostname , or a fully qualified domain name (FQDN) of the node.   committed_event_id Last known committed event Id on the node.   next_thing_id Next free thing Id on the node.   node_id Id which is assigned to the node.</description>
     </item>
     
     <item>
