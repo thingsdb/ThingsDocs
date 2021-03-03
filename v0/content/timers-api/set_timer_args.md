@@ -8,6 +8,10 @@ Set timer arguments.
 If less than the required arguments are given, then the remaining arguments will
 be set using `nil`. More arguments than the closure accepts are simply removed and thus not used.
 
+{{% notice warning %}}
+When the timer is created in the `@thingsdb` scope, only type `nil`, `int`, `float`, `bool`, `str`, `bytes`, `datetime` and `regex` are allowed as argument values.
+{{% /notice %}}
+
 This function generates an [event](../../overview/events).
 
 ### Function

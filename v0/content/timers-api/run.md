@@ -5,7 +5,7 @@ weight: 286
 
 Run a timer.
 
-{{% notice info %}}
+{{% notice note %}}
 The **run(..)** function may also be used to *run* a [procedure](../../procedures-api/run).
 {{% /notice %}}
 
