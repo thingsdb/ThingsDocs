@@ -4,7 +4,7 @@ weight: 276
 ---
 
 Creates a new procedure to the `@thingsdb` or a `@collection` scope. The name of the procedure must be unique within the scope.
-The given closure will be copied to the procedure, so this is *not* a reference to this closure.
+The given closure will be copied to the procedure, so this is *not* a reference to the given closure.
 
 This function generates an [event](../../overview/events).
 

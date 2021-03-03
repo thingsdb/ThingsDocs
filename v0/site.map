@@ -282,6 +282,7 @@ procedures-api
 timers-api
     del_timer
     has_timer
+    new_timer
     run
     set_timer_args
     timer_args
