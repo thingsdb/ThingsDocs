@@ -284,9 +284,9 @@ timers-api
     has_timer
     run
     set_timer_args
+    timer_args
     timer_info
     timers_info
-    timer_args
 modules
 watching
     node-status

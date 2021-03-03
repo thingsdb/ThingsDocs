@@ -1,6 +1,6 @@
 ---
 title: "max_quota_err"
-weight: 302
+weight: 304
 ---
 
 Returns an [error](../../data-types/error) when a quota limit is reached.
