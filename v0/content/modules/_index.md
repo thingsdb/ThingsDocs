@@ -22,3 +22,14 @@ Function | scope | description
 [restart_module](../node-api/restart_module) | `@node` | Restart a module on a single node.
 [set_module_conf](../thingsdb-api/set_module_conf) | `@thingsdb` | Change the module configuration.
 [set_module_scope](../thingsdb-api/set_module_scope) | `@thingsdb` | Change the module scope.
+
+
+### Building modules
+
+Modules can be created in any language. For some languages there exists a library which makes
+building a module an easy task. Refer below to a list of libraries and examples:
+
+Language | Library | Example
+-------- | ------- | -------
+[Go](https://golang.org)  | [go-timod](https://github.com/thingsdb/go-timod) | [Demo](https://github.com/thingsdb/ThingsDB/tree/master/modules/go/demo) (echo-reply example)
+[Python](https://www.python.org)  | [py-timod](https://github.com/thingsdb/py-timod) | [Demo](https://github.com/thingsdb/ThingsDB/tree/master/modules/python/demo.py) (echo-reply example)
