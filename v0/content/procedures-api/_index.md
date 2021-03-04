@@ -12,6 +12,21 @@ Procedures can be used in the `@thingsdb` scope and in `@collection` scopes.
 
 The same procedure name can be used in different scopes but must be unique within a scope.
 
+### Related functions
+
+Function | description
+-------- | ----- | -----------
+[del_procedure](./del_procedure) | Delete an existing procedure.
+[has_procedure](./has_procedure) | Check if a procedure exists.
+[new_procedure](./new_procedure) | Create a new procedure.
+[procedure_doc](./procedure_doc) | Get the docstring of a procedure.
+[procedure_info](./procedure_info) | Show information about a procedure.
+[procedures_info](./procedures_info) | Show information about all procedures in the current scope.
+[rename_procedure](./rename_procedure) | Rename an existing procedure.
+[run](./run) | Run a procedure.
+
+### Examples
+
 Below is an example where we make a procedure in the `@thingsdb` scope to help us create a user in ThingsDB with some
 pre-defined access rights and a token for one day usage.
 
