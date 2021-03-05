@@ -11,20 +11,20 @@
     <title>˂Type˃ :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1614859935" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1614859935" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1614859935" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1614859935" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1614859935" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1614859935" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1614859935" rel="stylesheet">
-    <link href="/v0/css/theme.css?1614859935" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1614859935" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1614933550" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1614933550" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1614933550" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1614933550" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1614933550" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1614933550" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1614933550" rel="stylesheet">
+    <link href="/v0/css/theme.css?1614933550" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1614933550" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1614859935" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1614933550" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1614859935"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1614933550"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1614859935"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1614859935"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1614933550"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1614933550"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1614859935"></script>
+<script type="text/javascript" src="/v0/js/search.js?1614933550"></script>
 
     
   </div>
@@ -6500,6 +6500,10 @@
         <li><a href="#what-if-a-type-is-removed">What if a Type is removed?</a></li>
         <li><a href="#example-2">Example 2</a></li>
         <li><a href="#example-3">Example 3</a></li>
+        <li><a href="#computed-properties">Computed properties</a></li>
+        <li><a href="#example-4">Example 4</a></li>
+        <li><a href="#example-5">Example 5</a></li>
+        <li><a href="#example-6">Example 6</a></li>
       </ul>
     </li>
   </ul>
@@ -6532,7 +6536,8 @@
 be able to filter-out properties which are not required.</p>
 <p>A solution to return only specific properties from a thing, is to work with <em>wrapped</em> Types.
 This feature is especially useful <em>(and fast)</em> if your source thing is a <a href="../type">Type</a> instance.</p>
-<p>Besides filtering properties, a wrapped <em>thing</em> also inherits the <a href="../type/#methods">methods</a> from the <em>type</em> it is wrapped with <em>(see <a href="#example-3">example 3</a>)</em>.</p>
+<p>Besides filtering properties, a wrapped <em>thing</em> also inherits the <a href="../type/#methods">methods</a> from the <em>type</em> it is wrapped with <em>(see <a href="#example-3">example 3</a>)</em>. When a wrapped type is returned to the client,
+those methods act as <a href="#computed-properties">computed properties</a>. <em>(see <a href="#example-4">example 4</a>, <a href="#example-5">example 5</a> and <a href="#example-6">example 6</a>)</em></p>
 
 <div class="notices note" ><p>When ThingsDB wraps a normal thing with a Type, each property must be compared to the definition of that Type to determine if it comes in the end result. However, if the source is an instance of Type, ThingsDB only needs to do this once and can use an internal cache for every other transition from that Type to Type.</p>
 </div>
@@ -6741,6 +6746,85 @@ point.wrap('MathXY').multiply();
 <p>Return value in JSON format:</p>
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#ae81ff">42</span>
+</code></pre></div><h3 id="computed-properties">Computed properties</h3>
+<p>Sometimes you want to wrap a type and compute some additional properties.
+A good example might be the count for some messages.</p>
+<h3 id="example-4">Example 4</h3>
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">set_type('Person', {
+    name: 'str',
+    messages: '[str]',
+});
+
+// Now we want to return a person but only need the number of message,
+// not the actual messages...
+
+// Create a `wrap-only` type and specify the name and an additional `mcount` method
+set_type('_Pmcount', {
+    name: 'any',
+    mcount: |p| p.messages.len()
+}, true);
+
+// If we now, with the above in place, create a person and wrap the person with _Pmcount:
+p = Person{
+    name: 'iris',
+    messages: ['hi', 'hello', 'bye']
+};
+p.wrap('_Pmcount');
+</code></pre><blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+            <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;iris&#34;</span>,
+            <span style="color:#f92672">&#34;mcount&#34;</span>: <span style="color:#ae81ff">3</span>
+}
+</code></pre></div><h3 id="example-5">Example 5</h3>
+<p>It is also possible to overwrite the same property name, for example:</p>
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">set_type('Person', {
+    name: 'str',
+    messages: '[str]',
+});
+
+// Overwriting properties is possible
+set_type('_Poverwrite', {
+    name: |p| p.name.upper(),
+    messages: |p| p.messages.len(),
+}, true);
+
+p = Person{
+    name: 'iris',
+    messages: ['hi', 'hello', 'bye']
+};
+p.wrap('_Poverwrite');
+</code></pre><blockquote>
+<p>The code above Will give the following result in JSON format</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+            <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;IRIS&#34;</span>,
+            <span style="color:#f92672">&#34;messages&#34;</span>: <span style="color:#ae81ff">3</span>
+}
+</code></pre></div><h3 id="example-6">Example 6</h3>
+<p>Computed properties may also have their own <em>depth</em> which does not affect the other properties</p>
+<pre><code>set_type('Foo', {
+    bar: 'thing',
+});
+
+set_type('_Pexample', {
+    bar: 'any',
+    other: || return({a: {b: 5}}, 2)
+}, true);
+
+foo = Foo{
+    bar: {x: {y: 6}},
+};
+foo.wrap(_Pexample); // Return one deep, note that `other` has it's own depth
+</code></pre><blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+            <span style="color:#f92672">&#34;bar&#34;</span>: {},
+            <span style="color:#f92672">&#34;other&#34;</span>: {<span style="color:#f92672">&#34;x&#34;</span>: {<span style="color:#f92672">&#34;y&#34;</span>: <span style="color:#ae81ff">6</span>}}
+}
+
 </code></pre></div>
 
 
@@ -6773,19 +6857,19 @@ point.wrap('MathXY').multiply();
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1614859935"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1614859935"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1614859935"></script>
-    <script src="/v0/js/jquery.sticky.js?1614859935"></script>
-    <script src="/v0/js/featherlight.min.js?1614859935"></script>
-    <script src="/v0/js/highlight.pack.js?1614859935"></script>
+    <script src="/v0/js/clipboard.min.js?1614933550"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1614933550"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1614933550"></script>
+    <script src="/v0/js/jquery.sticky.js?1614933550"></script>
+    <script src="/v0/js/featherlight.min.js?1614933550"></script>
+    <script src="/v0/js/highlight.pack.js?1614933550"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1614859935"></script>
-    <script src="/v0/js/learn.js?1614859935"></script>
-    <script src="/v0/js/hugo-learn.js?1614859935"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1614933550"></script>
+    <script src="/v0/js/learn.js?1614933550"></script>
+    <script src="/v0/js/hugo-learn.js?1614933550"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1614859935" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1614859935"></script>
+    <link href="/v0/mermaid/mermaid.css?1614933550" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1614933550"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

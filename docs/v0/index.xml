@@ -268,7 +268,7 @@ a = 6; b = 7; `The sum of {a} plus {b} is {a + b}.`;  Result in JSON format:
       
       <guid>https://docs.thingsdb.net/v0/overview/dictionary/</guid>
       <description>The following list contains definitions specific for ThingsDB:
-   Keyword Definition     Collection The collection is the root thing. Every collection has its own scope.   Closure A Closure is a user defined method which can be saved. It can be used as a prepared piece of code or to consume items from a thing, list, tuple or set.   Event ThingsDB creates an event when a query modifies something.</description>
+   Keyword Definition     Collection The collection is the root thing. Every collection has its own scope.   Computed properties With computed properties it is possible to return computed values by wrapping a Type.   Closure A Closure is a user defined method which can be saved. It can be used as a prepared piece of code or to consume items from a thing, list, tuple or set.</description>
     </item>
     
     <item>
