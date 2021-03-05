@@ -10,7 +10,10 @@ be able to filter-out properties which are not required.
 A solution to return only specific properties from a thing, is to work with *wrapped* Types.
 This feature is especially useful *(and fast)* if your source thing is a [Type](../type) instance.
 
-Besides filtering properties, a wrapped *thing* also inherits the [methods](../type/#methods) from the *type* it is wrapped with *(see [example 3](#example-3))*.
+Besides filtering properties, a wrapped *thing* also inherits the [methods](../type/#methods) from the *type* it is wrapped with *(see [example 3](#example-3))*. When a wrapped type is returned to the client,
+those methods act as [computed properties](#computed-properties). *(see [example 4](#example-4), [example 5](#example-5) and [example 6](#example-6))*
+
+
 
 {{% notice note %}}
 
@@ -250,4 +253,105 @@ point.wrap('MathXY').multiply();
 
 ```json
 42
+```
+
+### Computed properties
+
+Sometimes you want to wrap a type and compute some additional properties.
+A good example might be the count for some messages.
+
+### Example 4
+
+```thingsdb,json_response
+set_type('Person', {
+    name: 'str',
+    messages: '[str]',
+});
+
+// Now we want to return a person but only need the number of message,
+// not the actual messages...
+
+// Create a `wrap-only` type and specify the name and an additional `mcount` method
+set_type('_Pmcount', {
+    name: 'any',
+    mcount: |p| p.messages.len()
+}, true);
+
+// If we now, with the above in place, create a person and wrap the person with _Pmcount:
+p = Person{
+    name: 'iris',
+    messages: ['hi', 'hello', 'bye']
+};
+p.wrap('_Pmcount');
+```
+
+> Return value in JSON format
+
+```json
+{
+            "name": "iris",
+            "mcount": 3
+}
+```
+
+### Example 5
+
+It is also possible to overwrite the same property name, for example:
+
+```thingsdb,json_response
+set_type('Person', {
+    name: 'str',
+    messages: '[str]',
+});
+
+// Overwriting properties is possible
+set_type('_Poverwrite', {
+    name: |p| p.name.upper(),
+    messages: |p| p.messages.len(),
+}, true);
+
+p = Person{
+    name: 'iris',
+    messages: ['hi', 'hello', 'bye']
+};
+p.wrap('_Poverwrite');
+```
+
+> The code above Will give the following result in JSON format
+
+```json
+{
+            "name": "IRIS",
+            "messages": 3
+}
+```
+
+### Example 6
+
+Computed properties may also have their own *depth* which does not affect the other properties
+
+```
+set_type('Foo', {
+    bar: 'thing',
+});
+
+set_type('_Pexample', {
+    bar: 'any',
+    other: || return({a: {b: 5}}, 2)
+}, true);
+
+foo = Foo{
+    bar: {x: {y: 6}},
+};
+foo.wrap(_Pexample); // Return one deep, note that `other` has it's own depth
+```
+
+> Return value in JSON format
+
+```json
+{
+            "bar": {},
+            "other": {"x": {"y": 6}}
+}
+
 ```

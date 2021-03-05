@@ -8,6 +8,7 @@ The following list contains definitions specific for ThingsDB:
 Keyword | Definition
 ------ | :----------
 Collection |The [collection](../collections) is the root thing. Every collection has its own scope.
+Computed properties |With [computed properties](../../data-types/wtype#computed-properties) it is possible to return computed values by wrapping a [Type](../../data-types/type).
 Closure |A [Closure](../../data-types/closure) is a user defined method which can be saved. It can be used as a prepared piece of code or to consume items from a `thing`, `list`, `tuple` or `set`.
 Event |ThingsDB creates an [event](../events) when a query modifies something.  Events are applied in order by each node to guarantee consistency.
 Function |Function in ThingsDB means a built in function. A function needs the exact number of arguments that is expected, which is different for a closure or procedure.
