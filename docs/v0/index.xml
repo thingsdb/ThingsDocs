@@ -1253,6 +1253,20 @@ Arguments    Argument Type Description     source thing (required) Thing from wh
     </item>
     
     <item>
+      <title>copy</title>
+      <link>https://docs.thingsdb.net/v0/data-types/thing/copy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/thing/copy/</guid>
+      <description>Copy a thing.
+The function does not preserve the Type of a thing. Use dup(..) if you want a copy of the same type.
+ This function does not generate an event.
+Function thing.copy([deep]])
+Arguments    Argument Type Description     deep int (optional) How deep to copy the thing. Default is 1.    Return value A new thing.
+Example  This code shows an example using copy():</description>
+    </item>
+    
+    <item>
       <title>del</title>
       <link>https://docs.thingsdb.net/v0/data-types/thing/del/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1261,6 +1275,20 @@ Arguments    Argument Type Description     source thing (required) Thing from wh
       <description>Delete a property from a thing.
 While almost all functions on things are also available on Type instances, this one is not. This is because a Type instance has a fixed set of properties and so you are not allowed to delete one of them on a single instance. Use mod_type() instead, to delete the property from all instances if this is what you want.
  This function generates an event.</description>
+    </item>
+    
+    <item>
+      <title>dup</title>
+      <link>https://docs.thingsdb.net/v0/data-types/thing/dup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/thing/dup/</guid>
+      <description>Create a duplicate of a thing.
+The function preserves the Type of a thing. Use copy(..) to copy into a plain thing.
+ This function does not generate an event.
+Function thing.dup([deep]])
+Arguments    Argument Type Description     deep int (optional) How deep to duplicate the thing. Default is 1.    Return value A new thing.
+Example  This code shows an example using dup():</description>
     </item>
     
     <item>
@@ -1490,13 +1518,41 @@ Definable properties    definition default description     &#39;str&#39; &amp;qu
     </item>
     
     <item>
+      <title>copy</title>
+      <link>https://docs.thingsdb.net/v0/data-types/wtype/copy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/wtype/copy/</guid>
+      <description>Copy a wrapped thing.
+The function does not preserve the wrap or Type of a thing. Use dup(..) if you want a true duplicate.
+ This function does not generate an event.
+Function &amp;lt;Type&amp;gt;.copy([deep]])
+Arguments    Argument Type Description     deep int (optional) How deep to copy the wrapped thing. Default is 1.    Return value A new thing.
+Example  This code shows an example using copy() on a wrapped thing:</description>
+    </item>
+    
+    <item>
+      <title>dup</title>
+      <link>https://docs.thingsdb.net/v0/data-types/wtype/dup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/wtype/dup/</guid>
+      <description>Duplicate a wrapped thing.
+The function preserves both the wrap and Type of a thing. Use copy(..) if you want a new plain thing.
+ This function does not generate an event.
+Function &amp;lt;Type&amp;gt;.dup([deep]])
+Arguments    Argument Type Description     deep int (optional) How deep to duplicate the wrapped thing. Default is 1.    Return value A new wrapped thing.
+Example  This code shows an example using dup() on a wrapped thing:</description>
+    </item>
+    
+    <item>
       <title>unwrap</title>
       <link>https://docs.thingsdb.net/v0/data-types/wtype/unwrap/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/wtype/unwrap/</guid>
       <description>Unwrap a wrapped thing.
-Function .unwrap()
+Function &amp;lt;Type&amp;gt;.unwrap()
 Arguments None
 Return value Returns the wrapped thing.
 Example  This code shows an example using unwrap():

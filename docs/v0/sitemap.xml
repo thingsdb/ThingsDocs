@@ -451,7 +451,15 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/thing/copy/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/data-types/thing/del/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/thing/dup/</loc>
   </url>
   
   <url>
@@ -528,6 +536,14 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v0/data-types/wtype/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/wtype/copy/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/wtype/dup/</loc>
   </url>
   
   <url>
