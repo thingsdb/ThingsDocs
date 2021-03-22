@@ -1,6 +1,6 @@
 ---
 title: "timer_args"
-weight: 288
+weight: 292
 ---
 
 Get timer arguments as a [tuple](../../data-types/tuple).

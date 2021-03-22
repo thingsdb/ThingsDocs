@@ -1,6 +1,6 @@
 ---
 title: "˂Type˃"
-weight: 132
+weight: 134
 ---
 
 
@@ -12,7 +12,6 @@ This feature is especially useful *(and fast)* if your source thing is a [Type](
 
 Besides filtering properties, a wrapped *thing* also inherits the [methods](../type/#methods) from the *type* it is wrapped with *(see [example 3](#example-3))*. When a wrapped type is returned to the client,
 those methods act as [computed properties](#computed-properties). *(see [example 4](#example-4), [example 5](#example-5) and [example 6](#example-6))*
-
 
 
 {{% notice note %}}
@@ -28,6 +27,8 @@ but once the Types are defined, it is rather easy to use.
 
 Function | Description
 ------ | -----------
+[copy](./copy) | Copy the *wrapped* thing to a new thing.
+[dup](./dup) | Duplicate the *wrapped* thing *as-is* and keep the wrap.
 [unwrap](./unwrap) | Unwrap to access the *wrapped* thing..
 
 ### Example 1

@@ -8,7 +8,9 @@ weight: 111
 Function | Description
 ------ | -----------
 [assign](./assign) | Copies properties from a thing.
+[copy](./copy) | Copy a thing to a new thing. A Type is *not* preserved.
 [del](./del) | Remove a property.
+[dup](./dup) | Duplicate a thing while preserving the Type.
 [each](./each) | Iterate over all properties of a thing.
 [emit](./emit) | Emit an event to all watchers of a thing.
 [equals](./equals) | Test if two things are equal.

@@ -1,6 +1,6 @@
 ---
 title: "future"
-weight: 158
+weight: 162
 ---
 
 Returns a [future](../../data-types/future). It is *not* possible to assign a future to

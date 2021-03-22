@@ -110,7 +110,9 @@ data-types
         upper
     thing
         assign
+        copy
         del
+        dup
         each
         emit
         equals
@@ -130,6 +132,8 @@ data-types
     tuple
     type
     wtype
+        copy
+        dup
         unwrap
 operators
     arithmetic-operators

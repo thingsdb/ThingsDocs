@@ -1,6 +1,6 @@
 ---
 title: "has_node"
-weight: 252
+weight: 256
 ---
 
 Determines if a node exists in ThingsDB.

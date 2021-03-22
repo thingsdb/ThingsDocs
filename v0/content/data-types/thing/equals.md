@@ -1,6 +1,6 @@
 ---
 title: "equals"
-weight: 116
+weight: 118
 ---
 
 Determines if a [thing](..) is equal to another thing.
@@ -34,7 +34,7 @@ This function does *not* generate an [event](../../../overview/events).
 Argument | Type | Description
 -------- | ---- | -----------
 other | any (required) | Value to compare.
-deep | int (required) | How *deep* to compare the values. Default is `1`.
+deep | int (optional) | How *deep* to compare the values. Default is `1`.
 
 ### Return value
 

@@ -1,6 +1,6 @@
 ---
 title: "thing"
-weight: 217
+weight: 221
 ---
 
 Returns a [thing](../../data-types/thing) from a specified value, that may be dynamic. If no value is given, a new thing is returned.

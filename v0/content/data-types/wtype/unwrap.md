@@ -1,13 +1,13 @@
 ---
 title: "unwrap"
-weight: 133
+weight: 137
 ---
 
 Unwrap a [wrapped](../) thing.
 
 ### Function
 
-*<Type>*.`unwrap()`
+*`<Type>`*.`unwrap()`
 
 ### Arguments
 
