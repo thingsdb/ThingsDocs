@@ -13,10 +13,14 @@ Combination | Description
 `Type?` <-> `{Type}`| One to many relation.
 `{Type}` <-> `{Type}` | Many to many relation.
 
-All missing relations on existing instances will be automatically created. With a *one-to-one* or a *one-to-many* relation this might not be possible because
-you might be in a state where the existing instances are not related correctly. For example, you want to create a *one-to-many* relation but one of the *thing*s
-exists in sets of two different things. One of them is obviously incorrect. In such state ThingsDB will raise a [type_err()](../../../errors/type_err) and does not
+All missing relations on existing instances will be automatically created by ThingsDB once you add a new relation.
+
+{{% notice info %}}
+With a ***one-to-one*** or a ***one-to-many*** relation it may mot be possible to automatically create all missing relations because
+you might be in a state where the existing instances are not related correctly. For example, you want to create a ***one-to-many*** relation but one of the *things*
+exists in a *set* on another *thing* than being referenced to. Either the *set* or the *reference* is obviously incorrect. In such state ThingsDB will raise a [type_err()](../../../errors/type_err) and does not
 create the relation.
+{{% /notice %}}
 
 ### Action
 
