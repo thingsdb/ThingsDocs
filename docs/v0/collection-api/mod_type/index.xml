@@ -51,7 +51,7 @@ Without an additional callback it is possible to modify to a less &amp;lsquo;str
       <guid>https://docs.thingsdb.net/v0/collection-api/mod_type/rel/</guid>
       <description>Add or delete a relation between properties of the same or different types.
 Relations can only be created between nillable type definitions and/or restricted sets. This results in the following combinations:
-   Combination Description     Type? &amp;lt;-&amp;gt; Type? One to one relation.   Type? &amp;lt;-&amp;gt; {Type} One to many relation.   {Type} &amp;lt;-&amp;gt; {Type} Many to many relation.    All missing relations on existing instances will be automatically created.</description>
+   Combination Description     Type? &amp;lt;-&amp;gt; Type? One to one relation.   Type? &amp;lt;-&amp;gt; {Type} One to many relation.   {Type} &amp;lt;-&amp;gt; {Type} Many to many relation.    All missing relations on existing instances will be automatically created by ThingsDB once you add a new relation.</description>
     </item>
     
     <item>
