@@ -1,6 +1,6 @@
 ---
 title: "user_info"
-weight: 275
+weight: 278
 ---
 
 Returns information about a user. If no argument is given, this function will return
@@ -26,7 +26,7 @@ username | str (optional) | Name of the user
 
 ### Return value
 
-Returns [info](../../data-types/info) about the user.
+Returns [mpdata](../../data-types/mpdata) about the user.
 
 ### Example
 

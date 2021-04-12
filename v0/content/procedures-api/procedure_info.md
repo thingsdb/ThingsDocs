@@ -1,6 +1,6 @@
 ---
 title: "procedure_info"
-weight: 282
+weight: 285
 ---
 
 Returns information about a procedure.
@@ -28,7 +28,7 @@ Argument | Type | Description
 
 ### Return value
 
-Returns [info](../../data-types/info) about a given procedure.
+Returns [mpdata](../../data-types/mpdata) about a given procedure.
 
 ### Example
 

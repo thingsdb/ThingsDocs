@@ -1,6 +1,6 @@
 ---
 title: "module_info"
-weight: 259
+weight: 262
 ---
 
 Returns information about a specific module.
@@ -30,7 +30,7 @@ name | str/int (required) | Name of the module
 
 ### Return value
 
-Returns [info](../../data-types/info) about the module.
+Returns [mpdata](../../data-types/mpdata) about the module.
 
 ### Example
 

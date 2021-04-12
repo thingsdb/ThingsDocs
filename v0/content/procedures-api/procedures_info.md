@@ -1,6 +1,6 @@
 ---
 title: "procedures_info"
-weight: 283
+weight: 286
 ---
 
 Returns procedure information about all procedures in the scope.
@@ -19,4 +19,4 @@ None
 
 ### Return value
 
-List with procedure [info](../../data-types/info)  about all procedures in the scope.
+List with procedure [mpdata](../../data-types/mpdata)  about all procedures in the scope.

@@ -1,6 +1,6 @@
 ---
 title: "type_info"
-weight: 227
+weight: 230
 ---
 
 Returns information about a given [Type](../../data-types/type).
@@ -39,7 +39,7 @@ type | str | The name of the Type for which the information about the properties
 
 ### Return value
 
-Returns [info](../../data-types/info) about the Type.
+Returns [mpdata](../../data-types/mpdata) about the Type.
 
 ### Example
 

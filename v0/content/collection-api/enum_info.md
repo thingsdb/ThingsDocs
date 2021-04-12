@@ -1,6 +1,6 @@
 ---
 title: "enum_info"
-weight: 157
+weight: 159
 ---
 
 Returns information about a given [enumeration type](../../data-types/enum).
@@ -28,7 +28,7 @@ enum | str | The name of the enum for which the information has to be returned.
 
 ### Return value
 
-Returns [info](../../data-types/info) about the enumeration type.
+Returns [mpdata](../../data-types/mpdata) about the enumeration type.
 
 ### Example
 

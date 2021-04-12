@@ -1,6 +1,6 @@
 ---
 title: "nodes_info"
-weight: 238
+weight: 241
 ---
 
 Returns information about all ThingsDB nodes.
@@ -29,7 +29,7 @@ None
 
 ### Return value
 
-List with node [info](../../data-types/info) about all nodes in ThingsDB.
+List with node [mpdata](../../data-types/mpdata) about all nodes in ThingsDB.
 
 ### Example
 

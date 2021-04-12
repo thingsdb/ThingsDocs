@@ -1,6 +1,6 @@
 ---
 title: "timer_info"
-weight: 293
+weight: 296
 ---
 
 Returns information about a timer.
@@ -30,7 +30,7 @@ Argument | Type | Description
 
 ### Return value
 
-Returns [info](../../data-types/info) about a given timer.
+Returns [mpdata](../../data-types/mpdata) about a given timer.
 
 ### Example
 

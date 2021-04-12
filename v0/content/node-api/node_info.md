@@ -1,6 +1,6 @@
 ---
 title: "node_info"
-weight: 237
+weight: 240
 ---
 
 Returns information about the node in the selected scope.
@@ -57,7 +57,7 @@ None
 
 ### Return value
 
-Returns [info](../../data-types/info) about the node. Which *node* is defined by the [scope](../../overview/scopes).
+Returns [mpdata](../../data-types/mpdata) about the node. Which *node* is defined by the [scope](../../overview/scopes).
 
 ### Example
 

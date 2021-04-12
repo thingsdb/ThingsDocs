@@ -1,6 +1,6 @@
 ---
 title: "timers_info"
-weight: 294
+weight: 297
 ---
 
 Returns timer information about all timers in the scope.
@@ -19,4 +19,4 @@ None
 
 ### Return value
 
-List with timer [info](../../data-types/info)  about all timers in the scope.
+List with timer [mpdata](../../data-types/mpdata)  about all timers in the scope.

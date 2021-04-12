@@ -1,6 +1,6 @@
 ---
 title: "collection_info"
-weight: 244
+weight: 247
 ---
 
 Returns information about a specific collection.
@@ -22,7 +22,7 @@ collection | str/int (required) | Name or Id of the collection
 
 ### Return value
 
-Returns [info](../../data-types/info) about the collection.
+Returns [mpdata](../../data-types/mpdata) about the collection.
 
 ### Example
 

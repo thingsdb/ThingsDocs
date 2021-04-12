@@ -1,6 +1,6 @@
 ---
 title: "types_info"
-weight: 228
+weight: 231
 ---
 
 Returns [Type](../../data-types/type) information about all the Types within a collection.
@@ -19,4 +19,4 @@ None
 
 ### Return value
 
-List with Type [info](../../data-types/info) about all Types in the collection.
+List with Type [mpdata](../../data-types/mpdata) about all Types in the collection.

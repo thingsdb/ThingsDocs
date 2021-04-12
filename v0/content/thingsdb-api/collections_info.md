@@ -1,6 +1,6 @@
 ---
 title: "collections_info"
-weight: 245
+weight: 248
 ---
 
 Returns collection information about all collections in ThingsDB.
@@ -24,4 +24,4 @@ None
 
 ### Return value
 
-List with collection [info](../../data-types/info)  about all collections in ThingsDB.
+List with collection [mpdata](../../data-types/mpdata)  about all collections in ThingsDB.

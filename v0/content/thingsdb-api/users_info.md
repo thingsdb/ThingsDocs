@@ -1,6 +1,6 @@
 ---
 title: "users_info"
-weight: 276
+weight: 279
 ---
 
 Returns user information about all users in ThingsDB.
@@ -22,4 +22,4 @@ None
 
 ### Return value
 
-List with user [info](../../data-types/info) about all users in ThingsDB.
+List with user [mpdata](../../data-types/mpdata) about all users in ThingsDB.

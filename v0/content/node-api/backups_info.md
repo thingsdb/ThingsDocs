@@ -1,6 +1,6 @@
 ---
 title: "backups_info"
-weight: 232
+weight: 235
 ---
 
 Returns backup schedule information about all backup schedules in the selected node scope.
@@ -19,4 +19,4 @@ None
 
 ### Return value
 
-List with backup schedule [info](../../data-types/info)  about all backup schedules in the selected node scope.
+List with backup schedule [mpdata](../../data-types/mpdata)  about all backup schedules in the selected node scope.

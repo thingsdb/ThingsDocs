@@ -1,6 +1,6 @@
 ---
 title: "modules_info"
-weight: 246
+weight: 249
 ---
 
 Returns module information about all modules in ThingsDB.
@@ -19,4 +19,4 @@ None
 
 ### Return value
 
-List with modules [info](../../data-types/info) about all modules in ThingsDB.
+List with modules [mpdata](../../data-types/mpdata) about all modules in ThingsDB.

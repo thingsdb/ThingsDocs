@@ -1,6 +1,6 @@
 ---
 title: "restart_module"
-weight: 240
+weight: 243
 ---
 
 Restarts a given module.

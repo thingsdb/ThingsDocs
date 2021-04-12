@@ -1,6 +1,6 @@
 ---
 title: "trim"
-weight: 107
+weight: 109
 ---
 
 This function can be used to remove all white-space characters from both the start and end of a string.

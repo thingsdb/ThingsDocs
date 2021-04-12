@@ -1,6 +1,6 @@
 ---
 title: "some"
-weight: 97
+weight: 99
 ---
 
 This function checks if at least one thing in the [set](..) passes a given test. It returns a [boolean](../../bool) value.

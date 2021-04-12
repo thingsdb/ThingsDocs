@@ -18,9 +18,9 @@ type | Description
 [error](./error) | An object containing information about an error.
 [float](./float) | Floating point type.
 [future](./future) | Futures can be used with modules and to postpone and isolate work.
-[info](./info) | Return value of all `*_info()` functions.
 [int](./int) | Integer type.
 [list](./list) | Mutable array type.
+[mpdata](./mpdata) | Raw MessagePack data.
 [nil](./nil) | Used to define a null value, or no value at all.
 [regex](./regex) | Regular expression.
 [set](./set) | Unordered group of unique things.

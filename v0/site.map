@@ -53,7 +53,6 @@ data-types
     future
         then
         else
-    info
     int
     list
         choice
@@ -80,6 +79,9 @@ data-types
         sort
         splice
         unshift
+    mpdata
+        len
+        load
     nil
     regex
         test
@@ -177,6 +179,7 @@ collection-api
     is_inf
     is_int
     is_list
+    is_mpdata
     is_nan
     is_nil
     is_raw
