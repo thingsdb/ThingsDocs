@@ -114,7 +114,7 @@ See the timer_info() function documentation for an example of the exposed timer 
 This function does not generate an event.
 Function timers_info()
 Arguments None
-Return value List with timer info about all timers in the scope.</description>
+Return value List with timer mpdata about all timers in the scope.</description>
     </item>
     
   </channel>

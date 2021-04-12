@@ -561,17 +561,6 @@ The closure will be called with the same arguments as given to the future, excep
     </item>
     
     <item>
-      <title>info</title>
-      <link>https://docs.thingsdb.net/v0/data-types/info/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/data-types/info/</guid>
-      <description>This is a special type within ThingsDB and is returned by all the *_info() functions.
-As an example we can take the node_info and view the type. This will tell us that the value is indeed of the info type.
-// get the current node info node_info = node_info(); // return the type as string to verify this is indeed the `info` type type(node_info);  Return value in JSON format</description>
-    </item>
-    
-    <item>
       <title>int</title>
       <link>https://docs.thingsdb.net/v0/data-types/int/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -894,6 +883,38 @@ Function list.unshift(item1, item2, ..., itemX)
 Return value Returns the new length of the list.
 Example  This code inserts values to the start of a list:
  list = [4, 5, 6]; list.unshift(1, 2, 3); // Returns the new length, 6 list;  Return value in JSON format</description>
+    </item>
+    
+    <item>
+      <title>len</title>
+      <link>https://docs.thingsdb.net/v0/data-types/mpdata/len/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/mpdata/len/</guid>
+      <description>Returns the length of mpdata in bytes.
+This function does not generate an event.
+Function mpdata.len()
+Arguments None
+Return value Returns length in bytes.
+Example  This code uses len():
+ user_info(&#39;admin&#39;).len();  Example return value in JSON format (size may be different)
+ 358 </description>
+    </item>
+    
+    <item>
+      <title>load</title>
+      <link>https://docs.thingsdb.net/v0/data-types/mpdata/load/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/mpdata/load/</guid>
+      <description>Load mpdata into ThingsDB.
+This function does not generate an event.
+Function mpdata.load()
+Arguments None
+Return value Returns a ThingsDB object.
+Example  This code uses load():
+ admin = user_info(&#39;admin&#39;).load(); // `admin` is now a ThingDB object. admin.name;  Return value in JSON format
+ &amp;#34;admin&amp;#34; </description>
     </item>
     
     <item>
@@ -1781,7 +1802,7 @@ See the enum_info() function documentation for an example of the exposed informa
 This function does not generate an event.
 Function enums_info()
 Arguments None
-Return value List with info about all enumeration types in the collection scope.</description>
+Return value List with mpdata about all enumeration types in the collection scope.</description>
     </item>
     
     <item>
@@ -2020,6 +2041,19 @@ Function is_future(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a future, else it returns false.
 Example  This code shows some return values for is_float():
  [ is_future( future(nil) ), is_future( future(nil).</description>
+    </item>
+    
+    <item>
+      <title>is_mpdata</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/is_mpdata/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/is_mpdata/</guid>
+      <description>This function determines whether the provided value is an integer or not.
+This function does not generate an event.
+This function has a deprecated alias isint which will be removed in the next minor release.
+ Function is_mpdata(value)
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type mpdata, else it returns false.</description>
     </item>
     
     <item>
@@ -2641,7 +2675,7 @@ See the type_info() function documentation for an example of the exposed Type in
 This function does not generate an event.
 Function types_info()
 Arguments None
-Return value List with Type info about all Types in the collection.</description>
+Return value List with Type mpdata about all Types in the collection.</description>
     </item>
     
     <item>
@@ -2675,7 +2709,7 @@ See the backup_info() function documentation for an example of the exposed backu
 This function does not generate an event.
 Function backups_info()
 Arguments None
-Return value List with backup schedule info about all backup schedules in the selected node scope.</description>
+Return value List with backup schedule mpdata about all backup schedules in the selected node scope.</description>
     </item>
     
     <item>
@@ -2812,7 +2846,7 @@ Return value Returns nil.</description>
 This function requires QUERY privileges on the requested collection, or EVENT privileges on the @thingsdb scope.
 This function does not generate an event.
 Function collection_info(collection)
-Arguments    Argument Type Description     collection str/int (required) Name or Id of the collection    Return value Returns info about the collection.
+Arguments    Argument Type Description     collection str/int (required) Name or Id of the collection    Return value Returns mpdata about the collection.
 Example  Returns information about collection stuff:
  collection_info(&#39;stuff&#39;);  Example return value in JSON format</description>
     </item>
@@ -2829,7 +2863,7 @@ If the user has no EVENT permissions on the @thingsdb scope, then only the colle
  This function does not generate an event.
 Function collections_info()
 Arguments None
-Return value List with collection info about all collections in ThingsDB.</description>
+Return value List with collection mpdata about all collections in ThingsDB.</description>
     </item>
     
     <item>
@@ -2843,7 +2877,7 @@ See the module_info() function documentation for an example of the exposed modul
 This function does not generate an event.
 Function modules_info()
 Arguments None
-Return value List with modules info about all modules in ThingsDB.</description>
+Return value List with modules mpdata about all modules in ThingsDB.</description>
     </item>
     
     <item>
@@ -3218,7 +3252,7 @@ Available Time Zones  Africa/Abidjan Africa/Accra Africa/Addis_Ababa Africa/Algi
 This function requires GRANT privileges on the @thingsdb scope when a username other then the logged in user is given as argument. For the currently logged in user, QUERY privileges on the @thingsdb scope are sufficient.
  This function does not generate an event.
 Function user_info([username])
-Arguments    Argument Type Description     username str (optional) Name of the user    Return value Returns info about the user.</description>
+Arguments    Argument Type Description     username str (optional) Name of the user    Return value Returns mpdata about the user.</description>
     </item>
     
     <item>
@@ -3233,7 +3267,7 @@ This function requires GRANT privileges on the @thingdb scope since it exposes u
 This function does not generate an event.
 Function users_info()
 Arguments None
-Return value List with user info about all users in ThingsDB.</description>
+Return value List with user mpdata about all users in ThingsDB.</description>
     </item>
     
     <item>
@@ -3310,7 +3344,7 @@ See the procedure_info() function documentation for an example of the exposed pr
 This function does not generate an event.
 Function procedures_info()
 Arguments None
-Return value List with procedure info about all procedures in the scope.</description>
+Return value List with procedure mpdata about all procedures in the scope.</description>
     </item>
     
     <item>
@@ -3442,7 +3476,7 @@ See the timer_info() function documentation for an example of the exposed timer 
 This function does not generate an event.
 Function timers_info()
 Arguments None
-Return value List with timer info about all timers in the scope.</description>
+Return value List with timer mpdata about all timers in the scope.</description>
     </item>
     
     <item>

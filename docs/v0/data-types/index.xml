@@ -32,17 +32,6 @@ Useful functions    Function Description     float return a float type for a giv
     </item>
     
     <item>
-      <title>info</title>
-      <link>https://docs.thingsdb.net/v0/data-types/info/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/data-types/info/</guid>
-      <description>This is a special type within ThingsDB and is returned by all the *_info() functions.
-As an example we can take the node_info and view the type. This will tell us that the value is indeed of the info type.
-// get the current node info node_info = node_info(); // return the type as string to verify this is indeed the `info` type type(node_info);  Return value in JSON format</description>
-    </item>
-    
-    <item>
       <title>int</title>
       <link>https://docs.thingsdb.net/v0/data-types/int/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

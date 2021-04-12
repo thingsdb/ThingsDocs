@@ -167,7 +167,7 @@ See the enum_info() function documentation for an example of the exposed informa
 This function does not generate an event.
 Function enums_info()
 Arguments None
-Return value List with info about all enumeration types in the collection scope.</description>
+Return value List with mpdata about all enumeration types in the collection scope.</description>
     </item>
     
     <item>
@@ -406,6 +406,19 @@ Function is_future(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a future, else it returns false.
 Example  This code shows some return values for is_float():
  [ is_future( future(nil) ), is_future( future(nil).</description>
+    </item>
+    
+    <item>
+      <title>is_mpdata</title>
+      <link>https://docs.thingsdb.net/v0/collection-api/is_mpdata/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/collection-api/is_mpdata/</guid>
+      <description>This function determines whether the provided value is an integer or not.
+This function does not generate an event.
+This function has a deprecated alias isint which will be removed in the next minor release.
+ Function is_mpdata(value)
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type mpdata, else it returns false.</description>
     </item>
     
     <item>
@@ -905,7 +918,7 @@ See the type_info() function documentation for an example of the exposed Type in
 This function does not generate an event.
 Function types_info()
 Arguments None
-Return value List with Type info about all Types in the collection.</description>
+Return value List with Type mpdata about all Types in the collection.</description>
     </item>
     
     <item>

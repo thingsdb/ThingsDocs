@@ -223,10 +223,6 @@
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/info/</loc>
-  </url>
-  
-  <url>
     <loc>https://docs.thingsdb.net/v0/data-types/int/</loc>
   </url>
   
@@ -328,6 +324,18 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v0/data-types/list/unshift/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/mpdata/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/mpdata/len/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/mpdata/load/</loc>
   </url>
   
   <url>
@@ -704,6 +712,10 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v0/collection-api/is_future/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/collection-api/is_mpdata/</loc>
   </url>
   
   <url>

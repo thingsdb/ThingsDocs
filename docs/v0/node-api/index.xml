@@ -31,7 +31,7 @@ See the backup_info() function documentation for an example of the exposed backu
 This function does not generate an event.
 Function backups_info()
 Arguments None
-Return value List with backup schedule info about all backup schedules in the selected node scope.</description>
+Return value List with backup schedule mpdata about all backup schedules in the selected node scope.</description>
     </item>
     
     <item>

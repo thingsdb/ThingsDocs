@@ -84,7 +84,7 @@ See the procedure_info() function documentation for an example of the exposed pr
 This function does not generate an event.
 Function procedures_info()
 Arguments None
-Return value List with procedure info about all procedures in the scope.</description>
+Return value List with procedure mpdata about all procedures in the scope.</description>
     </item>
     
     <item>
