@@ -16,3 +16,14 @@ theme = "hugo-theme-learn"
   # Description of the site, will be used in meta information
   description = "ThingsDB documentation"
   disableInlineCopyToClipBoard = true
+
+[[menu.shortcuts]]
+name = "<i class='far fa-window-maximize'></i> Website"
+url = "https://thingsdb.net/"
+weight = 10
+
+[[menu.shortcuts]]
+name = "<i class='fab fa-github'></i> Github repo"
+identifier = "ds"
+url = "https://github.com/thingsdb/ThingsDB"
+weight = 20
