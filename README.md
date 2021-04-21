@@ -18,7 +18,7 @@ Install Hugo (Ubuntu/Debian)
 
 > With the latest version of Hugo, the menu seems to be broken.
 
-A working version (including a .deb file) can be downloaded here: https://github.com/gohugoio/hugo/releases/tag/v0.65.3
+A working version (including a .deb file) can be downloaded [here](https://github.com/gohugoio/hugo/releases/tag/v0.69.2).
 
 Install template
 
