@@ -1,15 +1,11 @@
 ---
 title: "is_list"
-weight: 181
+weight: 184
 ---
 
 This function determines whether the provided value is a [list](../../data-types/list) or not.
 
 This function does *not* generate an [event](../../overview/events).
-
-{{% notice warning %}}
-This function has a deprecated alias `islist` which will be removed in the next *minor* release.
-{{% /notice %}}
 
 ### Function
 

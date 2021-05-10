@@ -1,15 +1,11 @@
 ---
 title: "is_nan"
-weight: 183
+weight: 185
 ---
 
 This function determines whether the provided value is a number.
 
 This function does *not* generate an [event](../../overview/events).
-
-{{% notice warning %}}
-This function has a deprecated alias `isnan` which will be removed in the next *minor* release.
-{{% /notice %}}
 
 ### Function
 

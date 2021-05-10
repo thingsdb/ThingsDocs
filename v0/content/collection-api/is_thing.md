@@ -1,16 +1,12 @@
 ---
 title: "is_thing"
-weight: 189
+weight: 191
 ---
 
 This function determines whether the provided value is a [thing](../../data-types/thing) or not.
 
 {{% notice note %}}
 [Type](../../data-types/type) instances are also things, so this function returns `true` for a Type instance as well.
-{{% /notice %}}
-
-{{% notice warning %}}
-This function has a deprecated alias `isthing` which will be removed in the next *minor* release.
 {{% /notice %}}
 
 This function does *not* generate an [event](../../overview/events).

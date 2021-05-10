@@ -1,15 +1,11 @@
 ---
 title: "is_bool"
-weight: 171
+weight: 173
 ---
 
 This function determines whether the provided value is a [bool](../../data-types/bool) or not.
 
 This function does *not* generate an [event](../../overview/events).
-
-{{% notice warning %}}
-This function has a deprecated alias `isbool` which will be removed in the next *minor* release.
-{{% /notice %}}
 
 ### Function
 

@@ -1,15 +1,11 @@
 ---
 title: "is_err"
-weight: 176
+weight: 178
 ---
 
 This function determines whether the provided value is a [error](../../data-types/error) or not.
 
 This function does *not* generate an [event](../../overview/events).
-
-{{% notice warning %}}
-This function has a deprecated alias `iserr` which will be removed in the next *minor* release.
-{{% /notice %}}
 
 ### Function
 

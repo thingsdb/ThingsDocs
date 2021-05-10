@@ -1,15 +1,11 @@
 ---
 title: "is_tuple"
-weight: 191
+weight: 193
 ---
 
 This function determines whether the provided value is a [tuple](../../data-types/tuple) or not. At least nested arrays are of kind tuple.
 
 This function does *not* generate an [event](../../overview/events).
-
-{{% notice warning %}}
-This function has a deprecated alias `istuple` which will be removed in the next *minor* release.
-{{% /notice %}}
 
 ### Function
 

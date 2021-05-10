@@ -1,6 +1,6 @@
 ---
 title: "rename_type"
-weight: 218
+weight: 220
 ---
 
 Rename a [type](../../data-types/type).

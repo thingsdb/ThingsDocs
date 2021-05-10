@@ -1,6 +1,6 @@
 ---
 title: "add"
-weight: 89
+weight: 91
 ---
 
 Adds a new thing to the [set](..) and returns the number of things which are

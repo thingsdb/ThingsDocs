@@ -8,10 +8,6 @@ Otherwise `nil` is returned.
 
 This function does *not* generate an [event](../../../overview/events).
 
-{{% notice warning %}}
-This function has a deprecated alias `findindex` which will be removed in the next *minor* release.
-{{% /notice %}}
-
 ### Function
 
 *array*.`find_index(callback)`

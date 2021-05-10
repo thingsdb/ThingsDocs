@@ -1,15 +1,11 @@
 ---
 title: "is_bytes"
-weight: 172
+weight: 174
 ---
 
 This function determines whether the provided value is of type [bytes](../../data-types/bytes) or not.
 
 This function does *not* generate an [event](../../overview/events).
-
-{{% notice warning %}}
-This function has a deprecated alias `isbytes` which will be removed in the next *minor* release.
-{{% /notice %}}
 
 ### Function
 

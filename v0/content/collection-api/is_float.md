@@ -1,15 +1,11 @@
 ---
 title: "is_float"
-weight: 177
+weight: 179
 ---
 
 This function determines whether the provided value is a [floating point](../../data-types/float) value or not.
 
 This function does *not* generate an [event](../../overview/events).
-
-{{% notice warning %}}
-This function has a deprecated alias `isfloat` which will be removed in the next *minor* release.
-{{% /notice %}}
 
 ### Function
 

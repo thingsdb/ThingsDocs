@@ -1,15 +1,11 @@
 ---
 title: "ends_with"
-weight: 102
+weight: 104
 ---
 
 Determines if a [string](..) ends with characters given by another string.
 
 This function does *not* generate an [event](../../../overview/events).
-
-{{% notice warning %}}
-This function has a deprecated alias `endswith` which will be removed in the next *minor* release.
-{{% /notice %}}
 
 ### Function
 

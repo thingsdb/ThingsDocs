@@ -1,16 +1,12 @@
 ---
 title: "is_raw"
-weight: 185
+weight: 187
 ---
 
 This function determines whether the provided value is of
 type `str` *or* `bytes`.
 
 This function does *not* generate an [event](../../overview/events).
-
-{{% notice warning %}}
-This function has a deprecated alias `israw` which will be removed in the next *minor* release.
-{{% /notice %}}
 
 ### Function
 

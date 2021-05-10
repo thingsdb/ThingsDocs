@@ -1,15 +1,11 @@
 ---
 title: "is_enum"
-weight: 175
+weight: 177
 ---
 
 This function determines whether the provided value is an [enumeration type](../../data-types/enum) member or not.
 
 This function does *not* generate an [event](../../overview/events).
-
-{{% notice warning %}}
-This function has a deprecated alias `isenum` which will be removed in the next *minor* release.
-{{% /notice %}}
 
 ### Function
 

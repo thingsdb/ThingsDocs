@@ -1,6 +1,6 @@
 ---
 title: "tuple"
-weight: 134
+weight: 136
 ---
 
 All nested *arrays* are immutable and thus tuples.
@@ -34,6 +34,7 @@ Function | Description
 [first](../list/first) | Return the first item from a tuple.
 [has](../list/has) | Return `true` if a given value is found in the tuple, or `false` if not found.
 [index_of](../list/index_of) | Return the index of a given value, or `nil` if not found.
+[is_unique](../list//is_unique) | Returns `true` if each item in a tuple is unique or `false` if a duplicate is found.
 [join](../list/join) | Returns a string with all items joined.
 [last](../list/last) | Return the last item from a tuple.
 [len](../list/len) | Return the length of the tuple.
@@ -42,6 +43,7 @@ Function | Description
 [reverse](../list/reverse) | Return a new list with the items in reverse order.
 [some](../list/some) | Check if at least one item passes a given test.
 [sort](../list/sort) | Return a new sorted `list`.
+[unique](../list/unique) | Returns a new list without duplicate items.
 
 {{% notice info %}}
 The above functions correspond to those of a `list`. For that reason, they are only listed under the data type `list`.

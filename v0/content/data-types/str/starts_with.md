@@ -1,15 +1,11 @@
 ---
 title: "starts_with"
-weight: 107
+weight: 109
 ---
 
 Determines if a [string](..) starts with characters given by another string.
 
 This function does *not* generate an [event](../../../overview/events).
-
-{{% notice warning %}}
-This function has a deprecated alias `startswith` which will be removed in the next *minor* release.
-{{% /notice %}}
 
 ### Function
 

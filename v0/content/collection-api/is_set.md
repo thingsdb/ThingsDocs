@@ -1,15 +1,11 @@
 ---
 title: "is_set"
-weight: 187
+weight: 189
 ---
 
 This function determines whether the provided value is a [set](../../data-types/set) or not.
 
 This function does *not* generate an [event](../../overview/events).
-
-{{% notice warning %}}
-This function has a deprecated alias `isset` which will be removed in the next *minor* release.
-{{% /notice %}}
 
 ### Function
 

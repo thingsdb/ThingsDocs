@@ -1,15 +1,11 @@
 ---
 title: "is_inf"
-weight: 179
+weight: 182
 ---
 
 This function determines whether the provided value is a positive or negative *infinity*.
 
 This function does *not* generate an [event](../../overview/events).
-
-{{% notice warning %}}
-This function has a deprecated alias `isinf` which will be removed in the next *minor* release.
-{{% /notice %}}
 
 ### Function
 

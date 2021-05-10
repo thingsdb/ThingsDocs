@@ -1,16 +1,12 @@
 ---
 title: "is_ascii"
-weight: 170
+weight: 172
 ---
 
 This function determines whether the provided value is of
 type [str](../../data-types/str) and contains only valid ascii characters.
 
 This function does *not* generate an [event](../../overview/events).
-
-{{% notice warning %}}
-This function has a deprecated alias `isascii` which will be removed in the next *minor* release.
-{{% /notice %}}
 
 ### Function
 

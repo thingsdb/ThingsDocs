@@ -8,10 +8,6 @@ The index of an array starts at `0`, so the first item has index `0` the second 
 
 This function does *not* generate an [event](../../../overview/events).
 
-{{% notice warning %}}
-This function has a deprecated alias `indexof` which will be removed in the next *minor* release.
-{{% /notice %}}
-
 ### Function
 
 *array*.`index_of(value)`

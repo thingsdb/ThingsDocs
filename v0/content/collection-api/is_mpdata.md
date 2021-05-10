@@ -1,15 +1,11 @@
 ---
 title: "is_mpdata"
-weight: 178
+weight: 181
 ---
 
 This function determines whether the provided value is an [integer](../../data-types/int) or not.
 
 This function does *not* generate an [event](../../overview/events).
-
-{{% notice warning %}}
-This function has a deprecated alias `isint` which will be removed in the next *minor* release.
-{{% /notice %}}
 
 ### Function
 

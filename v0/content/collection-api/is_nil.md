@@ -1,15 +1,11 @@
 ---
 title: "is_nil"
-weight: 184
+weight: 186
 ---
 
 This function determines whether the provided value is [nil](../../data-types/nil).
 
 This function does *not* generate an [event](../../overview/events).
-
-{{% notice warning %}}
-This function has a deprecated alias `isnil` which will be removed in the next *minor* release.
-{{% /notice %}}
 
 ### Function
 

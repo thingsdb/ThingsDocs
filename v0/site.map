@@ -65,6 +65,7 @@ data-types
         first
         has
         index_of
+        is_unique
         join
         last
         len
@@ -78,6 +79,7 @@ data-types
         some
         sort
         splice
+        unique
         unshift
     mpdata
         len
@@ -176,10 +178,10 @@ collection-api
     is_err
     is_float
     is_future
+    is_mpdata
     is_inf
     is_int
     is_list
-    is_mpdata
     is_nan
     is_nil
     is_raw

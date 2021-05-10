@@ -1,6 +1,6 @@
 ---
 title: "alt_raise"
-weight: 148
+weight: 150
 ---
 
 This function will try a statement. If the statement is successful it will just return the result but in case of an error, it will re-raise the error using a given error code.

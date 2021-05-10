@@ -1,6 +1,6 @@
 ---
 title: "is_closure"
-weight: 173
+weight: 175
 ---
 
 This function determines whether the provided value is a [closure](../../data-types/closure) or not.

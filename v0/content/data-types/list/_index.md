@@ -23,6 +23,7 @@ Function | Description
 [first](./first) | Return the first item from a list.
 [has](./has) | Return `true` if a given value is found in the list, or `false` if not found.
 [index_of](./index_of) | Return the index of a given value, or `nil` if not found.
+[is_unique](./is_unique) | Returns `true` if each item in a list is unique or `false` if a duplicate is found.
 [join](./join) | Returns a string with all items joined.
 [last](./last) | Return the last item from a list.
 [len](./len) | Return the length of the list.
@@ -36,6 +37,7 @@ Function | Description
 [some](./some) | Check if at least one item passes a given test.
 [sort](./sort) | Return a new sorted `list`.
 [splice](./splice) | Change a list by removing or replacing existing items and/or adding new items.
+[unique](./unique) | Returns a new list without duplicate items.
 [unshift](./unshift) | Add new items to the start of a list and returns the new length.
 
 {{% notice note %}}

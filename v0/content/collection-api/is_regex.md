@@ -1,6 +1,6 @@
 ---
 title: "is_regex"
-weight: 186
+weight: 188
 ---
 
 This function determines whether the provided value is of type [regex](../../data-types/regex) or not.

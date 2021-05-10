@@ -1,6 +1,6 @@
 ---
 title: "rename_collection"
-weight: 268
+weight: 270
 ---
 
 Rename a collection.
