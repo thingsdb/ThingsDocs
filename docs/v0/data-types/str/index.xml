@@ -31,9 +31,9 @@ Example  This code shows an example using contains():</description>
       <guid>https://docs.thingsdb.net/v0/data-types/str/ends_with/</guid>
       <description>Determines if a string ends with characters given by another string.
 This function does not generate an event.
-This function has a deprecated alias endswith which will be removed in the next minor release.
- Function str.ends_with(search_string)
-Arguments    Argument Type Description     search_string str (required) The characters to be searched for at the end of this string.    Return value Returns true if the given characters are found at the end of the string and otherwise false.</description>
+Function str.ends_with(search_string)
+Arguments    Argument Type Description     search_string str (required) The characters to be searched for at the end of this string.    Return value Returns true if the given characters are found at the end of the string and otherwise false.
+Example  This code shows an example using ends_with():</description>
     </item>
     
     <item>
@@ -100,9 +100,9 @@ Arguments    Argument Type Description     separator str (optional) The string u
       <guid>https://docs.thingsdb.net/v0/data-types/str/starts_with/</guid>
       <description>Determines if a string starts with characters given by another string.
 This function does not generate an event.
-This function has a deprecated alias startswith which will be removed in the next minor release.
- Function str.starts_with(search_string)
-Arguments    Argument Type Description     search_string str (required) The characters to be searched for at the start of this string.    Return value Returns true if the given characters are found at the start of the string and otherwise false.</description>
+Function str.starts_with(search_string)
+Arguments    Argument Type Description     search_string str (required) The characters to be searched for at the start of this string.    Return value Returns true if the given characters are found at the start of the string and otherwise false.
+Example  This code shows an example using starts_with():</description>
     </item>
     
     <item>

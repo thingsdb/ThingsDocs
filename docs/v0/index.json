@@ -39,7 +39,7 @@
 	"title": "Connect",
 	"tags": [],
 	"description": "",
-	"content": "Connect There are several options to communicate with ThingsDB. By default each node listens to port 9200 for TCP socket connections. With a socket connection it is possible to do queries, run procedures and watch for changes made to individual things in a collection.\nThe most easy way to use the socket connection is to use an existing connector. ThingsDB currently has connectors available for Python and Go. For other languages you can read the socket protocol section on how to implement a ThingsDB connector.\nAs an alternative to the socket connection, a ThingsDB node has support for HTTP request through an HTTP API.\n"
+	"content": "Connect There are several options to communicate with ThingsDB. By default each node listens to port 9200 for TCP socket connections. With a socket connection it is possible to do queries, run procedures and watch for changes made to individual things in a collection.\nThe most easy way to use the socket connection is to use an existing connector. ThingsDB currently has connectors available for Python and Go. For other languages you can read the socket protocol section on how to implement a ThingsDB connector.\nAs an alternative to the socket connection, a ThingsDB node has support for HTTP requests through an HTTP API.\n"
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/connect/authentication/",
@@ -396,7 +396,7 @@
 	"title": "list",
 	"tags": [],
 	"description": "",
-	"content": "An empty list can be constructed like this: list = [];\nNesting is also possible but each nested list will become a tuple which means the \u0026lsquo;list\u0026rsquo; will be immutable. ThingsDB does this because it wants to update all changes to subscribers and finds the subscribers by the parent object where the change is made. Since the parent of a nested \u0026lsquo;list\u0026rsquo; is another list, the thing holding the list would not be found.\nFunctions    Function Description     choice Return a random item from a list.   each Iterate over all items in a list.   every Check if all items pass a given test.   extend Add an array with items to the end of a list and returns the new length.   filter Return a new list with items that passed a given test.   find Return the first item that passed a given test.   find_index Return the index of the first item that passed a given test.   first Return the first item from a list.   has Return true if a given value is found in the list, or false if not found.   index_of Return the index of a given value, or nil if not found.   join Returns a string with all items joined.   last Return the last item from a list.   len Return the length of the list.   map Return a new list with the results of calling a provided closure on every item.   pop Remove the last item from a list and returns that item.   push Add new items to the end of a list and returns the new length.   reduce Execute a reducer function on each item, resulting in a single output value.   remove Remove the first item that passed a given test and returns that item.   reverse Return a new list with the items in reverse order.   shift Remove the first item from a list and returns that item.   some Check if at least one item passes a given test.   sort Return a new sorted list.   splice Change a list by removing or replacing existing items and/or adding new items.   unshift Add new items to the start of a list and returns the new length.    It is not possible to change a list while the list is in use, for example:\ntmp = [1, 2, 3]; tmp.map(|i| tmp.push(i));\n\u0026hellip;will raise bad_data_err() (cannot change type list while the value is being used)\n Reference versus copy It might be useful to understand when ThingsDB uses a reference to a list, and when it makes copy. As long as a list is used as a variable, then ThingsDB uses a reference to the list. If a list will be assigned to a thing, or if a list which is assigned to a thing, will be assigned to a variable, then a copy will be made. For example:\na = [1, 2]; b = a; // both `a` and `b` are variable so a *reference* is used. .c = a; // `c` is assigned, so a *copy* will be made. a.push(3); // note that `.c` is not affected because `.c` is a *copy*. // Return the values [a, b, .c];  Response in JSON format:\n [ [1, 2, 3], [1, 2, 3], [1, 2] ] The same is true for when a list is used within a closure. For example:\na = []; // `list` assigned to a variable // `a` stays a variable, so a reference will be used a2 = range(3).reduce(|arr, val| {arr.push(val); arr;}, a); // [0, 1, 2] assert (a == a2); // both `a` and `a2` are a reference to the same list  And when a list is assigned to a thing\u0026hellip;\n .b = []; // `list` assigned to a thing // `.b` will be assigned to `arr`, so in the first iteration a *copy* will be made b2 = range(3).reduce(|arr, val| {arr.push(val); arr;}, .b); // [0, 1, 2] assert (.b != b2); // [] != [0, 1, 2] "
+	"content": "An empty list can be constructed like this: list = [];\nNesting is also possible but each nested list will become a tuple which means the \u0026lsquo;list\u0026rsquo; will be immutable. ThingsDB does this because it wants to update all changes to subscribers and finds the subscribers by the parent object where the change is made. Since the parent of a nested \u0026lsquo;list\u0026rsquo; is another list, the thing holding the list would not be found.\nFunctions    Function Description     choice Return a random item from a list.   each Iterate over all items in a list.   every Check if all items pass a given test.   extend Add an array with items to the end of a list and returns the new length.   filter Return a new list with items that passed a given test.   find Return the first item that passed a given test.   find_index Return the index of the first item that passed a given test.   first Return the first item from a list.   has Return true if a given value is found in the list, or false if not found.   index_of Return the index of a given value, or nil if not found.   is_unique Returns true if each item in a list is unique or false if a duplicate is found.   join Returns a string with all items joined.   last Return the last item from a list.   len Return the length of the list.   map Return a new list with the results of calling a provided closure on every item.   pop Remove the last item from a list and returns that item.   push Add new items to the end of a list and returns the new length.   reduce Execute a reducer function on each item, resulting in a single output value.   remove Remove the first item that passed a given test and returns that item.   reverse Return a new list with the items in reverse order.   shift Remove the first item from a list and returns that item.   some Check if at least one item passes a given test.   sort Return a new sorted list.   splice Change a list by removing or replacing existing items and/or adding new items.   unique Returns a new list without duplicate items.   unshift Add new items to the start of a list and returns the new length.    It is not possible to change a list while the list is in use, for example:\ntmp = [1, 2, 3]; tmp.map(|i| tmp.push(i));\n\u0026hellip;will raise bad_data_err() (cannot change type list while the value is being used)\n Reference versus copy It might be useful to understand when ThingsDB uses a reference to a list, and when it makes copy. As long as a list is used as a variable, then ThingsDB uses a reference to the list. If a list will be assigned to a thing, or if a list which is assigned to a thing, will be assigned to a variable, then a copy will be made. For example:\na = [1, 2]; b = a; // both `a` and `b` are variable so a *reference* is used. .c = a; // `c` is assigned, so a *copy* will be made. a.push(3); // note that `.c` is not affected because `.c` is a *copy*. // Return the values [a, b, .c];  Response in JSON format:\n [ [1, 2, 3], [1, 2, 3], [1, 2] ] The same is true for when a list is used within a closure. For example:\na = []; // `list` assigned to a variable // `a` stays a variable, so a reference will be used a2 = range(3).reduce(|arr, val| {arr.push(val); arr;}, a); // [0, 1, 2] assert (a == a2); // both `a` and `a2` are a reference to the same list  And when a list is assigned to a thing\u0026hellip;\n .b = []; // `list` assigned to a thing // `.b` will be assigned to `arr`, so in the first iteration a *copy* will be made b2 = range(3).reduce(|arr, val| {arr.push(val); arr;}, .b); // [0, 1, 2] assert (.b != b2); // [] != [0, 1, 2] "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/data-types/list/choice/",
@@ -445,7 +445,7 @@
 	"title": "find_index",
 	"tags": [],
 	"description": "",
-	"content": "This function returns the index of the first item in a list or tuple that passes the test. Otherwise nil is returned.\nThis function does not generate an event.\nThis function has a deprecated alias findindex which will be removed in the next minor release.\n Function array.find_index(callback)\nArguments    Argument Type Description     callback closure The statement to try.    Explanation of the callback argument:\n   Iterable Callback arguments Description     array item, index Iterate over items in the array. Both item and index are optional.    Return value The index of the first item in the array that passes the test; otherwise, nil is returned.\nExample  This code shows an example using find_index():\n // some sports as an example sports = ['cycling', 'baseball', 'running', 'tennis', 'skateboarding']; // return the index of `running` in list sports.find_index(|sport| sport == 'running');  Return value in JSON format\n 2 "
+	"content": "This function returns the index of the first item in a list or tuple that passes the test. Otherwise nil is returned.\nThis function does not generate an event.\nFunction array.find_index(callback)\nArguments    Argument Type Description     callback closure The statement to try.    Explanation of the callback argument:\n   Iterable Callback arguments Description     array item, index Iterate over items in the array. Both item and index are optional.    Return value The index of the first item in the array that passes the test; otherwise, nil is returned.\nExample  This code shows an example using find_index():\n // some sports as an example sports = ['cycling', 'baseball', 'running', 'tennis', 'skateboarding']; // return the index of `running` in list sports.find_index(|sport| sport == 'running');  Return value in JSON format\n 2 "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/data-types/list/first/",
@@ -466,7 +466,14 @@
 	"title": "index_of",
 	"tags": [],
 	"description": "",
-	"content": "The function returns the first index of the item in a list or tuple that matches the provided value, otherwise nil if it is not present. The index of an array starts at 0, so the first item has index 0 the second 1 and so on.\nThis function does not generate an event.\nThis function has a deprecated alias indexof which will be removed in the next minor release.\n Function array.index_of(value)\nArguments    Argument Type Description     value any The value to find the index for.    Return value Index at which the first item matches a given value, or nil if it is not present.\nExample  This code shows an example using index_of():\n [\u0026quot;January\u0026quot;, \u0026quot;February\u0026quot;, \u0026quot;March\u0026quot;, \u0026quot;April\u0026quot;].index_of(\u0026quot;March\u0026quot;);  Return value in JSON format\n 2 "
+	"content": "The function returns the first index of the item in a list or tuple that matches the provided value, otherwise nil if it is not present. The index of an array starts at 0, so the first item has index 0 the second 1 and so on.\nThis function does not generate an event.\nFunction array.index_of(value)\nArguments    Argument Type Description     value any The value to find the index for.    Return value Index at which the first item matches a given value, or nil if it is not present.\nExample  This code shows an example using index_of():\n [\u0026quot;January\u0026quot;, \u0026quot;February\u0026quot;, \u0026quot;March\u0026quot;, \u0026quot;April\u0026quot;].index_of(\u0026quot;March\u0026quot;);  Return value in JSON format\n 2 "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/data-types/list/is_unique/",
+	"title": "is_unique",
+	"tags": [],
+	"description": "",
+	"content": "This function determines whether each item in a list is unique or not.\nAn item in the list is marked as a duplicate when an item is compared as equal to another item using the == operator.\nThis function does not generate an event.\nFunction list.is_unique()\nArguments None\nReturn value Returns true if each item in the list is unique or false if not.\nExample  This code shows some return values for is_unique():\n [ [\u0026quot;a\u0026quot;, \u0026quot;b\u0026quot;, \u0026quot;c\u0026quot;].is_unique(), [\u0026quot;foo\u0026quot;, \u0026quot;bar\u0026quot;, \u0026quot;foo\u0026quot;].is_unique(), ];  Return value in JSON format\n [ true, false ] "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/data-types/list/join/",
@@ -558,6 +565,13 @@
 	"tags": [],
 	"description": "",
 	"content": "The splice() function changes a list by removing or replacing existing items and/or adding new items.\nThis function generates an event (except when called on a variable).\nFunction list.splice(start, [delete_count, [item1, item2, ..., itemX]]))`\nArguments    Argument Type Description     start int (required) Start index in the list. If it is negative, it will start that many items from the end of the list.   delete_count int (optional) Number of item to remove from thestart of the list. If \u0026lt;= 0, no items will be removed.   item1, item2, \u0026hellip;, itemX any (optional) Items to add, beginning from the startof the list.    Return value A list containing the deleted items.\nExample  This code replaces an item in a list at position 2:\n months = ['Jan', 'Feb', 'April']; months.splice(2, 1, 'March'); /* Returns: ['April'] */ months;  Return value in JSON format\n [ \u0026#34;Jan\u0026#34;, \u0026#34;Feb\u0026#34;, \u0026#34;March\u0026#34; ] "
+},
+{
+	"uri": "https://docs.thingsdb.net/v0/data-types/list/unique/",
+	"title": "unique",
+	"tags": [],
+	"description": "",
+	"content": "This function returns a new list where each item in the list is unique. If duplicated items are found, the first item will be retained.\nAn item in the list is marked as a duplicate when an item is compared as equal to another item using the == operator.\nThis function does not generate an event.\nFunction list.unique()\nArguments None\nReturn value Returns a new list where each item in the list is unique. The original list stays untouched.\nExample  This code shows an example of unique():\n [\u0026quot;tic\u0026quot;, \u0026quot;tac\u0026quot;, \u0026quot;tic\u0026quot;, \u0026quot;toe\u0026quot;].unique(); // the second `tic` will not be retained in the new list  Return value in JSON format\n [ \u0026#34;tic\u0026#34;, \u0026#34;tac\u0026#34;, \u0026#34;toe\u0026#34; ] "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/data-types/list/unshift/",
@@ -711,7 +725,7 @@
 	"title": "ends_with",
 	"tags": [],
 	"description": "",
-	"content": "Determines if a string ends with characters given by another string.\nThis function does not generate an event.\nThis function has a deprecated alias endswith which will be removed in the next minor release.\n Function str.ends_with(search_string)\nArguments    Argument Type Description     search_string str (required) The characters to be searched for at the end of this string.    Return value Returns true if the given characters are found at the end of the string and otherwise false.\nExample  This code shows an example using ends_with():\n 'the answer to life the universe and everything'.ends_with('everything');  Return value in JSON format\n true "
+	"content": "Determines if a string ends with characters given by another string.\nThis function does not generate an event.\nFunction str.ends_with(search_string)\nArguments    Argument Type Description     search_string str (required) The characters to be searched for at the end of this string.    Return value Returns true if the given characters are found at the end of the string and otherwise false.\nExample  This code shows an example using ends_with():\n 'the answer to life the universe and everything'.ends_with('everything');  Return value in JSON format\n true "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/data-types/str/len/",
@@ -746,7 +760,7 @@
 	"title": "starts_with",
 	"tags": [],
 	"description": "",
-	"content": "Determines if a string starts with characters given by another string.\nThis function does not generate an event.\nThis function has a deprecated alias startswith which will be removed in the next minor release.\n Function str.starts_with(search_string)\nArguments    Argument Type Description     search_string str (required) The characters to be searched for at the start of this string.    Return value Returns true if the given characters are found at the start of the string and otherwise false.\nExample  This code shows an example using starts_with():\n 'the answer to life the universe and everything'.starts_with('the answer');  Return value in JSON format\n true "
+	"content": "Determines if a string starts with characters given by another string.\nThis function does not generate an event.\nFunction str.starts_with(search_string)\nArguments    Argument Type Description     search_string str (required) The characters to be searched for at the start of this string.    Return value Returns true if the given characters are found at the start of the string and otherwise false.\nExample  This code shows an example using starts_with():\n 'the answer to life the universe and everything'.starts_with('the answer');  Return value in JSON format\n true "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/data-types/str/test/",
@@ -935,7 +949,7 @@
 	"title": "tuple",
 	"tags": [],
 	"description": "",
-	"content": "All nested arrays are immutable and thus tuples.\nlist = []; list.push(['this list will be nested and therefore convert to a tuple']); // Check that the first item in `list` is indeed a `tuple` assert(is_tuple(list[0])); // Check that the `tuple` is indeed immutable assert(is_err(try(list[0].push('cannot be added to a tuple')))); A tuple only becomes a tuple when it is nested inside another tuple or list, which means the tuple will be immutable. ThingsDB does this to make watching things possible; it wants to update all changes within a thing to the subscribers that are watching, and finds them by thing. Since the parent of a nested tuple is another tuple or list, the watched thing holding the listwith nested lists would not be found.\nAnother property of lists and tuples in ThingsDB is that they both are always copies, and not a reference as in most languages. This is also done to enable watching.\nFunctions    Function Description     choice Return a random item from a tuple.   each Iterate over all items in a tuple.   every Check if all items pass a given test.   filter Return a new list with items that pass a given test.   find Return the first item that pass a given test.   find_index Return the index of the first item that pass a given test.   first Return the first item from a tuple.   has Return true if a given value is found in the tuple, or false if not found.   index_of Return the index of a given value, or nil if not found.   join Returns a string with all items joined.   last Return the last item from a tuple.   len Return the length of the tuple.   map Return a new list with the results of calling a provided closure on every item.   reduce Execute a reducer function on each item, resulting in a single output value.   reverse Return a new list with the items in reverse order.   some Check if at least one item passes a given test.   sort Return a new sorted list.    The above functions correspond to those of a list. For that reason, they are only listed under the data type list.\n "
+	"content": "All nested arrays are immutable and thus tuples.\nlist = []; list.push(['this list will be nested and therefore convert to a tuple']); // Check that the first item in `list` is indeed a `tuple` assert(is_tuple(list[0])); // Check that the `tuple` is indeed immutable assert(is_err(try(list[0].push('cannot be added to a tuple')))); A tuple only becomes a tuple when it is nested inside another tuple or list, which means the tuple will be immutable. ThingsDB does this to make watching things possible; it wants to update all changes within a thing to the subscribers that are watching, and finds them by thing. Since the parent of a nested tuple is another tuple or list, the watched thing holding the listwith nested lists would not be found.\nAnother property of lists and tuples in ThingsDB is that they both are always copies, and not a reference as in most languages. This is also done to enable watching.\nFunctions    Function Description     choice Return a random item from a tuple.   each Iterate over all items in a tuple.   every Check if all items pass a given test.   filter Return a new list with items that pass a given test.   find Return the first item that pass a given test.   find_index Return the index of the first item that pass a given test.   first Return the first item from a tuple.   has Return true if a given value is found in the tuple, or false if not found.   index_of Return the index of a given value, or nil if not found.   is_unique Returns true if each item in a tuple is unique or false if a duplicate is found.   join Returns a string with all items joined.   last Return the last item from a tuple.   len Return the length of the tuple.   map Return a new list with the results of calling a provided closure on every item.   reduce Execute a reducer function on each item, resulting in a single output value.   reverse Return a new list with the items in reverse order.   some Check if at least one item passes a given test.   sort Return a new sorted list.   unique Returns a new list without duplicate items.    The above functions correspond to those of a list. For that reason, they are only listed under the data type list.\n "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/data-types/type/",
@@ -1187,21 +1201,21 @@
 	"title": "is_ascii",
 	"tags": [],
 	"description": "",
-	"content": "This function determines whether the provided value is of type str and contains only valid ascii characters.\nThis function does not generate an event.\nThis function has a deprecated alias isascii which will be removed in the next minor release.\n Function is_ascii(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type str and contains only ascii characters, else false.\nExample  This code shows some return values for is_ascii():\n [ is_ascii( 'ԉ' ), is_ascii( 'pi' ), ];  Return value in JSON format\n [ false, true ] "
+	"content": "This function determines whether the provided value is of type str and contains only valid ascii characters.\nThis function does not generate an event.\nFunction is_ascii(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type str and contains only ascii characters, else false.\nExample  This code shows some return values for is_ascii():\n [ is_ascii( 'ԉ' ), is_ascii( 'pi' ), ];  Return value in JSON format\n [ false, true ] "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/is_bool/",
 	"title": "is_bool",
 	"tags": [],
 	"description": "",
-	"content": "This function determines whether the provided value is a bool or not.\nThis function does not generate an event.\nThis function has a deprecated alias isbool which will be removed in the next minor release.\n Function is_bool(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a boolean, else it returns false.\nExample  This code shows some return values for is_bool():\n [ is_bool( true ), is_bool( 'true' ), is_bool( nil ), ];  Return value in JSON format\n [ true, false, false ] "
+	"content": "This function determines whether the provided value is a bool or not.\nThis function does not generate an event.\nFunction is_bool(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a boolean, else it returns false.\nExample  This code shows some return values for is_bool():\n [ is_bool( true ), is_bool( 'true' ), is_bool( nil ), ];  Return value in JSON format\n [ true, false, false ] "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/is_bytes/",
 	"title": "is_bytes",
 	"tags": [],
 	"description": "",
-	"content": "This function determines whether the provided value is of type bytes or not.\nThis function does not generate an event.\nThis function has a deprecated alias isbytes which will be removed in the next minor release.\n Function is_bytes(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type bytes, else it returns false.\nExample  This code shows some return values for is_bytes():\n [ is_bytes( bytes() ), is_bytes( 'abc' ), ];  Return value in JSON format\n [ true, false ] "
+	"content": "This function determines whether the provided value is of type bytes or not.\nThis function does not generate an event.\nFunction is_bytes(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type bytes, else it returns false.\nExample  This code shows some return values for is_bytes():\n [ is_bytes( bytes() ), is_bytes( 'abc' ), ];  Return value in JSON format\n [ true, false ] "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/is_closure/",
@@ -1222,21 +1236,21 @@
 	"title": "is_enum",
 	"tags": [],
 	"description": "",
-	"content": "This function determines whether the provided value is an enumeration type member or not.\nThis function does not generate an event.\nThis function has a deprecated alias isenum which will be removed in the next minor release.\n Function is_enum(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type enum, else it returns false.\nExample  This code shows some return values for is_enum():\n set_enum('Status', { OK: 0, NOK: -1, }); [ is_enum( Status{OK} ), is_enum( 0 ), ];  Return value in JSON format\n [ true, false ] "
+	"content": "This function determines whether the provided value is an enumeration type member or not.\nThis function does not generate an event.\nFunction is_enum(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type enum, else it returns false.\nExample  This code shows some return values for is_enum():\n set_enum('Status', { OK: 0, NOK: -1, }); [ is_enum( Status{OK} ), is_enum( 0 ), ];  Return value in JSON format\n [ true, false ] "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/is_err/",
 	"title": "is_err",
 	"tags": [],
 	"description": "",
-	"content": "This function determines whether the provided value is a error or not.\nThis function does not generate an event.\nThis function has a deprecated alias iserr which will be removed in the next minor release.\n Function is_err(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is an error, else it returns false.\nExample  This code shows some return values for is_err():\n [ is_err( err() ), is_err( zero_div_err() ), is_err( try((1 / 0)) ), is_err( try((1 / 1)) ), ];  Return value in JSON format\n [ true, true, true, false ] "
+	"content": "This function determines whether the provided value is a error or not.\nThis function does not generate an event.\nFunction is_err(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is an error, else it returns false.\nExample  This code shows some return values for is_err():\n [ is_err( err() ), is_err( zero_div_err() ), is_err( try((1 / 0)) ), is_err( try((1 / 1)) ), ];  Return value in JSON format\n [ true, true, true, false ] "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/is_float/",
 	"title": "is_float",
 	"tags": [],
 	"description": "",
-	"content": "This function determines whether the provided value is a floating point value or not.\nThis function does not generate an event.\nThis function has a deprecated alias isfloat which will be removed in the next minor release.\n Function is_float(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a float, else it returns false.\nExample  This code shows some return values for is_float():\n [ is_float( 42.0 ), is_float( 0.42e+2 ), is_float( 42 ), ];  Return value in JSON format\n [ true, true, false ] "
+	"content": "This function determines whether the provided value is a floating point value or not.\nThis function does not generate an event.\nFunction is_float(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a float, else it returns false.\nExample  This code shows some return values for is_float():\n [ is_float( 42.0 ), is_float( 0.42e+2 ), is_float( 42 ), ];  Return value in JSON format\n [ true, true, false ] "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/is_future/",
@@ -1250,49 +1264,49 @@
 	"title": "is_mpdata",
 	"tags": [],
 	"description": "",
-	"content": "This function determines whether the provided value is an integer or not.\nThis function does not generate an event.\nThis function has a deprecated alias isint which will be removed in the next minor release.\n Function is_mpdata(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type mpdata, else it returns false.\nExample  This code shows some return values for is_mpdata():\n [ is_mpdata( user_info(\u0026quot;admin\u0026quot;) ), is_mpdata( user_info(\u0026quot;admin\u0026quot;).load() ), ];  Return value in JSON format\n [ true, false ] "
+	"content": "This function determines whether the provided value is an integer or not.\nThis function does not generate an event.\nFunction is_mpdata(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type mpdata, else it returns false.\nExample  This code shows some return values for is_mpdata():\n [ is_mpdata( user_info(\u0026quot;admin\u0026quot;) ), is_mpdata( user_info(\u0026quot;admin\u0026quot;).load() ), ];  Return value in JSON format\n [ true, false ] "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/is_inf/",
 	"title": "is_inf",
 	"tags": [],
 	"description": "",
-	"content": "This function determines whether the provided value is a positive or negative infinity.\nThis function does not generate an event.\nThis function has a deprecated alias isinf which will be removed in the next minor release.\n Function is_inf(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a positive or negative infinity, else it returns false.\nExample  This code shows some return values for is_inf():\n [ is_inf( -inf ), is_inf( inf ), is_inf( 0 ), is_inf( nan ), ];  Return value in JSON format\n [ true, true, false, false ] "
+	"content": "This function determines whether the provided value is a positive or negative infinity.\nThis function does not generate an event.\nFunction is_inf(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a positive or negative infinity, else it returns false.\nExample  This code shows some return values for is_inf():\n [ is_inf( -inf ), is_inf( inf ), is_inf( 0 ), is_inf( nan ), ];  Return value in JSON format\n [ true, true, false, false ] "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/is_int/",
 	"title": "is_int",
 	"tags": [],
 	"description": "",
-	"content": "This function determines whether the provided value is an integer or not.\nThis function does not generate an event.\nThis function has a deprecated alias isint which will be removed in the next minor release.\n Function is_int(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is an integer, else it returns false.\nExample  This code shows some return values for is_int():\n [ is_int( 42 ), is_int( 0x2a ), is_int( 42.0 ), is_int( '42' ), is_int( true ), ];  Return value in JSON format\n [ true, true, false, false, false ] "
+	"content": "This function determines whether the provided value is an integer or not.\nThis function does not generate an event.\nFunction is_int(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is an integer, else it returns false.\nExample  This code shows some return values for is_int():\n [ is_int( 42 ), is_int( 0x2a ), is_int( 42.0 ), is_int( '42' ), is_int( true ), ];  Return value in JSON format\n [ true, true, false, false, false ] "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/is_list/",
 	"title": "is_list",
 	"tags": [],
 	"description": "",
-	"content": "This function determines whether the provided value is a list or not.\nThis function does not generate an event.\nThis function has a deprecated alias islist which will be removed in the next minor release.\n Function is_list(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a list, else it returns false.\nExample  This code shows some return values for is_list():\n [ is_list( [] ), is_list( tmp = [['nested']] ), is_list( tmp[0] ), ];  Return value in JSON format\n [ true, true, false ] "
+	"content": "This function determines whether the provided value is a list or not.\nThis function does not generate an event.\nFunction is_list(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a list, else it returns false.\nExample  This code shows some return values for is_list():\n [ is_list( [] ), is_list( tmp = [['nested']] ), is_list( tmp[0] ), ];  Return value in JSON format\n [ true, true, false ] "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/is_nan/",
 	"title": "is_nan",
 	"tags": [],
 	"description": "",
-	"content": "This function determines whether the provided value is a number.\nThis function does not generate an event.\nThis function has a deprecated alias isnan which will be removed in the next minor release.\n Function is_nan(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is not a number, else false.\nExample  This code shows some return values for is_nan():\n [ is_nan( true ), is_nan( 123 ), is_nan( 3.14 ), is_nan( inf ), is_nan( [] ), is_nan( {} ), is_nan( nan ), is_nan( '123' ), ];  Return value in JSON format\n [ false, false, false, false, true, true, true, true ] "
+	"content": "This function determines whether the provided value is a number.\nThis function does not generate an event.\nFunction is_nan(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is not a number, else false.\nExample  This code shows some return values for is_nan():\n [ is_nan( true ), is_nan( 123 ), is_nan( 3.14 ), is_nan( inf ), is_nan( [] ), is_nan( {} ), is_nan( nan ), is_nan( '123' ), ];  Return value in JSON format\n [ false, false, false, false, true, true, true, true ] "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/is_nil/",
 	"title": "is_nil",
 	"tags": [],
 	"description": "",
-	"content": "This function determines whether the provided value is nil.\nThis function does not generate an event.\nThis function has a deprecated alias isnil which will be removed in the next minor release.\n Function is_nil(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is nil, else false.\nExample  This code shows some return values for is_nil():\n [ is_nil( nil ), is_nil( 0 ), ];  Return value in JSON format\n [ true, false ] "
+	"content": "This function determines whether the provided value is nil.\nThis function does not generate an event.\nFunction is_nil(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is nil, else false.\nExample  This code shows some return values for is_nil():\n [ is_nil( nil ), is_nil( 0 ), ];  Return value in JSON format\n [ true, false ] "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/is_raw/",
 	"title": "is_raw",
 	"tags": [],
 	"description": "",
-	"content": "This function determines whether the provided value is of type str or bytes.\nThis function does not generate an event.\nThis function has a deprecated alias israw which will be removed in the next minor release.\n Function is_raw(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type str or bytes, else false.\nExample  This code shows some return values for is_raw():\n [ is_raw( 'some string' ), is_raw( bytes('xxxx') ), ];  Return value in JSON format\n [ true, true ] "
+	"content": "This function determines whether the provided value is of type str or bytes.\nThis function does not generate an event.\nFunction is_raw(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type str or bytes, else false.\nExample  This code shows some return values for is_raw():\n [ is_raw( 'some string' ), is_raw( bytes('xxxx') ), ];  Return value in JSON format\n [ true, true ] "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/is_regex/",
@@ -1306,21 +1320,21 @@
 	"title": "is_set",
 	"tags": [],
 	"description": "",
-	"content": "This function determines whether the provided value is a set or not.\nThis function does not generate an event.\nThis function has a deprecated alias isset which will be removed in the next minor release.\n Function is_set(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a set, else it returns false.\nExample  This code shows some return values for is_set():\n [ is_set( [] ), is_set( set() ), ];  Return value in JSON format\n [ false, true ] "
+	"content": "This function determines whether the provided value is a set or not.\nThis function does not generate an event.\nFunction is_set(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a set, else it returns false.\nExample  This code shows some return values for is_set():\n [ is_set( [] ), is_set( set() ), ];  Return value in JSON format\n [ false, true ] "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/is_str/",
 	"title": "is_str",
 	"tags": [],
 	"description": "",
-	"content": "This function determines whether the provided value is of type str.\nThe value is not explicitly checked for valid UTF-8 characters, use is_utf8() if you want to check for valid UTF-8 data.\nThis function does not generate an event.\nThis function has a deprecated alias isstr which will be removed in the next minor release.\n Function is_str(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type str, else false.\nExample  This code shows some return values for is_utf8():\n [ is_str( 'ԉ' ), is_str( 'pi' ), ];  Return value in JSON format\n [ true, true ] "
+	"content": "This function determines whether the provided value is of type str.\nThe value is not explicitly checked for valid UTF-8 characters, use is_utf8() if you want to check for valid UTF-8 data.\nThis function does not generate an event.\nFunction is_str(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type str, else false.\nExample  This code shows some return values for is_utf8():\n [ is_str( 'ԉ' ), is_str( 'pi' ), ];  Return value in JSON format\n [ true, true ] "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/is_thing/",
 	"title": "is_thing",
 	"tags": [],
 	"description": "",
-	"content": "This function determines whether the provided value is a thing or not.\nType instances are also things, so this function returns true for a Type instance as well.\n This function has a deprecated alias isthing which will be removed in the next minor release.\n This function does not generate an event.\nFunction is_thing(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a thing, else it returns false.\nExample  This code shows some return values for is_thing():\n new_type('A'); [ is_thing( {} ), is_thing( A{} ), is_thing( [] ), ];  Return value in JSON format\n [ true, true, false ] "
+	"content": "This function determines whether the provided value is a thing or not.\nType instances are also things, so this function returns true for a Type instance as well.\n This function does not generate an event.\nFunction is_thing(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a thing, else it returns false.\nExample  This code shows some return values for is_thing():\n new_type('A'); [ is_thing( {} ), is_thing( A{} ), is_thing( [] ), ];  Return value in JSON format\n [ true, true, false ] "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/is_timeval/",
@@ -1334,14 +1348,14 @@
 	"title": "is_tuple",
 	"tags": [],
 	"description": "",
-	"content": "This function determines whether the provided value is a tuple or not. At least nested arrays are of kind tuple.\nThis function does not generate an event.\nThis function has a deprecated alias istuple which will be removed in the next minor release.\n Function is_tuple(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a tuple, else it returns false.\nExample  This code shows some return values for is_tuple():\n [ is_tuple( [] ), is_tuple( tmp = [['nested'], set()] ), is_tuple( tmp[0] ), is_tuple( tmp[1] ), ];  Return value in JSON format\n [ false, false, true, true ] "
+	"content": "This function determines whether the provided value is a tuple or not. At least nested arrays are of kind tuple.\nThis function does not generate an event.\nFunction is_tuple(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a tuple, else it returns false.\nExample  This code shows some return values for is_tuple():\n [ is_tuple( [] ), is_tuple( tmp = [['nested'], set()] ), is_tuple( tmp[0] ), is_tuple( tmp[1] ), ];  Return value in JSON format\n [ false, false, true, true ] "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/is_utf8/",
 	"title": "is_utf8",
 	"tags": [],
 	"description": "",
-	"content": "This function determines whether the provided value is of type str and contains valid UTF-8 characters.\nThis function does not generate an event.\nThis function has a deprecated alias isutf8 which will be removed in the next minor release.\n Function is_utf8(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type raw and contains valid utf8, else false.\nExample  This code shows some return values for is_utf8():\n [ is_utf8( 'ԉ' ), is_utf8( 'pi' ), ];  Return value in JSON format\n [ true, true ] "
+	"content": "This function determines whether the provided value is of type str and contains valid UTF-8 characters.\nThis function does not generate an event.\nFunction is_utf8(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type raw and contains valid utf8, else false.\nExample  This code shows some return values for is_utf8():\n [ is_utf8( 'ԉ' ), is_utf8( 'pi' ), ];  Return value in JSON format\n [ true, true ] "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/list/",

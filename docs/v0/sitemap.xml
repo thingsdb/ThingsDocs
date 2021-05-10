@@ -271,6 +271,10 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/list/is_unique/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v0/data-types/list/join/</loc>
   </url>
   
@@ -320,6 +324,10 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v0/data-types/list/splice/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v0/data-types/list/unique/</loc>
   </url>
   
   <url>
