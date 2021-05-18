@@ -2081,12 +2081,11 @@ Example  This code shows some return values for is_float():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/collection-api/is_mpdata/</guid>
-      <description>This function determines whether the provided value is an integer or not.
+      <description>This function determines whether the provided value is of type mpdata or not.
 This function does not generate an event.
 Function is_mpdata(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type mpdata, else it returns false.
-Example  This code shows some return values for is_mpdata():
- [ is_mpdata( user_info(&amp;quot;admin&amp;quot;) ), is_mpdata( user_info(&amp;quot;admin&amp;quot;).</description>
+Example  This code shows some return values for is_mpdata():</description>
     </item>
     
     <item>

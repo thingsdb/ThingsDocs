@@ -3,7 +3,7 @@ title: "is_mpdata"
 weight: 181
 ---
 
-This function determines whether the provided value is an [integer](../../data-types/int) or not.
+This function determines whether the provided value is of type [mpdata](../../data-types/) or not.
 
 This function does *not* generate an [event](../../overview/events).
 

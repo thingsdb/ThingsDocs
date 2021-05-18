@@ -1264,7 +1264,7 @@
 	"title": "is_mpdata",
 	"tags": [],
 	"description": "",
-	"content": "This function determines whether the provided value is an integer or not.\nThis function does not generate an event.\nFunction is_mpdata(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type mpdata, else it returns false.\nExample  This code shows some return values for is_mpdata():\n [ is_mpdata( user_info(\u0026quot;admin\u0026quot;) ), is_mpdata( user_info(\u0026quot;admin\u0026quot;).load() ), ];  Return value in JSON format\n [ true, false ] "
+	"content": "This function determines whether the provided value is of type mpdata or not.\nThis function does not generate an event.\nFunction is_mpdata(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type mpdata, else it returns false.\nExample  This code shows some return values for is_mpdata():\n [ is_mpdata( user_info(\u0026quot;admin\u0026quot;) ), is_mpdata( user_info(\u0026quot;admin\u0026quot;).load() ), ];  Return value in JSON format\n [ true, false ] "
 },
 {
 	"uri": "https://docs.thingsdb.net/v0/collection-api/is_inf/",
