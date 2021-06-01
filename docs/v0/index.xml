@@ -625,6 +625,17 @@ Example  This code extends a list with a given array:</description>
     </item>
     
     <item>
+      <title>extend_unique</title>
+      <link>https://docs.thingsdb.net/v0/data-types/list/extend_unique/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/list/extend_unique/</guid>
+      <description>Adds a list or tuple with items to the end of a list, and returns the new length. Only items which do not have a duplicate in the list will be added.
+An item in the list is marked as a duplicate when an item is compared as equal to another item using the == operator.
+If the original list contains duplicate items, those items remain untouched. See example 2.</description>
+    </item>
+    
+    <item>
       <title>filter</title>
       <link>https://docs.thingsdb.net/v0/data-types/list/filter/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
