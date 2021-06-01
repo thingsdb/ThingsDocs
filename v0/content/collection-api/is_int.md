@@ -1,6 +1,6 @@
 ---
 title: "is_int"
-weight: 183
+weight: 184
 ---
 
 This function determines whether the provided value is an [integer](../../data-types/int) or not.

@@ -17,6 +17,7 @@ Function | Description
 [each](./each) | Iterate over all items in a list.
 [every](./every) | Check if all items pass a given test.
 [extend](./extend) | Add an array with items to the end of a list and returns the new length.
+[extend_unique](./extend_unique) | Like [extend](./extend) but only append items which do not have a duplicate in the list.
 [filter](./filter) | Return a new `list` with items that passed a given test.
 [find](./find) | Return the first item that passed a given test.
 [find_index](./find_index) | Return the index of the first item that passed a given test.

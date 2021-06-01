@@ -1,6 +1,6 @@
 ---
 title: "has_timer"
-weight: 293
+weight: 294
 ---
 
 Determines if a timer exists in the current scope.

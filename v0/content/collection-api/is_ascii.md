@@ -1,6 +1,6 @@
 ---
 title: "is_ascii"
-weight: 172
+weight: 173
 ---
 
 This function determines whether the provided value is of

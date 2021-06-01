@@ -1,6 +1,6 @@
 ---
 title: "timer_info"
-weight: 298
+weight: 299
 ---
 
 Returns information about a timer.

@@ -59,6 +59,7 @@ data-types
         each
         every
         extend
+        extend_unique
         filter
         find
         find_index

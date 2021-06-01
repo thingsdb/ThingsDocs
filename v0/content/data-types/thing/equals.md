@@ -1,6 +1,6 @@
 ---
 title: "equals"
-weight: 122
+weight: 123
 ---
 
 Determines if a [thing](..) is equal to another thing.
