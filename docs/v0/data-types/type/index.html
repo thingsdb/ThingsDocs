@@ -11,20 +11,20 @@
     <title>Type :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1622627063" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1622627063" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1622627063" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1622627063" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1622627063" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1622627063" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1622627063" rel="stylesheet">
-    <link href="/v0/css/theme.css?1622627063" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1622627063" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1622635560" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1622635560" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1622635560" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1622635560" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1622635560" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1622635560" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1622635560" rel="stylesheet">
+    <link href="/v0/css/theme.css?1622635560" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1622635560" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1622627063" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1622635560" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1622627063"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1622635560"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1622627063"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1622627063"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1622635560"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1622635560"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1622627063"></script>
+<script type="text/javascript" src="/v0/js/search.js?1622635560"></script>
 
     
   </div>
@@ -7101,8 +7101,8 @@ Values{};  // return a `Values` instance with default values
 </div>
 
 <h3 id="use-condition-to-set-a-default-value">Use condition to set a default value</h3>
-<p>Since both the <code>min</code> and <code>max</code> of a <em>range</em> or <em>length</em> condition are optional, you can use this syntax to configure an alternative default value.</p>
-<p><em>(You may combine a default value with a condition on <code>min</code> and/or <code>max</code> but this example is here to make clear that this is not required.)</em></p>
+<p>Both the <code>min</code> and <code>max</code> of a <em>range</em> and <em>length</em> condition are optional. For this reason you can use the <em>&ldquo;condition&rdquo;</em> syntax to configure a default value for a property on a Type.</p>
+<p><em>(You may want to combine a default value with a minimum and/or maximum limit and that is fine; This example is just to make it clear that setting a <code>min</code> and/or <code>max</code> value is not required.)</em></p>
 <p>For example:</p>
 <pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">set_type('TestDefault', {
     f: 'float&lt;::3.14&gt;',
@@ -7277,19 +7277,19 @@ Note that the types info is included inside an <a href="../../watching/on-init">
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1622627063"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1622627063"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1622627063"></script>
-    <script src="/v0/js/jquery.sticky.js?1622627063"></script>
-    <script src="/v0/js/featherlight.min.js?1622627063"></script>
-    <script src="/v0/js/highlight.pack.js?1622627063"></script>
+    <script src="/v0/js/clipboard.min.js?1622635560"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1622635560"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1622635560"></script>
+    <script src="/v0/js/jquery.sticky.js?1622635560"></script>
+    <script src="/v0/js/featherlight.min.js?1622635560"></script>
+    <script src="/v0/js/highlight.pack.js?1622635560"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1622627063"></script>
-    <script src="/v0/js/learn.js?1622627063"></script>
-    <script src="/v0/js/hugo-learn.js?1622627063"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1622635560"></script>
+    <script src="/v0/js/learn.js?1622635560"></script>
+    <script src="/v0/js/hugo-learn.js?1622635560"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1622627063" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1622627063"></script>
+    <link href="/v0/mermaid/mermaid.css?1622635560" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1622635560"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
