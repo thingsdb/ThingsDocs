@@ -13,19 +13,19 @@ all defined properties are guaranteed to exist with a value matching the Type de
 definition | default | description
 ---------- | ------- | -----------
 `'str'` | `""` | requires type [str](../str) (values of type [str](../str) *should* contain valid UTF-8 characters).
-`'str<..>'` | *depends* | requires type [str](../str) with a certain length *(see [length condition](#length-condition))*.
+`'str<..>'` | *depends* | requires type [str](../str) with a certain length *(see [length condition](#length-condition) and [default value](#use-condition-to-set-a-default-value))*
 `/pattern/` | *depends* | requires type [str](../str) with a math to a specified pattern *(see [pattern condition](#pattern-condition))*.
 `'utf8'` | `""` | requires type [str](../str) and the value *must* contain valid UTF-8 characters.
 `'raw'` | `""` | requires type [str](../str) *or* [bytes](../bytes).
 `'bytes'` | `bytes()` | requires type [bytes](../bytes).
 `'bool'` | `false` | requires type [bool](../bool).
 `'int'` | `0` | requires type [int](../int).
-`'int<..>'` | *depends* | requires type [int](../int) within a given range *(see [range condition](#range-condition))*.
+`'int<..>'` | *depends* | requires type [int](../int) within a given range *(see [range condition](#range-condition)  and [default value](#use-condition-to-set-a-default-value))*.
 `'uint'` | `0` | requires a *non-negative* integer (type [int](../int), `>= 0`).
 `'pint'` | `1` | requires a *positive* integer (type [int](../int), `> 0`).
 `'nint'` | `-1` | requires a *negative* integer (type [int](../int), `< 0`).
 `'float'` | `0.0` | requires type [float](../float).
-`'float<..>'` | *depends* | requires type [float](../float) within a given range *(see [range condition](#range-condition))*.
+`'float<..>'` | *depends* | requires type [float](../float) within a given range *(see [range condition](#range-condition) and [default value](#use-condition-to-set-a-default-value))*.
 `'number'` | `0` | requires type [float](../float) *or* type [int](../int).
 `'datetime'` | `datetime()` | requires type [datetime](../datetime). *(defaults to the current date/time)*
 `'timeval'` | `timeval()` | requires type [timeval](../timeval). *(defaults to the current date/time)*
@@ -142,8 +142,8 @@ str<min:max:default>
 
 argument  | description
 --------  | -----------
-`min`     | minimal length *(inclusive)*.
-`max`     | maximum length *(inclusive, this value must be equal to or greater than `min`)*.
+`min`     | Optional minimal length *(inclusive)*.
+`max`     | Optional maximum length *(inclusive, this value must be equal to or greater than `min`)*.
 `default` | Optional default value. If not given, the default value will be the smallest possible string filled with the dash (`-`) character.
 
 For example:
@@ -248,8 +248,8 @@ float<min:max:default>
 
 argument  | description
 --------  | -----------
-`min`     | minimal value *(inclusive)*.
-`max`     | maximum value *(inclusive, this value must be equal to or greater than `min`)*.
+`min`     | Optional minimal value *(inclusive)*.
+`max`     | Optional maximum value *(inclusive, this value must be equal to or greater than `min`)*.
 `default` | Optional default value. If not given, the default value will be the closest possible value towards zero (`0`).
 
 For example:
@@ -281,6 +281,33 @@ Values{};  // return a `Values` instance with default values
 A range condition cannot be used as a nested array definition, thus something like `"[int<1:10>]"` is ***not*** possible.
 {{% /notice %}}
 
+### Use condition to set a default value
+
+Since both the `min` and `max` of a *range* or *length* condition are optional, you can use this syntax to configure an alternative default value.
+
+*(You may combine a default value with a condition on `min` and/or `max` but this example is here to make clear that this is not required.)*
+
+For example:
+
+```thingsdb,json_response
+set_type('TestDefault', {
+    f: 'float<::3.14>',
+    i: 'int<::42>',
+    s: 'str<::ThingsDB>',
+});
+
+TestDefault{};  // return a `TestDefault` instance with default values
+```
+
+> Return value in JSON format
+
+```json
+{
+    "f": 3.14,
+    "i": 42,
+    "s": "ThingsDB"
+}
+```
 
 ### Get instance of a type
 
