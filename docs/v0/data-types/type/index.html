@@ -11,20 +11,20 @@
     <title>Type :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1622538831" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1622538831" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1622538831" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1622538831" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1622538831" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1622538831" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1622538831" rel="stylesheet">
-    <link href="/v0/css/theme.css?1622538831" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1622538831" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1622627063" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1622627063" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1622627063" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1622627063" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1622627063" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1622627063" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1622627063" rel="stylesheet">
+    <link href="/v0/css/theme.css?1622627063" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1622627063" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1622538831" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1622627063" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1622538831"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1622627063"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1622538831"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1622538831"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1622627063"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1622627063"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1622538831"></script>
+<script type="text/javascript" src="/v0/js/search.js?1622627063"></script>
 
     
   </div>
@@ -6719,6 +6719,7 @@
         <li><a href="#length-condition">Length condition</a></li>
         <li><a href="#pattern-condition">Pattern condition</a></li>
         <li><a href="#range-condition">Range condition</a></li>
+        <li><a href="#use-condition-to-set-a-default-value">Use condition to set a default value</a></li>
         <li><a href="#get-instance-of-a-type">Get instance of a type</a></li>
         <li><a href="#methods">Methods</a></li>
         <li><a href="#related-functions">Related functions</a></li>
@@ -6770,7 +6771,7 @@ all defined properties are guaranteed to exist with a value matching the Type de
 <tr>
 <td><code>'str&lt;..&gt;'</code></td>
 <td><em>depends</em></td>
-<td>requires type <a href="../str">str</a> with a certain length <em>(see <a href="#length-condition">length condition</a>)</em>.</td>
+<td>requires type <a href="../str">str</a> with a certain length <em>(see <a href="#length-condition">length condition</a> and <a href="#use-condition-to-set-a-default-value">default value</a>)</em></td>
 </tr>
 <tr>
 <td><code>/pattern/</code></td>
@@ -6805,7 +6806,7 @@ all defined properties are guaranteed to exist with a value matching the Type de
 <tr>
 <td><code>'int&lt;..&gt;'</code></td>
 <td><em>depends</em></td>
-<td>requires type <a href="../int">int</a> within a given range <em>(see <a href="#range-condition">range condition</a>)</em>.</td>
+<td>requires type <a href="../int">int</a> within a given range <em>(see <a href="#range-condition">range condition</a>  and <a href="#use-condition-to-set-a-default-value">default value</a>)</em>.</td>
 </tr>
 <tr>
 <td><code>'uint'</code></td>
@@ -6830,7 +6831,7 @@ all defined properties are guaranteed to exist with a value matching the Type de
 <tr>
 <td><code>'float&lt;..&gt;'</code></td>
 <td><em>depends</em></td>
-<td>requires type <a href="../float">float</a> within a given range <em>(see <a href="#range-condition">range condition</a>)</em>.</td>
+<td>requires type <a href="../float">float</a> within a given range <em>(see <a href="#range-condition">range condition</a> and <a href="#use-condition-to-set-a-default-value">default value</a>)</em>.</td>
 </tr>
 <tr>
 <td><code>'number'</code></td>
@@ -6973,11 +6974,11 @@ return(book, 2);
 <tbody>
 <tr>
 <td><code>min</code></td>
-<td>minimal length <em>(inclusive)</em>.</td>
+<td>Optional minimal length <em>(inclusive)</em>.</td>
 </tr>
 <tr>
 <td><code>max</code></td>
-<td>maximum length <em>(inclusive, this value must be equal to or greater than <code>min</code>)</em>.</td>
+<td>Optional maximum length <em>(inclusive, this value must be equal to or greater than <code>min</code>)</em>.</td>
 </tr>
 <tr>
 <td><code>default</code></td>
@@ -7064,11 +7065,11 @@ Words{};  // return a Person with default values
 <tbody>
 <tr>
 <td><code>min</code></td>
-<td>minimal value <em>(inclusive)</em>.</td>
+<td>Optional minimal value <em>(inclusive)</em>.</td>
 </tr>
 <tr>
 <td><code>max</code></td>
-<td>maximum value <em>(inclusive, this value must be equal to or greater than <code>min</code>)</em>.</td>
+<td>Optional maximum value <em>(inclusive, this value must be equal to or greater than <code>min</code>)</em>.</td>
 </tr>
 <tr>
 <td><code>default</code></td>
@@ -7099,7 +7100,26 @@ Values{};  // return a `Values` instance with default values
 <div class="notices warning" ><p>A range condition cannot be used as a nested array definition, thus something like <code>&quot;[int&lt;1:10&gt;]&quot;</code> is <em><strong>not</strong></em> possible.</p>
 </div>
 
-<h3 id="get-instance-of-a-type">Get instance of a type</h3>
+<h3 id="use-condition-to-set-a-default-value">Use condition to set a default value</h3>
+<p>Since both the <code>min</code> and <code>max</code> of a <em>range</em> or <em>length</em> condition are optional, you can use this syntax to configure an alternative default value.</p>
+<p><em>(You may combine a default value with a condition on <code>min</code> and/or <code>max</code> but this example is here to make clear that this is not required.)</em></p>
+<p>For example:</p>
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">set_type('TestDefault', {
+    f: 'float&lt;::3.14&gt;',
+    i: 'int&lt;::42&gt;',
+    s: 'str&lt;::ThingsDB&gt;',
+});
+
+TestDefault{};  // return a `TestDefault` instance with default values
+</code></pre><blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;f&#34;</span>: <span style="color:#ae81ff">3.14</span>,
+    <span style="color:#f92672">&#34;i&#34;</span>: <span style="color:#ae81ff">42</span>,
+    <span style="color:#f92672">&#34;s&#34;</span>: <span style="color:#e6db74">&#34;ThingsDB&#34;</span>
+}
+</code></pre></div><h3 id="get-instance-of-a-type">Get instance of a type</h3>
 <p>The <a href="../../collection-api/thing">thing(..)</a> function may be used to get an instance
 of a given Id. This does not guarantee that the <em>thing</em> is truly of the type you expect.
 Instead of adding a <a href="../../collection-api/type_assert">type_assert(..)</a> on the <em>thing</em>, it is also possible to
@@ -7257,19 +7277,19 @@ Note that the types info is included inside an <a href="../../watching/on-init">
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1622538831"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1622538831"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1622538831"></script>
-    <script src="/v0/js/jquery.sticky.js?1622538831"></script>
-    <script src="/v0/js/featherlight.min.js?1622538831"></script>
-    <script src="/v0/js/highlight.pack.js?1622538831"></script>
+    <script src="/v0/js/clipboard.min.js?1622627063"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1622627063"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1622627063"></script>
+    <script src="/v0/js/jquery.sticky.js?1622627063"></script>
+    <script src="/v0/js/featherlight.min.js?1622627063"></script>
+    <script src="/v0/js/highlight.pack.js?1622627063"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1622538831"></script>
-    <script src="/v0/js/learn.js?1622538831"></script>
-    <script src="/v0/js/hugo-learn.js?1622538831"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1622627063"></script>
+    <script src="/v0/js/learn.js?1622627063"></script>
+    <script src="/v0/js/hugo-learn.js?1622627063"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1622538831" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1622538831"></script>
+    <link href="/v0/mermaid/mermaid.css?1622627063" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1622627063"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
