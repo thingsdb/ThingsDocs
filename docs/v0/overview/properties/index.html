@@ -11,20 +11,20 @@
     <title>Properties :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1622635560" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1622635560" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1622635560" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1622635560" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1622635560" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1622635560" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1622635560" rel="stylesheet">
-    <link href="/v0/css/theme.css?1622635560" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1622635560" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1622646037" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1622646037" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1622646037" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1622646037" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1622646037" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1622646037" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1622646037" rel="stylesheet">
+    <link href="/v0/css/theme.css?1622646037" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1622646037" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1622635560" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1622646037" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1622635560"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1622646037"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1622635560"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1622635560"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1622646037"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1622646037"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1622635560"></script>
+<script type="text/javascript" src="/v0/js/search.js?1622646037"></script>
 
     
   </div>
@@ -6711,7 +6711,15 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#example">Example</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -6814,7 +6822,26 @@ the square bracket <code>[..]</code> notation or the <a href="../../data-types/t
 </tr>
 </tbody>
 </table>
+<h3 id="example">Example</h3>
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">x = {};
 
+// Character `!` is reserved and cannot be used as key
+assert(is_err(try({
+    x['!'] = nil;
+})));
+
+// Note that it is fine to use the `!` in any other combination as key
+// For example, the following key is perfectly valid:
+x['!!'] = nil;
+
+x;
+</code></pre><blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;!!&#34;</span>: <span style="color:#66d9ef">null</span>
+}
+</code></pre></div>
 
 <footer class=" footline" >
 	
@@ -6844,19 +6871,19 @@ the square bracket <code>[..]</code> notation or the <a href="../../data-types/t
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1622635560"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1622635560"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1622635560"></script>
-    <script src="/v0/js/jquery.sticky.js?1622635560"></script>
-    <script src="/v0/js/featherlight.min.js?1622635560"></script>
-    <script src="/v0/js/highlight.pack.js?1622635560"></script>
+    <script src="/v0/js/clipboard.min.js?1622646037"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1622646037"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1622646037"></script>
+    <script src="/v0/js/jquery.sticky.js?1622646037"></script>
+    <script src="/v0/js/featherlight.min.js?1622646037"></script>
+    <script src="/v0/js/highlight.pack.js?1622646037"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1622635560"></script>
-    <script src="/v0/js/learn.js?1622635560"></script>
-    <script src="/v0/js/hugo-learn.js?1622635560"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1622646037"></script>
+    <script src="/v0/js/learn.js?1622646037"></script>
+    <script src="/v0/js/hugo-learn.js?1622646037"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1622635560" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1622635560"></script>
+    <link href="/v0/mermaid/mermaid.css?1622646037" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1622646037"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
