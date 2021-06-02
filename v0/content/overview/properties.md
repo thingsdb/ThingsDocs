@@ -30,3 +30,28 @@ key | description
 `.` | Reserved for type.
 `/` | Reserved for closures.
 
+### Example
+
+
+```thingsdb,json_response
+x = {};
+
+// Character `!` is reserved and cannot be used as key
+assert(is_err(try({
+    x['!'] = nil;
+})));
+
+// Note that it is fine to use the `!` in any other combination as key
+// For example, the following key is perfectly valid:
+x['!!'] = nil;
+
+x;
+```
+
+> Return value in JSON format
+
+```json
+{
+    "!!": null
+}
+```

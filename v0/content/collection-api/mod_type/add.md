@@ -57,7 +57,7 @@ null
 Instead of a fixed initial value, a [closure](../../../data-types/closure) may be used. The closure will be called on each instance of the Type, with the instance as it's first argument.
 
 {{% notice warning %}}
-For types with *wrap-only* mode enabled there are no instances to migrate and therefore the `init` argument cannot be used.
+For types with *wrap-only* mode enabled there are no instances to migrate. Therefore it is not possible to use the `init` argument in combination with a *wrap-only* type.
 {{% /notice %}}
 
 The return value of the closure will be used as the new value, unless:

@@ -173,7 +173,7 @@ Person{};  // return a Person with default values
 ```
 
 {{% notice warning %}}
-A length condition cannot be used as a nested array definition, thus something like `"[str<1:10>]"` is ***not*** possible.
+It is not possible to use a length condition as a nested array definition. For example, something like `"[str<1:10>]"` is ***not*** allowed.
 {{% /notice %}}
 
 ### Pattern condition
