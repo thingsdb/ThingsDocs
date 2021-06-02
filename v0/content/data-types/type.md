@@ -283,9 +283,9 @@ A range condition cannot be used as a nested array definition, thus something li
 
 ### Use condition to set a default value
 
-Since both the `min` and `max` of a *range* or *length* condition are optional, you can use this syntax to configure an alternative default value.
+Both the `min` and `max` of a *range* and *length* condition are optional. For this reason you can use the *"condition"* syntax to configure a default value for a property on a Type.
 
-*(You may combine a default value with a condition on `min` and/or `max` but this example is here to make clear that this is not required.)*
+*(You may want to combine a default value with a minimum and/or maximum limit and that is fine; This example is just to make it clear that setting a `min` and/or `max` value is not required.)*
 
 For example:
 
