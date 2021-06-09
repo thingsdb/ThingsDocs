@@ -17,7 +17,7 @@ This function does *not* generate an [event](../../../overview/events).
 Argument | Type | Description
 -------- | ---- | -----------
 old | str (required) | The old substring to replace.
-limit | str (required) | String which will replace the *old* substring.
+new | str (required) | String which will replace the *old* substring.
 number | int (optional) | Maximum number of replacements. If not given, all occurrences of the *old* substring will be replaced. If *negative*, replacement starts at the end of the string.
 
 
