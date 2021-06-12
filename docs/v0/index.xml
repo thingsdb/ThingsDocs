@@ -1197,10 +1197,8 @@ Example  Example using lower():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/data-types/str/replace/</guid>
-      <description>Return a new string in which in which the occurrences of old have been replaced with new. Optionally, the number of replacements can be restricted and may start from either left or right.
-This function does not generate an event.
-Function str.replace(old, new, [number])
-Arguments    Argument Type Description     old str (required) The old substring to replace.   limit str (required) String which will replace the old substring.</description>
+      <description>Return a new string in which in which the occurrences of old have been replaced with new. Instead of an old string it is also possible to use a regular expression and the new string may also be a closure which then in turn should return a new string to replace the old part with.
+Optionally, the number of replacements can be restricted and may start from either left or right (Unless a regular expression is used, in which case the number of replacements can only be restricted from the left).</description>
     </item>
     
     <item>
@@ -3412,9 +3410,10 @@ Arguments    Argument Type Description     current_name str (required) Current p
       <guid>https://docs.thingsdb.net/v0/procedures-api/run/</guid>
       <description>Run a procedure.
 The run(..) function may also be used to run a timer.
- This function does not generate an event.
+ If the procedure name is not dynamic, you do need the run(..) function but instead you may call the procedure as a function call.
+This function does not generate an event.
 Function run(procedure, ...args)
-Arguments    Argument Type Description     procedure str (required) Name of the procedure to run.   &amp;hellip;args any The arguments for the procedure. If more arguments are given than the procedure expects, the redundant arguments will be ignored. If too few arguments are given, then the remaining arguments will be set to nil.</description>
+Arguments    Argument Type Description     procedure str (required) Name of the procedure to run.   &amp;hellip;args any The arguments for the procedure.</description>
     </item>
     
     <item>

@@ -11,20 +11,20 @@
     <title>replace :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1622646037" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1622646037" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1622646037" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1622646037" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1622646037" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1622646037" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1622646037" rel="stylesheet">
-    <link href="/v0/css/theme.css?1622646037" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1622646037" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1623508031" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1623508031" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1623508031" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1623508031" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1623508031" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1623508031" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1623508031" rel="stylesheet">
+    <link href="/v0/css/theme.css?1623508031" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1623508031" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1622646037" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1623508031" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1622646037"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1623508031"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1622646037"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1622646037"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1623508031"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1623508031"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1622646037"></script>
+<script type="text/javascript" src="/v0/js/search.js?1623508031"></script>
 
     
   </div>
@@ -6723,6 +6723,7 @@
       <ul>
         <li><a href="#function">Function</a></li>
         <li><a href="#arguments">Arguments</a></li>
+        <li><a href="#closure-arguments">Closure Arguments</a></li>
         <li><a href="#return-value">Return value</a></li>
         <li><a href="#example">Example</a></li>
       </ul>
@@ -6752,8 +6753,8 @@
 
 
 
-<p>Return a new <a href="..">string</a> in which in which the occurrences of <em>old</em> have been replaced with <em>new</em>.
-Optionally, the <em>number</em> of replacements can be restricted and may start from either left or right.</p>
+<p>Return a new <a href="..">string</a> in which in which the occurrences of <em>old</em> have been replaced with <em>new</em>. Instead of an <em>old</em> string it is also possible to use a regular expression and the <em>new</em> string may also be a closure which then in turn should return a new string to replace the <em>old</em> part with.</p>
+<p>Optionally, the <em>number</em> of replacements can be restricted and may start from either left or right <em>(Unless a regular expression is used, in which case the number of replacements can only be restricted from the left)</em>.</p>
 <p>This function does <em>not</em> generate an <a href="../../../overview/events">event</a>.</p>
 <h3 id="function">Function</h3>
 <p><em>str</em>.<code>replace(old, new, [number])</code></p>
@@ -6769,18 +6770,50 @@ Optionally, the <em>number</em> of replacements can be restricted and may start 
 <tbody>
 <tr>
 <td>old</td>
-<td>str (required)</td>
-<td>The old substring to replace.</td>
+<td>str/regex (required)</td>
+<td>The old substring to replace, or a regular expression to search for matches.</td>
 </tr>
 <tr>
-<td>limit</td>
-<td>str (required)</td>
-<td>String which will replace the <em>old</em> substring.</td>
+<td>new</td>
+<td>str/closure (required)</td>
+<td>String which will replace the <em>old</em> substring. If a closure is used, the return value of the closure will be used to replace the <em>old</em> substring with (see <a href="#closure-arguments">closure arguments</a>).</td>
 </tr>
 <tr>
 <td>number</td>
 <td>int (optional)</td>
-<td>Maximum number of replacements. If not given, all occurrences of the <em>old</em> substring will be replaced. If <em>negative</em>, replacement starts at the end of the string.</td>
+<td>Maximum number of replacements. If not given, all occurrences of the <em>old</em> substring will be replaced. If <em>negative</em>, replacement starts at the end of the string <em>(a negative replacement is only possible when <code>old</code> is of type <code>str</code>)</em>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="closure-arguments">Closure Arguments</h3>
+<p>This are the arguments which are given when a closure is used for <em>new</em> instead of a plain string:</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>groups <code>0..X</code></td>
+<td>The first arguments are all the capture groups. <em>(Only when <code>old</code> is a regular expression)</em></td>
+</tr>
+<tr>
+<td>full match</td>
+<td>After the capture groups, the next argument will be the full match. <em>(Only when <code>old</code> is a regular expression)</em></td>
+</tr>
+<tr>
+<td>start position</td>
+<td>Start position of the match in the original string.</td>
+</tr>
+<tr>
+<td>end position</td>
+<td>End position of the match in the original string.</td>
+</tr>
+<tr>
+<td>original string</td>
+<td>The original string. The full match thus is <code>original[start:end]</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -6812,6 +6845,24 @@ Optionally, the <em>number</em> of replacements can be restricted and may start 
     <span style="color:#e6db74">&#34;My favorite color is black and I have a white car.&#34;</span>,
     <span style="color:#e6db74">&#34;My favorite color is red and I have a black mountainbike.&#34;</span>
 ]
+</code></pre></div><blockquote>
+<p>Example using <em><strong>replace()</strong></em> with a <strong>regular expression</strong>:</p>
+</blockquote>
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">s = 'Iris is 8 years old, has 3 bikes and about 25 books';
+s.replace(/\d+/, |m| str(int(m)+1));
+</code></pre><blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;Iris is 9 years old, has 4 bikes and about 26 books&#34;</span>
+</code></pre></div><blockquote>
+<p>Example using <em><strong>replace()</strong></em> with a <strong>regular expression</strong> and <strong>capture groups</strong>:</p>
+</blockquote>
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">s = 'This is an _example_!!';
+s.replace(/_(\w*)_/, |a| `&lt;strong&gt;{a}&lt;/strong&gt;`);
+</code></pre><blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;This is an &lt;strong&gt;example&lt;/strong&gt;!!&#34;</span>
 </code></pre></div>
 
 <footer class=" footline" >
@@ -6842,19 +6893,19 @@ Optionally, the <em>number</em> of replacements can be restricted and may start 
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1622646037"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1622646037"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1622646037"></script>
-    <script src="/v0/js/jquery.sticky.js?1622646037"></script>
-    <script src="/v0/js/featherlight.min.js?1622646037"></script>
-    <script src="/v0/js/highlight.pack.js?1622646037"></script>
+    <script src="/v0/js/clipboard.min.js?1623508031"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1623508031"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1623508031"></script>
+    <script src="/v0/js/jquery.sticky.js?1623508031"></script>
+    <script src="/v0/js/featherlight.min.js?1623508031"></script>
+    <script src="/v0/js/highlight.pack.js?1623508031"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1622646037"></script>
-    <script src="/v0/js/learn.js?1622646037"></script>
-    <script src="/v0/js/hugo-learn.js?1622646037"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1623508031"></script>
+    <script src="/v0/js/learn.js?1623508031"></script>
+    <script src="/v0/js/hugo-learn.js?1623508031"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1622646037" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1622646037"></script>
+    <link href="/v0/mermaid/mermaid.css?1623508031" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1623508031"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

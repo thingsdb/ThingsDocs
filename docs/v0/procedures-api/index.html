@@ -11,20 +11,20 @@
     <title>Procedures API :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1622646038" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1622646038" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1622646038" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1622646038" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1622646038" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1622646038" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1622646038" rel="stylesheet">
-    <link href="/v0/css/theme.css?1622646038" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1622646038" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1623508032" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1623508032" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1623508032" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1623508032" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1623508032" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1623508032" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1623508032" rel="stylesheet">
+    <link href="/v0/css/theme.css?1623508032" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1623508032" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1622646038" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1623508032" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1622646038"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1623508032"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1622646038"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1622646038"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1623508032"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1623508032"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1622646038"></script>
+<script type="text/javascript" src="/v0/js/search.js?1623508032"></script>
 
     
   </div>
@@ -6793,7 +6793,7 @@ pre-defined access rights and a token for one day usage.</p>
     // Return the token
     token;
 });
-</code></pre><p>Once a procedure is created, it can be easily used via a <a href="./run">run</a> function in one of the native ThingsDB clients available (see the example below) or by performing a <code>RUN</code> request using the HTTP API (see <a href="../connect/http-api/#run-request">connect</a> section). For a more low-level example view the <a href="../connect/socket/run">socket run example</a>.</p>
+</code></pre><p>Once a procedure is created, it can be easily used in a query. You may just call the procedure as if it is a function, or you can use the <a href="./run">run</a> function in one of the native ThingsDB clients available (see the example below) or by performing a <code>RUN</code> request using the HTTP API (see <a href="../connect/http-api/#run-request">connect</a> section). For a more low-level example view the <a href="../connect/socket/run">socket run example</a>.</p>
 <blockquote>
 <p>Here is a complete working example where we use the Python client to call our procedure.</p>
 </blockquote>
@@ -6820,10 +6820,10 @@ client<span style="color:#f92672">.</span>close()
 loop<span style="color:#f92672">.</span>run_until_complete(client<span style="color:#f92672">.</span>wait_closed())
 </code></pre></div><p>It is also possible to use the procedure within a query or from another procedure. This can be done with the <a href="./run">run</a> function.</p>
 <blockquote>
-<p>Here is an example query where we use <code>run</code> to create a new user.</p>
+<p>Here is an example where we use the <code>create_user</code> procedure in a query.</p>
 </blockquote>
-<pre><code class="language-thingsdb,should_pass,@t" data-lang="thingsdb,should_pass,@t">// Our procedure has side-effects so we need to wrap `run` with `wse`
-token = wse(run('create_user', 'cato'));
+<pre><code class="language-thingsdb,should_pass,@t" data-lang="thingsdb,should_pass,@t">// Our procedure has side-effects so we need to wrap the call with `wse`
+token = wse(create_user('cato'));
 
 // return the token
 token;
@@ -6832,6 +6832,10 @@ token;
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;Sj3WQ3dkm8Hl8B/iFoH9Cz&#34;</span>
 </code></pre></div>
+<div class="notices note" ><p>Prior to version <strong>v0.10.13</strong> it was not possible to call a procedure just by it&rsquo;s name. Instead the <code>run(..)</code> function was required. Thus, the above example would need to be written as: <code>token = wse(run('create_user', 'cato'));</code>.</p>
+</div>
+
+
 
 
 
@@ -6865,19 +6869,19 @@ token;
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1622646038"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1622646038"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1622646038"></script>
-    <script src="/v0/js/jquery.sticky.js?1622646038"></script>
-    <script src="/v0/js/featherlight.min.js?1622646038"></script>
-    <script src="/v0/js/highlight.pack.js?1622646038"></script>
+    <script src="/v0/js/clipboard.min.js?1623508032"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1623508032"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1623508032"></script>
+    <script src="/v0/js/jquery.sticky.js?1623508032"></script>
+    <script src="/v0/js/featherlight.min.js?1623508032"></script>
+    <script src="/v0/js/highlight.pack.js?1623508032"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1622646038"></script>
-    <script src="/v0/js/learn.js?1622646038"></script>
-    <script src="/v0/js/hugo-learn.js?1622646038"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1623508032"></script>
+    <script src="/v0/js/learn.js?1623508032"></script>
+    <script src="/v0/js/hugo-learn.js?1623508032"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1622646038" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1622646038"></script>
+    <link href="/v0/mermaid/mermaid.css?1623508032" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1623508032"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -107,9 +107,10 @@ Arguments    Argument Type Description     current_name str (required) Current p
       <guid>https://docs.thingsdb.net/v0/procedures-api/run/</guid>
       <description>Run a procedure.
 The run(..) function may also be used to run a timer.
- This function does not generate an event.
+ If the procedure name is not dynamic, you do need the run(..) function but instead you may call the procedure as a function call.
+This function does not generate an event.
 Function run(procedure, ...args)
-Arguments    Argument Type Description     procedure str (required) Name of the procedure to run.   &amp;hellip;args any The arguments for the procedure. If more arguments are given than the procedure expects, the redundant arguments will be ignored. If too few arguments are given, then the remaining arguments will be set to nil.</description>
+Arguments    Argument Type Description     procedure str (required) Name of the procedure to run.   &amp;hellip;args any The arguments for the procedure.</description>
     </item>
     
   </channel>
