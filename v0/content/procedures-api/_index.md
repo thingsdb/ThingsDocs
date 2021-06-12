@@ -49,7 +49,7 @@ new_procedure('create_user', |name| {
 });
 ```
 
-Once a procedure is created, it can be easily used via a [run](./run) function in one of the native ThingsDB clients available (see the example below) or by performing a `RUN` request using the HTTP API (see [connect](../connect/http-api/#run-request) section). For a more low-level example view the [socket run example](../connect/socket/run).
+Once a procedure is created, it can be easily used in a query. You may just call the procedure as if it is a function, or you can use the [run](./run) function in one of the native ThingsDB clients available (see the example below) or by performing a `RUN` request using the HTTP API (see [connect](../connect/http-api/#run-request) section). For a more low-level example view the [socket run example](../connect/socket/run).
 
 > Here is a complete working example where we use the Python client to call our procedure.
 
@@ -79,11 +79,11 @@ loop.run_until_complete(client.wait_closed())
 
 It is also possible to use the procedure within a query or from another procedure. This can be done with the [run](./run) function.
 
-> Here is an example query where we use `run` to create a new user.
+> Here is an example where we use the `create_user` procedure in a query.
 
 ```thingsdb,should_pass,@t
-// Our procedure has side-effects so we need to wrap `run` with `wse`
-token = wse(run('create_user', 'cato'));
+// Our procedure has side-effects so we need to wrap the call with `wse`
+token = wse(create_user('cato'));
 
 // return the token
 token;
@@ -94,3 +94,8 @@ token;
 ```json
 "Sj3WQ3dkm8Hl8B/iFoH9Cz"
 ```
+
+{{% notice note %}}
+Prior to version **v0.10.13** it was not possible to call a procedure just by it's name. Instead the `run(..)` function was required. Thus, the above example would need to be written as: `token = wse(run('create_user', 'cato'));`.
+{{% /notice %}}
+

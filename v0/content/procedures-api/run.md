@@ -9,6 +9,8 @@ Run a procedure.
 The **run(..)** function may also be used to *run* a [timer](../../timers-api/run).
 {{% /notice %}}
 
+If the procedure name is not dynamic, you do need the `run(..)` function but instead you may call the procedure as a function call.
+
 This function does *not* generate an [event](../../overview/events).
 
 ### Function
@@ -39,10 +41,10 @@ new_procedure('greet', |name| is_str(name)
 );
 
 // run `greet` with a given name
-greet_iris = run('greet', "Iris");
+greet_iris = run('greet', "Iris");  // equal to: greet("Iris");
 
 // run `greet` with nil
-greet_nil = run('greet', nil);
+greet_nil = run('greet', nil);  // equal to: greet();
 
 // return the greet response values
 [greet_iris, greet_nil];
