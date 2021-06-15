@@ -89,7 +89,8 @@ If Google Cloud Storage is configured then it is possible to create backups dire
       
       <guid>https://docs.thingsdb.net/v0/node-api/node_info/</guid>
       <description>Returns information about the node in the selected scope. See scopes for more information on how to target a specific node scope.
-   Value Description     archive_files Number of archive files. May decrease after a full store during away mode.   archived_in_memory Number of events which are archived in memory.   cache_expiration_time Time in seconds when a query expires in cache. Cleanup takes place when in away mode.</description>
+Like all other info(..) functions, this function returns mpdata which can be loaded to extract one or more properties. See example 2.
+   Value Description     archive_files Number of archive files. May decrease after a full store during away mode.   archived_in_memory Number of events which are archived in memory.</description>
     </item>
     
     <item>
@@ -123,13 +124,12 @@ Example  This code will reset the counters on a node:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/node-api/restart_module/</guid>
-      <description>Restarts a given module.
-This function does not generate an event.
+      <description>Restarts a given module on the select node scope.
+If you want to restart the module on all nodes, you can use the deploy_module(name, nil) function with nil as second argument.
+ This function does not generate an event.
 Function restart_module(name)
 Arguments    Argument Type Description     name str (required) Module to restart.    Return value Returns nil.
-Example  This code will reset the counters on a node:
- restart_module(&#39;DEMO&#39;);  Return value in JSON format
- null </description>
+Example  This code will reset the counters on a node:</description>
     </item>
     
     <item>

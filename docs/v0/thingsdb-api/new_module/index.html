@@ -11,20 +11,20 @@
     <title>new_module :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1623654952" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1623654952" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1623654952" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1623654952" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1623654952" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1623654952" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1623654952" rel="stylesheet">
-    <link href="/v0/css/theme.css?1623654952" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1623654952" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1623789277" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1623789277" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1623789277" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1623789277" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1623789277" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1623789277" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1623789277" rel="stylesheet">
+    <link href="/v0/css/theme.css?1623789277" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1623789277" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1623654952" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1623789277" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1623654952"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1623789277"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1623654952"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1623654952"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1623789277"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1623789277"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1623654952"></script>
+<script type="text/javascript" src="/v0/js/search.js?1623789277"></script>
 
     
   </div>
@@ -5191,25 +5191,6 @@
  
   
     
-      <li data-nav-id="/v0/thingsdb-api/modules_info/" title="modules_info" class="dd-item ">
-        <a href="/v0/thingsdb-api/modules_info/">
-        modules_info
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
       <li data-nav-id="/v0/thingsdb-api/del_collection/" title="del_collection" class="dd-item ">
         <a href="/v0/thingsdb-api/del_collection/">
         del_collection
@@ -5308,6 +5289,25 @@
       <li data-nav-id="/v0/thingsdb-api/del_user/" title="del_user" class="dd-item ">
         <a href="/v0/thingsdb-api/del_user/">
         del_user
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/thingsdb-api/deploy_module/" title="deploy_module" class="dd-item ">
+        <a href="/v0/thingsdb-api/deploy_module/">
+        deploy_module
         
         </a>
     </li>
@@ -5441,6 +5441,25 @@
       <li data-nav-id="/v0/thingsdb-api/module_info/" title="module_info" class="dd-item ">
         <a href="/v0/thingsdb-api/module_info/">
         module_info
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/thingsdb-api/modules_info/" title="modules_info" class="dd-item ">
+        <a href="/v0/thingsdb-api/modules_info/">
+        modules_info
         
         </a>
     </li>
@@ -6746,7 +6765,9 @@
 
 
 
-<p>Configures a new module for ThingsDB.</p>
+<p>Create (and configure) a new module for ThingsDB.</p>
+<p>After a module is created, a <a href="../../data-types/future/#modules">future()</a> is required to use the new module.</p>
+<p>ThingsDB has special support for Python modules which will be activated if you module file ends with <code>.py</code>. In this case the <a href="../../getting-started/configuration">Python interpreter</a> will be used to start the module.</p>
 
 <div class="notices tip" ><p>By default a <strong>module</strong> can be used in all scopes. It is possible however, to restrict the usage by using <a href="../set_module_scope">set_module_scope(..)</a>.</p>
 </div>
@@ -6767,12 +6788,12 @@
 <tr>
 <td><code>name</code></td>
 <td>str (required)</td>
-<td>Username, between 1 and 128 <em>graphical</em> characters.</td>
+<td>Name of the new module.</td>
 </tr>
 <tr>
 <td><code>file</code></td>
 <td>str (required)</td>
-<td>Filename of the module. The same file might be configured multiple times. The file must be path relative to the <a href="../../getting-started/configuration">modules path</a>)</td>
+<td>Filename of the module. The same file might be configured multiple times. The file must be path relative to the <a href="../../getting-started/configuration">modules path</a>). If the file ends with <code>.py</code>, the Python interpreter will be used to start the module.</td>
 </tr>
 <tr>
 <td><code>configuration</code></td>
@@ -6822,19 +6843,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1623654952"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1623654952"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1623654952"></script>
-    <script src="/v0/js/jquery.sticky.js?1623654952"></script>
-    <script src="/v0/js/featherlight.min.js?1623654952"></script>
-    <script src="/v0/js/highlight.pack.js?1623654952"></script>
+    <script src="/v0/js/clipboard.min.js?1623789277"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1623789277"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1623789277"></script>
+    <script src="/v0/js/jquery.sticky.js?1623789277"></script>
+    <script src="/v0/js/featherlight.min.js?1623789277"></script>
+    <script src="/v0/js/highlight.pack.js?1623789277"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1623654952"></script>
-    <script src="/v0/js/learn.js?1623654952"></script>
-    <script src="/v0/js/hugo-learn.js?1623654952"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1623789277"></script>
+    <script src="/v0/js/learn.js?1623789277"></script>
+    <script src="/v0/js/hugo-learn.js?1623789277"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1623654952" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1623654952"></script>
+    <link href="/v0/mermaid/mermaid.css?1623789277" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1623789277"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

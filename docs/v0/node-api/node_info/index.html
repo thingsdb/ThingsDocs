@@ -11,20 +11,20 @@
     <title>node_info :: ThingsDB documentation</title>
 
     
-    <link href="/v0/css/nucleus.css?1623654952" rel="stylesheet">
-    <link href="/v0/css/fontawesome-all.min.css?1623654952" rel="stylesheet">
-    <link href="/v0/css/hybrid.css?1623654952" rel="stylesheet">
-    <link href="/v0/css/featherlight.min.css?1623654952" rel="stylesheet">
-    <link href="/v0/css/perfect-scrollbar.min.css?1623654952" rel="stylesheet">
-    <link href="/v0/css/auto-complete.css?1623654952" rel="stylesheet">
-    <link href="/v0/css/atom-one-dark-reasonable.css?1623654952" rel="stylesheet">
-    <link href="/v0/css/theme.css?1623654952" rel="stylesheet">
-    <link href="/v0/css/hugo-theme.css?1623654952" rel="stylesheet">
+    <link href="/v0/css/nucleus.css?1623789277" rel="stylesheet">
+    <link href="/v0/css/fontawesome-all.min.css?1623789277" rel="stylesheet">
+    <link href="/v0/css/hybrid.css?1623789277" rel="stylesheet">
+    <link href="/v0/css/featherlight.min.css?1623789277" rel="stylesheet">
+    <link href="/v0/css/perfect-scrollbar.min.css?1623789277" rel="stylesheet">
+    <link href="/v0/css/auto-complete.css?1623789277" rel="stylesheet">
+    <link href="/v0/css/atom-one-dark-reasonable.css?1623789277" rel="stylesheet">
+    <link href="/v0/css/theme.css?1623789277" rel="stylesheet">
+    <link href="/v0/css/hugo-theme.css?1623789277" rel="stylesheet">
     
-      <link href="/v0/css/theme-mine.css?1623654952" rel="stylesheet">
+      <link href="/v0/css/theme-mine.css?1623789277" rel="stylesheet">
     
 
-    <script src="/v0/js/jquery-3.3.1.min.js?1623654952"></script>
+    <script src="/v0/js/jquery-3.3.1.min.js?1623789277"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v0/js/lunr.min.js?1623654952"></script>
-<script type="text/javascript" src="/v0/js/auto-complete.js?1623654952"></script>
+<script type="text/javascript" src="/v0/js/lunr.min.js?1623789277"></script>
+<script type="text/javascript" src="/v0/js/auto-complete.js?1623789277"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v0\/";
     
 </script>
-<script type="text/javascript" src="/v0/js/search.js?1623654952"></script>
+<script type="text/javascript" src="/v0/js/search.js?1623789277"></script>
 
     
   </div>
@@ -5191,25 +5191,6 @@
  
   
     
-      <li data-nav-id="/v0/thingsdb-api/modules_info/" title="modules_info" class="dd-item ">
-        <a href="/v0/thingsdb-api/modules_info/">
-        modules_info
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
       <li data-nav-id="/v0/thingsdb-api/del_collection/" title="del_collection" class="dd-item ">
         <a href="/v0/thingsdb-api/del_collection/">
         del_collection
@@ -5308,6 +5289,25 @@
       <li data-nav-id="/v0/thingsdb-api/del_user/" title="del_user" class="dd-item ">
         <a href="/v0/thingsdb-api/del_user/">
         del_user
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/thingsdb-api/deploy_module/" title="deploy_module" class="dd-item ">
+        <a href="/v0/thingsdb-api/deploy_module/">
+        deploy_module
         
         </a>
     </li>
@@ -5441,6 +5441,25 @@
       <li data-nav-id="/v0/thingsdb-api/module_info/" title="module_info" class="dd-item ">
         <a href="/v0/thingsdb-api/module_info/">
         module_info
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v0/thingsdb-api/modules_info/" title="modules_info" class="dd-item ">
+        <a href="/v0/thingsdb-api/modules_info/">
+        modules_info
         
         </a>
     </li>
@@ -6718,7 +6737,8 @@
         <li><a href="#function">Function</a></li>
         <li><a href="#arguments">Arguments</a></li>
         <li><a href="#return-value">Return value</a></li>
-        <li><a href="#example">Example</a></li>
+        <li><a href="#example-1">Example 1</a></li>
+        <li><a href="#example-2">Example 2</a></li>
       </ul>
     </li>
   </ul>
@@ -6748,6 +6768,7 @@
 
 <p>Returns information about the node in the selected scope.
 See <a href="../../overview/scopes">scopes</a> for more information on how to target a specific node scope.</p>
+<p>Like all other <em>info(..)</em> functions, this function returns <a href="../../data-types/mpdata">mpdata</a> which can be loaded to extract one or more properties. See <a href="#example-2">example 2</a>.</p>
 <table>
 <thead>
 <tr>
@@ -6861,6 +6882,10 @@ See <a href="../../overview/scopes">scopes</a> for more information on how to ta
 <td>Listening for node TCP socket connections on this port.</td>
 </tr>
 <tr>
+<td>python_interpreter</td>
+<td>Displays the Python interpreter which the node is using to run Python modules.</td>
+</tr>
+<tr>
 <td>result_size_limit</td>
 <td>Result size limit is checked when packing properties for a thing. If, at the check moment, the packed data size exceeds the limit, packing stops and an <a href="../../errors/#internal-errors">RESULT_TOO_LARGE</a> error will be returned. This limit is set in bytes and is used to prevent a huge amount of data, typically when a high <code>deep</code> value is used. See the <a href="../../getting-started/configuration">configuration page</a> to configure this limit.</td>
 </tr>
@@ -6909,7 +6934,7 @@ See <a href="../../overview/scopes">scopes</a> for more information on how to ta
 <p>None</p>
 <h3 id="return-value">Return value</h3>
 <p>Returns <a href="../../data-types/mpdata">mpdata</a> about the node. Which <em>node</em> is defined by the <a href="../../overview/scopes">scope</a>.</p>
-<h3 id="example">Example</h3>
+<h3 id="example-1">Example 1</h3>
 <blockquote>
 <p>This code returns info for the connected node:</p>
 </blockquote>
@@ -6934,16 +6959,17 @@ See <a href="../../overview/scopes">scopes</a> for more information on how to ta
     <span style="color:#f92672">&#34;http_status_port&#34;</span>: <span style="color:#e6db74">&#34;disabled&#34;</span>,
     <span style="color:#f92672">&#34;ip_support&#34;</span>: <span style="color:#e6db74">&#34;ALL&#34;</span>,
     <span style="color:#f92672">&#34;libcleri_version&#34;</span>: <span style="color:#e6db74">&#34;0.12.1&#34;</span>,
-    <span style="color:#f92672">&#34;libpcre2_version&#34;</span>: <span style="color:#e6db74">&#34;10.32&#34;</span>,
-    <span style="color:#f92672">&#34;libuv_version&#34;</span>: <span style="color:#e6db74">&#34;1.24.1&#34;</span>,
+    <span style="color:#f92672">&#34;libpcre2_version&#34;</span>: <span style="color:#e6db74">&#34;10.34&#34;</span>,
+    <span style="color:#f92672">&#34;libuv_version&#34;</span>: <span style="color:#e6db74">&#34;1.34.2&#34;</span>,
     <span style="color:#f92672">&#34;local_committed_event_id&#34;</span>: <span style="color:#ae81ff">2</span>,
     <span style="color:#f92672">&#34;local_stored_event_id&#34;</span>: <span style="color:#ae81ff">2</span>,
     <span style="color:#f92672">&#34;log_level&#34;</span>: <span style="color:#e6db74">&#34;WARNING&#34;</span>,
-    <span style="color:#f92672">&#34;msgpack_version&#34;</span>: <span style="color:#e6db74">&#34;3.2.0&#34;</span>,
+    <span style="color:#f92672">&#34;msgpack_version&#34;</span>: <span style="color:#e6db74">&#34;3.2.1&#34;</span>,
     <span style="color:#f92672">&#34;next_event_id&#34;</span>: <span style="color:#ae81ff">3</span>,
     <span style="color:#f92672">&#34;next_thing_id&#34;</span>: <span style="color:#ae81ff">5</span>,
     <span style="color:#f92672">&#34;node_id&#34;</span>: <span style="color:#ae81ff">0</span>,
     <span style="color:#f92672">&#34;node_port&#34;</span>: <span style="color:#ae81ff">9220</span>,
+    <span style="color:#f92672">&#34;python_interpreter&#34;</span>: <span style="color:#e6db74">&#34;/usr/bin/python&#34;</span>,
     <span style="color:#f92672">&#34;result_size_limit&#34;</span>: <span style="color:#ae81ff">20971520</span>,
     <span style="color:#f92672">&#34;scheduled_backups&#34;</span>: <span style="color:#ae81ff">0</span>,
     <span style="color:#f92672">&#34;status&#34;</span>: <span style="color:#e6db74">&#34;READY&#34;</span>,
@@ -6951,10 +6977,19 @@ See <a href="../../overview/scopes">scopes</a> for more information on how to ta
     <span style="color:#f92672">&#34;syntax_version&#34;</span>: <span style="color:#e6db74">&#34;v0&#34;</span>,
     <span style="color:#f92672">&#34;threshold_query_cache&#34;</span>: <span style="color:#ae81ff">160</span>,
     <span style="color:#f92672">&#34;uptime&#34;</span>: <span style="color:#ae81ff">7.854678630828857</span>,
-    <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;0.2.13&#34;</span>,
+    <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;0.10.13&#34;</span>,
     <span style="color:#f92672">&#34;yajl_version&#34;</span>: <span style="color:#e6db74">&#34;2.1.0&#34;</span>,
     <span style="color:#f92672">&#34;zone&#34;</span>: <span style="color:#ae81ff">0</span>
 }
+</code></pre></div><h3 id="example-2">Example 2</h3>
+<blockquote>
+<p>This code returns just the version of ThingsDB:</p>
+</blockquote>
+<pre><code class="language-thingsdb,should_pass,@n" data-lang="thingsdb,should_pass,@n">node_info().load().version;
+</code></pre><blockquote>
+<p>Example return value in JSON format</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;0.10.13&#34;</span>
 </code></pre></div>
 
 <footer class=" footline" >
@@ -6985,19 +7020,19 @@ See <a href="../../overview/scopes">scopes</a> for more information on how to ta
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v0/js/clipboard.min.js?1623654952"></script>
-    <script src="/v0/js/perfect-scrollbar.min.js?1623654952"></script>
-    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1623654952"></script>
-    <script src="/v0/js/jquery.sticky.js?1623654952"></script>
-    <script src="/v0/js/featherlight.min.js?1623654952"></script>
-    <script src="/v0/js/highlight.pack.js?1623654952"></script>
+    <script src="/v0/js/clipboard.min.js?1623789277"></script>
+    <script src="/v0/js/perfect-scrollbar.min.js?1623789277"></script>
+    <script src="/v0/js/perfect-scrollbar.jquery.min.js?1623789277"></script>
+    <script src="/v0/js/jquery.sticky.js?1623789277"></script>
+    <script src="/v0/js/featherlight.min.js?1623789277"></script>
+    <script src="/v0/js/highlight.pack.js?1623789277"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v0/js/modernizr.custom-3.6.0.js?1623654952"></script>
-    <script src="/v0/js/learn.js?1623654952"></script>
-    <script src="/v0/js/hugo-learn.js?1623654952"></script>
+    <script src="/v0/js/modernizr.custom-3.6.0.js?1623789277"></script>
+    <script src="/v0/js/learn.js?1623789277"></script>
+    <script src="/v0/js/hugo-learn.js?1623789277"></script>
 
-    <link href="/v0/mermaid/mermaid.css?1623654952" rel="stylesheet" />
-    <script src="/v0/mermaid/mermaid.js?1623654952"></script>
+    <link href="/v0/mermaid/mermaid.css?1623789277" rel="stylesheet" />
+    <script src="/v0/mermaid/mermaid.js?1623789277"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

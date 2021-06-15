@@ -2810,7 +2810,8 @@ If Google Cloud Storage is configured then it is possible to create backups dire
       
       <guid>https://docs.thingsdb.net/v0/node-api/node_info/</guid>
       <description>Returns information about the node in the selected scope. See scopes for more information on how to target a specific node scope.
-   Value Description     archive_files Number of archive files. May decrease after a full store during away mode.   archived_in_memory Number of events which are archived in memory.   cache_expiration_time Time in seconds when a query expires in cache. Cleanup takes place when in away mode.</description>
+Like all other info(..) functions, this function returns mpdata which can be loaded to extract one or more properties. See example 2.
+   Value Description     archive_files Number of archive files. May decrease after a full store during away mode.   archived_in_memory Number of events which are archived in memory.</description>
     </item>
     
     <item>
@@ -2844,13 +2845,12 @@ Example  This code will reset the counters on a node:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/node-api/restart_module/</guid>
-      <description>Restarts a given module.
-This function does not generate an event.
+      <description>Restarts a given module on the select node scope.
+If you want to restart the module on all nodes, you can use the deploy_module(name, nil) function with nil as second argument.
+ This function does not generate an event.
 Function restart_module(name)
 Arguments    Argument Type Description     name str (required) Module to restart.    Return value Returns nil.
-Example  This code will reset the counters on a node:
- restart_module(&#39;DEMO&#39;);  Return value in JSON format
- null </description>
+Example  This code will reset the counters on a node:</description>
     </item>
     
     <item>
@@ -2907,20 +2907,6 @@ If the user has no EVENT permissions on the @thingsdb scope, then only the colle
 Function collections_info()
 Arguments None
 Return value List with collection mpdata about all collections in ThingsDB.</description>
-    </item>
-    
-    <item>
-      <title>modules_info</title>
-      <link>https://docs.thingsdb.net/v0/thingsdb-api/modules_info/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v0/thingsdb-api/modules_info/</guid>
-      <description>Returns module information about all modules in ThingsDB.
-See the module_info() function documentation for an example of the exposed module information.
-This function does not generate an event.
-Function modules_info()
-Arguments None
-Return value List with modules mpdata about all modules in ThingsDB.</description>
     </item>
     
     <item>
@@ -3004,6 +2990,18 @@ This function requires GRANT privileges on the @thingsdb scope.
  This function generates an event.
 Function del_user(username)
 Arguments    Argument Type Description     username str (required) Username of the user to delete.</description>
+    </item>
+    
+    <item>
+      <title>deploy_module</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/deploy_module/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/deploy_module/</guid>
+      <description>Deploy a module on all nodes. The module must be configured first, using the new_module() function. This function is used to write the module data (or plain python code) to the module. After deploying the code, the module will be restarted on every node.
+Before deploying a module, it is strongly recommended to use a development environment before deploying the module into production.
+ This function generates an event.
+Function deploy_module(name, data)</description>
     </item>
     
     <item>
@@ -3100,6 +3098,20 @@ Example  This code shows an example use case of has_user():
     </item>
     
     <item>
+      <title>modules_info</title>
+      <link>https://docs.thingsdb.net/v0/thingsdb-api/modules_info/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/thingsdb-api/modules_info/</guid>
+      <description>Returns module information about all modules in ThingsDB.
+See the module_info() function documentation for an example of the exposed module information.
+This function does not generate an event.
+Function modules_info()
+Arguments None
+Return value List with modules mpdata about all modules in ThingsDB.</description>
+    </item>
+    
+    <item>
       <title>new_collection</title>
       <link>https://docs.thingsdb.net/v0/thingsdb-api/new_collection/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -3118,11 +3130,10 @@ Arguments    Argument Type Description     name str (required) Name of the new c
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v0/thingsdb-api/new_module/</guid>
-      <description>Configures a new module for ThingsDB.
-By default a module can be used in all scopes. It is possible however, to restrict the usage by using set_module_scope(..).
- This function generates an event.
-Function new_module(name, file, [configuration])
-Arguments    Argument Type Description     name str (required) Username, between 1 and 128 graphical characters.   file str (required) Filename of the module. The same file might be configured multiple times.</description>
+      <description>Create (and configure) a new module for ThingsDB.
+After a module is created, a future() is required to use the new module.
+ThingsDB has special support for Python modules which will be activated if you module file ends with .py. In this case the Python interpreter will be used to start the module.
+By default a module can be used in all scopes. It is possible however, to restrict the usage by using set_module_scope(.</description>
     </item>
     
     <item>
