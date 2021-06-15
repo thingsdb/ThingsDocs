@@ -249,13 +249,13 @@ node-api
 thingsdb-api
     collection_info
     collections_info
-    modules_info
     del_collection
     del_expired
     del_module
     del_node
     del_token
     del_user
+    deploy_module
     grant
     has_collection
     has_module
@@ -263,6 +263,7 @@ thingsdb-api
     has_token
     has_user
     module_info
+    modules_info
     new_collection
     new_module
     new_node

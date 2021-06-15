@@ -1,6 +1,6 @@
 ---
 title: "new_timer"
-weight: 295
+weight: 296
 ---
 
 Creates a new timer to the `@thingsdb` or a `@collection` scope.

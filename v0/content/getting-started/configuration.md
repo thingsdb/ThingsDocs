@@ -20,7 +20,7 @@ Variable | Default | Description
 `THINGSDB_MODULES_PATH` | */usr/lib/thingsdb/modules* | Path where ThingsDB modules are stored.
 `THINGSDB_NODE_NAME` | *hostname* | ThingsDB will publish itself to other nodes using this node name.
 `THINGSDB_PIPE_CLIENT_NAME` | *disabled* | Named PIPE for client connections. Support for client PIPE connections will be disabled if the value is not configured.
-`THINGSDB_PYTHON_INTERPRETER` | */usr/bin/python* | Interpreter used for running `*.py` module files.
+`THINGSDB_PYTHON_INTERPRETER` | *python* | Interpreter used for running `*.py` module files. *(may also be set to an absolute path like `/usr/bin/python`)*
 `THINGSDB_QUERY_DURATION_ERROR` | *disabled* | Log an error message when a query takes more than X second(s).
 `THINGSDB_QUERY_DURATION_WARN` | *disabled* | Log a warning message when a query takes more than X second(s).
 `THINGSDB_RESULT_SIZE_LIMIT` | `20971520` *(20 MiB)* | Result size limit is checked when packing properties for a thing. If, at the check moment, the packed data size exceeds the limit, packing stops and an [RESULT_TOO_LARGE](../../errors/#internal-errors) error will be returned. This limit is set in bytes and is used to prevent a huge amount of data, typically when a high `deep` value is used.

@@ -1,6 +1,6 @@
 ---
 title: "timers_info"
-weight: 300
+weight: 301
 ---
 
 Returns timer information about all timers in the scope.
