@@ -198,7 +198,7 @@ module_info('greeting').load().status;  // "running"
 
 Ok, now let's try to use the module:
 
-```thingsdb,should_pass,@t
+```thingsdb,syntax_only,@t
 future({
     module: 'greeting',
     name: 'Arthur Dent'
@@ -207,7 +207,7 @@ future({
 
 Or, when we configure the module language to `nl` (dutch):
 
-```thingsdb,should_pass,@t
+```thingsdb,syntax_only,@t
 // Configure the module to use Dutch (nl)
 set_module_conf('greeting', {lang: 'nl'});
 
