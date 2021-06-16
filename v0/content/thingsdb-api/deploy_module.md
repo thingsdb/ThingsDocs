@@ -37,9 +37,7 @@ new_module('ECHO', 'echo.py');
 
 // Deploy the module code
 deploy_module('ECHO',
-"
-import logging
-from timod import start_module, TiHandler, LookupError
+"from timod import start_module, TiHandler, LookupError
 
 
 class Handler(TiHandler):

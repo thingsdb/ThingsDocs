@@ -69,7 +69,7 @@ future({
 });
 ```
 
-Data from a module is returned to ThingsDB as [mpdata])(../../data-types/mpdata) by default. For example:
+Data from a module is returned to ThingsDB as [mpdata](../../data-types/mpdata) by default. For example:
 
 ```thingsdb,syntax_only
 // Suppose we have a DEMO module which accepts a message and returns with a reply message:
@@ -80,7 +80,7 @@ future({
 ```
 
 The above is fine if we want the result, in this case the `reply`, back to our client. If we on the other hand want to do
-something with the `reply` message in ThingsDB, we can either choose to call [.load()](../../data-types/mpdata/load) on the `reply` value but
+something with the `reply` message, we can either choose to call [.load()](../../data-types/mpdata/load) on the `reply` value but
 a better option would be to set the `load` property to `true` in the request, for example:
 
 ```thingsdb,syntax_only
