@@ -15,8 +15,12 @@ This function does *not* generate an [event](../../../overview/events).
 
 Argument | Type | Description
 -------- | ---- | -----------
-separator | str (optional) | The string used to split the original string. If omitted, white-space will be used as separator.
+separator | str/regex (optional) | The string used to split the original string. If omitted, white-space will be used as separator. Instead of a string, a regular expression may be used as well, see [regular expression](#regular-expression).
 limit | int (optional) | Split at most `limit` times. If this value is negative, splitting starts from the end of the string. If omitted, no *limit* is used.
+
+### Regular expression
+
+If separator is a [regular expression](../../regex) with capturing parentheses, then each time separator matches, the results of the capturing parentheses are added into the output list.
 
 ### Return value
 
@@ -85,5 +89,42 @@ Returns a new list with substrings.
     "title",
     "subject",
     "body"
+]
+```
+
+> Example using ***split()*** with a *regular expression*:
+
+```thingsdb,json_response
+'Found 143 songs of 3 minutes and 45 seconds.'.split(/\d+/);
+```
+
+> Return value in JSON format
+
+```json
+[
+    "Found ",
+    " songs of ",
+    " minutes and ",
+    " seconds."
+]
+```
+
+> Example using ***split()*** with a *regular expression* and *capture groups*:
+
+```thingsdb,json_response
+'Found 143 songs of 3 minutes and 45 seconds.'.split(/\s*(\d+)\s*/);
+```
+
+> Return value in JSON format
+
+```json
+[
+    "Found",
+    "143",
+    "songs of",
+    "3",
+    "minutes and",
+    "45",
+    "seconds."
 ]
 ```

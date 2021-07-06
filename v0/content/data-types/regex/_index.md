@@ -26,9 +26,10 @@ Function | Description
 
 Function | Description
 ------ | -----------
-[regex](../../collection-api/regex) | Create a new `regex`.
 [is_regex](../../collection-api/is_regex) | Test if a given value is of type `regex`.
+[regex](../../collection-api/regex) | Create a new `regex`.
 *str.*[replace](../str/replace) | Replace one or more occurrences of a `regex` pattern in a string.
+*str.*[split](../str/split) | Split a string based on a `regex` pattern.
 
 
 > This code uses a regular expression for an oversimplified email check:
