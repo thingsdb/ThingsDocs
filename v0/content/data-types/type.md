@@ -36,7 +36,7 @@ definition | default | description
 `'X'` | `X{}` | requires a instance of [Type](../type) `X`, or a member of [enumerator](../enum) `X`. The value `X` should be replaced with the `Type` / `enum` name.
 `'[]'` | `[]` | requires a [list](../list).
 `'{}'` | `set()` | requires a [set](../set).
-`'any'` | `nil` | any type is valid.
+`'any'` | `nil` | any type is valid *(with the exception of a [future](../future))*.
 
 Each definition can be made optional by adding a question-mark `?` to the definition.
 If a property is made optional, then the value `nil` is allowed instead of the given type
