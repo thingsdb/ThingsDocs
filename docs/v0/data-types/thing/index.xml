@@ -17,9 +17,7 @@
       
       <guid>https://docs.thingsdb.net/v0/data-types/thing/assign/</guid>
       <description>Copies properties from a given thing. Existing properties will be overwritten and new properties will be added. If this function is used on an instance of a custom Type, all properties of the source must be valid according the type specification, otherwise an exception will be raised and no properties will be copied.
-This function generates an event.
-Function thing.assign(source)
-Arguments    Argument Type Description     source thing (required) Thing from which the properties are copied.</description>
+It is not possible to use assign(..) to set a property with a relation unless the source if of the same Type.</description>
     </item>
     
     <item>
@@ -204,6 +202,17 @@ Arguments    Argument Type Description     callback closure (required) Closure t
 This function generates an event.
 Function thing.set(name, value)
 Arguments    Argument Type Description     name str (required) The name of the property to set.   value any (required) The value which will be assigned to the property.</description>
+    </item>
+    
+    <item>
+      <title>to_type</title>
+      <link>https://docs.thingsdb.net/v0/data-types/thing/to_type/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/thing/to_type/</guid>
+      <description>Converts a thing into an instance of a given Type.
+Before a thing may be converted, all the properties of the thing must have an exact match with the properties defined by the Type. It you later want to change tome properties, the function mod_type can be used.
+Since the root of a collection is also a thing, it is possible to use this function to make the collection strict.</description>
     </item>
     
     <item>
