@@ -22,6 +22,7 @@ Function | Description
 [len](./len) | Return the number of items.
 [map](./map) | Return a [list](../list) with the results of calling a provided closure on every property.
 [set](./set) | Create a new property on a thing.
+[to_type](./to_type) | Converts a thing into an instance of a [Type](../type).
 [unwatch](./unwatch) | Stop watching the `thing` for mutations.
 [values](./values) | Return a list with all the property values of a thing.
 [watch](./watch) | Watch the `thing` for mutations.

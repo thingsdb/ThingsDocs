@@ -1,6 +1,6 @@
 ---
 title: "is_raw"
-weight: 188
+weight: 189
 ---
 
 This function determines whether the provided value is of

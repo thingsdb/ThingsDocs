@@ -1,6 +1,6 @@
 ---
 title: "Type"
-weight: 138
+weight: 139
 ---
 
 
@@ -29,6 +29,9 @@ definition | default | description
 `'number'` | `0` | requires type [float](../float) *or* type [int](../int).
 `'datetime'` | `datetime()` | requires type [datetime](../datetime). *(defaults to the current date/time)*
 `'timeval'` | `timeval()` | requires type [timeval](../timeval). *(defaults to the current date/time)*
+`'regex'` | `regex('.*')` | requires type [regex](../regex).
+`'closure'` | `||nil` | requires type [closure](../closure).
+`'error'` | `err()` | requires type [error](../error).
 `'thing'` | `{}` | requires a [thing](../thing).
 `'X'` | `X{}` | requires a instance of [Type](../type) `X`, or a member of [enumerator](../enum) `X`. The value `X` should be replaced with the `Type` / `enum` name.
 `'[]'` | `[]` | requires a [list](../list).

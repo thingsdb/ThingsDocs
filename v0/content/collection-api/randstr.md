@@ -1,6 +1,6 @@
 ---
 title: "randstr"
-weight: 216
+weight: 217
 ---
 
 Returns a [string](../../data-types/str) with random characters.
