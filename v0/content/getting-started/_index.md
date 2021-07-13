@@ -23,6 +23,10 @@ Supported tags:
 
 `thingsdb/node:gcloud-VERSION` *(Includes Google Cloud Utilities so ThingsDB can created backups in the Google Cloud.)*
 
+`thingsdb/node:full-VERSION` *(Based on a Debian image with Google Cloud Utilities, Python3 and [py-timod](https://pypi.org/project/py-timod/) installed.)*
+
+`thingsdb/node:latest` *(Latest ThingsDB build from the `master` branch using a minimal Alpine Linux base image)*
+
 
 ### Run ThingsDB in GKE (Google Kubernetes Engine)
 
