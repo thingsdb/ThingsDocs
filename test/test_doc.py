@@ -30,7 +30,7 @@ DOC_VERSION = os.getenv('DOC_VERSION')
 if not DOC_VERSION:
     sys.exit(
         'expecting an environment variable DOC_VERSION\n'
-        'for eaxmple: DOC_VERSION=v0')
+        'for eaxmple: DOC_VERSION=v1')
 
 CONTENT_PATH = os.path.join(ROOT_PATH, DOC_VERSION, 'content')
 RE_TEST = re.compile(
