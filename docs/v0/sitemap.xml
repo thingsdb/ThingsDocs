@@ -3,1319 +3,1327 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/getting-started/</loc>
+    <loc>https://docs.thingsdb.net/v1/getting-started/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/getting-started/build-from-source/</loc>
+    <loc>https://docs.thingsdb.net/v1/getting-started/build-from-source/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/getting-started/configuration/</loc>
+    <loc>https://docs.thingsdb.net/v1/getting-started/configuration/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/getting-started/start-up-node/</loc>
+    <loc>https://docs.thingsdb.net/v1/getting-started/start-up-node/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/getting-started/readiness-liveness/</loc>
+    <loc>https://docs.thingsdb.net/v1/getting-started/readiness-liveness/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/connect/</loc>
+    <loc>https://docs.thingsdb.net/v1/connect/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/connect/authentication/</loc>
+    <loc>https://docs.thingsdb.net/v1/connect/authentication/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/connect/http-api/</loc>
+    <loc>https://docs.thingsdb.net/v1/connect/http-api/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/connect/python/</loc>
+    <loc>https://docs.thingsdb.net/v1/connect/python/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/connect/go/</loc>
+    <loc>https://docs.thingsdb.net/v1/connect/go/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/connect/socket/</loc>
+    <loc>https://docs.thingsdb.net/v1/connect/socket/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/connect/socket/ping/</loc>
+    <loc>https://docs.thingsdb.net/v1/connect/socket/ping/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/connect/socket/auth/</loc>
+    <loc>https://docs.thingsdb.net/v1/connect/socket/auth/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/connect/socket/query/</loc>
+    <loc>https://docs.thingsdb.net/v1/connect/socket/query/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/connect/socket/run/</loc>
+    <loc>https://docs.thingsdb.net/v1/connect/socket/run/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/connect/socket/watch/</loc>
+    <loc>https://docs.thingsdb.net/v1/connect/socket/join/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/connect/socket/error-response/</loc>
+    <loc>https://docs.thingsdb.net/v1/connect/socket/error-response/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/overview/</loc>
+    <loc>https://docs.thingsdb.net/v1/overview/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/overview/scopes/</loc>
+    <loc>https://docs.thingsdb.net/v1/overview/scopes/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/overview/collections/</loc>
+    <loc>https://docs.thingsdb.net/v1/overview/collections/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/overview/names/</loc>
+    <loc>https://docs.thingsdb.net/v1/overview/names/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/overview/properties/</loc>
+    <loc>https://docs.thingsdb.net/v1/overview/properties/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/overview/variable/</loc>
+    <loc>https://docs.thingsdb.net/v1/overview/variable/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/overview/events/</loc>
+    <loc>https://docs.thingsdb.net/v1/overview/changes/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/overview/slices/</loc>
+    <loc>https://docs.thingsdb.net/v1/overview/slices/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/overview/template-strings/</loc>
+    <loc>https://docs.thingsdb.net/v1/overview/template-strings/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/overview/dictionary/</loc>
+    <loc>https://docs.thingsdb.net/v1/overview/dictionary/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/bool/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/bool/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/bytes/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/bytes/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/bytes/len/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/bytes/len/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/closure/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/closure/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/closure/call/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/closure/call/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/closure/def/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/closure/def/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/closure/doc/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/closure/doc/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/datetime/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/datetime/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/datetime/extract/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/datetime/extract/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/datetime/format/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/datetime/format/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/datetime/move/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/datetime/move/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/datetime/replace/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/datetime/replace/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/datetime/to/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/datetime/to/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/datetime/week/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/datetime/week/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/datetime/weekday/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/datetime/weekday/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/datetime/yday/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/datetime/yday/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/datetime/zone/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/datetime/zone/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/enum/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/enum/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/enum/name/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/enum/name/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/enum/value/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/enum/value/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/error/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/error/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/error/code/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/error/code/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/error/msg/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/error/msg/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/float/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/float/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/future/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/future/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/future/then/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/future/then/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/future/else/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/future/else/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/int/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/int/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/list/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/list/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/list/choice/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/list/choice/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/list/each/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/list/each/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/list/every/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/list/every/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/list/extend/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/list/extend/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/list/extend_unique/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/list/extend_unique/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/list/filter/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/list/filter/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/list/find/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/list/find/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/list/find_index/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/list/find_index/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/list/first/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/list/first/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/list/has/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/list/has/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/list/index_of/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/list/index_of/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/list/is_unique/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/list/is_unique/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/list/join/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/list/join/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/list/last/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/list/last/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/list/len/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/list/len/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/list/map/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/list/map/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/list/pop/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/list/pop/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/list/push/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/list/push/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/list/reduce/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/list/reduce/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/list/remove/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/list/remove/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/list/reverse/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/list/reverse/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/list/shift/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/list/shift/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/list/some/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/list/some/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/list/sort/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/list/sort/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/list/splice/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/list/splice/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/list/unique/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/list/unique/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/list/unshift/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/list/unshift/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/mpdata/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/mpdata/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/mpdata/len/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/mpdata/len/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/mpdata/load/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/mpdata/load/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/nil/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/nil/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/regex/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/room/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/regex/test/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/room/emit/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/set/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/room/id/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/set/add/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/regex/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/set/each/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/regex/test/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/set/every/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/set/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/set/filter/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/set/add/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/set/find/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/set/each/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/set/has/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/set/every/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/set/len/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/set/filter/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/set/map/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/set/find/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/set/reduce/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/set/has/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/set/remove/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/set/len/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/set/some/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/set/map/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/str/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/set/reduce/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/str/contains/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/set/remove/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/str/ends_with/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/set/some/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/str/len/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/str/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/str/lower/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/str/contains/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/str/replace/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/str/ends_with/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/str/split/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/str/len/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/str/starts_with/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/str/lower/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/str/test/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/str/replace/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/str/trim/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/str/split/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/str/trim_left/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/str/starts_with/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/str/trim_right/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/str/test/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/str/upper/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/str/trim/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/thing/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/str/trim_left/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/thing/assign/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/str/trim_right/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/thing/copy/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/str/upper/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/thing/del/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/thing/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/thing/dup/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/thing/assign/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/thing/each/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/thing/copy/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/thing/emit/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/thing/del/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/thing/equals/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/thing/dup/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/thing/filter/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/thing/each/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/thing/get/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/thing/equals/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/thing/has/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/thing/filter/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/thing/id/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/thing/get/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/thing/keys/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/thing/has/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/thing/len/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/thing/id/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/thing/map/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/thing/keys/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/thing/set/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/thing/len/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/thing/to_type/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/thing/map/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/thing/unwatch/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/thing/set/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/thing/values/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/thing/to_type/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/thing/watch/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/thing/values/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/thing/wrap/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/thing/wrap/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/timeval/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/timeval/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/tuple/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/tuple/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/type/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/type/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/wtype/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/wtype/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/wtype/copy/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/wtype/copy/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/wtype/dup/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/wtype/dup/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/data-types/wtype/unwrap/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/wtype/unwrap/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/operators/</loc>
+    <loc>https://docs.thingsdb.net/v1/operators/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/operators/arithmetic-operators/</loc>
+    <loc>https://docs.thingsdb.net/v1/operators/arithmetic-operators/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/operators/assignments/</loc>
+    <loc>https://docs.thingsdb.net/v1/operators/assignments/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/operators/binary-bitwise-operators/</loc>
+    <loc>https://docs.thingsdb.net/v1/operators/binary-bitwise-operators/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/operators/conditional-ternary-operator/</loc>
+    <loc>https://docs.thingsdb.net/v1/operators/conditional-ternary-operator/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/operators/logical-operators/</loc>
+    <loc>https://docs.thingsdb.net/v1/operators/logical-operators/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/operators/precedence-and-associativity/</loc>
+    <loc>https://docs.thingsdb.net/v1/operators/precedence-and-associativity/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/alt_raise/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/alt_raise/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/assert/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/assert/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/base64_decode/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/base64_decode/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/base64_encode/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/base64_encode/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/bool/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/bool/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/bytes/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/bytes/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/datetime/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/datetime/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/deep/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/deep/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/del_enum/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/del_enum/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/del_type/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/del_type/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/enum/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/enum/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/enum_info/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/enum_info/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/enums_info/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/enums_info/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/err/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/err/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/event_id/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/change_id/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/float/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/float/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/future/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/future/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/has_enum/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/has_enum/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/has_type/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/has_type/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/if/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/if/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/int/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/int/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/is_array/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/is_array/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/is_ascii/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/is_ascii/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/is_bool/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/is_bool/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/is_bytes/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/is_bytes/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/is_closure/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/is_closure/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/is_datetime/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/is_datetime/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/is_enum/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/is_enum/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/is_err/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/is_err/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/is_float/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/is_float/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/is_future/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/is_future/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/is_mpdata/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/is_mpdata/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/is_inf/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/is_inf/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/is_int/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/is_int/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/is_list/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/is_list/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/is_nan/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/is_nan/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/is_nil/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/is_nil/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/is_raw/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/is_raw/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/is_regex/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/is_regex/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/is_set/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/is_room/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/is_str/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/is_set/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/is_thing/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/is_str/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/is_timeval/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/is_thing/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/is_tuple/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/is_timeval/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/is_utf8/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/is_tuple/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/list/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/is_utf8/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/mod_enum/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/list/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/mod_enum/add/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/mod_enum/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/mod_enum/def/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/mod_enum/add/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/mod_enum/del/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/mod_enum/def/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/mod_enum/mod/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/mod_enum/del/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/mod_enum/ren/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/mod_enum/mod/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/mod_type/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/mod_enum/ren/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/mod_type/add/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/mod_type/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/mod_type/del/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/mod_type/add/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/mod_type/mod/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/mod_type/del/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/mod_type/rel/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/mod_type/mod/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/mod_type/ren/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/mod_type/rel/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/mod_type/wpo/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/mod_type/ren/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/new/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/mod_type/wpo/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/new_type/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/new/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/now/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/new_type/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/raise/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/now/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/rand/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/raise/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/randint/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/rand/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/randstr/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/randint/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/range/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/randstr/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/refs/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/range/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/regex/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/refs/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/rename_enum/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/regex/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/rename_type/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/rename_enum/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/return/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/rename_type/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/set/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/return/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/set_enum/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/room/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/set_type/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/set/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/str/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/set_enum/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/thing/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/set_type/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/timeval/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/str/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/try/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/thing/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/type/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/timeval/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/type_assert/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/try/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/type_count/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/type/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/type_info/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/type_assert/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/types_info/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/type_count/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/collection-api/wse/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/type_info/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/node-api/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/types_info/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/node-api/backup_info/</loc>
+    <loc>https://docs.thingsdb.net/v1/collection-api/wse/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/node-api/backups_info/</loc>
+    <loc>https://docs.thingsdb.net/v1/node-api/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/node-api/counters/</loc>
+    <loc>https://docs.thingsdb.net/v1/node-api/backup_info/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/node-api/del_backup/</loc>
+    <loc>https://docs.thingsdb.net/v1/node-api/backups_info/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/node-api/has_backup/</loc>
+    <loc>https://docs.thingsdb.net/v1/node-api/counters/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/node-api/new_backup/</loc>
+    <loc>https://docs.thingsdb.net/v1/node-api/del_backup/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/node-api/node_info/</loc>
+    <loc>https://docs.thingsdb.net/v1/node-api/has_backup/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/node-api/nodes_info/</loc>
+    <loc>https://docs.thingsdb.net/v1/node-api/new_backup/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/node-api/reset_counters/</loc>
+    <loc>https://docs.thingsdb.net/v1/node-api/node_info/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/node-api/restart_module/</loc>
+    <loc>https://docs.thingsdb.net/v1/node-api/nodes_info/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/node-api/set_log_level/</loc>
+    <loc>https://docs.thingsdb.net/v1/node-api/reset_counters/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/node-api/shutdown/</loc>
+    <loc>https://docs.thingsdb.net/v1/node-api/restart_module/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/</loc>
+    <loc>https://docs.thingsdb.net/v1/node-api/set_log_level/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/collection_info/</loc>
+    <loc>https://docs.thingsdb.net/v1/node-api/shutdown/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/collections_info/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/del_collection/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/collection_info/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/del_expired/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/collections_info/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/del_module/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/del_collection/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/del_node/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/del_expired/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/del_token/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/del_module/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/del_user/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/del_node/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/deploy_module/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/del_token/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/grant/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/del_user/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/has_collection/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/deploy_module/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/has_module/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/grant/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/has_node/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/has_collection/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/has_token/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/has_module/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/has_user/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/has_node/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/module_info/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/has_token/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/modules_info/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/has_user/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/new_collection/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/module_info/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/new_module/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/modules_info/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/new_node/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/new_collection/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/new_token/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/new_module/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/new_user/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/new_node/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/rename_collection/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/new_token/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/rename_module/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/new_user/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/rename_user/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/rename_collection/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/restore/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/rename_module/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/revoke/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/rename_user/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/set_module_conf/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/restore/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/set_module_scope/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/revoke/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/set_password/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/set_module_conf/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/set_time_zone/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/set_module_scope/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/time_zones_info/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/set_password/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/user_info/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/set_time_zone/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/thingsdb-api/users_info/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/time_zones_info/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/procedures-api/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/user_info/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/procedures-api/del_procedure/</loc>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/users_info/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/procedures-api/has_procedure/</loc>
+    <loc>https://docs.thingsdb.net/v1/procedures-api/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/procedures-api/new_procedure/</loc>
+    <loc>https://docs.thingsdb.net/v1/procedures-api/del_procedure/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/procedures-api/procedure_doc/</loc>
+    <loc>https://docs.thingsdb.net/v1/procedures-api/has_procedure/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/procedures-api/procedure_info/</loc>
+    <loc>https://docs.thingsdb.net/v1/procedures-api/new_procedure/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/procedures-api/procedures_info/</loc>
+    <loc>https://docs.thingsdb.net/v1/procedures-api/procedure_doc/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/procedures-api/rename_procedure/</loc>
+    <loc>https://docs.thingsdb.net/v1/procedures-api/procedure_info/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/procedures-api/run/</loc>
+    <loc>https://docs.thingsdb.net/v1/procedures-api/procedures_info/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/timers-api/</loc>
+    <loc>https://docs.thingsdb.net/v1/procedures-api/rename_procedure/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/timers-api/del_timer/</loc>
+    <loc>https://docs.thingsdb.net/v1/procedures-api/run/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/timers-api/has_timer/</loc>
+    <loc>https://docs.thingsdb.net/v1/timers-api/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/timers-api/new_timer/</loc>
+    <loc>https://docs.thingsdb.net/v1/timers-api/del_timer/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/timers-api/run/</loc>
+    <loc>https://docs.thingsdb.net/v1/timers-api/has_timer/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/timers-api/set_timer_args/</loc>
+    <loc>https://docs.thingsdb.net/v1/timers-api/new_timer/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/timers-api/timer_args/</loc>
+    <loc>https://docs.thingsdb.net/v1/timers-api/run/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/timers-api/timer_info/</loc>
+    <loc>https://docs.thingsdb.net/v1/timers-api/set_timer_args/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/timers-api/timers_info/</loc>
+    <loc>https://docs.thingsdb.net/v1/timers-api/timer_args/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/modules/</loc>
+    <loc>https://docs.thingsdb.net/v1/timers-api/timer_info/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/watching/</loc>
+    <loc>https://docs.thingsdb.net/v1/timers-api/timers_info/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/watching/node-status/</loc>
+    <loc>https://docs.thingsdb.net/v1/modules/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/watching/on-init/</loc>
+    <loc>https://docs.thingsdb.net/v1/listening/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/watching/on-update/</loc>
+    <loc>https://docs.thingsdb.net/v1/listening/node-status/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/watching/on-delete/</loc>
+    <loc>https://docs.thingsdb.net/v1/listening/on-join/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/watching/on-stop/</loc>
+    <loc>https://docs.thingsdb.net/v1/listening/on-leave/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/watching/warning/</loc>
+    <loc>https://docs.thingsdb.net/v1/listening/on-emit/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/errors/</loc>
+    <loc>https://docs.thingsdb.net/v1/listening/on-delete/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/errors/assert_err/</loc>
+    <loc>https://docs.thingsdb.net/v1/listening/warning/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/errors/auth_err/</loc>
+    <loc>https://docs.thingsdb.net/v1/errors/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/errors/bad_data_err/</loc>
+    <loc>https://docs.thingsdb.net/v1/errors/assert_err/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/errors/forbidden_err/</loc>
+    <loc>https://docs.thingsdb.net/v1/errors/auth_err/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/errors/lookup_err/</loc>
+    <loc>https://docs.thingsdb.net/v1/errors/bad_data_err/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/errors/max_quota_err/</loc>
+    <loc>https://docs.thingsdb.net/v1/errors/forbidden_err/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/errors/node_err/</loc>
+    <loc>https://docs.thingsdb.net/v1/errors/lookup_err/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/errors/num_arguments_err/</loc>
+    <loc>https://docs.thingsdb.net/v1/errors/max_quota_err/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/errors/operation_err/</loc>
+    <loc>https://docs.thingsdb.net/v1/errors/node_err/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/errors/overflow_err/</loc>
+    <loc>https://docs.thingsdb.net/v1/errors/num_arguments_err/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/errors/syntax_err/</loc>
+    <loc>https://docs.thingsdb.net/v1/errors/operation_err/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/errors/type_err/</loc>
+    <loc>https://docs.thingsdb.net/v1/errors/overflow_err/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/errors/value_err/</loc>
+    <loc>https://docs.thingsdb.net/v1/errors/syntax_err/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/errors/cancelled_err/</loc>
+    <loc>https://docs.thingsdb.net/v1/errors/type_err/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/errors/zero_div_err/</loc>
+    <loc>https://docs.thingsdb.net/v1/errors/value_err/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/</loc>
+    <loc>https://docs.thingsdb.net/v1/errors/cancelled_err/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/categories/</loc>
+    <loc>https://docs.thingsdb.net/v1/errors/zero_div_err/</loc>
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v0/tags/</loc>
+    <loc>https://docs.thingsdb.net/v1/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v1/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v1/tags/</loc>
   </url>
   
 </urlset>

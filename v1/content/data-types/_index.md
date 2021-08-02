@@ -23,6 +23,7 @@ type | Description
 [mpdata](./mpdata) | Raw MessagePack data.
 [nil](./nil) | Used to define a null value, or no value at all.
 [regex](./regex) | Regular expression.
+[room](./room) | Room type for joining and emitting events.
 [set](./set) | Unordered group of unique things.
 [str](./str) | String type.
 [thing](./thing) | Object with key value pairs.
