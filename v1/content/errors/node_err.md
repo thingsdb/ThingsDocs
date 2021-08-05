@@ -19,7 +19,7 @@ message | str (optional) | Alternative error message.
 
 ### Return value
 
-An error value.
+An error value *(in a client response, an error value will be packed as a string value with the error message)*.
 
 ### Example
 
@@ -32,9 +32,5 @@ node_err();
 > Return value in JSON format
 
 ```json
-{
-    "!": "node_err()",
-    "error_code": -51,
-    "error_msg": "node is temporary unable to handle the request"
-}
+"node is temporary unable to handle the request"
 ```

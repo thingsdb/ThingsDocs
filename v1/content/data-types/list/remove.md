@@ -3,21 +3,20 @@ title: "remove"
 weight: 77
 ---
 
-This function removes and returns the value of the *first* item in the [list](../../list) that satisfies the callback function.
-Otherwise `nil` is returned if no alternative return value is specified.
+This function removes all values in the [list](../../list) that satisfies the callback function.
+The removed values will be returned in a new list. An empty list is returned if no value is removed.
 
 This function generates a [change](../../../overview/changes) *(except when called on a [variable](../../../overview/variable))*.
 
 ### Function
 
-*list*.`remove(callback, [alt])`
+*list*.`remove(callback)`
 
 ### Arguments
 
 Argument | Type | Description
 -------- | ---- | -----------
-callback | closure | Closure to execute on each value until the closure evaluates to true.
-alt | any (optional) | Alternative value which is returned if no item has passed the *callback* test.
+callback | closure | Closure to execute on each value.
 
 Explanation of the *callback* argument:
 
@@ -25,16 +24,9 @@ Iterable | Arguments | Description
 -------- | -------- | -----------
 list | item, index | Iterate over items in the list. Both item and index are optional.
 
-{{% notice note %}}
-The `alt` argument will be *lazily* evaluated. Consider the following example: \
-`elems.remove(|e| (e.name == "foo"), items.pop());` \
-Here, the item will *only* be popped, in case `e` with `name` *foo* is *not* found in `elems`.
-{{% /notice %}}
-
 ### Return value
 
-The value of the first item in the list that satisfies the provided testing function;
-otherwise, `nil` or a specified alternative value is returned.
+A list with the removed items from the list. The order of items in the new list will be the same as the original order in the list.
 
 ### Example
 
@@ -52,11 +44,13 @@ tmp = [1, 2, 3, 4];
 
 ```json
 [
-    2,
+    [
+        2,
+        4
+    ],
     [
         1,
-        3,
-        4
+        3
     ]
 ]
 ```

@@ -19,7 +19,7 @@ message | str (optional) | Alternative error message.
 
 ### Return value
 
-An error value.
+An error value *(in a client response, an error value will be packed as a string value with the error message)*.
 
 ### Example
 
@@ -32,9 +32,5 @@ zero_div_err();
 > Return value in JSON format
 
 ```json
-{
-    "!": "zero_div_err()",
-    "error_code": -58,
-    "error_msg": "division or module by zero"
-}
+"division or module by zero"
 ```

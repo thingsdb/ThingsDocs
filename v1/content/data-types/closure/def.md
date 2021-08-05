@@ -29,7 +29,7 @@ add_one = |x| {
 };
 
 // Return the definition as a string
-add_one.def();
+str(add_one);
 ```
 
 > Return value in JSON format

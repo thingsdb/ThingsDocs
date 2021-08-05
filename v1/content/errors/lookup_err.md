@@ -19,7 +19,7 @@ message | str (optional) | Alternative error message.
 
 ### Return value
 
-An error value.
+An error value *(in a client response, an error value will be packed as a string value with the error message)*.
 
 ### Example
 
@@ -32,9 +32,5 @@ lookup_err();
 > Return value in JSON format
 
 ```json
-{
-    "!": "lookup_err()",
-    "error_code": -54,
-    "error_msg": "requested resource not found"
-}
+"requested resource not found"
 ```

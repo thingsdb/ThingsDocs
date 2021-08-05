@@ -52,7 +52,7 @@ nodes_info();
         "status": "READY",
         "stored_change_id": 4,
         "stream": null,
-        "syntax_version": "v0",
+        "syntax_version": "v1",
         "zone": 0
     },
     {
@@ -64,7 +64,7 @@ nodes_info();
         "status": "READY",
         "stored_change_id": 4,
         "stream": "<node-out:1> 192.168.0.10:9220",
-        "syntax_version": "v0",
+        "syntax_version": "v1",
         "zone": 0
     }
 ]

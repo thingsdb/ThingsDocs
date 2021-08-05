@@ -19,7 +19,7 @@ message | str (optional) | Alternative error message.
 
 ### Return value
 
-An error value.
+An error value *(in a client response, an error value will be packed as a string value with the error message)*.
 
 ### Example
 
@@ -32,9 +32,5 @@ value_err();
 > Return value in JSON format
 
 ```json
-{
-    "!": "value_err()",
-    "error_code": -60,
-    "error_msg": "object has the right type but an inappropriate value"
-}
+"object has the right type but an inappropriate value"
 ```

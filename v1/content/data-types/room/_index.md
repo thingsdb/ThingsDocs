@@ -12,5 +12,5 @@ It is possible to use emit on rooms with Id `nil` but then the event will be emi
 Function | Description
 ------ | -----------
 [emit](./emit) | Emit a *change*.
-[id](.id) | Return `id` of the room or `nil` when the room is not stored.
+[id](./id) | Return `id` of the room or `nil` when the room is not stored.
 

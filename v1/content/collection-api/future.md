@@ -44,8 +44,8 @@ future(nil, 42);
 
 > Use a future to prevent a change in some cases:
 
-```thingsdb,json_response
-# dummy condition
+```thingsdb,should_pass
+// dummy condition
 condition = 2 > 1;
 
 if (condition, future(|| {

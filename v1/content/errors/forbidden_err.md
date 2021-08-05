@@ -19,7 +19,7 @@ message | str (optional) | Alternative error message.
 
 ### Return value
 
-An error value.
+An error value *(in a client response, an error value will be packed as a string value with the error message)*.
 
 ### Example
 
@@ -32,9 +32,5 @@ forbidden_err();
 > Return value in JSON format
 
 ```json
-{
-    "!": "forbidden_err()",
-    "error_code": -55,
-    "error_msg": "forbidden (access denied)"
-}
+"forbidden (access denied)"
 ```

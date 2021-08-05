@@ -20,13 +20,14 @@ message | str (optional) | Optional error message.
 
 ### Return value
 
-An error value.
+An error value *(in a client response, an error value will be packed as a string value with the error message)*.
 
 ### Example
 
 > This code shows some return values for ***err()***:
 
 ```thingsdb,json_response
+// Error 59 is the internal integer overflow error
 [
     err(),
     err(-100, 'some error occurred'),
@@ -39,25 +40,9 @@ An error value.
 
 ```json
 [
-    {
-        "!": "err(-100)",
-        "error_code": -100,
-        "error_msg": "error:-100"
-    },
-    {
-        "!": "err(-100)",
-        "error_code": -100,
-        "error_msg": "some error occurred"
-    },
-    {
-        "!": "err(-101)",
-        "error_code": -101,
-        "error_msg": "error:-101"
-    },
-    {
-        "!": "overflow_err()",
-        "error_code": -59,
-        "error_msg": "integer overflow"
-    }
+    "error:-100",
+    "some error occurred",
+    "error:-101",
+    "integer overflow"
 ]
 ```
