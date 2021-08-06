@@ -17,8 +17,9 @@
       
       <guid>https://docs.thingsdb.net/v1/data-types/bool/</guid>
       <description>Booleans are either true or false. Other types can convert to bool by using the ! (not) operator or the bool function.
- This code creates a bool property is_the_earth_flat to collection stuff:
- .is_the_earth_flat = !true; Related functions    Function Description     bool Create a new boolean value.   is_bool Test if a given value is of type bool.    </description>
+The bool() documentation contains a helpful example table to explain how different types are converted to bool.
+  This code creates a bool property is_the_earth_flat to collection stuff:
+ .is_the_earth_flat = !true; Related functions    Function Description     bool Convert a value into type bool.</description>
     </item>
     
     <item>
