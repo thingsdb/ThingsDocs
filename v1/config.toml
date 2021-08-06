@@ -1,7 +1,7 @@
 baseURL = "https://docs.thingsdb.net/v1/"
 languageCode = "en-us"
 title = "ThingsDB documentation"
-publishDir = "../docs/v0"
+publishDir = "../docs/v1"
 
 # Change the default theme to be use when building the site with Hugo
 theme = "hugo-theme-learn"

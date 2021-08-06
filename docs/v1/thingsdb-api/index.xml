@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ThingsDB API on ThingsDB documentation</title>
+    <link>https://docs.thingsdb.net/v1/thingsdb-api/</link>
+    <description>Recent content in ThingsDB API on ThingsDB documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://docs.thingsdb.net/v1/thingsdb-api/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>collection_info</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/collection_info/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/collection_info/</guid>
+      <description>Returns information about a specific collection.
+This function requires QUERY privileges on the requested collection, or CHANGE privileges on the @thingsdb scope.
+This function does not generate a change.
+Function collection_info(collection)
+Arguments    Argument Type Description     collection str/int (required) Name or Id of the collection    Return value Returns mpdata about the collection.
+Example  Returns information about collection stuff:
+ collection_info(&#39;stuff&#39;);  Example return value in JSON format</description>
+    </item>
+    
+    <item>
+      <title>collections_info</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/collections_info/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/collections_info/</guid>
+      <description>Returns collection information about all collections in ThingsDB.
+See the collection_info() function documentation for an example of the exposed collection information.
+If the user has no CHANGE permissions on the @thingsdb scope, then only the collections where the user has at least QUERY privileges are included in the result.
+ This function does not generate a change.
+Function collections_info()
+Arguments None
+Return value List with collection mpdata about all collections in ThingsDB.</description>
+    </item>
+    
+    <item>
+      <title>del_collection</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/del_collection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/del_collection/</guid>
+      <description>Delete a collection.
+This function generates a change.
+Function del_collection(name)
+Arguments    Argument Type Description     name str (required) Name of the collection to delete.    Return value Returns nil when successful. A lookup_err() is raised if the collection does not exist.
+Example  This code will delete collection stuff:
+ // Delete collection `stuff` del_collection(&#39;stuff&#39;); </description>
+    </item>
+    
+    <item>
+      <title>del_expired</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/del_expired/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/del_expired/</guid>
+      <description>Delete all expired tokens.
+This function requires GRANT privileges on the @thingsdb scope.
+ This function generates a change.
+Function del_expired()
+Arguments None
+Return value Returns nil.
+Example  This code will delete all expired tokens:
+ // Delete all expired tokens del_expired(); </description>
+    </item>
+    
+    <item>
+      <title>del_module</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/del_module/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/del_module/</guid>
+      <description>Delete a module. A SIGTERM signal will be send to the process for the module which might cancel running futures.
+This function generates a change.
+Function del_module(name)
+Arguments    Argument Type Description     name str (required) Name of the module to delete.    Return value Returns nil when successful.
+Example  This code will delete module DEMO:
+ // Delete module `DEMO` del_module(&#39;DEMO&#39;); </description>
+    </item>
+    
+    <item>
+      <title>del_node</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/del_node/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/del_node/</guid>
+      <description>Delete a node from ThingsDB.
+Before deleting a node, the node must be offline. As long is the node is active, you are not allowed to delete the node. See shutdown for shutting down a node by using a query.
+ This function generates a change.
+Function del_node(node_id)
+Arguments    Argument Type Description     node_id int (required) Id of the node to delete.    Return value Returns nil when successful.</description>
+    </item>
+    
+    <item>
+      <title>del_token</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/del_token/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/del_token/</guid>
+      <description>Delete a token.
+This function requires GRANT privileges on the @thingsdb scope unless the given token belongs to the logged on user. In the latter case, only CHANGE privileges are required.
+ This function generates a change.
+Function del_token(key)
+Arguments    Argument Type Description     key str (required) Token key to delete.    Return value Returns nil when successful. A lookup_err() is raised if the token is not found.</description>
+    </item>
+    
+    <item>
+      <title>del_user</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/del_user/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/del_user/</guid>
+      <description>Delete a user. It is not possible to delete your own user account and a bad_data_err() will be raised in case you try to. Any tokens associated with the user will also be deleted.
+This function requires GRANT privileges on the @thingsdb scope.
+ This function generates a change.
+Function del_user(username)
+Arguments    Argument Type Description     username str (required) Username of the user to delete.</description>
+    </item>
+    
+    <item>
+      <title>deploy_module</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/deploy_module/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/deploy_module/</guid>
+      <description>Deploy a module on all nodes. The module must be configured first, using the new_module() function. This function is used to write the module data (or plain python code) to the module. After deploying the code, the module will be restarted on every node.
+Before deploying a module, it is strongly recommended to use a development environment before deploying the module into production.
+ This function generates a change.
+Function deploy_module(name, data)</description>
+    </item>
+    
+    <item>
+      <title>grant</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/grant/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/grant/</guid>
+      <description>Grant, collection or general, privileges to a user. Access to a user is provided by setting a bit mask to either the @node, @thingsdb or a @collection scope.
+To use this function, at least CHANGE privileges on the @thingsdb scope and GRANT privileges on the target scope are required.
+It is not possible to set privileges on a specific node scope. Therefore scope @node will apply to all nodes in ThingsDB.</description>
+    </item>
+    
+    <item>
+      <title>has_collection</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/has_collection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/has_collection/</guid>
+      <description>Determines if a collection exists in ThingsDB.
+This function does not generate a change.
+Function has_collection(collection)
+Arguments    Argument Type Description     collection str/int (required) Collection name or Id to check.    Return value Returns true if the collection exists and otherwise false.
+Example  This code shows an example use case of has_collection():
+ has_collection(&#39;stuff&#39;);  Return value in JSON format
+ true </description>
+    </item>
+    
+    <item>
+      <title>has_module</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/has_module/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/has_module/</guid>
+      <description>Determines if a module exists in ThingsDB. The scope restriction of the module has no impact on the result of this function.
+This function does not generate a change.
+Function has_module(name)
+Arguments    Argument Type Description     name str (required) Module to check.    Return value Returns true if the module exists and otherwise false.
+Example  This code shows an example use case of has_module():</description>
+    </item>
+    
+    <item>
+      <title>has_node</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/has_node/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/has_node/</guid>
+      <description>Determines if a node exists in ThingsDB.
+This function does not generate a change.
+Function has_node(id)
+Arguments    Argument Type Description     id int (required) Node Id to check.    Return value Returns true if a node with a given Id exists and otherwise false.
+Example  This code shows an example use case of has_node():
+ has_node(0);  Return value in JSON format</description>
+    </item>
+    
+    <item>
+      <title>has_token</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/has_token/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/has_token/</guid>
+      <description>Determines if a token exists in ThingsDB.
+This function requires GRANT privileges on the @thingsdb scope.
+ This function does not generate a change.
+Function has_token(key)
+Arguments    Argument Type Description     key str (required) Token key to check.    Return value Returns true if the token exists and otherwise false.
+Example  This code shows an example use case of has_token():
+ has_token(&#39;XXXXXXXXXXXXXXXXXXXXXX&#39;);  Return value in JSON format</description>
+    </item>
+    
+    <item>
+      <title>has_user</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/has_user/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/has_user/</guid>
+      <description>Determines if a user exists in ThingsDB.
+This function requires GRANT privileges on the @thingsdb scope.
+ This function does not generate a change.
+Function has_user(username)
+Arguments    Argument Type Description     username str (required) User to check.    Return value Returns true if the user exists and otherwise false.
+Example  This code shows an example use case of has_user():
+ has_user(&#39;admin&#39;);  Return value in JSON format</description>
+    </item>
+    
+    <item>
+      <title>module_info</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/module_info/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/module_info/</guid>
+      <description>Returns information about a specific module.
+   Value Description     conf Configuration for the module. (Only visible when the user has CHANGE privileges in the @thingsdb scope)   created_at Time Stamp when the module was created.   file Module file name.   name Name of the module.   restarts Number of time the module is restarted. Manual restarts are excluded and will reset the counter to zero.</description>
+    </item>
+    
+    <item>
+      <title>modules_info</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/modules_info/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/modules_info/</guid>
+      <description>Returns module information about all modules in ThingsDB.
+See the module_info() function documentation for an example of the exposed module information.
+This function does not generate a change.
+Function modules_info()
+Arguments None
+Return value List with modules mpdata about all modules in ThingsDB.</description>
+    </item>
+    
+    <item>
+      <title>new_collection</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/new_collection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/new_collection/</guid>
+      <description>Create a new collection.
+This function generates a change.
+Function new_collection(name)
+Arguments    Argument Type Description     name str (required) Name of the new collection.    The user who has created the collection will automatically receive full access rights to the new collection. Use grant to give other users access to the collection.
+ Return value Returns the new collection id if successful. A lookup_err() is raised if the collection already exists.</description>
+    </item>
+    
+    <item>
+      <title>new_module</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/new_module/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/new_module/</guid>
+      <description>Create (and configure) a new module for ThingsDB.
+After a module is created, a future() is required to use the new module.
+ThingsDB has special support for Python modules which will be activated if you module file ends with .py. In this case the Python interpreter will be used to start the module.
+By default a module can be used in all scopes. It is possible however, to restrict the usage by using set_module_scope(.</description>
+    </item>
+    
+    <item>
+      <title>new_node</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/new_node/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/new_node/</guid>
+      <description>Adds a new node to ThingsDB. Nodes are used for scaling and high availability.
+Before using this command, make sure another node is started and waiting for a join. This can be done by starting thingsdb with the --secret argument, for example:
+thingsdb --secret &amp;#34;my-one-time-secret&amp;#34; Next, you will see something like this:
+Waiting for an invite from a node to join ThingsDB... You can use the following query to add this node: new_node(&amp;#39;my-one-time-secret&amp;#39;, &amp;#39;node.</description>
+    </item>
+    
+    <item>
+      <title>new_token</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/new_token/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/new_token/</guid>
+      <description>Adds a new token for a given user. An optional expiration time may be given; after this time the token cannot be used anymore. Use del_expired to cleanup expired tokens. The expiration time may be given as a datetime or timeval type.
+Expiration dates in the past are not allowed an will raise a bad_data_err() error.
+It is also possible to set a description for the token which can be used to identify the token.</description>
+    </item>
+    
+    <item>
+      <title>new_user</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/new_user/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/new_user/</guid>
+      <description>Creates a new user to ThingsDB. The new user is created without a password, token and access privileges. You probably want to set a password or add a new token, and assign some privileges using grant(&amp;hellip;).
+This function requires GRANT privileges on the @thingsdb scope.
+ This function generates a change.
+Function new_user(user)
+Arguments    Argument Type Description     user str (required) Username, between 1 and 128 graphical characters.</description>
+    </item>
+    
+    <item>
+      <title>rename_collection</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/rename_collection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/rename_collection/</guid>
+      <description>Rename a collection.
+This function generates a change.
+Function rename_collection(current_name, new_name)
+Arguments    Argument Type Description     current_name str (required) Current collection name.   new_name str (required) New name for the collection.    Return value Returns nil when successful.</description>
+    </item>
+    
+    <item>
+      <title>rename_module</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/rename_module/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/rename_module/</guid>
+      <description>Rename a module.
+This function generates a change.
+Function rename_module(current_name, new_name)
+Arguments    Argument Type Description     current_name str (required) Current module name.   new_name str (required) New name for the module.    Return value Returns nil when successful.</description>
+    </item>
+    
+    <item>
+      <title>rename_user</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/rename_user/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/rename_user/</guid>
+      <description>Rename a user.
+This function requires GRANT privileges on the @thingsdb scope.
+ This function generates a change.
+Function rename_user(current_name, new_name)
+Arguments    Argument Type Description     current_name str (required) Current user name.   new_name str (required) New name for the user.    Return value Returns nil when successful.</description>
+    </item>
+    
+    <item>
+      <title>restore</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/restore/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/restore/</guid>
+      <description>Restore from a backup file created with the new_backup function.
+Before using this function the following list of requirements must be must be fulfilled:
+ The user performing the restore must have FULL privileges on the@thingsdb scope. No collections may exists. Use collections_info() and del_collection(..) to remove existing collections. All nodes must be online and ready. If this is not the case, then either remove the node or wait for the node to become ready.</description>
+    </item>
+    
+    <item>
+      <title>revoke</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/revoke/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/revoke/</guid>
+      <description>Revoke, collection or general, privileges from a user. See grant for more information on how access privileges can be set for a user.
+To use this function, at least CHANGE privileges on the @thingsdb scope and GRANT privileges on the target scope are required.
+This function generates a change.
+Function revoke(target, user, mask)
+Arguments    Argument Type Description     target int/raw Can be either the @node, @thingsdb, or a @collection scope.</description>
+    </item>
+    
+    <item>
+      <title>set_module_conf</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/set_module_conf/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/set_module_conf/</guid>
+      <description>Change the module configuration. This will (re-send) the module configuration to the module. If the module was not started, ThingsDB will also auto-load the module and send the configuration. Any Value is accepted as config but value nil will not be considered as a configuration and thus will not be send to the module.
+This function generates a change.
+Function set_module_conf(name, configuration)
+Arguments    Argument Type Description     name str (required) Name of the module.</description>
+    </item>
+    
+    <item>
+      <title>set_module_scope</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/set_module_scope/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/set_module_scope/</guid>
+      <description>Modules can be restricted for usage in a single scope. This can be a @collection:.. scope, but also a @node or @thingsdb scope. This function can be used to change the module scope. When the scope is set to nil, the module can be used in any scope.
+This function generates a change.
+Function set_module_scope(name, scope)
+Arguments    Argument Type Description     name str (required) Name of the module.</description>
+    </item>
+    
+    <item>
+      <title>set_password</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/set_password/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/set_password/</guid>
+      <description>Change a user&amp;rsquo;s password. This function can also be used to remove an existing password by using nil as the new password.
+Passwords must contain 1 to 128 printable characters.
+This function requires GRANT privileges on the @thingsdb scope when a username other then the logged in user is given as argument. For the currently logged in user, CHANGE privileges on the @thingsdb scope are sufficient.
+ This function generates a change.</description>
+    </item>
+    
+    <item>
+      <title>set_time_zone</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/set_time_zone/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/set_time_zone/</guid>
+      <description>By default each collection will be created with time zone UTC. This function can be used to change the time zone for a collection. If changed, the functions datetime(..) and timeval(..) will use the collections time zone unless specified otherwise. See time_zones_info() for a list of all available timezones.
+Use collection_info(..) to view the current time zone for a collection.
+This function generates a change.
+Function set_time_zone(collection, zone)
+Arguments    Argument Type Description     collection str/int (required) Collection name or Id to change the time zone for.</description>
+    </item>
+    
+    <item>
+      <title>time_zones_info</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/time_zones_info/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/time_zones_info/</guid>
+      <description>Returns all available time zones in ThingsDB.
+This function does not generate a change.
+Function time_zones_info()
+Arguments None
+Return value Returns a list with all available time zones in ThingsDB.
+Available Time Zones  Africa/Abidjan Africa/Accra Africa/Addis_Ababa Africa/Algiers Africa/Asmara Africa/Bamako Africa/Bangui Africa/Banjul Africa/Bissau Africa/Blantyre Africa/Brazzaville Africa/Bujumbura Africa/Cairo Africa/Casablanca Africa/Ceuta Africa/Conakry Africa/Dakar Africa/Dar_es_Salaam Africa/Djibouti Africa/Douala Africa/El_Aaiun Africa/Freetown Africa/Gaborone Africa/Harare Africa/Johannesburg Africa/Juba Africa/Kampala Africa/Khartoum Africa/Kigali Africa/Kinshasa Africa/Lagos Africa/Libreville Africa/Lome Africa/Luanda Africa/Lubumbashi Africa/Lusaka Africa/Malabo Africa/Maputo Africa/Maseru Africa/Mbabane Africa/Mogadishu Africa/Monrovia Africa/Nairobi Africa/Ndjamena Africa/Niamey Africa/Nouakchott Africa/Ouagadougou Africa/Porto-Novo Africa/Sao_Tome Africa/Tripoli Africa/Tunis Africa/Windhoek America/Adak America/Anchorage America/Anguilla America/Antigua America/Araguaina America/Argentina/Buenos_Aires America/Argentina/Catamarca America/Argentina/Cordoba America/Argentina/Jujuy America/Argentina/La_Rioja America/Argentina/Mendoza America/Argentina/Rio_Gallegos America/Argentina/Salta America/Argentina/San_Juan America/Argentina/San_Luis America/Argentina/Tucuman America/Argentina/Ushuaia America/Aruba America/Asuncion America/Atikokan America/Bahia America/Bahia_Banderas America/Barbados America/Belem America/Belize America/Blanc-Sablon America/Boa_Vista America/Bogota America/Boise America/Cambridge_Bay America/Campo_Grande America/Cancun America/Caracas America/Cayenne America/Cayman America/Chicago America/Chihuahua America/Costa_Rica America/Creston America/Cuiaba America/Curacao America/Danmarkshavn America/Dawson America/Dawson_Creek America/Denver America/Detroit America/Dominica America/Edmonton America/Eirunepe America/El_Salvador America/Fort_Nelson America/Fortaleza America/Glace_Bay America/Goose_Bay America/Grand_Turk America/Grenada America/Guadeloupe America/Guatemala America/Guayaquil America/Guyana America/Halifax America/Havana America/Hermosillo America/Indiana/Indianapolis America/Indiana/Knox America/Indiana/Marengo America/Indiana/Petersburg America/Indiana/Tell_City America/Indiana/Vevay America/Indiana/Vincennes America/Indiana/Winamac America/Inuvik America/Iqaluit America/Jamaica America/Juneau America/Kentucky/Louisville America/Kentucky/Monticello America/Kralendijk America/La_Paz America/Lima America/Los_Angeles America/Lower_Princes America/Maceio America/Managua America/Manaus America/Marigot America/Martinique America/Matamoros America/Mazatlan America/Menominee America/Merida America/Metlakatla America/Mexico_City America/Miquelon America/Moncton America/Monterrey America/Montevideo America/Montserrat America/Nassau America/New_York America/Nipigon America/Nome America/Noronha America/North_Dakota/Beulah America/North_Dakota/Center America/North_Dakota/New_Salem America/Nuuk America/Ojinaga America/Panama America/Pangnirtung America/Paramaribo America/Phoenix America/Port-au-Prince America/Port_of_Spain America/Porto_Velho America/Puerto_Rico America/Punta_Arenas America/Rainy_River America/Rankin_Inlet America/Recife America/Regina America/Resolute America/Rio_Branco America/Santarem America/Santiago America/Santo_Domingo America/Sao_Paulo America/Scoresbysund America/Sitka America/St_Barthelemy America/St_Johns America/St_Kitts America/St_Lucia America/St_Thomas America/St_Vincent America/Swift_Current America/Tegucigalpa America/Thule America/Thunder_Bay America/Tijuana America/Toronto America/Tortola America/Vancouver America/Whitehorse America/Winnipeg America/Yakutat America/Yellowknife Antarctica/Casey Antarctica/Davis Antarctica/DumontDUrville Antarctica/Macquarie Antarctica/Mawson Antarctica/McMurdo Antarctica/Palmer Antarctica/Rothera Antarctica/Syowa Antarctica/Troll Antarctica/Vostok Arctic/Longyearbyen Asia/Aden Asia/Almaty Asia/Amman Asia/Anadyr Asia/Aqtau Asia/Aqtobe Asia/Ashgabat Asia/Atyrau Asia/Baghdad Asia/Bahrain Asia/Baku Asia/Bangkok Asia/Barnaul Asia/Beirut Asia/Bishkek Asia/Brunei Asia/Chita Asia/Choibalsan Asia/Colombo Asia/Damascus Asia/Dhaka Asia/Dili Asia/Dubai Asia/Dushanbe Asia/Famagusta Asia/Gaza Asia/Hebron Asia/Ho_Chi_Minh Asia/Hong_Kong Asia/Hovd Asia/Irkutsk Asia/Jakarta Asia/Jayapura Asia/Jerusalem Asia/Kabul Asia/Kamchatka Asia/Karachi Asia/Kathmandu Asia/Khandyga Asia/Kolkata Asia/Krasnoyarsk Asia/Kuala_Lumpur Asia/Kuching Asia/Kuwait Asia/Macau Asia/Magadan Asia/Makassar Asia/Manila Asia/Muscat Asia/Nicosia Asia/Novokuznetsk Asia/Novosibirsk Asia/Omsk Asia/Oral Asia/Phnom_Penh Asia/Pontianak Asia/Pyongyang Asia/Qatar Asia/Qostanay Asia/Qyzylorda Asia/Riyadh Asia/Sakhalin Asia/Samarkand Asia/Seoul Asia/Shanghai Asia/Singapore Asia/Srednekolymsk Asia/Taipei Asia/Tashkent Asia/Tbilisi Asia/Tehran Asia/Thimphu Asia/Tokyo Asia/Tomsk Asia/Ulaanbaatar Asia/Urumqi Asia/Ust-Nera Asia/Vientiane Asia/Vladivostok Asia/Yakutsk Asia/Yangon Asia/Yekaterinburg Asia/Yerevan Atlantic/Azores Atlantic/Bermuda Atlantic/Canary Atlantic/Cape_Verde Atlantic/Faroe Atlantic/Madeira Atlantic/Reykjavik Atlantic/South_Georgia Atlantic/St_Helena Atlantic/Stanley Australia/Adelaide Australia/Brisbane Australia/Broken_Hill Australia/Currie Australia/Darwin Australia/Eucla Australia/Hobart Australia/Lindeman Australia/Lord_Howe Australia/Melbourne Australia/Perth Australia/Sydney Canada/Atlantic Canada/Central Canada/Eastern Canada/Mountain Canada/Newfoundland Canada/Pacific Europe/Amsterdam Europe/Andorra Europe/Astrakhan Europe/Athens Europe/Belgrade Europe/Berlin Europe/Bratislava Europe/Brussels Europe/Bucharest Europe/Budapest Europe/Busingen Europe/Chisinau Europe/Copenhagen Europe/Dublin Europe/Gibraltar Europe/Guernsey Europe/Helsinki Europe/Isle_of_Man Europe/Istanbul Europe/Jersey Europe/Kaliningrad Europe/Kiev Europe/Kirov Europe/Lisbon Europe/Ljubljana Europe/London Europe/Luxembourg Europe/Madrid Europe/Malta Europe/Mariehamn Europe/Minsk Europe/Monaco Europe/Moscow Europe/Oslo Europe/Paris Europe/Podgorica Europe/Prague Europe/Riga Europe/Rome Europe/Samara Europe/San_Marino Europe/Sarajevo Europe/Saratov Europe/Simferopol Europe/Skopje Europe/Sofia Europe/Stockholm Europe/Tallinn Europe/Tirane Europe/Ulyanovsk Europe/Uzhgorod Europe/Vaduz Europe/Vatican Europe/Vienna Europe/Vilnius Europe/Volgograd Europe/Warsaw Europe/Zagreb Europe/Zaporozhye Europe/Zurich GMT Indian/Antananarivo Indian/Chagos Indian/Christmas Indian/Cocos Indian/Comoro Indian/Kerguelen Indian/Mahe Indian/Maldives Indian/Mauritius Indian/Mayotte Indian/Reunion Pacific/Apia Pacific/Auckland Pacific/Bougainville Pacific/Chatham Pacific/Chuuk Pacific/Easter Pacific/Efate Pacific/Enderbury Pacific/Fakaofo Pacific/Fiji Pacific/Funafuti Pacific/Galapagos Pacific/Gambier Pacific/Guadalcanal Pacific/Guam Pacific/Honolulu Pacific/Kiritimati Pacific/Kosrae Pacific/Kwajalein Pacific/Majuro Pacific/Marquesas Pacific/Midway Pacific/Nauru Pacific/Niue Pacific/Norfolk Pacific/Noumea Pacific/Pago_Pago Pacific/Palau Pacific/Pitcairn Pacific/Pohnpei Pacific/Port_Moresby Pacific/Rarotonga Pacific/Saipan Pacific/Tahiti Pacific/Tarawa Pacific/Tongatapu Pacific/Wake Pacific/Wallis US/Alaska US/Arizona US/Central US/Eastern US/Hawaii US/Mountain US/Pacific UTC  </description>
+    </item>
+    
+    <item>
+      <title>user_info</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/user_info/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/user_info/</guid>
+      <description>Returns information about a user. If no argument is given, this function will return information about the currently logged in user.
+This function requires GRANT privileges on the @thingsdb scope when a username other then the logged in user is given as argument. For the currently logged in user, QUERY privileges on the @thingsdb scope are sufficient.
+ This function does not generate a change.
+Function user_info([username])
+Arguments    Argument Type Description     username str (optional) Name of the user    Return value Returns mpdata about the user.</description>
+    </item>
+    
+    <item>
+      <title>users_info</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/users_info/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/users_info/</guid>
+      <description>Returns user information about all users in ThingsDB.
+See the user_info() function documentation for an example of the exposed user information.
+This function requires GRANT privileges on the @thingdb scope since it exposes user access and token information.
+This function does not generate a change.
+Function users_info()
+Arguments None
+Return value List with user mpdata about all users in ThingsDB.</description>
+    </item>
+    
+  </channel>
+</rss>

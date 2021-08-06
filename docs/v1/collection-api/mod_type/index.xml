@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mod_type on ThingsDB documentation</title>
+    <link>https://docs.thingsdb.net/v1/collection-api/mod_type/</link>
+    <description>Recent content in mod_type on ThingsDB documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://docs.thingsdb.net/v1/collection-api/mod_type/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>add</title>
+      <link>https://docs.thingsdb.net/v1/collection-api/mod_type/add/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/collection-api/mod_type/add/</guid>
+      <description>Adds a property to an existing Type.
+Since version v0.9.2 an initial value is no longer required when having active instances of the given Type. If the initial value is omitted, then a single default value according the Type definition will be created and applied to all instances. See section &amp;ldquo;init using callback&amp;rdquo; for information on how to create a new initial value for each instance.
+ Action mod_type(type, &#39;add&#39;, name, definition/closure, [init])</description>
+    </item>
+    
+    <item>
+      <title>del</title>
+      <link>https://docs.thingsdb.net/v1/collection-api/mod_type/del/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/collection-api/mod_type/del/</guid>
+      <description>Deletes a property or method from an existing Type.
+A property will be removed from all the active instances of that Type.
+ Action mod_type(type, &#39;del&#39;, name)
+Arguments    Argument Type Description     type str Name of the Type where the property has to be removed from.   &#39;del&#39; str Passing this argument will result in a delete action.   name str Name of the property or method that has to be removed.</description>
+    </item>
+    
+    <item>
+      <title>mod</title>
+      <link>https://docs.thingsdb.net/v1/collection-api/mod_type/mod/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/collection-api/mod_type/mod/</guid>
+      <description>Modifies the type definition of a property or the closure of a method from an existing Type. It is not possible to convert a property to a method or the other way around.
+Without an additional callback it is possible to modify to a less &amp;lsquo;strict&amp;rsquo; definition. So for example, age: &#39;int&#39; can become age: &#39;int?&#39;, but not the other way around. Since version v0.9.3 it is possible to migrate to a more strict or completely different definition by using an additional callback closure for generating new values.</description>
+    </item>
+    
+    <item>
+      <title>rel</title>
+      <link>https://docs.thingsdb.net/v1/collection-api/mod_type/rel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/collection-api/mod_type/rel/</guid>
+      <description>Add or delete a relation between properties of the same or different types.
+Relations can only be created between nillable type definitions and/or restricted sets. This results in the following combinations:
+   Combination Description     Type? &amp;lt;-&amp;gt; Type? One to one relation.   Type? &amp;lt;-&amp;gt; {Type} One to many relation.   {Type} &amp;lt;-&amp;gt; {Type} Many to many relation.    All missing relations on existing instances will be automatically created by ThingsDB once you add a new relation.</description>
+    </item>
+    
+    <item>
+      <title>ren</title>
+      <link>https://docs.thingsdb.net/v1/collection-api/mod_type/ren/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/collection-api/mod_type/ren/</guid>
+      <description>Rename a property or method from an existing Type.
+Action mod_type(type, &#39;ren&#39;, name, to)
+Arguments    Argument Type Description     type str Name of the Type where the property or method has to be modified from.   &#39;ren&#39; str Passing this argument will result in a modify action.   name str Name of the property or method that has to be modified.   to str New name for the property or method that has to be modified.</description>
+    </item>
+    
+    <item>
+      <title>wpo</title>
+      <link>https://docs.thingsdb.net/v1/collection-api/mod_type/wpo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/collection-api/mod_type/wpo/</guid>
+      <description>Enable or disable wrap-only mode for an existing Type.
+When wrap-only mode is enabled, no instances of the type can be created and the type can not be used by other type unless that type is also in wrap-only mode. The only purpose of a type in wrap-only mode is to wrap things with but this gives you the assurance that no data is created using this type.
+Enable wrap-only mode To enable wrap-only mode, make sure no instances of this type exist, and also be sure that no other type without wrap-only mode is dependent on the type you want to change.</description>
+    </item>
+    
+  </channel>
+</rss>
