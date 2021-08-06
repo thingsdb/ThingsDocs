@@ -41,6 +41,7 @@ Type      | Number | Description
 `RUN`     | 37 | Run a procedure, see [procedures](../../procedures-api) for more info.
 `JOIN`    | 38 | Join one or more room(s).
 `LEAVE`   | 39 | Leave one or more room(s).
+`EMIT`    | 40 | Emit an event to a room.
 
 ##### CHK (Unsigned, 8bit)
 
@@ -65,7 +66,7 @@ ThingsDB can respond with one of the following response type:
 Type | Number | Description
 --------| -----| -----------
 `PONG`  | 16 | Success response to `PING` (header only).
-`OK`    | 17 | Success response to `AUTH` (header only).
+`OK`    | 17 | Success response to `AUTH` and `EMIT` (header only).
 `DATA`  | 18 | Success response to `QUERY`, `RUN`, `JOIN` and `LEAVE` (with data).
 `ERROR` | 19 | Error response (with data).
 
@@ -101,4 +102,5 @@ Some more examples:
 - [sending a query request](./query)
 - [sending a run request](./run)
 - [sending a join request](./join)
+- [sending an emit event request](./emit)
 - [receiving an error response](./error-response)

@@ -1,6 +1,6 @@
 ---
 title: "Variable"
-weight: 23
+weight: 24
 ---
 
 Can be used to assign a value to a variable which can be used within a query.

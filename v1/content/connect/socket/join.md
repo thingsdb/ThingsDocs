@@ -38,7 +38,7 @@ Now we create the header. For this example we just use Id 0:
 - Request Join package type (38) `\x26`
 - Inverse type check bit (249) `0xd9`
 
-> Sending the *Query* package
+> Sending the *Join* package
 
 ```none
 \x0d\x00\x00\x00\x00\x00\x26\xd9\x93\xa7//stuff\x11\xcd\x01\xc8

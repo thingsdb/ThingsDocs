@@ -1,6 +1,6 @@
 ---
 title: "closure"
-weight: 32
+weight: 33
 ---
 
 Closures are user defined methods which can be saved. They can be used as a prepared piece of code or to consume items from a `thing`, `list`, `tuple` or `set`.
@@ -18,7 +18,6 @@ More complex closures are also possible, check the last example below.
 Function | Description
 ------ | -----------
 [call](./call) | Call the closure with optional arguments.
-[def](./def) | Return the definition of a closure using spaces, line-breaks and indentation.
 [doc](./doc) | Return the doc string of the closure.
 
 {{% notice note %}}

@@ -6,7 +6,7 @@ weight: 249
 Restarts a given module on the select node scope.
 
 {{% notice tip %}}
-If you want to restart the module on *all* nodes, you can use the [deploy_module(*name*, *nil*)](../../thingsdb-api/deploy_node) function with `nil` as second argument.
+If you want to restart the module on *all* nodes, you can use the [deploy_module(*name*, *nil*)](../../thingsdb-api/deploy_module) function with `nil` as second argument.
 {{% /notice %}}
 
 This function does *not* generate a [change](../../overview/changes).

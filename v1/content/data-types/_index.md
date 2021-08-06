@@ -1,6 +1,6 @@
 ---
 title: "Data Types"
-weight: 28
+weight: 29
 chapter: true
 ---
 

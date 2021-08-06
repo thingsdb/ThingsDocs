@@ -32,7 +32,7 @@ Function | Description
 [pop](./pop) | Remove the last item from a list and returns that item.
 [push](./push) | Add new items to the end of a list and returns the new length.
 [reduce](./reduce) | Execute a reducer function on each item, resulting in a single output value.
-[remove](./remove) | Remove the first item that passed a given test and returns that item.
+[remove](./remove) | Remove items that pass a given test and returns the removed items in a list.
 [reverse](./reverse) | Return a new list with the items in reverse order.
 [shift](./shift) | Remove the first item from a list and returns that item.
 [some](./some) | Check if at least one item passes a given test.

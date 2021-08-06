@@ -1,6 +1,6 @@
 ---
 title: "Scopes"
-weight: 19
+weight: 20
 ---
 
 When sending a query, calling a procedure or subscribing to a thing, the request
