@@ -11,8 +11,13 @@ use your own type. For example the function [now()](../../collection-api/now) re
 {{% /notice %}}
 
 {{% notice tip %}}
-Type `datetime` will appear as an ISO8601 formatted string in query results. It might be more convenient to get the value as a UNIX time stamp instead.
+Type `datetime` will appear as an ISO8601 formatted string in query results. It might be more convenient to get the value as a UNIX time-stamp instead.
 If so, you might want to look at the [timeval](../timeval) type which is created for this purpose.
+{{% /notice %}}
+
+{{% notice tip %}}
+Converting a `datetime` or `timeval` type to type *int* or *float* will return the UNIX time-stamp.
+For example: `int(datetime('2013-06-02T00:00:00Z'))` returns the *int* value `1370131200`.
 {{% /notice %}}
 
 ### Functions

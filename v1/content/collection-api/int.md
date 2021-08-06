@@ -30,7 +30,7 @@ value | any (optional) | The value where to create an integer value for.
 ### Return value
 
 An integer value. In case the integer value is too large for a 64bit integer,
-an [overflow_err()](../../errors/overflow_err) is raised. Other type than `float`, `str`, `bool` or `int`
+an [overflow_err()](../../errors/overflow_err) is raised. Other type than `float`, `str`, `bool`, `datetime`, `timeval` or `int`
 will raise a [bad_data_err()](../../errors/bad_data_err).
 
 ### Example
@@ -46,6 +46,7 @@ will raise a [bad_data_err()](../../errors/bad_data_err).
     int('0xFF'),
     int(true),
     int(false),
+    int(datetime('2013-06-02T00:00:00Z')),
 ];
 ```
 
@@ -59,6 +60,7 @@ will raise a [bad_data_err()](../../errors/bad_data_err).
     365,
     255,
     1,
-    0
+    0,
+    1370131200
 ]
 ```

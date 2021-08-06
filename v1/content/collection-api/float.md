@@ -26,7 +26,7 @@ value | any (optional) | The value where to create a floating point value for.
 
 ### Return value
 
-A floating point value. Other type than `float`, `str`, `bool` or `int`
+A floating point value. Other type than `float`, `str`, `bool`, `datetime`, `timeval` or `int`
 will raise a [bad_data_err()](../../errors/bad_data_err).
 
 ### Example
@@ -41,6 +41,7 @@ will raise a [bad_data_err()](../../errors/bad_data_err).
     float('0xFF'),
     float(true),
     float(false),
+    float(datetime('2013-06-02T00:00:00Z')),
 ];
 ```
 
@@ -53,6 +54,7 @@ will raise a [bad_data_err()](../../errors/bad_data_err).
     365.0,
     255.0,
     1.0,
-    0.0
+    0.0,
+    1370131200.0
 ]
 ```
