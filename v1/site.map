@@ -93,6 +93,7 @@ data-types
         test
     set
         add
+        clear
         each
         every
         filter

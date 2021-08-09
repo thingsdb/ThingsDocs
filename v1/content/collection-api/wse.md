@@ -1,6 +1,6 @@
 ---
 title: "wse"
-weight: 238
+weight: 239
 ---
 
 Stored closures which can potentially make changes to ThingsDB are called

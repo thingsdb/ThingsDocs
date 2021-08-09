@@ -11,6 +11,7 @@ Each [thing](../thing) will only exists once in a collection.
 Function | Description
 ------ | -----------
 [add](./add) | Add things to a set.
+[clear](./clear) | Remove all things from a set.
 [each](./each) | Iterate over all items in a set.
 [every](./every) | Check if all things pass a given test.
 [filter](./filter) | Return a new `set` with things that pass a given test.
