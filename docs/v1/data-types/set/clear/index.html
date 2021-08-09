@@ -8,7 +8,7 @@
 
 
     <link rel="shortcut icon" href='/v1/images/favicon.ico' type="image/x-icon" />
-    <title>split :: ThingsDB documentation</title>
+    <title>clear :: ThingsDB documentation</title>
 
     
     <link href="/v1/css/nucleus.css?1628510131" rel="stylesheet">
@@ -38,7 +38,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/v1/data-types/str/split/">
+  <body class="" data-url="/v1/data-types/set/clear/">
     <nav id="sidebar" class="">
 
 
@@ -2061,7 +2061,7 @@
   
     
     <li data-nav-id="/v1/data-types/set/" title="set" class="dd-item 
-        
+        parent
         
         
         ">
@@ -2104,7 +2104,7 @@
  
   
     
-      <li data-nav-id="/v1/data-types/set/clear/" title="clear" class="dd-item ">
+      <li data-nav-id="/v1/data-types/set/clear/" title="clear" class="dd-item active">
         <a href="/v1/data-types/set/clear/">
         clear
         
@@ -2323,7 +2323,7 @@
   
     
     <li data-nav-id="/v1/data-types/str/" title="str" class="dd-item 
-        parent
+        
         
         
         ">
@@ -2442,7 +2442,7 @@
  
   
     
-      <li data-nav-id="/v1/data-types/str/split/" title="split" class="dd-item active">
+      <li data-nav-id="/v1/data-types/str/split/" title="split" class="dd-item ">
         <a href="/v1/data-types/str/split/">
         split
         
@@ -6812,7 +6812,7 @@
             
           
           
-            <a href='/v1/'></a> > <a href='/v1/data-types/'>Data Types</a> > <a href='/v1/data-types/str/'>str</a> > split
+            <a href='/v1/'></a> > <a href='/v1/data-types/'>Data Types</a> > <a href='/v1/data-types/set/'>set</a> > clear
           
          
           
@@ -6832,10 +6832,8 @@
     <li>
       <ul>
         <li><a href="#function">Function</a></li>
-        <li><a href="#arguments">Arguments</a></li>
-        <li><a href="#regular-expression">Regular expression</a></li>
         <li><a href="#return-value">Return value</a></li>
-        <li><a href="#examples">Examples</a></li>
+        <li><a href="#example">Example</a></li>
       </ul>
     </li>
   </ul>
@@ -6855,7 +6853,7 @@
           
             <h1>
               
-              split
+              clear
             </h1>
           
 
@@ -6863,113 +6861,26 @@
 
 
 
-<p>Return a new <a href="..">string</a> in which all case-based characters are in lower case.</p>
-<p>This function does <em>not</em> generate a <a href="../../../overview/changes">change</a>.</p>
+<p>Removes all things from a <a href="..">set</a>.</p>
+<p>This function generates a <a href="../../../overview/changes">change</a> <em>(except when called on a <a href="../../../overview/variable">variable</a>)</em>.</p>
 <h3 id="function">Function</h3>
-<p><em>str</em>.<code>split([separator], [limit])</code></p>
-<h3 id="arguments">Arguments</h3>
-<table>
-<thead>
-<tr>
-<th>Argument</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>separator</td>
-<td>str/regex (optional)</td>
-<td>The string used to split the original string. If omitted, white-space will be used as separator. Instead of a string, a regular expression may be used as well, see <a href="#regular-expression">regular expression</a>.</td>
-</tr>
-<tr>
-<td>limit</td>
-<td>int (optional)</td>
-<td>Split at most <code>limit</code> times. If this value is negative, splitting starts from the end of the string. If omitted, no <em>limit</em> is used.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="regular-expression">Regular expression</h3>
-<p>If separator is a <a href="../../regex">regular expression</a> with capturing parentheses, then each time separator matches, the results of the capturing parentheses are added into the output list.</p>
+<p><em>set</em>.<code>clear()</code></p>
 <h3 id="return-value">Return value</h3>
-<p>Returns a new list with substrings.</p>
-<h3 id="examples">Examples</h3>
+<p>Returns <code>nil</code>.</p>
+<h3 id="example">Example</h3>
 <blockquote>
-<p>Example using <em><strong>split()</strong></em> without arguments:</p>
+<p>This code adds things to a set:</p>
 </blockquote>
-<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">'How are you doing?'.split();
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">a = {item: 'a'};
+b = {item: 'b'};
+s = set(a, b);
+
+s.clear();
+s;  // the set is empty
 </code></pre><blockquote>
 <p>Return value in JSON format</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
-    <span style="color:#e6db74">&#34;How&#34;</span>,
-    <span style="color:#e6db74">&#34;are&#34;</span>,
-    <span style="color:#e6db74">&#34;you&#34;</span>,
-    <span style="color:#e6db74">&#34;doing?&#34;</span>
-]
-</code></pre></div><blockquote>
-<p>Example using <em><strong>split()</strong></em> with a <em>limit</em>:</p>
-</blockquote>
-<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">'This is a test'.split(1);
-</code></pre><blockquote>
-<p>Return value in JSON format</p>
-</blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
-    <span style="color:#e6db74">&#34;This&#34;</span>,
-    <span style="color:#e6db74">&#34;is a test&#34;</span>
-]
-</code></pre></div><blockquote>
-<p>Example using <em><strong>split()</strong></em> with a negative <em>limit</em>:</p>
-</blockquote>
-<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">'This is a test'.split(-1);
-</code></pre><blockquote>
-<p>Return value in JSON format</p>
-</blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
-    <span style="color:#e6db74">&#34;This is a&#34;</span>,
-    <span style="color:#e6db74">&#34;test&#34;</span>
-]
-</code></pre></div><blockquote>
-<p>Example using <em><strong>split()</strong></em> with a <em>separator</em>:</p>
-</blockquote>
-<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">'title,subject,body'.split(',');
-</code></pre><blockquote>
-<p>Return value in JSON format</p>
-</blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
-    <span style="color:#e6db74">&#34;title&#34;</span>,
-    <span style="color:#e6db74">&#34;subject&#34;</span>,
-    <span style="color:#e6db74">&#34;body&#34;</span>
-]
-</code></pre></div><blockquote>
-<p>Example using <em><strong>split()</strong></em> with a <em>regular expression</em>:</p>
-</blockquote>
-<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">'Found 143 songs of 3 minutes and 45 seconds.'.split(/\d+/);
-</code></pre><blockquote>
-<p>Return value in JSON format</p>
-</blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
-    <span style="color:#e6db74">&#34;Found &#34;</span>,
-    <span style="color:#e6db74">&#34; songs of &#34;</span>,
-    <span style="color:#e6db74">&#34; minutes and &#34;</span>,
-    <span style="color:#e6db74">&#34; seconds.&#34;</span>
-]
-</code></pre></div><blockquote>
-<p>Example using <em><strong>split()</strong></em> with a <em>regular expression</em> and <em>capture groups</em>:</p>
-</blockquote>
-<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">'Found 143 songs of 3 minutes and 45 seconds.'.split(/\s*(\d+)\s*/);
-</code></pre><blockquote>
-<p>Return value in JSON format</p>
-</blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
-    <span style="color:#e6db74">&#34;Found&#34;</span>,
-    <span style="color:#e6db74">&#34;143&#34;</span>,
-    <span style="color:#e6db74">&#34;songs of&#34;</span>,
-    <span style="color:#e6db74">&#34;3&#34;</span>,
-    <span style="color:#e6db74">&#34;minutes and&#34;</span>,
-    <span style="color:#e6db74">&#34;45&#34;</span>,
-    <span style="color:#e6db74">&#34;seconds.&#34;</span>
-]
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[]
 </code></pre></div>
 
 <footer class=" footline" >
@@ -6987,10 +6898,10 @@
         
     
         
-            <a class="nav nav-prev" href="/v1/data-types/str/replace/" title="replace"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/v1/data-types/set/add/" title="add"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/v1/data-types/str/starts_with/" title="starts_with" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/v1/data-types/set/each/" title="each" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     
     </div>

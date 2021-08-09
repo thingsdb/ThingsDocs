@@ -383,6 +383,10 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v1/data-types/set/clear/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v1/data-types/set/each/</loc>
   </url>
   
