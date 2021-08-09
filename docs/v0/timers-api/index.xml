@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Timers API on ThingsDB documentation</title>
-    <link>https://docs.thingsdb.net/v1/timers-api/</link>
+    <link>https://docs.thingsdb.net/v0/timers-api/</link>
     <description>Recent content in Timers API on ThingsDB documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://docs.thingsdb.net/v1/timers-api/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://docs.thingsdb.net/v0/timers-api/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>del_timer</title>
-      <link>https://docs.thingsdb.net/v1/timers-api/del_timer/</link>
+      <link>https://docs.thingsdb.net/v0/timers-api/del_timer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/timers-api/del_timer/</guid>
+      <guid>https://docs.thingsdb.net/v0/timers-api/del_timer/</guid>
       <description>Delete a timer.
-This function generates a change.
+This function generates an event.
 Function del_timer(timer)
 Arguments    Argument Type Description     timer int (required) Timer Id to delete.    Return value Returns nil when successful. A lookup_err() is raised if the timer does not exist.
 Example  This code will will update .counter by one each minute. After 10 minutes the counter has reached 10 and will delete itself.</description>
@@ -25,12 +25,12 @@ Example  This code will will update .counter by one each minute. After 10 minute
     
     <item>
       <title>has_timer</title>
-      <link>https://docs.thingsdb.net/v1/timers-api/has_timer/</link>
+      <link>https://docs.thingsdb.net/v0/timers-api/has_timer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/timers-api/has_timer/</guid>
+      <guid>https://docs.thingsdb.net/v0/timers-api/has_timer/</guid>
       <description>Determines if a timer exists in the current scope.
-This function does not generate a change.
+This function does not generate an event.
 Function has_timer(timer)
 Arguments    Argument Type Description     timer int (required) Timer Id to check.    Return value Returns true if a timer with a given Id exists in the current scope and otherwise false.
 Example  This code shows an example use case of has_timer():
@@ -39,26 +39,26 @@ Example  This code shows an example use case of has_timer():
     
     <item>
       <title>new_timer</title>
-      <link>https://docs.thingsdb.net/v1/timers-api/new_timer/</link>
+      <link>https://docs.thingsdb.net/v0/timers-api/new_timer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/timers-api/new_timer/</guid>
+      <guid>https://docs.thingsdb.net/v0/timers-api/new_timer/</guid>
       <description>Creates a new timer to the @thingsdb or a @collection scope. The given closure will be copied to the timer, so this is not a reference to the given closure.
 When the timer is created in the @thingsdb scope, only type nil, int, float, bool, str, bytes, datetime and regex are allowed as argument values.
- This function generates a change.
+ This function generates an event.
 Function new_timer(start, [repeat], closure, [arguments])
 Arguments    Argument Type Description     start datetime (required) Time when the timer should start.</description>
     </item>
     
     <item>
       <title>run</title>
-      <link>https://docs.thingsdb.net/v1/timers-api/run/</link>
+      <link>https://docs.thingsdb.net/v0/timers-api/run/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/timers-api/run/</guid>
+      <guid>https://docs.thingsdb.net/v0/timers-api/run/</guid>
       <description>Run a timer.
 The run(..) function may also be used to run a procedure.
- This function does not generate a change.
+ This function does not generate an event.
 Function run(timer)
 Arguments    Argument Type Description     timer int (required) Id of the timer to run.    Return value Returns the timer response.
 Example  Example code using run:
@@ -67,27 +67,27 @@ Example  Example code using run:
     
     <item>
       <title>set_timer_args</title>
-      <link>https://docs.thingsdb.net/v1/timers-api/set_timer_args/</link>
+      <link>https://docs.thingsdb.net/v0/timers-api/set_timer_args/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/timers-api/set_timer_args/</guid>
+      <guid>https://docs.thingsdb.net/v0/timers-api/set_timer_args/</guid>
       <description>Set timer arguments.
 If less than the required arguments are given, then the remaining arguments will be set using nil. More arguments than the closure accepts are simply removed and thus not used.
 When the timer is created in the @thingsdb scope, only type nil, int, float, bool, str, bytes, datetime and regex are allowed as argument values.
- This function generates a change.
+ This function generates an event.
 Function set_timer_args(timer, args)
 Arguments    Argument Type Description     timer int (required) Timer to set new arguments for.</description>
     </item>
     
     <item>
       <title>timer_args</title>
-      <link>https://docs.thingsdb.net/v1/timers-api/timer_args/</link>
+      <link>https://docs.thingsdb.net/v0/timers-api/timer_args/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/timers-api/timer_args/</guid>
+      <guid>https://docs.thingsdb.net/v0/timers-api/timer_args/</guid>
       <description>Get timer arguments as a tuple.
 The first argument for a timer closure is the timer_id. This timer_id is not included in the list of arguments.
- This function does not generate a change.
+ This function does not generate an event.
 Function timer_args(timer)
 Arguments    Argument Type Description     timer int (required) Timer to get the arguments for.    Return value Returns a tuple with arguments.
 Example  This code will will be called every minute for 10 times and then it the timer will be removed.</description>
@@ -95,23 +95,23 @@ Example  This code will will be called every minute for 10 times and then it the
     
     <item>
       <title>timer_info</title>
-      <link>https://docs.thingsdb.net/v1/timers-api/timer_info/</link>
+      <link>https://docs.thingsdb.net/v0/timers-api/timer_info/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/timers-api/timer_info/</guid>
+      <guid>https://docs.thingsdb.net/v0/timers-api/timer_info/</guid>
       <description>Returns information about a timer.
-   Value Description     arguments Array with positional argument names.   definition Closure definition. (Only available with CHANGE privileges)   doc Doc string of the closure in the timer.   id Id of the timer.   next_run Scheduled time when the timer wil run.   repeat Repeat the timer each X seconds. (Only when this is a repeating timer)   user User which credentials are used for the timer.</description>
+   Value Description     arguments Array with positional argument names.   definition Closure definition. (Only available with EVENT privileges)   doc Doc string of the closure in the timer.   id Id of the timer.   next_run Scheduled time when the timer wil run.   repeat Repeat the timer each X seconds. (Only when this is a repeating timer)   user User which credentials are used for the timer.</description>
     </item>
     
     <item>
       <title>timers_info</title>
-      <link>https://docs.thingsdb.net/v1/timers-api/timers_info/</link>
+      <link>https://docs.thingsdb.net/v0/timers-api/timers_info/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/timers-api/timers_info/</guid>
+      <guid>https://docs.thingsdb.net/v0/timers-api/timers_info/</guid>
       <description>Returns timer information about all timers in the scope.
 See the timer_info() function documentation for an example of the exposed timer information.
-This function does not generate a change.
+This function does not generate an event.
 Function timers_info()
 Arguments None
 Return value List with timer mpdata about all timers in the scope.</description>

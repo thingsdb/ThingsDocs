@@ -2,33 +2,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>thing on ThingsDB documentation</title>
-    <link>https://docs.thingsdb.net/v1/data-types/thing/</link>
+    <link>https://docs.thingsdb.net/v0/data-types/thing/</link>
     <description>Recent content in thing on ThingsDB documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://docs.thingsdb.net/v1/data-types/thing/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://docs.thingsdb.net/v0/data-types/thing/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>assign</title>
-      <link>https://docs.thingsdb.net/v1/data-types/thing/assign/</link>
+      <link>https://docs.thingsdb.net/v0/data-types/thing/assign/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/data-types/thing/assign/</guid>
+      <guid>https://docs.thingsdb.net/v0/data-types/thing/assign/</guid>
       <description>Copies properties from a given thing. Existing properties will be overwritten and new properties will be added. If this function is used on an instance of a custom Type, all properties of the source must be valid according the type specification, otherwise an exception will be raised and no properties will be copied.
 It is not possible to use assign(..) to set a property with a relation unless the source if of the same Type.</description>
     </item>
     
     <item>
       <title>copy</title>
-      <link>https://docs.thingsdb.net/v1/data-types/thing/copy/</link>
+      <link>https://docs.thingsdb.net/v0/data-types/thing/copy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/data-types/thing/copy/</guid>
+      <guid>https://docs.thingsdb.net/v0/data-types/thing/copy/</guid>
       <description>Copy a thing.
 The function does not preserve the Type of a thing. Use dup(..) if you want a copy of the same type.
- This function does not generate a change.
+ This function does not generate an event.
 Function thing.copy([deep]])
 Arguments    Argument Type Description     deep int (optional) How deep to copy the thing. Default is 1.    Return value A new thing.
 Example  This code shows an example using copy():</description>
@@ -36,24 +36,24 @@ Example  This code shows an example using copy():</description>
     
     <item>
       <title>del</title>
-      <link>https://docs.thingsdb.net/v1/data-types/thing/del/</link>
+      <link>https://docs.thingsdb.net/v0/data-types/thing/del/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/data-types/thing/del/</guid>
+      <guid>https://docs.thingsdb.net/v0/data-types/thing/del/</guid>
       <description>Delete a property from a thing.
 While almost all functions on things are also available on Type instances, this one is not. This is because a Type instance has a fixed set of properties and so you are not allowed to delete one of them on a single instance. Use mod_type() instead, to delete the property from all instances if this is what you want.
- This function generates a change.</description>
+ This function generates an event.</description>
     </item>
     
     <item>
       <title>dup</title>
-      <link>https://docs.thingsdb.net/v1/data-types/thing/dup/</link>
+      <link>https://docs.thingsdb.net/v0/data-types/thing/dup/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/data-types/thing/dup/</guid>
+      <guid>https://docs.thingsdb.net/v0/data-types/thing/dup/</guid>
       <description>Create a duplicate of a thing.
 The function preserves the Type of a thing. Use copy(..) to copy into a plain thing.
- This function does not generate a change.
+ This function does not generate an event.
 Function thing.dup([deep]])
 Arguments    Argument Type Description     deep int (optional) How deep to duplicate the thing. Default is 1.    Return value A new thing.
 Example  This code shows an example using dup():</description>
@@ -61,24 +61,35 @@ Example  This code shows an example using dup():</description>
     
     <item>
       <title>each</title>
-      <link>https://docs.thingsdb.net/v1/data-types/thing/each/</link>
+      <link>https://docs.thingsdb.net/v0/data-types/thing/each/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/data-types/thing/each/</guid>
+      <guid>https://docs.thingsdb.net/v0/data-types/thing/each/</guid>
       <description>Iterate over all properties on a thing.
 Be aware that the order when iterating over a thing is not guaranteed.
- This function does not generate a change.
+ This function does not generate an event.
 Function thing.each(callback)
 Arguments    Argument Type Description     callback closure (required) Closure to execute on each value.    Explanation of the callback argument:
    Iterable Arguments Description     thing name, value Iterate over the thing properties.</description>
     </item>
     
     <item>
-      <title>equals</title>
-      <link>https://docs.thingsdb.net/v1/data-types/thing/equals/</link>
+      <title>emit</title>
+      <link>https://docs.thingsdb.net/v0/data-types/thing/emit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/data-types/thing/equals/</guid>
+      <guid>https://docs.thingsdb.net/v0/data-types/thing/emit/</guid>
+      <description>Emit an event to all watchers of a thing. The event is a string value which you are free to choose. It is possible, but not required, to send extra arguments with the event.
+When you emit an event, the event is handled by ThingsDB just as any other event and thus the order in which they are send to the client is guaranteed.
+ This function generates an event.</description>
+    </item>
+    
+    <item>
+      <title>equals</title>
+      <link>https://docs.thingsdb.net/v0/data-types/thing/equals/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/thing/equals/</guid>
       <description>Determines if a thing is equal to another thing.
 Comparing things is usually done with a strict compare, for example:
 {} == {}; // This is *false* because left and right are not the same object Function equals can be used to perform a weak compare, for example:
@@ -87,12 +98,12 @@ Comparing things is usually done with a strict compare, for example:
     
     <item>
       <title>filter</title>
-      <link>https://docs.thingsdb.net/v1/data-types/thing/filter/</link>
+      <link>https://docs.thingsdb.net/v0/data-types/thing/filter/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/data-types/thing/filter/</guid>
+      <guid>https://docs.thingsdb.net/v0/data-types/thing/filter/</guid>
       <description>The function returns a new thing with properties that pass the test.
-This function does not generate a change.
+This function does not generate an event.
 Function thing.filter(callback)
 Arguments    Argument Type Description     callback closure (required) Closure to execute on each value.    Explanation of the callback argument:
    Iterable Arguments Description     thing name, value Iterate over the thing properties. Both name and value are optional.</description>
@@ -100,24 +111,24 @@ Arguments    Argument Type Description     callback closure (required) Closure t
     
     <item>
       <title>get</title>
-      <link>https://docs.thingsdb.net/v1/data-types/thing/get/</link>
+      <link>https://docs.thingsdb.net/v0/data-types/thing/get/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/data-types/thing/get/</guid>
+      <guid>https://docs.thingsdb.net/v0/data-types/thing/get/</guid>
       <description>Return the value of a property on a thing by a given property name. If the property is not found then the return value will be nil, unless an alternative return value is given.
-This function does not generate a change.
+This function does not generate an event.
 Function thing.get(name [, alt])
 Arguments    Argument Type Description     name str (required) Name of the property where to return the value for.   alt any (optional) Optional return value.</description>
     </item>
     
     <item>
       <title>has</title>
-      <link>https://docs.thingsdb.net/v1/data-types/thing/has/</link>
+      <link>https://docs.thingsdb.net/v0/data-types/thing/has/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/data-types/thing/has/</guid>
+      <guid>https://docs.thingsdb.net/v0/data-types/thing/has/</guid>
       <description>Determines if a thing has a given property.
-This function does not generate a change.
+This function does not generate an event.
 Function thing.has(name)
 Arguments    Argument Type Description     name str (required) Name of the property to check.    Return value Returns true when the given property name is found and otherwise false.
 Example  This code shows an example use case of has():
@@ -126,12 +137,12 @@ Example  This code shows an example use case of has():
     
     <item>
       <title>id</title>
-      <link>https://docs.thingsdb.net/v1/data-types/thing/id/</link>
+      <link>https://docs.thingsdb.net/v0/data-types/thing/id/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/data-types/thing/id/</guid>
+      <guid>https://docs.thingsdb.net/v0/data-types/thing/id/</guid>
       <description>Returns the id of a thing or nil if the thing is not stored.
-This function does not generate a change.
+This function does not generate an event.
 Function thing.id()
 Arguments None
 Return value Returns id of a thing or nil when the thing is not stored.
@@ -142,24 +153,24 @@ Example  This code uses id() to return a collection id:
     
     <item>
       <title>keys</title>
-      <link>https://docs.thingsdb.net/v1/data-types/thing/keys/</link>
+      <link>https://docs.thingsdb.net/v0/data-types/thing/keys/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/data-types/thing/keys/</guid>
+      <guid>https://docs.thingsdb.net/v0/data-types/thing/keys/</guid>
       <description>keys The function returns a list with all the property names of a thing. The same could be returned using map so the following statement is true:
 .keys() == .map(|k| k)
 Although the keys() and map() functions in the example above will return a list with the same order, the order of keys in the list is not guaranteed and may be different each time you run the query.
- This function does not generate a change.</description>
+ This function does not generate an event.</description>
     </item>
     
     <item>
       <title>len</title>
-      <link>https://docs.thingsdb.net/v1/data-types/thing/len/</link>
+      <link>https://docs.thingsdb.net/v0/data-types/thing/len/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/data-types/thing/len/</guid>
+      <guid>https://docs.thingsdb.net/v0/data-types/thing/len/</guid>
       <description>Returns the number of items in a thing.
-This function does not generate a change.
+This function does not generate an event.
 Function thing.len()
 Arguments None
 Return value Returns the number of items in a thing.
@@ -170,58 +181,84 @@ Example  This code uses len() to return the number of items in a thing:
     
     <item>
       <title>map</title>
-      <link>https://docs.thingsdb.net/v1/data-types/thing/map/</link>
+      <link>https://docs.thingsdb.net/v0/data-types/thing/map/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/data-types/thing/map/</guid>
+      <guid>https://docs.thingsdb.net/v0/data-types/thing/map/</guid>
       <description>The function iterates over all properties on a thing and returns a new list based on the results of a given callback function.
 Be aware that the order when iterating over a thing is not guaranteed.
- This function does not generate a change.
+ This function does not generate an event.
 Function thing.map(callback)
 Arguments    Argument Type Description     callback closure (required) Closure to execute on each value.    Explanation of the callback argument:</description>
     </item>
     
     <item>
       <title>set</title>
-      <link>https://docs.thingsdb.net/v1/data-types/thing/set/</link>
+      <link>https://docs.thingsdb.net/v0/data-types/thing/set/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/data-types/thing/set/</guid>
+      <guid>https://docs.thingsdb.net/v0/data-types/thing/set/</guid>
       <description>Creates a new property on a thing. If the property already exists then the old property will be overwritten. This function is equal to an assignment except that it can be used when the name of the property is dynamic.
-This function generates a change.
+This function generates an event.
 Function thing.set(name, value)
 Arguments    Argument Type Description     name str (required) The name of the property to set.   value any (required) The value which will be assigned to the property.</description>
     </item>
     
     <item>
       <title>to_type</title>
-      <link>https://docs.thingsdb.net/v1/data-types/thing/to_type/</link>
+      <link>https://docs.thingsdb.net/v0/data-types/thing/to_type/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/data-types/thing/to_type/</guid>
+      <guid>https://docs.thingsdb.net/v0/data-types/thing/to_type/</guid>
       <description>Converts a thing into an instance of a given Type.
 Before a thing may be converted, all the properties of the thing must have an exact match with the properties defined by the Type. It you later want to change tome properties, the function mod_type can be used.
 Since the root of a collection is also a thing, it is possible to use this function to make the collection strict.</description>
     </item>
     
     <item>
-      <title>values</title>
-      <link>https://docs.thingsdb.net/v1/data-types/thing/values/</link>
+      <title>unwatch</title>
+      <link>https://docs.thingsdb.net/v0/data-types/thing/unwatch/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/data-types/thing/values/</guid>
+      <guid>https://docs.thingsdb.net/v0/data-types/thing/unwatch/</guid>
+      <description>Stop watching for mutations on a thing. This function returns nil and triggers a stop event, only when the thing was being watched.
+This function does not generate an event.
+Function thing.unwatch()
+Arguments None
+Return value Returns nil.
+Example  This code shows how to use unwatch():
+ .unwatch();  Return value in JSON format:
+ null </description>
+    </item>
+    
+    <item>
+      <title>values</title>
+      <link>https://docs.thingsdb.net/v0/data-types/thing/values/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/thing/values/</guid>
       <description>Returns a list with all the property values of a thing. The same could be returned using map so the following statement is true:
 (.values() == .map(|_, v| v))
 Although the values() and map() in the example above will return a list with the same order, the order of values in the list is not guaranteed and may be different each time you run the query.
- This function does not generate a change.</description>
+ This function does not generate an event.</description>
+    </item>
+    
+    <item>
+      <title>watch</title>
+      <link>https://docs.thingsdb.net/v0/data-types/thing/watch/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v0/data-types/thing/watch/</guid>
+      <description>Subscribe for watching mutations on a stored thing. If this function is called on a thing which is not stored, and therefore has no #ID, then a value_err() is raised. This function returns nil, but every call always triggers an init event, even if it involves multiple calls of this function on the same thing.
+This function only works with socket connections. When using this function with an HTTP API request, it has no effect.</description>
     </item>
     
     <item>
       <title>wrap</title>
-      <link>https://docs.thingsdb.net/v1/data-types/thing/wrap/</link>
+      <link>https://docs.thingsdb.net/v0/data-types/thing/wrap/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/data-types/thing/wrap/</guid>
+      <guid>https://docs.thingsdb.net/v0/data-types/thing/wrap/</guid>
       <description>Wrap a thing with a another Type to filter out properties, while preserving the Id. A wrapped thing inherits the methods from the type it is wrapped with.
 For a more advanced example using wrap() and unwrap() see &amp;lt;Type&amp;gt;.
 Function thing.wrap(Type)

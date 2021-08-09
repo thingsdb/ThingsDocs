@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>enum on ThingsDB documentation</title>
-    <link>https://docs.thingsdb.net/v1/data-types/enum/</link>
+    <link>https://docs.thingsdb.net/v0/data-types/enum/</link>
     <description>Recent content in enum on ThingsDB documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://docs.thingsdb.net/v1/data-types/enum/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://docs.thingsdb.net/v0/data-types/enum/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>name</title>
-      <link>https://docs.thingsdb.net/v1/data-types/enum/name/</link>
+      <link>https://docs.thingsdb.net/v0/data-types/enum/name/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/data-types/enum/name/</guid>
+      <guid>https://docs.thingsdb.net/v0/data-types/enum/name/</guid>
       <description>Returns the name of the enumerator member.
-This function does not generate a change.
+This function does not generate an event.
 Function member.name()
 Arguments None
 Return value Returns the name of the enumerator member.
@@ -28,12 +28,12 @@ Example  This code creates a closure with a doc string:
     
     <item>
       <title>value</title>
-      <link>https://docs.thingsdb.net/v1/data-types/enum/value/</link>
+      <link>https://docs.thingsdb.net/v0/data-types/enum/value/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/data-types/enum/value/</guid>
+      <guid>https://docs.thingsdb.net/v0/data-types/enum/value/</guid>
       <description>Returns the value of the enumerator member.
-This function does not generate a change.
+This function does not generate an event.
 Function member.value()
 Arguments None
 Return value Returns the name of the enumerator member.

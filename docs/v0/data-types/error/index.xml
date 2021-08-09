@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>error on ThingsDB documentation</title>
-    <link>https://docs.thingsdb.net/v1/data-types/error/</link>
+    <link>https://docs.thingsdb.net/v0/data-types/error/</link>
     <description>Recent content in error on ThingsDB documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://docs.thingsdb.net/v1/data-types/error/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://docs.thingsdb.net/v0/data-types/error/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>code</title>
-      <link>https://docs.thingsdb.net/v1/data-types/error/code/</link>
+      <link>https://docs.thingsdb.net/v0/data-types/error/code/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/data-types/error/code/</guid>
+      <guid>https://docs.thingsdb.net/v0/data-types/error/code/</guid>
       <description>Returns the error code of an error type.
-This function does not generate a change.
+This function does not generate an event.
 Function error.code()
 Arguments None
 Return value Returns error code of an error.
@@ -28,12 +28,12 @@ Example  This code uses code() to return the error code for an error:
     
     <item>
       <title>msg</title>
-      <link>https://docs.thingsdb.net/v1/data-types/error/msg/</link>
+      <link>https://docs.thingsdb.net/v0/data-types/error/msg/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/data-types/error/msg/</guid>
+      <guid>https://docs.thingsdb.net/v0/data-types/error/msg/</guid>
       <description>Returns the error message of an error type.
-This function does not generate a change.
+This function does not generate an event.
 Function error.msg()
 Arguments None
 Return value Returns error message of an error.

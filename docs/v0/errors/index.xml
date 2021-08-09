@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Errors on ThingsDB documentation</title>
-    <link>https://docs.thingsdb.net/v1/errors/</link>
+    <link>https://docs.thingsdb.net/v0/errors/</link>
     <description>Recent content in Errors on ThingsDB documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://docs.thingsdb.net/v1/errors/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://docs.thingsdb.net/v0/errors/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>assert_err</title>
-      <link>https://docs.thingsdb.net/v1/errors/assert_err/</link>
+      <link>https://docs.thingsdb.net/v0/errors/assert_err/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/errors/assert_err/</guid>
+      <guid>https://docs.thingsdb.net/v0/errors/assert_err/</guid>
       <description>Returns an error when an assertion has failed.
-This function does not generate a change.
+This function does not generate an event.
 Function assert_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
 Example  This code shows assert_err():
@@ -27,12 +27,12 @@ Example  This code shows assert_err():
     
     <item>
       <title>auth_err</title>
-      <link>https://docs.thingsdb.net/v1/errors/auth_err/</link>
+      <link>https://docs.thingsdb.net/v0/errors/auth_err/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/errors/auth_err/</guid>
+      <guid>https://docs.thingsdb.net/v0/errors/auth_err/</guid>
       <description>Returns an error when authentication has failed.
-This function does not generate a change.
+This function does not generate an event.
 Function auth_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
 Example  This code shows auth_err():
@@ -42,12 +42,12 @@ Example  This code shows auth_err():
     
     <item>
       <title>bad_data_err</title>
-      <link>https://docs.thingsdb.net/v1/errors/bad_data_err/</link>
+      <link>https://docs.thingsdb.net/v0/errors/bad_data_err/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/errors/bad_data_err/</guid>
+      <guid>https://docs.thingsdb.net/v0/errors/bad_data_err/</guid>
       <description>Returns an error when a request is malformed.
-This function does not generate a change.
+This function does not generate an event.
 Function bad_data_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
 Example  This code shows bad_data_err():
@@ -57,12 +57,12 @@ Example  This code shows bad_data_err():
     
     <item>
       <title>forbidden_err</title>
-      <link>https://docs.thingsdb.net/v1/errors/forbidden_err/</link>
+      <link>https://docs.thingsdb.net/v0/errors/forbidden_err/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/errors/forbidden_err/</guid>
+      <guid>https://docs.thingsdb.net/v0/errors/forbidden_err/</guid>
       <description>Returns an error when the client or user is missing the required privileges.
-This function does not generate a change.
+This function does not generate an event.
 Function forbidden_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
 Example  This code shows forbidden_err():
@@ -72,12 +72,12 @@ Example  This code shows forbidden_err():
     
     <item>
       <title>lookup_err</title>
-      <link>https://docs.thingsdb.net/v1/errors/lookup_err/</link>
+      <link>https://docs.thingsdb.net/v0/errors/lookup_err/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/errors/lookup_err/</guid>
+      <guid>https://docs.thingsdb.net/v0/errors/lookup_err/</guid>
       <description>Returns an error when a requested resource is not found or when an index is out-of-range.
-This function does not generate a change.
+This function does not generate an event.
 Function lookup_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
 Example  This code shows lookup_err():
@@ -87,12 +87,12 @@ Example  This code shows lookup_err():
     
     <item>
       <title>max_quota_err</title>
-      <link>https://docs.thingsdb.net/v1/errors/max_quota_err/</link>
+      <link>https://docs.thingsdb.net/v0/errors/max_quota_err/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/errors/max_quota_err/</guid>
+      <guid>https://docs.thingsdb.net/v0/errors/max_quota_err/</guid>
       <description>Returns an error when a quota limit is reached.
-This function does not generate a change.
+This function does not generate an event.
 Function max_quota_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
 Example  This code shows max_quota_err():
@@ -102,12 +102,12 @@ Example  This code shows max_quota_err():
     
     <item>
       <title>node_err</title>
-      <link>https://docs.thingsdb.net/v1/errors/node_err/</link>
+      <link>https://docs.thingsdb.net/v0/errors/node_err/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/errors/node_err/</guid>
+      <guid>https://docs.thingsdb.net/v0/errors/node_err/</guid>
       <description>Returns an error when a node was not able to handle the request.
-This function does not generate a change.
+This function does not generate an event.
 Function node_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
 Example  This code shows node_err():
@@ -117,12 +117,12 @@ Example  This code shows node_err():
     
     <item>
       <title>num_arguments_err</title>
-      <link>https://docs.thingsdb.net/v1/errors/num_arguments_err/</link>
+      <link>https://docs.thingsdb.net/v0/errors/num_arguments_err/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/errors/num_arguments_err/</guid>
+      <guid>https://docs.thingsdb.net/v0/errors/num_arguments_err/</guid>
       <description>Returns an error when a wrong number of arguments is given.
-This function does not generate a change.
+This function does not generate an event.
 Function num_arguments_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
 Example  This code shows num_arguments_err():
@@ -132,12 +132,12 @@ Example  This code shows num_arguments_err():
     
     <item>
       <title>operation_err</title>
-      <link>https://docs.thingsdb.net/v1/errors/operation_err/</link>
+      <link>https://docs.thingsdb.net/v0/errors/operation_err/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/errors/operation_err/</guid>
+      <guid>https://docs.thingsdb.net/v0/errors/operation_err/</guid>
       <description>Returns an error when an operation is not valid within the current context.
-This function does not generate a change.
+This function does not generate an event.
 Function operation_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
 Example  This code shows operation_err():
@@ -147,12 +147,12 @@ Example  This code shows operation_err():
     
     <item>
       <title>overflow_err</title>
-      <link>https://docs.thingsdb.net/v1/errors/overflow_err/</link>
+      <link>https://docs.thingsdb.net/v0/errors/overflow_err/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/errors/overflow_err/</guid>
+      <guid>https://docs.thingsdb.net/v0/errors/overflow_err/</guid>
       <description>Returns an error when an attempt is made to create an integer value out of the supported 64Bit (signed) range.
-This function does not generate a change.
+This function does not generate an event.
 Function overflow_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
 Example  This code shows overflow_err():
@@ -162,12 +162,12 @@ Example  This code shows overflow_err():
     
     <item>
       <title>syntax_err</title>
-      <link>https://docs.thingsdb.net/v1/errors/syntax_err/</link>
+      <link>https://docs.thingsdb.net/v0/errors/syntax_err/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/errors/syntax_err/</guid>
+      <guid>https://docs.thingsdb.net/v0/errors/syntax_err/</guid>
       <description>Returns an error when the given ThingsDB code contains a syntax error.
-This function does not generate a change.
+This function does not generate an event.
 Function syntax_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
 Example  This code shows syntax_err():
@@ -177,12 +177,12 @@ Example  This code shows syntax_err():
     
     <item>
       <title>type_err</title>
-      <link>https://docs.thingsdb.net/v1/errors/type_err/</link>
+      <link>https://docs.thingsdb.net/v0/errors/type_err/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/errors/type_err/</guid>
+      <guid>https://docs.thingsdb.net/v0/errors/type_err/</guid>
       <description>Returns an error when a given value is of the incorrect type.
-This function does not generate a change.
+This function does not generate an event.
 Function type_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
 Example  This code shows type_err():
@@ -192,12 +192,12 @@ Example  This code shows type_err():
     
     <item>
       <title>value_err</title>
-      <link>https://docs.thingsdb.net/v1/errors/value_err/</link>
+      <link>https://docs.thingsdb.net/v0/errors/value_err/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/errors/value_err/</guid>
+      <guid>https://docs.thingsdb.net/v0/errors/value_err/</guid>
       <description>Returns an error when a given value has the correct type but contains invalid data.
-This function does not generate a change.
+This function does not generate an event.
 Function value_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
 Example  This code shows value_err():
@@ -207,12 +207,12 @@ Example  This code shows value_err():
     
     <item>
       <title>cancelled_err</title>
-      <link>https://docs.thingsdb.net/v1/errors/cancelled_err/</link>
+      <link>https://docs.thingsdb.net/v0/errors/cancelled_err/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/errors/cancelled_err/</guid>
+      <guid>https://docs.thingsdb.net/v0/errors/cancelled_err/</guid>
       <description>Returns an error when an operation is cancelled before completion. Fox example by a time-out or stop of service.
-This function does not generate a change.
+This function does not generate an event.
 Function cancelled_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
 Example  This code shows cancelled_err():
@@ -222,12 +222,12 @@ Example  This code shows cancelled_err():
     
     <item>
       <title>zero_div_err</title>
-      <link>https://docs.thingsdb.net/v1/errors/zero_div_err/</link>
+      <link>https://docs.thingsdb.net/v0/errors/zero_div_err/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/errors/zero_div_err/</guid>
+      <guid>https://docs.thingsdb.net/v0/errors/zero_div_err/</guid>
       <description>Returns an error when an attempt is made to divide or take a modulo by zero.
-This function does not generate a change.
+This function does not generate an event.
 Function zero_div_err([message])
 Arguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value.
 Example  This code shows zero_div_err():

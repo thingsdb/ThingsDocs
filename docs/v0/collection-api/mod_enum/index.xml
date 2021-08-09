@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mod_enum on ThingsDB documentation</title>
-    <link>https://docs.thingsdb.net/v1/collection-api/mod_enum/</link>
+    <link>https://docs.thingsdb.net/v0/collection-api/mod_enum/</link>
     <description>Recent content in mod_enum on ThingsDB documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://docs.thingsdb.net/v1/collection-api/mod_enum/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://docs.thingsdb.net/v0/collection-api/mod_enum/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>add</title>
-      <link>https://docs.thingsdb.net/v1/collection-api/mod_enum/add/</link>
+      <link>https://docs.thingsdb.net/v0/collection-api/mod_enum/add/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/collection-api/mod_enum/add/</guid>
+      <guid>https://docs.thingsdb.net/v0/collection-api/mod_enum/add/</guid>
       <description>Adds a member to an existing enumerator type.
 Action mod_enum(enum, &#39;add&#39;, name, value)
 Arguments    Argument Type Description     enum str Name of the enumerator type where the member has to be added to.   &#39;add&#39; str Passing this argument will result in an add action.   name str Name of the member that has to be added.   value depends Value of the member that has to be added.</description>
@@ -23,10 +23,10 @@ Arguments    Argument Type Description     enum str Name of the enumerator type 
     
     <item>
       <title>def</title>
-      <link>https://docs.thingsdb.net/v1/collection-api/mod_enum/def/</link>
+      <link>https://docs.thingsdb.net/v0/collection-api/mod_enum/def/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/collection-api/mod_enum/def/</guid>
+      <guid>https://docs.thingsdb.net/v0/collection-api/mod_enum/def/</guid>
       <description>Set a member from an existing enumerator type as default member. The default member is also selected when a instance of a Type is created using the enumerator as a required property.
 Action mod_enum(enum, &#39;def&#39;, name)
 Arguments    Argument Type Description     enum str Name of the enumerator type where the member has to be removed from.   &#39;def&#39; str Passing this argument will result in a set default action.</description>
@@ -34,10 +34,10 @@ Arguments    Argument Type Description     enum str Name of the enumerator type 
     
     <item>
       <title>del</title>
-      <link>https://docs.thingsdb.net/v1/collection-api/mod_enum/del/</link>
+      <link>https://docs.thingsdb.net/v0/collection-api/mod_enum/del/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/collection-api/mod_enum/del/</guid>
+      <guid>https://docs.thingsdb.net/v0/collection-api/mod_enum/del/</guid>
       <description>Delete a member from an existing enumerator type.
 A member may only be removed if the member is no longer being used. Otherwise an operation_err() is raised.
  Action mod_enum(enum, &#39;del&#39;, name)
@@ -46,10 +46,10 @@ Arguments    Argument Type Description     enum str Name of the enumerator type 
     
     <item>
       <title>mod</title>
-      <link>https://docs.thingsdb.net/v1/collection-api/mod_enum/mod/</link>
+      <link>https://docs.thingsdb.net/v0/collection-api/mod_enum/mod/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/collection-api/mod_enum/mod/</guid>
+      <guid>https://docs.thingsdb.net/v0/collection-api/mod_enum/mod/</guid>
       <description>Modify a member value from an existing enumerator type.
 Action mod_enum(enum, &#39;mod&#39;, name, value)
 Arguments    Argument Type Description     enum str Name of the enumerator type where the member has to be removed from.   &#39;mod&#39; str Passing this argument will result in a modify action.   name str Name of the member that has to be modified.   value any New value for the member that has to be modified.</description>
@@ -57,10 +57,10 @@ Arguments    Argument Type Description     enum str Name of the enumerator type 
     
     <item>
       <title>ren</title>
-      <link>https://docs.thingsdb.net/v1/collection-api/mod_enum/ren/</link>
+      <link>https://docs.thingsdb.net/v0/collection-api/mod_enum/ren/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/collection-api/mod_enum/ren/</guid>
+      <guid>https://docs.thingsdb.net/v0/collection-api/mod_enum/ren/</guid>
       <description>Rename a member value from an existing enumerator type.
 Action mod_enum(enum, &#39;ren&#39;, name, to)
 Arguments    Argument Type Description     enum str Name of the enumerator type where the member has to be removed from.   &#39;ren&#39; str Passing this argument will result in a rename action.   name str Name of the member that has to be modified.   to str New name for the member that has to be modified.</description>
