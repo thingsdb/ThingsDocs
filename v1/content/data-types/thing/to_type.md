@@ -1,6 +1,6 @@
 ---
 title: "to_type"
-weight: 135
+weight: 137
 ---
 
 Converts a *thing* into an instance of a given [Type](../../type).

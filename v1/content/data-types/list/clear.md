@@ -1,15 +1,15 @@
 ---
 title: "clear"
-weight: 97
+weight: 59
 ---
 
-Removes all things from a [set](..).
+Removes all items from a [list](..).
 
 This function generates a [change](../../../overview/changes) *(except when called on a [variable](../../../overview/variable))*.
 
 ### Function
 
-*set*.`clear()`
+*list*.`clear()`
 
 ### Return value
 
@@ -20,12 +20,10 @@ Returns `nil`.
 > This code adds things to a set:
 
 ```thingsdb,json_response
-a = {item: 'a'};
-b = {item: 'b'};
-s = set(a, b);
+arr = ['a', 'b', 'c'];
 
-s.clear();
-s;  // the set is empty
+arr.clear();
+arr;  // the list is empty
 ```
 
 > Return value in JSON format

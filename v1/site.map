@@ -56,6 +56,7 @@ data-types
     int
     list
         choice
+        clear
         each
         every
         extend
@@ -119,6 +120,7 @@ data-types
         upper
     thing
         assign
+        clear
         copy
         del
         dup

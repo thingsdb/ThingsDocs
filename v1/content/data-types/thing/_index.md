@@ -1,6 +1,6 @@
 ---
 title: "thing"
-weight: 120
+weight: 121
 ---
 
 ### Functions
@@ -8,6 +8,7 @@ weight: 120
 Function | Description
 ------ | -----------
 [assign](./assign) | Copies properties from a thing.
+[clear](./clear) | Remove all properties from a thing.
 [copy](./copy) | Copy a thing to a new thing. A Type is *not* preserved.
 [del](./del) | Remove a property.
 [dup](./dup) | Duplicate a thing while preserving the Type.

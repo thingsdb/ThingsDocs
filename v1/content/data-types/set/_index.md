@@ -1,6 +1,6 @@
 ---
 title: "set"
-weight: 94
+weight: 95
 ---
 
 A set is a collection which is unordered and can only contain things.

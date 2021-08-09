@@ -1,6 +1,6 @@
 ---
 title: "del_node"
-weight: 259
+weight: 261
 ---
 
 Delete a node from ThingsDB.

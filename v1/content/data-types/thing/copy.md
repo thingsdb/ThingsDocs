@@ -1,6 +1,6 @@
 ---
 title: "copy"
-weight: 122
+weight: 124
 ---
 
 Copy a *thing*.

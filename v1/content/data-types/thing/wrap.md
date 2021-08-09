@@ -1,6 +1,6 @@
 ---
 title: "wrap"
-weight: 137
+weight: 139
 ---
 
 Wrap a thing with a another [Type](../../type) to filter out properties, while preserving the Id.

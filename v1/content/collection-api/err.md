@@ -1,6 +1,6 @@
 ---
 title: "err"
-weight: 166
+weight: 168
 ---
 
 Returns an [error](../../data-types/error).
