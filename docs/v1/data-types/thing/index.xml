@@ -21,6 +21,21 @@ It is not possible to use assign(..) to set a property with a relation unless th
     </item>
     
     <item>
+      <title>clear</title>
+      <link>https://docs.thingsdb.net/v1/data-types/thing/clear/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/data-types/thing/clear/</guid>
+      <description>Removes all properties from a thing.
+This function generates a change (except when called on a variable).
+Function thing.clear()
+Return value Returns nil.
+Example  This code adds things to a set:
+ my_thing = { a: &#39;Property A&#39;, b: &#39;Property B&#39;, c: &#39;Property C&#39; }; my_thing.clear(); my_thing; // the thing is empty  Return value in JSON format
+ {} </description>
+    </item>
+    
+    <item>
       <title>copy</title>
       <link>https://docs.thingsdb.net/v1/data-types/thing/copy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

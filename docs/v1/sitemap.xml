@@ -235,6 +235,10 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v1/data-types/list/clear/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v1/data-types/list/each/</loc>
   </url>
   
@@ -484,6 +488,10 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v1/data-types/thing/assign/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v1/data-types/thing/clear/</loc>
   </url>
   
   <url>
