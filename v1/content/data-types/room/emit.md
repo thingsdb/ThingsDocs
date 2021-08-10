@@ -4,7 +4,7 @@ weight: 91
 ---
 
 
-Emit a *change* to all clients which have joined this [room](..).
+Emit an *event* to all clients which have joined this [room](..).
 The event is a string value which you are free to choose. It is possible, but not required, to send extra arguments with the event.
 
 This function does *not* generate a [change](../../../overview/changes).
