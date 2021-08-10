@@ -9,7 +9,7 @@ Install the following dependencies:
 - libuv1
 - libpcre2
 - libyajl
-- libcleri (`>=0.12.1`)
+- libcleri (`>=0.12.2`)
 
 When using Debian/Ubuntu; *libuv1*, *libpcre2* and *libyajl* can be installed using apt:
 
@@ -20,7 +20,7 @@ sudo apt-get install -y \
     libyajl-dev
 ```
 
-At least version `0.12.1` for library `libcleri-dev` is required.
+At least version `0.12.x` for library `libcleri-dev` is required.
 
 ```bash
 git clone https://github.com/transceptor-technology/libcleri.git

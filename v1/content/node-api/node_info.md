@@ -87,7 +87,7 @@ node_info();
     "http_api_port": 9210,
     "http_status_port": 8080,
     "ip_support": "ALL",
-    "libcleri_version": "0.12.1",
+    "libcleri_version": "0.12.2",
     "libpcre2_version": "10.34",
     "libuv_version": "1.34.2",
     "local_committed_change_id": 2,
