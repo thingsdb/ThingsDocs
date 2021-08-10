@@ -17,8 +17,8 @@
       
       <guid>https://docs.thingsdb.net/v1/getting-started/build-from-source/</guid>
       <description>Install the following dependencies:
- libuv1 libpcre2 libyajl libcleri (&amp;gt;=0.12.1)  When using Debian/Ubuntu; libuv1, libpcre2 and libyajl can be installed using apt:
-sudo apt-get install -y \  libuv1-dev \  libpcre2-dev \  libyajl-dev At least version 0.12.1 for library libcleri-dev is required.
+ libuv1 libpcre2 libyajl libcleri (&amp;gt;=0.12.2)  When using Debian/Ubuntu; libuv1, libpcre2 and libyajl can be installed using apt:
+sudo apt-get install -y \  libuv1-dev \  libpcre2-dev \  libyajl-dev At least version 0.12.x for library libcleri-dev is required.
 git clone https://github.com/transceptor-technology/libcleri.git cd libcleri/Release make sudo make install Next, clone the project
 git clone https://github.com/thingsdb/ThingsDB.git cd ThingsDB/Release make clean &amp;amp;&amp;amp; make You might want to create a symlink like this:</description>
     </item>
@@ -988,7 +988,7 @@ It might be convenient to use nil as the last statement in a query to prevent re
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v1/data-types/room/emit/</guid>
-      <description>Emit a change to all clients which have joined this room. The event is a string value which you are free to choose. It is possible, but not required, to send extra arguments with the event.
+      <description>Emit an event to all clients which have joined this room. The event is a string value which you are free to choose. It is possible, but not required, to send extra arguments with the event.
 This function does not generate a change.
 Using events enables a user to write code like this example of a ChatRoom in the Python language:
 import asyncio from thingsdb.util import event, Room from thingsdb.client import Client class ChatRoom(Room): @event(&amp;#39;new-message&amp;#39;) def on_new_message(self, msg): pass # do something with the message client = Client() loop = asyncio.</description>

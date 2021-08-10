@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v1/data-types/room/emit/</guid>
-      <description>Emit a change to all clients which have joined this room. The event is a string value which you are free to choose. It is possible, but not required, to send extra arguments with the event.
+      <description>Emit an event to all clients which have joined this room. The event is a string value which you are free to choose. It is possible, but not required, to send extra arguments with the event.
 This function does not generate a change.
 Using events enables a user to write code like this example of a ChatRoom in the Python language:
 import asyncio from thingsdb.util import event, Room from thingsdb.client import Client class ChatRoom(Room): @event(&amp;#39;new-message&amp;#39;) def on_new_message(self, msg): pass # do something with the message client = Client() loop = asyncio.</description>
