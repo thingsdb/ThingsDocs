@@ -94,7 +94,8 @@ python setup.py install Quick usage import asyncio from thingsdb.client import C
       <guid>https://docs.thingsdb.net/v1/connect/go/</guid>
       <description>Installation Simple install the package to your $GOPATH with the go tool from shell:
 $ go get github.com/thingsdb/go-thingsdb Make sure Git is installed on your machine and in your system&amp;rsquo;s PATH.
-Quick usage package main import ( &amp;#34;crypto/tls&amp;#34; &amp;#34;fmt&amp;#34; thingsdb &amp;#34;github.com/thingsdb/go-thingsdb&amp;#34; ) func example(conn *thingsdb.Conn, res chan interface{}) { var data interface{} var err error if err := conn.Connect(); err != nil { res &amp;lt;- err return } defer conn.Close() if err := conn.</description>
+Quick usage  Note: This example requires at lease version 1.0.0 of the go-thingsdb connector.
+ package main import ( &amp;#34;crypto/tls&amp;#34; &amp;#34;fmt&amp;#34; thingsdb &amp;#34;github.com/thingsdb/go-thingsdb&amp;#34; ) func example(conn *thingsdb.Conn, res chan interface{}) { if err := conn.Connect(); err != nil { res &amp;lt;- err return } // Close the connection at the end of this function  defer conn.</description>
     </item>
     
     <item>

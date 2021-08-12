@@ -11,20 +11,20 @@
     <title>Go :: ThingsDB documentation</title>
 
     
-    <link href="/v1/css/nucleus.css?1628603606" rel="stylesheet">
-    <link href="/v1/css/fontawesome-all.min.css?1628603606" rel="stylesheet">
-    <link href="/v1/css/hybrid.css?1628603606" rel="stylesheet">
-    <link href="/v1/css/featherlight.min.css?1628603606" rel="stylesheet">
-    <link href="/v1/css/perfect-scrollbar.min.css?1628603606" rel="stylesheet">
-    <link href="/v1/css/auto-complete.css?1628603606" rel="stylesheet">
-    <link href="/v1/css/atom-one-dark-reasonable.css?1628603606" rel="stylesheet">
-    <link href="/v1/css/theme.css?1628603606" rel="stylesheet">
-    <link href="/v1/css/hugo-theme.css?1628603606" rel="stylesheet">
+    <link href="/v1/css/nucleus.css?1628763429" rel="stylesheet">
+    <link href="/v1/css/fontawesome-all.min.css?1628763429" rel="stylesheet">
+    <link href="/v1/css/hybrid.css?1628763429" rel="stylesheet">
+    <link href="/v1/css/featherlight.min.css?1628763429" rel="stylesheet">
+    <link href="/v1/css/perfect-scrollbar.min.css?1628763429" rel="stylesheet">
+    <link href="/v1/css/auto-complete.css?1628763429" rel="stylesheet">
+    <link href="/v1/css/atom-one-dark-reasonable.css?1628763429" rel="stylesheet">
+    <link href="/v1/css/theme.css?1628763429" rel="stylesheet">
+    <link href="/v1/css/hugo-theme.css?1628763429" rel="stylesheet">
     
-      <link href="/v1/css/theme-mine.css?1628603606" rel="stylesheet">
+      <link href="/v1/css/theme-mine.css?1628763429" rel="stylesheet">
     
 
-    <script src="/v1/js/jquery-3.3.1.min.js?1628603606"></script>
+    <script src="/v1/js/jquery-3.3.1.min.js?1628763429"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v1/js/lunr.min.js?1628603606"></script>
-<script type="text/javascript" src="/v1/js/auto-complete.js?1628603606"></script>
+<script type="text/javascript" src="/v1/js/lunr.min.js?1628763429"></script>
+<script type="text/javascript" src="/v1/js/auto-complete.js?1628763429"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v1\/";
     
 </script>
-<script type="text/javascript" src="/v1/js/search.js?1628603606"></script>
+<script type="text/javascript" src="/v1/js/search.js?1628763429"></script>
 
     
   </div>
@@ -6898,6 +6898,9 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ go get github.com/thingsdb/go-thingsdb
 </code></pre></div><p>Make sure <a href="https://git-scm.com/downloads">Git</a> is installed on your machine and in your system&rsquo;s PATH.</p>
 <h3 id="quick-usage">Quick usage</h3>
+<blockquote>
+<p>Note: This example requires at lease <strong>version 1.0.0</strong> of the go-thingsdb connector.</p>
+</blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 
 <span style="color:#f92672">import</span> (
@@ -6908,32 +6911,30 @@
 )
 
 <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">example</span>(<span style="color:#a6e22e">conn</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">thingsdb</span>.<span style="color:#a6e22e">Conn</span>, <span style="color:#a6e22e">res</span> <span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">interface</span>{}) {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">data</span> <span style="color:#66d9ef">interface</span>{}
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>
-
     <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">conn</span>.<span style="color:#a6e22e">Connect</span>(); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
         <span style="color:#a6e22e">res</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">err</span>
         <span style="color:#66d9ef">return</span>
     }
 
-    <span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">conn</span>.<span style="color:#a6e22e">Close</span>()
+	<span style="color:#75715e">// Close the connection at the end of this function
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">conn</span>.<span style="color:#a6e22e">Close</span>()
 
 	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">conn</span>.<span style="color:#a6e22e">AuthToken</span>(<span style="color:#e6db74">&#34;Fai6NmH7QYxA6WLYPdtgcy&#34;</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
 		<span style="color:#a6e22e">res</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">err</span>
 		<span style="color:#66d9ef">return</span>
 	}
 
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">data</span>, <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">conn</span>.<span style="color:#a6e22e">Query</span>(
+	<span style="color:#a6e22e">data</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">conn</span>.<span style="color:#a6e22e">Query</span>(
 		<span style="color:#e6db74">&#34;//Doc&#34;</span>,                <span style="color:#75715e">// Scope
 </span><span style="color:#75715e"></span>		<span style="color:#e6db74">&#34;.greetings.choice();&#34;</span>, <span style="color:#75715e">// ThingsDB code
-</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">nil</span>, <span style="color:#75715e">// Optional array with variable (may be `nil`)
-</span><span style="color:#75715e"></span>		<span style="color:#ae81ff">120</span>, <span style="color:#75715e">// Timeout in seconds
-</span><span style="color:#75715e"></span>	); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-		<span style="color:#a6e22e">res</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">err</span>
-		<span style="color:#66d9ef">return</span>
-	}
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">nil</span>,                    <span style="color:#75715e">// Arguments, may be a map[string]interface{}
+</span><span style="color:#75715e"></span>	);
 
-	<span style="color:#a6e22e">res</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data</span>
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+		<span style="color:#a6e22e">res</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data</span>
+	} <span style="color:#66d9ef">else</span> {
+		<span style="color:#a6e22e">res</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">err</span>
+	}
 }
 
 <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
@@ -6948,19 +6949,8 @@
 	<span style="color:#75715e">// Create a new ThingsDB connection
 </span><span style="color:#75715e"></span>	<span style="color:#a6e22e">conn</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">thingsdb</span>.<span style="color:#a6e22e">NewConn</span>(<span style="color:#e6db74">&#34;playground.thingsdb.net&#34;</span>, <span style="color:#ae81ff">9400</span>, <span style="color:#a6e22e">conf</span>)
 
-	<span style="color:#75715e">// Set-up a log channel, this is not required
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">conn</span>.<span style="color:#a6e22e">LogCh</span> = make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">string</span>)
-
 	<span style="color:#75715e">// Start our example
 </span><span style="color:#75715e"></span>	<span style="color:#66d9ef">go</span> <span style="color:#a6e22e">example</span>(<span style="color:#a6e22e">conn</span>, <span style="color:#a6e22e">res</span>)
-
-	<span style="color:#75715e">// Log handler
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">go</span> <span style="color:#66d9ef">func</span>() {
-		<span style="color:#66d9ef">for</span> {
-			<span style="color:#a6e22e">msg</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">conn</span>.<span style="color:#a6e22e">LogCh</span>
-			<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Log: %s\n&#34;</span>, <span style="color:#a6e22e">msg</span>)
-		}
-	}()
 
 	<span style="color:#75715e">// Wait for the response
 </span><span style="color:#75715e"></span>	<span style="color:#a6e22e">data</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">res</span>
@@ -7008,19 +6998,19 @@ Welcome at ThingsDB!
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v1/js/clipboard.min.js?1628603606"></script>
-    <script src="/v1/js/perfect-scrollbar.min.js?1628603606"></script>
-    <script src="/v1/js/perfect-scrollbar.jquery.min.js?1628603606"></script>
-    <script src="/v1/js/jquery.sticky.js?1628603606"></script>
-    <script src="/v1/js/featherlight.min.js?1628603606"></script>
-    <script src="/v1/js/highlight.pack.js?1628603606"></script>
+    <script src="/v1/js/clipboard.min.js?1628763429"></script>
+    <script src="/v1/js/perfect-scrollbar.min.js?1628763429"></script>
+    <script src="/v1/js/perfect-scrollbar.jquery.min.js?1628763429"></script>
+    <script src="/v1/js/jquery.sticky.js?1628763429"></script>
+    <script src="/v1/js/featherlight.min.js?1628763429"></script>
+    <script src="/v1/js/highlight.pack.js?1628763429"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v1/js/modernizr.custom-3.6.0.js?1628603606"></script>
-    <script src="/v1/js/learn.js?1628603606"></script>
-    <script src="/v1/js/hugo-learn.js?1628603606"></script>
+    <script src="/v1/js/modernizr.custom-3.6.0.js?1628763429"></script>
+    <script src="/v1/js/learn.js?1628763429"></script>
+    <script src="/v1/js/hugo-learn.js?1628763429"></script>
 
-    <link href="/v1/mermaid/mermaid.css?1628603606" rel="stylesheet" />
-    <script src="/v1/mermaid/mermaid.js?1628603606"></script>
+    <link href="/v1/mermaid/mermaid.css?1628763429" rel="stylesheet" />
+    <script src="/v1/mermaid/mermaid.js?1628763429"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
