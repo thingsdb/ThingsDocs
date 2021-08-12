@@ -15,6 +15,8 @@ Make sure [Git](https://git-scm.com/downloads) is installed on your machine and 
 
 ### Quick usage
 
+> Note: This example requires at lease **version 1.0.0** of the go-thingsdb connector.
+
 ```go
 package main
 
@@ -26,14 +28,12 @@ import (
 )
 
 func example(conn *thingsdb.Conn, res chan interface{}) {
-    var data interface{}
-    var err error
-
     if err := conn.Connect(); err != nil {
         res <- err
         return
     }
 
+	// Close the connection at the end of this function
     defer conn.Close()
 
 	if err := conn.AuthToken("Fai6NmH7QYxA6WLYPdtgcy"); err != nil {
@@ -41,17 +41,17 @@ func example(conn *thingsdb.Conn, res chan interface{}) {
 		return
 	}
 
-	if data, err = conn.Query(
+	data, err := conn.Query(
 		"//Doc",                // Scope
 		".greetings.choice();", // ThingsDB code
-		nil, // Optional array with variable (may be `nil`)
-		120, // Timeout in seconds
-	); err != nil {
-		res <- err
-		return
-	}
+		nil,                    // Arguments, may be a map[string]interface{}
+	);
 
-	res <- data
+	if err == nil {
+		res <- data
+	} else {
+		res <- err
+	}
 }
 
 func main() {
@@ -66,19 +66,8 @@ func main() {
 	// Create a new ThingsDB connection
 	conn := thingsdb.NewConn("playground.thingsdb.net", 9400, conf)
 
-	// Set-up a log channel, this is not required
-	conn.LogCh = make(chan string)
-
 	// Start our example
 	go example(conn, res)
-
-	// Log handler
-	go func() {
-		for {
-			msg := <-conn.LogCh
-			fmt.Printf("Log: %s\n", msg)
-		}
-	}()
 
 	// Wait for the response
 	data := <-res
