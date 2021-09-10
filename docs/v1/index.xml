@@ -2791,8 +2791,12 @@ Return value List with Type mpdata about all Types in the collection.</descripti
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v1/collection-api/wse/</guid>
-      <description>Stored closures which can potentially make changes to ThingsDB are called closures with side effects and must be wrapped with the wse(..) function. This allows ThingsDB before running the query to make a change.
-Function wse() might also be called without arguments which can be used to force ThingsDB to generate a change. This might be useful for when it is really important that a query returns a result based on a state where all previous changes are processed.</description>
+      <description>This function enforces ThingsDB to create a change.
+When using a stored closure which requires a change it might not be possible for ThingsDB to detect the change requirement before evaluation the query. In this case it is required to use wse() to enforce a change.
+Function wse() might both wrap a statement and be called without arguments.
+This function generates a change.
+Function wse([statement])
+Arguments    Argument Type Description     statement any (optional) Statement or block to wrap.</description>
     </item>
     
     <item>
@@ -3448,7 +3452,7 @@ Example  Create a new procedure add_one:</description>
       
       <guid>https://docs.thingsdb.net/v1/procedures-api/procedure_info/</guid>
       <description>Returns information about a procedure.
-   Value Description     arguments Array with positional argument names.   created_at Time Stamp when the procedure is created.   definition Closure definition. (Only available with CHANGE privileges)   doc Doc string of the closure in the procedure.   name Name of the procedure.   with_side_effects Boolean value which indicates if this procedure has side effects.</description>
+   Value Description     arguments Array with positional argument names.   created_at Time Stamp when the procedure is created.   definition Closure definition. (Only available with CHANGE privileges)   doc Doc string of the closure in the procedure.   name Name of the procedure.   with_side_effects Boolean value which indicates if this procedure has side effects and thus requires a change.</description>
     </item>
     
     <item>
@@ -3543,7 +3547,7 @@ The run(..) function may also be used to run a procedure.
 Function run(timer)
 Arguments    Argument Type Description     timer int (required) Id of the timer to run.    Return value Returns the timer response.
 Example  Example code using run:
- .counter = 1; timer = new_timer(datetime().move(&#39;days&#39;, 1), || .counter += 1); wse(run(timer));  Return value in JSON format</description>
+ .counter = 1; timer = new_timer(datetime().move(&#39;days&#39;, 1), || .counter += 1); run(timer);  Return value in JSON format</description>
     </item>
     
     <item>
