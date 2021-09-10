@@ -14,7 +14,7 @@ Value | Description
 `next_run` | Scheduled time when the timer wil run.
 `repeat` | Repeat the timer each `X` seconds. *(Only when this is a repeating timer)*
 `user` | User which credentials are used for the timer. *(Only available with `CHANGE` privileges)*
-`with_side_effects` | Boolean value which indicates if this timer has side effects.
+`with_side_effects` | Boolean value which indicates if this timer has side effects and thus requires a [change](../../overview/changes).
 
 This function does *not* generate a [change](../../overview/changes).
 

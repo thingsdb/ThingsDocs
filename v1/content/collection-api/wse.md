@@ -3,17 +3,12 @@ title: "wse"
 weight: 241
 ---
 
-Stored closures which can potentially make changes to ThingsDB are called
-*closures with side effects* and must be wrapped with the `wse(..)` function.
-This allows ThingsDB before running the query to make a *change*.
+This function enforces ThingsDB to create a [change](../../overview/changes).
 
-Function `wse()` might also be called without arguments which can be used to force ThingsDB
-to generate a *change*. This might be useful for when it is really important that a query
-returns a result based on a state where all previous changes are processed.
+When using a stored closure which requires a change it might not be possible for ThingsDB
+to detect the change requirement before evaluation the query. In this case it is required to use `wse()` to enforce a change.
 
-{{% notice info %}}
-You should use `wse` only when required, otherwise this would lead to unnecessary changes.
-{{% /notice %}}
+Function `wse()` might both wrap a statement and be called without arguments.
 
 This function generates a [change](../../overview/changes).
 
@@ -35,17 +30,21 @@ Return value of the given statement.
 
 > This code shows an example usage for ***wse()***:
 
-```thingsdb,json_response
+```thingsdb,should_pass
 // Suppose we have a closure with side-effects
 .take_license = || .licenses -= 1;
 
 // And we have some initial licenses
 .licenses = 99;
+```
 
-wse({
-    // without wse() this would raise an error
-    .take_license();
-});
+> Here we need **wse()** to enforce a change:
+
+```thingsdb,syntax_only
+wse();
+
+// without wse() no change would be created and thus this would raise an error
+.take_license();
 
 // Return the number of licenses left
 .licenses;

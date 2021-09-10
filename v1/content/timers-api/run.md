@@ -33,7 +33,7 @@ Returns the timer response.
 .counter = 1;
 timer = new_timer(datetime().move('days', 1), || .counter += 1);
 
-wse(run(timer));
+run(timer);
 ```
 
 > Return value in JSON format

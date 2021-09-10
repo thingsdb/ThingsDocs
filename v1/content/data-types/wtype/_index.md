@@ -82,7 +82,7 @@ set_type('_AllBooks', {
 };
 
 // Create a procedure for adding a new book
-new_procedure('add_book', |author_name, book_title| wse({
+new_procedure('add_book', |author_name, book_title| {
     writer = .upsert_writer(author_name);
     new_book = Book{
         title: book_title,
@@ -90,14 +90,12 @@ new_procedure('add_book', |author_name, book_title| wse({
     };
     .books.add(new_book);
     writer.books.add(new_book);
-}));
+});
 
 // Add some sample books
-wse({
-    run('add_book', 'Alice', 'Foo');
-    run('add_book', 'Alice', 'Bar');
-    run('add_book', 'Bob', 'Baz');
-});
+run('add_book', 'Alice', 'Foo');
+run('add_book', 'Alice', 'Bar');
+run('add_book', 'Bob', 'Baz');
 
 /*
  * Now we can simply wrap the collection to return the books with titles and

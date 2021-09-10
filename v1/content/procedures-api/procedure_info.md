@@ -12,7 +12,7 @@ Value | Description
 `definition` | Closure definition. *(Only available with `CHANGE` privileges)*
 `doc` | Doc string of the closure in the procedure.
 `name` | Name of the procedure.
-`with_side_effects` | Boolean value which indicates if this procedure has side effects.
+`with_side_effects` | Boolean value which indicates if this procedure has side effects and thus requires a [change](../../overview/changes).
 
 This function does *not* generate a [change](../../overview/changes).
 
