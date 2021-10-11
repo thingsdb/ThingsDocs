@@ -17,8 +17,8 @@
       
       <guid>https://docs.thingsdb.net/v1/getting-started/build-from-source/</guid>
       <description>Install the following dependencies:
- libuv1 libpcre2 libyajl libcleri (&amp;gt;=0.12.2)  When using Debian/Ubuntu; libuv1, libpcre2 and libyajl can be installed using apt:
-sudo apt-get install -y \  libuv1-dev \  libpcre2-dev \  libyajl-dev At least version 0.12.x for library libcleri-dev is required.
+ libuv1 libpcre2 libyajl libcurl libcleri (&amp;gt;=0.12.2)  When using Debian/Ubuntu; libuv1, libpcre2, libyajl and libcurl can be installed using apt:
+sudo apt-get install -y \  libuv1-dev \  libpcre2-dev \  libyajl-dev \  libcurl4-nss-dev \ At least version 0.12.x for library libcleri-dev is required.
 git clone https://github.com/transceptor-technology/libcleri.git cd libcleri/Release make sudo make install Next, clone the project
 git clone https://github.com/thingsdb/ThingsDB.git cd ThingsDB/Release make clean &amp;amp;&amp;amp; make You might want to create a symlink like this:</description>
     </item>
@@ -1807,6 +1807,21 @@ Arguments    Argument Type Description     value any (optional) The value where 
     </item>
     
     <item>
+      <title>change_id</title>
+      <link>https://docs.thingsdb.net/v1/collection-api/change_id/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/collection-api/change_id/</guid>
+      <description>Returns the current change Id for the running query. The return value will be nil if the query does not require a change.
+This function does not generate a change.
+Function change_id()
+Arguments None
+Return value The current change Id or nil when the query does not require a change.
+Example  Example using change_id():
+ change_id(); // nil, since no change is required  Return value in JSON format</description>
+    </item>
+    
+    <item>
       <title>datetime</title>
       <link>https://docs.thingsdb.net/v1/collection-api/datetime/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1897,21 +1912,6 @@ Return value List with mpdata about all enumeration types in the collection scop
 This function does not generate a change.
 Function err([code, [message]])
 Arguments    Argument Type Description     code int (optional) Integer error code between -127 and -50, defaults to -100.   message str (optional) Optional error message.    Return value An error value (in a client response, an error value will be packed as a string value with the error message).</description>
-    </item>
-    
-    <item>
-      <title>change_id</title>
-      <link>https://docs.thingsdb.net/v1/collection-api/change_id/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v1/collection-api/change_id/</guid>
-      <description>Returns the current change Id for the running query. The return value will be nil if the query does not require a change.
-This function does not generate a change.
-Function change_id()
-Arguments None
-Return value The current change Id or nil when the query does not require a change.
-Example  Example using change_id():
- change_id(); // nil, since no change is required  Return value in JSON format</description>
     </item>
     
     <item>
@@ -2336,6 +2336,18 @@ Function list([value])
 Arguments    Argument Type Description     value set/list/tuple (optional) Optional value to initialize the list.    Return value A new list.
 Example  This code shows some return values for list():
  list( set({}, {}) );  Return value in JSON format</description>
+    </item>
+    
+    <item>
+      <title>log</title>
+      <link>https://docs.thingsdb.net/v1/collection-api/log/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/collection-api/log/</guid>
+      <description>Might be used for debugging code. The message will be always be logged on the console of the node which is processing the request. When you are connected using a socket stream, then a warning message with code 2 will be send to the client as well.
+This function does not generate a change.
+Function log(value)
+Arguments    Argument Type Description     value str/any (required) Value to log.</description>
     </item>
     
     <item>
@@ -2879,7 +2891,7 @@ If Google Cloud Storage is configured then it is possible to create backups dire
       <guid>https://docs.thingsdb.net/v1/node-api/node_info/</guid>
       <description>Returns information about the node in the selected scope. See scopes for more information on how to target a specific node scope.
 Like all other info(..) functions, this function returns mpdata which can be loaded to extract one or more properties. See example 2.
-   Value Description     archive_files Number of archive files. May decrease after a full store during away mode.   archived_in_memory Number of changes which are archived in memory.</description>
+   Value Description     architecture Machine architecture of this node, for example amd64.   archive_files Number of archive files. May decrease after a full store during away mode.</description>
     </item>
     
     <item>
@@ -3238,6 +3250,18 @@ This function requires GRANT privileges on the @thingsdb scope.
  This function generates a change.
 Function new_user(user)
 Arguments    Argument Type Description     user str (required) Username, between 1 and 128 graphical characters.</description>
+    </item>
+    
+    <item>
+      <title>refresh_module</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/refresh_module/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/refresh_module/</guid>
+      <description>Refresh module first stops the module (if running), next if will check for an update and performs the update if required. When finished, it will start the module again.
+This function generates a change.
+Function refresh_module(name)
+Arguments    Argument Type Description     name str (required) Name of the module to refresh.    Return value Returns nil. You might want to use module_info(..) to check if the module is successfully running.</description>
     </item>
     
     <item>

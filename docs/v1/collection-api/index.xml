@@ -90,6 +90,21 @@ Arguments    Argument Type Description     value any (optional) The value where 
     </item>
     
     <item>
+      <title>change_id</title>
+      <link>https://docs.thingsdb.net/v1/collection-api/change_id/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/collection-api/change_id/</guid>
+      <description>Returns the current change Id for the running query. The return value will be nil if the query does not require a change.
+This function does not generate a change.
+Function change_id()
+Arguments None
+Return value The current change Id or nil when the query does not require a change.
+Example  Example using change_id():
+ change_id(); // nil, since no change is required  Return value in JSON format</description>
+    </item>
+    
+    <item>
       <title>datetime</title>
       <link>https://docs.thingsdb.net/v1/collection-api/datetime/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -180,21 +195,6 @@ Return value List with mpdata about all enumeration types in the collection scop
 This function does not generate a change.
 Function err([code, [message]])
 Arguments    Argument Type Description     code int (optional) Integer error code between -127 and -50, defaults to -100.   message str (optional) Optional error message.    Return value An error value (in a client response, an error value will be packed as a string value with the error message).</description>
-    </item>
-    
-    <item>
-      <title>change_id</title>
-      <link>https://docs.thingsdb.net/v1/collection-api/change_id/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v1/collection-api/change_id/</guid>
-      <description>Returns the current change Id for the running query. The return value will be nil if the query does not require a change.
-This function does not generate a change.
-Function change_id()
-Arguments None
-Return value The current change Id or nil when the query does not require a change.
-Example  Example using change_id():
- change_id(); // nil, since no change is required  Return value in JSON format</description>
     </item>
     
     <item>
@@ -619,6 +619,18 @@ Function list([value])
 Arguments    Argument Type Description     value set/list/tuple (optional) Optional value to initialize the list.    Return value A new list.
 Example  This code shows some return values for list():
  list( set({}, {}) );  Return value in JSON format</description>
+    </item>
+    
+    <item>
+      <title>log</title>
+      <link>https://docs.thingsdb.net/v1/collection-api/log/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/collection-api/log/</guid>
+      <description>Might be used for debugging code. The message will be always be logged on the console of the node which is processing the request. When you are connected using a socket stream, then a warning message with code 2 will be send to the client as well.
+This function does not generate a change.
+Function log(value)
+Arguments    Argument Type Description     value str/any (required) Value to log.</description>
     </item>
     
     <item>

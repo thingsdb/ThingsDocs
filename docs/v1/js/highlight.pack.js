@@ -1,5 +1,5 @@
 /*
-  Highlight.js 10.0.0-beta.0 (a4700ac0)
+  Highlight.js 10.0.0-beta.0 (c894b381)
   License: BSD-3-Clause
   Copyright (c) 2006-2020, Ivan Sagalaev
 */
@@ -1862,7 +1862,7 @@ hljs.registerLanguage('thingsdb', function () {
                         'is_ascii|is_bool|is_bytes|is_closure|is_datetime|is_enum|is_err|is_float|is_inf|is_int|is_room|' +
                         'is_list|is_mpdata|is_nan|is_nil|is_raw|is_regex|is_set|is_str|is_thing|is_timeval|is_tuple|' +
                         'is_utf8|regex|list|mod_enum|mod_type|new|new_type|now|raise|rand|range|' +
-                        'randint|randstr|refs|rename_enum|rename_type|return|set|set_enum|set_type|str|thing|try|type|' +
+                        'randint|randstr|refs|log|rename_enum|rename_type|return|set|set_enum|set_type|str|thing|try|type|' +
                         'future|is_future|timeval|type_assert|type_count|type_info|types_info|wse|' +
                         /* node functions */
                         'backup_info|backups_info|counters|del_backup|' +
@@ -1873,7 +1873,7 @@ hljs.registerLanguage('thingsdb', function () {
                         'del_expired|del_node|del_token|del_user|grant|' +
                         'has_collection|has_node|has_token|has_user|' +
                         'new_collection|new_node|new_token|new_user|' +
-                        'rename_collection|rename_user|restore|revoke|set_password|set_time_zone|' +
+                        'refresh_module|rename_collection|rename_user|restore|revoke|set_password|set_time_zone|' +
                         'time_zones_info|user_info|users_info|' +
                         'has_module|del_module|module_info|modules_info|new_module|deploy_module|rename_module|set_module_conf|set_module_scope|' +
                         /* procedure functions */

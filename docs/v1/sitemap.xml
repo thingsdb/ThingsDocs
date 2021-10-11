@@ -643,6 +643,10 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v1/collection-api/change_id/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v1/collection-api/datetime/</loc>
   </url>
   
@@ -672,10 +676,6 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v1/collection-api/err/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v1/collection-api/change_id/</loc>
   </url>
   
   <url>
@@ -804,6 +804,10 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v1/collection-api/list/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v1/collection-api/log/</loc>
   </url>
   
   <url>
@@ -1108,6 +1112,10 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v1/thingsdb-api/new_user/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v1/thingsdb-api/refresh_module/</loc>
   </url>
   
   <url>

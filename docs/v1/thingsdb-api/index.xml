@@ -304,6 +304,18 @@ Arguments    Argument Type Description     user str (required) Username, between
     </item>
     
     <item>
+      <title>refresh_module</title>
+      <link>https://docs.thingsdb.net/v1/thingsdb-api/refresh_module/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/thingsdb-api/refresh_module/</guid>
+      <description>Refresh module first stops the module (if running), next if will check for an update and performs the update if required. When finished, it will start the module again.
+This function generates a change.
+Function refresh_module(name)
+Arguments    Argument Type Description     name str (required) Name of the module to refresh.    Return value Returns nil. You might want to use module_info(..) to check if the module is successfully running.</description>
+    </item>
+    
+    <item>
       <title>rename_collection</title>
       <link>https://docs.thingsdb.net/v1/thingsdb-api/rename_collection/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

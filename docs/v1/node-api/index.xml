@@ -90,7 +90,7 @@ If Google Cloud Storage is configured then it is possible to create backups dire
       <guid>https://docs.thingsdb.net/v1/node-api/node_info/</guid>
       <description>Returns information about the node in the selected scope. See scopes for more information on how to target a specific node scope.
 Like all other info(..) functions, this function returns mpdata which can be loaded to extract one or more properties. See example 2.
-   Value Description     archive_files Number of archive files. May decrease after a full store during away mode.   archived_in_memory Number of changes which are archived in memory.</description>
+   Value Description     architecture Machine architecture of this node, for example amd64.   archive_files Number of archive files. May decrease after a full store during away mode.</description>
     </item>
     
     <item>
