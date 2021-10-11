@@ -627,7 +627,7 @@ Example  This code shows some return values for list():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v1/collection-api/log/</guid>
-      <description>Might be used for debugging code. The message will be always be logged on the console of the node which is processing the request. When you are connected using a socket stream, then a warning message with code 2 will be send to the client as well.
+      <description>Might be used for debugging code. The message will be logged as a warning message on the console of the node which is processing the request. When you are connected using a socket stream, then a warning message with code 2 will be send to the client as well.
 This function does not generate a change.
 Function log(value)
 Arguments    Argument Type Description     value str/any (required) Value to log.</description>

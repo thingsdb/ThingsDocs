@@ -10,13 +10,13 @@ ThingsDB might push one of the following waning codes:
 
 Code | Description
 ---- | -----------
-`X` | Currently, ThingsDB does not have any known warning codes.
+`2`  | Message from the [log()](../../collection-api/log) function.
 
 > Example *warning* event in JSON format:
 
 ```json
 {
-    "warn_code": 1,
-    "warn_msg": "function XXX is deprecated..."
+    "warn_code": 2,
+    "warn_msg": "Test.., one, two, three"
 }
 ```

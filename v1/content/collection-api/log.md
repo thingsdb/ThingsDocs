@@ -3,8 +3,8 @@ title: "log"
 weight: 202
 ---
 
-Might be used for debugging code. The message will be *always* be logged on the console of the node which is processing the request.
-When you are connected using a socket stream, then a [warning](../../listening/warning) message with code `2` will be send to the client as well.
+Might be used for debugging code. The message will be logged as a warning message on the console of the node which is processing the request.
+When you are connected using a socket stream, then a [warning message](../../listening/warning) with code `2` will be send to the client as well.
 
 This function does *not* generate a [change](../../overview/changes).
 
@@ -16,7 +16,7 @@ This function does *not* generate a [change](../../overview/changes).
 
 Argument | Type | Description
 -------- | ---- | -----------
-value | str/any (required) | Value to log. If not a string, an attempt will be made to convert the value into a string. A [type_err()](../../errors/type_err) will be raised when tje conversion has failed.
+value | str/any (required) | Value to log. If not a string, an attempt will be made to convert the value into a string. A [type_err()](../../errors/type_err) will be raised when the conversion has failed.
 
 ### Return value
 

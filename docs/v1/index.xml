@@ -2344,7 +2344,7 @@ Example  This code shows some return values for list():
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v1/collection-api/log/</guid>
-      <description>Might be used for debugging code. The message will be always be logged on the console of the node which is processing the request. When you are connected using a socket stream, then a warning message with code 2 will be send to the client as well.
+      <description>Might be used for debugging code. The message will be logged as a warning message on the console of the node which is processing the request. When you are connected using a socket stream, then a warning message with code 2 will be send to the client as well.
 This function does not generate a change.
 Function log(value)
 Arguments    Argument Type Description     value str/any (required) Value to log.</description>
@@ -3690,8 +3690,8 @@ If this event is not received when expected, the reason might be that the room b
       <guid>https://docs.thingsdb.net/v1/listening/warning/</guid>
       <description>ThingsDB might send a warning events to a client. The warn_code can be used to determine the warning type.
 ThingsDB might push one of the following waning codes:
-   Code Description     X Currently, ThingsDB does not have any known warning codes.     Example warning event in JSON format:
- { &amp;#34;warn_code&amp;#34;: 1, &amp;#34;warn_msg&amp;#34;: &amp;#34;function XXX is deprecated...&amp;#34; } </description>
+   Code Description     2 Message from the log() function.     Example warning event in JSON format:
+ { &amp;#34;warn_code&amp;#34;: 2, &amp;#34;warn_msg&amp;#34;: &amp;#34;Test.., one, two, three&amp;#34; } </description>
     </item>
     
     <item>
