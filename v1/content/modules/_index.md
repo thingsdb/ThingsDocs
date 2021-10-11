@@ -1,6 +1,6 @@
 ---
 title: "Modules"
-weight: 308
+weight: 310
 chapter: true
 ---
 
@@ -19,6 +19,7 @@ Function | scope | description
 -------- | ----- | -----------
 [del_module](../thingsdb-api/del_module) | `@thingsdb` | Delete a module.
 [deploy_module](../thingsdb-api/deploy_module) | `@thingsdb` | Deploy code for a module.
+[refresh_module](../thingsdb-api/refresh_module) | `@thingsdb` | Refresh a module. This will stop, update *(if required)*, and re-start a module.
 [has_module](../thingsdb-api/has_module) | `@thingsdb` | Check if a module exists.
 [module_info](../thingsdb-api/module_info) | *all scopes* | Show information about a module.
 [modules_info](../thingsdb-api/modules_info) | *all scopes* | Show information about all module.

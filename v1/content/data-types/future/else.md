@@ -51,5 +51,5 @@ future({
 > Example return value in JSON format
 
 ```json
-"module `DUMMY` is not running (status: no such file or directory)"
+"module `DUMMY` is not running (status: module not installed)"
 ```

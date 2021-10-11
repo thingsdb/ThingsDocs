@@ -1,6 +1,6 @@
 ---
 title: "node_info"
-weight: 249
+weight: 250
 ---
 
 Returns information about the node in the selected scope.
@@ -10,6 +10,7 @@ Like all other *info(..)* functions, this function returns [mpdata](../../data-t
 
 Value | Description
 ------- | -----------
+architecture | Machine architecture of this node, for example `amd64`.
 archive_files | Number of archive files. May decrease after a full store during *away* mode.
 archived_in_memory | Number of changes which are archived in memory.
 cache_expiration_time | Time in seconds when a query expires in cache. Cleanup takes place when in *away* mode.
@@ -29,12 +30,14 @@ libpcre2_version | PCRE regular expression library version.
 libuv_version | UV asynchronous library version.
 local_committed_change_id | Last committed change Id on the node.
 local_stored_change_id | Last stored change Id on disk. Store takes place when in *away* mode.
-log_level | Current log level for the node. May be changed at runtime using [set_log_level(..)](../../node-api/set_log_level)
+log_level | Current log level for the node. May be changed at runtime using [set_log_level(..)](../../node-api/set_log_level).
+modules_path | Path where the modules are stored.
 msgpack_version | MessagePack data protocol library version.
 next_free_id | Next free Id *(used for things, timers, rooms etc.)*.
 node_id | The `id` which is assigned to the node.
 node_name | This node will publish itself to other nodes using the node name. This can be an IP address, hostname, or a fully qualified domain name (FQDN) of the node.
 node_port | Listening for node TCP socket connections on this port.
+platform | Machine platform of this node, for example `linux`.
 python_interpreter | Displays the Python interpreter which the node is using to run Python modules.
 result_size_limit | Result size limit is checked when packing properties for a thing. If, at the check moment, the packed data size exceeds the limit, packing stops and an [RESULT_TOO_LARGE](../../errors/#internal-errors) error will be returned. This limit is set in bytes and is used to prevent a huge amount of data, typically when a high `deep` value is used. See the [configuration page](../../getting-started/configuration) to configure this limit.
 scheduled_backups | Number of backups scheduled on this node. Only repeated backups or backups which are planned in the future are included.
@@ -73,6 +76,7 @@ node_info();
 
 ```json
 {
+    "architecture": "amd64",
     "archive_files": 1,
     "archived_in_memory": 0,
     "cache_expiration_time": 900,
@@ -93,12 +97,14 @@ node_info();
     "local_committed_change_id": 2,
     "local_stored_change_id": 1,
     "log_level": "WARNING",
+    "modules_path": "/usr/lib/thingsdb-modules",
     "msgpack_version": "3.2.1",
     "next_change_id": 3,
     "next_free_id": 3,
     "node_id": 0,
     "node_name": "node0.local",
     "node_port": 9221,
+    "platform": "linux",
     "python_interpreter": "/usr/bin/python",
     "result_size_limit": 20971520,
     "scheduled_backups": 0,

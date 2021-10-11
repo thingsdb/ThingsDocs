@@ -9,15 +9,17 @@ Install the following dependencies:
 - libuv1
 - libpcre2
 - libyajl
+- libcurl
 - libcleri (`>=0.12.2`)
 
-When using Debian/Ubuntu; *libuv1*, *libpcre2* and *libyajl* can be installed using apt:
+When using Debian/Ubuntu; *libuv1*, *libpcre2*, *libyajl* and *libcurl* can be installed using apt:
 
 ```bash
 sudo apt-get install -y \
     libuv1-dev \
     libpcre2-dev \
-    libyajl-dev
+    libyajl-dev \
+    libcurl4-nss-dev \
 ```
 
 At least version `0.12.x` for library `libcleri-dev` is required.
