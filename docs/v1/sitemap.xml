@@ -1243,6 +1243,14 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v1/modules/hello-world-module/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v1/modules/publish-a-module/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v1/listening/</loc>
   </url>
   

@@ -308,6 +308,8 @@ timers-api
     timer_info
     timers_info
 modules
+    hello-world-module
+    publish-a-module
 listening
     node-status
     on-join

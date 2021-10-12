@@ -132,7 +132,7 @@ Arguments    Argument Type Description     username str (required) Username of t
       <description>Deploy a module on all nodes. The module must be configured first, using the new_module() function. This function is used to write the module data (or plain python code) to the module. After deploying the code, the module will be restarted on every node.
 Before deploying a module, it is strongly recommended to use a development environment before deploying the module into production.
  This function generates a change.
-Function deploy_module(name, data)</description>
+Function deploy_module(name, data/new source)</description>
     </item>
     
     <item>

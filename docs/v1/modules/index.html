@@ -11,20 +11,20 @@
     <title>Modules :: ThingsDB documentation</title>
 
     
-    <link href="/v1/css/nucleus.css?1633961851" rel="stylesheet">
-    <link href="/v1/css/fontawesome-all.min.css?1633961851" rel="stylesheet">
-    <link href="/v1/css/hybrid.css?1633961851" rel="stylesheet">
-    <link href="/v1/css/featherlight.min.css?1633961851" rel="stylesheet">
-    <link href="/v1/css/perfect-scrollbar.min.css?1633961851" rel="stylesheet">
-    <link href="/v1/css/auto-complete.css?1633961851" rel="stylesheet">
-    <link href="/v1/css/atom-one-dark-reasonable.css?1633961851" rel="stylesheet">
-    <link href="/v1/css/theme.css?1633961851" rel="stylesheet">
-    <link href="/v1/css/hugo-theme.css?1633961851" rel="stylesheet">
+    <link href="/v1/css/nucleus.css?1634032828" rel="stylesheet">
+    <link href="/v1/css/fontawesome-all.min.css?1634032828" rel="stylesheet">
+    <link href="/v1/css/hybrid.css?1634032828" rel="stylesheet">
+    <link href="/v1/css/featherlight.min.css?1634032828" rel="stylesheet">
+    <link href="/v1/css/perfect-scrollbar.min.css?1634032828" rel="stylesheet">
+    <link href="/v1/css/auto-complete.css?1634032828" rel="stylesheet">
+    <link href="/v1/css/atom-one-dark-reasonable.css?1634032828" rel="stylesheet">
+    <link href="/v1/css/theme.css?1634032828" rel="stylesheet">
+    <link href="/v1/css/hugo-theme.css?1634032828" rel="stylesheet">
     
-      <link href="/v1/css/theme-mine.css?1633961851" rel="stylesheet">
+      <link href="/v1/css/theme-mine.css?1634032828" rel="stylesheet">
     
 
-    <script src="/v1/js/jquery-3.3.1.min.js?1633961851"></script>
+    <script src="/v1/js/jquery-3.3.1.min.js?1634032828"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v1/js/lunr.min.js?1633961851"></script>
-<script type="text/javascript" src="/v1/js/auto-complete.js?1633961851"></script>
+<script type="text/javascript" src="/v1/js/lunr.min.js?1634032828"></script>
+<script type="text/javascript" src="/v1/js/auto-complete.js?1634032828"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v1\/";
     
 </script>
-<script type="text/javascript" src="/v1/js/search.js?1633961851"></script>
+<script type="text/javascript" src="/v1/js/search.js?1634032828"></script>
 
     
   </div>
@@ -6351,6 +6351,54 @@
           
       </a>
       
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v1/modules/hello-world-module/" title="Hello World Module" class="dd-item ">
+        <a href="/v1/modules/hello-world-module/">
+        Hello World Module
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/v1/modules/publish-a-module/" title="Publish a module" class="dd-item ">
+        <a href="/v1/modules/publish-a-module/">
+        Publish a module
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
               
     </li>
   
@@ -6907,9 +6955,8 @@
 	<h1 id="modules">Modules</h1>
 <p>ThingsDB can be extended with modules. A module is a binary file or Python code which accepts input from ThingsDB and returns with a response.
 Each module will be started by ThingsDB as a separate process. For Python code this means that a Python interpreter is started for every module.
-Modules keep running as long as ThingsDB is alive, but may be restarted from within ThingsDB using <a href="../node-api/restart_module">restart_module()</a> on a single node, or with <a href="../thingsdb-api/deploy_module">deploy_module()</a>
-which can be used to restart a module on <em>all</em> nodes.</p>
-<p>See the <a href="#hello-module">hello module</a> section below for a tutorial on how to create and use modules in ThingsDB.</p>
+Modules keep running as long as ThingsDB is alive, but may be restarted from within ThingsDB using <a href="../node-api/restart_module">restart_module()</a> on a single node, or with <a href="../thingsdb-api/deploy_module">deploy_module()</a> and/or <a href="../thingsdb-api/refresh_module">refresh_module()</a> which can be used to restart/re-install a module on <em>all</em> nodes.</p>
+<p>See the <a href="../hello-world-module">hello world module</a> section below for a tutorial on how to create and use modules in ThingsDB.</p>
 <h3 id="related-functions">Related functions</h3>
 <table>
 <thead>
@@ -7001,132 +7048,35 @@ building a module an easy task. Refer below to a list of libraries and examples:
 </tr>
 </tbody>
 </table>
-<h3 id="hello-module">Hello module</h3>
-<p>In this section we will create and use a module to help you understand how a module can be used.
-Our module will be written in Python and will accept a <em>name</em> and returns with a greeting in either English or Dutch, depending on the module configuration.</p>
-<p>Before we can use a Python module, make sure ThingsDB has a Python interpreter (<em>at least Python 3.7)</em> with the Python package <a href="https://pypi.org/project/py-timod/">py-timod</a> installed.</p>
-<p>Use the following code in the <code>@node</code> scope to view which Python interpreter ThingsDB is using:</p>
-<pre><code class="language-thingsdb,should_pass,@n" data-lang="thingsdb,should_pass,@n">node_info().load().python_interpreter;  // something like &quot;/usr/bin/python&quot;
-</code></pre><p>If you are able to open a terminal on the host where ThingsDB is running, you can check if <code>py-timod</code> is installed by staring the Python interpreter and import <code>timod</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ /usr/bin/python
-Python 3.8.5 <span style="color:#f92672">(</span>default, May <span style="color:#ae81ff">27</span> 2021, 13:30:53<span style="color:#f92672">)</span>
-<span style="color:#f92672">[</span>GCC 9.3.0<span style="color:#f92672">]</span> on linux
-Type <span style="color:#e6db74">&#34;help&#34;</span>, <span style="color:#e6db74">&#34;copyright&#34;</span>, <span style="color:#e6db74">&#34;credits&#34;</span> or <span style="color:#e6db74">&#34;license&#34;</span> <span style="color:#66d9ef">for</span> more information.
-&gt;&gt;&gt; import timod
-&gt;&gt;&gt; timod.__version__
-<span style="color:#e6db74">&#39;0.0.6&#39;</span>
-&gt;&gt;&gt;
-</code></pre></div><p>If this is all set-up, we can create, deploy and test the module!</p>
-<p>The rest of the ThingsDB code in this tutorial code must run in the <code>@thingsdb</code> scope!</p>
-<pre><code class="language-thingsdb,should_pass,@t" data-lang="thingsdb,should_pass,@t">new_module(&quot;greeting&quot;, &quot;greeting.py&quot;);  // The module file must end with .py to tell
-                                        // ThingsDB we are going to use a Python module.
-</code></pre><p>Hooray, the module is created!! ..but wait.. we don&rsquo;t have the actual module yet. If we look at the module status, we should see that the module will not be started because obviously, the greeting.py file is missing.</p>
-<pre><code class="language-thingsdb,should_pass,@t" data-lang="thingsdb,should_pass,@t">module_info('greeting').load().status;  // &quot;no such file or directory&quot;
-</code></pre><p>Ok, let&rsquo;s first create the required Python code. A basic module looks like the following:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> timod <span style="color:#f92672">import</span> start_module, TiHandler
+<h3 id="list-of-modules">List of modules</h3>
+<p>This is list with some tested modules. If you want you&rsquo;re module in this list, feel free to modify the list and create a pull request!</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/thingsdb/module-go-siridb">github.com/thingsdb/module-go-siridb</a></td>
+<td>For communicating with a <a href="https://siridb.net">SiriDB</a> database.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/thingsdb/module-go-requests">github.com/thingsdb/module-go-requests</a></td>
+<td>For making HTTP requests.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/thingsdb/module-py-demo">github.com/thingsdb/module-py-demo</a></td>
+<td>Demo module using the <a href="https://python.org">Python language</a>.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/thingsdb/module-go-demo">github.com/thingsdb/module-go-demo</a></td>
+<td>Demo module using the <a href="https://golang.org">Go language</a>.</td>
+</tr>
+</tbody>
+</table>
 
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Handler</span>(TiHandler):
-
-    async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">on_config</span>(self, cfg):
-        <span style="color:#66d9ef">pass</span>
-
-    async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">on_request</span>(self, req):
-        <span style="color:#66d9ef">pass</span>
-
-
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
-    start_module(<span style="color:#e6db74">&#39;greeting&#39;</span>, Handler())
-</code></pre></div><p>This code contains a handler with two methods. The <code>on_config(..)</code> method will be called when ThingsDB starts a module and when the config is changed using the <a href="../thingsdb-api/set_module_conf">set_module_conf</a> function. The <code>on_request(..)</code> method will be called from a <a href="../data-types/future/#modules">future</a>. A <a href="../data-types/future/#modules">future</a> is required to use the module.</p>
-<p>The Python method <code>start_module</code> is used to start the module and accepts a <em>name</em> which we changed to <code>greeting</code> and an instance of a <code>TiHandler</code> class, just <code>Handler()</code> in our case.</p>
-
-<div class="notices note" ><p>As mentioned earlier, a module usually keeps running as long as ThingsDB is alive and may accept multiple request in parallel. Therefore, it is important to write code in both the <code>on_config</code> and <code>on_request</code> in a <strong>non-blocking</strong> way.</p>
-</div>
-
-<p>We want our module to support both English and Dutch and therefore we are going to create a configuration function which accepts a language. We also use the <code>__init__()</code> function to initialize a default language.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> timod <span style="color:#f92672">import</span> <span style="color:#a6e22e">LookupError</span>, <span style="color:#a6e22e">ValueError</span>
-<span style="color:#f92672">...</span>
-    <span style="color:#66d9ef">def</span> __init__(self):
-        self<span style="color:#f92672">.</span>lang <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;en&#39;</span>  <span style="color:#75715e"># set a default language</span>
-
-    async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">on_config</span>(self, cfg):
-        <span style="color:#66d9ef">try</span>:
-            lang <span style="color:#f92672">=</span> cfg[<span style="color:#e6db74">&#39;lang&#39;</span>]
-        <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">KeyError</span>:
-            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">LookupError</span>(<span style="color:#e6db74">&#39;`lang` is missing&#39;</span>)
-
-        <span style="color:#66d9ef">if</span> lang <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> [<span style="color:#e6db74">&#39;nl&#39;</span>, <span style="color:#e6db74">&#39;en&#39;</span>]:
-            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74">&#39;only `nl` and `en` are supported&#39;</span>)
-
-        self<span style="color:#f92672">.</span>lang <span style="color:#f92672">=</span> lang
-</code></pre></div><p>Next, we write the <code>on_request</code> method:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">on_request</span>(self, req):
-        <span style="color:#66d9ef">try</span>:
-            name <span style="color:#f92672">=</span> cfg[<span style="color:#e6db74">&#39;name&#39;</span>]
-        <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">KeyError</span>:
-            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">LookupError</span>(<span style="color:#e6db74">&#39;`name` is missing&#39;</span>)
-
-        <span style="color:#66d9ef">return</span> {
-            <span style="color:#e6db74">&#39;en&#39;</span>: <span style="color:#e6db74">&#39;Hello {}, enjoy this day!!&#39;</span><span style="color:#f92672">.</span>format(name),
-            <span style="color:#e6db74">&#39;nl&#39;</span>: <span style="color:#e6db74">&#39;Hallo {}, geniet van deze dag!!&#39;</span><span style="color:#f92672">.</span>format(name)
-        }[self<span style="color:#f92672">.</span>lang]
-</code></pre></div><p>Our module is finished!</p>
-<p>Now we are going to deploy the code and we are going to use the <a href="../thingsdb-api/deploy_module">deploy_module()</a> function for this job.</p>
-<p>The <a href="../thingsdb-api/deploy_module">deploy_module()</a> function accepts a module name and data. It writes the data <em>(or code)</em> to the attached file of the module and then (re-)loads the module on all the nodes.
-In our case, we keep it simple and just paste the code in a query as a plain string. When developing a real module you probably want to upload the file using a query argument.</p>
-<pre><code class="language-thingsdb,should_pass,@t" data-lang="thingsdb,should_pass,@t">// Deploy the module code
-deploy_module('greeting',
-&quot;from timod import start_module, TiHandler, LookupError, ValueError
-
-
-class Handler(TiHandler):
-
-    def __init__(self):
-        self.lang = 'en'  # set a default language
-
-    async def on_config(self, cfg):
-        try:
-            lang = cfg['lang']
-        except KeyError:
-            raise LookupError('`lang` is missing')
-
-        if lang not in ['nl', 'en']:
-            raise ValueError('only `nl` and `en` are supported')
-
-        self.lang = lang
-
-    async def on_request(self, req):
-        try:
-            name = req['name']
-        except KeyError:
-            raise LookupError('`name` is missing')
-
-        return {
-            'en': 'Hello {}, enjoy this day!!'.format(name),
-            'nl': 'Hallo {}, geniet van deze dag!!'.format(name)
-        }[self.lang]
-
-
-if __name__ == '__main__':
-    start_module('greeting', Handler())
-&quot;);
-</code></pre><p>If everything is successful, the module status should now be changed to &ldquo;running&rdquo;:</p>
-<pre><code class="language-thingsdb,should_pass,@t" data-lang="thingsdb,should_pass,@t">module_info('greeting').load().status;  // &quot;running&quot;
-</code></pre><p>Ok, now let&rsquo;s try to use the module:</p>
-<pre><code class="language-thingsdb,syntax_only,@t" data-lang="thingsdb,syntax_only,@t">future({
-    module: 'greeting',
-    name: 'Arthur Dent'
-}).then(|greet| greet);  // &quot;Hello Arthur Dent, enjoy this day!!&quot;
-</code></pre><p>Or, when we configure the module language to <code>nl</code> (dutch):</p>
-<pre><code class="language-thingsdb,syntax_only,@t" data-lang="thingsdb,syntax_only,@t">// Configure the module to use Dutch (nl)
-set_module_conf('greeting', {lang: 'nl'});
-
-// The greet should now be in Dutch
-future({
-    module: 'greeting',
-    name: 'Arthur Dent'
-}).then(|greet| greet);  // &quot;Hallo Arthur Dent, geniet van deze dag!!&quot;
-</code></pre>
 
 
 
@@ -7150,7 +7100,7 @@ future({
             <a class="nav nav-prev" href="/v1/timers-api/timers_info/" title="timers_info"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/v1/listening/" title="Listening" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/v1/modules/hello-world-module/" title="Hello World Module" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     
     </div>
@@ -7160,19 +7110,19 @@ future({
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v1/js/clipboard.min.js?1633961851"></script>
-    <script src="/v1/js/perfect-scrollbar.min.js?1633961851"></script>
-    <script src="/v1/js/perfect-scrollbar.jquery.min.js?1633961851"></script>
-    <script src="/v1/js/jquery.sticky.js?1633961851"></script>
-    <script src="/v1/js/featherlight.min.js?1633961851"></script>
-    <script src="/v1/js/highlight.pack.js?1633961851"></script>
+    <script src="/v1/js/clipboard.min.js?1634032828"></script>
+    <script src="/v1/js/perfect-scrollbar.min.js?1634032828"></script>
+    <script src="/v1/js/perfect-scrollbar.jquery.min.js?1634032828"></script>
+    <script src="/v1/js/jquery.sticky.js?1634032828"></script>
+    <script src="/v1/js/featherlight.min.js?1634032828"></script>
+    <script src="/v1/js/highlight.pack.js?1634032828"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v1/js/modernizr.custom-3.6.0.js?1633961851"></script>
-    <script src="/v1/js/learn.js?1633961851"></script>
-    <script src="/v1/js/hugo-learn.js?1633961851"></script>
+    <script src="/v1/js/modernizr.custom-3.6.0.js?1634032828"></script>
+    <script src="/v1/js/learn.js?1634032828"></script>
+    <script src="/v1/js/hugo-learn.js?1634032828"></script>
 
-    <link href="/v1/mermaid/mermaid.css?1633961851" rel="stylesheet" />
-    <script src="/v1/mermaid/mermaid.js?1633961851"></script>
+    <link href="/v1/mermaid/mermaid.css?1634032828" rel="stylesheet" />
+    <script src="/v1/mermaid/mermaid.js?1634032828"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

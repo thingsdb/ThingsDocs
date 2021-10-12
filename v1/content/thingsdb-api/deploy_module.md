@@ -14,14 +14,15 @@ This function generates a [change](../../overview/changes).
 
 ### Function
 
-`deploy_module(name, data)`
+`deploy_module(name, data/new source)`
 
 ### Arguments
 
 Argument | Type | Description
 -------- | ---- | -----------
 `name` | str (required) | Name of the module to deploy the new code for.
-`data` | str/bytes/nil (required) | Data for the module. When `nil`, no data will be overwritten but the module *will* be restarted on all nodes. This might be useful if you want to force a module restart on all nodes. Type `str` is only allowed for Python modules.
+`data` | str/bytes/nil (required) | **Only for modules with a file based source**. Data for the module. When `nil`, no data will be overwritten but the module *will* be restarted on all nodes. This might be useful if you want to force a module restart on all nodes. Type `str` is only allowed for Python modules.
+`new source` | str | **Only for modules with a repository based source**. New source for the module. The module will stop, check for a new version using the new source, and next re-start the module.
 
 ### Return value
 

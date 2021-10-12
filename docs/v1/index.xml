@@ -3081,7 +3081,7 @@ Arguments    Argument Type Description     username str (required) Username of t
       <description>Deploy a module on all nodes. The module must be configured first, using the new_module() function. This function is used to write the module data (or plain python code) to the module. After deploying the code, the module will be restarted on every node.
 Before deploying a module, it is strongly recommended to use a development environment before deploying the module into production.
  This function generates a change.
-Function deploy_module(name, data)</description>
+Function deploy_module(name, data/new source)</description>
     </item>
     
     <item>
@@ -3624,6 +3624,27 @@ This function does not generate a change.
 Function timers_info()
 Arguments None
 Return value List with timer mpdata about all timers in the scope.</description>
+    </item>
+    
+    <item>
+      <title>Hello World Module</title>
+      <link>https://docs.thingsdb.net/v1/modules/hello-world-module/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/modules/hello-world-module/</guid>
+      <description>In this section we will create and use a module to help you understand how a module can be used. Our module will be written in Python and will accept a name and returns with a greeting in either English or Dutch, depending on the module configuration.
+Before we can use a Python module, make sure ThingsDB has a Python interpreter (at least Python 3.7) with the Python package py-timod installed.</description>
+    </item>
+    
+    <item>
+      <title>Publish a module</title>
+      <link>https://docs.thingsdb.net/v1/modules/publish-a-module/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/modules/publish-a-module/</guid>
+      <description>Modules can be published using a GitHub repository. A module repository mush at least contain a module.json file and the module file to start.
+module.json  Example of a module.json:
+ { &amp;#34;doc&amp;#34;: &amp;#34;Demo module&amp;#34;, &amp;#34;version&amp;#34;: 11, &amp;#34;main&amp;#34;: &amp;#34;demo.py&amp;#34;, &amp;#34;defaults&amp;#34;: { &amp;#34;load&amp;#34;: true, &amp;#34;deep&amp;#34;: 0 }, &amp;#34;exposes&amp;#34;: { &amp;#34;ping&amp;#34;: { &amp;#34;defaults&amp;#34;: { &amp;#34;message&amp;#34;: &amp;#34;ping&amp;#34; }, &amp;#34;argmap&amp;#34;: [] }, &amp;#34;msg&amp;#34;: { &amp;#34;argmap&amp;#34;: [&amp;#34;message&amp;#34;] } }, &amp;#34;requirements&amp;#34;: [ &amp;#34;py-timod&amp;#34; ] } Key: doc (optional) Type string or null.</description>
     </item>
     
     <item>
