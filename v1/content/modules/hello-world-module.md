@@ -61,7 +61,7 @@ if __name__ == '__main__':
     start_module('greeting', Handler())
 ```
 
-This code contains a handler with two methods. The `on_config(..)` method will be called when ThingsDB starts a module and when the config is changed using the [set_module_conf](../thingsdb-api/set_module_conf) function. The `on_request(..)` method will be called from a [future](../data-types/future/#modules). A [future](../data-types/future/#modules) is required to use the module.
+This code contains a handler with two methods. The `on_config(..)` method will be called when ThingsDB starts a module and when the config is changed using the [set_module_conf](../../thingsdb-api/set_module_conf) function. The `on_request(..)` method will be called from a [future](../../data-types/future/#modules). A [future](../../data-types/future/#modules) is required to use the module.
 
 The Python method `start_module` is used to start the module and accepts a *name* which we changed to `greeting` and an instance of a `TiHandler` class, just `Handler()` in our case.
 
@@ -107,9 +107,9 @@ Next, we write the `on_request` method:
 
 Our module is finished!
 
-Now we are going to deploy the code and we are going to use the [deploy_module()](../thingsdb-api/deploy_module) function for this job.
+Now we are going to deploy the code and we are going to use the [deploy_module()](../../thingsdb-api/deploy_module) function for this job.
 
-The [deploy_module()](../thingsdb-api/deploy_module) function accepts a module name and data. It writes the data *(or code)* to the attached file of the module and then (re-)loads the module on all the nodes.
+The [deploy_module()](../../thingsdb-api/deploy_module) function accepts a module name and data. It writes the data *(or code)* to the attached file of the module and then (re-)loads the module on all the nodes.
 In our case, we keep it simple and just paste the code in a query as a plain string. When developing a real module you probably want to upload the file using a query argument.
 
 ```thingsdb,should_pass,@t

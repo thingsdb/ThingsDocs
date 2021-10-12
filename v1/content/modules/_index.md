@@ -10,7 +10,7 @@ ThingsDB can be extended with modules. A module is a binary file or Python code 
 Each module will be started by ThingsDB as a separate process. For Python code this means that a Python interpreter is started for every module.
 Modules keep running as long as ThingsDB is alive, but may be restarted from within ThingsDB using [restart_module()](../node-api/restart_module) on a single node, or with [deploy_module()](../thingsdb-api/deploy_module) and/or [refresh_module()](../thingsdb-api/refresh_module) which can be used to restart/re-install a module on *all* nodes.
 
-See the [hello world module](../hello-world-module) section below for a tutorial on how to create and use modules in ThingsDB.
+See the [hello world module](./hello-world-module) section below for a tutorial on how to create and use modules in ThingsDB.
 
 ### Related functions
 
@@ -36,8 +36,8 @@ building a module an easy task. Refer below to a list of libraries and examples:
 
 Language | Library | Example
 -------- | ------- | -------
-[Go](https://golang.org)  | [go-timod](https://github.com/thingsdb/go-timod) | [Demo](https://github.com/thingsdb/ThingsDB/tree/master/modules/go/demo) (echo-reply example)
-[Python](https://www.python.org)  | [py-timod](https://github.com/thingsdb/py-timod) | [Demo](https://github.com/thingsdb/ThingsDB/tree/master/modules/python/demo.py) (echo-reply example)
+[Go](https://golang.org)  | [go-timod](https://github.com/thingsdb/go-timod) | [Demo](https://github.com/thingsdb/module-go-demo) (echo-reply example)
+[Python](https://www.python.org)  | [py-timod](https://github.com/thingsdb/py-timod) | [Demo](https://github.com/thingsdb/module-py-demo) (echo-reply example)
 
 
 ### List of modules

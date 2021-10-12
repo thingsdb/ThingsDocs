@@ -11,20 +11,20 @@
     <title>Hello World Module :: ThingsDB documentation</title>
 
     
-    <link href="/v1/css/nucleus.css?1634032827" rel="stylesheet">
-    <link href="/v1/css/fontawesome-all.min.css?1634032827" rel="stylesheet">
-    <link href="/v1/css/hybrid.css?1634032827" rel="stylesheet">
-    <link href="/v1/css/featherlight.min.css?1634032827" rel="stylesheet">
-    <link href="/v1/css/perfect-scrollbar.min.css?1634032827" rel="stylesheet">
-    <link href="/v1/css/auto-complete.css?1634032827" rel="stylesheet">
-    <link href="/v1/css/atom-one-dark-reasonable.css?1634032827" rel="stylesheet">
-    <link href="/v1/css/theme.css?1634032827" rel="stylesheet">
-    <link href="/v1/css/hugo-theme.css?1634032827" rel="stylesheet">
+    <link href="/v1/css/nucleus.css?1634033044" rel="stylesheet">
+    <link href="/v1/css/fontawesome-all.min.css?1634033044" rel="stylesheet">
+    <link href="/v1/css/hybrid.css?1634033044" rel="stylesheet">
+    <link href="/v1/css/featherlight.min.css?1634033044" rel="stylesheet">
+    <link href="/v1/css/perfect-scrollbar.min.css?1634033044" rel="stylesheet">
+    <link href="/v1/css/auto-complete.css?1634033044" rel="stylesheet">
+    <link href="/v1/css/atom-one-dark-reasonable.css?1634033044" rel="stylesheet">
+    <link href="/v1/css/theme.css?1634033044" rel="stylesheet">
+    <link href="/v1/css/hugo-theme.css?1634033044" rel="stylesheet">
     
-      <link href="/v1/css/theme-mine.css?1634032827" rel="stylesheet">
+      <link href="/v1/css/theme-mine.css?1634033044" rel="stylesheet">
     
 
-    <script src="/v1/js/jquery-3.3.1.min.js?1634032827"></script>
+    <script src="/v1/js/jquery-3.3.1.min.js?1634033044"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v1/js/lunr.min.js?1634032827"></script>
-<script type="text/javascript" src="/v1/js/auto-complete.js?1634032827"></script>
+<script type="text/javascript" src="/v1/js/lunr.min.js?1634033044"></script>
+<script type="text/javascript" src="/v1/js/auto-complete.js?1634033044"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v1\/";
     
 </script>
-<script type="text/javascript" src="/v1/js/search.js?1634032827"></script>
+<script type="text/javascript" src="/v1/js/search.js?1634033044"></script>
 
     
   </div>
@@ -7004,7 +7004,7 @@ Type <span style="color:#e6db74">&#34;help&#34;</span>, <span style="color:#e6db
 
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
     start_module(<span style="color:#e6db74">&#39;greeting&#39;</span>, Handler())
-</code></pre></div><p>This code contains a handler with two methods. The <code>on_config(..)</code> method will be called when ThingsDB starts a module and when the config is changed using the <a href="../thingsdb-api/set_module_conf">set_module_conf</a> function. The <code>on_request(..)</code> method will be called from a <a href="../data-types/future/#modules">future</a>. A <a href="../data-types/future/#modules">future</a> is required to use the module.</p>
+</code></pre></div><p>This code contains a handler with two methods. The <code>on_config(..)</code> method will be called when ThingsDB starts a module and when the config is changed using the <a href="../../thingsdb-api/set_module_conf">set_module_conf</a> function. The <code>on_request(..)</code> method will be called from a <a href="../../data-types/future/#modules">future</a>. A <a href="../../data-types/future/#modules">future</a> is required to use the module.</p>
 <p>The Python method <code>start_module</code> is used to start the module and accepts a <em>name</em> which we changed to <code>greeting</code> and an instance of a <code>TiHandler</code> class, just <code>Handler()</code> in our case.</p>
 
 <div class="notices note" ><p>As mentioned earlier, a module usually keeps running as long as ThingsDB is alive and may accept multiple request in parallel. Therefore, it is important to write code in both the <code>on_config</code> and <code>on_request</code> in a <strong>non-blocking</strong> way.</p>
@@ -7038,8 +7038,8 @@ Type <span style="color:#e6db74">&#34;help&#34;</span>, <span style="color:#e6db
             <span style="color:#e6db74">&#39;nl&#39;</span>: <span style="color:#e6db74">&#39;Hallo {}, geniet van deze dag!!&#39;</span><span style="color:#f92672">.</span>format(name)
         }[self<span style="color:#f92672">.</span>lang]
 </code></pre></div><p>Our module is finished!</p>
-<p>Now we are going to deploy the code and we are going to use the <a href="../thingsdb-api/deploy_module">deploy_module()</a> function for this job.</p>
-<p>The <a href="../thingsdb-api/deploy_module">deploy_module()</a> function accepts a module name and data. It writes the data <em>(or code)</em> to the attached file of the module and then (re-)loads the module on all the nodes.
+<p>Now we are going to deploy the code and we are going to use the <a href="../../thingsdb-api/deploy_module">deploy_module()</a> function for this job.</p>
+<p>The <a href="../../thingsdb-api/deploy_module">deploy_module()</a> function accepts a module name and data. It writes the data <em>(or code)</em> to the attached file of the module and then (re-)loads the module on all the nodes.
 In our case, we keep it simple and just paste the code in a query as a plain string. When developing a real module you probably want to upload the file using a query argument.</p>
 <pre><code class="language-thingsdb,should_pass,@t" data-lang="thingsdb,should_pass,@t">// Deploy the module code
 deploy_module('greeting',
@@ -7123,19 +7123,19 @@ future({
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v1/js/clipboard.min.js?1634032827"></script>
-    <script src="/v1/js/perfect-scrollbar.min.js?1634032827"></script>
-    <script src="/v1/js/perfect-scrollbar.jquery.min.js?1634032827"></script>
-    <script src="/v1/js/jquery.sticky.js?1634032827"></script>
-    <script src="/v1/js/featherlight.min.js?1634032827"></script>
-    <script src="/v1/js/highlight.pack.js?1634032827"></script>
+    <script src="/v1/js/clipboard.min.js?1634033045"></script>
+    <script src="/v1/js/perfect-scrollbar.min.js?1634033045"></script>
+    <script src="/v1/js/perfect-scrollbar.jquery.min.js?1634033045"></script>
+    <script src="/v1/js/jquery.sticky.js?1634033045"></script>
+    <script src="/v1/js/featherlight.min.js?1634033045"></script>
+    <script src="/v1/js/highlight.pack.js?1634033045"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v1/js/modernizr.custom-3.6.0.js?1634032827"></script>
-    <script src="/v1/js/learn.js?1634032827"></script>
-    <script src="/v1/js/hugo-learn.js?1634032827"></script>
+    <script src="/v1/js/modernizr.custom-3.6.0.js?1634033045"></script>
+    <script src="/v1/js/learn.js?1634033045"></script>
+    <script src="/v1/js/hugo-learn.js?1634033045"></script>
 
-    <link href="/v1/mermaid/mermaid.css?1634032827" rel="stylesheet" />
-    <script src="/v1/mermaid/mermaid.js?1634032827"></script>
+    <link href="/v1/mermaid/mermaid.css?1634033045" rel="stylesheet" />
+    <script src="/v1/mermaid/mermaid.js?1634033045"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
