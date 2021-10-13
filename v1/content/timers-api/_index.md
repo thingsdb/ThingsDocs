@@ -1,6 +1,6 @@
 ---
 title: "Timers API"
-weight: 301
+weight: 303
 chapter: true
 ---
 

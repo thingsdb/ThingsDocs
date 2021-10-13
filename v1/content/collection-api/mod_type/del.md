@@ -1,6 +1,6 @@
 ---
 title: "del"
-weight: 211
+weight: 213
 ---
 
 Deletes a property or method from an existing [Type](../../../data-types/type).

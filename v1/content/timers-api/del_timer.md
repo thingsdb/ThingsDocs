@@ -1,6 +1,6 @@
 ---
 title: "del_timer"
-weight: 302
+weight: 304
 ---
 
 Delete a timer.

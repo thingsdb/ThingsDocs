@@ -198,6 +198,8 @@ collection-api
     is_timeval
     is_tuple
     is_utf8
+    json_dump
+    json_load
     list
     log
     mod_enum

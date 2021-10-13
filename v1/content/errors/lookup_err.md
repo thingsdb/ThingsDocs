@@ -1,6 +1,6 @@
 ---
 title: "lookup_err"
-weight: 325
+weight: 327
 ---
 
 Returns an [error](../../data-types/error) when a requested resource is not found or when an index is out-of-range.
