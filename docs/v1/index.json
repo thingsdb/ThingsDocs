@@ -1400,6 +1400,20 @@
 	"content": "This function determines whether the provided value is of type str and contains valid UTF-8 characters.\nThis function does not generate a change.\nFunction is_utf8(value)\nArguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is of type raw and contains valid utf8, else false.\nExample  This code shows some return values for is_utf8():\n [ is_utf8( 'ԉ' ), is_utf8( 'pi' ), ];  Return value in JSON format\n [ true, true ] "
 },
 {
+	"uri": "https://docs.thingsdb.net/v1/collection-api/json_dump/",
+	"title": "json_dump",
+	"tags": [],
+	"description": "",
+	"content": "Converts a ThingsDB value in to a JSON string.\nThis function does not generate a change.\nFunction json_dump(value, [options])\nArguments    Argument Type Description     value any The value to convert into a JSON string.   options thing Thing with options.    Options    Option Type Description     deep int Specify how deep the value must be converted. (defaults to 1)   beautify bool Generate a JSON string with new lines and indentation to make the string more readable.    Return value JSON string.\nExample  This code shows an example for json_dump:\n json_dump({ success: true });  Return value in JSON format\n \u0026#34;{\\\u0026#34;success\\\u0026#34;:true}\u0026#34;  Another example with extra options:\n data = { people: [ {name: 'Iris'}, {name: 'Tess'}, ] }; json_dump(data, {deep: 2});  Return value in JSON format\n \u0026#34;{\\\u0026#34;people\\\u0026#34;:[{\\\u0026#34;name\\\u0026#34;:\\\u0026#34;Iris\\\u0026#34;},{\\\u0026#34;name\\\u0026#34;:\\\u0026#34;Tess\\\u0026#34;}]}\u0026#34; "
+},
+{
+	"uri": "https://docs.thingsdb.net/v1/collection-api/json_load/",
+	"title": "json_load",
+	"tags": [],
+	"description": "",
+	"content": "Converts a JSON string into a ThingsDB value.\nThis function does not generate a change.\nFunction json_load(string)\nArguments    Argument Type Description     string str JSON string to convert.    Return value ThingsDB value.\nExample  This code shows an example for json_load:\n json_load('{\u0026quot;success\u0026quot;: true}');  Return value in JSON format\n { \u0026#34;success\u0026#34;: true } "
+},
+{
 	"uri": "https://docs.thingsdb.net/v1/collection-api/list/",
 	"title": "list",
 	"tags": [],

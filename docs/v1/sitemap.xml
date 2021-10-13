@@ -803,6 +803,14 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v1/collection-api/json_dump/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v1/collection-api/json_load/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v1/collection-api/list/</loc>
   </url>
   
