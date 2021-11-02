@@ -1,6 +1,6 @@
 ---
 title: "zone"
-weight: 45
+weight: 46
 ---
 
 Return zone information as a string about the [datetime](../) (or [timeval](../../timeval)) object.

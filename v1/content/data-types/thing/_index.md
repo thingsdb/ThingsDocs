@@ -1,6 +1,6 @@
 ---
 title: "thing"
-weight: 121
+weight: 135
 ---
 
 ### Functions
@@ -21,7 +21,7 @@ Function | Description
 [keys](./keys) | Return a list with all the property names of a thing.
 [len](./len) | Return the number of items.
 [map](./map) | Return a [list](../list) with the results of calling a provided closure on every property.
-[set](./set) | Create a new property on a thing.
-[to_type](./to_type) | Converts a thing into an instance of a [Type](../type).
+[set](./set) | Create a new or overwrite an existing property on a thing.
+[to_type](./to_type) | Converts a thing into a [typed](../typed) thing.
 [values](./values) | Return a list with all the property values of a thing.
-[wrap](./wrap) | Wrap the `thing` with a [Type](../type).
+[wrap](./wrap) | Wrap the *thing* with a [Type](../../overview/type).

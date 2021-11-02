@@ -1,9 +1,9 @@
 ---
 title: "to_type"
-weight: 137
+weight: 151
 ---
 
-Converts a *thing* into an instance of a given [Type](../../type).
+Converts a *[thing](../../thing)* into an *[typed](../../typed)* thing.
 
 Before a thing may be converted, *all* the properties of the thing must have an exact match with the properties defined by the Type.
 It you later want to change tome properties, the function [mod_type](../../../collection-api/mod_type) can be used.
@@ -28,7 +28,7 @@ This function generates a [change](../../../overview/changes).
 
 Argument | Type | Description
 -------- | ---- | -----------
-type | str | Name of the [Type](../../type) to convert the thing into.
+type | str | Name of the [Type](../../../overview/type) to convert the thing into.
 
 ### Return value
 

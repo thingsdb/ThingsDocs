@@ -1,6 +1,6 @@
 ---
 title: "err"
-weight: 169
+weight: 183
 ---
 
 Returns an [error](../../data-types/error).
@@ -15,7 +15,7 @@ This function does *not* generate a [change](../../overview/changes).
 
 Argument | Type | Description
 -------- | ---- | -----------
-code | int (optional) | Integer error code between -127 and -50, defaults to -100.
+code | int (optional) | Integer error code between -127 and -50, defaults to -100. See [error documentation](../../errors) for build-in errors.
 message | str (optional) | Optional error message.
 
 ### Return value

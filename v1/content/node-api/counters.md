@@ -1,6 +1,6 @@
 ---
 title: "counters"
-weight: 248
+weight: 265
 ---
 
 Returns `counters` for the ThingsDB node in the selected scope. Counters start all at zero when ThingsDB
@@ -28,8 +28,9 @@ queries_success | Number of queries where this node acted as the master node and
 queries_with_error | Number of queries where this node acted as the master node but the query has returned with an error.
 quorum_lost | Number of times this node did not get a *change* Id accepted by the [quorum](../../overview/dictionary) of nodes. a *change-Id* will not be accepted if another node is attempting to assign the same *change-Id*. This is not an issue since the node will just try another *change-Id*. It only indicates the number of collisions occurred while trying to assign a *change* Id.
 started_at | UNIX time-stamp in seconds when the counters started counting. See [reset_counters()](../reset_counters).
+tasks_success | Number of successfully processed tasks.
+tasks_with_error | Number of processed tasks where the task returned with an error.
 wasted_cache | Number of cached queries which are cleaned from the cache without ever being used.
-watcher_failed | The value is increased if an update could not be forwarded to a registered watcher.
 
 This function does *not* generate a [change](../../overview/changes).
 
@@ -75,8 +76,8 @@ counters();
     "queries_with_error": 0,
     "quorum_lost": 0,
     "started_at": 1627903017,
-    "timers_success": 0,
-    "timers_with_error": 0,
+    "tasks_success": 0,
+    "tasks_with_error": 0,
     "wasted_cache": 0,
     "watcher_failed": 0
 }

@@ -1,9 +1,9 @@
 ---
 title: "has_type"
-weight: 173
+weight: 187
 ---
 
-Determines if a [Type](../../data-types/type) exists in the current `@collection` scope.
+Determines if a [Type](../../overview/type) exists in the current `@collection` scope.
 
 This function does *not* generate a [change](../../overview/changes).
 
@@ -15,11 +15,11 @@ This function does *not* generate a [change](../../overview/changes).
 
 Argument | Type | Description
 -------- | ---- | -----------
-type | str (required) | [Type](../../data-types/type) name to check.
+type | str (required) | [Type](../../overview/type) name to check.
 
 ### Return value
 
-Returns `true` if a [Type](../../data-types/type) with a given name exists and otherwise `false`.
+Returns `true` if a [Type](../../overview/type) with a given name exists and otherwise `false`.
 
 ### Example
 

@@ -1,9 +1,9 @@
 ---
 title: "type_count"
-weight: 241
+weight: 258
 ---
 
-Returns the number of instances of a given [Type](../../data-types/type) within a collection.
+Returns the number of instances of a given [Type](../../overview/type) within a collection.
 
 This function does *not* generate a [change](../../overview/changes).
 

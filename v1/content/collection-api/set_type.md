@@ -1,9 +1,9 @@
 ---
 title: "set_type"
-weight: 234
+weight: 249
 ---
 
-Defines the properties of a [Type](../../data-types/type). Function `set_type` works only on a new Type. Use `mod_type()` if you want to change an existing Type, see [mod_type](../mod_type).
+Defines the properties of a [Type](../../overview/type). Function `set_type` works only on a new Type. Use `mod_type()` if you want to change an existing Type, see [mod_type](../mod_type).
 
 This function generates a [change](../../overview/changes).
 
@@ -15,7 +15,7 @@ This function generates a [change](../../overview/changes).
 
 Argument | Type | Description
 -------- | ---- | -----------
-type | str | The name of the [Type](../../data-types/type) where the properties have to be set.
+type | str | The name of the [Type](../../overview/type) where the properties have to be set.
 value | thing | Thing containing all the properties to be set.
 wrap_only | bool (optional) | When `true` the type will be configured with *wrap-only* mode enabled. Default is `false` for a new type, or untouched if the type already existed.
 

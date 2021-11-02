@@ -1,10 +1,10 @@
 ---
 title: "def"
-weight: 207
+weight: 222
 ---
 
 Set a member from an existing [enumerator type](../../../data-types/enum) as default member.
-The default member is also selected when a instance of a [Type](../../../data-types/type) is created using the enumerator as a required property.
+The default member is also selected when a instance of a [Type](../../../overview/type) is created using the enumerator as a required property.
 
 
 ### Action

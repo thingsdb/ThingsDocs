@@ -1,6 +1,6 @@
 ---
 title: "Errors"
-weight: 322
+weight: 330
 chapter: false
 ---
 
@@ -26,6 +26,8 @@ Error | Code | Meaning
 
 ## Internal errors
 
+Internal errors cannot be *caught* nor *raised* by using ThingsDB code. Range `-49 .. -1` is reserved for internal errors.
+
 Error | Code | Meaning
 ------| ---- | -------
 `RESULT_TOO_LARGE` | -6 | Result size limit is exceeded. See the [configuration page](../getting-started/configuration) to configure this limit.
@@ -37,5 +39,5 @@ Error | Code | Meaning
 
 ## Custom errors
 
-The range `-127 .. -100` is reserved by ThingsDB for custom error codes although technically this range can be extended from `-127` up to `-64`.
+The range `-127 .. -100` is attended to be used for custom error codes.
 See [err(..)](../collection-api/err) and [alt_raise(..)](../collection-api/err) for more information on how to use custom error codes.

@@ -1,15 +1,19 @@
 ---
 title: "clear"
-weight: 97
+weight: 98
 ---
 
 Removes all things from a [set](..).
 
-This function generates a [change](../../../overview/changes) *(except when called on a [variable](../../../overview/variable))*.
+This function generates a [change](../../../overview/changes)
 
 ### Function
 
 *set*.`clear()`
+
+### Arguments
+
+None
 
 ### Return value
 

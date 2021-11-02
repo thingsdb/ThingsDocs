@@ -1,12 +1,12 @@
 ---
 title: "is_thing"
-weight: 197
+weight: 212
 ---
 
 This function determines whether the provided value is a [thing](../../data-types/thing) or not.
 
 {{% notice note %}}
-[Type](../../data-types/type) instances are also things, so this function returns `true` for a Type instance as well.
+Typed things are also things, so this function returns `true` for both [typed](../../overview/type) and [non-typed](../../data-types/thing) things.
 {{% /notice %}}
 
 This function does *not* generate a [change](../../overview/changes).

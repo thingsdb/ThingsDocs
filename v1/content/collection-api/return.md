@@ -1,6 +1,6 @@
 ---
 title: "return"
-weight: 230
+weight: 245
 ---
 
 The `return` function moves the argument to the output of the current query/closure call.
@@ -182,6 +182,6 @@ return(.artists, 3);
 ```
 
 {{% notice tip %}}
-Use custom [Type](../../data-types/type) and the [wrap()](../../data-types/thing/wrap) function to gain more control on which properties to return.
+Use custom [Type](../../overview/type) and the [wrap()](../../data-types/thing/wrap) function to gain more control on which properties to return.
 {{% /notice %}}
 

@@ -1,9 +1,9 @@
 ---
 title: "new_type"
-weight: 219
+weight: 234
 ---
 
-Creates a new [Type](../../data-types/type). This function *only* creates a new type
+Creates a new [Type](../../overview/type). This function *only* creates a new type
 and does not allow you to specify any fields. With the [set_type()](../set_type) function
 you can define the fields for the new type.
 
@@ -26,7 +26,7 @@ type | string | Name of the Type to be created.
 wrap_only | bool (optional) | When `true` the new type will be created with *wrap-only* mode enabled. Default is `false`.
 
 {{% notice note %}}
-If **wrap-only** mode is enabled, no instances of this type can be
+If **wrap-only** mode is enabled, no typed thing of this type can be
 created nor can the type be used by other type. In **wrap-only** mode the only purpose of the type is to [wrap](../../data-types/thing/wrap) other things.
 {{% /notice %}}
 

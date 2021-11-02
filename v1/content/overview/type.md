@@ -1,43 +1,45 @@
 ---
 title: "Type"
-weight: 142
+weight: 29
 ---
 
 
-A Type is like a thing with pre-defined properties and/or methods. When an instance of a Type is created,
-all defined properties are guaranteed to exist with a value matching the Type definition.
+Use a Type to create [typed](../../data-types/typed) things.
+
+A *[typed](../../data-types/typed)* thing is a thing with pre-defined properties and/or methods with are defined by a *Type*.
+When creating a *[typed](../../data-types/typed)* thing, all defined properties of the *type* are guaranteed to exist with a value matching the type definition.
 
 
 ### Definable properties
 
 definition | default | description
 ---------- | ------- | -----------
-`'str'` | `""` | requires type [str](../str) (values of type [str](../str) *should* contain valid UTF-8 characters).
-`'str<..>'` | *depends* | requires type [str](../str) with a certain length *(see [length condition](#length-condition) and [default value](#use-condition-to-set-a-default-value))*
-`/pattern/` | *depends* | requires type [str](../str) with a math to a specified pattern *(see [pattern condition](#pattern-condition))*.
-`'utf8'` | `""` | requires type [str](../str) and the value *must* contain valid UTF-8 characters.
-`'raw'` | `""` | requires type [str](../str) *or* [bytes](../bytes).
-`'bytes'` | `bytes()` | requires type [bytes](../bytes).
-`'bool'` | `false` | requires type [bool](../bool).
-`'int'` | `0` | requires type [int](../int).
-`'int<..>'` | *depends* | requires type [int](../int) within a given range *(see [range condition](#range-condition)  and [default value](#use-condition-to-set-a-default-value))*.
-`'uint'` | `0` | requires a *non-negative* integer (type [int](../int), `>= 0`).
-`'pint'` | `1` | requires a *positive* integer (type [int](../int), `> 0`).
-`'nint'` | `-1` | requires a *negative* integer (type [int](../int), `< 0`).
-`'float'` | `0.0` | requires type [float](../float).
-`'float<..>'` | *depends* | requires type [float](../float) within a given range *(see [range condition](#range-condition) and [default value](#use-condition-to-set-a-default-value))*.
-`'number'` | `0` | requires type [float](../float) *or* type [int](../int).
-`'datetime'` | `datetime()` | requires type [datetime](../datetime). *(defaults to the current date/time)*
-`'timeval'` | `timeval()` | requires type [timeval](../timeval). *(defaults to the current date/time)*
-`'regex'` | `regex('.*')` | requires type [regex](../regex).
-`'closure'` | `||nil` | requires type [closure](../closure).
-`'error'` | `err()` | requires type [error](../error).
-`'room'` | `room()` | requires type [room](../room).
-`'thing'` | `{}` | requires a [thing](../thing).
-`'X'` | `X{}` | requires a instance of [Type](../type) `X`, or a member of [enumerator](../enum) `X`. The value `X` should be replaced with the `Type` / `enum` name.
-`'[]'` | `[]` | requires a [list](../list).
-`'{}'` | `set()` | requires a [set](../set).
-`'any'` | `nil` | any type is valid *(with the exception of a [future](../future))*.
+`'str'` | `""` | requires type [str](../../data-types/str) (values of type [str](../../data-types/str) *should* contain valid UTF-8 characters).
+`'str<..>'` | *depends* | requires type [str](../../data-types/str) with a certain length *(see [length condition](#length-condition) and [default value](#use-condition-to-set-a-default-value))*
+`/pattern/` | *depends* | requires type [str](../../data-types/str) with a math to a specified pattern *(see [pattern condition](#pattern-condition))*.
+`'utf8'` | `""` | requires type [str](../../data-types/str) and the value *must* contain valid UTF-8 characters.
+`'raw'` | `""` | requires type [str](../../data-types/str) *or* [bytes](../../data-types/bytes).
+`'bytes'` | `bytes()` | requires type [bytes](../../data-types/bytes).
+`'bool'` | `false` | requires type [bool](../../data-types/bool).
+`'int'` | `0` | requires type [int](../../data-types/int).
+`'int<..>'` | *depends* | requires type [int](../../data-types/int) within a given range *(see [range condition](#range-condition)  and [default value](#use-condition-to-set-a-default-value))*.
+`'uint'` | `0` | requires a *non-negative* integer (type [int](../../data-types/int), `>= 0`).
+`'pint'` | `1` | requires a *positive* integer (type [int](../../data-types/int), `> 0`).
+`'nint'` | `-1` | requires a *negative* integer (type [int](../../data-types/int), `< 0`).
+`'float'` | `0.0` | requires type [float](../../data-types/float).
+`'float<..>'` | *depends* | requires type [float](../../data-types/float) within a given range *(see [range condition](#range-condition) and [default value](#use-condition-to-set-a-default-value))*.
+`'number'` | `0` | requires type [float](../../data-types/float) *or* type [int](../../data-types/int).
+`'datetime'` | `datetime()` | requires type [datetime](../../data-types/datetime). *(defaults to the current date/time)*
+`'timeval'` | `timeval()` | requires type [timeval](../../data-types/timeval). *(defaults to the current date/time)*
+`'regex'` | `regex('.*')` | requires type [regex](../../data-types/regex).
+`'closure'` | `||nil` | requires type [closure](../../data-types/closure).
+`'error'` | `err()` | requires type [error](../../data-types/error).
+`'room'` | `room()` | requires type [room](../../data-types/room).
+`'thing'` | `{}` | requires a [thing](../../data-types/thing).
+`'X'` | `X{}` | requires a instance of [Type](../type) `X`, or a member of [enumerator](../../data-types/enum) `X`. The value `X` should be replaced with the `Type` / `enum` name.
+`'[]'` | `[]` | requires a [list](../../data-types/list).
+`'{}'` | `set()` | requires a [set](../../data-types/set).
+`'any'` | `nil` | any type is valid *(with the exception of a [future](../../data-types/future))*.
 
 Each definition can be made optional by adding a question-mark `?` to the definition.
 If a property is made optional, then the value `nil` is allowed instead of the given type
@@ -49,7 +51,7 @@ and `nil` will also be the default if the property is missing.
 // Create a new type `User` with an optional property `name`.
 set_type('User', {name: 'str?'});
 
-// Create a instance of type `User` without a name
+// Create a typed thing of type `User` without a name
 unknown = User{};
 
 // ..or explicitly set name to `nil`

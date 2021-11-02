@@ -1,9 +1,9 @@
 ---
 title: "mod"
-weight: 214
+weight: 229
 ---
 
-Modifies the type definition of a property or the closure of a method from an existing [Type](../../../data-types/type).
+Modifies the type definition of a property or the closure of a method from an existing [Type](../../../overview/type).
 It is not possible to convert a *property* to a *method* or the other way around.
 
 {{% notice note %}}

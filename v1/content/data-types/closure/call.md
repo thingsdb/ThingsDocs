@@ -1,6 +1,6 @@
 ---
 title: "call"
-weight: 34
+weight: 35
 ---
 
 Call a closure.

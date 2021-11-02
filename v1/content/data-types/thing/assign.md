@@ -1,12 +1,12 @@
 ---
 title: "assign"
-weight: 122
+weight: 136
 ---
 
-Copies properties from a given [thing](..). Existing properties will be overwritten and new properties will be added. If this function is used on an instance of a custom [Type](../../type), *all* properties of the source must be valid according the type specification, otherwise an exception will be raised and no properties will be copied.
+Copies properties from a given [thing](..). Existing properties will be overwritten and new properties will be added. If this function is used on a *[typed](../../typed)* thing, *all* properties of the source must be valid according the type specification, otherwise an exception will be raised and no properties will be copied.
 
 {{% notice note %}}
-It is *not* possible to use `assign(..)` to set a property with a [relation](../../../collection-api/mod_type/rel) unless the *source* if of the same [Type](../../type).
+It is *not* possible to use `assign(..)` to set a property with a [relation](../../../collection-api/mod_type/rel) unless the *source* if of the same [Type](../../../overview/type).
 {{% /notice %}}
 
 This function generates a [change](../../../overview/changes).

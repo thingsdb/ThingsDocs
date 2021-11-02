@@ -1,6 +1,6 @@
 ---
 title: "˂Type˃"
-weight: 143
+weight: 157
 ---
 
 
@@ -8,7 +8,7 @@ It is sometimes useful to get things with their Id (`#`) but still
 be able to filter-out properties which are not required.
 
 A solution to return only specific properties from a thing, is to work with *wrapped* Types.
-This feature is especially useful *(and fast)* if your source thing is a [Type](../type) instance.
+This feature is especially useful *(and fast)* if your source thing is a [typed](../typed) thing.
 
 Besides filtering properties, a wrapped *thing* also inherits the [methods](../type/#methods) from the *type* it is wrapped with *(see [example 3](#example-3))*. When a wrapped type is returned to the client,
 those methods act as [computed properties](#computed-properties). *(see [example 4](#example-4), [example 5](#example-5) and [example 6](#example-6))*
@@ -16,7 +16,7 @@ those methods act as [computed properties](#computed-properties). *(see [example
 
 {{% notice note %}}
 
-When ThingsDB wraps a normal thing with a Type, each property must be compared to the definition of that Type to determine if it comes in the end result. However, if the source is an instance of Type, ThingsDB only needs to do this once and can use an internal cache for every other transition from that Type to Type.
+When ThingsDB wraps a thing with a Type, each property must be compared to the definition of that Type to determine if it comes in the end result. However, if the source is *typed* thing, ThingsDB only needs to do this once and can use an internal cache for every other transition from that Type to Type.
 
 {{% /notice %}}
 

@@ -1,15 +1,19 @@
 ---
 title: "clear"
-weight: 123
+weight: 137
 ---
 
 Removes all properties from a [thing](..).
 
-This function generates a [change](../../../overview/changes) *(except when called on a [variable](../../../overview/variable))*.
+This function generates a [change](../../../overview/changes)
 
 ### Function
 
 *thing*.`clear()`
+
+### Arguments
+
+None
 
 ### Return value
 

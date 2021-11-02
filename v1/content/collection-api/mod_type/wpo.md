@@ -1,9 +1,9 @@
 ---
 title: "wpo"
-weight: 217
+weight: 232
 ---
 
-Enable or disable *wrap-only* mode for an existing [Type](../../../data-types/type).
+Enable or disable *wrap-only* mode for an existing [Type](../../../overview/type).
 
 When wrap-only mode is enabled, no instances of the type can be created and the type
 can not be used by other type unless that type is also in wrap-only mode. The only purpose of a type in wrap-only mode is to [wrap](../../../data-types/thing/wrap) things with but this gives you the assurance that no data is created using this type.

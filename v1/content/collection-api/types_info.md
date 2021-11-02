@@ -1,9 +1,9 @@
 ---
 title: "types_info"
-weight: 243
+weight: 260
 ---
 
-Returns [Type](../../data-types/type) information about all the Types within a collection.
+Returns [Type](../../overview/type) information about all the Types within a collection.
 
 See the [type_info()](../type_info) function documentation for an example of the exposed Type information.
 

@@ -1,6 +1,6 @@
 ---
 title: "Data Types"
-weight: 29
+weight: 30
 chapter: true
 ---
 
@@ -26,9 +26,10 @@ type | Description
 [room](./room) | Room type for joining and emitting events.
 [set](./set) | Unordered group of unique things.
 [str](./str) | String type.
+[task](./task) | Schedule a task (*[closure](./closure)*) to run at a specific date/time.
 [thing](./thing) | Object with key value pairs.
 [timeval](./timeval) | Like `datetime` but returns as a UNIX time-stamp by default.
 [tuple](./tuple) | Nested and immutable [list](./list).
-[Type](./type) | Type are [things](./thing) with pre-defined properties.
-[&lt;Type&gt;](./wtype) | Wrapped thing by a [Type](./type).
+[typed](./typed) | Type are [things](./thing) with pre-defined properties.
+[&lt;Type&gt;](./wtype) | Wrapped thing by a [Type](../overview/type).
 

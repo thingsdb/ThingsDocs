@@ -1,19 +1,19 @@
 ---
 title: "del_type"
-weight: 165
+weight: 179
 ---
 
-Deletes an existing [Type](../../data-types/type).
+Deletes an existing [Type](../../overview/type).
 
-It is not possible to delete a [Type](../../data-types/type) which is used by another
+It is not possible to delete a [Type](../../overview/type) which is used by another
 Type. You should first change or delete the other Type before you are able to delete this Type.
 See the example below.
 
 {{% notice warning %}}
-If there are still instances of the Type you delete, then all instances will be
-converted to normal [things](../../data-types/thing). No properties will be removed
+If there are still things of the Type you delete, then all things will be
+converted to non-typed [things](../../data-types/thing). No properties will be removed
 in this process. With [type_count(..)](../type_count)
-you can view the number of instances of a certain Type.
+you can view the number of things of a certain Type.
 {{% /notice %}}
 
 This function generates a [change](../../overview/changes).

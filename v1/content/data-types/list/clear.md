@@ -1,15 +1,19 @@
 ---
 title: "clear"
-weight: 59
+weight: 60
 ---
 
 Removes all items from a [list](..).
 
-This function generates a [change](../../../overview/changes) *(except when called on a [variable](../../../overview/variable))*.
+This function generates a [change](../../../overview/changes)
 
 ### Function
 
 *list*.`clear()`
+
+### Arguments
+
+None
 
 ### Return value
 

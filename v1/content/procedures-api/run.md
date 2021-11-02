@@ -1,13 +1,9 @@
 ---
 title: "run"
-weight: 302
+weight: 319
 ---
 
 Run a procedure.
-
-{{% notice info %}}
-The **run(..)** function may also be used to *run* a [timer](../../timers-api/run).
-{{% /notice %}}
 
 If the procedure name is not dynamic, you do need the `run(..)` function but instead you may call the procedure as a function call.
 

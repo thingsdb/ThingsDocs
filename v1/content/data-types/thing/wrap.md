@@ -1,10 +1,10 @@
 ---
 title: "wrap"
-weight: 139
+weight: 153
 ---
 
-Wrap a thing with a another [Type](../../type) to filter out properties, while preserving the Id.
-A wrapped *thing* inherits the [methods](../../type/#methods) from the *type* it is wrapped with.
+Wrap a thing with a [Type](../../../overview/type) to filter out properties, while preserving the Id.
+A wrapped *thing* inherits the [methods](../../../overview/type/#methods) from the *type* it is wrapped with.
 
 For a more advanced example using [wrap()](..) and [unwrap()](../../wtype/unwrap) see [\<Type\>](../../wtype/#example).
 
@@ -14,9 +14,9 @@ For a more advanced example using [wrap()](..) and [unwrap()](../../wtype/unwrap
 
 ### Arguments
 
-Argument | Arguments   | Description
--------- | ----------- | -----------
-Type     | str         | Type's name to wrap the thing with.
+Argument | Arguments     | Description
+-------- | ------------- | -----------
+Type     | str (optional)| Type's name to wrap the thing with. If not given, the thing will be wrapped with it's own type.
 
 ### Return value
 

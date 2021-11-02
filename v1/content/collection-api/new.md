@@ -1,19 +1,19 @@
 ---
 title: "new"
-weight: 218
+weight: 233
 ---
 
-Creates a new instance of a defined [Type](../../data-types/type).
+Creates a new typed thing of a defined [Type](../../overview/type).
 
 {{% notice info %}}
-When possible it is preferred to use the syntax `MyType{...}` to create a instance of a certain Type. However, sometimes you need to create an instance dynamically with the Type's name as variable and then `new()` can be used. {{% /notice %}}
+When possible it is preferred to use the syntax `MyType{...}` to create a thing of a certain Type. However, sometimes you need to create an thing dynamically with the Type's name as variable and then `new()` can be used. {{% /notice %}}
 
 {{% notice tip %}}
 Since version **v0.9.2** the `value` argument is no longer required. If not given all properties will be set to their default values.
 {{% /notice %}}
 
 {{% notice tip %}}
-Since version **v0.9.5** it is also possible to create an instance using the shorter syntax `Type(thing)` *(instead of writing `new("Type", thing)`)*.
+Since version **v0.9.5** it is also possible to create a typed thing using the shorter syntax `Type(thing)` *(instead of writing `new("Type", thing)`)*.
 {{% /notice %}}
 
 This function generates a [change](../../overview/changes).
@@ -26,12 +26,12 @@ This function generates a [change](../../overview/changes).
 
 Argument | Type | Description
 -------- | ---- | -----------
-type | str | The name of the Type that an instance must be made of.
-value | thing (optional) | Thing containing all the properties that must be added to the new instance of the given Type.
+type | str | The name of the Type that a thing must be made of.
+value | thing (optional) | Thing containing all the properties that must be added to the new thing of the given Type.
 
 ### Return value
 
-A Thing containing all the properties which have been added to the new instance of the given Type.
+A Thing containing all the properties which have been added to the new thing of the given Type.
 
 ### Example
 
@@ -45,7 +45,7 @@ set_type('Person', {
     hobbies: '[str]'
 });
 
-// Create an instance of type `Person`
+// Create a typed thing of type `Person`
 new('Person', {
     name: 'John',
     age: 34,
@@ -64,5 +64,5 @@ new('Person', {
 ```
 
 {{% notice note %}}
-The property names and (data) types of the values that are added to an instance of an existing type must exactly match that Type.
+The property names and (data) types of the values that are added to a typed thing of an existing type must exactly match that Type.
 {{% /notice %}}

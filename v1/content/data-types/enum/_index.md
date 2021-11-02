@@ -1,11 +1,11 @@
 ---
 title: "enum"
-weight: 46
+weight: 47
 ---
 
 Enumerators are a set of unique names coupled to a unique set of values. ThingsDB support enumerators for type `int`, `float`, `str`, `bytes` and `thing`, where all members
-must have the same type. Thus, it is not possible to have an enum type with for example both values of type `int` and `str`. Enumerators with type `thing` may contain `things`
-using different [Type](../type) as each instance of a Type is still a [thing](../thing).
+must have the same type. Thus, it is not possible to have an enum type with for example both values of type `int` and `str`. Enumerators with type `thing` may contain both [things](../thing) and [typed things](../typed)
+as they are both compatible with type [thing](../thing).
 
 
 ### Functions

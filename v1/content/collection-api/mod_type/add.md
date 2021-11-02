@@ -1,13 +1,13 @@
 ---
 title: "add"
-weight: 212
+weight: 227
 ---
 
-Adds a property to an existing [Type](../../../data-types/type).
+Adds a property to an existing [Type](../../../overview/type).
 
 {{% notice info %}}
 Since version **v0.9.2** an initial value is no longer required when having active instances of the given Type.
-If the initial value is omitted, then ***a single*** default value according the [Type definition](../../..//data-types/type/#definable-properties) will be created and applied to ***all instances***. See section ["init using callback"](#init-using-callback) for information on how to create a new initial value for each instance.
+If the initial value is omitted, then ***a single*** default value according the [Type definition](../../..//overview/type/#definable-properties) will be created and applied to ***all instances***. See section ["init using callback"](#init-using-callback) for information on how to create a new initial value for each instance.
 {{% /notice %}}
 
 ### Action
@@ -18,11 +18,11 @@ If the initial value is omitted, then ***a single*** default value according the
 
 Argument | Type | Description
 -------- | ---- | -----------
-type | str | Name of the [Type](../../../data-types/type) where the property has to be added to.
+type | str | Name of the [Type](../../../overview/type) where the property has to be added to.
 `'add'` | str | Passing this argument will result in an *add* action.
 name | str | Name of the property that has to be added.
 definition/closure | str/closure | Type definition of the *property* or closure for the *method* that has to be added
-init | any/closure | The default value to set on existing instances of this [Type](../../../data-types/type). If a closure is used, then the closure will be called on each existing instance, see [init using callback](#init-using-callback). The `init` argument is only accepted when adding a new *property* on a type with [wrap-only](../wpo) mode disabled and must be omitted when adding a new *method* or changing a type with *wrap-only* mode enabled.
+init | any/closure | The default value to set on existing instances of this [Type](../../../overview/type). If a closure is used, then the closure will be called on each existing instance, see [init using callback](#init-using-callback). The `init` argument is only accepted when adding a new *property* on a type with [wrap-only](../wpo) mode disabled and must be omitted when adding a new *method* or changing a type with *wrap-only* mode enabled.
 
 ### Return value
 

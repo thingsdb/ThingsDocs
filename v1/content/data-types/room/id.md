@@ -1,6 +1,6 @@
 ---
 title: "id"
-weight: 92
+weight: 93
 ---
 
 Returns the `id` of a [room](..) or `nil` if the room is not stored.
@@ -21,11 +21,11 @@ Returns `id` of a room or `nil` when the room is not stored.
 
 ### Example
 
-> This code uses `id()` to return a collection id:
+> This code uses `id()` to return a room id:
 
 ```thingsdb,should_pass
 .chat = room();
-.chat.id();  // Returns the collection id
+.chat.id();  // Returns the room id
 ```
 
 > Example return value in JSON format

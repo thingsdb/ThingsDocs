@@ -1,9 +1,9 @@
 ---
 title: "rename_type"
-weight: 229
+weight: 244
 ---
 
-Rename a [type](../../data-types/type).
+Rename a [type](../../overview/type).
 
 This function generates a [change](../../overview/changes).
 
@@ -15,8 +15,8 @@ This function generates a [change](../../overview/changes).
 
 Argument | Type | Description
 -------- | ---- | -----------
-`current_name` | str (required) | Current [type](../../data-types/type) name.
-`new_name` | str (required) | New name for the [type](../../data-types/type).
+`current_name` | str (required) | Current [type](../../overview/type) name.
+`new_name` | str (required) | New name for the [type](../../overview/type).
 
 ### Return value
 
