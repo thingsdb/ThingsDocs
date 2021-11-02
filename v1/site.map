@@ -127,6 +127,7 @@ data-types
         cancel
         closure
         del
+        err
         id
         owner
         set_args
