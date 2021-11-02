@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v1/data-types/thing/assign/</guid>
-      <description>Copies properties from a given thing. Existing properties will be overwritten and new properties will be added. If this function is used on an instance of a custom Type, all properties of the source must be valid according the type specification, otherwise an exception will be raised and no properties will be copied.
+      <description>Copies properties from a given thing. Existing properties will be overwritten and new properties will be added. If this function is used on a typed thing, all properties of the source must be valid according the type specification, otherwise an exception will be raised and no properties will be copied.
 It is not possible to use assign(..) to set a property with a relation unless the source if of the same Type.</description>
     </item>
     
@@ -27,8 +27,9 @@ It is not possible to use assign(..) to set a property with a relation unless th
       
       <guid>https://docs.thingsdb.net/v1/data-types/thing/clear/</guid>
       <description>Removes all properties from a thing.
-This function generates a change (except when called on a variable).
+This function generates a change
 Function thing.clear()
+Arguments None
 Return value Returns nil.
 Example  This code adds things to a set:
  my_thing = { a: &#39;Property A&#39;, b: &#39;Property B&#39;, c: &#39;Property C&#39; }; my_thing.clear(); my_thing; // the thing is empty  Return value in JSON format
@@ -214,9 +215,10 @@ Arguments    Argument Type Description     name str (required) The name of the p
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v1/data-types/thing/to_type/</guid>
-      <description>Converts a thing into an instance of a given Type.
+      <description>Converts a thing into an typed thing.
 Before a thing may be converted, all the properties of the thing must have an exact match with the properties defined by the Type. It you later want to change tome properties, the function mod_type can be used.
-Since the root of a collection is also a thing, it is possible to use this function to make the collection strict.</description>
+Since the root of a collection is also a thing, it is possible to use this function to make the collection strict.
+It is not possible to convert a thing into a Type with relations.</description>
     </item>
     
     <item>
@@ -237,11 +239,10 @@ Although the values() and map() in the example above will return a list with the
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v1/data-types/thing/wrap/</guid>
-      <description>Wrap a thing with a another Type to filter out properties, while preserving the Id. A wrapped thing inherits the methods from the type it is wrapped with.
+      <description>Wrap a thing with a Type to filter out properties, while preserving the Id. A wrapped thing inherits the methods from the type it is wrapped with.
 For a more advanced example using wrap() and unwrap() see &amp;lt;Type&amp;gt;.
 Function thing.wrap(Type)
-Arguments    Argument Arguments Description     Type str Type&amp;rsquo;s name to wrap the thing with.    Return value A wrapped thing.
-Example  This code shows an example using wrap():</description>
+Arguments    Argument Arguments Description     Type str (optional) Type&amp;rsquo;s name to wrap the thing with. If not given, the thing will be wrapped with it&amp;rsquo;s own type.</description>
     </item>
     
   </channel>

@@ -33,8 +33,8 @@ This function does not generate a change.
 Function room.id()
 Arguments None
 Return value Returns id of a room or nil when the room is not stored.
-Example  This code uses id() to return a collection id:
- .chat = room(); .chat.id(); // Returns the collection id  Example return value in JSON format
+Example  This code uses id() to return a room id:
+ .chat = room(); .chat.id(); // Returns the room id  Example return value in JSON format
  624 </description>
     </item>
     

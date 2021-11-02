@@ -32,8 +32,9 @@ Example  This code shows an example using choice():
       
       <guid>https://docs.thingsdb.net/v1/data-types/list/clear/</guid>
       <description>Removes all items from a list.
-This function generates a change (except when called on a variable).
+This function generates a change
 Function list.clear()
+Arguments None
 Return value Returns nil.
 Example  This code adds things to a set:
  arr = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]; arr.clear(); arr; // the list is empty  Return value in JSON format

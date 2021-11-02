@@ -30,8 +30,9 @@ Example  This code adds things to a set:</description>
       
       <guid>https://docs.thingsdb.net/v1/data-types/set/clear/</guid>
       <description>Removes all things from a set.
-This function generates a change (except when called on a variable).
+This function generates a change
 Function set.clear()
+Arguments None
 Return value Returns nil.
 Example  This code adds things to a set:
  a = {item: &#39;a&#39;}; b = {item: &#39;b&#39;}; s = set(a, b); s.clear(); s; // the set is empty  Return value in JSON format

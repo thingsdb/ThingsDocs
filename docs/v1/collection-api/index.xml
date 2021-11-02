@@ -146,7 +146,7 @@ Arguments    Argument Type Description     enum string Name of the enumerator ty
       <guid>https://docs.thingsdb.net/v1/collection-api/del_type/</guid>
       <description>Deletes an existing Type.
 It is not possible to delete a Type which is used by another Type. You should first change or delete the other Type before you are able to delete this Type. See the example below.
-If there are still instances of the Type you delete, then all instances will be converted to normal things. No properties will be removed in this process. With type_count(..) you can view the number of instances of a certain Type.</description>
+If there are still things of the Type you delete, then all things will be converted to non-typed things. No properties will be removed in this process. With type_count(..) you can view the number of things of a certain Type.</description>
     </item>
     
     <item>
@@ -194,7 +194,7 @@ Return value List with mpdata about all enumeration types in the collection scop
       <description>Returns an error.
 This function does not generate a change.
 Function err([code, [message]])
-Arguments    Argument Type Description     code int (optional) Integer error code between -127 and -50, defaults to -100.   message str (optional) Optional error message.    Return value An error value (in a client response, an error value will be packed as a string value with the error message).</description>
+Arguments    Argument Type Description     code int (optional) Integer error code between -127 and -50, defaults to -100. See error documentation for build-in errors.   message str (optional) Optional error message.    Return value An error value (in a client response, an error value will be packed as a string value with the error message).</description>
     </item>
     
     <item>
@@ -555,13 +555,27 @@ Arguments    Argument Type Description     value any (required) The value to be 
     </item>
     
     <item>
+      <title>is_task</title>
+      <link>https://docs.thingsdb.net/v1/collection-api/is_task/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/collection-api/is_task/</guid>
+      <description>This function determines whether the provided value is a task or not.
+This function does not generate a change.
+Function is_task(value)
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a task, else it returns false.
+Example  This code shows some return values for is_task():
+ [ is_task( thing() ), is_task( task(datetime(), ||nil) ), ];  Return value in JSON format</description>
+    </item>
+    
+    <item>
       <title>is_thing</title>
       <link>https://docs.thingsdb.net/v1/collection-api/is_thing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v1/collection-api/is_thing/</guid>
       <description>This function determines whether the provided value is a thing or not.
-Type instances are also things, so this function returns true for a Type instance as well.
+Typed things are also things, so this function returns true for both typed and non-typed things.
  This function does not generate a change.
 Function is_thing(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a thing, else it returns false.</description>
@@ -666,8 +680,8 @@ Arguments    Argument Type Description     value str/any (required) Value to log
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v1/collection-api/new/</guid>
-      <description>Creates a new instance of a defined Type.
-When possible it is preferred to use the syntax MyType{...} to create a instance of a certain Type. However, sometimes you need to create an instance dynamically with the Type&amp;rsquo;s name as variable and then new() can be used.
+      <description>Creates a new typed thing of a defined Type.
+When possible it is preferred to use the syntax MyType{...} to create a thing of a certain Type. However, sometimes you need to create an thing dynamically with the Type&amp;rsquo;s name as variable and then new() can be used.
  Since version v0.9.2 the value argument is no longer required. If not given all properties will be set to their default values.</description>
     </item>
     
@@ -885,6 +899,35 @@ When bytes are converted to str then the data will be checked if it contains val
 This function does not generate a change.
 Function str(value)
 Arguments    Argument Type Description     value any (optional) The value to create a string from.</description>
+    </item>
+    
+    <item>
+      <title>task</title>
+      <link>https://docs.thingsdb.net/v1/collection-api/task/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/collection-api/task/</guid>
+      <description>Create a new task or get an existing task by Id.
+Using an Id as a single argument, this function can be used to return an existing task. With tasks() you can get a list with all available tasks.
+This function generates a change.
+Function task(Id) (get a task by Id) task(start, code, [args]) (create a new task)
+Arguments    Argument Type Description     Id int (required) The Id of the task to return.</description>
+    </item>
+    
+    <item>
+      <title>tasks</title>
+      <link>https://docs.thingsdb.net/v1/collection-api/tasks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/collection-api/tasks/</guid>
+      <description>Return a list with all the tasks in the current scope.
+This function does not generate a change.
+Function tasks()
+Arguments None
+Return value A list with all the tasks in the current scope.
+Example  Example tasks():
+ tasks();  Example return value in JSON format
+ [ &amp;#34;&amp;lt;task:9 owner:admin run_at:nil status:err&amp;gt;&amp;#34;, &amp;#34;&amp;lt;task:10 owner:admin run_at:2021-11-03T12:43:57Z status:nil&amp;gt;&amp;#34;, &amp;#34;&amp;lt;task:26 owner:admin run_at:2021-11-03T20:00:00Z status:nil&amp;gt;&amp;#34; ]  Example how to use tasks() to get all task Ids:</description>
     </item>
     
     <item>

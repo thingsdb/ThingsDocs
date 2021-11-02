@@ -285,6 +285,17 @@ a = 6; b = 7; `The sum of {a} plus {b} is {a + b}.`;  Result in JSON format:
     </item>
     
     <item>
+      <title>Type</title>
+      <link>https://docs.thingsdb.net/v1/overview/type/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/overview/type/</guid>
+      <description>Use a Type to create typed things.
+A typed thing is a thing with pre-defined properties and/or methods with are defined by a Type. When creating a typed thing, all defined properties of the type are guaranteed to exist with a value matching the type definition.
+Definable properties    definition default description     &#39;str&#39; &amp;quot;&amp;quot; requires type str (values of type str should contain valid UTF-8 characters).</description>
+    </item>
+    
+    <item>
       <title>bool</title>
       <link>https://docs.thingsdb.net/v1/data-types/bool/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -590,8 +601,9 @@ Example  This code shows an example using choice():
       
       <guid>https://docs.thingsdb.net/v1/data-types/list/clear/</guid>
       <description>Removes all items from a list.
-This function generates a change (except when called on a variable).
+This function generates a change
 Function list.clear()
+Arguments None
 Return value Returns nil.
 Example  This code adds things to a set:
  arr = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]; arr.clear(); arr; // the list is empty  Return value in JSON format
@@ -1006,8 +1018,8 @@ This function does not generate a change.
 Function room.id()
 Arguments None
 Return value Returns id of a room or nil when the room is not stored.
-Example  This code uses id() to return a collection id:
- .chat = room(); .chat.id(); // Returns the collection id  Example return value in JSON format
+Example  This code uses id() to return a room id:
+ .chat = room(); .chat.id(); // Returns the room id  Example return value in JSON format
  624 </description>
     </item>
     
@@ -1045,8 +1057,9 @@ Example  This code adds things to a set:</description>
       
       <guid>https://docs.thingsdb.net/v1/data-types/set/clear/</guid>
       <description>Removes all things from a set.
-This function generates a change (except when called on a variable).
+This function generates a change
 Function set.clear()
+Arguments None
 Return value Returns nil.
 Example  This code adds things to a set:
  a = {item: &#39;a&#39;}; b = {item: &#39;b&#39;}; s = set(a, b); s.clear(); s; // the set is empty  Return value in JSON format
@@ -1357,12 +1370,184 @@ Example  Example using upper():
     </item>
     
     <item>
+      <title>again_at</title>
+      <link>https://docs.thingsdb.net/v1/data-types/task/again_at/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/data-types/task/again_at/</guid>
+      <description>Re-schedules the task to a new date/time. The task will run again at the new date/time, even if the task returns with an error.
+It is only possible to use again_at within the callback of the parent task. If may however be used within a future or other closure, as long as this closure is nested within the tasks callback.
+ This function generates a change.
+Function task.again_at(start)
+Arguments    Argument Type Description     start datetime (required) Date/time when the task should start again.</description>
+    </item>
+    
+    <item>
+      <title>again_in</title>
+      <link>https://docs.thingsdb.net/v1/data-types/task/again_in/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/data-types/task/again_in/</guid>
+      <description>Re-schedules the task to a new date/time. The task will run again at the new date/time, even if the task returns with an error.
+It is only possible to use again_at within the callback of the parent task. If may however be used within a future or other closure, as long as this closure is nested within the tasks callback.
+ This function generates a change.
+Function task.again_in(unit, num)
+Arguments    Argument Type Description     unit str (required) One of years, months, weeks, days, hours, minutes or seconds.</description>
+    </item>
+    
+    <item>
+      <title>args</title>
+      <link>https://docs.thingsdb.net/v1/data-types/task/args/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/data-types/task/args/</guid>
+      <description>Get task arguments as a new list. As this function returns a new list, making changes to this list does not affect the task arguments.
+This function does not generate a change.
+Function task.args()
+Arguments None
+Return value Returns a new list with arguments.
+Example  This code will will be called every minute for 10 times and then it the timer will be removed.
+ t = task( datetime().move(&#39;days&#39;, 1), |task, a, b| { .</description>
+    </item>
+    
+    <item>
+      <title>at</title>
+      <link>https://docs.thingsdb.net/v1/data-types/task/at/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/data-types/task/at/</guid>
+      <description>Get the scheduled start time of a task or nil if the task is not scheduled.
+This function does not generate a change.
+Function task.at()
+Arguments None
+Return value Returns the scheduled start time of a task or nil if the task is not scheduled.
+Example  Example usage task.at():
+ t = task(datetime(&#39;2022-01-01&#39;), ||log(&#39;Dummy task&#39;)); t.at();  Return value in JSON format
+ &amp;#34;2022-01-01T00:00:00Z&amp;#34; </description>
+    </item>
+    
+    <item>
+      <title>cancel</title>
+      <link>https://docs.thingsdb.net/v1/data-types/task/cancel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/data-types/task/cancel/</guid>
+      <description>Cancel a task. Using this function sets the task error to cancelled_err and the task will not be executed. This function differs from del() as it will not remove the task.
+This function generates a change.
+Function task.cancel()
+Arguments None
+Return value Returns nil.
+Example  Example usage task.cancel():
+ t = task(datetime(), ||log(&#39;Dummy task&#39;)); t.cancel(); // cancel the task before it can start  Return value in JSON format</description>
+    </item>
+    
+    <item>
+      <title>closure</title>
+      <link>https://docs.thingsdb.net/v1/data-types/task/closure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/data-types/task/closure/</guid>
+      <description>Get the closure of a task.
+This function does not generate a change.
+Function task.closure()
+Arguments None
+Return value Returns the closure of the task.
+Example  Example usage task.closure():
+ t = task(datetime(), ||log(&#39;Dummy task&#39;)); t.closure();  Return value in JSON format
+ &amp;#34;||log(&amp;#39;Dummy task&amp;#39;)&amp;#34; </description>
+    </item>
+    
+    <item>
+      <title>del</title>
+      <link>https://docs.thingsdb.net/v1/data-types/task/del/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/data-types/task/del/</guid>
+      <description>Delete a task. After calling this function, the task will be removed from ThingsDB. If there are references to this task, then those references will no longer contain the original task but an empty task instead.
+This function generates a change.
+Function task.del()
+Arguments None
+Return value Returns nil.
+Example  Example usage task.del():
+ t = task(datetime(), ||log(&#39;Dummy task&#39;)); t.del(); // delete the task before it can start  Return value in JSON format</description>
+    </item>
+    
+    <item>
+      <title>id</title>
+      <link>https://docs.thingsdb.net/v1/data-types/task/id/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/data-types/task/id/</guid>
+      <description>Returns the id of a task or nil if the task is removed (empty).
+Notice that every task will be stored, thus all new tasks will get an Id. Only when a task is successfully finished or removed using del(), the task will be empty and therefore the Id will be nil.
+This function does not generate a change.
+Function task.id()
+Arguments None
+Return value Returns id of a task or nil if the task is removed (empty).</description>
+    </item>
+    
+    <item>
+      <title>owner</title>
+      <link>https://docs.thingsdb.net/v1/data-types/task/owner/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/data-types/task/owner/</guid>
+      <description>Get the owner of the the task as string value.
+This function does not generate a change.
+Function task.owner()
+Arguments None
+Return value Returns the name of the owner from the task.
+Example  Example code to get the owner of a task:
+ t = task(datetime(), ||nil); t.owner(); // Returns the owner of the task  Return value in JSON format
+ &amp;#34;admin&amp;#34; </description>
+    </item>
+    
+    <item>
+      <title>set_args</title>
+      <link>https://docs.thingsdb.net/v1/data-types/task/set_args/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/data-types/task/set_args/</guid>
+      <description>Set task arguments.
+If less than the required arguments are given, then the remaining arguments will be set using nil. A num_arguments_err() is raised if the task too much arguments are used.
+When the timer is created in the @thingsdb scope, only (some) immutable types like int, float, str etc. can be used as argument values.
+ This function generates a change.
+Function task.set_args(args)
+Arguments    Argument Type Description     args list (required) List with task arguments.</description>
+    </item>
+    
+    <item>
+      <title>set_closure</title>
+      <link>https://docs.thingsdb.net/v1/data-types/task/set_closure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/data-types/task/set_closure/</guid>
+      <description>Change the closure to execute. Obsolete closure arguments will be removed when the new closure accepts less arguments than the previous closure. If the new closure accepts more arguments, the argument list will be extended with nil values.
+This function generates a change.
+Function task.set_closure(code)
+Arguments    Argument Type Description     code closure (required) New closure to attach to the task.    Return value Returns nil when successful.</description>
+    </item>
+    
+    <item>
+      <title>set_owner</title>
+      <link>https://docs.thingsdb.net/v1/data-types/task/set_owner/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/data-types/task/set_owner/</guid>
+      <description>Change the owner of a task. The new owner must have at least CHANGE permissions on scope where the task is created.
+Changing the owner is useful if you plan to remove an existing user as removing a user will also delete the tasks of the user.
+ This function generates a change.
+Function task.set_owner(name)
+Arguments    Argument Type Description     name str (required) Name of the new owner.</description>
+    </item>
+    
+    <item>
       <title>assign</title>
       <link>https://docs.thingsdb.net/v1/data-types/thing/assign/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v1/data-types/thing/assign/</guid>
-      <description>Copies properties from a given thing. Existing properties will be overwritten and new properties will be added. If this function is used on an instance of a custom Type, all properties of the source must be valid according the type specification, otherwise an exception will be raised and no properties will be copied.
+      <description>Copies properties from a given thing. Existing properties will be overwritten and new properties will be added. If this function is used on a typed thing, all properties of the source must be valid according the type specification, otherwise an exception will be raised and no properties will be copied.
 It is not possible to use assign(..) to set a property with a relation unless the source if of the same Type.</description>
     </item>
     
@@ -1373,8 +1558,9 @@ It is not possible to use assign(..) to set a property with a relation unless th
       
       <guid>https://docs.thingsdb.net/v1/data-types/thing/clear/</guid>
       <description>Removes all properties from a thing.
-This function generates a change (except when called on a variable).
+This function generates a change
 Function thing.clear()
+Arguments None
 Return value Returns nil.
 Example  This code adds things to a set:
  my_thing = { a: &#39;Property A&#39;, b: &#39;Property B&#39;, c: &#39;Property C&#39; }; my_thing.clear(); my_thing; // the thing is empty  Return value in JSON format
@@ -1560,9 +1746,10 @@ Arguments    Argument Type Description     name str (required) The name of the p
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v1/data-types/thing/to_type/</guid>
-      <description>Converts a thing into an instance of a given Type.
+      <description>Converts a thing into an typed thing.
 Before a thing may be converted, all the properties of the thing must have an exact match with the properties defined by the Type. It you later want to change tome properties, the function mod_type can be used.
-Since the root of a collection is also a thing, it is possible to use this function to make the collection strict.</description>
+Since the root of a collection is also a thing, it is possible to use this function to make the collection strict.
+It is not possible to convert a thing into a Type with relations.</description>
     </item>
     
     <item>
@@ -1583,11 +1770,10 @@ Although the values() and map() in the example above will return a list with the
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v1/data-types/thing/wrap/</guid>
-      <description>Wrap a thing with a another Type to filter out properties, while preserving the Id. A wrapped thing inherits the methods from the type it is wrapped with.
+      <description>Wrap a thing with a Type to filter out properties, while preserving the Id. A wrapped thing inherits the methods from the type it is wrapped with.
 For a more advanced example using wrap() and unwrap() see &amp;lt;Type&amp;gt;.
 Function thing.wrap(Type)
-Arguments    Argument Arguments Description     Type str Type&amp;rsquo;s name to wrap the thing with.    Return value A wrapped thing.
-Example  This code shows an example using wrap():</description>
+Arguments    Argument Arguments Description     Type str (optional) Type&amp;rsquo;s name to wrap the thing with. If not given, the thing will be wrapped with it&amp;rsquo;s own type.</description>
     </item>
     
     <item>
@@ -1611,13 +1797,13 @@ list = []; list.push([&#39;this list will be nested and therefore convert to a t
     </item>
     
     <item>
-      <title>Type</title>
-      <link>https://docs.thingsdb.net/v1/data-types/type/</link>
+      <title>typed</title>
+      <link>https://docs.thingsdb.net/v1/data-types/typed/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.thingsdb.net/v1/data-types/type/</guid>
-      <description>A Type is like a thing with pre-defined properties and/or methods. When an instance of a Type is created, all defined properties are guaranteed to exist with a value matching the Type definition.
-Definable properties    definition default description     &#39;str&#39; &amp;quot;&amp;quot; requires type str (values of type str should contain valid UTF-8 characters).   &#39;str&amp;lt;..&amp;gt;&#39; depends requires type str with a certain length (see length condition and default value)   /pattern/ depends requires type str with a math to a specified pattern (see pattern condition).</description>
+      <guid>https://docs.thingsdb.net/v1/data-types/typed/</guid>
+      <description>A typed thing is a thing with pre-defined properties and/or methods with are defined by a Type. When creating a typed thing, all defined properties of the Type are guaranteed to exist with a value matching the type definition.
+Most, but not all, functions of a thing work on typed things as well. Next to the functions below, a typed thing may have additional methods which are defined by the Type.</description>
     </item>
     
     <item>
@@ -1863,7 +2049,7 @@ Arguments    Argument Type Description     enum string Name of the enumerator ty
       <guid>https://docs.thingsdb.net/v1/collection-api/del_type/</guid>
       <description>Deletes an existing Type.
 It is not possible to delete a Type which is used by another Type. You should first change or delete the other Type before you are able to delete this Type. See the example below.
-If there are still instances of the Type you delete, then all instances will be converted to normal things. No properties will be removed in this process. With type_count(..) you can view the number of instances of a certain Type.</description>
+If there are still things of the Type you delete, then all things will be converted to non-typed things. No properties will be removed in this process. With type_count(..) you can view the number of things of a certain Type.</description>
     </item>
     
     <item>
@@ -1911,7 +2097,7 @@ Return value List with mpdata about all enumeration types in the collection scop
       <description>Returns an error.
 This function does not generate a change.
 Function err([code, [message]])
-Arguments    Argument Type Description     code int (optional) Integer error code between -127 and -50, defaults to -100.   message str (optional) Optional error message.    Return value An error value (in a client response, an error value will be packed as a string value with the error message).</description>
+Arguments    Argument Type Description     code int (optional) Integer error code between -127 and -50, defaults to -100. See error documentation for build-in errors.   message str (optional) Optional error message.    Return value An error value (in a client response, an error value will be packed as a string value with the error message).</description>
     </item>
     
     <item>
@@ -2272,13 +2458,27 @@ Arguments    Argument Type Description     value any (required) The value to be 
     </item>
     
     <item>
+      <title>is_task</title>
+      <link>https://docs.thingsdb.net/v1/collection-api/is_task/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/collection-api/is_task/</guid>
+      <description>This function determines whether the provided value is a task or not.
+This function does not generate a change.
+Function is_task(value)
+Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a task, else it returns false.
+Example  This code shows some return values for is_task():
+ [ is_task( thing() ), is_task( task(datetime(), ||nil) ), ];  Return value in JSON format</description>
+    </item>
+    
+    <item>
       <title>is_thing</title>
       <link>https://docs.thingsdb.net/v1/collection-api/is_thing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v1/collection-api/is_thing/</guid>
       <description>This function determines whether the provided value is a thing or not.
-Type instances are also things, so this function returns true for a Type instance as well.
+Typed things are also things, so this function returns true for both typed and non-typed things.
  This function does not generate a change.
 Function is_thing(value)
 Arguments    Argument Type Description     value any (required) The value to be tested.    Return value Returns true if the given value is a thing, else it returns false.</description>
@@ -2505,8 +2705,8 @@ Enable wrap-only mode To enable wrap-only mode, make sure no instances of this t
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.thingsdb.net/v1/collection-api/new/</guid>
-      <description>Creates a new instance of a defined Type.
-When possible it is preferred to use the syntax MyType{...} to create a instance of a certain Type. However, sometimes you need to create an instance dynamically with the Type&amp;rsquo;s name as variable and then new() can be used.
+      <description>Creates a new typed thing of a defined Type.
+When possible it is preferred to use the syntax MyType{...} to create a thing of a certain Type. However, sometimes you need to create an thing dynamically with the Type&amp;rsquo;s name as variable and then new() can be used.
  Since version v0.9.2 the value argument is no longer required. If not given all properties will be set to their default values.</description>
     </item>
     
@@ -2724,6 +2924,35 @@ When bytes are converted to str then the data will be checked if it contains val
 This function does not generate a change.
 Function str(value)
 Arguments    Argument Type Description     value any (optional) The value to create a string from.</description>
+    </item>
+    
+    <item>
+      <title>task</title>
+      <link>https://docs.thingsdb.net/v1/collection-api/task/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/collection-api/task/</guid>
+      <description>Create a new task or get an existing task by Id.
+Using an Id as a single argument, this function can be used to return an existing task. With tasks() you can get a list with all available tasks.
+This function generates a change.
+Function task(Id) (get a task by Id) task(start, code, [args]) (create a new task)
+Arguments    Argument Type Description     Id int (required) The Id of the task to return.</description>
+    </item>
+    
+    <item>
+      <title>tasks</title>
+      <link>https://docs.thingsdb.net/v1/collection-api/tasks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/collection-api/tasks/</guid>
+      <description>Return a list with all the tasks in the current scope.
+This function does not generate a change.
+Function tasks()
+Arguments None
+Return value A list with all the tasks in the current scope.
+Example  Example tasks():
+ tasks();  Example return value in JSON format
+ [ &amp;#34;&amp;lt;task:9 owner:admin run_at:nil status:err&amp;gt;&amp;#34;, &amp;#34;&amp;lt;task:10 owner:admin run_at:2021-11-03T12:43:57Z status:nil&amp;gt;&amp;#34;, &amp;#34;&amp;lt;task:26 owner:admin run_at:2021-11-03T20:00:00Z status:nil&amp;gt;&amp;#34; ]  Example how to use tasks() to get all task Ids:</description>
     </item>
     
     <item>
@@ -3539,118 +3768,10 @@ Arguments    Argument Type Description     current_name str (required) Current p
       
       <guid>https://docs.thingsdb.net/v1/procedures-api/run/</guid>
       <description>Run a procedure.
-The run(..) function may also be used to run a timer.
- If the procedure name is not dynamic, you do need the run(..) function but instead you may call the procedure as a function call.
+If the procedure name is not dynamic, you do need the run(..) function but instead you may call the procedure as a function call.
 This function does not generate a change.
 Function run(procedure, ...args)
-Arguments    Argument Type Description     procedure str (required) Name of the procedure to run.   &amp;hellip;args any The arguments for the procedure.</description>
-    </item>
-    
-    <item>
-      <title>del_timer</title>
-      <link>https://docs.thingsdb.net/v1/timers-api/del_timer/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v1/timers-api/del_timer/</guid>
-      <description>Delete a timer.
-This function generates a change.
-Function del_timer(timer)
-Arguments    Argument Type Description     timer int (required) Timer Id to delete.    Return value Returns nil when successful. A lookup_err() is raised if the timer does not exist.
-Example  This code will will update .counter by one each minute. After 10 minutes the counter has reached 10 and will delete itself.</description>
-    </item>
-    
-    <item>
-      <title>has_timer</title>
-      <link>https://docs.thingsdb.net/v1/timers-api/has_timer/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v1/timers-api/has_timer/</guid>
-      <description>Determines if a timer exists in the current scope.
-This function does not generate a change.
-Function has_timer(timer)
-Arguments    Argument Type Description     timer int (required) Timer Id to check.    Return value Returns true if a timer with a given Id exists in the current scope and otherwise false.
-Example  This code shows an example use case of has_timer():
- has_timer(123);  Example return value in JSON format</description>
-    </item>
-    
-    <item>
-      <title>new_timer</title>
-      <link>https://docs.thingsdb.net/v1/timers-api/new_timer/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v1/timers-api/new_timer/</guid>
-      <description>Creates a new timer to the @thingsdb or a @collection scope. The given closure will be copied to the timer, so this is not a reference to the given closure.
-When the timer is created in the @thingsdb scope, only type nil, int, float, bool, str, bytes, datetime and regex are allowed as argument values.
- This function generates a change.
-Function new_timer(start, [repeat], closure, [arguments])
-Arguments    Argument Type Description     start datetime (required) Time when the timer should start.</description>
-    </item>
-    
-    <item>
-      <title>run</title>
-      <link>https://docs.thingsdb.net/v1/timers-api/run/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v1/timers-api/run/</guid>
-      <description>Run a timer.
-The run(..) function may also be used to run a procedure.
- This function does not generate a change.
-Function run(timer)
-Arguments    Argument Type Description     timer int (required) Id of the timer to run.    Return value Returns the timer response.
-Example  Example code using run:
- .counter = 1; timer = new_timer(datetime().move(&#39;days&#39;, 1), || .counter += 1); run(timer);  Return value in JSON format</description>
-    </item>
-    
-    <item>
-      <title>set_timer_args</title>
-      <link>https://docs.thingsdb.net/v1/timers-api/set_timer_args/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v1/timers-api/set_timer_args/</guid>
-      <description>Set timer arguments.
-If less than the required arguments are given, then the remaining arguments will be set using nil. More arguments than the closure accepts are simply removed and thus not used.
-When the timer is created in the @thingsdb scope, only type nil, int, float, bool, str, bytes, datetime and regex are allowed as argument values.
- This function generates a change.
-Function set_timer_args(timer, args)
-Arguments    Argument Type Description     timer int (required) Timer to set new arguments for.</description>
-    </item>
-    
-    <item>
-      <title>timer_args</title>
-      <link>https://docs.thingsdb.net/v1/timers-api/timer_args/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v1/timers-api/timer_args/</guid>
-      <description>Get timer arguments as a tuple.
-The first argument for a timer closure is the timer_id. This timer_id is not included in the list of arguments.
- This function does not generate a change.
-Function timer_args(timer)
-Arguments    Argument Type Description     timer int (required) Timer to get the arguments for.    Return value Returns a tuple with arguments.
-Example  This code will will be called every minute for 10 times and then it the timer will be removed.</description>
-    </item>
-    
-    <item>
-      <title>timer_info</title>
-      <link>https://docs.thingsdb.net/v1/timers-api/timer_info/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v1/timers-api/timer_info/</guid>
-      <description>Returns information about a timer.
-   Value Description     arguments Array with positional argument names.   definition Closure definition. (Only available with CHANGE privileges)   doc Doc string of the closure in the timer.   id Id of the timer.   next_run Scheduled time when the timer wil run.   repeat Repeat the timer each X seconds. (Only when this is a repeating timer)   user User which credentials are used for the timer.</description>
-    </item>
-    
-    <item>
-      <title>timers_info</title>
-      <link>https://docs.thingsdb.net/v1/timers-api/timers_info/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v1/timers-api/timers_info/</guid>
-      <description>Returns timer information about all timers in the scope.
-See the timer_info() function documentation for an example of the exposed timer information.
-This function does not generate a change.
-Function timers_info()
-Arguments None
-Return value List with timer mpdata about all timers in the scope.</description>
+Arguments    Argument Type Description     procedure str (required) Name of the procedure to run.   &amp;hellip;args any The arguments for the procedure. If more arguments are given than the procedure expects, the redundant arguments will be ignored.</description>
     </item>
     
     <item>

@@ -115,6 +115,10 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v1/overview/type/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v1/data-types/</loc>
   </url>
   
@@ -483,6 +487,58 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v1/data-types/task/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v1/data-types/task/again_at/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v1/data-types/task/again_in/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v1/data-types/task/args/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v1/data-types/task/at/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v1/data-types/task/cancel/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v1/data-types/task/closure/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v1/data-types/task/del/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v1/data-types/task/id/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v1/data-types/task/owner/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v1/data-types/task/set_args/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v1/data-types/task/set_closure/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v1/data-types/task/set_owner/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v1/data-types/thing/</loc>
   </url>
   
@@ -567,7 +623,7 @@
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v1/data-types/type/</loc>
+    <loc>https://docs.thingsdb.net/v1/data-types/typed/</loc>
   </url>
   
   <url>
@@ -787,6 +843,10 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v1/collection-api/is_task/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v1/collection-api/is_thing/</loc>
   </url>
   
@@ -940,6 +1000,14 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v1/collection-api/str/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v1/collection-api/task/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v1/collection-api/tasks/</loc>
   </url>
   
   <url>
@@ -1208,42 +1276,6 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v1/procedures-api/run/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v1/timers-api/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v1/timers-api/del_timer/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v1/timers-api/has_timer/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v1/timers-api/new_timer/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v1/timers-api/run/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v1/timers-api/set_timer_args/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v1/timers-api/timer_args/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v1/timers-api/timer_info/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v1/timers-api/timers_info/</loc>
   </url>
   
   <url>
