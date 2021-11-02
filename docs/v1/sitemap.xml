@@ -507,6 +507,10 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v1/data-types/task/err/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v1/data-types/task/cancel/</loc>
   </url>
   

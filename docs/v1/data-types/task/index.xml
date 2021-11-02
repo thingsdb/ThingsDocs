@@ -68,6 +68,20 @@ Example  Example usage task.at():
     </item>
     
     <item>
+      <title>err</title>
+      <link>https://docs.thingsdb.net/v1/data-types/task/err/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/data-types/task/err/</guid>
+      <description>When a task as failed with an error, the error is stored on the task and the task will not be removed automatically. With this function you may get the error to view and/or debug the problem.
+This function does not generate a change.
+Function task.err()
+Arguments None
+Return value Returns the error when a task has failed or nil if the task is empty or without error.
+Example  Example usage task.</description>
+    </item>
+    
+    <item>
       <title>cancel</title>
       <link>https://docs.thingsdb.net/v1/data-types/task/cancel/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

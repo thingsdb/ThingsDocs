@@ -8,23 +8,23 @@
 
 
     <link rel="shortcut icon" href='/v1/images/favicon.ico' type="image/x-icon" />
-    <title>restart_module :: ThingsDB documentation</title>
+    <title>err :: ThingsDB documentation</title>
 
     
-    <link href="/v1/css/nucleus.css?1635871930" rel="stylesheet">
-    <link href="/v1/css/fontawesome-all.min.css?1635871930" rel="stylesheet">
-    <link href="/v1/css/hybrid.css?1635871930" rel="stylesheet">
-    <link href="/v1/css/featherlight.min.css?1635871930" rel="stylesheet">
-    <link href="/v1/css/perfect-scrollbar.min.css?1635871930" rel="stylesheet">
-    <link href="/v1/css/auto-complete.css?1635871930" rel="stylesheet">
-    <link href="/v1/css/atom-one-dark-reasonable.css?1635871930" rel="stylesheet">
-    <link href="/v1/css/theme.css?1635871930" rel="stylesheet">
-    <link href="/v1/css/hugo-theme.css?1635871930" rel="stylesheet">
+    <link href="/v1/css/nucleus.css?1635871929" rel="stylesheet">
+    <link href="/v1/css/fontawesome-all.min.css?1635871929" rel="stylesheet">
+    <link href="/v1/css/hybrid.css?1635871929" rel="stylesheet">
+    <link href="/v1/css/featherlight.min.css?1635871929" rel="stylesheet">
+    <link href="/v1/css/perfect-scrollbar.min.css?1635871929" rel="stylesheet">
+    <link href="/v1/css/auto-complete.css?1635871929" rel="stylesheet">
+    <link href="/v1/css/atom-one-dark-reasonable.css?1635871929" rel="stylesheet">
+    <link href="/v1/css/theme.css?1635871929" rel="stylesheet">
+    <link href="/v1/css/hugo-theme.css?1635871929" rel="stylesheet">
     
-      <link href="/v1/css/theme-mine.css?1635871930" rel="stylesheet">
+      <link href="/v1/css/theme-mine.css?1635871929" rel="stylesheet">
     
 
-    <script src="/v1/js/jquery-3.3.1.min.js?1635871930"></script>
+    <script src="/v1/js/jquery-3.3.1.min.js?1635871929"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -38,7 +38,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/v1/node-api/restart_module/">
+  <body class="" data-url="/v1/data-types/task/err/">
     <nav id="sidebar" class="">
 
 
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v1/js/lunr.min.js?1635871930"></script>
-<script type="text/javascript" src="/v1/js/auto-complete.js?1635871930"></script>
+<script type="text/javascript" src="/v1/js/lunr.min.js?1635871929"></script>
+<script type="text/javascript" src="/v1/js/auto-complete.js?1635871929"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v1\/";
     
 </script>
-<script type="text/javascript" src="/v1/js/search.js?1635871930"></script>
+<script type="text/javascript" src="/v1/js/search.js?1635871929"></script>
 
     
   </div>
@@ -687,7 +687,7 @@
   
     
     <li data-nav-id="/v1/data-types/" title="Data Types" class="dd-item 
-        
+        parent
         
         
         ">
@@ -2623,7 +2623,7 @@
   
     
     <li data-nav-id="/v1/data-types/task/" title="task" class="dd-item 
-        
+        parent
         
         
         ">
@@ -2723,7 +2723,7 @@
  
   
     
-      <li data-nav-id="/v1/data-types/task/err/" title="err" class="dd-item ">
+      <li data-nav-id="/v1/data-types/task/err/" title="err" class="dd-item active">
         <a href="/v1/data-types/task/err/">
         err
         
@@ -5412,7 +5412,7 @@
   
     
     <li data-nav-id="/v1/node-api/" title="Node API" class="dd-item 
-        parent
+        
         
         
         ">
@@ -5607,7 +5607,7 @@
  
   
     
-      <li data-nav-id="/v1/node-api/restart_module/" title="restart_module" class="dd-item active">
+      <li data-nav-id="/v1/node-api/restart_module/" title="restart_module" class="dd-item ">
         <a href="/v1/node-api/restart_module/">
         restart_module
         
@@ -7143,7 +7143,13 @@
             
           
           
-            <a href='/v1/'></a> > <a href='/v1/node-api/'>Node API</a> > restart_module
+            
+            
+          
+          
+            <a href='/v1/'></a> > <a href='/v1/data-types/'>Data Types</a> > <a href='/v1/data-types/task/'>task</a> > err
+          
+         
           
          
           
@@ -7183,7 +7189,7 @@
           
             <h1>
               
-              restart_module
+              err
             </h1>
           
 
@@ -7191,42 +7197,26 @@
 
 
 
-<p>Restarts a given module on the select node scope.</p>
-
-<div class="notices tip" ><p>If you want to restart the module on <em>all</em> nodes, you can use the <a href="../../thingsdb-api/deploy_module">deploy_module(<em>name</em>, <em>nil</em>)</a> function with <code>nil</code> as second argument.</p>
-</div>
-
-<p>This function does <em>not</em> generate a <a href="../../overview/changes">change</a>.</p>
+<p>When a task as failed with an error, the error is stored on the task and the task will not be removed automatically.
+With this function you may get the error to view and/or debug the problem.</p>
+<p>This function does <em>not</em> generate a <a href="../../../overview/changes">change</a>.</p>
 <h3 id="function">Function</h3>
-<p><code>restart_module(name)</code></p>
+<p><em>task</em>.<code>err()</code></p>
 <h3 id="arguments">Arguments</h3>
-<table>
-<thead>
-<tr>
-<th>Argument</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>name</td>
-<td>str (required)</td>
-<td>Module to restart.</td>
-</tr>
-</tbody>
-</table>
+<p>None</p>
 <h3 id="return-value">Return value</h3>
-<p>Returns <code>nil</code>.</p>
+<p>Returns the error when a task has failed or <code>nil</code> if the task is empty or without error.</p>
 <h3 id="example">Example</h3>
 <blockquote>
-<p>This code will reset the counters on a node:</p>
+<p>Example usage <em><strong>task.err()</strong></em>:</p>
 </blockquote>
-<pre><code class="language-thingsdb,syntax_only,@n" data-lang="thingsdb,syntax_only,@n">restart_module('DEMO');
+<pre><code class="language-thingsdb,should_pass" data-lang="thingsdb,should_pass">.my_task = task(datetime(), || 1/0);
+</code></pre><p>Suppose we wait a few seconds and then check the task for errors:</p>
+<pre><code class="language-thingsdb,should_pass" data-lang="thingsdb,should_pass">.my_task.err()
 </code></pre><blockquote>
 <p>Return value in JSON format</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#66d9ef">null</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;division or modulo by zero&#34;</span>
 </code></pre></div>
 
 <footer class=" footline" >
@@ -7244,10 +7234,10 @@
         
     
         
-            <a class="nav nav-prev" href="/v1/node-api/reset_counters/" title="reset_counters"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/v1/data-types/task/at/" title="at"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/v1/node-api/set_log_level/" title="set_log_level" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/v1/data-types/task/cancel/" title="cancel" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     
     </div>
@@ -7257,19 +7247,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v1/js/clipboard.min.js?1635871930"></script>
-    <script src="/v1/js/perfect-scrollbar.min.js?1635871930"></script>
-    <script src="/v1/js/perfect-scrollbar.jquery.min.js?1635871930"></script>
-    <script src="/v1/js/jquery.sticky.js?1635871930"></script>
-    <script src="/v1/js/featherlight.min.js?1635871930"></script>
-    <script src="/v1/js/highlight.pack.js?1635871930"></script>
+    <script src="/v1/js/clipboard.min.js?1635871929"></script>
+    <script src="/v1/js/perfect-scrollbar.min.js?1635871929"></script>
+    <script src="/v1/js/perfect-scrollbar.jquery.min.js?1635871929"></script>
+    <script src="/v1/js/jquery.sticky.js?1635871929"></script>
+    <script src="/v1/js/featherlight.min.js?1635871929"></script>
+    <script src="/v1/js/highlight.pack.js?1635871929"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v1/js/modernizr.custom-3.6.0.js?1635871930"></script>
-    <script src="/v1/js/learn.js?1635871930"></script>
-    <script src="/v1/js/hugo-learn.js?1635871930"></script>
+    <script src="/v1/js/modernizr.custom-3.6.0.js?1635871929"></script>
+    <script src="/v1/js/learn.js?1635871929"></script>
+    <script src="/v1/js/hugo-learn.js?1635871929"></script>
 
-    <link href="/v1/mermaid/mermaid.css?1635871930" rel="stylesheet" />
-    <script src="/v1/mermaid/mermaid.js?1635871930"></script>
+    <link href="/v1/mermaid/mermaid.css?1635871929" rel="stylesheet" />
+    <script src="/v1/mermaid/mermaid.js?1635871929"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

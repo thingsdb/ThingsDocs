@@ -851,7 +851,7 @@
 	"title": "task",
 	"tags": [],
 	"description": "",
-	"content": "Functions    Function Description     again_at Re-schedule a task at a specific date/time.   again_in Re-schedule a task relative to the original start time.   args Get a new list with then task arguments.   cancel Cancel a task.   closure Return the closure of the task.   del Delete a task.   id Return id of the task or nil when the task is removed.   owner Return the owner name of the task.   set_args Set task arguments.   set_closure Set a new closure (code to execute) for an existing task.   set_owner Change the owner of a task.    "
+	"content": "Functions    Function Description     again_at Re-schedule a task at a specific date/time.   again_in Re-schedule a task relative to the original start time.   args Get a new list with then task arguments.   at Get the task scheduled date/time.   cancel Cancel a task.   closure Return the closure of the task.   del Delete a task.   err Get the task error (if any).   id Return id of the task or nil when the task is removed.   owner Return the owner name of the task.   set_args Set task arguments.   set_closure Set a new closure (code to execute) for an existing task.   set_owner Change the owner of a task.    "
 },
 {
 	"uri": "https://docs.thingsdb.net/v1/data-types/task/again_at/",
@@ -880,6 +880,13 @@
 	"tags": [],
 	"description": "",
 	"content": "Get the scheduled start time of a task or nil if the task is not scheduled.\nThis function does not generate a change.\nFunction task.at()\nArguments None\nReturn value Returns the scheduled start time of a task or nil if the task is not scheduled.\nExample  Example usage task.at():\n t = task(datetime('2022-01-01'), ||log('Dummy task')); t.at();  Return value in JSON format\n \u0026#34;2022-01-01T00:00:00Z\u0026#34; "
+},
+{
+	"uri": "https://docs.thingsdb.net/v1/data-types/task/err/",
+	"title": "err",
+	"tags": [],
+	"description": "",
+	"content": "When a task as failed with an error, the error is stored on the task and the task will not be removed automatically. With this function you may get the error to view and/or debug the problem.\nThis function does not generate a change.\nFunction task.err()\nArguments None\nReturn value Returns the error when a task has failed or nil if the task is empty or without error.\nExample  Example usage task.err():\n .my_task = task(datetime(), || 1/0); Suppose we wait a few seconds and then check the task for errors:\n.my_task.err()  Return value in JSON format\n \u0026#34;division or modulo by zero\u0026#34; "
 },
 {
 	"uri": "https://docs.thingsdb.net/v1/data-types/task/cancel/",
