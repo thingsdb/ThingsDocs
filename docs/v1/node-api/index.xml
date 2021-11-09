@@ -100,7 +100,7 @@ Like all other info(..) functions, this function returns mpdata which can be loa
       
       <guid>https://docs.thingsdb.net/v1/node-api/nodes_info/</guid>
       <description>Returns information about all ThingsDB nodes.
-   Value Description     node_name A node will publish itself to other nodes using the node name. This can be for example an IP address, hostname , or a fully qualified domain name (FQDN) of the node.   committed_change_id Last known committed change Id on the node.   next_free_id Next free Id (Id&amp;rsquo;s used for things, timers, users, rooms etc.</description>
+   Value Description     node_name A node will publish itself to other nodes using the node name. This can be for example an IP address, hostname , or a fully qualified domain name (FQDN) of the node.   committed_change_id Last known committed change Id on the node.   next_free_id Next free Id (Id&amp;rsquo;s used for things, tasks, users, rooms etc.</description>
     </item>
     
     <item>

@@ -1406,7 +1406,7 @@ This function does not generate a change.
 Function task.args()
 Arguments None
 Return value Returns a new list with arguments.
-Example  This code will will be called every minute for 10 times and then it the timer will be removed.
+Example  This code will will be called every minute for 10 times and then the task will be removed.
  t = task( datetime().move(&#39;days&#39;, 1), |task, a, b| { .</description>
     </item>
     
@@ -1524,7 +1524,7 @@ Example  Example code to get the owner of a task:
       <guid>https://docs.thingsdb.net/v1/data-types/task/set_args/</guid>
       <description>Set task arguments.
 If less than the required arguments are given, then the remaining arguments will be set using nil. A num_arguments_err() is raised if the task too much arguments are used.
-When the timer is created in the @thingsdb scope, only (some) immutable types like int, float, str etc. can be used as argument values.
+When the task is created in the @thingsdb scope, only (some) immutable types like int, float, str etc. can be used as argument values.
  This function generates a change.
 Function task.set_args(args)
 Arguments    Argument Type Description     args list (required) List with task arguments.</description>
@@ -3171,7 +3171,7 @@ Like all other info(..) functions, this function returns mpdata which can be loa
       
       <guid>https://docs.thingsdb.net/v1/node-api/nodes_info/</guid>
       <description>Returns information about all ThingsDB nodes.
-   Value Description     node_name A node will publish itself to other nodes using the node name. This can be for example an IP address, hostname , or a fully qualified domain name (FQDN) of the node.   committed_change_id Last known committed change Id on the node.   next_free_id Next free Id (Id&amp;rsquo;s used for things, timers, users, rooms etc.</description>
+   Value Description     node_name A node will publish itself to other nodes using the node name. This can be for example an IP address, hostname , or a fully qualified domain name (FQDN) of the node.   committed_change_id Last known committed change Id on the node.   next_free_id Next free Id (Id&amp;rsquo;s used for things, tasks, users, rooms etc.</description>
     </item>
     
     <item>

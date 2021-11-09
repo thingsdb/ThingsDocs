@@ -47,7 +47,7 @@ This function does not generate a change.
 Function task.args()
 Arguments None
 Return value Returns a new list with arguments.
-Example  This code will will be called every minute for 10 times and then it the timer will be removed.
+Example  This code will will be called every minute for 10 times and then the task will be removed.
  t = task( datetime().move(&#39;days&#39;, 1), |task, a, b| { .</description>
     </item>
     
@@ -165,7 +165,7 @@ Example  Example code to get the owner of a task:
       <guid>https://docs.thingsdb.net/v1/data-types/task/set_args/</guid>
       <description>Set task arguments.
 If less than the required arguments are given, then the remaining arguments will be set using nil. A num_arguments_err() is raised if the task too much arguments are used.
-When the timer is created in the @thingsdb scope, only (some) immutable types like int, float, str etc. can be used as argument values.
+When the task is created in the @thingsdb scope, only (some) immutable types like int, float, str etc. can be used as argument values.
  This function generates a change.
 Function task.set_args(args)
 Arguments    Argument Type Description     args list (required) List with task arguments.</description>
