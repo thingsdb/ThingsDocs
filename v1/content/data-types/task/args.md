@@ -22,7 +22,7 @@ Returns a new `list` with arguments.
 
 ### Example
 
-> This code will will be called every minute for 10 times and then it the timer will be removed.
+> This code will will be called every minute for 10 times and then the task will be removed.
 
 ```thingsdb,json_response
 t = task(

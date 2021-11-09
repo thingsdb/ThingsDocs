@@ -9,7 +9,7 @@ If less than the required arguments are given, then the remaining arguments will
 be set using `nil`. A [num_arguments_err()](../../../errors/num_arguments_err) is raised if the task too much arguments are used.
 
 {{% notice warning %}}
-When the timer is created in the `@thingsdb` scope, only *(some)* immutable types like `int`, `float`, `str` etc. can be used as argument values.
+When the task is created in the `@thingsdb` scope, only *(some)* immutable types like `int`, `float`, `str` etc. can be used as argument values.
 {{% /notice %}}
 
 This function generates a [change](../../../overview/changes).
@@ -30,7 +30,7 @@ Returns `nil` when successful.
 
 ### Example
 
-> This code will will be called every minute for 10 times and then it the timer will be removed.
+> This code will will be called every minute for 10 times and then the task will be removed.
 
 ```thingsdb,should_pass
 

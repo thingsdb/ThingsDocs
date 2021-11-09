@@ -41,6 +41,11 @@ A boolean value.
     { bool([]);                     /* an empty array evaluates to false            */},
     { bool(set());                  /* an empty set evaluates to false              */},
     { bool(room());                 /* a non-stored room (no Id) evaluates to false */},
+    { bool({
+        t = task(datetime(), ||0);
+        t.cancel();
+        t;
+    });                             /* non-scheduled tasks evaluate to false        */},
 
     "true:",
     { bool(42);                     /* non zero integers evaluates to true          */},
@@ -52,6 +57,7 @@ A boolean value.
     { bool(.room = room());         /* a stored room (with Id) evaluates to true    */},
     { bool(future(||nil));          /* futures evaluate to true                     */},
     { bool(timeval(0));             /* datetime and timeval always evaluate to true */},
+    { bool(task(datetime(), ||0));  /* scheduled tasks evaluate to true             */},
 ];
 ```
 
@@ -70,6 +76,7 @@ A boolean value.
     false,
     false,
     false,
+    false,
     "true:",
     true,
     true,
@@ -79,6 +86,6 @@ A boolean value.
     true,
     true,
     true,
+    true,
     true
-]
 ```

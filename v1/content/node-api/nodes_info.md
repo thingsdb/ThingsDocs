@@ -9,7 +9,7 @@ Value | Description
 ------- | -----------
 node_name | A node will publish itself to other nodes using the node name. This can be for example an IP address,  hostname , or a fully qualified domain name (FQDN) of the node.
 committed_change_id | Last known committed change Id on the node.
-next_free_id | Next free Id *(Id's used for things, timers, users, rooms etc.)* on the node.
+next_free_id | Next free Id *(Id's used for things, tasks, users, rooms etc.)* on the node.
 node_id | Id which is assigned to the node.
 port | TCP port on which the node is listening for node connections.
 status | Current status of the node.

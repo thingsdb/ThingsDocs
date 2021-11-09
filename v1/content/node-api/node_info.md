@@ -33,7 +33,7 @@ local_stored_change_id | Last stored change Id on disk. Store takes place when i
 log_level | Current log level for the node. May be changed at runtime using [set_log_level(..)](../../node-api/set_log_level).
 modules_path | Path where the modules are stored.
 msgpack_version | MessagePack data protocol library version.
-next_free_id | Next free Id *(used for things, timers, rooms etc.)*.
+next_free_id | Next free Id *(used for things, tasks, rooms etc.)*.
 node_id | The `id` which is assigned to the node.
 node_name | This node will publish itself to other nodes using the node name. This can be an IP address, hostname, or a fully qualified domain name (FQDN) of the node.
 node_port | Listening for node TCP socket connections on this port.
