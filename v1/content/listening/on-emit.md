@@ -18,5 +18,5 @@ The event contains the room Id, a *change* name and arguments (`args`) as an arr
 ```
 
 {{% notice note %}}
-When using a *thing* as an argument, do not forget the default *deep* level is 1 and may required a higher value. (see the  [emit(..)](../../data-types/room/emit) function)
+When using a *thing* in the argument(s), do not forget the *deep* level is one (1) by default so it might be required to use a higher value. (see the [emit(..)](../../data-types/room/emit) function)
 {{% /notice %}}

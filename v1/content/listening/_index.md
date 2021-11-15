@@ -4,7 +4,13 @@ weight: 323
 chapter: false
 ---
 
-Socket connections can listen to events from ThingsDB. It is not possible to listen to events the HTTP API.
+Socket connections can listen to events from ThingsDB.
+
+This chapter explains how and when ThingsDB sends events to socket connections. You only need to read this if you want to implement the event handling yourself. If possible, you should use a *native client/connector* and read the corresponding documentation on how to handle ThingsDB events as a *client/connector* most likely has *out-of-the-box* support for event handling.
+
+{{% notice note %}}
+There is no option to listing to event when using the HTTP API.
+{{% /notice %}}
 
 The following events may be received by a client:
 
@@ -25,5 +31,5 @@ When connected and authenticated with a socket connection, you will automaticall
 
 ## Join rooms
 
-When joining one or more rooms, ThingsDB is guaranteed to return with the response on the join request before the *[on_join](./on-join)* events are being transmitted.
+When joining one or more rooms, ThingsDB is guaranteed to return with the response on the join request before the *[on_join](./on-join)* event(s) are being transmitted.
 The *[on_leave](./on-leave)* event is only transmitted when an explicit request is made to leave a room. Thus, this event is *not* triggered when a client disconnect, or when a node is shutting down.
