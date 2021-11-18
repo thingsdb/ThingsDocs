@@ -1015,6 +1015,25 @@ td {
 #body #breadcrumbs span {
     padding: 0 0.1rem;
 }
+#body #breadcrumbs .links {
+    display: inline;
+    padding: 0 0.1rem;
+}
+#body #breadcrumbs .links * {
+    display: inline-block;
+    padding: 0;
+}
+#body #breadcrumbs .links meta {
+    display: none;
+}
+#body #breadcrumbs .links li:last-of-type {
+    cursor: text;
+}
+a[aria-disabled="true"] {
+    color: inherit;
+    pointer-events: none;
+    text-decoration: none;
+}
 @media only all and (max-width: 59.938em) {
     #sidebar {
         width: 230px;

@@ -1,5 +1,5 @@
 /*
-  Highlight.js 10.0.0-beta.0 (a4700ac0)
+  Highlight.js 10.0.0-beta.0 (606f2925)
   License: BSD-3-Clause
   Copyright (c) 2006-2020, Ivan Sagalaev
 */
@@ -35,7 +35,7 @@
   }
 
 
-  
+
   function inherit(parent) {  // inherit(parent, override_obj, override_obj, ...)
     var key;
     var result = {};
@@ -1771,7 +1771,7 @@ hljs.registerLanguage('thingsdb', function () {
 
     /*
     Language: ThingsDB
-    Author: Jeroen van der Heijden <jeroen@transceptor.technology>
+    Author: Jeroen van der Heijden <jeroen@cesbit.com>
     Category: common, scripting
     Website: https://thingsdb.net
     */
@@ -1859,10 +1859,10 @@ hljs.registerLanguage('thingsdb', function () {
                         /* collection functions */
                         'alt_raise|assert|base64_encode|base64_decode|bool|bytes|room|' +
                         'datetime|deep|del_enum|del_type|enum|enum_info|enums_info|err|change_id|float|has_enum|has_type|if|int|is_array|' +
-                        'is_ascii|is_bool|is_bytes|is_closure|is_datetime|is_enum|is_err|is_float|is_inf|is_int|is_room|' +
+                        'is_ascii|is_bool|is_bytes|is_closure|is_datetime|is_enum|is_err|is_float|is_inf|is_int|is_room|is_task|' +
                         'is_list|is_mpdata|is_nan|is_nil|is_raw|is_regex|is_set|is_str|is_thing|is_timeval|is_tuple|' +
-                        'is_utf8|regex|list|mod_enum|mod_type|new|new_type|now|raise|rand|range|' +
-                        'randint|randstr|refs|rename_enum|rename_type|return|set|set_enum|set_type|str|thing|try|type|' +
+                        'is_utf8|task|tasks|json_dump|json_load|regex|list|mod_enum|mod_type|new|new_type|now|raise|rand|range|' +
+                        'randint|randstr|refs|log|rename_enum|rename_type|return|set|set_enum|set_type|str|thing|try|type|' +
                         'future|is_future|timeval|type_assert|type_count|type_info|types_info|wse|' +
                         /* node functions */
                         'backup_info|backups_info|counters|del_backup|' +
@@ -1873,15 +1873,12 @@ hljs.registerLanguage('thingsdb', function () {
                         'del_expired|del_node|del_token|del_user|grant|' +
                         'has_collection|has_node|has_token|has_user|' +
                         'new_collection|new_node|new_token|new_user|' +
-                        'rename_collection|rename_user|restore|revoke|set_password|set_time_zone|' +
+                        'refresh_module|rename_collection|rename_user|restore|revoke|set_password|set_time_zone|' +
                         'time_zones_info|user_info|users_info|' +
                         'has_module|del_module|module_info|modules_info|new_module|deploy_module|rename_module|set_module_conf|set_module_scope|' +
                         /* procedure functions */
                         'del_procedure|has_procedure|new_procedure|rename_procedure|' +
                         'procedure_doc|procedure_info|procedures_info|run|' +
-                        /* timer functions */
-                        'del_timer|has_timer|new_timer|set_timer_args|' +
-                        'timer_args|timer_info|timers_info|' +
                         /* error functions */
                         'assert_err|auth_err|bad_data_err|cancelled_err|forbidden_err|' +
                         'lookup_err|max_quota_err|node_err|num_arguments_err|' +
@@ -1894,9 +1891,9 @@ hljs.registerLanguage('thingsdb', function () {
                 {
                     className: 'function',
                     begin: new RegExp(
-                        '\\.\\s*(assign|len|load|call|choice|copy|dup|join|doc|emit|code|msg|each|every|extend|extend_unique|filter|find|' +
-                        'find_index|index_of|map|name|pop|push|remove|replace|reverse|split|sort|splice|unique|is_unique|' +
-                        'add|clear|has|contains|ends_with|lower|starts_with|test|trim|trim_left|trim_right|upper|' +
+                        '\\.\\s*(assign|args|set_args|len|load|call|choice|closure|set_closure|copy|dup|join|doc|emit|code|msg|each|every|extend|extend_unique|filter|find|' +
+                        'find_index|index_of|map|name|owner|set_owner|pop|push|remove|replace|reverse|split|sort|splice|unique|is_unique|' +
+                        'at|again_in|again_at|cancel|add|err|clear|has|contains|ends_with|lower|starts_with|test|trim|trim_left|trim_right|upper|' +
                         'del|to_type|get|id|keys|reduce|set|shift|some|value|values|wrap|unshift|unwrap|' +
                         'extract|first|last|equals|then|else|format|move|to|week|weekday|yday|zone)\\s*(?=\\()'
                     ),
