@@ -33,7 +33,7 @@ set_type('_Email', {email: 'str'});
 // Store a thing
 .joente = {
     name: 'Jeroen van der Heijden',
-    email: 'jeroen@transceptor.technology',
+    email: 'jeroen@cesbit.com',
     gender: 'male',
 };
 
@@ -46,6 +46,6 @@ set_type('_Email', {email: 'str'});
 ```json
 {
     "#": 42,
-    "email": "jeroen@transceptor.technology"
+    "email": "jeroen@cesbit.com"
 }
 ```

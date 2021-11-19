@@ -55,7 +55,7 @@ users.find(|user| user.name.starts_with('Jeroen'));
 ```json
 {
     "#": 16,
-    "email": "jeroen@transceptor.technology",
+    "email": "jeroen@cesbit.com",
     "name": "Jeroen van der Heijden"
 }
 ```
