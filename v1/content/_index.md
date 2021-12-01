@@ -1,6 +1,8 @@
 ---
 weight: 0
+title: "ThingsDB"
 ---
+
 # ThingsDB
 
 [Cesbit](https://cesbit.com), a Dutch software startup, is proud to announce ThingsDB to the world. ThingsDB is an object-oriented database with event-driven features that allows developers to store "things" in an intuitive way.
