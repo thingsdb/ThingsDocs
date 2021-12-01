@@ -2422,13 +2422,6 @@
 	"content": "Returns an error when an attempt is made to divide or take a modulo by zero.\nThis function does not generate a change.\nFunction zero_div_err([message])\nArguments    Argument Type Description     message str (optional) Alternative error message.    Return value An error value (in a client response, an error value will be packed as a string value with the error message).\nExample  This code shows zero_div_err():\n zero_div_err();  Return value in JSON format\n \u0026#34;division or module by zero\u0026#34; "
 },
 {
-	"uri": "https://docs.thingsdb.net/v1/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": "ThingsDB Cesbit, a Dutch software startup, is proud to announce ThingsDB to the world. ThingsDB is an object-oriented database with event-driven features that allows developers to store \u0026ldquo;things\u0026rdquo; in an intuitive way.\nGet it now Source code is available here at GitHub.\n"
-},
-{
 	"uri": "https://docs.thingsdb.net/v1/categories/",
 	"title": "Categories",
 	"tags": [],
@@ -2441,4 +2434,11 @@
 	"tags": [],
 	"description": "",
 	"content": ""
+},
+{
+	"uri": "https://docs.thingsdb.net/v1/",
+	"title": "ThingsDB",
+	"tags": [],
+	"description": "",
+	"content": "ThingsDB Cesbit, a Dutch software startup, is proud to announce ThingsDB to the world. ThingsDB is an object-oriented database with event-driven features that allows developers to store \u0026ldquo;things\u0026rdquo; in an intuitive way.\nGet it now Source code is available here at GitHub.\n"
 }]
