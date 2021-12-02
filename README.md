@@ -100,3 +100,7 @@ Next run the following command:
 ```
 
 The weight value of all files has been updated according to the order in the site.map file.
+
+## Contributing
+
+Make pull requests without including a new build. Thus do not include changes to the `/docs` folder.
