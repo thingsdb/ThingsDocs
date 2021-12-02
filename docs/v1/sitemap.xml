@@ -1387,15 +1387,15 @@
   </url>
   
   <url>
-    <loc>https://docs.thingsdb.net/v1/</loc>
-  </url>
-  
-  <url>
     <loc>https://docs.thingsdb.net/v1/categories/</loc>
   </url>
   
   <url>
     <loc>https://docs.thingsdb.net/v1/tags/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v1/</loc>
   </url>
   
 </urlset>
