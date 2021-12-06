@@ -22,7 +22,7 @@ definition | default | description
 `'bytes'` | `bytes()` | requires type [bytes](../../data-types/bytes).
 `'bool'` | `false` | requires type [bool](../../data-types/bool).
 `'int'` | `0` | requires type [int](../../data-types/int).
-`'int<..>'` | *depends* | requires type [int](../../data-types/int) within a given range *(see [range condition](#range-condition)  and [default value](#use-condition-to-set-a-default-value))*.
+`'int<..>'` | *depends* | requires type [int](../../data-types/int) within a given range *(see [range condition](#range-condition) and [default value](#use-condition-to-set-a-default-value))*.
 `'uint'` | `0` | requires a *non-negative* integer (type [int](../../data-types/int), `>= 0`).
 `'pint'` | `1` | requires a *positive* integer (type [int](../../data-types/int), `> 0`).
 `'nint'` | `-1` | requires a *negative* integer (type [int](../../data-types/int), `< 0`).
@@ -36,9 +36,13 @@ definition | default | description
 `'error'` | `err()` | requires type [error](../../data-types/error).
 `'room'` | `room()` | requires type [room](../../data-types/room).
 `'thing'` | `{}` | requires a [thing](../../data-types/thing).
-`'X'` | `X{}` | requires a instance of [Type](../type) `X`, or a member of [enumerator](../../data-types/enum) `X`. The value `X` should be replaced with the `Type` / `enum` name.
+`'thing<T>'` | `{}` | requires a value restricted [thing](../../data-types/thing) where each value must be of type `T`.
+`'T'` | `T{}` | requires a instance of [Type](../type) `T`, or a member of [enumerator](../../data-types/enum) `T`. The value `T` should be replaced with the `Type` / `enum` name.
 `'[]'` | `[]` | requires a [list](../../data-types/list).
+`'[T]'` | `[]` | requires a [list](../../data-types/list) where each item in the list must be of type `T` *(see [restrict items](#restrict-items))*.
 `'{}'` | `set()` | requires a [set](../../data-types/set).
+`'{T}'` | `set()` | requires a [set](../../data-types/set) where each element in the set must be of type `T` *(see [restrict items](#restrict-items))*.
+`'[]'` | `[]` | requires a [list](../../data-types/list).
 `'any'` | `nil` | any type is valid *(with the exception of a [future](../../data-types/future))*.
 
 Each definition can be made optional by adding a question-mark `?` to the definition.
@@ -82,6 +86,8 @@ assert(is_err(try(User{name: 0})));
     }
 ]
 ```
+
+### Restrict items
 
 When using a list `'[]'` or set `'{}'` definition, it is also possible to make the list or set restricted to a certain type.
 In this case only items of the given definition are allowed as members. For example `'[int]'` requires the members of a list

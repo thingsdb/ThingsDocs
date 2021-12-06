@@ -1,6 +1,6 @@
 ---
 title: "set"
-weight: 96
+weight: 97
 ---
 
 A set is a collection which is unordered and can only contain things.
@@ -20,7 +20,8 @@ Function | Description
 [len](./len) | Return the length of a set.
 [map](./map) | Return a [list](../list) with the results of calling a provided closure on every thing.
 [reduce](./reduce) | Execute a reducer function on each thing, resulting in a single output value.
-[remove](./remove) | Remove things from a set.
+[remove](./remove) | Remove things from a set. Accepts one or more things to remove or a closure to be used as a test. The removed things are returned in a list.
+[restriction](./restriction) | Return the restriction of the set or `nil` when the set is not restricted.
 [some](./some) | Check if at least one thing passes a given test.
 
 ### Operators

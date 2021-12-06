@@ -1,6 +1,6 @@
 ---
 title: "str"
-weight: 109
+weight: 111
 ---
 
 This is the `string` type of ThingsDB. A value of type `str` *should* contain valid UTF-8 characters. This
@@ -20,7 +20,6 @@ Function | Description
 [replace](./replace) | Returns a new string in witch occurrences of a given substring or regular expression match are replaced with another substring.
 [split](./split) | Split a string into a new list with substrings.
 [starts_with](./starts_with) | Determine if a string starts with characters given by another string.
-[test](./test) | Test if a string matches a given regular expression and return `true` or `false` *(**deprecated**, use [regex.test](../regex/test) instead)*.
 [trim](./trim) | Returns a new string with whitespace characters removed from both the *start* and *end* of a string.
 [trim_left](./trim_left) | Returns a new string with whitespace characters removed from the *start* of a string.
 [trim_right](./trim_right) | Returns a new string with whitespace characters removed from the the *end* of a string.

@@ -1,6 +1,6 @@
 ---
 title: "copy"
-weight: 158
+weight: 164
 ---
 
 Copy a [wrapped](../) thing.

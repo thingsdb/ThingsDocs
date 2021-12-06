@@ -1,6 +1,6 @@
 ---
 title: "thing"
-weight: 135
+weight: 138
 ---
 
 ### Functions
@@ -21,6 +21,9 @@ Function | Description
 [keys](./keys) | Return a list with all the property names of a thing.
 [len](./len) | Return the number of items.
 [map](./map) | Return a [list](../list) with the results of calling a provided closure on every property.
+[remove](./remove) | Remove properties that pass a given test and returns the removed *values* in a list.
+[restrict](./restrict) | Set or remove a value restriction on a thing.
+[restriction](./restriction) | Return the restriction of the thing or `nil` when the thing is not restricted.
 [set](./set) | Create a new or overwrite an existing property on a thing.
 [to_type](./to_type) | Converts a thing into a [typed](../typed) thing.
 [values](./values) | Return a list with all the property values of a thing.

@@ -1,6 +1,6 @@
 ---
 title: "remove"
-weight: 107
+weight: 108
 ---
 
 This function can be used to remove `things` from a `set`.
@@ -12,15 +12,21 @@ It is also possible to specify `things` as arguments. In this case a list is ret
 all the things which are removed from the set, in the order that the arguments are used.
 Things which are not found in the set are ignored.
 
-This function generates a [change](../../../overview/changes) *(except when called on a [variable](../../../overview/variable))*.
+This function generates a [change](../../../overview/changes).
 
 ### Function
 
-*set*.`remove(callback)`
+*set*.`remove(callback, [limit])`
+
+Where *limit* is an *optional* positive integer which limits the things to remove. For example, a *limit* of `1` removes at most one thing from the set.
 
 Or
 
 *set*.`remove(thing1, thing2, ..., thingX)`
+
+{{% notice warning %}}
+If a callback satisfies more than a given `limit` of things, it is not reliable *which* things are removed as the order of things in a set is not guaranteed.
+{{% /notice %}}
 
 ### Arguments
 

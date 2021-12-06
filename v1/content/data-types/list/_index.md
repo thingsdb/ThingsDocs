@@ -34,6 +34,7 @@ Function | Description
 [push](./push) | Add new items to the end of a list and returns the new length.
 [reduce](./reduce) | Execute a reducer function on each item, resulting in a single output value.
 [remove](./remove) | Remove items that pass a given test and returns the removed items in a list.
+[restriction](./restriction) | Return the restriction of the list or `nil` when the list is not restricted.
 [reverse](./reverse) | Return a new list with the items in reverse order.
 [shift](./shift) | Remove the first item from a list and returns that item.
 [some](./some) | Check if at least one item passes a given test.

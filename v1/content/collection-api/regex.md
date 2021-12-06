@@ -1,6 +1,6 @@
 ---
 title: "regex"
-weight: 242
+weight: 248
 ---
 
 Create a new regular expression.
@@ -33,7 +33,7 @@ A new regular expression.
 // match strings which start with "the ", case in-sensitive (`i` flag)
 re = regex("^the\s", "i");
 
-"The Pretenders".test(re);
+re.test("The Pretenders");
 ```
 
 > Example return value in JSON format

@@ -4,9 +4,9 @@ weight: 79
 ---
 
 This function removes all values in the [list](../../list) that satisfies the callback function.
-The removed values will be returned in a new list. An empty list is returned if no value is removed.
+The removed values will be returned in a new list. An empty list is returned if no values are removed.
 
-This function generates a [change](../../../overview/changes) *(except when called on a [variable](../../../overview/variable))*.
+This function generates a [change](../../../overview/changes).
 
 ### Function
 
@@ -26,7 +26,7 @@ Iterable | Arguments | Description
 list | item, index | Iterate over items in the list. Both item and index are optional.
 
 {{% notice note %}}
-When `limmit` is a negative value, removing starts at the end of the list. Note that in this case the returned *list* still contains the removed items in the same order as they were in the original *list*.
+When `limit` is a negative value, removing starts at the end of the list. Note that in this case the returned *list* still contains the removed items in the same order as they were in the original *list*.
 {{% /notice %}}
 
 ### Return value

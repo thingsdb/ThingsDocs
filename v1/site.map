@@ -77,6 +77,7 @@ data-types
         push
         reduce
         remove
+        restriction
         reverse
         shift
         some
@@ -105,6 +106,7 @@ data-types
         map
         reduce
         remove
+        restriction
         some
     str
         contains
@@ -124,10 +126,10 @@ data-types
         again_in
         args
         at
+        err
         cancel
         closure
         del
-        err
         id
         owner
         set_args
@@ -148,6 +150,9 @@ data-types
         keys
         len
         map
+        remove
+        restrict
+        restriction
         set
         to_type
         values

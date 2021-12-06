@@ -1,6 +1,6 @@
 ---
 title: "Hello World Module"
-weight: 321
+weight: 327
 ---
 
 In this section we will create and use a module to help you understand how a module can be used.
@@ -39,7 +39,7 @@ new_module("greeting", "greeting.py");  // The module file must end with .py to 
 Hooray, the module is created!! ..but wait.. we don't have the actual module yet. If we look at the module status, we should see that the module will not be started because obviously, the greeting.py file is missing.
 
 ```thingsdb,should_pass,@t
-module_info('greeting').load().status;  // "no such file or directory"
+module_info('greeting').load().status;  // "module not installed"
 ```
 
 Ok, let's first create the required Python code. A basic module looks like the following:

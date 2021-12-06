@@ -1,6 +1,6 @@
 ---
 title: "err"
-weight: 126
+weight: 129
 ---
 
 When a task as failed with an error, the error is stored on the task and the task will not be removed automatically.
@@ -30,7 +30,7 @@ Returns the error when a task has failed or `nil` if the task is empty or withou
 
 Suppose we wait a few seconds and then check the task for errors:
 
-```thingsdb,should_pass
+```thingsdb,syntax_only
 .my_task.err()
 ```
 
