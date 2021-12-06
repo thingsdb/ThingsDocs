@@ -198,6 +198,48 @@ Arguments    Argument Type Description     callback closure (required) Closure t
     </item>
     
     <item>
+      <title>remove</title>
+      <link>https://docs.thingsdb.net/v1/data-types/thing/remove/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/data-types/thing/remove/</guid>
+      <description>This function removes all properties from a thing that satisfies the callback function. The removed values will be returned in a new list. An empty list is returned if no values are removed.
+This function generates a change.
+Function list.remove(callback, [limit])
+Arguments    Argument Type Description     callback closure (required) Closure to execute on each value.   limit int (optional) Limit the number of properties to remove.</description>
+    </item>
+    
+    <item>
+      <title>restrict</title>
+      <link>https://docs.thingsdb.net/v1/data-types/thing/restrict/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/data-types/thing/restrict/</guid>
+      <description>Set or remove a value restriction on a thing. Function restriction() can be used to view the current restriction.
+This function generates a change.
+Function thing.restrict(type)
+Arguments    Argument Type Description     type str/nil (required) Restriction to set on the thing or nil to remove a restriction.    Return value Returns the thing
+Example  Use restrict() to force int values on a thing;</description>
+    </item>
+    
+    <item>
+      <title>restriction</title>
+      <link>https://docs.thingsdb.net/v1/data-types/thing/restriction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/data-types/thing/restriction/</guid>
+      <description>Returns the value restriction of a thing as type str or nil when the thing is not value restricted.
+This function does not generate a change.
+Function thing.restriction()
+Arguments None
+Return value Returns restriction of the thing or nil if not value restricted.
+Example  Using restriction() on a non-restricted thing:
+ {}.restriction();  Return value in JSON format
+ null  Using restriction() on a restricted thing:
+ {}.restrict(&#39;str&#39;).restriction();  Return value in JSON format</description>
+    </item>
+    
+    <item>
       <title>set</title>
       <link>https://docs.thingsdb.net/v1/data-types/thing/set/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

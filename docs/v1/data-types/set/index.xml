@@ -163,6 +163,23 @@ It is also possible to specify things as arguments. In this case a list is retur
     </item>
     
     <item>
+      <title>restriction</title>
+      <link>https://docs.thingsdb.net/v1/data-types/set/restriction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/data-types/set/restriction/</guid>
+      <description>Returns the set restriction as type str or nil when the set is not value restricted.
+This function does not generate a change.
+Function set.restriction()
+Arguments None
+Return value Returns restriction of the set or nil if not value restricted.
+Example  Using restriction() on a non-restricted set:
+ set().restriction();  Return value in JSON format
+ null  Using restriction() on a restricted set:
+ // Create an example type new_type(&#39;S&#39;); set_type(&#39;Y&#39;, {set: &#39;{S}&#39;}); Y{}.</description>
+    </item>
+    
+    <item>
       <title>some</title>
       <link>https://docs.thingsdb.net/v1/data-types/set/some/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

@@ -104,19 +104,6 @@ Example  This code shows an example using starts_with():</description>
     </item>
     
     <item>
-      <title>test</title>
-      <link>https://docs.thingsdb.net/v1/data-types/str/test/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.thingsdb.net/v1/data-types/str/test/</guid>
-      <description>This function is deprecated and should be replaced with test(..) on type regex.
- Test if a string matches a given regular expression and return true or false.
-This function does not generate a change.
-Function str.test(regex)
-Arguments    Argument Type Description     regex regex (required) The regular expression to test against the string.    Return value true if there is a match between the string and the specified regular expression, otherwise false.</description>
-    </item>
-    
-    <item>
       <title>trim</title>
       <link>https://docs.thingsdb.net/v1/data-types/str/trim/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

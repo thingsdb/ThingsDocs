@@ -319,6 +319,10 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v1/data-types/list/restriction/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v1/data-types/list/reverse/</loc>
   </url>
   
@@ -431,6 +435,10 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v1/data-types/set/restriction/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v1/data-types/set/some/</loc>
   </url>
   
@@ -464,10 +472,6 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v1/data-types/str/starts_with/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.thingsdb.net/v1/data-types/str/test/</loc>
   </url>
   
   <url>
@@ -600,6 +604,18 @@
   
   <url>
     <loc>https://docs.thingsdb.net/v1/data-types/thing/map/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v1/data-types/thing/remove/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v1/data-types/thing/restrict/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.thingsdb.net/v1/data-types/thing/restriction/</loc>
   </url>
   
   <url>

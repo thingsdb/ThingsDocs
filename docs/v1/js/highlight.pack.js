@@ -1,5 +1,5 @@
 /*
-  Highlight.js 10.0.0-beta.0 (606f2925)
+  Highlight.js 10.0.0-beta.0 (ccfcf165)
   License: BSD-3-Clause
   Copyright (c) 2006-2020, Ivan Sagalaev
 */
@@ -35,7 +35,7 @@
   }
 
 
-
+  
   function inherit(parent) {  // inherit(parent, override_obj, override_obj, ...)
     var key;
     var result = {};
@@ -1771,7 +1771,7 @@ hljs.registerLanguage('thingsdb', function () {
 
     /*
     Language: ThingsDB
-    Author: Jeroen van der Heijden <jeroen@cesbit.com>
+    Author: Jeroen van der Heijden <jeroen@transceptor.technology>
     Category: common, scripting
     Website: https://thingsdb.net
     */
@@ -1892,7 +1892,7 @@ hljs.registerLanguage('thingsdb', function () {
                     className: 'function',
                     begin: new RegExp(
                         '\\.\\s*(assign|args|set_args|len|load|call|choice|closure|set_closure|copy|dup|join|doc|emit|code|msg|each|every|extend|extend_unique|filter|find|' +
-                        'find_index|index_of|map|name|owner|set_owner|pop|push|remove|replace|reverse|split|sort|splice|unique|is_unique|' +
+                        'find_index|index_of|map|name|owner|set_owner|pop|push|remove|replace|reverse|restrict|restriction|split|sort|splice|unique|is_unique|' +
                         'at|again_in|again_at|cancel|add|err|clear|has|contains|ends_with|lower|starts_with|test|trim|trim_left|trim_right|upper|' +
                         'del|to_type|get|id|keys|reduce|set|shift|some|value|values|wrap|unshift|unwrap|' +
                         'extract|first|last|equals|then|else|format|move|to|week|weekday|yday|zone)\\s*(?=\\()'
