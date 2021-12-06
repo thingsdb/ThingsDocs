@@ -22,6 +22,18 @@ Since version v0.9.2 an initial value is no longer required when having active i
     </item>
     
     <item>
+      <title>all</title>
+      <link>https://docs.thingsdb.net/v1/collection-api/mod_type/all/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.thingsdb.net/v1/collection-api/mod_type/all/</guid>
+      <description>Run a given callback on all the instances of a given Type.
+This function should be used for migration purposes and not for common queries as the function is rather slow. When calling this action, ThingsDB requires to loop over all the things in the collection, including the things which are marked for garbage collection.
+ Action mod_type(type, &#39;all&#39;, callback)
+Arguments    Argument Type Description     type str Name of the Type to iterate over.</description>
+    </item>
+    
+    <item>
       <title>del</title>
       <link>https://docs.thingsdb.net/v1/collection-api/mod_type/del/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

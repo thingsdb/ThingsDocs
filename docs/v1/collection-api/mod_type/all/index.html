@@ -8,7 +8,7 @@
 
 
     <link rel="shortcut icon" href='/v1/images/favicon.ico' type="image/x-icon" />
-    <title>is_regex :: ThingsDB documentation</title>
+    <title>all :: ThingsDB documentation</title>
 
     
     <link href="/v1/css/nucleus.css?1638806565" rel="stylesheet">
@@ -38,7 +38,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/v1/collection-api/is_regex/">
+  <body class="" data-url="/v1/collection-api/mod_type/all/">
     <nav id="sidebar" class="">
 
 
@@ -4405,7 +4405,7 @@
  
   
     
-      <li data-nav-id="/v1/collection-api/is_regex/" title="is_regex" class="dd-item active">
+      <li data-nav-id="/v1/collection-api/is_regex/" title="is_regex" class="dd-item ">
         <a href="/v1/collection-api/is_regex/">
         is_regex
         
@@ -4782,7 +4782,7 @@
   
     
     <li data-nav-id="/v1/collection-api/mod_type/" title="mod_type" class="dd-item 
-        
+        parent
         
         
         ">
@@ -4825,7 +4825,7 @@
  
   
     
-      <li data-nav-id="/v1/collection-api/mod_type/all/" title="all" class="dd-item ">
+      <li data-nav-id="/v1/collection-api/mod_type/all/" title="all" class="dd-item active">
         <a href="/v1/collection-api/mod_type/all/">
         all
         
@@ -7240,8 +7240,12 @@
           
           
           
+          
+          
+          
+          
           <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement">
-            <meta itemprop="position" content="3" />
+            <meta itemprop="position" content="4" />
             <a itemprop="item" href="/v1/">
               <span itemprop="name">ThingsDB</span>
             </a>
@@ -7252,7 +7256,7 @@
         
           
           <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement">
-            <meta itemprop="position" content="2" />
+            <meta itemprop="position" content="3" />
             <a itemprop="item" href="/v1/collection-api/">
               <span itemprop="name">Collection API</span>
             </a>
@@ -7263,9 +7267,20 @@
         
           
           <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement">
+            <meta itemprop="position" content="2" />
+            <a itemprop="item" href="/v1/collection-api/mod_type/">
+              <span itemprop="name">mod_type</span>
+            </a>
+          </li>
+          
+          >
+          
+        
+          
+          <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement">
             <meta itemprop="position" content="1" />
-            <a itemprop="item" href="/v1/collection-api/is_regex/" aria-disabled="true">
-              <span itemprop="name">is_regex</span>
+            <a itemprop="item" href="/v1/collection-api/mod_type/all/" aria-disabled="true">
+              <span itemprop="name">all</span>
             </a>
           </li>
           
@@ -7280,7 +7295,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#function">Function</a></li>
+        <li><a href="#action">Action</a></li>
         <li><a href="#arguments">Arguments</a></li>
         <li><a href="#return-value">Return value</a></li>
         <li><a href="#example">Example</a></li>
@@ -7303,7 +7318,7 @@
           
             <h1>
               
-              is_regex
+              all
             </h1>
           
 
@@ -7311,10 +7326,14 @@
 
 
 
-<p>This function determines whether the provided value is of type <a href="../../data-types/regex">regex</a> or not.</p>
-<p>This function does <em>not</em> generate a <a href="../../overview/changes">change</a>.</p>
-<h3 id="function">Function</h3>
-<p><code>is_regex(value)</code></p>
+<p>Run a given callback on all the instances of a given Type.</p>
+
+<div class="notices note" ><p>This function should be used for migration purposes and <em>not</em> for common queries as the function is rather slow.
+When calling this action, ThingsDB requires to loop over all the things in the collection, including the things which are marked for garbage collection.</p>
+</div>
+
+<h3 id="action">Action</h3>
+<p><code>mod_type(type, 'all', callback)</code></p>
 <h3 id="arguments">Arguments</h3>
 <table>
 <thead>
@@ -7326,31 +7345,46 @@
 </thead>
 <tbody>
 <tr>
-<td>value</td>
-<td>any (required)</td>
-<td>The value to be tested.</td>
+<td>type</td>
+<td>str</td>
+<td>Name of the Type to iterate over.</td>
+</tr>
+<tr>
+<td><code>'all'</code></td>
+<td>str</td>
+<td>Passing this argument will result in a <em>iterate-all</em> action.</td>
+</tr>
+<tr>
+<td>callback</td>
+<td>closure</td>
+<td>The closure will be called on each instance.</td>
 </tr>
 </tbody>
 </table>
 <h3 id="return-value">Return value</h3>
-<p>Returns <code>true</code> if the given value is of type <a href="../../data-types/regex">regex</a>, else it returns <code>false</code>.</p>
+<p>The value <code>nil</code>.</p>
 <h3 id="example">Example</h3>
 <blockquote>
-<p>This code shows some return values for <em><strong>is_regex()</strong></em>:</p>
+<p>This code shows the return value for the action <em><strong>all</strong></em>:</p>
 </blockquote>
-<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">[
-    is_regex( /.*/ ),
-    is_regex( regex(&quot;.*&quot;) ),
-    is_regex( &quot;.*&quot; ),
-];
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">// Create type `Player`
+set_type('Player', {
+    score: 'int',
+});
+
+// Create a player with score &quot;10&quot;
+player = Player{score: 10};
+
+// Update all the current scores times 10
+mod_type('Player', 'all', |p| p.score *= 10);
+
+player;
 </code></pre><blockquote>
 <p>Return value in JSON format</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
-    <span style="color:#66d9ef">true</span>,
-    <span style="color:#66d9ef">true</span>,
-    <span style="color:#66d9ef">false</span>
-]
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;score&#34;</span>: <span style="color:#ae81ff">100</span>
+}
 </code></pre></div>
 
 <footer class=" footline" >
@@ -7368,10 +7402,10 @@
         
     
         
-            <a class="nav nav-prev" href="/v1/collection-api/is_raw/" title="is_raw"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/v1/collection-api/mod_type/add/" title="add"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/v1/collection-api/is_room/" title="is_room" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/v1/collection-api/mod_type/del/" title="del" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     
     </div>

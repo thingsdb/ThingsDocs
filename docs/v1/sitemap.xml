@@ -931,6 +931,10 @@
   </url>
   
   <url>
+    <loc>https://docs.thingsdb.net/v1/collection-api/mod_type/all/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.thingsdb.net/v1/collection-api/mod_type/del/</loc>
   </url>
   
