@@ -116,7 +116,6 @@ data-types
         replace
         split
         starts_with
-        test
         trim
         trim_left
         trim_right
@@ -231,6 +230,7 @@ collection-api
         ren
     mod_type
         add
+        all
         del
         mod
         rel

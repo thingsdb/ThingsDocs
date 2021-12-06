@@ -1,6 +1,6 @@
 ---
 title: "add"
-weight: 233
+weight: 232
 ---
 
 Adds a property to an existing [Type](../../../overview/type).

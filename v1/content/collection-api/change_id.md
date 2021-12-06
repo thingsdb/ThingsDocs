@@ -1,6 +1,6 @@
 ---
 title: "change_id"
-weight: 181
+weight: 180
 ---
 
 Returns the current change Id for the running query. The return value will be `nil` if the query does not require a *change*.

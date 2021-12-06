@@ -1,6 +1,6 @@
 ---
 title: "is_bool"
-weight: 198
+weight: 197
 ---
 
 This function determines whether the provided value is a [bool](../../data-types/bool) or not.

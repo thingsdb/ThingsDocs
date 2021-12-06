@@ -1,6 +1,6 @@
 ---
 title: "mod_type"
-weight: 232
+weight: 231
 ---
 
 This function is used to modify an existing [Type](../../overview/type). A number of actions can be performed with this function.
@@ -12,6 +12,7 @@ This function generates a [change](../../overview/changes).
 Action | Description
 ------ | -----------
 [add](./add) | Add a property to an existing Type.
+[all](./all) | Iterate over all instances of a given Type.
 [del](./del) | Delete a property of an existing Type.
 [mod](./mod) | Modify a property of an existing Type.
 [rel](./rel) | Create a relation between existing Type/properties.
