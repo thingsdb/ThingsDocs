@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>set on ThingsDB documentation</title><link>https://docs.thingsdb.net/v1/data-types/set/</link><description>Recent content in set on ThingsDB documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://docs.thingsdb.net/v1/data-types/set/index.xml" rel="self" type="application/rss+xml"/><item><title>add</title><link>https://docs.thingsdb.net/v1/data-types/set/add/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/set/add/</guid><description>Adds a new thing to the set and returns the number of things which are actually added to the set. For example my_set.add(#42); will return 0 if my_set already contains thing #42.
+This function generates a change (except when called on a variable).
+Function set.add(thing1, thing1, ..., thingX)
+Return value Returns the number of things which are added to the set.
+Example This code adds things to a set:</description></item><item><title>clear</title><link>https://docs.thingsdb.net/v1/data-types/set/clear/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/set/clear/</guid><description>Removes all things from a set.
+This function generates a change
+Function set.clear()
+Arguments None
+Return value Returns nil.
+Example This code adds things to a set:
+a = {item: 'a'}; b = {item: 'b'}; s = set(a, b); s.clear(); s; // the set is empty Return value in JSON format
+[]</description></item><item><title>each</title><link>https://docs.thingsdb.net/v1/data-types/set/each/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/set/each/</guid><description>Iterate over items in a set.
+Be aware that the order when iterating over a set or a thing is not guaranteed.
+This function does not generate a change.
+Function set.each(callback)
+Arguments Argument Type Description callback closure (required) Closure to execute on each value. Explanation of the callback argument:
+Iterable Arguments Description set thing, Id Iterate over things in the set.</description></item><item><title>every</title><link>https://docs.thingsdb.net/v1/data-types/set/every/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/set/every/</guid><description>This function checks if all things in the set pass a given test. It returns a boolean value.
+Calling this function on an empty set returns true for any condition!
+This function does not generate a change.
+Function set.every(callback)
+Arguments Argument Type Description callback closure Closure to execute on each thing until the closure evaluates to false. Explanation of the callback argument:</description></item><item><title>filter</title><link>https://docs.thingsdb.net/v1/data-types/set/filter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/set/filter/</guid><description>The function returns a new set with things that pass the test.
+This function does not generate a change.
+Function set.filter(callback)
+Arguments Argument Type Description callback closure (required) Closure to execute on each value. Explanation of the callback argument:
+Iterable Arguments Description set thing, Id Iterate over things in the set. Both thing and id are optional.</description></item><item><title>find</title><link>https://docs.thingsdb.net/v1/data-types/set/find/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/set/find/</guid><description>This function returns the value of the first item in the set that passes the test. Otherwise nil is returned if no alternative return value is specified.
+This function does not generate a change.
+The return value when called on a set might be unpredictable since a set is not ordered. set({name: 'Iris'}, {name: 'Cato'}).find(||true); &amp;hellip;will return {Iris} or {Cato}.
+Function set.find(callback, [alt])
+Arguments Argument Type Description callback closure Closure to execute on each value until the closure evaluates to true.</description></item><item><title>has</title><link>https://docs.thingsdb.net/v1/data-types/set/has/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/set/has/</guid><description>Determines if a set has a given thing.
+This function does not generate a change.
+Function set.has(thing)
+Arguments Argument Type Description thing thing (required) Thing to check. Return value Returns true if the given thing is found in the set and otherwise false.
+Example This code shows an example use case of has():
+iris = {name: 'Iris'}; s = set(iris); /* Check if iris is in set `s` */ s.</description></item><item><title>len</title><link>https://docs.thingsdb.net/v1/data-types/set/len/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/set/len/</guid><description>Returns the length of a set.
+This function does not generate a change.
+Function set.len()
+Arguments None
+Return value Returns length of the set.
+Example This code uses len() to return the number of items in a set:
+set({item: 'a'}, {item: 'b'}).len(); Return value in JSON format
+2</description></item><item><title>map</title><link>https://docs.thingsdb.net/v1/data-types/set/map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/set/map/</guid><description>The function iterates over items in a set and returns a new list based on the results of a given callback function.
+Be aware that the order when iterating over a set or a thing is not guaranteed.
+This function does not generate a change.
+Function set.map(callback)
+Arguments Explanation of the callback argument:
+Iterable Arguments Description set thing, Id Iterate over things in the set.</description></item><item><title>reduce</title><link>https://docs.thingsdb.net/v1/data-types/set/reduce/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/set/reduce/</guid><description>Executes a given reducer closure on every thing in the set, accumulating to a single return value.
+A set is unordered and therefore the order how things are processed by the reducer might be different from what you expect.
+This function does not generate a change.
+Function set.reduce(reducer, [initial])
+Arguments Argument Type Description reducer closure (required) Closure to execute on every thing (except for the first, if no initial value is provided).</description></item><item><title>remove</title><link>https://docs.thingsdb.net/v1/data-types/set/remove/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/set/remove/</guid><description>This function can be used to remove things from a set.
+If a closure is used, then all things that satisfy the test are removed from the set and returned as list. The order of the removed things is not guaranteed since the set itself is unordered.
+It is also possible to specify things as arguments. In this case a list is returned with all the things which are removed from the set, in the order that the arguments are used.</description></item><item><title>restriction</title><link>https://docs.thingsdb.net/v1/data-types/set/restriction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/set/restriction/</guid><description>Returns the set restriction as type str or nil when the set is not value restricted.
+This function does not generate a change.
+Function set.restriction()
+Arguments None
+Return value Returns restriction of the set or nil if not value restricted.
+Example Using restriction() on a non-restricted set:
+set().restriction(); Return value in JSON format
+null Using restriction() on a restricted set:
+// Create an example type new_type('S'); set_type('Y', {set: '{S}'}); Y{}.</description></item><item><title>some</title><link>https://docs.thingsdb.net/v1/data-types/set/some/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/set/some/</guid><description>This function checks if at least one thing in the set passes a given test. It returns a boolean value.
+Calling this function on an empty set returns false for any condition!
+This function does not generate a change.
+Function set.some(callback)
+Arguments Argument Type Description callback closure Closure to execute on each thing until the closure evaluates to true. Explanation of the callback argument:</description></item></channel></rss>

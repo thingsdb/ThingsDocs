@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>bytes on ThingsDB documentation</title><link>https://docs.thingsdb.net/v0/data-types/bytes/</link><description>Recent content in bytes on ThingsDB documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://docs.thingsdb.net/v0/data-types/bytes/index.xml" rel="self" type="application/rss+xml"/><item><title>len</title><link>https://docs.thingsdb.net/v0/data-types/bytes/len/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v0/data-types/bytes/len/</guid><description>Returns the length of the bytes value.
+This function does not generate an event.
+Function bytes.len()
+Arguments None
+Return value Returns length of the byte sequence.
+Example This code uses len() to return the length of a byte sequence:
+bytes(&amp;quot;abc&amp;quot;).len(); Return value in JSON format
+3</description></item></channel></rss>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>regex on ThingsDB documentation</title><link>https://docs.thingsdb.net/v0/data-types/regex/</link><description>Recent content in regex on ThingsDB documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://docs.thingsdb.net/v0/data-types/regex/index.xml" rel="self" type="application/rss+xml"/><item><title>test</title><link>https://docs.thingsdb.net/v0/data-types/regex/test/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v0/data-types/regex/test/</guid><description>Test if a string matches a given regular expression and return true or false.
+This function does not generate an event.
+Function regex.test(string)
+Arguments Argument Type Description string str (required) The string to test. Return value true if there is a match between the string and the regular expression, otherwise false.
+Example Examples using test():
+// The first regex is case sensitive, the second is case insensitive [ regex(&amp;quot;^hello&amp;quot;).</description></item></channel></rss>
