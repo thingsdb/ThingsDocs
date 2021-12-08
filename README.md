@@ -32,21 +32,11 @@ To start the website run the following commands:
 
 **Development**:
 
-Start development server
+Start development server from the `v1/` folder. (or `v0/` for the previous mayor ThingsDB version documentation)
 
 ```bash
 hugo server --disableFastRender # This command starts the Hugo server and watches the site directory for changes.
 ```
-
-**Production**:
-
-Build for GitHub pages
-
-```bash
-hugo # This command generates the static website in the public/ directory. If you do not have a site, then it gives errors about missing layout files.
-```
-
-And upload to master
 
 ## Syntax highlighting
 
@@ -100,7 +90,3 @@ Next run the following command:
 ```
 
 The weight value of all files has been updated according to the order in the site.map file.
-
-## Contributing
-
-Make pull requests without including a new build. Thus do not include changes to the `/docs` folder.
