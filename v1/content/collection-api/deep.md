@@ -3,19 +3,21 @@ title: "deep"
 weight: 182
 ---
 
-Returns the current `deep` value for the running query. The deep value indicates how far down the result of a query is returned. For example, *thing1* may contain a *thing2* that contains a *thing3*. A deep value of 1 would only show the content of *thing1* and a deep value of 3 will go as deep as the content of *thing3*.
+Set or return the current `deep` value for the **running query**. The deep value indicates how far down the result of a query is returned. For example, *thing1* may contain a *thing2* that contains a *thing3*. A deep value of 1 would only show the content of *thing1* and a deep value of 3 will go as deep as the content of *thing3*.
 
-The `deep` value changes when a function with a [return(..)](../../collection-api/return) is called which has changed the `deep` value for this query.
+Besides this function the `deep` value can change after a closure with a [return(..)](../../collection-api/return) is called which has changed the `deep` value for this query.
 
 This function does *not* generate a [change](../../overview/changes).
 
 ### Function
 
-`deep()`
+`deep([deep])`
 
 ### Arguments
 
-None
+Argument | Type | Description
+-------- | ---- | -----------
+deep | int (optional) | Set a new *"deep"* level. If not given, the current deep level is returned.
 
 ### Return value
 
@@ -23,14 +25,35 @@ The current `deep` value for the running query.
 
 ### Example
 
-> This code uses `deep()` to return the default `deep` value:
+> This code uses `deep()` to set *deep* to a new value:
 
 ```thingsdb,json_response
-deep();  // returns the default since `deep` is not changed
+deep(3);  // Set the `deep` value to 3 for this query
+{
+    v: "Level 1",
+    a: {
+        v: "Level 2",
+        b: {
+            v: "Level 3",
+            c: {
+                v: 'Level 4'
+            }
+        }
+    }
+};
 ```
 
-> Return value in JSON format
+> Return value in JSON format *(c, level 4, is not included as we use deep 3)*
 
 ```json
-1
+{
+    "a": {
+        "b": {
+            "c": {},
+            "v": "Level 3"
+        },
+        "v": "Level 2"
+    },
+    "v": "Level 1"
+}
 ```
