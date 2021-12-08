@@ -11,20 +11,20 @@
     <title>deep :: ThingsDB documentation</title>
 
     
-    <link href="/v1/css/nucleus.css?1638806565" rel="stylesheet">
-    <link href="/v1/css/fontawesome-all.min.css?1638806565" rel="stylesheet">
-    <link href="/v1/css/hybrid.css?1638806565" rel="stylesheet">
-    <link href="/v1/css/featherlight.min.css?1638806565" rel="stylesheet">
-    <link href="/v1/css/perfect-scrollbar.min.css?1638806565" rel="stylesheet">
-    <link href="/v1/css/auto-complete.css?1638806565" rel="stylesheet">
-    <link href="/v1/css/atom-one-dark-reasonable.css?1638806565" rel="stylesheet">
-    <link href="/v1/css/theme.css?1638806565" rel="stylesheet">
-    <link href="/v1/css/hugo-theme.css?1638806565" rel="stylesheet">
+    <link href="/v1/css/nucleus.css?1638952065" rel="stylesheet">
+    <link href="/v1/css/fontawesome-all.min.css?1638952065" rel="stylesheet">
+    <link href="/v1/css/hybrid.css?1638952065" rel="stylesheet">
+    <link href="/v1/css/featherlight.min.css?1638952065" rel="stylesheet">
+    <link href="/v1/css/perfect-scrollbar.min.css?1638952065" rel="stylesheet">
+    <link href="/v1/css/auto-complete.css?1638952065" rel="stylesheet">
+    <link href="/v1/css/atom-one-dark-reasonable.css?1638952065" rel="stylesheet">
+    <link href="/v1/css/theme.css?1638952065" rel="stylesheet">
+    <link href="/v1/css/hugo-theme.css?1638952065" rel="stylesheet">
     
-      <link href="/v1/css/theme-mine.css?1638806565" rel="stylesheet">
+      <link href="/v1/css/theme-mine.css?1638952065" rel="stylesheet">
     
 
-    <script src="/v1/js/jquery-3.3.1.min.js?1638806565"></script>
+    <script src="/v1/js/jquery-3.3.1.min.js?1638952065"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/v1/js/lunr.min.js?1638806565"></script>
-<script type="text/javascript" src="/v1/js/auto-complete.js?1638806565"></script>
+<script type="text/javascript" src="/v1/js/lunr.min.js?1638952065"></script>
+<script type="text/javascript" src="/v1/js/auto-complete.js?1638952065"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.thingsdb.net\/v1\/";
     
 </script>
-<script type="text/javascript" src="/v1/js/search.js?1638806565"></script>
+<script type="text/javascript" src="/v1/js/search.js?1638952065"></script>
 
     
   </div>
@@ -7311,24 +7311,60 @@
 
 
 
-<p>Returns the current <code>deep</code> value for the running query. The deep value indicates how far down the result of a query is returned. For example, <em>thing1</em> may contain a <em>thing2</em> that contains a <em>thing3</em>. A deep value of 1 would only show the content of <em>thing1</em> and a deep value of 3 will go as deep as the content of <em>thing3</em>.</p>
-<p>The <code>deep</code> value changes when a function with a <a href="../../collection-api/return">return(..)</a> is called which has changed the <code>deep</code> value for this query.</p>
+<p>Set or return the current <code>deep</code> value for the <strong>running query</strong>. The deep value indicates how far down the result of a query is returned. For example, <em>thing1</em> may contain a <em>thing2</em> that contains a <em>thing3</em>. A deep value of 1 would only show the content of <em>thing1</em> and a deep value of 3 will go as deep as the content of <em>thing3</em>.</p>
+<p>Besides this function the <code>deep</code> value can change after a closure with a <a href="../../collection-api/return">return(..)</a> is called which has changed the <code>deep</code> value for this query.</p>
 <p>This function does <em>not</em> generate a <a href="../../overview/changes">change</a>.</p>
 <h3 id="function">Function</h3>
-<p><code>deep()</code></p>
+<p><code>deep([deep])</code></p>
 <h3 id="arguments">Arguments</h3>
-<p>None</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deep</td>
+<td>int (optional)</td>
+<td>Set a new <em>&ldquo;deep&rdquo;</em> level. If not given, the current deep level is returned.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="return-value">Return value</h3>
 <p>The current <code>deep</code> value for the running query.</p>
 <h3 id="example">Example</h3>
 <blockquote>
-<p>This code uses <code>deep()</code> to return the default <code>deep</code> value:</p>
+<p>This code uses <code>deep()</code> to set <em>deep</em> to a new value:</p>
 </blockquote>
-<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">deep();  // returns the default since `deep` is not changed
+<pre><code class="language-thingsdb,json_response" data-lang="thingsdb,json_response">deep(3);  // Set the `deep` value to 3 for this query
+{
+    v: &quot;Level 1&quot;,
+    a: {
+        v: &quot;Level 2&quot;,
+        b: {
+            v: &quot;Level 3&quot;,
+            c: {
+                v: 'Level 4'
+            }
+        }
+    }
+};
 </code></pre><blockquote>
-<p>Return value in JSON format</p>
+<p>Return value in JSON format <em>(c, level 4, is not included as we use deep 3)</em></p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#ae81ff">1</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;a&#34;</span>: {
+        <span style="color:#f92672">&#34;b&#34;</span>: {
+            <span style="color:#f92672">&#34;c&#34;</span>: {},
+            <span style="color:#f92672">&#34;v&#34;</span>: <span style="color:#e6db74">&#34;Level 3&#34;</span>
+        },
+        <span style="color:#f92672">&#34;v&#34;</span>: <span style="color:#e6db74">&#34;Level 2&#34;</span>
+    },
+    <span style="color:#f92672">&#34;v&#34;</span>: <span style="color:#e6db74">&#34;Level 1&#34;</span>
+}
 </code></pre></div>
 
 <footer class=" footline" >
@@ -7359,19 +7395,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/v1/js/clipboard.min.js?1638806565"></script>
-    <script src="/v1/js/perfect-scrollbar.min.js?1638806565"></script>
-    <script src="/v1/js/perfect-scrollbar.jquery.min.js?1638806565"></script>
-    <script src="/v1/js/jquery.sticky.js?1638806565"></script>
-    <script src="/v1/js/featherlight.min.js?1638806565"></script>
-    <script src="/v1/js/highlight.pack.js?1638806565"></script>
+    <script src="/v1/js/clipboard.min.js?1638952065"></script>
+    <script src="/v1/js/perfect-scrollbar.min.js?1638952065"></script>
+    <script src="/v1/js/perfect-scrollbar.jquery.min.js?1638952065"></script>
+    <script src="/v1/js/jquery.sticky.js?1638952065"></script>
+    <script src="/v1/js/featherlight.min.js?1638952065"></script>
+    <script src="/v1/js/highlight.pack.js?1638952065"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/v1/js/modernizr.custom-3.6.0.js?1638806565"></script>
-    <script src="/v1/js/learn.js?1638806565"></script>
-    <script src="/v1/js/hugo-learn.js?1638806565"></script>
+    <script src="/v1/js/modernizr.custom-3.6.0.js?1638952065"></script>
+    <script src="/v1/js/learn.js?1638952065"></script>
+    <script src="/v1/js/hugo-learn.js?1638952065"></script>
 
-    <link href="/v1/mermaid/mermaid.css?1638806565" rel="stylesheet" />
-    <script src="/v1/mermaid/mermaid.js?1638806565"></script>
+    <link href="/v1/mermaid/mermaid.css?1638952065" rel="stylesheet" />
+    <script src="/v1/mermaid/mermaid.js?1638952065"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
