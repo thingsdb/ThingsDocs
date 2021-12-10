@@ -6,17 +6,17 @@
 <meta name=description content="ThingsDB documentation">
 <link rel="shortcut icon" href=/v1/images/favicon.ico type=image/x-icon>
 <title>timeval :: ThingsDB documentation</title>
-<link href=/v1/css/nucleus.css?1638968876 rel=stylesheet>
-<link href=/v1/css/fontawesome-all.min.css?1638968876 rel=stylesheet>
-<link href=/v1/css/hybrid.css?1638968876 rel=stylesheet>
-<link href=/v1/css/featherlight.min.css?1638968876 rel=stylesheet>
-<link href=/v1/css/perfect-scrollbar.min.css?1638968876 rel=stylesheet>
-<link href=/v1/css/auto-complete.css?1638968876 rel=stylesheet>
-<link href=/v1/css/atom-one-dark-reasonable.css?1638968876 rel=stylesheet>
-<link href=/v1/css/theme.css?1638968876 rel=stylesheet>
-<link href=/v1/css/hugo-theme.css?1638968876 rel=stylesheet>
-<link href=/v1/css/theme-mine.css?1638968876 rel=stylesheet>
-<script src=/v1/js/jquery-3.3.1.min.js?1638968876></script>
+<link href=/v1/css/nucleus.css?1639127401 rel=stylesheet>
+<link href=/v1/css/fontawesome-all.min.css?1639127401 rel=stylesheet>
+<link href=/v1/css/hybrid.css?1639127401 rel=stylesheet>
+<link href=/v1/css/featherlight.min.css?1639127401 rel=stylesheet>
+<link href=/v1/css/perfect-scrollbar.min.css?1639127401 rel=stylesheet>
+<link href=/v1/css/auto-complete.css?1639127401 rel=stylesheet>
+<link href=/v1/css/atom-one-dark-reasonable.css?1639127401 rel=stylesheet>
+<link href=/v1/css/theme.css?1639127401 rel=stylesheet>
+<link href=/v1/css/hugo-theme.css?1639127401 rel=stylesheet>
+<link href=/v1/css/theme-mine.css?1639127401 rel=stylesheet>
+<script src=/v1/js/jquery-3.3.1.min.js?1639127401></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}:not(pre)>code+span.copy-to-clipboard{display:none}</style>
 </head>
 <body data-url=/v1/collection-api/timeval/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/v1/js/lunr.min.js?1638968876></script>
-<script type=text/javascript src=/v1/js/auto-complete.js?1638968876></script>
+<script type=text/javascript src=/v1/js/lunr.min.js?1639127401></script>
+<script type=text/javascript src=/v1/js/auto-complete.js?1639127401></script>
 <script type=text/javascript>var baseurl="https://docs.thingsdb.net/v1/"</script>
-<script type=text/javascript src=/v1/js/search.js?1638968876></script>
+<script type=text/javascript src=/v1/js/search.js?1639127401></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -1102,11 +1102,6 @@ is_float
 is_future
 </a>
 </li>
-<li data-nav-id=/v1/collection-api/is_mpdata/ title=is_mpdata class=dd-item>
-<a href=/v1/collection-api/is_mpdata/>
-is_mpdata
-</a>
-</li>
 <li data-nav-id=/v1/collection-api/is_inf/ title=is_inf class=dd-item>
 <a href=/v1/collection-api/is_inf/>
 is_inf
@@ -1120,6 +1115,11 @@ is_int
 <li data-nav-id=/v1/collection-api/is_list/ title=is_list class=dd-item>
 <a href=/v1/collection-api/is_list/>
 is_list
+</a>
+</li>
+<li data-nav-id=/v1/collection-api/is_mpdata/ title=is_mpdata class=dd-item>
+<a href=/v1/collection-api/is_mpdata/>
+is_mpdata
 </a>
 </li>
 <li data-nav-id=/v1/collection-api/is_nan/ title=is_nan class=dd-item>
@@ -1165,6 +1165,11 @@ is_task
 <li data-nav-id=/v1/collection-api/is_thing/ title=is_thing class=dd-item>
 <a href=/v1/collection-api/is_thing/>
 is_thing
+</a>
+</li>
+<li data-nav-id=/v1/collection-api/is_time_zone/ title=is_time_zone class=dd-item>
+<a href=/v1/collection-api/is_time_zone/>
+is_time_zone
 </a>
 </li>
 <li data-nav-id=/v1/collection-api/is_timeval/ title=is_timeval class=dd-item>
@@ -1379,6 +1384,11 @@ tasks
 <li data-nav-id=/v1/collection-api/thing/ title=thing class=dd-item>
 <a href=/v1/collection-api/thing/>
 thing
+</a>
+</li>
+<li data-nav-id=/v1/collection-api/time_zones_info/ title=time_zones_info class=dd-item>
+<a href=/v1/collection-api/time_zones_info/>
+time_zones_info
 </a>
 </li>
 <li data-nav-id=/v1/collection-api/timeval/ title=timeval class="dd-item active">
@@ -1653,11 +1663,6 @@ set_password
 <li data-nav-id=/v1/thingsdb-api/set_time_zone/ title=set_time_zone class=dd-item>
 <a href=/v1/thingsdb-api/set_time_zone/>
 set_time_zone
-</a>
-</li>
-<li data-nav-id=/v1/thingsdb-api/time_zones_info/ title=time_zones_info class=dd-item>
-<a href=/v1/thingsdb-api/time_zones_info/>
-time_zones_info
 </a>
 </li>
 <li data-nav-id=/v1/thingsdb-api/user_info/ title=user_info class=dd-item>
@@ -1996,25 +2001,25 @@ timeval
 </div>
 </div>
 <div id=navigation>
-<a class="nav nav-prev" href=/v1/collection-api/thing/ title=thing> <i class="fa fa-chevron-left"></i></a>
+<a class="nav nav-prev" href=/v1/collection-api/time_zones_info/ title=time_zones_info> <i class="fa fa-chevron-left"></i></a>
 <a class="nav nav-next" href=/v1/collection-api/try/ title=try style=margin-right:0><i class="fa fa-chevron-right"></i></a>
 </div>
 </section>
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/v1/js/clipboard.min.js?1638968876></script>
-<script src=/v1/js/perfect-scrollbar.min.js?1638968876></script>
-<script src=/v1/js/perfect-scrollbar.jquery.min.js?1638968876></script>
-<script src=/v1/js/jquery.sticky.js?1638968876></script>
-<script src=/v1/js/featherlight.min.js?1638968876></script>
-<script src=/v1/js/highlight.pack.js?1638968876></script>
+<script src=/v1/js/clipboard.min.js?1639127402></script>
+<script src=/v1/js/perfect-scrollbar.min.js?1639127402></script>
+<script src=/v1/js/perfect-scrollbar.jquery.min.js?1639127402></script>
+<script src=/v1/js/jquery.sticky.js?1639127402></script>
+<script src=/v1/js/featherlight.min.js?1639127402></script>
+<script src=/v1/js/highlight.pack.js?1639127402></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=/v1/js/modernizr.custom-3.6.0.js?1638968876></script>
-<script src=/v1/js/learn.js?1638968876></script>
-<script src=/v1/js/hugo-learn.js?1638968876></script>
-<link href=/v1/mermaid/mermaid.css?1638968876 rel=stylesheet>
-<script src=/v1/mermaid/mermaid.js?1638968876></script>
+<script src=/v1/js/modernizr.custom-3.6.0.js?1639127402></script>
+<script src=/v1/js/learn.js?1639127402></script>
+<script src=/v1/js/hugo-learn.js?1639127402></script>
+<link href=/v1/mermaid/mermaid.css?1639127402 rel=stylesheet>
+<script src=/v1/mermaid/mermaid.js?1639127402></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 </body>
 </html>

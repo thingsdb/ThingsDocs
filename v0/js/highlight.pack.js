@@ -1,5 +1,5 @@
 /*
-  Highlight.js 10.0.0-beta.0 (ccfcf165)
+  Highlight.js 10.0.0-beta.0 (caf80177)
   License: BSD-3-Clause
   Copyright (c) 2006-2020, Ivan Sagalaev
 */
@@ -1859,7 +1859,7 @@ hljs.registerLanguage('thingsdb', function () {
                         /* collection functions */
                         'alt_raise|assert|base64_encode|base64_decode|bool|bytes|room|' +
                         'datetime|deep|del_enum|del_type|enum|enum_info|enums_info|err|change_id|float|has_enum|has_type|if|int|is_array|' +
-                        'is_ascii|is_bool|is_bytes|is_closure|is_datetime|is_enum|is_err|is_float|is_inf|is_int|is_room|is_task|' +
+                        'is_ascii|is_bool|is_bytes|is_closure|is_datetime|is_enum|is_err|is_float|is_inf|is_int|is_room|is_task|is_time_zone|' +
                         'is_list|is_mpdata|is_nan|is_nil|is_raw|is_regex|is_set|is_str|is_thing|is_timeval|is_tuple|' +
                         'is_utf8|task|tasks|json_dump|json_load|regex|list|mod_enum|mod_type|new|new_type|now|raise|rand|range|' +
                         'randint|randstr|refs|log|rename_enum|rename_type|return|set|set_enum|set_type|str|thing|try|type|' +
