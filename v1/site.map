@@ -202,10 +202,10 @@ collection-api
     is_err
     is_float
     is_future
-    is_mpdata
     is_inf
     is_int
     is_list
+    is_mpdata
     is_nan
     is_nil
     is_raw
@@ -215,6 +215,7 @@ collection-api
     is_str
     is_task
     is_thing
+    is_time_zone
     is_timeval
     is_tuple
     is_utf8
@@ -257,6 +258,7 @@ collection-api
     task
     tasks
     thing
+    time_zones_info
     timeval
     try
     type
@@ -311,7 +313,6 @@ thingsdb-api
     set_module_scope
     set_password
     set_time_zone
-    time_zones_info
     user_info
     users_info
 procedures-api

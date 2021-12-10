@@ -1,6 +1,6 @@
 ---
 title: "rename_module"
-weight: 306
+weight: 308
 ---
 
 Rename a module.

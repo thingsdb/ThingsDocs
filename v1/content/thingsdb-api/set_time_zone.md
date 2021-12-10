@@ -1,13 +1,13 @@
 ---
 title: "set_time_zone"
-weight: 313
+weight: 315
 ---
 
 
 By default each collection will be created with time zone `UTC`. This function
 can be used to change the time zone for a collection. If changed, the functions
 [datetime(..)](../../collection-api/datetime) and [timeval(..)](../../collection-api/timeval)
-will use the collections time zone unless specified otherwise. See [time_zones_info()](../time_zones_info) for a list of all available timezones.
+will use the collections time zone unless specified otherwise. See [time_zones_info()](../../collection-api/time_zones_info) for a list of all available timezones.
 
 Use [collection_info(..)](../collection_info) to view the current time zone for a collection.
 

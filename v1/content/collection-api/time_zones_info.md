@@ -1,9 +1,13 @@
 ---
 title: "time_zones_info"
-weight: 314
+weight: 261
 ---
 
 Returns all available time zones in ThingsDB.
+
+{{% notice tip %}}
+The function [is_time_zone(..)](../is_time_zone) can be used to check if a given [str](../../data-types/str) contains a time zone known by ThingsDB.
+{{% /notice %}}
 
 This function does *not* generate a [change](../../overview/changes).
 
