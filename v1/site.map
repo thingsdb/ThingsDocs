@@ -18,15 +18,16 @@ connect
         error-response
 overview
     scopes
+    changes
     collections
+    dictionary
     names
     properties
-    variable
-    changes
     slices
+    statements
     template-strings
-    dictionary
     type
+    variable
 data-types
     bool
     bytes

@@ -1,6 +1,6 @@
 ---
 title: "set_args"
-weight: 134
+weight: 135
 ---
 
 Set task arguments.
@@ -41,7 +41,7 @@ task(
         if (x < 10, {
             log(`x = {x}`);
             task.again_in('seconds', 10);
-            return();
+            return nil;
         });
         log('Task `count x` is Done!');
     },

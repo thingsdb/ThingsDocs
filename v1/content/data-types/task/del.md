@@ -1,6 +1,6 @@
 ---
 title: "del"
-weight: 131
+weight: 132
 ---
 
 Delete a task. After calling this function, the task will be removed from ThingsDB. If there are references to this task, then those references will no longer contain the original task but an empty task instead.

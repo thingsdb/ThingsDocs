@@ -1,6 +1,6 @@
 ---
 title: "format"
-weight: 39
+weight: 40
 ---
 
 Returns a string representation for a `datetime` object using a custom format.

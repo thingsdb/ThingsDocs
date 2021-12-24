@@ -1,6 +1,6 @@
 ---
 title: "ends_with"
-weight: 113
+weight: 114
 ---
 
 Determines if a [string](..) ends with characters given by another string.

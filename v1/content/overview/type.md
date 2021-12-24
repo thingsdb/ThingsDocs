@@ -127,7 +127,7 @@ book.notes.push(Note{
 assert(is_err(try(book.notes.push({test: 'not a Note'}))));
 
 // Return the book, 2 levels deep to see the note
-return(book, 2);
+return book, 2;
 ```
 
 > Return value in JSON format

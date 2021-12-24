@@ -1,9 +1,13 @@
 ---
 title: "return"
-weight: 252
+weight: 253
 ---
 
 The `return` function moves the argument to the output of the current query/closure call.
+
+{{% notice warning %}}
+This function is **deprecated** and will be removed in some future version of ThingsDB. Use the **[return](../../overview/statements/#return)** statement instead.
+{{% /notice %}}
 
 If no `return` is specified, then the last value will be the value which is returned.
 A second argument can be given to the return function which can be used to specify how `deep`

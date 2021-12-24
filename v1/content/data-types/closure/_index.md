@@ -1,6 +1,6 @@
 ---
 title: "closure"
-weight: 34
+weight: 35
 ---
 
 Closures are user defined methods which can be saved. They can be used as a prepared piece of code or to consume items from a `thing`, `list`, `tuple` or `set`.
@@ -45,12 +45,12 @@ It is common to wrap a block scope within one or more functions.
 When this is the case, the doc string will be read from the first argument,
 *only* if the first *non-function* argument contains a block scope with a doc string.
 
-For example, this closure contains a block scope wrapped with [return](../../collection-api/return) and [wse](../../collection-api/wse):
+For example, this closure contains a block scope wrapped with [return](../../overview/statements/#return) and [wse](../../collection-api/wse):
 
 ```thingsdb,should_pass
-|| return(wse({
+|| return wse({
     "this is still a doc string, even while wrapped using `return` and `wse`.";
-}), 2);
+}), 2;
 ```
 
 ### Examples

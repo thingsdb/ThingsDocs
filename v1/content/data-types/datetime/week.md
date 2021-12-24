@@ -1,6 +1,6 @@
 ---
 title: "week"
-weight: 43
+weight: 44
 ---
 
 Return the week of the year as an integer between `0..53`. Week `1` starts at the first Sunday in January.

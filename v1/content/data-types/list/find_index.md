@@ -1,6 +1,6 @@
 ---
 title: "find_index"
-weight: 67
+weight: 68
 ---
 
 This function returns the index of the first item in a [list](..) or [tuple](../../tuple) that passes the test.

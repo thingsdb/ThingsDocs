@@ -1,6 +1,6 @@
 ---
 title: "id"
-weight: 148
+weight: 149
 ---
 
 Returns the `id` of a [thing](..) or `nil` if the thing is not stored.

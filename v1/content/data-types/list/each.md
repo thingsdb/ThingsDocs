@@ -1,6 +1,6 @@
 ---
 title: "each"
-weight: 61
+weight: 62
 ---
 
 Iterate over all the items in an [list](../../list) or [tuple](../../tuple).
@@ -37,7 +37,9 @@ fibonacci = |n| {
     seq = range(2);
 
     // Return the first `n` items when `n` is less or equal to 1.
-    n <= 1 && return(seq[:n]);
+    if (n <= 1) {
+        return seq[:n];
+    };
 
     // Append the sum of the last two items, and do this `n` minus 2 times.
     // Function `each` is used since we do not use the return value.

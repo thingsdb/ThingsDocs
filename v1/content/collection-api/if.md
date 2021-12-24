@@ -1,9 +1,13 @@
 ---
 title: "if"
-weight: 193
+weight: 194
 ---
 
 Runs a block code based on the result of a given condition.
+
+{{% notice warning %}}
+This function is **deprecated** and will be removed in some future version of ThingsDB. Use the **[if..else](../../overview/statements/#ifelse)** statement instead.
+{{% /notice %}}
 
 {{% notice note %}}
 ThingsDB uses *lazy-evaluation* of function arguments. For this reason *if()* is a function call, and not a statement like in most other languages.
@@ -33,7 +37,7 @@ Returns `nil`.
 
 ```thingsdb,json_response
 if(2 > 1, {
-    return("two is more than one");
+    return "two is more than one";
 });
 
 "math is broken";

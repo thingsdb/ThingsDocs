@@ -1,11 +1,11 @@
 ---
 title: "deep"
-weight: 182
+weight: 183
 ---
 
 Set or return the current `deep` value for the **running query**. The deep value indicates how far down the result of a query is returned. For example, *thing1* may contain a *thing2* that contains a *thing3*. A deep value of 1 would only show the content of *thing1* and a deep value of 3 will go as deep as the content of *thing3*.
 
-Besides this function the `deep` value can change after a closure with a [return(..)](../../collection-api/return) is called which has changed the `deep` value for this query.
+Besides this function the `deep` value can change after a closure with a [return](../../overview/statements/#return) statement has changed the `deep` value for this query.
 
 This function does *not* generate a [change](../../overview/changes).
 

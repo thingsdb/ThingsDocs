@@ -1,6 +1,6 @@
 ---
 title: "replace"
-weight: 41
+weight: 42
 ---
 
 Return a new [datetime](../) (or [timeval](../../timeval)) object with altered properties.

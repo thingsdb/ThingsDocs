@@ -1,6 +1,6 @@
 ---
 title: "map"
-weight: 75
+weight: 76
 ---
 
 The function iterates over items in an [list](../../list) or [tuple](../../tuple) and

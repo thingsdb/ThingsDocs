@@ -1,6 +1,6 @@
 ---
 title: "˂Type˃"
-weight: 162
+weight: 163
 ---
 
 
@@ -101,7 +101,7 @@ run('add_book', 'Bob', 'Baz');
  * Now we can simply wrap the collection to return the books with titles and
  * the author names including the thing-ids.
  */
-return(.wrap('_AllBooks'), 3);
+return .wrap('_AllBooks'), 3;
 ```
 
 ```json
@@ -336,7 +336,7 @@ set_type('Foo', {
 
 set_type('_Pexample', {
     bar: 'any',
-    other: || return({a: {b: 5}}, 2)
+    other: || return {a: {b: 5}}, 2
 }, true);
 
 foo = Foo{
