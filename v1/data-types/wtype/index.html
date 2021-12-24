@@ -6,17 +6,17 @@
 <meta name=description content="ThingsDB documentation">
 <link rel="shortcut icon" href=/v1/images/favicon.ico type=image/x-icon>
 <title>˂Type˃ :: ThingsDB documentation</title>
-<link href=/v1/css/nucleus.css?1639127407 rel=stylesheet>
-<link href=/v1/css/fontawesome-all.min.css?1639127407 rel=stylesheet>
-<link href=/v1/css/hybrid.css?1639127407 rel=stylesheet>
-<link href=/v1/css/featherlight.min.css?1639127407 rel=stylesheet>
-<link href=/v1/css/perfect-scrollbar.min.css?1639127407 rel=stylesheet>
-<link href=/v1/css/auto-complete.css?1639127407 rel=stylesheet>
-<link href=/v1/css/atom-one-dark-reasonable.css?1639127407 rel=stylesheet>
-<link href=/v1/css/theme.css?1639127407 rel=stylesheet>
-<link href=/v1/css/hugo-theme.css?1639127407 rel=stylesheet>
-<link href=/v1/css/theme-mine.css?1639127407 rel=stylesheet>
-<script src=/v1/js/jquery-3.3.1.min.js?1639127407></script>
+<link href=/v1/css/nucleus.css?1640376162 rel=stylesheet>
+<link href=/v1/css/fontawesome-all.min.css?1640376162 rel=stylesheet>
+<link href=/v1/css/hybrid.css?1640376162 rel=stylesheet>
+<link href=/v1/css/featherlight.min.css?1640376162 rel=stylesheet>
+<link href=/v1/css/perfect-scrollbar.min.css?1640376162 rel=stylesheet>
+<link href=/v1/css/auto-complete.css?1640376162 rel=stylesheet>
+<link href=/v1/css/atom-one-dark-reasonable.css?1640376162 rel=stylesheet>
+<link href=/v1/css/theme.css?1640376162 rel=stylesheet>
+<link href=/v1/css/hugo-theme.css?1640376162 rel=stylesheet>
+<link href=/v1/css/theme-mine.css?1640376162 rel=stylesheet>
+<script src=/v1/js/jquery-3.3.1.min.js?1640376162></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}:not(pre)>code+span.copy-to-clipboard{display:none}</style>
 </head>
 <body data-url=/v1/data-types/wtype/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/v1/js/lunr.min.js?1639127407></script>
-<script type=text/javascript src=/v1/js/auto-complete.js?1639127407></script>
+<script type=text/javascript src=/v1/js/lunr.min.js?1640376162></script>
+<script type=text/javascript src=/v1/js/auto-complete.js?1640376162></script>
 <script type=text/javascript>var baseurl="https://docs.thingsdb.net/v1/"</script>
-<script type=text/javascript src=/v1/js/search.js?1639127407></script>
+<script type=text/javascript src=/v1/js/search.js?1640376162></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -145,9 +145,19 @@ Overview
 Scopes
 </a>
 </li>
+<li data-nav-id=/v1/overview/changes/ title=Changes class=dd-item>
+<a href=/v1/overview/changes/>
+Changes
+</a>
+</li>
 <li data-nav-id=/v1/overview/collections/ title=Collections class=dd-item>
 <a href=/v1/overview/collections/>
 Collections
+</a>
+</li>
+<li data-nav-id=/v1/overview/dictionary/ title=Dictionary class=dd-item>
+<a href=/v1/overview/dictionary/>
+Dictionary
 </a>
 </li>
 <li data-nav-id=/v1/overview/names/ title=Names class=dd-item>
@@ -160,19 +170,14 @@ Names
 Properties
 </a>
 </li>
-<li data-nav-id=/v1/overview/variable/ title=Variable class=dd-item>
-<a href=/v1/overview/variable/>
-Variable
-</a>
-</li>
-<li data-nav-id=/v1/overview/changes/ title=Changes class=dd-item>
-<a href=/v1/overview/changes/>
-Changes
-</a>
-</li>
 <li data-nav-id=/v1/overview/slices/ title=Slices class=dd-item>
 <a href=/v1/overview/slices/>
 Slices
+</a>
+</li>
+<li data-nav-id=/v1/overview/statements/ title=Statements class=dd-item>
+<a href=/v1/overview/statements/>
+Statements
 </a>
 </li>
 <li data-nav-id=/v1/overview/template-strings/ title="Template Strings" class=dd-item>
@@ -180,14 +185,14 @@ Slices
 Template Strings
 </a>
 </li>
-<li data-nav-id=/v1/overview/dictionary/ title=Dictionary class=dd-item>
-<a href=/v1/overview/dictionary/>
-Dictionary
-</a>
-</li>
 <li data-nav-id=/v1/overview/type/ title=Type class=dd-item>
 <a href=/v1/overview/type/>
 Type
+</a>
+</li>
+<li data-nav-id=/v1/overview/variable/ title=Variable class=dd-item>
+<a href=/v1/overview/variable/>
+Variable
 </a>
 </li>
 </ul>
@@ -2045,7 +2050,7 @@ run('add_book', 'Bob', 'Baz');
  * Now we can simply wrap the collection to return the books with titles and
  * the author names including the thing-ids.
  */
-return(.wrap('_AllBooks'), 3);
+return .wrap('_AllBooks'), 3;
 </code></pre><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
     <span style=color:#f92672>&#34;#&#34;</span>: <span style=color:#ae81ff>4</span>,
     <span style=color:#f92672>&#34;books&#34;</span>: [
@@ -2226,7 +2231,7 @@ p.wrap('_Poverwrite');
 
 set_type('_Pexample', {
     bar: 'any',
-    other: || return({a: {b: 5}}, 2)
+    other: || return {a: {b: 5}}, 2
 }, true);
 
 foo = Foo{
@@ -2254,18 +2259,18 @@ foo.wrap(_Pexample); // Return one deep, note that `other` has it's own depth
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/v1/js/clipboard.min.js?1639127407></script>
-<script src=/v1/js/perfect-scrollbar.min.js?1639127407></script>
-<script src=/v1/js/perfect-scrollbar.jquery.min.js?1639127407></script>
-<script src=/v1/js/jquery.sticky.js?1639127407></script>
-<script src=/v1/js/featherlight.min.js?1639127407></script>
-<script src=/v1/js/highlight.pack.js?1639127407></script>
+<script src=/v1/js/clipboard.min.js?1640376162></script>
+<script src=/v1/js/perfect-scrollbar.min.js?1640376162></script>
+<script src=/v1/js/perfect-scrollbar.jquery.min.js?1640376162></script>
+<script src=/v1/js/jquery.sticky.js?1640376162></script>
+<script src=/v1/js/featherlight.min.js?1640376162></script>
+<script src=/v1/js/highlight.pack.js?1640376162></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=/v1/js/modernizr.custom-3.6.0.js?1639127407></script>
-<script src=/v1/js/learn.js?1639127407></script>
-<script src=/v1/js/hugo-learn.js?1639127407></script>
-<link href=/v1/mermaid/mermaid.css?1639127407 rel=stylesheet>
-<script src=/v1/mermaid/mermaid.js?1639127407></script>
+<script src=/v1/js/modernizr.custom-3.6.0.js?1640376162></script>
+<script src=/v1/js/learn.js?1640376162></script>
+<script src=/v1/js/hugo-learn.js?1640376162></script>
+<link href=/v1/mermaid/mermaid.css?1640376162 rel=stylesheet>
+<script src=/v1/mermaid/mermaid.js?1640376162></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 </body>
 </html>
