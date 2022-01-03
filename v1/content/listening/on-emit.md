@@ -1,6 +1,6 @@
 ---
 title: "on-emit"
-weight: 335
+weight: 336
 ---
 
 An emit event is triggered when a *change* is emitted using the [emit(..)](../../data-types/room/emit) function on a [room](../../data-types/room).
@@ -18,5 +18,5 @@ The event contains the room Id, a *change* name and arguments (`args`) as an arr
 ```
 
 {{% notice note %}}
-When using a *thing* in the argument(s), do not forget the *deep* level is one (1) by default so it might be required to use a higher value. (see the [emit(..)](../../data-types/room/emit) function)
+When using a *thing* in the argument(s), do not forget to check the  *deep* value. (see the [emit(..)](../../data-types/room/emit) function)
 {{% /notice %}}

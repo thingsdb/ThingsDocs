@@ -18,7 +18,7 @@ Function *equals* can be used to perform a weak compare, for example:
 ```
 
 {{% notice note %}}
-By default the *equals* function will only compare values **one** level deep. An optional second
+By default the *equals* function ignores the current *deep* value and will only compare values **one** level deep. An optional second
 argument can be used to change this behavior. Any integer value
 between `0` and `127` is allowed.
 {{% /notice %}}

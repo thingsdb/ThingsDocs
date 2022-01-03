@@ -9,6 +9,8 @@ Create a duplicate of a *thing*.
 The function preserves the Type of a thing. Use [copy(..)](../copy) to copy into a plain thing.
 {{% /notice %}}
 
+For the *deep* value, this function does *not* inherit the current *deep* value but *always* uses `1` as default.
+
 This function does *not* generate a [change](../../../overview/changes).
 
 ### Function

@@ -10,8 +10,7 @@ This function is **deprecated** and will be removed in some future version of Th
 {{% /notice %}}
 
 If no `return` is specified, then the last value will be the value which is returned.
-A second argument can be given to the return function which can be used to specify how `deep`
-the result should be returned. The default `deep` value is set to 1, but any value between 0 and 127 is possible.
+A second argument can be given to the return function which can be used to overwrite the current *deep* value.
 See the [deep](#deep) section for a detailed explanation of this argument.
 
 A query can run different procedures and/or closures which might have changed the `deep` value. In case you
@@ -35,7 +34,7 @@ This function does *not* generate a [change](../../overview/changes).
 Argument | Type | Description
 -------- | ---- | -----------
 value | any (optional) | The value which will be moved to the output of the query or closure.
-deep | int (optional) | Specify the `deep` value for the query (the current `deep` value will be overwritten).
+deep | int (optional) | Specify the `deep` value for the query (defaults to the current *deep* value).
 
 ### Return value
 

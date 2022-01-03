@@ -35,7 +35,7 @@ for (i in range(5)) {
 "Number 3"
 ```
 
-Example *return* with a different *deep* value:
+Example *return* with an explicit *deep* value:
 
 ```thingsdb,json_response
 return {

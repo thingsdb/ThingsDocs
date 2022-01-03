@@ -5,6 +5,9 @@ weight: 302
 
 Create a new collection.
 
+After creating a new collection, you might want to configure a different *time-zone* and/or *deep* value. The initial *deep* value and *time zone* are inherited from the `@thingsdb` scope.
+See [set_time_zone()](../set_time_zone) and [set_default_deep()](../set_default_deep).
+
 This function generates a [change](../../overview/changes).
 
 ### Function

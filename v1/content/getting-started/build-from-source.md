@@ -10,7 +10,7 @@ Install the following dependencies:
 - libpcre2
 - libyajl
 - libcurl
-- libcleri (`>=0.12.2`)
+- libcleri (`>=1.0.0`)
 
 When using Debian/Ubuntu; *libuv1*, *libpcre2*, *libyajl* and *libcurl* can be installed using apt:
 

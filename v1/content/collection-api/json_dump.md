@@ -22,7 +22,7 @@ options | thing | Thing with [options](#options).
 
 Option | Type | Description
 ------ | ---- | -----------
-deep | int | Specify how [deep](../../collection-api/return/#deep) the value must be converted. (defaults to `1`)
+deep | int | Specify how [deep](../../collection-api/return/#deep) the value must be converted. (defaults to the current *deep* value)
 beautify | bool | Generate a JSON string with new lines and indentation to make the string more readable.
 
 ### Return value

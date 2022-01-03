@@ -9,6 +9,8 @@ Copy a *thing*.
 The function does *not* preserve the Type of a thing. Use [dup(..)](../dup) if you want a copy of the same type.
 {{% /notice %}}
 
+For the *deep* value, this function does *not* inherit the current *deep* value but *always* uses `1` as default.
+
 This function does *not* generate a [change](../../../overview/changes).
 
 ### Function

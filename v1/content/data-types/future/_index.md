@@ -51,12 +51,12 @@ future({
 });
 ```
 
-Besides the required `module` property, a property `deep` will be understood and will tell ThingsDB how [deep](../../collection-api/deep) the request must be packed. The default *deep* value is one (`1`).
+Besides the required `module` property, a property `deep` will be understood and will tell ThingsDB how [deep](../../collection-api/deep) the request must be packed. The default *deep* value is the current *deep* value.
 
 For example:
 
 ```thingsdb,syntax_only
-// Deep must be at least 2, otherwise the items are not packed for the module request
+// We can be explicit with deep and then must use at least 2, otherwise the items are not packed for the module request
 future({
     module: 'DEMO',
     deep: 2,

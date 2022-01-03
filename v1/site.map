@@ -310,6 +310,7 @@ thingsdb-api
     rename_user
     restore
     revoke
+    set_default_deep
     set_module_conf
     set_module_scope
     set_password

@@ -1,6 +1,6 @@
 ---
 title: "set_module_conf"
-weight: 313
+weight: 314
 ---
 
 Change the module configuration. This will (re-send) the module configuration to the module. If the module was not started, ThingsDB will also auto-load the module and send the configuration.
@@ -17,7 +17,7 @@ This function generates a [change](../../overview/changes).
 Argument | Type | Description
 --------- | ----------- | -----------
 name | str (required) | Name of the module.
-configuration | any/nil (required) | New configuration for the module. The configuration will be packed using a fixed [deep](../../collection-api/deep) value of two (`2`). Value `nil` is an exception and can be used if the module does not require any configuration.
+configuration | any/nil (required) | New configuration for the module. The configuration will be packed using a fixed [deep](../../collection-api/deep) value of two (`3`). Value `nil` is an exception and can be used if the module does not require any configuration.
 
 ### Return value
 
