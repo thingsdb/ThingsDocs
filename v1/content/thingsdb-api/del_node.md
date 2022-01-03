@@ -3,7 +3,7 @@ title: "del_node"
 weight: 290
 ---
 
-Delete a node from ThingsDB.
+This function can be used to delete a node from ThingsDB.
 
 {{% notice warning %}}
 Before deleting a node, the node *must* be offline. As long is the node is *active*, you are not allowed
@@ -24,4 +24,4 @@ node_id | int (required) | Id of the node to delete.
 
 ### Return value
 
-Returns `nil` when successful. A [lookup_err()](../../errors/lookup_err) is raised if the node Id does not exist.
+Returns `nil` when successful.
