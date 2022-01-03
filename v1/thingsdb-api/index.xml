@@ -27,11 +27,11 @@ This function generates a change.
 Function del_module(name)
 Arguments Argument Type Description name str (required) Name of the module to delete. Return value Returns nil when successful.
 Example This code will delete module DEMO:
-// Delete module `DEMO` del_module('DEMO');</description></item><item><title>del_node</title><link>https://docs.thingsdb.net/v1/thingsdb-api/del_node/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/thingsdb-api/del_node/</guid><description>Delete a node from ThingsDB.
+// Delete module `DEMO` del_module('DEMO');</description></item><item><title>del_node</title><link>https://docs.thingsdb.net/v1/thingsdb-api/del_node/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/thingsdb-api/del_node/</guid><description>This function can be used to delete a node from ThingsDB.
 Before deleting a node, the node must be offline. As long is the node is active, you are not allowed to delete the node. See shutdown for shutting down a node by using a query.
 This function generates a change.
 Function del_node(node_id)
-Arguments Argument Type Description node_id int (required) Id of the node to delete. Return value Returns nil when successful.</description></item><item><title>del_token</title><link>https://docs.thingsdb.net/v1/thingsdb-api/del_token/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/thingsdb-api/del_token/</guid><description>Delete a token.
+Arguments Argument Type Description node_id int (required) Id of the node to delete.</description></item><item><title>del_token</title><link>https://docs.thingsdb.net/v1/thingsdb-api/del_token/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/thingsdb-api/del_token/</guid><description>Delete a token.
 This function requires GRANT privileges on the @thingsdb scope unless the given token belongs to the logged on user. In the latter case, only CHANGE privileges are required.
 This function generates a change.
 Function del_token(key)
