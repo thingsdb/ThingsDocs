@@ -8,17 +8,17 @@ Example This code adds things to a set:
 my_thing = { a: 'Property A', b: 'Property B', c: 'Property C' }; my_thing.clear(); my_thing; // the thing is empty Return value in JSON format
 {}</description></item><item><title>copy</title><link>https://docs.thingsdb.net/v1/data-types/thing/copy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/thing/copy/</guid><description>Copy a thing.
 The function does not preserve the Type of a thing. Use dup(..) if you want a copy of the same type.
+For the deep value, this function does not inherit the current deep value but always uses 1 as default.
 This function does not generate a change.
 Function thing.copy([deep]])
-Arguments Argument Type Description deep int (optional) How deep to copy the thing. Default is 1. Return value A new thing.
-Example This code shows an example using copy():</description></item><item><title>del</title><link>https://docs.thingsdb.net/v1/data-types/thing/del/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/thing/del/</guid><description>Delete a property from a thing.
+Arguments Argument Type Description deep int (optional) How deep to copy the thing.</description></item><item><title>del</title><link>https://docs.thingsdb.net/v1/data-types/thing/del/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/thing/del/</guid><description>Delete a property from a thing.
 While almost all functions on things are also available on Type instances, this one is not. This is because a Type instance has a fixed set of properties and so you are not allowed to delete one of them on a single instance. Use mod_type() instead, to delete the property from all instances if this is what you want.
 This function generates a change.</description></item><item><title>dup</title><link>https://docs.thingsdb.net/v1/data-types/thing/dup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/thing/dup/</guid><description>Create a duplicate of a thing.
 The function preserves the Type of a thing. Use copy(..) to copy into a plain thing.
+For the deep value, this function does not inherit the current deep value but always uses 1 as default.
 This function does not generate a change.
 Function thing.dup([deep]])
-Arguments Argument Type Description deep int (optional) How deep to duplicate the thing. Default is 1. Return value A new thing.
-Example This code shows an example using dup():</description></item><item><title>each</title><link>https://docs.thingsdb.net/v1/data-types/thing/each/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/thing/each/</guid><description>Iterate over all properties on a thing.
+Arguments Argument Type Description deep int (optional) How deep to duplicate the thing.</description></item><item><title>each</title><link>https://docs.thingsdb.net/v1/data-types/thing/each/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/thing/each/</guid><description>Iterate over all properties on a thing.
 Be aware that the order when iterating over a thing is not guaranteed.
 This function does not generate a change.
 Function thing.each(callback)
@@ -26,7 +26,7 @@ Arguments Argument Type Description callback closure (required) Closure to execu
 Iterable Arguments Description thing name, value Iterate over the thing properties.</description></item><item><title>equals</title><link>https://docs.thingsdb.net/v1/data-types/thing/equals/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/thing/equals/</guid><description>Determines if a thing is equal to another thing.
 Comparing things is usually done with a strict compare, for example:
 {} == {}; // This is *false* because left and right are not the same object Function equals can be used to perform a weak compare, for example:
-{}.equals({}); // This is *true*, both objects have the same content. By default the equals function will only compare values one level deep.</description></item><item><title>filter</title><link>https://docs.thingsdb.net/v1/data-types/thing/filter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/thing/filter/</guid><description>The function returns a new thing with properties that pass the test.
+{}.equals({}); // This is *true*, both objects have the same content. By default the equals function ignores the current deep value and will only compare values one level deep.</description></item><item><title>filter</title><link>https://docs.thingsdb.net/v1/data-types/thing/filter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/thing/filter/</guid><description>The function returns a new thing with properties that pass the test.
 This function does not generate a change.
 Function thing.filter(callback)
 Arguments Argument Type Description callback closure (required) Closure to execute on each value. Explanation of the callback argument:

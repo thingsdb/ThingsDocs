@@ -1,5 +1,5 @@
 /*
-  Highlight.js 10.0.0-beta.0 (caf80177)
+  Highlight.js 10.0.0-beta.0 (530d53bf)
   License: BSD-3-Clause
   Copyright (c) 2006-2020, Ivan Sagalaev
 */
@@ -1873,7 +1873,7 @@ hljs.registerLanguage('thingsdb', function () {
                         'del_expired|del_node|del_token|del_user|grant|' +
                         'has_collection|has_node|has_token|has_user|' +
                         'new_collection|new_node|new_token|new_user|' +
-                        'refresh_module|rename_collection|rename_user|restore|revoke|set_password|set_time_zone|' +
+                        'refresh_module|rename_collection|rename_user|restore|revoke|set_password|set_time_zone|set_default_deep|' +
                         'time_zones_info|user_info|users_info|' +
                         'has_module|del_module|module_info|modules_info|new_module|deploy_module|rename_module|set_module_conf|set_module_scope|' +
                         /* procedure functions */
