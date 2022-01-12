@@ -167,7 +167,15 @@ Arguments None
 Return value Returns nil.
 Example This code adds things to a set:
 arr = ['a', 'b', 'c']; arr.clear(); arr; // the list is empty Return value in JSON format
-[]</description></item><item><title>each</title><link>https://docs.thingsdb.net/v1/data-types/list/each/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/list/each/</guid><description>Iterate over all the items in an list or tuple. Use this functions instead of map when you are not interested in the return value.
+[]</description></item><item><title>copy</title><link>https://docs.thingsdb.net/v1/data-types/list/copy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/list/copy/</guid><description>Copy a list.
+If a deep value higher than 0 (default) is used, then this function will create copies of the things within the list.
+This function does not generate a change.
+Function list.copy([deep]])
+Arguments Argument Type Description deep int (optional) How deep to copy things withing the list. Default is 0 (only a copy of the list, not the things within the list).</description></item><item><title>dup</title><link>https://docs.thingsdb.net/v1/data-types/list/dup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/list/dup/</guid><description>Duplicate a list.
+If a deep value higher than 0 (default) is used, then this function will also create duplicates of the things within the list.
+This function does not generate a change.
+Function list.dup([deep]])
+Arguments Argument Type Description deep int (optional) How deep to duplicate things withing the list. Default is 0 (only a duplicate of the list, not the things within the list).</description></item><item><title>each</title><link>https://docs.thingsdb.net/v1/data-types/list/each/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/list/each/</guid><description>Iterate over all the items in an list or tuple. Use this functions instead of map when you are not interested in the return value.
 This function does not generate a change.
 Function array.each(callback)
 Arguments Argument Type Description callback closure (required) Closure to execute on each value. Explanation of the callback argument:
@@ -325,7 +333,15 @@ Arguments None
 Return value Returns nil.
 Example This code adds things to a set:
 a = {item: 'a'}; b = {item: 'b'}; s = set(a, b); s.clear(); s; // the set is empty Return value in JSON format
-[]</description></item><item><title>each</title><link>https://docs.thingsdb.net/v1/data-types/set/each/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/set/each/</guid><description>Iterate over items in a set.
+[]</description></item><item><title>copy</title><link>https://docs.thingsdb.net/v1/data-types/set/copy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/set/copy/</guid><description>Copy a set.
+If a deep value higher than 0 (default) is used, then this function will create copies of the things within the set.
+This function does not generate a change.
+Function set.copy([deep]])
+Arguments Argument Type Description deep int (optional) How deep to copy things withing the set. Default is 0 (only a copy of the set, not the things within the set).</description></item><item><title>dup</title><link>https://docs.thingsdb.net/v1/data-types/set/dup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/set/dup/</guid><description>Duplicate a set.
+If a deep value higher than 0 (default) is used, then this function will also create duplicates of the things within the set.
+This function does not generate a change.
+Function set.dup([deep]])
+Arguments Argument Type Description deep int (optional) How deep to duplicate things withing the set. Default is 0 (only a duplicate of the set, not the things within the set).</description></item><item><title>each</title><link>https://docs.thingsdb.net/v1/data-types/set/each/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/set/each/</guid><description>Iterate over items in a set.
 Be aware that the order when iterating over a set or a thing is not guaranteed.
 This function does not generate a change.
 Function set.each(callback)
@@ -822,9 +838,7 @@ json_load('{&amp;quot;success&amp;quot;: true}'); Return value in JSON format
 { &amp;#34;success&amp;#34;: true }</description></item><item><title>list</title><link>https://docs.thingsdb.net/v1/collection-api/list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/list/</guid><description>Returns a new empty list or returns a list for a given set.
 This function does not generate a change.
 Function list([value])
-Arguments Argument Type Description value set/list/tuple (optional) Optional value to initialize the list. Return value A new list.
-Example This code shows some return values for list():
-list( set({}, {}) ); Return value in JSON format</description></item><item><title>log</title><link>https://docs.thingsdb.net/v1/collection-api/log/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/log/</guid><description>Might be used for debugging code. The message will be logged as a warning message on the console of the node which is processing the request. When you are connected using a socket stream, then a warning message with code 2 will be send to the client as well.
+Arguments Argument Type Description value set/list/tuple (optional) Optional value to initialize the list. If the argument is already a list or tuple, the return value will be the same list or tuple. Return value A new list (Unless the given argument was a tuple or list, then no conversion takes place and the given list or tuple will be the return value).</description></item><item><title>log</title><link>https://docs.thingsdb.net/v1/collection-api/log/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/log/</guid><description>Might be used for debugging code. The message will be logged as a warning message on the console of the node which is processing the request. When you are connected using a socket stream, then a warning message with code 2 will be send to the client as well.
 This function does not generate a change.
 Function log(value)
 Arguments Argument Type Description value str/any (required) Value to log.</description></item><item><title>add</title><link>https://docs.thingsdb.net/v1/collection-api/mod_enum/add/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/mod_enum/add/</guid><description>Adds a member to an existing enumerator type.
@@ -907,7 +921,7 @@ Function room([id])
 Arguments Argument Type Description id int (optional) The Id for the room to return. Return value Returns a room. A lookup_err() is returned in case a room Id is given which is not found inside the collection.</description></item><item><title>set</title><link>https://docs.thingsdb.net/v1/collection-api/set/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/set/</guid><description>Returns a new empty set. If an array is given, then all items in the given array must be of type thing and a new set is returned based on the given things. Instead of an array, it is also possible to provide one thing or multiple comma-separated things.
 This function does not generate a change.
 Function set(array_or_things)
-Arguments Argument Type Description array_or_things array/things (optional) Optional array or things to initialize the set.</description></item><item><title>set_enum</title><link>https://docs.thingsdb.net/v1/collection-api/set_enum/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/set_enum/</guid><description>Creates a new enumerator type.
+Arguments Argument Type Description array_or_things array/set/things (optional) Optional array or things to initialize the set.</description></item><item><title>set_enum</title><link>https://docs.thingsdb.net/v1/collection-api/set_enum/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/set_enum/</guid><description>Creates a new enumerator type.
 This function generates a change.
 Function set_enum(enum, members)
 Arguments Argument Type Description enum str The name of the enumerator type to create. members thing Thing containing all the members to be set. Return value The value nil.

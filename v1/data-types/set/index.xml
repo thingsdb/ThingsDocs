@@ -9,7 +9,15 @@ Arguments None
 Return value Returns nil.
 Example This code adds things to a set:
 a = {item: 'a'}; b = {item: 'b'}; s = set(a, b); s.clear(); s; // the set is empty Return value in JSON format
-[]</description></item><item><title>each</title><link>https://docs.thingsdb.net/v1/data-types/set/each/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/set/each/</guid><description>Iterate over items in a set.
+[]</description></item><item><title>copy</title><link>https://docs.thingsdb.net/v1/data-types/set/copy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/set/copy/</guid><description>Copy a set.
+If a deep value higher than 0 (default) is used, then this function will create copies of the things within the set.
+This function does not generate a change.
+Function set.copy([deep]])
+Arguments Argument Type Description deep int (optional) How deep to copy things withing the set. Default is 0 (only a copy of the set, not the things within the set).</description></item><item><title>dup</title><link>https://docs.thingsdb.net/v1/data-types/set/dup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/set/dup/</guid><description>Duplicate a set.
+If a deep value higher than 0 (default) is used, then this function will also create duplicates of the things within the set.
+This function does not generate a change.
+Function set.dup([deep]])
+Arguments Argument Type Description deep int (optional) How deep to duplicate things withing the set. Default is 0 (only a duplicate of the set, not the things within the set).</description></item><item><title>each</title><link>https://docs.thingsdb.net/v1/data-types/set/each/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/set/each/</guid><description>Iterate over items in a set.
 Be aware that the order when iterating over a set or a thing is not guaranteed.
 This function does not generate a change.
 Function set.each(callback)
