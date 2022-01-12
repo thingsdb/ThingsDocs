@@ -1,6 +1,6 @@
 ---
 title: "tuple"
-weight: 161
+weight: 165
 ---
 
 All nested *arrays* are immutable and thus tuples.
@@ -23,6 +23,8 @@ A `tuple` only becomes a `tuple` when it is nested inside another `tuple` or `li
 Function | Description
 ------ | -----------
 [choice](../list/choice) | Return a random item from a tuple.
+[copy](../list/copy) | Copy a tuple *(same as [dup](../list/dup) unless a non-zero deep argument is used)*.
+[dup](../list/dup) | Duplicate a tuple.
 [each](../list/each) | Iterate over all items in a tuple.
 [every](../list/every) | Check if all items pass a given test.
 [filter](../list/filter) | Return a new `list` with items that pass a given test.

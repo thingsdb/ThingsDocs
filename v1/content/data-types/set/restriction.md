@@ -1,6 +1,6 @@
 ---
 title: "restriction"
-weight: 110
+weight: 114
 ---
 
 Returns the set restriction as type [str](../../str) or [nil](../../nil) when the set is *not* value restricted.

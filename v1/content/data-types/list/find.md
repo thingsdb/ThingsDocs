@@ -1,6 +1,6 @@
 ---
 title: "find"
-weight: 67
+weight: 69
 ---
 
 This function returns the value of the first item in the [list](..) or [tuple](../../tuple) that passes the test.

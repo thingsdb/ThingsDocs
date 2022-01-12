@@ -1,6 +1,6 @@
 ---
 title: "list"
-weight: 225
+weight: 229
 ---
 
 Returns a new empty [list](../../data-types/list) or returns a list for a given `set`.
@@ -15,11 +15,11 @@ This function does *not* generate a [change](../../overview/changes).
 
 Argument | Type | Description
 -------- | ---- | -----------
-value | set/list/tuple (optional) | Optional value to initialize the list.
+value | set/list/tuple (optional) | Optional value to initialize the list. If the argument is already a *list* or *tuple*, the return value will be the same *list* or *tuple*.
 
 ### Return value
 
-A new list.
+A new list *(Unless the given argument was a tuple or list, then no conversion takes place and the given list or tuple will be the return value)*.
 
 ### Example
 

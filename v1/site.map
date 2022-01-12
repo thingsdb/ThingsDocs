@@ -59,6 +59,8 @@ data-types
     list
         choice
         clear
+        copy
+        dup
         each
         every
         extend
@@ -98,6 +100,8 @@ data-types
     set
         add
         clear
+        copy
+        dup
         each
         every
         filter

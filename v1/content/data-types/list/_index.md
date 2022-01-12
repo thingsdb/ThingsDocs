@@ -15,6 +15,8 @@ Function | Description
 ------ | -----------
 [choice](./choice) | Return a random item from a list.
 [clear](./clear) | Remove all items from a list.
+[copy](./copy) | Copy a list *(same as [dup](./dup) unless a non-zero deep argument is used)*.
+[dup](./dup) | Duplicate a list.
 [each](./each) | Iterate over all items in a list.
 [every](./every) | Check if all items pass a given test.
 [extend](./extend) | Add an array with items to the end of a list and returns the new length.

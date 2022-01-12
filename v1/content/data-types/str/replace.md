@@ -1,6 +1,6 @@
 ---
 title: "replace"
-weight: 117
+weight: 121
 ---
 
 Return a new [string](..) in which in which the occurrences of *old* have been replaced with *new*. Instead of an *old* string it is also possible to use a regular expression and the *new* string may also be a closure which then in turn should return a new string to replace the *old* part with.

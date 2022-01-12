@@ -1,6 +1,6 @@
 ---
 title: "set"
-weight: 255
+weight: 259
 ---
 
 Returns a new empty [set](../../data-types/set). If an array is given, then all items in the
@@ -17,11 +17,11 @@ This function does *not* generate a [change](../../overview/changes).
 
 Argument | Type | Description
 -------- | ---- | -----------
-array_or_things | array/things (optional) | Optional array or things to initialize the set.
+array_or_things | array/set/things (optional) | Optional array or things to initialize the set. If the argument is already a *set*, the return value will be the same *set*.
 
 ### Return value
 
-A new set.
+A new set *(Unless the given argument was a set, then no conversion takes place and the given set will be the return value)*.
 
 ### Example
 

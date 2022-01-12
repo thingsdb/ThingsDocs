@@ -1,6 +1,6 @@
 ---
 title: "set"
-weight: 98
+weight: 100
 ---
 
 A set is a collection which is unordered and can only contain things.
@@ -12,6 +12,8 @@ Function | Description
 ------ | -----------
 [add](./add) | Add things to a set.
 [clear](./clear) | Remove all things from a set.
+[copy](./copy) | Copy a set *(same as [dup](./dup) unless a non-zero deep argument is used)*.
+[dup](./dup) | Duplicate a set.
 [each](./each) | Iterate over all items in a set.
 [every](./every) | Check if all things pass a given test.
 [filter](./filter) | Return a new `set` with things that pass a given test.

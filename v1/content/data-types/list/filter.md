@@ -1,6 +1,6 @@
 ---
 title: "filter"
-weight: 66
+weight: 68
 ---
 
 The function returns a new list with items that pass the test.
