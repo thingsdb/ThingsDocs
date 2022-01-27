@@ -25,7 +25,7 @@ sudo apt-get install -y \
 At least version `0.12.x` for library `libcleri-dev` is required.
 
 ```bash
-git clone https://github.com/transceptor-technology/libcleri.git
+git clone https://github.com/cesbit/libcleri.git
 cd libcleri/Release
 make
 sudo make install
