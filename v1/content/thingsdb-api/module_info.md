@@ -1,6 +1,6 @@
 ---
 title: "module_info"
-weight: 304
+weight: 305
 ---
 
 Returns information about a specific module.

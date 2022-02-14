@@ -1,6 +1,6 @@
 ---
 title: "has_module"
-weight: 300
+weight: 301
 ---
 
 Determines if a module exists in ThingsDB. The scope restriction of the module has no impact on the result of this function.

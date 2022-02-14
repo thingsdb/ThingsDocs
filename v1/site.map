@@ -183,6 +183,7 @@ collection-api
     bool
     bytes
     change_id
+    closure
     datetime
     deep
     del_enum

@@ -1,6 +1,6 @@
 ---
 title: "modules_info"
-weight: 305
+weight: 306
 ---
 
 Returns module information about all modules in ThingsDB.

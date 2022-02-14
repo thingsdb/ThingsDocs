@@ -1,6 +1,6 @@
 ---
 title: "json_load"
-weight: 228
+weight: 229
 ---
 
 Converts a JSON [string](../../data-types/str) into a ThingsDB value.
