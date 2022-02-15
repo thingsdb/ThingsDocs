@@ -22,15 +22,26 @@ This function generates a [change](../../overview/changes).
 
 ### Function
 
-`restore(filename, [take_access])`
+`restore(filename, [options])`
 
 ### Arguments
 
 Argument | Type | Description
 -------- | ---- | -----------
 `filename` | str | Tar file containing the backup, usually a file ending with `.tar.gz`.
-`take_access` | bool (optional) | When `true`, the users and tokens will **not** be restored, but instead the user performing the restore will be granted full access to all scopes. Default is `false`.
+`options` | thing (optional) | A thing with optional [options](#options).
 
+
+#### Options
+
+Option | Type | Description
+-------- | ---- | -----------
+`take_access` | bool | When `true`, the users and tokens will **not** be restored and all associated *tasks* will be cleared. The user performing the restore will be granted full access to all scopes. Default is `false`.
+`restore_tasks` | bool | When `true`, the tasks will be also be restored. If `false` or when `take_access` is set to `true`, all the *tasks* will be cleared. Default is `false`.
+
+{{% notice warning %}}
+The options `take_access` and `restore_tasks` cannot both be set to `true`.
+{{% /notice %}}
 
 ### Return value
 
@@ -41,7 +52,10 @@ Returns `nil` when successful.
 > Restore from a backup file
 
 ```thingsdb,syntax_only,@t
-restore('/tmp/backup.tar.gz');
+restore('/tmp/backup.tar.gz', {
+    take_access: true,
+    restore_tasks: false,
+});
 ```
 
 > Return value in JSON format
