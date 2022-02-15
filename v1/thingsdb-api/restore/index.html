@@ -6,17 +6,17 @@
 <meta name=description content="ThingsDB documentation">
 <link rel="shortcut icon" href=/v1/images/favicon.ico type=image/x-icon>
 <title>restore :: ThingsDB documentation</title>
-<link href=/v1/css/nucleus.css?1644908909 rel=stylesheet>
-<link href=/v1/css/fontawesome-all.min.css?1644908909 rel=stylesheet>
-<link href=/v1/css/hybrid.css?1644908909 rel=stylesheet>
-<link href=/v1/css/featherlight.min.css?1644908909 rel=stylesheet>
-<link href=/v1/css/perfect-scrollbar.min.css?1644908909 rel=stylesheet>
-<link href=/v1/css/auto-complete.css?1644908909 rel=stylesheet>
-<link href=/v1/css/atom-one-dark-reasonable.css?1644908909 rel=stylesheet>
-<link href=/v1/css/theme.css?1644908909 rel=stylesheet>
-<link href=/v1/css/hugo-theme.css?1644908909 rel=stylesheet>
-<link href=/v1/css/theme-mine.css?1644908909 rel=stylesheet>
-<script src=/v1/js/jquery-3.3.1.min.js?1644908909></script>
+<link href=/v1/css/nucleus.css?1644931316 rel=stylesheet>
+<link href=/v1/css/fontawesome-all.min.css?1644931316 rel=stylesheet>
+<link href=/v1/css/hybrid.css?1644931316 rel=stylesheet>
+<link href=/v1/css/featherlight.min.css?1644931316 rel=stylesheet>
+<link href=/v1/css/perfect-scrollbar.min.css?1644931316 rel=stylesheet>
+<link href=/v1/css/auto-complete.css?1644931316 rel=stylesheet>
+<link href=/v1/css/atom-one-dark-reasonable.css?1644931316 rel=stylesheet>
+<link href=/v1/css/theme.css?1644931316 rel=stylesheet>
+<link href=/v1/css/hugo-theme.css?1644931316 rel=stylesheet>
+<link href=/v1/css/theme-mine.css?1644931316 rel=stylesheet>
+<script src=/v1/js/jquery-3.3.1.min.js?1644931316></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}:not(pre)>code+span.copy-to-clipboard{display:none}</style>
 </head>
 <body data-url=/v1/thingsdb-api/restore/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/v1/js/lunr.min.js?1644908909></script>
-<script type=text/javascript src=/v1/js/auto-complete.js?1644908909></script>
+<script type=text/javascript src=/v1/js/lunr.min.js?1644931316></script>
+<script type=text/javascript src=/v1/js/auto-complete.js?1644931316></script>
 <script type=text/javascript>var baseurl="https://docs.thingsdb.net/v1/"</script>
-<script type=text/javascript src=/v1/js/search.js?1644908909></script>
+<script type=text/javascript src=/v1/js/search.js?1644931316></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -1986,7 +1986,7 @@ restore
 </div>
 <p>This function generates a <a href=../../overview/changes>change</a>.</p>
 <h3 id=function>Function</h3>
-<p><code>restore(filename, [take_access])</code></p>
+<p><code>restore(filename, [options])</code></p>
 <h3 id=arguments>Arguments</h3>
 <table>
 <thead>
@@ -2003,19 +2003,46 @@ restore
 <td>Tar file containing the backup, usually a file ending with <code>.tar.gz</code>.</td>
 </tr>
 <tr>
-<td><code>take_access</code></td>
-<td>bool (optional)</td>
-<td>When <code>true</code>, the users and tokens will <strong>not</strong> be restored, but instead the user performing the restore will be granted full access to all scopes. Default is <code>false</code>.</td>
+<td><code>options</code></td>
+<td>thing (optional)</td>
+<td>A thing with optional <a href=#options>options</a>.</td>
 </tr>
 </tbody>
 </table>
+<h4 id=options>Options</h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>take_access</code></td>
+<td>bool</td>
+<td>When <code>true</code>, the users and tokens will <strong>not</strong> be restored and all associated <em>tasks</em> will be cleared. The user performing the restore will be granted full access to all scopes. Default is <code>false</code>.</td>
+</tr>
+<tr>
+<td><code>restore_tasks</code></td>
+<td>bool</td>
+<td>When <code>true</code>, the tasks will be also be restored. If <code>false</code> or when <code>take_access</code> is set to <code>true</code>, all the <em>tasks</em> will be cleared. Default is <code>false</code>.</td>
+</tr>
+</tbody>
+</table>
+<div class="notices warning"><p>The options <code>take_access</code> and <code>restore_tasks</code> cannot both be set to <code>true</code>.</p>
+</div>
 <h3 id=return-value>Return value</h3>
 <p>Returns <code>nil</code> when successful.</p>
 <h3 id=example>Example</h3>
 <blockquote>
 <p>Restore from a backup file</p>
 </blockquote>
-<pre tabindex=0><code class=language-thingsdb,syntax_only,@t data-lang=thingsdb,syntax_only,@t>restore('/tmp/backup.tar.gz');
+<pre tabindex=0><code class=language-thingsdb,syntax_only,@t data-lang=thingsdb,syntax_only,@t>restore('/tmp/backup.tar.gz', {
+    take_access: true,
+    restore_tasks: false,
+});
 </code></pre><blockquote>
 <p>Return value in JSON format</p>
 </blockquote>
@@ -2033,18 +2060,18 @@ restore
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/v1/js/clipboard.min.js?1644908909></script>
-<script src=/v1/js/perfect-scrollbar.min.js?1644908909></script>
-<script src=/v1/js/perfect-scrollbar.jquery.min.js?1644908909></script>
-<script src=/v1/js/jquery.sticky.js?1644908909></script>
-<script src=/v1/js/featherlight.min.js?1644908909></script>
-<script src=/v1/js/highlight.pack.js?1644908909></script>
+<script src=/v1/js/clipboard.min.js?1644931316></script>
+<script src=/v1/js/perfect-scrollbar.min.js?1644931316></script>
+<script src=/v1/js/perfect-scrollbar.jquery.min.js?1644931316></script>
+<script src=/v1/js/jquery.sticky.js?1644931316></script>
+<script src=/v1/js/featherlight.min.js?1644931316></script>
+<script src=/v1/js/highlight.pack.js?1644931316></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=/v1/js/modernizr.custom-3.6.0.js?1644908909></script>
-<script src=/v1/js/learn.js?1644908909></script>
-<script src=/v1/js/hugo-learn.js?1644908909></script>
-<link href=/v1/mermaid/mermaid.css?1644908909 rel=stylesheet>
-<script src=/v1/mermaid/mermaid.js?1644908909></script>
+<script src=/v1/js/modernizr.custom-3.6.0.js?1644931316></script>
+<script src=/v1/js/learn.js?1644931316></script>
+<script src=/v1/js/hugo-learn.js?1644931316></script>
+<link href=/v1/mermaid/mermaid.css?1644931316 rel=stylesheet>
+<script src=/v1/mermaid/mermaid.js?1644931316></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 </body>
 </html>
