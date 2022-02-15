@@ -16,7 +16,7 @@ This function does *not* generate a [change](../../overview/changes).
 
 Argument | Type | Description
 -------- | ---- | -----------
-value | str (optional) | Convert a string into a closure. If omitted, closure `|| nil` is returned.
+value | str (optional) | Convert a string into a closure. If omitted the default closure `\|\| nil` is returned.
 
 ### Return value
 
