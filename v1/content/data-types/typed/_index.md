@@ -28,8 +28,9 @@ Function | Description
 [map](../thing/map) | Return a [list](../list) with the results of calling a provided closure on every property.
 [set](../thing/set) | Set a property of a typed thing to a new value.
 [values](../thing/values) | Return a list with all the property values of a typed thing.
+[to_thing](./to_thing) | Converts a *typed* thing to a *non-typed* [thing](../thing).
 [wrap](../thing/wrap) | Wrap the *typed* thing with a [Type](../../overview/type).
 
 {{% notice info %}}
-The above functions correspond to those of a `thing`. For that reason, they are only listed under the data type `thing`.
+Most of the above functions correspond to those of a `thing`. For that reason, they are only listed under the data type `thing`.
 {{% /notice %}}

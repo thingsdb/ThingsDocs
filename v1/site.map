@@ -164,6 +164,7 @@ data-types
     timeval
     tuple
     typed
+        to_thing
     wtype
         copy
         dup

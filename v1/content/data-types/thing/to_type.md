@@ -3,7 +3,7 @@ title: "to_type"
 weight: 161
 ---
 
-Converts a *[thing](../../thing)* into an *[typed](../../typed)* thing.
+Converts a *[thing](../../thing)* into a *[typed](../../typed)* thing.
 
 Before a thing may be converted, *all* the properties of the thing must have an exact match with the properties defined by the Type.
 It you later want to change tome properties, the function [mod_type](../../../collection-api/mod_type) can be used.
@@ -15,7 +15,7 @@ It is not possible to convert a thing into a Type with [relations](../../../coll
 {{% /notice %}}
 
 {{% notice warning %}}
-This function works only on a thing and can not be undone. **Converting a thing is therefore permanent**.
+Although it is possible to convert a *typed* thing to a *non-typed* thing using the [to_thing](../../typed/to_thing) function, this ***only works*** if the type is not dependent of any other type (including self dependencies). This is because ThingsDB is not able to tell if it is allowed to convert back to a *non-typed* thing when it might be required by a parent of the *typed* thing.
 {{% /notice %}}
 
 This function generates a [change](../../../overview/changes).

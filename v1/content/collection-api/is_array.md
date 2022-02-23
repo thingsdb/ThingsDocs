@@ -1,6 +1,6 @@
 ---
 title: "is_array"
-weight: 201
+weight: 202
 ---
 
 This function determines whether the provided value is of type [list](../../data-types/list) or [tuple](../../data-types/tuple) or not. The functions [is_list](../../collection-api/is_list) and
