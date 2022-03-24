@@ -6,30 +6,16 @@ chapter: true
 
 # Getting started
 
+There are a few options to get started with ThingsDB.
+
 ### Try for free
 
-Get your own **playground** for free at [https://thingsdb.net](https://thingsdb.net) and continue reading at [connect](../connect).
+Get your own **playground** for free at [https://thingsdb.net](https://thingsdb.net) and continue reading at the chapter [connect](../connect).
 
-Or.., build your own ThingsDB by cloning the [GitHub](https://github.com/thingsdb/ThingsDB) project and follow the steps in the next paragraphs.
+### Build from source
 
-### Docker images
+Here is a [tutorial](./build-from-source) explaining how to build the ThingsDB server from source code.
 
-Docker images are available at [GitHub](https://github.com/thingsdb/ThingsDB/pkgs/container/node/).
+### Docker
 
-
-Supported tags:
-
-`ghcr.io/thingsdb/node:VERSION` *(Minimal ThingsDB image based on Alpine Linux.)*
-
-`ghcr.io/thingsdb/node:gcloud-VERSION` *(Includes Google Cloud Utilities so ThingsDB can created backups in the Google Cloud.)*
-
-`ghcr.io/thingsdb/node:full-VERSION` *(Based on a Debian image with Google Cloud Utilities, Python3 and [py-timod](https://pypi.org/project/py-timod/) installed.)*
-
-`ghcr.io/thingsdb/node:latest` *(Latest ThingsDB build from the `master` branch using a minimal Alpine Linux base image)*
-
-
-### Run ThingsDB in GKE (Google Kubernetes Engine)
-
-The following link will explain how to deploy ThingsDB in GKE (Google Kubernetes Engine):
-
-[https://github.com/thingsdb/ThingsDB/tree/master/gke#readme](https://github.com/thingsdb/ThingsDB/tree/master/gke#readme)
+Want to use ThingsDB in Docker? Check out our [Docker guide](./docker).
