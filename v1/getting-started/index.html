@@ -6,17 +6,17 @@
 <meta name=description content="ThingsDB documentation">
 <link rel="shortcut icon" href=/v1/images/favicon.ico type=image/x-icon>
 <title>Getting started :: ThingsDB documentation</title>
-<link href=/v1/css/nucleus.css?1648210114 rel=stylesheet>
-<link href=/v1/css/fontawesome-all.min.css?1648210114 rel=stylesheet>
-<link href=/v1/css/hybrid.css?1648210114 rel=stylesheet>
-<link href=/v1/css/featherlight.min.css?1648210114 rel=stylesheet>
-<link href=/v1/css/perfect-scrollbar.min.css?1648210114 rel=stylesheet>
-<link href=/v1/css/auto-complete.css?1648210114 rel=stylesheet>
-<link href=/v1/css/atom-one-dark-reasonable.css?1648210114 rel=stylesheet>
-<link href=/v1/css/theme.css?1648210114 rel=stylesheet>
-<link href=/v1/css/hugo-theme.css?1648210114 rel=stylesheet>
-<link href=/v1/css/theme-mine.css?1648210114 rel=stylesheet>
-<script src=/v1/js/jquery-3.3.1.min.js?1648210114></script>
+<link href=/v1/css/nucleus.css?1648210868 rel=stylesheet>
+<link href=/v1/css/fontawesome-all.min.css?1648210868 rel=stylesheet>
+<link href=/v1/css/hybrid.css?1648210868 rel=stylesheet>
+<link href=/v1/css/featherlight.min.css?1648210868 rel=stylesheet>
+<link href=/v1/css/perfect-scrollbar.min.css?1648210868 rel=stylesheet>
+<link href=/v1/css/auto-complete.css?1648210868 rel=stylesheet>
+<link href=/v1/css/atom-one-dark-reasonable.css?1648210868 rel=stylesheet>
+<link href=/v1/css/theme.css?1648210868 rel=stylesheet>
+<link href=/v1/css/hugo-theme.css?1648210868 rel=stylesheet>
+<link href=/v1/css/theme-mine.css?1648210868 rel=stylesheet>
+<script src=/v1/js/jquery-3.3.1.min.js?1648210868></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}:not(pre)>code+span.copy-to-clipboard{display:none}</style>
 </head>
 <body data-url=/v1/getting-started/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/v1/js/lunr.min.js?1648210114></script>
-<script type=text/javascript src=/v1/js/auto-complete.js?1648210114></script>
+<script type=text/javascript src=/v1/js/lunr.min.js?1648210868></script>
+<script type=text/javascript src=/v1/js/auto-complete.js?1648210868></script>
 <script type=text/javascript>var baseurl="https://docs.thingsdb.net/v1/"</script>
-<script type=text/javascript src=/v1/js/search.js?1648210114></script>
+<script type=text/javascript src=/v1/js/search.js?1648210868></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -49,6 +49,11 @@ Getting started
 <li data-nav-id=/v1/getting-started/build-from-source/ title="Build from source" class=dd-item>
 <a href=/v1/getting-started/build-from-source/>
 Build from source
+</a>
+</li>
+<li data-nav-id=/v1/getting-started/docker/ title=Docker class=dd-item>
+<a href=/v1/getting-started/docker/>
+Docker
 </a>
 </li>
 <li data-nav-id=/v1/getting-started/configuration/ title=Configuration class=dd-item>
@@ -1955,17 +1960,14 @@ zero_div_err
 <div id=chapter>
 <div id=body-inner>
 <h1 id=getting-started>Getting started</h1>
+<p>There are a few options to get started with ThingsDB.</p>
 <h3 id=try-for-free>Try for free</h3>
-<p>Get your own <strong>playground</strong> for free at <a href=https://thingsdb.net>https://thingsdb.net</a> and continue reading at <a href=../connect>connect</a>.</p>
-<p>Or.., build your own ThingsDB by cloning the <a href=https://github.com/thingsdb/ThingsDB>GitHub</a> project and follow the steps in the next paragraphs.</p>
-<h3 id=docker-images>Docker images</h3>
-<p>Docker images are available at <a href=https://github.com/thingsdb/ThingsDB/pkgs/container/node/>GitHub</a>.</p>
-<p>Supported tags:</p>
-<p><code>ghcr.io/thingsdb/node:VERSION</code> <em>(Minimal ThingsDB image based on Alpine Linux.)</em></p>
-<p><code>ghcr.io/thingsdb/node:gcloud-VERSION</code> <em>(Includes Google Cloud Utilities so ThingsDB can created backups in the Google Cloud.)</em></p>
-<p><code>ghcr.io/thingsdb/node:full-VERSION</code> <em>(Based on a Debian image with Google Cloud Utilities, Python3 and <a href=https://pypi.org/project/py-timod/>py-timod</a> installed.)</em></p>
-<p><code>ghcr.io/thingsdb/node:latest</code> <em>(Latest ThingsDB build from the <code>master</code> branch using a minimal Alpine Linux base image)</em></p>
-<h3 id=run-thingsdb-in-gke-google-kubernetes-engine>Run ThingsDB in GKE (Google Kubernetes Engine)</h3>
+<p>Get your own <strong>playground</strong> for free at <a href=https://thingsdb.net>https://thingsdb.net</a> and continue reading at the chapter <a href=../connect>connect</a>.</p>
+<h3 id=build-from-source>Build from source</h3>
+<p>Here is a <a href=./build-from-source>tutorial</a> explaining how to build the ThingsDB server from source code.</p>
+<h3 id=docker>Docker</h3>
+<p>Want to use ThingsDB in Docker? Check out our <a href=./docker>Docker guide</a>.</p>
+<h3 id=gke-google-kubernetes-engine>GKE (Google Kubernetes Engine)</h3>
 <p>The following link will explain how to deploy ThingsDB in GKE (Google Kubernetes Engine):</p>
 <p><a href=https://github.com/thingsdb/ThingsDB/tree/master/gke#readme>https://github.com/thingsdb/ThingsDB/tree/master/gke#readme</a></p>
 <footer class=footline>
@@ -1980,18 +1982,18 @@ zero_div_err
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/v1/js/clipboard.min.js?1648210114></script>
-<script src=/v1/js/perfect-scrollbar.min.js?1648210114></script>
-<script src=/v1/js/perfect-scrollbar.jquery.min.js?1648210114></script>
-<script src=/v1/js/jquery.sticky.js?1648210114></script>
-<script src=/v1/js/featherlight.min.js?1648210114></script>
-<script src=/v1/js/highlight.pack.js?1648210114></script>
+<script src=/v1/js/clipboard.min.js?1648210868></script>
+<script src=/v1/js/perfect-scrollbar.min.js?1648210868></script>
+<script src=/v1/js/perfect-scrollbar.jquery.min.js?1648210868></script>
+<script src=/v1/js/jquery.sticky.js?1648210868></script>
+<script src=/v1/js/featherlight.min.js?1648210868></script>
+<script src=/v1/js/highlight.pack.js?1648210868></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=/v1/js/modernizr.custom-3.6.0.js?1648210114></script>
-<script src=/v1/js/learn.js?1648210114></script>
-<script src=/v1/js/hugo-learn.js?1648210114></script>
-<link href=/v1/mermaid/mermaid.css?1648210114 rel=stylesheet>
-<script src=/v1/mermaid/mermaid.js?1648210114></script>
+<script src=/v1/js/modernizr.custom-3.6.0.js?1648210868></script>
+<script src=/v1/js/learn.js?1648210868></script>
+<script src=/v1/js/hugo-learn.js?1648210868></script>
+<link href=/v1/mermaid/mermaid.css?1648210868 rel=stylesheet>
+<script src=/v1/mermaid/mermaid.js?1648210868></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 </body>
 </html>

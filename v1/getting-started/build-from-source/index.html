@@ -6,17 +6,17 @@
 <meta name=description content="ThingsDB documentation">
 <link rel="shortcut icon" href=/v1/images/favicon.ico type=image/x-icon>
 <title>Build from source :: ThingsDB documentation</title>
-<link href=/v1/css/nucleus.css?1648210112 rel=stylesheet>
-<link href=/v1/css/fontawesome-all.min.css?1648210112 rel=stylesheet>
-<link href=/v1/css/hybrid.css?1648210112 rel=stylesheet>
-<link href=/v1/css/featherlight.min.css?1648210112 rel=stylesheet>
-<link href=/v1/css/perfect-scrollbar.min.css?1648210112 rel=stylesheet>
-<link href=/v1/css/auto-complete.css?1648210112 rel=stylesheet>
-<link href=/v1/css/atom-one-dark-reasonable.css?1648210112 rel=stylesheet>
-<link href=/v1/css/theme.css?1648210112 rel=stylesheet>
-<link href=/v1/css/hugo-theme.css?1648210112 rel=stylesheet>
-<link href=/v1/css/theme-mine.css?1648210112 rel=stylesheet>
-<script src=/v1/js/jquery-3.3.1.min.js?1648210112></script>
+<link href=/v1/css/nucleus.css?1648210866 rel=stylesheet>
+<link href=/v1/css/fontawesome-all.min.css?1648210866 rel=stylesheet>
+<link href=/v1/css/hybrid.css?1648210866 rel=stylesheet>
+<link href=/v1/css/featherlight.min.css?1648210866 rel=stylesheet>
+<link href=/v1/css/perfect-scrollbar.min.css?1648210866 rel=stylesheet>
+<link href=/v1/css/auto-complete.css?1648210866 rel=stylesheet>
+<link href=/v1/css/atom-one-dark-reasonable.css?1648210866 rel=stylesheet>
+<link href=/v1/css/theme.css?1648210866 rel=stylesheet>
+<link href=/v1/css/hugo-theme.css?1648210866 rel=stylesheet>
+<link href=/v1/css/theme-mine.css?1648210866 rel=stylesheet>
+<script src=/v1/js/jquery-3.3.1.min.js?1648210866></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}:not(pre)>code+span.copy-to-clipboard{display:none}</style>
 </head>
 <body data-url=/v1/getting-started/build-from-source/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/v1/js/lunr.min.js?1648210112></script>
-<script type=text/javascript src=/v1/js/auto-complete.js?1648210112></script>
+<script type=text/javascript src=/v1/js/lunr.min.js?1648210866></script>
+<script type=text/javascript src=/v1/js/auto-complete.js?1648210866></script>
 <script type=text/javascript>var baseurl="https://docs.thingsdb.net/v1/"</script>
-<script type=text/javascript src=/v1/js/search.js?1648210112></script>
+<script type=text/javascript src=/v1/js/search.js?1648210866></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -48,6 +48,11 @@ Getting started
 <li data-nav-id=/v1/getting-started/build-from-source/ title="Build from source" class="dd-item active">
 <a href=/v1/getting-started/build-from-source/>
 Build from source
+</a>
+</li>
+<li data-nav-id=/v1/getting-started/docker/ title=Docker class=dd-item>
+<a href=/v1/getting-started/docker/>
+Docker
 </a>
 </li>
 <li data-nav-id=/v1/getting-started/configuration/ title=Configuration class=dd-item>
@@ -1968,7 +1973,7 @@ zero_div_err
 <h1>
 Build from source
 </h1>
-<p>Install the following dependencies:</p>
+<p>First, install the following required dependencies:</p>
 <ul>
 <li>libuv1</li>
 <li>libpcre2</li>
@@ -1982,16 +1987,20 @@ Build from source
 </span><span style=color:#ae81ff></span>    libpcre2-dev <span style=color:#ae81ff>\
 </span><span style=color:#ae81ff></span>    libyajl-dev <span style=color:#ae81ff>\
 </span><span style=color:#ae81ff></span>    libcurl4-nss-dev <span style=color:#ae81ff>\
-</span></code></pre></div><p>At least version <code>0.12.x</code> for library <code>libcleri-dev</code> is required.</p>
+</span></code></pre></div><p>Libcleri can be compiled and installed from the <a href=https://github.com/cesbit/libcleri>source code</a>:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>git clone https://github.com/cesbit/libcleri.git
 cd libcleri/Release
 make
 sudo make install
-</code></pre></div><p>Next, clone the project</p>
+</code></pre></div><blockquote>
+<p><strong>Note</strong>: At least version <code>0.12.x</code> for library <code>libcleri-dev</code> is required.</p>
+</blockquote>
+<p>Next, clone the ThingsDB project.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>git clone https://github.com/thingsdb/ThingsDB.git
-</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>cd ThingsDB/Release
+</code></pre></div><p>Then compile the source code to make it executable.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>cd ThingsDB/Release
 make clean <span style=color:#f92672>&amp;&amp;</span> make
-</code></pre></div><p>You might want to create a symlink like this:</p>
+</code></pre></div><p>Finally, you might want to create a symlink like this:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo ln -s ~/ThingsDB/Release/thingsdb /usr/local/bin/thingsdb
 </code></pre></div>
 <footer class=footline>
@@ -2000,24 +2009,24 @@ make clean <span style=color:#f92672>&amp;&amp;</span> make
 </div>
 <div id=navigation>
 <a class="nav nav-prev" href=/v1/getting-started/ title="Getting started"> <i class="fa fa-chevron-left"></i></a>
-<a class="nav nav-next" href=/v1/getting-started/configuration/ title=Configuration style=margin-right:0><i class="fa fa-chevron-right"></i></a>
+<a class="nav nav-next" href=/v1/getting-started/docker/ title=Docker style=margin-right:0><i class="fa fa-chevron-right"></i></a>
 </div>
 </section>
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/v1/js/clipboard.min.js?1648210112></script>
-<script src=/v1/js/perfect-scrollbar.min.js?1648210112></script>
-<script src=/v1/js/perfect-scrollbar.jquery.min.js?1648210112></script>
-<script src=/v1/js/jquery.sticky.js?1648210112></script>
-<script src=/v1/js/featherlight.min.js?1648210112></script>
-<script src=/v1/js/highlight.pack.js?1648210112></script>
+<script src=/v1/js/clipboard.min.js?1648210866></script>
+<script src=/v1/js/perfect-scrollbar.min.js?1648210866></script>
+<script src=/v1/js/perfect-scrollbar.jquery.min.js?1648210866></script>
+<script src=/v1/js/jquery.sticky.js?1648210866></script>
+<script src=/v1/js/featherlight.min.js?1648210866></script>
+<script src=/v1/js/highlight.pack.js?1648210866></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=/v1/js/modernizr.custom-3.6.0.js?1648210112></script>
-<script src=/v1/js/learn.js?1648210112></script>
-<script src=/v1/js/hugo-learn.js?1648210112></script>
-<link href=/v1/mermaid/mermaid.css?1648210112 rel=stylesheet>
-<script src=/v1/mermaid/mermaid.js?1648210112></script>
+<script src=/v1/js/modernizr.custom-3.6.0.js?1648210866></script>
+<script src=/v1/js/learn.js?1648210866></script>
+<script src=/v1/js/hugo-learn.js?1648210866></script>
+<link href=/v1/mermaid/mermaid.css?1648210866 rel=stylesheet>
+<script src=/v1/mermaid/mermaid.js?1648210866></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 </body>
 </html>
