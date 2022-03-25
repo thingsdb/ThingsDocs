@@ -33,11 +33,11 @@ The value `nil`.
 // Create enum `Color`
 set_enum('Color', {
     RED: '#ff0000',
-    BLUE: '#00ff00'
+    GREEN: '#00ff00'
 });
 
-// Remove `BLUE` from enum `Color`
-mod_enum('Color', 'del', 'BLUE');
+// Remove `GREEN` from enum `Color`
+mod_enum('Color', 'del', 'GREEN');
 ```
 
 > Return value in JSON format

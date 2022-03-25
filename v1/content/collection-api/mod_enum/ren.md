@@ -31,12 +31,12 @@ The value `nil`.
 // Create enum `Color`
 set_enum('Color', {
     RED: '#ff0000',
-    BLUE: '#00ff00',
-    GRAS: '#0000ff',
+    GREEN: '#00ff00',
+    SKY: '#0000ff',
 });
 
-// Modify `GRAS` to `GREEN`
-mod_enum('Color', 'ren', 'GRAS', 'GREEN');
+// Modify `SKY` to `BLUE`
+mod_enum('Color', 'ren', 'SKY', 'BLUE');
 ```
 
 > Return value in JSON format
