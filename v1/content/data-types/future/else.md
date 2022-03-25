@@ -1,6 +1,6 @@
 ---
 title: "else"
-weight: 57
+weight: 58
 ---
 
 Function *else* accepts a [closure](../../closure) as argument which

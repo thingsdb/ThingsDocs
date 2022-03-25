@@ -1,6 +1,6 @@
 ---
 title: "list"
-weight: 231
+weight: 232
 ---
 
 Returns a new empty [list](../../data-types/list) or returns a list for a given `set`.

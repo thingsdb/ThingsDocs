@@ -1,6 +1,6 @@
 ---
 title: "len"
-weight: 34
+weight: 35
 ---
 
 Returns the length of the bytes value.

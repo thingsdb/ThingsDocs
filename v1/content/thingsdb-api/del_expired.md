@@ -1,6 +1,6 @@
 ---
 title: "del_expired"
-weight: 294
+weight: 295
 ---
 
 Delete all expired tokens.

@@ -1,6 +1,6 @@
 ---
 title: "restriction"
-weight: 83
+weight: 84
 ---
 
 Returns the lst restriction as type [str](../../str) or [nil](../../nil) when the list is *not* value restricted.

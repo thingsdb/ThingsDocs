@@ -1,6 +1,6 @@
 ---
 title: "Authentication"
-weight: 7
+weight: 8
 ---
 
 ThingsDB supports authentication by using a *user* and *password* combination, or with a *token*. A default user `admin` with password `pass` is created on a fresh installation.

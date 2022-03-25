@@ -1,6 +1,6 @@
 ---
 title: "extract"
-weight: 39
+weight: 40
 ---
 
 Return a `thing` with `second`, `minute`, `hour`, `day`, `month`, `year` and `gmt_offset` as individual properties.

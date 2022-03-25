@@ -4,7 +4,7 @@ weight: 2
 chapter: false
 ---
 
-Install the following dependencies:
+First, install the following required dependencies:
 
 - libuv1
 - libpcre2
@@ -12,7 +12,7 @@ Install the following dependencies:
 - libcurl
 - libcleri (`>=1.0.0`)
 
-When using Debian/Ubuntu; *libuv1*, *libpcre2*, *libyajl* and *libcurl* can be installed using apt:
+When using Debian/Ubuntu; _libuv1_, _libpcre2_, _libyajl_ and _libcurl_ can be installed using apt:
 
 ```bash
 sudo apt-get install -y \
@@ -22,7 +22,7 @@ sudo apt-get install -y \
     libcurl4-nss-dev \
 ```
 
-At least version `0.12.x` for library `libcleri-dev` is required.
+Libcleri can be compiled and installed from the [source code](https://github.com/cesbit/libcleri):
 
 ```bash
 git clone https://github.com/cesbit/libcleri.git
@@ -31,18 +31,22 @@ make
 sudo make install
 ```
 
-Next, clone the project
+> **Note**: At least version `0.12.x` for library `libcleri-dev` is required.
+
+Next, clone the ThingsDB project.
 
 ```bash
 git clone https://github.com/thingsdb/ThingsDB.git
 ```
+
+Then compile the source code to make it executable.
 
 ```bash
 cd ThingsDB/Release
 make clean && make
 ```
 
-You might want to create a symlink like this:
+Finally, you might want to create a symlink like this:
 
 ```bash
 sudo ln -s ~/ThingsDB/Release/thingsdb /usr/local/bin/thingsdb
