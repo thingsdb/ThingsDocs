@@ -1,6 +1,6 @@
 ---
 title: "unique"
-weight: 89
+weight: 90
 ---
 
 This function returns a *new* list where each item in the list is unique. If duplicated items are found, the first item will be retained.

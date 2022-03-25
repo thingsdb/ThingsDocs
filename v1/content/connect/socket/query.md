@@ -1,6 +1,6 @@
 ---
 title: "Example query"
-weight: 14
+weight: 15
 ---
 
 Query ThingsDB. A successful query request will respond with a `DATA (18)` package.

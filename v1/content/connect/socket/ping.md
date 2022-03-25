@@ -1,6 +1,6 @@
 ---
 title: "Example ping"
-weight: 12
+weight: 13
 ---
 
 Can be used as keep-alive. A successful ping will respond with a `PONG (16)`

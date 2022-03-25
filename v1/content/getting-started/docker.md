@@ -17,12 +17,6 @@ Docker images of ThingsDB are available at [GitHub](https://github.com/thingsdb/
 
 `ghcr.io/thingsdb/node:latest` _(Latest ThingsDB build from the `master` branch using a minimal Alpine Linux base image)_
 
-### Run ThingsDB in GKE (Google Kubernetes Engine)
-
-The following link will explain how to deploy ThingsDB in GKE (Google Kubernetes Engine):
-
-[https://github.com/thingsdb/ThingsDB/tree/master/gke#readme](https://github.com/thingsdb/ThingsDB/tree/master/gke#readme)
-
 ### Getting started
 
 The basic steps required to run the ThingsDB server in Docker are explained below.
