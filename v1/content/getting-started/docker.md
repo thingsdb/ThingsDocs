@@ -38,7 +38,7 @@ The pull command fetches the latest ThingsDB server image from the GitHub Contai
 Great! Let's now run a Docker container based on this image. To do that you are going to use the `docker run` command.
 
 ```bash
-$ docker run -d -p 9200:9200 -v ~/thingsdb-data:/data -v ~/thingsdb-modules:/modules  ghcr.io/thingsdb/node --init
+$ docker run --name thingsdb -d -p 9200:9200 -v ~/thingsdb-data:/data -v ~/thingsdb-modules:/modules  ghcr.io/thingsdb/node --init
 ```
 
 You’ll notice a few flags being used. Here’s some more info on them:
@@ -60,7 +60,7 @@ This command shows you all containers that are currently running and should disp
 
 ```bash
 CONTAINER ID   IMAGE                   COMMAND                  CREATED         STATUS         PORTS                                                                     NAMES
-408e414a0213   ghcr.io/thingsdb/node   "/usr/local/bin/thin…"   9 seconds ago   Up 8 seconds   8080/tcp, 9210/tcp, 9220/tcp, 0.0.0.0:9200->9200/tcp, :::9200->9200/tcp   serene_roentgen
+408e414a0213   ghcr.io/thingsdb/node   "/usr/local/bin/thin…"   9 seconds ago   Up 8 seconds   8080/tcp, 9210/tcp, 9220/tcp, 0.0.0.0:9200->9200/tcp, :::9200->9200/tcp   thingsdb
 ```
 
 #### Stopping
@@ -68,5 +68,5 @@ CONTAINER ID   IMAGE                   COMMAND                  CREATED         
 To stop the active ThingsDB container, run the `docker stop` command.
 
 ```bash
-$ docker stop 408e414a0213
+$ docker stop thingsdb
 ```
