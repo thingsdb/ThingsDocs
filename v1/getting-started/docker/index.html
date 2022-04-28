@@ -6,17 +6,17 @@
 <meta name=description content="ThingsDB documentation">
 <link rel="shortcut icon" href=/v1/images/favicon.ico type=image/x-icon>
 <title>Docker :: ThingsDB documentation</title>
-<link href=/v1/css/nucleus.css?1651145651 rel=stylesheet>
-<link href=/v1/css/fontawesome-all.min.css?1651145651 rel=stylesheet>
-<link href=/v1/css/hybrid.css?1651145651 rel=stylesheet>
-<link href=/v1/css/featherlight.min.css?1651145651 rel=stylesheet>
-<link href=/v1/css/perfect-scrollbar.min.css?1651145651 rel=stylesheet>
-<link href=/v1/css/auto-complete.css?1651145651 rel=stylesheet>
-<link href=/v1/css/atom-one-dark-reasonable.css?1651145651 rel=stylesheet>
-<link href=/v1/css/theme.css?1651145651 rel=stylesheet>
-<link href=/v1/css/hugo-theme.css?1651145651 rel=stylesheet>
-<link href=/v1/css/theme-mine.css?1651145651 rel=stylesheet>
-<script src=/v1/js/jquery-3.3.1.min.js?1651145651></script>
+<link href=/v1/css/nucleus.css?1651147338 rel=stylesheet>
+<link href=/v1/css/fontawesome-all.min.css?1651147338 rel=stylesheet>
+<link href=/v1/css/hybrid.css?1651147338 rel=stylesheet>
+<link href=/v1/css/featherlight.min.css?1651147338 rel=stylesheet>
+<link href=/v1/css/perfect-scrollbar.min.css?1651147338 rel=stylesheet>
+<link href=/v1/css/auto-complete.css?1651147338 rel=stylesheet>
+<link href=/v1/css/atom-one-dark-reasonable.css?1651147338 rel=stylesheet>
+<link href=/v1/css/theme.css?1651147338 rel=stylesheet>
+<link href=/v1/css/hugo-theme.css?1651147338 rel=stylesheet>
+<link href=/v1/css/theme-mine.css?1651147338 rel=stylesheet>
+<script src=/v1/js/jquery-3.3.1.min.js?1651147338></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}:not(pre)>code+span.copy-to-clipboard{display:none}</style>
 </head>
 <body data-url=/v1/getting-started/docker/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/v1/js/lunr.min.js?1651145651></script>
-<script type=text/javascript src=/v1/js/auto-complete.js?1651145651></script>
+<script type=text/javascript src=/v1/js/lunr.min.js?1651147338></script>
+<script type=text/javascript src=/v1/js/auto-complete.js?1651147338></script>
 <script type=text/javascript>var baseurl="https://docs.thingsdb.net/v1/"</script>
-<script type=text/javascript src=/v1/js/search.js?1651145651></script>
+<script type=text/javascript src=/v1/js/search.js?1651147338></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -2005,21 +2005,30 @@ Docker
 <p>The pull command fetches the latest ThingsDB server image from the GitHub Container Registry and saves it in your system.</p>
 <h4 id=running>Running</h4>
 <p>Great! Let&rsquo;s now run a Docker container based on this image. To do that you are going to use the <code>docker run</code> command.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ docker run -d -p 9200:9200 thingsdb/node
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ docker run <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    --name thingsdb <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    -d <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    -p 9200:9200 <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    -v ~/thingsdb-data:/data <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    -v ~/thingsdb-modules:/modules <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    ghcr.io/thingsdb/node --init
 </code></pre></div><p>You’ll notice a few flags being used. Here’s some more info on them:</p>
 <ul>
 <li><code>-d</code> - Run the container in detached mode (in the background).</li>
 <li><code>-p 9200:9200</code> - Map port 9200 of the host to port 9200 (ThingsDB port for client socket connections) in the container.</li>
-<li><code>thingsdb/node</code> - The image to use.</li>
+<li><code>-v ~/thingsdb-data:/data</code> - Mount a volume for ThingsDB data. (For data persistence)</li>
+<li><code>-v ~/thingsdb-modules:/modules</code> - Mount a volume for ThingsDB modules. (For data persistence)</li>
+<li><code>ghcr.io/thingsdb/node</code> - The image to use.</li>
+<li><code>--init</code> - For initializing ThingsDB. This argument is technically only required when running ThingsDB for the first time.</li>
 </ul>
 <p>To verify that the container is running, you can use the <code>docker ps</code> command.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ docker ps
 </code></pre></div><p>This command shows you all containers that are currently running and should display a similar output as this:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>CONTAINER ID   IMAGE           COMMAND                  CREATED          STATUS         PORTS                                                                     NAMES
-f0169c9e7939   thingsdb/node   <span style=color:#e6db74>&#34;/usr/local/bin/thin…&#34;</span>   <span style=color:#ae81ff>11</span> seconds ago   Up <span style=color:#ae81ff>9</span> seconds   8080/tcp, 9210/tcp, 9220/tcp, 0.0.0.0:9200-&gt;9200/tcp, :::9200-&gt;9200/tcp   objective_tu
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>CONTAINER ID   IMAGE                   COMMAND                  CREATED         STATUS         PORTS                                                                     NAMES
+408e414a0213   ghcr.io/thingsdb/node   <span style=color:#e6db74>&#34;/usr/local/bin/thin…&#34;</span>   <span style=color:#ae81ff>9</span> seconds ago   Up <span style=color:#ae81ff>8</span> seconds   8080/tcp, 9210/tcp, 9220/tcp, 0.0.0.0:9200-&gt;9200/tcp, :::9200-&gt;9200/tcp   thingsdb
 </code></pre></div><h4 id=stopping>Stopping</h4>
 <p>To stop the active ThingsDB container, run the <code>docker stop</code> command.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ docker stop thingsdb/node
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ docker stop thingsdb
 </code></pre></div>
 <footer class=footline>
 </footer>
@@ -2033,18 +2042,18 @@ f0169c9e7939   thingsdb/node   <span style=color:#e6db74>&#34;/usr/local/bin/thi
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/v1/js/clipboard.min.js?1651145651></script>
-<script src=/v1/js/perfect-scrollbar.min.js?1651145651></script>
-<script src=/v1/js/perfect-scrollbar.jquery.min.js?1651145651></script>
-<script src=/v1/js/jquery.sticky.js?1651145651></script>
-<script src=/v1/js/featherlight.min.js?1651145651></script>
-<script src=/v1/js/highlight.pack.js?1651145651></script>
+<script src=/v1/js/clipboard.min.js?1651147338></script>
+<script src=/v1/js/perfect-scrollbar.min.js?1651147338></script>
+<script src=/v1/js/perfect-scrollbar.jquery.min.js?1651147338></script>
+<script src=/v1/js/jquery.sticky.js?1651147338></script>
+<script src=/v1/js/featherlight.min.js?1651147338></script>
+<script src=/v1/js/highlight.pack.js?1651147338></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=/v1/js/modernizr.custom-3.6.0.js?1651145651></script>
-<script src=/v1/js/learn.js?1651145651></script>
-<script src=/v1/js/hugo-learn.js?1651145651></script>
-<link href=/v1/mermaid/mermaid.css?1651145651 rel=stylesheet>
-<script src=/v1/mermaid/mermaid.js?1651145651></script>
+<script src=/v1/js/modernizr.custom-3.6.0.js?1651147338></script>
+<script src=/v1/js/learn.js?1651147338></script>
+<script src=/v1/js/hugo-learn.js?1651147338></script>
+<link href=/v1/mermaid/mermaid.css?1651147338 rel=stylesheet>
+<script src=/v1/mermaid/mermaid.js?1651147338></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 </body>
 </html>
