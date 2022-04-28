@@ -158,6 +158,7 @@ data-types
         remove
         restrict
         restriction
+        search
         set
         to_type
         values

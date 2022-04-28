@@ -1,6 +1,6 @@
 ---
 title: "Publish a module"
-weight: 338
+weight: 339
 ---
 
 Modules can be published using a [GitHub](https://github.com) repository. A module repository mush at least contain a `module.json` file and the module file to start.

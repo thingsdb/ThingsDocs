@@ -1,6 +1,6 @@
 ---
 title: "del_node"
-weight: 297
+weight: 298
 ---
 
 This function can be used to delete a node from ThingsDB.
