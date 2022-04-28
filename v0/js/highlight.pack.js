@@ -1,5 +1,5 @@
 /*
-  Highlight.js 10.0.0-beta.0 (5ebf47bc)
+  Highlight.js 10.0.0-beta.0 (bdb5b648)
   License: BSD-3-Clause
   Copyright (c) 2006-2020, Ivan Sagalaev
 */
@@ -1899,7 +1899,7 @@ hljs.registerLanguage('thingsdb', function () {
                         'find_index|index_of|map|name|owner|set_owner|pop|push|remove|replace|reverse|restrict|restriction|split|sort|splice|unique|is_unique|' +
                         'at|again_in|again_at|cancel|add|err|clear|has|contains|ends_with|lower|starts_with|test|trim|trim_left|trim_right|upper|' +
                         'del|to_type|to_thing|get|id|keys|reduce|set|shift|some|value|values|wrap|unshift|unwrap|' +
-                        'extract|first|last|equals|then|else|format|move|to|week|weekday|yday|zone)\\s*(?=\\()'
+                        'search|extract|first|last|equals|then|else|format|move|to|week|weekday|yday|zone)\\s*(?=\\()'
                     ),
                 },
                 {
