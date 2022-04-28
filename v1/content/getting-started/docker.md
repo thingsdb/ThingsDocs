@@ -38,7 +38,13 @@ The pull command fetches the latest ThingsDB server image from the GitHub Contai
 Great! Let's now run a Docker container based on this image. To do that you are going to use the `docker run` command.
 
 ```bash
-$ docker run --name thingsdb -d -p 9200:9200 -v ~/thingsdb-data:/data -v ~/thingsdb-modules:/modules  ghcr.io/thingsdb/node --init
+$ docker run \
+    --name thingsdb \
+    -d \
+    -p 9200:9200 \
+    -v ~/thingsdb-data:/data \
+    -v ~/thingsdb-modules:/modules \
+    ghcr.io/thingsdb/node --init
 ```
 
 You’ll notice a few flags being used. Here’s some more info on them:
