@@ -3,8 +3,11 @@ title: "search"
 weight: 161
 ---
 
-Debug function to find the parent(s) of a given thing.
+Find the parent(s) of a given thing.
 
+{{% notice warning %}}
+This function is useful for **debugging purposes** and must **not be used in production** queries as the function isn't optimized for speed.
+{{% /notice %}}
 
 This function does *not* generate a [change](../../../overview/changes).
 

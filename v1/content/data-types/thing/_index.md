@@ -24,6 +24,7 @@ Function | Description
 [remove](./remove) | Remove properties that pass a given test and returns the removed *values* in a list.
 [restrict](./restrict) | Set or remove a value restriction on a thing.
 [restriction](./restriction) | Return the restriction of the thing or `nil` when the thing is not restricted.
+[search](./search) | Search for a given thing within a thing.
 [set](./set) | Create a new or overwrite an existing property on a thing.
 [to_type](./to_type) | Converts a thing into a [typed](../typed) thing.
 [values](./values) | Return a list with all the property values of a thing.
