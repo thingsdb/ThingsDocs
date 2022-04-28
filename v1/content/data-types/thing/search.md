@@ -42,8 +42,6 @@ Each result contains a thing with a `parent`, `parent_type`, `key` and `key_type
 > Return value in JSON format
 
 ```json
-1
-.search(thing(4))
 [
     {
         "key": "example",
