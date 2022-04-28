@@ -38,14 +38,23 @@ The pull command fetches the latest ThingsDB server image from the GitHub Contai
 Great! Let's now run a Docker container based on this image. To do that you are going to use the `docker run` command.
 
 ```bash
-$ docker run -d -p 9200:9200 thingsdb/node
+$ docker run \
+    --name thingsdb \
+    -d \
+    -p 9200:9200 \
+    -v ~/thingsdb-data:/data \
+    -v ~/thingsdb-modules:/modules \
+    ghcr.io/thingsdb/node --init
 ```
 
 You’ll notice a few flags being used. Here’s some more info on them:
 
 - `-d` - Run the container in detached mode (in the background).
 - `-p 9200:9200` - Map port 9200 of the host to port 9200 (ThingsDB port for client socket connections) in the container.
-- `thingsdb/node` - The image to use.
+- `-v ~/thingsdb-data:/data` - Mount a volume for ThingsDB data. (For data persistence)
+- `-v ~/thingsdb-modules:/modules` - Mount a volume for ThingsDB modules. (For data persistence)
+- `ghcr.io/thingsdb/node` - The image to use.
+- `--init` - For initializing ThingsDB. This argument is technically only required when running ThingsDB for the first time.
 
 To verify that the container is running, you can use the `docker ps` command.
 
@@ -56,8 +65,8 @@ $ docker ps
 This command shows you all containers that are currently running and should display a similar output as this:
 
 ```bash
-CONTAINER ID   IMAGE           COMMAND                  CREATED          STATUS         PORTS                                                                     NAMES
-f0169c9e7939   thingsdb/node   "/usr/local/bin/thin…"   11 seconds ago   Up 9 seconds   8080/tcp, 9210/tcp, 9220/tcp, 0.0.0.0:9200->9200/tcp, :::9200->9200/tcp   objective_tu
+CONTAINER ID   IMAGE                   COMMAND                  CREATED         STATUS         PORTS                                                                     NAMES
+408e414a0213   ghcr.io/thingsdb/node   "/usr/local/bin/thin…"   9 seconds ago   Up 8 seconds   8080/tcp, 9210/tcp, 9220/tcp, 0.0.0.0:9200->9200/tcp, :::9200->9200/tcp   thingsdb
 ```
 
 #### Stopping
@@ -65,5 +74,5 @@ f0169c9e7939   thingsdb/node   "/usr/local/bin/thin…"   11 seconds ago   Up 9 
 To stop the active ThingsDB container, run the `docker stop` command.
 
 ```bash
-$ docker stop thingsdb/node
+$ docker stop thingsdb
 ```
