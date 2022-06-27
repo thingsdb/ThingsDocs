@@ -8,7 +8,7 @@ Logical operators are generally used with [bool](../../data-types/bool) values.
 Operator | Description
 -------- | -----------
 `&&` | Logical AND.
-`||` | Logical OR.
+`\|\|` | Logical OR.
 
 As logical expressions are evaluated left to right, they are tested for possible *"short-circuit"* evaluation. This means that the evaluation of an expression is stopped when the outcome is determined. This applies in the following two cases:
 
