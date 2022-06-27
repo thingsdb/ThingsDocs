@@ -14,6 +14,6 @@ Symbol | Type of operation | Associativity
 `\|` | Bitwise OR | Left-to-right
 `==` `!=` `<=` `>=` `<` `>` | Compare | Left-to-right
 `&&` | Logical AND | Left-to-right
-`\||` | Logical OR | Left-to-right
+`\|\|` | Logical OR | Left-to-right
 `? :` | Conditional | Right-to-left
 `=` `*=` `/=` `%=` `+=` `-=` `&=` `^=` `\|=` | Assignments | Right-to-left
