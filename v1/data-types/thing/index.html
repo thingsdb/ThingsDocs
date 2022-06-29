@@ -6,17 +6,17 @@
 <meta name=description content="ThingsDB documentation">
 <link rel="shortcut icon" href=/v1/images/favicon.ico type=image/x-icon>
 <title>thing :: ThingsDB documentation</title>
-<link href=/v1/css/nucleus.css?1656342305 rel=stylesheet>
-<link href=/v1/css/fontawesome-all.min.css?1656342305 rel=stylesheet>
-<link href=/v1/css/hybrid.css?1656342305 rel=stylesheet>
-<link href=/v1/css/featherlight.min.css?1656342305 rel=stylesheet>
-<link href=/v1/css/perfect-scrollbar.min.css?1656342305 rel=stylesheet>
-<link href=/v1/css/auto-complete.css?1656342305 rel=stylesheet>
-<link href=/v1/css/atom-one-dark-reasonable.css?1656342305 rel=stylesheet>
-<link href=/v1/css/theme.css?1656342305 rel=stylesheet>
-<link href=/v1/css/hugo-theme.css?1656342305 rel=stylesheet>
-<link href=/v1/css/theme-mine.css?1656342305 rel=stylesheet>
-<script src=/v1/js/jquery-3.3.1.min.js?1656342305></script>
+<link href=/v1/css/nucleus.css?1656490763 rel=stylesheet>
+<link href=/v1/css/fontawesome-all.min.css?1656490763 rel=stylesheet>
+<link href=/v1/css/hybrid.css?1656490763 rel=stylesheet>
+<link href=/v1/css/featherlight.min.css?1656490763 rel=stylesheet>
+<link href=/v1/css/perfect-scrollbar.min.css?1656490763 rel=stylesheet>
+<link href=/v1/css/auto-complete.css?1656490763 rel=stylesheet>
+<link href=/v1/css/atom-one-dark-reasonable.css?1656490763 rel=stylesheet>
+<link href=/v1/css/theme.css?1656490763 rel=stylesheet>
+<link href=/v1/css/hugo-theme.css?1656490763 rel=stylesheet>
+<link href=/v1/css/theme-mine.css?1656490763 rel=stylesheet>
+<script src=/v1/js/jquery-3.3.1.min.js?1656490763></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}:not(pre)>code+span.copy-to-clipboard{display:none}</style>
 </head>
 <body data-url=/v1/data-types/thing/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/v1/js/lunr.min.js?1656342305></script>
-<script type=text/javascript src=/v1/js/auto-complete.js?1656342305></script>
+<script type=text/javascript src=/v1/js/lunr.min.js?1656490763></script>
+<script type=text/javascript src=/v1/js/auto-complete.js?1656490763></script>
 <script type=text/javascript>var baseurl="https://docs.thingsdb.net/v1/"</script>
-<script type=text/javascript src=/v1/js/search.js?1656342305></script>
+<script type=text/javascript src=/v1/js/search.js?1656490763></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -1974,6 +1974,7 @@ zero_div_err
 <li>
 <ul>
 <li><a href=#functions>Functions</a></li>
+<li><a href=#examples>Examples</a></li>
 </ul>
 </li>
 </ul>
@@ -1988,6 +1989,8 @@ zero_div_err
 <h1>
 thing
 </h1>
+<p>A Thing in ThingsDB is a <em>key/value</em> object where each key must be of type <a href=../str>str</a> <em>(except for some <a href=../../overview/properties>reserved properties</a>)</em> and values can be any type.
+For as long as a thing is used as a variable and not <em>stored</em> in a collection, a thing does not have an Id. Only when a <em>thing</em> is attached and therefore stored in a collection, ThingsDB will assign an Id to the <code>#</code> property. This property is not accessible but can be read using the <a href=./id>id()</a> function. <em>See <a href=#examples>examples</a> below.</em></p>
 <h3 id=functions>Functions</h3>
 <table>
 <thead>
@@ -2087,6 +2090,32 @@ thing
 </tr>
 </tbody>
 </table>
+<h3 id=examples>Examples</h3>
+<pre tabindex=0><code class=language-thingsdb data-lang=thingsdb>// create a new thing
+my_thing = {};
+
+// keys following the naming rules can be created and accessed using the `.key` syntax
+my_thing.color = 'blueish';
+
+// Functions like `get` and `set` can also be used to create and read properties,
+// and just as the bracket [..] notation they can be used to use keys which do not
+// follow the naming convention, for example a key with spaces:
+my_thing['with some spaces'] = 'almost any str is possible as key';
+
+ // my_thing does not have an Id as we are using it as a variable
+assert (my_thing.id() == nil);
+
+// attach to the collection will generate an Id
+.my_thing = my_thing;
+assert (my_thing.id() != nil);
+</code></pre><p>Properties can be set immediately at initialization. Its quite common to wite a query with query params where the query param is used as key/value pairs in a thing. In this case it is possible to use a short syntax.</p>
+<pre tabindex=0><code class=language-thingsdb data-lang=thingsdb>// this query is called with name='...'
+// In this case writing &quot;name: name,&quot; is not required and a &quot;short&quot; syntax can be used
+my_thing = {
+    name:,
+    other: 'another key/value pair'
+};
+</code></pre>
 <footer class=footline>
 </footer>
 </div>
@@ -2099,18 +2128,18 @@ thing
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/v1/js/clipboard.min.js?1656342305></script>
-<script src=/v1/js/perfect-scrollbar.min.js?1656342305></script>
-<script src=/v1/js/perfect-scrollbar.jquery.min.js?1656342305></script>
-<script src=/v1/js/jquery.sticky.js?1656342305></script>
-<script src=/v1/js/featherlight.min.js?1656342305></script>
-<script src=/v1/js/highlight.pack.js?1656342305></script>
+<script src=/v1/js/clipboard.min.js?1656490763></script>
+<script src=/v1/js/perfect-scrollbar.min.js?1656490763></script>
+<script src=/v1/js/perfect-scrollbar.jquery.min.js?1656490763></script>
+<script src=/v1/js/jquery.sticky.js?1656490763></script>
+<script src=/v1/js/featherlight.min.js?1656490763></script>
+<script src=/v1/js/highlight.pack.js?1656490763></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=/v1/js/modernizr.custom-3.6.0.js?1656342305></script>
-<script src=/v1/js/learn.js?1656342305></script>
-<script src=/v1/js/hugo-learn.js?1656342305></script>
-<link href=/v1/mermaid/mermaid.css?1656342305 rel=stylesheet>
-<script src=/v1/mermaid/mermaid.js?1656342305></script>
+<script src=/v1/js/modernizr.custom-3.6.0.js?1656490763></script>
+<script src=/v1/js/learn.js?1656490763></script>
+<script src=/v1/js/hugo-learn.js?1656490763></script>
+<link href=/v1/mermaid/mermaid.css?1656490763 rel=stylesheet>
+<script src=/v1/mermaid/mermaid.js?1656490763></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 </body>
 </html>
