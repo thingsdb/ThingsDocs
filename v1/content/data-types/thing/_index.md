@@ -3,6 +3,9 @@ title: "thing"
 weight: 143
 ---
 
+A Thing in ThingsDB is a _key/value_ object where each key must be of type [str](../str) _(except for some [reserved properties](../../overview/properties))_ and values can be any type.
+For as long as a thing is used as a variable and not _stored_ in a collection, a thing does not have an Id. Only when a _thing_ is attached and therefore stored in a collection, ThingsDB will assign an Id to the `#` property. This property is not accessible but can be read using the [id()](./id) function. _See [examples](#examples) below._
+
 ### Functions
 
 Function | Description
@@ -29,3 +32,36 @@ Function | Description
 [to_type](./to_type) | Converts a thing into a [typed](../typed) thing.
 [values](./values) | Return a list with all the property values of a thing.
 [wrap](./wrap) | Wrap the *thing* with a [Type](../../overview/type).
+
+### Examples
+
+```thingsdb
+// create a new thing
+my_thing = {};
+
+// keys following the naming rules can be created and accessed using the `.key` syntax
+my_thing.color = 'blueish';
+
+// Functions like `get` and `set` can also be used to create and read properties,
+// and just as the bracket [..] notation they can be used to use keys which do not
+// follow the naming convention, for example a key with spaces:
+my_thing['with some spaces'] = 'almost any str is possible as key';
+
+ // my_thing does not have an Id as we are using it as a variable
+assert (my_thing.id() == nil);
+
+// attach to the collection will generate an Id
+.my_thing = my_thing;
+assert (my_thing.id() != nil);
+```
+
+Properties can be set immediately at initialization. Its quite common to wite a query with query params where the query param is used as key/value pairs in a thing. In this case it is possible to use a short syntax.
+
+```thingsdb
+// this query is called with name='...'
+// In this case writing "name: name," is not required and a "short" syntax can be used
+my_thing = {
+    name:,
+    other: 'another key/value pair'
+};
+```
