@@ -15,9 +15,9 @@ res = alt_raise(statement, error_code);
 // is equivalent to:
 res = try(statement);
 
-if (is_err(res), {
+if (is_err(res)) {
     raise(error_code, res.msg());
-});
+};
 ```
 
 >With an error message
@@ -29,9 +29,9 @@ res = alt_raise(statement, error_code, err_msg);
 // is equivalent to:
 res = try(statement);
 
-if (is_err(res), {
+if (is_err(res)) {
     raise(error_code, err_msg);
-});
+};
 ```
 
 This function does *not* generate a [change](../../overview/changes).

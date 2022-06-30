@@ -48,8 +48,8 @@ future(nil, 42);
 // dummy condition
 condition = 2 > 1;
 
-if (condition, future(|| {
+if (condition) future(|| {
     // a change is only required if the condition evaluates to `true`
     .only_if_condition = true;
-}));
+});
 ```

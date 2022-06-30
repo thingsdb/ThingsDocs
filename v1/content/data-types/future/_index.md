@@ -11,31 +11,31 @@ For example, the code below will always create a *change*, no matter what the va
 has to know if a *change* is required before it knows the value of `x`.
 
 ```thingsdb,syntax_only
-if (x > 10, {
+if (x > 10) {
     .answers.push(x);
-});
+};
 ```
 
 When using a future we could optimize the code:
 
 ```thingsdb,syntax_only
-if (x > 10, {
+if (x > 10) {
     future(nil, x).then(|_, x| {
         .answers.push(x);  // This will still require a *change*, but the event
                            // is only created when x > 10.
     });
-});
+};
 ```
 
 Instead of using the `future(nil, ..).then(|_, ..| ..)` construction, a future accepts a closure as first argument to be used as a shortcut. So the above can be written as:
 
 ```thingsdb,syntax_only
-if (x > 10, {
+if (x > 10) {
     future(|x| {
         .answers.push(x);  // This will still require a *change*, but the event
                            // is only created when x > 10.
     });
-});
+};
 ```
 
 

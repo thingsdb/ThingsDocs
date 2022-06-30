@@ -38,11 +38,11 @@ task(
     datetime(),
     |task, x| {
         task.set_args([x+1]);
-        if (x < 10, {
+        if (x < 10) {
             log(`x = {x}`);
             task.again_in('seconds', 10);
             return nil;
-        });
+        };
         log('Task `count x` is Done!');
     },
     [1]
