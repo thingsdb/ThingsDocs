@@ -87,7 +87,11 @@ Since the root of a collection is also a thing, it is possible to use this funct
 It is not possible to convert a thing into a Type with relations.</description></item><item><title>values</title><link>https://docs.thingsdb.net/v1/data-types/thing/values/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/thing/values/</guid><description>Returns a list with all the property values of a thing. The same could be returned using map so the following statement is true:
 (.values() == .map(|_, v| v))
 Although the values() and map() in the example above will return a list with the same order, the order of values in the list is not guaranteed and may be different each time you run the query.
-This function does not generate a change.</description></item><item><title>wrap</title><link>https://docs.thingsdb.net/v1/data-types/thing/wrap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/thing/wrap/</guid><description>Wrap a thing with a Type to filter out properties, while preserving the Id. A wrapped thing inherits the methods from the type it is wrapped with.
+This function does not generate a change.</description></item><item><title>vmap</title><link>https://docs.thingsdb.net/v1/data-types/thing/vmap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/thing/vmap/</guid><description>The function returns a new thing with equal keys but values computed as a result of a given closure callback.
+This function does not generate a change.
+Function thing.vmap(callback)
+Arguments Argument Type Description callback closure (required) Closure to execute on each value. Explanation of the callback argument:
+Iterable Arguments Description thing value Iterate over the thing values.</description></item><item><title>wrap</title><link>https://docs.thingsdb.net/v1/data-types/thing/wrap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/thing/wrap/</guid><description>Wrap a thing with a Type to filter out properties, while preserving the Id. A wrapped thing inherits the methods from the type it is wrapped with.
 For a more advanced example using wrap() and unwrap() see &amp;lt;Type&amp;gt;.
 Function thing.wrap(Type)
 Arguments Argument Arguments Description Type str (optional) Type&amp;rsquo;s name to wrap the thing with. If not given, the thing will be wrapped with it&amp;rsquo;s own type.</description></item></channel></rss>
