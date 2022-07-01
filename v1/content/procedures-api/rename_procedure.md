@@ -1,6 +1,6 @@
 ---
 title: "rename_procedure"
-weight: 335
+weight: 336
 ---
 
 Rename a procedure.

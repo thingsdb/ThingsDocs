@@ -31,6 +31,7 @@ Function | Description
 [set](./set) | Create a new or overwrite an existing property on a thing.
 [to_type](./to_type) | Converts a thing into a [typed](../typed) thing.
 [values](./values) | Return a list with all the property values of a thing.
+[vmap](./vmap) | Returns a new thing with equal keys but values as a result of a given closure.
 [wrap](./wrap) | Wrap the *thing* with a [Type](../../overview/type).
 
 ### Examples

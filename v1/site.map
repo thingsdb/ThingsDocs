@@ -162,6 +162,7 @@ data-types
         set
         to_type
         values
+        vmap
         wrap
     timeval
     tuple

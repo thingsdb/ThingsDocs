@@ -1,6 +1,6 @@
 ---
 title: "log"
-weight: 234
+weight: 235
 ---
 
 Might be used for debugging code. The message will be logged as a warning message on the console of the node which is processing the request.

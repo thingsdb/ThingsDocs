@@ -1,6 +1,6 @@
 ---
 title: "dup"
-weight: 172
+weight: 173
 ---
 
 Duplicate a [wrapped](../) thing.
