@@ -159,11 +159,11 @@ type_err(&amp;quot;incorrect type&amp;quot;).msg(); Return value in JSON format
 Useful functions Function Description float return a float type for a given value. is_float check if the given value is of the float type. is_inf check if the given value is infinite. is_nan check if the given value is not-a-number.</description></item><item><title>then</title><link>https://docs.thingsdb.net/v1/data-types/future/then/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/future/then/</guid><description>Function then accepts a closure as argument which will be executed only when the future is successful. The code inside the closure will only generate a change then the closure code is executed. The return value of the closure will be used as the new future value.
 The closure will be called with the same arguments as given to the future, except for the first argument, which can be the result of a module.</description></item><item><title>else</title><link>https://docs.thingsdb.net/v1/data-types/future/else/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/future/else/</guid><description>Function else accepts a closure as argument which will be executed only when the future is using a module which has failed with some error. The code inside the closure will only generate a change when the closure code is executed. The return value of the closure will be used as the new future value.
 The closure will be called with the same arguments as given to the future, except for the first argument, which is the error from the module.</description></item><item><title>int</title><link>https://docs.thingsdb.net/v1/data-types/int/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/int/</guid><description>ThingsDB can store 64bit signed integer values. When assigning integer values larger than 64bit, an overflow_err() will be returned. Other types can be converted to int by using the int function.
-Notations Base Example Description 2 0b1111011 Binary notation starts with 0b (zero, lower case b), followed by binary digits (0-1). 8 0o173 Octal notation starts with 0o (zero, lower case o), followed by octal digits (0-8).</description></item><item><title>choice</title><link>https://docs.thingsdb.net/v1/data-types/list/choice/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/list/choice/</guid><description>This function returns a pseudo-random item from a list or tuple . The array must contain at least one item, otherwise a lookup_err() is raised.
+Notations Base Example Description 2 0b1111011 Binary notation starts with 0b (zero, lower case b), followed by binary digits (0-1). 8 0o173 Octal notation starts with 0o (zero, lower case o), followed by octal digits (0-8).</description></item><item><title>choice</title><link>https://docs.thingsdb.net/v1/data-types/list/choice/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/list/choice/</guid><description>This function returns a pseudo-random item from a list or tuple. The array must contain at least one item, otherwise a lookup_err() is raised.
 This function does not generate a change.
 Function array.choice()
 Arguments None
-Return value A pseudo-random item from the array.
+Return value A pseudo-random item from the array or a lookup_err() when empty.
 Example This code shows an example using choice():
 // Returns either `a`, `b` or `c` ['a', 'b', 'c'].choice(); Example return value in JSON format</description></item><item><title>clear</title><link>https://docs.thingsdb.net/v1/data-types/list/clear/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/list/clear/</guid><description>Removes all items from a list.
 This function generates a change
@@ -380,7 +380,14 @@ Be aware that the order when iterating over a set or a thing is not guaranteed.
 This function does not generate a change.
 Function set.map(callback)
 Arguments Explanation of the callback argument:
-Iterable Arguments Description set thing, Id Iterate over things in the set.</description></item><item><title>reduce</title><link>https://docs.thingsdb.net/v1/data-types/set/reduce/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/set/reduce/</guid><description>Executes a given reducer closure on every thing in the set, accumulating to a single return value.
+Iterable Arguments Description set thing, Id Iterate over things in the set.</description></item><item><title>one</title><link>https://docs.thingsdb.net/v1/data-types/set/one/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/set/one/</guid><description>This function returns a thing from a set. The set must contain at least one thing, otherwise a lookup_err() is raised.
+The thing which is returned from the set is neither random nor predictable.
+This function does not generate a change.
+Function set.one()
+Arguments None
+Return value One thing from the set or a lookup_err() when empty.
+Example This code shows an example using one():
+// Returns either Iris, Cato or Tess set({name: 'Iris'}, {name: 'Cato'}, {name: 'Tess'}, ).</description></item><item><title>reduce</title><link>https://docs.thingsdb.net/v1/data-types/set/reduce/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/set/reduce/</guid><description>Executes a given reducer closure on every thing in the set, accumulating to a single return value.
 A set is unordered and therefore the order how things are processed by the reducer might be different from what you expect.
 This function does not generate a change.
 Function set.reduce(reducer, [initial])

@@ -51,7 +51,14 @@ Be aware that the order when iterating over a set or a thing is not guaranteed.
 This function does not generate a change.
 Function set.map(callback)
 Arguments Explanation of the callback argument:
-Iterable Arguments Description set thing, Id Iterate over things in the set.</description></item><item><title>reduce</title><link>https://docs.thingsdb.net/v1/data-types/set/reduce/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/set/reduce/</guid><description>Executes a given reducer closure on every thing in the set, accumulating to a single return value.
+Iterable Arguments Description set thing, Id Iterate over things in the set.</description></item><item><title>one</title><link>https://docs.thingsdb.net/v1/data-types/set/one/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/set/one/</guid><description>This function returns a thing from a set. The set must contain at least one thing, otherwise a lookup_err() is raised.
+The thing which is returned from the set is neither random nor predictable.
+This function does not generate a change.
+Function set.one()
+Arguments None
+Return value One thing from the set or a lookup_err() when empty.
+Example This code shows an example using one():
+// Returns either Iris, Cato or Tess set({name: 'Iris'}, {name: 'Cato'}, {name: 'Tess'}, ).</description></item><item><title>reduce</title><link>https://docs.thingsdb.net/v1/data-types/set/reduce/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/set/reduce/</guid><description>Executes a given reducer closure on every thing in the set, accumulating to a single return value.
 A set is unordered and therefore the order how things are processed by the reducer might be different from what you expect.
 This function does not generate a change.
 Function set.reduce(reducer, [initial])
