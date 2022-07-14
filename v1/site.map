@@ -110,6 +110,7 @@ data-types
         has
         len
         map
+        one
         reduce
         remove
         restriction

@@ -1,6 +1,6 @@
 ---
 title: "mod"
-weight: 240
+weight: 241
 ---
 
 Modify a member value from an existing [enumerator type](../../../data-types/enum).

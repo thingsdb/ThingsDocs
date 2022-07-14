@@ -1,6 +1,6 @@
 ---
 title: "vmap"
-weight: 165
+weight: 166
 ---
 
 The function returns a new thing with equal keys but values computed as a result of a given closure callback.
