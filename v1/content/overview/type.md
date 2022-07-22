@@ -16,7 +16,7 @@ definition | default | description
 ---------- | ------- | -----------
 `'str'` | `""` | requires type [str](../../data-types/str) (values of type [str](../../data-types/str) *should* contain valid UTF-8 characters).
 `'str<..>'` | *depends* | requires type [str](../../data-types/str) with a certain length *(see [length condition](#length-condition) and [default value](#use-condition-to-set-a-default-value))*
-`/pattern/` | *depends* | requires type [str](../../data-types/str) with a math to a specified pattern *(see [pattern condition](#pattern-condition))*.
+`/pattern/` | *depends* | requires type [str](../../data-types/str) with a match to a specified pattern *(see [pattern condition](#pattern-condition))*.
 `'utf8'` | `""` | requires type [str](../../data-types/str) and the value *must* contain valid UTF-8 characters.
 `'raw'` | `""` | requires type [str](../../data-types/str) *or* [bytes](../../data-types/bytes).
 `'bytes'` | `bytes()` | requires type [bytes](../../data-types/bytes).
