@@ -40,13 +40,14 @@ loop.run_forever()
 
 ### Function
 
-*room*.`emit([deep], event, ...)`
+*room*.`emit([deep [, flags]], event, ...)`
 
 ### Arguments
 
 Argument | Type | Description
 -------- | ---- | -----------
 deep | int (optional) | Specify how [deep](../../../collection-api/return/#deep) the arguments must be send with the event. (defaults to the current *deep* value)
+flags | int | Specify which flags to use; see [return-flags](../../overview/statements/#return-flags)
 event | str (required) | Event name to emit. *(name must have at least 1 and at most 255 characters)*
 ... | any (optional) | Arguments send together with the event.
 

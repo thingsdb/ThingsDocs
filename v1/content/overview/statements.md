@@ -17,7 +17,7 @@ Statement  | Description
 ## return
 
 Every ThingsDB query will have a return value. If no `return` statement is used, then the *return value* will be the value of the last statement.
-It is therefore not required to use the `return` statement unless you want to return with a value *before* the end of the code is reached. THe `return` statement also accepts a second argument to specify a different [deep](../../collection-api/deep) level together with `return`.
+It is therefore not required to use the `return` statement unless you want to return with a value *before* the end of the code is reached. The `return` statement also accepts a second and third argument to specify a different [deep](../../collection-api/deep) level and optional [flags](#return-flags) together with `return`.
 
 Example usage of the *return* statement:
 
@@ -52,6 +52,31 @@ return {
     "nested": {
         "text": "this is a thing with a second level"
     }
+}
+```
+
+### return flags
+
+Flag   | Description
+------ | -----------
+NO_IDS | Return things without ID's, even when the _things_ are stored.
+
+> Example use of the `NO_IDS` flags:
+
+```thingsdb,json_response
+.my_thing = {
+    text: "this is an example without #"
+};
+
+// Return "my_thing", 1 level deep, without ID (#)
+return .my_thing, 1, NO_IDS;
+```
+
+> Return value in JSON format
+
+```json
+{
+    "text": "this is an example without #"
 }
 ```
 
