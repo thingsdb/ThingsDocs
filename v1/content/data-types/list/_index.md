@@ -32,6 +32,9 @@ Function | Description
 [last](./last) | Return the last item from a list.
 [len](./len) | Return the length of the list.
 [map](./map) | Return a new `list` with the results of calling a provided closure on every item.
+[map_id](./map_id) | Return a new `list` with the Ids for all the *things* in the original list.
+[map_type](./map_type) | Return a new `list` with each item of the original list converted to a *typed-thing* of the given Type.
+[map_wrap](./map_wrap) | Return a new `list` with the Ids for all the *things* in the original list.
 [pop](./pop) | Remove the last item from a list and returns that item.
 [push](./push) | Add new items to the end of a list and returns the new length.
 [reduce](./reduce) | Execute a reducer function on each item, resulting in a single output value.

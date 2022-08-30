@@ -77,6 +77,9 @@ data-types
         last
         len
         map
+        map_id
+        map_type
+        map_wrap
         pop
         push
         reduce
@@ -110,6 +113,8 @@ data-types
         has
         len
         map
+        map_id
+        map_wrap
         one
         reduce
         remove
@@ -201,7 +206,6 @@ collection-api
     future
     has_enum
     has_type
-    if
     int
     is_array
     is_ascii
@@ -260,7 +264,6 @@ collection-api
     regex
     rename_enum
     rename_type
-    return
     room
     set
     set_enum

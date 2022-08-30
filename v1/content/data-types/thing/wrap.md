@@ -1,6 +1,6 @@
 ---
 title: "wrap"
-weight: 167
+weight: 172
 ---
 
 Wrap a thing with a [Type](../../../overview/type) to filter out properties, while preserving the Id.
@@ -10,13 +10,13 @@ For a more advanced example using [wrap()](..) and [unwrap()](../../wtype/unwrap
 
 ### Function
 
-*thing*.`wrap(Type)`
+*thing*.`wrap([Type])`
 
 ### Arguments
 
 Argument | Arguments     | Description
 -------- | ------------- | -----------
-Type     | str (optional)| Type's name to wrap the thing with. If not given, the thing will be wrapped with it's own type.
+Type     | str (optional)| Type's name to wrap the thing with. If not given, the thing will be wrapped with its own type.
 
 ### Return value
 

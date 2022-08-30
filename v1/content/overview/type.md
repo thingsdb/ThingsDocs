@@ -32,7 +32,7 @@ definition | default | description
 `'datetime'` | `datetime()` | requires type [datetime](../../data-types/datetime). *(defaults to the current date/time)*
 `'timeval'` | `timeval()` | requires type [timeval](../../data-types/timeval). *(defaults to the current date/time)*
 `'regex'` | `regex('.*')` | requires type [regex](../../data-types/regex).
-`'closure'` | `||nil` | requires type [closure](../../data-types/closure).
+`'closure'` | `\|\|nil` | requires type [closure](../../data-types/closure).
 `'error'` | `err()` | requires type [error](../../data-types/error).
 `'room'` | `room()` | requires type [room](../../data-types/room).
 `'thing'` | `{}` | requires a [thing](../../data-types/thing).
@@ -85,6 +85,42 @@ assert(is_err(try(User{name: 0})));
         "name": "Iris"
     }
 ]
+```
+
+### Same deep level
+
+Any definable property can be pre-fixed with a `&` character which is only used after the type is used to wrap and tells to use the same *deep* level for this property.
+Although the character is allowed everywhere, it only has effect when the value is or contains *thing(s)*. Only a *thing* honors *deep* thus this makes sense.
+
+> For example
+
+```thingdb,json_response
+new_type('User');
+set_type('User', {
+    name: 'str',
+    friend: '&User?'
+});
+
+iris = User{
+    name: 'Iris',
+    friend: User{
+        name: 'Cato'
+    }
+};
+
+iris.wrap();
+```
+
+> Return value in JSON format
+
+```json
+{
+    "friend": {
+        "friend": null,
+        "name": "Cato"
+    },
+    "name": "Iris"
+}
 ```
 
 ### Restrict items

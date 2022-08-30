@@ -1,6 +1,6 @@
 ---
 title: "restart_module"
-weight: 291
+weight: 294
 ---
 
 Restarts a given module on the select node scope.

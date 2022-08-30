@@ -1,6 +1,6 @@
 ---
 title: "set"
-weight: 101
+weight: 104
 ---
 
 A set is a collection which is unordered and can only contain things.
@@ -21,6 +21,8 @@ Function | Description
 [has](./has) | Test if a set contains a given thing.
 [len](./len) | Return the length of a set.
 [map](./map) | Return a [list](../list) with the results of calling a provided closure on every thing.
+[map_id](./map_id) | Return a `list` with the Ids for all the *things* in the original *set*.
+[map_wrap](./map_wrap) | Return a `list` with the Ids for all the *things* in the original *set*.
 [one](./one) | Return one _thing_ from the set.
 [reduce](./reduce) | Execute a reducer function on each thing, resulting in a single output value.
 [remove](./remove) | Remove things from a set. Accepts one or more things to remove or a closure to be used as a test. The removed things are returned in a list.

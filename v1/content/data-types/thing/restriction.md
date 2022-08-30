@@ -1,6 +1,6 @@
 ---
 title: "restriction"
-weight: 161
+weight: 166
 ---
 
 Returns the value restriction of a thing as type [str](../../str) or [nil](../../nil) when the thing is *not* value restricted.
