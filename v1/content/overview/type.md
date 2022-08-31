@@ -126,11 +126,11 @@ iris.wrap();
 
 ### Named Id
 
-ThingsDB return the Id of a thing as property `#`. Thus, as an example you might get a result like this:
+ThingsDB returns the Id of a thing as property `#`. Thus, as an example you might get a result like this:
 
 ```thingsdb,should_pass
 set_type('Person', {name: 'str'});
-.alice = {name: 'Alice'};
+.alice = Person{name: 'Alice'};
 ```
 
 > Returns with something like:
@@ -144,8 +144,8 @@ set_type('Person', {name: 'str'});
 If we want something else than `#`, what we can do is define some property, for example `id` with the `#` definition:
 
 ```thingsdb,should_pass
-set_type('Person', {id: '#', nameL 'str'});
-.alice = {name: 'Alice'};
+set_type('Person', {id: '#', name: 'str'});
+.alice = Person{name: 'Alice'};
 ```
 
 > Returns with something like:
