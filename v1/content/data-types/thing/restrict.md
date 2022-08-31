@@ -27,9 +27,9 @@ Returns the thing
 
 ```thingsdb,json_response
 example = {}.restrict('int');
-example.x = 10;
-assert ( is_err ( try ( example.name = 'Iris' )));  // values must be float
-example;
+example.x = 10;  // this is OK
+assert ( is_err ( try ( example.name = 'Iris' )));  // values must be int
+example;  // only `x` is set
 ```
 
 > Return value in JSON format

@@ -3,7 +3,7 @@ title: "restriction"
 weight: 166
 ---
 
-Returns the value restriction of a thing as type [str](../../str) or [nil](../../nil) when the thing is *not* value restricted.
+Returns the value restriction of a thing as type [str](../../str) or [nil](../../nil) when the thing is *not* value restricted. A thing can be restricted when the thing is a property of a *typed* thing or by using the [restrict(..)](../restrict) function (see the [example](#example)).
 
 This function does *not* generate a [change](../../../overview/changes).
 
@@ -43,4 +43,19 @@ null
 
 ```json
 "str"
+```
+
+> Using `restriction()` on a another restricted thing:
+
+```thingsdb,json_response
+// Create an example type
+set_type('X', {onlyint: 'thing<int>'});
+
+X{}.onlyint.restriction();
+```
+
+> Return value in JSON format
+
+```json
+"int"
 ```

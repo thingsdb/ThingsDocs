@@ -3,7 +3,7 @@ title: "restriction"
 weight: 87
 ---
 
-Returns the lst restriction as type [str](../../str) or [nil](../../nil) when the list is *not* value restricted.
+Returns the list restriction as type [str](../../str) or [nil](../../nil) when the list is *not* value restricted. A list can *only* be restricted if the list is a property of a *typed* thing (see the [example](#example)).
 
 This function does *not* generate a [change](../../../overview/changes).
 
