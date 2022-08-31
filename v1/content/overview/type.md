@@ -44,8 +44,9 @@ definition | default | description
 `'{T}'` | `set()` | requires a [set](../../data-types/set) where each element in the set must be of type `T` *(see [restrict items](#restrict-items))*.
 `'[]'` | `[]` | requires a [list](../../data-types/list).
 `'any'` | `nil` | any type is valid *(with the exception of a [future](../../data-types/future))*.
+`'#'` | *depends* | Not a real property, see [named Id](#named-id).
 
-Each definition can be made optional by adding a question-mark `?` to the definition.
+Each definition can be made optional by adding a question-mark `?` to the definition and with a `&` prefix you can tell a *wrapped* type to use the [same deep level](#same-deep-level).
 If a property is made optional, then the value `nil` is allowed instead of the given type
 and `nil` will also be the default if the property is missing.
 
@@ -120,6 +121,38 @@ iris.wrap();
         "name": "Cato"
     },
     "name": "Iris"
+}
+```
+
+### Named Id
+
+ThingsDB return the Id of a thing as property `#`. Thus, as an example you might get a result like this:
+
+```thingsdb,should_pass
+set_type('Person', {name: 'str'});
+.alice = {name: 'Alice'};
+```
+
+> Returns with something like:
+```json
+{
+    "#": 123,
+    "name": "Alice"
+}
+```
+
+If we want something else than `#`, what we can do is define some property, for example `id` with the `#` definition:
+
+```thingsdb,should_pass
+set_type('Person', {id: '#', nameL 'str'});
+.alice = {name: 'Alice'};
+```
+
+> Returns with something like:
+```json
+{
+    "id": 123,
+    "name": "Alice"
 }
 ```
 
