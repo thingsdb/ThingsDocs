@@ -5,21 +5,21 @@
 <meta name=generator content="Hugo 0.90.0">
 <meta name=description content="ThingsDB documentation">
 <link rel="shortcut icon" href=/v1/images/favicon.ico type=image/x-icon>
-<title>return :: ThingsDB documentation</title>
-<link href=/v1/css/nucleus.css?1659598631 rel=stylesheet>
-<link href=/v1/css/fontawesome-all.min.css?1659598631 rel=stylesheet>
-<link href=/v1/css/hybrid.css?1659598631 rel=stylesheet>
-<link href=/v1/css/featherlight.min.css?1659598631 rel=stylesheet>
-<link href=/v1/css/perfect-scrollbar.min.css?1659598631 rel=stylesheet>
-<link href=/v1/css/auto-complete.css?1659598631 rel=stylesheet>
-<link href=/v1/css/atom-one-dark-reasonable.css?1659598631 rel=stylesheet>
-<link href=/v1/css/theme.css?1659598631 rel=stylesheet>
-<link href=/v1/css/hugo-theme.css?1659598631 rel=stylesheet>
-<link href=/v1/css/theme-mine.css?1659598631 rel=stylesheet>
-<script src=/v1/js/jquery-3.3.1.min.js?1659598631></script>
+<title>map_type :: ThingsDB documentation</title>
+<link href=/v1/css/nucleus.css?1661929986 rel=stylesheet>
+<link href=/v1/css/fontawesome-all.min.css?1661929986 rel=stylesheet>
+<link href=/v1/css/hybrid.css?1661929986 rel=stylesheet>
+<link href=/v1/css/featherlight.min.css?1661929986 rel=stylesheet>
+<link href=/v1/css/perfect-scrollbar.min.css?1661929986 rel=stylesheet>
+<link href=/v1/css/auto-complete.css?1661929986 rel=stylesheet>
+<link href=/v1/css/atom-one-dark-reasonable.css?1661929986 rel=stylesheet>
+<link href=/v1/css/theme.css?1661929986 rel=stylesheet>
+<link href=/v1/css/hugo-theme.css?1661929986 rel=stylesheet>
+<link href=/v1/css/theme-mine.css?1661929986 rel=stylesheet>
+<script src=/v1/js/jquery-3.3.1.min.js?1661929986></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}:not(pre)>code+span.copy-to-clipboard{display:none}</style>
 </head>
-<body data-url=/v1/collection-api/return/>
+<body data-url=/v1/data-types/list/map_type/>
 <nav id=sidebar>
 <div id=header-wrapper>
 <div id=header>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/v1/js/lunr.min.js?1659598631></script>
-<script type=text/javascript src=/v1/js/auto-complete.js?1659598631></script>
+<script type=text/javascript src=/v1/js/lunr.min.js?1661929986></script>
+<script type=text/javascript src=/v1/js/auto-complete.js?1661929986></script>
 <script type=text/javascript>var baseurl="https://docs.thingsdb.net/v1/"</script>
-<script type=text/javascript src=/v1/js/search.js?1659598631></script>
+<script type=text/javascript src=/v1/js/search.js?1661929986></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -202,7 +202,8 @@ Variable
 </li>
 </ul>
 </li>
-<li data-nav-id=/v1/data-types/ title="Data Types" class=dd-item>
+<li data-nav-id=/v1/data-types/ title="Data Types" class="dd-item
+parent">
 <a href=/v1/data-types/>
 Data Types
 </a>
@@ -354,7 +355,8 @@ else
 int
 </a>
 </li>
-<li data-nav-id=/v1/data-types/list/ title=list class=dd-item>
+<li data-nav-id=/v1/data-types/list/ title=list class="dd-item
+parent">
 <a href=/v1/data-types/list/>
 list
 </a>
@@ -452,6 +454,21 @@ len
 <li data-nav-id=/v1/data-types/list/map/ title=map class=dd-item>
 <a href=/v1/data-types/list/map/>
 map
+</a>
+</li>
+<li data-nav-id=/v1/data-types/list/map_id/ title=map_id class=dd-item>
+<a href=/v1/data-types/list/map_id/>
+map_id
+</a>
+</li>
+<li data-nav-id=/v1/data-types/list/map_type/ title=map_type class="dd-item active">
+<a href=/v1/data-types/list/map_type/>
+map_type
+</a>
+</li>
+<li data-nav-id=/v1/data-types/list/map_wrap/ title=map_wrap class=dd-item>
+<a href=/v1/data-types/list/map_wrap/>
+map_wrap
 </a>
 </li>
 <li data-nav-id=/v1/data-types/list/pop/ title=pop class=dd-item>
@@ -625,6 +642,16 @@ len
 <li data-nav-id=/v1/data-types/set/map/ title=map class=dd-item>
 <a href=/v1/data-types/set/map/>
 map
+</a>
+</li>
+<li data-nav-id=/v1/data-types/set/map_id/ title=map_id class=dd-item>
+<a href=/v1/data-types/set/map_id/>
+map_id
+</a>
+</li>
+<li data-nav-id=/v1/data-types/set/map_wrap/ title=map_wrap class=dd-item>
+<a href=/v1/data-types/set/map_wrap/>
+map_wrap
 </a>
 </li>
 <li data-nav-id=/v1/data-types/set/one/ title=one class=dd-item>
@@ -993,8 +1020,7 @@ Precedence and associativity
 </li>
 </ul>
 </li>
-<li data-nav-id=/v1/collection-api/ title="Collection API" class="dd-item
-parent">
+<li data-nav-id=/v1/collection-api/ title="Collection API" class=dd-item>
 <a href=/v1/collection-api/>
 Collection API
 </a>
@@ -1097,11 +1123,6 @@ has_enum
 <li data-nav-id=/v1/collection-api/has_type/ title=has_type class=dd-item>
 <a href=/v1/collection-api/has_type/>
 has_type
-</a>
-</li>
-<li data-nav-id=/v1/collection-api/if/ title=if class=dd-item>
-<a href=/v1/collection-api/if/>
-if
 </a>
 </li>
 <li data-nav-id=/v1/collection-api/int/ title=int class=dd-item>
@@ -1396,11 +1417,6 @@ rename_enum
 <li data-nav-id=/v1/collection-api/rename_type/ title=rename_type class=dd-item>
 <a href=/v1/collection-api/rename_type/>
 rename_type
-</a>
-</li>
-<li data-nav-id=/v1/collection-api/return/ title=return class="dd-item active">
-<a href=/v1/collection-api/return/>
-return
 </a>
 </li>
 <li data-nav-id=/v1/collection-api/room/ title=room class=dd-item>
@@ -1954,23 +1970,30 @@ zero_div_err
 <ol class=links itemscope itemtype=http://schema.org/BreadcrumbList>
 <meta itemprop=itemListOrder content="Descending">
 <li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement>
-<meta itemprop=position content="3">
+<meta itemprop=position content="4">
 <a itemprop=item href=/v1/>
 <span itemprop=name>ThingsDB</span>
 </a>
 </li>
 >
 <li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement>
+<meta itemprop=position content="3">
+<a itemprop=item href=/v1/data-types/>
+<span itemprop=name>Data Types</span>
+</a>
+</li>
+>
+<li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement>
 <meta itemprop=position content="2">
-<a itemprop=item href=/v1/collection-api/>
-<span itemprop=name>Collection API</span>
+<a itemprop=item href=/v1/data-types/list/>
+<span itemprop=name>list</span>
 </a>
 </li>
 >
 <li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement>
 <meta itemprop=position content="1">
-<a itemprop=item href=/v1/collection-api/return/ aria-disabled=true>
-<span itemprop=name>return</span>
+<a itemprop=item href=/v1/data-types/list/map_type/ aria-disabled=true>
+<span itemprop=name>map_type</span>
 </a>
 </li>
 </ol>
@@ -1985,7 +2008,6 @@ zero_div_err
 <li><a href=#arguments>Arguments</a></li>
 <li><a href=#return-value>Return value</a></li>
 <li><a href=#example>Example</a></li>
-<li><a href=#deep>Deep</a></li>
 </ul>
 </li>
 </ul>
@@ -1998,184 +2020,89 @@ zero_div_err
 </div>
 <div id=body-inner>
 <h1>
-return
+map_type
 </h1>
-<p>The <code>return</code> function moves the argument to the output of the current query/closure call.</p>
-<div class="notices warning"><p>This function is <strong>deprecated</strong> and will be removed in some future version of ThingsDB. Use the <strong><a href=../../overview/statements/#return>return</a></strong> statement instead.</p>
-</div>
-<p>If no <code>return</code> is specified, then the last value will be the value which is returned.
-A second argument can be given to the return function which can be used to overwrite the current <em>deep</em> value.
-See the <a href=#deep>deep</a> section for a detailed explanation of this argument.</p>
-<p>A query can run different procedures and/or closures which might have changed the <code>deep</code> value. In case you
-need to know the current <code>deep</code> value, the function <a href=../../collection-api/deep>deep()</a> can be used.</p>
-<div class="notices warning"><p>Be careful with using a deep value greater than one, especially when circular references are made since this can result
-in returning a large amount of data.</p>
-</div>
-<p>When no arguments are used the return value will be <code>nil</code>.</p>
-<p>This function does <em>not</em> generate a <a href=../../overview/changes>change</a>.</p>
+<p>The function must be called on a list with <em>Ids (integer values)</em> or <em>things</em> and returns a new list with the Ids and things converted to corresponding <a href=../../typed>typed</a> things.</p>
+<pre tabindex=0><code class=language-thingsdb,syntax_only data-lang=thingsdb,syntax_only>// Take as example:
+my_list.map_type('MyType');
+
+// This is a fast shortcut for:
+my_list.map(|item| MyType(item));
+</code></pre><p>This function does <em>not</em> generate a <a href=../../../overview/changes>change</a>.</p>
 <h3 id=function>Function</h3>
-<p><code>return([value[, deep]])</code></p>
+<p><em>array</em>.<code>map_type(Type)</code></p>
 <h3 id=arguments>Arguments</h3>
 <table>
 <thead>
 <tr>
 <th>Argument</th>
-<th>Type</th>
+<th>Arguments</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>value</td>
-<td>any (optional)</td>
-<td>The value which will be moved to the output of the query or closure.</td>
-</tr>
-<tr>
-<td>deep</td>
-<td>int (optional)</td>
-<td>Specify the <code>deep</code> value for the query (defaults to the current <em>deep</em> value).</td>
+<td>Type</td>
+<td>str</td>
+<td>Convert the items in the list to this Type.</td>
 </tr>
 </tbody>
 </table>
 <h3 id=return-value>Return value</h3>
-<p>The <code>return</code> function has no real return value but will move directly
-to the output of the current query or closure.</p>
+<p>A new list with each item of the original list converted to a typed <em>thing</em> of the given Type.</p>
 <h3 id=example>Example</h3>
 <blockquote>
-<p>This code shows how <em><strong>return()</strong></em> can be used:</p>
+<p>This code shows an example using <em><strong>map_type(..)</strong></em>:</p>
 </blockquote>
-<pre tabindex=0><code class=language-thingsdb,should_pass data-lang=thingsdb,should_pass>// return .colors, two levels deep if .colors exists
-try(return(.colors, 2));
+<pre tabindex=0><code class=language-thingsdb,json_response data-lang=thingsdb,json_response>set_type('User', {name: 'str', age: 'int'});
+users = [{name: &quot;Iris&quot;, age: 9}, {name: &quot;Sasha&quot;, age: 37}];
 
-// if .colors could not be returned, create the property
-.colors = {
-    aegean: {
-        R: 0x5e,
-        G: 0x8e,
-        B: 0xc9,
-    },
-};
+// returns a list with things of type User
+users = users.map_type('User');
 
-return(.colors, 2);
+// every item is of type User
+assert( users.every(|item| type(item) == 'User') );
+
+// return the list of users
+users
 </code></pre><blockquote>
-<p>Example return value in JSON format (the #ids might be different)</p>
+<p>Return value in JSON format</p>
 </blockquote>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
-    <span style=color:#f92672>&#34;#&#34;</span>: <span style=color:#ae81ff>23</span>,
-    <span style=color:#f92672>&#34;aegean&#34;</span>: {
-        <span style=color:#f92672>&#34;#&#34;</span>: <span style=color:#ae81ff>24</span>,
-        <span style=color:#f92672>&#34;B&#34;</span>: <span style=color:#ae81ff>201</span>,
-        <span style=color:#f92672>&#34;G&#34;</span>: <span style=color:#ae81ff>142</span>,
-        <span style=color:#f92672>&#34;R&#34;</span>: <span style=color:#ae81ff>94</span>
-    }
-}
-</code></pre></div><h3 id=deep>Deep</h3>
-<p>To understand the <code>deep</code> argument, suppose you have the following data:</p>
-<pre tabindex=0><code class=language-thingsdb,syntax_only data-lang=thingsdb,syntax_only>.artists = [{
-    artist: &quot;David Bowie&quot;,
-    albums: [{
-        name: &quot;The Rise and Fall of Ziggy Stardust and the Spiders from Mars&quot;,
-        songs: [{
-            title: &quot;Five Years&quot;,
-            duration: 4.42
-        }]
-    }]
-}];
-</code></pre><p>If you only require the ID&rsquo;s from all <code>.artists</code> and do not any other properties, a value of <code>0</code> should be used for <code>deep</code>:</p>
-<pre tabindex=0><code class=language-thingsdb,syntax_only data-lang=thingsdb,syntax_only>return(.artists, 0);
-</code></pre><p>Something like this will be returned. (the Id <code>#</code> might be different since this is auto generated)</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>[
     {
-        <span style=color:#f92672>&#34;#&#34;</span>: <span style=color:#ae81ff>34580</span>
-    }
-]
-</code></pre></div><p>Here are some more examples using different values of <em>deep</em>:</p>
-<blockquote>
-<p>Return the artists, albums will be returned only with (#) ID&rsquo;s:</p>
-</blockquote>
-<pre tabindex=0><code class=language-thingsdb,syntax_only data-lang=thingsdb,syntax_only>.artists;  // Uses the default deep value of `1`
-</code></pre><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>[
+        <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;Iris&#34;</span>,
+        <span style=color:#f92672>&#34;age&#34;</span>: <span style=color:#ae81ff>9</span>
+    },
     {
-        <span style=color:#f92672>&#34;#&#34;</span>: <span style=color:#ae81ff>34580</span>,
-        <span style=color:#f92672>&#34;albums&#34;</span>: [
-            {
-                <span style=color:#f92672>&#34;#&#34;</span>: <span style=color:#ae81ff>34581</span>
-            }
-        ],
-        <span style=color:#f92672>&#34;artist&#34;</span>: <span style=color:#e6db74>&#34;David Bowie&#34;</span>
-    }
-]
-</code></pre></div><blockquote>
-<p>Return the artists and albums, songs will be returned only with (#) ID&rsquo;s:</p>
-</blockquote>
-<pre tabindex=0><code class=language-thingsdb,syntax_only data-lang=thingsdb,syntax_only>return(.artists, 2);
-</code></pre><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>[
-    {
-        <span style=color:#f92672>&#34;#&#34;</span>: <span style=color:#ae81ff>34580</span>,
-        <span style=color:#f92672>&#34;albums&#34;</span>: [
-            {
-                <span style=color:#f92672>&#34;#&#34;</span>: <span style=color:#ae81ff>34581</span>,
-                <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;The Rise and Fall of Ziggy Stardust and the Spiders from Mars&#34;</span>,
-                <span style=color:#f92672>&#34;songs&#34;</span>: [
-                    {
-                        <span style=color:#f92672>&#34;#&#34;</span>: <span style=color:#ae81ff>34582</span>
-                    }
-                ]
-            }
-        ],
-        <span style=color:#f92672>&#34;artist&#34;</span>: <span style=color:#e6db74>&#34;David Bowie&#34;</span>
-    }
-]
-</code></pre></div><blockquote>
-<p>Return the artists, albums and songs:</p>
-</blockquote>
-<pre tabindex=0><code class=language-thingsdb,syntax_only data-lang=thingsdb,syntax_only>return(.artists, 3);
-</code></pre><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>[
-    {
-        <span style=color:#f92672>&#34;#&#34;</span>: <span style=color:#ae81ff>34580</span>,
-        <span style=color:#f92672>&#34;albums&#34;</span>: [
-            {
-                <span style=color:#f92672>&#34;#&#34;</span>: <span style=color:#ae81ff>34581</span>,
-                <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;The Rise and Fall of Ziggy Stardust and the Spiders from Mars&#34;</span>,
-                <span style=color:#f92672>&#34;songs&#34;</span>: [
-                    {
-                        <span style=color:#f92672>&#34;#&#34;</span>: <span style=color:#ae81ff>34582</span>,
-                        <span style=color:#f92672>&#34;duration&#34;</span>: <span style=color:#ae81ff>4.42</span>,
-                        <span style=color:#f92672>&#34;title&#34;</span>: <span style=color:#e6db74>&#34;Five Years&#34;</span>
-                    }
-                ]
-            }
-        ],
-        <span style=color:#f92672>&#34;artist&#34;</span>: <span style=color:#e6db74>&#34;David Bowie&#34;</span>
+        <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;Sasha&#34;</span>,
+        <span style=color:#f92672>&#34;age&#34;</span>: <span style=color:#ae81ff>37</span>
     }
 ]
 </code></pre></div>
-<div class="notices tip"><p>Use custom <a href=../../overview/type>Type</a> and the <a href=../../data-types/thing/wrap>wrap()</a> function to gain more control on which properties to return.</p>
-</div>
 <footer class=footline>
 </footer>
 </div>
 </div>
 <div id=navigation>
-<a class="nav nav-prev" href=/v1/collection-api/rename_type/ title=rename_type> <i class="fa fa-chevron-left"></i></a>
-<a class="nav nav-next" href=/v1/collection-api/room/ title=room style=margin-right:0><i class="fa fa-chevron-right"></i></a>
+<a class="nav nav-prev" href=/v1/data-types/list/map_id/ title=map_id> <i class="fa fa-chevron-left"></i></a>
+<a class="nav nav-next" href=/v1/data-types/list/map_wrap/ title=map_wrap style=margin-right:0><i class="fa fa-chevron-right"></i></a>
 </div>
 </section>
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/v1/js/clipboard.min.js?1659598631></script>
-<script src=/v1/js/perfect-scrollbar.min.js?1659598631></script>
-<script src=/v1/js/perfect-scrollbar.jquery.min.js?1659598631></script>
-<script src=/v1/js/jquery.sticky.js?1659598631></script>
-<script src=/v1/js/featherlight.min.js?1659598631></script>
-<script src=/v1/js/highlight.pack.js?1659598631></script>
+<script src=/v1/js/clipboard.min.js?1661929986></script>
+<script src=/v1/js/perfect-scrollbar.min.js?1661929986></script>
+<script src=/v1/js/perfect-scrollbar.jquery.min.js?1661929986></script>
+<script src=/v1/js/jquery.sticky.js?1661929986></script>
+<script src=/v1/js/featherlight.min.js?1661929986></script>
+<script src=/v1/js/highlight.pack.js?1661929986></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=/v1/js/modernizr.custom-3.6.0.js?1659598631></script>
-<script src=/v1/js/learn.js?1659598631></script>
-<script src=/v1/js/hugo-learn.js?1659598631></script>
-<link href=/v1/mermaid/mermaid.css?1659598631 rel=stylesheet>
-<script src=/v1/mermaid/mermaid.js?1659598631></script>
+<script src=/v1/js/modernizr.custom-3.6.0.js?1661929986></script>
+<script src=/v1/js/learn.js?1661929986></script>
+<script src=/v1/js/hugo-learn.js?1661929986></script>
+<link href=/v1/mermaid/mermaid.css?1661929986 rel=stylesheet>
+<script src=/v1/mermaid/mermaid.js?1661929986></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 </body>
 </html>

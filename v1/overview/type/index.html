@@ -6,17 +6,17 @@
 <meta name=description content="ThingsDB documentation">
 <link rel="shortcut icon" href=/v1/images/favicon.ico type=image/x-icon>
 <title>Type :: ThingsDB documentation</title>
-<link href=/v1/css/nucleus.css?1659598636 rel=stylesheet>
-<link href=/v1/css/fontawesome-all.min.css?1659598636 rel=stylesheet>
-<link href=/v1/css/hybrid.css?1659598636 rel=stylesheet>
-<link href=/v1/css/featherlight.min.css?1659598636 rel=stylesheet>
-<link href=/v1/css/perfect-scrollbar.min.css?1659598636 rel=stylesheet>
-<link href=/v1/css/auto-complete.css?1659598636 rel=stylesheet>
-<link href=/v1/css/atom-one-dark-reasonable.css?1659598636 rel=stylesheet>
-<link href=/v1/css/theme.css?1659598636 rel=stylesheet>
-<link href=/v1/css/hugo-theme.css?1659598636 rel=stylesheet>
-<link href=/v1/css/theme-mine.css?1659598636 rel=stylesheet>
-<script src=/v1/js/jquery-3.3.1.min.js?1659598636></script>
+<link href=/v1/css/nucleus.css?1661929989 rel=stylesheet>
+<link href=/v1/css/fontawesome-all.min.css?1661929989 rel=stylesheet>
+<link href=/v1/css/hybrid.css?1661929989 rel=stylesheet>
+<link href=/v1/css/featherlight.min.css?1661929989 rel=stylesheet>
+<link href=/v1/css/perfect-scrollbar.min.css?1661929989 rel=stylesheet>
+<link href=/v1/css/auto-complete.css?1661929989 rel=stylesheet>
+<link href=/v1/css/atom-one-dark-reasonable.css?1661929989 rel=stylesheet>
+<link href=/v1/css/theme.css?1661929989 rel=stylesheet>
+<link href=/v1/css/hugo-theme.css?1661929989 rel=stylesheet>
+<link href=/v1/css/theme-mine.css?1661929989 rel=stylesheet>
+<script src=/v1/js/jquery-3.3.1.min.js?1661929989></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}:not(pre)>code+span.copy-to-clipboard{display:none}</style>
 </head>
 <body data-url=/v1/overview/type/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/v1/js/lunr.min.js?1659598636></script>
-<script type=text/javascript src=/v1/js/auto-complete.js?1659598636></script>
+<script type=text/javascript src=/v1/js/lunr.min.js?1661929989></script>
+<script type=text/javascript src=/v1/js/auto-complete.js?1661929989></script>
 <script type=text/javascript>var baseurl="https://docs.thingsdb.net/v1/"</script>
-<script type=text/javascript src=/v1/js/search.js?1659598636></script>
+<script type=text/javascript src=/v1/js/search.js?1661929989></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -455,6 +455,21 @@ len
 map
 </a>
 </li>
+<li data-nav-id=/v1/data-types/list/map_id/ title=map_id class=dd-item>
+<a href=/v1/data-types/list/map_id/>
+map_id
+</a>
+</li>
+<li data-nav-id=/v1/data-types/list/map_type/ title=map_type class=dd-item>
+<a href=/v1/data-types/list/map_type/>
+map_type
+</a>
+</li>
+<li data-nav-id=/v1/data-types/list/map_wrap/ title=map_wrap class=dd-item>
+<a href=/v1/data-types/list/map_wrap/>
+map_wrap
+</a>
+</li>
 <li data-nav-id=/v1/data-types/list/pop/ title=pop class=dd-item>
 <a href=/v1/data-types/list/pop/>
 pop
@@ -626,6 +641,16 @@ len
 <li data-nav-id=/v1/data-types/set/map/ title=map class=dd-item>
 <a href=/v1/data-types/set/map/>
 map
+</a>
+</li>
+<li data-nav-id=/v1/data-types/set/map_id/ title=map_id class=dd-item>
+<a href=/v1/data-types/set/map_id/>
+map_id
+</a>
+</li>
+<li data-nav-id=/v1/data-types/set/map_wrap/ title=map_wrap class=dd-item>
+<a href=/v1/data-types/set/map_wrap/>
+map_wrap
 </a>
 </li>
 <li data-nav-id=/v1/data-types/set/one/ title=one class=dd-item>
@@ -1099,11 +1124,6 @@ has_enum
 has_type
 </a>
 </li>
-<li data-nav-id=/v1/collection-api/if/ title=if class=dd-item>
-<a href=/v1/collection-api/if/>
-if
-</a>
-</li>
 <li data-nav-id=/v1/collection-api/int/ title=int class=dd-item>
 <a href=/v1/collection-api/int/>
 int
@@ -1396,11 +1416,6 @@ rename_enum
 <li data-nav-id=/v1/collection-api/rename_type/ title=rename_type class=dd-item>
 <a href=/v1/collection-api/rename_type/>
 rename_type
-</a>
-</li>
-<li data-nav-id=/v1/collection-api/return/ title=return class=dd-item>
-<a href=/v1/collection-api/return/>
-return
 </a>
 </li>
 <li data-nav-id=/v1/collection-api/room/ title=room class=dd-item>
@@ -1982,6 +1997,7 @@ zero_div_err
 <li>
 <ul>
 <li><a href=#definable-properties>Definable properties</a></li>
+<li><a href=#same-deep-level>Same deep level</a></li>
 <li><a href=#restrict-items>Restrict items</a></li>
 <li><a href=#length-condition>Length condition</a></li>
 <li><a href=#pattern-condition>Pattern condition</a></li>
@@ -2109,8 +2125,8 @@ When creating a <em><a href=../../data-types/typed>typed</a></em> thing, all def
 </tr>
 <tr>
 <td><code>'closure'</code></td>
-<td>`</td>
-<td></td>
+<td><code>||nil</code></td>
+<td>requires type <a href=../../data-types/closure>closure</a>.</td>
 </tr>
 <tr>
 <td><code>'error'</code></td>
@@ -2206,6 +2222,36 @@ assert(is_err(try(User{name: 0})));
         <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;Iris&#34;</span>
     }
 ]
+</code></pre></div><h3 id=same-deep-level>Same deep level</h3>
+<p>Any definable property can be pre-fixed with a <code>&</code> character which is only used after the type is used to wrap and tells to use the same <em>deep</em> level for this property.
+Although the character is allowed everywhere, it only has effect when the value is or contains <em>thing(s)</em>. Only a <em>thing</em> honors <em>deep</em> thus this makes sense.</p>
+<blockquote>
+<p>For example</p>
+</blockquote>
+<pre tabindex=0><code class=language-thingdb,json_response data-lang=thingdb,json_response>new_type('User');
+set_type('User', {
+    name: 'str',
+    friend: '&amp;User?'
+});
+
+iris = User{
+    name: 'Iris',
+    friend: User{
+        name: 'Cato'
+    }
+};
+
+iris.wrap();
+</code></pre><blockquote>
+<p>Return value in JSON format</p>
+</blockquote>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+    <span style=color:#f92672>&#34;friend&#34;</span>: {
+        <span style=color:#f92672>&#34;friend&#34;</span>: <span style=color:#66d9ef>null</span>,
+        <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;Cato&#34;</span>
+    },
+    <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;Iris&#34;</span>
+}
 </code></pre></div><h3 id=restrict-items>Restrict items</h3>
 <p>When using a list <code>'[]'</code> or set <code>'{}'</code> definition, it is also possible to make the list or set restricted to a certain type.
 In this case only items of the given definition are allowed as members. For example <code>'[int]'</code> requires the members of a list
@@ -2498,18 +2544,18 @@ When a method is used on an instance of a type, the first argument will be the <
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/v1/js/clipboard.min.js?1659598636></script>
-<script src=/v1/js/perfect-scrollbar.min.js?1659598636></script>
-<script src=/v1/js/perfect-scrollbar.jquery.min.js?1659598636></script>
-<script src=/v1/js/jquery.sticky.js?1659598636></script>
-<script src=/v1/js/featherlight.min.js?1659598636></script>
-<script src=/v1/js/highlight.pack.js?1659598636></script>
+<script src=/v1/js/clipboard.min.js?1661929989></script>
+<script src=/v1/js/perfect-scrollbar.min.js?1661929989></script>
+<script src=/v1/js/perfect-scrollbar.jquery.min.js?1661929989></script>
+<script src=/v1/js/jquery.sticky.js?1661929989></script>
+<script src=/v1/js/featherlight.min.js?1661929989></script>
+<script src=/v1/js/highlight.pack.js?1661929989></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=/v1/js/modernizr.custom-3.6.0.js?1659598636></script>
-<script src=/v1/js/learn.js?1659598636></script>
-<script src=/v1/js/hugo-learn.js?1659598636></script>
-<link href=/v1/mermaid/mermaid.css?1659598636 rel=stylesheet>
-<script src=/v1/mermaid/mermaid.js?1659598636></script>
+<script src=/v1/js/modernizr.custom-3.6.0.js?1661929989></script>
+<script src=/v1/js/learn.js?1661929989></script>
+<script src=/v1/js/hugo-learn.js?1661929989></script>
+<link href=/v1/mermaid/mermaid.css?1661929989 rel=stylesheet>
+<script src=/v1/mermaid/mermaid.js?1661929989></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 </body>
 </html>

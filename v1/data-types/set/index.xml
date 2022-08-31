@@ -51,7 +51,16 @@ Be aware that the order when iterating over a set or a thing is not guaranteed.
 This function does not generate a change.
 Function set.map(callback)
 Arguments Explanation of the callback argument:
-Iterable Arguments Description set thing, Id Iterate over things in the set.</description></item><item><title>one</title><link>https://docs.thingsdb.net/v1/data-types/set/one/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/set/one/</guid><description>This function returns a thing from a set. The set must contain at least one thing, otherwise a lookup_err() is raised.
+Iterable Arguments Description set thing, Id Iterate over things in the set.</description></item><item><title>map_id</title><link>https://docs.thingsdb.net/v1/data-types/set/map_id/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/set/map_id/</guid><description>The function returns a list with the Ids of all the things in the set.
+// Take as example: my_set.map_id(); // This is a fast shortcut for: my_set.map(|item| item.id()); This function does not generate a change.
+Function set.map_id()
+Arguments None
+Return value A list with the Ids for all the things in the original set.
+Example This code shows an example using map_id():
+.users = set({name: &amp;quot;Iris&amp;quot;, age: 9}, {name: &amp;quot;Sasha&amp;quot;, age: 37}); // returns a list with Ids .</description></item><item><title>map_wrap</title><link>https://docs.thingsdb.net/v1/data-types/set/map_wrap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/set/map_wrap/</guid><description>The function returns a list with every thing wrapped according the given type.
+// Take as example: my_set.map_wrap('_SomeType'); // This is a fast shortcut for: my_set.map(|item| item.wrap('_SomeType')); This function does not generate a change.
+Function set.map_wrap([Type])
+Arguments Argument Arguments Description Type str (optional) Type&amp;rsquo;s name to wrap the thing with. If not given, the thing will be wrapped with its own type. Return value A list with the Ids for all the things in the original set.</description></item><item><title>one</title><link>https://docs.thingsdb.net/v1/data-types/set/one/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/set/one/</guid><description>This function returns a thing from a set. The set must contain at least one thing, otherwise a lookup_err() is raised.
 The thing which is returned from the set is neither random nor predictable.
 This function does not generate a change.
 Function set.one()

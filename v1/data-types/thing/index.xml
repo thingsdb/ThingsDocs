@@ -93,5 +93,5 @@ Function thing.vmap(callback)
 Arguments Argument Type Description callback closure (required) Closure to execute on each value. Explanation of the callback argument:
 Iterable Arguments Description thing value Iterate over the thing values.</description></item><item><title>wrap</title><link>https://docs.thingsdb.net/v1/data-types/thing/wrap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/thing/wrap/</guid><description>Wrap a thing with a Type to filter out properties, while preserving the Id. A wrapped thing inherits the methods from the type it is wrapped with.
 For a more advanced example using wrap() and unwrap() see &amp;lt;Type&amp;gt;.
-Function thing.wrap(Type)
-Arguments Argument Arguments Description Type str (optional) Type&amp;rsquo;s name to wrap the thing with. If not given, the thing will be wrapped with it&amp;rsquo;s own type.</description></item></channel></rss>
+Function thing.wrap([Type])
+Arguments Argument Arguments Description Type str (optional) Type&amp;rsquo;s name to wrap the thing with. If not given, the thing will be wrapped with its own type.</description></item></channel></rss>

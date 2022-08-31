@@ -6,17 +6,17 @@
 <meta name=description content="ThingsDB documentation">
 <link rel="shortcut icon" href=/v1/images/favicon.ico type=image/x-icon>
 <title>set_default_deep :: ThingsDB documentation</title>
-<link href=/v1/css/nucleus.css?1659598637 rel=stylesheet>
-<link href=/v1/css/fontawesome-all.min.css?1659598637 rel=stylesheet>
-<link href=/v1/css/hybrid.css?1659598637 rel=stylesheet>
-<link href=/v1/css/featherlight.min.css?1659598637 rel=stylesheet>
-<link href=/v1/css/perfect-scrollbar.min.css?1659598637 rel=stylesheet>
-<link href=/v1/css/auto-complete.css?1659598637 rel=stylesheet>
-<link href=/v1/css/atom-one-dark-reasonable.css?1659598637 rel=stylesheet>
-<link href=/v1/css/theme.css?1659598637 rel=stylesheet>
-<link href=/v1/css/hugo-theme.css?1659598637 rel=stylesheet>
-<link href=/v1/css/theme-mine.css?1659598637 rel=stylesheet>
-<script src=/v1/js/jquery-3.3.1.min.js?1659598637></script>
+<link href=/v1/css/nucleus.css?1661929990 rel=stylesheet>
+<link href=/v1/css/fontawesome-all.min.css?1661929990 rel=stylesheet>
+<link href=/v1/css/hybrid.css?1661929990 rel=stylesheet>
+<link href=/v1/css/featherlight.min.css?1661929990 rel=stylesheet>
+<link href=/v1/css/perfect-scrollbar.min.css?1661929990 rel=stylesheet>
+<link href=/v1/css/auto-complete.css?1661929990 rel=stylesheet>
+<link href=/v1/css/atom-one-dark-reasonable.css?1661929990 rel=stylesheet>
+<link href=/v1/css/theme.css?1661929990 rel=stylesheet>
+<link href=/v1/css/hugo-theme.css?1661929990 rel=stylesheet>
+<link href=/v1/css/theme-mine.css?1661929990 rel=stylesheet>
+<script src=/v1/js/jquery-3.3.1.min.js?1661929990></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}:not(pre)>code+span.copy-to-clipboard{display:none}</style>
 </head>
 <body data-url=/v1/thingsdb-api/set_default_deep/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/v1/js/lunr.min.js?1659598637></script>
-<script type=text/javascript src=/v1/js/auto-complete.js?1659598637></script>
+<script type=text/javascript src=/v1/js/lunr.min.js?1661929990></script>
+<script type=text/javascript src=/v1/js/auto-complete.js?1661929990></script>
 <script type=text/javascript>var baseurl="https://docs.thingsdb.net/v1/"</script>
-<script type=text/javascript src=/v1/js/search.js?1659598637></script>
+<script type=text/javascript src=/v1/js/search.js?1661929990></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -454,6 +454,21 @@ len
 map
 </a>
 </li>
+<li data-nav-id=/v1/data-types/list/map_id/ title=map_id class=dd-item>
+<a href=/v1/data-types/list/map_id/>
+map_id
+</a>
+</li>
+<li data-nav-id=/v1/data-types/list/map_type/ title=map_type class=dd-item>
+<a href=/v1/data-types/list/map_type/>
+map_type
+</a>
+</li>
+<li data-nav-id=/v1/data-types/list/map_wrap/ title=map_wrap class=dd-item>
+<a href=/v1/data-types/list/map_wrap/>
+map_wrap
+</a>
+</li>
 <li data-nav-id=/v1/data-types/list/pop/ title=pop class=dd-item>
 <a href=/v1/data-types/list/pop/>
 pop
@@ -625,6 +640,16 @@ len
 <li data-nav-id=/v1/data-types/set/map/ title=map class=dd-item>
 <a href=/v1/data-types/set/map/>
 map
+</a>
+</li>
+<li data-nav-id=/v1/data-types/set/map_id/ title=map_id class=dd-item>
+<a href=/v1/data-types/set/map_id/>
+map_id
+</a>
+</li>
+<li data-nav-id=/v1/data-types/set/map_wrap/ title=map_wrap class=dd-item>
+<a href=/v1/data-types/set/map_wrap/>
+map_wrap
 </a>
 </li>
 <li data-nav-id=/v1/data-types/set/one/ title=one class=dd-item>
@@ -1098,11 +1123,6 @@ has_enum
 has_type
 </a>
 </li>
-<li data-nav-id=/v1/collection-api/if/ title=if class=dd-item>
-<a href=/v1/collection-api/if/>
-if
-</a>
-</li>
 <li data-nav-id=/v1/collection-api/int/ title=int class=dd-item>
 <a href=/v1/collection-api/int/>
 int
@@ -1395,11 +1415,6 @@ rename_enum
 <li data-nav-id=/v1/collection-api/rename_type/ title=rename_type class=dd-item>
 <a href=/v1/collection-api/rename_type/>
 rename_type
-</a>
-</li>
-<li data-nav-id=/v1/collection-api/return/ title=return class=dd-item>
-<a href=/v1/collection-api/return/>
-return
 </a>
 </li>
 <li data-nav-id=/v1/collection-api/room/ title=room class=dd-item>
@@ -2000,9 +2015,9 @@ zero_div_err
 set_default_deep
 </h1>
 <p>The <em>deep</em> value determines how many levels of data are returned by a query. Only <em>things</em> count towards this value. See <a href=../../collection-api/deep>deep()</a> for more info about the <em>deep</em> value.</p>
-<p>The default <em>deep</em> value for the <em>@node</em> and <em>@thingsdb</em> scopes has been set to <code>127</code>, this is the maximum value. Collections will inherit the <em>deep</em> value from the <em>@thingsdb</em> scope so they also have <code>127</code> as their default unless the <em>@thingsdb</em> scope is changed.</p>
+<p>The default <em>deep</em> value for the <em>@node</em> and <em>@thingsdb</em> scopes has been set to <code>1</code>. Collections will inherit the <em>deep</em> value from the <em>@thingsdb</em> scope so they also have <code>1</code> as their default unless the <em>@thingsdb</em> scope is changed.</p>
 <p>This function can be used to change the <em>deep</em> value for a scope.</p>
-<div class="notices warning"><p><strong>Be careful</strong> with changing the <em>deep</em> value as this will effect queries where <em>deep</em> has not explicitly been specified.</p>
+<div class="notices warning"><p><strong>Be careful</strong> with changing the <em>deep</em> value as this will effect queries where <em>deep</em> has not explicitly been specified. In ThingDB version 1.2.x the default value was set to <code>127</code>.</p>
 </div>
 <p>Use <code>deep();</code> to view the current <em>deep</em> value in a scope.</p>
 <p>This function generates a <a href=../../overview/changes>change</a>.</p>
@@ -2036,8 +2051,8 @@ set_default_deep
 <blockquote>
 <p>This code changes the password for user <em>admin</em>:</p>
 </blockquote>
-<pre tabindex=0><code class=language-thingsdb,json_response,@t data-lang=thingsdb,json_response,@t>// Change the default deep value for collection &quot;stuff&quot; to 1
-set_default_deep('//stuff', 1);
+<pre tabindex=0><code class=language-thingsdb,json_response,@t data-lang=thingsdb,json_response,@t>// Change the default deep value for collection &quot;stuff&quot; to 127
+set_default_deep('//stuff', 127);
 </code></pre><blockquote>
 <p>Return value in JSON format</p>
 </blockquote>
@@ -2055,18 +2070,18 @@ set_default_deep('//stuff', 1);
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/v1/js/clipboard.min.js?1659598637></script>
-<script src=/v1/js/perfect-scrollbar.min.js?1659598637></script>
-<script src=/v1/js/perfect-scrollbar.jquery.min.js?1659598637></script>
-<script src=/v1/js/jquery.sticky.js?1659598637></script>
-<script src=/v1/js/featherlight.min.js?1659598637></script>
-<script src=/v1/js/highlight.pack.js?1659598637></script>
+<script src=/v1/js/clipboard.min.js?1661929990></script>
+<script src=/v1/js/perfect-scrollbar.min.js?1661929990></script>
+<script src=/v1/js/perfect-scrollbar.jquery.min.js?1661929990></script>
+<script src=/v1/js/jquery.sticky.js?1661929990></script>
+<script src=/v1/js/featherlight.min.js?1661929990></script>
+<script src=/v1/js/highlight.pack.js?1661929990></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=/v1/js/modernizr.custom-3.6.0.js?1659598637></script>
-<script src=/v1/js/learn.js?1659598637></script>
-<script src=/v1/js/hugo-learn.js?1659598637></script>
-<link href=/v1/mermaid/mermaid.css?1659598637 rel=stylesheet>
-<script src=/v1/mermaid/mermaid.js?1659598637></script>
+<script src=/v1/js/modernizr.custom-3.6.0.js?1661929990></script>
+<script src=/v1/js/learn.js?1661929990></script>
+<script src=/v1/js/hugo-learn.js?1661929990></script>
+<link href=/v1/mermaid/mermaid.css?1661929990 rel=stylesheet>
+<script src=/v1/mermaid/mermaid.js?1661929990></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 </body>
 </html>

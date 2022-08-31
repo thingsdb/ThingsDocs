@@ -76,7 +76,18 @@ Example This code uses len() to return the number of items in a collection:
 This function does not generate a change.
 Function array.map(callback)
 Arguments Argument Type Description callback closure (required) Closure to execute on each value. Explanation of the callback argument:
-Iterable Arguments Description array item, index Iterate over all items in the array.</description></item><item><title>pop</title><link>https://docs.thingsdb.net/v1/data-types/list/pop/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/list/pop/</guid><description>Removes the last item from a list and returns that item.
+Iterable Arguments Description array item, index Iterate over all items in the array.</description></item><item><title>map_id</title><link>https://docs.thingsdb.net/v1/data-types/list/map_id/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/list/map_id/</guid><description>The function must be called on a list with things and returns a new list with the Ids of all the things.
+// Take as example: my_list.map_id(); // This is a fast shortcut for: my_list.map(|item| item.id()); This function does not generate a change.
+Function array.map_id()
+Arguments None
+Return value A new list with the Ids for all the things in the original list.
+Example This code shows an example using map_id():</description></item><item><title>map_type</title><link>https://docs.thingsdb.net/v1/data-types/list/map_type/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/list/map_type/</guid><description>The function must be called on a list with Ids (integer values) or things and returns a new list with the Ids and things converted to corresponding typed things.
+// Take as example: my_list.map_type('MyType'); // This is a fast shortcut for: my_list.map(|item| MyType(item)); This function does not generate a change.
+Function array.map_type(Type)
+Arguments Argument Arguments Description Type str Convert the items in the list to this Type.</description></item><item><title>map_wrap</title><link>https://docs.thingsdb.net/v1/data-types/list/map_wrap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/list/map_wrap/</guid><description>The function must be called on a list with things and returns a new list with every thing wrapped according the given type.
+// Take as example: my_list.map_wrap('_SomeType'); // This is a fast shortcut for: my_list.map(|item| item.wrap('_SomeType')); This function does not generate a change.
+Function array.map_wrap([Type])
+Arguments Argument Arguments Description Type str (optional) Type&amp;rsquo;s name to wrap the thing with. If not given, the thing will be wrapped with its own type.</description></item><item><title>pop</title><link>https://docs.thingsdb.net/v1/data-types/list/pop/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/list/pop/</guid><description>Removes the last item from a list and returns that item.
 This function changes the length of the list. The pop() function works on a list type array, but not on a tuple since tuples are immutable.
 This function generates a change (except when called on a variable).
 Function list.pop()
