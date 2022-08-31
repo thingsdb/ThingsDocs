@@ -95,7 +95,7 @@ Although the character is allowed everywhere, it only has effect when the value 
 
 > For example
 
-```thingdb,json_response
+```thingsdb,json_response
 new_type('User');
 set_type('User', {
     name: 'str',
