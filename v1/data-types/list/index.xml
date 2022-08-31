@@ -104,15 +104,13 @@ Function array.reduce(reducer, [initial])
 Arguments Argument Type Description reducer closure (required) Closure to execute on every value (except for the first, if no initial value is provided). initial any (optional) The initial value serves as the first argument of the callback during the first call.</description></item><item><title>remove</title><link>https://docs.thingsdb.net/v1/data-types/list/remove/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/list/remove/</guid><description>This function removes all values in the list that satisfies the callback function. The removed values will be returned in a new list. An empty list is returned if no values are removed.
 This function generates a change.
 Function list.remove(callback, [limit])
-Arguments Argument Type Description callback closure (required) Closure to execute on each value. limit int (optional) Limit the number of items to remove.</description></item><item><title>restriction</title><link>https://docs.thingsdb.net/v1/data-types/list/restriction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/list/restriction/</guid><description>Returns the lst restriction as type str or nil when the list is not value restricted.
+Arguments Argument Type Description callback closure (required) Closure to execute on each value. limit int (optional) Limit the number of items to remove.</description></item><item><title>restriction</title><link>https://docs.thingsdb.net/v1/data-types/list/restriction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/list/restriction/</guid><description>Returns the list restriction as type str or nil when the list is not value restricted. A list can only be restricted if the list is a property of a typed thing (see the example).
 This function does not generate a change.
 Function array.restriction()
 Arguments None
 Return value Returns restriction of the list or nil if not value restricted.
 Example Using restriction() on a non-restricted list:
-[1, 2, 3, 4].restriction(); Return value in JSON format
-null Using restriction() on a restricted list:
-// Create an example type set_type('X', {arr: '[int]'}); X{}.</description></item><item><title>reverse</title><link>https://docs.thingsdb.net/v1/data-types/list/reverse/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/list/reverse/</guid><description>The function returns a new list with items in reverse order.
+[1, 2, 3, 4].</description></item><item><title>reverse</title><link>https://docs.thingsdb.net/v1/data-types/list/reverse/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/list/reverse/</guid><description>The function returns a new list with items in reverse order.
 This function does not generate a change.
 Function array.reverse()
 Arguments None

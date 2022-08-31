@@ -66,15 +66,12 @@ Arguments Argument Type Description callback closure (required) Closure to execu
 This function generates a change.
 Function thing.restrict(type)
 Arguments Argument Type Description type str/nil (required) Restriction to set on the thing or nil to remove a restriction. Return value Returns the thing
-Example Use restrict() to force int values on a thing;</description></item><item><title>restriction</title><link>https://docs.thingsdb.net/v1/data-types/thing/restriction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/thing/restriction/</guid><description>Returns the value restriction of a thing as type str or nil when the thing is not value restricted.
+Example Use restrict() to force int values on a thing;</description></item><item><title>restriction</title><link>https://docs.thingsdb.net/v1/data-types/thing/restriction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/thing/restriction/</guid><description>Returns the value restriction of a thing as type str or nil when the thing is not value restricted. A thing can be restricted when the thing is a property of a typed thing or by using the restrict(..) function (see the example).
 This function does not generate a change.
 Function thing.restriction()
 Arguments None
 Return value Returns restriction of the thing or nil if not value restricted.
-Example Using restriction() on a non-restricted thing:
-{}.restriction(); Return value in JSON format
-null Using restriction() on a restricted thing:
-{}.restrict('str').restriction(); Return value in JSON format</description></item><item><title>search</title><link>https://docs.thingsdb.net/v1/data-types/thing/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/thing/search/</guid><description>Find the parent(s) of a given thing.
+Example Using restriction() on a non-restricted thing:</description></item><item><title>search</title><link>https://docs.thingsdb.net/v1/data-types/thing/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/thing/search/</guid><description>Find the parent(s) of a given thing.
 This function is useful for debugging purposes and must not be used in production queries as the function isn&amp;rsquo;t optimized for speed.
 This function does not generate a change.
 Function thing.search(needle, [options])
