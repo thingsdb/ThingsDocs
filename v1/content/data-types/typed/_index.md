@@ -4,7 +4,7 @@ weight: 175
 ---
 
 
-A *typed* thing is a thing with pre-defined properties and/or methods with are defined by a *[Type](../../overview/type)*.
+A *typed* thing is a thing with predefined properties and/or methods with are defined by a *[Type](../../overview/type)*.
 When creating a *typed* thing, all defined properties of the *[Type](../../overview/type)* are guaranteed to exist with a value matching the type definition.
 
 Most, but not all, functions of a *thing* work on *typed things* as well. Next to the functions below, a *typed thing* may have [additional methods](../../overview/type/#methods) which are defined by the [Type](../../overview/type).

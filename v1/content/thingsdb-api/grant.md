@@ -12,7 +12,7 @@ To use this function, at least `CHANGE` privileges on the `@thingsdb` scope and 
 It is not possible to set privileges on a specific node scope. Therefore scope `@node` will apply to *all* nodes in ThingsDB.
 {{% /notice %}}
 
-The following pre-defined masks are available:
+The following predefined masks are available:
 
 Mask         | Description
 ------------ | -----------

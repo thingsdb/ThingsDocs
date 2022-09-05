@@ -28,7 +28,7 @@ Function | description
 ### Examples
 
 Below is an example where we make a procedure in the `@thingsdb` scope to help us create a user in ThingsDB with some
-pre-defined access rights and a token for one day usage.
+predefined access rights and a token for one day usage.
 
 ```thingsdb,should_pass,@t
 new_procedure('create_user', |name| {

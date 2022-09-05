@@ -30,6 +30,6 @@ type | Description
 [thing](./thing) | Object with key value pairs.
 [timeval](./timeval) | Like `datetime` but returns as a UNIX time-stamp by default.
 [tuple](./tuple) | Nested and immutable [list](./list).
-[typed](./typed) | Type are [things](./thing) with pre-defined properties.
+[typed](./typed) | Type are [things](./thing) with predefined properties.
 [&lt;Type&gt;](./wtype) | Wrapped thing by a [Type](../overview/type).
 

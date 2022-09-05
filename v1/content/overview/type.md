@@ -6,7 +6,7 @@ weight: 30
 
 Use a Type to create [typed](../../data-types/typed) things.
 
-A *[typed](../../data-types/typed)* thing is a thing with pre-defined properties and/or methods with are defined by a *Type*.
+A *[typed](../../data-types/typed)* thing is a thing with predefined properties and/or methods with are defined by a *Type*.
 When creating a *[typed](../../data-types/typed)* thing, all defined properties of the *type* are guaranteed to exist with a value matching the type definition.
 
 
