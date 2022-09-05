@@ -6,17 +6,17 @@
 <meta name=description content="ThingsDB documentation">
 <link rel="shortcut icon" href=/v1/images/favicon.ico type=image/x-icon>
 <title>Python :: ThingsDB documentation</title>
-<link href=/v1/css/nucleus.css?1661953766 rel=stylesheet>
-<link href=/v1/css/fontawesome-all.min.css?1661953766 rel=stylesheet>
-<link href=/v1/css/hybrid.css?1661953766 rel=stylesheet>
-<link href=/v1/css/featherlight.min.css?1661953766 rel=stylesheet>
-<link href=/v1/css/perfect-scrollbar.min.css?1661953766 rel=stylesheet>
-<link href=/v1/css/auto-complete.css?1661953766 rel=stylesheet>
-<link href=/v1/css/atom-one-dark-reasonable.css?1661953766 rel=stylesheet>
-<link href=/v1/css/theme.css?1661953766 rel=stylesheet>
-<link href=/v1/css/hugo-theme.css?1661953766 rel=stylesheet>
-<link href=/v1/css/theme-mine.css?1661953766 rel=stylesheet>
-<script src=/v1/js/jquery-3.3.1.min.js?1661953766></script>
+<link href=/v1/css/nucleus.css?1662387780 rel=stylesheet>
+<link href=/v1/css/fontawesome-all.min.css?1662387780 rel=stylesheet>
+<link href=/v1/css/hybrid.css?1662387780 rel=stylesheet>
+<link href=/v1/css/featherlight.min.css?1662387780 rel=stylesheet>
+<link href=/v1/css/perfect-scrollbar.min.css?1662387780 rel=stylesheet>
+<link href=/v1/css/auto-complete.css?1662387780 rel=stylesheet>
+<link href=/v1/css/atom-one-dark-reasonable.css?1662387780 rel=stylesheet>
+<link href=/v1/css/theme.css?1662387780 rel=stylesheet>
+<link href=/v1/css/hugo-theme.css?1662387780 rel=stylesheet>
+<link href=/v1/css/theme-mine.css?1662387780 rel=stylesheet>
+<script src=/v1/js/jquery-3.3.1.min.js?1662387780></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}:not(pre)>code+span.copy-to-clipboard{display:none}</style>
 </head>
 <body data-url=/v1/connect/python/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/v1/js/lunr.min.js?1661953766></script>
-<script type=text/javascript src=/v1/js/auto-complete.js?1661953766></script>
+<script type=text/javascript src=/v1/js/lunr.min.js?1662387780></script>
+<script type=text/javascript src=/v1/js/auto-complete.js?1662387780></script>
 <script type=text/javascript>var baseurl="https://docs.thingsdb.net/v1/"</script>
-<script type=text/javascript src=/v1/js/search.js?1661953766></script>
+<script type=text/javascript src=/v1/js/search.js?1662387780></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -2024,6 +2024,7 @@ Python
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> asyncio
 <span style=color:#f92672>from</span> thingsdb.client <span style=color:#f92672>import</span> Client
 
+
 <span style=color:#66d9ef>async</span> <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>hello_world</span>():
     client <span style=color:#f92672>=</span> Client()
 
@@ -2036,9 +2037,11 @@ Python
         <span style=color:#66d9ef>await</span> client<span style=color:#f92672>.</span>authenticate(<span style=color:#e6db74>&#39;admin&#39;</span>, <span style=color:#e6db74>&#39;pass&#39;</span>)
 
         <span style=color:#75715e># perform the hello world code...</span>
-        print(<span style=color:#66d9ef>await</span> client<span style=color:#f92672>.</span>query(<span style=color:#e6db74>&#39;&#39;&#39;
+        <span style=color:#75715e># the //ti comment is optional to tell your IDE to use ThingsDB</span>
+        <span style=color:#75715e># syntax highlighting if supported.</span>
+        print(<span style=color:#66d9ef>await</span> client<span style=color:#f92672>.</span>query(<span style=color:#e6db74>&#34;&#34;&#34;//ti
 </span><span style=color:#e6db74>            &#34;Hello World!&#34;;
-</span><span style=color:#e6db74>        &#39;&#39;&#39;</span>))
+</span><span style=color:#e6db74>        &#34;&#34;&#34;</span>))
 
     <span style=color:#66d9ef>finally</span>:
         <span style=color:#75715e># the will close the client in a nice way</span>
@@ -2046,7 +2049,7 @@ Python
         <span style=color:#66d9ef>await</span> client<span style=color:#f92672>.</span>wait_closed()
 
 <span style=color:#75715e># run the hello world example</span>
-asyncio<span style=color:#f92672>.</span>get_event_loop()<span style=color:#f92672>.</span>run_until_complete(hello_world())
+asyncio<span style=color:#f92672>.</span>run(hello_world())
 </code></pre></div><h3 id=more-info>More info</h3>
 <p>A more complete description of the Python client can be found in one of the links below.</p>
 <ul>
@@ -2065,18 +2068,18 @@ asyncio<span style=color:#f92672>.</span>get_event_loop()<span style=color:#f926
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/v1/js/clipboard.min.js?1661953766></script>
-<script src=/v1/js/perfect-scrollbar.min.js?1661953766></script>
-<script src=/v1/js/perfect-scrollbar.jquery.min.js?1661953766></script>
-<script src=/v1/js/jquery.sticky.js?1661953766></script>
-<script src=/v1/js/featherlight.min.js?1661953766></script>
-<script src=/v1/js/highlight.pack.js?1661953766></script>
+<script src=/v1/js/clipboard.min.js?1662387780></script>
+<script src=/v1/js/perfect-scrollbar.min.js?1662387780></script>
+<script src=/v1/js/perfect-scrollbar.jquery.min.js?1662387780></script>
+<script src=/v1/js/jquery.sticky.js?1662387780></script>
+<script src=/v1/js/featherlight.min.js?1662387780></script>
+<script src=/v1/js/highlight.pack.js?1662387780></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=/v1/js/modernizr.custom-3.6.0.js?1661953766></script>
-<script src=/v1/js/learn.js?1661953766></script>
-<script src=/v1/js/hugo-learn.js?1661953766></script>
-<link href=/v1/mermaid/mermaid.css?1661953766 rel=stylesheet>
-<script src=/v1/mermaid/mermaid.js?1661953766></script>
+<script src=/v1/js/modernizr.custom-3.6.0.js?1662387780></script>
+<script src=/v1/js/learn.js?1662387780></script>
+<script src=/v1/js/hugo-learn.js?1662387780></script>
+<link href=/v1/mermaid/mermaid.css?1662387780 rel=stylesheet>
+<script src=/v1/mermaid/mermaid.js?1662387780></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 </body>
 </html>

@@ -9,7 +9,7 @@ Statement Description return Return a value and optionally define a deep value. 
 Here is an example of how they may be used:
 a = 6; b = 7; `The sum of {a} plus {b} is {a + b}.`; Result in JSON format:
 &amp;#34;The sum of 6 plus 7 is 13.&amp;#34; If you wish to use the backtick character or curly brackets inside your string, then you need to escape those by using the same character twice.</description></item><item><title>Type</title><link>https://docs.thingsdb.net/v1/overview/type/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/overview/type/</guid><description>Use a Type to create typed things.
-A typed thing is a thing with pre-defined properties and/or methods with are defined by a Type. When creating a typed thing, all defined properties of the type are guaranteed to exist with a value matching the type definition.
+A typed thing is a thing with predefined properties and/or methods with are defined by a Type. When creating a typed thing, all defined properties of the type are guaranteed to exist with a value matching the type definition.
 Definable properties definition default description 'str' &amp;quot;&amp;quot; requires type str (values of type str should contain valid UTF-8 characters).</description></item><item><title>Variable</title><link>https://docs.thingsdb.net/v1/overview/variable/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/overview/variable/</guid><description>Can be used to assign a value to a variable which can be used within a query.
 Variable can be created with QUERY privileges since they do not modify the collection&amp;rsquo;s data.
 To create a variable, just assign a value to a valid name.
