@@ -27,6 +27,7 @@ python setup.py install
 import asyncio
 from thingsdb.client import Client
 
+
 async def hello_world():
     client = Client()
 
@@ -49,7 +50,7 @@ async def hello_world():
         await client.wait_closed()
 
 # run the hello world example
-asyncio.get_event_loop().run_until_complete(hello_world())
+asyncio.run(hello_world())
 ```
 
 ### More info
