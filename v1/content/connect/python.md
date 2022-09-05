@@ -40,9 +40,11 @@ async def hello_world():
         await client.authenticate('admin', 'pass')
 
         # perform the hello world code...
-        print(await client.query('''
+        # the //ti comment is optional to tell your IDE to use ThingsDB
+        # syntax highlighting if supported.
+        print(await client.query("""//ti
             "Hello World!";
-        '''))
+        """))
 
     finally:
         # the will close the client in a nice way
