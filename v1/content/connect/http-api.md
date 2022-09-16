@@ -75,7 +75,7 @@ curl --location --request POST 'https://playground.thingsdb.net//Doc' \
 
 ### Localhost
 
-Make sure to enable the HTTP API if you want to use it. By default HTTP is disabled.
+Make sure to enable the HTTP API if you want to use it. By default the HTTP API is disabled.
 
 In this example we start _thingsdb_ with an environment variable to enable the HTTP API on port 9210:
 
@@ -89,7 +89,7 @@ The logging should now include something like this line:
 [I 2022-09-16 09:10:42] start listening for HTTP API requests on TCP port 9210
 ```
 
-Test a HTTP request to ThingsDB:
+Test a HTTP API request to ThingsDB:
 
 ```bash
 curl --location --request POST 'http://localhost:9210//stuff' \
