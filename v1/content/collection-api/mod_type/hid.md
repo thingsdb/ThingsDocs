@@ -5,7 +5,7 @@ weight: 251
 
 Enable or disable *hide-id* for an existing [Type](../../../overview/type).
 
-When _hide_id_ is enabled, this type will not return the Id property to the client unless _deep_ is equal to zero (0) in which case _only_ the Id is returned. This last behavior is where it is different from the `NO_IDS` flag which can be used for example with the [return](../../../overview/statements/#return-flags) statement.
+When _hide_id_ is enabled, this type will not return the Id property to the client unless _deep_ is equal to zero (0) in which case _only_ the Id is returned. This last behavior is different from the `NO_IDS` flag which can be used for example with the [return](../../../overview/statements/#return-flags) statement. _(The `NO_IDS` flag would return empty things when deep is 0)_
 
 ### Action
 
