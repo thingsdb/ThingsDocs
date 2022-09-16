@@ -248,6 +248,7 @@ collection-api
         add
         all
         del
+        hid
         mod
         rel
         ren

@@ -13,7 +13,7 @@ The API has support for both [MessagePack](https://msgpack.org) and [JSON](https
 
 {{% notice tip %}}
 Use **MessagePack** if possible since this is the data serialization protocol which is used by ThingsDB
-internally and will therefore be a faster than JSON. It also allows for sending and receiving binary data and is usually more compact than JSON.
+internally and therefore is faster than JSON. It also allows for sending and receiving binary data and is usually more compact than JSON.
 In most examples we use JSON just because it is more readable.
 {{% /notice %}}
 
@@ -67,10 +67,38 @@ curl --location --request POST 'https://playground.thingsdb.net//Doc' \
 }'
 ```
 
-> Example response:
+> Response:
 
 ```json
 2
+```
+
+### Localhost
+
+Make sure to enable the HTTP API if you want to use it. By default HTTP is disabled.
+
+In this example we start _thingsdb_ with an environment variable to enable the HTTP API on port 9210:
+
+```text
+THINGSDB_HTTP_API_PORT=9210 /path/to/thingsdb --log-level info
+```
+
+The logging should now include something like this line:
+
+```text
+[I 2022-09-16 09:10:42] start listening for HTTP API requests on TCP port 9210
+```
+
+Test a HTTP request to ThingsDB:
+
+```bash
+curl --location --request POST 'http://localhost:9210//stuff' \
+--header 'Content-Type: application/json' \
+--user admin:pass \
+--data-raw '{
+	"type": "query",
+	"code": "1 + 1;"
+}'
 ```
 
 ## Run request

@@ -1,6 +1,6 @@
 ---
 title: "revoke"
-weight: 325
+weight: 326
 ---
 
 Revoke, collection or general, privileges from a user. See [grant](../../thingsdb-api/grant) for more information on

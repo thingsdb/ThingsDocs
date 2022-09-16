@@ -1,6 +1,6 @@
 ---
 title: "new_type"
-weight: 256
+weight: 257
 ---
 
 Creates a new [Type](../../overview/type). This function *only* creates a new type
@@ -16,7 +16,7 @@ This function generates a [change](../../overview/changes).
 
 ### Function
 
-`new_type(type, [wrap_only])`
+`new_type(type, [wrap_only, [hide_id]])`
 
 ### Arguments
 
@@ -24,6 +24,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 type | string | Name of the Type to be created.
 wrap_only | bool (optional) | When `true` the new type will be created with *wrap-only* mode enabled. Default is `false`.
+hide_id | bool (optional) | When `true` the new type will be created with *hide-id* enabled. Default is `false`. See ["hid" action on mod_type](../mod_type/hid) for more information.
 
 {{% notice note %}}
 If **wrap-only** mode is enabled, no typed thing of this type can be

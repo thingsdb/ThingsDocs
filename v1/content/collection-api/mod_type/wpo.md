@@ -1,6 +1,6 @@
 ---
 title: "wpo"
-weight: 254
+weight: 255
 ---
 
 Enable or disable *wrap-only* mode for an existing [Type](../../../overview/type).
@@ -40,7 +40,6 @@ The value `nil`.
 // Create type `Person`
 set_type('Person', {
     name: 'str',
-    a: 'int',
 });
 
 // Set type Person in wrap-only mode

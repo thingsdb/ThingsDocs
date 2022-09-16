@@ -1,6 +1,6 @@
 ---
 title: "counters"
-weight: 287
+weight: 288
 ---
 
 Returns `counters` for the ThingsDB node in the selected scope. Counters start all at zero when ThingsDB

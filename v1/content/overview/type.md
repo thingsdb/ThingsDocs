@@ -46,7 +46,7 @@ definition | default | description
 `'any'` | `nil` | any type is valid *(with the exception of a [future](../../data-types/future))*.
 `'#'` | *depends* | Not a real property, see [named Id](#named-id).
 
-Each definition can be made optional by adding a question-mark `?` to the definition and with a `&` prefix you can tell a *wrapped* type to use the [same deep level](#same-deep-level).
+Each definition can be made optional by adding a question-mark `?` to the definition and can be [prefixed](#prefix-flags) with additional flags.
 If a property is made optional, then the value `nil` is allowed instead of the given type
 and `nil` will also be the default if the property is missing.
 
@@ -87,6 +87,16 @@ assert(is_err(try(User{name: 0})));
     }
 ]
 ```
+### Prefix flags
+
+All definitions can be pre-fixed with additional flags which are applied when a thing is being wrapped.
+
+Flag | Description
+---- | -----------
+`&`  | Tells ThingsDB to use the same *deep* level as the parent. See [documentation](#same-deep-level) below for more information.
+`+`  | Fakes the parent to have a deep level of `127` and therefore this property will get a deep level of `126`. _(Not possible in combination with the `-` flag)_
+`-`  | Fakes the parent to have a deep level of `1` and therefore this property will get a deep level of `0`. Note: both the `&` and `-` flags combination enforces a deep level of exactly `1`.
+`^`  | Tells ThingsDB to use the `NO_IDS` return flag on this property. See [return flags](../statements#return-flags) for more information.
 
 ### Same deep level
 
