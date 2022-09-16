@@ -208,7 +208,7 @@ When possible it is preferred to use the syntax MyType{...} to create a thing of
 Since version v0.9.2 the value argument is no longer required. If not given all properties will be set to their default values.</description></item><item><title>new_type</title><link>https://docs.thingsdb.net/v1/collection-api/new_type/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/new_type/</guid><description>Creates a new Type. This function only creates a new type and does not allow you to specify any fields. With the set_type() function you can define the fields for the new type.
 It is possible to use set_type directly without calling new_type first. However, sometimes you want to cross reference two types so you want both type to exists before calling set_type.
 This function generates a change.
-Function new_type(type, [wrap_only])</description></item><item><title>now</title><link>https://docs.thingsdb.net/v1/collection-api/now/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/now/</guid><description>Return the time in seconds since the epoch as a floating point number.
+Function new_type(type, [wrap_only, [hide_id]])</description></item><item><title>now</title><link>https://docs.thingsdb.net/v1/collection-api/now/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/now/</guid><description>Return the time in seconds since the epoch as a floating point number.
 If you require the same time multiple times within a query, then call now() only once and save it to a variable, for example now = now();
 This function does not generate a change.
 Function now()
@@ -262,7 +262,7 @@ Arguments Argument Type Description enum str The name of the enumerator type to 
 Example This code shows how to use set_enum():
 set_enum('Status', { OK: 0, NOK: -1 }); Return value in JSON format</description></item><item><title>set_type</title><link>https://docs.thingsdb.net/v1/collection-api/set_type/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/set_type/</guid><description>Defines the properties of a Type. Function set_type works only on a new Type. Use mod_type() if you want to change an existing Type, see mod_type.
 This function generates a change.
-Function set_type(type, value, [wrap_only])
+Function set_type(type, value, [wrap_only, [hide_id]])
 Arguments Argument Type Description type str The name of the Type where the properties have to be set. value thing Thing containing all the properties to be set.</description></item><item><title>str</title><link>https://docs.thingsdb.net/v1/collection-api/str/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/str/</guid><description>Convert a value to a string. If no value is given, an empty string &amp;quot;&amp;quot; is returned.
 When bytes are converted to str then the data will be checked if it contains valid UTF-8 characters. If this is not the case, a value_err() will be raised.
 This function does not generate a change.

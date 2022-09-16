@@ -6,17 +6,17 @@
 <meta name=description content="ThingsDB documentation">
 <link rel="shortcut icon" href=/v1/images/favicon.ico type=image/x-icon>
 <title>HTTP API :: ThingsDB documentation</title>
-<link href=/v1/css/nucleus.css?1662387780 rel=stylesheet>
-<link href=/v1/css/fontawesome-all.min.css?1662387780 rel=stylesheet>
-<link href=/v1/css/hybrid.css?1662387780 rel=stylesheet>
-<link href=/v1/css/featherlight.min.css?1662387780 rel=stylesheet>
-<link href=/v1/css/perfect-scrollbar.min.css?1662387780 rel=stylesheet>
-<link href=/v1/css/auto-complete.css?1662387780 rel=stylesheet>
-<link href=/v1/css/atom-one-dark-reasonable.css?1662387780 rel=stylesheet>
-<link href=/v1/css/theme.css?1662387780 rel=stylesheet>
-<link href=/v1/css/hugo-theme.css?1662387780 rel=stylesheet>
-<link href=/v1/css/theme-mine.css?1662387780 rel=stylesheet>
-<script src=/v1/js/jquery-3.3.1.min.js?1662387780></script>
+<link href=/v1/css/nucleus.css?1663326042 rel=stylesheet>
+<link href=/v1/css/fontawesome-all.min.css?1663326042 rel=stylesheet>
+<link href=/v1/css/hybrid.css?1663326042 rel=stylesheet>
+<link href=/v1/css/featherlight.min.css?1663326042 rel=stylesheet>
+<link href=/v1/css/perfect-scrollbar.min.css?1663326042 rel=stylesheet>
+<link href=/v1/css/auto-complete.css?1663326042 rel=stylesheet>
+<link href=/v1/css/atom-one-dark-reasonable.css?1663326042 rel=stylesheet>
+<link href=/v1/css/theme.css?1663326042 rel=stylesheet>
+<link href=/v1/css/hugo-theme.css?1663326042 rel=stylesheet>
+<link href=/v1/css/theme-mine.css?1663326042 rel=stylesheet>
+<script src=/v1/js/jquery-3.3.1.min.js?1663326042></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}:not(pre)>code+span.copy-to-clipboard{display:none}</style>
 </head>
 <body data-url=/v1/connect/http-api/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/v1/js/lunr.min.js?1662387780></script>
-<script type=text/javascript src=/v1/js/auto-complete.js?1662387780></script>
+<script type=text/javascript src=/v1/js/lunr.min.js?1663326042></script>
+<script type=text/javascript src=/v1/js/auto-complete.js?1663326042></script>
 <script type=text/javascript>var baseurl="https://docs.thingsdb.net/v1/"</script>
-<script type=text/javascript src=/v1/js/search.js?1662387780></script>
+<script type=text/javascript src=/v1/js/search.js?1663326042></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -1336,6 +1336,11 @@ all
 del
 </a>
 </li>
+<li data-nav-id=/v1/collection-api/mod_type/hid/ title=hid class=dd-item>
+<a href=/v1/collection-api/mod_type/hid/>
+hid
+</a>
+</li>
 <li data-nav-id=/v1/collection-api/mod_type/mod/ title=mod class=dd-item>
 <a href=/v1/collection-api/mod_type/mod/>
 mod
@@ -1996,7 +2001,11 @@ zero_div_err
 <ul>
 <li><a href=#headers>Headers</a></li>
 <li><a href=#query-request>Query request</a></li>
-<li><a href=#query-example>Query example</a></li>
+<li><a href=#query-example>Query example</a>
+<ul>
+<li><a href=#localhost>Localhost</a></li>
+</ul>
+</li>
 <li><a href=#run-request>Run request</a></li>
 <li><a href=#run-example>Run example</a></li>
 </ul>
@@ -2017,7 +2026,7 @@ with the <code>http_api_port</code> in the <a href=https://github.com/thingsdb/T
 or with the <code>THINGSDB_HTTP_API_PORT</code> environment variable.</p>
 <p>The API has support for both <a href=https://msgpack.org>MessagePack</a> and <a href=https://www.json.org>JSON</a> and can be used to perform queries and run procedures.</p>
 <div class="notices tip"><p>Use <strong>MessagePack</strong> if possible since this is the data serialization protocol which is used by ThingsDB
-internally and will therefore be a faster than JSON. It also allows for sending and receiving binary data and is usually more compact than JSON.
+internally and therefore is faster than JSON. It also allows for sending and receiving binary data and is usually more compact than JSON.
 In most examples we use JSON just because it is more readable.</p>
 </div>
 <h2 id=headers>Headers</h2>
@@ -2075,9 +2084,23 @@ In most examples we use JSON just because it is more readable.</p>
 </span><span style=color:#e6db74>	&#34;code&#34;: &#34;1 + 1;&#34;
 </span><span style=color:#e6db74>}&#39;</span>
 </code></pre></div><blockquote>
-<p>Example response:</p>
+<p>Response:</p>
 </blockquote>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=color:#ae81ff>2</span>
+</code></pre></div><h3 id=localhost>Localhost</h3>
+<p>Make sure to enable the HTTP API if you want to use it. By default HTTP is disabled.</p>
+<p>In this example we start <em>thingsdb</em> with an environment variable to enable the HTTP API on port 9210:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text>THINGSDB_HTTP_API_PORT=9210 /path/to/thingsdb --log-level info
+</code></pre></div><p>The logging should now include something like this line:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text>[I 2022-09-16 09:10:42] start listening for HTTP API requests on TCP port 9210
+</code></pre></div><p>Test a HTTP request to ThingsDB:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>curl --location --request POST <span style=color:#e6db74>&#39;http://localhost:9210//stuff&#39;</span> <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>--header <span style=color:#e6db74>&#39;Content-Type: application/json&#39;</span> <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>--user admin:pass <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>--data-raw <span style=color:#e6db74>&#39;{
+</span><span style=color:#e6db74>	&#34;type&#34;: &#34;query&#34;,
+</span><span style=color:#e6db74>	&#34;code&#34;: &#34;1 + 1;&#34;
+</span><span style=color:#e6db74>}&#39;</span>
 </code></pre></div><h2 id=run-request>Run request</h2>
 <table>
 <thead>
@@ -2137,18 +2160,18 @@ In most examples we use JSON just because it is more readable.</p>
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/v1/js/clipboard.min.js?1662387780></script>
-<script src=/v1/js/perfect-scrollbar.min.js?1662387780></script>
-<script src=/v1/js/perfect-scrollbar.jquery.min.js?1662387780></script>
-<script src=/v1/js/jquery.sticky.js?1662387780></script>
-<script src=/v1/js/featherlight.min.js?1662387780></script>
-<script src=/v1/js/highlight.pack.js?1662387780></script>
+<script src=/v1/js/clipboard.min.js?1663326042></script>
+<script src=/v1/js/perfect-scrollbar.min.js?1663326042></script>
+<script src=/v1/js/perfect-scrollbar.jquery.min.js?1663326042></script>
+<script src=/v1/js/jquery.sticky.js?1663326042></script>
+<script src=/v1/js/featherlight.min.js?1663326042></script>
+<script src=/v1/js/highlight.pack.js?1663326042></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=/v1/js/modernizr.custom-3.6.0.js?1662387780></script>
-<script src=/v1/js/learn.js?1662387780></script>
-<script src=/v1/js/hugo-learn.js?1662387780></script>
-<link href=/v1/mermaid/mermaid.css?1662387780 rel=stylesheet>
-<script src=/v1/mermaid/mermaid.js?1662387780></script>
+<script src=/v1/js/modernizr.custom-3.6.0.js?1663326042></script>
+<script src=/v1/js/learn.js?1663326042></script>
+<script src=/v1/js/hugo-learn.js?1663326042></script>
+<link href=/v1/mermaid/mermaid.css?1663326042 rel=stylesheet>
+<script src=/v1/mermaid/mermaid.js?1663326042></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 </body>
 </html>
