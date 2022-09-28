@@ -42,7 +42,6 @@ definition | default | description
 `'[T]'` | `[]` | requires a [list](../../data-types/list) where each item in the list must be of type `T` *(see [restrict items](#restrict-items))*.
 `'{}'` | `set()` | requires a [set](../../data-types/set).
 `'{T}'` | `set()` | requires a [set](../../data-types/set) where each element in the set must be of type `T` *(see [restrict items](#restrict-items))*.
-`'[]'` | `[]` | requires a [list](../../data-types/list).
 `'any'` | `nil` | any type is valid *(with the exception of a [future](../../data-types/future))*.
 `'#'` | *depends* | Not a real property, see [named Id](#named-id).
 

@@ -10,7 +10,7 @@ This function generates a [change](../../../overview/changes).
 
 ### Function
 
-*list*.`remove(callback, [limit])`
+*thing*.`remove(callback, [limit])`
 
 ### Arguments
 
