@@ -13,7 +13,7 @@ Combination | Description
 `Type?` <-> `{Type}`| One to many relation.
 `{Type}` <-> `{Type}` | Many to many relation.
 
-All missing relations on existing instances will be automatically created by ThingsDB once you add a new relation.
+All missing relations on existing instances will be automatically created by ThingsDB once you add a new relation. Relations only work on stored things.
 
 {{% notice info %}}
 With a ***one-to-one*** or a ***one-to-many*** relation it may mot be possible to automatically create all missing relations because
@@ -63,15 +63,14 @@ set_type('Person', {
 mod_type('Person', 'rel', 'workspace', 'people');
 
 // Create a workspace
-foo = Workspace{};
+.foo = Workspace{};
 
 // Create a person and assign workspace `foo`:
-alice = Person{
-    workspace: foo
-};
+alice = Person{};
+.foo.people.add(alice);
 
-// alice is automatically assigned to people in workspace foo:
-foo.people.has(alice);  // true
+// THe workspace of Alice is automatically set to foo
+alice.workspace == .foo;  // true
 ```
 
 > Return value in JSON format
@@ -93,14 +92,14 @@ set_type('Album', {
 // Create a relation for Album.similar
 mod_type('Album', 'rel', 'similar', 'similar');
 
-hoss = Album{title: 'Hoss'};
-punk_in_drublic = Album{title: 'Punk in Drublic'};
+.hoss = Album{title: 'Hoss'};
+.punk_in_drublic = Album{title: 'Punk in Drublic'};
 
 // Add `punk_in_drublic` as a similar album to `hoss`
-hoss.similar.add(punk_in_drublic);
+.hoss.similar.add(.punk_in_drublic);
 
 // note that `hoss` is also added as a similar album to `punk_in_drublic`:
-punk_in_drublic.similar.has(hoss);  // true
+.punk_in_drublic.similar.has(.hoss);  // true
 ```
 
 > Return value in JSON format

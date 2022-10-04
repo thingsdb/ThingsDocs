@@ -97,8 +97,19 @@ assert (a == a2);   // both `a` and `a2` are a reference to the same list
 ```thingsdb,should_pass
 .b = [];   // `list` assigned to a thing
 
-// `.b` will be assigned to `arr`, so in the first iteration a *copy* will be made
+// `.b` will be assigned to a variable, thus this is still a reference
 b2 = range(3).reduce(|arr, val| {arr.push(val); arr;}, .b);  // [0, 1, 2]
 
-assert (.b != b2);  // [] != [0, 1, 2]
+assert (.b == b2);  // b2 is a reference to .b
+```
+
+> A copy is made when assigned to a thing
+
+```thingsdb,should_pass
+a = [];   // `list` assigned to a thing
+
+.b = a;   // this is a copy as we assign to a thing
+
+.b.push(1, 2 , 3);
+assert (a != .b);  // [] != [1, 2, 3]
 ```
