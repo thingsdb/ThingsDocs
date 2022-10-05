@@ -6,17 +6,17 @@
 <meta name=description content="ThingsDB documentation">
 <link rel="shortcut icon" href=/v1/images/favicon.ico type=image/x-icon>
 <title>rel :: ThingsDB documentation</title>
-<link href=/v1/css/nucleus.css?1663332336 rel=stylesheet>
-<link href=/v1/css/fontawesome-all.min.css?1663332336 rel=stylesheet>
-<link href=/v1/css/hybrid.css?1663332336 rel=stylesheet>
-<link href=/v1/css/featherlight.min.css?1663332336 rel=stylesheet>
-<link href=/v1/css/perfect-scrollbar.min.css?1663332336 rel=stylesheet>
-<link href=/v1/css/auto-complete.css?1663332336 rel=stylesheet>
-<link href=/v1/css/atom-one-dark-reasonable.css?1663332336 rel=stylesheet>
-<link href=/v1/css/theme.css?1663332336 rel=stylesheet>
-<link href=/v1/css/hugo-theme.css?1663332336 rel=stylesheet>
-<link href=/v1/css/theme-mine.css?1663332336 rel=stylesheet>
-<script src=/v1/js/jquery-3.3.1.min.js?1663332336></script>
+<link href=/v1/css/nucleus.css?1664970252 rel=stylesheet>
+<link href=/v1/css/fontawesome-all.min.css?1664970252 rel=stylesheet>
+<link href=/v1/css/hybrid.css?1664970252 rel=stylesheet>
+<link href=/v1/css/featherlight.min.css?1664970252 rel=stylesheet>
+<link href=/v1/css/perfect-scrollbar.min.css?1664970252 rel=stylesheet>
+<link href=/v1/css/auto-complete.css?1664970252 rel=stylesheet>
+<link href=/v1/css/atom-one-dark-reasonable.css?1664970252 rel=stylesheet>
+<link href=/v1/css/theme.css?1664970252 rel=stylesheet>
+<link href=/v1/css/hugo-theme.css?1664970252 rel=stylesheet>
+<link href=/v1/css/theme-mine.css?1664970252 rel=stylesheet>
+<script src=/v1/js/jquery-3.3.1.min.js?1664970252></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}:not(pre)>code+span.copy-to-clipboard{display:none}</style>
 </head>
 <body data-url=/v1/collection-api/mod_type/rel/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/v1/js/lunr.min.js?1663332336></script>
-<script type=text/javascript src=/v1/js/auto-complete.js?1663332336></script>
+<script type=text/javascript src=/v1/js/lunr.min.js?1664970252></script>
+<script type=text/javascript src=/v1/js/auto-complete.js?1664970252></script>
 <script type=text/javascript>var baseurl="https://docs.thingsdb.net/v1/"</script>
-<script type=text/javascript src=/v1/js/search.js?1663332336></script>
+<script type=text/javascript src=/v1/js/search.js?1664970252></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -2051,7 +2051,7 @@ rel
 </tr>
 </tbody>
 </table>
-<p>All missing relations on existing instances will be automatically created by ThingsDB once you add a new relation.</p>
+<p>All missing relations on existing instances will be automatically created by ThingsDB once you add a new relation. Relations only work on stored things.</p>
 <div class="notices info"><p>With a <em><strong>one-to-one</strong></em> or a <em><strong>one-to-many</strong></em> relation it may mot be possible to automatically create all missing relations because
 you might be in a state where the existing instances are not related correctly. For example, you want to create a <em><strong>one-to-many</strong></em> relation but one of the <em>things</em>
 exists in a <em>set</em> on another <em>thing</em> than being referenced to. Either the <em>set</em> or the <em>reference</em> is obviously incorrect. In such state ThingsDB will raise a <a href=../../../errors/type_err>type_err()</a> and does not
@@ -2116,15 +2116,14 @@ set_type('Person', {
 mod_type('Person', 'rel', 'workspace', 'people');
 
 // Create a workspace
-foo = Workspace{};
+.foo = Workspace{};
 
 // Create a person and assign workspace `foo`:
-alice = Person{
-    workspace: foo
-};
+alice = Person{};
+.foo.people.add(alice);
 
-// alice is automatically assigned to people in workspace foo:
-foo.people.has(alice);  // true
+// THe workspace of Alice is automatically set to foo
+alice.workspace == .foo;  // true
 </code></pre><blockquote>
 <p>Return value in JSON format</p>
 </blockquote>
@@ -2140,14 +2139,14 @@ set_type('Album', {
 // Create a relation for Album.similar
 mod_type('Album', 'rel', 'similar', 'similar');
 
-hoss = Album{title: 'Hoss'};
-punk_in_drublic = Album{title: 'Punk in Drublic'};
+.hoss = Album{title: 'Hoss'};
+.punk_in_drublic = Album{title: 'Punk in Drublic'};
 
 // Add `punk_in_drublic` as a similar album to `hoss`
-hoss.similar.add(punk_in_drublic);
+.hoss.similar.add(.punk_in_drublic);
 
 // note that `hoss` is also added as a similar album to `punk_in_drublic`:
-punk_in_drublic.similar.has(hoss);  // true
+.punk_in_drublic.similar.has(.hoss);  // true
 </code></pre><blockquote>
 <p>Return value in JSON format</p>
 </blockquote>
@@ -2165,18 +2164,18 @@ punk_in_drublic.similar.has(hoss);  // true
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/v1/js/clipboard.min.js?1663332336></script>
-<script src=/v1/js/perfect-scrollbar.min.js?1663332336></script>
-<script src=/v1/js/perfect-scrollbar.jquery.min.js?1663332336></script>
-<script src=/v1/js/jquery.sticky.js?1663332336></script>
-<script src=/v1/js/featherlight.min.js?1663332336></script>
-<script src=/v1/js/highlight.pack.js?1663332336></script>
+<script src=/v1/js/clipboard.min.js?1664970252></script>
+<script src=/v1/js/perfect-scrollbar.min.js?1664970252></script>
+<script src=/v1/js/perfect-scrollbar.jquery.min.js?1664970252></script>
+<script src=/v1/js/jquery.sticky.js?1664970252></script>
+<script src=/v1/js/featherlight.min.js?1664970252></script>
+<script src=/v1/js/highlight.pack.js?1664970252></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=/v1/js/modernizr.custom-3.6.0.js?1663332336></script>
-<script src=/v1/js/learn.js?1663332336></script>
-<script src=/v1/js/hugo-learn.js?1663332336></script>
-<link href=/v1/mermaid/mermaid.css?1663332336 rel=stylesheet>
-<script src=/v1/mermaid/mermaid.js?1663332336></script>
+<script src=/v1/js/modernizr.custom-3.6.0.js?1664970252></script>
+<script src=/v1/js/learn.js?1664970252></script>
+<script src=/v1/js/hugo-learn.js?1664970252></script>
+<link href=/v1/mermaid/mermaid.css?1664970252 rel=stylesheet>
+<script src=/v1/mermaid/mermaid.js?1664970252></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 </body>
 </html>

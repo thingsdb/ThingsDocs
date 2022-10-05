@@ -61,7 +61,7 @@ This function does not generate a change.
 Function thing.map(callback)
 Arguments Argument Type Description callback closure (required) Closure to execute on each value. Explanation of the callback argument:</description></item><item><title>remove</title><link>https://docs.thingsdb.net/v1/data-types/thing/remove/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/thing/remove/</guid><description>This function removes all properties from a thing that satisfies the callback function. The removed values will be returned in a new list. An empty list is returned if no values are removed.
 This function generates a change.
-Function list.remove(callback, [limit])
+Function thing.remove(callback, [limit])
 Arguments Argument Type Description callback closure (required) Closure to execute on each value. limit int (optional) Limit the number of properties to remove.</description></item><item><title>restrict</title><link>https://docs.thingsdb.net/v1/data-types/thing/restrict/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/thing/restrict/</guid><description>Set or remove a value restriction on a thing. Function restriction() can be used to view the current restriction.
 This function generates a change.
 Function thing.restrict(type)

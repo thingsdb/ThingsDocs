@@ -6,17 +6,17 @@
 <meta name=description content="ThingsDB documentation">
 <link rel="shortcut icon" href=/v1/images/favicon.ico type=image/x-icon>
 <title>list :: ThingsDB documentation</title>
-<link href=/v1/css/nucleus.css?1663332342 rel=stylesheet>
-<link href=/v1/css/fontawesome-all.min.css?1663332342 rel=stylesheet>
-<link href=/v1/css/hybrid.css?1663332342 rel=stylesheet>
-<link href=/v1/css/featherlight.min.css?1663332342 rel=stylesheet>
-<link href=/v1/css/perfect-scrollbar.min.css?1663332342 rel=stylesheet>
-<link href=/v1/css/auto-complete.css?1663332342 rel=stylesheet>
-<link href=/v1/css/atom-one-dark-reasonable.css?1663332342 rel=stylesheet>
-<link href=/v1/css/theme.css?1663332342 rel=stylesheet>
-<link href=/v1/css/hugo-theme.css?1663332342 rel=stylesheet>
-<link href=/v1/css/theme-mine.css?1663332342 rel=stylesheet>
-<script src=/v1/js/jquery-3.3.1.min.js?1663332342></script>
+<link href=/v1/css/nucleus.css?1664970257 rel=stylesheet>
+<link href=/v1/css/fontawesome-all.min.css?1664970257 rel=stylesheet>
+<link href=/v1/css/hybrid.css?1664970257 rel=stylesheet>
+<link href=/v1/css/featherlight.min.css?1664970257 rel=stylesheet>
+<link href=/v1/css/perfect-scrollbar.min.css?1664970257 rel=stylesheet>
+<link href=/v1/css/auto-complete.css?1664970257 rel=stylesheet>
+<link href=/v1/css/atom-one-dark-reasonable.css?1664970257 rel=stylesheet>
+<link href=/v1/css/theme.css?1664970257 rel=stylesheet>
+<link href=/v1/css/hugo-theme.css?1664970257 rel=stylesheet>
+<link href=/v1/css/theme-mine.css?1664970257 rel=stylesheet>
+<script src=/v1/js/jquery-3.3.1.min.js?1664970257></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}:not(pre)>code+span.copy-to-clipboard{display:none}</style>
 </head>
 <body data-url=/v1/data-types/list/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/v1/js/lunr.min.js?1663332342></script>
-<script type=text/javascript src=/v1/js/auto-complete.js?1663332342></script>
+<script type=text/javascript src=/v1/js/lunr.min.js?1664970257></script>
+<script type=text/javascript src=/v1/js/auto-complete.js?1664970257></script>
 <script type=text/javascript>var baseurl="https://docs.thingsdb.net/v1/"</script>
-<script type=text/javascript src=/v1/js/search.js?1663332342></script>
+<script type=text/javascript src=/v1/js/search.js?1664970257></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -2206,10 +2206,19 @@ assert (a == a2);   // both `a` and `a2` are a reference to the same list
 </blockquote>
 <pre tabindex=0><code class=language-thingsdb,should_pass data-lang=thingsdb,should_pass>.b = [];   // `list` assigned to a thing
 
-// `.b` will be assigned to `arr`, so in the first iteration a *copy* will be made
+// `.b` will be assigned to a variable, thus this is still a reference
 b2 = range(3).reduce(|arr, val| {arr.push(val); arr;}, .b);  // [0, 1, 2]
 
-assert (.b != b2);  // [] != [0, 1, 2]
+assert (.b == b2);  // b2 is a reference to .b
+</code></pre><blockquote>
+<p>A copy is made when assigned to a thing</p>
+</blockquote>
+<pre tabindex=0><code class=language-thingsdb,should_pass data-lang=thingsdb,should_pass>a = [];   // `list` assigned to a thing
+
+.b = a;   // this is a copy as we assign to a thing
+
+.b.push(1, 2 , 3);
+assert (a != .b);  // [] != [1, 2, 3]
 </code></pre>
 <footer class=footline>
 </footer>
@@ -2223,18 +2232,18 @@ assert (.b != b2);  // [] != [0, 1, 2]
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/v1/js/clipboard.min.js?1663332342></script>
-<script src=/v1/js/perfect-scrollbar.min.js?1663332342></script>
-<script src=/v1/js/perfect-scrollbar.jquery.min.js?1663332342></script>
-<script src=/v1/js/jquery.sticky.js?1663332342></script>
-<script src=/v1/js/featherlight.min.js?1663332342></script>
-<script src=/v1/js/highlight.pack.js?1663332342></script>
+<script src=/v1/js/clipboard.min.js?1664970257></script>
+<script src=/v1/js/perfect-scrollbar.min.js?1664970257></script>
+<script src=/v1/js/perfect-scrollbar.jquery.min.js?1664970257></script>
+<script src=/v1/js/jquery.sticky.js?1664970257></script>
+<script src=/v1/js/featherlight.min.js?1664970257></script>
+<script src=/v1/js/highlight.pack.js?1664970257></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=/v1/js/modernizr.custom-3.6.0.js?1663332342></script>
-<script src=/v1/js/learn.js?1663332342></script>
-<script src=/v1/js/hugo-learn.js?1663332342></script>
-<link href=/v1/mermaid/mermaid.css?1663332342 rel=stylesheet>
-<script src=/v1/mermaid/mermaid.js?1663332342></script>
+<script src=/v1/js/modernizr.custom-3.6.0.js?1664970257></script>
+<script src=/v1/js/learn.js?1664970257></script>
+<script src=/v1/js/hugo-learn.js?1664970257></script>
+<link href=/v1/mermaid/mermaid.css?1664970257 rel=stylesheet>
+<script src=/v1/mermaid/mermaid.js?1664970257></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 </body>
 </html>
