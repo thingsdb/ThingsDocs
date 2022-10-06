@@ -151,7 +151,6 @@ data-types
         clear
         copy
         del
-        ren
         dup
         each
         equals
@@ -163,6 +162,7 @@ data-types
         len
         map
         remove
+        ren
         restrict
         restriction
         search
@@ -201,6 +201,7 @@ collection-api
     del_type
     enum
     enum_info
+    enum_map
     enums_info
     err
     float
