@@ -25,6 +25,7 @@ Function | Description
 [len](./len) | Return the number of items.
 [map](./map) | Return a [list](../list) with the results of calling a provided closure on every property.
 [remove](./remove) | Remove properties that pass a given test and returns the removed *values* in a list.
+[ren](./ren) | Rename a property.
 [restrict](./restrict) | Set or remove a value restriction on a thing.
 [restriction](./restriction) | Return the restriction of the thing or `nil` when the thing is not restricted.
 [search](./search) | Search for a given thing within a thing.

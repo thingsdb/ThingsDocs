@@ -151,6 +151,7 @@ data-types
         clear
         copy
         del
+        ren
         dup
         each
         equals
