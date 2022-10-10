@@ -1,6 +1,6 @@
 ---
 title: "map_wrap"
-weight: 117
+weight: 118
 ---
 
 The function returns a `list` with every thing wrapped according the given type.

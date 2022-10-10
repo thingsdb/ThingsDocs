@@ -66,6 +66,7 @@ data-types
         every
         extend
         extend_unique
+        fill
         filter
         find
         find_index

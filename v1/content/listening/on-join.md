@@ -1,6 +1,6 @@
 ---
 title: "on-join"
-weight: 350
+weight: 351
 ---
 
 This event will be pushed when a [room](../../data-types/room) is joined.

@@ -1,6 +1,6 @@
 ---
 title: "map_type"
-weight: 81
+weight: 82
 ---
 
 The function must be called on a list with *Ids (integer values)* or *things* and returns a new list with the Ids and things converted to corresponding [typed](../../typed) things.

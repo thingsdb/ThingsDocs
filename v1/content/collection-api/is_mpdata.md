@@ -1,6 +1,6 @@
 ---
 title: "is_mpdata"
-weight: 225
+weight: 226
 ---
 
 This function determines whether the provided value is of type [mpdata](../../data-types/) or not.
