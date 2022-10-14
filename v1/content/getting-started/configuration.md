@@ -24,6 +24,7 @@ Variable | Default | Description
 `THINGSDB_QUERY_DURATION_ERROR` | *disabled* | Log an error message when a query takes more than X second(s) *(accepts a floating point value like `1.5`)*.
 `THINGSDB_QUERY_DURATION_WARN` | *disabled* | Log a warning message when a query takes more than X second(s) *(accepts a floating point value like `1.5`)*.
 `THINGSDB_RESULT_SIZE_LIMIT` | `20971520` *(20 MiB)* | Result size limit is checked when packing properties for a thing. If, at the check moment, the packed data size exceeds the limit, packing stops and an [RESULT_TOO_LARGE](../../errors/#internal-errors) error will be returned. This limit is set in bytes and is used to prevent a huge amount of data, typically when a high `deep` value is used.
+`THINGSDB_SHUTDOWN_PERIOD` | `6` | Period in seconds before shutting down. This window provides clients to re-connect to another node. _Note: the shutdown period value is only used when having multiple nodes._
 `THINGSDB_STORAGE_PATH` | *depends* | Location to store ThingsDB data. The default location depends on the user who is running ThingsDB. (`/var/lib/thingsdb/` for *root* and `~/.thingsdb/` for a normal user).
 `THINGSDB_THRESHOLD_FULL_STORAGE` | `1000` | Threshold for number of events before initiating a full database store.
 `THINGSDB_THRESHOLD_QUERY_CACHE` | `160` | Queries with a length equal to, or greater than this threshold will be cached by the node.
