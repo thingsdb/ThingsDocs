@@ -179,6 +179,7 @@ data-types
     wtype
         copy
         dup
+        id
         unwrap
 operators
     arithmetic-operators

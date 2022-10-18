@@ -1,6 +1,6 @@
 ---
 title: "del_enum"
-weight: 201
+weight: 202
 ---
 
 Deletes an existing [enumerator type](../../data-types/enum).

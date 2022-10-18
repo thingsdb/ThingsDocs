@@ -1,6 +1,6 @@
 ---
 title: "set_log_level"
-weight: 299
+weight: 300
 ---
 
 Change the log level for the node in the selected scope.
