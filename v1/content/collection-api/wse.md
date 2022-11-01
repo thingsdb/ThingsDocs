@@ -1,6 +1,6 @@
 ---
 title: "wse"
-weight: 288
+weight: 289
 ---
 
 This function enforces ThingsDB to create a [change](../../overview/changes).
@@ -24,7 +24,7 @@ statement | any (optional) | Statement or block to wrap.
 
 ### Return value
 
-Return value of the given statement.
+Return value of the given statement or `nil`.
 
 ### Example
 

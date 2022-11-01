@@ -260,6 +260,7 @@ collection-api
     new
     new_type
     now
+    nse
     raise
     rand
     randint
