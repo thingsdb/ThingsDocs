@@ -8,7 +8,13 @@ The function preserves both the wrap and Type of a thing. Use copy(..) if you wa
 This function does not generate a change.
 Function &amp;lt;Type&amp;gt;.dup([deep]])
 Arguments Argument Type Description deep int (optional) How deep to duplicate the wrapped thing. Default is 1. Return value A new wrapped thing.
-Example This code shows an example using dup() on a wrapped thing:</description></item><item><title>unwrap</title><link>https://docs.thingsdb.net/v1/data-types/wtype/unwrap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/wtype/unwrap/</guid><description>Unwrap a wrapped thing.
+Example This code shows an example using dup() on a wrapped thing:</description></item><item><title>id</title><link>https://docs.thingsdb.net/v1/data-types/wtype/id/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/wtype/id/</guid><description>Returns the id of a wrapped thing or nil if the thing is not stored.
+This function does not generate a change.
+Function &amp;lt;Type&amp;gt;.id()
+Arguments None
+Return value Returns id of a wrapped thing or nil when the thing is not stored.
+Example This code uses id() to return a collection id:
+set_type('Person', {name: 'str', namelen: |this| this.name.len()}); alice = Person{name: 'Alice'}; w = alice.wrap(); w.id(); // returns the Id (same as w.</description></item><item><title>unwrap</title><link>https://docs.thingsdb.net/v1/data-types/wtype/unwrap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/wtype/unwrap/</guid><description>Unwrap a wrapped thing.
 Function &amp;lt;Type&amp;gt;.unwrap()
 Arguments None
 Return value Returns the wrapped thing.

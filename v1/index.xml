@@ -664,7 +664,13 @@ The function preserves both the wrap and Type of a thing. Use copy(..) if you wa
 This function does not generate a change.
 Function &amp;lt;Type&amp;gt;.dup([deep]])
 Arguments Argument Type Description deep int (optional) How deep to duplicate the wrapped thing. Default is 1. Return value A new wrapped thing.
-Example This code shows an example using dup() on a wrapped thing:</description></item><item><title>unwrap</title><link>https://docs.thingsdb.net/v1/data-types/wtype/unwrap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/wtype/unwrap/</guid><description>Unwrap a wrapped thing.
+Example This code shows an example using dup() on a wrapped thing:</description></item><item><title>id</title><link>https://docs.thingsdb.net/v1/data-types/wtype/id/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/wtype/id/</guid><description>Returns the id of a wrapped thing or nil if the thing is not stored.
+This function does not generate a change.
+Function &amp;lt;Type&amp;gt;.id()
+Arguments None
+Return value Returns id of a wrapped thing or nil when the thing is not stored.
+Example This code uses id() to return a collection id:
+set_type('Person', {name: 'str', namelen: |this| this.name.len()}); alice = Person{name: 'Alice'}; w = alice.wrap(); w.id(); // returns the Id (same as w.</description></item><item><title>unwrap</title><link>https://docs.thingsdb.net/v1/data-types/wtype/unwrap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/wtype/unwrap/</guid><description>Unwrap a wrapped thing.
 Function &amp;lt;Type&amp;gt;.unwrap()
 Arguments None
 Return value Returns the wrapped thing.
@@ -929,7 +935,9 @@ Function now()
 Arguments None
 Return value Current timestamp.
 Example This code shows the current timestamp:
-// current timestamp now(); Example return value in JSON format</description></item><item><title>raise</title><link>https://docs.thingsdb.net/v1/collection-api/raise/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/raise/</guid><description>Raises an error.
+// current timestamp now(); Example return value in JSON format</description></item><item><title>nse</title><link>https://docs.thingsdb.net/v1/collection-api/nse/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/nse/</guid><description>This function promises ThingsDB that your code has no-side-effects and therefore does not require a change.
+Suppose you use the following code:
+response = {}; response.text = &amp;quot;Some message&amp;quot;; // This enforces a change response; // Return the response On the second code line, ThingsDB doesn&amp;rsquo;t know if response is a stored object or not. Therefore ThingsDB will create a change. Although the code example above is very simple and in this case can be simply re-written to avoid a change, it is not always that simple.</description></item><item><title>raise</title><link>https://docs.thingsdb.net/v1/collection-api/raise/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/raise/</guid><description>Raises an error.
 This function does not generate a change.
 Function raise([error])
 Arguments Argument Type Description value error/str (optional) The error to raise. Return value None
