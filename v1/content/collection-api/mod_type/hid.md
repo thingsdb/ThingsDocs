@@ -17,7 +17,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 type | str | Name of the Type where to set hide-id on or off.
 `'hid'` | str | Passing this argument will result in a *set-hide_id* action.
-mode | bool | Enable or disable wrap-mode.
+mode | bool | Enable or disable hide-id.
 
 ### Return value
 
@@ -33,7 +33,7 @@ set_type('Person', {
     name: 'str',
 });
 
-// Set type Person in wrap-only mode
+// Set type Person to hide the id
 mod_type('Person', 'hid', true);
 
 .iris = Person{name: "Iris"};
