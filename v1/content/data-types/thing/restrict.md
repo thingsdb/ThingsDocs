@@ -1,6 +1,6 @@
 ---
 title: "restrict"
-weight: 167
+weight: 168
 ---
 
 Set or remove a value restriction on a thing. Function [restriction()](../restriction) can be used to view the current restriction.

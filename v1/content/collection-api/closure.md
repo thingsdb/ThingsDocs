@@ -1,6 +1,6 @@
 ---
 title: "closure"
-weight: 199
+weight: 200
 ---
 
 Returns an [closure](../../data-types/closure) from a given string.

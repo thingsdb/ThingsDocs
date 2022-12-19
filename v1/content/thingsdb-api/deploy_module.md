@@ -1,6 +1,6 @@
 ---
 title: "deploy_module"
-weight: 312
+weight: 313
 ---
 
 Deploy a module on all nodes. The module must be configured first, using the [new_module()](../new_module) function. This function is used to write the module data *(or plain python code)* to the module.

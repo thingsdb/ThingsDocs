@@ -26,6 +26,7 @@ overview
     properties
     slices
     statements
+    optional-chaining
     template-strings
     type
     variable

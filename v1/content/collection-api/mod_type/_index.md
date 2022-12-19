@@ -1,6 +1,6 @@
 ---
 title: "mod_type"
-weight: 251
+weight: 252
 ---
 
 This function is used to modify an existing [Type](../../overview/type). A number of actions can be performed with this function.

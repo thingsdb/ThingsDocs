@@ -1,6 +1,6 @@
 ---
 title: "remove"
-weight: 87
+weight: 88
 ---
 
 This function removes all values in the [list](../../list) that satisfies the callback function.

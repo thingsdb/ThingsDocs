@@ -1,6 +1,6 @@
 ---
 title: "set_closure"
-weight: 148
+weight: 149
 ---
 
 Change the closure to execute. Obsolete closure arguments will be removed when the new closure accepts less arguments than the previous closure.
