@@ -35,6 +35,7 @@ definition | default | description
 `'closure'` | `\|\|nil` | requires type [closure](../../data-types/closure).
 `'error'` | `err()` | requires type [error](../../data-types/error).
 `'room'` | `room()` | requires type [room](../../data-types/room).
+`'task'` | `task()` | requires type [task](../../data-types/task).
 `'thing'` | `{}` | requires a [thing](../../data-types/thing).
 `'thing<T>'` | `{}` | requires a value restricted [thing](../../data-types/thing) where each value must be of type `T`.
 `'T'` | `T{}` | requires a instance of [Type](../type) `T`, or a member of [enumerator](../../data-types/enum) `T`. The value `T` should be replaced with the `Type` / `enum` name.
