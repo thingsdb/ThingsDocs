@@ -34,7 +34,7 @@ Returns a new `datetime` (or `timeval`) object.
 > This code uses `to()` as an example:
 
 ```thingsdb,json_response
-datetime('2020-12-10T16:08:24Z').to('Europe/Kiev');
+datetime('2020-12-10T16:08:24Z').to('Europe/Kyiv');
 ```
 
 > Return value in JSON format

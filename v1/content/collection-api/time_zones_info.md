@@ -368,7 +368,7 @@ Returns a list with all available time zones in ThingsDB.
  * Europe/Istanbul
  * Europe/Jersey
  * Europe/Kaliningrad
- * Europe/Kiev
+ * Europe/Kyiv
  * Europe/Kirov
  * Europe/Lisbon
  * Europe/Ljubljana
