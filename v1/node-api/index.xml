@@ -4,7 +4,11 @@ See the backup_info() function documentation for an example of the exposed backu
 This function does not generate a change.
 Function backups_info()
 Arguments None
-Return value List with backup schedule mpdata about all backup schedules in the selected node scope.</description></item><item><title>counters</title><link>https://docs.thingsdb.net/v1/node-api/counters/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/node-api/counters/</guid><description>Returns counters for the ThingsDB node in the selected scope. Counters start all at zero when ThingsDB is started, or when the counters are reset by using reset_counters()'.
+Return value List with backup schedule mpdata about all backup schedules in the selected node scope.</description></item><item><title>backups_ok</title><link>https://docs.thingsdb.net/v1/node-api/backups_ok/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/node-api/backups_ok/</guid><description>Returns false if at least one backup had failed (result code != 0). In all other cases this function returns true (also when no backups are available or not yet started).
+This function does not generate a change.
+Function backups_ok()
+Arguments None
+Return value Returns false if at least one backup has failed, otherwise this function returns true.</description></item><item><title>counters</title><link>https://docs.thingsdb.net/v1/node-api/counters/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/node-api/counters/</guid><description>Returns counters for the ThingsDB node in the selected scope. Counters start all at zero when ThingsDB is started, or when the counters are reset by using reset_counters()'.
 Counters give information about things, queries and changes. If you suspect failed queries, then the counters might provide you with more information.
 Counter Description average_change_duration The average change duration in seconds. Change duration is measured from the time a change is created (before the final Id is assigned), until the actual change is committed to ThingsDB.</description></item><item><title>del_backup</title><link>https://docs.thingsdb.net/v1/node-api/del_backup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/node-api/del_backup/</guid><description>Delete a scheduled backup. If the scheduled backup was pending, the backup job will be cancelled.
 This function does not generate a change.
