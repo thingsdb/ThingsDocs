@@ -1,6 +1,6 @@
 ---
 title: "shutdown"
-weight: 303
+weight: 304
 ---
 
 Shutdown the node in the selected scope. This is a clean shutdown, allowing all other nodes (and clients) to disconnect.

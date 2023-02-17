@@ -291,6 +291,7 @@ collection-api
 node-api
     backup_info
     backups_info
+    backups_ok
     counters
     del_backup
     has_backup

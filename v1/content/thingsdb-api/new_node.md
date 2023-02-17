@@ -1,6 +1,6 @@
 ---
 title: "new_node"
-weight: 324
+weight: 325
 ---
 
 Adds a new node to ThingsDB. Nodes are used for scaling and high availability.
