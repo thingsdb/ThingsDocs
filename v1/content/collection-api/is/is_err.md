@@ -1,11 +1,11 @@
 ---
 title: "is_err"
-weight: 222
+weight: 224
 ---
 
-This function determines whether the provided value is a [error](../../data-types/error) or not.
+This function determines whether the provided value is a [error](../../../data-types/error) or not.
 
-This function does *not* generate a [change](../../overview/changes).
+This function does *not* generate a [change](../../../overview/changes).
 
 ### Function
 

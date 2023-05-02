@@ -1,11 +1,11 @@
 ---
 title: "is_nan"
-weight: 229
+weight: 231
 ---
 
-This function determines whether the provided value is a number.
+This function determines whether the provided value is not a number.
 
-This function does *not* generate a [change](../../overview/changes).
+This function does *not* generate a [change](../../../overview/changes).
 
 ### Function
 

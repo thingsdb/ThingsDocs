@@ -1,12 +1,12 @@
 ---
 title: "is_time_zone"
-weight: 238
+weight: 241
 ---
 
 This function determines whether the provided value is of
-type [str](../../data-types/str) and contains a valid time zone *(see [time_zones_info()](../time_zones_info) for a list with all available time zones)*.
+type [str](../../../data-types/str) and contains a valid time zone *(see [time_zones_info()](../../time_zones_info) for a list with all available time zones)*.
 
-This function does *not* generate a [change](../../overview/changes).
+This function does *not* generate a [change](../../../overview/changes).
 
 ### Function
 

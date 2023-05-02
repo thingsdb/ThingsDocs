@@ -212,33 +212,37 @@ collection-api
     has_enum
     has_type
     int
-    is_array
-    is_ascii
-    is_bool
-    is_bytes
-    is_closure
-    is_datetime
-    is_enum
-    is_err
-    is_float
-    is_future
-    is_inf
-    is_int
-    is_list
-    is_mpdata
-    is_nan
-    is_nil
-    is_raw
-    is_regex
-    is_room
-    is_set
-    is_str
-    is_task
-    is_thing
-    is_time_zone
-    is_timeval
-    is_tuple
-    is_utf8
+    is
+        is_array
+        is_ascii
+        is_bool
+        is_bytes
+        is_closure
+        is_datetime
+        is_email
+        is_enum
+        is_err
+        is_float
+        is_future
+        is_inf
+        is_int
+        is_list
+        is_mpdata
+        is_nan
+        is_nil
+        is_raw
+        is_regex
+        is_room
+        is_set
+        is_str
+        is_task
+        is_tel
+        is_thing
+        is_time_zone
+        is_timeval
+        is_tuple
+        is_url
+        is_utf8
     json_dump
     json_load
     list
@@ -280,6 +284,7 @@ collection-api
     tasks
     thing
     time_zones_info
+    timeit
     timeval
     try
     type

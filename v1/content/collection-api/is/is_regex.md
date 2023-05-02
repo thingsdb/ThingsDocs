@@ -1,11 +1,11 @@
 ---
 title: "is_regex"
-weight: 232
+weight: 234
 ---
 
-This function determines whether the provided value is of type [regex](../../data-types/regex) or not.
+This function determines whether the provided value is of type [regex](../../../data-types/regex) or not.
 
-This function does *not* generate a [change](../../overview/changes).
+This function does *not* generate a [change](../../../overview/changes).
 
 ### Function
 
@@ -19,7 +19,7 @@ value | any (required) | The value to be tested.
 
 ### Return value
 
-Returns `true` if the given value is of type [regex](../../data-types/regex), else it returns `false`.
+Returns `true` if the given value is of type [regex](../../../data-types/regex), else it returns `false`.
 
 ### Example
 

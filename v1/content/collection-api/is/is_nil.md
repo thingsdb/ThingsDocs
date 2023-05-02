@@ -1,11 +1,11 @@
 ---
 title: "is_nil"
-weight: 230
+weight: 232
 ---
 
-This function determines whether the provided value is [nil](../../data-types/nil).
+This function determines whether the provided value is [nil](../../../data-types/nil).
 
-This function does *not* generate a [change](../../overview/changes).
+This function does *not* generate a [change](../../../overview/changes).
 
 ### Function
 

@@ -1,17 +1,17 @@
 ---
-title: "is_datetime"
-weight: 220
+title: "is_timeval"
+weight: 242
 ---
 
 This function determines whether the provided value is of
-type [datetime](../../data-types/datetime).
+type [timeval](../../../data-types/timeval).
 
-This function does *not* generate a [change](../../overview/changes).
+This function does *not* generate a [change](../../../overview/changes).
 
 
 ### Function
 
-`is_datetime(value)`
+`is_timeval(value)`
 
 ### Arguments
 
@@ -29,8 +29,8 @@ Returns `true` if the given value is of type `timeval`, else `false`.
 
 ```thingsdb,json_response
 [
-    is_datetime( timeval(2013, 2, 6) ),
-    is_datetime( datetime(2013, 2, 6) ),
+    is_timeval( timeval(2013, 2, 6) ),
+    is_timeval( datetime(2013, 2, 6) ),
 ];
 ```
 
@@ -38,7 +38,7 @@ Returns `true` if the given value is of type `timeval`, else `false`.
 
 ```json
 [
-    false,
-    true
+    true,
+    false
 ]
 ```

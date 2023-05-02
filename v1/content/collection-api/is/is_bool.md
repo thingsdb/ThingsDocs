@@ -1,11 +1,11 @@
 ---
 title: "is_bool"
-weight: 217
+weight: 218
 ---
 
-This function determines whether the provided value is a [bool](../../data-types/bool) or not.
+This function determines whether the provided value is a [bool](../../../data-types/bool) or not.
 
-This function does *not* generate a [change](../../overview/changes).
+This function does *not* generate a [change](../../../overview/changes).
 
 ### Function
 

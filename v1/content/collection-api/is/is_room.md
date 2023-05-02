@@ -1,11 +1,11 @@
 ---
 title: "is_room"
-weight: 233
+weight: 235
 ---
 
-This function determines whether the provided value is a [room](../../data-types/room) or not.
+This function determines whether the provided value is a [room](../../../data-types/room) or not.
 
-This function does *not* generate a [change](../../overview/changes).
+This function does *not* generate a [change](../../../overview/changes).
 
 ### Function
 

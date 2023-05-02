@@ -1,12 +1,12 @@
 ---
 title: "is_array"
-weight: 215
+weight: 216
 ---
 
-This function determines whether the provided value is of type [list](../../data-types/list) or [tuple](../../data-types/tuple) or not. The functions [is_list](../../collection-api/is_list) and
-[is_tuple](../../collection-api/is_tuple) can be used to check if the array is mutable.
+This function determines whether the provided value is of type [list](../../../data-types/list) or [tuple](../../../data-types/tuple) or not. The functions [is_list](../../../collection-api/is/is_list) and
+[is_tuple](../../../collection-api/is/is_tuple) can be used to check if the array is mutable.
 
-This function does *not* generate a [change](../../overview/changes).
+This function does *not* generate a [change](../../../overview/changes).
 
 ### Function
 

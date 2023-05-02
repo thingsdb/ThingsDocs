@@ -1,12 +1,12 @@
 ---
 title: "is_ascii"
-weight: 216
+weight: 217
 ---
 
 This function determines whether the provided value is of
-type [str](../../data-types/str) and contains only valid ascii characters.
+type [str](../../../data-types/str) and contains only valid ascii characters.
 
-This function does *not* generate a [change](../../overview/changes).
+This function does *not* generate a [change](../../../overview/changes).
 
 ### Function
 

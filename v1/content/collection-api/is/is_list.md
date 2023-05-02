@@ -1,11 +1,11 @@
 ---
 title: "is_list"
-weight: 227
+weight: 229
 ---
 
-This function determines whether the provided value is a [list](../../data-types/list) or not.
+This function determines whether the provided value is a [list](../../../data-types/list) or not.
 
-This function does *not* generate a [change](../../overview/changes).
+This function does *not* generate a [change](../../../overview/changes).
 
 ### Function
 

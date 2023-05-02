@@ -1,15 +1,15 @@
 ---
 title: "is_thing"
-weight: 237
+weight: 240
 ---
 
-This function determines whether the provided value is a [thing](../../data-types/thing) or not.
+This function determines whether the provided value is a [thing](../../../data-types/thing) or not.
 
 {{% notice note %}}
-Typed things are also things, so this function returns `true` for both [typed](../../overview/type) and [non-typed](../../data-types/thing) things.
+Typed things are also things, so this function returns `true` for both [typed](../../../overview/type) and [non-typed](../../../data-types/thing) things.
 {{% /notice %}}
 
-This function does *not* generate a [change](../../overview/changes).
+This function does *not* generate a [change](../../../overview/changes).
 
 ### Function
 

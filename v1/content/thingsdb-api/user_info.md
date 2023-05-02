@@ -1,6 +1,6 @@
 ---
 title: "user_info"
-weight: 339
+weight: 344
 ---
 
 Returns information about a user. If no argument is given, this function will return

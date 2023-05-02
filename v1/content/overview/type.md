@@ -39,6 +39,12 @@ definition | default | description
 `'thing'` | `{}` | requires a [thing](../../data-types/thing).
 `'thing<T>'` | `{}` | requires a value restricted [thing](../../data-types/thing) where each value must be of type `T`.
 `'T'` | `T{}` | requires a instance of [Type](../type) `T`, or a member of [enumerator](../../data-types/enum) `T`. The value `T` should be replaced with the `Type` / `enum` name.
+`'email'` | `""` | requires type [str](../../data-types/str) and the value *must* contain an email address _(or empty string)_.
+`'email<..>'` | *depends* | requires type [str](../../data-types/str) and the value *must* contain an email address _(empty string is not allowed, a [default email address](#use-condition-to-set-a-default-value) must be given)_.
+`'url'` | `""` | requires type [str](../../data-types/str) and the value *must* contain a URL _(or empty string)_.
+`'url<..>'` | *depends* | requires type [str](../../data-types/str) and the value *must* contain a URL _(empty string is not allowed and a [default URL](#use-condition-to-set-a-default-value) must be given)_.
+`'tel'` | `""` | requires type [str](../../data-types/str) and the value *must* contain a telephone number _(or empty string)_.
+`'tel<..>'` | *depends* | requires type [str](../../data-types/str) and the value *must* contain a telephone number _(empty string is not allowed, a [default telephone number](#use-condition-to-set-a-default-value) must be given)_.
 `'[]'` | `[]` | requires a [list](../../data-types/list).
 `'[T]'` | `[]` | requires a [list](../../data-types/list) where each item in the list must be of type `T` *(see [restrict items](#restrict-items))*.
 `'{}'` | `set()` | requires a [set](../../data-types/set).
@@ -398,6 +404,28 @@ TestDefault{};  // return a `TestDefault` instance with default values
     "f": 3.14,
     "i": 42,
     "s": "ThingsDB"
+}
+```
+
+For `email`, `url` and `tel`, you can also set a default value, for example:
+
+```thingsdb,json_response
+set_type('TestDefault', {
+    e: 'email<info@thingsdb.io>',
+    u: 'url<https://thingsdb.io>',
+    t: 'tel<(0031) 6 1279 8880>',
+});
+
+TestDefault{};  // return a `TestDefault` instance with default values
+```
+
+> Return value in JSON format
+
+```json
+{
+    "e": "info@thingsdb.io",
+    "t": "(0031) 6 1279 8880",
+    "u": "https://thingsdb.io"
 }
 ```
 

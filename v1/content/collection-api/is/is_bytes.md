@@ -1,11 +1,11 @@
 ---
 title: "is_bytes"
-weight: 218
+weight: 219
 ---
 
-This function determines whether the provided value is of type [bytes](../../data-types/bytes) or not.
+This function determines whether the provided value is of type [bytes](../../../data-types/bytes) or not.
 
-This function does *not* generate a [change](../../overview/changes).
+This function does *not* generate a [change](../../../overview/changes).
 
 ### Function
 

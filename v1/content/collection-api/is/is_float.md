@@ -1,11 +1,11 @@
 ---
 title: "is_float"
-weight: 223
+weight: 225
 ---
 
-This function determines whether the provided value is a [floating point](../../data-types/float) value or not.
+This function determines whether the provided value is a [floating point](../../../data-types/float) value or not.
 
-This function does *not* generate a [change](../../overview/changes).
+This function does *not* generate a [change](../../../overview/changes).
 
 ### Function
 

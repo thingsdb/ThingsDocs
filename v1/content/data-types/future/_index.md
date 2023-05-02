@@ -103,4 +103,4 @@ Function | Description
 Function | Description
 ------ | -----------
 [future](../../collection-api/future) | Create a new future.
-[is_future](../../collection-api/is_future) | Test if a given value is of type future.
+[is_future](../../collection-api/is/is_future) | Test if a given value is of type future.

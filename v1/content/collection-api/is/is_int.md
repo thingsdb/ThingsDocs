@@ -1,11 +1,11 @@
 ---
 title: "is_int"
-weight: 226
+weight: 228
 ---
 
-This function determines whether the provided value is an [integer](../../data-types/int) or not.
+This function determines whether the provided value is an [integer](../../../data-types/int) or not.
 
-This function does *not* generate a [change](../../overview/changes).
+This function does *not* generate a [change](../../../overview/changes).
 
 ### Function
 

@@ -1,6 +1,6 @@
 ---
 title: "rename_enum"
-weight: 272
+weight: 276
 ---
 
 Rename an [enum](../../data-types/enum) type.

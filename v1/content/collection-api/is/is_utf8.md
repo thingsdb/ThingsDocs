@@ -1,18 +1,16 @@
 ---
-title: "is_str"
-weight: 235
+title: "is_utf8"
+weight: 245
 ---
 
 This function determines whether the provided value is of
-type [str](../../data-types/str).
+type [str](../../../data-types/str) and contains valid UTF-8 characters.
 
-The value is *not* explicitly checked for valid UTF-8 characters, use [is_utf8()](../is_utf8) if you want to check for valid UTF-8 data.
-
-This function does *not* generate a [change](../../overview/changes).
+This function does *not* generate a [change](../../../overview/changes).
 
 ### Function
 
-`is_str(value)`
+`is_utf8(value)`
 
 ### Arguments
 
@@ -22,7 +20,7 @@ value | any (required) | The value to be tested.
 
 ### Return value
 
-Returns `true` if the given value is of type `str`, else `false`.
+Returns `true` if the given value is of type `raw` and contains valid utf8, else `false`.
 
 ### Example
 
@@ -30,8 +28,8 @@ Returns `true` if the given value is of type `str`, else `false`.
 
 ```thingsdb,json_response
 [
-    is_str( 'ԉ' ),
-    is_str( 'pi' ),
+    is_utf8( 'ԉ' ),
+    is_utf8( 'pi' ),
 ];
 ```
 

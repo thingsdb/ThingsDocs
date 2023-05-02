@@ -26,7 +26,7 @@ Function | Description
 
 Function | Description
 ------ | -----------
-[is_regex](../../collection-api/is_regex) | Test if a given value is of type `regex`.
+[is_regex](../../collection-api/is/is_regex) | Test if a given value is of type `regex`.
 [regex](../../collection-api/regex) | Create a new `regex`.
 *str.*[replace](../str/replace) | Replace one or more occurrences of a `regex` pattern in a string.
 *str.*[split](../str/split) | Split a string based on a `regex` pattern.

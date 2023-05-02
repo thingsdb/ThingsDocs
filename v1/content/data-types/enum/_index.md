@@ -25,7 +25,7 @@ Function | Description
 [enum_info](../../collection-api/enum_info) | Return info about the enumerator type.
 [enums_info](../../collection-api/enums_info) |Return info about all the enumerator types in the current scope.
 [has_enum](../../collection-api/has_enum) | Determine if the current scope has a given enumerator type.
-[is_enum](../../collection-api/is_enum) | Test if a given value is a member of an enumerator type.
+[is_enum](../../collection-api/is/is_enum) | Test if a given value is a member of an enumerator type.
 [mod_enum](../../collection-api/mod_enum) | Modify an existing enumerator type.
 [rename_enum](../../collection-api/rename_enum) | Rename the enumerator type.
 [set_enum](../../collection-api/set_enum) | Create a new enumerator type.

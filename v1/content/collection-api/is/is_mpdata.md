@@ -1,11 +1,11 @@
 ---
 title: "is_mpdata"
-weight: 228
+weight: 230
 ---
 
-This function determines whether the provided value is of type [mpdata](../../data-types/) or not.
+This function determines whether the provided value is of type [mpdata](../../../data-types/) or not.
 
-This function does *not* generate a [change](../../overview/changes).
+This function does *not* generate a [change](../../../overview/changes).
 
 ### Function
 
@@ -19,7 +19,7 @@ value | any (required) | The value to be tested.
 
 ### Return value
 
-Returns `true` if the given value is of type [mpdata](../../data-types/), else it returns `false`.
+Returns `true` if the given value is of type [mpdata](../../../data-types/), else it returns `false`.
 
 ### Example
 

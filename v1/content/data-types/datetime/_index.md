@@ -39,4 +39,4 @@ Function | Description
 Function | Description
 ------ | -----------
 [datetime](../../collection-api/datetime) | Create a new datetime value.
-[is_datetime](../../collection-api/is_datetime) | Test if a given value is of type datetime.
+[is_datetime](../../collection-api/is/is_datetime) | Test if a given value is of type datetime.

@@ -22,4 +22,4 @@ The [bool() documentation](../../collection-api/bool) contains a helpful example
 Function | Description
 ------ | -----------
 [bool](../../collection-api/bool) | Convert a value into type bool.
-[is_bool](../../collection-api/is_bool) | Test if a given value is of type bool.
+[is_bool](../../collection-api/is/is_bool) | Test if a given value is of type bool.

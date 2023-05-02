@@ -1,11 +1,11 @@
 ---
 title: "is_enum"
-weight: 221
+weight: 223
 ---
 
-This function determines whether the provided value is an [enumeration type](../../data-types/enum) member or not.
+This function determines whether the provided value is an [enumeration type](../../../data-types/enum) member or not.
 
-This function does *not* generate a [change](../../overview/changes).
+This function does *not* generate a [change](../../../overview/changes).
 
 ### Function
 

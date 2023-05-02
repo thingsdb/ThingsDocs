@@ -56,4 +56,4 @@ The above functions correspond to those of a `datetime` object. For that reason,
 Function | Description
 ------ | -----------
 [timeval](../../collection-api/timeval) | Create a new timeval value.
-[is_timeval](../../collection-api/is_timeval) | Test if a given value is of type timeval.
+[is_timeval](../../collection-api/is/is_timeval) | Test if a given value is of type timeval.

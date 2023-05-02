@@ -1,6 +1,6 @@
 ---
 title: "def"
-weight: 248
+weight: 252
 ---
 
 Set a member from an existing [enumerator type](../../../data-types/enum) as default member.

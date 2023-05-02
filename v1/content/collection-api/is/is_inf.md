@@ -1,11 +1,11 @@
 ---
 title: "is_inf"
-weight: 225
+weight: 227
 ---
 
 This function determines whether the provided value is a positive or negative *infinity*.
 
-This function does *not* generate a [change](../../overview/changes).
+This function does *not* generate a [change](../../../overview/changes).
 
 ### Function
 
