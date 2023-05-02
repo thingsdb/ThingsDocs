@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>is... on ThingsDB documentation</title><link>https://docs.thingsdb.net/v1/collection-api/is/</link><description>Recent content in is... on ThingsDB documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://docs.thingsdb.net/v1/collection-api/is/index.xml" rel="self" type="application/rss+xml"/><item><title>is_array</title><link>https://docs.thingsdb.net/v1/collection-api/is/is_array/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/is/is_array/</guid><description>This function determines whether the provided value is of type list or tuple or not. The functions is_list and is_tuple can be used to check if the array is mutable.
+This function does not generate a change.
+Function is_array(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the value passed is an array, else it returns false.</description></item><item><title>is_ascii</title><link>https://docs.thingsdb.net/v1/collection-api/is/is_ascii/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/is/is_ascii/</guid><description>This function determines whether the provided value is of type str and contains only valid ascii characters.
+This function does not generate a change.
+Function is_ascii(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is of type str and contains only ascii characters, else false.
+Example This code shows some return values for is_ascii():</description></item><item><title>is_bool</title><link>https://docs.thingsdb.net/v1/collection-api/is/is_bool/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/is/is_bool/</guid><description>This function determines whether the provided value is a bool or not.
+This function does not generate a change.
+Function is_bool(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is a boolean, else it returns false.
+Example This code shows some return values for is_bool():
+[ is_bool( true ), is_bool( 'true' ), is_bool( nil ), ]; Return value in JSON format</description></item><item><title>is_bytes</title><link>https://docs.thingsdb.net/v1/collection-api/is/is_bytes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/is/is_bytes/</guid><description>This function determines whether the provided value is of type bytes or not.
+This function does not generate a change.
+Function is_bytes(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is of type bytes, else it returns false.
+Example This code shows some return values for is_bytes():</description></item><item><title>is_closure</title><link>https://docs.thingsdb.net/v1/collection-api/is/is_closure/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/is/is_closure/</guid><description>This function determines whether the provided value is a closure or not.
+This function does not generate a change.
+Function is_closure(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is a closure, else it returns false.
+Example This code shows some return values for is_closure():
+[ is_closure( || nil ), is_closure( nil ), ]; Return value in JSON format</description></item><item><title>is_datetime</title><link>https://docs.thingsdb.net/v1/collection-api/is/is_datetime/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/is/is_datetime/</guid><description>This function determines whether the provided value is of type datetime.
+This function does not generate a change.
+Function is_datetime(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is of type timeval, else false.
+Example This code shows some return values for is_utf8():
+[ is_datetime( timeval(2013, 2, 6) ), is_datetime( datetime(2013, 2, 6) ), ]; Return value in JSON format</description></item><item><title>is_email</title><link>https://docs.thingsdb.net/v1/collection-api/is/is_email/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/is/is_email/</guid><description>This function determines whether the provided value is of type str and contains an email address.
+This function does not generate a change.
+Function is_email(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is of type str and contains an email address, else false.
+Example This code shows some return values for is_email():</description></item><item><title>is_enum</title><link>https://docs.thingsdb.net/v1/collection-api/is/is_enum/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/is/is_enum/</guid><description>This function determines whether the provided value is an enumeration type member or not.
+This function does not generate a change.
+Function is_enum(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is of type enum, else it returns false.
+Example This code shows some return values for is_enum():</description></item><item><title>is_err</title><link>https://docs.thingsdb.net/v1/collection-api/is/is_err/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/is/is_err/</guid><description>This function determines whether the provided value is a error or not.
+This function does not generate a change.
+Function is_err(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is an error, else it returns false.
+Example This code shows some return values for is_err():
+[ is_err( err() ), is_err( zero_div_err() ), is_err( try((1 / 0)) ), is_err( try((1 / 1)) ), ]; Return value in JSON format</description></item><item><title>is_float</title><link>https://docs.thingsdb.net/v1/collection-api/is/is_float/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/is/is_float/</guid><description>This function determines whether the provided value is a floating point value or not.
+This function does not generate a change.
+Function is_float(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is a float, else it returns false.
+Example This code shows some return values for is_float():</description></item><item><title>is_future</title><link>https://docs.thingsdb.net/v1/collection-api/is/is_future/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/is/is_future/</guid><description>This function determines whether the provided value is a future value or not.
+This function does not generate a change.
+Function is_future(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is a future, else it returns false.
+Example This code shows some return values for is_float():
+[ is_future( future(nil) ), is_future( future(nil).</description></item><item><title>is_inf</title><link>https://docs.thingsdb.net/v1/collection-api/is/is_inf/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/is/is_inf/</guid><description>This function determines whether the provided value is a positive or negative infinity.
+This function does not generate a change.
+Function is_inf(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is a positive or negative infinity, else it returns false.
+Example This code shows some return values for is_inf():</description></item><item><title>is_int</title><link>https://docs.thingsdb.net/v1/collection-api/is/is_int/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/is/is_int/</guid><description>This function determines whether the provided value is an integer or not.
+This function does not generate a change.
+Function is_int(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is an integer, else it returns false.
+Example This code shows some return values for is_int():
+[ is_int( 42 ), is_int( 0x2a ), is_int( 42.</description></item><item><title>is_list</title><link>https://docs.thingsdb.net/v1/collection-api/is/is_list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/is/is_list/</guid><description>This function determines whether the provided value is a list or not.
+This function does not generate a change.
+Function is_list(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is a list, else it returns false.
+Example This code shows some return values for is_list():
+[ is_list( [] ), is_list( tmp = [['nested']] ), is_list( tmp[0] ), ]; Return value in JSON format</description></item><item><title>is_mpdata</title><link>https://docs.thingsdb.net/v1/collection-api/is/is_mpdata/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/is/is_mpdata/</guid><description>This function determines whether the provided value is of type mpdata or not.
+This function does not generate a change.
+Function is_mpdata(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is of type mpdata, else it returns false.
+Example This code shows some return values for is_mpdata():</description></item><item><title>is_nan</title><link>https://docs.thingsdb.net/v1/collection-api/is/is_nan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/is/is_nan/</guid><description>This function determines whether the provided value is not a number.
+This function does not generate a change.
+Function is_nan(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is not a number, else false.
+Example This code shows some return values for is_nan():
+[ is_nan( true ), is_nan( 123 ), is_nan( 3.</description></item><item><title>is_nil</title><link>https://docs.thingsdb.net/v1/collection-api/is/is_nil/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/is/is_nil/</guid><description>This function determines whether the provided value is nil.
+This function does not generate a change.
+Function is_nil(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is nil, else false.
+Example This code shows some return values for is_nil():
+[ is_nil( nil ), is_nil( 0 ), ]; Return value in JSON format</description></item><item><title>is_raw</title><link>https://docs.thingsdb.net/v1/collection-api/is/is_raw/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/is/is_raw/</guid><description>This function determines whether the provided value is of type str or bytes.
+This function does not generate a change.
+Function is_raw(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is of type str or bytes, else false.
+Example This code shows some return values for is_raw():</description></item><item><title>is_regex</title><link>https://docs.thingsdb.net/v1/collection-api/is/is_regex/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/is/is_regex/</guid><description>This function determines whether the provided value is of type regex or not.
+This function does not generate a change.
+Function is_regex(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is of type regex, else it returns false.
+Example This code shows some return values for is_regex():</description></item><item><title>is_room</title><link>https://docs.thingsdb.net/v1/collection-api/is/is_room/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/is/is_room/</guid><description>This function determines whether the provided value is a room or not.
+This function does not generate a change.
+Function is_room(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is a room, else it returns false.
+Example This code shows some return values for is_room():
+[ is_room( thing() ), is_room( room() ), ]; Return value in JSON format</description></item><item><title>is_set</title><link>https://docs.thingsdb.net/v1/collection-api/is/is_set/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/is/is_set/</guid><description>This function determines whether the provided value is a set or not.
+This function does not generate a change.
+Function is_set(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is a set, else it returns false.
+Example This code shows some return values for is_set():
+[ is_set( [] ), is_set( set() ), ]; Return value in JSON format</description></item><item><title>is_str</title><link>https://docs.thingsdb.net/v1/collection-api/is/is_str/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/is/is_str/</guid><description>This function determines whether the provided value is of type str.
+The value is not explicitly checked for valid UTF-8 characters, use is_utf8() if you want to check for valid UTF-8 data.
+This function does not generate a change.
+Function is_str(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is of type str, else false.</description></item><item><title>is_task</title><link>https://docs.thingsdb.net/v1/collection-api/is/is_task/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/is/is_task/</guid><description>This function determines whether the provided value is a task or not.
+This function does not generate a change.
+Function is_task(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is a task, else it returns false.
+Example This code shows some return values for is_task():
+[ is_task( thing() ), is_task( task(datetime(), ||nil) ), ]; Return value in JSON format</description></item><item><title>is_tel</title><link>https://docs.thingsdb.net/v1/collection-api/is/is_tel/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/is/is_tel/</guid><description>This function determines whether the provided value is of type str and contains a telephone number.
+This function does not generate a change.
+Function is_tel(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is of type str and contains a telephone number, else false.
+Example This code shows some return values for is_tel():</description></item><item><title>is_thing</title><link>https://docs.thingsdb.net/v1/collection-api/is/is_thing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/is/is_thing/</guid><description>This function determines whether the provided value is a thing or not.
+Typed things are also things, so this function returns true for both typed and non-typed things.
+This function does not generate a change.
+Function is_thing(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is a thing, else it returns false.</description></item><item><title>is_time_zone</title><link>https://docs.thingsdb.net/v1/collection-api/is/is_time_zone/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/is/is_time_zone/</guid><description>This function determines whether the provided value is of type str and contains a valid time zone (see time_zones_info() for a list with all available time zones).
+This function does not generate a change.
+Function is_time_zone(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is of type str and contains a valid time zone, else false.</description></item><item><title>is_timeval</title><link>https://docs.thingsdb.net/v1/collection-api/is/is_timeval/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/is/is_timeval/</guid><description>This function determines whether the provided value is of type timeval.
+This function does not generate a change.
+Function is_timeval(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is of type timeval, else false.
+Example This code shows some return values for is_utf8():
+[ is_timeval( timeval(2013, 2, 6) ), is_timeval( datetime(2013, 2, 6) ), ]; Return value in JSON format</description></item><item><title>is_tuple</title><link>https://docs.thingsdb.net/v1/collection-api/is/is_tuple/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/is/is_tuple/</guid><description>This function determines whether the provided value is a tuple or not. At least nested arrays are of kind tuple.
+This function does not generate a change.
+Function is_tuple(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is a tuple, else it returns false.
+Example This code shows some return values for is_tuple():</description></item><item><title>is_url</title><link>https://docs.thingsdb.net/v1/collection-api/is/is_url/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/is/is_url/</guid><description>This function determines whether the provided value is of type str and contains a URL. A valid URL must start with either http:/// , https:// or ftp://.
+This function does not generate a change.
+Function is_url(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is of type str and contains a URL, else false.</description></item><item><title>is_utf8</title><link>https://docs.thingsdb.net/v1/collection-api/is/is_utf8/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/is/is_utf8/</guid><description>This function determines whether the provided value is of type str and contains valid UTF-8 characters.
+This function does not generate a change.
+Function is_utf8(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is of type raw and contains valid utf8, else false.
+Example This code shows some return values for is_utf8():</description></item></channel></rss>
