@@ -346,6 +346,7 @@ thingsdb-api
 procedures-api
     del_procedure
     has_procedure
+    mod_procedure
     new_procedure
     procedure_doc
     procedure_info

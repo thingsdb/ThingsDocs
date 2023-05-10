@@ -1,6 +1,6 @@
 ---
 title: "node_err"
-weight: 372
+weight: 373
 ---
 
 Returns an [error](../../data-types/error) when a node was not able to handle the request.

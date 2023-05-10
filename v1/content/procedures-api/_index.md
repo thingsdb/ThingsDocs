@@ -18,6 +18,7 @@ Function | description
 -------- | ----- | -----------
 [del_procedure](./del_procedure) | Delete an existing procedure.
 [has_procedure](./has_procedure) | Check if a procedure exists.
+[mod_procedure](./mod_procedure) | Modify an existing procedure.
 [new_procedure](./new_procedure) | Create a new procedure.
 [procedure_doc](./procedure_doc) | Get the docstring of a procedure.
 [procedure_info](./procedure_info) | Show information about a procedure.
