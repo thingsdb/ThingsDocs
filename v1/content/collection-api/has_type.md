@@ -1,6 +1,6 @@
 ---
 title: "has_type"
-weight: 213
+weight: 214
 ---
 
 Determines if a [Type](../../overview/type) exists in the current `@collection` scope.

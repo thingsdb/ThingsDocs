@@ -1,6 +1,6 @@
 ---
 title: "add"
-weight: 251
+weight: 252
 ---
 
 Adds a member to an existing [enumerator type](../../../data-types/enum).

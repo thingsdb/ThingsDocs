@@ -1,6 +1,6 @@
 ---
 title: "tuple"
-weight: 177
+weight: 178
 ---
 
 All nested *arrays* are immutable and thus tuples.
@@ -31,6 +31,7 @@ Function | Description
 [find](../list/find) | Return the first item that pass a given test.
 [find_index](../list/find_index) | Return the index of the first item that pass a given test.
 [first](../list/first) | Return the first item from a tuple.
+[flat](../list/flat) | Return a new `list` with all `tuple` elements concatenated into it recursively up to a specified depth.
 [has](../list/has) | Return `true` if a given value is found in the tuple, or `false` if not found.
 [index_of](../list/index_of) | Return the index of a given value, or `nil` if not found.
 [is_unique](../list//is_unique) | Returns `true` if each item in a tuple is unique or `false` if a duplicate is found.

@@ -72,6 +72,7 @@ data-types
         find
         find_index
         first
+        flat
         has
         index_of
         is_unique

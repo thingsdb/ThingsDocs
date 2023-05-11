@@ -1,6 +1,6 @@
 ---
 title: "set_password"
-weight: 342
+weight: 343
 ---
 
 Change a user's password. This function can also be used to remove an existing

@@ -1,6 +1,6 @@
 ---
 title: "del_user"
-weight: 318
+weight: 319
 ---
 
 Delete a user. It is not possible to delete your own user account and a [bad_data_err()](../../errors/bad_data_err) will be raised in case you try to.

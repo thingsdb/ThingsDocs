@@ -1,6 +1,6 @@
 ---
 title: "on-emit"
-weight: 363
+weight: 364
 ---
 
 An emit event is triggered when a *change* is emitted using the [emit(..)](../../data-types/room/emit) function on a [room](../../data-types/room).

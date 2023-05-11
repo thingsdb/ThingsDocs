@@ -26,6 +26,7 @@ Function | Description
 [find](./find) | Return the first item that passed a given test.
 [find_index](./find_index) | Return the index of the first item that passed a given test.
 [first](./first) | Return the first item from a list.
+[flat](./flat) | Return a new `list` with all `tuple` elements concatenated into it recursively up to a specified depth.
 [has](./has) | Return `true` if a given value is found in the list, or `false` if not found.
 [index_of](./index_of) | Return the index of a given value, or `nil` if not found.
 [is_unique](./is_unique) | Returns `true` if each item in a list is unique or `false` if a duplicate is found.

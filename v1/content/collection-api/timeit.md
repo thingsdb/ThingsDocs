@@ -1,6 +1,6 @@
 ---
 title: "timeit"
-weight: 287
+weight: 288
 ---
 
 The _timeit_ function can be used to check the duration of some code. It only measures the execution time of the code and does not include additional change creation and does not wait for futures to be completed.
