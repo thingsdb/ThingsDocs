@@ -6,7 +6,7 @@ weight: 9
 
 Before using the HTTP API, make sure at least one node has the API port enabled.
 By default the API port is enabled and listening to TCP port `9210`, but can be disabled or changed
-with the `http_api_port` in the [configuration file](https://github.com/thingsdb/ThingsDB/blob/master/thingsdb.example.conf)
+with the `http_api_port` in the [configuration file](https://github.com/thingsdb/ThingsDB/blob/main/thingsdb.example.conf)
 or with the `THINGSDB_HTTP_API_PORT` environment variable.
 
 The API has support for both [MessagePack](https://msgpack.org) and [JSON](https://www.json.org) and can be used to perform queries and run procedures.

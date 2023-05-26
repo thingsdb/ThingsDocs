@@ -24,4 +24,4 @@ Want to use ThingsDB in Docker? Check out our [Docker guide](./docker).
 
 The following link will explain how to deploy ThingsDB in GKE (Google Kubernetes Engine):
 
-[https://github.com/thingsdb/ThingsDB/tree/master/gke#readme](https://github.com/thingsdb/ThingsDB/tree/master/gke#readme)
+[https://github.com/thingsdb/ThingsDB/tree/main/gke#readme](https://github.com/thingsdb/ThingsDB/tree/main/gke#readme)

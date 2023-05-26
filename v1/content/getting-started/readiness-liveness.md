@@ -24,5 +24,5 @@ Since **v0.9.20** ThingsDB will _also_ respond with `200 OK` to a `/ready` reque
 
 {{% notice tip %}}
 The following link will explain how to deploy ThingsDB in GKE (Google Kubernetes Engine) and can be used as an example for using the `/ready` and `/healthy` handlers:
-[https://github.com/thingsdb/ThingsDB/tree/master/gke#readme](https://github.com/thingsdb/ThingsDB/tree/master/gke#readme)
+[https://github.com/thingsdb/ThingsDB/tree/main/gke#readme](https://github.com/thingsdb/ThingsDB/tree/main/gke#readme)
 {{% /notice %}}

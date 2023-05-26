@@ -4,7 +4,7 @@ weight: 4
 chapter: false
 ---
 
-ThingsDB can start with a [configuration file](https://github.com/thingsdb/ThingsDB/blob/master/thingsdb.example.conf) and/or with environment variables. However be aware that the environment variables will overwrite the configuration file settings if both apply to the same setting.
+ThingsDB can start with a [configuration file](https://github.com/thingsdb/ThingsDB/blob/main/thingsdb.example.conf) and/or with environment variables. However be aware that the environment variables will overwrite the configuration file settings if both apply to the same setting.
 
 Variable | Default | Description
 -------- | ------- | -----------
