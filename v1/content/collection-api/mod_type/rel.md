@@ -16,7 +16,7 @@ Combination | Description
 All missing relations on existing instances will be automatically created by ThingsDB once you add a new relation. Relations only work on stored things.
 
 {{% notice info %}}
-With a ***one-to-one*** or a ***one-to-many*** relation it may mot be possible to automatically create all missing relations because
+With a ***one-to-one*** or a ***one-to-many*** relation it may not be possible to automatically create all missing relations because
 you might be in a state where the existing instances are not related correctly. For example, you want to create a ***one-to-many*** relation but one of the *things*
 exists in a *set* on another *thing* than being referenced to. Either the *set* or the *reference* is obviously incorrect. In such state ThingsDB will raise a [type_err()](../../../errors/type_err) and does not
 create the relation.
