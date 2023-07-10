@@ -180,7 +180,12 @@ arr = ['a', 'b', 'c']; arr.clear(); arr; // the list is empty Return value in JS
 If a deep value higher than 0 (default) is used, then this function will create copies of the things within the list.
 This function does not generate a change.
 Function list.copy([deep]])
-Arguments Argument Type Description deep int (optional) How deep to copy things withing the list. Default is 0 (only a copy of the list, not the things within the list).</description></item><item><title>dup</title><link>https://docs.thingsdb.net/v1/data-types/list/dup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/list/dup/</guid><description>Duplicate a list.
+Arguments Argument Type Description deep int (optional) How deep to copy things withing the list. Default is 0 (only a copy of the list, not the things within the list).</description></item><item><title>count</title><link>https://docs.thingsdb.net/v1/data-types/list/count/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/list/count/</guid><description>Returns the number of times a value appears in a list. A closure might be given which can be used a a shortcut for .filter().len().
+This function does not generate a change.
+Function array.count(any)
+Arguments Argument Type Description any any Element to count Return value First item in the list.
+Example This code shows an example using count():
+[1, 4, 2, 9, 7, 8, 9, 3, 1].</description></item><item><title>dup</title><link>https://docs.thingsdb.net/v1/data-types/list/dup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/list/dup/</guid><description>Duplicate a list.
 If a deep value higher than 0 (default) is used, then this function will also create duplicates of the things within the list.
 This function does not generate a change.
 Function list.dup([deep]])
