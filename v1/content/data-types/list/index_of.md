@@ -1,6 +1,6 @@
 ---
 title: "index_of"
-weight: 77
+weight: 78
 ---
 
 The function returns the first index of the item in a [list](..) or [tuple](../../tuple) that matches the provided value, otherwise `nil` if it is not present.

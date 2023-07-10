@@ -1,6 +1,6 @@
 ---
 title: "first"
-weight: 74
+weight: 75
 ---
 
 Returns the first item in the list. A [lookup_err()](../../../errors/lookup_err) is raised when this function is used on an empty list unless a default value is given, in which case the given value will be returned.

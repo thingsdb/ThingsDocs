@@ -1,6 +1,6 @@
 ---
 title: "enum"
-weight: 206
+weight: 207
 ---
 
 Returns a [enum](../../data-types/enum) member from a given value.

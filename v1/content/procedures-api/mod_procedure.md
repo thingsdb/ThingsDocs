@@ -1,6 +1,6 @@
 ---
 title: "mod_procedure"
-weight: 350
+weight: 351
 ---
 
 Changes the closure for an existing procedure. This function also updates the `created_at` time as if it is a new procedure.

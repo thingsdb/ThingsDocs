@@ -1,6 +1,6 @@
 ---
 title: "ren"
-weight: 264
+weight: 265
 ---
 
 Rename a property or method from an existing [Type](../../../overview/type).

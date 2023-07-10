@@ -1,6 +1,6 @@
 ---
 title: "Hello World Module"
-weight: 358
+weight: 359
 ---
 
 In this section we will create and use a module to help you understand how a module can be used.
