@@ -14,6 +14,7 @@ the change is  made. Since the parent of a nested 'list' is another list, the `t
 Function | Description
 ------ | -----------
 [choice](./choice) | Return a random item from a list.
+[count](./count) | Returns the number of elements with a specified value in a list.
 [clear](./clear) | Remove all items from a list.
 [copy](./copy) | Copy a list *(same as [dup](./dup) unless a non-zero deep argument is used)*.
 [dup](./dup) | Duplicate a list.

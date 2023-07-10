@@ -24,6 +24,7 @@ Function | Description
 ------ | -----------
 [choice](../list/choice) | Return a random item from a tuple.
 [copy](../list/copy) | Copy a tuple *(same as [dup](../list/dup) unless a non-zero deep argument is used)*.
+[count](../list/count) | Returns the number of elements with a specified value in a tuple.
 [dup](../list/dup) | Duplicate a tuple.
 [each](../list/each) | Iterate over all items in a tuple.
 [every](../list/every) | Check if all items pass a given test.
