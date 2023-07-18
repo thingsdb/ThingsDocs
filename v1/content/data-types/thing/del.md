@@ -24,9 +24,7 @@ property | str (required) | Name of the property to delete.
 
 ### Return value
 
-Returns the removed value if successful. A [lookup_err()](../../../errors/lookup_err) is returned
-if the property does not exist or [bad_data_err()](../../../errors/bad_data_err) in case the given property is
-not a valid [name](../../../overview/names).
+Returns the removed value if successful. A [lookup_err()](../../../errors/lookup_err) is returned if the property does not exist.
 
 {{% notice warning %}}
 In versions before **v0.9.3** the return value of `.del(..)` used to be `nil` when successful.
