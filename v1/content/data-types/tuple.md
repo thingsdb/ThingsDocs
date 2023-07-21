@@ -1,6 +1,6 @@
 ---
 title: "tuple"
-weight: 179
+weight: 180
 ---
 
 All nested *arrays* are immutable and thus tuples.
@@ -47,6 +47,7 @@ Function | Description
 [reverse](../list/reverse) | Return a new list with the items in reverse order.
 [some](../list/some) | Check if at least one item passes a given test.
 [sort](../list/sort) | Return a new sorted `list`.
+[sum](../list/sum) | Returns the sum of all elements in a tuple.
 [unique](../list/unique) | Returns a new list without duplicate items.
 
 {{% notice info %}}

@@ -1,6 +1,6 @@
 ---
 title: "room"
-weight: 103
+weight: 104
 ---
 
 This type can be used to [emit](./emit) events to all clients which have joined the room.

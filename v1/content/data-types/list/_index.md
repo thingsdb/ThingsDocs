@@ -48,6 +48,7 @@ Function | Description
 [some](./some) | Check if at least one item passes a given test.
 [sort](./sort) | Return a new sorted `list`.
 [splice](./splice) | Change a list by removing or replacing existing items and/or adding new items.
+[sum](./sum) |  Returns the sum of all elements in a list.
 [unique](./unique) | Returns a new list without duplicate items.
 [unshift](./unshift) | Add new items to the start of a list and returns the new length.
 

@@ -1,6 +1,6 @@
 ---
 title: "clear"
-weight: 110
+weight: 111
 ---
 
 Removes all things from a [set](..).

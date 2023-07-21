@@ -1,6 +1,6 @@
 ---
 title: "thing"
-weight: 153
+weight: 154
 ---
 
 A Thing in ThingsDB is a _key/value_ object where each key must be of type [str](../str) _(except for some [reserved properties](../../overview/properties))_ and values can be any type.

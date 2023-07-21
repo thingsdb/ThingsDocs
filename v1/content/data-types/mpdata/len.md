@@ -1,6 +1,6 @@
 ---
 title: "len"
-weight: 100
+weight: 101
 ---
 
 Returns the length of [mpdata](..) in bytes.

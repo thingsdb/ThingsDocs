@@ -1,6 +1,6 @@
 ---
 title: "id"
-weight: 185
+weight: 186
 ---
 
 Returns the `id` of a _wrapped_ [thing](..) or `nil` if the thing is not stored.

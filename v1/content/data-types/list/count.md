@@ -3,7 +3,7 @@ title: "count"
 weight: 65
 ---
 
-Returns the number of times a value appears in a list. A [closure](../../closure) might be given which can be used a a shortcut for `.filter().len()`.
+Returns the number of times a value appears in a list. A [closure](../../closure) might be given which can be used as a shortcut for `.filter().len()`.
 
 This function does *not* generate a [change](../../../overview/changes).
 

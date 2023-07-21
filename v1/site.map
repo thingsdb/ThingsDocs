@@ -94,6 +94,7 @@ data-types
         some
         sort
         splice
+        sum
         unique
         unshift
     mpdata

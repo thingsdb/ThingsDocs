@@ -1,6 +1,6 @@
 ---
 title: "on-leave"
-weight: 364
+weight: 365
 ---
 
 This event will be pushed when a [room](../../data-types/room) is joined.

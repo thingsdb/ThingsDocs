@@ -1,6 +1,6 @@
 ---
 title: "restriction"
-weight: 171
+weight: 172
 ---
 
 Returns the value restriction of a thing as type [str](../../str) or [nil](../../nil) when the thing is *not* value restricted. A thing can be restricted when the thing is a property of a *typed* thing or by using the [restrict(..)](../restrict) function (see the [example](#example)).

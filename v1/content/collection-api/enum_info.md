@@ -1,6 +1,6 @@
 ---
 title: "enum_info"
-weight: 208
+weight: 209
 ---
 
 Returns information about a given [enumeration type](../../data-types/enum).
