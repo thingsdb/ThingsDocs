@@ -31,7 +31,7 @@ make
 sudo make install
 ```
 
-> **Note**: At least version `0.12.x` for library `libcleri-dev` is required.
+> **Note**: At least version `1.0.0` for library `libcleri-dev` is required.
 
 Next, clone the ThingsDB project.
 
