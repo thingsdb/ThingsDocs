@@ -8,7 +8,7 @@ chapter: true
 
 There are a few options to get started with ThingsDB.
 
-### Try for free
+### It's Free!
 
 Get your own **playground** for free at [https://thingsdb.net](https://thingsdb.net) and continue reading at the chapter [connect](../connect).
 
