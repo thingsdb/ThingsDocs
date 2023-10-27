@@ -7,6 +7,8 @@ Enumerators are a set of unique names coupled to a unique set of values. ThingsD
 must have the same type. Thus, it is not possible to have an enum type with for example both values of type `int` and `str`. Enumerators with type `thing` may contain both [things](../thing) and [typed things](../typed)
 as they are both compatible with type [thing](../thing).
 
+In addition to values, methods on enumerators can also be defined as [closures](../closure). When a method is called, the first argument is the enum member. This can be useful for organizing code.
+
 
 ### Functions
 
@@ -39,6 +41,7 @@ set_enum('Severity', {
     MAJOR: 2,
     MINOR: 3,
     DEBUG: 4,
+    str: |this| `{this.name()} ({this})`,
 });
 
 // Get a member by name
@@ -65,6 +68,9 @@ assert( b.value() == 2 );
 // Or, the name can be returned using the `.name()` function
 assert( c.name() == 'MINOR');
 
+// Methods can be defined. In the example we defined a method `str` for a string representation
+assert( d.str() == 'DEBUG (4)');
+
 // The value of the members will be returned in a response
 [a, b, c, d];
 ```
@@ -79,3 +85,4 @@ assert( c.name() == 'MINOR');
     4
 ]
 ```
+
