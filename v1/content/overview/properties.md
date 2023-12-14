@@ -1,6 +1,6 @@
 ---
 title: "Properties"
-weight: 26
+weight: 29
 ---
 
 Properties are key/value pairs which are assigned to a `thing`. The collection itself is also a `thing` to which properties can be assigned.

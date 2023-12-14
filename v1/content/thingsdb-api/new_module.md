@@ -1,6 +1,6 @@
 ---
 title: "new_module"
-weight: 332
+weight: 335
 ---
 
 Create (and configure) a new module for ThingsDB.

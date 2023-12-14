@@ -9,6 +9,7 @@ connect
     http-api
     python
     go
+    csharp
     socket
         ping
         auth
@@ -17,6 +18,9 @@ connect
         join
         emit
         error-response
+book
+    1.2-first-code
+    1.1-installation
 overview
     scopes
     changes

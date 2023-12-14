@@ -1,6 +1,6 @@
 ---
 title: "Optional Chaining"
-weight: 29
+weight: 32
 ---
 
 ThingsDB double dot notation is called **optional chaining** and allows using a property or function call.

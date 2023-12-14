@@ -1,6 +1,6 @@
 ---
 title: "syntax_err"
-weight: 380
+weight: 383
 ---
 
 Returns an [error](../../data-types/error) when the given ThingsDB code contains a syntax error.

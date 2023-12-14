@@ -1,6 +1,6 @@
 ---
 title: "extend_unique"
-weight: 70
+weight: 73
 ---
 
 Adds a [list](..) or [tuple](../../tuple) with items to the end of a [list](..), and returns the new length. Only items which do not have a duplicate in the list will be added.

@@ -1,6 +1,6 @@
 ---
 title: "datetime"
-weight: 40
+weight: 43
 ---
 
 Type `datetime` can be used to store a value with date and time information.
