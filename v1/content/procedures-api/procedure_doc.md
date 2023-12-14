@@ -1,6 +1,6 @@
 ---
 title: "procedure_doc"
-weight: 357
+weight: 355
 ---
 
 Returns the doc string for a given procedure. An *empty* string is returned if the procedure has no doc string.

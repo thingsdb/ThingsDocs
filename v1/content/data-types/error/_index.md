@@ -1,6 +1,6 @@
 ---
 title: "error"
-weight: 56
+weight: 54
 ---
 
 When an error occurs within a function, an object can be returned. The object, called an error, contains information about the error, including its type and a message.

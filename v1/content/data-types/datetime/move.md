@@ -1,6 +1,6 @@
 ---
 title: "move"
-weight: 46
+weight: 44
 ---
 
 Return a new [datetime](../) (or [timeval](../../timeval)) object, which is shifted in time relative to the original date/time.

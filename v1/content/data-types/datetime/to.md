@@ -1,6 +1,6 @@
 ---
 title: "to"
-weight: 48
+weight: 46
 ---
 
 Return a new [datetime](../) (or [timeval](../../timeval)) object with new time zone information.

@@ -1,6 +1,6 @@
 ---
 title: "wse"
-weight: 301
+weight: 299
 ---
 
 This function enforces ThingsDB to create a [change](../../overview/changes).

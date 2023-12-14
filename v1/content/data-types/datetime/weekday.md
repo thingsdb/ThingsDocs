@@ -1,6 +1,6 @@
 ---
 title: "weekday"
-weight: 50
+weight: 48
 ---
 
 Return the number of days (`0..6`) since the last Sunday.
