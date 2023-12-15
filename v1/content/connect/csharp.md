@@ -36,7 +36,7 @@ namespace HelloWorld
         {
             // replace `localhost` with your ThingsDB server address and optionally
             // provide a port and enable TLS/SSL. (see documentation)
-            Connector conn = new("localhost", 9200);
+            Connector conn = new("localhost");
 
             // replace 'admin' and 'pass' with your username and password or a valid token
             await conn.Connect("admin", "pass");
