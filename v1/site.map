@@ -211,10 +211,12 @@ collection-api
     enum_map
     enums_info
     err
+    export
     float
     future
     has_enum
     has_type
+    import
     int
     is
         is_array
@@ -280,6 +282,7 @@ collection-api
     rename_enum
     rename_type
     room
+    root
     set
     set_enum
     set_type
