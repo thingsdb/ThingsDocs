@@ -4,6 +4,8 @@ getting-started
     configuration
     start-up-node
     readiness-liveness
+book
+
 connect
     authentication
     http-api
