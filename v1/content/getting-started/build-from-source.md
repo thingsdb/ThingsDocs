@@ -10,7 +10,6 @@ First, install the following required dependencies:
 - libpcre2
 - libyajl
 - libcurl
-- libcleri (`>=1.0.0`)
 
 When using Debian/Ubuntu; _libuv1_, _libpcre2_, _libyajl_ and _libcurl_ can be installed using apt:
 
@@ -21,17 +20,6 @@ sudo apt-get install -y \
     libyajl-dev \
     libcurl4-nss-dev \
 ```
-
-Libcleri can be compiled and installed from the [source code](https://github.com/cesbit/libcleri):
-
-```bash
-git clone https://github.com/cesbit/libcleri.git
-cd libcleri/Release
-make
-sudo make install
-```
-
-> **Note**: At least version `1.0.0` for library `libcleri-dev` is required.
 
 Next, clone the ThingsDB project.
 
