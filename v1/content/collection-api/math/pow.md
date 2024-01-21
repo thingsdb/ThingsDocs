@@ -14,7 +14,7 @@ This function does *not* generate a [change](../../../overview/changes).
 ### Arguments
 
 Argument | Type                 | Description
--------- | ---- ----------------| ------------
+-------- | -------------------- | ------------
 x        | int/float (required) | Base number
 y        | int/float (required) | Power number
 
