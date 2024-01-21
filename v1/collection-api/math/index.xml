@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>math... on ThingsDB documentation</title><link>https://docs.thingsdb.net/v1/collection-api/math/</link><description>Recent content in math... on ThingsDB documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://docs.thingsdb.net/v1/collection-api/math/index.xml" rel="self" type="application/rss+xml"/><item><title>abs</title><link>https://docs.thingsdb.net/v1/collection-api/math/abs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/math/abs/</guid><description>Return the absolute value of a given number.
+This function does not generate a change.
+Function abs(number)
+Arguments Argument Type Description number int/float (required) Input number Return value Returns with an int or float, depending on the input.
+Example abs() function example:
+`Absolute value of integer is: {abs(-42)}`; Return value in JSON format
+&amp;#34;Absolute value of integer is: 42&amp;#34;</description></item><item><title>ceil</title><link>https://docs.thingsdb.net/v1/collection-api/math/ceil/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/math/ceil/</guid><description>Return the ceiling of a given number. This is the smallest integer &amp;gt;= the given number.
+This function does not generate a change.
+Function ceil(number)
+Arguments Argument Type Description number int/float (required) Input number Return value Returns with an int or an overflow_err() when outside the range of INT_MIN and INT_MAX.
+Example ceil() function example:
+ceil(4.31); Return value in JSON format</description></item><item><title>cos</title><link>https://docs.thingsdb.net/v1/collection-api/math/cos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/math/cos/</guid><description>Return the cosine of a given number. The value passed in this function should be in radians.
+This function does not generate a change.
+Function cos(number)
+Arguments Argument Type Description number int/float (required) Input number Return value Returns with a float, the cosine of value passed as argument.
+Example cos() function example:
+`The value of cosine of pi / 3 is {cos(MATH_PI / 3)}` Return value in JSON format</description></item><item><title>exp</title><link>https://docs.thingsdb.net/v1/collection-api/math/exp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/math/exp/</guid><description>Returns e raised to the power of x.
+The number e is the base of the natural system of logarithms (defined as MATH_E, approximately 2.718282) and x is the number passed to the function.
+This function does not generate a change.
+Function exp(number)
+Arguments Argument Type Description number int/float (required) Input number Return value Returns with a float value.
+Example cos() function example:</description></item><item><title>floor</title><link>https://docs.thingsdb.net/v1/collection-api/math/floor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/math/floor/</guid><description>Return the floor of a given number. This is the largest integer &amp;lt;= the given number.
+This function does not generate a change.
+Function floor(number)
+Arguments Argument Type Description number int/float (required) Input number Return value Returns with an int or an overflow_err() when outside the range of INT_MIN and INT_MAX.
+Example floor() function example:
+floor(4.31); Return value in JSON format</description></item><item><title>log10</title><link>https://docs.thingsdb.net/v1/collection-api/math/log10/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/math/log10/</guid><description>Return the base 10 logarithm of a given number.
+This function does not generate a change.
+Function log10(number)
+Arguments Argument Type Description number int/float (required) Input number, must be &amp;gt; 0. Return value Returns with a float or a value_err() on negative or zero input number.
+Example log10() function example:
+log10(2.7183); Return value in JSON format
+0.</description></item><item><title>log2</title><link>https://docs.thingsdb.net/v1/collection-api/math/log2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/math/log2/</guid><description>Return the base 2 logarithm of a given number.
+This function does not generate a change.
+Function log2(number)
+Arguments Argument Type Description number int/float (required) Input number, must be &amp;gt; 0. Return value Returns with a float or a value_err() on negative or zero input number.
+Example log2() function example:
+log2(2.7183); Return value in JSON format
+1.</description></item><item><title>loge</title><link>https://docs.thingsdb.net/v1/collection-api/math/loge/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/math/loge/</guid><description>Returns the natural logarithm (base e) of a given number.
+This function does not generate a change.
+Function loge(number)
+Arguments Argument Type Description number int/float (required) Input number, must be &amp;gt; 0. Return value Returns with a float or a value_err() on negative or zero input number.
+Example loge() function example:
+loge(5.6); Return value in JSON format</description></item><item><title>pow</title><link>https://docs.thingsdb.net/v1/collection-api/math/pow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/math/pow/</guid><description>Returns x to the power of y.
+This function does not generate a change.
+Function pow(x, y)
+Arguments Argument Type Description x int/float (required) Base number y int/float (required) Power number Return value Returns with a float.
+Example pow() function example:
+pow(3, 4); Return value in JSON format
+81.0</description></item><item><title>sin</title><link>https://docs.thingsdb.net/v1/collection-api/math/sin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/math/sin/</guid><description>Return the sine of a given number. The value passed in this function should be in radians.
+This function does not generate a change.
+Function sin(number)
+Arguments Argument Type Description number int/float (required) Input number Return value Returns with a float, the sine of value passed as argument.
+Example sin() function example:
+`The value of sine of pi / 6 is {sin(MATH_PI / 6)}` Return value in JSON format</description></item><item><title>sqrt</title><link>https://docs.thingsdb.net/v1/collection-api/math/sqrt/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/math/sqrt/</guid><description>Return the square root of a given number.
+This function does not generate a change.
+Function sqrt(number)
+Arguments Argument Type Description number int/float (required) Input number, must be &amp;gt;= 0. Return value Returns with a float or a value_err() on negative input number.
+Example sqrt() function example:
+`The square root of 2 is {sqrt(2)}` Return value in JSON format</description></item><item><title>tan</title><link>https://docs.thingsdb.net/v1/collection-api/math/tan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/math/tan/</guid><description>Return the tangent of a given number. The value passed in this function should be in radians.
+This function does not generate a change.
+Function tan(number)
+Arguments Argument Type Description number int/float (required) Input number Return value Returns with a float, the tangent of value passed as argument.
+Example tan() function example:
+`The value of tangent of pi / 6 is {tan(MATH_PI / 6)}` Return value in JSON format</description></item></channel></rss>

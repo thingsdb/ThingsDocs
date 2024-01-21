@@ -167,6 +167,7 @@ type_err(&amp;quot;incorrect type&amp;quot;).msg(); Return value in JSON format
 Useful functions Function Description float return a float type for a given value. is_float check if the given value is of the float type. is_inf check if the given value is infinite. is_nan check if the given value is not-a-number.</description></item><item><title>then</title><link>https://docs.thingsdb.net/v1/data-types/future/then/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/future/then/</guid><description>Function then accepts a closure as argument which will be executed only when the future is successful. The code inside the closure will only generate a change then the closure code is executed. The return value of the closure will be used as the new future value.
 The closure will be called with the same arguments as given to the future, except for the first argument, which can be the result of a module.</description></item><item><title>else</title><link>https://docs.thingsdb.net/v1/data-types/future/else/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/future/else/</guid><description>Function else accepts a closure as argument which will be executed only when the future is using a module which has failed with some error. The code inside the closure will only generate a change when the closure code is executed. The return value of the closure will be used as the new future value.
 The closure will be called with the same arguments as given to the future, except for the first argument, which is the error from the module.</description></item><item><title>int</title><link>https://docs.thingsdb.net/v1/data-types/int/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/int/</guid><description>ThingsDB can store 64bit signed integer values. When assigning integer values larger than 64bit, an overflow_err() will be returned. Other types can be converted to int by using the int function.
+The minimum and maximum are defined by the constants INT_MIN and INT_MAX.
 Notations Base Example Description 2 0b1111011 Binary notation starts with 0b (zero, lower case b), followed by binary digits (0-1). 8 0o173 Octal notation starts with 0o (zero, lower case o), followed by octal digits (0-8).</description></item><item><title>choice</title><link>https://docs.thingsdb.net/v1/data-types/list/choice/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/list/choice/</guid><description>This function returns a pseudo-random item from a list or tuple. The array must contain at least one item, otherwise a lookup_err() is raised.
 This function does not generate a change.
 Function array.choice()
@@ -931,7 +932,71 @@ Function list([value])
 Arguments Argument Type Description value set/list/tuple (optional) Optional value to initialize the list. If the argument is already a list or tuple, the return value will be the same list or tuple. Return value A new list (Unless the given argument was a tuple or list, then no conversion takes place and the given list or tuple will be the return value).</description></item><item><title>log</title><link>https://docs.thingsdb.net/v1/collection-api/log/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/log/</guid><description>Might be used for debugging code. The message will be logged as a warning message on the console of the node which is processing the request. When you are connected using a socket stream, then a warning message with code 2 will be send to the client as well.
 This function does not generate a change.
 Function log(value)
-Arguments Argument Type Description value str/any (required) Value to log.</description></item><item><title>add</title><link>https://docs.thingsdb.net/v1/collection-api/mod_enum/add/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/mod_enum/add/</guid><description>Adds a member to an existing enumerator type.
+Arguments Argument Type Description value str/any (required) Value to log.</description></item><item><title>abs</title><link>https://docs.thingsdb.net/v1/collection-api/math/abs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/math/abs/</guid><description>Return the absolute value of a given number.
+This function does not generate a change.
+Function abs(number)
+Arguments Argument Type Description number int/float (required) Input number Return value Returns with an int or float, depending on the input.
+Example abs() function example:
+`Absolute value of integer is: {abs(-42)}`; Return value in JSON format
+&amp;#34;Absolute value of integer is: 42&amp;#34;</description></item><item><title>ceil</title><link>https://docs.thingsdb.net/v1/collection-api/math/ceil/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/math/ceil/</guid><description>Return the ceiling of a given number. This is the smallest integer &amp;gt;= the given number.
+This function does not generate a change.
+Function ceil(number)
+Arguments Argument Type Description number int/float (required) Input number Return value Returns with an int or an overflow_err() when outside the range of INT_MIN and INT_MAX.
+Example ceil() function example:
+ceil(4.31); Return value in JSON format</description></item><item><title>cos</title><link>https://docs.thingsdb.net/v1/collection-api/math/cos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/math/cos/</guid><description>Return the cosine of a given number. The value passed in this function should be in radians.
+This function does not generate a change.
+Function cos(number)
+Arguments Argument Type Description number int/float (required) Input number Return value Returns with a float, the cosine of value passed as argument.
+Example cos() function example:
+`The value of cosine of pi / 3 is {cos(MATH_PI / 3)}` Return value in JSON format</description></item><item><title>exp</title><link>https://docs.thingsdb.net/v1/collection-api/math/exp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/math/exp/</guid><description>Returns e raised to the power of x.
+The number e is the base of the natural system of logarithms (defined as MATH_E, approximately 2.718282) and x is the number passed to the function.
+This function does not generate a change.
+Function exp(number)
+Arguments Argument Type Description number int/float (required) Input number Return value Returns with a float value.
+Example cos() function example:</description></item><item><title>floor</title><link>https://docs.thingsdb.net/v1/collection-api/math/floor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/math/floor/</guid><description>Return the floor of a given number. This is the largest integer &amp;lt;= the given number.
+This function does not generate a change.
+Function floor(number)
+Arguments Argument Type Description number int/float (required) Input number Return value Returns with an int or an overflow_err() when outside the range of INT_MIN and INT_MAX.
+Example floor() function example:
+floor(4.31); Return value in JSON format</description></item><item><title>log10</title><link>https://docs.thingsdb.net/v1/collection-api/math/log10/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/math/log10/</guid><description>Return the base 10 logarithm of a given number.
+This function does not generate a change.
+Function log10(number)
+Arguments Argument Type Description number int/float (required) Input number, must be &amp;gt; 0. Return value Returns with a float or a value_err() on negative or zero input number.
+Example log10() function example:
+log10(2.7183); Return value in JSON format
+0.</description></item><item><title>log2</title><link>https://docs.thingsdb.net/v1/collection-api/math/log2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/math/log2/</guid><description>Return the base 2 logarithm of a given number.
+This function does not generate a change.
+Function log2(number)
+Arguments Argument Type Description number int/float (required) Input number, must be &amp;gt; 0. Return value Returns with a float or a value_err() on negative or zero input number.
+Example log2() function example:
+log2(2.7183); Return value in JSON format
+1.</description></item><item><title>loge</title><link>https://docs.thingsdb.net/v1/collection-api/math/loge/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/math/loge/</guid><description>Returns the natural logarithm (base e) of a given number.
+This function does not generate a change.
+Function loge(number)
+Arguments Argument Type Description number int/float (required) Input number, must be &amp;gt; 0. Return value Returns with a float or a value_err() on negative or zero input number.
+Example loge() function example:
+loge(5.6); Return value in JSON format</description></item><item><title>pow</title><link>https://docs.thingsdb.net/v1/collection-api/math/pow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/math/pow/</guid><description>Returns x to the power of y.
+This function does not generate a change.
+Function pow(x, y)
+Arguments Argument Type Description x int/float (required) Base number y int/float (required) Power number Return value Returns with a float.
+Example pow() function example:
+pow(3, 4); Return value in JSON format
+81.0</description></item><item><title>sin</title><link>https://docs.thingsdb.net/v1/collection-api/math/sin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/math/sin/</guid><description>Return the sine of a given number. The value passed in this function should be in radians.
+This function does not generate a change.
+Function sin(number)
+Arguments Argument Type Description number int/float (required) Input number Return value Returns with a float, the sine of value passed as argument.
+Example sin() function example:
+`The value of sine of pi / 6 is {sin(MATH_PI / 6)}` Return value in JSON format</description></item><item><title>sqrt</title><link>https://docs.thingsdb.net/v1/collection-api/math/sqrt/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/math/sqrt/</guid><description>Return the square root of a given number.
+This function does not generate a change.
+Function sqrt(number)
+Arguments Argument Type Description number int/float (required) Input number, must be &amp;gt;= 0. Return value Returns with a float or a value_err() on negative input number.
+Example sqrt() function example:
+`The square root of 2 is {sqrt(2)}` Return value in JSON format</description></item><item><title>tan</title><link>https://docs.thingsdb.net/v1/collection-api/math/tan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/math/tan/</guid><description>Return the tangent of a given number. The value passed in this function should be in radians.
+This function does not generate a change.
+Function tan(number)
+Arguments Argument Type Description number int/float (required) Input number Return value Returns with a float, the tangent of value passed as argument.
+Example tan() function example:
+`The value of tangent of pi / 6 is {tan(MATH_PI / 6)}` Return value in JSON format</description></item><item><title>add</title><link>https://docs.thingsdb.net/v1/collection-api/mod_enum/add/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/mod_enum/add/</guid><description>Adds a member to an existing enumerator type.
 Action mod_enum(enum, 'add', name, value)
 Arguments Argument Type Description enum str Name of the enumerator type where the member has to be added to. 'add' str Passing this argument will result in an add action. name str Name of the member that has to be added. value depends Value of the member that has to be added.</description></item><item><title>def</title><link>https://docs.thingsdb.net/v1/collection-api/mod_enum/def/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/collection-api/mod_enum/def/</guid><description>Set a member from an existing enumerator type as default member. The default member is also selected when a instance of a Type is created using the enumerator as a required property.
 Action mod_enum(enum, 'def', name)
