@@ -7,6 +7,8 @@ ThingsDB can store 64bit signed integer values. When assigning integer values
 larger than 64bit, an [overflow_err()](../../errors/overflow_err) will be returned. Other types can be
 converted to `int` by using the [int](../../collection-api/int) function.
 
+The minimum and maximum are defined by the constants `INT_MIN` and `INT_MAX`.
+
 ### Notations
 
 Base | Example | Description

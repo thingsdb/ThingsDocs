@@ -253,6 +253,19 @@ collection-api
     json_load
     list
     log
+    math
+        abs
+        ceil
+        cos
+        exp
+        floor
+        log10
+        log2
+        loge
+        pow
+        sin
+        sqrt
+        tan
     mod_enum
         add
         def
