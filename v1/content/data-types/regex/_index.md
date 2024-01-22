@@ -39,7 +39,7 @@ Function | Description
 email_test = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
 /* example usage of our 'email_test' */
-email_test.test('info@thingsdb.net');
+email_test.test('info@thingsdb.io');
 ```
 
 > Return value in JSON format

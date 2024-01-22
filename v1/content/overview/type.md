@@ -249,7 +249,7 @@ For example:
 ```thingsdb,json_response
 set_type('Person', {
     name: 'str<1:10>',
-    email: 'str<3:50:info@thingsdb.net>'
+    email: 'str<3:50:info@thingsdb.io>'
 });
 
 /*
@@ -266,7 +266,7 @@ Person{};  // return a Person with default values
 ```json
 {
     "name": "-",
-    "email": "info@thingsdb.net"
+    "email": "info@thingsdb.io"
 }
 ```
 

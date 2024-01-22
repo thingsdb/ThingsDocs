@@ -10,7 +10,7 @@ There are a few options to get started with ThingsDB.
 
 ### It's Free!
 
-Get your own **playground** for free at [https://thingsdb.net](https://thingsdb.net) and continue reading at the chapter [connect](../connect).
+Get your own **playground** for free at [https://thingsdb.io/playground](https://thingsdb.io/playground) and continue reading at the chapter [connect](../connect).
 
 ### Build from source
 
