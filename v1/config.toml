@@ -1,4 +1,4 @@
-baseURL = "https://docs.thingsdb.net/v1/"
+baseURL = "https://docs.thingsdb.io/v1/"
 languageCode = "en-us"
 title = "ThingsDB documentation"
 publishDir = "../docs/v1"
@@ -19,7 +19,7 @@ theme = "hugo-theme-learn"
 
 [[menu.shortcuts]]
 name = "<i class='far fa-window-maximize'></i> Website"
-url = "https://thingsdb.net/"
+url = "https://thingsdb.io/"
 weight = 10
 
 [[menu.shortcuts]]
