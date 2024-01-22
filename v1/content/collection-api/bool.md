@@ -30,34 +30,34 @@ A boolean value.
 
 ```thingsdb,json_response
 [
-    "false:",
-    { bool();                       /* default bool is false                        */},
-    { bool(0);                      /* zero (0) evaluates to false                  */},
-    { bool(0.0);                    /* zero float (0.0) evaluates to false          */},
-    { bool(nil);                    /* nil evaluates to false                       */},
-    { bool({});                     /* an empty thing evaluates to false            */},
-    { bool(err());                  /* all errors evaluate to false                 */},
-    { bool('');                     /* an empty string evaluates to false           */},
-    { bool([]);                     /* an empty array evaluates to false            */},
-    { bool(set());                  /* an empty set evaluates to false              */},
-    { bool(room());                 /* a non-stored room (no Id) evaluates to false */},
-    { bool({
+    // Evaluate to false
+    bool(),                       // default bool is false
+    bool(0),                      // zero (0) evaluates to false
+    bool(0.0),                    // zero float (0.0) evaluates to false
+    bool(nil),                    // nil evaluates to false
+    bool({}),                     // an empty thing evaluates to false
+    bool(err()),                  // all errors evaluate to false
+    bool(''),                     // an empty string evaluates to false
+    bool([]),                     // an empty array evaluates to false
+    bool(set()),                  // an empty set evaluates to false
+    bool(room()),                 // a non-stored room (no Id) evaluates to false
+    bool({
         t = task(datetime(), ||0);
         t.cancel();
         t;
-    });                             /* non-scheduled tasks evaluate to false        */},
+    }),                            // non-scheduled tasks evaluate to false
 
-    "true:",
-    { bool(42);                     /* non zero integers evaluates to true          */},
-    { bool(-1.0);                   /* non zero float values evaluates to true      */},
-    { bool({answer: 42});           /* non empty thing evaluates to true            */},
-    { bool([1, 2, 3]);              /* non empty array evaluates to true            */},
-    { bool('forty two');            /* non empty string evaluates to true           */},
-    { bool(set({}, {}));            /* non empty set evaluates to true              */},
-    { bool(.room = room());         /* a stored room (with Id) evaluates to true    */},
-    { bool(future(||nil));          /* futures evaluate to true                     */},
-    { bool(timeval(0));             /* datetime and timeval always evaluate to true */},
-    { bool(task(datetime(), ||0));  /* scheduled tasks evaluate to true             */},
+    // Evaluate to true
+    bool(42),                     // non zero integers evaluates to true
+    bool(-1.0),                   // non zero float values evaluates to true
+    bool({answer: 42}),           // non empty thing evaluates to true
+    bool([1, 2, 3]),              // non empty array evaluates to true
+    bool('forty two'),            // non empty string evaluates to true
+    bool(set({}, {})),            // non empty set evaluates to true
+    bool(.room = room()),         // a stored room (with Id) evaluates to true
+    bool(future(||nil)),          // futures evaluate to true
+    bool(timeval(0)),             // datetime and timeval always evaluate to true
+    bool(task(datetime(), ||0)),  // scheduled tasks evaluate to true
 ];
 ```
 
@@ -65,7 +65,6 @@ A boolean value.
 
 ```json
 [
-    "false:",
     false,
     false,
     false,
@@ -77,7 +76,6 @@ A boolean value.
     false,
     false,
     false,
-    "true:",
     true,
     true,
     true,
