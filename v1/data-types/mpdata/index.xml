@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>mpdata on ThingsDB documentation</title><link>https://docs.thingsdb.net/v1/data-types/mpdata/</link><description>Recent content in mpdata on ThingsDB documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://docs.thingsdb.net/v1/data-types/mpdata/index.xml" rel="self" type="application/rss+xml"/><item><title>len</title><link>https://docs.thingsdb.net/v1/data-types/mpdata/len/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/mpdata/len/</guid><description>Returns the length of mpdata in bytes.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>mpdata on ThingsDB documentation</title><link>https://docs.thingsdb.io/v1/data-types/mpdata/</link><description>Recent content in mpdata on ThingsDB documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://docs.thingsdb.io/v1/data-types/mpdata/index.xml" rel="self" type="application/rss+xml"/><item><title>len</title><link>https://docs.thingsdb.io/v1/data-types/mpdata/len/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/mpdata/len/</guid><description>Returns the length of mpdata in bytes.
 This function does not generate a change.
 Function mpdata.len()
 Arguments None
 Return value Returns length in bytes.
 Example This code uses len():
 user_info('admin').len(); Example return value in JSON format (size may be different)
-358</description></item><item><title>load</title><link>https://docs.thingsdb.net/v1/data-types/mpdata/load/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.net/v1/data-types/mpdata/load/</guid><description>Load mpdata into ThingsDB.
+358</description></item><item><title>load</title><link>https://docs.thingsdb.io/v1/data-types/mpdata/load/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/mpdata/load/</guid><description>Load mpdata into ThingsDB.
 This function does not generate a change.
 Function mpdata.load()
 Arguments None

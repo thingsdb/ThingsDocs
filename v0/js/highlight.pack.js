@@ -35,7 +35,7 @@
   }
 
 
-  
+
   function inherit(parent) {  // inherit(parent, override_obj, override_obj, ...)
     var key;
     var result = {};
@@ -1773,7 +1773,7 @@ hljs.registerLanguage('thingsdb', function () {
     Language: ThingsDB
     Author: Jeroen van der Heijden <jeroen@cesbit.com>
     Category: common, scripting
-    Website: https://thingsdb.net
+    Website: https://thingsdb.io
     */
 
     function thingsdb(hljs) {
