@@ -263,6 +263,7 @@ collection-api
         log2
         loge
         pow
+        round
         sin
         sqrt
         tan

@@ -1,6 +1,6 @@
 ---
 title: "new_user"
-weight: 352
+weight: 353
 ---
 
 Creates a new user to ThingsDB. The new user is created without a password, token and access privileges.

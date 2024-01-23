@@ -23,6 +23,7 @@ Function           | Description
 [log2](./log2)     | Return the base 2 logarithm of a given number.
 [loge](./loge)     | Returns the natural logarithm (base _e_) of a given number.
 [pow](./pow)       | Returns _x_ to the power of _y_.
+[round](./round)   | Returns a number rounded to the provided decimal places.
 [sin](./sin)       | Return the sine of a given number _(measured in radians)_.
 [sqrt](./sqrt)     | Return the square root of a given number.
 [tan](./tan)       | Return the tangent of a given number _(measured in radians)_.

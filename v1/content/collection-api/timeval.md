@@ -1,6 +1,6 @@
 ---
 title: "timeval"
-weight: 308
+weight: 309
 ---
 
 Returns a [timeval](../../data-types/timeval) depending on some optional values.
