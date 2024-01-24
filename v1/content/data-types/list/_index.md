@@ -60,9 +60,10 @@ It is not possible to change a list while the list is in use, for example: \
 
 ### Reference versus copy
 
-It might be useful to understand when ThingsDB uses a *reference* to a `list`, and when it makes *copy*. As long as a `list`
-is used as a [variable](../../overview/variable), then ThingsDB uses a *reference* to the list. If a `list` will be assigned
-to a [thing](../thing), or if a `list` which *is* assigned to a [thing](../thing), will be assigned to a [variable](../../overview/variable), then a *copy* will be made.
+It might be useful to understand when ThingsDB uses a *reference* to a `list`, and when it makes *copy*. When a `list`
+is assigned to a [variable](../../overview/variable), then ThingsDB uses a *reference* to the list. If a `list` will be assigned
+to a [thing](../thing) then a *copy* will be made.
+
 For example:
 
 ```thingsdb,json_response
