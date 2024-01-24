@@ -39,10 +39,8 @@ Operation | Description
 `^` *(symmetric difference)* | Set with things in either `a` or `b` but not both.
 `<=` *(is subset)* | Determines if `a` is a subset of `b`.
 `<` *(is proper subset)* | Determines if `a` is a proper subset of `b` _(subset, but not equal)_.
-
-{{% notice tip %}}
-The subset checks can be reversed by using the inequality operators `>=` and `>`, respectively.
-{{% /notice %}}
+`>=` *(is superset)* | Determines if `a` is a superset of `b`.
+`>` *(is proper superset)* | Determines if `a` is a proper superset of `b` _(superset, but not equal)_.
 
 > Example set operators
 
@@ -63,6 +61,8 @@ assert (a < set(anna, cato, iris));         // "a" is a proper subset
 assert ((a < set(cato, iris)) == false);    // "a" is not a proper subset
 assert (a <= set(cato, iris));              // "a" is a subset
 assert ((a <= b) == false);                 // "a" is not a subset of "b"
+assert (a > set(iris));                     // "a" is a superset of set(iris)
+
 ```
 
 {{% notice warning %}}
