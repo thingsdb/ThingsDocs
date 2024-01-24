@@ -37,8 +37,8 @@ Operation | Description
 `&` *(intersection)* | Set with things common to `a` and `b`.
 `-` *(difference)* | Set with things in `a` but not in `b`.
 `^` *(symmetric difference)* | Set with things in either `a` or `b` but not both.
-`<=` *(subset)* | Determines if `a` is a subset of `b`.
-`<` *(proper subset)* | Determines if `a` is a proper subset of `b` _(subset, but not equal)_.
+`<=` *(is subset)* | Determines if `a` is a subset of `b`.
+`<` *(is proper subset)* | Determines if `a` is a proper subset of `b` _(subset, but not equal)_.
 
 {{% notice tip %}}
 The subset checks can be reversed by using the inequality operators `>=` and `>`, respectively.
