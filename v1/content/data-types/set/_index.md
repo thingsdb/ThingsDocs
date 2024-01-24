@@ -37,6 +37,12 @@ Operation | Description
 `&` *(intersection)* | Set with things common to `a` and `b`.
 `-` *(difference)* | Set with things in `a` but not in `b`.
 `^` *(symmetric difference)* | Set with things in either `a` or `b` but not both.
+`<=` *(subset)* | Determines if `a` is a subset of `b`.
+`<` *(proper subset)* | Determines if `a` is a proper subset of `b` _(subset, but not equal)_.
+
+{{% notice tip %}}
+The subset checks can be reversed by using the inequality operators `>=` and `>`, respectively.
+{{% /notice %}}
 
 > Example set operators
 
@@ -52,6 +58,11 @@ assert (a | b == set(anna, cato, iris));    // Union
 assert (a & b == set(cato));                // Intersection
 assert (a - b == set(iris));                // Difference
 assert (a ^ b == set(anna, iris));          // Symmetric difference
+
+assert (a < set(anna, cato, iris));         // "a" is a proper subset
+assert ((a < set(cato, iris)) == false);    // "a" is not a proper subset
+assert (a <= set(cato, iris));              // "a" is a subset
+assert ((a <= b) == false);                 // "a" is not a subset of "b"
 ```
 
 {{% notice warning %}}
