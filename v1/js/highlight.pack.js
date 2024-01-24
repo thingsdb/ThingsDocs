@@ -1,5 +1,5 @@
 /*
-  Highlight.js 10.0.0-beta.0 (e961105f)
+  Highlight.js 10.0.0-beta.0 (67d77678)
   License: BSD-3-Clause
   Copyright (c) 2006-2020, Ivan Sagalaev
 */
@@ -35,7 +35,7 @@
   }
 
 
-
+  
   function inherit(parent) {  // inherit(parent, override_obj, override_obj, ...)
     var key;
     var result = {};
@@ -1773,7 +1773,7 @@ hljs.registerLanguage('thingsdb', function () {
     Language: ThingsDB
     Author: Jeroen van der Heijden <jeroen@cesbit.com>
     Category: common, scripting
-    Website: https://thingsdb.io
+    Website: https://thingsdb.net
     */
 
     function thingsdb(hljs) {
@@ -1867,7 +1867,7 @@ hljs.registerLanguage('thingsdb', function () {
                         'is_list|is_mpdata|is_nan|is_nil|is_raw|is_regex|is_set|is_str|is_thing|is_timeval|is_tuple|' +
                         'is_utf8|is_email|is_url|is_tel|timeit|task|tasks|json_dump|json_load|regex|list|mod_enum|mod_type|new|new_type|now|raise|rand|range|' +
                         'randint|randstr|refs|log|rename_enum|rename_type|set|set_enum|set_type|str|thing|try|type|' +
-                        'future|is_future|timeval|type_assert|type_count|type_info|types_info|wse|nse|export|import|root|abs|ceil|cos|exp|floor|log10|log2|loge|pow|sin|sqrt|tan|' +
+                        'future|is_future|timeval|type_assert|type_count|type_info|types_info|wse|nse|export|import|root|abs|ceil|cos|exp|floor|log10|log2|loge|pow|round|sin|sqrt|tan|' +
                         /* node functions */
                         'backup_info|backups_info|backups_ok|counters|del_backup|' +
                         'has_backup|new_backup|node_info|nodes_info|' +

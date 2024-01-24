@@ -982,7 +982,10 @@ Function pow(x, y)
 Arguments Argument Type Description x int/float (required) Base number y int/float (required) Power number Return value Returns with a float.
 Example pow() function example:
 pow(3, 4); Return value in JSON format
-81.0</description></item><item><title>sin</title><link>https://docs.thingsdb.io/v1/collection-api/math/sin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/math/sin/</guid><description>Return the sine of a given number. The value passed in this function should be in radians.
+81.0</description></item><item><title>round</title><link>https://docs.thingsdb.io/v1/collection-api/math/round/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/math/round/</guid><description>Return a number that will be rounded to the decimal places which are given as input. If the decimal places to be rounded are not specified, it is considered as 0, and it will round to the nearest integer.
+This function does not generate a change.
+Function round(number, places)
+Arguments Argument Type Description number int/float (required) Number to be rounded. places int (optional) Number of digits.</description></item><item><title>sin</title><link>https://docs.thingsdb.io/v1/collection-api/math/sin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/math/sin/</guid><description>Return the sine of a given number. The value passed in this function should be in radians.
 This function does not generate a change.
 Function sin(number)
 Arguments Argument Type Description number int/float (required) Input number Return value Returns with a float, the sine of value passed as argument.
