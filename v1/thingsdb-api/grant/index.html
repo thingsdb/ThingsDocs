@@ -6,17 +6,17 @@
 <meta name=description content="ThingsDB documentation">
 <link rel="shortcut icon" href=/v1/images/favicon.ico type=image/x-icon>
 <title>grant :: ThingsDB documentation</title>
-<link href=/v1/css/nucleus.css?1706091782 rel=stylesheet>
-<link href=/v1/css/fontawesome-all.min.css?1706091782 rel=stylesheet>
-<link href=/v1/css/hybrid.css?1706091782 rel=stylesheet>
-<link href=/v1/css/featherlight.min.css?1706091782 rel=stylesheet>
-<link href=/v1/css/perfect-scrollbar.min.css?1706091782 rel=stylesheet>
-<link href=/v1/css/auto-complete.css?1706091782 rel=stylesheet>
-<link href=/v1/css/atom-one-dark-reasonable.css?1706091782 rel=stylesheet>
-<link href=/v1/css/theme.css?1706091782 rel=stylesheet>
-<link href=/v1/css/hugo-theme.css?1706091782 rel=stylesheet>
-<link href=/v1/css/theme-mine.css?1706091782 rel=stylesheet>
-<script src=/v1/js/jquery-3.3.1.min.js?1706091782></script>
+<link href=/v1/css/nucleus.css?1706621793 rel=stylesheet>
+<link href=/v1/css/fontawesome-all.min.css?1706621793 rel=stylesheet>
+<link href=/v1/css/hybrid.css?1706621793 rel=stylesheet>
+<link href=/v1/css/featherlight.min.css?1706621793 rel=stylesheet>
+<link href=/v1/css/perfect-scrollbar.min.css?1706621793 rel=stylesheet>
+<link href=/v1/css/auto-complete.css?1706621793 rel=stylesheet>
+<link href=/v1/css/atom-one-dark-reasonable.css?1706621793 rel=stylesheet>
+<link href=/v1/css/theme.css?1706621793 rel=stylesheet>
+<link href=/v1/css/hugo-theme.css?1706621793 rel=stylesheet>
+<link href=/v1/css/theme-mine.css?1706621793 rel=stylesheet>
+<script src=/v1/js/jquery-3.3.1.min.js?1706621793></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}:not(pre)>code+span.copy-to-clipboard{display:none}</style>
 </head>
 <body data-url=/v1/thingsdb-api/grant/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/v1/js/lunr.min.js?1706091782></script>
-<script type=text/javascript src=/v1/js/auto-complete.js?1706091782></script>
+<script type=text/javascript src=/v1/js/lunr.min.js?1706621793></script>
+<script type=text/javascript src=/v1/js/auto-complete.js?1706621793></script>
 <script type=text/javascript>var baseurl="https://docs.thingsdb.io/v1/"</script>
-<script type=text/javascript src=/v1/js/search.js?1706091782></script>
+<script type=text/javascript src=/v1/js/search.js?1706621793></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -2209,23 +2209,23 @@ a bit mask to either the <code>@node</code>, <code>@thingsdb</code> or a <code>@
 <tbody>
 <tr>
 <td><code>QUERY</code> (1)</td>
-<td>Gives read access.</td>
+<td>Grants access to execute queries.</td>
 </tr>
 <tr>
 <td><code>CHANGE</code> (2)</td>
-<td>Gives modify access.</td>
+<td>Grants access to make changes.</td>
 </tr>
 <tr>
 <td><code>GRANT</code> (4)</td>
-<td>Gives modify and grant (and revoke) privileges.</td>
+<td>Grants administrative privileges, allowing users to grant and revoke permissions to other users.</td>
 </tr>
 <tr>
 <td><code>JOIN</code> (8)</td>
-<td>Gives join (and leave) privileges.</td>
+<td>Grants join (and leave) privileges to a room.</td>
 </tr>
 <tr>
 <td><code>RUN</code> (16)</td>
-<td>Gives run procedures access.</td>
+<td>Grants access to run procedures directly.</td>
 </tr>
 <tr>
 <td><code>USER</code> (27)</td>
@@ -2300,18 +2300,18 @@ grant('@:stuff', 'iris', QUERY|JOIN);
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/v1/js/clipboard.min.js?1706091782></script>
-<script src=/v1/js/perfect-scrollbar.min.js?1706091782></script>
-<script src=/v1/js/perfect-scrollbar.jquery.min.js?1706091782></script>
-<script src=/v1/js/jquery.sticky.js?1706091782></script>
-<script src=/v1/js/featherlight.min.js?1706091782></script>
-<script src=/v1/js/highlight.pack.js?1706091782></script>
+<script src=/v1/js/clipboard.min.js?1706621793></script>
+<script src=/v1/js/perfect-scrollbar.min.js?1706621793></script>
+<script src=/v1/js/perfect-scrollbar.jquery.min.js?1706621793></script>
+<script src=/v1/js/jquery.sticky.js?1706621793></script>
+<script src=/v1/js/featherlight.min.js?1706621793></script>
+<script src=/v1/js/highlight.pack.js?1706621793></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=/v1/js/modernizr.custom-3.6.0.js?1706091782></script>
-<script src=/v1/js/learn.js?1706091782></script>
-<script src=/v1/js/hugo-learn.js?1706091782></script>
-<link href=/v1/mermaid/mermaid.css?1706091782 rel=stylesheet>
-<script src=/v1/mermaid/mermaid.js?1706091782></script>
+<script src=/v1/js/modernizr.custom-3.6.0.js?1706621793></script>
+<script src=/v1/js/learn.js?1706621793></script>
+<script src=/v1/js/hugo-learn.js?1706621793></script>
+<link href=/v1/mermaid/mermaid.css?1706621793 rel=stylesheet>
+<script src=/v1/mermaid/mermaid.js?1706621793></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 </body>
 </html>
