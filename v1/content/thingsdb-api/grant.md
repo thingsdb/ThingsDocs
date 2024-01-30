@@ -16,11 +16,11 @@ The following predefined masks are available:
 
 Mask         | Description
 ------------ | -----------
-`QUERY` (1)  | Gives read access.
-`CHANGE` (2) | Gives modify access.
-`GRANT` (4)  | Gives modify and grant (and revoke) privileges.
-`JOIN` (8)   | Gives join (and leave) privileges.
-`RUN` (16)   | Gives run procedures access.
+`QUERY` (1)  | Grants access to execute queries.
+`CHANGE` (2) | Grants access to make changes.
+`GRANT` (4)  | Grants administrative privileges, allowing users to grant and revoke permissions to other users.
+`JOIN` (8)   | Grants join (and leave) privileges to a room.
+`RUN` (16)   | Grants access to run procedures directly.
 `USER` (27)  | A *mask* for `QUEY`, `CHANGE`, `JOIN` and `RUN`.
 `FULL` (31)  | A *mask* for full privileges.
 
