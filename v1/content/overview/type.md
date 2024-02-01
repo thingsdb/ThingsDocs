@@ -18,6 +18,7 @@ definition | default | description
 `'str<..>'` | *depends* | requires type [str](../../data-types/str) with a certain length *(see [length condition](#length-condition) and [default value](#use-condition-to-set-a-default-value))*
 `'/pattern/'` | *depends* | requires type [str](../../data-types/str) with a match to a specified pattern *(see [pattern condition](#pattern-condition))*.
 `'utf8'` | `""` | requires type [str](../../data-types/str) and the value *must* contain valid UTF-8 characters.
+`'utf8<..>'` | *depends* | requires type [str](../../data-types/str), the value *must* contain valid UTF-8 characters and with a certain length *(see [length condition](#length-condition) and [default value](#use-condition-to-set-a-default-value))*
 `'raw'` | `""` | requires type [str](../../data-types/str) *or* [bytes](../../data-types/bytes).
 `'bytes'` | `bytes()` | requires type [bytes](../../data-types/bytes).
 `'bool'` | `false` | requires type [bool](../../data-types/bool).
@@ -232,7 +233,7 @@ return book, 2;
 
 ### Length condition
 
-A length condition may be added to a `str` type definition using the following syntax:
+A length condition may be added to a `str` or `utf8` type definition using the following syntax:
 
 ```
 str<min:max:default>
