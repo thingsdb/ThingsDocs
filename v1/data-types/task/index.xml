@@ -2,11 +2,9 @@
 It is only possible to use again_at within the callback of the parent task. If may however be used within a future or other closure, as long as this closure is nested within the tasks callback.
 This function generates a change.
 Function task.again_at(start)
-Arguments Argument Type Description start datetime (required) Date/time when the task should start again.</description></item><item><title>again_in</title><link>https://docs.thingsdb.io/v1/data-types/task/again_in/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/task/again_in/</guid><description>Re-schedules the task to a new date/time. The task will run again at the new date/time, even if the task returns with an error.
-It is only possible to use again_at within the callback of the parent task. If may however be used within a future or other closure, as long as this closure is nested within the tasks callback.
-This function generates a change.
-Function task.again_in(unit, num)
-Arguments Argument Type Description unit str (required) One of years, months, weeks, days, hours, minutes or seconds.</description></item><item><title>args</title><link>https://docs.thingsdb.io/v1/data-types/task/args/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/task/args/</guid><description>Get task arguments as a new list. As this function returns a new list, making changes to this list does not affect the task arguments.
+Arguments Argument Type Description start datetime (required) Date/time when the task should start again.</description></item><item><title>again_in</title><link>https://docs.thingsdb.io/v1/data-types/task/again_in/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/task/again_in/</guid><description>Re-schedules the task to a new date/time relative to the original start time. The task will run again at the new date/time, even if the task returns with an error.
+It is only possible to use again_in within the callback of the parent task. If may however be used within a future or other closure, as long as this closure is nested within the tasks callback.
+This function generates a change.</description></item><item><title>args</title><link>https://docs.thingsdb.io/v1/data-types/task/args/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/task/args/</guid><description>Get task arguments as a new list. As this function returns a new list, making changes to this list does not affect the task arguments.
 This function does not generate a change.
 Function task.args()
 Arguments None

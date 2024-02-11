@@ -44,8 +44,8 @@ Function thing.id()
 Arguments None
 Return value Returns id of a thing or nil when the thing is not stored.
 Example This code uses id() to return a collection id:
-.id(); // Returns the collection id Example return value in JSON format
-3</description></item><item><title>keys</title><link>https://docs.thingsdb.io/v1/data-types/thing/keys/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/thing/keys/</guid><description>keys The function returns a list with all the property names of a thing. The same could be returned using map so the following statement is true:
+.id(); // Returns the collection id Return value in JSON format
+1</description></item><item><title>keys</title><link>https://docs.thingsdb.io/v1/data-types/thing/keys/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/thing/keys/</guid><description>keys The function returns a list with all the property names of a thing. The same could be returned using map so the following statement is true:
 .keys() == .map(|k| k)
 Although the keys() and map() functions in the example above will return a list with the same order, the order of keys in the list is not guaranteed and may be different each time you run the query.
 This function does not generate a change.</description></item><item><title>len</title><link>https://docs.thingsdb.io/v1/data-types/thing/len/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/thing/len/</guid><description>Returns the number of items in a thing.
