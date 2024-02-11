@@ -40,6 +40,7 @@ collection_info('stuff');
     "created_at": 1579175900,
     "default_deep": 1,
     "name": "stuff",
+    "next_free_id": 93114,
     "things": 61352,
     "time_zone": "UTC"
 }

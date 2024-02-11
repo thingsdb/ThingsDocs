@@ -27,8 +27,8 @@ Returns `id` of a thing or `nil` when the thing is not stored.
 .id();  // Returns the collection id
 ```
 
-> Example return value in JSON format
+> Return value in JSON format
 
 ```json
-3
+1
 ```
