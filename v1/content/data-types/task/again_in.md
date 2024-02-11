@@ -3,10 +3,10 @@ title: "again_in"
 weight: 143
 ---
 
-Re-schedules the task to a new date/time. The task will run again at the new date/time, even if the task returns with an error.
+Re-schedules the task to a new date/time relative to the original start time. The task will run again at the new date/time, even if the task returns with an error.
 
 {{% notice note %}}
-It is only possible to use `again_at` within the callback of the parent task. If may however be used within a future or other closure, as long as this closure is nested within the tasks callback.
+It is only possible to use `again_in` within the callback of the parent task. If may however be used within a future or other closure, as long as this closure is nested within the tasks callback.
 {{% /notice %}}
 
 This function generates a [change](../../../overview/changes).
