@@ -25,6 +25,7 @@ Function | Description
 [del_enum](../../collection-api/del_enum) | Delete an enumerator type.
 [enum](../../collection-api/enum) | Get an enumerator member by value.
 [enum_info](../../collection-api/enum_info) | Return info about the enumerator type.
+[enum_map](../../collection-api/enum_map) | Returns a thing with key/value pairs for all the members of a given enum.
 [enums_info](../../collection-api/enums_info) |Return info about all the enumerator types in the current scope.
 [has_enum](../../collection-api/has_enum) | Determine if the current scope has a given enumerator type.
 [is_enum](../../collection-api/is/is_enum) | Test if a given value is a member of an enumerator type.
