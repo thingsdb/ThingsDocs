@@ -23,7 +23,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 type | str | Name of the Type where the property has to be modified from.
 `'mod'` | str | Passing this argument will result in a *modify* action.
-name | str | Name of the property that has to be modified.
+name | str | Name of the property or method that has to be modified.
 definition/closure | str/closure | New type definition of the property or closure for the method that has to be modified.
 callback | closure | The closure will be called on each existing instance and can be used to set a new value, see [modify using callback](#modify-using-callback). The `callback` argument is only accepted when modifying a *property* on a type with [wrap-only](../wpo) mode disabled and must be omitted when modifying a *method* or changing a type with *wrap-only* mode enabled.
 

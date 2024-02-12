@@ -11,8 +11,8 @@ This function generates a [change](../../overview/changes).
 
 Action | Description
 ------ | -----------
-[add](./add) | Add a member to an existing enumerator type.
-[def](./def) | Set a member as default for an existing enumerator type.
-[del](./del) | Delete a member of an existing enumerator type.
-[mod](./mod) | Modify a member value of an existing enumerator type.
-[ren](./ren) | Rename a member of an existing enumerator type.
+[add](./add) | Adds a member or method to the enumerator.
+[def](./def) | Sets the default member for the enumerator.
+[del](./del) | Deletes a member or method from the enumerator.
+[mod](./mod) | Modifies a members value or methods closure.
+[ren](./ren) | Renames a member or method.

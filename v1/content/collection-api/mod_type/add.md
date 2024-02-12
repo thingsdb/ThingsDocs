@@ -3,7 +3,7 @@ title: "add"
 weight: 277
 ---
 
-Adds a property to an existing [Type](../../../overview/type).
+Adds a property or method to an existing [Type](../../../overview/type).
 
 {{% notice info %}}
 Since version **v0.9.2** an initial value is no longer required when having active instances of the given Type.
@@ -20,7 +20,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 type | str | Name of the [Type](../../../overview/type) where the property has to be added to.
 `'add'` | str | Passing this argument will result in an *add* action.
-name | str | Name of the property that has to be added.
+name | str | Name of the property or method that has to be added.
 definition/closure | str/closure | Type definition of the *property* or closure for the *method* that has to be added
 init | any/closure | The default value to set on existing instances of this [Type](../../../overview/type). If a closure is used, then the closure will be called on each existing instance, see [init using callback](#init-using-callback). The `init` argument is only accepted when adding a new *property* on a type with [wrap-only](../wpo) mode disabled and must be omitted when adding a new *method* or changing a type with *wrap-only* mode enabled.
 

@@ -3,7 +3,7 @@ title: "add"
 weight: 271
 ---
 
-Adds a member to an existing [enumerator type](../../../data-types/enum).
+Adds a member or method to an existing [enumerator type](../../../data-types/enum).
 
 
 ### Action
@@ -16,8 +16,8 @@ Argument | Type | Description
 -------- | ---- | -----------
 enum | str | Name of the [enumerator type](../../../data-types/enum) where the member has to be added to.
 `'add'` | str | Passing this argument will result in an *add* action.
-name | str | Name of the member that has to be added.
-value | depends | Value of the member that has to be added. The type of the member must be equal to the other enum values.
+name | str | Name of the member or method that has to be added.
+value | depends | Value of the member that has to be added. The type of the member must be equal to the other enum values. For a method the value must be a closure.
 
 ### Return value
 

@@ -3,7 +3,7 @@ title: "mod"
 weight: 274
 ---
 
-Modify a member value from an existing [enumerator type](../../../data-types/enum).
+Modify a member value or method closure from an existing [enumerator type](../../../data-types/enum).
 
 
 ### Action
@@ -16,8 +16,8 @@ Argument | Type | Description
 -------- | ---- | -----------
 enum | str | Name of the [enumerator type](../../../data-types/enum) where the member has to be removed from.
 `'mod'` | str | Passing this argument will result in a *modify* action.
-name | str | Name of the member that has to be modified.
-value | any | New value for the member that has to be modified.
+name | str | Name of the member or method that has to be modified.
+value | any | New value for the member or method that has to be modified.
 
 ### Return value
 

@@ -11,11 +11,11 @@ This function generates a [change](../../overview/changes).
 
 Action | Description
 ------ | -----------
-[add](./add) | Adds a new method or property to the type.
+[add](./add) | Adds a new property or method to the type.
 [all](./all) | Iterates over all instances of a given type.
-[del](./del) | Deletes a property from the type.
+[del](./del) | Deletes a property or method from the type.
 [hid](./hid) | Enables or disable *hide-id* for the type.
-[mod](./mod) | Modifies a method or property definition.
+[mod](./mod) | Modifies a property or method definition.
 [rel](./rel) | Creates a relation between types.
-[ren](./ren) | Renames a method or property.
+[ren](./ren) | Renames a property or method.
 [wpo](./wpo) | Enables or disable *wrap-only* mode for the type.
