@@ -38,6 +38,13 @@ if (x > 10) {
 };
 ```
 
+Arguments _may_ be provided by a list. In this case the length of the list must match the number of arguments accepted by the closure:
+
+```thingsdb,syntax_only
+future(|x| {
+    .answers.push(x);  // x = 10
+}, [10]);
+```
 
 ### Modules
 
