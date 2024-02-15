@@ -20,7 +20,7 @@ Argument | Type | Description
 
 ### Return value
 
-Returns the name of the procedure. A [lookup_err()](../../errors/lookup_err) is raised if the procedure does not exist.
+The value `nil`. A [lookup_err()](../../errors/lookup_err) is raised if the procedure does not exist.
 
 ### Example
 
