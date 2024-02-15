@@ -28,7 +28,6 @@ Function | scope | description
 [set_module_conf](../thingsdb-api/set_module_conf) | `@thingsdb` | Change the module configuration.
 [set_module_scope](../thingsdb-api/set_module_scope) | `@thingsdb` | Change the module scope.
 
-
 ### Building modules
 
 Modules can be created in any language. For some languages there exists a library which makes
@@ -39,19 +38,12 @@ Language | Library | Example
 [Go](https://golang.org)  | [go-timod](https://github.com/thingsdb/go-timod) | [Demo](https://github.com/thingsdb/module-go-demo) (echo-reply example)
 [Python](https://www.python.org)  | [py-timod](https://github.com/thingsdb/py-timod) | [Demo](https://github.com/thingsdb/module-py-demo) (echo-reply example)
 
+### Available modules
 
-### List of modules
+See the [supported modules](./supported-modules) section for a list of modules maintained by the ThingsDB team.
 
-This is list with some tested modules. If you want you're module in this list, feel free to modify the list and create a pull request!
+{{% notice tip %}}
+We like to build a list of additional modules, contact <info@thingsdb.io> if you have a module you want to introduce to the world
+{{% /notice %}}
 
-Name                                                                                        | Description
-------------------------------------------------------------------------------------------- | --------------------------
-[github.com/thingsdb/module-go-requests](https://github.com/thingsdb/module-go-requests)    | For making HTTP requests.
-[github.com/thingsdb/module-go-siridb](https://github.com/thingsdb/module-go-siridb)        | For communicating with a [SiriDB](https://siridb.com) database.
-[github.com/thingsdb/module-go-smtp](https://github.com/thingsdb/module-go-smtp)            | For sending emails using SMTP.
-[github.com/thingsdb/module-go-thingsdb](https://github.com/thingsdb/module-go-thingsdb)    | For communicating with other [ThingsDB](https://thingsdb.io) scopes.
-[github.com/thingsdb/module-go-twilio](https://github.com/thingsdb/module-go-twilio)        | For communicating with [Twilio](https://twilio.com) _(for making SMS, WhatsApp and Voice calls and more)_.
-[github.com/thingsdb/module-go-dutycalls](https://github.com/thingsdb/module-go-dutycalls)  | For access to the [DutyCalls](https://dutycalls.me) [REST API](https://docs.dutycalls.me/rest-api/).
-[github.com/thingsdb/module-py-demo](https://github.com/thingsdb/module-py-demo)            | Demo module using the [Python language](https://python.org).
-[github.com/thingsdb/module-go-demo](https://github.com/thingsdb/module-go-demo)            | Demo module using the [Go language](https://golang.org).
 
