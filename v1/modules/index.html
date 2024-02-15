@@ -6,17 +6,17 @@
 <meta name=description content="ThingsDB documentation">
 <link rel="shortcut icon" href=/v1/images/favicon.ico type=image/x-icon>
 <title>Modules :: ThingsDB documentation</title>
-<link href=/v1/css/nucleus.css?1707685703 rel=stylesheet>
-<link href=/v1/css/fontawesome-all.min.css?1707685703 rel=stylesheet>
-<link href=/v1/css/hybrid.css?1707685703 rel=stylesheet>
-<link href=/v1/css/featherlight.min.css?1707685703 rel=stylesheet>
-<link href=/v1/css/perfect-scrollbar.min.css?1707685703 rel=stylesheet>
-<link href=/v1/css/auto-complete.css?1707685703 rel=stylesheet>
-<link href=/v1/css/atom-one-dark-reasonable.css?1707685703 rel=stylesheet>
-<link href=/v1/css/theme.css?1707685703 rel=stylesheet>
-<link href=/v1/css/hugo-theme.css?1707685703 rel=stylesheet>
-<link href=/v1/css/theme-mine.css?1707685703 rel=stylesheet>
-<script src=/v1/js/jquery-3.3.1.min.js?1707685703></script>
+<link href=/v1/css/nucleus.css?1707997152 rel=stylesheet>
+<link href=/v1/css/fontawesome-all.min.css?1707997152 rel=stylesheet>
+<link href=/v1/css/hybrid.css?1707997152 rel=stylesheet>
+<link href=/v1/css/featherlight.min.css?1707997152 rel=stylesheet>
+<link href=/v1/css/perfect-scrollbar.min.css?1707997152 rel=stylesheet>
+<link href=/v1/css/auto-complete.css?1707997152 rel=stylesheet>
+<link href=/v1/css/atom-one-dark-reasonable.css?1707997152 rel=stylesheet>
+<link href=/v1/css/theme.css?1707997152 rel=stylesheet>
+<link href=/v1/css/hugo-theme.css?1707997152 rel=stylesheet>
+<link href=/v1/css/theme-mine.css?1707997152 rel=stylesheet>
+<script src=/v1/js/jquery-3.3.1.min.js?1707997152></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}:not(pre)>code+span.copy-to-clipboard{display:none}</style>
 </head>
 <body data-url=/v1/modules/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/v1/js/lunr.min.js?1707685703></script>
-<script type=text/javascript src=/v1/js/auto-complete.js?1707685703></script>
+<script type=text/javascript src=/v1/js/lunr.min.js?1707997152></script>
+<script type=text/javascript src=/v1/js/auto-complete.js?1707997152></script>
 <script type=text/javascript>var baseurl="https://docs.thingsdb.io/v1/"</script>
-<script type=text/javascript src=/v1/js/search.js?1707685703></script>
+<script type=text/javascript src=/v1/js/search.js?1707997152></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -1996,6 +1996,11 @@ Hello World Module
 Publish a module
 </a>
 </li>
+<li data-nav-id=/v1/modules/supported-modules/ title="Supported Modules" class=dd-item>
+<a href=/v1/modules/supported-modules/>
+Supported Modules
+</a>
+</li>
 </ul>
 </li>
 <li data-nav-id=/v1/listening/ title=Listening class=dd-item>
@@ -2264,46 +2269,10 @@ building a module an easy task. Refer below to a list of libraries and examples:
 </tr>
 </tbody>
 </table>
-<h3 id=list-of-modules>List of modules</h3>
-<p>This is list with some tested modules. If you want you&rsquo;re module in this list, feel free to modify the list and create a pull request!</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href=https://github.com/thingsdb/module-go-siridb>github.com/thingsdb/module-go-siridb</a></td>
-<td>For communicating with a <a href=https://siridb.net>SiriDB</a> database.</td>
-</tr>
-<tr>
-<td><a href=https://github.com/thingsdb/module-go-dutycalls>github.com/thingsdb/module-go-dutycalls</a></td>
-<td>For access to the <a href=https://dutycalls.me>DutyCalls</a> <a href=https://docs.dutycalls.me/rest-api/>REST API</a>.</td>
-</tr>
-<tr>
-<td><a href=https://github.com/thingsdb/module-go-twilio>github.com/thingsdb/module-go-twilio</a></td>
-<td>For communicating with <a href=https://twilio.com>Twilio</a> <em>(for making SMS, WhatsApp and Voice calls and more)</em>.</td>
-</tr>
-<tr>
-<td><a href=https://github.com/thingsdb/module-go-smtp>github.com/thingsdb/module-go-smtp</a></td>
-<td>For sending emails using SMTP.</td>
-</tr>
-<tr>
-<td><a href=https://github.com/thingsdb/module-go-requests>github.com/thingsdb/module-go-requests</a></td>
-<td>For making HTTP requests.</td>
-</tr>
-<tr>
-<td><a href=https://github.com/thingsdb/module-py-demo>github.com/thingsdb/module-py-demo</a></td>
-<td>Demo module using the <a href=https://python.org>Python language</a>.</td>
-</tr>
-<tr>
-<td><a href=https://github.com/thingsdb/module-go-demo>github.com/thingsdb/module-go-demo</a></td>
-<td>Demo module using the <a href=https://golang.org>Go language</a>.</td>
-</tr>
-</tbody>
-</table>
+<h3 id=available-modules>Available modules</h3>
+<p>See the <a href=./supported-modules>supported modules</a> section for a list of modules maintained by the ThingsDB team.</p>
+<div class="notices tip"><p>We like to build a list of additional modules, contact <a href=mailto:info@thingsdb.io>info@thingsdb.io</a> if you have a module you want to introduce to the world</p>
+</div>
 <footer class=footline>
 </footer>
 </div>
@@ -2317,18 +2286,18 @@ building a module an easy task. Refer below to a list of libraries and examples:
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/v1/js/clipboard.min.js?1707685703></script>
-<script src=/v1/js/perfect-scrollbar.min.js?1707685703></script>
-<script src=/v1/js/perfect-scrollbar.jquery.min.js?1707685703></script>
-<script src=/v1/js/jquery.sticky.js?1707685703></script>
-<script src=/v1/js/featherlight.min.js?1707685703></script>
-<script src=/v1/js/highlight.pack.js?1707685703></script>
+<script src=/v1/js/clipboard.min.js?1707997152></script>
+<script src=/v1/js/perfect-scrollbar.min.js?1707997152></script>
+<script src=/v1/js/perfect-scrollbar.jquery.min.js?1707997152></script>
+<script src=/v1/js/jquery.sticky.js?1707997152></script>
+<script src=/v1/js/featherlight.min.js?1707997152></script>
+<script src=/v1/js/highlight.pack.js?1707997152></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=/v1/js/modernizr.custom-3.6.0.js?1707685703></script>
-<script src=/v1/js/learn.js?1707685703></script>
-<script src=/v1/js/hugo-learn.js?1707685703></script>
-<link href=/v1/mermaid/mermaid.css?1707685703 rel=stylesheet>
-<script src=/v1/mermaid/mermaid.js?1707685703></script>
+<script src=/v1/js/modernizr.custom-3.6.0.js?1707997152></script>
+<script src=/v1/js/learn.js?1707997152></script>
+<script src=/v1/js/hugo-learn.js?1707997152></script>
+<link href=/v1/mermaid/mermaid.css?1707997152 rel=stylesheet>
+<script src=/v1/mermaid/mermaid.js?1707997152></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 </body>
 </html>
