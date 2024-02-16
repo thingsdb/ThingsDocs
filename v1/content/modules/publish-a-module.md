@@ -112,7 +112,7 @@ The following keys can be used in an exposed function map:
 
 - `doc` *(optional)*: Documentation or link to documentation of the exposed function.
 - `defaults` *(optional)*: Defaults for this exposed function. Global defaults will be inherited but may be overwritten here.
-- `argmap` *(optional)*: Map positional arguments to key/value pairs.
+- `argmap` *(optional)*: Map positional arguments to key/value pairs. If not given the argmap `["*"]` is used.
 
 For example: suppose we have a module `demo` which requires a `message` argument. To use this module we would have to call the module like this:
 
