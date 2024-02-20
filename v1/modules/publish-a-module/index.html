@@ -6,17 +6,17 @@
 <meta name=description content="ThingsDB documentation">
 <link rel="shortcut icon" href=/v1/images/favicon.ico type=image/x-icon>
 <title>Publish a module :: ThingsDB documentation</title>
-<link href=/v1/css/nucleus.css?1707997151 rel=stylesheet>
-<link href=/v1/css/fontawesome-all.min.css?1707997151 rel=stylesheet>
-<link href=/v1/css/hybrid.css?1707997151 rel=stylesheet>
-<link href=/v1/css/featherlight.min.css?1707997151 rel=stylesheet>
-<link href=/v1/css/perfect-scrollbar.min.css?1707997151 rel=stylesheet>
-<link href=/v1/css/auto-complete.css?1707997151 rel=stylesheet>
-<link href=/v1/css/atom-one-dark-reasonable.css?1707997151 rel=stylesheet>
-<link href=/v1/css/theme.css?1707997151 rel=stylesheet>
-<link href=/v1/css/hugo-theme.css?1707997151 rel=stylesheet>
-<link href=/v1/css/theme-mine.css?1707997151 rel=stylesheet>
-<script src=/v1/js/jquery-3.3.1.min.js?1707997151></script>
+<link href=/v1/css/nucleus.css?1708418142 rel=stylesheet>
+<link href=/v1/css/fontawesome-all.min.css?1708418142 rel=stylesheet>
+<link href=/v1/css/hybrid.css?1708418142 rel=stylesheet>
+<link href=/v1/css/featherlight.min.css?1708418142 rel=stylesheet>
+<link href=/v1/css/perfect-scrollbar.min.css?1708418142 rel=stylesheet>
+<link href=/v1/css/auto-complete.css?1708418142 rel=stylesheet>
+<link href=/v1/css/atom-one-dark-reasonable.css?1708418142 rel=stylesheet>
+<link href=/v1/css/theme.css?1708418142 rel=stylesheet>
+<link href=/v1/css/hugo-theme.css?1708418142 rel=stylesheet>
+<link href=/v1/css/theme-mine.css?1708418142 rel=stylesheet>
+<script src=/v1/js/jquery-3.3.1.min.js?1708418142></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}:not(pre)>code+span.copy-to-clipboard{display:none}</style>
 </head>
 <body data-url=/v1/modules/publish-a-module/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/v1/js/lunr.min.js?1707997151></script>
-<script type=text/javascript src=/v1/js/auto-complete.js?1707997151></script>
+<script type=text/javascript src=/v1/js/lunr.min.js?1708418142></script>
+<script type=text/javascript src=/v1/js/auto-complete.js?1708418142></script>
 <script type=text/javascript>var baseurl="https://docs.thingsdb.io/v1/"</script>
-<script type=text/javascript src=/v1/js/search.js?1707997151></script>
+<script type=text/javascript src=/v1/js/search.js?1708418142></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -2278,7 +2278,7 @@ The key should consist of the platform and architecture combined with a slash (<
 <ul>
 <li><code>doc</code> <em>(optional)</em>: Documentation or link to documentation of the exposed function.</li>
 <li><code>defaults</code> <em>(optional)</em>: Defaults for this exposed function. Global defaults will be inherited but may be overwritten here.</li>
-<li><code>argmap</code> <em>(optional)</em>: Map positional arguments to key/value pairs.</li>
+<li><code>argmap</code> <em>(optional)</em>: Map positional arguments to key/value pairs. If not given the argmap <code>["*"]</code> is used.</li>
 </ul>
 <p>For example: suppose we have a module <code>demo</code> which requires a <code>message</code> argument. To use this module we would have to call the module like this:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>demo</span>({<span style=color:#a6e22e>message</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;my beautiful message&#34;</span>});
@@ -2310,18 +2310,18 @@ The key should consist of the platform and architecture combined with a slash (<
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/v1/js/clipboard.min.js?1707997151></script>
-<script src=/v1/js/perfect-scrollbar.min.js?1707997151></script>
-<script src=/v1/js/perfect-scrollbar.jquery.min.js?1707997151></script>
-<script src=/v1/js/jquery.sticky.js?1707997151></script>
-<script src=/v1/js/featherlight.min.js?1707997151></script>
-<script src=/v1/js/highlight.pack.js?1707997151></script>
+<script src=/v1/js/clipboard.min.js?1708418142></script>
+<script src=/v1/js/perfect-scrollbar.min.js?1708418142></script>
+<script src=/v1/js/perfect-scrollbar.jquery.min.js?1708418142></script>
+<script src=/v1/js/jquery.sticky.js?1708418142></script>
+<script src=/v1/js/featherlight.min.js?1708418142></script>
+<script src=/v1/js/highlight.pack.js?1708418142></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=/v1/js/modernizr.custom-3.6.0.js?1707997151></script>
-<script src=/v1/js/learn.js?1707997151></script>
-<script src=/v1/js/hugo-learn.js?1707997151></script>
-<link href=/v1/mermaid/mermaid.css?1707997151 rel=stylesheet>
-<script src=/v1/mermaid/mermaid.js?1707997151></script>
+<script src=/v1/js/modernizr.custom-3.6.0.js?1708418142></script>
+<script src=/v1/js/learn.js?1708418142></script>
+<script src=/v1/js/hugo-learn.js?1708418142></script>
+<link href=/v1/mermaid/mermaid.css?1708418142 rel=stylesheet>
+<script src=/v1/mermaid/mermaid.js?1708418142></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 </body>
 </html>
