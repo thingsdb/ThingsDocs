@@ -61,8 +61,7 @@ Function task.set_args(args)
 Arguments Argument Type Description args list (required) List with task arguments.</description></item><item><title>set_closure</title><link>https://docs.thingsdb.io/v1/data-types/task/set_closure/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/task/set_closure/</guid><description>Change the closure to execute. Obsolete closure arguments will be removed when the new closure accepts less arguments than the previous closure. If the new closure accepts more arguments, the argument list will be extended with nil values.
 This function generates a change.
 Function task.set_closure(code)
-Arguments Argument Type Description code closure (required) New closure to attach to the task. Return value Returns nil when successful.</description></item><item><title>set_owner</title><link>https://docs.thingsdb.io/v1/data-types/task/set_owner/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/task/set_owner/</guid><description>Change the owner of a task. The new owner must have at least CHANGE permissions on scope where the task is created.
-Changing the owner is useful if you plan to remove an existing user as removing a user will also delete the tasks of the user.
+Arguments Argument Type Description code closure (required) New closure to attach to the task. Return value Returns nil when successful.</description></item><item><title>set_owner</title><link>https://docs.thingsdb.io/v1/data-types/task/set_owner/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/task/set_owner/</guid><description>Change the owner of a task. The new owner must have at least CHANGE permissions on scope where the task is created and access rights may not exceed the access rights of the user who is calling this method.
+Changing the owner is useful if you plan to remove an existing user (removing a user will also delete the tasks of the user).
 This function generates a change.
-Function task.set_owner(name)
-Arguments Argument Type Description name str (required) Name of the new owner.</description></item></channel></rss>
+Function task.</description></item></channel></rss>
