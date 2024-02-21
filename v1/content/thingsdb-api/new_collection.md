@@ -28,20 +28,20 @@ Use `grant` to give other users access to the collection.
 
 ### Return value
 
-Returns the new collection `id` if successful. A [lookup_err()](../../errors/lookup_err) is raised
+Returns the new collection `name` if successful. A [lookup_err()](../../errors/lookup_err) is raised
 if the collection already exists.
 
 ### Example
 
 > This code will create a collection *"awesome_things"*:
 
-```thingsdb,should_pass,@t
+```thingsdb,json_response,@t
 // Creates a new collection
 new_collection('awesome_things');
 ```
 
-> Example return value in JSON format (the new collection id)
+> Teturn value in JSON format (the new collection name)
 
 ```json
-31415
+"awesome_things"
 ```

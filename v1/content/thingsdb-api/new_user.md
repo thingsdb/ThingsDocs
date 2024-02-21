@@ -24,19 +24,19 @@ Argument | Type | Description
 
 ### Return value
 
-Returns the new user `id` if successful. A [lookup_err()](../../errors/lookup_err) is raised
+Returns the new user `name` if successful. A [lookup_err()](../../errors/lookup_err) is raised
 if the user already exists.
 
 ### Example
 
 > Create a new user `iris`:
 
-```thingsdb,should_pass,@t
+```thingsdb,json_response,@t
 new_user('iris');
 ```
 
-> Example return value in JSON format (the new user id)
+> Return value in JSON format (the new user name)
 
 ```json
-19
+"iris"
 ```

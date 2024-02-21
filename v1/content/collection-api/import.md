@@ -13,19 +13,20 @@ This function generates a [change](../../overview/changes).
 
 ### Function
 
-`import([options])`
+`import(data, [options])`
 
 ### Arguments
 
-Argument | Type | Description
--------- | ---- | -----------
+Argument  | Type             | Description
+--------- | ---------------- | -----------
+`data`    | bytes (required) | The data to import.
 `options` | thing (optional) | A thing with optional [options](#options).
 
 #### Options
 
 Option | Type | Description
 ------ | ---- | -----------
-`import_tasks` | bool | When `true`, tasks will be imported as well. If `false` *(default)*, tasks are not imported and each existing task will be set to an empty task.
+`import_tasks` | bool | When `true`, tasks will be imported as well and the owner will be set to the user performing the import. If `false` *(default)*, tasks are not imported and each existing task will be set to an empty task.
 
 ### Return value
 

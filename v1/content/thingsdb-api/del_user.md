@@ -4,7 +4,7 @@ weight: 339
 ---
 
 Delete a user. It is not possible to delete your own user account and a [bad_data_err()](../../errors/bad_data_err) will be raised in case you try to.
-Any *tokens* associated with the user will also be deleted.
+Any *tokens* and *tasks* associated with the user will also be deleted.
 
 {{% notice note %}}
 This function requires `GRANT` privileges on the `@thingsdb` scope.

@@ -27,6 +27,14 @@ Next, clone the ThingsDB project.
 git clone https://github.com/thingsdb/ThingsDB.git
 ```
 
+Make sure the build essentials are installed.
+
+For Debian/Ubuntu:
+
+```bash
+sudo apt-get install build-essential
+```
+
 Then compile the source code to make it executable.
 
 ```bash

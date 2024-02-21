@@ -8,7 +8,7 @@ Restore from a backup file created with the [new_backup](#../../node-api/new_bac
 Before using this function the following list of requirements must be must be fulfilled:
 
  - The user performing the restore must have `FULL` privileges on the`@thingsdb` [scope](../../overview/scopes).
- - No collections may exists. Use [collections_info()](../collections_info) and [del_collection(..)](../del_collection) to check and remove existing collections.
+ - No _(non-empty)_ collections may exists. Use [collections_info()](../collections_info) and [del_collection(..)](../del_collection) to check and remove existing collections.
  - No modules may exists. Use [modules_info()](../modules_info) and [del_module(..)](../del_module) to check and remove existing modules.
  - No tasks may exists in the `@thingsdb` scope. Use [tasks()](../../collection-api/tasks) and [task(..).del()](../../data-types/task/del) to check and remove existing tasks.
  - All nodes must be *online* and *ready*. If this is *not* the case, then either remove the node or wait for the node to become *ready*. Use [nodes_info()](../../node-api/nodes_info) to check for the status of the nodes.
