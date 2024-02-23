@@ -7,7 +7,7 @@ This function returns a [list](../../data-types/list) of numbers, starting from 
 
 {{% notice warning %}}
 Function **range()** may only be used for relatively small lists.
-An [operation_err()](../../errors/operation_err) *(maximum range length exceeded)* will be raised when trying to create a list with more than **9999** numbers.
+An [operation_err()](../../errors/operation_err) *(maximum range length exceeded)* will be raised when trying to create a list with more than **100000** numbers.
 {{% /notice %}}
 
 ### Function
