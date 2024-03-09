@@ -42,6 +42,6 @@ mod_procedure('add_one', |x| {
 > Return value in JSON format
 
 ```json
-"add_one"
+null
 ```
 

@@ -23,11 +23,11 @@ Event | Description
 [ON_EMIT](./on-emit) (`8`) | a *change* is emitted to this room.
 [ON_DELETE](./on-delete) (`9`) | A joined [room](../data-types/room) is removed from ThingsDB.
 
-> The number `0-9` represents the package type in a [package header](http://localhost:1313/v0/connect/socket/#package).
+> The number `0-9` represents the package type in a [package header](../connect/socket/#package).
 
 ## Node status changes and warnings
 
-When connected and authenticated with a socket connection, you will automatically receive *[node-status-changes]((./node-status)* and *[warning-events](./warning)*.
+When connected and authenticated with a socket connection, you will automatically receive *[node-status-changes](./node-status)* and *[warning-events](./warning)*.
 
 ## Join rooms
 

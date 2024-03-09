@@ -32,5 +32,5 @@ zero_div_err();
 > Return value in JSON format
 
 ```json
-"division or module by zero"
+"division or modulo by zero"
 ```
