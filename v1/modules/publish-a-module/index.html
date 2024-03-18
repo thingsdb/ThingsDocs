@@ -6,17 +6,17 @@
 <meta name=description content="ThingsDB documentation">
 <link rel="shortcut icon" href=/v1/images/favicon.ico type=image/x-icon>
 <title>Publish a module :: ThingsDB documentation</title>
-<link href=/v1/css/nucleus.css?1709983280 rel=stylesheet>
-<link href=/v1/css/fontawesome-all.min.css?1709983280 rel=stylesheet>
-<link href=/v1/css/hybrid.css?1709983280 rel=stylesheet>
-<link href=/v1/css/featherlight.min.css?1709983280 rel=stylesheet>
-<link href=/v1/css/perfect-scrollbar.min.css?1709983280 rel=stylesheet>
-<link href=/v1/css/auto-complete.css?1709983280 rel=stylesheet>
-<link href=/v1/css/atom-one-dark-reasonable.css?1709983280 rel=stylesheet>
-<link href=/v1/css/theme.css?1709983280 rel=stylesheet>
-<link href=/v1/css/hugo-theme.css?1709983280 rel=stylesheet>
-<link href=/v1/css/theme-mine.css?1709983280 rel=stylesheet>
-<script src=/v1/js/jquery-3.3.1.min.js?1709983280></script>
+<link href=/v1/css/nucleus.css?1710751958 rel=stylesheet>
+<link href=/v1/css/fontawesome-all.min.css?1710751958 rel=stylesheet>
+<link href=/v1/css/hybrid.css?1710751958 rel=stylesheet>
+<link href=/v1/css/featherlight.min.css?1710751958 rel=stylesheet>
+<link href=/v1/css/perfect-scrollbar.min.css?1710751958 rel=stylesheet>
+<link href=/v1/css/auto-complete.css?1710751958 rel=stylesheet>
+<link href=/v1/css/atom-one-dark-reasonable.css?1710751958 rel=stylesheet>
+<link href=/v1/css/theme.css?1710751958 rel=stylesheet>
+<link href=/v1/css/hugo-theme.css?1710751958 rel=stylesheet>
+<link href=/v1/css/theme-mine.css?1710751958 rel=stylesheet>
+<script src=/v1/js/jquery-3.3.1.min.js?1710751958></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}:not(pre)>code+span.copy-to-clipboard{display:none}</style>
 </head>
 <body data-url=/v1/modules/publish-a-module/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/v1/js/lunr.min.js?1709983280></script>
-<script type=text/javascript src=/v1/js/auto-complete.js?1709983280></script>
+<script type=text/javascript src=/v1/js/lunr.min.js?1710751958></script>
+<script type=text/javascript src=/v1/js/auto-complete.js?1710751958></script>
 <script type=text/javascript>var baseurl="https://docs.thingsdb.io/v1/"</script>
-<script type=text/javascript src=/v1/js/search.js?1709983280></script>
+<script type=text/javascript src=/v1/js/search.js?1710751958></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -2268,7 +2268,9 @@ The key should consist of the platform and architecture combined with a slash (<
         <span style=color:#f92672>&#34;load&#34;</span>: <span style=color:#66d9ef>true</span>,
         <span style=color:#f92672>&#34;deep&#34;</span>: <span style=color:#ae81ff>0</span>
     }
-</code></pre></div><h3 id=key-includes-optional>Key: <code>includes</code> <em>(optional)</em></h3>
+</code></pre></div><p>The <code>load</code> parameter (default: <code>false</code>) determines how a module&rsquo;s response is processed in ThingsDB. When set to <code>false</code> (default), the response remains in its raw MessagePack data format (<a href=../../data-types/mpdata/>mpdata</a>). This allows you to work directly return the data or unpack it manually later. However, choosing <code>true</code> simplifies usage by automatically unpacking the MessagePack data upon retrieval. While convenient, unpacking adds some processing overhead, so consider this trade-off when making your selection.</p>
+<p>The <code>deep</code> parameter controls how deeply nested data structures are unpacked within arguments passed to the module. In most cases, a value of <code>0</code> or <code>1</code> will suffice. Module arguments behave similarly to client responses, respecting the <a href=../../data-types/thing/wrap>wrap(..)</a> method for control over sent data.</p>
+<h3 id=key-includes-optional>Key: <code>includes</code> <em>(optional)</em></h3>
 <p>Type <code>array</code> with <code>string</code> and/or <code>map</code> items.</p>
 <p>Each file in the <code>includes</code> array will be copied to the module folder. If files depend on a platform/architecture, a map might be used to copy only the applicable file(s). Like with <em>main</em>, large files should be placed in either a <code>bin/</code>, <code>blob/</code> or <code>blobs/</code> folder.</p>
 <h3 id=key-exposes-optional>Key: <code>exposes</code> <em>(optional)</em></h3>
@@ -2310,18 +2312,18 @@ The key should consist of the platform and architecture combined with a slash (<
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/v1/js/clipboard.min.js?1709983280></script>
-<script src=/v1/js/perfect-scrollbar.min.js?1709983280></script>
-<script src=/v1/js/perfect-scrollbar.jquery.min.js?1709983280></script>
-<script src=/v1/js/jquery.sticky.js?1709983280></script>
-<script src=/v1/js/featherlight.min.js?1709983280></script>
-<script src=/v1/js/highlight.pack.js?1709983280></script>
+<script src=/v1/js/clipboard.min.js?1710751958></script>
+<script src=/v1/js/perfect-scrollbar.min.js?1710751958></script>
+<script src=/v1/js/perfect-scrollbar.jquery.min.js?1710751958></script>
+<script src=/v1/js/jquery.sticky.js?1710751958></script>
+<script src=/v1/js/featherlight.min.js?1710751958></script>
+<script src=/v1/js/highlight.pack.js?1710751958></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=/v1/js/modernizr.custom-3.6.0.js?1709983280></script>
-<script src=/v1/js/learn.js?1709983280></script>
-<script src=/v1/js/hugo-learn.js?1709983280></script>
-<link href=/v1/mermaid/mermaid.css?1709983280 rel=stylesheet>
-<script src=/v1/mermaid/mermaid.js?1709983280></script>
+<script src=/v1/js/modernizr.custom-3.6.0.js?1710751958></script>
+<script src=/v1/js/learn.js?1710751958></script>
+<script src=/v1/js/hugo-learn.js?1710751958></script>
+<link href=/v1/mermaid/mermaid.css?1710751958 rel=stylesheet>
+<script src=/v1/mermaid/mermaid.js?1710751958></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 </body>
 </html>
