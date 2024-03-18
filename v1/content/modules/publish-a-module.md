@@ -96,6 +96,10 @@ Example defaults:
     }
 ```
 
+The `load` parameter (default: `false`) determines how a module's response is processed in ThingsDB. When set to `false` (default), the response remains in its raw MessagePack data format ([mpdata](../../data-types/mpdata/)). This allows you to work directly return the data or unpack it manually later. However, choosing `true` simplifies usage by automatically unpacking the MessagePack data upon retrieval. While convenient, unpacking adds some processing overhead, so consider this trade-off when making your selection.
+
+The `deep` parameter controls how deeply nested data structures are unpacked within arguments passed to the module. In most cases, a value of `0` or `1` will suffice. Module arguments behave similarly to client responses, respecting the [wrap(..)](../../data-types/thing/wrap) method for control over sent data.
+
 ### Key: `includes` *(optional)*
 
 Type `array` with `string` and/or `map` items.
