@@ -45,7 +45,7 @@ Example This code shows some return values for is_float():</description></item><
 This function does not generate a change.
 Function is_future(value)
 Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is a future, else it returns false.
-Example This code shows some return values for is_float():
+Example This code shows some return values for is_future():
 [ is_future( future(nil) ), is_future( future(nil).</description></item><item><title>is_inf</title><link>https://docs.thingsdb.io/v1/collection-api/is/is_inf/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/is/is_inf/</guid><description>This function determines whether the provided value is a positive or negative infinity.
 This function does not generate a change.
 Function is_inf(value)
@@ -60,7 +60,12 @@ This function does not generate a change.
 Function is_list(value)
 Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is a list, else it returns false.
 Example This code shows some return values for is_list():
-[ is_list( [] ), is_list( tmp = [['nested']] ), is_list( tmp[0] ), ]; Return value in JSON format</description></item><item><title>is_mpdata</title><link>https://docs.thingsdb.io/v1/collection-api/is/is_mpdata/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/is/is_mpdata/</guid><description>This function determines whether the provided value is of type mpdata or not.
+[ is_list( [] ), is_list( tmp = [['nested']] ), is_list( tmp[0] ), ]; Return value in JSON format</description></item><item><title>is_module</title><link>https://docs.thingsdb.io/v1/collection-api/is/is_module/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/is/is_module/</guid><description>This function determines whether the provided value is a module value or not.
+This function does not generate a change.
+Function is_module(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is a module, else it returns false.
+Example This code shows some return values for is_module():
+is_module(123); Return value in JSON format</description></item><item><title>is_mpdata</title><link>https://docs.thingsdb.io/v1/collection-api/is/is_mpdata/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/is/is_mpdata/</guid><description>This function determines whether the provided value is of type mpdata or not.
 This function does not generate a change.
 Function is_mpdata(value)
 Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is of type mpdata, else it returns false.
