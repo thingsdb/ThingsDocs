@@ -21,6 +21,7 @@ Function                        | Description
 [is_err](./is_err)              | Determines whether the provided value is a [error](../../data-types/error) or not.
 [is_float](./is_float)          | Determines whether the provided value is a [floating point](../../data-types/float) value or not.
 [is_future](./is_future)        | Determines whether the provided value is a [future](../../data-types/future) value or not.
+[is_module](./is_module)        | Determines whether the provided value is a [module](../../modules) value or not.
 [is_inf](./is_inf)              | Determines whether the provided value is a positive or negative *infinity*.
 [is_int](./is_int)              | Determines whether the provided value is an [integer](../../data-types/int) or not.
 [is_list](./is_list)            | Determines whether the provided value is a [list](../../data-types/list) or not.

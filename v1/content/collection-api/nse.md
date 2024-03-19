@@ -1,6 +1,6 @@
 ---
 title: "nse"
-weight: 288
+weight: 289
 ---
 
 This function promises ThingsDB that your code has _no-side-effects_ and therefore does not require a [change](../../overview/changes).

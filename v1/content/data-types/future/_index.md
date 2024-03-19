@@ -46,6 +46,17 @@ future(|x| {
 }, [10]);
 ```
 
+Arguments _must_ not contain stored data with an Id. Such an argument must be provided using the Id as ThingsDB otherwise has no way of knowing that the object with Id still exists in the context when using the object.
+
+```thingsdb,syntax_only
+.x = {};
+
+future(|x| {
+    .answers.push(x);
+}, [.x]);  // 
+```
+
+
 ### Modules
 
 When a future is used to call a [module](../../modules), the first argument of the future will be the request for the module and must be a thing containing at least a `module` property.

@@ -23,7 +23,7 @@ Returns `true` if the given value is a future, else it returns `false`.
 
 ### Example
 
-> This code shows some return values for ***is_float()***:
+> This code shows some return values for ***is_future()***:
 
 ```thingsdb,json_response
 [

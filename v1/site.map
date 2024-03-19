@@ -233,6 +233,7 @@ collection-api
         is_inf
         is_int
         is_list
+        is_module
         is_mpdata
         is_nan
         is_nil
@@ -377,6 +378,7 @@ procedures-api
 modules
     hello-world-module
     publish-a-module
+    supported-modules
 listening
     node-status
     on-join
