@@ -150,6 +150,17 @@ In combination with `defaults` it is possible to expose some nice and handy func
 
 The above will first capture the `"message"` as first argument, and accepts a second argument which must be `nil` or a `thing`.
 
+Instead of parsing exposed functions to the module, simple closures may also be exposed. The first argument to such closure is the module itself:
+
+```json
+    "exposes": {
+        "msg": {
+            "argmap": ["message"]
+        },
+        "say_hello": "|this| this.msg('Hello!!')"
+    }
+```
+
 ### Key: `requirements` *(optional)*
 
 Type `array` of `strings`.
