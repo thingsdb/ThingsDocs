@@ -53,9 +53,17 @@ Arguments _must_ not contain stored data with an Id. Such an argument must be pr
 
 future(|x| {
     .answers.push(x);
-}, [.x]);  // 
+}, [.x]);  // !!ERROR: context does not allow arguments which are stored by Id
 ```
 
+Parse such a thing by using the plain Id:
+
+```thingsdb,syntax_only
+future(|x_id| {
+    x = thing(x_id);
+    .answers.push(x);
+}, [.x.id()]);  // Parse the plain Id
+```
 
 ### Modules
 
