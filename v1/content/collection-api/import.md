@@ -1,6 +1,6 @@
 ---
 title: "import"
-weight: 219
+weight: 220
 ---
 
 This function can be used to import a collection which was exported using the [export(..)](../import) function with the option `dump` enabled.

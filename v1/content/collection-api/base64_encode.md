@@ -1,6 +1,6 @@
 ---
 title: "base64_encode"
-weight: 200
+weight: 201
 ---
 
 Encode a [str](../../data-types/str) or [bytes](../../data-types/bytes) value using Base64.

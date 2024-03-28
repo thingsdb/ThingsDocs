@@ -1,6 +1,6 @@
 ---
 title: "mod"
-weight: 282
+weight: 283
 ---
 
 Modifies the type definition of a property or the closure of a method from an existing [Type](../../../overview/type).

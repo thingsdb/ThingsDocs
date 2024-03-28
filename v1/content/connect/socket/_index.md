@@ -102,5 +102,6 @@ Some more examples:
 - [sending a query request](./query)
 - [sending a run request](./run)
 - [sending a join request](./join)
+- [sending a leave request](./leave)
 - [sending an emit event request](./emit)
 - [receiving an error response](./error-response)

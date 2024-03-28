@@ -1,6 +1,6 @@
 ---
 title: "floor"
-weight: 262
+weight: 263
 ---
 
 Return the floor of a given number. This is the largest integer <= the given number.

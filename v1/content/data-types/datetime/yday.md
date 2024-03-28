@@ -1,6 +1,6 @@
 ---
 title: "yday"
-weight: 49
+weight: 50
 ---
 
 Return the day in the year as an integer value between `0..365` where the first of January is day `0`.

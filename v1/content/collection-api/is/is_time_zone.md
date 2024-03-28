@@ -1,6 +1,6 @@
 ---
 title: "is_time_zone"
-weight: 248
+weight: 249
 ---
 
 This function determines whether the provided value is of

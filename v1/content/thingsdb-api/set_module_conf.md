@@ -1,6 +1,6 @@
 ---
 title: "set_module_conf"
-weight: 362
+weight: 363
 ---
 
 Change the module configuration. This will (re-send) the module configuration to the module. If the module was not started, ThingsDB will also auto-load the module and send the configuration.

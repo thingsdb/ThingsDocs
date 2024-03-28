@@ -1,6 +1,6 @@
 ---
 title: "unshift"
-weight: 100
+weight: 101
 ---
 
 Adds new items to the start of a list, and returns the new length.

@@ -1,6 +1,6 @@
 ---
 title: "count"
-weight: 66
+weight: 67
 ---
 
 Returns the number of times a value appears in a list. A [closure](../../closure) might be given which can be used as a shortcut for `.filter().len()`.

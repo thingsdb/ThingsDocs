@@ -1,6 +1,6 @@
 ---
 title: "map_wrap"
-weight: 87
+weight: 88
 ---
 
 The function must be called on a list with *things* and returns a new list with every thing wrapped according the given type.

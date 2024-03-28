@@ -1,6 +1,6 @@
 ---
 title: "Changes"
-weight: 23
+weight: 24
 ---
 
 When a query uses a statement which makes a change to ThingsDB, then internally ThingsDB will create a *change* with a new *change-Id* to apply these transformations.

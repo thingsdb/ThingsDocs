@@ -16,6 +16,7 @@ connect
         query
         run
         join
+        leave
         emit
         error-response
 overview

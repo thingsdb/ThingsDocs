@@ -1,6 +1,6 @@
 ---
 title: "range"
-weight: 294
+weight: 295
 ---
 
 This function returns a [list](../../data-types/list) of numbers, starting from 0 (by default), increments by 1 (by default), and ends at a specified number.

@@ -1,6 +1,6 @@
 ---
 title: "has_collection"
-weight: 343
+weight: 344
 ---
 
 Determines if a collection exists in ThingsDB.
