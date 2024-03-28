@@ -19,7 +19,11 @@ Example As an example we assume there is a procedure created in the @thingsdb sc
 Syntax
 [scope, ...IDs] The IDs are the room-IDs you want to join.
 The socket needs to be authorized before sending a join request. See the auth example for how to authorize a socket connection.
-Example As an example we assume that we want to listen to a room with Id 17 for events.</description></item><item><title>Example emit</title><link>https://docs.thingsdb.io/v1/connect/socket/emit/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/connect/socket/emit/</guid><description>Emit an event to a room in a collection. A successful emit request will respond with OK (17)
+Example As an example we assume that we want to listen to a room with Id 17 for events.</description></item><item><title>Example leave</title><link>https://docs.thingsdb.io/v1/connect/socket/leave/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/connect/socket/leave/</guid><description>Leave one- or more joined rooms. A successful leave request will respond with an array of equal length of the number of rooms.
+Syntax
+[scope, ...IDs] The IDs are the room-IDs you want to leave.
+The socket needs to be authorized before sending a leave request. See the auth example for how to authorize a socket connection.
+Example As an example we assume that we want to leave a joined room with Id 17.</description></item><item><title>Example emit</title><link>https://docs.thingsdb.io/v1/connect/socket/emit/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/connect/socket/emit/</guid><description>Emit an event to a room in a collection. A successful emit request will respond with OK (17)
 Syntax
 [scope, room_id, event, ...args] The args are optional argument to send with the event.
 The socket needs to be authorized before sending a emit request. See the auth example for how to authorize a socket connection.
