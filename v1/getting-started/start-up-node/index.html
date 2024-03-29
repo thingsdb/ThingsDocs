@@ -6,17 +6,17 @@
 <meta name=description content="ThingsDB documentation">
 <link rel="shortcut icon" href=/v1/images/favicon.ico type=image/x-icon>
 <title>Start up node :: ThingsDB documentation</title>
-<link href=/v1/css/nucleus.css?1711637885 rel=stylesheet>
-<link href=/v1/css/fontawesome-all.min.css?1711637885 rel=stylesheet>
-<link href=/v1/css/hybrid.css?1711637885 rel=stylesheet>
-<link href=/v1/css/featherlight.min.css?1711637885 rel=stylesheet>
-<link href=/v1/css/perfect-scrollbar.min.css?1711637885 rel=stylesheet>
-<link href=/v1/css/auto-complete.css?1711637885 rel=stylesheet>
-<link href=/v1/css/atom-one-dark-reasonable.css?1711637885 rel=stylesheet>
-<link href=/v1/css/theme.css?1711637885 rel=stylesheet>
-<link href=/v1/css/hugo-theme.css?1711637885 rel=stylesheet>
-<link href=/v1/css/theme-mine.css?1711637885 rel=stylesheet>
-<script src=/v1/js/jquery-3.3.1.min.js?1711637885></script>
+<link href=/v1/css/nucleus.css?1711722683 rel=stylesheet>
+<link href=/v1/css/fontawesome-all.min.css?1711722683 rel=stylesheet>
+<link href=/v1/css/hybrid.css?1711722683 rel=stylesheet>
+<link href=/v1/css/featherlight.min.css?1711722683 rel=stylesheet>
+<link href=/v1/css/perfect-scrollbar.min.css?1711722683 rel=stylesheet>
+<link href=/v1/css/auto-complete.css?1711722683 rel=stylesheet>
+<link href=/v1/css/atom-one-dark-reasonable.css?1711722683 rel=stylesheet>
+<link href=/v1/css/theme.css?1711722683 rel=stylesheet>
+<link href=/v1/css/hugo-theme.css?1711722683 rel=stylesheet>
+<link href=/v1/css/theme-mine.css?1711722683 rel=stylesheet>
+<script src=/v1/js/jquery-3.3.1.min.js?1711722683></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}:not(pre)>code+span.copy-to-clipboard{display:none}</style>
 </head>
 <body data-url=/v1/getting-started/start-up-node/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/v1/js/lunr.min.js?1711637885></script>
-<script type=text/javascript src=/v1/js/auto-complete.js?1711637885></script>
+<script type=text/javascript src=/v1/js/lunr.min.js?1711722683></script>
+<script type=text/javascript src=/v1/js/auto-complete.js?1711722683></script>
 <script type=text/javascript>var baseurl="https://docs.thingsdb.io/v1/"</script>
-<script type=text/javascript src=/v1/js/search.js?1711637885></script>
+<script type=text/javascript src=/v1/js/search.js?1711722683></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -100,6 +100,11 @@ Go
 <li data-nav-id=/v1/connect/csharp/ title=C# class=dd-item>
 <a href=/v1/connect/csharp/>
 C#
+</a>
+</li>
+<li data-nav-id=/v1/connect/php/ title=PHP class=dd-item>
+<a href=/v1/connect/php/>
+PHP
 </a>
 </li>
 <li data-nav-id=/v1/connect/socket/ title=Socket class=dd-item>
@@ -2188,7 +2193,11 @@ zero_div_err
 <div class=wrapper>
 <nav id=TableOfContents>
 <ul>
-<li><a href=#flag-information>Flag information</a></li>
+<li><a href=#flag-information>Flag information</a>
+<ul>
+<li><a href=#flags-as-environment-variable>Flags as environment variable</a></li>
+</ul>
+</li>
 <li><a href=#use-cases>Use cases</a>
 <ul>
 <li><a href=#containerized-environments>Containerized environments</a></li>
@@ -2275,6 +2284,34 @@ Running on three nodes brings redundancy and ensures the database stays operatio
 </tr>
 </tbody>
 </table>
+<h3 id=flags-as-environment-variable>Flags as environment variable</h3>
+<p>Arguments are not supported in all cases. If needed, <code>--init</code>, <code>--secret</code> and <code>--deploy</code> can be replaced with enviroment variable.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Environment variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--init</code></td>
+<td><code>THINGSDB_INIT</code></td>
+<td>Set to <code>1</code> to use <code>--init</code>, example: <code>THINGSDB_INIT=1</code>.</td>
+</tr>
+<tr>
+<td><code>--secret</code></td>
+<td><code>THINGSDB_SECRET</code></td>
+<td>Set some secret, example: <code>THINGSDB_SECRET=pass</code>.</td>
+</tr>
+<tr>
+<td><code>--deploy</code></td>
+<td><code>THINGSDB_DEPLOY</code></td>
+<td>Set to <code>1</code> to use <code>--deploy</code>, example: <code>THINGSDB_DEPLOY=1</code>.</td>
+</tr>
+</tbody>
+</table>
 <h2 id=use-cases>Use cases</h2>
 <h3 id=containerized-environments>Containerized environments</h3>
 <p>In containerized environments like kubernetes it is often useful to initialize automatically based on the node name.
@@ -2310,18 +2347,18 @@ variable <code>THINGSDB_NODE_SECRET</code> is set.</li>
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/v1/js/clipboard.min.js?1711637885></script>
-<script src=/v1/js/perfect-scrollbar.min.js?1711637885></script>
-<script src=/v1/js/perfect-scrollbar.jquery.min.js?1711637885></script>
-<script src=/v1/js/jquery.sticky.js?1711637885></script>
-<script src=/v1/js/featherlight.min.js?1711637885></script>
-<script src=/v1/js/highlight.pack.js?1711637885></script>
+<script src=/v1/js/clipboard.min.js?1711722683></script>
+<script src=/v1/js/perfect-scrollbar.min.js?1711722683></script>
+<script src=/v1/js/perfect-scrollbar.jquery.min.js?1711722683></script>
+<script src=/v1/js/jquery.sticky.js?1711722683></script>
+<script src=/v1/js/featherlight.min.js?1711722683></script>
+<script src=/v1/js/highlight.pack.js?1711722683></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=/v1/js/modernizr.custom-3.6.0.js?1711637885></script>
-<script src=/v1/js/learn.js?1711637885></script>
-<script src=/v1/js/hugo-learn.js?1711637885></script>
-<link href=/v1/mermaid/mermaid.css?1711637885 rel=stylesheet>
-<script src=/v1/mermaid/mermaid.js?1711637885></script>
+<script src=/v1/js/modernizr.custom-3.6.0.js?1711722683></script>
+<script src=/v1/js/learn.js?1711722683></script>
+<script src=/v1/js/hugo-learn.js?1711722683></script>
+<link href=/v1/mermaid/mermaid.css?1711722683 rel=stylesheet>
+<script src=/v1/mermaid/mermaid.js?1711722683></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 </body>
 </html>
