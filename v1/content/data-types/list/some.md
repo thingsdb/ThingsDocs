@@ -1,6 +1,6 @@
 ---
 title: "some"
-weight: 96
+weight: 97
 ---
 
 This function checks if at least one item in the [list](..) or [tuple](../../tuple) passes a given test. It returns a [boolean](../../bool) value.

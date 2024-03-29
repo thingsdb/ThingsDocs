@@ -1,6 +1,6 @@
 ---
 title: "set_owner"
-weight: 155
+weight: 156
 ---
 
 Change the owner of a task. The new owner must have at least **CHANGE** permissions on scope where the task is created and access rights may not exceed the access rights of the user who is calling this method.

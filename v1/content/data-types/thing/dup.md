@@ -1,6 +1,6 @@
 ---
 title: "dup"
-weight: 161
+weight: 162
 ---
 
 Create a duplicate of a *thing*.

@@ -1,6 +1,6 @@
 ---
 title: "cancel"
-weight: 148
+weight: 149
 ---
 
 Cancel a task. Using this function sets the task error to *[cancelled_err](../../../errors//cancelled_err)* and the task will not be executed. This function differs from [del()](../del) as it will not remove the task.

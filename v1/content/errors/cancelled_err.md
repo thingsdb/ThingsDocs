@@ -1,6 +1,6 @@
 ---
 title: "cancelled_err"
-weight: 404
+weight: 405
 ---
 
 Returns an [error](../../data-types/error) when an operation is cancelled before completion. Fox example by a time-out or stop of service.

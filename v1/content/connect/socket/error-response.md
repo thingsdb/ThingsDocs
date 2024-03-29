@@ -1,6 +1,6 @@
 ---
 title: "Example error response"
-weight: 21
+weight: 22
 ---
 
 In this example we perform a [query](../query) request and assume the socket connection is not authenticated yet.

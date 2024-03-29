@@ -1,6 +1,6 @@
 ---
 title: "new_collection"
-weight: 351
+weight: 352
 ---
 
 Create a new collection.

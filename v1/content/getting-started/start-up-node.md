@@ -40,6 +40,16 @@ The secret is used when adding this node; see [new_node](../../thingsdb-api/new_
 | `--log-colorized`       | Use colorized logging.                                                                                                                                                                                               |
 | `-y`, `--yes`           | Confirm questions with yes.                                                                                                                                                                                          |
 
+### Flags as environment variable
+Arguments are not supported in all cases. If needed, `--init`, `--secret` and `--deploy` can be replaced with enviroment variable.
+
+Argument   | Environment variable | Description
+---------- | -------------------- | -----------
+`--init`   | `THINGSDB_INIT`      | Set to `1` to use `--init`, example: `THINGSDB_INIT=1`.
+`--secret` | `THINGSDB_SECRET`    | Set some secret, example: `THINGSDB_SECRET=pass`.
+`--deploy` | `THINGSDB_DEPLOY`    | Set to `1` to use `--deploy`, example: `THINGSDB_DEPLOY=1`.
+
+
 ## Use cases
 
 ### Containerized environments

@@ -1,6 +1,6 @@
 ---
 title: "Example run"
-weight: 17
+weight: 18
 ---
 
 Run a procedure in ThingsDB. A successful run request will respond with a `DATA (18)` package.

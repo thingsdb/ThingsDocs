@@ -10,6 +10,7 @@ connect
     python
     go
     csharp
+    php
     socket
         ping
         auth
