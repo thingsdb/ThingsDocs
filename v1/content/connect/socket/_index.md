@@ -22,10 +22,9 @@ Length of the *data*, stored as **Unsigned, 32-bit, Little Endian**. The header 
 
 #### Id (16bit)
 
-The Id can be used as an identifier of your package. When ThingsDB send a response
-on a request, it will use the same Id so this allows you to map a response to a
-request. This is useful if you want to send multiple requests in parallel.
-It needs to be stored as **16-bit, Little Endian**.
+The `Id` is a unique identifier assigned to your package by ThingsDB. It allows you to easily map responses to their corresponding requests,
+especially when sending multiple requests concurrently. This identifier is a 16-bit integer, ideally stored in little-endian format for consistency.
+While using an **unsigned integer is recommended**, signed values can also be used.
 
 #### TYPE (Unsigned, 8bit)
 
