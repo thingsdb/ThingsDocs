@@ -20,9 +20,9 @@ sending an `AUTH` package.
 
 Length of the *data*, stored as **Unsigned, 32-bit, Little Endian**. The header size is *not* included in the length.
 
-#### Id (16bit)
+#### ID (16bit)
 
-The `Id` is a unique identifier assigned to your package by ThingsDB. It allows you to easily map responses to their corresponding requests,
+The `ID` is a unique identifier assigned to your package by ThingsDB. It allows you to easily map responses to their corresponding requests,
 especially when sending multiple requests concurrently. This identifier is a 16-bit integer, ideally stored in little-endian format for consistency.
 While using an **unsigned integer is recommended**, signed values can also be used.
 
@@ -54,7 +54,7 @@ Data serialized using [MessagePack](https://msgpack.org).
 
 ```none
 ┌───────────┬───────────┬───────────┬───────────┬───────────┐
-│ LEN (4)   │ Id (2)    │ TYPE (1)  │ CHK (1)   │ DATA (..) │
+│ LEN (4)   │ ID (2)    │ TYPE (1)  │ CHK (1)   │ DATA (..) │
 └───────────┴───────────┴───────────┴───────────┴───────────┘
 ```
 
@@ -81,7 +81,7 @@ Serializing the above using [MessagePack](https://msgpack.org) results in the fo
 
 `\x92\xa5admin\xa4pass`
 
-Now we create the header. For this example we just use Id 0:
+Now we create the header. For this example we just use ID 0:
 
 - Data length (12) `\x0c\x00\x00\x00`
 - Identifier (0) `\x00\x00`
