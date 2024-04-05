@@ -20,7 +20,7 @@ sending an `AUTH` package.
 
 Length of the *data*, stored as **Unsigned, 32-bit, Little Endian**. The header size is *not* included in the length.
 
-#### ID (16bit)
+#### Id (16bit)
 
 The `Id` is a unique identifier assigned to your package by ThingsDB. It allows you to easily map responses to their corresponding requests,
 especially when sending multiple requests concurrently. This identifier is a 16-bit integer, ideally stored in little-endian format for consistency.
