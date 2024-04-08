@@ -95,7 +95,7 @@ if (size < 10) {
     return 'medium';
 } else {
     return 'large';
-}
+};
 ```
 
 > Return value in JSON format
