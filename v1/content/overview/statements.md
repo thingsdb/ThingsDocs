@@ -25,8 +25,8 @@ Example usage of the *return* statement:
 for (i in range(5)) {
     if (i == 3) {
         return `Number {i}`;
-    }
-}
+    };
+};
 ```
 
 > Return value in JSON format
