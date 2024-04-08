@@ -6,17 +6,17 @@
 <meta name=description content="ThingsDB documentation">
 <link rel="shortcut icon" href=/v1/images/favicon.ico type=image/x-icon>
 <title>Socket :: ThingsDB documentation</title>
-<link href=/v1/css/nucleus.css?1712297588 rel=stylesheet>
-<link href=/v1/css/fontawesome-all.min.css?1712297588 rel=stylesheet>
-<link href=/v1/css/hybrid.css?1712297588 rel=stylesheet>
-<link href=/v1/css/featherlight.min.css?1712297588 rel=stylesheet>
-<link href=/v1/css/perfect-scrollbar.min.css?1712297588 rel=stylesheet>
-<link href=/v1/css/auto-complete.css?1712297588 rel=stylesheet>
-<link href=/v1/css/atom-one-dark-reasonable.css?1712297588 rel=stylesheet>
-<link href=/v1/css/theme.css?1712297588 rel=stylesheet>
-<link href=/v1/css/hugo-theme.css?1712297588 rel=stylesheet>
-<link href=/v1/css/theme-mine.css?1712297588 rel=stylesheet>
-<script src=/v1/js/jquery-3.3.1.min.js?1712297588></script>
+<link href=/v1/css/nucleus.css?1712571829 rel=stylesheet>
+<link href=/v1/css/fontawesome-all.min.css?1712571829 rel=stylesheet>
+<link href=/v1/css/hybrid.css?1712571829 rel=stylesheet>
+<link href=/v1/css/featherlight.min.css?1712571829 rel=stylesheet>
+<link href=/v1/css/perfect-scrollbar.min.css?1712571829 rel=stylesheet>
+<link href=/v1/css/auto-complete.css?1712571829 rel=stylesheet>
+<link href=/v1/css/atom-one-dark-reasonable.css?1712571829 rel=stylesheet>
+<link href=/v1/css/theme.css?1712571829 rel=stylesheet>
+<link href=/v1/css/hugo-theme.css?1712571829 rel=stylesheet>
+<link href=/v1/css/theme-mine.css?1712571829 rel=stylesheet>
+<script src=/v1/js/jquery-3.3.1.min.js?1712571829></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}:not(pre)>code+span.copy-to-clipboard{display:none}</style>
 </head>
 <body data-url=/v1/connect/socket/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/v1/js/lunr.min.js?1712297588></script>
-<script type=text/javascript src=/v1/js/auto-complete.js?1712297588></script>
+<script type=text/javascript src=/v1/js/lunr.min.js?1712571829></script>
+<script type=text/javascript src=/v1/js/auto-complete.js?1712571829></script>
 <script type=text/javascript>var baseurl="https://docs.thingsdb.io/v1/"</script>
-<script type=text/javascript src=/v1/js/search.js?1712297588></script>
+<script type=text/javascript src=/v1/js/search.js?1712571829></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -2227,8 +2227,8 @@ sending an <code>AUTH</code> package.</p>
 <h2 id=package>Package</h2>
 <h4 id=len-unsigned-32bit>LEN (Unsigned, 32bit)</h4>
 <p>Length of the <em>data</em>, stored as <strong>Unsigned, 32-bit, Little Endian</strong>. The header size is <em>not</em> included in the length.</p>
-<h4 id=id-16bit>Id (16bit)</h4>
-<p>The <code>Id</code> is a unique identifier assigned to your package by ThingsDB. It allows you to easily map responses to their corresponding requests,
+<h4 id=id-16bit>ID (16bit)</h4>
+<p>The <code>ID</code> is a unique identifier assigned to your package by ThingsDB. It allows you to easily map responses to their corresponding requests,
 especially when sending multiple requests concurrently. This identifier is a 16-bit integer, ideally stored in little-endian format for consistency.
 While using an <strong>unsigned integer is recommended</strong>, signed values can also be used.</p>
 <h4 id=type-unsigned-8bit>TYPE (Unsigned, 8bit)</h4>
@@ -2288,7 +2288,7 @@ While using an <strong>unsigned integer is recommended</strong>, signed values c
 <p>Package format:</p>
 </blockquote>
 <pre tabindex=0><code class=language-none data-lang=none>┌───────────┬───────────┬───────────┬───────────┬───────────┐
-│ LEN (4)   │ Id (2)    │ TYPE (1)  │ CHK (1)   │ DATA (..) │
+│ LEN (4)   │ ID (2)    │ TYPE (1)  │ CHK (1)   │ DATA (..) │
 └───────────┴───────────┴───────────┴───────────┴───────────┘
 </code></pre><h2 id=response-type>Response type</h2>
 <p>ThingsDB can respond with one of the following response type:</p>
@@ -2329,7 +2329,7 @@ While using an <strong>unsigned integer is recommended</strong>, signed values c
 <p><code>["admin", "pass"]</code></p>
 <p>Serializing the above using <a href=https://msgpack.org>MessagePack</a> results in the following <code>12</code> bytes:</p>
 <p><code>\x92\xa5admin\xa4pass</code></p>
-<p>Now we create the header. For this example we just use Id 0:</p>
+<p>Now we create the header. For this example we just use ID 0:</p>
 <ul>
 <li>Data length (12) <code>\x0c\x00\x00\x00</code></li>
 <li>Identifier (0) <code>\x00\x00</code></li>
@@ -2362,18 +2362,18 @@ While using an <strong>unsigned integer is recommended</strong>, signed values c
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/v1/js/clipboard.min.js?1712297588></script>
-<script src=/v1/js/perfect-scrollbar.min.js?1712297588></script>
-<script src=/v1/js/perfect-scrollbar.jquery.min.js?1712297588></script>
-<script src=/v1/js/jquery.sticky.js?1712297588></script>
-<script src=/v1/js/featherlight.min.js?1712297588></script>
-<script src=/v1/js/highlight.pack.js?1712297588></script>
+<script src=/v1/js/clipboard.min.js?1712571829></script>
+<script src=/v1/js/perfect-scrollbar.min.js?1712571829></script>
+<script src=/v1/js/perfect-scrollbar.jquery.min.js?1712571829></script>
+<script src=/v1/js/jquery.sticky.js?1712571829></script>
+<script src=/v1/js/featherlight.min.js?1712571829></script>
+<script src=/v1/js/highlight.pack.js?1712571829></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=/v1/js/modernizr.custom-3.6.0.js?1712297588></script>
-<script src=/v1/js/learn.js?1712297588></script>
-<script src=/v1/js/hugo-learn.js?1712297588></script>
-<link href=/v1/mermaid/mermaid.css?1712297588 rel=stylesheet>
-<script src=/v1/mermaid/mermaid.js?1712297588></script>
+<script src=/v1/js/modernizr.custom-3.6.0.js?1712571829></script>
+<script src=/v1/js/learn.js?1712571829></script>
+<script src=/v1/js/hugo-learn.js?1712571829></script>
+<link href=/v1/mermaid/mermaid.css?1712571829 rel=stylesheet>
+<script src=/v1/mermaid/mermaid.js?1712571829></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 </body>
 </html>
