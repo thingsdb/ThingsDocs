@@ -1,6 +1,6 @@
 ---
 title: "new"
-weight: 288
+weight: 289
 ---
 
 Creates a new typed thing of a defined [Type](../../overview/type).

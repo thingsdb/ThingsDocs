@@ -1,6 +1,6 @@
 ---
 title: "Statements"
-weight: 31
+weight: 32
 ---
 
 ThingsDB has support for the following statements:

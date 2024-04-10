@@ -1,6 +1,6 @@
 ---
 title: "refresh_module"
-weight: 357
+weight: 358
 ---
 
 Refresh module first stops the module (if running), next if will check for an update and performs the update if required. When finished, it will start the module again.

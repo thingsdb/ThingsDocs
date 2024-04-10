@@ -1,6 +1,6 @@
 ---
 title: "is_err"
-weight: 232
+weight: 233
 ---
 
 This function determines whether the provided value is a [error](../../../data-types/error) or not.

@@ -4,10 +4,9 @@ weight: 9
 ---
 
 
-Before using the HTTP API, make sure at least one node has the API port enabled.
-By default the API port is enabled and listening to TCP port `9210`, but can be disabled or changed
-with the `http_api_port` in the [configuration file](https://github.com/thingsdb/ThingsDB/blob/main/thingsdb.example.conf)
-or with the `THINGSDB_HTTP_API_PORT` environment variable.
+The ThingsDB HTTP API requires at least one node within your cluster to have the API port enabled, as it's disabled by default.
+To activate it, edit the `http_api_port` setting in your ThingsDB [configuration file](https://github.com/thingsdb/ThingsDB/blob/main/thingsdb.example.conf)
+or set the `THINGSDB_HTTP_API_PORT` environment variable. You can use a common port like `9210` for this purpose.
 
 The API has support for both [MessagePack](https://msgpack.org) and [JSON](https://www.json.org) and can be used to perform queries and run procedures.
 

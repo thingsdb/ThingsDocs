@@ -34,6 +34,16 @@ async def hello_world():
     # replace `localhost` with your ThingsDB server address
     await client.connect('localhost')
 
+    # WebSocket connection are also supported: (replace port if required)
+    #
+    #   await client.connect('ws://localhost:9270')
+    #
+    # for a secure connection, use wss:// and provide an SSL context, example:
+    # (ssl can be set either to True or False, or an SSLContext)
+    #
+    #   await client.connect('wss://localhost:9270', ssl=True)
+    #
+
     try:
         # replace `admin` and `pass` with your username and password
         # or use a valid token string
