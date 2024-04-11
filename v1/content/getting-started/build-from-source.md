@@ -10,6 +10,7 @@ First, install the following required dependencies:
 - libpcre2
 - libyajl
 - libcurl
+- libssl
 
 When using Debian/Ubuntu; _libuv1_, _libpcre2_, _libyajl_, _libcurl_ and _libssl_ can be installed using apt:
 
