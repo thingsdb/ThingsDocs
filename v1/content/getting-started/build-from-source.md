@@ -11,7 +11,7 @@ First, install the following required dependencies:
 - libyajl
 - libcurl
 
-When using Debian/Ubuntu; _libuv1_, _libpcre2_, _libyajl_ and _libcurl_ can be installed using apt:
+When using Debian/Ubuntu; _libuv1_, _libpcre2_, _libyajl_, _libcurl_ and _libssl_ can be installed using apt:
 
 ```bash
 sudo apt-get install -y \
@@ -19,6 +19,7 @@ sudo apt-get install -y \
     libpcre2-dev \
     libyajl-dev \
     libcurl4-nss-dev \
+    libssl-dev
 ```
 
 Next, clone the ThingsDB project.
