@@ -28,6 +28,7 @@ ip_support | Enabled IP support. May be IPv4/IPv6 or both.
 libcleri_version | Cleri language parser library version.
 libpcre2_version | PCRE regular expression library version.
 libuv_version | UV asynchronous library version.
+libwebsockets_version | WebSockets library version.
 local_committed_change_id | Last committed change Id on the node.
 local_stored_change_id | Last stored change Id on disk. Store takes place when in *away* mode.
 log_level | Current log level for the node. May be changed at runtime using [set_log_level(..)](../../node-api/set_log_level).
@@ -92,8 +93,9 @@ node_info();
     "http_status_port": 8080,
     "ip_support": "ALL",
     "libcleri_version": "1.0.2a",
-    "libpcre2_version": "10.34",
-    "libuv_version": "1.34.2",
+    "libpcre2_version": "10.39",
+    "libuv_version": "1.43.0",
+    "libwebsockets_version": "4.3.99-v1.6.0",
     "local_committed_change_id": 2,
     "local_stored_change_id": 1,
     "log_level": "WARNING",
