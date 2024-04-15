@@ -1,6 +1,6 @@
 ---
 title: "every"
-weight: 72
+weight: 73
 ---
 
 This function checks if all items in the  [list](..) or [tuple](../../tuple) pass a given test. It returns a [boolean](../../bool) value.

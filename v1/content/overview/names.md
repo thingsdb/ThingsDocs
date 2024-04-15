@@ -1,6 +1,6 @@
 ---
 title: "Names"
-weight: 29
+weight: 30
 ---
 
 The following rules apply to names in ThingsDB:

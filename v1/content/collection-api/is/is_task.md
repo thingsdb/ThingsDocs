@@ -1,6 +1,6 @@
 ---
 title: "is_task"
-weight: 248
+weight: 249
 ---
 
 This function determines whether the provided value is a [task](../../../data-types/task) or not.

@@ -1,6 +1,6 @@
 ---
 title: "dup"
-weight: 70
+weight: 71
 ---
 
 Duplicate a *list*.

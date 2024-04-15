@@ -1,6 +1,6 @@
 ---
 title: "filter"
-weight: 166
+weight: 167
 ---
 
 The function returns a new thing with properties that pass the test.

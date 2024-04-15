@@ -1,6 +1,6 @@
 ---
 title: "set_enum"
-weight: 305
+weight: 306
 ---
 
 Creates a new [enumerator type](../../data-types/enum).

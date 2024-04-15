@@ -11,6 +11,7 @@ connect
     go
     csharp
     php
+    javascript
     socket
         ping
         auth

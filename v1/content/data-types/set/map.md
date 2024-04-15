@@ -1,6 +1,6 @@
 ---
 title: "map"
-weight: 124
+weight: 125
 ---
 
 The function iterates over items in a [set](..) and

@@ -10,13 +10,14 @@ There are several options to communicate with ThingsDB. The easiest option is to
 
 The following connectors are available:
 
-Language                 | Query/Run support | Room (event) support
------------------------- | ----------------- | --------------------
-[Python](./python)       | &#x2714;          | &#x2714;
-[Go](./go)               | &#x2714;          | &#x2714;
-[C#](./csharp)           | &#x2714;          | &#x2714;
-[PHP](./php)             | &#x2714;          | &#x2714;
-[HTTP (API)](./http-api) | &#x2714;          | -
+Language                            | Query/Run support | Room (event) support
+----------------------------------- | ----------------- | --------------------
+[Python](./python)                  | &#x2714;          | &#x2714;
+[Go](./go)                          | &#x2714;          | &#x2714;
+[C#](./csharp)                      | &#x2714;          | &#x2714;
+[PHP](./php)                        | &#x2714;          | &#x2714;
+[JavaScript / Node.js](./javascript)| &#x2714;          | &#x2714;
+[HTTP (API)](./http-api)            | &#x2714;          | -
 
 For other languages you can read the [socket protocol](./socket) section on how to implement a ThingsDB connector.
 

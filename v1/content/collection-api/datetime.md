@@ -1,6 +1,6 @@
 ---
 title: "datetime"
-weight: 208
+weight: 209
 ---
 
 Returns a [datetime](../../data-types/datetime) depending on some optional values.

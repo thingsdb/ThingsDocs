@@ -1,6 +1,6 @@
 ---
 title: "Example join"
-weight: 19
+weight: 20
 ---
 
 Join one- or more rooms in a collection. A successful join request will respond with an array of equal length of the number of rooms to join.

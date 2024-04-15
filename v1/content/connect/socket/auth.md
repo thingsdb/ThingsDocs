@@ -1,6 +1,6 @@
 ---
 title: "Example auth"
-weight: 16
+weight: 17
 ---
 
 Used for authorizing the socket connection. A successful authentication will respond with `OK (17)`
