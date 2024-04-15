@@ -3,6 +3,7 @@ title: "WebSocket"
 weight: 24
 ---
 
+## Enable WebSockets
 
 To use WebSockets, at least one node within your cluster must have the WebSocket port enabled, as it's disabled by default.
 To activate it, edit the `ws_port` setting in your ThingsDB [configuration file](https://github.com/thingsdb/ThingsDB/blob/main/thingsdb.example.conf)
@@ -10,7 +11,7 @@ or set the `THINGSDB_WS_PORT` environment variable. You can use a common port li
 
 When enabled, connections can be made using `ws://<address>:<port>`.
 
-## Enabling Secure WebSockets
+## Secure WebSockets
 
 To safeguard data transfer with Secure WebSockets, certificates are essential.
 
@@ -42,9 +43,10 @@ The easiest option is to use an existing _connector_ with WebSocket support.
 
 The following connectors are available:
 
-Language                 | Query/Run support | Room (event) support
------------------------- | ----------------- | --------------------
-[Python](../python)       | &#x2714;          | &#x2714;
+Language                            | Query/Run support | Room (event) support
+----------------------------------- | ----------------- | --------------------
+[Python](../python)                 | &#x2714;          | &#x2714;
+[JavaScript / Node.js](./javascript)| &#x2714;          | &#x2714;
 
 
 ### Implement WebSocket for a new language
