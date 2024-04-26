@@ -11,9 +11,11 @@ Docker images of ThingsDB are available at [GitHub](https://github.com/thingsdb/
 
 `ghcr.io/thingsdb/node:VERSION` _(Minimal ThingsDB image based on Alpine Linux.)_
 
-`ghcr.io/thingsdb/node:gcloud-VERSION` _(Includes Google Cloud Utilities so ThingsDB can created backups in the Google Cloud.)_
+`ghcr.io/thingsdb/node:gcloud-VERSION` _(Includes Google Cloud Utilities so ThingsDB can created backups in the Google Cloud. `-VERSION` is optional, otherwise the latest GCloud image will be used.)_
 
-`ghcr.io/thingsdb/node:full-VERSION` _(Based on a Debian image with Google Cloud Utilities, Python3 and [py-timod](https://pypi.org/project/py-timod/) installed.)_
+`ghcr.io/thingsdb/node:full-VERSION` _(Based on a Debian image with Google Cloud Utilities, Python3 and [py-timod](https://pypi.org/project/py-timod/) installed. `-VERSION` is optional, otherwise the latest Full image will be used.)_
+
+`ghcr.io/thingsdb/node:arm64-VERSION` _(Minimal ThingsDB image based on Alpine Linux build for ARM hardware. `-VERSION` is optional, otherwise the latest ARM64 image will be used.)_
 
 `ghcr.io/thingsdb/node:latest` _(Latest ThingsDB build from the `master` branch using a minimal Alpine Linux base image)_
 
