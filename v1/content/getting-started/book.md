@@ -16,3 +16,5 @@ The Official ThingsDB Guide by [Jeroen van der Heijden](https://github.com/joent
 ### Read Online:
 
 Dive right in by reading the book online: https://book.thingsdb.io/
+
+![Book cover](/v1/images/book.jpg?width=800px)
