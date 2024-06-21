@@ -1,6 +1,6 @@
 ---
 title: "Example leave"
-weight: 21
+weight: 22
 ---
 
 Leave one- or more joined rooms. A successful leave request will respond with an array of equal length of the number of rooms.

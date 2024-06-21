@@ -1,6 +1,6 @@
 ---
 title: "time_zones_info"
-weight: 312
+weight: 313
 ---
 
 Returns all available time zones in ThingsDB.

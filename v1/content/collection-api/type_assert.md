@@ -1,6 +1,6 @@
 ---
 title: "type_assert"
-weight: 317
+weight: 318
 ---
 
 Raises a [type_err()](../../errors/type_err) if the specified expression evaluates to `false`.

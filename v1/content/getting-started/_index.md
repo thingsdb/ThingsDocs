@@ -12,6 +12,10 @@ There are a few options to get started with ThingsDB.
 
 Get your own **playground** for free at [https://thingsdb.io/playground](https://thingsdb.io/playground) and continue reading at the chapter [connect](../connect).
 
+### Read the book
+
+Reading the [ThingsDB book](./book) is a great way to get you started with ThingsDB!
+
 ### Build from source
 
 Here is a [tutorial](./build-from-source) explaining how to build the ThingsDB server from source code.

@@ -1,6 +1,6 @@
 ---
 title: "restriction"
-weight: 96
+weight: 97
 ---
 
 Returns the list restriction as type [str](../../str) or [nil](../../nil) when the list is *not* value restricted. A list can *only* be restricted if the list is a property of a *typed* thing (see the [example](#example)).

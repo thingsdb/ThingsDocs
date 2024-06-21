@@ -1,6 +1,6 @@
 ---
 title: "closure"
-weight: 42
+weight: 43
 ---
 
 Closures are user defined methods which can be saved. They can be used as a prepared piece of code or to consume items from a `thing`, `list`, `tuple` or `set`.

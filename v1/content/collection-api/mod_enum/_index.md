@@ -1,6 +1,6 @@
 ---
 title: "mod_enum"
-weight: 275
+weight: 276
 ---
 
 This function is used to modify an existing [enumerator type](../../data-types/enum). A number of actions can be performed with this function.

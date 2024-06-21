@@ -1,6 +1,6 @@
 ---
 title: "on-delete"
-weight: 391
+weight: 392
 ---
 
 A delete event will be pushed as soon as a joined [room](../../data-types/room) is removed from ThingsDB.

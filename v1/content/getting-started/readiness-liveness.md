@@ -1,6 +1,6 @@
 ---
 title: "Readiness and liveness"
-weight: 6
+weight: 7
 chapter: false
 ---
 

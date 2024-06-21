@@ -1,6 +1,6 @@
 ---
 title: "restore"
-weight: 363
+weight: 364
 ---
 
 Restore from a backup file created with the [new_backup](#../../node-api/new_backup) function.

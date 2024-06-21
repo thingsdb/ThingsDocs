@@ -1,6 +1,6 @@
 ---
 title: "Python"
-weight: 10
+weight: 11
 ---
 
 ### Installation
