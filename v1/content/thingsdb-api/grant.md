@@ -21,7 +21,7 @@ Mask         | Description
 `GRANT` (4)  | Grants administrative privileges, allowing users to grant and revoke permissions to other users.
 `JOIN` (8)   | Grants join (and leave) privileges to a room.
 `RUN` (16)   | Grants access to run procedures directly.
-`USER` (27)  | A *mask* for `QUEY`, `CHANGE`, `JOIN` and `RUN`.
+`USER` (27)  | A *mask* for `QUERY`, `CHANGE`, `JOIN` and `RUN`.
 `FULL` (31)  | A *mask* for full privileges.
 
 {{% notice note %}}
