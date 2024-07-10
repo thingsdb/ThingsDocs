@@ -5,7 +5,7 @@ weight: 15
 
 ### Requirements
 
-- ThingsDB [v1](https://github.com/thingsdb/ThingsDB/releases/) with [WebSockets](../websocket) enabled
+- ThingsDB [^1.6](https://github.com/thingsdb/ThingsDB/releases/) with [WebSockets](../websocket) enabled
 - Javascript
 
 ### Installation
