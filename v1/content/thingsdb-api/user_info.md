@@ -12,6 +12,10 @@ other then the logged in user is given as argument. For the currently logged in 
 privileges on the `@thingsdb` scope are sufficient.
 {{% /notice %}}
 
+{{% notice note %}}
+This function is accessible from _any_ scope when invoked without arguments.
+{{% /notice %}}
+
 This function does *not* generate a [change](../../overview/changes).
 
 ### Function
