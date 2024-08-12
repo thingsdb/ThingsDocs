@@ -13,7 +13,7 @@ privileges on the `@thingsdb` scope are sufficient.
 {{% /notice %}}
 
 {{% notice note %}}
-This function is accessible from _any_ scope when invoked without arguments.
+This function is accessible from _any_ scope when invoked without arguments _(since version 1.6.6)_.
 {{% /notice %}}
 
 This function does *not* generate a [change](../../overview/changes).
