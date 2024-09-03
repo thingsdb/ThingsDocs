@@ -20,7 +20,7 @@ sudo apt-get install -y \
     libuv1-dev \
     libpcre2-dev \
     libyajl-dev \
-    libcurl4-nss-dev \
+    libcurl4-openssl-dev \
     libssl-dev \
     libcap-dev
 ```
