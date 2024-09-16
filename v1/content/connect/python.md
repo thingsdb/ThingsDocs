@@ -41,7 +41,8 @@ async def hello_world():
     # for a secure connection, use wss:// and provide an SSL context, example:
     # (ssl can be set either to True or False, or an SSLContext)
     #
-    #   await client.connect('wss://localhost:9270', ssl=True)
+    #   client = Client(ssl=True)
+    #   await client.connect('wss://localhost:9270')
     #
 
     try:
