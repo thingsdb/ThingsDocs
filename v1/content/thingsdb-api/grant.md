@@ -20,7 +20,7 @@ Mask         | Description
 `CHANGE` (2) | Grants access to make changes.
 `GRANT` (4)  | Grants administrative privileges, allowing users to grant and revoke permissions to other users.
 `JOIN` (8)   | Grants join (and leave) privileges to a room.
-`RUN` (16)   | Grants access to run procedures directly.
+`RUN` (16)   | Grants access to run procedures directly. Without `CHANGE`, only procedures without changes are allowed.
 `USER` (27)  | A *mask* for `QUERY`, `CHANGE`, `JOIN` and `RUN`.
 `FULL` (31)  | A *mask* for full privileges.
 
