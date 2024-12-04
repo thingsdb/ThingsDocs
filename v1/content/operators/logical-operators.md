@@ -1,6 +1,6 @@
 ---
 title: "Logical operators"
-weight: 199
+weight: 200
 ---
 
 Logical operators are generally used with [bool](../../data-types/bool) values.

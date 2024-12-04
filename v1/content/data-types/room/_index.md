@@ -13,4 +13,6 @@ Function | Description
 ------ | -----------
 [emit](./emit) | Emit a *change*.
 [id](./id) | Return `id` of the room or `nil` when the room is not stored.
+[name](./name) | Return the _name_ of the room or `nil` when the room has no name.
+[set_name](./set_name) | Set or remove the _name_ for a room.
 

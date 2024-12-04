@@ -110,6 +110,8 @@ data-types
     room
         emit
         id
+        name
+        set_name
     regex
         test
     set

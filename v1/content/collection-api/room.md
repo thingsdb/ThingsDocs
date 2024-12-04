@@ -1,6 +1,6 @@
 ---
 title: "room"
-weight: 304
+weight: 305
 ---
 
 Returns a [room](../../data-types/room) from a specified value, that may be dynamic. If no value is given, a new room is returned.
@@ -15,7 +15,7 @@ This function does *not* generate a [change](../../overview/changes).
 
 Argument | Type | Description
 -------- | ---- | -----------
-id | int (optional) | The Id for the room to return.
+id | int/str (optional) | The Id for the room to return. The Id can also be a _name_ for a room (see [set_name](../../data-types/room/set_name)).
 
 ### Return value
 

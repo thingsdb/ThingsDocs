@@ -1,6 +1,6 @@
 ---
 title: "root"
-weight: 305
+weight: 306
 ---
 
 Returns the `root` for the current collection or `nil` when the current scope is not a collection scope.

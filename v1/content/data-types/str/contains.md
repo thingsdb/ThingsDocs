@@ -1,6 +1,6 @@
 ---
 title: "contains"
-weight: 135
+weight: 136
 ---
 
 Determines if a given string is a substring of a [string](..).

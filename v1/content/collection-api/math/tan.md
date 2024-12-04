@@ -1,6 +1,6 @@
 ---
 title: "tan"
-weight: 275
+weight: 276
 ---
 
 Return the tangent of a given number. The value passed in this function should be in radians.
