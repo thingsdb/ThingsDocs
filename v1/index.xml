@@ -369,7 +369,17 @@ Arguments None
 Return value Returns id of a room or nil when the room is not stored.
 Example This code uses id() to return a room id:
 .chat = room(); .chat.id(); // Returns the room id Example return value in JSON format
-624</description></item><item><title>test</title><link>https://docs.thingsdb.io/v1/data-types/regex/test/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/regex/test/</guid><description>Test if a string matches a given regular expression and return true or false.
+624</description></item><item><title>name</title><link>https://docs.thingsdb.io/v1/data-types/room/name/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/room/name/</guid><description>Returns the name of the room or nil if the room is nameless.
+This function does not generate a change.
+Function room.name()
+Arguments None
+Return value Returns the name of the room or nil.
+Example This code creates a room, gives the room a name and uses the name() function to return the name.
+.room = room(); .room.set_name('my_room'); // Return the name .room.name(); Return value in JSON format</description></item><item><title>set_name</title><link>https://docs.thingsdb.io/v1/data-types/room/set_name/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/room/set_name/</guid><description>Set the name of a room. Provide a nil argument to remove the current name.
+This function generates a change.
+Function room.set_name(name_or_nil)
+Arguments Argument Type Description name_or_nil str/nil (required) Name for the room or nil to remove the name. Return value The value nil.
+Example This code creates a room, gives the room a name and uses the name() function to return the name.</description></item><item><title>test</title><link>https://docs.thingsdb.io/v1/data-types/regex/test/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/regex/test/</guid><description>Test if a string matches a given regular expression and return true or false.
 This function does not generate a change.
 Function regex.test(string)
 Arguments Argument Type Description string str (required) The string to test. Return value true if there is a match between the string and the regular expression, otherwise false.
@@ -1091,7 +1101,7 @@ Function rename_type(current_name, new_name)
 Arguments Argument Type Description current_name str (required) Current type name. new_name str (required) New name for the type. Return value Returns nil when successful.</description></item><item><title>room</title><link>https://docs.thingsdb.io/v1/collection-api/room/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/room/</guid><description>Returns a room from a specified value, that may be dynamic. If no value is given, a new room is returned.
 This function does not generate a change.
 Function room([id])
-Arguments Argument Type Description id int (optional) The Id for the room to return. Return value Returns a room. A lookup_err() is returned in case a room Id is given which is not found inside the collection.</description></item><item><title>root</title><link>https://docs.thingsdb.io/v1/collection-api/root/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/root/</guid><description>Returns the root for the current collection or nil when the current scope is not a collection scope.
+Arguments Argument Type Description id int/str (optional) The Id for the room to return. The Id can also be a name for a room (see set_name). Return value Returns a room.</description></item><item><title>root</title><link>https://docs.thingsdb.io/v1/collection-api/root/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/root/</guid><description>Returns the root for the current collection or nil when the current scope is not a collection scope.
 This function does not generate a change.
 Function root()
 Arguments None
