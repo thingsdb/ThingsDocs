@@ -11,6 +11,8 @@ Emit an event to a room in a collection.  A successful emit request will respond
 [scope, room_id, event, ...args]
 ```
 
+The `room_id` parameter accepts either a *room*-ID or *room*-name to designate the desired room.
+
 The `args` are optional argument to send with the event.
 
 {{% notice warning %}}

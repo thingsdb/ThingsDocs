@@ -12,7 +12,7 @@ Leave one- or more joined rooms. A successful leave request will respond with an
 [scope, ...IDs]
 ```
 
-The `IDs` are the *room*-IDs you want to leave.
+The `IDs` parameter accepts either *room*-IDs or *room*-names to designate the desired rooms for leaving.
 
 {{% notice warning %}}
 The socket needs to be authorized before sending a `leave` request.
