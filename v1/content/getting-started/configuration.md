@@ -1,6 +1,6 @@
 ---
 title: "Configuration"
-weight: 5
+weight: 6
 chapter: false
 ---
 

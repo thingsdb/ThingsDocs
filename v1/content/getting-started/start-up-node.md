@@ -1,6 +1,6 @@
 ---
 title: "Start up node"
-weight: 6
+weight: 7
 chapter: false
 ---
 
