@@ -1,6 +1,6 @@
 ---
 title: "del"
-weight: 280
+weight: 282
 ---
 
 Delete a member or method from an existing [enumerator type](../../../data-types/enum).

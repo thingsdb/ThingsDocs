@@ -1,6 +1,6 @@
 ---
 title: "Template Strings"
-weight: 36
+weight: 37
 ---
 
 Template strings allows you to use embedded ThingsDB expressions to generate a string constant. Template strings are enclosed by the backtick (`) character instead of double or single quotes.

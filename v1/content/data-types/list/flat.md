@@ -1,6 +1,6 @@
 ---
 title: "flat"
-weight: 82
+weight: 83
 ---
 
 The function returns a new `list` with all `tuple` elements concatenated into it recursively up to a specified depth.

@@ -1,6 +1,6 @@
 ---
 title: "enums_info"
-weight: 218
+weight: 220
 ---
 
 Returns [enumeration type](../../data-types/enum) information about all the enum's within a collection scope.

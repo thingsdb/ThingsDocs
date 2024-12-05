@@ -1,6 +1,6 @@
 ---
 title: "Socket"
-weight: 16
+weight: 17
 ---
 
 This is a more in depth view of the socket protocol used for communication with ThingsDB.

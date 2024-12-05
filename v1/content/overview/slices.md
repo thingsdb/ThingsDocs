@@ -1,6 +1,6 @@
 ---
 title: "Slices"
-weight: 33
+weight: 34
 ---
 
 The following slice notation can be used:

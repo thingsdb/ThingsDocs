@@ -1,6 +1,6 @@
 ---
 title: "every"
-weight: 122
+weight: 124
 ---
 
 This function checks if all things in the [set](..) pass a given test. It returns a [boolean](../../bool) value.

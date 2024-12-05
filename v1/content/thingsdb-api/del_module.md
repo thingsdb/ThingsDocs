@@ -1,6 +1,6 @@
 ---
 title: "del_module"
-weight: 343
+weight: 345
 ---
 
 Delete a module. A `SIGTERM` signal will be send to the process for the module which might cancel running futures.

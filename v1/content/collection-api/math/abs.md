@@ -1,6 +1,6 @@
 ---
 title: "abs"
-weight: 264
+weight: 266
 ---
 
 Return the absolute value of a given number.

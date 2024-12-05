@@ -1,6 +1,6 @@
 ---
 title: "copy"
-weight: 70
+weight: 71
 ---
 
 Copy a *list*.

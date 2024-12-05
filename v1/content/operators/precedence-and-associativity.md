@@ -1,6 +1,6 @@
 ---
 title: "Precedence and associativity"
-weight: 201
+weight: 203
 ---
 
 Symbol | Type of operation | Associativity

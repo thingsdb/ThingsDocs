@@ -2,6 +2,7 @@ getting-started
     book
     build-from-source
     docker
+    azure
     configuration
     start-up-node
     readiness-liveness

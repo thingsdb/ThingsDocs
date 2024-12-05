@@ -1,6 +1,6 @@
 ---
 title: "backups_ok"
-weight: 327
+weight: 329
 ---
 
 Returns `false` if at least one backup had failed _(result code != 0)_.

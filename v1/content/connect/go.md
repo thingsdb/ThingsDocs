@@ -1,6 +1,6 @@
 ---
 title: "Go"
-weight: 12
+weight: 13
 ---
 
 ### Installation

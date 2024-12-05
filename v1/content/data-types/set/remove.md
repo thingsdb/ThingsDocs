@@ -1,6 +1,6 @@
 ---
 title: "remove"
-weight: 132
+weight: 134
 ---
 
 This function can be used to remove `things` from a `set`.

@@ -26,7 +26,7 @@ Want to use ThingsDB in Docker? Check out our [Docker guide](./docker).
 
 ### Azure
 
-Want to quickly deploy a ThingsDB environment to Azure? Check out the [Azure guide](./azure.md).
+Want to quickly deploy a ThingsDB environment to Azure? Check out the [Azure guide](./azure).
 
 ### GKE (Google Kubernetes Engine)
 
