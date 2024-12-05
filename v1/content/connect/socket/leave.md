@@ -14,6 +14,10 @@ Leave one- or more joined rooms. A successful leave request will respond with an
 
 The `IDs` parameter accepts either *room*-IDs or *room*-names to designate the desired rooms for leaving.
 
+{{% notice note %}}
+Room names require ThingsDB version **1.7.0** or higher.
+{{% /notice %}}
+
 {{% notice warning %}}
 The socket needs to be authorized before sending a `leave` request.
 See the [auth example](../auth) for how to authorize a socket connection.

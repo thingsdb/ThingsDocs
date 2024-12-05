@@ -13,6 +13,10 @@ Emit an event to a room in a collection.  A successful emit request will respond
 
 The `room_id` parameter accepts either a *room*-ID or *room*-name to designate the desired room.
 
+{{% notice note %}}
+Room names require ThingsDB version **1.7.0** or higher.
+{{% /notice %}}
+
 The `args` are optional argument to send with the event.
 
 {{% notice warning %}}
