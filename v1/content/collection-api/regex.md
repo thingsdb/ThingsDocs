@@ -7,6 +7,12 @@ Create a new regular expression.
 
 This function can be used to create a regular expression from a given pattern with optional flags.
 
+The syntax `/pattern/flags` can be translated to `regex(pattern, flags)` so the following is true:
+
+```thingsdb,should_pass
+assert( /^api_.*/i == regex("^api_.*", "i") );  // the same!
+```
+
 This function does *not* generate a [change](../../overview/changes).
 
 ### Function

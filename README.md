@@ -20,6 +20,13 @@ Install Hugo (Ubuntu/Debian)
 
 A working version (including a .deb file) can be downloaded [here](https://github.com/gohugoio/hugo/releases/tag/v0.90.0).
 
+(or find the deb package in this repo)
+
+Prevent Hugo from upgrading
+```
+sudo apt-mark hold hugo
+```
+
 Install template
 
 ```bash

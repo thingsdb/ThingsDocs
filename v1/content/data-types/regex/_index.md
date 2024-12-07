@@ -4,8 +4,11 @@ weight: 116
 ---
 
 Regular expression can be constructed using a literal which consists of a pattern enclosed between slashes, as follows: `re = /ab+c/;`.
+
 It is probably a good idea to store a `regex` in a variable if you plan to use the regular expression multiple times. This prevents the
 requirement to compile the regular expression each time.
+
+Instead of the regular expression syntax, the function [regex](../../collection-api/regex) bay also be used and may be preferred when reading a pattern from input. For example `re = regex('ab+c');`.
 
 ### Flags
 
