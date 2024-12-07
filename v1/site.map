@@ -373,6 +373,8 @@ thingsdb-api
     set_time_zone
     user_info
     users_info
+    whitelist_add
+    whitelist_del
 procedures-api
     del_procedure
     has_procedure

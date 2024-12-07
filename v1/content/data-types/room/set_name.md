@@ -5,7 +5,7 @@ weight: 115
 
 Set the _name_ of a room. Provide a `nil` argument to remove the current name.
 
-This function generates a [change](../../overview/changes).
+This function generates a [change](../../../overview/changes).
 
 ### Function
 

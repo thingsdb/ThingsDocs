@@ -28,7 +28,7 @@ Variable | Default | Description
 `THINGSDB_STORAGE_PATH` | *depends* | Location to store ThingsDB data. The default location depends on the user who is running ThingsDB. (`/var/lib/thingsdb/` for *root* and `~/.thingsdb/` for a normal user).
 `THINGSDB_THRESHOLD_FULL_STORAGE` | `1000` | Threshold for number of events before initiating a full database store.
 `THINGSDB_THRESHOLD_QUERY_CACHE` | `160` | Queries with a length equal to, or greater than this threshold will be cached by the node.
-`THINGSDB_WS_PORT` | *disabled* | [WebSocket](../../connect/websocket/) port  _(`9270` is commonly used when enabled)_.
+`THINGSDB_WS_PORT` | *disabled* | [WebSocket](../../connect/websocket) port  _(`9270` is commonly used when enabled)_.
 `THINGSDB_WS_KEY_FILE` | *none* | Path to private key file _(required for [Secure WebSockets](../../connect/websocket/#secure-websockets))_.
 `THINGSDB_WS_CERT_FILE` | *none* | Path to certificate file _(required for [Secure WebSockets](../../connect/websocket/#secure-websockets))_.
 `THINGSDB_ZONE` | `0` | Start node in this [zone](../../overview/dictionary) number. Zones are used for forwarding queries while in *away* mode.

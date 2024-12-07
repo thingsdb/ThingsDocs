@@ -12,6 +12,12 @@ To use this function, at least `CHANGE` privileges on the `@thingsdb` scope and 
 It is not possible to set privileges on a specific node scope. Therefore scope `@node` will apply to *all* nodes in ThingsDB.
 {{% /notice %}}
 
+#### Whitelists
+
+Whitelists provide fine-grained control over user access. Granting a user `CHANGE|JOIN|RUN` permissions in conjunction with a whitelist enables the creation of user accounts that can only execute specified procedures and join designated rooms. See the [whitelist_add](../whitelist_add) and [whitelist_del](../whitelist_del) functions.
+
+#### Permissions
+
 The following predefined masks are available:
 
 Mask         | Description

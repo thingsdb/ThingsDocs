@@ -1,6 +1,6 @@
 ---
 title: "node-status"
-weight: 391
+weight: 393
 ---
 
 The body of a *Node Status* event contains both the node Id and status of the node.
