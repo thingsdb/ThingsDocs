@@ -40,6 +40,7 @@ definition | default | description
 `'thing'` | `{}` | requires a [thing](../../data-types/thing).
 `'thing<T>'` | `{}` | requires a value restricted [thing](../../data-types/thing) where each value must be of type `T`.
 `'T'` | `T{}` | requires a instance of [Type](../type) `T`, or a member of [enumerator](../../data-types/enum) `T`. The value `T` should be replaced with the `Type` / `enum` name.
+`'E{M}'` | `E{M}` | requires a instance of a member of [enumerator](../../data-types/enum). Instead of the enumerator default, member `M` will be used as the default value.
 `'email'` | `""` | requires type [str](../../data-types/str) and the value *must* contain an email address _(or empty string)_.
 `'email<..>'` | *depends* | requires type [str](../../data-types/str) and the value *must* contain an email address _(empty string is not allowed, a [default email address](#use-condition-to-set-a-default-value) must be given)_.
 `'url'` | `""` | requires type [str](../../data-types/str) and the value *must* contain a URL _(or empty string)_.
