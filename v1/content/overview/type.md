@@ -22,6 +22,7 @@ definition | default | description
 `'raw'` | `""` | requires type [str](../../data-types/str) *or* [bytes](../../data-types/bytes).
 `'bytes'` | `bytes()` | requires type [bytes](../../data-types/bytes).
 `'bool'` | `false` | requires type [bool](../../data-types/bool).
+`'bool<..>'` | *depends* | like `bool` but with an custom default, for example: `bool<true>`.
 `'int'` | `0` | requires type [int](../../data-types/int).
 `'int<..>'` | *depends* | requires type [int](../../data-types/int) within a given range *(see [range condition](#range-condition) and [default value](#use-condition-to-set-a-default-value))*.
 `'uint'` | `0` | requires a *non-negative* integer (type [int](../../data-types/int), `>= 0`).
