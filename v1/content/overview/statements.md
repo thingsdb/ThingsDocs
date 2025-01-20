@@ -19,6 +19,13 @@ Statement  | Description
 Every ThingsDB query will have a return value. If no `return` statement is used, then the *return value* will be the value of the last statement.
 It is therefore not required to use the `return` statement unless you want to return with a value *before* the end of the code is reached. The `return` statement also accepts a second and third argument to specify a different [deep](../../collection-api/deep) level and optional [flags](#return-flags) together with `return`.
 
+
+{{% notice note %}}
+Starting with ThingsDB version 1.7.4, the `return` statement can be used without arguments. This makes `return;` equivalent to `return nil;`.
+{{% /notice %}}
+
+When the return statement is used without additional arguments,
+
 Example usage of the *return* statement:
 
 ```thingsdb,json_response
