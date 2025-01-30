@@ -1,6 +1,6 @@
 ---
 title: "to_type"
-weight: 184
+weight: 185
 ---
 
 Converts a *[thing](../../thing)* into a *[typed](../../typed)* thing.

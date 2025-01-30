@@ -1,6 +1,6 @@
 ---
 title: "Supported Modules"
-weight: 391
+weight: 392
 ---
 
 Unlock powerful functionalities with these production-ready modules, rigorously tested and maintained by the ThingsDB team.

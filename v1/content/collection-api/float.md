@@ -1,6 +1,6 @@
 ---
 title: "float"
-weight: 223
+weight: 224
 ---
 
 Returns a [float](../../data-types/float) from a specified value.

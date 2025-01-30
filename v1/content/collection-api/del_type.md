@@ -1,6 +1,6 @@
 ---
 title: "del_type"
-weight: 216
+weight: 217
 ---
 
 Deletes an existing [Type](../../overview/type).

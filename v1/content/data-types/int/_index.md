@@ -23,3 +23,9 @@ Base | Example | Description
 ```thingsdb,should_pass
 .count = 123;
 ```
+
+### Functions
+
+Function | Description
+------ | -----------
+[bit_count](./bit_count) | Return the number of ones in the binary representation of the absolute value of the integer.

@@ -1,6 +1,6 @@
 ---
 title: "join"
-weight: 87
+weight: 88
 ---
 
 This function returns a new string by concatenating all items in a [list](..) or [tuple](../../tuple).

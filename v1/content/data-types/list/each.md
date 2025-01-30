@@ -1,6 +1,6 @@
 ---
 title: "each"
-weight: 74
+weight: 75
 ---
 
 Iterate over all the items in an [list](../../list) or [tuple](../../tuple).

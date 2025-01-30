@@ -1,6 +1,6 @@
 ---
 title: "has"
-weight: 84
+weight: 85
 ---
 
 Determines if a [list](..) or [tuple](../../tuple) has a given value.

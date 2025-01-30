@@ -65,6 +65,7 @@ data-types
         then
         else
     int
+        bit_count
     list
         choice
         clear
