@@ -25,7 +25,7 @@ response;  // Return the response
 ```
 
 {{% notice info %}}
-This function raises an _Operation error_ if there are _side-effects_ which can't be avoided. For example when used too late: `x.y = 1; nse()` or when a function really does require a change like `nse(); new_type('T');`.
+This function can raise an _Operation error_ if there are _side-effects_ which can't be avoided. For example when a function really does require a change like `nse(); new_type('T');`. This is not the case when `nse()` is used after a change is already made, for example `.x = 1; nse();` will run and create a change as _nse_ is used after the change.
 {{% /notice %}}
 
 This function does *not* generate a [change](../../overview/changes).
