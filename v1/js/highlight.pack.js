@@ -1,5 +1,5 @@
 /*
-  Highlight.js 10.0.0-beta.0 (cb060fe2)
+  Highlight.js 10.0.0-beta.0 (6bc76da7)
   License: BSD-3-Clause
   Copyright (c) 2006-2020, Ivan Sagalaev
 */
@@ -1833,7 +1833,7 @@ hljs.registerLanguage('thingsdb', function () {
 
         var REGEXP = {
             className: 'regexp',
-            begin: new RegExp('(/[^/\\\\\\n]+(?:\\\\.[^/\\\\]*)*/i?)'),
+            begin: new RegExp('(/[^/\\\\\\n]+(?:\\\\.[^/\\\\]*)*/[gism]*)'),
             relevance: 0,
         };
 
@@ -1897,7 +1897,7 @@ hljs.registerLanguage('thingsdb', function () {
                     begin: new RegExp(
                         '\\.\\s*(assign|args|set_args|len|load|call|choice|closure|set_closure|copy|dup|join|doc|emit|code|msg|each|every|extend|extend_unique|filter|find|' +
                         'find_index|index_of|count|sum|flat|map|map_id|map_wrap|map_type|vmap|name|owner|set_owner|pop|push|fill|remove|replace|reverse|restrict|restriction|split|sort|splice|unique|is_unique|' +
-                        'at|again_in|again_at|cancel|add|one|err|clear|has|contains|ends_with|lower|starts_with|test|trim|trim_left|trim_right|upper|' +
+                        'at|again_in|again_at|cancel|add|one|err|clear|has|contains|ends_with|lower|starts_with|test|match|trim|trim_left|trim_right|upper|' +
                         'del|ren|to_type|to_thing|get|id|keys|reduce|set|shift|some|value|values|wrap|unshift|unwrap|' +
                         'set_name|bit_count|search|extract|first|last|equals|then|else|format|move|to|week|weekday|yday|zone)\\s*(?=\\()'
                     ),
