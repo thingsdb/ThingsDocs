@@ -3,7 +3,7 @@ title: "match"
 weight: 118
 ---
 
-Returns the result of matching a [string](../str) with the regular expression.
+Returns the result of matching a [string](../../str) with the regular expression.
 
 When the regular expression has the global (`g`) flag set, this function returns a list containing all matches; however, capture groups are ignored.
 If no matches are found in this mode, an empty list is returned. Conversely, if the global (`g`) flag is ***not*** set, only the first match is returned, and it will include any capture groups.

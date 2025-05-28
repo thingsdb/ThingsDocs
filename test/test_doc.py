@@ -34,7 +34,7 @@ if not DOC_VERSION:
 
 CONTENT_PATH = os.path.join(ROOT_PATH, DOC_VERSION, 'content')
 RE_TEST = re.compile(
-    '```thingsdb,([a-zA-Z_]*)(,(@[\:a-zA-Z0-9]))?')
+    r'```thingsdb,([a-zA-Z_]*)(,(@[\:a-zA-Z0-9]))?')
 
 RE_LINK = re.compile(r'(\[[\w\s\-\(\)\.]+\]\(([\.\/\w\-]+)\))')
 
