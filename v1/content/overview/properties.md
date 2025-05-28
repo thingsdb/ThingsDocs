@@ -25,7 +25,7 @@ key | description
 `)` | *unused*
 `*` | Reserved for regular expressions.
 `+` | *unused*
-`,` | *unused*
+`,` | Reserved for storing type _(definition `@`)_.
 `-` | *unused*
 `.` | Reserved for type.
 `/` | Reserved for closures.

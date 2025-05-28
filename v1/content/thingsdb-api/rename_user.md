@@ -1,6 +1,6 @@
 ---
 title: "rename_user"
-weight: 367
+weight: 368
 ---
 
 Rename a user.

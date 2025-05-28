@@ -1,6 +1,6 @@
 ---
 title: "sin"
-weight: 277
+weight: 278
 ---
 
 Return the sine of a given number. The value passed in this function should be in radians.

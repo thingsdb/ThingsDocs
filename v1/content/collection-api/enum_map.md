@@ -1,6 +1,6 @@
 ---
 title: "enum_map"
-weight: 220
+weight: 221
 ---
 
 Returns a thing with key/value pairs for all the members of a given enum.

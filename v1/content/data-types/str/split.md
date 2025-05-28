@@ -1,6 +1,6 @@
 ---
 title: "split"
-weight: 144
+weight: 145
 ---
 
 Return a new [string](..) in which all case-based characters are in lower case.

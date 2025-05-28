@@ -1,6 +1,6 @@
 ---
 title: "grant"
-weight: 351
+weight: 352
 ---
 
 Grant, collection or general, privileges to a user. Access to a user is provided by setting

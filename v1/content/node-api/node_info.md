@@ -1,6 +1,6 @@
 ---
 title: "node_info"
-weight: 335
+weight: 336
 ---
 
 Returns information about the node in the selected scope.

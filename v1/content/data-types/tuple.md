@@ -1,6 +1,6 @@
 ---
 title: "tuple"
-weight: 190
+weight: 191
 ---
 
 All nested *arrays* are immutable and thus tuples.

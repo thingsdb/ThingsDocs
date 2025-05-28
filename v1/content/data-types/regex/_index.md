@@ -17,13 +17,14 @@ Flag | Description
 `i`  | Case-insensitive search.
 `m`  | Multi-line search.
 `s`  | Allows `.` to match newline characters.
+`g`  | Enable global. Useful for example when using the [match](./match) fnuction.
 
 ### Functions
 
 Function | Description
 ------ | -----------
-[test](./test) | Test if a given [string](../str) has a match with the regular expression.
-
+[test](./test)   | Test if a given [string](../str) has a match with the regular expression.
+[match](./match) | Returns the result of matching a [string](../str) with the regular expression.
 
 ### Related functions
 

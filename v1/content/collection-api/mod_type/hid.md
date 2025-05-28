@@ -1,6 +1,6 @@
 ---
 title: "hid"
-weight: 290
+weight: 291
 ---
 
 Enable or disable *hide-id* for an existing [Type](../../../overview/type).
