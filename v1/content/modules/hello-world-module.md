@@ -6,7 +6,7 @@ weight: 391
 In this section we will create and use a module to help you understand how a module can be used.
 Our module will be written in Python and will accept a *name* and returns with a greeting in either English or Dutch, depending on the module configuration.
 
-Before we can use a Python module, make sure ThingsDB has a Python interpreter (*at least Python 3.7)* with the Python package [py-timod](https://pypi.org/project/py-timod/) installed.
+Before we can use a Python module, make sure ThingsDB has a Python interpreter (*at least Python 3.9)* with the Python package [py-timod](https://pypi.org/project/py-timod/) installed.
 
 Use the following code in the `@node` scope to view which Python interpreter ThingsDB is using:
 
