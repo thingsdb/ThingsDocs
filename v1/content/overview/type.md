@@ -107,6 +107,7 @@ Flag | Description
 `-`  | Fakes the parent to have a deep level of `1` and therefore this property will get a deep level of `0`. Note: both the `&` and `-` flags combination enforces a deep level of exactly `1`.
 `^`  | Tell ThingsDB to use the `NO_IDS` return flag on this property. See [return flags](../statements#return-flags) for more information.
 `*`  | When the value is a member of an enumerator, return the _name_ instead of the _value_.
+`?`  | Exclude the property when the value is `nil`.
 
 ### Same deep level
 
