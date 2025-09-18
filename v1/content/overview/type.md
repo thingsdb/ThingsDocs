@@ -55,7 +55,7 @@ definition | default | description
 `'any'` | `nil` | any type is valid *(with the exception of a [future](../../data-types/future))*.
 `'#'` | *depends* | Not a real property, see [named Id](#named-id).
 
-Each definition can be made optional by adding a question-mark `?` to the definition and can be [prefixed](#prefix-flags) with additional flags.
+Each definition can be made optional by adding a question-mark `?` to the definition and can be prefixed with additional [wrap flags](#wrap-prefix-flags).
 If a property is made optional, then the value `nil` is allowed instead of the given type
 and `nil` will also be the default if the property is missing.
 
@@ -96,7 +96,7 @@ assert(is_err(try(User{name: 0})));
     }
 ]
 ```
-### Prefix flags
+### Wrap (Prefix) flags
 
 All definitions can be pre-fixed with additional flags which are applied when a thing is being wrapped.
 

@@ -6,7 +6,7 @@ weight: 12
 ### Installation
 
 {{% notice note %}}
-The **python-thingsdb** library requires **Python 3.9** or higher.
+The **python-thingsdb** library requires **Python 3.10** or higher.
 {{% /notice %}}
 
 Just use pip:
