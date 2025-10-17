@@ -26,7 +26,7 @@ options | thing | Thing with [options](#options).
 
 Option | Type | Description
 ------ | ---- | -----------
-deep | int | Specify how [deep](../../collection-api/return/#deep) the thing must be searched. (defaults to 1)
+deep | int | Specify how [deep](../../collection-api/deep) the thing must be searched. (defaults to 1)
 limit | int | Specify a limit of how many results must be search for. (defaults to 1)
 
 ### Return value
