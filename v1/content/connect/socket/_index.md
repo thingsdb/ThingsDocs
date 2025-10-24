@@ -32,15 +32,16 @@ Package type is used to describe what kind of package is transmitted.
 
 #### Request type
 
-Type      | Number | Description
-----------| -----| -----------
-`PING`    | 32 | Ping, useful as keep-alive.
-`AUTH`    | 33 | Authorization., expects: `[username, password]` or a `token_string`.
-`QUERY`   | 34 | Query ThingsDB.
-`RUN`     | 37 | Run a procedure, see [procedures](../../procedures-api) for more info.
-`JOIN`    | 38 | Join one or more room(s).
-`LEAVE`   | 39 | Leave one or more room(s).
-`EMIT`    | 40 | Emit an event to a room.
+Type        | Number | Description
+------------| -----| -----------
+`PING`      | 32 | Ping, useful as keep-alive.
+`AUTH`      | 33 | Authorization., expects: `[username, password]` or a `token_string`.
+`QUERY`     | 34 | Query ThingsDB.
+`RUN`       | 37 | Run a procedure, see [procedures](../../procedures-api) for more info.
+`JOIN`      | 38 | Join one or more room(s).
+`LEAVE`     | 39 | Leave one or more room(s).
+`EMIT`      | 40 | Emit an event to a room.
+`EMIT_PEER` | 41 | Emit an event to a room to peers only.
 
 ##### CHK (Unsigned, 8bit)
 
@@ -65,7 +66,7 @@ ThingsDB can respond with one of the following response type:
 Type | Number | Description
 --------| -----| -----------
 `PONG`  | 16 | Success response to `PING` (header only).
-`OK`    | 17 | Success response to `AUTH` and `EMIT` (header only).
+`OK`    | 17 | Success response to `AUTH`, `EMIT` and `EMIT_PEER` (header only).
 `DATA`  | 18 | Success response to `QUERY`, `RUN`, `JOIN` and `LEAVE` (with data).
 `ERROR` | 19 | Error response (with data).
 
