@@ -108,6 +108,7 @@ Flag | Description
 `^`  | Tell ThingsDB to use the `NO_IDS` return flag on this property. See [return flags](../statements#return-flags) for more information.
 `*`  | When the value is a member of an enumerator, return the _name_ instead of the _value_.
 `?`  | Exclude the property when the value is `nil`.
+`!`  | Exclude the property when the value evaluates to `false`.
 
 ### Same deep level
 
