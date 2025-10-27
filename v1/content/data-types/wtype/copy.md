@@ -3,11 +3,7 @@ title: "copy"
 weight: 195
 ---
 
-Copy a [wrapped](../) thing.
-
-{{% notice warning %}}
-The function does *not* preserve the *wrap* or *Type* of a thing. Use [dup(..)](../dup) if you want a true duplicate.
-{{% /notice %}}
+Copy a [wrapped](../) thing to a new thing including the outcome of computed properts.
 
 This function does *not* generate a [change](../../../overview/changes).
 
@@ -31,7 +27,7 @@ A new thing.
 
 ```thingsdb,json_response
 set_type('Person', {
-    name: 'str'
+    name: 'str',
 });
 
 robot = {
