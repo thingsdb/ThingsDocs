@@ -57,12 +57,12 @@ set_type('_WriterName', {
 set_type('_Book', {
     id: '#',
     title: 'any',
-    author: '_WriterName'
+    author: '&_WriterName'
 }, /* wrap-only */true);
 
 // Create a Type for returning only a set of `books` as `_Book`
 set_type('_AllBooks', {
-    books: '{_Book}'
+    books: '&{_Book}'
 }, /* wrap-only */true, /* hide-id */true);
 
 // Create two sets, `writers` and `books`, to store all books and writers in
@@ -102,7 +102,7 @@ run('add_book', 'Bob', 'Baz');
  * Now we can simply wrap the collection to return the books with titles and
  * the author names including the thing-ids.
  */
-return .wrap('_AllBooks'), 3;
+.wrap('_AllBooks');
 ```
 
 ```json
