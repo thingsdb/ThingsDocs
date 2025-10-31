@@ -6,17 +6,17 @@
 <meta name=description content="ThingsDB documentation">
 <link rel="shortcut icon" href=/v1/images/favicon.ico type=image/x-icon>
 <title>˂Type˃ :: ThingsDB documentation</title>
-<link href=/v1/css/nucleus.css?1761332671 rel=stylesheet>
-<link href=/v1/css/fontawesome-all.min.css?1761332671 rel=stylesheet>
-<link href=/v1/css/hybrid.css?1761332671 rel=stylesheet>
-<link href=/v1/css/featherlight.min.css?1761332671 rel=stylesheet>
-<link href=/v1/css/perfect-scrollbar.min.css?1761332671 rel=stylesheet>
-<link href=/v1/css/auto-complete.css?1761332671 rel=stylesheet>
-<link href=/v1/css/atom-one-dark-reasonable.css?1761332671 rel=stylesheet>
-<link href=/v1/css/theme.css?1761332671 rel=stylesheet>
-<link href=/v1/css/hugo-theme.css?1761332671 rel=stylesheet>
-<link href=/v1/css/theme-mine.css?1761332671 rel=stylesheet>
-<script src=/v1/js/jquery-3.3.1.min.js?1761332671></script>
+<link href=/v1/css/nucleus.css?1761902201 rel=stylesheet>
+<link href=/v1/css/fontawesome-all.min.css?1761902201 rel=stylesheet>
+<link href=/v1/css/hybrid.css?1761902201 rel=stylesheet>
+<link href=/v1/css/featherlight.min.css?1761902201 rel=stylesheet>
+<link href=/v1/css/perfect-scrollbar.min.css?1761902201 rel=stylesheet>
+<link href=/v1/css/auto-complete.css?1761902201 rel=stylesheet>
+<link href=/v1/css/atom-one-dark-reasonable.css?1761902201 rel=stylesheet>
+<link href=/v1/css/theme.css?1761902201 rel=stylesheet>
+<link href=/v1/css/hugo-theme.css?1761902201 rel=stylesheet>
+<link href=/v1/css/theme-mine.css?1761902201 rel=stylesheet>
+<script src=/v1/js/jquery-3.3.1.min.js?1761902201></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}:not(pre)>code+span.copy-to-clipboard{display:none}</style>
 </head>
 <body data-url=/v1/data-types/wtype/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/v1/js/lunr.min.js?1761332671></script>
-<script type=text/javascript src=/v1/js/auto-complete.js?1761332671></script>
+<script type=text/javascript src=/v1/js/lunr.min.js?1761902201></script>
+<script type=text/javascript src=/v1/js/auto-complete.js?1761902201></script>
 <script type=text/javascript>var baseurl="https://docs.thingsdb.io/v1/"</script>
-<script type=text/javascript src=/v1/js/search.js?1761332671></script>
+<script type=text/javascript src=/v1/js/search.js?1761902201></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -2251,6 +2251,7 @@ zero_div_err
 <ul>
 <li><a href=#functions>Functions</a></li>
 <li><a href=#example-1>Example 1</a></li>
+<li><a href=#nested-wrap-structure>Nested wrap structure</a></li>
 <li><a href=#what-if-a-type-is-removed>What if a Type is removed?</a></li>
 <li><a href=#example-2>Example 2</a></li>
 <li><a href=#example-3>Example 3</a></li>
@@ -2323,18 +2324,19 @@ set_type('Writer', {
 // Create a Type to just return a writer's `name`
 set_type('_WriterName', {
     name: 'any'
-});
+}, /* wrap-only */true, /* hide-id */true);
 
 // Create a Type for returning a `title` and author as `_WriterName`
 set_type('_Book', {
+    id: '#',
     title: 'any',
     author: '_WriterName'
-});
+}, /* wrap-only */true);
 
 // Create a Type for returning only a set of `books` as `_Book`
 set_type('_AllBooks', {
     books: '{_Book}'
-});
+}, /* wrap-only */true, /* hide-id */true);
 
 // Create two sets, `writers` and `books`, to store all books and writers in
 .writers = set();
@@ -2375,35 +2377,44 @@ run('add_book', 'Bob', 'Baz');
  */
 return .wrap('_AllBooks'), 3;
 </code></pre><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
-    <span style=color:#f92672>&#34;#&#34;</span>: <span style=color:#ae81ff>4</span>,
     <span style=color:#f92672>&#34;books&#34;</span>: [
         {
-            <span style=color:#f92672>&#34;#&#34;</span>: <span style=color:#ae81ff>6</span>,
+            <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>6</span>,
             <span style=color:#f92672>&#34;author&#34;</span>: {
-                <span style=color:#f92672>&#34;#&#34;</span>: <span style=color:#ae81ff>5</span>,
                 <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;Alice&#34;</span>
             },
             <span style=color:#f92672>&#34;title&#34;</span>: <span style=color:#e6db74>&#34;Foo&#34;</span>
         },
         {
-            <span style=color:#f92672>&#34;#&#34;</span>: <span style=color:#ae81ff>7</span>,
+            <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>7</span>,
             <span style=color:#f92672>&#34;author&#34;</span>: {
-                <span style=color:#f92672>&#34;#&#34;</span>: <span style=color:#ae81ff>5</span>,
                 <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;Alice&#34;</span>
             },
             <span style=color:#f92672>&#34;title&#34;</span>: <span style=color:#e6db74>&#34;Bar&#34;</span>
         },
         {
-            <span style=color:#f92672>&#34;#&#34;</span>: <span style=color:#ae81ff>9</span>,
+            <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>9</span>,
             <span style=color:#f92672>&#34;author&#34;</span>: {
-                <span style=color:#f92672>&#34;#&#34;</span>: <span style=color:#ae81ff>8</span>,
                 <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;Bob&#34;</span>
             },
             <span style=color:#f92672>&#34;title&#34;</span>: <span style=color:#e6db74>&#34;Baz&#34;</span>
         }
     ]
 }
-</code></pre></div><h3 id=what-if-a-type-is-removed>What if a Type is removed?</h3>
+</code></pre></div><h3 id=nested-wrap-structure>Nested wrap structure</h3>
+<p>Since version 1.8.0, it is possible to write a nested wrap structure. In the example above this would mean that we no longer need to create the types <code>_Book</code> and <code>_WriterName</code>, but instead nest everything below <code>_AllBooks</code>.</p>
+<p>For each nested structure, in this case <code>books</code> and <code>author</code>, the <code>&</code> flag is implied. For the <em>&ldquo;id&rdquo;</em> to be returned, the <code>#</code> property must be explicitly defined, otherwise the type will be created with the <em>&ldquo;hide id&rdquo;</em> flag and it will not appear in the result.</p>
+<pre tabindex=0><code class=language-thingsdb,should_pass data-lang=thingsdb,should_pass>// Create a Type for returning only a set of `books` as `_Book`
+set_type('_AllBooks', {
+    books: [{
+        id: '#',
+        title: 'any',
+        author: {
+            name: 'any'
+        }
+    }]
+}, true, true);
+</code></pre><h3 id=what-if-a-type-is-removed>What if a Type is removed?</h3>
 <p>When a Type is removed that was wrapping things, all these things are not filtered anymore. However these things are still connected to the removed Type&rsquo;s name. In case you decide to add a Type with the same name, then the wrapped things will be filtered again according to the Type&rsquo;s new definition. The following <a href=#example-2>example</a> will demonstrate this event.</p>
 <h3 id=example-2>Example 2</h3>
 <pre tabindex=0><code class=language-thingsdb,should_pass data-lang=thingsdb,should_pass>// Create type `Person`
@@ -2582,18 +2593,18 @@ foo.wrap(_Pexample); // Return one deep, note that `other` has it's own depth
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/v1/js/clipboard.min.js?1761332672></script>
-<script src=/v1/js/perfect-scrollbar.min.js?1761332672></script>
-<script src=/v1/js/perfect-scrollbar.jquery.min.js?1761332672></script>
-<script src=/v1/js/jquery.sticky.js?1761332672></script>
-<script src=/v1/js/featherlight.min.js?1761332672></script>
-<script src=/v1/js/highlight.pack.js?1761332672></script>
+<script src=/v1/js/clipboard.min.js?1761902201></script>
+<script src=/v1/js/perfect-scrollbar.min.js?1761902201></script>
+<script src=/v1/js/perfect-scrollbar.jquery.min.js?1761902201></script>
+<script src=/v1/js/jquery.sticky.js?1761902201></script>
+<script src=/v1/js/featherlight.min.js?1761902201></script>
+<script src=/v1/js/highlight.pack.js?1761902201></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=/v1/js/modernizr.custom-3.6.0.js?1761332672></script>
-<script src=/v1/js/learn.js?1761332672></script>
-<script src=/v1/js/hugo-learn.js?1761332672></script>
-<link href=/v1/mermaid/mermaid.css?1761332672 rel=stylesheet>
-<script src=/v1/mermaid/mermaid.js?1761332672></script>
+<script src=/v1/js/modernizr.custom-3.6.0.js?1761902201></script>
+<script src=/v1/js/learn.js?1761902201></script>
+<script src=/v1/js/hugo-learn.js?1761902201></script>
+<link href=/v1/mermaid/mermaid.css?1761902201 rel=stylesheet>
+<script src=/v1/mermaid/mermaid.js?1761902201></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 </body>
 </html>
