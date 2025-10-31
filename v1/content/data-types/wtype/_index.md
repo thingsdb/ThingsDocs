@@ -149,7 +149,9 @@ set_type('_AllBooks', {
             name: 'any'
         }
     }]
-}, true, true);
+}, /* wrap-only */true, /* hide-id */true);  // hide-id will only affect `_AllBooks`,
+                                             // not the nested type `_AllBooks.books`
+                                             // and `_AllBooks.books.author`
 ```
 
 ### What if a Type is removed?
