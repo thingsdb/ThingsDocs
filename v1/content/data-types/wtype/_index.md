@@ -51,18 +51,19 @@ set_type('Writer', {
 // Create a Type to just return a writer's `name`
 set_type('_WriterName', {
     name: 'any'
-});
+}, /* wrap-only */true, /* hide-id */true);
 
 // Create a Type for returning a `title` and author as `_WriterName`
 set_type('_Book', {
+    id: '#',
     title: 'any',
     author: '_WriterName'
-});
+}, /* wrap-only */true);
 
 // Create a Type for returning only a set of `books` as `_Book`
 set_type('_AllBooks', {
     books: '{_Book}'
-});
+}, /* wrap-only */true, /* hide-id */true);
 
 // Create two sets, `writers` and `books`, to store all books and writers in
 .writers = set();
@@ -106,34 +107,49 @@ return .wrap('_AllBooks'), 3;
 
 ```json
 {
-    "#": 4,
     "books": [
         {
-            "#": 6,
+            "id": 6,
             "author": {
-                "#": 5,
                 "name": "Alice"
             },
             "title": "Foo"
         },
         {
-            "#": 7,
+            "id": 7,
             "author": {
-                "#": 5,
                 "name": "Alice"
             },
             "title": "Bar"
         },
         {
-            "#": 9,
+            "id": 9,
             "author": {
-                "#": 8,
                 "name": "Bob"
             },
             "title": "Baz"
         }
     ]
 }
+```
+
+### Nested wrap structure
+
+Since version 1.8.0, it is possible to write a nested wrap structure. In the example above this would mean that we no longer need to create the types `_Book` and `_WriterName`, but instead nest everything below `_AllBooks`.
+
+For each nested structure, in this case `books` and `author`, the `&` flag is implied. For the _"id"_ to be returned, the `#` property must be explicitly defined, otherwise the type will be created with the _"hide id"_ flag and it will not appear in the result.
+
+```thingsdb,should_pass
+// Create a Type for returning only a set of `books` as `_Book`
+set_type('_AllBooks', {
+    books: [{
+        id: '#',
+        title: 'any',
+        author: {
+            name: 'any'
+        }
+    }]
+}, true, true);
 ```
 
 ### What if a Type is removed?
