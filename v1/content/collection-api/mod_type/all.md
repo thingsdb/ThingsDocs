@@ -5,6 +5,10 @@ weight: 289
 
 Run a given callback on all the instances of a given Type.
 
+{{% notice tip %}}
+Use [type_all(..)](../../type_all) if you just need a [set](../../data-types/set) with all instances.
+{{% /notice %}}
+
 {{% notice note %}}
 This function should be used for migration purposes and *not* for common queries as the function is rather slow.
 When calling this action, ThingsDB requires to loop over all the things in the collection, including the things which are marked for garbage collection.

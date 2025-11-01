@@ -15,8 +15,8 @@ This function does *not* generate a [change](../../overview/changes).
 
 Argument | Type | Description
 -------- | ---- | -----------
-type | str | The name of the Type for which the number of instances must be returned.
+type | str | The name of the Type for which the instances must be returned.
 
 ### Return value
 
-A `set` with all occurrences of the given [Type](../../overview/type) within a collection.
+A [set](../../data-types/set) with all occurrences of the given [Type](../../overview/type) within a collection.
