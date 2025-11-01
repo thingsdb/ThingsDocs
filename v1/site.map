@@ -320,6 +320,7 @@ collection-api
     timeval
     try
     type
+    type_all
     type_assert
     type_count
     type_info

@@ -1,15 +1,15 @@
 ---
-title: "type_count"
-weight: 325
+title: "type_all"
+weight: 323
 ---
 
-Returns the number of instances of a given [Type](../../overview/type) within a collection.
+Returns a [set](../../data-types/set) with all instances of a given [Type](../../overview/type) within a collection.
 
 This function does *not* generate a [change](../../overview/changes).
 
 ### Function
 
-`type_count(type)`
+`type_all(type)`
 
 ### Arguments
 
@@ -19,4 +19,4 @@ type | str | The name of the Type for which the number of instances must be retu
 
 ### Return value
 
-An `int` representing the number of occurrences.
+A `set` with all occurrences of the given [Type](../../overview/type) within a collection.
