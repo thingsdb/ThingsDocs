@@ -33,13 +33,17 @@ change_id(); // nil, since no change is required Return value in JSON format</de
 This function does not generate a change.
 Function closure(value)
 Arguments Argument Type Description value str (optional) Convert a string into a closure. If omitted the default closure || nil is returned. Return value An new closure.
-Example This code shows some return values for closure():</description></item><item><title>datetime</title><link>https://docs.thingsdb.io/v1/collection-api/datetime/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/datetime/</guid><description>Returns a datetime depending on some optional values.
+Example This code shows some return values for closure():</description></item><item><title>commit</title><link>https://docs.thingsdb.io/v1/collection-api/commit/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/commit/</guid><description>Saves a commit for the current query.
+This function requires that the query makes a change, and that commit history has been enabled for the relevant scope.
+Use commit(..)* only for collection structural changes like set-up or migration scripts. It is not intended for routine &amp;ldquo;normal&amp;rdquo; operations that your application performs during its regular runtime.
+Use the history() function to view the commits in the history log.
+This function does not generate a change.</description></item><item><title>datetime</title><link>https://docs.thingsdb.io/v1/collection-api/datetime/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/datetime/</guid><description>Returns a datetime depending on some optional values.
 This function does not generate a change.
 Function Interface Arguments Description datetime() None Return a datetime with the current date/tine. datetime(ts) int/float Return a datetime from a given UNIX time stamp. datetime(str, [fmt]) str Return a datetime from a given string. See initialize from string for a details. datetime(int, int, int, [int, [int, [int]]], [zone]) int, int,&amp;hellip; str Return a datetime using values for individual time units, with optional time zone.</description></item><item><title>deep</title><link>https://docs.thingsdb.io/v1/collection-api/deep/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/deep/</guid><description>Set or return the current deep value for the running query. The deep value indicates how far down the result of a query is returned. For example, thing1 may contain a thing2 that contains a thing3. A deep value of 1 would only show the content of thing1 and a deep value of 3 will go as deep as the content of thing3. ThingsDB allows deep to have a value between 0 and 127.</description></item><item><title>del_enum</title><link>https://docs.thingsdb.io/v1/collection-api/del_enum/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/del_enum/</guid><description>Deletes an existing enumerator type.
 It is not possible to delete a enumerator type which is used by a Type or if one of the enumerator members is still being used. See example below.
-This function generates a change.
+This function generates a change and requires a call to commit() if commit history is enabled for the scope.
 Function del_enum(enum)
-Arguments Argument Type Description enum string Name of the enumerator type to be deleted. Return value The value nil.</description></item><item><title>del_type</title><link>https://docs.thingsdb.io/v1/collection-api/del_type/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/del_type/</guid><description>Deletes an existing Type.
+Arguments Argument Type Description enum string Name of the enumerator type to be deleted.</description></item><item><title>del_type</title><link>https://docs.thingsdb.io/v1/collection-api/del_type/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/del_type/</guid><description>Deletes an existing Type.
 It is not possible to delete a Type which is used by another Type. You should first change or delete the other Type before you are able to delete this Type. See the example below.
 If there are still things of the Type you delete, then all things will be converted to non-typed things. No properties will be removed in this process. With type_count(..) you can view the number of things of a certain Type.</description></item><item><title>enum</title><link>https://docs.thingsdb.io/v1/collection-api/enum/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/enum/</guid><description>Returns a enum member from a given value. A lookup_err() is raised if either the enum or value is not found.
 This function does not generate a change.
@@ -98,8 +102,7 @@ Arguments Argument Type Description value str/any (required) Value to log.</desc
 When possible it is preferred to use the syntax MyType{...} to create a thing of a certain Type. However, sometimes you need to create an thing dynamically with the Type&amp;rsquo;s name as variable and then new() can be used.
 Since version v0.9.2 the value argument is no longer required. If not given all properties will be set to their default values.</description></item><item><title>new_type</title><link>https://docs.thingsdb.io/v1/collection-api/new_type/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/new_type/</guid><description>Creates a new Type. This function only creates a new type and does not allow you to specify any fields. With the set_type() function you can define the fields for the new type.
 It is possible to use set_type directly without calling new_type first. However, sometimes you want to cross reference two types so you want both type to exists before calling set_type.
-This function generates a change.
-Function new_type(type, [wrap_only, [hide_id]])</description></item><item><title>now</title><link>https://docs.thingsdb.io/v1/collection-api/now/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/now/</guid><description>Return the time in seconds since the epoch as a floating point number.
+This function generates a change and requires a call to commit() if commit history is enabled for the scope.</description></item><item><title>now</title><link>https://docs.thingsdb.io/v1/collection-api/now/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/now/</guid><description>Return the time in seconds since the epoch as a floating point number.
 If you require the same time multiple times within a query, then call now() only once and save it to a variable, for example now = now();
 This function does not generate a change.
 Function now()
@@ -138,10 +141,10 @@ The syntax /pattern/flags can be translated to regex(pattern, flags) so the foll
 assert( /^api_.*/i == regex(&amp;quot;^api_.*&amp;quot;, &amp;quot;i&amp;quot;) ); // the same! This function does not generate a change.
 Function regex(pattern, [flags])
 Arguments Argument Type Description pattern str (required) The pattern to use as a regular expression.</description></item><item><title>rename_enum</title><link>https://docs.thingsdb.io/v1/collection-api/rename_enum/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/rename_enum/</guid><description>Rename an enum type.
-This function generates a change.
+This function generates a change and requires a call to commit() if commit history is enabled for the scope.
 Function rename_enum(current_name, new_name)
 Arguments Argument Type Description current_name str (required) Current enum type name. new_name str (required) New name for the enum type. Return value Returns nil when successful.</description></item><item><title>rename_type</title><link>https://docs.thingsdb.io/v1/collection-api/rename_type/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/rename_type/</guid><description>Rename a type.
-This function generates a change.
+This function generates a change and requires a call to commit() if commit history is enabled for the scope.
 Function rename_type(current_name, new_name)
 Arguments Argument Type Description current_name str (required) Current type name. new_name str (required) New name for the type. Return value Returns nil when successful.</description></item><item><title>room</title><link>https://docs.thingsdb.io/v1/collection-api/room/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/room/</guid><description>Returns a room from a specified value, that may be dynamic. If no value is given, a new room is returned.
 This function does not generate a change.
@@ -157,14 +160,12 @@ true</description></item><item><title>set</title><link>https://docs.thingsdb.io/
 This function does not generate a change.
 Function set(array_or_things)
 Arguments Argument Type Description array_or_things array/set/things (optional) Optional array or things to initialize the set.</description></item><item><title>set_enum</title><link>https://docs.thingsdb.io/v1/collection-api/set_enum/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/set_enum/</guid><description>Creates a new enumerator type.
-This function generates a change.
+This function generates a change and requires a call to commit() if commit history is enabled for the scope.
 Function set_enum(enum, members)
-Arguments Argument Type Description enum str The name of the enumerator type to create. members thing Thing containing all the members to be set (or enum methods). Return value The value nil.
-Example This code shows how to use set_enum():
-set_enum('Status', { OK: 0, NOK: -1, isOk: |this| this == Status{OK}, }); Return value in JSON format</description></item><item><title>set_type</title><link>https://docs.thingsdb.io/v1/collection-api/set_type/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/set_type/</guid><description>Defines the properties of a Type. Function set_type works only on a new Type. Use mod_type() if you want to change an existing Type, see mod_type.
-This function generates a change.
+Arguments Argument Type Description enum str The name of the enumerator type to create. members thing Thing containing all the members to be set (or enum methods). Return value The value nil.</description></item><item><title>set_type</title><link>https://docs.thingsdb.io/v1/collection-api/set_type/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/set_type/</guid><description>Defines the properties of a Type. Function set_type works only on a new Type. Use mod_type() if you want to change an existing Type, see mod_type.
+This function generates a change and requires a call to commit() if commit history is enabled for the scope.
 Function set_type(type, value, [wrap_only, [hide_id]])
-Arguments Argument Type Description type str The name of the Type where the properties have to be set. value thing Thing containing all the properties to be set.</description></item><item><title>str</title><link>https://docs.thingsdb.io/v1/collection-api/str/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/str/</guid><description>Convert a value to a string. If no value is given, an empty string &amp;quot;&amp;quot; is returned.
+Arguments Argument Type Description type str The name of the Type where the properties have to be set.</description></item><item><title>str</title><link>https://docs.thingsdb.io/v1/collection-api/str/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/str/</guid><description>Convert a value to a string. If no value is given, an empty string &amp;quot;&amp;quot; is returned.
 When bytes are converted to str then the data will be checked if it contains valid UTF-8 characters. If this is not the case, a value_err() will be raised.
 This function does not generate a change.
 Function str(value)
