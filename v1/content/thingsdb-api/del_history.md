@@ -19,11 +19,11 @@ Argument | Type | Description
 
 Option      | Type      | Description
 ----------- | --------- | -----------
-`scope`     | str       | Can be either the `@thingsdb` or a `@collection` [scope](../../overview/scopes). This option is _required_ only if [commit history](../set_history) is enabled on multiple scopes.
+`scope`     | str       | Can be either the `@thingsdb` or a `@collection` [scope](../../overview/scopes). This option is required ***only*** if [commit history](../set_history) is enabled on ***multiple*** scopes.
 `id`        | int       | Use `id` to delete a specific commit.
 `contains`  | str       | Filter commits where the given string is found in either **user name**, **message** or or associated **code**.
 `match`     | regex     | Accepts a [regular expression](../../data-types/regex) used to selectively filter commits. A commit is included in the result set if the regular expression successfully matches any part of its **user name**, **message**, or associated **code**.
-`first`     | int       | Takes an integer _"X"_ and limits the operation to the _"X"_ oldest records.
+`first`     | int       | Takes an integer _"X"_ and limits the operation to the _"X"_ oldest records. ***only
 `last`      | int       | Takes an integer _"X"_ and limits the operation to the _"X"_ newest records.
 `before`    | datetime  | Takes a [datetime](../../data-types/datetime) object to set an upper time limit. Only commits made before this exact date and time will be included.
 `after`     | datetime  | Takes a [datetime](../../data-types/datetime) object to set an lower time limit. Only commits made after this exact date and time will be included.

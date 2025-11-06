@@ -19,7 +19,7 @@ Argument | Type | Description
 
 Option      | Type      | Description
 ----------- | --------- | -----------
-`scope`     | str       | Can be either the `@thingsdb` or a `@collection` [scope](../../overview/scopes). This option is _required_ only if [commit history](../set_history) is enabled on multiple scopes.
+`scope`     | str       | Can be either the `@thingsdb` or a `@collection` [scope](../../overview/scopes). This option is required ***only*** if [commit history](../set_history) is enabled on ***multiple*** scopes.
 `detail`    | bool      | When `true`, the associated **code** for each commit will be included in the result (defaults to `false`).
 `id`        | int       | Use the `id` option to retrieve a specific commit. When used, it overrides the standard list return, causing the function to return either the single matching commit or `nil` if that specific ID (combined with any other active filters) is not found.
 `contains`  | str       | Filter commits where the given string is found in either **user name**, **message** or or associated **code**.
