@@ -1,6 +1,6 @@
 ---
 title: "new_type"
-weight: 297
+weight: 298
 ---
 
 Creates a new [Type](../../overview/type). This function *only* creates a new type
@@ -12,7 +12,7 @@ It is possible to use `set_type` directly without calling `new_type` first. Howe
 you want to cross reference two types so you want both type to exists before calling `set_type`.
 {{% /notice %}}
 
-This function generates a [change](../../overview/changes).
+This function generates a [change](../../overview/changes) and requires a call to [commit()](../commit) if [commit history](../../thingsdb-api/set_history) is enabled for the scope.
 
 ### Function
 

@@ -1,12 +1,12 @@
 ---
 title: "new_procedure"
-weight: 385
+weight: 389
 ---
 
 Creates a new procedure to the `@thingsdb` or a `@collection` scope. The name of the procedure must be unique within the scope.
 The given closure will be copied to the procedure, so this is *not* a reference to the given closure.
 
-This function generates a [change](../../overview/changes).
+This function generates a [change](../../overview/changes) and requires a call to [commit()](../../collection-api/commit) if [commit history](../../thingsdb-api/set_history) is enabled for the scope.
 
 ### Function
 

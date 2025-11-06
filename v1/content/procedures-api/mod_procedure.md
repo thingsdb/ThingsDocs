@@ -1,11 +1,11 @@
 ---
 title: "mod_procedure"
-weight: 384
+weight: 388
 ---
 
 Changes the closure for an existing procedure. This function also updates the `created_at` time as if it is a new procedure.
 
-This function generates a [change](../../overview/changes).
+This function generates a [change](../../overview/changes) and requires a call to [commit()](../../collection-api/commit) if [commit history](../../thingsdb-api/set_history) is enabled for the scope.
 
 ### Function
 

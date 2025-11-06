@@ -212,6 +212,7 @@ collection-api
     bytes
     change_id
     closure
+    commit
     datetime
     deep
     del_enum
@@ -345,6 +346,7 @@ thingsdb-api
     collections_info
     del_collection
     del_expired
+    del_history
     del_module
     del_node
     del_token
@@ -356,6 +358,7 @@ thingsdb-api
     has_node
     has_token
     has_user
+    history
     module_info
     modules_info
     new_collection
@@ -370,6 +373,7 @@ thingsdb-api
     restore
     revoke
     set_default_deep
+    set_history.
     set_module_conf
     set_module_scope
     set_password

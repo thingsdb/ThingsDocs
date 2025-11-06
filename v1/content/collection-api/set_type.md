@@ -1,11 +1,11 @@
 ---
 title: "set_type"
-weight: 313
+weight: 314
 ---
 
 Defines the properties of a [Type](../../overview/type). Function `set_type` works only on a new Type. Use `mod_type()` if you want to change an existing Type, see [mod_type](../mod_type).
 
-This function generates a [change](../../overview/changes).
+This function generates a [change](../../overview/changes) and requires a call to [commit()](../commit) if [commit history](../../thingsdb-api/set_history) is enabled for the scope.
 
 ### Function
 

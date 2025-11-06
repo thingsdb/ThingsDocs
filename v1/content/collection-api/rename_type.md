@@ -1,11 +1,11 @@
 ---
 title: "rename_type"
-weight: 308
+weight: 309
 ---
 
 Rename a [type](../../overview/type).
 
-This function generates a [change](../../overview/changes).
+This function generates a [change](../../overview/changes) and requires a call to [commit()](../commit) if [commit history](../../thingsdb-api/set_history) is enabled for the scope.
 
 ### Function
 

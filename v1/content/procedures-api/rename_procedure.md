@@ -1,11 +1,11 @@
 ---
 title: "rename_procedure"
-weight: 389
+weight: 393
 ---
 
 Rename a procedure.
 
-This function generates a [change](../../overview/changes).
+This function generates a [change](../../overview/changes) and requires a call to [commit()](../../collection-api/commit) if [commit history](../../thingsdb-api/set_history) is enabled for the scope.
 
 ### Function
 

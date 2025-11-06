@@ -1,11 +1,11 @@
 ---
 title: "set_enum"
-weight: 312
+weight: 313
 ---
 
 Creates a new [enumerator type](../../data-types/enum).
 
-This function generates a [change](../../overview/changes).
+This function generates a [change](../../overview/changes) and requires a call to [commit()](../commit) if [commit history](../../thingsdb-api/set_history) is enabled for the scope.
 
 ### Function
 

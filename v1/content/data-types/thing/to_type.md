@@ -18,7 +18,7 @@ It is not possible to convert a thing into a Type with [relations](../../../coll
 Although it is possible to convert a *typed* thing to a *non-typed* thing using the [to_thing](../../typed/to_thing) function, this ***only works*** if the type is not dependent of any other type (including self dependencies). This is because ThingsDB is not able to tell if it is allowed to convert back to a *non-typed* thing when it might be required by a parent of the *typed* thing.
 {{% /notice %}}
 
-This function generates a [change](../../../overview/changes).
+This function generates a [change](../../../overview/changes). It requires a call to [commit()](../../../collection-api/commit) if [commit history](../../../thingsdb-api/set_history) is enabled for the scope _and_ the function is used on the [root](../../../collection-api/root) of the collection.
 
 ### Function
 

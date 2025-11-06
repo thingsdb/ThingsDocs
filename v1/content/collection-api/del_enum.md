@@ -1,6 +1,6 @@
 ---
 title: "del_enum"
-weight: 217
+weight: 218
 ---
 
 Deletes an existing [enumerator type](../../data-types/enum).
@@ -8,7 +8,7 @@ Deletes an existing [enumerator type](../../data-types/enum).
 It is not possible to delete a [enumerator type](../../data-types/enum) which is used by a
 Type or if one of the enumerator members is still being used. See [example](#example) below.
 
-This function generates a [change](../../overview/changes).
+This function generates a [change](../../overview/changes) and requires a call to [commit()](../commit) if [commit history](../../thingsdb-api/set_history) is enabled for the scope.
 
 ### Function
 

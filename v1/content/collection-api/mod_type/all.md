@@ -1,12 +1,12 @@
 ---
 title: "all"
-weight: 289
+weight: 290
 ---
 
 Run a given callback on all the instances of a given Type.
 
 {{% notice tip %}}
-Use [type_all(..)](../../type_all) if you just need a [set](../../data-types/set) with all instances.
+Use [type_all(..)](../../type_all) if you just need a [set](../../../data-types/set) with all instances.
 {{% /notice %}}
 
 {{% notice note %}}

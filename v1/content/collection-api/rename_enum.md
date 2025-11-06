@@ -1,11 +1,11 @@
 ---
 title: "rename_enum"
-weight: 307
+weight: 308
 ---
 
 Rename an [enum](../../data-types/enum) type.
 
-This function generates a [change](../../overview/changes).
+This function generates a [change](../../overview/changes) and requires a call to [commit()](../commit) if [commit history](../../thingsdb-api/set_history) is enabled for the scope.
 
 ### Function
 

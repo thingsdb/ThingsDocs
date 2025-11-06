@@ -1,11 +1,11 @@
 ---
 title: "mod_type"
-weight: 287
+weight: 288
 ---
 
 This function is used to modify an existing [Type](../../overview/type). A number of actions can be performed with this function.
 
-This function generates a [change](../../overview/changes).
+This function generates a [change](../../overview/changes) and requires a call to [commit()](../commit) if [commit history](../../thingsdb-api/set_history) is enabled for the scope.
 
 ### Actions
 

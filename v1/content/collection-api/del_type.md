@@ -1,6 +1,6 @@
 ---
 title: "del_type"
-weight: 218
+weight: 219
 ---
 
 Deletes an existing [Type](../../overview/type).
@@ -16,7 +16,7 @@ in this process. With [type_count(..)](../type_count)
 you can view the number of things of a certain Type.
 {{% /notice %}}
 
-This function generates a [change](../../overview/changes).
+This function generates a [change](../../overview/changes) and requires a call to [commit()](../commit) if [commit history](../../thingsdb-api/set_history) is enabled for the scope.
 
 ### Function
 

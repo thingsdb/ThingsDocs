@@ -1,6 +1,6 @@
 ---
 title: "grant"
-weight: 353
+weight: 355
 ---
 
 Grant, collection or general, privileges to a user. Access to a user is provided by setting
@@ -40,13 +40,13 @@ This function generates a [change](../../overview/changes).
 
 ### Function
 
-`grant(target, user, mask)`
+`grant(scope, user, mask)`
 
 ### Arguments
 
 Argument | Type | Description
 -------- | ---- | -----------
-`target` | int/raw | Can be either the `@node`, `@thingsdb`, or a `@collection` [scope](../../overview/scopes).
+`scope` | str | Can be either the `@node`, `@thingsdb`, or a `@collection` [scope](../../overview/scopes).
 `user` | str | User to grant privileges to.
 `mask` | int | Bit-mask for setting privileges.
 

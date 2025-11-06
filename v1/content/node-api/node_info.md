@@ -1,6 +1,6 @@
 ---
 title: "node_info"
-weight: 337
+weight: 338
 ---
 
 Returns information about the node in the selected scope.
@@ -18,6 +18,7 @@ cached_names | Number of [names](../../overview/names) cached in memory.
 cached_queries | Number of queries the node has in stored in cache.
 changes_in_queue | Changes which are pending in the queue.
 client_port | Listening for client TCP socket connections on this port.
+commit_history | The total number of historical commits stored for the `@thingsdb` scope. The value will be the integer count, or the string `"disabled"` if commit history has been turned off (see [set_history](../../thingsdb-api/set_history)). To view this metric for collection scopes, use the [collections_info()](../../thingsdb-api/collections_info) function.
 connected_clients | Number of connected clients to the node.
 db_stored_change_id | Last stored change Id in full database store.
 global_committed_change_id | Lowest known committed change Id by all nodes.
@@ -85,6 +86,7 @@ node_info();
     "cached_queries": 7,
     "changes_in_queue": 0,
     "client_port": 9200,
+    "commit_historry": "disabled",
     "connected_clients": 1,
     "db_stored_change_id": 1,
     "global_committed_change_id": 2,

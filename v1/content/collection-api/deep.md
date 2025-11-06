@@ -1,6 +1,6 @@
 ---
 title: "deep"
-weight: 216
+weight: 217
 ---
 
 Set or return the current `deep` value for the **running query**. The deep value indicates how far down the result of a query is returned. For example, *thing1* may contain a *thing2* that contains a *thing3*. A deep value of 1 would only show the content of *thing1* and a deep value of 3 will go as deep as the content of *thing3*. ThingsDB allows *deep* to have a value between `0` and `127`.

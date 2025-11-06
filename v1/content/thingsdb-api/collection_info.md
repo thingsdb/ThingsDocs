@@ -1,6 +1,6 @@
 ---
 title: "collection_info"
-weight: 344
+weight: 345
 ---
 
 Returns information about a specific collection.
@@ -38,6 +38,7 @@ collection_info('stuff');
 {
     "collection_id": 782,
     "created_at": 1579175900,
+    "commit_history": "disabled",
     "default_deep": 1,
     "name": "stuff",
     "next_free_id": 93114,
