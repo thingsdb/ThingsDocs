@@ -35,7 +35,7 @@ Function closure(value)
 Arguments Argument Type Description value str (optional) Convert a string into a closure. If omitted the default closure || nil is returned. Return value An new closure.
 Example This code shows some return values for closure():</description></item><item><title>commit</title><link>https://docs.thingsdb.io/v1/collection-api/commit/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/commit/</guid><description>Saves a commit for the current query.
 This function requires that the query makes a change, and that commit history has been enabled for the relevant scope.
-Use commit(..)* only for collection structural changes like set-up or migration scripts. It is not intended for routine &amp;ldquo;normal&amp;rdquo; operations that your application performs during its regular runtime.
+Use commit(..) only for collection structural changes like set-up or migration scripts. It is not intended for routine &amp;ldquo;normal&amp;rdquo; operations that your application performs during its regular runtime.
 Use the history() function to view the commits in the history log.
 This function does not generate a change.</description></item><item><title>datetime</title><link>https://docs.thingsdb.io/v1/collection-api/datetime/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/datetime/</guid><description>Returns a datetime depending on some optional values.
 This function does not generate a change.
