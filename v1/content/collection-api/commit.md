@@ -8,7 +8,7 @@ Saves a commit for the current query.
 This function requires that the query makes a [change](../../overview/changes), _and_ that [commit history](../../thingsdb-api/set_history) has been enabled for the relevant scope.
 
 {{% notice note %}}
-Use **commit(..)*** only for collection structural changes like set-up or migration scripts.
+Use **commit(..)** only for collection structural changes like set-up or migration scripts.
 It is _not_ intended for routine "normal" operations that your application performs during its regular runtime.
 {{% /notice %}}
 
