@@ -7,7 +7,7 @@ List commit records from history based on a given filter.
 
 ### Function
 
-`del_history(options)`
+`history(options)`
 
 ### Arguments
 
