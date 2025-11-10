@@ -6,17 +6,17 @@
 <meta name=description content="ThingsDB documentation">
 <link rel="shortcut icon" href=/v1/images/favicon.ico type=image/x-icon>
 <title>anonymous :: ThingsDB documentation</title>
-<link href=/v1/css/nucleus.css?1762771219 rel=stylesheet>
-<link href=/v1/css/fontawesome-all.min.css?1762771219 rel=stylesheet>
-<link href=/v1/css/hybrid.css?1762771219 rel=stylesheet>
-<link href=/v1/css/featherlight.min.css?1762771219 rel=stylesheet>
-<link href=/v1/css/perfect-scrollbar.min.css?1762771219 rel=stylesheet>
-<link href=/v1/css/auto-complete.css?1762771219 rel=stylesheet>
-<link href=/v1/css/atom-one-dark-reasonable.css?1762771219 rel=stylesheet>
-<link href=/v1/css/theme.css?1762771219 rel=stylesheet>
-<link href=/v1/css/hugo-theme.css?1762771219 rel=stylesheet>
-<link href=/v1/css/theme-mine.css?1762771219 rel=stylesheet>
-<script src=/v1/js/jquery-3.3.1.min.js?1762771219></script>
+<link href=/v1/css/nucleus.css?1762773177 rel=stylesheet>
+<link href=/v1/css/fontawesome-all.min.css?1762773177 rel=stylesheet>
+<link href=/v1/css/hybrid.css?1762773177 rel=stylesheet>
+<link href=/v1/css/featherlight.min.css?1762773177 rel=stylesheet>
+<link href=/v1/css/perfect-scrollbar.min.css?1762773177 rel=stylesheet>
+<link href=/v1/css/auto-complete.css?1762773177 rel=stylesheet>
+<link href=/v1/css/atom-one-dark-reasonable.css?1762773177 rel=stylesheet>
+<link href=/v1/css/theme.css?1762773177 rel=stylesheet>
+<link href=/v1/css/hugo-theme.css?1762773177 rel=stylesheet>
+<link href=/v1/css/theme-mine.css?1762773177 rel=stylesheet>
+<script src=/v1/js/jquery-3.3.1.min.js?1762773177></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}:not(pre)>code+span.copy-to-clipboard{display:none}</style>
 </head>
 <body data-url=/v1/data-types/anomyous/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/v1/js/lunr.min.js?1762771219></script>
-<script type=text/javascript src=/v1/js/auto-complete.js?1762771219></script>
+<script type=text/javascript src=/v1/js/lunr.min.js?1762773177></script>
+<script type=text/javascript src=/v1/js/auto-complete.js?1762773177></script>
 <script type=text/javascript>var baseurl="https://docs.thingsdb.io/v1/"</script>
-<script type=text/javascript src=/v1/js/search.js?1762771219></script>
+<script type=text/javascript src=/v1/js/search.js?1762773177></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -2282,6 +2282,8 @@ zero_div_err
 <ul>
 <li>
 <ul>
+<li><a href=#usage-example>Usage Example</a></li>
+<li><a href=#complex-structures>Complex Structures</a></li>
 <li><a href=#related-functions>Related functions</a></li>
 </ul>
 </li>
@@ -2297,7 +2299,17 @@ zero_div_err
 <h1>
 anonymous
 </h1>
-<p>Anonymous type can be created to define the output value of things.</p>
+<p>Anonymous types are used to define a restricted structural definition of data, used to control the exact output structure.</p>
+<p>The anonymous literal syntax <code>&{...}</code> is the preferred method for defining anonymous types:</p>
+<pre tabindex=0><code class=language-thingsdb,syntax_only data-lang=thingsdb,syntax_only>&amp;{
+    field_1: 'type_def_1',
+    field_2: 'type_def_2',
+    // ...
+}
+</code></pre><p>As an alternative, the <a href=../../collection-api/ano>ano(..)</a> function can be used.
+This is generally only useful when you need to construct the type definition dynamically at runtime using input or program logic.</p>
+<h3 id=usage-example>Usage Example</h3>
+<p>In this example, an instance of the full <code>User</code> type is created, but the <a href=../thing/wrap>wrap</a> method uses an anonymous type to ensure only specific fields (<code>id</code>, <code>name</code>, <code>email</code>) are returned, effectively hiding the sensitive <code>password_hash</code>.</p>
 <pre tabindex=0><code class=language-thingsdb,should_pass data-lang=thingsdb,should_pass>// User type with three field:
 set_type('User', {
     name: 'str',
@@ -2321,12 +2333,25 @@ set_type('User', {
 </code></pre><blockquote>
 <p>Possible return value in JSON format</p>
 </blockquote>
-<pre tabindex=0><code class=language-jaon data-lang=jaon>{
-    &quot;id&quot;: 12345,
-    &quot;name&quot;: &quot;Jeroen van der Heijden&quot;,
-    &quot;email&quot;: &quot;jeroen@cesbit.com&quot;
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+    <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>12345</span>,
+    <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;Jeroen van der Heijden&#34;</span>,
+    <span style=color:#f92672>&#34;email&#34;</span>: <span style=color:#e6db74>&#34;jeroen@cesbit.com&#34;</span>
 }
-</code></pre><h3 id=related-functions>Related functions</h3>
+</code></pre></div><h3 id=complex-structures>Complex Structures</h3>
+<p>Anonymous types support all standard type definitions, including nested structures, arrays, and enumerator references.</p>
+<pre tabindex=0><code class=language-thingsdb,should_pass data-lang=thingsdb,should_pass>&amp;{
+    id: '#',
+    checks: [{
+        type: '*enum',  // exposes an enumerator type instance by its name
+        options: {
+            is_silent: 'bool',
+            interval: 'int',
+        },
+    }],
+}
+</code></pre><p>For a comprehensive guide on all available type definitions and their syntax, please refer to the <a href=../../overview/type>type overview page</a>.</p>
+<h3 id=related-functions>Related functions</h3>
 <table>
 <thead>
 <tr>
@@ -2341,7 +2366,7 @@ set_type('User', {
 </tr>
 <tr>
 <td><a href=../thing/wrap>wrap</a></td>
-<td>Create an <code>anonymous</code> type from a <a href=../thing>thing</a> using a function call.</td>
+<td>Wrap the <em>thing</em> with a <a href=../../overview/type>Type</a>.</td>
 </tr>
 <tr>
 <td><a href=../list/map_wrap>map_wrap</a> <em>(on list)</em></td>
@@ -2365,18 +2390,18 @@ set_type('User', {
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/v1/js/clipboard.min.js?1762771219></script>
-<script src=/v1/js/perfect-scrollbar.min.js?1762771219></script>
-<script src=/v1/js/perfect-scrollbar.jquery.min.js?1762771219></script>
-<script src=/v1/js/jquery.sticky.js?1762771219></script>
-<script src=/v1/js/featherlight.min.js?1762771219></script>
-<script src=/v1/js/highlight.pack.js?1762771219></script>
+<script src=/v1/js/clipboard.min.js?1762773177></script>
+<script src=/v1/js/perfect-scrollbar.min.js?1762773177></script>
+<script src=/v1/js/perfect-scrollbar.jquery.min.js?1762773177></script>
+<script src=/v1/js/jquery.sticky.js?1762773177></script>
+<script src=/v1/js/featherlight.min.js?1762773177></script>
+<script src=/v1/js/highlight.pack.js?1762773177></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=/v1/js/modernizr.custom-3.6.0.js?1762771219></script>
-<script src=/v1/js/learn.js?1762771219></script>
-<script src=/v1/js/hugo-learn.js?1762771219></script>
-<link href=/v1/mermaid/mermaid.css?1762771219 rel=stylesheet>
-<script src=/v1/mermaid/mermaid.js?1762771219></script>
+<script src=/v1/js/modernizr.custom-3.6.0.js?1762773177></script>
+<script src=/v1/js/learn.js?1762773177></script>
+<script src=/v1/js/hugo-learn.js?1762773177></script>
+<link href=/v1/mermaid/mermaid.css?1762773177 rel=stylesheet>
+<script src=/v1/mermaid/mermaid.js?1762773177></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 </body>
 </html>
