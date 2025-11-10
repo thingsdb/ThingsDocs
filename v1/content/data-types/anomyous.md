@@ -5,9 +5,7 @@ weight: 41
 
 Anonymous type can be created to define the output value of things.
 
-> Return value in JSON format
-
-```thingsdb
+```thingsdb,should_pass
 // User type with three field:
 set_type('User', {
     name: 'str',
@@ -30,7 +28,14 @@ set_type('User', {
 });
 ```
 
-``
+> Possible return value in JSON format
+```jaon
+{
+    "id": 12345,
+    "name": "Jeroen van der Heijden",
+    "email": "jeroen@cesbit.com"
+}
+```
 
 ### Related functions
 
