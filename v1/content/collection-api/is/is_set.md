@@ -1,6 +1,6 @@
 ---
 title: "is_set"
-weight: 254
+weight: 256
 ---
 
 This function determines whether the provided value is a [set](../../../data-types/set) or not.

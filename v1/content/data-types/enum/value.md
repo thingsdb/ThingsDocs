@@ -1,6 +1,6 @@
 ---
 title: "value"
-weight: 59
+weight: 60
 ---
 
 Returns the value of the enumerator member.

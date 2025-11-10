@@ -10,6 +10,7 @@ ThingsDB uses the following data types:
 
 type | Description
 ------ | -----------
+[anonymous](./anomyous) | Anonymous type for wrapping things.
 [bool](./bool) | Booleans are either `true` or `false`.
 [bytes](./bytes) | Byte sequence.
 [closure](./closure) | Closures can be used as functions or to consume items from a `thing`, `list`, `tuple` or `set`.
@@ -31,5 +32,5 @@ type | Description
 [timeval](./timeval) | Like `datetime` but returns as a UNIX time-stamp by default.
 [tuple](./tuple) | Nested and immutable [list](./list).
 [typed](./typed) | Type are [things](./thing) with predefined properties.
-[&lt;Type&gt;](./wtype) | Wrapped thing by a [Type](../overview/type).
+[&lt;Type&gt;](./wtype) | Wrapped thing by a [Type](../overview/type) or an [anonymous](../overview/type) type.
 

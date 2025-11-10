@@ -1,6 +1,6 @@
 ---
 title: "len"
-weight: 130
+weight: 131
 ---
 
 Returns the length of a [set](..).

@@ -13,7 +13,7 @@ There are 16, single character keys that are reserved for ThingsDB and cannot be
 
 key | description
 --- | -----------
-` ` *(space)* | *unused*
+` ` *(space)* | Reserver for <\<anonymous\>>.
 `!` | Reserved for errors.
 `"` | Reserved for timeval.
 `#` | Reserved for thing ID's.

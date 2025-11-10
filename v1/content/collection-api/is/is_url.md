@@ -1,6 +1,6 @@
 ---
 title: "is_url"
-weight: 262
+weight: 264
 ---
 
 This function determines whether the provided value is of

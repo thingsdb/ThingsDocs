@@ -1,6 +1,6 @@
 ---
 title: "map_wrap"
-weight: 133
+weight: 134
 ---
 
 The function returns a `list` with every thing wrapped according the given type.
@@ -23,7 +23,7 @@ This function does *not* generate a [change](../../../overview/changes).
 
 Argument | Arguments     | Description
 -------- | ------------- | -----------
-Type     | str (optional)| Type's name to wrap the thing with. If not given, the thing will be wrapped with its own type.
+Type     | str/anonymous (optional)| Type's name or [anonumous](../../anomyous) type to wrap the thing with. If not given, the thing will be wrapped with its own type.
 
 ### Return value
 
@@ -39,6 +39,25 @@ users = [{name: "Iris", age: 9}];
 
 // returns a list with wrapped things
 users.map_wrap('_User');
+```
+
+> Return value in JSON format
+
+```json
+[
+    {
+        "name": "Iris"
+    }
+]
+```
+
+> Same example using an **anonymous** type:
+
+```thingsdb,json_response
+users = [{name: "Iris", age: 9}];
+
+// returns a list with wrapped things
+users.map_wrap(&{name: 'str'});
 ```
 
 > Return value in JSON format

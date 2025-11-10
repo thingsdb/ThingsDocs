@@ -1,6 +1,6 @@
 ---
 title: "˂Type˃"
-weight: 194
+weight: 195
 ---
 
 
@@ -152,6 +152,22 @@ set_type('_AllBooks', {
 }, /* wrap-only */true, /* hide-id */true);  // hide-id will only affect `_AllBooks`,
                                              // not the nested type `_AllBooks.books`
                                              // and `_AllBooks.books.author`
+```
+
+### Using Anonymous type
+
+Version 1.8.2 of ThingsDB has introduces the [anonymous](../anomyous) type which can be used without defining a wrap-only type.
+
+```thingsdb,should_pass
+.wrap(&{
+    books: [{
+        id: '#',
+        title: 'any',
+        author: {
+            name: 'any'
+        }
+    }]
+});
 ```
 
 ### What if a Type is removed?

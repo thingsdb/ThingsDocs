@@ -1,6 +1,6 @@
 ---
 title: "wrap"
-weight: 189
+weight: 190
 ---
 
 Wrap a thing with a [Type](../../../overview/type) to filter out properties, while preserving the Id.
@@ -16,7 +16,7 @@ For a more advanced example using [wrap()](..) and [unwrap()](../../wtype/unwrap
 
 Argument | Arguments     | Description
 -------- | ------------- | -----------
-Type     | str (optional)| Type's name to wrap the thing with. If not given, the thing will be wrapped with its own type.
+Type     | str/anonymous (optional)| Type's name or [anonumous](../../anomyous) type to wrap the thing with. If not given, the thing will be wrapped with its own type.
 
 ### Return value
 
@@ -26,26 +26,45 @@ A [wrapped](../../wtype) thing.
 
 > This code shows an example using ***wrap()***:
 
-```thingsdb,should_pass
+```thingsdb,json_response
 // Create a Type to return just an email field.
-set_type('_Email', {email: 'str'});
+set_type('_Email', {email: 'str'}, true, true);
 
-// Store a thing
-.joente = {
+user = {
     name: 'Jeroen van der Heijden',
     email: 'jeroen@cesbit.com',
     gender: 'male',
 };
 
-// Return the email field and Id (#)
-.joente.wrap('_Email');
+// Return the email field
+user.wrap('_Email');
 ```
 
-> Example return value in JSON format
+> Return value in JSON format
 
 ```json
 {
-    "#": 42,
+    "email": "jeroen@cesbit.com"
+}
+```
+
+> Same example using an **anonymous** type:
+
+```thingsdb,should_pass
+user = {
+    name: 'Jeroen van der Heijden',
+    email: 'jeroen@cesbit.com',
+    gender: 'male',
+};
+
+// Return the email field
+user.wrap(&{email: 'str'});
+```
+
+> Return value in JSON format
+
+```json
+{
     "email": "jeroen@cesbit.com"
 }
 ```

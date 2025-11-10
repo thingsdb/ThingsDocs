@@ -1,6 +1,6 @@
 ---
 title: "log10"
-weight: 274
+weight: 276
 ---
 
 Return the base 10 logarithm of a given number.

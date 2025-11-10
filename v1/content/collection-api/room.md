@@ -1,6 +1,6 @@
 ---
 title: "room"
-weight: 310
+weight: 312
 ---
 
 Returns a [room](../../data-types/room) from a specified value, that may be dynamic. If no value is given, a new room is returned.

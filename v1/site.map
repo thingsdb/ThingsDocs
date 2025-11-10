@@ -38,6 +38,7 @@ overview
     type
     variable
 data-types
+    anomyous
     bool
     bytes
         len
@@ -109,14 +110,14 @@ data-types
         len
         load
     nil
+    regex
+        match
+        test
     room
         emit
         id
         name
         set_name
-    regex
-        match
-        test
     set
         add
         clear
@@ -205,6 +206,7 @@ operators
     precedence-and-associativity
 collection-api
     alt_raise
+    ano
     assert
     base64_decode
     base64_encode
@@ -373,7 +375,7 @@ thingsdb-api
     restore
     revoke
     set_default_deep
-    set_history.
+    set_history
     set_module_conf
     set_module_scope
     set_password
