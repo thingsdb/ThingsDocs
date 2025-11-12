@@ -115,6 +115,7 @@ Returns a list with all available time zones in ThingsDB.
  * America/Chicago
  * America/Chihuahua
  * America/Costa_Rica
+ * America/Coyhaique
  * America/Creston
  * America/Cuiaba
  * America/Curacao
