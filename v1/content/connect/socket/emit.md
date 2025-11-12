@@ -40,7 +40,7 @@ Now we create the header. For this example we just use Id 0:
 
 - Data length (29) `\x1d\x00\x00\x00`
 - Identifier (0) `\x00\x00`
-- Request Emit package type (40) `\x28`
+- Request Emit package type (40) `\x28` _(Use (41), `\x29` for emitting to peers only)_
 - Inverse type check bit (247) `0xd7`
 
 > Sending the *Emit* package
