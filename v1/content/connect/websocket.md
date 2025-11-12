@@ -43,10 +43,10 @@ The easiest option is to use an existing _connector_ with WebSocket support.
 
 The following connectors are available:
 
-Language                            | Query/Run support | Room (event) support
------------------------------------ | ----------------- | --------------------
-[Python](../python)                 | &#x2714;          | &#x2714;
-[JavaScript / Node.js](./javascript)| &#x2714;          | &#x2714;
+Language                                | Query/Run support | Room (event) support
+--------------------------------------- | ----------------- | --------------------
+[Python](../python)                     | &#x2714;          | &#x2714;
+[JavaScript / Node.js](../javascript)   | &#x2714;          | &#x2714;
 
 
 ### Implement WebSocket for a new language
