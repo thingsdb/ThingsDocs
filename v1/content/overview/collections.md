@@ -1,6 +1,6 @@
 ---
 title: "Collections"
-weight: 30
+weight: 31
 ---
 
 Each collection can be thought of as an *object* to which properties can be

@@ -1,6 +1,6 @@
 ---
 title: "json_dump"
-weight: 266
+weight: 267
 ---
 
 Converts a ThingsDB value in to a JSON [string](../../data-types/str).

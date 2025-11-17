@@ -1,6 +1,6 @@
 ---
 title: "WebSocket"
-weight: 26
+weight: 27
 ---
 
 ## Enable WebSockets

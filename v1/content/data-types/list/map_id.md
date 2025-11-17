@@ -1,6 +1,6 @@
 ---
 title: "map_id"
-weight: 93
+weight: 94
 ---
 
 The function must be called on a list with *things* and returns a new list with the Ids of all the things.

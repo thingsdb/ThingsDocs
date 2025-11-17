@@ -1,6 +1,6 @@
 ---
 title: "enum"
-weight: 58
+weight: 59
 ---
 
 Enumerators are a set of unique names coupled to a unique set of values. ThingsDB support enumerators for type `int`, `float`, `str`, `bytes` and `thing`, where all members

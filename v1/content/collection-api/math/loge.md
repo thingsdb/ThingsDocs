@@ -1,6 +1,6 @@
 ---
 title: "loge"
-weight: 278
+weight: 279
 ---
 
 Returns the natural logarithm (base _e_) of a given number.

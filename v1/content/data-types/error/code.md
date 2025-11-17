@@ -1,6 +1,6 @@
 ---
 title: "code"
-weight: 62
+weight: 63
 ---
 
 Returns the error *code* of an [error](..) type.

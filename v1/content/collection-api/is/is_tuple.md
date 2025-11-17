@@ -1,6 +1,6 @@
 ---
 title: "is_tuple"
-weight: 263
+weight: 264
 ---
 
 This function determines whether the provided value is a [tuple](../../../data-types/tuple) or not. At least nested arrays are of kind tuple.

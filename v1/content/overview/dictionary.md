@@ -1,6 +1,6 @@
 ---
 title: "Dictionary"
-weight: 31
+weight: 32
 ---
 
 The following list contains definitions specific for ThingsDB:

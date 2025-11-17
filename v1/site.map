@@ -13,6 +13,7 @@ connect
     go
     csharp
     php
+    java
     javascript
     socket
         ping

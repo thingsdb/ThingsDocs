@@ -1,6 +1,6 @@
 ---
 title: "clear"
-weight: 72
+weight: 73
 ---
 
 Removes all items from a [list](..).

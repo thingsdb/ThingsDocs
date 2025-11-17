@@ -1,6 +1,6 @@
 ---
 title: "JavaScript"
-weight: 16
+weight: 17
 ---
 
 ### Requirements

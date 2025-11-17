@@ -16,6 +16,7 @@ Language                            | Query/Run support | Room (event) support
 [Go](./go)                          | &#x2714;          | &#x2714;
 [C#](./csharp)                      | &#x2714;          | &#x2714;
 [PHP](./php)                        | &#x2714;          | &#x2714;
+[Java](./java)                      | &#x2714;          | &#x2714;
 [JavaScript / Node.js](./javascript)| &#x2714;          | &#x2714;
 [HTTP (API)](./http-api)            | &#x2714;          | -
 

@@ -1,6 +1,6 @@
 ---
 title: "Example emit"
-weight: 24
+weight: 25
 ---
 
 Emit an event to a room in a collection.  A successful emit request will respond with `OK (17)`

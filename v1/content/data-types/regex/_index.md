@@ -1,6 +1,6 @@
 ---
 title: "regex"
-weight: 113
+weight: 114
 ---
 
 Regular expression can be constructed using a literal which consists of a pattern enclosed between slashes, as follows: `re = /ab+c/;`.

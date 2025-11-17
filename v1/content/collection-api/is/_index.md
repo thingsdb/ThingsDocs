@@ -1,6 +1,6 @@
 ---
 title: "is..."
-weight: 234
+weight: 235
 ---
 
 There are many functions in ThingsDB to check if a value is compatible with some specification.
