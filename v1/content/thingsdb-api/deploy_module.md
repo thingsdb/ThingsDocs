@@ -32,7 +32,7 @@ Returns `nil`. You might want to use [module_info(..)](../module_info) to check 
 
 > Create a new python module `ECHO` and deploy the code using `deploy_module(..)`:
 
-```thingsdb,json_response,@t
+```thingsdb,syntax_only
 // Create a new (python) module
 new_module('ECHO', 'echo.py');
 

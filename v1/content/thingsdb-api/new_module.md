@@ -42,7 +42,7 @@ Returns `nil`. You might want to use [module_info(..)](../module_info) to check 
 
 > Create a new module `DEMO1`:
 
-```thingsdb,json_response,@t
+```thingsdb,syntax_only
 new_module('demo', 'github.com/thingsdb/module-py-demo');
 ```
 

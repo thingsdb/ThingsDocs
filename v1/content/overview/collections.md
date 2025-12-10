@@ -84,4 +84,48 @@ Stored *things* will get an Id (`#`) from ThingsDB.
 }
 ```
 
+### Typed Collection
+To ensure data integrity and consistent structure within a collection, you can enforce a type schema. This process involves defining a custom type and applying it to the collection's root.
+
+#### Understanding the Collection Root
+Every collection in ThingsDB starts as a single, basic thing. This _"root"_ is an untyped [thing](../../data-types/thing) that holds all your collection's data.
+
+To enforce structure, we must convert this untyped root into a structured, custom type.
+
+#### Declaring and Applying the Root Type
+First, you must define your new custom type. This example creates a type called `Root`, but you can choose any name relevant to your data model.
+
+```thingsdb,syntax_only
+// Step A: Declare the new type structure
+new_type('Root');  // Initially an empty type definition.
+
+// Step B: Convert the collection's root to the defined type
+.to_type('Root');
+```
+Once the `.to_type('Root')` command executes, your collection's entire structure is governed by the `Root` type.
+
+{{% notice note %}}
+Because we initially defined `Root` as an empty type, this conversion effectively locks the collection to an empty object. Any subsequent attempt to add data to the collection must conform to additions made to the `Root` type.
+{{% /notice %}}
+
+#### Modifying the Schema
+To actually give your collection a structure (i.e., add properties), you use the [mod_type](../../collection-api/mod_type) function.
+
+Suppose you want to give your collection a required `name` property that must be a string. You modify the `Root` type, and the change is automatically applied to your collection's root object.
+
+```thingsdb,syntax_only
+// Modify the 'Root' type:
+// mod_type(Type, Action, PropertyName, PropertyType, DefaultValue)
+mod_type('Root', 'add', 'name', 'str', 'My Collection Name');
+
+// The new property is immediately available on the collection root
+.name;  // Returns: "My Collection Name" (the default value)
+
+// Attempting to change the name to a non-string will result in an error
+.name = 123; // ERROR: Must be a string
+```
+
+By typing the collection's root, you ensure that all operations that modify the collection's structure must pass through the type definition, providing a single, reliable source of schema validation for all components interacting with your data.
+
+### More information
 See the [Collection API](../../collection-api) documentation for functions which can be used to manipulate ThingsDB data.
