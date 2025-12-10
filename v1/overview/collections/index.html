@@ -6,17 +6,17 @@
 <meta name=description content="ThingsDB documentation">
 <link rel="shortcut icon" href=/v1/images/favicon.ico type=image/x-icon>
 <title>Collections :: ThingsDB documentation</title>
-<link href=/v1/css/nucleus.css?1763414056 rel=stylesheet>
-<link href=/v1/css/fontawesome-all.min.css?1763414056 rel=stylesheet>
-<link href=/v1/css/hybrid.css?1763414056 rel=stylesheet>
-<link href=/v1/css/featherlight.min.css?1763414056 rel=stylesheet>
-<link href=/v1/css/perfect-scrollbar.min.css?1763414056 rel=stylesheet>
-<link href=/v1/css/auto-complete.css?1763414056 rel=stylesheet>
-<link href=/v1/css/atom-one-dark-reasonable.css?1763414056 rel=stylesheet>
-<link href=/v1/css/theme.css?1763414056 rel=stylesheet>
-<link href=/v1/css/hugo-theme.css?1763414056 rel=stylesheet>
-<link href=/v1/css/theme-mine.css?1763414056 rel=stylesheet>
-<script src=/v1/js/jquery-3.3.1.min.js?1763414056></script>
+<link href=/v1/css/nucleus.css?1765374987 rel=stylesheet>
+<link href=/v1/css/fontawesome-all.min.css?1765374987 rel=stylesheet>
+<link href=/v1/css/hybrid.css?1765374987 rel=stylesheet>
+<link href=/v1/css/featherlight.min.css?1765374987 rel=stylesheet>
+<link href=/v1/css/perfect-scrollbar.min.css?1765374987 rel=stylesheet>
+<link href=/v1/css/auto-complete.css?1765374987 rel=stylesheet>
+<link href=/v1/css/atom-one-dark-reasonable.css?1765374987 rel=stylesheet>
+<link href=/v1/css/theme.css?1765374987 rel=stylesheet>
+<link href=/v1/css/hugo-theme.css?1765374987 rel=stylesheet>
+<link href=/v1/css/theme-mine.css?1765374987 rel=stylesheet>
+<script src=/v1/js/jquery-3.3.1.min.js?1765374987></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}:not(pre)>code+span.copy-to-clipboard{display:none}</style>
 </head>
 <body data-url=/v1/overview/collections/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/v1/js/lunr.min.js?1763414056></script>
-<script type=text/javascript src=/v1/js/auto-complete.js?1763414056></script>
+<script type=text/javascript src=/v1/js/lunr.min.js?1765374987></script>
+<script type=text/javascript src=/v1/js/auto-complete.js?1765374987></script>
 <script type=text/javascript>var baseurl="https://docs.thingsdb.io/v1/"</script>
-<script type=text/javascript src=/v1/js/search.js?1763414056></script>
+<script type=text/javascript src=/v1/js/search.js?1765374987></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -2283,7 +2283,16 @@ zero_div_err
 </div>
 <div class=progress>
 <div class=wrapper>
-<nav id=TableOfContents></nav>
+<nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li><a href=#typed-collection>Typed Collection</a></li>
+<li><a href=#more-information>More information</a></li>
+</ul>
+</li>
+</ul>
+</nav>
 </div>
 </div>
 </div>
@@ -2353,7 +2362,36 @@ nil;
     <span style=color:#f92672>&#34;suit&#34;</span>: <span style=color:#e6db74>&#34;Spades&#34;</span>,
     <span style=color:#f92672>&#34;value&#34;</span>: <span style=color:#ae81ff>1</span>
 }
-</code></pre></div><p>See the <a href=../../collection-api>Collection API</a> documentation for functions which can be used to manipulate ThingsDB data.</p>
+</code></pre></div><h3 id=typed-collection>Typed Collection</h3>
+<p>To ensure data integrity and consistent structure within a collection, you can enforce a type schema. This process involves defining a custom type and applying it to the collection&rsquo;s root.</p>
+<h4 id=understanding-the-collection-root>Understanding the Collection Root</h4>
+<p>Every collection in ThingsDB starts as a single, basic thing. This <em>&ldquo;root&rdquo;</em> is an untyped <a href=../../data-types/thing>thing</a> that holds all your collection&rsquo;s data.</p>
+<p>To enforce structure, we must convert this untyped root into a structured, custom type.</p>
+<h4 id=declaring-and-applying-the-root-type>Declaring and Applying the Root Type</h4>
+<p>First, you must define your new custom type. This example creates a type called <code>Root</code>, but you can choose any name relevant to your data model.</p>
+<pre tabindex=0><code class=language-thingsdb,syntax_only data-lang=thingsdb,syntax_only>// Step A: Declare the new type structure
+new_type('Root');  // Initially an empty type definition.
+
+// Step B: Convert the collection's root to the defined type
+.to_type('Root');
+</code></pre><p>Once the <code>.to_type('Root')</code> command executes, your collection&rsquo;s entire structure is governed by the <code>Root</code> type.</p>
+<div class="notices note"><p>Because we initially defined <code>Root</code> as an empty type, this conversion effectively locks the collection to an empty object. Any subsequent attempt to add data to the collection must conform to additions made to the <code>Root</code> type.</p>
+</div>
+<h4 id=modifying-the-schema>Modifying the Schema</h4>
+<p>To actually give your collection a structure (i.e., add properties), you use the <a href=../../collection-api/mod_type>mod_type</a> function.</p>
+<p>Suppose you want to give your collection a required <code>name</code> property that must be a string. You modify the <code>Root</code> type, and the change is automatically applied to your collection&rsquo;s root object.</p>
+<pre tabindex=0><code class=language-thingsdb,syntax_only data-lang=thingsdb,syntax_only>// Modify the 'Root' type:
+// mod_type(Type, Action, PropertyName, PropertyType, DefaultValue)
+mod_type('Root', 'add', 'name', 'str', 'My Collection Name');
+
+// The new property is immediately available on the collection root
+.name;  // Returns: &quot;My Collection Name&quot; (the default value)
+
+// Attempting to change the name to a non-string will result in an error
+.name = 123; // ERROR: Must be a string
+</code></pre><p>By typing the collection&rsquo;s root, you ensure that all operations that modify the collection&rsquo;s structure must pass through the type definition, providing a single, reliable source of schema validation for all components interacting with your data.</p>
+<h3 id=more-information>More information</h3>
+<p>See the <a href=../../collection-api>Collection API</a> documentation for functions which can be used to manipulate ThingsDB data.</p>
 <footer class=footline>
 </footer>
 </div>
@@ -2366,18 +2404,18 @@ nil;
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/v1/js/clipboard.min.js?1763414056></script>
-<script src=/v1/js/perfect-scrollbar.min.js?1763414056></script>
-<script src=/v1/js/perfect-scrollbar.jquery.min.js?1763414056></script>
-<script src=/v1/js/jquery.sticky.js?1763414056></script>
-<script src=/v1/js/featherlight.min.js?1763414056></script>
-<script src=/v1/js/highlight.pack.js?1763414056></script>
+<script src=/v1/js/clipboard.min.js?1765374987></script>
+<script src=/v1/js/perfect-scrollbar.min.js?1765374987></script>
+<script src=/v1/js/perfect-scrollbar.jquery.min.js?1765374987></script>
+<script src=/v1/js/jquery.sticky.js?1765374987></script>
+<script src=/v1/js/featherlight.min.js?1765374987></script>
+<script src=/v1/js/highlight.pack.js?1765374987></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=/v1/js/modernizr.custom-3.6.0.js?1763414056></script>
-<script src=/v1/js/learn.js?1763414056></script>
-<script src=/v1/js/hugo-learn.js?1763414056></script>
-<link href=/v1/mermaid/mermaid.css?1763414056 rel=stylesheet>
-<script src=/v1/mermaid/mermaid.js?1763414056></script>
+<script src=/v1/js/modernizr.custom-3.6.0.js?1765374987></script>
+<script src=/v1/js/learn.js?1765374987></script>
+<script src=/v1/js/hugo-learn.js?1765374987></script>
+<link href=/v1/mermaid/mermaid.css?1765374987 rel=stylesheet>
+<script src=/v1/mermaid/mermaid.js?1765374987></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 </body>
 </html>
