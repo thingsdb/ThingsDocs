@@ -115,11 +115,11 @@ Suppose you want to give your collection a required `name` property that must be
 
 ```thingsdb,syntax_only
 // Modify the 'Root' type:
-// mod_type(Type, Action, PropertyName, PropertyType, DefaultValue)
+// mod_type(Type, Action, PropertyName, PropertyType, InitialValue)
 mod_type('Root', 'add', 'name', 'str', 'My Collection Name');
 
 // The new property is immediately available on the collection root
-.name;  // Returns: "My Collection Name" (the default value)
+.name;  // Returns: "My Collection Name" (the initial value)
 
 // Attempting to change the name to a non-string will result in an error
 .name = 123; // ERROR: Must be a string
