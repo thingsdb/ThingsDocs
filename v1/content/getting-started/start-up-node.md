@@ -34,6 +34,7 @@ The secret is used when adding this node; see [new_node](../../thingsdb-api/new_
 | `--force`               | Force `--init` or `--secret` to remove existing data if exists.                                                                                                                                                      |
 | `--secret SECRET`       | Set one time secret and wait for request to join.                                                                                                                                                                    |
 | `--rebuild`             | Rebuild the node (can only be used when having >1 nodes). A use case is explained in the [next paragraph](#fix-a-corrupted-node).                                                                                    |
+| `--auto-rebuild`        | Auto rebuild the node on failure (only works when having >1 nodes).
 | `--forget-nodes`        | Forget all nodes info and load ThingsDB with a single node. A use case is explained in the [next paragraph](#restore-from-backup).                                                                                   |
 | `-v`, `--version`       | Show version information and exit.                                                                                                                                                                                   |
 | `-l`, `--log-level`     | Set initial log level: _debug_, _info_, _warning_, _error_, _critical_.                                                                                                                                              |
@@ -43,11 +44,12 @@ The secret is used when adding this node; see [new_node](../../thingsdb-api/new_
 ### Flags as environment variable
 Arguments are not supported in all cases. If needed, `--init`, `--secret` and `--deploy` can be replaced with enviroment variable.
 
-Argument   | Environment variable | Description
----------- | -------------------- | -----------
-`--init`   | `THINGSDB_INIT`      | Set to `1` to use `--init`, example: `THINGSDB_INIT=1`.
-`--secret` | `THINGSDB_SECRET`    | Set some secret, example: `THINGSDB_SECRET=pass`.
-`--deploy` | `THINGSDB_DEPLOY`    | Set to `1` to use `--deploy`, example: `THINGSDB_DEPLOY=1`.
+Argument        | Environment variable    | Description
+----------      | --------------------    | -----------
+`--init`        | `THINGSDB_INIT`         | Set to `1` to use `--init`, example: `THINGSDB_INIT=1`.
+`--secret`      | `THINGSDB_SECRET`       | Set some secret, example: `THINGSDB_SECRET=pass`.
+`--deploy`      | `THINGSDB_DEPLOY`       | Set to `1` to use `--deploy`, example: `THINGSDB_DEPLOY=1`.
+`--auto-rebuild`| `THINGSDB_AUTO_REBUILD` | Set to `1` to use `--auto-rebuild`, example: `THINGSDB_AUTO_REBUILD=1`.
 
 
 ## Use cases

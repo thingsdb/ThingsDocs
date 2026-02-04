@@ -34,4 +34,4 @@ Variable | Default | Description
 `THINGSDB_ZONE` | `0` | Start node in this [zone](../../overview/dictionary) number. Zones are used for forwarding queries while in *away* mode.
 
 
-Additionally, the environment variable `THINGSDB_INIT`, `THINGSDB_SECRET` and `THINGSDB_DEPLOY` can be used to replace command line arguments which is [documented here](../start-up-node/#flags-as-environment-variable).
+Additionally, the environment variable `THINGSDB_INIT`, `THINGSDB_SECRET`, `THINGSDB_DEPLOY` and `THINGSDB_AUTO_REBUILD` can be used to replace command line arguments which is [documented here](../start-up-node/#flags-as-environment-variable).
