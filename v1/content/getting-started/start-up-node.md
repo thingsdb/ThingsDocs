@@ -42,7 +42,7 @@ The secret is used when adding this node; see [new_node](../../thingsdb-api/new_
 | `-y`, `--yes`           | Confirm questions with yes.                                                                                                                                                                                          |
 
 ### Flags as environment variable
-Arguments are not supported in all cases. If needed, `--init`, `--secret` and `--deploy` can be replaced with enviroment variable.
+Arguments are not supported in all cases. If needed, `--init`, `--secret`, `--deploy` and `--auto-rebuild` can be replaced with enviroment variable.
 
 Argument        | Environment variable    | Description
 ----------      | --------------------    | -----------
