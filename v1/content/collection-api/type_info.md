@@ -14,8 +14,9 @@ Value | Description
 `fields` | Array with arrays containing two strings, the property name and definition.
 `methods` | Object with methods where the key is the method name and the value an object containing information about the closure.
 `relations` | Object with [relations](../mod_type/rel).
-`hide_id` | Boolean indication if this type has *hide_id_* enabled or not.
 `wrap_only` | Boolean indication if this type has *wrap-only* mode enabled or not.
+`hide_id` | Boolean indication if this type has *hide-id* enabled or not.
+`auto_index` | Boolean indication if this type has *auto-index* enabled or not.
 
 {{% notice info %}}
 Methods information will contain the definition of the attached closure ***only*** when the user has at least `CHANGE` privileges on the collection containing the type.
@@ -76,6 +77,7 @@ type_info('Book');
 
 ```json
 {
+    "auto_index": false,
     "created_at": 1613736754,
     "fields": [
         [
