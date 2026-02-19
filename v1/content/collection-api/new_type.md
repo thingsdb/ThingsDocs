@@ -1,6 +1,6 @@
 ---
 title: "new_type"
-weight: 301
+weight: 302
 ---
 
 Creates a new [Type](../../overview/type). This function *only* creates a new type
@@ -16,20 +16,27 @@ This function generates a [change](../../overview/changes) and requires a call t
 
 ### Function
 
-`new_type(type, [wrap_only, [hide_id]])`
+`new_type(type, [flags])`
 
 ### Arguments
 
 Argument | Type | Description
 -------- | ---- | -----------
 type | string | Name of the Type to be created.
-wrap_only | bool (optional) | When `true` the new type will be created with *wrap-only* mode enabled. Default is `false`.
-hide_id | bool (optional) | When `true` the new type will be created with *hide-id* enabled. Default is `false`. See ["hid" action on mod_type](../mod_type/hid) for more information.
+flags | int (optional) | Flags for the new type (see [flags](#flags) for a detailed description).
 
 {{% notice note %}}
 If **wrap-only** mode is enabled, no typed thing of this type can be
 created nor can the type be used by other type. In **wrap-only** mode the only purpose of the type is to [wrap](../../data-types/thing/wrap) other things.
 {{% /notice %}}
+
+### Flags
+
+Flag        | Description
+----------- | -----------
+`WPO` _(2)_ | When set, the new type will be created with *wrap-only* mode enabled.
+`HID` _(4)_ | When set, the new type will be created with *hide-id* enabled. See ["hid" action on mod_type](../mod_type/hid) for more information.
+`IDX` _(8)_ | When set, *auto-index* will be enabled for the new type. See ["idx" action on mod_type](../mod_type/idx) for more information.
 
 ### Return value
 

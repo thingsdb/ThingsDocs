@@ -1,6 +1,6 @@
 ---
 title: "del_history"
-weight: 352
+weight: 353
 ---
 
 Delete commit records from history based on a given filter.

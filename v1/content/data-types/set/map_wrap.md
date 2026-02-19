@@ -34,7 +34,7 @@ A `list` with the Ids for all the *things* in the original *set*.
 > This code shows an example using ***map_wrap(..)***:
 
 ```thingsdb,json_response
-set_type('_User', {name: 'str'});
+set_type('_User', {name: 'str'}, WPO);
 users = [{name: "Iris", age: 9}];
 
 // returns a list with wrapped things

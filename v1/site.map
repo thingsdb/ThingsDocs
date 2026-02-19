@@ -293,6 +293,7 @@ collection-api
         all
         del
         hid
+        idx
         mod
         rel
         ren

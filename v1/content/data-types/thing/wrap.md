@@ -28,7 +28,7 @@ A [wrapped](../../wtype) thing.
 
 ```thingsdb,json_response
 // Create a Type to return just an email field.
-set_type('_Email', {email: 'str'}, true, true);
+set_type('_Email', {email: 'str'}, WPO|HID);
 
 user = {
     name: 'Jeroen van der Heijden',

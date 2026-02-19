@@ -51,19 +51,19 @@ set_type('Writer', {
 // Create a Type to just return a writer's `name`
 set_type('_WriterName', {
     name: 'any'
-}, /* wrap-only */true, /* hide-id */true);
+}, WPO|HID);
 
 // Create a Type for returning a `title` and author as `_WriterName`
 set_type('_Book', {
     id: '#',
     title: 'any',
     author: '&_WriterName'
-}, /* wrap-only */true);
+}, WPO);
 
 // Create a Type for returning only a set of `books` as `_Book`
 set_type('_AllBooks', {
     books: '&{_Book}'
-}, /* wrap-only */true, /* hide-id */true);
+}, WPO|HID);
 
 // Create two sets, `writers` and `books`, to store all books and writers in
 .writers = set();
@@ -149,9 +149,9 @@ set_type('_AllBooks', {
             name: 'any'
         }
     }]
-}, /* wrap-only */true, /* hide-id */true);  // hide-id will only affect `_AllBooks`,
-                                             // not the nested type `_AllBooks.books`
-                                             // and `_AllBooks.books.author`
+}, WPO|HID);  // hide-id (HID) will only affect `_AllBooks`,
+              // not the nested type `_AllBooks.books`
+              // and `_AllBooks.books.author`
 ```
 
 ### Using Anonymous type
@@ -308,7 +308,7 @@ set_type('Person', {
 set_type('_Pmcount', {
     name: 'any',
     mcount: |p| p.messages.len()
-}, true);
+}, WPO);
 
 // If we now, with the above in place, create a person and wrap the person with _Pmcount:
 p = Person{
@@ -341,7 +341,7 @@ set_type('Person', {
 set_type('_Poverwrite', {
     name: |p| p.name.upper(),
     messages: |p| p.messages.len(),
-}, true);
+}, WPO);
 
 p = Person{
     name: 'iris',
@@ -371,7 +371,7 @@ set_type('Foo', {
 set_type('_Pexample', {
     bar: 'any',
     other: || return {a: {b: 5}}, 2
-}, true);
+}, WPO);
 
 foo = Foo{
     bar: {x: {y: 6}},

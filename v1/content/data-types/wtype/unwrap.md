@@ -23,7 +23,7 @@ Returns the wrapped [thing](../../thing).
 
 ```thingsdb,should_pass
 // Create a Type to return just an email field.
-set_type('_Email', {email: 'str'});
+set_type('_Email', {email: 'str'}, WPO);
 
 // Store a thing
 .joente = {
