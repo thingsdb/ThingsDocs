@@ -6,17 +6,17 @@
 <meta name=description content="ThingsDB documentation">
 <link rel="shortcut icon" href=/v1/images/favicon.ico type=image/x-icon>
 <title>˂Type˃ :: ThingsDB documentation</title>
-<link href=/v1/css/nucleus.css?1770206838 rel=stylesheet>
-<link href=/v1/css/fontawesome-all.min.css?1770206838 rel=stylesheet>
-<link href=/v1/css/hybrid.css?1770206838 rel=stylesheet>
-<link href=/v1/css/featherlight.min.css?1770206838 rel=stylesheet>
-<link href=/v1/css/perfect-scrollbar.min.css?1770206838 rel=stylesheet>
-<link href=/v1/css/auto-complete.css?1770206838 rel=stylesheet>
-<link href=/v1/css/atom-one-dark-reasonable.css?1770206838 rel=stylesheet>
-<link href=/v1/css/theme.css?1770206838 rel=stylesheet>
-<link href=/v1/css/hugo-theme.css?1770206838 rel=stylesheet>
-<link href=/v1/css/theme-mine.css?1770206838 rel=stylesheet>
-<script src=/v1/js/jquery-3.3.1.min.js?1770206838></script>
+<link href=/v1/css/nucleus.css?1771581921 rel=stylesheet>
+<link href=/v1/css/fontawesome-all.min.css?1771581921 rel=stylesheet>
+<link href=/v1/css/hybrid.css?1771581921 rel=stylesheet>
+<link href=/v1/css/featherlight.min.css?1771581921 rel=stylesheet>
+<link href=/v1/css/perfect-scrollbar.min.css?1771581921 rel=stylesheet>
+<link href=/v1/css/auto-complete.css?1771581921 rel=stylesheet>
+<link href=/v1/css/atom-one-dark-reasonable.css?1771581921 rel=stylesheet>
+<link href=/v1/css/theme.css?1771581921 rel=stylesheet>
+<link href=/v1/css/hugo-theme.css?1771581921 rel=stylesheet>
+<link href=/v1/css/theme-mine.css?1771581921 rel=stylesheet>
+<script src=/v1/js/jquery-3.3.1.min.js?1771581921></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}:not(pre)>code+span.copy-to-clipboard{display:none}</style>
 </head>
 <body data-url=/v1/data-types/wtype/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/v1/js/lunr.min.js?1770206838></script>
-<script type=text/javascript src=/v1/js/auto-complete.js?1770206838></script>
+<script type=text/javascript src=/v1/js/lunr.min.js?1771581921></script>
+<script type=text/javascript src=/v1/js/auto-complete.js?1771581921></script>
 <script type=text/javascript>var baseurl="https://docs.thingsdb.io/v1/"</script>
-<script type=text/javascript src=/v1/js/search.js?1770206838></script>
+<script type=text/javascript src=/v1/js/search.js?1771581921></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -1569,6 +1569,11 @@ del
 hid
 </a>
 </li>
+<li data-nav-id=/v1/collection-api/mod_type/idx/ title=idx class=dd-item>
+<a href=/v1/collection-api/mod_type/idx/>
+idx
+</a>
+</li>
 <li data-nav-id=/v1/collection-api/mod_type/mod/ title=mod class=dd-item>
 <a href=/v1/collection-api/mod_type/mod/>
 mod
@@ -2365,19 +2370,19 @@ set_type('Writer', {
 // Create a Type to just return a writer's `name`
 set_type('_WriterName', {
     name: 'any'
-}, /* wrap-only */true, /* hide-id */true);
+}, WPO|HID);
 
 // Create a Type for returning a `title` and author as `_WriterName`
 set_type('_Book', {
     id: '#',
     title: 'any',
     author: '&amp;_WriterName'
-}, /* wrap-only */true);
+}, WPO);
 
 // Create a Type for returning only a set of `books` as `_Book`
 set_type('_AllBooks', {
     books: '&amp;{_Book}'
-}, /* wrap-only */true, /* hide-id */true);
+}, WPO|HID);
 
 // Create two sets, `writers` and `books`, to store all books and writers in
 .writers = set();
@@ -2454,9 +2459,9 @@ set_type('_AllBooks', {
             name: 'any'
         }
     }]
-}, /* wrap-only */true, /* hide-id */true);  // hide-id will only affect `_AllBooks`,
-                                             // not the nested type `_AllBooks.books`
-                                             // and `_AllBooks.books.author`
+}, WPO|HID);  // hide-id (HID) will only affect `_AllBooks`,
+              // not the nested type `_AllBooks.books`
+              // and `_AllBooks.books.author`
 </code></pre><h3 id=using-anonymous-type>Using Anonymous type</h3>
 <p>Version 1.8.2 of ThingsDB has introduces the <a href=../anomyous>anonymous</a> type which can be used without defining a wrap-only type.</p>
 <pre tabindex=0><code class=language-thingsdb,should_pass data-lang=thingsdb,should_pass>.wrap(&amp;{
@@ -2571,7 +2576,7 @@ A good example might be the count for some messages.</p>
 set_type('_Pmcount', {
     name: 'any',
     mcount: |p| p.messages.len()
-}, true);
+}, WPO);
 
 // If we now, with the above in place, create a person and wrap the person with _Pmcount:
 p = Person{
@@ -2597,7 +2602,7 @@ p.wrap('_Pmcount');
 set_type('_Poverwrite', {
     name: |p| p.name.upper(),
     messages: |p| p.messages.len(),
-}, true);
+}, WPO);
 
 p = Person{
     name: 'iris',
@@ -2620,7 +2625,7 @@ p.wrap('_Poverwrite');
 set_type('_Pexample', {
     bar: 'any',
     other: || return {a: {b: 5}}, 2
-}, true);
+}, WPO);
 
 foo = Foo{
     bar: {x: {y: 6}},
@@ -2647,18 +2652,18 @@ foo.wrap(_Pexample); // Return one deep, note that `other` has it's own depth
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/v1/js/clipboard.min.js?1770206838></script>
-<script src=/v1/js/perfect-scrollbar.min.js?1770206838></script>
-<script src=/v1/js/perfect-scrollbar.jquery.min.js?1770206838></script>
-<script src=/v1/js/jquery.sticky.js?1770206838></script>
-<script src=/v1/js/featherlight.min.js?1770206838></script>
-<script src=/v1/js/highlight.pack.js?1770206838></script>
+<script src=/v1/js/clipboard.min.js?1771581922></script>
+<script src=/v1/js/perfect-scrollbar.min.js?1771581922></script>
+<script src=/v1/js/perfect-scrollbar.jquery.min.js?1771581922></script>
+<script src=/v1/js/jquery.sticky.js?1771581922></script>
+<script src=/v1/js/featherlight.min.js?1771581922></script>
+<script src=/v1/js/highlight.pack.js?1771581922></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=/v1/js/modernizr.custom-3.6.0.js?1770206838></script>
-<script src=/v1/js/learn.js?1770206838></script>
-<script src=/v1/js/hugo-learn.js?1770206838></script>
-<link href=/v1/mermaid/mermaid.css?1770206838 rel=stylesheet>
-<script src=/v1/mermaid/mermaid.js?1770206838></script>
+<script src=/v1/js/modernizr.custom-3.6.0.js?1771581922></script>
+<script src=/v1/js/learn.js?1771581922></script>
+<script src=/v1/js/hugo-learn.js?1771581922></script>
+<link href=/v1/mermaid/mermaid.css?1771581922 rel=stylesheet>
+<script src=/v1/mermaid/mermaid.js?1771581922></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 </body>
 </html>

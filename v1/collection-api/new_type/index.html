@@ -6,17 +6,17 @@
 <meta name=description content="ThingsDB documentation">
 <link rel="shortcut icon" href=/v1/images/favicon.ico type=image/x-icon>
 <title>new_type :: ThingsDB documentation</title>
-<link href=/v1/css/nucleus.css?1770206832 rel=stylesheet>
-<link href=/v1/css/fontawesome-all.min.css?1770206832 rel=stylesheet>
-<link href=/v1/css/hybrid.css?1770206832 rel=stylesheet>
-<link href=/v1/css/featherlight.min.css?1770206832 rel=stylesheet>
-<link href=/v1/css/perfect-scrollbar.min.css?1770206832 rel=stylesheet>
-<link href=/v1/css/auto-complete.css?1770206832 rel=stylesheet>
-<link href=/v1/css/atom-one-dark-reasonable.css?1770206832 rel=stylesheet>
-<link href=/v1/css/theme.css?1770206832 rel=stylesheet>
-<link href=/v1/css/hugo-theme.css?1770206832 rel=stylesheet>
-<link href=/v1/css/theme-mine.css?1770206832 rel=stylesheet>
-<script src=/v1/js/jquery-3.3.1.min.js?1770206832></script>
+<link href=/v1/css/nucleus.css?1771581916 rel=stylesheet>
+<link href=/v1/css/fontawesome-all.min.css?1771581916 rel=stylesheet>
+<link href=/v1/css/hybrid.css?1771581916 rel=stylesheet>
+<link href=/v1/css/featherlight.min.css?1771581916 rel=stylesheet>
+<link href=/v1/css/perfect-scrollbar.min.css?1771581916 rel=stylesheet>
+<link href=/v1/css/auto-complete.css?1771581916 rel=stylesheet>
+<link href=/v1/css/atom-one-dark-reasonable.css?1771581916 rel=stylesheet>
+<link href=/v1/css/theme.css?1771581916 rel=stylesheet>
+<link href=/v1/css/hugo-theme.css?1771581916 rel=stylesheet>
+<link href=/v1/css/theme-mine.css?1771581916 rel=stylesheet>
+<script src=/v1/js/jquery-3.3.1.min.js?1771581916></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}:not(pre)>code+span.copy-to-clipboard{display:none}</style>
 </head>
 <body data-url=/v1/collection-api/new_type/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/v1/js/lunr.min.js?1770206832></script>
-<script type=text/javascript src=/v1/js/auto-complete.js?1770206832></script>
+<script type=text/javascript src=/v1/js/lunr.min.js?1771581916></script>
+<script type=text/javascript src=/v1/js/auto-complete.js?1771581916></script>
 <script type=text/javascript>var baseurl="https://docs.thingsdb.io/v1/"</script>
-<script type=text/javascript src=/v1/js/search.js?1770206832></script>
+<script type=text/javascript src=/v1/js/search.js?1771581916></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -1567,6 +1567,11 @@ del
 hid
 </a>
 </li>
+<li data-nav-id=/v1/collection-api/mod_type/idx/ title=idx class=dd-item>
+<a href=/v1/collection-api/mod_type/idx/>
+idx
+</a>
+</li>
 <li data-nav-id=/v1/collection-api/mod_type/mod/ title=mod class=dd-item>
 <a href=/v1/collection-api/mod_type/mod/>
 mod
@@ -2289,6 +2294,7 @@ zero_div_err
 <ul>
 <li><a href=#function>Function</a></li>
 <li><a href=#arguments>Arguments</a></li>
+<li><a href=#flags>Flags</a></li>
 <li><a href=#return-value>Return value</a></li>
 <li><a href=#example>Example</a></li>
 </ul>
@@ -2313,7 +2319,7 @@ you want to cross reference two types so you want both type to exists before cal
 </div>
 <p>This function generates a <a href=../../overview/changes>change</a> and requires a call to <a href=../commit>commit()</a> if <a href=../../thingsdb-api/set_history>commit history</a> is enabled for the scope.</p>
 <h3 id=function>Function</h3>
-<p><code>new_type(type, [wrap_only, [hide_id]])</code></p>
+<p><code>new_type(type, [flags])</code></p>
 <h3 id=arguments>Arguments</h3>
 <table>
 <thead>
@@ -2330,20 +2336,38 @@ you want to cross reference two types so you want both type to exists before cal
 <td>Name of the Type to be created.</td>
 </tr>
 <tr>
-<td>wrap_only</td>
-<td>bool (optional)</td>
-<td>When <code>true</code> the new type will be created with <em>wrap-only</em> mode enabled. Default is <code>false</code>.</td>
-</tr>
-<tr>
-<td>hide_id</td>
-<td>bool (optional)</td>
-<td>When <code>true</code> the new type will be created with <em>hide-id</em> enabled. Default is <code>false</code>. See <a href=../mod_type/hid>&ldquo;hid&rdquo; action on mod_type</a> for more information.</td>
+<td>flags</td>
+<td>int (optional)</td>
+<td>Flags for the new type (see <a href=#flags>flags</a> for a detailed description).</td>
 </tr>
 </tbody>
 </table>
 <div class="notices note"><p>If <strong>wrap-only</strong> mode is enabled, no typed thing of this type can be
 created nor can the type be used by other type. In <strong>wrap-only</strong> mode the only purpose of the type is to <a href=../../data-types/thing/wrap>wrap</a> other things.</p>
 </div>
+<h3 id=flags>Flags</h3>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>WPO</code> <em>(2)</em></td>
+<td>When set, the new type will be created with <em>wrap-only</em> mode enabled.</td>
+</tr>
+<tr>
+<td><code>HID</code> <em>(4)</em></td>
+<td>When set, the new type will be created with <em>hide-id</em> enabled. See <a href=../mod_type/hid>&ldquo;hid&rdquo; action on mod_type</a> for more information.</td>
+</tr>
+<tr>
+<td><code>IDX</code> <em>(8)</em></td>
+<td>When set, <em>auto-index</em> will be enabled for the new type. See <a href=../mod_type/idx>&ldquo;idx&rdquo; action on mod_type</a> for more information.</td>
+</tr>
+</tbody>
+</table>
 <h3 id=return-value>Return value</h3>
 <p>The name of the newly created Type.</p>
 <h3 id=example>Example</h3>
@@ -2403,18 +2427,18 @@ types_info();
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/v1/js/clipboard.min.js?1770206832></script>
-<script src=/v1/js/perfect-scrollbar.min.js?1770206832></script>
-<script src=/v1/js/perfect-scrollbar.jquery.min.js?1770206832></script>
-<script src=/v1/js/jquery.sticky.js?1770206832></script>
-<script src=/v1/js/featherlight.min.js?1770206832></script>
-<script src=/v1/js/highlight.pack.js?1770206832></script>
+<script src=/v1/js/clipboard.min.js?1771581916></script>
+<script src=/v1/js/perfect-scrollbar.min.js?1771581916></script>
+<script src=/v1/js/perfect-scrollbar.jquery.min.js?1771581916></script>
+<script src=/v1/js/jquery.sticky.js?1771581916></script>
+<script src=/v1/js/featherlight.min.js?1771581916></script>
+<script src=/v1/js/highlight.pack.js?1771581916></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=/v1/js/modernizr.custom-3.6.0.js?1770206832></script>
-<script src=/v1/js/learn.js?1770206832></script>
-<script src=/v1/js/hugo-learn.js?1770206832></script>
-<link href=/v1/mermaid/mermaid.css?1770206832 rel=stylesheet>
-<script src=/v1/mermaid/mermaid.js?1770206832></script>
+<script src=/v1/js/modernizr.custom-3.6.0.js?1771581916></script>
+<script src=/v1/js/learn.js?1771581916></script>
+<script src=/v1/js/hugo-learn.js?1771581916></script>
+<link href=/v1/mermaid/mermaid.css?1771581916 rel=stylesheet>
+<script src=/v1/mermaid/mermaid.js?1771581916></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 </body>
 </html>

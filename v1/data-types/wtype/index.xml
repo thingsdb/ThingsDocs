@@ -19,4 +19,4 @@ Function &amp;lt;Type&amp;gt;.unwrap()
 Arguments None
 Return value Returns the wrapped thing.
 Example This code shows an example using unwrap():
-// Create a Type to return just an email field. set_type('_Email', {email: 'str'}); // Store a thing .joente = { name: 'Jeroen van der Heijden', email: 'jeroen@cesbit.com', gender: 'male', }; // Wrap `joente` with the `_Email` type. .w = .joente.wrap('_Email'); // Return the original `thing` .w.unwrap(); Example return value in JSON format</description></item></channel></rss>
+// Create a Type to return just an email field. set_type('_Email', {email: 'str'}, WPO); // Store a thing .joente = { name: 'Jeroen van der Heijden', email: 'jeroen@cesbit.com', gender: 'male', }; // Wrap `joente` with the `_Email` type. .w = .joente.wrap('_Email'); // Return the original `thing` .</description></item></channel></rss>

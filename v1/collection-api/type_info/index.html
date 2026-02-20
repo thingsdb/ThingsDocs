@@ -6,17 +6,17 @@
 <meta name=description content="ThingsDB documentation">
 <link rel="shortcut icon" href=/v1/images/favicon.ico type=image/x-icon>
 <title>type_info :: ThingsDB documentation</title>
-<link href=/v1/css/nucleus.css?1770206832 rel=stylesheet>
-<link href=/v1/css/fontawesome-all.min.css?1770206832 rel=stylesheet>
-<link href=/v1/css/hybrid.css?1770206832 rel=stylesheet>
-<link href=/v1/css/featherlight.min.css?1770206832 rel=stylesheet>
-<link href=/v1/css/perfect-scrollbar.min.css?1770206832 rel=stylesheet>
-<link href=/v1/css/auto-complete.css?1770206832 rel=stylesheet>
-<link href=/v1/css/atom-one-dark-reasonable.css?1770206832 rel=stylesheet>
-<link href=/v1/css/theme.css?1770206832 rel=stylesheet>
-<link href=/v1/css/hugo-theme.css?1770206832 rel=stylesheet>
-<link href=/v1/css/theme-mine.css?1770206832 rel=stylesheet>
-<script src=/v1/js/jquery-3.3.1.min.js?1770206832></script>
+<link href=/v1/css/nucleus.css?1771581916 rel=stylesheet>
+<link href=/v1/css/fontawesome-all.min.css?1771581916 rel=stylesheet>
+<link href=/v1/css/hybrid.css?1771581916 rel=stylesheet>
+<link href=/v1/css/featherlight.min.css?1771581916 rel=stylesheet>
+<link href=/v1/css/perfect-scrollbar.min.css?1771581916 rel=stylesheet>
+<link href=/v1/css/auto-complete.css?1771581916 rel=stylesheet>
+<link href=/v1/css/atom-one-dark-reasonable.css?1771581916 rel=stylesheet>
+<link href=/v1/css/theme.css?1771581916 rel=stylesheet>
+<link href=/v1/css/hugo-theme.css?1771581916 rel=stylesheet>
+<link href=/v1/css/theme-mine.css?1771581916 rel=stylesheet>
+<script src=/v1/js/jquery-3.3.1.min.js?1771581916></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}:not(pre)>code+span.copy-to-clipboard{display:none}</style>
 </head>
 <body data-url=/v1/collection-api/type_info/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/v1/js/lunr.min.js?1770206832></script>
-<script type=text/javascript src=/v1/js/auto-complete.js?1770206832></script>
+<script type=text/javascript src=/v1/js/lunr.min.js?1771581916></script>
+<script type=text/javascript src=/v1/js/auto-complete.js?1771581916></script>
 <script type=text/javascript>var baseurl="https://docs.thingsdb.io/v1/"</script>
-<script type=text/javascript src=/v1/js/search.js?1770206832></script>
+<script type=text/javascript src=/v1/js/search.js?1771581916></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -1567,6 +1567,11 @@ del
 hid
 </a>
 </li>
+<li data-nav-id=/v1/collection-api/mod_type/idx/ title=idx class=dd-item>
+<a href=/v1/collection-api/mod_type/idx/>
+idx
+</a>
+</li>
 <li data-nav-id=/v1/collection-api/mod_type/mod/ title=mod class=dd-item>
 <a href=/v1/collection-api/mod_type/mod/>
 mod
@@ -2343,12 +2348,16 @@ type_info
 <td>Object with <a href=../mod_type/rel>relations</a>.</td>
 </tr>
 <tr>
-<td><code>hide_id</code></td>
-<td>Boolean indication if this type has <em>hide_id_</em> enabled or not.</td>
-</tr>
-<tr>
 <td><code>wrap_only</code></td>
 <td>Boolean indication if this type has <em>wrap-only</em> mode enabled or not.</td>
+</tr>
+<tr>
+<td><code>hide_id</code></td>
+<td>Boolean indication if this type has <em>hide-id</em> enabled or not.</td>
+</tr>
+<tr>
+<td><code>auto_index</code></td>
+<td>Boolean indication if this type has <em>auto-index</em> enabled or not.</td>
 </tr>
 </tbody>
 </table>
@@ -2410,6 +2419,7 @@ type_info('Book');
 <p>Example return value in JSON format</p>
 </blockquote>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+    <span style=color:#f92672>&#34;auto_index&#34;</span>: <span style=color:#66d9ef>false</span>,
     <span style=color:#f92672>&#34;created_at&#34;</span>: <span style=color:#ae81ff>1613736754</span>,
     <span style=color:#f92672>&#34;fields&#34;</span>: [
         [
@@ -2465,18 +2475,18 @@ type_info('Book');
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/v1/js/clipboard.min.js?1770206832></script>
-<script src=/v1/js/perfect-scrollbar.min.js?1770206832></script>
-<script src=/v1/js/perfect-scrollbar.jquery.min.js?1770206832></script>
-<script src=/v1/js/jquery.sticky.js?1770206832></script>
-<script src=/v1/js/featherlight.min.js?1770206832></script>
-<script src=/v1/js/highlight.pack.js?1770206832></script>
+<script src=/v1/js/clipboard.min.js?1771581916></script>
+<script src=/v1/js/perfect-scrollbar.min.js?1771581916></script>
+<script src=/v1/js/perfect-scrollbar.jquery.min.js?1771581916></script>
+<script src=/v1/js/jquery.sticky.js?1771581916></script>
+<script src=/v1/js/featherlight.min.js?1771581916></script>
+<script src=/v1/js/highlight.pack.js?1771581916></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=/v1/js/modernizr.custom-3.6.0.js?1770206832></script>
-<script src=/v1/js/learn.js?1770206832></script>
-<script src=/v1/js/hugo-learn.js?1770206832></script>
-<link href=/v1/mermaid/mermaid.css?1770206832 rel=stylesheet>
-<script src=/v1/mermaid/mermaid.js?1770206832></script>
+<script src=/v1/js/modernizr.custom-3.6.0.js?1771581916></script>
+<script src=/v1/js/learn.js?1771581916></script>
+<script src=/v1/js/hugo-learn.js?1771581916></script>
+<link href=/v1/mermaid/mermaid.css?1771581916 rel=stylesheet>
+<script src=/v1/mermaid/mermaid.js?1771581916></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 </body>
 </html>

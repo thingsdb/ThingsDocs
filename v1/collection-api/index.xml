@@ -169,7 +169,7 @@ This function generates a change and requires a call to commit() if commit histo
 Function set_enum(enum, members)
 Arguments Argument Type Description enum str The name of the enumerator type to create. members thing Thing containing all the members to be set (or enum methods). Return value The value nil.</description></item><item><title>set_type</title><link>https://docs.thingsdb.io/v1/collection-api/set_type/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/set_type/</guid><description>Defines the properties of a Type. Function set_type works only on a new Type. Use mod_type() if you want to change an existing Type, see mod_type.
 This function generates a change and requires a call to commit() if commit history is enabled for the scope.
-Function set_type(type, value, [wrap_only, [hide_id]])
+Function set_type(type, value, [flags])
 Arguments Argument Type Description type str The name of the Type where the properties have to be set.</description></item><item><title>str</title><link>https://docs.thingsdb.io/v1/collection-api/str/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/str/</guid><description>Convert a value to a string. If no value is given, an empty string &amp;quot;&amp;quot; is returned.
 When bytes are converted to str then the data will be checked if it contains valid UTF-8 characters. If this is not the case, a value_err() will be raised.
 This function does not generate a change.
@@ -207,6 +207,7 @@ Function type(value)
 Arguments Argument Type Description value any (required) The value to return the type name for. Return value Type name of the given value.
 Example Returns the type name of a given value:
 [ type( nil ), type( 42 ), type( 3.14 ), ]; Example return value in JSON format</description></item><item><title>type_all</title><link>https://docs.thingsdb.io/v1/collection-api/type_all/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/type_all/</guid><description>Returns a set with all instances of a given Type within a collection.
+To optimize performance for frequent type_all(..) requests, enable auto-index. This caches type metadata, resulting in significantly faster response times.
 This function does not generate a change.
 Function type_all(type)
 Arguments Argument Type Description type str The name of the Type for which the instances must be returned. Return value A set with all occurrences of the given Type within a collection.</description></item><item><title>type_assert</title><link>https://docs.thingsdb.io/v1/collection-api/type_assert/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/type_assert/</guid><description>Raises a type_err() if the specified expression evaluates to false.
