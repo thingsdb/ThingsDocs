@@ -43,6 +43,8 @@ Function | Description
 [map_id](../list/map_id) | Return a new `list` with the Ids for all the *things* in the original list.
 [map_type](../list/map_type) | Return a new `list` with each item of the original list converted to a *typed-thing* of the given Type.
 [map_wrap](../list/map_wrap) | Return a new `list` with the Ids for all the *things* in the original list.
+[max](../list/max) | Returns the maximum value from all values in the list.
+[min](../list/min) | Returns the minumum value from all values in the list.
 [reduce](../list/reduce) | Execute a reducer function on each item, resulting in a single output value.
 [reverse](../list/reverse) | Return a new list with the items in reverse order.
 [some](../list/some) | Check if at least one item passes a given test.
