@@ -339,7 +339,21 @@ Function array.sort([closure, [reverse]])
 Arguments Argument Type Description callback closure (optional) Closure to execute on each value, which is used to determine how the list should be sorted. reverse bool (optional) Determines the order of the returned list. The reverse argument cannot be used together with a closure which takes two arguments.</description></item><item><title>splice</title><link>https://docs.thingsdb.io/v1/data-types/list/splice/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/list/splice/</guid><description>The splice() function changes a list by removing or replacing existing items and/or adding new items.
 This function generates a change (except when called on a variable).
 Function list.splice(start, [delete_count, [item1, item2, ..., itemX]]))`
-Arguments Argument Type Description start int (required) Start index in the list. If it is negative, it will start that many items from the end of the list. delete_count int (optional) Number of item to remove from thestart of the list.</description></item><item><title>sum</title><link>https://docs.thingsdb.io/v1/data-types/list/sum/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/list/sum/</guid><description>Returns the sum of each value in a list. A closure might be given which can be used as a shortcut for .map().sum().
+Arguments Argument Type Description start int (required) Start index in the list. If it is negative, it will start that many items from the end of the list. delete_count int (optional) Number of item to remove from thestart of the list.</description></item><item><title>max</title><link>https://docs.thingsdb.io/v1/data-types/list/max/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/list/max/</guid><description>Returns the maximum value from a list.
+This function does not generate a change.
+Function array.max()
+Arguments None
+Return value The maximum value of all values in a list. A lookup_err() is raised if the list is empty.
+Example This code shows an example using max():
+[1, 4, 2, 9, 7, 8, 9, 3, 1].max(); Return value in JSON format
+9</description></item><item><title>min</title><link>https://docs.thingsdb.io/v1/data-types/list/min/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/list/min/</guid><description>Returns the minimum value from a list.
+This function does not generate a change.
+Function array.min()
+Arguments None
+Return value The minimum value of all values in a list. A lookup_err() is raised if the list is empty.
+Example This code shows an example using min():
+[&amp;quot;lemon&amp;quot;, &amp;quot;apple&amp;quot;, &amp;quot;cherry&amp;quot;, &amp;quot;orange&amp;quot;].min(); Return value in JSON format
+&amp;#34;apple&amp;#34;</description></item><item><title>sum</title><link>https://docs.thingsdb.io/v1/data-types/list/sum/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/list/sum/</guid><description>Returns the sum of each value in a list. A closure might be given which can be used as a shortcut for .map().sum().
 This function does not generate a change.
 Function array.sum([callback])
 Arguments Argument Type Description callback closure (optional) Use the callback on each element in the list and sum the return values. Return value The sum of all values.</description></item><item><title>unique</title><link>https://docs.thingsdb.io/v1/data-types/list/unique/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/list/unique/</guid><description>This function returns a new list where each item in the list is unique. If duplicated items are found, the first item will be retained.
