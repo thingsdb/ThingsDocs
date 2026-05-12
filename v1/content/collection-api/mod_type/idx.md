@@ -16,7 +16,7 @@ When *auto-index* is enabled, this type will use an internal index for [type_all
 Argument | Type | Description
 -------- | ---- | -----------
 type | str | Name of the Type where to set auto-index on or off.
-`'idx'` | str | Passing this argument will result in a *set-auto-index action.
+`'idx'` | str | Passing this argument will result in a *set auto-index* action.
 mode | bool | Enable or disable auto-index.
 
 ### Return value
