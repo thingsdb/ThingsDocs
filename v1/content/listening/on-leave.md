@@ -3,9 +3,9 @@ title: "on-leave"
 weight: 406
 ---
 
-This event will be pushed when a [room](../../data-types/room) is joined.
+This event will be pushed when a [room](../../data-types/room) has left.
 
-> Example *on-join* event in JSON format:
+> Example *on-leave* event in JSON format:
 
 ```json
 {
