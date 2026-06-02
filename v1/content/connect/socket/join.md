@@ -58,8 +58,8 @@ A few seconds (or less) later, you will receive a [on-join](../../../listening/o
 
 See the [listening documentation](../../../listening) for more information.
 
-> Responding *{id: 17}* package for room 17 which was joined in our example:
+> Responding *{scope: "@collection:stuff", id: 17}* package for room 17 which was joined in our example:
 
 ```none
-\x05\x00\x00\x00\xff\xff\x06\xf9\x81\xa2id\x11
+\x1d\x00\x00\x00\xff\xff\x06\xf9\x82\xa5scope\xb1@collection:stuff\xa2id\x11
 ```

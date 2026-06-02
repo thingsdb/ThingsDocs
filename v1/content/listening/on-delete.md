@@ -14,6 +14,7 @@ In this case you have to wait until **garbage collection** has cleaned the *thin
 
 ```json
 {
+    "scope": "@collection:stuff",
     "id": 42
 }
 ```

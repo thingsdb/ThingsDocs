@@ -42,10 +42,10 @@ Now we create the header. For this example we just use Id 0:
 - Request Leave package type (39) `\x27`
 - Inverse type check bit (249) `0xd9`
 
-> Sending the *Join* package
+> Sending the *Leave* package
 
 ```none
-\x0d\x00\x00\x00\x00\x00\x27\xd9\x93\xa7//stuff\x11\xcd\x01\xc8
+\x0d\x00\x00\x00\x00\x00\x27\xd8\x93\xa7//stuff\x11\xcd\x01\xc8
 ```
 
 > Responding *[17, nil]* package (room Id 17 is found, the second (456) was not)
@@ -58,8 +58,8 @@ A few seconds (or less) later, you will receive a [on-leave](../../../listening/
 
 See the [listening documentation](../../../listening) for more information.
 
-> Responding *{id: 17}* package for room 17 which was joined in our example:
+> Responding *{scope: "@collection:stuff", id: 17}* package for room 17 which was joined in our example:
 
 ```none
-\x05\x00\x00\x00\xff\xff\x07\xf9\x81\xa2id\x11
+\x1d\x00\x00\x00\xff\xff\x07\xf8\x82\xa5scope\xb1@collection:stuff\xa2id\x11
 ```

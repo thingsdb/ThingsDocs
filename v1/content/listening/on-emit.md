@@ -11,6 +11,7 @@ The event contains the room Id, a *change* name and arguments (`args`) as an arr
 
 ```json
 {
+    "scope": "@collection:stuff",
     "id": 123,
     "event": "my-event",
     "args": []
