@@ -11,7 +11,7 @@ Variable | Default | Description
 `THINGSDB_BIND_CLIENT_ADDR` | `127.0.0.1` | Bind client connections to this address. This variable both allows an IPv4 address like `0.0.0.0` or IPv6 like `::`.
 `THINGSDB_BIND_NODE_ADDR` | `127.0.0.1` | Bind node connections to this address. This variable both allows an IPv4 address like `0.0.0.0` or IPv6 like `::`.
 `THINGSDB_CACHE_EXPIRATION_TIME` | `900` | Cached queries which are not used within this expiration time *(in seconds)* will be removed from the cache while the node is in *away* mode. A value of `0` will disable the query cache.
-`THINGSDB_GCLOUD_KEY_FILE` | *disabled* | Service Authentication file *(e.g service_account.json)* used for creating backups in Google Cloud Storage. Support for Google Cloud Storage will be disabled if the value is not configured. Note that `gcloud` and `gsutil` must be installed to use this service.
+`THINGSDB_GCLOUD_KEY_FILE` | *disabled* | Service Authentication file *(e.g service_account.json)* used for creating backups in Google Cloud Storage. Support for Google Cloud Storage will be disabled if the value is not configured. Note that `gcloud` must be installed to use this service.
 `THINGSDB_HTTP_API_PORT` | *disabled* | TCP port for listening to HTTP API calls _(`9210` is commonly used when enabled)_.
 `THINGSDB_HTTP_STATUS_PORT` | *disabled* | TCP port for listening to health and readiness checks _(`8080` is commonly used when enabled)_..
 `THINGSDB_IP_SUPPORT` | `ALL` | Listen to IPv4 (`IPV4ONLY`), IPv6 (`IPV6ONLY`) or both (`ALL`) addresses.
