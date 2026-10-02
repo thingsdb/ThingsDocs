@@ -1,6 +1,6 @@
 ---
 title: "dict"
-weight: 62
+weight: 63
 ---
 
 A dictionary is similar to a [thing](../thing), but with key differences. Unlike a thing, a dictionary has no ID and accepts keys of type [int](../int), [uuid](../uuid) or [str](../str) without restrictions _(e.g. property `"#"` is reserved and cannot be used on a thing, but is valid as a dict key)_.

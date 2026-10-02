@@ -1,6 +1,6 @@
 ---
 title: "name"
-weight: 120
+weight: 124
 ---
 
 Returns the name of the room or [nil](../../nil) if the room is nameless.

@@ -1,6 +1,6 @@
 ---
 title: "each"
-weight: 127
+weight: 131
 ---
 
 Iterate over items in a [set](..).

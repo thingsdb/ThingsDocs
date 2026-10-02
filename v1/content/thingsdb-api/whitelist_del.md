@@ -1,6 +1,6 @@
 ---
 title: "whitelist_del"
-weight: 388
+weight: 395
 ---
 
 Deletes an existing rule from a whitelist or removes all rules, effectively disabling the whitelist.

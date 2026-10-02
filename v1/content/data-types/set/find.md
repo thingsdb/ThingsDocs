@@ -1,6 +1,6 @@
 ---
 title: "find"
-weight: 130
+weight: 134
 ---
 
 This function returns the value of the first item in the [set](..) that passes the test.

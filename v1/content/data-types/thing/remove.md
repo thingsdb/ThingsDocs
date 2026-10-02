@@ -1,6 +1,6 @@
 ---
 title: "remove"
-weight: 182
+weight: 186
 ---
 
 This function removes all properties from a [thing](../../thing) that satisfies the callback function.

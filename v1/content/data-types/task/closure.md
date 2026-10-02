@@ -1,6 +1,6 @@
 ---
 title: "closure"
-weight: 160
+weight: 164
 ---
 
 Get the closure of a task.

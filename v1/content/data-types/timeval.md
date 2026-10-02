@@ -1,6 +1,6 @@
 ---
 title: "timeval"
-weight: 192
+weight: 196
 ---
 
 Type `timeval` is exactly the same as type [datetime](../datetime). The only difference is the

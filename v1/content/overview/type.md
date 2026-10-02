@@ -55,6 +55,7 @@ definition | default | description
 `'url<..>'` | *depends* | requires type [str](../../data-types/str) and the value *must* contain a URL _(empty string is not allowed and a [default URL](#use-condition-to-set-a-default-value) must be given)_.
 `'utf8'` | `""` | requires type [str](../../data-types/str) and the value *must* contain valid UTF-8 characters.
 `'utf8<..>'` | *depends* | requires type [str](../../data-types/str), the value *must* contain valid UTF-8 characters and with a certain length *(see [length condition](#length-condition) and [default value](#use-condition-to-set-a-default-value))*
+`'uuid'` | `uuid()` | requires type [uuid](../../data-types/uuid). *(defaults with a new UUID (version 7) value)*
 `'{}'` | `set()` | requires a [set](../../data-types/set).
 `'{T}'` | `set()` | requires a [set](../../data-types/set) where each element in the set must be of type `T` *(see [restrict items](#restrict-items))*.
 

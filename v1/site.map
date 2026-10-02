@@ -41,6 +41,7 @@ overview
 data-types
     anomyous
     bool
+    uuid
     bytes
         len
     closure
@@ -59,6 +60,7 @@ data-types
     enum
         name
         value
+    dict
     error
         code
         msg
@@ -104,6 +106,8 @@ data-types
         some
         sort
         splice
+        max
+        min
         sum
         unique
         unshift
@@ -239,6 +243,7 @@ collection-api
         is_bytes
         is_closure
         is_datetime
+        is_dict
         is_email
         is_enum
         is_err
@@ -264,6 +269,7 @@ collection-api
         is_tuple
         is_url
         is_utf8
+        is_uuid
     json_dump
     json_load
     list
@@ -330,6 +336,7 @@ collection-api
     type_count
     type_info
     types_info
+    uuid
     wse
 node-api
     backup_info
