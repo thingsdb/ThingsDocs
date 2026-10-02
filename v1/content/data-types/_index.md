@@ -15,6 +15,7 @@ type | Description
 [bytes](./bytes) | Byte sequence.
 [closure](./closure) | Closures can be used as functions or to consume items from a `thing`, `list`, `tuple` or `set`.
 [datetime](./datetime) | Type `datetime` can be used to store a value with date and time information.
+[dict](./dict) | Dictionary type for storing key/value pairs.
 [enum](./enum) | Enumerators.
 [error](./error) | An object containing information about an error.
 [float](./float) | Floating point type.

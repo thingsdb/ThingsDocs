@@ -19,7 +19,7 @@ This function does *not* generate a [change](../../overview/changes).
 
 ### Function
 
-`int(value)`
+`int([value])`
 
 ### Arguments
 

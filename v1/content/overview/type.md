@@ -14,47 +14,49 @@ When creating a *[typed](../../data-types/typed)* thing, all defined properties 
 
 definition | default | description
 ---------- | ------- | -----------
-`'str'` | `""` | requires type [str](../../data-types/str) (values of type [str](../../data-types/str) *should* contain valid UTF-8 characters).
-`'str<..>'` | *depends* | requires type [str](../../data-types/str) with a certain length *(see [length condition](#length-condition) and [default value](#use-condition-to-set-a-default-value))*
+`'#'` | *depends* | Not a real property, see [named Id](#named-id).
 `'/pattern/'` | *depends* | requires type [str](../../data-types/str) with a match to a specified pattern *(see [pattern condition](#pattern-condition))*.
-`'utf8'` | `""` | requires type [str](../../data-types/str) and the value *must* contain valid UTF-8 characters.
-`'utf8<..>'` | *depends* | requires type [str](../../data-types/str), the value *must* contain valid UTF-8 characters and with a certain length *(see [length condition](#length-condition) and [default value](#use-condition-to-set-a-default-value))*
-`'raw'` | `""` | requires type [str](../../data-types/str) *or* [bytes](../../data-types/bytes).
-`'bytes'` | `bytes()` | requires type [bytes](../../data-types/bytes).
-`'bool'` | `false` | requires type [bool](../../data-types/bool).
-`'bool<..>'` | *depends* | like `bool` but with an custom default, for example: `bool<true>`.
-`'int'` | `0` | requires type [int](../../data-types/int).
-`'int<..>'` | *depends* | requires type [int](../../data-types/int) within a given range *(see [range condition](#range-condition) and [default value](#use-condition-to-set-a-default-value))*.
-`'uint'` | `0` | requires a *non-negative* integer (type [int](../../data-types/int), `>= 0`).
-`'pint'` | `1` | requires a *positive* integer (type [int](../../data-types/int), `> 0`).
-`'nint'` | `-1` | requires a *negative* integer (type [int](../../data-types/int), `< 0`).
-`'float'` | `0.0` | requires type [float](../../data-types/float).
-`'float<..>'` | *depends* | requires type [float](../../data-types/float) within a given range *(see [range condition](#range-condition) and [default value](#use-condition-to-set-a-default-value))*.
-`'number'` | `0` | requires type [float](../../data-types/float) *or* type [int](../../data-types/int).
-`'datetime'` | `datetime()` | requires type [datetime](../../data-types/datetime). *(defaults to the current date/time)*
-`'timeval'` | `timeval()` | requires type [timeval](../../data-types/timeval). *(defaults to the current date/time)*
-`'regex'` | `regex('.*')` | requires type [regex](../../data-types/regex).
-`'closure'` | `\|\|nil` | requires type [closure](../../data-types/closure).
-`'error'` | `err()` | requires type [error](../../data-types/error).
-`'room'` | `room()` | requires type [room](../../data-types/room).
-`'task'` | `task()` | requires type [task](../../data-types/task).
-`'thing'` | `{}` | requires a [thing](../../data-types/thing).
-`'thing<T>'` | `{}` | requires a value restricted [thing](../../data-types/thing) where each value must be of type `T`.
-`'T'` | `T{}` | requires a instance of [Type](../type) `T`, or a member of [enumerator](../../data-types/enum) `T`. The value `T` should be replaced with the `Type` / `enum` name.
 `'E{M}'` | `E{M}` | requires an instance of a member of [enumerator](../../data-types/enum). Instead of the enumerator default, member `M` will be used as the default value.
-`'enum'` | `nil` | Requires an instance of a member of _any_ [enumerator](../../data-types/enum) or `nil`.
-`'email'` | `""` | requires type [str](../../data-types/str) and the value *must* contain an email address _(or empty string)_.
-`'email<..>'` | *depends* | requires type [str](../../data-types/str) and the value *must* contain an email address _(empty string is not allowed, a [default email address](#use-condition-to-set-a-default-value) must be given)_.
-`'url'` | `""` | requires type [str](../../data-types/str) and the value *must* contain a URL _(or empty string)_.
-`'url<..>'` | *depends* | requires type [str](../../data-types/str) and the value *must* contain a URL _(empty string is not allowed and a [default URL](#use-condition-to-set-a-default-value) must be given)_.
-`'tel'` | `""` | requires type [str](../../data-types/str) and the value *must* contain a telephone number _(or empty string)_.
-`'tel<..>'` | *depends* | requires type [str](../../data-types/str) and the value *must* contain a telephone number _(empty string is not allowed, a [default telephone number](#use-condition-to-set-a-default-value) must be given)_.
+`'T'` | `T{}` | requires a instance of [Type](../type) `T`, or a member of [enumerator](../../data-types/enum) `T`. The value `T` should be replaced with the `Type` / `enum` name.
 `'[]'` | `[]` | requires a [list](../../data-types/list).
 `'[T]'` | `[]` | requires a [list](../../data-types/list) where each item in the list must be of type `T` *(see [restrict items](#restrict-items))*.
+`'any'` | `nil` | any type is valid *(with the exception of a [future](../../data-types/future))*.
+`'bool'` | `false` | requires type [bool](../../data-types/bool).
+`'bool<..>'` | *depends* | like `bool` but with an custom default, for example: `bool<true>`.
+`'bytes'` | `bytes()` | requires type [bytes](../../data-types/bytes).
+`'closure'` | `\|\|nil` | requires type [closure](../../data-types/closure).
+`'datetime'` | `datetime()` | requires type [datetime](../../data-types/datetime). *(defaults to the current date/time)*
+`'dict'` | `dict()` | requires type [dict](../../data-types/dict)
+`'dict<K:V>'` | `dict()` | requires type [dict](../../data-types/dict) with keys of type `K` _(oneof: `any`, `uuid`, `int` or `str`)_ and values of type `V`.
+`'email'` | `""` | requires type [str](../../data-types/str) and the value *must* contain an email address _(or empty string)_.
+`'email<..>'` | *depends* | requires type [str](../../data-types/str) and the value *must* contain an email address _(empty string is not allowed, a [default email address](#use-condition-to-set-a-default-value) must be given)_.
+`'enum'` | `nil` | Requires an instance of a member of _any_ [enumerator](../../data-types/enum) or `nil`.
+`'error'` | `err()` | requires type [error](../../data-types/error).
+`'float'` | `0.0` | requires type [float](../../data-types/float).
+`'float<..>'` | *depends* | requires type [float](../../data-types/float) within a given range *(see [range condition](#range-condition) and [default value](#use-condition-to-set-a-default-value))*.
+`'int'` | `0` | requires type [int](../../data-types/int).
+`'int<..>'` | *depends* | requires type [int](../../data-types/int) within a given range *(see [range condition](#range-condition) and [default value](#use-condition-to-set-a-default-value))*.
+`'nint'` | `-1` | requires a *negative* integer (type [int](../../data-types/int), `< 0`).
+`'number'` | `0` | requires type [float](../../data-types/float) *or* type [int](../../data-types/int).
+`'pint'` | `1` | requires a *positive* integer (type [int](../../data-types/int), `> 0`).
+`'raw'` | `""` | requires type [str](../../data-types/str) *or* [bytes](../../data-types/bytes).
+`'regex'` | `regex('.*')` | requires type [regex](../../data-types/regex).
+`'room'` | `room()` | requires type [room](../../data-types/room).
+`'str'` | `""` | requires type [str](../../data-types/str) (values of type [str](../../data-types/str) *should* contain valid UTF-8 characters).
+`'str<..>'` | *depends* | requires type [str](../../data-types/str) with a certain length *(see [length condition](#length-condition) and [default value](#use-condition-to-set-a-default-value))*
+`'task'` | `task()` | requires type [task](../../data-types/task).
+`'tel'` | `""` | requires type [str](../../data-types/str) and the value *must* contain a telephone number _(or empty string)_.
+`'tel<..>'` | *depends* | requires type [str](../../data-types/str) and the value *must* contain a telephone number _(empty string is not allowed, a [default telephone number](#use-condition-to-set-a-default-value) must be given)_.
+`'thing'` | `{}` | requires a [thing](../../data-types/thing).
+`'thing<T>'` | `{}` | requires a value restricted [thing](../../data-types/thing) where each value must be of type `T`.
+`'timeval'` | `timeval()` | requires type [timeval](../../data-types/timeval). *(defaults to the current date/time)*
+`'uint'` | `0` | requires a *non-negative* integer (type [int](../../data-types/int), `>= 0`).
+`'url'` | `""` | requires type [str](../../data-types/str) and the value *must* contain a URL _(or empty string)_.
+`'url<..>'` | *depends* | requires type [str](../../data-types/str) and the value *must* contain a URL _(empty string is not allowed and a [default URL](#use-condition-to-set-a-default-value) must be given)_.
+`'utf8'` | `""` | requires type [str](../../data-types/str) and the value *must* contain valid UTF-8 characters.
+`'utf8<..>'` | *depends* | requires type [str](../../data-types/str), the value *must* contain valid UTF-8 characters and with a certain length *(see [length condition](#length-condition) and [default value](#use-condition-to-set-a-default-value))*
 `'{}'` | `set()` | requires a [set](../../data-types/set).
 `'{T}'` | `set()` | requires a [set](../../data-types/set) where each element in the set must be of type `T` *(see [restrict items](#restrict-items))*.
-`'any'` | `nil` | any type is valid *(with the exception of a [future](../../data-types/future))*.
-`'#'` | *depends* | Not a real property, see [named Id](#named-id).
 
 Each definition can be made optional by adding a question-mark `?` to the definition and can be prefixed with additional [wrap flags](#wrap-prefix-flags).
 If a property is made optional, then the value `nil` is allowed instead of the given type
