@@ -33,5 +33,5 @@ type | Description
 [timeval](./timeval) | Like `datetime` but returns as a UNIX time-stamp by default.
 [tuple](./tuple) | Nested and immutable [list](./list).
 [typed](./typed) | Type are [things](./thing) with predefined properties.
+[uuid](./uuid) | Universally Unique Identifier (UUID) type.
 [&lt;Type&gt;](./wtype) | Wrapped thing by a [Type](../overview/type) or an [anonymous](../overview/type) type.
-
