@@ -24,7 +24,11 @@ This function does not generate a change.
 Function is_datetime(value)
 Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is of type timeval, else false.
 Example This code shows some return values for is_utf8():
-[ is_datetime( timeval(2013, 2, 6) ), is_datetime( datetime(2013, 2, 6) ), ]; Return value in JSON format</description></item><item><title>is_email</title><link>https://docs.thingsdb.io/v1/collection-api/is/is_email/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/is/is_email/</guid><description>This function determines whether the provided value is of type str and contains an email address.
+[ is_datetime( timeval(2013, 2, 6) ), is_datetime( datetime(2013, 2, 6) ), ]; Return value in JSON format</description></item><item><title>is_dict</title><link>https://docs.thingsdb.io/v1/collection-api/is/is_dict/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/is/is_dict/</guid><description>This function determines whether the provided value is a dict value or not.
+This function does not generate a change.
+Function is_dict(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is of type dict, else it returns false.
+Example This code shows some return values for is_dict():</description></item><item><title>is_email</title><link>https://docs.thingsdb.io/v1/collection-api/is/is_email/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/is/is_email/</guid><description>This function determines whether the provided value is of type str and contains an email address.
 This function does not generate a change.
 Function is_email(value)
 Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is of type str and contains an email address, else false.
@@ -133,4 +137,8 @@ Arguments Argument Type Description value any (required) The value to be tested.
 This function does not generate a change.
 Function is_utf8(value)
 Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is of type raw and contains valid utf8, else false.
-Example This code shows some return values for is_utf8():</description></item></channel></rss>
+Example This code shows some return values for is_utf8():</description></item><item><title>is_uuid</title><link>https://docs.thingsdb.io/v1/collection-api/is/is_uuid/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/is/is_uuid/</guid><description>This function determines whether the provided value is a uuid value or not.
+This function does not generate a change.
+Function is_uuid(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is of type uuid, else it returns false.
+Example This code shows some return values for is_uuid():</description></item></channel></rss>

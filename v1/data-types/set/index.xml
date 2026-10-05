@@ -18,7 +18,7 @@ If a deep value higher than 0 (default) is used, then this function will also cr
 This function does not generate a change.
 Function set.dup([deep]])
 Arguments Argument Type Description deep int (optional) How deep to duplicate things withing the set. Default is 0 (only a duplicate of the set, not the things within the set).</description></item><item><title>each</title><link>https://docs.thingsdb.io/v1/data-types/set/each/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/set/each/</guid><description>Iterate over items in a set.
-Be aware that the order when iterating over a set or a thing is not guaranteed.
+Be aware that the order when iterating over a set, dict or a thing is not guaranteed.
 This function does not generate a change.
 Function set.each(callback)
 Arguments Argument Type Description callback closure (required) Closure to execute on each value. Explanation of the callback argument:
@@ -47,7 +47,7 @@ Return value Returns length of the set.
 Example This code uses len() to return the number of items in a set:
 set({item: 'a'}, {item: 'b'}).len(); Return value in JSON format
 2</description></item><item><title>map</title><link>https://docs.thingsdb.io/v1/data-types/set/map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/set/map/</guid><description>The function iterates over items in a set and returns a new list based on the results of a given callback function.
-Be aware that the order when iterating over a set or a thing is not guaranteed.
+Be aware that the order when iterating over a set, dict or a thing is not guaranteed.
 This function does not generate a change.
 Function set.map(callback)
 Arguments Explanation of the callback argument:

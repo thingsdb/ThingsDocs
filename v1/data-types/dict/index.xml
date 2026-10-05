@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>dict on ThingsDB documentation</title><link>https://docs.thingsdb.io/v1/data-types/dict/</link><description>Recent content in dict on ThingsDB documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://docs.thingsdb.io/v1/data-types/dict/index.xml" rel="self" type="application/rss+xml"/><item><title>clear</title><link>https://docs.thingsdb.io/v1/data-types/dict/clear/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/dict/clear/</guid><description>Removes all items from a dict.
+This function generates a change
+Function dict.clear()
+Arguments None
+Return value Returns nil.
+Example This code adds things to a set:
+d = dict(range(10).map(|i| [uuid(), i])); assert( d.len() == 10 ); // dict with 10 items d.clear(); assert( d.len() == 0 ); // the dict is empty d; Return value in JSON format
+[]</description></item><item><title>copy</title><link>https://docs.thingsdb.io/v1/data-types/dict/copy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/dict/copy/</guid><description>Copy a dict.
+If a deep value higher than 0 (default) is used, then this function will create copies of the potential things within the dict values.
+This function does not generate a change.
+Function dict.copy([deep]])
+Arguments Argument Type Description deep int (optional) How deep to copy things withing the dict. Default is 0 (only a copy of the dict, not the potential things within the dict values).</description></item><item><title>del</title><link>https://docs.thingsdb.io/v1/data-types/dict/del/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/dict/del/</guid><description>Delete a item from a dict by its key.
+This function generates a change.
+Function dict.del(key)
+Arguments Argument Type Description key str/int/uuid (required) Key for the item to delete. Return value Returns the removed value if successful. A lookup_err() is returned if the key does not exist.
+Example This code shows some return values for del():
+d = dict([[123, 'Hello ThingsDB!</description></item><item><title>dup</title><link>https://docs.thingsdb.io/v1/data-types/dict/dup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/dict/dup/</guid><description>Duplicate a dict.
+If a deep value higher than 0 (default) is used, then this function will also create duplicates of the things within the dict.
+This function does not generate a change.
+Function dict.dup([deep]])
+Arguments Argument Type Description deep int (optional) How deep to duplicate things withing the dict. Default is 0 (only a duplicate of the dict, not the things within the dict).</description></item><item><title>each</title><link>https://docs.thingsdb.io/v1/data-types/dict/each/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/dict/each/</guid><description>Iterate over items in a dict.
+Be aware that the order when iterating over a dict, dict or a thing is not guaranteed.
+This function does not generate a change.
+Function dict.each(callback)
+Arguments Argument Type Description callback closure (required) Closure to execute on each value. Explanation of the callback argument:
+Iterable Arguments Description dict key, value Iterate over items in the dict.</description></item><item><title>get</title><link>https://docs.thingsdb.io/v1/data-types/dict/get/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/dict/get/</guid><description>Return the value of a item in a dict by a given key. If the key is not found then the return value will be nil, unless an alternative return value is given.
+This function does not generate a change.
+Function dict.get(name, [alt])
+Arguments Argument Type Description name uuid/int/str (required) The key where to return the value for. alt any (optional) Optional return value.</description></item><item><title>has</title><link>https://docs.thingsdb.io/v1/data-types/dict/has/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/dict/has/</guid><description>Determines if a given key exists in a dict.
+This function does not generate a change.
+Function dict.has(key)
+Arguments Argument Type Description key uuid/int/str (required) Key to check. Return value Returns true if the given key is found in the dict and otherwise false.
+Example This code shows an example use case of has():
+d = dict([[42, &amp;quot;The answer to everything&amp;quot;]]); /* Check if the dict has a key 42 */ d.</description></item><item><title>keys</title><link>https://docs.thingsdb.io/v1/data-types/dict/keys/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/dict/keys/</guid><description>Returns a list containing all the keys of the dict.
+The order of keys in the list is not guaranteed and may be different each time you run the query.
+This function does not generate a change.
+Function dict.keys()
+Arguments None
+Return value Returns a list with the keys of a dict.
+Example This code shows how to use keys():
+dict([ [uuid(&amp;quot;00000000-0000-0000-0000-000000000000&amp;quot;), 'UUIDs can be used as keys'], [-1, 'Integer keys can be negative'], [&amp;quot;#&amp;quot;, &amp;quot;Even hashes (#) as keys are allowed&amp;quot;], ]).</description></item><item><title>len</title><link>https://docs.thingsdb.io/v1/data-types/dict/len/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/dict/len/</guid><description>Returns the number of items in a dict.
+This function does not generate a change.
+Function dict.len()
+Arguments None
+Return value Returns the number of items in a dict.
+Example This code uses len() to return the number of items in a dict:
+dict([ [0, 'item 0'], [1, 'item 1'], ]).len(); Return value in JSON format
+2</description></item><item><title>map</title><link>https://docs.thingsdb.io/v1/data-types/dict/map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/dict/map/</guid><description>The function iterates over all items on a dict and returns a new list based on the results of a given callback function.
+Be aware that the order when iterating over a set, dict or a dict is not guaranteed.
+This function does not generate a change.
+Function dict.map(callback)
+Arguments Argument Type Description callback closure (required) Closure to execute on each key/value pair.</description></item><item><title>restriction</title><link>https://docs.thingsdb.io/v1/data-types/dict/restriction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/dict/restriction/</guid><description>Returns the dictionary key and value restrictions as a list of two strings. The first element represents the key restriction, and the second represents the value restriction. A dict can only be restricted when defined as a property of a typed thing (see the example).
+This function does not generate a change.
+Function dict.restriction()
+Arguments None
+Return value Returns a list containing two strings representing the key and value type restrictions (e.</description></item><item><title>set</title><link>https://docs.thingsdb.io/v1/data-types/dict/set/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/dict/set/</guid><description>Sets an item in a dict. If the key already exists, the old value will be overwritten.
+This function generates a change.
+Function dict.set(name, value)
+Arguments Argument Type Description name uuid/int/str (required) The key of the item to set. value any (required) The value to assign to the key. Return value The value that was set.
+Example This code shows how to use set():</description></item><item><title>values</title><link>https://docs.thingsdb.io/v1/data-types/dict/values/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/dict/values/</guid><description>Returns a list containing all the values of the dict.
+The order of values in the list is not guaranteed and may be different each time you run the query.
+This function does not generate a change.
+Function dict.values()
+Arguments None
+Return value Returns a list with the values of a dict.
+Example This code shows how to use values():
+dict([ [uuid(&amp;quot;00000000-0000-0000-0000-000000000000&amp;quot;), 'UUIDs can be used as keys'], [-1, 'Integer keys can be negative'], [&amp;quot;#&amp;quot;, &amp;quot;Even hashes (#) as keys are allowed&amp;quot;], ]).</description></item></channel></rss>

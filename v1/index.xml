@@ -84,7 +84,7 @@ Here is an example of how they may be used:
 a = 6; b = 7; `The sum of {a} plus {b} is {a + b}.`; Result in JSON format:
 &amp;#34;The sum of 6 plus 7 is 13.&amp;#34; If you wish to use the backtick character or curly brackets inside your string, then you need to escape those by using the same character twice.</description></item><item><title>Type</title><link>https://docs.thingsdb.io/v1/overview/type/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/overview/type/</guid><description>Use a Type to create typed things.
 A typed thing is a thing with predefined properties and/or methods with are defined by a Type. When creating a typed thing, all defined properties of the type are guaranteed to exist with a value matching the type definition.
-Definable properties definition default description 'str' &amp;quot;&amp;quot; requires type str (values of type str should contain valid UTF-8 characters).</description></item><item><title>Variable</title><link>https://docs.thingsdb.io/v1/overview/variable/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/overview/variable/</guid><description>Can be used to assign a value to a variable which can be used within a query.
+Definable properties definition default description '#' depends Not a real property, see named Id. '/pattern/' depends requires type str with a match to a specified pattern (see pattern condition).</description></item><item><title>Variable</title><link>https://docs.thingsdb.io/v1/overview/variable/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/overview/variable/</guid><description>Can be used to assign a value to a variable which can be used within a query.
 Variable can be created with QUERY privileges since they do not modify the collection&amp;rsquo;s data.
 To create a variable, just assign a value to a valid name.
 Some valid examples:
@@ -154,7 +154,73 @@ Arguments None
 Return value Returns zone information or nil if no zone information is available.
 Example This code uses zone() as an example:
 [ datetime().zone(), datetime().to('Europe/Amsterdam').zone(), datetime().to('+00').zone(), ] Return value in JSON format
-[ &amp;#34;UTC&amp;#34;, &amp;#34;Europe/Amsterdam&amp;#34;, null ]</description></item><item><title>name</title><link>https://docs.thingsdb.io/v1/data-types/enum/name/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/enum/name/</guid><description>Returns the name of the enumerator member.
+[ &amp;#34;UTC&amp;#34;, &amp;#34;Europe/Amsterdam&amp;#34;, null ]</description></item><item><title>clear</title><link>https://docs.thingsdb.io/v1/data-types/dict/clear/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/dict/clear/</guid><description>Removes all items from a dict.
+This function generates a change
+Function dict.clear()
+Arguments None
+Return value Returns nil.
+Example This code adds things to a set:
+d = dict(range(10).map(|i| [uuid(), i])); assert( d.len() == 10 ); // dict with 10 items d.clear(); assert( d.len() == 0 ); // the dict is empty d; Return value in JSON format
+[]</description></item><item><title>copy</title><link>https://docs.thingsdb.io/v1/data-types/dict/copy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/dict/copy/</guid><description>Copy a dict.
+If a deep value higher than 0 (default) is used, then this function will create copies of the potential things within the dict values.
+This function does not generate a change.
+Function dict.copy([deep]])
+Arguments Argument Type Description deep int (optional) How deep to copy things withing the dict. Default is 0 (only a copy of the dict, not the potential things within the dict values).</description></item><item><title>del</title><link>https://docs.thingsdb.io/v1/data-types/dict/del/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/dict/del/</guid><description>Delete a item from a dict by its key.
+This function generates a change.
+Function dict.del(key)
+Arguments Argument Type Description key str/int/uuid (required) Key for the item to delete. Return value Returns the removed value if successful. A lookup_err() is returned if the key does not exist.
+Example This code shows some return values for del():
+d = dict([[123, 'Hello ThingsDB!</description></item><item><title>dup</title><link>https://docs.thingsdb.io/v1/data-types/dict/dup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/dict/dup/</guid><description>Duplicate a dict.
+If a deep value higher than 0 (default) is used, then this function will also create duplicates of the things within the dict.
+This function does not generate a change.
+Function dict.dup([deep]])
+Arguments Argument Type Description deep int (optional) How deep to duplicate things withing the dict. Default is 0 (only a duplicate of the dict, not the things within the dict).</description></item><item><title>each</title><link>https://docs.thingsdb.io/v1/data-types/dict/each/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/dict/each/</guid><description>Iterate over items in a dict.
+Be aware that the order when iterating over a dict, dict or a thing is not guaranteed.
+This function does not generate a change.
+Function dict.each(callback)
+Arguments Argument Type Description callback closure (required) Closure to execute on each value. Explanation of the callback argument:
+Iterable Arguments Description dict key, value Iterate over items in the dict.</description></item><item><title>get</title><link>https://docs.thingsdb.io/v1/data-types/dict/get/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/dict/get/</guid><description>Return the value of a item in a dict by a given key. If the key is not found then the return value will be nil, unless an alternative return value is given.
+This function does not generate a change.
+Function dict.get(name, [alt])
+Arguments Argument Type Description name uuid/int/str (required) The key where to return the value for. alt any (optional) Optional return value.</description></item><item><title>has</title><link>https://docs.thingsdb.io/v1/data-types/dict/has/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/dict/has/</guid><description>Determines if a given key exists in a dict.
+This function does not generate a change.
+Function dict.has(key)
+Arguments Argument Type Description key uuid/int/str (required) Key to check. Return value Returns true if the given key is found in the dict and otherwise false.
+Example This code shows an example use case of has():
+d = dict([[42, &amp;quot;The answer to everything&amp;quot;]]); /* Check if the dict has a key 42 */ d.</description></item><item><title>keys</title><link>https://docs.thingsdb.io/v1/data-types/dict/keys/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/dict/keys/</guid><description>Returns a list containing all the keys of the dict.
+The order of keys in the list is not guaranteed and may be different each time you run the query.
+This function does not generate a change.
+Function dict.keys()
+Arguments None
+Return value Returns a list with the keys of a dict.
+Example This code shows how to use keys():
+dict([ [uuid(&amp;quot;00000000-0000-0000-0000-000000000000&amp;quot;), 'UUIDs can be used as keys'], [-1, 'Integer keys can be negative'], [&amp;quot;#&amp;quot;, &amp;quot;Even hashes (#) as keys are allowed&amp;quot;], ]).</description></item><item><title>len</title><link>https://docs.thingsdb.io/v1/data-types/dict/len/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/dict/len/</guid><description>Returns the number of items in a dict.
+This function does not generate a change.
+Function dict.len()
+Arguments None
+Return value Returns the number of items in a dict.
+Example This code uses len() to return the number of items in a dict:
+dict([ [0, 'item 0'], [1, 'item 1'], ]).len(); Return value in JSON format
+2</description></item><item><title>map</title><link>https://docs.thingsdb.io/v1/data-types/dict/map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/dict/map/</guid><description>The function iterates over all items on a dict and returns a new list based on the results of a given callback function.
+Be aware that the order when iterating over a set, dict or a dict is not guaranteed.
+This function does not generate a change.
+Function dict.map(callback)
+Arguments Argument Type Description callback closure (required) Closure to execute on each key/value pair.</description></item><item><title>restriction</title><link>https://docs.thingsdb.io/v1/data-types/dict/restriction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/dict/restriction/</guid><description>Returns the dictionary key and value restrictions as a list of two strings. The first element represents the key restriction, and the second represents the value restriction. A dict can only be restricted when defined as a property of a typed thing (see the example).
+This function does not generate a change.
+Function dict.restriction()
+Arguments None
+Return value Returns a list containing two strings representing the key and value type restrictions (e.</description></item><item><title>set</title><link>https://docs.thingsdb.io/v1/data-types/dict/set/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/dict/set/</guid><description>Sets an item in a dict. If the key already exists, the old value will be overwritten.
+This function generates a change.
+Function dict.set(name, value)
+Arguments Argument Type Description name uuid/int/str (required) The key of the item to set. value any (required) The value to assign to the key. Return value The value that was set.
+Example This code shows how to use set():</description></item><item><title>values</title><link>https://docs.thingsdb.io/v1/data-types/dict/values/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/dict/values/</guid><description>Returns a list containing all the values of the dict.
+The order of values in the list is not guaranteed and may be different each time you run the query.
+This function does not generate a change.
+Function dict.values()
+Arguments None
+Return value Returns a list with the values of a dict.
+Example This code shows how to use values():
+dict([ [uuid(&amp;quot;00000000-0000-0000-0000-000000000000&amp;quot;), 'UUIDs can be used as keys'], [-1, 'Integer keys can be negative'], [&amp;quot;#&amp;quot;, &amp;quot;Even hashes (#) as keys are allowed&amp;quot;], ]).</description></item><item><title>name</title><link>https://docs.thingsdb.io/v1/data-types/enum/name/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/enum/name/</guid><description>Returns the name of the enumerator member.
 This function does not generate a change.
 Function member.name()
 Arguments None
@@ -429,7 +495,7 @@ If a deep value higher than 0 (default) is used, then this function will also cr
 This function does not generate a change.
 Function set.dup([deep]])
 Arguments Argument Type Description deep int (optional) How deep to duplicate things withing the set. Default is 0 (only a duplicate of the set, not the things within the set).</description></item><item><title>each</title><link>https://docs.thingsdb.io/v1/data-types/set/each/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/set/each/</guid><description>Iterate over items in a set.
-Be aware that the order when iterating over a set or a thing is not guaranteed.
+Be aware that the order when iterating over a set, dict or a thing is not guaranteed.
 This function does not generate a change.
 Function set.each(callback)
 Arguments Argument Type Description callback closure (required) Closure to execute on each value. Explanation of the callback argument:
@@ -458,7 +524,7 @@ Return value Returns length of the set.
 Example This code uses len() to return the number of items in a set:
 set({item: 'a'}, {item: 'b'}).len(); Return value in JSON format
 2</description></item><item><title>map</title><link>https://docs.thingsdb.io/v1/data-types/set/map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/set/map/</guid><description>The function iterates over items in a set and returns a new list based on the results of a given callback function.
-Be aware that the order when iterating over a set or a thing is not guaranteed.
+Be aware that the order when iterating over a set, dict or a thing is not guaranteed.
 This function does not generate a change.
 Function set.map(callback)
 Arguments Explanation of the callback argument:
@@ -636,7 +702,7 @@ For the deep value, this function does not inherit the current deep value but al
 This function does not generate a change.
 Function thing.dup([deep]])
 Arguments Argument Type Description deep int (optional) How deep to duplicate the thing.</description></item><item><title>each</title><link>https://docs.thingsdb.io/v1/data-types/thing/each/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/thing/each/</guid><description>Iterate over all properties on a thing.
-Be aware that the order when iterating over a thing is not guaranteed.
+Be aware that the order when iterating over a set, dict or a thing is not guaranteed.
 This function does not generate a change.
 Function thing.each(callback)
 Arguments Argument Type Description callback closure (required) Closure to execute on each value. Explanation of the callback argument:
@@ -649,7 +715,7 @@ Function thing.filter(callback)
 Arguments Argument Type Description callback closure (required) Closure to execute on each value. Explanation of the callback argument:
 Iterable Arguments Description thing name, value Iterate over the thing properties. Both name and value are optional.</description></item><item><title>get</title><link>https://docs.thingsdb.io/v1/data-types/thing/get/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/thing/get/</guid><description>Return the value of a property on a thing by a given property name. If the property is not found then the return value will be nil, unless an alternative return value is given.
 This function does not generate a change.
-Function thing.get(name [, alt])
+Function thing.get(name, [alt])
 Arguments Argument Type Description name str (required) Name of the property where to return the value for. alt any (optional) Optional return value.</description></item><item><title>has</title><link>https://docs.thingsdb.io/v1/data-types/thing/has/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/thing/has/</guid><description>Determines if a thing has a given property.
 This function does not generate a change.
 Function thing.has(name)
@@ -662,7 +728,7 @@ Arguments None
 Return value Returns id of a thing or nil when the thing is not stored.
 Example This code uses id() to return a collection id:
 .id(); // Returns the collection id Return value in JSON format
-1</description></item><item><title>keys</title><link>https://docs.thingsdb.io/v1/data-types/thing/keys/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/thing/keys/</guid><description>keys The function returns a list with all the property names of a thing. The same could be returned using map so the following statement is true:
+1</description></item><item><title>keys</title><link>https://docs.thingsdb.io/v1/data-types/thing/keys/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/thing/keys/</guid><description>The function returns a list with all the property names of a thing. The same could be returned using map so the following statement is true:
 .keys() == .map(|k| k)
 Although the keys() and map() functions in the example above will return a list with the same order, the order of keys in the list is not guaranteed and may be different each time you run the query.
 This function does not generate a change.</description></item><item><title>len</title><link>https://docs.thingsdb.io/v1/data-types/thing/len/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/thing/len/</guid><description>Returns the number of items in a thing.
@@ -673,10 +739,10 @@ Return value Returns the number of items in a thing.
 Example This code uses len() to return the number of items in a thing:
 {name: 'Iris', age: 6}.len(); Return value in JSON format
 2</description></item><item><title>map</title><link>https://docs.thingsdb.io/v1/data-types/thing/map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/thing/map/</guid><description>The function iterates over all properties on a thing and returns a new list based on the results of a given callback function.
-Be aware that the order when iterating over a thing is not guaranteed.
+Be aware that the order when iterating over a set, dict or a thing is not guaranteed.
 This function does not generate a change.
 Function thing.map(callback)
-Arguments Argument Type Description callback closure (required) Closure to execute on each value. Explanation of the callback argument:</description></item><item><title>remove</title><link>https://docs.thingsdb.io/v1/data-types/thing/remove/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/thing/remove/</guid><description>This function removes all properties from a thing that satisfies the callback function. The removed values will be returned in a new list. An empty list is returned if no values are removed.
+Arguments Argument Type Description callback closure (required) Closure to execute on each name/value pair.</description></item><item><title>remove</title><link>https://docs.thingsdb.io/v1/data-types/thing/remove/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/thing/remove/</guid><description>This function removes all properties from a thing that satisfies the callback function. The removed values will be returned in a new list. An empty list is returned if no values are removed.
 This function generates a change.
 Function thing.remove(callback, [limit])
 Arguments Argument Type Description callback closure (required) Closure to execute on each value. limit int (optional) Limit the number of properties to remove.</description></item><item><title>ren</title><link>https://docs.thingsdb.io/v1/data-types/thing/ren/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/thing/ren/</guid><description>Rename a property on a thing.
@@ -718,7 +784,10 @@ This function generates a change.
 Function typed-thing.to_thing()
 Arguments None
 Return value Returns nil when successful.
-Example This code converts a typed thing to a thing:</description></item><item><title>copy</title><link>https://docs.thingsdb.io/v1/data-types/wtype/copy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/wtype/copy/</guid><description>Copy a wrapped thing to a new thing including the outcome of computed properts.
+Example This code converts a typed thing to a thing:</description></item><item><title>uuid</title><link>https://docs.thingsdb.io/v1/data-types/uuid/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/uuid/</guid><description>Universally Unique Identifier type.
+ThingsDB uses UUID Version 7, a time-ordered format that combines a Unix millisecond timestamp with random data. This ensures generated UUIDs are naturally sorted by creation time, making them highly efficient for database indexing and sorting.
+Generate a new unique UUID (version 7):
+uuid(); // returns a new UUID (version 7) Related functions Function Description uuid Create a new UUID from given bytes or a string, or a random UUID (version 7) if no arguments are given.</description></item><item><title>copy</title><link>https://docs.thingsdb.io/v1/data-types/wtype/copy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/wtype/copy/</guid><description>Copy a wrapped thing to a new thing including the outcome of computed properts.
 This function does not generate a change.
 Function &amp;lt;Type&amp;gt;.copy([deep]])
 Arguments Argument Type Description deep int (optional) How deep to copy the wrapped thing. Default is 1. Return value A new thing.
@@ -758,7 +827,7 @@ Function ano(value)
 Arguments Argument Type Description value thing The thing representing the anonymous type. Return value Return with an anonymous type.
 Example This code shows how the ano function can be used.</description></item><item><title>assert</title><link>https://docs.thingsdb.io/v1/collection-api/assert/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/assert/</guid><description>Raises an assert_err() if the specified expression evaluates to false.
 This function does not generate a change.
-Function assert(expression [, error_msg])
+Function assert(expression, [error_msg])
 Arguments Argument Type Description expression any (required) The expression to evaluate. error_msg str (optional) Custom error message. Return value Returns nil if the type of the expression evaluates to true. Otherwise an assert_err() is raised.
 In versions before v0.</description></item><item><title>base64_decode</title><link>https://docs.thingsdb.io/v1/collection-api/base64_decode/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/base64_decode/</guid><description>Decode a Base64 encoded string.
 See base64_encode for Base64 encoding.
@@ -865,7 +934,11 @@ This function does not generate a change.
 Function is_datetime(value)
 Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is of type timeval, else false.
 Example This code shows some return values for is_utf8():
-[ is_datetime( timeval(2013, 2, 6) ), is_datetime( datetime(2013, 2, 6) ), ]; Return value in JSON format</description></item><item><title>is_email</title><link>https://docs.thingsdb.io/v1/collection-api/is/is_email/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/is/is_email/</guid><description>This function determines whether the provided value is of type str and contains an email address.
+[ is_datetime( timeval(2013, 2, 6) ), is_datetime( datetime(2013, 2, 6) ), ]; Return value in JSON format</description></item><item><title>is_dict</title><link>https://docs.thingsdb.io/v1/collection-api/is/is_dict/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/is/is_dict/</guid><description>This function determines whether the provided value is a dict value or not.
+This function does not generate a change.
+Function is_dict(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is of type dict, else it returns false.
+Example This code shows some return values for is_dict():</description></item><item><title>is_email</title><link>https://docs.thingsdb.io/v1/collection-api/is/is_email/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/is/is_email/</guid><description>This function determines whether the provided value is of type str and contains an email address.
 This function does not generate a change.
 Function is_email(value)
 Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is of type str and contains an email address, else false.
@@ -974,7 +1047,11 @@ Arguments Argument Type Description value any (required) The value to be tested.
 This function does not generate a change.
 Function is_utf8(value)
 Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is of type raw and contains valid utf8, else false.
-Example This code shows some return values for is_utf8():</description></item><item><title>json_dump</title><link>https://docs.thingsdb.io/v1/collection-api/json_dump/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/json_dump/</guid><description>Converts a ThingsDB value in to a JSON string.
+Example This code shows some return values for is_utf8():</description></item><item><title>is_uuid</title><link>https://docs.thingsdb.io/v1/collection-api/is/is_uuid/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/is/is_uuid/</guid><description>This function determines whether the provided value is a uuid value or not.
+This function does not generate a change.
+Function is_uuid(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is of type uuid, else it returns false.
+Example This code shows some return values for is_uuid():</description></item><item><title>json_dump</title><link>https://docs.thingsdb.io/v1/collection-api/json_dump/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/json_dump/</guid><description>Converts a ThingsDB value in to a JSON string.
 This function does not generate a change.
 Function json_dump(value, [options])
 Arguments Argument Type Description value any The value to convert into a JSON string. options thing Thing with options. Options Option Type Description deep int Specify how deep the value must be converted.</description></item><item><title>json_load</title><link>https://docs.thingsdb.io/v1/collection-api/json_load/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/json_load/</guid><description>Converts a JSON string into a ThingsDB value.
@@ -1196,7 +1273,7 @@ This function does not generate a change.
 Function type_all(type)
 Arguments Argument Type Description type str The name of the Type for which the instances must be returned. Return value A set with all occurrences of the given Type within a collection.</description></item><item><title>type_assert</title><link>https://docs.thingsdb.io/v1/collection-api/type_assert/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/type_assert/</guid><description>Raises a type_err() if the specified expression evaluates to false.
 This function does not generate a change.
-Function assert(expression, type(s) [, error_msg])
+Function assert(expression, type(s), [error_msg])
 Arguments Argument Type Description expression any (required) The result of this expression will be type tested. type(s) str/list (required) Type name or list with type names to check. error_msg str (optional) Custom error message. Return value Returns nil if the type of the expression evaluates to true.</description></item><item><title>type_count</title><link>https://docs.thingsdb.io/v1/collection-api/type_count/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/type_count/</guid><description>Returns the number of instances of a given Type within a collection.
 This function does not generate a change.
 Function type_count(type)
@@ -1206,7 +1283,11 @@ See the type_info() function documentation for an example of the exposed Type in
 This function does not generate a change.
 Function types_info()
 Arguments None
-Return value List with Type mpdata about all Types in the collection.</description></item><item><title>wse</title><link>https://docs.thingsdb.io/v1/collection-api/wse/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/wse/</guid><description>This function enforces ThingsDB to create a change.
+Return value List with Type mpdata about all Types in the collection.</description></item><item><title>uuid</title><link>https://docs.thingsdb.io/v1/collection-api/uuid/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/uuid/</guid><description>Returns a new uuid (version 7) or converts a byte sequence or string into a UUID.
+When a string is provided, it may contain lowercase or uppercase characters, and hyphens are optional.
+This function does not generate a change.
+Function uuid([value])
+Arguments Argument Type Description value bytes/str (optional) The value to convert into a UUID. Return value A UUID value. In a client response, the UUID is returned as a lowercase, hyphenated string.</description></item><item><title>wse</title><link>https://docs.thingsdb.io/v1/collection-api/wse/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/wse/</guid><description>This function enforces ThingsDB to create a change.
 When using a stored closure which requires a change it might not be possible for ThingsDB to detect the change requirement before evaluation the query. In this case it is required to use wse() to enforce a change.
 Function wse() might both wrap a statement and be called without arguments.
 This function generates a change.

@@ -19,7 +19,7 @@ For the deep value, this function does not inherit the current deep value but al
 This function does not generate a change.
 Function thing.dup([deep]])
 Arguments Argument Type Description deep int (optional) How deep to duplicate the thing.</description></item><item><title>each</title><link>https://docs.thingsdb.io/v1/data-types/thing/each/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/thing/each/</guid><description>Iterate over all properties on a thing.
-Be aware that the order when iterating over a thing is not guaranteed.
+Be aware that the order when iterating over a set, dict or a thing is not guaranteed.
 This function does not generate a change.
 Function thing.each(callback)
 Arguments Argument Type Description callback closure (required) Closure to execute on each value. Explanation of the callback argument:
@@ -32,7 +32,7 @@ Function thing.filter(callback)
 Arguments Argument Type Description callback closure (required) Closure to execute on each value. Explanation of the callback argument:
 Iterable Arguments Description thing name, value Iterate over the thing properties. Both name and value are optional.</description></item><item><title>get</title><link>https://docs.thingsdb.io/v1/data-types/thing/get/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/thing/get/</guid><description>Return the value of a property on a thing by a given property name. If the property is not found then the return value will be nil, unless an alternative return value is given.
 This function does not generate a change.
-Function thing.get(name [, alt])
+Function thing.get(name, [alt])
 Arguments Argument Type Description name str (required) Name of the property where to return the value for. alt any (optional) Optional return value.</description></item><item><title>has</title><link>https://docs.thingsdb.io/v1/data-types/thing/has/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/thing/has/</guid><description>Determines if a thing has a given property.
 This function does not generate a change.
 Function thing.has(name)
@@ -45,7 +45,7 @@ Arguments None
 Return value Returns id of a thing or nil when the thing is not stored.
 Example This code uses id() to return a collection id:
 .id(); // Returns the collection id Return value in JSON format
-1</description></item><item><title>keys</title><link>https://docs.thingsdb.io/v1/data-types/thing/keys/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/thing/keys/</guid><description>keys The function returns a list with all the property names of a thing. The same could be returned using map so the following statement is true:
+1</description></item><item><title>keys</title><link>https://docs.thingsdb.io/v1/data-types/thing/keys/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/thing/keys/</guid><description>The function returns a list with all the property names of a thing. The same could be returned using map so the following statement is true:
 .keys() == .map(|k| k)
 Although the keys() and map() functions in the example above will return a list with the same order, the order of keys in the list is not guaranteed and may be different each time you run the query.
 This function does not generate a change.</description></item><item><title>len</title><link>https://docs.thingsdb.io/v1/data-types/thing/len/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/thing/len/</guid><description>Returns the number of items in a thing.
@@ -56,10 +56,10 @@ Return value Returns the number of items in a thing.
 Example This code uses len() to return the number of items in a thing:
 {name: 'Iris', age: 6}.len(); Return value in JSON format
 2</description></item><item><title>map</title><link>https://docs.thingsdb.io/v1/data-types/thing/map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/thing/map/</guid><description>The function iterates over all properties on a thing and returns a new list based on the results of a given callback function.
-Be aware that the order when iterating over a thing is not guaranteed.
+Be aware that the order when iterating over a set, dict or a thing is not guaranteed.
 This function does not generate a change.
 Function thing.map(callback)
-Arguments Argument Type Description callback closure (required) Closure to execute on each value. Explanation of the callback argument:</description></item><item><title>remove</title><link>https://docs.thingsdb.io/v1/data-types/thing/remove/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/thing/remove/</guid><description>This function removes all properties from a thing that satisfies the callback function. The removed values will be returned in a new list. An empty list is returned if no values are removed.
+Arguments Argument Type Description callback closure (required) Closure to execute on each name/value pair.</description></item><item><title>remove</title><link>https://docs.thingsdb.io/v1/data-types/thing/remove/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/thing/remove/</guid><description>This function removes all properties from a thing that satisfies the callback function. The removed values will be returned in a new list. An empty list is returned if no values are removed.
 This function generates a change.
 Function thing.remove(callback, [limit])
 Arguments Argument Type Description callback closure (required) Closure to execute on each value. limit int (optional) Limit the number of properties to remove.</description></item><item><title>ren</title><link>https://docs.thingsdb.io/v1/data-types/thing/ren/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/thing/ren/</guid><description>Rename a property on a thing.
