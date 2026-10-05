@@ -3,7 +3,7 @@ title: "dict"
 weight: 240
 ---
 
-Returns a new [dict](../../data-types/dict) or converts a array of tuples into a dict.
+Returns a new [dict](../../data-types/dict) or converts an array of key-value pairs into a dict.
 
 This function does *not* generate a [change](../../overview/changes).
 
@@ -15,11 +15,15 @@ This function does *not* generate a [change](../../overview/changes).
 
 Argument | Type | Description
 -------- | ---- | -----------
-value | list (optional) | The list with ley/value pairs to create a [dict](../../data-types/dict) for.
+value | list (optional) | A list of key-value pairs to convert into a [dict](../../data-types/dict).
 
 ### Return value
 
-A dict value. In a client response, the dict is returned as a list with key value pairs to preserve JSON compatibility in case of integer keys.
+A dict value.
+
+{{% notice note %}}
+In a client response, the dict is returned as an array of nested key-value pairs to preserve JSON compatibility when integer keys are used.
+{{% /notice %}}
 
 ### Example
 
@@ -34,7 +38,7 @@ dict([
 ]);
 ```
 
-> Example return value in JSON format _(Order is not guranteed)_
+> Example return value in JSON format _(order is not guaranteed)_
 
 ```json
 [
