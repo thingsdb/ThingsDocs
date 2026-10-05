@@ -1,6 +1,6 @@
 ---
 title: "load"
-weight: 116
+weight: 128
 ---
 
 Load [mpdata](..) into ThingsDB.

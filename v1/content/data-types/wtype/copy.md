@@ -1,6 +1,6 @@
 ---
 title: "copy"
-weight: 201
+weight: 214
 ---
 
 Copy a [wrapped](../) thing to a new thing including the outcome of computed properts.

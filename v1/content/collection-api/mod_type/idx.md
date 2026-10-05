@@ -1,6 +1,6 @@
 ---
 title: "idx"
-weight: 302
+weight: 315
 ---
 
 Enable or disable *auto-index* for an existing [Type](../../../overview/type).

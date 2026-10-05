@@ -1,6 +1,6 @@
 ---
 title: "new_token"
-weight: 378
+weight: 391
 ---
 
 Adds a new token for a given user. An optional expiration time may be given; after this time the token cannot
@@ -26,7 +26,7 @@ This function generates a [change](../../overview/changes).
 
 ### Function
 
-`new_token(username, [, expiration_time] [, description])`
+`new_token(username,, [expiration_time], [description])`
 
 ### Arguments
 

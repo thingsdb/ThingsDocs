@@ -1,6 +1,6 @@
 ---
 title: "emit"
-weight: 122
+weight: 134
 ---
 
 
@@ -40,7 +40,7 @@ loop.run_forever()
 
 ### Function
 
-*room*.`emit([deep [, flags]], event, ...)`
+*room*.`emit([deep, [flags]], event, ...)`
 
 ### Arguments
 

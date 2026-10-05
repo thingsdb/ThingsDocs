@@ -41,7 +41,6 @@ overview
 data-types
     anomyous
     bool
-    uuid
     bytes
         len
     closure
@@ -57,10 +56,23 @@ data-types
         weekday
         yday
         zone
+    dict
+        clear
+        copy
+        del
+        dup
+        each
+        get
+        has
+        keys
+        len
+        map
+        restriction
+        set
+        values
     enum
         name
         value
-    dict
     error
         code
         msg
@@ -197,6 +209,7 @@ data-types
     tuple
     typed
         to_thing
+    uuid
     wtype
         copy
         dup

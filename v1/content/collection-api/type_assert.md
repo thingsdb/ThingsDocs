@@ -1,6 +1,6 @@
 ---
 title: "type_assert"
-weight: 335
+weight: 348
 ---
 
 Raises a [type_err()](../../errors/type_err) if the specified expression evaluates to `false`.
@@ -9,7 +9,7 @@ This function does *not* generate a [change](../../overview/changes).
 
 ### Function
 
-`assert(expression, type(s) [, error_msg])`
+`assert(expression, type(s), [error_msg])`
 
 ### Arguments
 

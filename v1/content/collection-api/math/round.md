@@ -1,6 +1,6 @@
 ---
 title: "round"
-weight: 287
+weight: 300
 ---
 
 Return a number that will be rounded to the decimal places which are given as input.

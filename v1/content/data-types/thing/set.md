@@ -1,6 +1,6 @@
 ---
 title: "set"
-weight: 191
+weight: 203
 ---
 
 Creates a new property on a [thing](..). If the property already exists then the old
@@ -22,7 +22,7 @@ value | any (required)  | The value which will be assigned to the property.
 
 ### Return value
 
-The value which will be assigned.
+The value that was set.
 
 ### Example
 

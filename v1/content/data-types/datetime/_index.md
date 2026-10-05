@@ -1,6 +1,6 @@
 ---
 title: "datetime"
-weight: 50
+weight: 49
 ---
 
 Type `datetime` can be used to store a value with date and time information.
@@ -18,6 +18,10 @@ If so, you might want to look at the [timeval](../timeval) type which is created
 {{% notice tip %}}
 Converting a `datetime` or `timeval` type to type *int* or *float* will return the UNIX time-stamp.
 For example: `int(datetime('2013-06-02T00:00:00Z'))` returns the *int* value `1370131200`.
+{{% /notice %}}
+
+{{% notice tip %}}
+Since version **v1.10.0** it is allowed to wrap type `datetime` as type `timeval` and vice versa.
 {{% /notice %}}
 
 ### Functions

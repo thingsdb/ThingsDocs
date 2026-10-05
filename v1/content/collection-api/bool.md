@@ -1,6 +1,6 @@
 ---
 title: "bool"
-weight: 218
+weight: 231
 ---
 
 Returns a [bool](../../data-types/bool) from a specified value.
@@ -40,6 +40,7 @@ A boolean value.
     bool(''),                     // an empty string evaluates to false
     bool([]),                     // an empty array evaluates to false
     bool(set()),                  // an empty set evaluates to false
+    bool(dict()),                 // an empty dict evaluates to false
     bool(room()),                 // a non-stored room (no Id) evaluates to false
     bool({
         t = task(datetime(), ||0);
@@ -54,10 +55,12 @@ A boolean value.
     bool([1, 2, 3]),              // non empty array evaluates to true
     bool('forty two'),            // non empty string evaluates to true
     bool(set({}, {})),            // non empty set evaluates to true
+    bool(dict([[0, 0]])),         // non empty dict evaluates to true
     bool(.room = room()),         // a stored room (with Id) evaluates to true
     bool(future(||nil)),          // futures evaluate to true
     bool(timeval(0)),             // datetime and timeval always evaluate to true
     bool(task(datetime(), ||0)),  // scheduled tasks evaluate to true
+    bool(uuid()),                 // any uuid evaluates to true
 ];
 ```
 
@@ -76,6 +79,9 @@ A boolean value.
     false,
     false,
     false,
+    false,
+    true,
+    true,
     true,
     true,
     true,

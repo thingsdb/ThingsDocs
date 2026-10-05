@@ -1,9 +1,7 @@
 ---
 title: "keys"
-weight: 183
+weight: 195
 ---
-
-## keys
 
 The function returns a list with all the property names of a [thing](..).
 The same could be returned using map so the following statement is `true`:

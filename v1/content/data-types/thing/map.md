@@ -1,13 +1,13 @@
 ---
 title: "map"
-weight: 185
+weight: 197
 ---
 
 The function iterates over all properties on a [thing](..) and
 returns a new [list](../../list) based on the results of a given callback function.
 
 {{% notice warning %}}
-Be aware that the order when iterating over a *thing* is not guaranteed.
+Be aware that the order when iterating over a *set*, *dict* or a *thing* is not guaranteed.
 {{% /notice %}}
 
 This function does *not* generate a [change](../../../overview/changes).
@@ -20,7 +20,7 @@ This function does *not* generate a [change](../../../overview/changes).
 
 Argument | Type | Description
 -------- | ---- | -----------
-callback | closure (required) | Closure to execute on each value.
+callback | closure (required) | Closure to execute on each name/value pair.
 
 Explanation of the *callback* argument:
 

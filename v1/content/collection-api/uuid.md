@@ -1,6 +1,6 @@
 ---
 title: "uuid"
-weight: 339
+weight: 352
 ---
 
 Returns a new [uuid](../../data-types/uuid) _(version 7)_ or converts a byte sequence or string into a UUID.
