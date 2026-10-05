@@ -1,6 +1,6 @@
 ---
 title: "pop"
-weight: 97
+weight: 111
 ---
 
 Removes the last item from a [list](../../list) and returns that item.

@@ -1,6 +1,6 @@
 ---
 title: "reduce"
-weight: 137
+weight: 153
 ---
 
 Executes a given reducer [closure](../../closure) on every thing in the set, accumulating to a single return value.

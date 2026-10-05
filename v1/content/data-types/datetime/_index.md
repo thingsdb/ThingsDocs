@@ -20,6 +20,10 @@ Converting a `datetime` or `timeval` type to type *int* or *float* will return t
 For example: `int(datetime('2013-06-02T00:00:00Z'))` returns the *int* value `1370131200`.
 {{% /notice %}}
 
+{{% notice tip %}}
+Since version **v1.10.0** it is allowed to wrap type `datetime` as type `timeval` and vice versa.
+{{% /notice %}}
+
 ### Functions
 
 Function | Description

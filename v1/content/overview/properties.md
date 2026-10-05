@@ -23,15 +23,14 @@ key | description
 `'` | Reserved for datetime.
 `(` | *unused*
 `)` | *unused*
-`*` | Reserved for regular expressions.
+`*` | Reserved for dictionary.
 `+` | *unused*
 `,` | Reserved for storing type _(definition `@`)_.
 `-` | *unused*
 `.` | Reserved for type.
-`/` | Reserved for closures.
+`/` | Reserved for closures _(obsolete since v1.0.0)_.
 
 ### Example
-
 
 ```thingsdb,json_response
 x = {};

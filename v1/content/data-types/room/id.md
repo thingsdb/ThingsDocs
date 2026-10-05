@@ -1,6 +1,6 @@
 ---
 title: "id"
-weight: 119
+weight: 135
 ---
 
 Returns the `id` of a [room](..) or `nil` if the room is not stored.

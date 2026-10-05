@@ -1,6 +1,6 @@
 ---
 title: "assert"
-weight: 211
+weight: 228
 ---
 
 Raises an [assert_err()](../../errors/assert_err) if the specified expression evaluates to `false`.
@@ -9,7 +9,7 @@ This function does *not* generate a [change](../../overview/changes).
 
 ### Function
 
-`assert(expression [, error_msg])`
+`assert(expression, [error_msg])`
 
 ### Arguments
 

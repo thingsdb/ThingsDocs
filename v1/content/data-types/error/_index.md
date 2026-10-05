@@ -1,6 +1,6 @@
 ---
 title: "error"
-weight: 62
+weight: 76
 ---
 
 When an error occurs within a function, an object can be returned. The object, called an error, contains information about the error, including its type and a message.
@@ -17,6 +17,7 @@ Function | Description
 Function | Description
 ------ | -----------
 [err](../../collection-api/err) | Initialize a new error.
+[is_err](../../collection-api/is/is_err) | Test if a given value is of type error.
 [raise](../../collection-api/raise) | Raise an error.
 [try](../../collection-api/try) | Try a statement and catch if an error is raised.
 

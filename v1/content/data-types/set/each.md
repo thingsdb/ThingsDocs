@@ -1,12 +1,12 @@
 ---
 title: "each"
-weight: 127
+weight: 143
 ---
 
 Iterate over items in a [set](..).
 
 {{% notice warning %}}
-Be aware that the order when iterating over a *set* or a *thing* is not guaranteed.
+Be aware that the order when iterating over a *set*, *dict* or a *thing* is not guaranteed.
 {{% /notice %}}
 
 This function does *not* generate a [change](../../../overview/changes).

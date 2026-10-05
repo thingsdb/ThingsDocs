@@ -1,6 +1,6 @@
 ---
 title: "set_default_deep"
-weight: 379
+weight: 399
 ---
 
 The *deep* value determines how many levels of data are returned by a query. Only *things* count towards this value. See [deep()](../../collection-api/deep) for more info about the *deep* value.

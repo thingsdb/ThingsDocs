@@ -1,6 +1,6 @@
 ---
 title: "int"
-weight: 234
+weight: 251
 ---
 
 Returns an [int](../../data-types/int) from a specified value.
@@ -19,7 +19,7 @@ This function does *not* generate a [change](../../overview/changes).
 
 ### Function
 
-`int(value)`
+`int([value])`
 
 ### Arguments
 

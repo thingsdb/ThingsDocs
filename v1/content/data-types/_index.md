@@ -15,6 +15,7 @@ type | Description
 [bytes](./bytes) | Byte sequence.
 [closure](./closure) | Closures can be used as functions or to consume items from a `thing`, `list`, `tuple` or `set`.
 [datetime](./datetime) | Type `datetime` can be used to store a value with date and time information.
+[dict](./dict) | Dictionary type for storing key/value pairs.
 [enum](./enum) | Enumerators.
 [error](./error) | An object containing information about an error.
 [float](./float) | Floating point type.
@@ -32,5 +33,5 @@ type | Description
 [timeval](./timeval) | Like `datetime` but returns as a UNIX time-stamp by default.
 [tuple](./tuple) | Nested and immutable [list](./list).
 [typed](./typed) | Type are [things](./thing) with predefined properties.
+[uuid](./uuid) | Universally Unique Identifier (UUID) type.
 [&lt;Type&gt;](./wtype) | Wrapped thing by a [Type](../overview/type) or an [anonymous](../overview/type) type.
-

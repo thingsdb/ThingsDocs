@@ -1,6 +1,6 @@
 ---
 title: "ano"
-weight: 210
+weight: 227
 ---
 
 Create an [anonymous](../../data-types/anomyous) type from a given [thing](../../data-types/thing).
