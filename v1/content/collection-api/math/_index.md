@@ -1,6 +1,6 @@
 ---
 title: "math..."
-weight: 290
+weight: 291
 ---
 
 The following mathematical functions and constants are supported by ThingsDB:

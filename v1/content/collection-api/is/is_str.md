@@ -1,6 +1,6 @@
 ---
 title: "is_str"
-weight: 276
+weight: 277
 ---
 
 This function determines whether the provided value is of type [str](../../../data-types/str).

@@ -1,6 +1,6 @@
 ---
 title: "sqrt"
-weight: 302
+weight: 303
 ---
 
 Return the square root of a given number.

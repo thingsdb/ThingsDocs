@@ -1,6 +1,6 @@
 ---
 title: "is_module"
-weight: 268
+weight: 269
 ---
 
 This function determines whether the provided value is a [module](../../../modules) value or not.

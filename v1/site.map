@@ -237,6 +237,7 @@ collection-api
     deep
     del_enum
     del_type
+    dict
     enum
     enum_info
     enum_map

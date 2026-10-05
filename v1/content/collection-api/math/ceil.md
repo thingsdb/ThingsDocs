@@ -1,6 +1,6 @@
 ---
 title: "ceil"
-weight: 292
+weight: 293
 ---
 
 Return the ceiling of a given number. This is the smallest integer >= the given number.

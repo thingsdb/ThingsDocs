@@ -1,6 +1,6 @@
 ---
 title: "has_enum"
-weight: 248
+weight: 249
 ---
 
 Determines if a [enumerator type](../../data-types/enum) exists in the current `@collection` scope.

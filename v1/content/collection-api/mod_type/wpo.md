@@ -1,6 +1,6 @@
 ---
 title: "wpo"
-weight: 319
+weight: 320
 ---
 
 Enable or disable *wrap-only* mode for an existing [Type](../../../overview/type).

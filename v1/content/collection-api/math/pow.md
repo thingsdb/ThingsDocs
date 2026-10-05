@@ -1,6 +1,6 @@
 ---
 title: "pow"
-weight: 299
+weight: 300
 ---
 
 Returns _x_ to the power of _y_.
