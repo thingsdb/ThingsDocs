@@ -58,7 +58,7 @@ b;
 > Note that a duplicate with a deep value can create duplicates of things with the Type information preserved:
 
 ```thingsdb,json_response
-dict_type('Person', {
+set_type('Person', {
     name: 'str'
 });
 

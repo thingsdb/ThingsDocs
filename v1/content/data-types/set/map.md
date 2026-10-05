@@ -33,7 +33,10 @@ A new list of items that are the result of the callback function.
 > This code shows an example using ***map()***:
 
 ```thingsdb,json_response
-users = [{name: "Iris", age: 6}, {name: "Sasha", age: 34}];
+users = [
+    {name: "Iris", age: 6},
+    {name: "Sasha", age: 34},
+];
 
 // returns ["Iris", "Sasha"]
 set(users).map(|user| user.name).sort();

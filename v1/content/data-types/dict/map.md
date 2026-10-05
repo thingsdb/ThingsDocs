@@ -41,7 +41,7 @@ d = dict([
     [uuid(), "a"],
     [uuid(), "b"],
     [uuid(), "c"],
-])
+]);
 
 d.map(|k, v| v.upper()).sort();
 ```
