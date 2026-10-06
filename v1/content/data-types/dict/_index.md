@@ -31,4 +31,5 @@ Function | Description
 
 Function | Description
 ------ | -----------
+[dict](../../collection-api/dict) | Create a new dict or converts an array of key-value pairs into a dict.
 [is_dict](../../collection-api/is/is_dict) | Test if a given value is of type dict.

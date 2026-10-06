@@ -3,7 +3,7 @@ title: "dict"
 weight: 240
 ---
 
-Returns a new [dict](../../data-types/dict) or converts an array of key-value pairs into a dict.
+Returns a new [dict](../../data-types/dict) or converts an array of key-value pairs into a [dict](../../data-types/dict).
 
 This function does *not* generate a [change](../../overview/changes).
 
