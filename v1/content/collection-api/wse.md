@@ -10,6 +10,10 @@ to detect the change requirement before evaluation the query. In this case it is
 
 Function `wse()` might both wrap a statement and be called without arguments.
 
+{{% notice tip %}}
+Since version **1.10.1** it is possible to write **`f(..)!`** instead of **`wse(f(..))`** making the function call obsolete.
+{{% /notice %}}
+
 This function generates a [change](../../overview/changes).
 
 ### Function
@@ -41,10 +45,8 @@ Return value of the given statement or `nil`.
 > Here we need **wse()** to enforce a change:
 
 ```thingsdb,syntax_only
-wse();
-
-// without wse() no change would be created and thus this would raise an error
-.take_license();
+// Without wse() no change would be created and thus this would raise an error
+wse(.take_license());
 
 // Return the number of licenses left
 .licenses;
@@ -54,4 +56,20 @@ wse();
 
 ```json
 98
+```
+
+> Or, we could also use the shorter `(..)!` syntax:
+
+```thingsdb,syntax_only
+// The `!` after the function tells ThingsDB to use wse(..)
+.take_license()!;
+
+// Return the number of licenses left
+.licenses;
+```
+
+> Return value in JSON format
+
+```json
+97
 ```

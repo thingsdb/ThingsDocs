@@ -82,8 +82,8 @@ It is also possible to use the procedure within a query or from another procedur
 > Here is an example where we use the `create_user` procedure in a query.
 
 ```thingsdb,should_pass,@t
-// Our procedure requires a change so we need to use `wse`
-token = wse(create_user('cato'));
+// Our procedure requires a change so we need to use `!` or wse(..) prior to v1.10.1
+token = create_user('cato')!;
 
 // return the token
 token;
