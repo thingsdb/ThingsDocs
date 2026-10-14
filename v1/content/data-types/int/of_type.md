@@ -11,7 +11,7 @@ The stored thing must already be of the specified type. For example, if `#3` is 
 
 When the type name is known at write-time, the constructor syntax is preferred:
 
-```thingsdb,should_pass
+```thingsdb,syntax_only
 // Shorthand syntax for a static type
 T(123);
 
@@ -43,7 +43,7 @@ Returns the instance of the specified type.
 
 > Dynamically instantiate an object using a variable type name:
 
-```thingsdb,json_response
+```thingsdb,syntax_only
 // Given a dynamic type name variable
 type_name = "T";
 
