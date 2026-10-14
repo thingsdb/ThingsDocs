@@ -29,3 +29,4 @@ Base | Example | Description
 Function | Description
 ------ | -----------
 [bit_count](./bit_count) | Return the number of ones in the binary representation of the absolute value of the integer.
+[of_type](./of_type) | Returns the type instance matching the given ID and type name.

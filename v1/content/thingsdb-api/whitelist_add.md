@@ -1,6 +1,6 @@
 ---
 title: "whitelist_add"
-weight: 408
+weight: 409
 ---
 
 A whitelist can be configured for both rooms and procedures. This whitelist determines which specific rooms and procedures a user is allowed to access.

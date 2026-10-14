@@ -82,6 +82,7 @@ data-types
         else
     int
         bit_count
+        of_type
     list
         choice
         clear

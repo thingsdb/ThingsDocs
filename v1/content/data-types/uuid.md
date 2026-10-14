@@ -1,6 +1,6 @@
 ---
 title: "uuid"
-weight: 212
+weight: 213
 ---
 
 Universally Unique Identifier type.

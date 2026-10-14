@@ -1,6 +1,6 @@
 ---
 title: "set_name"
-weight: 137
+weight: 138
 ---
 
 Set the _name_ of a room. Provide a `nil` argument to remove the current name.
