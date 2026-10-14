@@ -256,7 +256,10 @@ Function int.bit_count()
 Arguments None
 Return value Return the number of ones in the binary representation of the absolute value of the integer.
 Example This code creates a room, gives the room a name and uses the name() function to return the name.
-(42).bit_count(); // Returns 3, binary representation: 0b101010 Return value in JSON format</description></item><item><title>choice</title><link>https://docs.thingsdb.io/v1/data-types/list/choice/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/list/choice/</guid><description>This function returns a pseudo-random item from a list or tuple. The array must contain at least one item, otherwise a lookup_err() is raised.
+(42).bit_count(); // Returns 3, binary representation: 0b101010 Return value in JSON format</description></item><item><title>of_type</title><link>https://docs.thingsdb.io/v1/data-types/int/of_type/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/int/of_type/</guid><description>Returns the stored ThingsDB instance of a specific type matching the given ID.
+The stored thing must already be of the specified type. For example, if #3 is an instance of type F, (3).of_type('T') will fail. This function validates the type rather than converting it.
+When the type name is known at write-time, the constructor syntax is preferred:
+// Shorthand syntax for a static type T(123); // Equivalent using of_type (123).</description></item><item><title>choice</title><link>https://docs.thingsdb.io/v1/data-types/list/choice/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/list/choice/</guid><description>This function returns a pseudo-random item from a list or tuple. The array must contain at least one item, otherwise a lookup_err() is raised.
 This function does not generate a change.
 Function array.choice()
 Arguments None
