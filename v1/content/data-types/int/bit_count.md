@@ -1,6 +1,6 @@
 ---
 title: "bit_count"
-weight: 84
+weight: 85
 ---
 
 Return the number of ones in the binary representation of the absolute value of the integer.

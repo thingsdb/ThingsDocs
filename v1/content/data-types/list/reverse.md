@@ -1,6 +1,6 @@
 ---
 title: "reverse"
-weight: 117
+weight: 118
 ---
 
 The function returns a new list with items in reverse order.

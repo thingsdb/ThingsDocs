@@ -1,6 +1,6 @@
 ---
 title: "set_history"
-weight: 402
+weight: 403
 ---
 
 Enables _"commit history"_ for a given scope. Commit history can be enabled for collections scopes and the @thingsdb scope.

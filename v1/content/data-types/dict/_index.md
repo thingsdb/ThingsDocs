@@ -26,6 +26,7 @@ Function | Description
 [restriction](./restriction) | Return the key/value restriction of the dict, or `["any", "any"]` if no restriction is set.
 [set](./set) | Set an item in a dict. If the key already exists, the old value will be overwritten.
 [values](./values) | Return a [list](../list) with all the values of the dict.
+[vmap](./vmap) | Returns a new dict with equal keys but values as a result of a given closure.
 
 ### Related functions
 

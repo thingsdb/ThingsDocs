@@ -1,6 +1,6 @@
 ---
 title: "cos"
-weight: 295
+weight: 296
 ---
 
 Return the cosine of a given number. The value passed in this function should be in radians.

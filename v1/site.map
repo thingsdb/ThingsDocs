@@ -70,6 +70,7 @@ data-types
         restriction
         set
         values
+        vmap
     enum
         name
         value

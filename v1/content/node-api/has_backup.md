@@ -1,6 +1,6 @@
 ---
 title: "has_backup"
-weight: 362
+weight: 363
 ---
 
 Determines if a backup exists in ThingsDB.

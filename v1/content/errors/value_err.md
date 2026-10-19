@@ -1,6 +1,6 @@
 ---
 title: "value_err"
-weight: 445
+weight: 446
 ---
 
 Returns an [error](../../data-types/error) when a given value has the correct type but contains invalid data.
