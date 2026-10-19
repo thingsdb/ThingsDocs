@@ -64,4 +64,8 @@ Function dict.values()
 Arguments None
 Return value Returns a list with the values of a dict.
 Example This code shows how to use values():
-dict([ [uuid(&amp;quot;00000000-0000-0000-0000-000000000000&amp;quot;), 'UUIDs can be used as keys'], [-1, 'Integer keys can be negative'], [&amp;quot;#&amp;quot;, &amp;quot;Even hashes (#) as keys are allowed&amp;quot;], ]).</description></item></channel></rss>
+dict([ [uuid(&amp;quot;00000000-0000-0000-0000-000000000000&amp;quot;), 'UUIDs can be used as keys'], [-1, 'Integer keys can be negative'], [&amp;quot;#&amp;quot;, &amp;quot;Even hashes (#) as keys are allowed&amp;quot;], ]).</description></item><item><title>vmap</title><link>https://docs.thingsdb.io/v1/data-types/dict/vmap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/dict/vmap/</guid><description>The function returns a new dict with equal keys but values computed as a result of a given closure callback.
+This function does not generate a change.
+Function dict.vmap(callback)
+Arguments Argument Type Description callback closure (required) Closure to execute on each value. Explanation of the callback argument:
+Iterable Arguments Description dict value Iterate over the dict values.</description></item></channel></rss>
