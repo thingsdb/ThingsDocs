@@ -105,9 +105,10 @@ assert(is_err(try(User{name: 0})));
 
 ### Read-only properties
 
-Each defination can be marked as read-only by adding `(ro)` to the end of the definition. When marked as read-only, the property can only be set when an instance is creadted.
+A property definition can be marked as read-only by appending `(ro)`. Once marked as read-only, the property can only be set when the instance is created.
 
-For example:
+> For example:
+
 ```thingsdb,json_response
 // Create a new type `Container` with an optional property `name` and read-only `created.
 set_type('Container', {
@@ -122,7 +123,7 @@ set_type('Container', {
 };
 
 .container.name = 'Example';   // we can overwrite 'name'
-try(.container.key = 'xxx');   // returns with an error
+try(.container.key = 'xxx');   // returns with an error as 'key' is read-only
 ```
 
 ```json
