@@ -1,6 +1,6 @@
 ---
 title: "nil"
-weight: 131
+weight: 132
 ---
 
 Probably the most simple type, it can be used as *no value*.

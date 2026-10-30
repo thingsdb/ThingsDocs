@@ -1,6 +1,6 @@
 ---
 title: "rename_type"
-weight: 335
+weight: 336
 ---
 
 Rename a [type](../../overview/type).

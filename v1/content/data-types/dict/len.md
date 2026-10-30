@@ -1,6 +1,6 @@
 ---
 title: "len"
-weight: 68
+weight: 69
 ---
 
 Returns the number of items in a [dict](..).

@@ -1,6 +1,6 @@
 ---
 title: "sum"
-weight: 125
+weight: 126
 ---
 
 Returns the sum of each value in a list. A [closure](../../closure) might be given which can be used as a shortcut for `.map().sum()`.

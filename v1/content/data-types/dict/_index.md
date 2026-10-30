@@ -18,6 +18,7 @@ Function | Description
 [del](./del) | Delete an item from the dict by its key.
 [dup](./dup) | Duplicate a dict.
 [each](./each) | Iterate over all items in a dict.
+[filter](./filter) | Return a new `dict` with key/value pairs that pass a given test.
 [get](./get) | Return the value of an item by its key. If the key is not found, return [nil](../nil) unless an alternative default value is given.
 [has](./has) | Determine if the dict has a given key.
 [keys](./keys) | Return a [list](../list) with all the keys of the dict.

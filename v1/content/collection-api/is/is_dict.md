@@ -1,6 +1,6 @@
 ---
 title: "is_dict"
-weight: 262
+weight: 263
 ---
 
 This function determines whether the provided value is a [dict](../../../data-types/dict) value or not.

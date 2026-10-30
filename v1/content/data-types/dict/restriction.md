@@ -1,6 +1,6 @@
 ---
 title: "restriction"
-weight: 70
+weight: 71
 ---
 
 Returns the dictionary key and value restrictions as a [list](../../list) of two [strings](../../str). The first element represents the key restriction, and the second represents the value restriction. A dict can *only* be restricted when defined as a property of a *typed* thing (see the [example](#example)).

@@ -1,6 +1,6 @@
 ---
 title: "len"
-weight: 162
+weight: 163
 ---
 
 Returns the length of a [string](..).

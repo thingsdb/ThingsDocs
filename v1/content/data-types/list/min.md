@@ -1,6 +1,6 @@
 ---
 title: "min"
-weight: 124
+weight: 125
 ---
 
 Returns the minimum value from a list.

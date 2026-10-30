@@ -1,6 +1,6 @@
 ---
 title: "map"
-weight: 69
+weight: 70
 ---
 
 The function iterates over all items on a [dict](..) and

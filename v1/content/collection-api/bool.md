@@ -1,6 +1,6 @@
 ---
 title: "bool"
-weight: 233
+weight: 234
 ---
 
 Returns a [bool](../../data-types/bool) from a specified value.

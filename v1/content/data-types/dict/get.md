@@ -1,6 +1,6 @@
 ---
 title: "get"
-weight: 65
+weight: 66
 ---
 
 Return the value of a item in a [dict](..) by a given key.
