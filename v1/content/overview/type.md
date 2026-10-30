@@ -59,7 +59,9 @@ definition | default | description
 `'{}'` | `set()` | requires a [set](../../data-types/set).
 `'{T}'` | `set()` | requires a [set](../../data-types/set) where each element in the set must be of type `T` *(see [restrict items](#restrict-items))*.
 
-Each definition can be made optional by adding a question-mark `?` to the definition and can be prefixed with additional [wrap flags](#wrap-prefix-flags).
+### Optional (nillable) properties
+
+Each definition can be made optional by adding a question-mark `?` to the definition.
 If a property is made optional, then the value `nil` is allowed instead of the given type
 and `nil` will also be the default if the property is missing.
 
@@ -100,6 +102,33 @@ assert(is_err(try(User{name: 0})));
     }
 ]
 ```
+
+### Read-only properties
+
+Each defination can be marked as read-only by adding `(ro)` to the end of the definition. When marked as read-only, the property can only be set when an instance is creadted.
+
+For example:
+```thingsdb,json_response
+// Create a new type `Container` with an optional property `name` and read-only `created.
+set_type('Container', {
+    name: 'str',
+    key: 'str(ro)',
+    created: 'datetime(ro)',
+});
+
+.container = Container{
+    name: 'example',
+    key: 'secret',
+};
+
+.container.name = 'Example';   // we can overwrite 'name'
+try(.container.key = 'xxx');   // returns with an error
+```
+
+```json
+"mismatch in type `Container`; property `key` is read-only"
+```
+
 ### Wrap (Prefix) flags
 
 All definitions can be pre-fixed with additional flags which are applied when a thing is being wrapped.
