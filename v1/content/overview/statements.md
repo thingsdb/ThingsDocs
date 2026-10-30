@@ -66,7 +66,7 @@ return {
 
 Flag     | Description
 -------- | -----------
-`NO_IDS` | Return things without ID's, even when the _things_ are stored. _(`HID` can be used as alias to `NO_IDS`)_.
+`NO_IDS` | Return things without ID's, even when the _things_ are stored. _(`HID` can be used as an alias for `NO_IDS`)_.
 
 > Example use of the `NO_IDS` flags:
 
