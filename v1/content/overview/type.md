@@ -110,7 +110,7 @@ A property definition can be marked as read-only by appending `(ro)`. Once marke
 > For example:
 
 ```thingsdb,json_response
-// Create a new type `Container` with an optional property `name` and read-only `created.
+// Create a new type `Container`. Both `key` and `created` are marked as read-only
 set_type('Container', {
     name: 'str',
     key: 'str(ro)',
