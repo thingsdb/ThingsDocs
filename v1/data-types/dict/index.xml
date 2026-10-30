@@ -23,7 +23,11 @@ Be aware that the order when iterating over a dict, dict or a thing is not guara
 This function does not generate a change.
 Function dict.each(callback)
 Arguments Argument Type Description callback closure (required) Closure to execute on each value. Explanation of the callback argument:
-Iterable Arguments Description dict key, value Iterate over items in the dict.</description></item><item><title>get</title><link>https://docs.thingsdb.io/v1/data-types/dict/get/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/dict/get/</guid><description>Return the value of a item in a dict by a given key. If the key is not found then the return value will be nil, unless an alternative return value is given.
+Iterable Arguments Description dict key, value Iterate over items in the dict.</description></item><item><title>filter</title><link>https://docs.thingsdb.io/v1/data-types/dict/filter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/dict/filter/</guid><description>The function returns a new dict with key/value pairs that pass the test.
+This function does not generate a change.
+Function thing.filter(callback)
+Arguments Argument Type Description callback closure (required) Closure to execute on each key/value pair. Explanation of the callback argument:
+Iterable Arguments Description dict key, value Iterate over the key/value pairs. Both key and value are optional.</description></item><item><title>get</title><link>https://docs.thingsdb.io/v1/data-types/dict/get/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/dict/get/</guid><description>Return the value of a item in a dict by a given key. If the key is not found then the return value will be nil, unless an alternative return value is given.
 This function does not generate a change.
 Function dict.get(name, [alt])
 Arguments Argument Type Description name uuid/int/str (required) The key where to return the value for. alt any (optional) Optional return value.</description></item><item><title>has</title><link>https://docs.thingsdb.io/v1/data-types/dict/has/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/dict/has/</guid><description>Determines if a given key exists in a dict.
