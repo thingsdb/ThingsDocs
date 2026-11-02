@@ -1,4 +1,4 @@
 psutil==5.7.0
 pycodestyle==2.5.0
-msgpack==1.2.1
+msgpack==1.2.3
 python-thingsdb
