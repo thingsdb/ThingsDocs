@@ -19,4 +19,5 @@ Action | Description
 [mod](./mod) | Modifies a property or method definition.
 [rel](./rel) | Creates a relation between types.
 [ren](./ren) | Renames a property or method.
+[row](./row) | Configures the columns for *wrap-as-row*. or `nil` to disable.
 [wpo](./wpo) | Enable or disable *wrap-only* mode for the type.

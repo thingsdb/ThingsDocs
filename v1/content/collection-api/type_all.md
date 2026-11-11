@@ -1,6 +1,6 @@
 ---
 title: "type_all"
-weight: 351
+weight: 352
 ---
 
 Returns a [set](../../data-types/set) with all instances of a given [Type](../../overview/type) within a collection.
