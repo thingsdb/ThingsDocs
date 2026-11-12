@@ -13,7 +13,7 @@ Value | Description
 `name` | Type's name.
 `fields` | Array with arrays containing two strings, the property name and definition.
 `methods` | Object with methods where the key is the method name and the value an object containing information about the closure.
-`row` | Array of column names, where each column refers to a field or method. null if *wrap-as-row* is disabled.
+`row` | Array of column names, where each column refers to a field or method. `nil` if [*wrap-as-row*](../mod_type/row) is disabled.
 `relations` | Object with [relations](../mod_type/rel).
 `wrap_only` | Boolean indication if this type has *wrap-only* mode enabled or not.
 `hide_id` | Boolean indication if this type has *hide-id* enabled or not.
