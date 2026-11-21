@@ -51,19 +51,19 @@ The table below lists all target property definitions that support automatic con
 
 | Target Type | Accepted Input | Conversion Rules & Format |
 | :--- | :--- | :--- |
-| `int` | `float` | Must represent an exact whole number (e.g., `3.0` $\rightarrow$ `3`). Floats with a non-zero fractional part (e.g., `3.1`) raise a `value_err()`. Other types like `bool` are not converted. |
-| `float` | `int` | Converted directly to `float` (e.g., `6` $\rightarrow$ `6.0`). |
+| `int` | `float` | Must represent an exact whole number (e.g., `3.0` -> `3`). Floats with a non-zero fractional part (e.g., `3.1`) raise a [value_err()](../../errors/value_err). Other types like [bool](../../data-types/bool) are not converted. |
+| `float` | `int` | Converted directly to [float](../../data-types/float) (e.g., `6` -> `6.0`). |
 | `regex` | `str` | Must be formatted as `"/expression/flags"`. |
-| `closure` | `str` | Must be valid closure syntax, e.g., `"|args| body"`. |
-| `uuid` | `str`, `bytes` | Must be a valid UUID string (e.g., `"550e8400-e29b-41d4-a716-446655440000"`) or a 16-byte `bytes` value (such as binary UUIDs from MessagePack). |
+| `closure` | `str` | Must be valid closure syntax, e.g., `"\|args\| body"`. |
+| `uuid` | `str`, `bytes` | Must be a valid UUID string (e.g., `"550e8400-e29b-41d4-a716-446655440000"`) or a 16-byte [bytes](../../data-types/bytes) value (such as binary UUIDs from MessagePack). |
 | `datetime` | `str` | Must be a valid ISO 8601 date/time string (e.g., `"2026-11-20T22:32:28Z"`). |
 | `timeval` | `int`, `float` | Interpreted as a UNIX timestamp in seconds. |
 | `enum` | `str`, _enum member type_ | All enum types are supported. If the input is a str, it is checked against member names first, and then against member values. |
-| `error` | `int`, `str`, `thing` | Converted to an `error` using the error code, message, or `{err, msg}` structure. |
+| `error` | `str` | Converted to an [error](../../data-types/error) using the string as the error message and the default error code `-100`. |
 | `array` (`[...]`) | `array` | Elements are recursively converted to match the array's item definition. |
-| `set` (`{...}`) | `array` | Converted to a `set`, with elements recursively converted to match the set's item definition. |
-| `thing<T>` | `thing` | Values inside the `thing` are recursively converted to match definition `T`. |
-| *Custom Type* | `thing`, `int` | A `thing` is recursively converted into a new instance of the target type. An `int` is resolved to an existing instance with that Id in the current collection. |
+| `set` (`{...}`) | `array` | Converted to a [set](../../data-types/set), with elements recursively converted to match the set's item definition. |
+| `thing<T>` | `thing` | Values inside the [thing](../../data-types/thing) are recursively converted to match definition `T`. |
+| *Custom Type* | `thing`, `int` | A [thing](../../data-types/thing) is recursively converted into a new instance of the target type. An [int](../../data-types/int) is resolved to an existing instance with that Id in the current collection. |
 
 ---
 
@@ -136,15 +136,15 @@ set_type('Sample', {
 });
 
 s = Sample({
-    count: 5.0,                                                 // -> int: 5
-    ratio: 2,                                                   // -> float: 2.0
-    pattern: '/^item-[0-9]+$/i',                                // -> regex: /^item-[0-9]+$/i
-    callback: '|x| x * 2',                                      // -> closure: |x| x * 2
-    created: 1795214029,                                        // -> timeval: 2026-11-20T22:33:49Z
-    updated: '2026-11-20T22:33:49Z',                            // -> datetime: 2026-11-20T22:33:49Z
-    uid: '550e8400-e29b-41d4-a716-446655440000',                // -> uuid: 550e8400-e29b-41d4-a716-446655440000
-    raw_uid: base64_decode('VQ6EAOKbQdSnFkRmVUQAAA=='),         // -> uuid: 550e8400-e29b-41d4-a716-446655440000
-    scores: [10.0, 20.0, 30.0],                                 // -> [int]: [10, 20, 30]
+    count: 5.0,                                          // -> int: 5
+    ratio: 2,                                            // -> float: 2.0
+    pattern: '/^item-[0-9]+$/i',                         // -> regex: /^item-[0-9]+$/i
+    callback: '|x| x * 2',                               // -> closure: |x| x * 2
+    created: 1795214029,                                 // -> timeval: 2026-11-20T22:33:49Z
+    updated: '2026-11-20T22:33:49Z',                     // -> datetime: 2026-11-20T22:33:49Z
+    uid: '550e8400-e29b-41d4-a716-446655440000',         // -> uuid: 550e8400-e29b-41d4-a716-446655440000
+    raw_uid: base64_decode('VQ6EAOKbQdSnFkRmVUQAAA=='),  // -> uuid: 550e8400-e29b-41d4-a716-446655440000
+    scores: [10.0, 20.0, 30.0],                          // -> [int]: [10, 20, 30]
 });
 
 // Inspect the converted types and values
