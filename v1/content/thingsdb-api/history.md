@@ -1,6 +1,6 @@
 ---
 title: "history"
-weight: 390
+weight: 391
 ---
 
 List commit records from history based on a given filter.

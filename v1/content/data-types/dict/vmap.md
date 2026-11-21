@@ -1,6 +1,6 @@
 ---
 title: "vmap"
-weight: 74
+weight: 75
 ---
 
 The function returns a new dict with equal keys but values computed as a result of a given closure callback.

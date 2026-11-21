@@ -1,6 +1,6 @@
 ---
 title: "anonymous"
-weight: 42
+weight: 43
 ---
 
 Anonymous types are used to define a restricted structural definition of data, used to control the exact output structure.

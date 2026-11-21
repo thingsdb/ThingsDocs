@@ -1,6 +1,6 @@
 ---
 title: "values"
-weight: 73
+weight: 74
 ---
 
 Returns a list containing all the values of the [dict](..).

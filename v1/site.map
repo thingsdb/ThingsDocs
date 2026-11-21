@@ -38,6 +38,7 @@ overview
     template-strings
     type
     variable
+    auto-conversion
 data-types
     anomyous
     bool

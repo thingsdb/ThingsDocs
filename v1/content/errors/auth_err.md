@@ -1,6 +1,6 @@
 ---
 title: "auth_err"
-weight: 437
+weight: 438
 ---
 
 Returns an [error](../../data-types/error) when authentication has failed.

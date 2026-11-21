@@ -1,6 +1,6 @@
 ---
 title: "upper"
-weight: 171
+weight: 172
 ---
 
 Return a new [string](..) in which all case-based characters are in upper case.

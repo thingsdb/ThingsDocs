@@ -1,6 +1,6 @@
 ---
 title: "zero_div_err"
-weight: 450
+weight: 451
 ---
 
 Returns an [error](../../data-types/error) when an attempt is made to divide or take a modulo by zero.

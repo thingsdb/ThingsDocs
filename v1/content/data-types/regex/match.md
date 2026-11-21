@@ -1,6 +1,6 @@
 ---
 title: "match"
-weight: 134
+weight: 135
 ---
 
 Returns the result of matching a [string](../../str) with the regular expression.

@@ -1,6 +1,6 @@
 ---
 title: "Conditional ternary operator"
-weight: 225
+weight: 226
 ---
 
 The conditional operator returns one of two values based on the logical value of the condition.

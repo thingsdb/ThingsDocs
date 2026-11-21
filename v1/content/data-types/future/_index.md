@@ -1,6 +1,6 @@
 ---
 title: "future"
-weight: 82
+weight: 83
 ---
 
 Futures are mainly used for modules, but they can also be used to run some code at some later time.

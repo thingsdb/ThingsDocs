@@ -1,6 +1,6 @@
 ---
 title: "each"
-weight: 64
+weight: 65
 ---
 
 Iterate over items in a [dict](..).

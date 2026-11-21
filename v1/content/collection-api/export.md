@@ -1,6 +1,6 @@
 ---
 title: "export"
-weight: 249
+weight: 250
 ---
 
 This function can be used to export the collection structure as a readable string with ThingsDB code.
