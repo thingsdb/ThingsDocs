@@ -55,7 +55,7 @@ results = [];
 
 // Arguments:
 // 1. url ('https://api.infrasonar.com/healthy')
-// 2. *   (nil, or a thing with extra options like {headers: {...}})
+// 2. *   (nil, or a thing with extra options like {headers: [..]})
 // 3+.    Extra arguments forwarded to .then() / .fail() callbacks
 requests
     .get('https://api.infrasonar.com/healthy', nil, results)
@@ -86,15 +86,15 @@ With `nil` passed as the second argument, ThingsDB builds and sends the followin
 }
 ```
 
-If you instead pass a `thing` such as `{headers: {'Accept': 'text/plain'}}` as the second argument, its properties are merged into the payload:
+If you instead pass a `thing` such as `{headers: [['Accept', 'text/plain']]}` as the second argument, its properties are merged into the payload:
 
 ```json
 {
     "url": "https://api.infrasonar.com/healthy",
     "method": "GET",
-    "headers": {
-        "Accept": "text/plain"
-    }
+    "headers": [
+        ["Accept", "text/plain"]
+    ]
 }
 ```
 
