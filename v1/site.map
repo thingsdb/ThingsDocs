@@ -423,6 +423,7 @@ procedures-api
     rename_procedure
     run
 modules
+    making-a-module-call
     hello-world-module
     publish-a-module
     supported-modules

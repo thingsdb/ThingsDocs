@@ -10,6 +10,8 @@ ThingsDB can be extended with modules. A module is a binary file or Python code 
 Each module will be started by ThingsDB as a separate process. For Python code this means that a Python interpreter is started for every module.
 Modules keep running as long as ThingsDB is alive, but may be restarted from within ThingsDB using [restart_module()](../node-api/restart_module) on a single node, or with [deploy_module()](../thingsdb-api/deploy_module) and/or [refresh_module()](../thingsdb-api/refresh_module) which can be used to restart/re-install a module on *all* nodes.
 
+See [Making a module call](./making-a-module-call) for an example of how modules can be used.
+
 See the [hello world module](./hello-world-module) section below for a tutorial on how to create and use modules in ThingsDB.
 
 ### Related functions
