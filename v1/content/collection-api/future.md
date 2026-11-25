@@ -3,8 +3,11 @@ title: "future"
 weight: 252
 ---
 
-Returns a [future](../../data-types/future). It is *not* possible to assign a future to
-a collection or add the future to a list. If you do, then `nil` will be assigned instead.
+Returns a [future](../../data-types/future). It is *not* possible to assign or store a future in a `thing`, `dict`, `list`, or `tuple`; attempting to do so will raise a [type_err](../../errors/type_err).
+
+{{% notice warning %}}
+In versions before **v1.12.0**, assigning a `future` to a collection or adding it to a list did not raise an error and silently assigned `nil` instead.
+{{% /notice %}}
 
 If you want to use the return value from a future, you need to use [then(..)](../../data-types/future/then) and errors might be captured using the [else(..)](../../data-types/future/else) function.
 
