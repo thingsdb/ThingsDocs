@@ -1,5 +1,5 @@
 /*!
-  Highlight.js v11.11.1 (git: 06fff9b9b0)
+  Highlight.js v11.11.1 (git: b2e6aded1f)
   (c) 2006-2026 Josh Goebel <hello@joshgoebel.com> and other contributors
   License: BSD-3-Clause
  */
@@ -3198,7 +3198,7 @@ var hljs = (function () {
                       'is_list|is_mpdata|is_nan|is_nil|is_raw|is_regex|is_set|is_str|is_thing|is_timeval|is_tuple|uuid|is_uuid|dict|is_dict|' +
                       'is_utf8|is_email|is_url|is_tel|timeit|task|tasks|json_dump|json_load|regex|list|mod_enum|mod_type|new|new_type|now|raise|rand|range|' +
                       'randint|randstr|refs|log|rename_enum|rename_type|set|set_enum|set_type|str|thing|try|type|' +
-                      'future|is_future|timeval|type_assert|type_count|type_info|types_info|wse|nse|export|import|root|' +
+                      'future|is_future|timeval|type_all|type_assert|type_count|type_info|types_info|wse|nse|export|import|root|' +
                       /* node functions */
                       'backup_info|backups_info|backups_ok|counters|del_backup|' +
                       'has_backup|new_backup|node_info|nodes_info|' +
