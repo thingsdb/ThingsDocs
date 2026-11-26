@@ -1,6 +1,6 @@
 ---
 title: "clear"
-weight: 61
+weight: 63
 ---
 
 Removes all items from a [dict](..).

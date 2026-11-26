@@ -43,6 +43,8 @@ data-types
     anomyous
     bool
     bytes
+        decrypt
+        encrypt
         len
     closure
         call

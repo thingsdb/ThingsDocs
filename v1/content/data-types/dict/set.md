@@ -1,6 +1,6 @@
 ---
 title: "set"
-weight: 73
+weight: 75
 ---
 
 Sets an item in a [dict](..). If the key already exists, the old value will be overwritten.

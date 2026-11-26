@@ -15,6 +15,8 @@ The bytes type can be used to store a sequence of byte values.
 
 Function | Description
 ------ | -----------
+[decrypt](./decrypt) | Decrypt an encrypted byte sequence using AES-256-GCM.
+[encrypt](./encrypt) | Encrypt a byte sequence using AES-256-GCM.
 [len](./len) | Return the length of the byte sequence.
 
 ### Related functions

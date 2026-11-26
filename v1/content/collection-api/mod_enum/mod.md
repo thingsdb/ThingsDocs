@@ -1,6 +1,6 @@
 ---
 title: "mod"
-weight: 313
+weight: 315
 ---
 
 Modify a member value or method closure from an existing [enumerator type](../../../data-types/enum).

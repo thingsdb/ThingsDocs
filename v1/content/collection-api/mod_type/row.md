@@ -1,6 +1,6 @@
 ---
 title: "row"
-weight: 324
+weight: 326
 ---
 
 The `row` action configures or disables the *wrap-as-row* behavior for a specific type.

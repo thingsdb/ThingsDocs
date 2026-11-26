@@ -1,6 +1,6 @@
 ---
 title: "copy"
-weight: 62
+weight: 64
 ---
 
 Copy a *dict*.

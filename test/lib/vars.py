@@ -35,7 +35,7 @@ THINGSDB_TESTDIR = os.environ.get('THINGSDB_TESTDIR', './testdir')
 if not THINGSDB_TESTDIR.startswith('/'):
     THINGSDB_TESTDIR = os.path.join(os.getcwd(), THINGSDB_TESTDIR)
 
-LIBCURL_SUPP = os.path.join(os.getcwd(), 'libcurl.supp')
+MEMLEAK_SUPP = os.path.join(os.getcwd(), 'memleak.supp')
 
 try:
     THINGSDB_MEMCHECK = [
@@ -48,7 +48,7 @@ try:
             '--error-exitcode=1',
             '--leak-check=full',
             '--show-reachable=yes',
-            f'--suppressions={LIBCURL_SUPP}',
+            f'--suppressions={MEMLEAK_SUPP}',
             '--errors-for-leak-kinds=all',
         ],
         # full and vebose memcheck
@@ -60,7 +60,7 @@ try:
             '--show-leak-kinds=all',
             '--track-origins=yes',
             '--show-reachable=yes',
-            f'--suppressions={LIBCURL_SUPP}',
+            f'--suppressions={MEMLEAK_SUPP}',
             '--errors-for-leak-kinds=all',
             '-v',
         ],

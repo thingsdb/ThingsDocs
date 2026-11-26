@@ -1,6 +1,6 @@
 ---
 title: "is_future"
-weight: 269
+weight: 271
 ---
 
 This function determines whether the provided value is a [future](../../../data-types/future) value or not.

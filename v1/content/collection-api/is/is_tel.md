@@ -1,6 +1,6 @@
 ---
 title: "is_tel"
-weight: 283
+weight: 285
 ---
 
 This function determines whether the provided value is of

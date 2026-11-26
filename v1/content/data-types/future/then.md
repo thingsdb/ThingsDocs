@@ -1,6 +1,6 @@
 ---
 title: "then"
-weight: 84
+weight: 86
 ---
 
 Function *then* accepts a [closure](../../closure) as an argument which

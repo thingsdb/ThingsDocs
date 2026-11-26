@@ -1,6 +1,6 @@
 ---
 title: "Making a module call"
-weight: 426
+weight: 428
 ---
 
 Modules extend ThingsDB with external functionality—such as making HTTP requests, sending emails, or interacting with third-party services. When you call a method on a module, ThingsDB executes the call asynchronously and returns a [future](../../data-types/future/).

@@ -1,6 +1,6 @@
 ---
 title: "max"
-weight: 125
+weight: 127
 ---
 
 Returns the maximum value from a list.

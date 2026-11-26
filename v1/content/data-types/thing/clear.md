@@ -1,6 +1,6 @@
 ---
 title: "clear"
-weight: 189
+weight: 191
 ---
 
 Removes all properties from a [thing](..).

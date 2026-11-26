@@ -1,6 +1,6 @@
 ---
 title: "is_nan"
-weight: 275
+weight: 277
 ---
 
 This function determines whether the provided value is not a number.

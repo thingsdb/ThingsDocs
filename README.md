@@ -76,6 +76,7 @@ Copy the build to the Docs project
 
 ```bash
 cp build/highlight.js ../ThingsDocs/themes/hugo-theme-learn/static/js/highlight.pack.js
+cp build/highlight.js ../thingsdb-website/static/js/highlight.js
 ```
 
 ## Adding a chapter or paragraph

@@ -1,6 +1,6 @@
 ---
 title: "is_unique"
-weight: 107
+weight: 109
 ---
 
 This function determines whether each item in a list is unique or not.

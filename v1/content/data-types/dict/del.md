@@ -1,6 +1,6 @@
 ---
 title: "del"
-weight: 63
+weight: 65
 ---
 
 Delete a item from a [dict](..) by its key.

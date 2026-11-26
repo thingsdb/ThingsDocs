@@ -1,6 +1,6 @@
 ---
 title: "on-leave"
-weight: 433
+weight: 435
 ---
 
 This event will be pushed when a [room](../../data-types/room) has left.

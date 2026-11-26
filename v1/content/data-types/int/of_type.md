@@ -1,6 +1,6 @@
 ---
 title: "of_type"
-weight: 88
+weight: 90
 ---
 
 Returns the stored ThingsDB instance of a specific type matching the given ID.

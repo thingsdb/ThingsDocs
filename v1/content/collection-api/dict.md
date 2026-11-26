@@ -1,6 +1,6 @@
 ---
 title: "dict"
-weight: 244
+weight: 246
 ---
 
 Returns a new [dict](../../data-types/dict) or converts an array of key-value pairs into a [dict](../../data-types/dict).
