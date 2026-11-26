@@ -1,5 +1,5 @@
 /*!
-  Highlight.js v11.11.1 (git: b2e6aded1f)
+  Highlight.js v11.11.1 (git: d89948d823)
   (c) 2006-2026 Josh Goebel <hello@joshgoebel.com> and other contributors
   License: BSD-3-Clause
  */
@@ -3104,7 +3104,7 @@ var hljs = (function () {
   Language: ThingsDB
   Author: Jeroen van der Heijden <jeroen@cesbit.com>
   Category: common, scripting
-  Website: https://thingsdb.net
+  Website: https://thingsdb.io
   */
 
   function thingsdb(hljs) {
@@ -3228,7 +3228,7 @@ var hljs = (function () {
                   begin: new RegExp(
                       '\\.\\s*(assign|args|set_args|len|load|call|choice|closure|set_closure|copy|dup|join|doc|emit|code|msg|each|every|extend|extend_unique|filter|find|' +
                       'find_index|index_of|count|sum|min|max|flat|map|map_id|map_wrap|map_type|vmap|name|owner|set_owner|pop|push|fill|remove|replace|reverse|restrict|restriction|split|sort|splice|unique|is_unique|' +
-                      'at|again_in|again_at|cancel|add|one|err|clear|has|contains|ends_with|lower|starts_with|test|trim|trim_left|trim_right|upper|' +
+                      'at|again_in|again_at|cancel|add|one|encrypt|decrypt|err|clear|has|contains|ends_with|lower|starts_with|test|trim|trim_left|trim_right|upper|' +
                       'del|ren|to_type|of_type|to_thing|get|id|keys|reduce|set|shift|some|value|values|wrap|unshift|unwrap|' +
                       'search|extract|first|last|equals|then|else|format|move|to|week|weekday|yday|zone)\\s*(?=\\()'
                   ),
