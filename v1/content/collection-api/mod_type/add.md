@@ -6,7 +6,7 @@ weight: 318
 Adds a property or method to an existing [Type](../../../overview/type).
 
 {{% notice info %}}
-Since version **v0.9.2** an initial value is no longer required when having active instances of the given Type.
+Since ThingsDB **v0.9.2** an initial value is no longer required when having active instances of the given Type.
 If the initial value is omitted, then ***a single*** default value according the [Type definition](../../..//overview/type/#definable-properties) will be created and applied to ***all instances***. See section ["init using callback"](#init-using-callback) for information on how to create a new initial value for each instance.
 {{% /notice %}}
 

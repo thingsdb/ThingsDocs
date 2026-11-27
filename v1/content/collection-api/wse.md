@@ -11,7 +11,7 @@ to detect the change requirement before evaluation the query. In this case it is
 Function `wse()` might both wrap a statement and be called without arguments.
 
 {{% notice tip %}}
-Since version **1.10.1** it is possible to write **`f(..)!`** instead of **`wse(f(..))`** making the function call obsolete.
+Since ThingsDB **v1.10.1** it is possible to write **`f(..)!`** instead of **`wse(f(..))`** making the function call obsolete.
 {{% /notice %}}
 
 This function generates a [change](../../overview/changes).

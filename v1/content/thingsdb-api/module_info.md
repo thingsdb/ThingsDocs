@@ -14,7 +14,7 @@ Value | Description
 `restarts` | Number of time the module is restarted. Manual restarts are excluded and will reset the counter to zero. *(Only visible in a `@node` scope)*
 `version` | If available, the version string of the module.
 `doc` | If available, documentation or a documentation link.
-`schema` | Since ThingsDB 1.12.0, the module manifest schema version (`1` or `2`; defaults to `1`).
+`schema` | Since ThingsDB v1.12.0, the module manifest schema version (`1` or `2`; defaults to `1`).
 `scope` | The module can only be used in this scope. When the scope is `nil`, the module can be used in any scope.
 `status` | Status of the scope. The status must be `running` before the module can be used.
 `tasks` | The number of running tasks (futures) for this module on the current node. When going into *away* mode, open tasks might be cancelled. *(Only visible in a `@node` scope)*
