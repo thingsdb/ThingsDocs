@@ -9,7 +9,7 @@ It is not possible to convert a *property* to a *method* or the other way around
 {{% notice note %}}
 Without an additional `callback` it is possible to modify to a less 'strict' definition.
 So for example, `age: 'int'` can become `age: 'int?'`, but not the other way around.
-Since version **v0.9.3** it is possible to migrate to a more strict or completely different definition by using an additional
+Since ThingsDB **v0.9.3** it is possible to migrate to a more strict or completely different definition by using an additional
 callback closure for generating new values.
 {{% /notice %}}
 

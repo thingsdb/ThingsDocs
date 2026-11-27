@@ -9,11 +9,11 @@ Creates a new typed thing of a defined [Type](../../overview/type).
 When possible it is preferred to use the syntax `MyType{...}` to create a thing of a certain Type. However, sometimes you need to create an thing dynamically with the Type's name as variable and then `new()` can be used. {{% /notice %}}
 
 {{% notice tip %}}
-Since version **v0.9.2** the `value` argument is no longer required. If not given all properties will be set to their default values.
+Since ThingsDB **v0.9.2** the `value` argument is no longer required. If not given all properties will be set to their default values.
 {{% /notice %}}
 
 {{% notice tip %}}
-Since version **v0.9.5** it is also possible to create a typed thing using the shorter syntax `Type(thing)` *(instead of writing `new("Type", thing)`)*.
+Since ThingsDB **v0.9.5** it is also possible to create a typed thing using the shorter syntax `Type(thing)` *(instead of writing `new("Type", thing)`)*.
 {{% /notice %}}
 
 This function generates a [change](../../overview/changes).

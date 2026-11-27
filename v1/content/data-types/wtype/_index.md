@@ -135,7 +135,7 @@ run('add_book', 'Bob', 'Baz');
 
 ### Nested wrap structure
 
-Since version 1.8.0, it is possible to write a nested wrap structure. In the example above this would mean that we no longer need to create the types `_Book` and `_WriterName`, but instead nest everything below `_AllBooks`.
+Since ThingsDB v1.8.0, it is possible to write a nested wrap structure. In the example above this would mean that we no longer need to create the types `_Book` and `_WriterName`, but instead nest everything below `_AllBooks`.
 
 For each nested structure, in this case `books` and `author`, the `&` flag is implied. For the _"id"_ to be returned, the `#` property must be explicitly defined, otherwise the type will be created with the _"hide id"_ flag and it will not appear in the result.
 

@@ -5,6 +5,10 @@ weight: 344
 
 Creates a new [enumerator type](../../data-types/enum).
 
+{{% notice note %}}
+Since ThingsDB **v1.13.0**, enum names are no longer allowed to start with a lowercase character (`a-z`).
+{{% /notice %}}
+
 This function generates a [change](../../overview/changes) and requires a call to [commit()](../commit) if [commit history](../../thingsdb-api/set_history) is enabled for the scope.
 
 ### Function

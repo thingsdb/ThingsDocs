@@ -30,6 +30,10 @@ If **wrap-only** mode is enabled, no typed thing of this type can be
 created nor can the type be used by other type. In **wrap-only** mode the only purpose of the type is to [wrap](../../data-types/thing/wrap) other things.
 {{% /notice %}}
 
+{{% notice note %}}
+Since ThingsDB **v1.13.0**, type names are no longer allowed to start with a lowercase character (`a-z`).
+{{% /notice %}}
+
 ### Flags
 
 Flag        | Description
