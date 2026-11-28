@@ -91,7 +91,11 @@ This function does not generate a change.
 Function has_type(type)
 Arguments Argument Type Description type str (required) Type name to check. Return value Returns true if a Type with a given name exists and otherwise false.
 Example This code shows an example use case of has_type():
-has_type('XXX'); Return value in JSON format</description></item><item><title>import</title><link>https://docs.thingsdb.io/v1/collection-api/import/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/import/</guid><description>This function can be used to import a collection which was exported using the export(..) function with the option dump enabled.
+has_type('XXX'); Return value in JSON format</description></item><item><title>has_var</title><link>https://docs.thingsdb.io/v1/collection-api/has_var/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/has_var/</guid><description>Determines if a variable exists in the current scope.
+This function does not generate a change.
+Function has_var(var)
+Arguments Argument Type Description var str (required) Variable name to check. Return value Returns true if a variable with the given name exists in the current scope (even if its value is nil) and otherwise false.
+Example This code shows an example use case of has_var():</description></item><item><title>import</title><link>https://docs.thingsdb.io/v1/collection-api/import/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/import/</guid><description>This function can be used to import a collection which was exported using the export(..) function with the option dump enabled.
 This method can only be used in an empty collection.
 This function generates a change.
 Function import(data, [options])
