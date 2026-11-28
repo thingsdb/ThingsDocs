@@ -114,7 +114,11 @@ Example This code shows some return values for is_task():
 This function does not generate a change.
 Function is_tel(value)
 Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is of type str and contains a telephone number, else false.
-Example This code shows some return values for is_tel():</description></item><item><title>is_thing</title><link>https://docs.thingsdb.io/v1/collection-api/is/is_thing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/is/is_thing/</guid><description>This function determines whether the provided value is a thing or not.
+Example This code shows some return values for is_tel():</description></item><item><title>is_regex</title><link>https://docs.thingsdb.io/v1/collection-api/is/is_template/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/is/is_template/</guid><description>This function determines whether the provided value is of type template or not.
+This function does not generate a change.
+Function is_template(value)
+Arguments Argument Type Description value any (required) The value to be tested. Return value Returns true if the given value is of type template, else it returns false.
+Example This code shows some return values for is_template():</description></item><item><title>is_thing</title><link>https://docs.thingsdb.io/v1/collection-api/is/is_thing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/collection-api/is/is_thing/</guid><description>This function determines whether the provided value is a thing or not.
 Typed things are also things, so this function returns true for both typed and non-typed things.
 This function does not generate a change.
 Function is_thing(value)

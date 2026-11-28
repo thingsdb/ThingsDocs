@@ -1,5 +1,5 @@
 /*!
-  Highlight.js v11.11.1 (git: d89948d823)
+  Highlight.js v11.11.1 (git: 757c0ebf1e)
   (c) 2006-2026 Josh Goebel <hello@joshgoebel.com> and other contributors
   License: BSD-3-Clause
  */
@@ -3193,12 +3193,12 @@ var hljs = (function () {
                       '\\b(' +
                       /* collection functions */
                       'alt_raise|assert|base64_encode|base64_decode|bool|bytes|room|closure|' +
-                      'datetime|deep|del_enum|del_type|enum|enum_info|enum_map|enums_info|err|change_id|float|has_enum|has_type|int|is_array|' +
+                      'datetime|deep|del_enum|del_type|enum|enum_info|enum_map|enums_info|err|change_id|float|has_enum|has_type|has_var|int|is_array|' +
                       'is_ascii|is_bool|is_bytes|is_closure|is_datetime|is_enum|is_err|is_float|is_inf|is_int|is_room|is_task|is_time_zone|' +
-                      'is_list|is_mpdata|is_nan|is_nil|is_raw|is_regex|is_set|is_str|is_thing|is_timeval|is_tuple|uuid|is_uuid|dict|is_dict|' +
+                      'is_list|is_mpdata|is_nan|is_nil|is_raw|is_regex|is_set|is_str|is_thing|is_timeval|is_tuple|is_uuid|dict|is_dict|is_template|' +
                       'is_utf8|is_email|is_url|is_tel|timeit|task|tasks|json_dump|json_load|regex|list|mod_enum|mod_type|new|new_type|now|raise|rand|range|' +
                       'randint|randstr|refs|log|rename_enum|rename_type|set|set_enum|set_type|str|thing|try|type|' +
-                      'future|is_future|timeval|type_all|type_assert|type_count|type_info|types_info|wse|nse|export|import|root|' +
+                      'future|is_future|uuid|timeval|template|type_all|type_assert|type_count|type_info|types_info|wse|nse|export|import|root|' +
                       /* node functions */
                       'backup_info|backups_info|backups_ok|counters|del_backup|' +
                       'has_backup|new_backup|node_info|nodes_info|' +
@@ -3226,7 +3226,7 @@ var hljs = (function () {
               {
                   className: 'function',
                   begin: new RegExp(
-                      '\\.\\s*(assign|args|set_args|len|load|call|choice|closure|set_closure|copy|dup|join|doc|emit|code|msg|each|every|extend|extend_unique|filter|find|' +
+                      '\\.\\s*(assign|args|set_args|len|load|call|choice|closure|set_closure|render|copy|dup|join|doc|emit|code|msg|each|every|extend|extend_unique|filter|find|' +
                       'find_index|index_of|count|sum|min|max|flat|map|map_id|map_wrap|map_type|vmap|name|owner|set_owner|pop|push|fill|remove|replace|reverse|restrict|restriction|split|sort|splice|unique|is_unique|' +
                       'at|again_in|again_at|cancel|add|one|encrypt|decrypt|err|clear|has|contains|ends_with|lower|starts_with|test|trim|trim_left|trim_right|upper|' +
                       'del|ren|to_type|of_type|to_thing|get|id|keys|reduce|set|shift|some|value|values|wrap|unshift|unwrap|' +
