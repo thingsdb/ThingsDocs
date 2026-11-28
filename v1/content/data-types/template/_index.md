@@ -1,6 +1,6 @@
 ---
 title: "template"
-weight: 145
+weight: 189
 ---
 
 A `template` stores a compiled template string that can be evaluated and rendered on demand using the `.render()` method. Unlike [template strings](../../overview/template-strings), which are evaluated immediately, a `template` instance can be stored as a property and rendered later in the current or a provided scope.

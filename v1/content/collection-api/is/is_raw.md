@@ -1,6 +1,6 @@
 ---
 title: "is_raw"
-weight: 279
+weight: 283
 ---
 
 This function determines whether the provided value is of type [str](../../../data-types/str) *or* [bytes](../../../data-types/bytes).

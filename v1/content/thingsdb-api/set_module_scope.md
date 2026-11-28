@@ -1,6 +1,6 @@
 ---
 title: "set_module_scope"
-weight: 410
+weight: 415
 ---
 
 Modules can be restricted for usage in a single scope. This can be a `@collection:..` scope, but also a `@node` or `@thingsdb` scope.

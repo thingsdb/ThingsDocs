@@ -1,6 +1,6 @@
 ---
 title: "all"
-weight: 319
+weight: 324
 ---
 
 Run a given callback on all the instances of a given Type.

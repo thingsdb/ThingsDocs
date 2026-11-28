@@ -186,6 +186,9 @@ data-types
         set_args
         set_closure
         set_owner
+    template
+        len
+        render
     thing
         assign
         clear
@@ -229,6 +232,7 @@ operators
     logical-operators
     precedence-and-associativity
 collection-api
+    template
     alt_raise
     ano
     assert
@@ -283,6 +287,7 @@ collection-api
         is_str
         is_task
         is_tel
+        is_template
         is_thing
         is_time_zone
         is_timeval

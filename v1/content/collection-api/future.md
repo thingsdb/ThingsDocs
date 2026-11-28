@@ -1,6 +1,6 @@
 ---
 title: "future"
-weight: 254
+weight: 258
 ---
 
 Returns a [future](../../data-types/future). It is *not* possible to assign or store a future in a `thing`, `dict`, `list`, or `tuple`; attempting to do so will raise a [type_err](../../errors/type_err).

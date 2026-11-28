@@ -1,6 +1,6 @@
 ---
 title: "is_uuid"
-weight: 292
+weight: 297
 ---
 
 This function determines whether the provided value is a [uuid](../../../data-types/uuid) value or not.

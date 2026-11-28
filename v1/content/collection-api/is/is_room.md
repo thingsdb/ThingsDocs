@@ -1,6 +1,6 @@
 ---
 title: "is_room"
-weight: 281
+weight: 285
 ---
 
 This function determines whether the provided value is a [room](../../../data-types/room) or not.

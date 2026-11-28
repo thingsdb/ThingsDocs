@@ -1,6 +1,6 @@
 ---
 title: "template"
-weight: 215
+weight: 235
 ---
 
 Returns a new [template](../../data-types/template) instance from a given string.
