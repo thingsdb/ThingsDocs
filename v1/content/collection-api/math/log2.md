@@ -1,6 +1,6 @@
 ---
 title: "log2"
-weight: 309
+weight: 310
 ---
 
 Return the base 2 logarithm of a given number.

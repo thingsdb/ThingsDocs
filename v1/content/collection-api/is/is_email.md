@@ -1,6 +1,6 @@
 ---
 title: "is_email"
-weight: 271
+weight: 272
 ---
 
 This function determines whether the provided value is of

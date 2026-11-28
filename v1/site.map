@@ -258,6 +258,7 @@ collection-api
     future
     has_enum
     has_type
+    has_var
     import
     int
     is

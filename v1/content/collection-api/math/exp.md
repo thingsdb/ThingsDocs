@@ -1,6 +1,6 @@
 ---
 title: "exp"
-weight: 306
+weight: 307
 ---
 
 Returns _e_ raised to the power of _x_.
