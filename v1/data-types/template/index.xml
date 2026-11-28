@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>template on ThingsDB documentation</title><link>https://docs.thingsdb.io/v1/data-types/template/</link><description>Recent content in template on ThingsDB documentation</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://docs.thingsdb.io/v1/data-types/template/index.xml" rel="self" type="application/rss+xml"/><item><title>len</title><link>https://docs.thingsdb.io/v1/data-types/template/len/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/template/len/</guid><description>Returns the length of the raw template.
+This function does not generate a change.
+Function template.len()
+Arguments None
+Return value Returns the length of the raw template.
+Example This code uses len() to return the length of the template:
+tpl = template(&amp;quot;Hello {name}!&amp;quot;); tpl.len(); Return value in JSON format
+13</description></item><item><title>render</title><link>https://docs.thingsdb.io/v1/data-types/template/render/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.thingsdb.io/v1/data-types/template/render/</guid><description>Renders a template using the current scope, unless a scope is provided.
+This function does not generate a change, unless the template code itself modifies data in the target scope.
+Function template.render([scope])
+Arguments Argument Type Description scope thing (optional) The scope in which to evaluate the template. Defaults to the current scope if omitted. Return value Returns the rendered str value.</description></item></channel></rss>

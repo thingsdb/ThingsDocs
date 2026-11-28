@@ -6,17 +6,17 @@
 <meta name=description content="ThingsDB documentation">
 <link rel="shortcut icon" href=/v1/images/favicon.ico type=image/x-icon>
 <title>˂Type˃ :: ThingsDB documentation</title>
-<link href=/v1/css/nucleus.css?1795733821 rel=stylesheet>
-<link href=/v1/css/fontawesome-all.min.css?1795733821 rel=stylesheet>
-<link href=/v1/css/hybrid.css?1795733821 rel=stylesheet>
-<link href=/v1/css/featherlight.min.css?1795733821 rel=stylesheet>
-<link href=/v1/css/perfect-scrollbar.min.css?1795733821 rel=stylesheet>
-<link href=/v1/css/auto-complete.css?1795733821 rel=stylesheet>
-<link href=/v1/css/atom-one-dark-reasonable.css?1795733821 rel=stylesheet>
-<link href=/v1/css/theme.css?1795733821 rel=stylesheet>
-<link href=/v1/css/hugo-theme.css?1795733821 rel=stylesheet>
-<link href=/v1/css/theme-mine.css?1795733821 rel=stylesheet>
-<script src=/v1/js/jquery-3.3.1.min.js?1795733821></script>
+<link href=/v1/css/nucleus.css?1795861919 rel=stylesheet>
+<link href=/v1/css/fontawesome-all.min.css?1795861919 rel=stylesheet>
+<link href=/v1/css/hybrid.css?1795861919 rel=stylesheet>
+<link href=/v1/css/featherlight.min.css?1795861919 rel=stylesheet>
+<link href=/v1/css/perfect-scrollbar.min.css?1795861919 rel=stylesheet>
+<link href=/v1/css/auto-complete.css?1795861919 rel=stylesheet>
+<link href=/v1/css/atom-one-dark-reasonable.css?1795861919 rel=stylesheet>
+<link href=/v1/css/theme.css?1795861919 rel=stylesheet>
+<link href=/v1/css/hugo-theme.css?1795861919 rel=stylesheet>
+<link href=/v1/css/theme-mine.css?1795861919 rel=stylesheet>
+<script src=/v1/js/jquery-3.3.1.min.js?1795861919></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}:not(pre)>code+span.copy-to-clipboard{display:none}</style>
 </head>
 <body data-url=/v1/data-types/wtype/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/v1/js/lunr.min.js?1795733821></script>
-<script type=text/javascript src=/v1/js/auto-complete.js?1795733821></script>
+<script type=text/javascript src=/v1/js/lunr.min.js?1795861919></script>
+<script type=text/javascript src=/v1/js/auto-complete.js?1795861919></script>
 <script type=text/javascript>var baseurl="https://docs.thingsdb.io/v1/"</script>
-<script type=text/javascript src=/v1/js/search.js?1795733821></script>
+<script type=text/javascript src=/v1/js/search.js?1795861919></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -884,6 +884,23 @@ some
 </li>
 </ul>
 </li>
+<li data-nav-id=/v1/data-types/template/ title=template class=dd-item>
+<a href=/v1/data-types/template/>
+template
+</a>
+<ul>
+<li data-nav-id=/v1/data-types/template/len/ title=len class=dd-item>
+<a href=/v1/data-types/template/len/>
+len
+</a>
+</li>
+<li data-nav-id=/v1/data-types/template/render/ title=render class=dd-item>
+<a href=/v1/data-types/template/render/>
+render
+</a>
+</li>
+</ul>
+</li>
 <li data-nav-id=/v1/data-types/str/ title=str class=dd-item>
 <a href=/v1/data-types/str/>
 str
@@ -1245,6 +1262,11 @@ Precedence and associativity
 Collection API
 </a>
 <ul>
+<li data-nav-id=/v1/collection-api/template/ title=template class=dd-item>
+<a href=/v1/collection-api/template/>
+template
+</a>
+</li>
 <li data-nav-id=/v1/collection-api/alt_raise/ title=alt_raise class=dd-item>
 <a href=/v1/collection-api/alt_raise/>
 alt_raise
@@ -2595,7 +2617,7 @@ run('add_book', 'Bob', 'Baz');
     ]
 }
 </code></pre></div><h3 id=nested-wrap-structure>Nested wrap structure</h3>
-<p>Since version 1.8.0, it is possible to write a nested wrap structure. In the example above this would mean that we no longer need to create the types <code>_Book</code> and <code>_WriterName</code>, but instead nest everything below <code>_AllBooks</code>.</p>
+<p>Since ThingsDB v1.8.0, it is possible to write a nested wrap structure. In the example above this would mean that we no longer need to create the types <code>_Book</code> and <code>_WriterName</code>, but instead nest everything below <code>_AllBooks</code>.</p>
 <p>For each nested structure, in this case <code>books</code> and <code>author</code>, the <code>&</code> flag is implied. For the <em>&ldquo;id&rdquo;</em> to be returned, the <code>#</code> property must be explicitly defined, otherwise the type will be created with the <em>&ldquo;hide id&rdquo;</em> flag and it will not appear in the result.</p>
 <pre tabindex=0><code class=language-thingsdb,should_pass data-lang=thingsdb,should_pass>// Create a Type for returning only a set of `books` as `_Book`
 set_type('_AllBooks', {
@@ -2799,18 +2821,18 @@ foo.wrap(_Pexample); // Return one deep, note that `other` has it's own depth
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/v1/js/clipboard.min.js?1795733821></script>
-<script src=/v1/js/perfect-scrollbar.min.js?1795733821></script>
-<script src=/v1/js/perfect-scrollbar.jquery.min.js?1795733821></script>
-<script src=/v1/js/jquery.sticky.js?1795733821></script>
-<script src=/v1/js/featherlight.min.js?1795733821></script>
-<script src=/v1/js/highlight.pack.js?1795733821></script>
+<script src=/v1/js/clipboard.min.js?1795861919></script>
+<script src=/v1/js/perfect-scrollbar.min.js?1795861919></script>
+<script src=/v1/js/perfect-scrollbar.jquery.min.js?1795861919></script>
+<script src=/v1/js/jquery.sticky.js?1795861919></script>
+<script src=/v1/js/featherlight.min.js?1795861919></script>
+<script src=/v1/js/highlight.pack.js?1795861919></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=/v1/js/modernizr.custom-3.6.0.js?1795733821></script>
-<script src=/v1/js/learn.js?1795733821></script>
-<script src=/v1/js/hugo-learn.js?1795733821></script>
-<link href=/v1/mermaid/mermaid.css?1795733821 rel=stylesheet>
-<script src=/v1/mermaid/mermaid.js?1795733821></script>
+<script src=/v1/js/modernizr.custom-3.6.0.js?1795861919></script>
+<script src=/v1/js/learn.js?1795861919></script>
+<script src=/v1/js/hugo-learn.js?1795861919></script>
+<link href=/v1/mermaid/mermaid.css?1795861919 rel=stylesheet>
+<script src=/v1/mermaid/mermaid.js?1795861919></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 </body>
 </html>
