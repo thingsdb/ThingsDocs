@@ -35,6 +35,7 @@ Function                        | Description
 [is_str](./is_str)              | Determines whether the provided value is of type [str](../../data-types/str).
 [is_task](./is_task)            | Determines whether the provided value is a [task](../../data-types/task) or not.
 [is_tel](./is_tel)              | Determines whether the provided value is of type [str](../../data-types/str) and contains a telephone number.
+[is_template](./is_template)    | Determines whether the provided value is of type [template](../../data-types/template) or not.
 [is_thing](./is_thing)          | Determines whether the provided value is a [thing](../../data-types/thing) or not.
 [is_time_zone](./is_time_zone)  | Determines whether the provided value is of type [str](../../data-types/str) and contains a valid time zone.
 [is_timeval](./is_timeval)      | Determines whether the provided value is of type [timeval](../../data-types/timeval).
