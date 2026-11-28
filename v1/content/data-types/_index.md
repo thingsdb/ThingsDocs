@@ -29,6 +29,7 @@ type | Description
 [set](./set) | Unordered group of unique things.
 [str](./str) | String type.
 [task](./task) | Schedule a task (*[closure](./closure)*) to run at a specific date/time.
+[template](./template) | A `template` stores a compiled template string that can be evaluated and rendered on demand.
 [thing](./thing) | Object with key value pairs.
 [timeval](./timeval) | Like `datetime` but returns as a UNIX time-stamp by default.
 [tuple](./tuple) | Nested and immutable [list](./list).
