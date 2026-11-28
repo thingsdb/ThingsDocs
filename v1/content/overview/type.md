@@ -46,7 +46,8 @@ definition | default | description
 `'str<..>'` | *depends* | requires type [str](../../data-types/str) with a certain length *(see [length condition](#length-condition) and [default value](#use-condition-to-set-a-default-value))*
 `'task'` | `task()` | requires type [task](../../data-types/task).
 `'tel'` | `""` | requires type [str](../../data-types/str) and the value *must* contain a telephone number _(or empty string)_.
-`'tel<..>'` | *depends* | requires type [str](../../data-types/str) and the value *must* contain a telephone number _(empty string is not allowed, a [default telephone number](#use-condition-to-set-a-default-value) must be given)_.
+`'tel<..>'` | *depends* | requires type [str](../../data-types/str) and the value *must* contain a telephone number _(empty string is not allowed, a [default telephone number]
+`'template'` | `template('')` | requires type [template](../../data-types/template).
 `'thing'` | `{}` | requires a [thing](../../data-types/thing).
 `'thing<T>'` | `{}` | requires a value restricted [thing](../../data-types/thing) where each value must be of type `T`.
 `'timeval'` | `timeval()` | requires type [timeval](../../data-types/timeval). *(defaults to the current date/time)*

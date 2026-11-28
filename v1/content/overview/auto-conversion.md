@@ -3,7 +3,7 @@ title: "Auto-conversion"
 weight: 41
 ---
 
-When working with external payloads (such as JSON or MessagePack), incoming data often uses generic primitive types instead of ThingsDB's richer types (like `datetime`, `regex`, `set`, enums, or nested typed instances).
+When working with external payloads (such as JSON or MessagePack), incoming data often uses generic primitive types instead of ThingsDB's richer types (like `datetime`, `regex`, `template`, `set`, enums, or nested typed instances).
 
 To avoid manual mapping boilerplate, ThingsDB automatically converts compatible values to their target property definitions when initializing an instance from an existing `thing` or updating an instance with `.assign()`.
 
@@ -54,6 +54,7 @@ The table below lists all target property definitions that support automatic con
 | `int` | `float` | Must represent an exact whole number (e.g., `3.0` -> `3`). Floats with a non-zero fractional part (e.g., `3.1`) raise a [value_err()](../../errors/value_err). Other types like [bool](../../data-types/bool) are not converted. |
 | `float` | `int` | Converted directly to [float](../../data-types/float) (e.g., `6` -> `6.0`). |
 | `regex` | `str` | Must be formatted as `"/expression/flags"`. |
+| `template` | `str` | Must be valid template syntax, e.g., `"Hello {name}!"`. |
 | `closure` | `str` | Must be valid closure syntax, e.g., `"\|args\| body"`. |
 | `uuid` | `str`, `bytes` | Must be a valid UUID string (e.g., `"550e8400-e29b-41d4-a716-446655440000"`) or a 16-byte [bytes](../../data-types/bytes) value (such as binary UUIDs from MessagePack). |
 | `datetime` | `str` | Must be a valid ISO 8601 date/time string (e.g., `"2026-11-20T22:32:28Z"`). |
@@ -127,6 +128,7 @@ set_type('Sample', {
     count: 'int',
     ratio: 'float',
     pattern: 'regex',
+    tpl: 'template',
     callback: 'closure',
     created: 'timeval',
     updated: 'datetime',
@@ -139,6 +141,7 @@ s = Sample({
     count: 5.0,                                          // -> int: 5
     ratio: 2,                                            // -> float: 2.0
     pattern: '/^item-[0-9]+$/i',                         // -> regex: /^item-[0-9]+$/i
+    tpl: 'Hello {name}!',                                // -> template: `Hello {name}!`
     callback: '|x| x * 2',                               // -> closure: |x| x * 2
     created: 1795214029,                                 // -> timeval: 2026-11-20T22:33:49Z
     updated: '2026-11-20T22:33:49Z',                     // -> datetime: 2026-11-20T22:33:49Z
@@ -152,6 +155,7 @@ s = Sample({
     type(s.count),      // "int"
     type(s.ratio),      // "float"
     type(s.pattern),    // "regex"
+    type(s.tpl),        // "template"
     type(s.callback),   // "closure"
     type(s.created),    // "timeval"
     type(s.updated),    // "datetime"
